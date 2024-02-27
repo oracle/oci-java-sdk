@@ -40,6 +40,7 @@ public final class CreateOperatorControlDetails
         "preApprovedOpActionList",
         "isFullyPreApproved",
         "resourceType",
+        "numberOfApprovers",
         "emailIdList",
         "systemMessage",
         "compartmentId",
@@ -54,6 +55,7 @@ public final class CreateOperatorControlDetails
             java.util.List<String> preApprovedOpActionList,
             Boolean isFullyPreApproved,
             ResourceTypes resourceType,
+            Integer numberOfApprovers,
             java.util.List<String> emailIdList,
             String systemMessage,
             String compartmentId,
@@ -67,6 +69,7 @@ public final class CreateOperatorControlDetails
         this.preApprovedOpActionList = preApprovedOpActionList;
         this.isFullyPreApproved = isFullyPreApproved;
         this.resourceType = resourceType;
+        this.numberOfApprovers = numberOfApprovers;
         this.emailIdList = emailIdList;
         this.systemMessage = systemMessage;
         this.compartmentId = compartmentId;
@@ -199,6 +202,21 @@ public final class CreateOperatorControlDetails
             this.__explicitlySet__.add("resourceType");
             return this;
         }
+        /** Number of approvers required to approve an access request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+        private Integer numberOfApprovers;
+
+        /**
+         * Number of approvers required to approve an access request.
+         *
+         * @param numberOfApprovers the value to set
+         * @return this builder
+         */
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            this.numberOfApprovers = numberOfApprovers;
+            this.__explicitlySet__.add("numberOfApprovers");
+            return this;
+        }
         /** List of emailId. */
         @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
         private java.util.List<String> emailIdList;
@@ -297,6 +315,7 @@ public final class CreateOperatorControlDetails
                             this.preApprovedOpActionList,
                             this.isFullyPreApproved,
                             this.resourceType,
+                            this.numberOfApprovers,
                             this.emailIdList,
                             this.systemMessage,
                             this.compartmentId,
@@ -330,6 +349,9 @@ public final class CreateOperatorControlDetails
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfApprovers")) {
+                this.numberOfApprovers(model.getNumberOfApprovers());
             }
             if (model.wasPropertyExplicitlySet("emailIdList")) {
                 this.emailIdList(model.getEmailIdList());
@@ -468,6 +490,19 @@ public final class CreateOperatorControlDetails
         return resourceType;
     }
 
+    /** Number of approvers required to approve an access request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+    private final Integer numberOfApprovers;
+
+    /**
+     * Number of approvers required to approve an access request.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfApprovers() {
+        return numberOfApprovers;
+    }
+
     /** List of emailId. */
     @com.fasterxml.jackson.annotation.JsonProperty("emailIdList")
     private final java.util.List<String> emailIdList;
@@ -562,6 +597,7 @@ public final class CreateOperatorControlDetails
                 .append(String.valueOf(this.preApprovedOpActionList));
         sb.append(", isFullyPreApproved=").append(String.valueOf(this.isFullyPreApproved));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
         sb.append(", emailIdList=").append(String.valueOf(this.emailIdList));
         sb.append(", systemMessage=").append(String.valueOf(this.systemMessage));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -589,6 +625,7 @@ public final class CreateOperatorControlDetails
                         this.preApprovedOpActionList, other.preApprovedOpActionList)
                 && java.util.Objects.equals(this.isFullyPreApproved, other.isFullyPreApproved)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
                 && java.util.Objects.equals(this.emailIdList, other.emailIdList)
                 && java.util.Objects.equals(this.systemMessage, other.systemMessage)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -626,6 +663,9 @@ public final class CreateOperatorControlDetails
                                 ? 43
                                 : this.isFullyPreApproved.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfApprovers == null ? 43 : this.numberOfApprovers.hashCode());
         result = (result * PRIME) + (this.emailIdList == null ? 43 : this.emailIdList.hashCode());
         result =
                 (result * PRIME)

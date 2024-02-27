@@ -32,6 +32,7 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "lifecycleState",
         "lifecycleDetails",
         "platformVersion",
+        "dialogVersion",
         "baseId",
         "multilingualMode",
         "primaryLanguageTag",
@@ -52,6 +53,7 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
             LifecycleState lifecycleState,
             BotPublishState lifecycleDetails,
             String platformVersion,
+            String dialogVersion,
             String baseId,
             BotMultilingualMode multilingualMode,
             String primaryLanguageTag,
@@ -71,6 +73,7 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.platformVersion = platformVersion;
+        this.dialogVersion = dialogVersion;
         this.baseId = baseId;
         this.multilingualMode = multilingualMode;
         this.primaryLanguageTag = primaryLanguageTag;
@@ -241,6 +244,21 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
             this.__explicitlySet__.add("platformVersion");
             return this;
         }
+        /** The resource's dialog version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dialogVersion")
+        private String dialogVersion;
+
+        /**
+         * The resource's dialog version.
+         *
+         * @param dialogVersion the value to set
+         * @return this builder
+         */
+        public Builder dialogVersion(String dialogVersion) {
+            this.dialogVersion = dialogVersion;
+            this.__explicitlySet__.add("dialogVersion");
+            return this;
+        }
         /** The unique identifier for the base reource (when this resource extends another). */
         @com.fasterxml.jackson.annotation.JsonProperty("baseId")
         private String baseId;
@@ -395,6 +413,7 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.platformVersion,
+                            this.dialogVersion,
                             this.baseId,
                             this.multilingualMode,
                             this.primaryLanguageTag,
@@ -440,6 +459,9 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("platformVersion")) {
                 this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dialogVersion")) {
+                this.dialogVersion(model.getDialogVersion());
             }
             if (model.wasPropertyExplicitlySet("baseId")) {
                 this.baseId(model.getBaseId());
@@ -616,6 +638,19 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return platformVersion;
     }
 
+    /** The resource's dialog version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dialogVersion")
+    private final String dialogVersion;
+
+    /**
+     * The resource's dialog version.
+     *
+     * @return the value
+     */
+    public String getDialogVersion() {
+        return dialogVersion;
+    }
+
     /** The unique identifier for the base reource (when this resource extends another). */
     @com.fasterxml.jackson.annotation.JsonProperty("baseId")
     private final String baseId;
@@ -761,6 +796,7 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
+        sb.append(", dialogVersion=").append(String.valueOf(this.dialogVersion));
         sb.append(", baseId=").append(String.valueOf(this.baseId));
         sb.append(", multilingualMode=").append(String.valueOf(this.multilingualMode));
         sb.append(", primaryLanguageTag=").append(String.valueOf(this.primaryLanguageTag));
@@ -793,6 +829,7 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.platformVersion, other.platformVersion)
+                && java.util.Objects.equals(this.dialogVersion, other.dialogVersion)
                 && java.util.Objects.equals(this.baseId, other.baseId)
                 && java.util.Objects.equals(this.multilingualMode, other.multilingualMode)
                 && java.util.Objects.equals(this.primaryLanguageTag, other.primaryLanguageTag)
@@ -824,6 +861,9 @@ public final class Bot extends com.oracle.bmc.http.client.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.platformVersion == null ? 43 : this.platformVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dialogVersion == null ? 43 : this.dialogVersion.hashCode());
         result = (result * PRIME) + (this.baseId == null ? 43 : this.baseId.hashCode());
         result =
                 (result * PRIME)

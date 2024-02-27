@@ -609,6 +609,7 @@ public class ContainerInstanceAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getContainerId())
                 .appendPathParam("actions")
                 .appendPathParam("retrieveLogs")
+                .appendQueryParam("isPrevious", request.getIsPrevious())
                 .accept("application/json", "text/plain")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(java.io.InputStream.class, RetrieveLogsResponse.Builder::inputStream)

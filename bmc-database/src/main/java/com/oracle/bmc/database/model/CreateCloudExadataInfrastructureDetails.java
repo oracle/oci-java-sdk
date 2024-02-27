@@ -34,6 +34,7 @@ public final class CreateCloudExadataInfrastructureDetails
         "maintenanceWindow",
         "freeformTags",
         "definedTags",
+        "clusterPlacementGroupId",
         "customerContacts"
     })
     public CreateCloudExadataInfrastructureDetails(
@@ -46,6 +47,7 @@ public final class CreateCloudExadataInfrastructureDetails
             MaintenanceWindow maintenanceWindow,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String clusterPlacementGroupId,
             java.util.List<CustomerContact> customerContacts) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -57,6 +59,7 @@ public final class CreateCloudExadataInfrastructureDetails
         this.maintenanceWindow = maintenanceWindow;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.customerContacts = customerContacts;
     }
 
@@ -216,6 +219,25 @@ public final class CreateCloudExadataInfrastructureDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Exadata Infrastructure.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /** Customer contacts. */
         @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
         private java.util.List<CustomerContact> customerContacts;
@@ -247,6 +269,7 @@ public final class CreateCloudExadataInfrastructureDetails
                             this.maintenanceWindow,
                             this.freeformTags,
                             this.definedTags,
+                            this.clusterPlacementGroupId,
                             this.customerContacts);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -282,6 +305,9 @@ public final class CreateCloudExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
@@ -434,6 +460,23 @@ public final class CreateCloudExadataInfrastructureDetails
         return definedTags;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Exadata Infrastructure.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /** Customer contacts. */
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
     private final java.util.List<CustomerContact> customerContacts;
@@ -471,6 +514,8 @@ public final class CreateCloudExadataInfrastructureDetails
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(")");
         return sb.toString();
@@ -495,6 +540,8 @@ public final class CreateCloudExadataInfrastructureDetails
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && super.equals(other);
     }
@@ -520,6 +567,11 @@ public final class CreateCloudExadataInfrastructureDetails
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());

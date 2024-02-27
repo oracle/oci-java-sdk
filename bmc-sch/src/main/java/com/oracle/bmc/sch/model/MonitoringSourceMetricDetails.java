@@ -76,7 +76,7 @@ public class MonitoringSourceMetricDetails
         return result;
     }
 
-    /** The type descriminator. */
+    /** The type discriminator. */
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         All("all"),
 

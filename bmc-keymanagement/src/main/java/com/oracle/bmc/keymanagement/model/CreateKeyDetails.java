@@ -28,6 +28,8 @@ public final class CreateKeyDetails
         "displayName",
         "freeformTags",
         "keyShape",
+        "isAutoRotationEnabled",
+        "autoKeyRotationDetails",
         "protectionMode",
         "externalKeyReference"
     })
@@ -37,6 +39,8 @@ public final class CreateKeyDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             KeyShape keyShape,
+            Boolean isAutoRotationEnabled,
+            AutoKeyRotationDetails autoKeyRotationDetails,
             ProtectionMode protectionMode,
             ExternalKeyReference externalKeyReference) {
         super();
@@ -45,6 +49,8 @@ public final class CreateKeyDetails
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.keyShape = keyShape;
+        this.isAutoRotationEnabled = isAutoRotationEnabled;
+        this.autoKeyRotationDetails = autoKeyRotationDetails;
         this.protectionMode = protectionMode;
         this.externalKeyReference = externalKeyReference;
     }
@@ -141,6 +147,30 @@ public final class CreateKeyDetails
             this.__explicitlySet__.add("keyShape");
             return this;
         }
+        /** A parameter specifying whether the auto key rotation is enabled or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+        private Boolean isAutoRotationEnabled;
+
+        /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         *
+         * @param isAutoRotationEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            this.isAutoRotationEnabled = isAutoRotationEnabled;
+            this.__explicitlySet__.add("isAutoRotationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+        private AutoKeyRotationDetails autoKeyRotationDetails;
+
+        public Builder autoKeyRotationDetails(AutoKeyRotationDetails autoKeyRotationDetails) {
+            this.autoKeyRotationDetails = autoKeyRotationDetails;
+            this.__explicitlySet__.add("autoKeyRotationDetails");
+            return this;
+        }
         /**
          * The key's protection mode indicates how the key persists and where cryptographic
          * operations that use the key are performed. A protection mode of {@code HSM} means that
@@ -201,6 +231,8 @@ public final class CreateKeyDetails
                             this.displayName,
                             this.freeformTags,
                             this.keyShape,
+                            this.isAutoRotationEnabled,
+                            this.autoKeyRotationDetails,
                             this.protectionMode,
                             this.externalKeyReference);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -225,6 +257,12 @@ public final class CreateKeyDetails
             }
             if (model.wasPropertyExplicitlySet("keyShape")) {
                 this.keyShape(model.getKeyShape());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoRotationEnabled")) {
+                this.isAutoRotationEnabled(model.getIsAutoRotationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoKeyRotationDetails")) {
+                this.autoKeyRotationDetails(model.getAutoKeyRotationDetails());
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
@@ -322,6 +360,26 @@ public final class CreateKeyDetails
 
     public KeyShape getKeyShape() {
         return keyShape;
+    }
+
+    /** A parameter specifying whether the auto key rotation is enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+    private final Boolean isAutoRotationEnabled;
+
+    /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoRotationEnabled() {
+        return isAutoRotationEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+    private final AutoKeyRotationDetails autoKeyRotationDetails;
+
+    public AutoKeyRotationDetails getAutoKeyRotationDetails() {
+        return autoKeyRotationDetails;
     }
 
     /**
@@ -435,6 +493,8 @@ public final class CreateKeyDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", keyShape=").append(String.valueOf(this.keyShape));
+        sb.append(", isAutoRotationEnabled=").append(String.valueOf(this.isAutoRotationEnabled));
+        sb.append(", autoKeyRotationDetails=").append(String.valueOf(this.autoKeyRotationDetails));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
         sb.append(", externalKeyReference=").append(String.valueOf(this.externalKeyReference));
         sb.append(")");
@@ -456,6 +516,9 @@ public final class CreateKeyDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.keyShape, other.keyShape)
+                && java.util.Objects.equals(this.isAutoRotationEnabled, other.isAutoRotationEnabled)
+                && java.util.Objects.equals(
+                        this.autoKeyRotationDetails, other.autoKeyRotationDetails)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
                 && java.util.Objects.equals(this.externalKeyReference, other.externalKeyReference)
                 && super.equals(other);
@@ -472,6 +535,16 @@ public final class CreateKeyDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.keyShape == null ? 43 : this.keyShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotationEnabled == null
+                                ? 43
+                                : this.isAutoRotationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoKeyRotationDetails == null
+                                ? 43
+                                : this.autoKeyRotationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());

@@ -253,12 +253,16 @@ public final class CreateAutonomousVmClusterDetails
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /** The compute model of the Autonomous VM Cluster. */
+        /**
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended
+         * model and OCPU compute model is legacy.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster.
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended
+         * model and OCPU compute model is legacy.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -709,7 +713,10 @@ public final class CreateAutonomousVmClusterDetails
         return cpuCoreCountPerNode;
     }
 
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy.
+     */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -742,12 +749,16 @@ public final class CreateAutonomousVmClusterDetails
             throw new IllegalArgumentException("Invalid ComputeModel: " + key);
         }
     };
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy.
      *
      * @return the value
      */

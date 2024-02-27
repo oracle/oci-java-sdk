@@ -49,6 +49,7 @@ public final class LaunchInstanceDetails
         "shapeConfig",
         "sourceDetails",
         "subnetId",
+        "launchVolumeAttachments",
         "isPvEncryptionInTransitEnabled",
         "platformConfig",
         "instanceConfigurationId"
@@ -78,6 +79,7 @@ public final class LaunchInstanceDetails
             LaunchInstanceShapeConfigDetails shapeConfig,
             InstanceSourceDetails sourceDetails,
             String subnetId,
+            java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments,
             Boolean isPvEncryptionInTransitEnabled,
             LaunchInstancePlatformConfig platformConfig,
             String instanceConfigurationId) {
@@ -106,6 +108,7 @@ public final class LaunchInstanceDetails
         this.shapeConfig = shapeConfig;
         this.sourceDetails = sourceDetails;
         this.subnetId = subnetId;
+        this.launchVolumeAttachments = launchVolumeAttachments;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
@@ -686,6 +689,22 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /** Volume attachments to create as part of the launch instance operation. */
+        @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
+        private java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
+
+        /**
+         * Volume attachments to create as part of the launch instance operation.
+         *
+         * @param launchVolumeAttachments the value to set
+         * @return this builder
+         */
+        public Builder launchVolumeAttachments(
+                java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments) {
+            this.launchVolumeAttachments = launchVolumeAttachments;
+            this.__explicitlySet__.add("launchVolumeAttachments");
+            return this;
+        }
         /**
          * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
          * This field applies to both block volumes and boot volumes. The default value is false.
@@ -766,6 +785,7 @@ public final class LaunchInstanceDetails
                             this.shapeConfig,
                             this.sourceDetails,
                             this.subnetId,
+                            this.launchVolumeAttachments,
                             this.isPvEncryptionInTransitEnabled,
                             this.platformConfig,
                             this.instanceConfigurationId);
@@ -848,6 +868,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("launchVolumeAttachments")) {
+                this.launchVolumeAttachments(model.getLaunchVolumeAttachments());
             }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
@@ -1385,6 +1408,19 @@ public final class LaunchInstanceDetails
         return subnetId;
     }
 
+    /** Volume attachments to create as part of the launch instance operation. */
+    @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
+    private final java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
+
+    /**
+     * Volume attachments to create as part of the launch instance operation.
+     *
+     * @return the value
+     */
+    public java.util.List<LaunchAttachVolumeDetails> getLaunchVolumeAttachments() {
+        return launchVolumeAttachments;
+    }
+
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
      * This field applies to both block volumes and boot volumes. The default value is false.
@@ -1468,6 +1504,8 @@ public final class LaunchInstanceDetails
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", launchVolumeAttachments=")
+                .append(String.valueOf(this.launchVolumeAttachments));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
@@ -1512,6 +1550,8 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(
+                        this.launchVolumeAttachments, other.launchVolumeAttachments)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
@@ -1582,6 +1622,11 @@ public final class LaunchInstanceDetails
                 (result * PRIME)
                         + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.launchVolumeAttachments == null
+                                ? 43
+                                : this.launchVolumeAttachments.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPvEncryptionInTransitEnabled == null

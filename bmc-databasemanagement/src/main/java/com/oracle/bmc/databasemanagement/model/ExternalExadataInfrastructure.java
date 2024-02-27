@@ -211,6 +211,53 @@ public final class ExternalExadataInfrastructure extends DbmResource {
             this.__explicitlySet__.add("databaseCompartments");
             return this;
         }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -233,7 +280,9 @@ public final class ExternalExadataInfrastructure extends DbmResource {
                             this.licenseModel,
                             this.storageGrid,
                             this.databaseSystems,
-                            this.databaseCompartments);
+                            this.databaseCompartments,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -290,6 +339,12 @@ public final class ExternalExadataInfrastructure extends DbmResource {
             if (model.wasPropertyExplicitlySet("databaseCompartments")) {
                 this.databaseCompartments(model.getDatabaseCompartments());
             }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
             return this;
         }
     }
@@ -320,7 +375,9 @@ public final class ExternalExadataInfrastructure extends DbmResource {
             LicenseModel licenseModel,
             ExternalExadataStorageGridSummary storageGrid,
             java.util.List<ExternalExadataDatabaseSystemSummary> databaseSystems,
-            java.util.List<String> databaseCompartments) {
+            java.util.List<String> databaseCompartments,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super(
                 id,
                 displayName,
@@ -338,6 +395,8 @@ public final class ExternalExadataInfrastructure extends DbmResource {
         this.storageGrid = storageGrid;
         this.databaseSystems = databaseSystems;
         this.databaseCompartments = databaseCompartments;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     /** The rack size of the Exadata infrastructure. */
@@ -514,6 +573,48 @@ public final class ExternalExadataInfrastructure extends DbmResource {
         return databaseCompartments;
     }
 
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -535,6 +636,8 @@ public final class ExternalExadataInfrastructure extends DbmResource {
         sb.append(", storageGrid=").append(String.valueOf(this.storageGrid));
         sb.append(", databaseSystems=").append(String.valueOf(this.databaseSystems));
         sb.append(", databaseCompartments=").append(String.valueOf(this.databaseCompartments));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -555,6 +658,8 @@ public final class ExternalExadataInfrastructure extends DbmResource {
                 && java.util.Objects.equals(this.storageGrid, other.storageGrid)
                 && java.util.Objects.equals(this.databaseSystems, other.databaseSystems)
                 && java.util.Objects.equals(this.databaseCompartments, other.databaseCompartments)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -576,6 +681,8 @@ public final class ExternalExadataInfrastructure extends DbmResource {
                         + (this.databaseCompartments == null
                                 ? 43
                                 : this.databaseCompartments.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         return result;
     }
 }

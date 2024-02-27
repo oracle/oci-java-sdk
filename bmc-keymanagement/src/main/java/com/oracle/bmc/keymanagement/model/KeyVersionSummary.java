@@ -32,7 +32,8 @@ public final class KeyVersionSummary
         "timeCreated",
         "timeOfDeletion",
         "vaultId",
-        "externalKeyReferenceDetails"
+        "externalKeyReferenceDetails",
+        "isAutoRotated"
     })
     public KeyVersionSummary(
             String compartmentId,
@@ -43,7 +44,8 @@ public final class KeyVersionSummary
             java.util.Date timeCreated,
             java.util.Date timeOfDeletion,
             String vaultId,
-            ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            ExternalKeyReferenceDetails externalKeyReferenceDetails,
+            Boolean isAutoRotated) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -54,6 +56,7 @@ public final class KeyVersionSummary
         this.timeOfDeletion = timeOfDeletion;
         this.vaultId = vaultId;
         this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+        this.isAutoRotated = isAutoRotated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -214,6 +217,25 @@ public final class KeyVersionSummary
             this.__explicitlySet__.add("externalKeyReferenceDetails");
             return this;
         }
+        /**
+         * An optional property indicating whether this keyversion is generated from auto
+         * rotatation.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+        private Boolean isAutoRotated;
+
+        /**
+         * An optional property indicating whether this keyversion is generated from auto
+         * rotatation.
+         *
+         * @param isAutoRotated the value to set
+         * @return this builder
+         */
+        public Builder isAutoRotated(Boolean isAutoRotated) {
+            this.isAutoRotated = isAutoRotated;
+            this.__explicitlySet__.add("isAutoRotated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -229,7 +251,8 @@ public final class KeyVersionSummary
                             this.timeCreated,
                             this.timeOfDeletion,
                             this.vaultId,
-                            this.externalKeyReferenceDetails);
+                            this.externalKeyReferenceDetails,
+                            this.isAutoRotated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -264,6 +287,9 @@ public final class KeyVersionSummary
             }
             if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
                 this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoRotated")) {
+                this.isAutoRotated(model.getIsAutoRotated());
             }
             return this;
         }
@@ -519,6 +545,21 @@ public final class KeyVersionSummary
         return externalKeyReferenceDetails;
     }
 
+    /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+    private final Boolean isAutoRotated;
+
+    /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoRotated() {
+        return isAutoRotated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -544,6 +585,7 @@ public final class KeyVersionSummary
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", externalKeyReferenceDetails=")
                 .append(String.valueOf(this.externalKeyReferenceDetails));
+        sb.append(", isAutoRotated=").append(String.valueOf(this.isAutoRotated));
         sb.append(")");
         return sb.toString();
     }
@@ -568,6 +610,7 @@ public final class KeyVersionSummary
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(
                         this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
+                && java.util.Objects.equals(this.isAutoRotated, other.isAutoRotated)
                 && super.equals(other);
     }
 
@@ -594,6 +637,9 @@ public final class KeyVersionSummary
                         + (this.externalKeyReferenceDetails == null
                                 ? 43
                                 : this.externalKeyReferenceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotated == null ? 43 : this.isAutoRotated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

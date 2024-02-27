@@ -17,13 +17,13 @@ public class DeleteServiceConnectorRequest
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * the connector.
      */
     private String serviceConnectorId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the service connector.
+     * the connector.
      */
     public String getServiceConnectorId() {
         return serviceConnectorId;
@@ -67,13 +67,13 @@ public class DeleteServiceConnectorRequest
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * of the connector.
          */
         private String serviceConnectorId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the service connector.
+         * of the connector.
          *
          * @param serviceConnectorId the value to set
          * @return this builder instance

@@ -54,6 +54,15 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dialogVersion")
+        private String dialogVersion;
+
+        public Builder dialogVersion(String dialogVersion) {
+            this.dialogVersion = dialogVersion;
+            this.__explicitlySet__.add("dialogVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("multilingualMode")
         private BotMultilingualMode multilingualMode;
 
@@ -134,6 +143,7 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
                             this.category,
                             this.description,
                             this.platformVersion,
+                            this.dialogVersion,
                             this.multilingualMode,
                             this.primaryLanguageTag,
                             this.freeformTags,
@@ -156,6 +166,9 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
             }
             if (model.wasPropertyExplicitlySet("platformVersion")) {
                 this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dialogVersion")) {
+                this.dialogVersion(model.getDialogVersion());
             }
             if (model.wasPropertyExplicitlySet("multilingualMode")) {
                 this.multilingualMode(model.getMultilingualMode());
@@ -193,6 +206,7 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
             String category,
             String description,
             String platformVersion,
+            String dialogVersion,
             BotMultilingualMode multilingualMode,
             String primaryLanguageTag,
             java.util.Map<String, String> freeformTags,
@@ -203,6 +217,7 @@ public final class CreateSkillVersionDetails extends CreateSkillDetails {
                 category,
                 description,
                 platformVersion,
+                dialogVersion,
                 multilingualMode,
                 primaryLanguageTag,
                 freeformTags,

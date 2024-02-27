@@ -107,13 +107,15 @@ public final class AutonomousContainerDatabaseResourceUsage
             return this;
         }
         /**
-         * CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+         * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container
+         * Database restart.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+         * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container
+         * Database restart.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -124,15 +126,15 @@ public final class AutonomousContainerDatabaseResourceUsage
             return this;
         }
         /**
-         * CPUs / cores available for ADB provisioning or scaling in the Autonomous Container
-         * Database.
+         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous
+         * Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * CPUs / cores available for ADB provisioning or scaling in the Autonomous Container
-         * Database.
+         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous
+         * Container Database.
          *
          * @param availableCpus the value to set
          * @return this builder
@@ -213,12 +215,12 @@ public final class AutonomousContainerDatabaseResourceUsage
             this.__explicitlySet__.add("usedCpus");
             return this;
         }
-        /** Valid list of provisionable CPUs / cores for ADB creation. */
+        /** Valid list of provisionable CPUs for Autonomous Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
-         * Valid list of provisionable CPUs / cores for ADB creation.
+         * Valid list of provisionable CPUs for Autonomous Database.
          *
          * @param provisionableCpus the value to set
          * @return this builder
@@ -403,12 +405,16 @@ public final class AutonomousContainerDatabaseResourceUsage
         return displayName;
     }
 
-    /** CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart. */
+    /**
+     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database
+     * restart.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database
+     * restart.
      *
      * @return the value
      */
@@ -417,13 +423,15 @@ public final class AutonomousContainerDatabaseResourceUsage
     }
 
     /**
-     * CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container
+     * Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container
+     * Database.
      *
      * @return the value
      */
@@ -491,12 +499,12 @@ public final class AutonomousContainerDatabaseResourceUsage
         return usedCpus;
     }
 
-    /** Valid list of provisionable CPUs / cores for ADB creation. */
+    /** Valid list of provisionable CPUs for Autonomous Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
-     * Valid list of provisionable CPUs / cores for ADB creation.
+     * Valid list of provisionable CPUs for Autonomous Database.
      *
      * @return the value
      */

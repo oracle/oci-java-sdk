@@ -2304,10 +2304,30 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
                 .appendQueryParam("filterByDatabaseType", request.getFilterByDatabaseType())
                 .appendQueryParam("filterByDatabaseSubType", request.getFilterByDatabaseSubType())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam(
                         "filterByDatabaseDeploymentType",
                         request.getFilterByDatabaseDeploymentType())
                 .appendQueryParam("filterByDatabaseVersion", request.getFilterByDatabaseVersion())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -2316,6 +2336,8 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetDatabaseFleetHealthMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetDatabaseFleetHealthMetricsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -2482,6 +2504,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
                         GetExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString("etag", GetExternalAsmInstanceResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalAsmInstanceResponse.Builder::opcRequestId)
                 .callAsync(handler);
@@ -2579,6 +2602,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleBody(
                         com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
                         GetExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString("etag", GetExternalDbHomeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalDbHomeResponse.Builder::opcRequestId)
                 .callAsync(handler);
@@ -3050,6 +3074,7 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                         GetManagedDatabaseResponse.Builder::managedDatabase)
                 .handleResponseHeaderString(
                         "opc-request-id", GetManagedDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetManagedDatabaseResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -6940,6 +6965,43 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExternalAsmInstanceResponse> updateExternalAsmInstance(
+            UpdateExternalAsmInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalAsmInstanceRequest, UpdateExternalAsmInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getExternalAsmInstanceId(), "externalAsmInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalAsmInstanceDetails(),
+                "updateExternalAsmInstanceDetails is required");
+
+        return clientCall(request, UpdateExternalAsmInstanceResponse::builder)
+                .logger(LOG, "updateExternalAsmInstance")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalAsmInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalAsmInstance/UpdateExternalAsmInstance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalAsmInstanceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalAsmInstances")
+                .appendPathParam(request.getExternalAsmInstanceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalAsmInstance.class,
+                        UpdateExternalAsmInstanceResponse.Builder::externalAsmInstance)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalAsmInstanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalAsmInstanceResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExternalClusterResponse> updateExternalCluster(
             UpdateExternalClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7011,6 +7073,42 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateExternalClusterInstanceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalDbHomeResponse> updateExternalDbHome(
+            UpdateExternalDbHomeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExternalDbHomeRequest, UpdateExternalDbHomeResponse>
+                    handler) {
+
+        Validate.notBlank(request.getExternalDbHomeId(), "externalDbHomeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalDbHomeDetails(),
+                "updateExternalDbHomeDetails is required");
+
+        return clientCall(request, UpdateExternalDbHomeResponse::builder)
+                .logger(LOG, "updateExternalDbHome")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalDbHome",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalDbHome/UpdateExternalDbHome")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalDbHomeRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalDbHomes")
+                .appendPathParam(request.getExternalDbHomeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalDbHome.class,
+                        UpdateExternalDbHomeResponse.Builder::externalDbHome)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalDbHomeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateExternalDbHomeResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -7256,6 +7354,92 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExternalExadataStorageGridResponse>
+            updateExternalExadataStorageGrid(
+                    UpdateExternalExadataStorageGridRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageGridRequest,
+                                    UpdateExternalExadataStorageGridResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageGridId(),
+                "externalExadataStorageGridId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageGridDetails(),
+                "updateExternalExadataStorageGridDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageGridResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageGrid")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageGrid",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageGrid/UpdateExternalExadataStorageGrid")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageGridRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageGrids")
+                .appendPathParam(request.getExternalExadataStorageGridId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageGrid.class,
+                        UpdateExternalExadataStorageGridResponse.Builder
+                                ::externalExadataStorageGrid)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageGridResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageGridResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExternalExadataStorageServerResponse>
+            updateExternalExadataStorageServer(
+                    UpdateExternalExadataStorageServerRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExternalExadataStorageServerRequest,
+                                    UpdateExternalExadataStorageServerResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getExternalExadataStorageServerId(),
+                "externalExadataStorageServerId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalExadataStorageServerDetails(),
+                "updateExternalExadataStorageServerDetails is required");
+
+        return clientCall(request, UpdateExternalExadataStorageServerResponse::builder)
+                .logger(LOG, "updateExternalExadataStorageServer")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalExadataStorageServer",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalExadataStorageServer/UpdateExternalExadataStorageServer")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalExadataStorageServerRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalExadataStorageServers")
+                .appendPathParam(request.getExternalExadataStorageServerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalExadataStorageServer.class,
+                        UpdateExternalExadataStorageServerResponse.Builder
+                                ::externalExadataStorageServer)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalExadataStorageServerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalExadataStorageServerResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExternalListenerResponse> updateExternalListener(
             UpdateExternalListenerRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7320,6 +7504,42 @@ public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateManagedDatabaseResponse> updateManagedDatabase(
+            UpdateManagedDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateManagedDatabaseRequest, UpdateManagedDatabaseResponse>
+                    handler) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateManagedDatabaseDetails(),
+                "updateManagedDatabaseDetails is required");
+
+        return clientCall(request, UpdateManagedDatabaseResponse::builder)
+                .logger(LOG, "updateManagedDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateManagedDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/UpdateManagedDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateManagedDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabase.class,
+                        UpdateManagedDatabaseResponse.Builder::managedDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateManagedDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateManagedDatabaseResponse.Builder::etag)
                 .callAsync(handler);
     }
 

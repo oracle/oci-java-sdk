@@ -107,10 +107,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ActivateServiceConnectorResponse::builder)
                 .logger(LOG, "activateServiceConnector")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "ActivateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ActivateServiceConnector")
+                .serviceDetails("ServiceConnector", "ActivateServiceConnector", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateServiceConnectorRequest::builder)
                 .basePath("/20200909")
@@ -146,10 +143,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ChangeServiceConnectorCompartmentResponse::builder)
                 .logger(LOG, "changeServiceConnectorCompartment")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "ChangeServiceConnectorCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ChangeServiceConnectorCompartment")
+                .serviceDetails("ServiceConnector", "ChangeServiceConnectorCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeServiceConnectorCompartmentRequest::builder)
                 .basePath("/20200909")
@@ -182,10 +176,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, CreateServiceConnectorResponse::builder)
                 .logger(LOG, "createServiceConnector")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "CreateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/CreateServiceConnector")
+                .serviceDetails("ServiceConnector", "CreateServiceConnector", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateServiceConnectorRequest::builder)
                 .basePath("/20200909")
@@ -215,10 +206,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeactivateServiceConnectorResponse::builder)
                 .logger(LOG, "deactivateServiceConnector")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "DeactivateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeactivateServiceConnector")
+                .serviceDetails("ServiceConnector", "DeactivateServiceConnector", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DeactivateServiceConnectorRequest::builder)
                 .basePath("/20200909")
@@ -249,10 +237,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, DeleteServiceConnectorResponse::builder)
                 .logger(LOG, "deleteServiceConnector")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "DeleteServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/DeleteServiceConnector")
+                .serviceDetails("ServiceConnector", "DeleteServiceConnector", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteServiceConnectorRequest::builder)
                 .basePath("/20200909")
@@ -280,10 +265,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetServiceConnectorResponse::builder)
                 .logger(LOG, "getServiceConnector")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "GetServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/GetServiceConnector")
+                .serviceDetails("ServiceConnector", "GetServiceConnector", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetServiceConnectorRequest::builder)
                 .basePath("/20200909")
@@ -311,10 +293,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/GetWorkRequest")
+                .serviceDetails("ServiceConnector", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20200909")
@@ -342,10 +321,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListServiceConnectorsResponse::builder)
                 .logger(LOG, "listServiceConnectors")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "ListServiceConnectors",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/ListServiceConnectors")
+                .serviceDetails("ServiceConnector", "ListServiceConnectors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServiceConnectorsRequest::builder)
                 .basePath("/20200909")
@@ -382,10 +358,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("ServiceConnector", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20200909")
@@ -419,10 +392,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("ServiceConnector", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20200909")
@@ -455,10 +425,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/WorkRequest/ListWorkRequests")
+                .serviceDetails("ServiceConnector", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20200909")
@@ -494,10 +461,7 @@ public class ServiceConnectorAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, UpdateServiceConnectorResponse::builder)
                 .logger(LOG, "updateServiceConnector")
-                .serviceDetails(
-                        "ServiceConnector",
-                        "UpdateServiceConnector",
-                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ServiceConnector/UpdateServiceConnector")
+                .serviceDetails("ServiceConnector", "UpdateServiceConnector", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateServiceConnectorRequest::builder)
                 .basePath("/20200909")

@@ -240,6 +240,7 @@ public final class CreateOdaInstanceAttachmentDetails
     /** The type of target instance which this ODA instance is being attached. */
     public enum AttachmentType implements com.oracle.bmc.http.internal.BmcEnum {
         Fusion("FUSION"),
+        Max("MAX"),
         ;
 
         private final String value;

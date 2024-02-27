@@ -64,6 +64,13 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         "systemMessage",
         "opctlAdditionalMessage",
         "auditType",
+        "numberOfApproversRequired",
+        "numberOfApprovers",
+        "numberOfExtensionApprovers",
+        "approverDetails",
+        "extensionApproverDetails",
+        "isValidateAssignment",
+        "timeRequestedForFutureAccess",
         "freeformTags",
         "definedTags"
     })
@@ -97,6 +104,13 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             String systemMessage,
             String opctlAdditionalMessage,
             java.util.List<String> auditType,
+            Integer numberOfApproversRequired,
+            Integer numberOfApprovers,
+            Integer numberOfExtensionApprovers,
+            java.util.List<ApproverDetail> approverDetails,
+            java.util.List<ApproverDetail> extensionApproverDetails,
+            Boolean isValidateAssignment,
+            java.util.Date timeRequestedForFutureAccess,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -129,6 +143,13 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         this.systemMessage = systemMessage;
         this.opctlAdditionalMessage = opctlAdditionalMessage;
         this.auditType = auditType;
+        this.numberOfApproversRequired = numberOfApproversRequired;
+        this.numberOfApprovers = numberOfApprovers;
+        this.numberOfExtensionApprovers = numberOfExtensionApprovers;
+        this.approverDetails = approverDetails;
+        this.extensionApproverDetails = extensionApproverDetails;
+        this.isValidateAssignment = isValidateAssignment;
+        this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -624,6 +645,118 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("auditType");
             return this;
         }
+        /** Number of approvers required to approve an access request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfApproversRequired")
+        private Integer numberOfApproversRequired;
+
+        /**
+         * Number of approvers required to approve an access request.
+         *
+         * @param numberOfApproversRequired the value to set
+         * @return this builder
+         */
+        public Builder numberOfApproversRequired(Integer numberOfApproversRequired) {
+            this.numberOfApproversRequired = numberOfApproversRequired;
+            this.__explicitlySet__.add("numberOfApproversRequired");
+            return this;
+        }
+        /** Number of approvers who have authorized an access request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+        private Integer numberOfApprovers;
+
+        /**
+         * Number of approvers who have authorized an access request.
+         *
+         * @param numberOfApprovers the value to set
+         * @return this builder
+         */
+        public Builder numberOfApprovers(Integer numberOfApprovers) {
+            this.numberOfApprovers = numberOfApprovers;
+            this.__explicitlySet__.add("numberOfApprovers");
+            return this;
+        }
+        /** Number of approvers who have authorized an access request for extension. */
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfExtensionApprovers")
+        private Integer numberOfExtensionApprovers;
+
+        /**
+         * Number of approvers who have authorized an access request for extension.
+         *
+         * @param numberOfExtensionApprovers the value to set
+         * @return this builder
+         */
+        public Builder numberOfExtensionApprovers(Integer numberOfExtensionApprovers) {
+            this.numberOfExtensionApprovers = numberOfExtensionApprovers;
+            this.__explicitlySet__.add("numberOfExtensionApprovers");
+            return this;
+        }
+        /** Contains the user ids who have approved the accessRequest for extension. */
+        @com.fasterxml.jackson.annotation.JsonProperty("approverDetails")
+        private java.util.List<ApproverDetail> approverDetails;
+
+        /**
+         * Contains the user ids who have approved the accessRequest for extension.
+         *
+         * @param approverDetails the value to set
+         * @return this builder
+         */
+        public Builder approverDetails(java.util.List<ApproverDetail> approverDetails) {
+            this.approverDetails = approverDetails;
+            this.__explicitlySet__.add("approverDetails");
+            return this;
+        }
+        /** Contains the user ids who have approved the accessRequest for extension. */
+        @com.fasterxml.jackson.annotation.JsonProperty("extensionApproverDetails")
+        private java.util.List<ApproverDetail> extensionApproverDetails;
+
+        /**
+         * Contains the user ids who have approved the accessRequest for extension.
+         *
+         * @param extensionApproverDetails the value to set
+         * @return this builder
+         */
+        public Builder extensionApproverDetails(
+                java.util.List<ApproverDetail> extensionApproverDetails) {
+            this.extensionApproverDetails = extensionApproverDetails;
+            this.__explicitlySet__.add("extensionApproverDetails");
+            return this;
+        }
+        /** Whether the access request was requested for Validate Assignment. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isValidateAssignment")
+        private Boolean isValidateAssignment;
+
+        /**
+         * Whether the access request was requested for Validate Assignment.
+         *
+         * @param isValidateAssignment the value to set
+         * @return this builder
+         */
+        public Builder isValidateAssignment(Boolean isValidateAssignment) {
+            this.isValidateAssignment = isValidateAssignment;
+            this.__explicitlySet__.add("isValidateAssignment");
+            return this;
+        }
+        /**
+         * Time in future when the user for the access request needs to be created in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+         * '2020-05-22T21:10:29.600Z'
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRequestedForFutureAccess")
+        private java.util.Date timeRequestedForFutureAccess;
+
+        /**
+         * Time in future when the user for the access request needs to be created in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+         * '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeRequestedForFutureAccess the value to set
+         * @return this builder
+         */
+        public Builder timeRequestedForFutureAccess(java.util.Date timeRequestedForFutureAccess) {
+            this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
+            this.__explicitlySet__.add("timeRequestedForFutureAccess");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only.
@@ -695,6 +828,13 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                             this.systemMessage,
                             this.opctlAdditionalMessage,
                             this.auditType,
+                            this.numberOfApproversRequired,
+                            this.numberOfApprovers,
+                            this.numberOfExtensionApprovers,
+                            this.approverDetails,
+                            this.extensionApproverDetails,
+                            this.isValidateAssignment,
+                            this.timeRequestedForFutureAccess,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -791,6 +931,27 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("auditType")) {
                 this.auditType(model.getAuditType());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfApproversRequired")) {
+                this.numberOfApproversRequired(model.getNumberOfApproversRequired());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfApprovers")) {
+                this.numberOfApprovers(model.getNumberOfApprovers());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfExtensionApprovers")) {
+                this.numberOfExtensionApprovers(model.getNumberOfExtensionApprovers());
+            }
+            if (model.wasPropertyExplicitlySet("approverDetails")) {
+                this.approverDetails(model.getApproverDetails());
+            }
+            if (model.wasPropertyExplicitlySet("extensionApproverDetails")) {
+                this.extensionApproverDetails(model.getExtensionApproverDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isValidateAssignment")) {
+                this.isValidateAssignment(model.getIsValidateAssignment());
+            }
+            if (model.wasPropertyExplicitlySet("timeRequestedForFutureAccess")) {
+                this.timeRequestedForFutureAccess(model.getTimeRequestedForFutureAccess());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1240,6 +1401,103 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         return auditType;
     }
 
+    /** Number of approvers required to approve an access request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfApproversRequired")
+    private final Integer numberOfApproversRequired;
+
+    /**
+     * Number of approvers required to approve an access request.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfApproversRequired() {
+        return numberOfApproversRequired;
+    }
+
+    /** Number of approvers who have authorized an access request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfApprovers")
+    private final Integer numberOfApprovers;
+
+    /**
+     * Number of approvers who have authorized an access request.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfApprovers() {
+        return numberOfApprovers;
+    }
+
+    /** Number of approvers who have authorized an access request for extension. */
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfExtensionApprovers")
+    private final Integer numberOfExtensionApprovers;
+
+    /**
+     * Number of approvers who have authorized an access request for extension.
+     *
+     * @return the value
+     */
+    public Integer getNumberOfExtensionApprovers() {
+        return numberOfExtensionApprovers;
+    }
+
+    /** Contains the user ids who have approved the accessRequest for extension. */
+    @com.fasterxml.jackson.annotation.JsonProperty("approverDetails")
+    private final java.util.List<ApproverDetail> approverDetails;
+
+    /**
+     * Contains the user ids who have approved the accessRequest for extension.
+     *
+     * @return the value
+     */
+    public java.util.List<ApproverDetail> getApproverDetails() {
+        return approverDetails;
+    }
+
+    /** Contains the user ids who have approved the accessRequest for extension. */
+    @com.fasterxml.jackson.annotation.JsonProperty("extensionApproverDetails")
+    private final java.util.List<ApproverDetail> extensionApproverDetails;
+
+    /**
+     * Contains the user ids who have approved the accessRequest for extension.
+     *
+     * @return the value
+     */
+    public java.util.List<ApproverDetail> getExtensionApproverDetails() {
+        return extensionApproverDetails;
+    }
+
+    /** Whether the access request was requested for Validate Assignment. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isValidateAssignment")
+    private final Boolean isValidateAssignment;
+
+    /**
+     * Whether the access request was requested for Validate Assignment.
+     *
+     * @return the value
+     */
+    public Boolean getIsValidateAssignment() {
+        return isValidateAssignment;
+    }
+
+    /**
+     * Time in future when the user for the access request needs to be created in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+     * '2020-05-22T21:10:29.600Z'
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRequestedForFutureAccess")
+    private final java.util.Date timeRequestedForFutureAccess;
+
+    /**
+     * Time in future when the user for the access request needs to be created in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+     * '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeRequestedForFutureAccess() {
+        return timeRequestedForFutureAccess;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only.
@@ -1314,6 +1572,17 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", systemMessage=").append(String.valueOf(this.systemMessage));
         sb.append(", opctlAdditionalMessage=").append(String.valueOf(this.opctlAdditionalMessage));
         sb.append(", auditType=").append(String.valueOf(this.auditType));
+        sb.append(", numberOfApproversRequired=")
+                .append(String.valueOf(this.numberOfApproversRequired));
+        sb.append(", numberOfApprovers=").append(String.valueOf(this.numberOfApprovers));
+        sb.append(", numberOfExtensionApprovers=")
+                .append(String.valueOf(this.numberOfExtensionApprovers));
+        sb.append(", approverDetails=").append(String.valueOf(this.approverDetails));
+        sb.append(", extensionApproverDetails=")
+                .append(String.valueOf(this.extensionApproverDetails));
+        sb.append(", isValidateAssignment=").append(String.valueOf(this.isValidateAssignment));
+        sb.append(", timeRequestedForFutureAccess=")
+                .append(String.valueOf(this.timeRequestedForFutureAccess));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1360,6 +1629,17 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(
                         this.opctlAdditionalMessage, other.opctlAdditionalMessage)
                 && java.util.Objects.equals(this.auditType, other.auditType)
+                && java.util.Objects.equals(
+                        this.numberOfApproversRequired, other.numberOfApproversRequired)
+                && java.util.Objects.equals(this.numberOfApprovers, other.numberOfApprovers)
+                && java.util.Objects.equals(
+                        this.numberOfExtensionApprovers, other.numberOfExtensionApprovers)
+                && java.util.Objects.equals(this.approverDetails, other.approverDetails)
+                && java.util.Objects.equals(
+                        this.extensionApproverDetails, other.extensionApproverDetails)
+                && java.util.Objects.equals(this.isValidateAssignment, other.isValidateAssignment)
+                && java.util.Objects.equals(
+                        this.timeRequestedForFutureAccess, other.timeRequestedForFutureAccess)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1438,6 +1718,37 @@ public final class AccessRequest extends com.oracle.bmc.http.client.internal.Exp
                                 ? 43
                                 : this.opctlAdditionalMessage.hashCode());
         result = (result * PRIME) + (this.auditType == null ? 43 : this.auditType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfApproversRequired == null
+                                ? 43
+                                : this.numberOfApproversRequired.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfApprovers == null ? 43 : this.numberOfApprovers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfExtensionApprovers == null
+                                ? 43
+                                : this.numberOfExtensionApprovers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approverDetails == null ? 43 : this.approverDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.extensionApproverDetails == null
+                                ? 43
+                                : this.extensionApproverDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isValidateAssignment == null
+                                ? 43
+                                : this.isValidateAssignment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRequestedForFutureAccess == null
+                                ? 43
+                                : this.timeRequestedForFutureAccess.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

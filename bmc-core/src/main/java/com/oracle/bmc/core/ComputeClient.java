@@ -2945,6 +2945,9 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("instances")
                 .appendPathParam(request.getInstanceId())
                 .appendQueryParam("preserveBootVolume", request.getPreserveBootVolume())
+                .appendQueryParam(
+                        "preserveDataVolumesCreatedAtLaunch",
+                        request.getPreserveDataVolumesCreatedAtLaunch())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .handleResponseHeaderString(

@@ -122,6 +122,24 @@ public interface OperatorControlAssignment extends AutoCloseable {
             DeleteOperatorControlAssignmentRequest request);
 
     /**
+     * Returns the status of assignment validation associated with the assignmentId and the
+     * executionId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetAssignmentValidationStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAssignmentValidationStatus API.
+     */
+    GetAssignmentValidationStatusResponse getAssignmentValidationStatus(
+            GetAssignmentValidationStatusRequest request);
+
+    /**
      * Gets the details of an Operator Control Assignment of the specified ID.
      *
      * @param request The request object containing the details to send
@@ -172,6 +190,23 @@ public interface OperatorControlAssignment extends AutoCloseable {
      */
     UpdateOperatorControlAssignmentResponse updateOperatorControlAssignment(
             UpdateOperatorControlAssignmentRequest request);
+
+    /**
+     * Validates the assignment for the specified Operator Control Assignment ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ValidateOperatorAssignmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ValidateOperatorAssignment API.
+     */
+    ValidateOperatorAssignmentResponse validateOperatorAssignment(
+            ValidateOperatorAssignmentRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

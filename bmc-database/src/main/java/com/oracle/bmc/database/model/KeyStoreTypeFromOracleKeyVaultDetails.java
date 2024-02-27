@@ -61,6 +61,7 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
          * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
@@ -69,6 +70,7 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * Oracle Cloud Infrastructure
          * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * This parameter and {@code secretId} are required for Customer Managed Keys.
          *
          * @param vaultId the value to set
          * @return this builder
@@ -183,6 +185,7 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
      * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
@@ -191,6 +194,7 @@ public final class KeyStoreTypeFromOracleKeyVaultDetails extends KeyStoreTypeDet
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * Oracle Cloud Infrastructure
      * [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * This parameter and {@code secretId} are required for Customer Managed Keys.
      *
      * @return the value
      */

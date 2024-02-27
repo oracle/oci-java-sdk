@@ -186,6 +186,35 @@ public class AccessRequestsClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     @Override
+    public GetAuditLogReportResponse getAuditLogReport(GetAuditLogReportRequest request) {
+
+        Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");
+
+        return clientCall(request, GetAuditLogReportResponse::builder)
+                .logger(LOG, "getAuditLogReport")
+                .serviceDetails(
+                        "AccessRequests",
+                        "GetAuditLogReport",
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/AuditLogReport/GetAuditLogReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAuditLogReportRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("accessRequests")
+                .appendPathParam(request.getAccessRequestId())
+                .appendPathParam("auditLogReport")
+                .appendQueryParam("enableProcessTree", request.getEnableProcessTree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.operatoraccesscontrol.model.AuditLogReport.class,
+                        GetAuditLogReportResponse.Builder::auditLogReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAuditLogReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public InteractionRequestResponse interactionRequest(InteractionRequestRequest request) {
 
         Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");

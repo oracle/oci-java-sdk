@@ -70,16 +70,16 @@ public class SwitchoverAutonomousDatabaseRequest
         return opcRequestId;
     }
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous Data Guard standby database located in a different (remote) region from the
-     * source primary Autonomous Database.
+     * The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer
+     * (source Primary) database, which is located in a different (remote) region from the current
+     * peer database.
      */
     private String peerDbId;
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * of the Autonomous Data Guard standby database located in a different (remote) region from the
-     * source primary Autonomous Database.
+     * The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer
+     * (source Primary) database, which is located in a different (remote) region from the current
+     * peer database.
      */
     public String getPeerDbId() {
         return peerDbId;
@@ -170,18 +170,16 @@ public class SwitchoverAutonomousDatabaseRequest
         }
 
         /**
-         * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Data Guard standby database located in a different (remote) region from the
-         * source primary Autonomous Database.
+         * The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery
+         * peer (source Primary) database, which is located in a different (remote) region from the
+         * current peer database.
          */
         private String peerDbId = null;
 
         /**
-         * The database
-         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Data Guard standby database located in a different (remote) region from the
-         * source primary Autonomous Database.
+         * The database OCID(/Content/General/Concepts/identifiers.htm) of the Disaster Recovery
+         * peer (source Primary) database, which is located in a different (remote) region from the
+         * current peer database.
          *
          * @param peerDbId the value to set
          * @return this builder instance

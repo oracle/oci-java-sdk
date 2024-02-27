@@ -60,6 +60,40 @@ public interface ManagementAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Bulk create composite and value list entities into a skill.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkCreateSkillEntitiesResponse> bulkCreateSkillEntities(
+            BulkCreateSkillEntitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateSkillEntitiesRequest, BulkCreateSkillEntitiesResponse>
+                    handler);
+
+    /**
+     * Cascading delete of the custom entities in a skill.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CascadingDeleteSkillCustomEntitiesResponse>
+            cascadingDeleteSkillCustomEntities(
+                    CascadingDeleteSkillCustomEntitiesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSkillCustomEntitiesRequest,
+                                    CascadingDeleteSkillCustomEntitiesResponse>
+                            handler);
+
+    /**
      * Starts an asynchronous job to move the specified ODA Private Endpoint into a different
      * compartment.
      *
@@ -891,6 +925,20 @@ public interface ManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<StopChannelResponse> stopChannel(
             StopChannelRequest request,
             com.oracle.bmc.responses.AsyncHandler<StopChannelRequest, StopChannelResponse> handler);
+
+    /**
+     * Train a skill.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TrainSkillResponse> trainSkill(
+            TrainSkillRequest request,
+            com.oracle.bmc.responses.AsyncHandler<TrainSkillRequest, TrainSkillResponse> handler);
 
     /**
      * Updates the specified Authentication Provider with the information in the request body.

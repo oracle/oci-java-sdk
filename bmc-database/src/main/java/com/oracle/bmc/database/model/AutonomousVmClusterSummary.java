@@ -377,12 +377,22 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("cpusEnabled");
             return this;
         }
-        /** The compute model of the Autonomous VM Cluster. */
+        /**
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended
+         * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+         * Dedicated Exadata
+         * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster.
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended
+         * model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on
+         * Dedicated Exadata
+         * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+         * for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -608,14 +618,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("reservedCpus");
             return this;
         }
-        /**
-         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
-         */
+        /** **Deprecated.** Use field totalContainerDatabases. */
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
         private Integer provisionableAutonomousContainerDatabases;
 
         /**
-         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         * **Deprecated.** Use field totalContainerDatabases.
          *
          * @param provisionableAutonomousContainerDatabases the value to set
          * @return this builder
@@ -847,23 +855,19 @@ public final class AutonomousVmClusterSummary
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Integer reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-         * continue to be included in the count of CPUs available to the Autonomous Container
-         * Database even after one of its Autonomous Database is terminated or scaled down. You can
-         * release them to the available CPUs at its parent Autonomous VM Cluster level by
-         * restarting the Autonomous Container Database. - The CPU type (OCPUs or ECPUs) is
-         * determined by the parent Autonomous Exadata VM Cluster's compute model.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous
+         * Container Database even after one of its Autonomous Database is terminated or scaled
+         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
+         * level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -988,12 +992,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("timeOrdsCertificateExpires");
             return this;
         }
-        /** The lowest value to which exadataStorage in TBs can be scaled down. */
+        /** The lowest value to which exadataStorage(in TBs) can be scaled down. */
         @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
         private Double exadataStorageInTBsLowestScaledValue;
 
         /**
-         * The lowest value to which exadataStorage in TBs can be scaled down.
+         * The lowest value to which exadataStorage(in TBs) can be scaled down.
          *
          * @param exadataStorageInTBsLowestScaledValue the value to set
          * @return this builder
@@ -1019,12 +1023,12 @@ public final class AutonomousVmClusterSummary
             this.__explicitlySet__.add("cpusLowestScaledValue");
             return this;
         }
-        /** The lowest value to which ACDs can be scaled down. */
+        /** The lowest value to which maximum number of ACDs can be scaled down. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
         private Integer maxAcdsLowestScaledValue;
 
         /**
-         * The lowest value to which ACDs can be scaled down.
+         * The lowest value to which maximum number of ACDs can be scaled down.
          *
          * @param maxAcdsLowestScaledValue the value to set
          * @return this builder
@@ -1490,7 +1494,13 @@ public final class AutonomousVmClusterSummary
         return cpusEnabled;
     }
 
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated
+     * Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
@@ -1536,12 +1546,22 @@ public final class AutonomousVmClusterSummary
             return UnknownEnumValue;
         }
     };
-    /** The compute model of the Autonomous VM Cluster. */
+    /**
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated
+     * Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model
+     * and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated
+     * Exadata
+     * #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak)
+     * for more details.
      *
      * @return the value
      */
@@ -1737,12 +1757,12 @@ public final class AutonomousVmClusterSummary
         return reservedCpus;
     }
 
-    /** The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster. */
+    /** **Deprecated.** Use field totalContainerDatabases. */
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
     private final Integer provisionableAutonomousContainerDatabases;
 
     /**
-     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * **Deprecated.** Use field totalContainerDatabases.
      *
      * @return the value
      */
@@ -1986,23 +2006,19 @@ public final class AutonomousVmClusterSummary
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Integer reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure: - These are the CPUs that
-     * continue to be included in the count of CPUs available to the Autonomous Container Database
-     * even after one of its Autonomous Database is terminated or scaled down. You can release them
-     * to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous
-     * Container Database. - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous
-     * Exadata VM Cluster's compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container
+     * Database even after one of its Autonomous Database is terminated or scaled down. You can
+     * release them to the available CPUs at its parent Autonomous VM Cluster level by restarting
+     * the Autonomous Container Database.
      *
      * @return the value
      */
@@ -2109,12 +2125,12 @@ public final class AutonomousVmClusterSummary
         return timeOrdsCertificateExpires;
     }
 
-    /** The lowest value to which exadataStorage in TBs can be scaled down. */
+    /** The lowest value to which exadataStorage(in TBs) can be scaled down. */
     @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
     private final Double exadataStorageInTBsLowestScaledValue;
 
     /**
-     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
      *
      * @return the value
      */
@@ -2135,12 +2151,12 @@ public final class AutonomousVmClusterSummary
         return cpusLowestScaledValue;
     }
 
-    /** The lowest value to which ACDs can be scaled down. */
+    /** The lowest value to which maximum number of ACDs can be scaled down. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
     private final Integer maxAcdsLowestScaledValue;
 
     /**
-     * The lowest value to which ACDs can be scaled down.
+     * The lowest value to which maximum number of ACDs can be scaled down.
      *
      * @return the value
      */

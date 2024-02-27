@@ -3,6 +3,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.36.0 - 2024-02-27
+### Added
+- Support for specifying dialog version when creating skills entities in the Digital Assistant service
+- Support for bulk creation of skill entities in the Digital Assistant service
+- Support for training skill query entities in the Digital Assistant service
+- Support for cascading delete of skill custom entities in the Digital Assistant service
+- Support for creating autonomous dataguard associations in the Database service
+- Support for auto generation of secrets in the Secret Management service
+- Support for cluster placement groups in Cloud Exadata Infrastructure in the Database service
+- Support for retrieving previous logs of the container in the Container Instances service
+- Support for queue sources in the Connector Hub service
+- Support for automatic key rotation in the Key Management Service
+- Support for downloading operator activity reports and assignment healthchecks in the Operator Access Control service
+- Support for operator requesting access in the future time in the Operator Access Control service
+- Support for forwarding hypervisor logs in the Operator Access Control service
+- Support for asynchronous data asset export in the Data Catalog service
+- Support for launch with multiple volumes for virtual machines in the Compute Service
+- Support for tagging in Database Management service
+  
+### Breaking Changes
+- Method `public java.lang.Integer getMaxCpuCoreCount()` has been removed from the models `com.oracle.bmc.database.model.AutonomousDatabase`, `com.oracle.bmc.database.model.AutonomousDatabaseSummary`, `com.oracle.bmc.database.model.CreateAutonomousDatabaseBase` and `com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails` in the Database service
+- Field `PeerAutonomousDatabaseLifeCycleState` has been removed from the model `com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation` in the Database service
+- Class `com.oracle.bmc.database.model.DatabaseConnectionCredentailsByName` has been removed from the Database service
+
 ## 3.35.0 - 2024-02-20
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the me-dcc-doha-1 region

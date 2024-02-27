@@ -24,6 +24,18 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
     /** The returned {@code ManagedDatabase} instance. */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase;
 
@@ -40,15 +52,18 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
+        "etag",
         "managedDatabase"
     })
     private GetManagedDatabaseResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
+            String etag,
             com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
         this.managedDatabase = managedDatabase;
     }
 
@@ -88,6 +103,20 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
         /** The returned {@code ManagedDatabase} instance. */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabase managedDatabase;
 
@@ -113,6 +142,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             managedDatabase(o.getManagedDatabase());
 
             return this;
@@ -126,7 +156,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         @Override
         public GetManagedDatabaseResponse build() {
             return new GetManagedDatabaseResponse(
-                    __httpStatusCode__, headers, opcRequestId, managedDatabase);
+                    __httpStatusCode__, headers, opcRequestId, etag, managedDatabase);
         }
     }
 
@@ -145,6 +175,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",managedDatabase=").append(String.valueOf(managedDatabase));
         sb.append(")");
         return sb.toString();
@@ -162,6 +193,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         GetManagedDatabaseResponse other = (GetManagedDatabaseResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.managedDatabase, other.managedDatabase);
     }
 
@@ -170,6 +202,7 @@ public class GetManagedDatabaseResponse extends com.oracle.bmc.responses.BmcResp
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result =
                 (result * PRIME)
                         + (this.managedDatabase == null ? 43 : this.managedDatabase.hashCode());

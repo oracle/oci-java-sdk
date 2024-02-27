@@ -16,10 +16,10 @@ public class CreateServiceConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.sch.model.CreateServiceConnectorDetails> {
 
-    /** Configuration details for the new service connector. */
+    /** Configuration details for the new connector. */
     private com.oracle.bmc.sch.model.CreateServiceConnectorDetails createServiceConnectorDetails;
 
-    /** Configuration details for the new service connector. */
+    /** Configuration details for the new connector. */
     public com.oracle.bmc.sch.model.CreateServiceConnectorDetails
             getCreateServiceConnectorDetails() {
         return createServiceConnectorDetails;
@@ -75,12 +75,12 @@ public class CreateServiceConnectorRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Configuration details for the new service connector. */
+        /** Configuration details for the new connector. */
         private com.oracle.bmc.sch.model.CreateServiceConnectorDetails
                 createServiceConnectorDetails = null;
 
         /**
-         * Configuration details for the new service connector.
+         * Configuration details for the new connector.
          *
          * @param createServiceConnectorDetails the value to set
          * @return this builder instance

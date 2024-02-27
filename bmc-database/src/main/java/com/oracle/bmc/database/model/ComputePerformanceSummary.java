@@ -46,12 +46,12 @@ public final class ComputePerformanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of OCPU cores available. */
+        /** The number of CPU cores available. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
-         * The number of OCPU cores available.
+         * The number of CPU cores available.
          *
          * @param cpuCoreCount the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class ComputePerformanceSummary
         return new Builder().copy(this);
     }
 
-    /** The number of OCPU cores available. */
+    /** The number of CPU cores available. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
-     * The number of OCPU cores available.
+     * The number of CPU cores available.
      *
      * @return the value
      */

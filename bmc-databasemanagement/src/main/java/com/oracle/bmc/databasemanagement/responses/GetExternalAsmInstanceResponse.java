@@ -8,6 +8,18 @@ import com.oracle.bmc.databasemanagement.model.*;
 
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -39,15 +51,18 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
+        "etag",
         "opcRequestId",
         "externalAsmInstance"
     })
     private GetExternalAsmInstanceResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
+            String etag,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.ExternalAsmInstance externalAsmInstance) {
         super(__httpStatusCode__, headers);
+        this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.externalAsmInstance = externalAsmInstance;
     }
@@ -68,6 +83,20 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
         @Override
         public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
+            return this;
+        }
+
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
             return this;
         }
 
@@ -113,6 +142,7 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
         public Builder copy(GetExternalAsmInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             externalAsmInstance(o.getExternalAsmInstance());
 
@@ -127,7 +157,7 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
         @Override
         public GetExternalAsmInstanceResponse build() {
             return new GetExternalAsmInstanceResponse(
-                    __httpStatusCode__, headers, opcRequestId, externalAsmInstance);
+                    __httpStatusCode__, headers, etag, opcRequestId, externalAsmInstance);
         }
     }
 
@@ -145,6 +175,7 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",externalAsmInstance=").append(String.valueOf(externalAsmInstance));
         sb.append(")");
@@ -162,6 +193,7 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
 
         GetExternalAsmInstanceResponse other = (GetExternalAsmInstanceResponse) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.externalAsmInstance, other.externalAsmInstance);
     }
@@ -170,6 +202,7 @@ public class GetExternalAsmInstanceResponse extends com.oracle.bmc.responses.Bmc
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

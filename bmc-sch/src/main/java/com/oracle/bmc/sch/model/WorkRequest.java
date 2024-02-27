@@ -7,11 +7,11 @@ package com.oracle.bmc.sch.model;
 /**
  * An object representing an asynchronous work flow.
  *
- * <p>Many of the API requests you use to create and configure service connectors do not take effect
+ * <p>Many of the API requests you use to create and configure connectors do not take effect
  * immediately. In these cases, the request spawns an asynchronous work flow to fulfill the request.
  * WorkRequest objects provide visibility for in-progress work flows. For more information about
  * work requests, see [Viewing the State of a Work
- * Request](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/workrequests.htm). <br>
+ * Request](https://docs.cloud.oracle.com/iaas/Content/connector-hub/workrequests.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
