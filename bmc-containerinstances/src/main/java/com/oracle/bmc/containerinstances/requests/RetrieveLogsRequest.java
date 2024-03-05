@@ -40,16 +40,14 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return opcRequestId;
     }
     /**
-     * Returns the logs for the previous run of the container in a pod if the pod exists. If the
-     * container fails for some reason, this parameter is useful to determine the root cause of the
-     * failure.
+     * Returns the logs for the previous run of the container in a pod. If the container fails, this
+     * parameter can help you to determine the root cause of the failure.
      */
     private Boolean isPrevious;
 
     /**
-     * Returns the logs for the previous run of the container in a pod if the pod exists. If the
-     * container fails for some reason, this parameter is useful to determine the root cause of the
-     * failure.
+     * Returns the logs for the previous run of the container in a pod. If the container fails, this
+     * parameter can help you to determine the root cause of the failure.
      */
     public Boolean getIsPrevious() {
         return isPrevious;
@@ -98,16 +96,14 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Returns the logs for the previous run of the container in a pod if the pod exists. If the
-         * container fails for some reason, this parameter is useful to determine the root cause of
-         * the failure.
+         * Returns the logs for the previous run of the container in a pod. If the container fails,
+         * this parameter can help you to determine the root cause of the failure.
          */
         private Boolean isPrevious = null;
 
         /**
-         * Returns the logs for the previous run of the container in a pod if the pod exists. If the
-         * container fails for some reason, this parameter is useful to determine the root cause of
-         * the failure.
+         * Returns the logs for the previous run of the container in a pod. If the container fails,
+         * this parameter can help you to determine the root cause of the failure.
          *
          * @param isPrevious the value to set
          * @return this builder instance

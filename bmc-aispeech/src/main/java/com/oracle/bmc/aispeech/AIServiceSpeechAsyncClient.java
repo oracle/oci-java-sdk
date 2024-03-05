@@ -235,6 +235,35 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTranscriptionJobResponse> deleteTranscriptionJob(
+            DeleteTranscriptionJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getTranscriptionJobId(), "transcriptionJobId must not be blank");
+
+        return clientCall(request, DeleteTranscriptionJobResponse::builder)
+                .logger(LOG, "deleteTranscriptionJob")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "DeleteTranscriptionJob",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/TranscriptionJob/DeleteTranscriptionJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTranscriptionJobRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("transcriptionJobs")
+                .appendPathParam(request.getTranscriptionJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTranscriptionJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTranscriptionJobResponse> getTranscriptionJob(
             GetTranscriptionJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -20,7 +20,8 @@ public class SubscriptionServiceClient extends com.oracle.bmc.http.internal.Base
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SUBSCRIPTIONSERVICE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://ospap.oracle.com")
+                    .serviceEndpointTemplate(
+                            "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =

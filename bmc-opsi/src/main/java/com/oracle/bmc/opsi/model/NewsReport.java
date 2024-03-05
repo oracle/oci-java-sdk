@@ -37,7 +37,9 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "dayOfWeek",
+        "areChildCompartmentsIncluded"
     })
     public NewsReport(
             NewsFrequency newsFrequency,
@@ -55,7 +57,9 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            DayOfWeek dayOfWeek,
+            Boolean areChildCompartmentsIncluded) {
         super();
         this.newsFrequency = newsFrequency;
         this.contentTypes = contentTypes;
@@ -73,6 +77,8 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.dayOfWeek = dayOfWeek;
+        this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -340,6 +346,38 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+        private DayOfWeek dayOfWeek;
+
+        /**
+         * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+         *
+         * @param dayOfWeek the value to set
+         * @return this builder
+         */
+        public Builder dayOfWeek(DayOfWeek dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
+            this.__explicitlySet__.add("dayOfWeek");
+            return this;
+        }
+        /** A flag to consider the resources within a given compartment and all sub-compartments. */
+        @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
+        private Boolean areChildCompartmentsIncluded;
+
+        /**
+         * A flag to consider the resources within a given compartment and all sub-compartments.
+         *
+         * @param areChildCompartmentsIncluded the value to set
+         * @return this builder
+         */
+        public Builder areChildCompartmentsIncluded(Boolean areChildCompartmentsIncluded) {
+            this.areChildCompartmentsIncluded = areChildCompartmentsIncluded;
+            this.__explicitlySet__.add("areChildCompartmentsIncluded");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -362,7 +400,9 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.dayOfWeek,
+                            this.areChildCompartmentsIncluded);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -418,6 +458,12 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dayOfWeek")) {
+                this.dayOfWeek(model.getDayOfWeek());
+            }
+            if (model.wasPropertyExplicitlySet("areChildCompartmentsIncluded")) {
+                this.areChildCompartmentsIncluded(model.getAreChildCompartmentsIncluded());
             }
             return this;
         }
@@ -662,6 +708,32 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         return lifecycleDetails;
     }
 
+    /** Day of the week in which the news report will be sent if the frequency is set to WEEKLY. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+    private final DayOfWeek dayOfWeek;
+
+    /**
+     * Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
+     *
+     * @return the value
+     */
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    /** A flag to consider the resources within a given compartment and all sub-compartments. */
+    @com.fasterxml.jackson.annotation.JsonProperty("areChildCompartmentsIncluded")
+    private final Boolean areChildCompartmentsIncluded;
+
+    /**
+     * A flag to consider the resources within a given compartment and all sub-compartments.
+     *
+     * @return the value
+     */
+    public Boolean getAreChildCompartmentsIncluded() {
+        return areChildCompartmentsIncluded;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -693,6 +765,9 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", dayOfWeek=").append(String.valueOf(this.dayOfWeek));
+        sb.append(", areChildCompartmentsIncluded=")
+                .append(String.valueOf(this.areChildCompartmentsIncluded));
         sb.append(")");
         return sb.toString();
     }
@@ -723,6 +798,9 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.dayOfWeek, other.dayOfWeek)
+                && java.util.Objects.equals(
+                        this.areChildCompartmentsIncluded, other.areChildCompartmentsIncluded)
                 && super.equals(other);
     }
 
@@ -754,6 +832,12 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.dayOfWeek == null ? 43 : this.dayOfWeek.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areChildCompartmentsIncluded == null
+                                ? 43
+                                : this.areChildCompartmentsIncluded.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

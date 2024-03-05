@@ -152,6 +152,15 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             this.__explicitlySet__.add("iscsiLoginState");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isVolumeCreatedDuringLaunch")
+        private Boolean isVolumeCreatedDuringLaunch;
+
+        public Builder isVolumeCreatedDuringLaunch(Boolean isVolumeCreatedDuringLaunch) {
+            this.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
+            this.__explicitlySet__.add("isVolumeCreatedDuringLaunch");
+            return this;
+        }
         /**
          * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated
          * CHAP user name. (Also called the "CHAP password".)
@@ -329,6 +338,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                             this.isPvEncryptionInTransitEnabled,
                             this.isMultipath,
                             this.iscsiLoginState,
+                            this.isVolumeCreatedDuringLaunch,
                             this.chapSecret,
                             this.chapUsername,
                             this.ipv4,
@@ -387,6 +397,9 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             if (model.wasPropertyExplicitlySet("iscsiLoginState")) {
                 this.iscsiLoginState(model.getIscsiLoginState());
             }
+            if (model.wasPropertyExplicitlySet("isVolumeCreatedDuringLaunch")) {
+                this.isVolumeCreatedDuringLaunch(model.getIsVolumeCreatedDuringLaunch());
+            }
             if (model.wasPropertyExplicitlySet("chapSecret")) {
                 this.chapSecret(model.getChapSecret());
             }
@@ -440,6 +453,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             Boolean isPvEncryptionInTransitEnabled,
             Boolean isMultipath,
             IscsiLoginState iscsiLoginState,
+            Boolean isVolumeCreatedDuringLaunch,
             String chapSecret,
             String chapUsername,
             String ipv4,
@@ -462,7 +476,8 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                 volumeId,
                 isPvEncryptionInTransitEnabled,
                 isMultipath,
-                iscsiLoginState);
+                iscsiLoginState,
+                isVolumeCreatedDuringLaunch);
         this.chapSecret = chapSecret;
         this.chapUsername = chapUsername;
         this.ipv4 = ipv4;

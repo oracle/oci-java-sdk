@@ -20,7 +20,8 @@ public class InvoiceServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("INVOICESERVICE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://ospap.oracle.com")
+                    .serviceEndpointTemplate(
+                            "https://osp-oci-integ.osp.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
