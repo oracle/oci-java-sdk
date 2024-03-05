@@ -108,6 +108,15 @@ public final class LinuxSecurityContext extends SecurityContext {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+        private ContainerCapabilities capabilities;
+
+        public Builder capabilities(ContainerCapabilities capabilities) {
+            this.capabilities = capabilities;
+            this.__explicitlySet__.add("capabilities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -117,7 +126,8 @@ public final class LinuxSecurityContext extends SecurityContext {
                             this.runAsUser,
                             this.runAsGroup,
                             this.isNonRootUserCheckEnabled,
-                            this.isRootFileSystemReadonly);
+                            this.isRootFileSystemReadonly,
+                            this.capabilities);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -138,6 +148,9 @@ public final class LinuxSecurityContext extends SecurityContext {
             if (model.wasPropertyExplicitlySet("isRootFileSystemReadonly")) {
                 this.isRootFileSystemReadonly(model.getIsRootFileSystemReadonly());
             }
+            if (model.wasPropertyExplicitlySet("capabilities")) {
+                this.capabilities(model.getCapabilities());
+            }
             return this;
         }
     }
@@ -156,12 +169,14 @@ public final class LinuxSecurityContext extends SecurityContext {
             Integer runAsUser,
             Integer runAsGroup,
             Boolean isNonRootUserCheckEnabled,
-            Boolean isRootFileSystemReadonly) {
+            Boolean isRootFileSystemReadonly,
+            ContainerCapabilities capabilities) {
         super();
         this.runAsUser = runAsUser;
         this.runAsGroup = runAsGroup;
         this.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
         this.isRootFileSystemReadonly = isRootFileSystemReadonly;
+        this.capabilities = capabilities;
     }
 
     /**
@@ -234,6 +249,13 @@ public final class LinuxSecurityContext extends SecurityContext {
         return isRootFileSystemReadonly;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+    private final ContainerCapabilities capabilities;
+
+    public ContainerCapabilities getCapabilities() {
+        return capabilities;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -255,6 +277,7 @@ public final class LinuxSecurityContext extends SecurityContext {
                 .append(String.valueOf(this.isNonRootUserCheckEnabled));
         sb.append(", isRootFileSystemReadonly=")
                 .append(String.valueOf(this.isRootFileSystemReadonly));
+        sb.append(", capabilities=").append(String.valueOf(this.capabilities));
         sb.append(")");
         return sb.toString();
     }
@@ -275,6 +298,7 @@ public final class LinuxSecurityContext extends SecurityContext {
                         this.isNonRootUserCheckEnabled, other.isNonRootUserCheckEnabled)
                 && java.util.Objects.equals(
                         this.isRootFileSystemReadonly, other.isRootFileSystemReadonly)
+                && java.util.Objects.equals(this.capabilities, other.capabilities)
                 && super.equals(other);
     }
 
@@ -294,6 +318,7 @@ public final class LinuxSecurityContext extends SecurityContext {
                         + (this.isRootFileSystemReadonly == null
                                 ? 43
                                 : this.isRootFileSystemReadonly.hashCode());
+        result = (result * PRIME) + (this.capabilities == null ? 43 : this.capabilities.hashCode());
         return result;
     }
 }

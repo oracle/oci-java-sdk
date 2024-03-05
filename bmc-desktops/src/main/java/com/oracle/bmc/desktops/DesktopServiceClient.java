@@ -130,7 +130,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("DesktopService", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20220618")
@@ -156,7 +159,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ChangeDesktopPoolCompartmentResponse::builder)
                 .logger(LOG, "changeDesktopPoolCompartment")
-                .serviceDetails("DesktopService", "ChangeDesktopPoolCompartment", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ChangeDesktopPoolCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ChangeDesktopPoolCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDesktopPoolCompartmentRequest::builder)
                 .basePath("/20220618")
@@ -186,7 +192,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, CreateDesktopPoolResponse::builder)
                 .logger(LOG, "createDesktopPool")
-                .serviceDetails("DesktopService", "CreateDesktopPool", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "CreateDesktopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/CreateDesktopPool")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDesktopPoolRequest::builder)
                 .basePath("/20220618")
@@ -217,7 +226,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, DeleteDesktopResponse::builder)
                 .logger(LOG, "deleteDesktop")
-                .serviceDetails("DesktopService", "DeleteDesktop", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "DeleteDesktop",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/DeleteDesktop")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDesktopRequest::builder)
                 .basePath("/20220618")
@@ -241,7 +253,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, DeleteDesktopPoolResponse::builder)
                 .logger(LOG, "deleteDesktopPool")
-                .serviceDetails("DesktopService", "DeleteDesktopPool", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "DeleteDesktopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/DeleteDesktopPool")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDesktopPoolRequest::builder)
                 .basePath("/20220618")
@@ -266,7 +281,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetDesktopResponse::builder)
                 .logger(LOG, "getDesktop")
-                .serviceDetails("DesktopService", "GetDesktop", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "GetDesktop",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/GetDesktop")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDesktopRequest::builder)
                 .basePath("/20220618")
@@ -291,7 +309,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetDesktopPoolResponse::builder)
                 .logger(LOG, "getDesktopPool")
-                .serviceDetails("DesktopService", "GetDesktopPool", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "GetDesktopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/GetDesktopPool")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDesktopPoolRequest::builder)
                 .basePath("/20220618")
@@ -316,7 +337,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("DesktopService", "GetWorkRequest", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220618")
@@ -343,7 +367,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListDesktopPoolDesktopsResponse::builder)
                 .logger(LOG, "listDesktopPoolDesktops")
-                .serviceDetails("DesktopService", "ListDesktopPoolDesktops", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListDesktopPoolDesktops",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ListDesktopPoolDesktops")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDesktopPoolDesktopsRequest::builder)
                 .basePath("/20220618")
@@ -381,7 +408,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListDesktopPoolVolumesResponse::builder)
                 .logger(LOG, "listDesktopPoolVolumes")
-                .serviceDetails("DesktopService", "ListDesktopPoolVolumes", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListDesktopPoolVolumes",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ListDesktopPoolVolumes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDesktopPoolVolumesRequest::builder)
                 .basePath("/20220618")
@@ -416,7 +446,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListDesktopPoolsResponse::builder)
                 .logger(LOG, "listDesktopPools")
-                .serviceDetails("DesktopService", "ListDesktopPools", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListDesktopPools",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/ListDesktopPools")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDesktopPoolsRequest::builder)
                 .basePath("/20220618")
@@ -449,7 +482,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListDesktopsResponse::builder)
                 .logger(LOG, "listDesktops")
-                .serviceDetails("DesktopService", "ListDesktops", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListDesktops",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/ListDesktops")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDesktopsRequest::builder)
                 .basePath("/20220618")
@@ -485,7 +521,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("DesktopService", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220618")
@@ -516,7 +555,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("DesktopService", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220618")
@@ -546,7 +588,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("DesktopService", "ListWorkRequests", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220618")
@@ -579,7 +624,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, StartDesktopResponse::builder)
                 .logger(LOG, "startDesktop")
-                .serviceDetails("DesktopService", "StartDesktop", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "StartDesktop",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/StartDesktop")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartDesktopRequest::builder)
                 .basePath("/20220618")
@@ -606,7 +654,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, StartDesktopPoolResponse::builder)
                 .logger(LOG, "startDesktopPool")
-                .serviceDetails("DesktopService", "StartDesktopPool", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "StartDesktopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/StartDesktopPool")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartDesktopPoolRequest::builder)
                 .basePath("/20220618")
@@ -633,7 +684,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, StopDesktopResponse::builder)
                 .logger(LOG, "stopDesktop")
-                .serviceDetails("DesktopService", "StopDesktop", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "StopDesktop",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/StopDesktop")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopDesktopRequest::builder)
                 .basePath("/20220618")
@@ -660,7 +714,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, StopDesktopPoolResponse::builder)
                 .logger(LOG, "stopDesktopPool")
-                .serviceDetails("DesktopService", "StopDesktopPool", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "StopDesktopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/StopDesktopPool")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StopDesktopPoolRequest::builder)
                 .basePath("/20220618")
@@ -689,7 +746,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, UpdateDesktopResponse::builder)
                 .logger(LOG, "updateDesktop")
-                .serviceDetails("DesktopService", "UpdateDesktop", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "UpdateDesktop",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/Desktop/UpdateDesktop")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDesktopRequest::builder)
                 .basePath("/20220618")
@@ -716,7 +776,10 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         return clientCall(request, UpdateDesktopPoolResponse::builder)
                 .logger(LOG, "updateDesktopPool")
-                .serviceDetails("DesktopService", "UpdateDesktopPool", "")
+                .serviceDetails(
+                        "DesktopService",
+                        "UpdateDesktopPool",
+                        "https://docs.oracle.com/iaas/api/#/en/secure-desktops/20220618/DesktopPool/UpdateDesktopPool")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDesktopPoolRequest::builder)
                 .basePath("/20220618")

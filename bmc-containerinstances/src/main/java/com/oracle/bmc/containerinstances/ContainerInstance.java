@@ -274,8 +274,7 @@ public interface ContainerInstance extends AutoCloseable {
             RestartContainerInstanceRequest request);
 
     /**
-     * Retrieves recent logs from the specified container. The most recent 256 KB of logs are
-     * returned.
+     * Returns the most recent 256 KB of logs from the specified container.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

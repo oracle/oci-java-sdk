@@ -108,7 +108,10 @@ public class ConnectorPluginsAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, GetConnectorPluginResponse::builder)
                 .logger(LOG, "getConnectorPlugin")
-                .serviceDetails("ConnectorPlugins", "GetConnectorPlugin", "")
+                .serviceDetails(
+                        "ConnectorPlugins",
+                        "GetConnectorPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ConnectorPlugin/GetConnectorPlugin")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConnectorPluginRequest::builder)
                 .basePath("/20200909")
@@ -133,7 +136,10 @@ public class ConnectorPluginsAsyncClient extends com.oracle.bmc.http.internal.Ba
 
         return clientCall(request, ListConnectorPluginsResponse::builder)
                 .logger(LOG, "listConnectorPlugins")
-                .serviceDetails("ConnectorPlugins", "ListConnectorPlugins", "")
+                .serviceDetails(
+                        "ConnectorPlugins",
+                        "ListConnectorPlugins",
+                        "https://docs.oracle.com/iaas/api/#/en/serviceconnectors/20200909/ConnectorPluginSummary/ListConnectorPlugins")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListConnectorPluginsRequest::builder)
                 .basePath("/20200909")

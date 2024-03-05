@@ -129,6 +129,23 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete API cleans job, tasks and the related metadata. However the generated transcriptions
+     * in customer tenancy will not be deleted.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTranscriptionJobResponse> deleteTranscriptionJob(
+            DeleteTranscriptionJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>
+                    handler);
+
+    /**
      * Gets a Transcription Job by identifier
      *
      * @param request The request object containing the details to send
