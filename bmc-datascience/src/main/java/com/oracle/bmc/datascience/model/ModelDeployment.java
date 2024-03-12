@@ -34,6 +34,7 @@ public final class ModelDeployment
         "modelDeploymentConfigurationDetails",
         "categoryLogDetails",
         "modelDeploymentUrl",
+        "modelDeploymentSystemData",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -50,6 +51,7 @@ public final class ModelDeployment
             ModelDeploymentConfigurationDetails modelDeploymentConfigurationDetails,
             CategoryLogDetails categoryLogDetails,
             String modelDeploymentUrl,
+            ModelDeploymentSystemData modelDeploymentSystemData,
             ModelDeploymentLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -65,6 +67,7 @@ public final class ModelDeployment
         this.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
         this.categoryLogDetails = categoryLogDetails;
         this.modelDeploymentUrl = modelDeploymentUrl;
+        this.modelDeploymentSystemData = modelDeploymentSystemData;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -236,6 +239,16 @@ public final class ModelDeployment
             this.__explicitlySet__.add("modelDeploymentUrl");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentSystemData")
+        private ModelDeploymentSystemData modelDeploymentSystemData;
+
+        public Builder modelDeploymentSystemData(
+                ModelDeploymentSystemData modelDeploymentSystemData) {
+            this.modelDeploymentSystemData = modelDeploymentSystemData;
+            this.__explicitlySet__.add("modelDeploymentSystemData");
+            return this;
+        }
         /** The state of the model deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ModelDeploymentLifecycleState lifecycleState;
@@ -328,6 +341,7 @@ public final class ModelDeployment
                             this.modelDeploymentConfigurationDetails,
                             this.categoryLogDetails,
                             this.modelDeploymentUrl,
+                            this.modelDeploymentSystemData,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -370,6 +384,9 @@ public final class ModelDeployment
             }
             if (model.wasPropertyExplicitlySet("modelDeploymentUrl")) {
                 this.modelDeploymentUrl(model.getModelDeploymentUrl());
+            }
+            if (model.wasPropertyExplicitlySet("modelDeploymentSystemData")) {
+                this.modelDeploymentSystemData(model.getModelDeploymentSystemData());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -538,6 +555,13 @@ public final class ModelDeployment
         return modelDeploymentUrl;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("modelDeploymentSystemData")
+    private final ModelDeploymentSystemData modelDeploymentSystemData;
+
+    public ModelDeploymentSystemData getModelDeploymentSystemData() {
+        return modelDeploymentSystemData;
+    }
+
     /** The state of the model deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ModelDeploymentLifecycleState lifecycleState;
@@ -630,6 +654,8 @@ public final class ModelDeployment
                 .append(String.valueOf(this.modelDeploymentConfigurationDetails));
         sb.append(", categoryLogDetails=").append(String.valueOf(this.categoryLogDetails));
         sb.append(", modelDeploymentUrl=").append(String.valueOf(this.modelDeploymentUrl));
+        sb.append(", modelDeploymentSystemData=")
+                .append(String.valueOf(this.modelDeploymentSystemData));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -660,6 +686,8 @@ public final class ModelDeployment
                         other.modelDeploymentConfigurationDetails)
                 && java.util.Objects.equals(this.categoryLogDetails, other.categoryLogDetails)
                 && java.util.Objects.equals(this.modelDeploymentUrl, other.modelDeploymentUrl)
+                && java.util.Objects.equals(
+                        this.modelDeploymentSystemData, other.modelDeploymentSystemData)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -695,6 +723,11 @@ public final class ModelDeployment
                         + (this.modelDeploymentUrl == null
                                 ? 43
                                 : this.modelDeploymentUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.modelDeploymentSystemData == null
+                                ? 43
+                                : this.modelDeploymentSystemData.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

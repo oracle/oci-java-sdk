@@ -210,6 +210,15 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
@@ -520,6 +529,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                             this.licenseModel,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
                             this.inMemoryPercentage,
@@ -617,6 +627,9 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
             }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
@@ -741,6 +754,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             LicenseModel licenseModel,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             Integer inMemoryPercentage,
@@ -791,6 +805,7 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 licenseModel,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
                 inMemoryPercentage,

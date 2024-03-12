@@ -38,6 +38,7 @@ public final class UpdateAutonomousDatabaseDetails
         "localAdgAutoFailoverMaxDataLossLimit",
         "cpuCoreCount",
         "longTermBackupSchedule",
+        "isDevTier",
         "computeCount",
         "ocpuCount",
         "dataStorageSizeInTBs",
@@ -85,6 +86,7 @@ public final class UpdateAutonomousDatabaseDetails
             Integer localAdgAutoFailoverMaxDataLossLimit,
             Integer cpuCoreCount,
             LongTermBackUpScheduleDetails longTermBackupSchedule,
+            Boolean isDevTier,
             Float computeCount,
             Float ocpuCount,
             Integer dataStorageSizeInTBs,
@@ -131,6 +133,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
         this.cpuCoreCount = cpuCoreCount;
         this.longTermBackupSchedule = longTermBackupSchedule;
+        this.isDevTier = isDevTier;
         this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -304,6 +307,31 @@ public final class UpdateAutonomousDatabaseDetails
                 LongTermBackUpScheduleDetails longTermBackupSchedule) {
             this.longTermBackupSchedule = longTermBackupSchedule;
             this.__explicitlySet__.add("longTermBackupSchedule");
+            return this;
+        }
+        /**
+         * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+         * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+         * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to
+         * use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For
+         * ADB-Dev , memory and CPU cannot be scaled
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        /**
+         * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+         * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+         * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to
+         * use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For
+         * ADB-Dev , memory and CPU cannot be scaled
+         *
+         * @param isDevTier the value to set
+         * @return this builder
+         */
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
             return this;
         }
         /**
@@ -1572,6 +1600,7 @@ public final class UpdateAutonomousDatabaseDetails
                             this.localAdgAutoFailoverMaxDataLossLimit,
                             this.cpuCoreCount,
                             this.longTermBackupSchedule,
+                            this.isDevTier,
                             this.computeCount,
                             this.ocpuCount,
                             this.dataStorageSizeInTBs,
@@ -1637,6 +1666,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("longTermBackupSchedule")) {
                 this.longTermBackupSchedule(model.getLongTermBackupSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
             }
             if (model.wasPropertyExplicitlySet("computeCount")) {
                 this.computeCount(model.getComputeCount());
@@ -1920,6 +1952,29 @@ public final class UpdateAutonomousDatabaseDetails
 
     public LongTermBackUpScheduleDetails getLongTermBackupSchedule() {
         return longTermBackupSchedule;
+    }
+
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
+     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
+     * , memory and CPU cannot be scaled
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+    private final Boolean isDevTier;
+
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
+     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
+     * , memory and CPU cannot be scaled
+     *
+     * @return the value
+     */
+    public Boolean getIsDevTier() {
+        return isDevTier;
     }
 
     /**
@@ -3291,6 +3346,7 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.localAdgAutoFailoverMaxDataLossLimit));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", longTermBackupSchedule=").append(String.valueOf(this.longTermBackupSchedule));
+        sb.append(", isDevTier=").append(String.valueOf(this.isDevTier));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -3358,6 +3414,7 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.longTermBackupSchedule, other.longTermBackupSchedule)
+                && java.util.Objects.equals(this.isDevTier, other.isDevTier)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.dataStorageSizeInTBs, other.dataStorageSizeInTBs)
@@ -3431,6 +3488,7 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.longTermBackupSchedule == null
                                 ? 43
                                 : this.longTermBackupSchedule.hashCode());
+        result = (result * PRIME) + (this.isDevTier == null ? 43 : this.isDevTier.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =

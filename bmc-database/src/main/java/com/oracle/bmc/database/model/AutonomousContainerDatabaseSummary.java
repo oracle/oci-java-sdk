@@ -71,7 +71,11 @@ public final class AutonomousContainerDatabaseSummary
         "provisionedCpus",
         "reservedCpus",
         "largestProvisionableAutonomousDatabaseInCpus",
-        "timeOfLastBackup"
+        "timeOfLastBackup",
+        "dbSplitThreshold",
+        "vmFailoverReservation",
+        "distributionAffinity",
+        "netServicesArchitecture"
     })
     public AutonomousContainerDatabaseSummary(
             String id,
@@ -118,7 +122,11 @@ public final class AutonomousContainerDatabaseSummary
             Float provisionedCpus,
             Float reservedCpus,
             Float largestProvisionableAutonomousDatabaseInCpus,
-            java.util.Date timeOfLastBackup) {
+            java.util.Date timeOfLastBackup,
+            Integer dbSplitThreshold,
+            Integer vmFailoverReservation,
+            DistributionAffinity distributionAffinity,
+            NetServicesArchitecture netServicesArchitecture) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -166,6 +174,10 @@ public final class AutonomousContainerDatabaseSummary
         this.largestProvisionableAutonomousDatabaseInCpus =
                 largestProvisionableAutonomousDatabaseInCpus;
         this.timeOfLastBackup = timeOfLastBackup;
+        this.dbSplitThreshold = dbSplitThreshold;
+        this.vmFailoverReservation = vmFailoverReservation;
+        this.distributionAffinity = distributionAffinity;
+        this.netServicesArchitecture = netServicesArchitecture;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -971,6 +983,86 @@ public final class AutonomousContainerDatabaseSummary
             this.__explicitlySet__.add("timeOfLastBackup");
             return this;
         }
+        /**
+         * The value above which an Autonomous Database will be split across multiple nodes. This
+         * value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater
+         * than 16. Otherwise, it defaults to the "CPU per VM" value.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
+        private Integer dbSplitThreshold;
+
+        /**
+         * The value above which an Autonomous Database will be split across multiple nodes. This
+         * value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater
+         * than 16. Otherwise, it defaults to the "CPU per VM" value.
+         *
+         * @param dbSplitThreshold the value to set
+         * @return this builder
+         */
+        public Builder dbSplitThreshold(Integer dbSplitThreshold) {
+            this.dbSplitThreshold = dbSplitThreshold;
+            this.__explicitlySet__.add("dbSplitThreshold");
+            return this;
+        }
+        /**
+         * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of
+         * 25.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
+        private Integer vmFailoverReservation;
+
+        /**
+         * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of
+         * 25.
+         *
+         * @param vmFailoverReservation the value to set
+         * @return this builder
+         */
+        public Builder vmFailoverReservation(Integer vmFailoverReservation) {
+            this.vmFailoverReservation = vmFailoverReservation;
+            this.__explicitlySet__.add("vmFailoverReservation");
+            return this;
+        }
+        /**
+         * This option determines whether to open an Autonomous Database across the maximum number
+         * of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
+        private DistributionAffinity distributionAffinity;
+
+        /**
+         * This option determines whether to open an Autonomous Database across the maximum number
+         * of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         *
+         * @param distributionAffinity the value to set
+         * @return this builder
+         */
+        public Builder distributionAffinity(DistributionAffinity distributionAffinity) {
+            this.distributionAffinity = distributionAffinity;
+            this.__explicitlySet__.add("distributionAffinity");
+            return this;
+        }
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client
+         * processes to share very few server processes, thereby increasing the number of supported
+         * users.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+        private NetServicesArchitecture netServicesArchitecture;
+
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client
+         * processes to share very few server processes, thereby increasing the number of supported
+         * users.
+         *
+         * @param netServicesArchitecture the value to set
+         * @return this builder
+         */
+        public Builder netServicesArchitecture(NetServicesArchitecture netServicesArchitecture) {
+            this.netServicesArchitecture = netServicesArchitecture;
+            this.__explicitlySet__.add("netServicesArchitecture");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1022,7 +1114,11 @@ public final class AutonomousContainerDatabaseSummary
                             this.provisionedCpus,
                             this.reservedCpus,
                             this.largestProvisionableAutonomousDatabaseInCpus,
-                            this.timeOfLastBackup);
+                            this.timeOfLastBackup,
+                            this.dbSplitThreshold,
+                            this.vmFailoverReservation,
+                            this.distributionAffinity,
+                            this.netServicesArchitecture);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1167,6 +1263,18 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("timeOfLastBackup")) {
                 this.timeOfLastBackup(model.getTimeOfLastBackup());
+            }
+            if (model.wasPropertyExplicitlySet("dbSplitThreshold")) {
+                this.dbSplitThreshold(model.getDbSplitThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("vmFailoverReservation")) {
+                this.vmFailoverReservation(model.getVmFailoverReservation());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAffinity")) {
+                this.distributionAffinity(model.getDistributionAffinity());
+            }
+            if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
+                this.netServicesArchitecture(model.getNetServicesArchitecture());
             }
             return this;
         }
@@ -2230,6 +2338,172 @@ public final class AutonomousContainerDatabaseSummary
         return timeOfLastBackup;
     }
 
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value
+     * defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16.
+     * Otherwise, it defaults to the "CPU per VM" value.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
+    private final Integer dbSplitThreshold;
+
+    /**
+     * The value above which an Autonomous Database will be split across multiple nodes. This value
+     * defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16.
+     * Otherwise, it defaults to the "CPU per VM" value.
+     *
+     * @return the value
+     */
+    public Integer getDbSplitThreshold() {
+        return dbSplitThreshold;
+    }
+
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
+    private final Integer vmFailoverReservation;
+
+    /**
+     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     *
+     * @return the value
+     */
+    public Integer getVmFailoverReservation() {
+        return vmFailoverReservation;
+    }
+
+    /**
+     * This option determines whether to open an Autonomous Database across the maximum number of
+     * nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     */
+    public enum DistributionAffinity implements com.oracle.bmc.http.internal.BmcEnum {
+        MinimumDistribution("MINIMUM_DISTRIBUTION"),
+        MaximumDistribution("MAXIMUM_DISTRIBUTION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DistributionAffinity.class);
+
+        private final String value;
+        private static java.util.Map<String, DistributionAffinity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAffinity v : DistributionAffinity.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DistributionAffinity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAffinity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DistributionAffinity', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * This option determines whether to open an Autonomous Database across the maximum number of
+     * nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
+    private final DistributionAffinity distributionAffinity;
+
+    /**
+     * This option determines whether to open an Autonomous Database across the maximum number of
+     * nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     *
+     * @return the value
+     */
+    public DistributionAffinity getDistributionAffinity() {
+        return distributionAffinity;
+    }
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes
+     * to share very few server processes, thereby increasing the number of supported users.
+     */
+    public enum NetServicesArchitecture implements com.oracle.bmc.http.internal.BmcEnum {
+        Dedicated("DEDICATED"),
+        Shared("SHARED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetServicesArchitecture.class);
+
+        private final String value;
+        private static java.util.Map<String, NetServicesArchitecture> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NetServicesArchitecture v : NetServicesArchitecture.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        NetServicesArchitecture(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NetServicesArchitecture create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'NetServicesArchitecture', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes
+     * to share very few server processes, thereby increasing the number of supported users.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+    private final NetServicesArchitecture netServicesArchitecture;
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes
+     * to share very few server processes, thereby increasing the number of supported users.
+     *
+     * @return the value
+     */
+    public NetServicesArchitecture getNetServicesArchitecture() {
+        return netServicesArchitecture;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2297,6 +2571,11 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", largestProvisionableAutonomousDatabaseInCpus=")
                 .append(String.valueOf(this.largestProvisionableAutonomousDatabaseInCpus));
         sb.append(", timeOfLastBackup=").append(String.valueOf(this.timeOfLastBackup));
+        sb.append(", dbSplitThreshold=").append(String.valueOf(this.dbSplitThreshold));
+        sb.append(", vmFailoverReservation=").append(String.valueOf(this.vmFailoverReservation));
+        sb.append(", distributionAffinity=").append(String.valueOf(this.distributionAffinity));
+        sb.append(", netServicesArchitecture=")
+                .append(String.valueOf(this.netServicesArchitecture));
         sb.append(")");
         return sb.toString();
     }
@@ -2366,6 +2645,11 @@ public final class AutonomousContainerDatabaseSummary
                         this.largestProvisionableAutonomousDatabaseInCpus,
                         other.largestProvisionableAutonomousDatabaseInCpus)
                 && java.util.Objects.equals(this.timeOfLastBackup, other.timeOfLastBackup)
+                && java.util.Objects.equals(this.dbSplitThreshold, other.dbSplitThreshold)
+                && java.util.Objects.equals(this.vmFailoverReservation, other.vmFailoverReservation)
+                && java.util.Objects.equals(this.distributionAffinity, other.distributionAffinity)
+                && java.util.Objects.equals(
+                        this.netServicesArchitecture, other.netServicesArchitecture)
                 && super.equals(other);
     }
 
@@ -2500,6 +2784,24 @@ public final class AutonomousContainerDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.timeOfLastBackup == null ? 43 : this.timeOfLastBackup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSplitThreshold == null ? 43 : this.dbSplitThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmFailoverReservation == null
+                                ? 43
+                                : this.vmFailoverReservation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAffinity == null
+                                ? 43
+                                : this.distributionAffinity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.netServicesArchitecture == null
+                                ? 43
+                                : this.netServicesArchitecture.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
