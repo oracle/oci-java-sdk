@@ -52,7 +52,7 @@ public class NestedResourcePrincipalsExample {
                                 "<federationEndpointForParentResource>")
                         .build(leafAuthenticatioDetailsProvider);
 
-        final IdentityClient identityClient = new IdentityClient(provider);
+        final IdentityClient identityClient = IdentityClient.builder().build(provider);
 
         System.out.println(
                 "*******************List Availability Domains*********************************************");

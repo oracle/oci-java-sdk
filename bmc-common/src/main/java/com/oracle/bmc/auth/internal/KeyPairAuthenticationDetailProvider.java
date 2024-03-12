@@ -7,6 +7,7 @@ package com.oracle.bmc.auth.internal;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.util.StreamUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class KeyPairAuthenticationDetailProvider
     private final InputStream privateKeyStream;
     private final char[] passphrase;
     private final String tenancyId;
+    private final String ociResourcePrincipalVersion;
 
     /**
      * Constructor of KeyPairAuthenticationDetailProvider
@@ -50,10 +52,29 @@ public class KeyPairAuthenticationDetailProvider
             final InputStream privateKeyStream,
             final char[] passphrase,
             final String tenancyId) {
+        this(resourceId, privateKeyStream, passphrase, tenancyId, null);
+    }
+
+    /**
+     * Constructor of KeyPairAuthenticationDetailProvider
+     *
+     * @param resourceId resource id of the resource
+     * @param privateKeyStream private key stream to sign the sign the request
+     * @param passphrase passphrase for the private key
+     * @param tenancyId tenancy id of the resource
+     * @param ociResourcePrincipalVersion resource principal version
+     */
+    public KeyPairAuthenticationDetailProvider(
+            final String resourceId,
+            final InputStream privateKeyStream,
+            final char[] passphrase,
+            final String tenancyId,
+            final String ociResourcePrincipalVersion) {
         this.resourceId = resourceId;
         this.privateKeyStream = privateKeyStream;
         this.passphrase = passphrase;
         this.tenancyId = tenancyId;
+        this.ociResourcePrincipalVersion = ociResourcePrincipalVersion;
     }
 
     /**
@@ -64,7 +85,14 @@ public class KeyPairAuthenticationDetailProvider
     @Override
     public String getKeyId() {
         if (tenancyId != null) {
-            return "resource/v2.1.1/" + this.tenancyId + "/" + this.resourceId;
+            if (StringUtils.isNotBlank(ociResourcePrincipalVersion)
+                    && ociResourcePrincipalVersion.equals("2.1.1")) {
+                return "resource/v2.1.1/" + this.tenancyId + "/" + this.resourceId;
+            }
+            if (StringUtils.isNotBlank(ociResourcePrincipalVersion)
+                    && ociResourcePrincipalVersion.equals("2.1.2")) {
+                return "resource/v2.1.2/" + this.tenancyId + "/" + this.resourceId;
+            }
         }
         return "resource/v2.1/" + this.resourceId;
     }

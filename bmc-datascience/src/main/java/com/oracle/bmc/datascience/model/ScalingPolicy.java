@@ -23,6 +23,9 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = ScalingPolicy.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AutoScalingPolicy.class,
+            name = "AUTOSCALING"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = FixedSizeScalingPolicy.class,
             name = "FIXED_SIZE")
 })
@@ -78,6 +81,7 @@ public class ScalingPolicy extends com.oracle.bmc.http.client.internal.Explicitl
     /** The type of scaling policy. */
     public enum PolicyType implements com.oracle.bmc.http.internal.BmcEnum {
         FixedSize("FIXED_SIZE"),
+        Autoscaling("AUTOSCALING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

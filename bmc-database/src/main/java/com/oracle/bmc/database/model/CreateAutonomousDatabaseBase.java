@@ -79,6 +79,7 @@ public class CreateAutonomousDatabaseBase
         "licenseModel",
         "isPreviewVersionWithServiceTermsAccepted",
         "isAutoScalingEnabled",
+        "isDevTier",
         "isDedicated",
         "autonomousContainerDatabaseId",
         "inMemoryPercentage",
@@ -128,6 +129,7 @@ public class CreateAutonomousDatabaseBase
             LicenseModel licenseModel,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
             Integer inMemoryPercentage,
@@ -176,6 +178,7 @@ public class CreateAutonomousDatabaseBase
         this.licenseModel = licenseModel;
         this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.isDevTier = isDevTier;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
         this.inMemoryPercentage = inMemoryPercentage;
@@ -873,6 +876,29 @@ public class CreateAutonomousDatabaseBase
      */
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
+    }
+
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
+     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
+     * , memory and CPU cannot be scaled
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+    private final Boolean isDevTier;
+
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
+     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
+     * , memory and CPU cannot be scaled
+     *
+     * @return the value
+     */
+    public Boolean getIsDevTier() {
+        return isDevTier;
     }
 
     /**
@@ -1604,6 +1630,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", isPreviewVersionWithServiceTermsAccepted=")
                 .append(String.valueOf(this.isPreviewVersionWithServiceTermsAccepted));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", isDevTier=").append(String.valueOf(this.isDevTier));
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
@@ -1674,6 +1701,7 @@ public class CreateAutonomousDatabaseBase
                         this.isPreviewVersionWithServiceTermsAccepted,
                         other.isPreviewVersionWithServiceTermsAccepted)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.isDevTier, other.isDevTier)
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
@@ -1762,6 +1790,7 @@ public class CreateAutonomousDatabaseBase
                         + (this.isAutoScalingEnabled == null
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.isDevTier == null ? 43 : this.isDevTier.hashCode());
         result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
         result =
                 (result * PRIME)

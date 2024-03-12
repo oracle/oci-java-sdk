@@ -44,6 +44,8 @@ public class SessionTokenAuthenticationDetailsProvider
             org.slf4j.LoggerFactory.getLogger(SessionTokenAuthenticationDetailsProvider.class);
     private static final String CONFIG_FILE_DEBUG_INFORMATION_LOG =
             "\nFor more information about OCI configuration file and how to get required information, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm";
+    private static final String DEFAULT_PRIVATE_KEY_FILE_PATH =
+            "~/.oci/sessions/DEFAULT/oci_api_key.pem";
     private static final long DEFAULT_REFRESH_INITIAL_DELAY_MINUTES = 0;
     private static final long DEFAULT_REFRESH_INTERVAL_MINUTES = 55;
     private static final long DEFAULT_SESSION_LIFETIME_HOURS = 24;
@@ -109,9 +111,12 @@ public class SessionTokenAuthenticationDetailsProvider
             ScheduledExecutorService scheduler,
             boolean usingDefaultScheduler)
             throws IOException {
-        Validate.notNull(
-                privateKeyFilePath,
-                "SessionTokenAuthenticationDetailsProvider: privateKeyFilePath is a required parameter");
+        if (privateKeyFilePath == null) {
+            LOG.debug(
+                    "privateKeyFilePath was not provided, using the default path: {}",
+                    DEFAULT_PRIVATE_KEY_FILE_PATH);
+            privateKeyFilePath = DEFAULT_PRIVATE_KEY_FILE_PATH;
+        }
         this.privateKeySupplier = new SimplePrivateKeySupplier(privateKeyFilePath);
         if (region == null) {
             Validate.notNull(

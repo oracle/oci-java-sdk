@@ -77,6 +77,7 @@ public final class AutonomousDatabase
         "dbVersion",
         "isPreview",
         "dbWorkload",
+        "isDevTier",
         "isAccessControlEnabled",
         "whitelistedIps",
         "arePrimaryWhitelistedIpsUsed",
@@ -131,7 +132,8 @@ public final class AutonomousDatabase
         "localDisasterRecoveryType",
         "disasterRecoveryRegionType",
         "timeDisasterRecoveryRoleChanged",
-        "remoteDisasterRecoveryConfiguration"
+        "remoteDisasterRecoveryConfiguration",
+        "netServicesArchitecture"
     })
     public AutonomousDatabase(
             String id,
@@ -187,6 +189,7 @@ public final class AutonomousDatabase
             String dbVersion,
             Boolean isPreview,
             DbWorkload dbWorkload,
+            Boolean isDevTier,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -241,7 +244,8 @@ public final class AutonomousDatabase
             DisasterRecoveryConfiguration.DisasterRecoveryType localDisasterRecoveryType,
             DisasterRecoveryRegionType disasterRecoveryRegionType,
             java.util.Date timeDisasterRecoveryRoleChanged,
-            DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration) {
+            DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
+            NetServicesArchitecture netServicesArchitecture) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -296,6 +300,7 @@ public final class AutonomousDatabase
         this.dbVersion = dbVersion;
         this.isPreview = isPreview;
         this.dbWorkload = dbWorkload;
+        this.isDevTier = isDevTier;
         this.isAccessControlEnabled = isAccessControlEnabled;
         this.whitelistedIps = whitelistedIps;
         this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
@@ -351,6 +356,7 @@ public final class AutonomousDatabase
         this.disasterRecoveryRegionType = disasterRecoveryRegionType;
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
+        this.netServicesArchitecture = netServicesArchitecture;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1482,6 +1488,31 @@ public final class AutonomousDatabase
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
+            return this;
+        }
+        /**
+         * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+         * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+         * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to
+         * use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For
+         * ADB-Dev , memory and CPU cannot be scaled
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        /**
+         * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+         * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+         * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to
+         * use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For
+         * ADB-Dev , memory and CPU cannot be scaled
+         *
+         * @param isDevTier the value to set
+         * @return this builder
+         */
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
             return this;
         }
         /**
@@ -2690,6 +2721,27 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("remoteDisasterRecoveryConfiguration");
             return this;
         }
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client
+         * processes to share very few server processes, thereby increasing the number of supported
+         * users.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+        private NetServicesArchitecture netServicesArchitecture;
+
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client
+         * processes to share very few server processes, thereby increasing the number of supported
+         * users.
+         *
+         * @param netServicesArchitecture the value to set
+         * @return this builder
+         */
+        public Builder netServicesArchitecture(NetServicesArchitecture netServicesArchitecture) {
+            this.netServicesArchitecture = netServicesArchitecture;
+            this.__explicitlySet__.add("netServicesArchitecture");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -2750,6 +2802,7 @@ public final class AutonomousDatabase
                             this.dbVersion,
                             this.isPreview,
                             this.dbWorkload,
+                            this.isDevTier,
                             this.isAccessControlEnabled,
                             this.whitelistedIps,
                             this.arePrimaryWhitelistedIpsUsed,
@@ -2804,7 +2857,8 @@ public final class AutonomousDatabase
                             this.localDisasterRecoveryType,
                             this.disasterRecoveryRegionType,
                             this.timeDisasterRecoveryRoleChanged,
-                            this.remoteDisasterRecoveryConfiguration);
+                            this.remoteDisasterRecoveryConfiguration,
+                            this.netServicesArchitecture);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2975,6 +3029,9 @@ public final class AutonomousDatabase
             if (model.wasPropertyExplicitlySet("dbWorkload")) {
                 this.dbWorkload(model.getDbWorkload());
             }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
+            }
             if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
                 this.isAccessControlEnabled(model.getIsAccessControlEnabled());
             }
@@ -3141,6 +3198,9 @@ public final class AutonomousDatabase
             if (model.wasPropertyExplicitlySet("remoteDisasterRecoveryConfiguration")) {
                 this.remoteDisasterRecoveryConfiguration(
                         model.getRemoteDisasterRecoveryConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
+                this.netServicesArchitecture(model.getNetServicesArchitecture());
             }
             return this;
         }
@@ -4432,6 +4492,29 @@ public final class AutonomousDatabase
      */
     public DbWorkload getDbWorkload() {
         return dbWorkload;
+    }
+
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
+     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
+     * , memory and CPU cannot be scaled
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+    private final Boolean isDevTier;
+
+    /**
+     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
+     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
+     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
+     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
+     * , memory and CPU cannot be scaled
+     *
+     * @return the value
+     */
+    public Boolean getIsDevTier() {
+        return isDevTier;
     }
 
     /**
@@ -6112,6 +6195,72 @@ public final class AutonomousDatabase
         return remoteDisasterRecoveryConfiguration;
     }
 
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes
+     * to share very few server processes, thereby increasing the number of supported users.
+     */
+    public enum NetServicesArchitecture implements com.oracle.bmc.http.internal.BmcEnum {
+        Dedicated("DEDICATED"),
+        Shared("SHARED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetServicesArchitecture.class);
+
+        private final String value;
+        private static java.util.Map<String, NetServicesArchitecture> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NetServicesArchitecture v : NetServicesArchitecture.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        NetServicesArchitecture(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NetServicesArchitecture create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'NetServicesArchitecture', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes
+     * to share very few server processes, thereby increasing the number of supported users.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+    private final NetServicesArchitecture netServicesArchitecture;
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes
+     * to share very few server processes, thereby increasing the number of supported users.
+     *
+     * @return the value
+     */
+    public NetServicesArchitecture getNetServicesArchitecture() {
+        return netServicesArchitecture;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -6190,6 +6339,7 @@ public final class AutonomousDatabase
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", isPreview=").append(String.valueOf(this.isPreview));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
+        sb.append(", isDevTier=").append(String.valueOf(this.isDevTier));
         sb.append(", isAccessControlEnabled=").append(String.valueOf(this.isAccessControlEnabled));
         sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
         sb.append(", arePrimaryWhitelistedIpsUsed=")
@@ -6267,6 +6417,8 @@ public final class AutonomousDatabase
                 .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
         sb.append(", remoteDisasterRecoveryConfiguration=")
                 .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
+        sb.append(", netServicesArchitecture=")
+                .append(String.valueOf(this.netServicesArchitecture));
         sb.append(")");
         return sb.toString();
     }
@@ -6349,6 +6501,7 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.isPreview, other.isPreview)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
+                && java.util.Objects.equals(this.isDevTier, other.isDevTier)
                 && java.util.Objects.equals(
                         this.isAccessControlEnabled, other.isAccessControlEnabled)
                 && java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
@@ -6430,6 +6583,8 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(
                         this.remoteDisasterRecoveryConfiguration,
                         other.remoteDisasterRecoveryConfiguration)
+                && java.util.Objects.equals(
+                        this.netServicesArchitecture, other.netServicesArchitecture)
                 && super.equals(other);
     }
 
@@ -6584,6 +6739,7 @@ public final class AutonomousDatabase
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.isPreview == null ? 43 : this.isPreview.hashCode());
         result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
+        result = (result * PRIME) + (this.isDevTier == null ? 43 : this.isDevTier.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAccessControlEnabled == null
@@ -6809,6 +6965,11 @@ public final class AutonomousDatabase
                         + (this.remoteDisasterRecoveryConfiguration == null
                                 ? 43
                                 : this.remoteDisasterRecoveryConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.netServicesArchitecture == null
+                                ? 43
+                                : this.netServicesArchitecture.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
