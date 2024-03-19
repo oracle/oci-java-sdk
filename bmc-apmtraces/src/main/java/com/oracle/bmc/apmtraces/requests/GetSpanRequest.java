@@ -13,10 +13,10 @@ import com.oracle.bmc.apmtraces.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     private String apmDomainId;
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -47,17 +47,72 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Include spans that have a {@code spanStartTime} equal to or greater than this value. */
+    private java.util.Date timeSpanStartedGreaterThanOrEqualTo;
+
+    /** Include spans that have a {@code spanStartTime} equal to or greater than this value. */
+    public java.util.Date getTimeSpanStartedGreaterThanOrEqualTo() {
+        return timeSpanStartedGreaterThanOrEqualTo;
+    }
+    /** Include spans that have a {@code spanStartTime}less than this value. */
+    private java.util.Date timeSpanStartedLessThan;
+
+    /** Include spans that have a {@code spanStartTime}less than this value. */
+    public java.util.Date getTimeSpanStartedLessThan() {
+        return timeSpanStartedLessThan;
+    }
+    /** Name space from which the span details need to be retrieved. */
+    private SpanNamespace spanNamespace;
+
+    /** Name space from which the span details need to be retrieved. */
+    public enum SpanNamespace implements com.oracle.bmc.http.internal.BmcEnum {
+        Traces("TRACES"),
+        Synthetic("SYNTHETIC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SpanNamespace> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SpanNamespace v : SpanNamespace.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SpanNamespace(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SpanNamespace create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SpanNamespace: " + key);
+        }
+    };
+
+    /** Name space from which the span details need to be retrieved. */
+    public SpanNamespace getSpanNamespace() {
+        return spanNamespace;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetSpanRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM Domain ID the request is intended for. */
+        /** The APM Domain ID for the intended request. */
         private String apmDomainId = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          * @param apmDomainId the value to set
          * @return this builder instance
@@ -113,6 +168,49 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
+        /** Include spans that have a {@code spanStartTime} equal to or greater than this value. */
+        private java.util.Date timeSpanStartedGreaterThanOrEqualTo = null;
+
+        /**
+         * Include spans that have a {@code spanStartTime} equal to or greater than this value.
+         *
+         * @param timeSpanStartedGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeSpanStartedGreaterThanOrEqualTo(
+                java.util.Date timeSpanStartedGreaterThanOrEqualTo) {
+            this.timeSpanStartedGreaterThanOrEqualTo = timeSpanStartedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /** Include spans that have a {@code spanStartTime}less than this value. */
+        private java.util.Date timeSpanStartedLessThan = null;
+
+        /**
+         * Include spans that have a {@code spanStartTime}less than this value.
+         *
+         * @param timeSpanStartedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeSpanStartedLessThan(java.util.Date timeSpanStartedLessThan) {
+            this.timeSpanStartedLessThan = timeSpanStartedLessThan;
+            return this;
+        }
+
+        /** Name space from which the span details need to be retrieved. */
+        private SpanNamespace spanNamespace = null;
+
+        /**
+         * Name space from which the span details need to be retrieved.
+         *
+         * @param spanNamespace the value to set
+         * @return this builder instance
+         */
+        public Builder spanNamespace(SpanNamespace spanNamespace) {
+            this.spanNamespace = spanNamespace;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -147,6 +245,9 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             spanKey(o.getSpanKey());
             traceKey(o.getTraceKey());
             opcRequestId(o.getOpcRequestId());
+            timeSpanStartedGreaterThanOrEqualTo(o.getTimeSpanStartedGreaterThanOrEqualTo());
+            timeSpanStartedLessThan(o.getTimeSpanStartedLessThan());
+            spanNamespace(o.getSpanNamespace());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -185,8 +286,12 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             request.spanKey = spanKey;
             request.traceKey = traceKey;
             request.opcRequestId = opcRequestId;
+            request.timeSpanStartedGreaterThanOrEqualTo = timeSpanStartedGreaterThanOrEqualTo;
+            request.timeSpanStartedLessThan = timeSpanStartedLessThan;
+            request.spanNamespace = spanNamespace;
             return request;
-            // new GetSpanRequest(apmDomainId, spanKey, traceKey, opcRequestId);
+            // new GetSpanRequest(apmDomainId, spanKey, traceKey, opcRequestId,
+            // timeSpanStartedGreaterThanOrEqualTo, timeSpanStartedLessThan, spanNamespace);
         }
     }
 
@@ -200,7 +305,10 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 .apmDomainId(apmDomainId)
                 .spanKey(spanKey)
                 .traceKey(traceKey)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .timeSpanStartedGreaterThanOrEqualTo(timeSpanStartedGreaterThanOrEqualTo)
+                .timeSpanStartedLessThan(timeSpanStartedLessThan)
+                .spanNamespace(spanNamespace);
     }
 
     /**
@@ -221,6 +329,10 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         sb.append(",spanKey=").append(String.valueOf(this.spanKey));
         sb.append(",traceKey=").append(String.valueOf(this.traceKey));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",timeSpanStartedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeSpanStartedGreaterThanOrEqualTo));
+        sb.append(",timeSpanStartedLessThan=").append(String.valueOf(this.timeSpanStartedLessThan));
+        sb.append(",spanNamespace=").append(String.valueOf(this.spanNamespace));
         sb.append(")");
         return sb.toString();
     }
@@ -239,7 +351,13 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
                 && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
                 && java.util.Objects.equals(this.spanKey, other.spanKey)
                 && java.util.Objects.equals(this.traceKey, other.traceKey)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.timeSpanStartedGreaterThanOrEqualTo,
+                        other.timeSpanStartedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeSpanStartedLessThan, other.timeSpanStartedLessThan)
+                && java.util.Objects.equals(this.spanNamespace, other.spanNamespace);
     }
 
     @Override
@@ -250,6 +368,19 @@ public class GetSpanRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         result = (result * PRIME) + (this.spanKey == null ? 43 : this.spanKey.hashCode());
         result = (result * PRIME) + (this.traceKey == null ? 43 : this.traceKey.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSpanStartedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeSpanStartedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSpanStartedLessThan == null
+                                ? 43
+                                : this.timeSpanStartedLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.spanNamespace == null ? 43 : this.spanNamespace.hashCode());
         return result;
     }
 }

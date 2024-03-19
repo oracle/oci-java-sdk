@@ -28,6 +28,7 @@ public final class QueryResultMetadataSummary
         "sourceName",
         "queryResultsGroupedBy",
         "queryResultsOrderedBy",
+        "queryResultsTopologyInfo",
         "timeSeriesIntervalInMins"
     })
     public QueryResultMetadataSummary(
@@ -35,12 +36,14 @@ public final class QueryResultMetadataSummary
             String sourceName,
             java.util.List<QueryResultsGroupedBySummary> queryResultsGroupedBy,
             java.util.List<QueryResultsOrderedBySummary> queryResultsOrderedBy,
+            QueryResultsTopologyInfo queryResultsTopologyInfo,
             Integer timeSeriesIntervalInMins) {
         super();
         this.queryResultRowTypeSummaries = queryResultRowTypeSummaries;
         this.sourceName = sourceName;
         this.queryResultsGroupedBy = queryResultsGroupedBy;
         this.queryResultsOrderedBy = queryResultsOrderedBy;
+        this.queryResultsTopologyInfo = queryResultsTopologyInfo;
         this.timeSeriesIntervalInMins = timeSeriesIntervalInMins;
     }
 
@@ -129,6 +132,15 @@ public final class QueryResultMetadataSummary
             this.__explicitlySet__.add("queryResultsOrderedBy");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("queryResultsTopologyInfo")
+        private QueryResultsTopologyInfo queryResultsTopologyInfo;
+
+        public Builder queryResultsTopologyInfo(QueryResultsTopologyInfo queryResultsTopologyInfo) {
+            this.queryResultsTopologyInfo = queryResultsTopologyInfo;
+            this.__explicitlySet__.add("queryResultsTopologyInfo");
+            return this;
+        }
         /** Interval for the time series function in minutes. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSeriesIntervalInMins")
         private Integer timeSeriesIntervalInMins;
@@ -155,6 +167,7 @@ public final class QueryResultMetadataSummary
                             this.sourceName,
                             this.queryResultsGroupedBy,
                             this.queryResultsOrderedBy,
+                            this.queryResultsTopologyInfo,
                             this.timeSeriesIntervalInMins);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -175,6 +188,9 @@ public final class QueryResultMetadataSummary
             }
             if (model.wasPropertyExplicitlySet("queryResultsOrderedBy")) {
                 this.queryResultsOrderedBy(model.getQueryResultsOrderedBy());
+            }
+            if (model.wasPropertyExplicitlySet("queryResultsTopologyInfo")) {
+                this.queryResultsTopologyInfo(model.getQueryResultsTopologyInfo());
             }
             if (model.wasPropertyExplicitlySet("timeSeriesIntervalInMins")) {
                 this.timeSeriesIntervalInMins(model.getTimeSeriesIntervalInMins());
@@ -264,6 +280,13 @@ public final class QueryResultMetadataSummary
         return queryResultsOrderedBy;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("queryResultsTopologyInfo")
+    private final QueryResultsTopologyInfo queryResultsTopologyInfo;
+
+    public QueryResultsTopologyInfo getQueryResultsTopologyInfo() {
+        return queryResultsTopologyInfo;
+    }
+
     /** Interval for the time series function in minutes. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSeriesIntervalInMins")
     private final Integer timeSeriesIntervalInMins;
@@ -297,6 +320,8 @@ public final class QueryResultMetadataSummary
         sb.append(", sourceName=").append(String.valueOf(this.sourceName));
         sb.append(", queryResultsGroupedBy=").append(String.valueOf(this.queryResultsGroupedBy));
         sb.append(", queryResultsOrderedBy=").append(String.valueOf(this.queryResultsOrderedBy));
+        sb.append(", queryResultsTopologyInfo=")
+                .append(String.valueOf(this.queryResultsTopologyInfo));
         sb.append(", timeSeriesIntervalInMins=")
                 .append(String.valueOf(this.timeSeriesIntervalInMins));
         sb.append(")");
@@ -318,6 +343,8 @@ public final class QueryResultMetadataSummary
                 && java.util.Objects.equals(this.sourceName, other.sourceName)
                 && java.util.Objects.equals(this.queryResultsGroupedBy, other.queryResultsGroupedBy)
                 && java.util.Objects.equals(this.queryResultsOrderedBy, other.queryResultsOrderedBy)
+                && java.util.Objects.equals(
+                        this.queryResultsTopologyInfo, other.queryResultsTopologyInfo)
                 && java.util.Objects.equals(
                         this.timeSeriesIntervalInMins, other.timeSeriesIntervalInMins)
                 && super.equals(other);
@@ -343,6 +370,11 @@ public final class QueryResultMetadataSummary
                         + (this.queryResultsOrderedBy == null
                                 ? 43
                                 : this.queryResultsOrderedBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultsTopologyInfo == null
+                                ? 43
+                                : this.queryResultsTopologyInfo.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeSeriesIntervalInMins == null

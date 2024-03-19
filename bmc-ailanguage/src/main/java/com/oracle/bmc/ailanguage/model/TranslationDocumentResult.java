@@ -74,17 +74,23 @@ public final class TranslationDocumentResult
             return this;
         }
         /**
-         * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for
-         * supported languages.
+         * Language code supported Automatically detect language - auto Arabic - ar Brazilian
+         * Portuguese - pt-BR Canadian French - fr-CA Croatian - hr Czech - cs Danish - da Dutch -
+         * nl English - en Finnish - fi French - fr German - de Greek - el Hebrew - he Hungarian -
+         * hu Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl Portuguese - pt
+         * Romanian - ro Russian - ru Simplified Chinese - zh-CN Slovak - sk Slovenian - sl Spanish
+         * - es Swedish - sv Thai - th Traditional Chinese - zh-TW Turkish - tr Vietnamese - vi
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
         private String sourceLanguageCode;
 
         /**
-         * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for
-         * supported languages.
+         * Language code supported Automatically detect language - auto Arabic - ar Brazilian
+         * Portuguese - pt-BR Canadian French - fr-CA Croatian - hr Czech - cs Danish - da Dutch -
+         * nl English - en Finnish - fi French - fr German - de Greek - el Hebrew - he Hungarian -
+         * hu Italian - it Japanese - ja Korean - ko Norwegian - no Polish - pl Portuguese - pt
+         * Romanian - ro Russian - ru Simplified Chinese - zh-CN Slovak - sk Slovenian - sl Spanish
+         * - es Swedish - sv Thai - th Traditional Chinese - zh-TW Turkish - tr Vietnamese - vi
          *
          * @param sourceLanguageCode the value to set
          * @return this builder
@@ -95,17 +101,23 @@ public final class TranslationDocumentResult
             return this;
         }
         /**
-         * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for
-         * supported languages.
+         * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+         * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr
+         * German - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko
+         * Norwegian - no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese
+         * - zh-CN Slovak - sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional
+         * Chinese - zh-TW Turkish - tr Vietnamese - vi
          */
         @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
         private String targetLanguageCode;
 
         /**
-         * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for
-         * supported languages.
+         * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+         * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr
+         * German - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko
+         * Norwegian - no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese
+         * - zh-CN Slovak - sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional
+         * Chinese - zh-TW Turkish - tr Vietnamese - vi
          *
          * @param targetLanguageCode the value to set
          * @return this builder
@@ -186,17 +198,23 @@ public final class TranslationDocumentResult
     }
 
     /**
-     * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for supported
-     * languages.
+     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
+     * - pt-BR Canadian French - fr-CA Croatian - hr Czech - cs Danish - da Dutch - nl English - en
+     * Finnish - fi French - fr German - de Greek - el Hebrew - he Hungarian - hu Italian - it
+     * Japanese - ja Korean - ko Norwegian - no Polish - pl Portuguese - pt Romanian - ro Russian -
+     * ru Simplified Chinese - zh-CN Slovak - sk Slovenian - sl Spanish - es Swedish - sv Thai - th
+     * Traditional Chinese - zh-TW Turkish - tr Vietnamese - vi
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
     private final String sourceLanguageCode;
 
     /**
-     * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for supported
-     * languages.
+     * Language code supported Automatically detect language - auto Arabic - ar Brazilian Portuguese
+     * - pt-BR Canadian French - fr-CA Croatian - hr Czech - cs Danish - da Dutch - nl English - en
+     * Finnish - fi French - fr German - de Greek - el Hebrew - he Hungarian - hu Italian - it
+     * Japanese - ja Korean - ko Norwegian - no Polish - pl Portuguese - pt Romanian - ro Russian -
+     * ru Simplified Chinese - zh-CN Slovak - sk Slovenian - sl Spanish - es Swedish - sv Thai - th
+     * Traditional Chinese - zh-TW Turkish - tr Vietnamese - vi
      *
      * @return the value
      */
@@ -205,17 +223,23 @@ public final class TranslationDocumentResult
     }
 
     /**
-     * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for supported
-     * languages.
+     * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+     * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr German
+     * - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko Norwegian -
+     * no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese - zh-CN Slovak -
+     * sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional Chinese - zh-TW Turkish -
+     * tr Vietnamese - vi
      */
     @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
     private final String targetLanguageCode;
 
     /**
-     * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.cloud.oracle.com/iaas/language/using/overview.htm) for supported
-     * languages.
+     * Language code supported Arabic - ar Brazilian Portuguese - pt-BR Canadian French - fr-CA
+     * Croatian - hr Czech - cs Danish - da Dutch - nl English - en Finnish - fi French - fr German
+     * - de Greek - el Hebrew - he Hungarian - hu Italian - it Japanese - ja Korean - ko Norwegian -
+     * no Polish - pl Portuguese - pt Romanian - ro Russian - ru Simplified Chinese - zh-CN Slovak -
+     * sk Slovenian - sl Spanish - es Swedish - sv Thai - th Traditional Chinese - zh-TW Turkish -
+     * tr Vietnamese - vi
      *
      * @return the value
      */

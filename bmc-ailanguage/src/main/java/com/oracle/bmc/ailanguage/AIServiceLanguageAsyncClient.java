@@ -348,6 +348,36 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJobResponse> cancelJob(
+            CancelJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, CancelJobResponse::builder)
+                .logger(LOG, "cancelJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CancelJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/CancelJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeEndpointCompartmentResponse> changeEndpointCompartment(
             ChangeEndpointCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -379,6 +409,41 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeEndpointCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
+            ChangeJobCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeJobCompartmentDetails(),
+                "changeJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeJobCompartmentResponse::builder)
+                .logger(LOG, "changeJobCompartment")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ChangeJobCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/ChangeJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeJobCompartmentRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeJobCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -488,6 +553,37 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJobResponse> createJob(
+            CreateJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCreateJobDetails(), "createJobDetails is required");
+
+        return clientCall(request, CreateJobResponse::builder)
+                .logger(LOG, "createJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CreateJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/CreateJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Job.class, CreateJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateJobResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
@@ -580,6 +676,35 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
                         "opc-work-request-id", DeleteEndpointResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobResponse> deleteJob(
+            DeleteJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, DeleteJobResponse::builder)
+                .logger(LOG, "deleteJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "DeleteJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/DeleteJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -849,6 +974,32 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<GetJobResponse> getJob(
+            GetJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetJobResponse::builder)
+                .logger(LOG, "getJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/GetJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.ailanguage.model.Job.class, GetJobResponse.Builder::job)
+                .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetModelResponse> getModel(
             GetModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse>
@@ -1039,6 +1190,42 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", ListEvaluationResultsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListEvaluationResultsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobsResponse> listJobs(
+            ListJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobsResponse::builder)
+                .logger(LOG, "listJobs")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/ListJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.JobCollection.class,
+                        ListJobsResponse.Builder::jobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -1258,6 +1445,38 @@ public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", UpdateEndpointResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateEndpointResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobResponse> updateJob(
+            UpdateJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>
+                    handler) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(request.getUpdateJobDetails(), "updateJobDetails is required");
+
+        return clientCall(request, UpdateJobResponse::builder)
+                .logger(LOG, "updateJob")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "UpdateJob",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/UpdateJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJobRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Job.class, UpdateJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
                 .callAsync(handler);
     }
 

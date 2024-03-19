@@ -234,6 +234,21 @@ public interface AIServiceLanguage extends AutoCloseable {
             BatchLanguageTranslationRequest request);
 
     /**
+     * Canceling the job cancels all the tasks under it.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CancelJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelJob API.
+     */
+    CancelJobResponse cancelJob(CancelJobRequest request);
+
+    /**
      * Moves a Endpoint into a different compartment. When provided, If-Match is checked against
      * ETag values of the resource.
      *
@@ -250,6 +265,23 @@ public interface AIServiceLanguage extends AutoCloseable {
      */
     ChangeEndpointCompartmentResponse changeEndpointCompartment(
             ChangeEndpointCompartmentRequest request);
+
+    /**
+     * Moves a Job into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ChangeJobCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeJobCompartment API.
+     */
+    ChangeJobCompartmentResponse changeJobCompartment(ChangeJobCompartmentRequest request);
 
     /**
      * Moves a Model into a different compartment. When provided, If-Match is checked against ETag
@@ -302,6 +334,21 @@ public interface AIServiceLanguage extends AutoCloseable {
     CreateEndpointResponse createEndpoint(CreateEndpointRequest request);
 
     /**
+     * Creates a new language service async job.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/CreateJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJob API.
+     */
+    CreateJobResponse createJob(CreateJobRequest request);
+
+    /**
      * Creates a new model for training and train the model with date provided.
      *
      * @param request The request object containing the details to send
@@ -347,6 +394,21 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEndpoint API.
      */
     DeleteEndpointResponse deleteEndpoint(DeleteEndpointRequest request);
+
+    /**
+     * Deletes the language service async Job
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DeleteJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJob API.
+     */
+    DeleteJobResponse deleteJob(DeleteJobRequest request);
 
     /**
      * Deletes a provisioned model resource by identifier. This operation fails with a 409 error
@@ -531,6 +593,21 @@ public interface AIServiceLanguage extends AutoCloseable {
     GetEndpointResponse getEndpoint(GetEndpointRequest request);
 
     /**
+     * Gets a language service async job
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/GetJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJob API.
+     */
+    GetJobResponse getJob(GetJobRequest request);
+
+    /**
      * Gets a model by identifier
      *
      * @param request The request object containing the details to send
@@ -620,6 +697,21 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     ListEvaluationResults API.
      */
     ListEvaluationResultsResponse listEvaluationResults(ListEvaluationResultsRequest request);
+
+    /**
+     * Returns a list of language service async Jobs.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/ListJobsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJobs API.
+     */
+    ListJobsResponse listJobs(ListJobsRequest request);
 
     /**
      * Returns a list of models.
@@ -713,6 +805,21 @@ public interface AIServiceLanguage extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEndpoint API.
      */
     UpdateEndpointResponse updateEndpoint(UpdateEndpointRequest request);
+
+    /**
+     * Updates the language service async Job
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/UpdateJobExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJob API.
+     */
+    UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
      * Updates the model
