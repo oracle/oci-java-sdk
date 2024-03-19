@@ -14,10 +14,10 @@ import com.oracle.bmc.apmtraces.model.*;
 public class QueryRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.apmtraces.model.QueryDetails> {
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     private String apmDomainId;
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -69,13 +69,13 @@ public class QueryRequest
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
+     * The page token representing the page where to start retrieving results. This is usually
      * retrieved from a previous response.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
+     * The page token representing the page where to start retrieving results. This is usually
      * retrieved from a previous response.
      */
     public String getPage() {
@@ -99,11 +99,11 @@ public class QueryRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM Domain ID the request is intended for. */
+        /** The APM Domain ID for the intended request. */
         private String apmDomainId = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          * @param apmDomainId the value to set
          * @return this builder instance
@@ -193,14 +193,14 @@ public class QueryRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous response.
+         * The page token representing the page where to start retrieving results. This is usually
+         * retrieved from a previous response.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous response.
+         * The page token representing the page where to start retrieving results. This is usually
+         * retrieved from a previous response.
          *
          * @param page the value to set
          * @return this builder instance

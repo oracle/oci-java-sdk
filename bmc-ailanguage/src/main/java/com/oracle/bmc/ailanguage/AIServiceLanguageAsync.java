@@ -232,6 +232,20 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Canceling the job cancels all the tasks under it.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelJobResponse> cancelJob(
+            CancelJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse> handler);
+
+    /**
      * Moves a Endpoint into a different compartment. When provided, If-Match is checked against
      * ETag values of the resource.
      *
@@ -246,6 +260,23 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
             ChangeEndpointCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeEndpointCompartmentRequest, ChangeEndpointCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a Job into a different compartment. When provided, If-Match is checked against ETag
+     * values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
+            ChangeJobCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
                     handler);
 
     /**
@@ -298,6 +329,20 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new language service async job.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateJobResponse> createJob(
+            CreateJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handler);
+
+    /**
      * Creates a new model for training and train the model with date provided.
      *
      * @param request The request object containing the details to send
@@ -342,6 +387,20 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
             DeleteEndpointRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResponse>
                     handler);
+
+    /**
+     * Deletes the language service async Job
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteJobResponse> deleteJob(
+            DeleteJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handler);
 
     /**
      * Deletes a provisioned model resource by identifier. This operation fails with a 409 error
@@ -523,6 +582,20 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetEndpointRequest, GetEndpointResponse> handler);
 
     /**
+     * Gets a language service async job
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetJobResponse> getJob(
+            GetJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler);
+
+    /**
      * Gets a model by identifier
      *
      * @param request The request object containing the details to send
@@ -610,6 +683,20 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListEvaluationResultsRequest, ListEvaluationResultsResponse>
                     handler);
+
+    /**
+     * Returns a list of language service async Jobs.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListJobsResponse> listJobs(
+            ListJobsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handler);
 
     /**
      * Returns a list of models.
@@ -701,6 +788,20 @@ public interface AIServiceLanguageAsync extends AutoCloseable {
             UpdateEndpointRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResponse>
                     handler);
+
+    /**
+     * Updates the language service async Job
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateJobResponse> updateJob(
+            UpdateJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handler);
 
     /**
      * Updates the model

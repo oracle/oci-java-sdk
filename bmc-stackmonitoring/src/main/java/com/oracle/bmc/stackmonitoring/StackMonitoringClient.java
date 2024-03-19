@@ -366,7 +366,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "StackMonitoring",
                         "CreateBaselineableMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/CreateBaselineableMetricDetails/CreateBaselineableMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/CreateBaselineableMetric")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBaselineableMetricRequest::builder)
                 .basePath("/20210330")
@@ -945,7 +945,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "StackMonitoring",
                         "EvaluateBaselineableMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/EvaluateBaselineableMetricResult/EvaluateBaselineableMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/EvaluateBaselineableMetric")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EvaluateBaselineableMetricRequest::builder)
                 .basePath("/20210330")
@@ -1274,7 +1274,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "StackMonitoring",
                         "ListBaselineableMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetricSummary/ListBaselineableMetrics")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/ListBaselineableMetrics")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBaselineableMetricsRequest::builder)
                 .basePath("/20210330")
@@ -2095,7 +2095,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "StackMonitoring",
                         "UpdateBaselineableMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/UpdateBaselineableMetricDetails/UpdateBaselineableMetric")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/UpdateBaselineableMetric")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateBaselineableMetricRequest::builder)
                 .basePath("/20210330")

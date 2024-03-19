@@ -13,10 +13,10 @@ import com.oracle.bmc.apmtraces.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     private String apmDomainId;
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -41,13 +41,13 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
+     * The page token representing the page where to start retrieving results. This is usually
      * retrieved from a previous response.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
+     * The page token representing the page where to start retrieving results. This is usually
      * retrieved from a previous response.
      */
     public String getPage() {
@@ -60,11 +60,11 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM Domain ID the request is intended for. */
+        /** The APM Domain ID for the intended request. */
         private String apmDomainId = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          * @param apmDomainId the value to set
          * @return this builder instance
@@ -107,14 +107,14 @@ public class ListQuickPicksRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous response.
+         * The page token representing the page where to start retrieving results. This is usually
+         * retrieved from a previous response.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous response.
+         * The page token representing the page where to start retrieving results. This is usually
+         * retrieved from a previous response.
          *
          * @param page the value to set
          * @return this builder instance

@@ -13,10 +13,10 @@ import com.oracle.bmc.apmtraces.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     private String apmDomainId;
 
-    /** The APM Domain ID the request is intended for. */
+    /** The APM Domain ID for the intended request. */
     public String getApmDomainId() {
         return apmDomainId;
     }
@@ -40,17 +40,72 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Include traces that have a {@code minTraceStartTime} equal to or greater than this value. */
+    private java.util.Date timeTraceStartedGreaterThanOrEqualTo;
+
+    /** Include traces that have a {@code minTraceStartTime} equal to or greater than this value. */
+    public java.util.Date getTimeTraceStartedGreaterThanOrEqualTo() {
+        return timeTraceStartedGreaterThanOrEqualTo;
+    }
+    /** Include traces that have a {@code minTraceStartTime} less than this value. */
+    private java.util.Date timeTraceStartedLessThan;
+
+    /** Include traces that have a {@code minTraceStartTime} less than this value. */
+    public java.util.Date getTimeTraceStartedLessThan() {
+        return timeTraceStartedLessThan;
+    }
+    /** Name space from which the trace details need to be retrieved. */
+    private TraceNamespace traceNamespace;
+
+    /** Name space from which the trace details need to be retrieved. */
+    public enum TraceNamespace implements com.oracle.bmc.http.internal.BmcEnum {
+        Traces("TRACES"),
+        Synthetic("SYNTHETIC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TraceNamespace> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TraceNamespace v : TraceNamespace.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TraceNamespace(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TraceNamespace create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid TraceNamespace: " + key);
+        }
+    };
+
+    /** Name space from which the trace details need to be retrieved. */
+    public TraceNamespace getTraceNamespace() {
+        return traceNamespace;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetTraceRequest, java.lang.Void> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM Domain ID the request is intended for. */
+        /** The APM Domain ID for the intended request. */
         private String apmDomainId = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          * @param apmDomainId the value to set
          * @return this builder instance
@@ -93,6 +148,51 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
+         * Include traces that have a {@code minTraceStartTime} equal to or greater than this value.
+         */
+        private java.util.Date timeTraceStartedGreaterThanOrEqualTo = null;
+
+        /**
+         * Include traces that have a {@code minTraceStartTime} equal to or greater than this value.
+         *
+         * @param timeTraceStartedGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeTraceStartedGreaterThanOrEqualTo(
+                java.util.Date timeTraceStartedGreaterThanOrEqualTo) {
+            this.timeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /** Include traces that have a {@code minTraceStartTime} less than this value. */
+        private java.util.Date timeTraceStartedLessThan = null;
+
+        /**
+         * Include traces that have a {@code minTraceStartTime} less than this value.
+         *
+         * @param timeTraceStartedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeTraceStartedLessThan(java.util.Date timeTraceStartedLessThan) {
+            this.timeTraceStartedLessThan = timeTraceStartedLessThan;
+            return this;
+        }
+
+        /** Name space from which the trace details need to be retrieved. */
+        private TraceNamespace traceNamespace = null;
+
+        /**
+         * Name space from which the trace details need to be retrieved.
+         *
+         * @param traceNamespace the value to set
+         * @return this builder instance
+         */
+        public Builder traceNamespace(TraceNamespace traceNamespace) {
+            this.traceNamespace = traceNamespace;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -125,6 +225,9 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             apmDomainId(o.getApmDomainId());
             traceKey(o.getTraceKey());
             opcRequestId(o.getOpcRequestId());
+            timeTraceStartedGreaterThanOrEqualTo(o.getTimeTraceStartedGreaterThanOrEqualTo());
+            timeTraceStartedLessThan(o.getTimeTraceStartedLessThan());
+            traceNamespace(o.getTraceNamespace());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -162,8 +265,12 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.apmDomainId = apmDomainId;
             request.traceKey = traceKey;
             request.opcRequestId = opcRequestId;
+            request.timeTraceStartedGreaterThanOrEqualTo = timeTraceStartedGreaterThanOrEqualTo;
+            request.timeTraceStartedLessThan = timeTraceStartedLessThan;
+            request.traceNamespace = traceNamespace;
             return request;
-            // new GetTraceRequest(apmDomainId, traceKey, opcRequestId);
+            // new GetTraceRequest(apmDomainId, traceKey, opcRequestId,
+            // timeTraceStartedGreaterThanOrEqualTo, timeTraceStartedLessThan, traceNamespace);
         }
     }
 
@@ -173,7 +280,13 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().apmDomainId(apmDomainId).traceKey(traceKey).opcRequestId(opcRequestId);
+        return new Builder()
+                .apmDomainId(apmDomainId)
+                .traceKey(traceKey)
+                .opcRequestId(opcRequestId)
+                .timeTraceStartedGreaterThanOrEqualTo(timeTraceStartedGreaterThanOrEqualTo)
+                .timeTraceStartedLessThan(timeTraceStartedLessThan)
+                .traceNamespace(traceNamespace);
     }
 
     /**
@@ -193,6 +306,11 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         sb.append(",apmDomainId=").append(String.valueOf(this.apmDomainId));
         sb.append(",traceKey=").append(String.valueOf(this.traceKey));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",timeTraceStartedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeTraceStartedGreaterThanOrEqualTo));
+        sb.append(",timeTraceStartedLessThan=")
+                .append(String.valueOf(this.timeTraceStartedLessThan));
+        sb.append(",traceNamespace=").append(String.valueOf(this.traceNamespace));
         sb.append(")");
         return sb.toString();
     }
@@ -210,7 +328,13 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return super.equals(o)
                 && java.util.Objects.equals(this.apmDomainId, other.apmDomainId)
                 && java.util.Objects.equals(this.traceKey, other.traceKey)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.timeTraceStartedGreaterThanOrEqualTo,
+                        other.timeTraceStartedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.timeTraceStartedLessThan, other.timeTraceStartedLessThan)
+                && java.util.Objects.equals(this.traceNamespace, other.traceNamespace);
     }
 
     @Override
@@ -220,6 +344,19 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         result = (result * PRIME) + (this.apmDomainId == null ? 43 : this.apmDomainId.hashCode());
         result = (result * PRIME) + (this.traceKey == null ? 43 : this.traceKey.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeTraceStartedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeTraceStartedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeTraceStartedLessThan == null
+                                ? 43
+                                : this.timeTraceStartedLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.traceNamespace == null ? 43 : this.traceNamespace.hashCode());
         return result;
     }
 }

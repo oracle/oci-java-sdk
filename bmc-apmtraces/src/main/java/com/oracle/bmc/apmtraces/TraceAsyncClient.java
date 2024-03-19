@@ -117,6 +117,10 @@ public class TraceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .appendPathParam(request.getTraceKey())
                 .appendPathParam("aggregatedSnapshotData")
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam("serviceName", request.getServiceName())
+                .appendQueryParam("serverName", request.getServerName())
+                .appendQueryParam("spanKey", request.getSpanKey())
+                .appendQueryParam("spanName", request.getSpanName())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -150,6 +154,11 @@ public class TraceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .appendPathParam(request.getTraceKey())
                 .appendPathParam(request.getSpanKey())
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam(
+                        "timeSpanStartedGreaterThanOrEqualTo",
+                        request.getTimeSpanStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeSpanStartedLessThan", request.getTimeSpanStartedLessThan())
+                .appendEnumQueryParam("spanNamespace", request.getSpanNamespace())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
@@ -179,6 +188,11 @@ public class TraceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
                 .appendPathParam("traces")
                 .appendPathParam(request.getTraceKey())
                 .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .appendQueryParam(
+                        "timeTraceStartedGreaterThanOrEqualTo",
+                        request.getTimeTraceStartedGreaterThanOrEqualTo())
+                .appendQueryParam("timeTraceStartedLessThan", request.getTimeTraceStartedLessThan())
+                .appendEnumQueryParam("traceNamespace", request.getTraceNamespace())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(
