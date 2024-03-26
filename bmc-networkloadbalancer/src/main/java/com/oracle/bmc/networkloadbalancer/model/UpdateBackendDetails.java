@@ -39,8 +39,8 @@ public final class UpdateBackendDetails
          * The load balancing policy weight assigned to the server. Backend servers with a higher
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives three times the number of new connections as a server weighted '1'. For more
-         * information about load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * information about load balancing policies, see [How Network Load Balancing Policies
+         * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
          *
          * <p>Example: {@code 3}
          */
@@ -51,8 +51,8 @@ public final class UpdateBackendDetails
          * The load balancing policy weight assigned to the server. Backend servers with a higher
          * weight receive a larger proportion of incoming traffic. For example, a server weighted
          * '3' receives three times the number of new connections as a server weighted '1'. For more
-         * information about load balancing policies, see [How Load Balancing Policies
-         * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * information about load balancing policies, see [How Network Load Balancing Policies
+         * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
          *
          * <p>Example: {@code 3}
          *
@@ -180,8 +180,8 @@ public final class UpdateBackendDetails
      * The load balancing policy weight assigned to the server. Backend servers with a higher weight
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * three times the number of new connections as a server weighted '1'. For more information
-     * about load balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * about load balancing policies, see [How Network Load Balancing Policies
+     * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
      *
      * <p>Example: {@code 3}
      */
@@ -192,8 +192,8 @@ public final class UpdateBackendDetails
      * The load balancing policy weight assigned to the server. Backend servers with a higher weight
      * receive a larger proportion of incoming traffic. For example, a server weighted '3' receives
      * three times the number of new connections as a server weighted '1'. For more information
-     * about load balancing policies, see [How Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * about load balancing policies, see [How Network Load Balancing Policies
+     * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
      *
      * <p>Example: {@code 3}
      *

@@ -68,6 +68,9 @@ public final class UpdateAutonomousDatabaseDetails
         "privateEndpointLabel",
         "privateEndpointIp",
         "nsgIds",
+        "autoRefreshFrequencyInSeconds",
+        "autoRefreshPointLagInSeconds",
+        "timeOfAutoRefreshStart",
         "customerContacts",
         "isMtlsConnectionRequired",
         "resourcePoolLeaderId",
@@ -116,6 +119,9 @@ public final class UpdateAutonomousDatabaseDetails
             String privateEndpointLabel,
             String privateEndpointIp,
             java.util.List<String> nsgIds,
+            Integer autoRefreshFrequencyInSeconds,
+            Integer autoRefreshPointLagInSeconds,
+            java.util.Date timeOfAutoRefreshStart,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
             String resourcePoolLeaderId,
@@ -163,6 +169,9 @@ public final class UpdateAutonomousDatabaseDetails
         this.privateEndpointLabel = privateEndpointLabel;
         this.privateEndpointIp = privateEndpointIp;
         this.nsgIds = nsgIds;
+        this.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+        this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
+        this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
         this.customerContacts = customerContacts;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
         this.resourcePoolLeaderId = resourcePoolLeaderId;
@@ -1341,6 +1350,73 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
+         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum
+         * is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is
+         * controlled by the {@code timeOfAutoRefreshStart} parameter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshFrequencyInSeconds")
+        private Integer autoRefreshFrequencyInSeconds;
+
+        /**
+         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum
+         * is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is
+         * controlled by the {@code timeOfAutoRefreshStart} parameter.
+         *
+         * @param autoRefreshFrequencyInSeconds the value to set
+         * @return this builder
+         */
+        public Builder autoRefreshFrequencyInSeconds(Integer autoRefreshFrequencyInSeconds) {
+            this.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+            this.__explicitlySet__.add("autoRefreshFrequencyInSeconds");
+            return this;
+        }
+        /**
+         * The time, in seconds, the data of the refreshable clone lags the primary database at the
+         * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+         * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+         * data refresh happens.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshPointLagInSeconds")
+        private Integer autoRefreshPointLagInSeconds;
+
+        /**
+         * The time, in seconds, the data of the refreshable clone lags the primary database at the
+         * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+         * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+         * data refresh happens.
+         *
+         * @param autoRefreshPointLagInSeconds the value to set
+         * @return this builder
+         */
+        public Builder autoRefreshPointLagInSeconds(Integer autoRefreshPointLagInSeconds) {
+            this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
+            this.__explicitlySet__.add("autoRefreshPointLagInSeconds");
+            return this;
+        }
+        /**
+         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * refreshable clone. This value controls only the start time for the first refresh
+         * operation. Subsequent (ongoing) refresh operations have start times controlled by the
+         * value of the {@code autoRefreshFrequencyInSeconds} parameter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
+        private java.util.Date timeOfAutoRefreshStart;
+
+        /**
+         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * refreshable clone. This value controls only the start time for the first refresh
+         * operation. Subsequent (ongoing) refresh operations have start times controlled by the
+         * value of the {@code autoRefreshFrequencyInSeconds} parameter.
+         *
+         * @param timeOfAutoRefreshStart the value to set
+         * @return this builder
+         */
+        public Builder timeOfAutoRefreshStart(java.util.Date timeOfAutoRefreshStart) {
+            this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
+            this.__explicitlySet__.add("timeOfAutoRefreshStart");
+            return this;
+        }
+        /**
          * Customer Contacts. Setting this to an empty list removes all customer contacts of an
          * Oracle
          *
@@ -1630,6 +1706,9 @@ public final class UpdateAutonomousDatabaseDetails
                             this.privateEndpointLabel,
                             this.privateEndpointIp,
                             this.nsgIds,
+                            this.autoRefreshFrequencyInSeconds,
+                            this.autoRefreshPointLagInSeconds,
+                            this.timeOfAutoRefreshStart,
                             this.customerContacts,
                             this.isMtlsConnectionRequired,
                             this.resourcePoolLeaderId,
@@ -1756,6 +1835,15 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("autoRefreshFrequencyInSeconds")) {
+                this.autoRefreshFrequencyInSeconds(model.getAutoRefreshFrequencyInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("autoRefreshPointLagInSeconds")) {
+                this.autoRefreshPointLagInSeconds(model.getAutoRefreshPointLagInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfAutoRefreshStart")) {
+                this.timeOfAutoRefreshStart(model.getTimeOfAutoRefreshStart());
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
@@ -3102,6 +3190,67 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is
+     * 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled
+     * by the {@code timeOfAutoRefreshStart} parameter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshFrequencyInSeconds")
+    private final Integer autoRefreshFrequencyInSeconds;
+
+    /**
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is
+     * 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled
+     * by the {@code timeOfAutoRefreshStart} parameter.
+     *
+     * @return the value
+     */
+    public Integer getAutoRefreshFrequencyInSeconds() {
+        return autoRefreshFrequencyInSeconds;
+    }
+
+    /**
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the
+     * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+     * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+     * data refresh happens.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshPointLagInSeconds")
+    private final Integer autoRefreshPointLagInSeconds;
+
+    /**
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the
+     * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+     * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+     * data refresh happens.
+     *
+     * @return the value
+     */
+    public Integer getAutoRefreshPointLagInSeconds() {
+        return autoRefreshPointLagInSeconds;
+    }
+
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
+     * clone. This value controls only the start time for the first refresh operation. Subsequent
+     * (ongoing) refresh operations have start times controlled by the value of the {@code
+     * autoRefreshFrequencyInSeconds} parameter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
+    private final java.util.Date timeOfAutoRefreshStart;
+
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
+     * clone. This value controls only the start time for the first refresh operation. Subsequent
+     * (ongoing) refresh operations have start times controlled by the value of the {@code
+     * autoRefreshFrequencyInSeconds} parameter.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfAutoRefreshStart() {
+        return timeOfAutoRefreshStart;
+    }
+
+    /**
      * Customer Contacts. Setting this to an empty list removes all customer contacts of an Oracle
      *
      * <p>This cannot be updated in parallel with any of the following: isMTLSConnectionRequired,
@@ -3378,6 +3527,11 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", autoRefreshFrequencyInSeconds=")
+                .append(String.valueOf(this.autoRefreshFrequencyInSeconds));
+        sb.append(", autoRefreshPointLagInSeconds=")
+                .append(String.valueOf(this.autoRefreshPointLagInSeconds));
+        sb.append(", timeOfAutoRefreshStart=").append(String.valueOf(this.timeOfAutoRefreshStart));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", isMtlsConnectionRequired=")
                 .append(String.valueOf(this.isMtlsConnectionRequired));
@@ -3447,6 +3601,12 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(
+                        this.autoRefreshFrequencyInSeconds, other.autoRefreshFrequencyInSeconds)
+                && java.util.Objects.equals(
+                        this.autoRefreshPointLagInSeconds, other.autoRefreshPointLagInSeconds)
+                && java.util.Objects.equals(
+                        this.timeOfAutoRefreshStart, other.timeOfAutoRefreshStart)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
@@ -3568,6 +3728,21 @@ public final class UpdateAutonomousDatabaseDetails
                 (result * PRIME)
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoRefreshFrequencyInSeconds == null
+                                ? 43
+                                : this.autoRefreshFrequencyInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoRefreshPointLagInSeconds == null
+                                ? 43
+                                : this.autoRefreshPointLagInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfAutoRefreshStart == null
+                                ? 43
+                                : this.timeOfAutoRefreshStart.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());

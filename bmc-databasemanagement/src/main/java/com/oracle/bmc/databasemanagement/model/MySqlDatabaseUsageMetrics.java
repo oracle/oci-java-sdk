@@ -32,6 +32,9 @@ public final class MySqlDatabaseUsageMetrics
         "databaseVersion",
         "dbId",
         "databaseStatus",
+        "isHeatWaveEnabled",
+        "heatWaveClusterDisplayName",
+        "heatWaveNodeCount",
         "metrics"
     })
     public MySqlDatabaseUsageMetrics(
@@ -43,6 +46,9 @@ public final class MySqlDatabaseUsageMetrics
             String databaseVersion,
             String dbId,
             MySqlDatabaseStatus databaseStatus,
+            Boolean isHeatWaveEnabled,
+            String heatWaveClusterDisplayName,
+            Integer heatWaveNodeCount,
             java.util.List<MySqlFleetMetricDefinition> metrics) {
         super();
         this.compartmentId = compartmentId;
@@ -53,6 +59,9 @@ public final class MySqlDatabaseUsageMetrics
         this.databaseVersion = databaseVersion;
         this.dbId = dbId;
         this.databaseStatus = databaseStatus;
+        this.isHeatWaveEnabled = isHeatWaveEnabled;
+        this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+        this.heatWaveNodeCount = heatWaveNodeCount;
         this.metrics = metrics;
     }
 
@@ -182,6 +191,51 @@ public final class MySqlDatabaseUsageMetrics
             this.__explicitlySet__.add("databaseStatus");
             return this;
         }
+        /** If HeatWave is enabled for this db system or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
+        private Boolean isHeatWaveEnabled;
+
+        /**
+         * If HeatWave is enabled for this db system or not.
+         *
+         * @param isHeatWaveEnabled the value to set
+         * @return this builder
+         */
+        public Builder isHeatWaveEnabled(Boolean isHeatWaveEnabled) {
+            this.isHeatWaveEnabled = isHeatWaveEnabled;
+            this.__explicitlySet__.add("isHeatWaveEnabled");
+            return this;
+        }
+        /** The name of the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
+        private String heatWaveClusterDisplayName;
+
+        /**
+         * The name of the HeatWave cluster.
+         *
+         * @param heatWaveClusterDisplayName the value to set
+         * @return this builder
+         */
+        public Builder heatWaveClusterDisplayName(String heatWaveClusterDisplayName) {
+            this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            this.__explicitlySet__.add("heatWaveClusterDisplayName");
+            return this;
+        }
+        /** The number of nodes in the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeCount")
+        private Integer heatWaveNodeCount;
+
+        /**
+         * The number of nodes in the HeatWave cluster.
+         *
+         * @param heatWaveNodeCount the value to set
+         * @return this builder
+         */
+        public Builder heatWaveNodeCount(Integer heatWaveNodeCount) {
+            this.heatWaveNodeCount = heatWaveNodeCount;
+            this.__explicitlySet__.add("heatWaveNodeCount");
+            return this;
+        }
         /** A list of the database health metrics like CPU, Storage, and Memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<MySqlFleetMetricDefinition> metrics;
@@ -212,6 +266,9 @@ public final class MySqlDatabaseUsageMetrics
                             this.databaseVersion,
                             this.dbId,
                             this.databaseStatus,
+                            this.isHeatWaveEnabled,
+                            this.heatWaveClusterDisplayName,
+                            this.heatWaveNodeCount,
                             this.metrics);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -244,6 +301,15 @@ public final class MySqlDatabaseUsageMetrics
             }
             if (model.wasPropertyExplicitlySet("databaseStatus")) {
                 this.databaseStatus(model.getDatabaseStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveEnabled")) {
+                this.isHeatWaveEnabled(model.getIsHeatWaveEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveClusterDisplayName")) {
+                this.heatWaveClusterDisplayName(model.getHeatWaveClusterDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveNodeCount")) {
+                this.heatWaveNodeCount(model.getHeatWaveNodeCount());
             }
             if (model.wasPropertyExplicitlySet("metrics")) {
                 this.metrics(model.getMetrics());
@@ -369,6 +435,45 @@ public final class MySqlDatabaseUsageMetrics
         return databaseStatus;
     }
 
+    /** If HeatWave is enabled for this db system or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
+    private final Boolean isHeatWaveEnabled;
+
+    /**
+     * If HeatWave is enabled for this db system or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsHeatWaveEnabled() {
+        return isHeatWaveEnabled;
+    }
+
+    /** The name of the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
+    private final String heatWaveClusterDisplayName;
+
+    /**
+     * The name of the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public String getHeatWaveClusterDisplayName() {
+        return heatWaveClusterDisplayName;
+    }
+
+    /** The number of nodes in the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeCount")
+    private final Integer heatWaveNodeCount;
+
+    /**
+     * The number of nodes in the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public Integer getHeatWaveNodeCount() {
+        return heatWaveNodeCount;
+    }
+
     /** A list of the database health metrics like CPU, Storage, and Memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<MySqlFleetMetricDefinition> metrics;
@@ -405,6 +510,10 @@ public final class MySqlDatabaseUsageMetrics
         sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
         sb.append(", dbId=").append(String.valueOf(this.dbId));
         sb.append(", databaseStatus=").append(String.valueOf(this.databaseStatus));
+        sb.append(", isHeatWaveEnabled=").append(String.valueOf(this.isHeatWaveEnabled));
+        sb.append(", heatWaveClusterDisplayName=")
+                .append(String.valueOf(this.heatWaveClusterDisplayName));
+        sb.append(", heatWaveNodeCount=").append(String.valueOf(this.heatWaveNodeCount));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
         sb.append(")");
         return sb.toString();
@@ -428,6 +537,10 @@ public final class MySqlDatabaseUsageMetrics
                 && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
                 && java.util.Objects.equals(this.dbId, other.dbId)
                 && java.util.Objects.equals(this.databaseStatus, other.databaseStatus)
+                && java.util.Objects.equals(this.isHeatWaveEnabled, other.isHeatWaveEnabled)
+                && java.util.Objects.equals(
+                        this.heatWaveClusterDisplayName, other.heatWaveClusterDisplayName)
+                && java.util.Objects.equals(this.heatWaveNodeCount, other.heatWaveNodeCount)
                 && java.util.Objects.equals(this.metrics, other.metrics)
                 && super.equals(other);
     }
@@ -454,6 +567,17 @@ public final class MySqlDatabaseUsageMetrics
         result =
                 (result * PRIME)
                         + (this.databaseStatus == null ? 43 : this.databaseStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveEnabled == null ? 43 : this.isHeatWaveEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveClusterDisplayName == null
+                                ? 43
+                                : this.heatWaveClusterDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveNodeCount == null ? 43 : this.heatWaveNodeCount.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

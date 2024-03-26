@@ -5,9 +5,10 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The congfiguration of the listener. For more information about backend set configuration, see
+ * The congfiguration of the listener. For more information about listener configuration, see
  * [Managing Load Balancer
- * Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm). <br>
+ * Listeners](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -111,11 +112,11 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The protocol on which the listener accepts connection requests. For public network load
-         * balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY
-         * protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to
-         * be set to true). To get a list of valid protocols, use the {@link
-         * #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest)
-         * listNetworkLoadBalancersProtocols} operation.
+         * balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network
+         * load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires
+         * isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API
+         * is deprecated and it will not return the updated values. Use the allowed values for the
+         * protocol instead.
          *
          * <p>Example: {@code TCP}
          */
@@ -124,11 +125,11 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
 
         /**
          * The protocol on which the listener accepts connection requests. For public network load
-         * balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY
-         * protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to
-         * be set to true). To get a list of valid protocols, use the {@link
-         * #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest)
-         * listNetworkLoadBalancersProtocols} operation.
+         * balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network
+         * load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires
+         * isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API
+         * is deprecated and it will not return the updated values. Use the allowed values for the
+         * protocol instead.
          *
          * <p>Example: {@code TCP}
          *
@@ -262,11 +263,11 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * The protocol on which the listener accepts connection requests. For public network load
-     * balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol
-     * refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to
-     * true). To get a list of valid protocols, use the {@link
-     * #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest)
-     * listNetworkLoadBalancersProtocols} operation.
+     * balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load
+     * balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires
+     * isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is
+     * deprecated and it will not return the updated values. Use the allowed values for the protocol
+     * instead.
      *
      * <p>Example: {@code TCP}
      */
@@ -275,11 +276,11 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * The protocol on which the listener accepts connection requests. For public network load
-     * balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol
-     * refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to
-     * true). To get a list of valid protocols, use the {@link
-     * #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest)
-     * listNetworkLoadBalancersProtocols} operation.
+     * balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load
+     * balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires
+     * isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is
+     * deprecated and it will not return the updated values. Use the allowed values for the protocol
+     * instead.
      *
      * <p>Example: {@code TCP}
      *

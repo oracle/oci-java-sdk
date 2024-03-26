@@ -113,12 +113,12 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique name of a repository. This value is mutable. */
+        /** Name of the repository. Should be unique within the project. This value is mutable. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository. This value is mutable.
+         * Name of the repository. Should be unique within the project. This value is mutable.
          *
          * @param name the value to set
          * @return this builder
@@ -395,16 +395,20 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-         * event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
-         * repository.
+         * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in
+         * the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch
+         * with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are
+         * mirrored into a repository.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("triggerBuildEvents")
         private java.util.List<TriggerBuildEvents> triggerBuildEvents;
 
         /**
          * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-         * event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
-         * repository.
+         * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in
+         * the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch
+         * with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are
+         * mirrored into a repository.
          *
          * @param triggerBuildEvents the value to set
          * @return this builder
@@ -613,12 +617,12 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         return id;
     }
 
-    /** Unique name of a repository. This value is mutable. */
+    /** Name of the repository. Should be unique within the project. This value is mutable. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository. This value is mutable.
+     * Name of the repository. Should be unique within the project. This value is mutable.
      *
      * @return the value
      */
@@ -957,6 +961,8 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
     /** */
     public enum TriggerBuildEvents implements com.oracle.bmc.http.internal.BmcEnum {
         Push("PUSH"),
+        PullRequestCreated("PULL_REQUEST_CREATED"),
+        PullRequestUpdated("PULL_REQUEST_UPDATED"),
         CommitUpdates("COMMIT_UPDATES"),
 
         /**
@@ -1002,7 +1008,9 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
     };
     /**
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-     * event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
+     * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the
+     * repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an
+     * open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
      * repository.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("triggerBuildEvents")
@@ -1010,7 +1018,9 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-     * event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
+     * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the
+     * repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an
+     * open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
      * repository.
      *
      * @return the value

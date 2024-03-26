@@ -55,12 +55,12 @@ public final class CreateRepositoryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique name of a repository. */
+        /** Name of the repository. Should be unique within the project. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository.
+         * Name of the repository. Should be unique within the project.
          *
          * @param name the value to set
          * @return this builder
@@ -244,12 +244,12 @@ public final class CreateRepositoryDetails
         return new Builder().copy(this);
     }
 
-    /** Unique name of a repository. */
+    /** Name of the repository. Should be unique within the project. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository.
+     * Name of the repository. Should be unique within the project.
      *
      * @return the value
      */

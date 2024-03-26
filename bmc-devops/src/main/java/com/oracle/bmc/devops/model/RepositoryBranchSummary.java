@@ -72,6 +72,15 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Commit ID pointed to by the new branch. */
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
@@ -99,6 +108,7 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
                             this.repositoryId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.commitId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -123,6 +133,9 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("commitId")) {
                 this.commitId(model.getCommitId());
             }
@@ -146,8 +159,9 @@ public final class RepositoryBranchSummary extends RepositoryRefSummary {
             String repositoryId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String commitId) {
-        super(refName, fullRefName, repositoryId, freeformTags, definedTags);
+        super(refName, fullRefName, repositoryId, freeformTags, definedTags, systemTags);
         this.commitId = commitId;
     }
 

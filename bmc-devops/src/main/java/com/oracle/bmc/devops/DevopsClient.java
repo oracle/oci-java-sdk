@@ -971,6 +971,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", DeleteRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRefResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("Sunset", DeleteRefResponse.Builder::sunset)
                 .callSync();
     }
 
@@ -1545,6 +1546,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         GetRefResponse.Builder::repositoryRef)
                 .handleResponseHeaderString("etag", GetRefResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetRefResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("Sunset", GetRefResponse.Builder::sunset)
                 .callSync();
     }
 
@@ -2610,6 +2612,7 @@ public class DevopsClient extends com.oracle.bmc.http.internal.BaseSyncClient im
                         "opc-work-request-id", PutRepositoryRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PutRepositoryRefResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("Sunset", PutRepositoryRefResponse.Builder::sunset)
                 .callSync();
     }
 

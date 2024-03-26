@@ -32,6 +32,9 @@ package com.oracle.bmc.devops.model;
             value = OcirDeployArtifactSource.class,
             name = "OCIR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HelmCommandSpecArtifactSource.class,
+            name = "HELM_COMMAND_SPEC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = InlineDeployArtifactSource.class,
             name = "INLINE")
 })

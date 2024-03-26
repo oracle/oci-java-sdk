@@ -152,6 +152,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -190,6 +191,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateBackendResponse.Builder::opcWorkRequestId)
@@ -222,6 +224,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateBackendSetResponse.Builder::opcWorkRequestId)
@@ -254,6 +257,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", CreateListenerResponse.Builder::opcWorkRequestId)
@@ -283,6 +287,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer.class,
@@ -324,6 +329,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteBackendResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
@@ -355,6 +361,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteBackendSetResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
@@ -386,6 +393,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteListenerResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
@@ -415,6 +423,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteNetworkLoadBalancerResponse.Builder::opcWorkRequestId)
@@ -451,6 +460,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.Backend.class,
                         GetBackendResponse.Builder::backend)
@@ -488,6 +498,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("health")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.BackendHealth.class,
                         GetBackendHealthResponse.Builder::backendHealth)
@@ -520,6 +531,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.BackendSet.class,
                         GetBackendSetResponse.Builder::backendSet)
@@ -553,6 +565,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("health")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.BackendSetHealth.class,
                         GetBackendSetHealthResponse.Builder::backendSetHealth)
@@ -588,6 +601,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.HealthChecker.class,
                         GetHealthCheckerResponse.Builder::healthChecker)
@@ -621,6 +635,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.Listener.class,
                         GetListenerResponse.Builder::listener)
@@ -651,6 +666,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer.class,
                         GetNetworkLoadBalancerResponse.Builder::networkLoadBalancer)
@@ -681,6 +697,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam("health")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealth.class,
                         GetNetworkLoadBalancerHealthResponse.Builder::networkLoadBalancerHealth)
@@ -708,6 +725,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -743,6 +761,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.BackendSetCollection.class,
                         ListBackendSetsResponse.Builder::backendSetCollection)
@@ -782,6 +801,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.BackendCollection.class,
                         ListBackendsResponse.Builder::backendCollection)
@@ -817,6 +837,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-none-match", request.getIfNoneMatch())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.ListenerCollection.class,
                         ListListenersResponse.Builder::listenerCollection)
@@ -850,6 +871,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerHealthCollection
                                 .class,
@@ -888,6 +910,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancerCollection
                                 .class,
@@ -919,6 +942,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model
                                 .NetworkLoadBalancersPolicyCollection.class,
@@ -953,6 +977,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model
                                 .NetworkLoadBalancersProtocolCollection.class,
@@ -991,6 +1016,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -1024,6 +1050,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("limit", request.getLimit())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.WorkRequestLogEntryCollection
                                 .class,
@@ -1054,6 +1081,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("page", request.getPage())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.networkloadbalancer.model.WorkRequestCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestCollection)
@@ -1095,6 +1123,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateBackendResponse.Builder::opcWorkRequestId)
@@ -1130,6 +1159,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateBackendSetResponse.Builder::opcWorkRequestId)
@@ -1166,6 +1196,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1202,6 +1233,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id", UpdateListenerResponse.Builder::opcWorkRequestId)
@@ -1234,6 +1266,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -1269,6 +1302,7 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",

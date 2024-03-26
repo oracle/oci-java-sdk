@@ -102,6 +102,13 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
     public String getFilterByMySqlDatabaseVersion() {
         return filterByMySqlDatabaseVersion;
     }
+    /** The parameter to filter based on whether HeatWave is enabled for the database. */
+    private Boolean isHeatWaveEnabled;
+
+    /** The parameter to filter based on whether HeatWave is enabled for the database. */
+    public Boolean getIsHeatWaveEnabled() {
+        return isHeatWaveEnabled;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -256,6 +263,20 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
+        /** The parameter to filter based on whether HeatWave is enabled for the database. */
+        private Boolean isHeatWaveEnabled = null;
+
+        /**
+         * The parameter to filter based on whether HeatWave is enabled for the database.
+         *
+         * @param isHeatWaveEnabled the value to set
+         * @return this builder instance
+         */
+        public Builder isHeatWaveEnabled(Boolean isHeatWaveEnabled) {
+            this.isHeatWaveEnabled = isHeatWaveEnabled;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -295,6 +316,7 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             filterByMdsDeploymentType(o.getFilterByMdsDeploymentType());
             filterByMySqlStatus(o.getFilterByMySqlStatus());
             filterByMySqlDatabaseVersion(o.getFilterByMySqlDatabaseVersion());
+            isHeatWaveEnabled(o.getIsHeatWaveEnabled());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -338,10 +360,11 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
             request.filterByMdsDeploymentType = filterByMdsDeploymentType;
             request.filterByMySqlStatus = filterByMySqlStatus;
             request.filterByMySqlDatabaseVersion = filterByMySqlDatabaseVersion;
+            request.isHeatWaveEnabled = isHeatWaveEnabled;
             return request;
             // new GetMySqlFleetMetricRequest(compartmentId, startTime, endTime, opcRequestId,
             // filterByMetricNames, filterByMySqlDeploymentTypeParam, filterByMdsDeploymentType,
-            // filterByMySqlStatus, filterByMySqlDatabaseVersion);
+            // filterByMySqlStatus, filterByMySqlDatabaseVersion, isHeatWaveEnabled);
         }
     }
 
@@ -360,7 +383,8 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
                 .filterByMySqlDeploymentTypeParam(filterByMySqlDeploymentTypeParam)
                 .filterByMdsDeploymentType(filterByMdsDeploymentType)
                 .filterByMySqlStatus(filterByMySqlStatus)
-                .filterByMySqlDatabaseVersion(filterByMySqlDatabaseVersion);
+                .filterByMySqlDatabaseVersion(filterByMySqlDatabaseVersion)
+                .isHeatWaveEnabled(isHeatWaveEnabled);
     }
 
     /**
@@ -389,6 +413,7 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",filterByMySqlStatus=").append(String.valueOf(this.filterByMySqlStatus));
         sb.append(",filterByMySqlDatabaseVersion=")
                 .append(String.valueOf(this.filterByMySqlDatabaseVersion));
+        sb.append(",isHeatWaveEnabled=").append(String.valueOf(this.isHeatWaveEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -416,7 +441,8 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
                         this.filterByMdsDeploymentType, other.filterByMdsDeploymentType)
                 && java.util.Objects.equals(this.filterByMySqlStatus, other.filterByMySqlStatus)
                 && java.util.Objects.equals(
-                        this.filterByMySqlDatabaseVersion, other.filterByMySqlDatabaseVersion);
+                        this.filterByMySqlDatabaseVersion, other.filterByMySqlDatabaseVersion)
+                && java.util.Objects.equals(this.isHeatWaveEnabled, other.isHeatWaveEnabled);
     }
 
     @Override
@@ -454,6 +480,9 @@ public class GetMySqlFleetMetricRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.filterByMySqlDatabaseVersion == null
                                 ? 43
                                 : this.filterByMySqlDatabaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveEnabled == null ? 43 : this.isHeatWaveEnabled.hashCode());
         return result;
     }
 }

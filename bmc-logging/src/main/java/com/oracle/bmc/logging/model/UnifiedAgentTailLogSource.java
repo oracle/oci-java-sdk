@@ -60,12 +60,22 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("advancedOptions")
+        private UnifiedAgentTailSourceAdvancedOptions advancedOptions;
+
+        public Builder advancedOptions(UnifiedAgentTailSourceAdvancedOptions advancedOptions) {
+            this.advancedOptions = advancedOptions;
+            this.__explicitlySet__.add("advancedOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentTailLogSource build() {
             UnifiedAgentTailLogSource model =
-                    new UnifiedAgentTailLogSource(this.name, this.paths, this.parser);
+                    new UnifiedAgentTailLogSource(
+                            this.name, this.paths, this.parser, this.advancedOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +93,9 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
             if (model.wasPropertyExplicitlySet("parser")) {
                 this.parser(model.getParser());
             }
+            if (model.wasPropertyExplicitlySet("advancedOptions")) {
+                this.advancedOptions(model.getAdvancedOptions());
+            }
             return this;
         }
     }
@@ -98,10 +111,14 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
 
     @Deprecated
     public UnifiedAgentTailLogSource(
-            String name, java.util.List<String> paths, UnifiedAgentParser parser) {
+            String name,
+            java.util.List<String> paths,
+            UnifiedAgentParser parser,
+            UnifiedAgentTailSourceAdvancedOptions advancedOptions) {
         super(name);
         this.paths = paths;
         this.parser = parser;
+        this.advancedOptions = advancedOptions;
     }
 
     /** Absolute paths for log source files. Wildcards can be used. */
@@ -124,6 +141,13 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         return parser;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("advancedOptions")
+    private final UnifiedAgentTailSourceAdvancedOptions advancedOptions;
+
+    public UnifiedAgentTailSourceAdvancedOptions getAdvancedOptions() {
+        return advancedOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -141,6 +165,7 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", paths=").append(String.valueOf(this.paths));
         sb.append(", parser=").append(String.valueOf(this.parser));
+        sb.append(", advancedOptions=").append(String.valueOf(this.advancedOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -157,6 +182,7 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         UnifiedAgentTailLogSource other = (UnifiedAgentTailLogSource) o;
         return java.util.Objects.equals(this.paths, other.paths)
                 && java.util.Objects.equals(this.parser, other.parser)
+                && java.util.Objects.equals(this.advancedOptions, other.advancedOptions)
                 && super.equals(other);
     }
 
@@ -166,6 +192,9 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         int result = super.hashCode();
         result = (result * PRIME) + (this.paths == null ? 43 : this.paths.hashCode());
         result = (result * PRIME) + (this.parser == null ? 43 : this.parser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advancedOptions == null ? 43 : this.advancedOptions.hashCode());
         return result;
     }
 }
