@@ -498,6 +498,7 @@ public final class DeployArtifact
         GenericFile("GENERIC_FILE"),
         DockerImage("DOCKER_IMAGE"),
         HelmChart("HELM_CHART"),
+        HelmCommandSpec("HELM_COMMAND_SPEC"),
         CommandSpec("COMMAND_SPEC"),
 
         /**

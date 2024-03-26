@@ -142,6 +142,51 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             this.__explicitlySet__.add("releaseName");
             return this;
         }
+        /** Uninstall the Helm chart release on deleting the stage. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUninstallOnStageDelete")
+        private Boolean isUninstallOnStageDelete;
+
+        /**
+         * Uninstall the Helm chart release on deleting the stage.
+         *
+         * @param isUninstallOnStageDelete the value to set
+         * @return this builder
+         */
+        public Builder isUninstallOnStageDelete(Boolean isUninstallOnStageDelete) {
+            this.isUninstallOnStageDelete = isUninstallOnStageDelete;
+            this.__explicitlySet__.add("isUninstallOnStageDelete");
+            return this;
+        }
+        /** List of Helm command artifact OCIDs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("helmCommandArtifactIds")
+        private java.util.List<String> helmCommandArtifactIds;
+
+        /**
+         * List of Helm command artifact OCIDs.
+         *
+         * @param helmCommandArtifactIds the value to set
+         * @return this builder
+         */
+        public Builder helmCommandArtifactIds(java.util.List<String> helmCommandArtifactIds) {
+            this.helmCommandArtifactIds = helmCommandArtifactIds;
+            this.__explicitlySet__.add("helmCommandArtifactIds");
+            return this;
+        }
+        /** The purpose of running this Helm stage */
+        @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+        private Purpose purpose;
+
+        /**
+         * The purpose of running this Helm stage
+         *
+         * @param purpose the value to set
+         * @return this builder
+         */
+        public Builder purpose(Purpose purpose) {
+            this.purpose = purpose;
+            this.__explicitlySet__.add("purpose");
+            return this;
+        }
         /**
          * Default namespace to be used for Kubernetes deployment when not specified in the
          * manifest.
@@ -396,6 +441,9 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                             this.helmChartDeployArtifactId,
                             this.valuesArtifactIds,
                             this.releaseName,
+                            this.isUninstallOnStageDelete,
+                            this.helmCommandArtifactIds,
+                            this.purpose,
                             this.namespace,
                             this.timeoutInSeconds,
                             this.rollbackPolicy,
@@ -448,6 +496,15 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             }
             if (model.wasPropertyExplicitlySet("releaseName")) {
                 this.releaseName(model.getReleaseName());
+            }
+            if (model.wasPropertyExplicitlySet("isUninstallOnStageDelete")) {
+                this.isUninstallOnStageDelete(model.getIsUninstallOnStageDelete());
+            }
+            if (model.wasPropertyExplicitlySet("helmCommandArtifactIds")) {
+                this.helmCommandArtifactIds(model.getHelmCommandArtifactIds());
+            }
+            if (model.wasPropertyExplicitlySet("purpose")) {
+                this.purpose(model.getPurpose());
             }
             if (model.wasPropertyExplicitlySet("namespace")) {
                 this.namespace(model.getNamespace());
@@ -519,6 +576,9 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
             String helmChartDeployArtifactId,
             java.util.List<String> valuesArtifactIds,
             String releaseName,
+            Boolean isUninstallOnStageDelete,
+            java.util.List<String> helmCommandArtifactIds,
+            Purpose purpose,
             String namespace,
             Integer timeoutInSeconds,
             DeployStageRollbackPolicy rollbackPolicy,
@@ -545,6 +605,9 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
         this.helmChartDeployArtifactId = helmChartDeployArtifactId;
         this.valuesArtifactIds = valuesArtifactIds;
         this.releaseName = releaseName;
+        this.isUninstallOnStageDelete = isUninstallOnStageDelete;
+        this.helmCommandArtifactIds = helmCommandArtifactIds;
+        this.purpose = purpose;
         this.namespace = namespace;
         this.timeoutInSeconds = timeoutInSeconds;
         this.rollbackPolicy = rollbackPolicy;
@@ -612,6 +675,78 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
      */
     public String getReleaseName() {
         return releaseName;
+    }
+
+    /** Uninstall the Helm chart release on deleting the stage. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUninstallOnStageDelete")
+    private final Boolean isUninstallOnStageDelete;
+
+    /**
+     * Uninstall the Helm chart release on deleting the stage.
+     *
+     * @return the value
+     */
+    public Boolean getIsUninstallOnStageDelete() {
+        return isUninstallOnStageDelete;
+    }
+
+    /** List of Helm command artifact OCIDs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("helmCommandArtifactIds")
+    private final java.util.List<String> helmCommandArtifactIds;
+
+    /**
+     * List of Helm command artifact OCIDs.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getHelmCommandArtifactIds() {
+        return helmCommandArtifactIds;
+    }
+
+    /** The purpose of running this Helm stage */
+    public enum Purpose implements com.oracle.bmc.http.internal.BmcEnum {
+        ExecuteHelmUpgrade("EXECUTE_HELM_UPGRADE"),
+        ExecuteHelmCommand("EXECUTE_HELM_COMMAND"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Purpose> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Purpose v : Purpose.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Purpose(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Purpose create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Purpose: " + key);
+        }
+    };
+    /** The purpose of running this Helm stage */
+    @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+    private final Purpose purpose;
+
+    /**
+     * The purpose of running this Helm stage
+     *
+     * @return the value
+     */
+    public Purpose getPurpose() {
+        return purpose;
     }
 
     /**
@@ -838,6 +973,10 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                 .append(String.valueOf(this.helmChartDeployArtifactId));
         sb.append(", valuesArtifactIds=").append(String.valueOf(this.valuesArtifactIds));
         sb.append(", releaseName=").append(String.valueOf(this.releaseName));
+        sb.append(", isUninstallOnStageDelete=")
+                .append(String.valueOf(this.isUninstallOnStageDelete));
+        sb.append(", helmCommandArtifactIds=").append(String.valueOf(this.helmCommandArtifactIds));
+        sb.append(", purpose=").append(String.valueOf(this.purpose));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", rollbackPolicy=").append(String.valueOf(this.rollbackPolicy));
@@ -874,6 +1013,11 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                         this.helmChartDeployArtifactId, other.helmChartDeployArtifactId)
                 && java.util.Objects.equals(this.valuesArtifactIds, other.valuesArtifactIds)
                 && java.util.Objects.equals(this.releaseName, other.releaseName)
+                && java.util.Objects.equals(
+                        this.isUninstallOnStageDelete, other.isUninstallOnStageDelete)
+                && java.util.Objects.equals(
+                        this.helmCommandArtifactIds, other.helmCommandArtifactIds)
+                && java.util.Objects.equals(this.purpose, other.purpose)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.rollbackPolicy, other.rollbackPolicy)
@@ -911,6 +1055,17 @@ public final class CreateOkeHelmChartDeployStageDetails extends CreateDeployStag
                 (result * PRIME)
                         + (this.valuesArtifactIds == null ? 43 : this.valuesArtifactIds.hashCode());
         result = (result * PRIME) + (this.releaseName == null ? 43 : this.releaseName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUninstallOnStageDelete == null
+                                ? 43
+                                : this.isUninstallOnStageDelete.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.helmCommandArtifactIds == null
+                                ? 43
+                                : this.helmCommandArtifactIds.hashCode());
+        result = (result * PRIME) + (this.purpose == null ? 43 : this.purpose.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result =
                 (result * PRIME)

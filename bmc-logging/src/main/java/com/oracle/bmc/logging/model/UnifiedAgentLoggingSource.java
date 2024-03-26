@@ -23,6 +23,9 @@ package com.oracle.bmc.logging.model;
         defaultImpl = UnifiedAgentLoggingSource.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UnifiedAgentCustomPluginLogSource.class,
+            name = "CUSTOM_PLUGIN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UnifiedAgentWindowsEventSource.class,
             name = "WINDOWS_EVENT_LOG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -99,6 +102,7 @@ public class UnifiedAgentLoggingSource
     public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         LogTail("LOG_TAIL"),
         WindowsEventLog("WINDOWS_EVENT_LOG"),
+        CustomPlugin("CUSTOM_PLUGIN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

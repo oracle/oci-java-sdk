@@ -39,6 +39,7 @@ public final class AlarmStatusSummary
         "id",
         "displayName",
         "severity",
+        "ruleName",
         "timestampTriggered",
         "status",
         "suppression"
@@ -47,6 +48,7 @@ public final class AlarmStatusSummary
             String id,
             String displayName,
             Severity severity,
+            String ruleName,
             java.util.Date timestampTriggered,
             Status status,
             Suppression suppression) {
@@ -54,6 +56,7 @@ public final class AlarmStatusSummary
         this.id = id;
         this.displayName = displayName;
         this.severity = severity;
+        this.ruleName = ruleName;
         this.timestampTriggered = timestampTriggered;
         this.status = status;
         this.suppression = suppression;
@@ -120,6 +123,31 @@ public final class AlarmStatusSummary
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
+            return this;
+        }
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
+         * contains overrides. A valid ruleName value starts with an alphabetic character and
+         * includes only alphanumeric characters, underscores and square brackets. Minimum number of
+         * characters: 3. Default value is {@code BASE}. For information about alarm overrides, see
+         * {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+        private String ruleName;
+
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
+         * contains overrides. A valid ruleName value starts with an alphabetic character and
+         * includes only alphanumeric characters, underscores and square brackets. Minimum number of
+         * characters: 3. Default value is {@code BASE}. For information about alarm overrides, see
+         * {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         * @param ruleName the value to set
+         * @return this builder
+         */
+        public Builder ruleName(String ruleName) {
+            this.ruleName = ruleName;
+            this.__explicitlySet__.add("ruleName");
             return this;
         }
         /**
@@ -195,6 +223,7 @@ public final class AlarmStatusSummary
                             this.id,
                             this.displayName,
                             this.severity,
+                            this.ruleName,
                             this.timestampTriggered,
                             this.status,
                             this.suppression);
@@ -214,6 +243,9 @@ public final class AlarmStatusSummary
             }
             if (model.wasPropertyExplicitlySet("severity")) {
                 this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("ruleName")) {
+                this.ruleName(model.getRuleName());
             }
             if (model.wasPropertyExplicitlySet("timestampTriggered")) {
                 this.timestampTriggered(model.getTimestampTriggered());
@@ -345,6 +377,29 @@ public final class AlarmStatusSummary
     }
 
     /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
+     * overrides. A valid ruleName value starts with an alphabetic character and includes only
+     * alphanumeric characters, underscores and square brackets. Minimum number of characters: 3.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+    private final String ruleName;
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
+     * overrides. A valid ruleName value starts with an alphabetic character and includes only
+     * alphanumeric characters, underscores and square brackets. Minimum number of characters: 3.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     * @return the value
+     */
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    /**
      * Timestamp for the transition of the alarm state. For example, the time when the alarm
      * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
      * late-arriving metrics.
@@ -470,6 +525,7 @@ public final class AlarmStatusSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", suppression=").append(String.valueOf(this.suppression));
@@ -490,6 +546,7 @@ public final class AlarmStatusSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.suppression, other.suppression)
@@ -503,6 +560,7 @@ public final class AlarmStatusSummary
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());
         result =
                 (result * PRIME)
                         + (this.timestampTriggered == null

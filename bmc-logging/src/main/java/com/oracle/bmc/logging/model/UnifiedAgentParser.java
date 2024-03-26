@@ -38,6 +38,9 @@ package com.oracle.bmc.logging.model;
             value = UnifiedAgentSyslogParser.class,
             name = "SYSLOG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UnifiedAgentOpenmetricsParser.class,
+            name = "OPENMETRICS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UnifiedAgentAuditdParser.class,
             name = "AUDITD"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -304,6 +307,7 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.client.internal.Expl
         Multiline("MULTILINE"),
         Grok("GROK"),
         MultilineGrok("MULTILINE_GROK"),
+        Openmetrics("OPENMETRICS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

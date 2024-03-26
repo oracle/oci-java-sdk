@@ -179,17 +179,21 @@ public class VaultsWaiters {
                     public RotateSecretResponse call() throws Exception {
                         final RotateSecretResponse response = client.rotateSecret(request);
 
-                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                getWorkRequestRequest =
-                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                                .builder()
-                                                .workRequestId(response.getOpcWorkRequestId())
-                                                .build();
-                        workRequestClient
-                                .getWaiters()
-                                .forWorkRequest(
-                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
-                                .execute();
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
                         return response;
                     }
                 },

@@ -29,7 +29,15 @@ public final class ManagedMySqlDatabase
         "dbName",
         "dbVersion",
         "timeCreated",
-        "name"
+        "name",
+        "heatWaveClusterDisplayName",
+        "isHeatWaveEnabled",
+        "isLakehouseEnabled",
+        "heatWaveNodeShape",
+        "heatWaveMemorySize",
+        "heatWaveNodes",
+        "isHeatWaveActive",
+        "timeCreatedHeatWave"
     })
     public ManagedMySqlDatabase(
             String id,
@@ -37,7 +45,15 @@ public final class ManagedMySqlDatabase
             String dbName,
             String dbVersion,
             java.util.Date timeCreated,
-            String name) {
+            String name,
+            String heatWaveClusterDisplayName,
+            Boolean isHeatWaveEnabled,
+            Boolean isLakehouseEnabled,
+            String heatWaveNodeShape,
+            Integer heatWaveMemorySize,
+            java.util.List<HeatWaveNode> heatWaveNodes,
+            Boolean isHeatWaveActive,
+            java.util.Date timeCreatedHeatWave) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -45,6 +61,14 @@ public final class ManagedMySqlDatabase
         this.dbVersion = dbVersion;
         this.timeCreated = timeCreated;
         this.name = name;
+        this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+        this.isHeatWaveEnabled = isHeatWaveEnabled;
+        this.isLakehouseEnabled = isLakehouseEnabled;
+        this.heatWaveNodeShape = heatWaveNodeShape;
+        this.heatWaveMemorySize = heatWaveMemorySize;
+        this.heatWaveNodes = heatWaveNodes;
+        this.isHeatWaveActive = isHeatWaveActive;
+        this.timeCreatedHeatWave = timeCreatedHeatWave;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -139,6 +163,126 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("name");
             return this;
         }
+        /** The name of the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
+        private String heatWaveClusterDisplayName;
+
+        /**
+         * The name of the HeatWave cluster.
+         *
+         * @param heatWaveClusterDisplayName the value to set
+         * @return this builder
+         */
+        public Builder heatWaveClusterDisplayName(String heatWaveClusterDisplayName) {
+            this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            this.__explicitlySet__.add("heatWaveClusterDisplayName");
+            return this;
+        }
+        /** If HeatWave is enabled for this db system or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
+        private Boolean isHeatWaveEnabled;
+
+        /**
+         * If HeatWave is enabled for this db system or not.
+         *
+         * @param isHeatWaveEnabled the value to set
+         * @return this builder
+         */
+        public Builder isHeatWaveEnabled(Boolean isHeatWaveEnabled) {
+            this.isHeatWaveEnabled = isHeatWaveEnabled;
+            this.__explicitlySet__.add("isHeatWaveEnabled");
+            return this;
+        }
+        /** If HeatWave Lakehouse is enabled for the db system or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+        private Boolean isLakehouseEnabled;
+
+        /**
+         * If HeatWave Lakehouse is enabled for the db system or not.
+         *
+         * @param isLakehouseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
+            this.isLakehouseEnabled = isLakehouseEnabled;
+            this.__explicitlySet__.add("isLakehouseEnabled");
+            return this;
+        }
+        /** Shape of the nodes in the HeatWave cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
+        private String heatWaveNodeShape;
+
+        /**
+         * Shape of the nodes in the HeatWave cluster.
+         *
+         * @param heatWaveNodeShape the value to set
+         * @return this builder
+         */
+        public Builder heatWaveNodeShape(String heatWaveNodeShape) {
+            this.heatWaveNodeShape = heatWaveNodeShape;
+            this.__explicitlySet__.add("heatWaveNodeShape");
+            return this;
+        }
+        /** The total memory belonging to the HeatWave cluster in GBs. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveMemorySize")
+        private Integer heatWaveMemorySize;
+
+        /**
+         * The total memory belonging to the HeatWave cluster in GBs.
+         *
+         * @param heatWaveMemorySize the value to set
+         * @return this builder
+         */
+        public Builder heatWaveMemorySize(Integer heatWaveMemorySize) {
+            this.heatWaveMemorySize = heatWaveMemorySize;
+            this.__explicitlySet__.add("heatWaveMemorySize");
+            return this;
+        }
+        /** The information about an individual HeatWave nodes in the cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
+        private java.util.List<HeatWaveNode> heatWaveNodes;
+
+        /**
+         * The information about an individual HeatWave nodes in the cluster.
+         *
+         * @param heatWaveNodes the value to set
+         * @return this builder
+         */
+        public Builder heatWaveNodes(java.util.List<HeatWaveNode> heatWaveNodes) {
+            this.heatWaveNodes = heatWaveNodes;
+            this.__explicitlySet__.add("heatWaveNodes");
+            return this;
+        }
+        /** If the HeatWave cluster is active or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
+        private Boolean isHeatWaveActive;
+
+        /**
+         * If the HeatWave cluster is active or not.
+         *
+         * @param isHeatWaveActive the value to set
+         * @return this builder
+         */
+        public Builder isHeatWaveActive(Boolean isHeatWaveActive) {
+            this.isHeatWaveActive = isHeatWaveActive;
+            this.__explicitlySet__.add("isHeatWaveActive");
+            return this;
+        }
+        /** The date and time the Managed MySQL Database was created. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedHeatWave")
+        private java.util.Date timeCreatedHeatWave;
+
+        /**
+         * The date and time the Managed MySQL Database was created.
+         *
+         * @param timeCreatedHeatWave the value to set
+         * @return this builder
+         */
+        public Builder timeCreatedHeatWave(java.util.Date timeCreatedHeatWave) {
+            this.timeCreatedHeatWave = timeCreatedHeatWave;
+            this.__explicitlySet__.add("timeCreatedHeatWave");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -151,7 +295,15 @@ public final class ManagedMySqlDatabase
                             this.dbName,
                             this.dbVersion,
                             this.timeCreated,
-                            this.name);
+                            this.name,
+                            this.heatWaveClusterDisplayName,
+                            this.isHeatWaveEnabled,
+                            this.isLakehouseEnabled,
+                            this.heatWaveNodeShape,
+                            this.heatWaveMemorySize,
+                            this.heatWaveNodes,
+                            this.isHeatWaveActive,
+                            this.timeCreatedHeatWave);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +329,30 @@ public final class ManagedMySqlDatabase
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveClusterDisplayName")) {
+                this.heatWaveClusterDisplayName(model.getHeatWaveClusterDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveEnabled")) {
+                this.isHeatWaveEnabled(model.getIsHeatWaveEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isLakehouseEnabled")) {
+                this.isLakehouseEnabled(model.getIsLakehouseEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveNodeShape")) {
+                this.heatWaveNodeShape(model.getHeatWaveNodeShape());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveMemorySize")) {
+                this.heatWaveMemorySize(model.getHeatWaveMemorySize());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveNodes")) {
+                this.heatWaveNodes(model.getHeatWaveNodes());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveActive")) {
+                this.isHeatWaveActive(model.getIsHeatWaveActive());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreatedHeatWave")) {
+                this.timeCreatedHeatWave(model.getTimeCreatedHeatWave());
             }
             return this;
         }
@@ -269,6 +445,110 @@ public final class ManagedMySqlDatabase
         return name;
     }
 
+    /** The name of the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
+    private final String heatWaveClusterDisplayName;
+
+    /**
+     * The name of the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public String getHeatWaveClusterDisplayName() {
+        return heatWaveClusterDisplayName;
+    }
+
+    /** If HeatWave is enabled for this db system or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
+    private final Boolean isHeatWaveEnabled;
+
+    /**
+     * If HeatWave is enabled for this db system or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsHeatWaveEnabled() {
+        return isHeatWaveEnabled;
+    }
+
+    /** If HeatWave Lakehouse is enabled for the db system or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
+    private final Boolean isLakehouseEnabled;
+
+    /**
+     * If HeatWave Lakehouse is enabled for the db system or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsLakehouseEnabled() {
+        return isLakehouseEnabled;
+    }
+
+    /** Shape of the nodes in the HeatWave cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
+    private final String heatWaveNodeShape;
+
+    /**
+     * Shape of the nodes in the HeatWave cluster.
+     *
+     * @return the value
+     */
+    public String getHeatWaveNodeShape() {
+        return heatWaveNodeShape;
+    }
+
+    /** The total memory belonging to the HeatWave cluster in GBs. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveMemorySize")
+    private final Integer heatWaveMemorySize;
+
+    /**
+     * The total memory belonging to the HeatWave cluster in GBs.
+     *
+     * @return the value
+     */
+    public Integer getHeatWaveMemorySize() {
+        return heatWaveMemorySize;
+    }
+
+    /** The information about an individual HeatWave nodes in the cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
+    private final java.util.List<HeatWaveNode> heatWaveNodes;
+
+    /**
+     * The information about an individual HeatWave nodes in the cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<HeatWaveNode> getHeatWaveNodes() {
+        return heatWaveNodes;
+    }
+
+    /** If the HeatWave cluster is active or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
+    private final Boolean isHeatWaveActive;
+
+    /**
+     * If the HeatWave cluster is active or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsHeatWaveActive() {
+        return isHeatWaveActive;
+    }
+
+    /** The date and time the Managed MySQL Database was created. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedHeatWave")
+    private final java.util.Date timeCreatedHeatWave;
+
+    /**
+     * The date and time the Managed MySQL Database was created.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeCreatedHeatWave() {
+        return timeCreatedHeatWave;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -290,6 +570,15 @@ public final class ManagedMySqlDatabase
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", heatWaveClusterDisplayName=")
+                .append(String.valueOf(this.heatWaveClusterDisplayName));
+        sb.append(", isHeatWaveEnabled=").append(String.valueOf(this.isHeatWaveEnabled));
+        sb.append(", isLakehouseEnabled=").append(String.valueOf(this.isLakehouseEnabled));
+        sb.append(", heatWaveNodeShape=").append(String.valueOf(this.heatWaveNodeShape));
+        sb.append(", heatWaveMemorySize=").append(String.valueOf(this.heatWaveMemorySize));
+        sb.append(", heatWaveNodes=").append(String.valueOf(this.heatWaveNodes));
+        sb.append(", isHeatWaveActive=").append(String.valueOf(this.isHeatWaveActive));
+        sb.append(", timeCreatedHeatWave=").append(String.valueOf(this.timeCreatedHeatWave));
         sb.append(")");
         return sb.toString();
     }
@@ -310,6 +599,15 @@ public final class ManagedMySqlDatabase
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(
+                        this.heatWaveClusterDisplayName, other.heatWaveClusterDisplayName)
+                && java.util.Objects.equals(this.isHeatWaveEnabled, other.isHeatWaveEnabled)
+                && java.util.Objects.equals(this.isLakehouseEnabled, other.isLakehouseEnabled)
+                && java.util.Objects.equals(this.heatWaveNodeShape, other.heatWaveNodeShape)
+                && java.util.Objects.equals(this.heatWaveMemorySize, other.heatWaveMemorySize)
+                && java.util.Objects.equals(this.heatWaveNodes, other.heatWaveNodes)
+                && java.util.Objects.equals(this.isHeatWaveActive, other.isHeatWaveActive)
+                && java.util.Objects.equals(this.timeCreatedHeatWave, other.timeCreatedHeatWave)
                 && super.equals(other);
     }
 
@@ -325,6 +623,38 @@ public final class ManagedMySqlDatabase
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveClusterDisplayName == null
+                                ? 43
+                                : this.heatWaveClusterDisplayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveEnabled == null ? 43 : this.isHeatWaveEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLakehouseEnabled == null
+                                ? 43
+                                : this.isLakehouseEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveNodeShape == null ? 43 : this.heatWaveNodeShape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveMemorySize == null
+                                ? 43
+                                : this.heatWaveMemorySize.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveNodes == null ? 43 : this.heatWaveNodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveActive == null ? 43 : this.isHeatWaveActive.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedHeatWave == null
+                                ? 43
+                                : this.timeCreatedHeatWave.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

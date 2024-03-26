@@ -6,7 +6,8 @@ package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The properties that define a network load balancer. For more information, see [Managing a network
- * load balancer](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm).
+ * load
+ * balancer](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, then contact an administrator. If you are an administrator who writes policies to
@@ -38,6 +39,7 @@ public final class CreateNetworkLoadBalancerDetails
         "compartmentId",
         "displayName",
         "isPreserveSourceDestination",
+        "isSymmetricHashEnabled",
         "reservedIps",
         "isPrivate",
         "subnetId",
@@ -52,6 +54,7 @@ public final class CreateNetworkLoadBalancerDetails
             String compartmentId,
             String displayName,
             Boolean isPreserveSourceDestination,
+            Boolean isSymmetricHashEnabled,
             java.util.List<ReservedIP> reservedIps,
             Boolean isPrivate,
             String subnetId,
@@ -65,6 +68,7 @@ public final class CreateNetworkLoadBalancerDetails
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.isPreserveSourceDestination = isPreserveSourceDestination;
+        this.isSymmetricHashEnabled = isSymmetricHashEnabled;
         this.reservedIps = reservedIps;
         this.isPrivate = isPrivate;
         this.subnetId = subnetId;
@@ -133,6 +137,27 @@ public final class CreateNetworkLoadBalancerDetails
             this.__explicitlySet__.add("isPreserveSourceDestination");
             return this;
         }
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination
+         * header preservation enabled. This removes the additional dependency from NLB
+         * backends(like Firewalls) to perform SNAT.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+        private Boolean isSymmetricHashEnabled;
+
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination
+         * header preservation enabled. This removes the additional dependency from NLB
+         * backends(like Firewalls) to perform SNAT.
+         *
+         * @param isSymmetricHashEnabled the value to set
+         * @return this builder
+         */
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
+            this.__explicitlySet__.add("isSymmetricHashEnabled");
+            return this;
+        }
         /** An array of reserved Ips. */
         @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
         private java.util.List<ReservedIP> reservedIps;
@@ -160,8 +185,8 @@ public final class CreateNetworkLoadBalancerDetails
          * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
          * virtual cloud network. For more information about public and private network load
          * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
-         * This value is true by default.
+         * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This
+         * value is true by default.
          *
          * <p>Example: {@code true}
          */
@@ -180,8 +205,8 @@ public final class CreateNetworkLoadBalancerDetails
          * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
          * virtual cloud network. For more information about public and private network load
          * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
-         * This value is true by default.
+         * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This
+         * value is true by default.
          *
          * <p>Example: {@code true}
          *
@@ -355,6 +380,7 @@ public final class CreateNetworkLoadBalancerDetails
                             this.compartmentId,
                             this.displayName,
                             this.isPreserveSourceDestination,
+                            this.isSymmetricHashEnabled,
                             this.reservedIps,
                             this.isPrivate,
                             this.subnetId,
@@ -380,6 +406,9 @@ public final class CreateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("isPreserveSourceDestination")) {
                 this.isPreserveSourceDestination(model.getIsPreserveSourceDestination());
+            }
+            if (model.wasPropertyExplicitlySet("isSymmetricHashEnabled")) {
+                this.isSymmetricHashEnabled(model.getIsSymmetricHashEnabled());
             }
             if (model.wasPropertyExplicitlySet("reservedIps")) {
                 this.reservedIps(model.getReservedIps());
@@ -470,6 +499,25 @@ public final class CreateNetworkLoadBalancerDetails
         return isPreserveSourceDestination;
     }
 
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination
+     * header preservation enabled. This removes the additional dependency from NLB backends(like
+     * Firewalls) to perform SNAT.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+    private final Boolean isSymmetricHashEnabled;
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination
+     * header preservation enabled. This removes the additional dependency from NLB backends(like
+     * Firewalls) to perform SNAT.
+     *
+     * @return the value
+     */
+    public Boolean getIsSymmetricHashEnabled() {
+        return isSymmetricHashEnabled;
+    }
+
     /** An array of reserved Ips. */
     @com.fasterxml.jackson.annotation.JsonProperty("reservedIps")
     private final java.util.List<ReservedIP> reservedIps;
@@ -494,8 +542,8 @@ public final class CreateNetworkLoadBalancerDetails
      * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
      * your virtual cloud network. For more information about public and private network load
      * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
-     * This value is true by default.
+     * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This value is
+     * true by default.
      *
      * <p>Example: {@code true}
      */
@@ -513,8 +561,8 @@ public final class CreateNetworkLoadBalancerDetails
      * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
      * your virtual cloud network. For more information about public and private network load
      * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
-     * This value is true by default.
+     * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This value is
+     * true by default.
      *
      * <p>Example: {@code true}
      *
@@ -680,6 +728,7 @@ public final class CreateNetworkLoadBalancerDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isPreserveSourceDestination=")
                 .append(String.valueOf(this.isPreserveSourceDestination));
+        sb.append(", isSymmetricHashEnabled=").append(String.valueOf(this.isSymmetricHashEnabled));
         sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
@@ -708,6 +757,8 @@ public final class CreateNetworkLoadBalancerDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.isPreserveSourceDestination, other.isPreserveSourceDestination)
+                && java.util.Objects.equals(
+                        this.isSymmetricHashEnabled, other.isSymmetricHashEnabled)
                 && java.util.Objects.equals(this.reservedIps, other.reservedIps)
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
@@ -734,6 +785,11 @@ public final class CreateNetworkLoadBalancerDetails
                         + (this.isPreserveSourceDestination == null
                                 ? 43
                                 : this.isPreserveSourceDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricHashEnabled == null
+                                ? 43
+                                : this.isSymmetricHashEnabled.hashCode());
         result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
         result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());

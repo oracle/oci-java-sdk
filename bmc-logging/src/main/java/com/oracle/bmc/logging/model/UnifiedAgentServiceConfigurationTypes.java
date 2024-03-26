@@ -8,6 +8,7 @@ package com.oracle.bmc.logging.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public enum UnifiedAgentServiceConfigurationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Logging("LOGGING"),
+    Monitoring("MONITORING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

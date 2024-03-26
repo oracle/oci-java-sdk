@@ -82,17 +82,21 @@ public class BlockstorageWaiters {
                         final CopyBootVolumeBackupResponse response =
                                 client.copyBootVolumeBackup(request);
 
-                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                getWorkRequestRequest =
-                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                                .builder()
-                                                .workRequestId(response.getOpcWorkRequestId())
-                                                .build();
-                        workRequestClient
-                                .getWaiters()
-                                .forWorkRequest(
-                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
-                                .execute();
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
                         return response;
                     }
                 },
@@ -138,17 +142,21 @@ public class BlockstorageWaiters {
                     public CopyVolumeBackupResponse call() throws Exception {
                         final CopyVolumeBackupResponse response = client.copyVolumeBackup(request);
 
-                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                getWorkRequestRequest =
-                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
-                                                .builder()
-                                                .workRequestId(response.getOpcWorkRequestId())
-                                                .build();
-                        workRequestClient
-                                .getWaiters()
-                                .forWorkRequest(
-                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
-                                .execute();
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
                         return response;
                     }
                 },

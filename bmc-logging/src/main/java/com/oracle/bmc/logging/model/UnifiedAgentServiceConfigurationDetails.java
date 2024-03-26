@@ -24,7 +24,10 @@ package com.oracle.bmc.logging.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UnifiedAgentLoggingConfiguration.class,
-            name = "LOGGING")
+            name = "LOGGING"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UnifiedAgentMonitoringConfigurationDetails.class,
+            name = "MONITORING")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

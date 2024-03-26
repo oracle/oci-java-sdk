@@ -502,6 +502,100 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             this.__explicitlySet__.add("refreshableMode");
             return this;
         }
+        /**
+         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum
+         * is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is
+         * controlled by the {@code timeOfAutoRefreshStart} parameter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshFrequencyInSeconds")
+        private Integer autoRefreshFrequencyInSeconds;
+
+        /**
+         * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum
+         * is 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is
+         * controlled by the {@code timeOfAutoRefreshStart} parameter.
+         *
+         * @param autoRefreshFrequencyInSeconds the value to set
+         * @return this builder
+         */
+        public Builder autoRefreshFrequencyInSeconds(Integer autoRefreshFrequencyInSeconds) {
+            this.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+            this.__explicitlySet__.add("autoRefreshFrequencyInSeconds");
+            return this;
+        }
+        /**
+         * The time, in seconds, the data of the refreshable clone lags the primary database at the
+         * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+         * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+         * data refresh happens.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshPointLagInSeconds")
+        private Integer autoRefreshPointLagInSeconds;
+
+        /**
+         * The time, in seconds, the data of the refreshable clone lags the primary database at the
+         * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+         * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+         * data refresh happens.
+         *
+         * @param autoRefreshPointLagInSeconds the value to set
+         * @return this builder
+         */
+        public Builder autoRefreshPointLagInSeconds(Integer autoRefreshPointLagInSeconds) {
+            this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
+            this.__explicitlySet__.add("autoRefreshPointLagInSeconds");
+            return this;
+        }
+        /**
+         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * refreshable clone. This value controls only the start time for the first refresh
+         * operation. Subsequent (ongoing) refresh operations have start times controlled by the
+         * value of the {@code autoRefreshFrequencyInSeconds} parameter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
+        private java.util.Date timeOfAutoRefreshStart;
+
+        /**
+         * The the date and time that auto-refreshing will begin for an Autonomous Database
+         * refreshable clone. This value controls only the start time for the first refresh
+         * operation. Subsequent (ongoing) refresh operations have start times controlled by the
+         * value of the {@code autoRefreshFrequencyInSeconds} parameter.
+         *
+         * @param timeOfAutoRefreshStart the value to set
+         * @return this builder
+         */
+        public Builder timeOfAutoRefreshStart(java.util.Date timeOfAutoRefreshStart) {
+            this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
+            this.__explicitlySet__.add("timeOfAutoRefreshStart");
+            return this;
+        }
+        /**
+         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
+         * or {@code READ_WRITE} mode.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
+         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("openMode")
+        private OpenMode openMode;
+
+        /**
+         * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY}
+         * or {@code READ_WRITE} mode.
+         *
+         * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
+         * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
+         * dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         *
+         * @param openMode the value to set
+         * @return this builder
+         */
+        public Builder openMode(OpenMode openMode) {
+            this.openMode = openMode;
+            this.__explicitlySet__.add("openMode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -558,7 +652,11 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                             this.secretId,
                             this.secretVersionNumber,
                             this.sourceId,
-                            this.refreshableMode);
+                            this.refreshableMode,
+                            this.autoRefreshFrequencyInSeconds,
+                            this.autoRefreshPointLagInSeconds,
+                            this.timeOfAutoRefreshStart,
+                            this.openMode);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -719,6 +817,18 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             if (model.wasPropertyExplicitlySet("refreshableMode")) {
                 this.refreshableMode(model.getRefreshableMode());
             }
+            if (model.wasPropertyExplicitlySet("autoRefreshFrequencyInSeconds")) {
+                this.autoRefreshFrequencyInSeconds(model.getAutoRefreshFrequencyInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("autoRefreshPointLagInSeconds")) {
+                this.autoRefreshPointLagInSeconds(model.getAutoRefreshPointLagInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfAutoRefreshStart")) {
+                this.timeOfAutoRefreshStart(model.getTimeOfAutoRefreshStart());
+            }
+            if (model.wasPropertyExplicitlySet("openMode")) {
+                this.openMode(model.getOpenMode());
+            }
             return this;
         }
     }
@@ -783,7 +893,11 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
             String secretId,
             Integer secretVersionNumber,
             String sourceId,
-            RefreshableMode refreshableMode) {
+            RefreshableMode refreshableMode,
+            Integer autoRefreshFrequencyInSeconds,
+            Integer autoRefreshPointLagInSeconds,
+            java.util.Date timeOfAutoRefreshStart,
+            OpenMode openMode) {
         super(
                 compartmentId,
                 characterSet,
@@ -835,6 +949,10 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 secretVersionNumber);
         this.sourceId = sourceId;
         this.refreshableMode = refreshableMode;
+        this.autoRefreshFrequencyInSeconds = autoRefreshFrequencyInSeconds;
+        this.autoRefreshPointLagInSeconds = autoRefreshPointLagInSeconds;
+        this.timeOfAutoRefreshStart = timeOfAutoRefreshStart;
+        this.openMode = openMode;
     }
 
     /**
@@ -907,6 +1025,132 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         return refreshableMode;
     }
 
+    /**
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is
+     * 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled
+     * by the {@code timeOfAutoRefreshStart} parameter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshFrequencyInSeconds")
+    private final Integer autoRefreshFrequencyInSeconds;
+
+    /**
+     * The frequency a refreshable clone is refreshed after auto-refresh is enabled. The minimum is
+     * 1 hour. The maximum is 7 days. The date and time that auto-refresh is enabled is controlled
+     * by the {@code timeOfAutoRefreshStart} parameter.
+     *
+     * @return the value
+     */
+    public Integer getAutoRefreshFrequencyInSeconds() {
+        return autoRefreshFrequencyInSeconds;
+    }
+
+    /**
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the
+     * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+     * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+     * data refresh happens.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autoRefreshPointLagInSeconds")
+    private final Integer autoRefreshPointLagInSeconds;
+
+    /**
+     * The time, in seconds, the data of the refreshable clone lags the primary database at the
+     * point of refresh. The minimum is 0 minutes (0 mins means refresh to the latest available
+     * timestamp). The maximum is 7 days. The lag time increases after refreshing until the next
+     * data refresh happens.
+     *
+     * @return the value
+     */
+    public Integer getAutoRefreshPointLagInSeconds() {
+        return autoRefreshPointLagInSeconds;
+    }
+
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
+     * clone. This value controls only the start time for the first refresh operation. Subsequent
+     * (ongoing) refresh operations have start times controlled by the value of the {@code
+     * autoRefreshFrequencyInSeconds} parameter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfAutoRefreshStart")
+    private final java.util.Date timeOfAutoRefreshStart;
+
+    /**
+     * The the date and time that auto-refreshing will begin for an Autonomous Database refreshable
+     * clone. This value controls only the start time for the first refresh operation. Subsequent
+     * (ongoing) refresh operations have start times controlled by the value of the {@code
+     * autoRefreshFrequencyInSeconds} parameter.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfAutoRefreshStart() {
+        return timeOfAutoRefreshStart;
+    }
+
+    /**
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * {@code READ_WRITE} mode.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     */
+    public enum OpenMode implements com.oracle.bmc.http.internal.BmcEnum {
+        ReadOnly("READ_ONLY"),
+        ReadWrite("READ_WRITE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, OpenMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OpenMode v : OpenMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        OpenMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OpenMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid OpenMode: " + key);
+        }
+    };
+    /**
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * {@code READ_WRITE} mode.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("openMode")
+    private final OpenMode openMode;
+
+    /**
+     * Indicates the Autonomous Database mode. The database can be opened in {@code READ_ONLY} or
+     * {@code READ_WRITE} mode.
+     *
+     * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
+     * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion,
+     * isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     *
+     * @return the value
+     */
+    public OpenMode getOpenMode() {
+        return openMode;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -924,6 +1168,12 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", refreshableMode=").append(String.valueOf(this.refreshableMode));
+        sb.append(", autoRefreshFrequencyInSeconds=")
+                .append(String.valueOf(this.autoRefreshFrequencyInSeconds));
+        sb.append(", autoRefreshPointLagInSeconds=")
+                .append(String.valueOf(this.autoRefreshPointLagInSeconds));
+        sb.append(", timeOfAutoRefreshStart=").append(String.valueOf(this.timeOfAutoRefreshStart));
+        sb.append(", openMode=").append(String.valueOf(this.openMode));
         sb.append(")");
         return sb.toString();
     }
@@ -941,6 +1191,13 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
                 (CreateRefreshableAutonomousDatabaseCloneDetails) o;
         return java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.refreshableMode, other.refreshableMode)
+                && java.util.Objects.equals(
+                        this.autoRefreshFrequencyInSeconds, other.autoRefreshFrequencyInSeconds)
+                && java.util.Objects.equals(
+                        this.autoRefreshPointLagInSeconds, other.autoRefreshPointLagInSeconds)
+                && java.util.Objects.equals(
+                        this.timeOfAutoRefreshStart, other.timeOfAutoRefreshStart)
+                && java.util.Objects.equals(this.openMode, other.openMode)
                 && super.equals(other);
     }
 
@@ -952,6 +1209,22 @@ public final class CreateRefreshableAutonomousDatabaseCloneDetails
         result =
                 (result * PRIME)
                         + (this.refreshableMode == null ? 43 : this.refreshableMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoRefreshFrequencyInSeconds == null
+                                ? 43
+                                : this.autoRefreshFrequencyInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoRefreshPointLagInSeconds == null
+                                ? 43
+                                : this.autoRefreshPointLagInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfAutoRefreshStart == null
+                                ? 43
+                                : this.timeOfAutoRefreshStart.hashCode());
+        result = (result * PRIME) + (this.openMode == null ? 43 : this.openMode.hashCode());
         return result;
     }
 }

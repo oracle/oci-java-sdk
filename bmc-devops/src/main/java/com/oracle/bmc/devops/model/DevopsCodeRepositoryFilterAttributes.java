@@ -32,12 +32,12 @@ public final class DevopsCodeRepositoryFilterAttributes
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Branch for push event. */
+        /** Branch for push event; source branch for pull requests */
         @com.fasterxml.jackson.annotation.JsonProperty("headRef")
         private String headRef;
 
         /**
-         * Branch for push event.
+         * Branch for push event; source branch for pull requests
          *
          * @param headRef the value to set
          * @return this builder
@@ -90,12 +90,12 @@ public final class DevopsCodeRepositoryFilterAttributes
         return new Builder().copy(this);
     }
 
-    /** Branch for push event. */
+    /** Branch for push event; source branch for pull requests */
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
     private final String headRef;
 
     /**
-     * Branch for push event.
+     * Branch for push event; source branch for pull requests
      *
      * @return the value
      */

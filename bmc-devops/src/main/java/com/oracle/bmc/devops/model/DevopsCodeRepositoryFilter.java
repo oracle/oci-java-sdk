@@ -27,12 +27,12 @@ package com.oracle.bmc.devops.model;
 public final class DevopsCodeRepositoryFilter extends Filter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The events only support PUSH. */
+        /** The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED. */
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<Events> events;
 
         /**
-         * The events only support PUSH.
+         * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
          *
          * @param events the value to set
          * @return this builder
@@ -152,12 +152,12 @@ public final class DevopsCodeRepositoryFilter extends Filter {
             return UnknownEnumValue;
         }
     };
-    /** The events only support PUSH. */
+    /** The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED. */
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     private final java.util.List<Events> events;
 
     /**
-     * The events only support PUSH.
+     * The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
      *
      * @return the value
      */

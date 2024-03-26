@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.38.0 - 2024-03-26
+### Added
+- Support for creating and updating a refreshable clone with auto-refresh for an Autonomous Database in the Database service
+- Support for symmetric hashing in the Network Load Balancer service
+- Support for creating and deploying helm command specifications in the DevOps Service
+- Support for uninstalling helm chart when deleting an Oracle Kubernetes Stage through the DevOps Service
+- Support for collecting metrics and filter plugin with Unified Monitoring Agent (UMA) in the Logging service
+- Support for reading logs from head position after agent restart in the Logging service
+- Support for monitoring MySQL HeatWave clusters in Database Management Service
+- Support for multiple severities in an alarm in the Monitoring service
+  
+### Breaking Changes
+- Support for default retries on the operations of the Network Load Balancer service
+- The properties `displayName` and `description` have been made required in the model `CreateUnifiedAgentConfigurationDetails` in the Logging service
+- The property `recordInput` has been made required in the model `OperationalMetricsSource` in the Logging service
+
 ## 3.37.2 - 2024-03-19
 ### Added
 - Support for standalone Oracle HTTP server discovery and monitoring in the Stack Monitoring service

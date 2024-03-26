@@ -54,7 +54,9 @@ public final class MySqlDataSummary
         "lastSeen",
         "quantile95",
         "quantile99",
-        "quantile999"
+        "quantile999",
+        "heatWaveOffloaded",
+        "heatWaveOutOfMemory"
     })
     public MySqlDataSummary(
             String schemaName,
@@ -88,7 +90,9 @@ public final class MySqlDataSummary
             java.util.Date lastSeen,
             java.math.BigDecimal quantile95,
             java.math.BigDecimal quantile99,
-            java.math.BigDecimal quantile999) {
+            java.math.BigDecimal quantile999,
+            java.math.BigDecimal heatWaveOffloaded,
+            java.math.BigDecimal heatWaveOutOfMemory) {
         super();
         this.schemaName = schemaName;
         this.digest = digest;
@@ -122,6 +126,8 @@ public final class MySqlDataSummary
         this.quantile95 = quantile95;
         this.quantile99 = quantile99;
         this.quantile999 = quantile999;
+        this.heatWaveOffloaded = heatWaveOffloaded;
+        this.heatWaveOutOfMemory = heatWaveOutOfMemory;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -666,6 +672,36 @@ public final class MySqlDataSummary
             this.__explicitlySet__.add("quantile999");
             return this;
         }
+        /** The number of query executions offloaded to HeatWave. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOffloaded")
+        private java.math.BigDecimal heatWaveOffloaded;
+
+        /**
+         * The number of query executions offloaded to HeatWave.
+         *
+         * @param heatWaveOffloaded the value to set
+         * @return this builder
+         */
+        public Builder heatWaveOffloaded(java.math.BigDecimal heatWaveOffloaded) {
+            this.heatWaveOffloaded = heatWaveOffloaded;
+            this.__explicitlySet__.add("heatWaveOffloaded");
+            return this;
+        }
+        /** The number of query executions with HeatWave out-of-memory errors. */
+        @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOutOfMemory")
+        private java.math.BigDecimal heatWaveOutOfMemory;
+
+        /**
+         * The number of query executions with HeatWave out-of-memory errors.
+         *
+         * @param heatWaveOutOfMemory the value to set
+         * @return this builder
+         */
+        public Builder heatWaveOutOfMemory(java.math.BigDecimal heatWaveOutOfMemory) {
+            this.heatWaveOutOfMemory = heatWaveOutOfMemory;
+            this.__explicitlySet__.add("heatWaveOutOfMemory");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -704,7 +740,9 @@ public final class MySqlDataSummary
                             this.lastSeen,
                             this.quantile95,
                             this.quantile99,
-                            this.quantile999);
+                            this.quantile999,
+                            this.heatWaveOffloaded,
+                            this.heatWaveOutOfMemory);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -808,6 +846,12 @@ public final class MySqlDataSummary
             }
             if (model.wasPropertyExplicitlySet("quantile999")) {
                 this.quantile999(model.getQuantile999());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveOffloaded")) {
+                this.heatWaveOffloaded(model.getHeatWaveOffloaded());
+            }
+            if (model.wasPropertyExplicitlySet("heatWaveOutOfMemory")) {
+                this.heatWaveOutOfMemory(model.getHeatWaveOutOfMemory());
             }
             return this;
         }
@@ -1292,6 +1336,32 @@ public final class MySqlDataSummary
         return quantile999;
     }
 
+    /** The number of query executions offloaded to HeatWave. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOffloaded")
+    private final java.math.BigDecimal heatWaveOffloaded;
+
+    /**
+     * The number of query executions offloaded to HeatWave.
+     *
+     * @return the value
+     */
+    public java.math.BigDecimal getHeatWaveOffloaded() {
+        return heatWaveOffloaded;
+    }
+
+    /** The number of query executions with HeatWave out-of-memory errors. */
+    @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOutOfMemory")
+    private final java.math.BigDecimal heatWaveOutOfMemory;
+
+    /**
+     * The number of query executions with HeatWave out-of-memory errors.
+     *
+     * @return the value
+     */
+    public java.math.BigDecimal getHeatWaveOutOfMemory() {
+        return heatWaveOutOfMemory;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1340,6 +1410,8 @@ public final class MySqlDataSummary
         sb.append(", quantile95=").append(String.valueOf(this.quantile95));
         sb.append(", quantile99=").append(String.valueOf(this.quantile99));
         sb.append(", quantile999=").append(String.valueOf(this.quantile999));
+        sb.append(", heatWaveOffloaded=").append(String.valueOf(this.heatWaveOffloaded));
+        sb.append(", heatWaveOutOfMemory=").append(String.valueOf(this.heatWaveOutOfMemory));
         sb.append(")");
         return sb.toString();
     }
@@ -1388,6 +1460,8 @@ public final class MySqlDataSummary
                 && java.util.Objects.equals(this.quantile95, other.quantile95)
                 && java.util.Objects.equals(this.quantile99, other.quantile99)
                 && java.util.Objects.equals(this.quantile999, other.quantile999)
+                && java.util.Objects.equals(this.heatWaveOffloaded, other.heatWaveOffloaded)
+                && java.util.Objects.equals(this.heatWaveOutOfMemory, other.heatWaveOutOfMemory)
                 && super.equals(other);
     }
 
@@ -1463,6 +1537,14 @@ public final class MySqlDataSummary
         result = (result * PRIME) + (this.quantile95 == null ? 43 : this.quantile95.hashCode());
         result = (result * PRIME) + (this.quantile99 == null ? 43 : this.quantile99.hashCode());
         result = (result * PRIME) + (this.quantile999 == null ? 43 : this.quantile999.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveOffloaded == null ? 43 : this.heatWaveOffloaded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.heatWaveOutOfMemory == null
+                                ? 43
+                                : this.heatWaveOutOfMemory.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

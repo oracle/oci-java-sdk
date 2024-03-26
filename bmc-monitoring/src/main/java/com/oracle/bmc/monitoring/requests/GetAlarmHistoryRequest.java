@@ -40,22 +40,26 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
         return opcRequestId;
     }
     /**
-     * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition
-     * history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.
+     * The type of history entries to retrieve. State history (STATE_HISTORY), state transition
+     * history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history
+     * (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.
      *
      * <p>Example: {@code STATE_HISTORY}
      */
     private AlarmHistorytype alarmHistorytype;
 
     /**
-     * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition
-     * history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.
+     * The type of history entries to retrieve. State history (STATE_HISTORY), state transition
+     * history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history
+     * (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.
      *
      * <p>Example: {@code STATE_HISTORY}
      */
     public enum AlarmHistorytype implements com.oracle.bmc.http.internal.BmcEnum {
         StateHistory("STATE_HISTORY"),
         StateTransitionHistory("STATE_TRANSITION_HISTORY"),
+        RuleHistory("RULE_HISTORY"),
+        RuleTransitionHistory("RULE_TRANSITION_HISTORY"),
         ;
 
         private final String value;
@@ -87,8 +91,9 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The type of history entries to retrieve. State history (STATE_HISTORY) or state transition
-     * history (STATE_TRANSITION_HISTORY). If not specified, entries of both types are retrieved.
+     * The type of history entries to retrieve. State history (STATE_HISTORY), state transition
+     * history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history
+     * (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.
      *
      * <p>Example: {@code STATE_HISTORY}
      */
@@ -211,18 +216,18 @@ public class GetAlarmHistoryRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The type of history entries to retrieve. State history (STATE_HISTORY) or state
-         * transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types
-         * are retrieved.
+         * The type of history entries to retrieve. State history (STATE_HISTORY), state transition
+         * history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition
+         * history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.
          *
          * <p>Example: {@code STATE_HISTORY}
          */
         private AlarmHistorytype alarmHistorytype = null;
 
         /**
-         * The type of history entries to retrieve. State history (STATE_HISTORY) or state
-         * transition history (STATE_TRANSITION_HISTORY). If not specified, entries of both types
-         * are retrieved.
+         * The type of history entries to retrieve. State history (STATE_HISTORY), state transition
+         * history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition
+         * history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.
          *
          * <p>Example: {@code STATE_HISTORY}
          *

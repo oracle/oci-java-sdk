@@ -70,9 +70,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ChangeNetworkLoadBalancerCompartmentExample.java.html"
@@ -87,9 +87,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendExample.java.html"
@@ -102,9 +102,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendSetExample.java.html"
@@ -118,9 +118,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateListenerExample.java.html"
@@ -133,9 +133,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateNetworkLoadBalancerExample.java.html"
@@ -150,9 +150,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendExample.java.html"
@@ -168,9 +168,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendSetExample.java.html"
@@ -184,9 +184,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteListenerExample.java.html"
@@ -199,9 +199,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteNetworkLoadBalancerExample.java.html"
@@ -216,9 +216,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendExample.java.html"
@@ -231,9 +231,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendHealthExample.java.html"
@@ -247,9 +247,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendSetExample.java.html"
@@ -262,9 +262,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendSetHealthExample.java.html"
@@ -279,9 +279,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetHealthCheckerExample.java.html"
@@ -296,9 +296,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetListenerExample.java.html"
@@ -311,9 +311,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetNetworkLoadBalancerExample.java.html"
@@ -327,9 +327,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetNetworkLoadBalancerHealthExample.java.html"
@@ -344,9 +344,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetWorkRequestExample.java.html"
@@ -359,9 +359,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendSetsExample.java.html"
@@ -375,9 +375,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendsExample.java.html"
@@ -390,9 +390,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListListenersExample.java.html"
@@ -406,9 +406,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancerHealthsExample.java.html"
@@ -423,9 +423,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersExample.java.html"
@@ -440,9 +440,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersPoliciesExample.java.html"
@@ -458,9 +458,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersProtocolsExample.java.html"
@@ -475,9 +475,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestErrorsExample.java.html"
@@ -491,9 +491,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestLogsExample.java.html"
@@ -507,9 +507,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestsExample.java.html"
@@ -523,9 +523,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendExample.java.html"
@@ -538,9 +538,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendSetExample.java.html"
@@ -554,9 +554,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateHealthCheckerExample.java.html"
@@ -570,9 +570,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateListenerExample.java.html"
@@ -585,9 +585,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkLoadBalancerExample.java.html"
@@ -602,9 +602,9 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html"

@@ -6,6 +6,7 @@ package com.oracle.bmc.auth;
 
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
+import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.Services;
 import com.oracle.bmc.http.Priorities;
@@ -371,7 +372,8 @@ public class SessionTokenAuthenticationDetailsProvider
         }
     }
 
-    static class SessionTokenRefreshRequest
+    @InternalSdk
+    public static class SessionTokenRefreshRequest
             extends com.oracle.bmc.requests.BmcRequest<
                     SessionTokenRefreshRequest.SessionTokenRequest> {
         private String token;
@@ -381,12 +383,13 @@ public class SessionTokenAuthenticationDetailsProvider
         }
 
         @Override
-        @com.oracle.bmc.InternalSdk
+        @InternalSdk
         public SessionTokenRequest getBody$() {
             return new SessionTokenRequest(token);
         }
 
-        private class SessionTokenRequest {
+        @InternalSdk
+        public static class SessionTokenRequest {
             public String currentToken;
 
             public SessionTokenRequest(String token) {

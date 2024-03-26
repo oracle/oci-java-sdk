@@ -46,7 +46,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         "isNotificationsPerMetricDimensionEnabled",
         "freeformTags",
         "definedTags",
-        "lifecycleState"
+        "lifecycleState",
+        "overrides",
+        "ruleName",
+        "notificationVersion"
     })
     public AlarmSummary(
             String id,
@@ -62,7 +65,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             Boolean isNotificationsPerMetricDimensionEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Alarm.LifecycleState lifecycleState) {
+            Alarm.LifecycleState lifecycleState,
+            java.util.List<AlarmOverride> overrides,
+            String ruleName,
+            String notificationVersion) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -78,6 +84,9 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.lifecycleState = lifecycleState;
+        this.overrides = overrides;
+        this.ruleName = ruleName;
+        this.notificationVersion = notificationVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -427,6 +436,79 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * A set of overrides that control evaluations of the alarm.
+         *
+         * <p>Each override can specify values for query, severity, body, and pending duration. When
+         * an alarm contains overrides, the Monitoring service evaluates each override in order,
+         * beginning with the first override in the array (index position {@code 0}), and then
+         * evaluates the alarm's base values ({@code ruleName} value of {@code BASE}).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("overrides")
+        private java.util.List<AlarmOverride> overrides;
+
+        /**
+         * A set of overrides that control evaluations of the alarm.
+         *
+         * <p>Each override can specify values for query, severity, body, and pending duration. When
+         * an alarm contains overrides, the Monitoring service evaluates each override in order,
+         * beginning with the first override in the array (index position {@code 0}), and then
+         * evaluates the alarm's base values ({@code ruleName} value of {@code BASE}).
+         *
+         * @param overrides the value to set
+         * @return this builder
+         */
+        public Builder overrides(java.util.List<AlarmOverride> overrides) {
+            this.overrides = overrides;
+            this.__explicitlySet__.add("overrides");
+            return this;
+        }
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
+         * contains overrides. A valid ruleName value starts with an alphabetic character and
+         * includes only alphanumeric characters, underscores and square brackets. Minimum number of
+         * characters: 3. Default value is {@code BASE}. For information about alarm overrides, see
+         * {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+        private String ruleName;
+
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
+         * contains overrides. A valid ruleName value starts with an alphabetic character and
+         * includes only alphanumeric characters, underscores and square brackets. Minimum number of
+         * characters: 3. Default value is {@code BASE}. For information about alarm overrides, see
+         * {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         * @param ruleName the value to set
+         * @return this builder
+         */
+        public Builder ruleName(String ruleName) {
+            this.ruleName = ruleName;
+            this.__explicitlySet__.add("ruleName");
+            return this;
+        }
+        /**
+         * The version of the alarm notification to be delivered. Allowed value: {@code 1.X} The
+         * value must start with a number (up to four digits), followed by a period and an uppercase
+         * X.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationVersion")
+        private String notificationVersion;
+
+        /**
+         * The version of the alarm notification to be delivered. Allowed value: {@code 1.X} The
+         * value must start with a number (up to four digits), followed by a period and an uppercase
+         * X.
+         *
+         * @param notificationVersion the value to set
+         * @return this builder
+         */
+        public Builder notificationVersion(String notificationVersion) {
+            this.notificationVersion = notificationVersion;
+            this.__explicitlySet__.add("notificationVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -447,7 +529,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.isNotificationsPerMetricDimensionEnabled,
                             this.freeformTags,
                             this.definedTags,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.overrides,
+                            this.ruleName,
+                            this.notificationVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -498,6 +583,15 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("overrides")) {
+                this.overrides(model.getOverrides());
+            }
+            if (model.wasPropertyExplicitlySet("ruleName")) {
+                this.ruleName(model.getRuleName());
+            }
+            if (model.wasPropertyExplicitlySet("notificationVersion")) {
+                this.notificationVersion(model.getNotificationVersion());
             }
             return this;
         }
@@ -876,6 +970,71 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         return lifecycleState;
     }
 
+    /**
+     * A set of overrides that control evaluations of the alarm.
+     *
+     * <p>Each override can specify values for query, severity, body, and pending duration. When an
+     * alarm contains overrides, the Monitoring service evaluates each override in order, beginning
+     * with the first override in the array (index position {@code 0}), and then evaluates the
+     * alarm's base values ({@code ruleName} value of {@code BASE}).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("overrides")
+    private final java.util.List<AlarmOverride> overrides;
+
+    /**
+     * A set of overrides that control evaluations of the alarm.
+     *
+     * <p>Each override can specify values for query, severity, body, and pending duration. When an
+     * alarm contains overrides, the Monitoring service evaluates each override in order, beginning
+     * with the first override in the array (index position {@code 0}), and then evaluates the
+     * alarm's base values ({@code ruleName} value of {@code BASE}).
+     *
+     * @return the value
+     */
+    public java.util.List<AlarmOverride> getOverrides() {
+        return overrides;
+    }
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
+     * overrides. A valid ruleName value starts with an alphabetic character and includes only
+     * alphanumeric characters, underscores and square brackets. Minimum number of characters: 3.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+    private final String ruleName;
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
+     * overrides. A valid ruleName value starts with an alphabetic character and includes only
+     * alphanumeric characters, underscores and square brackets. Minimum number of characters: 3.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     * @return the value
+     */
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    /**
+     * The version of the alarm notification to be delivered. Allowed value: {@code 1.X} The value
+     * must start with a number (up to four digits), followed by a period and an uppercase X.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationVersion")
+    private final String notificationVersion;
+
+    /**
+     * The version of the alarm notification to be delivered. Allowed value: {@code 1.X} The value
+     * must start with a number (up to four digits), followed by a period and an uppercase X.
+     *
+     * @return the value
+     */
+    public String getNotificationVersion() {
+        return notificationVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -906,6 +1065,9 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", overrides=").append(String.valueOf(this.overrides));
+        sb.append(", ruleName=").append(String.valueOf(this.ruleName));
+        sb.append(", notificationVersion=").append(String.valueOf(this.notificationVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -936,6 +1098,9 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.overrides, other.overrides)
+                && java.util.Objects.equals(this.ruleName, other.ruleName)
+                && java.util.Objects.equals(this.notificationVersion, other.notificationVersion)
                 && super.equals(other);
     }
 
@@ -969,6 +1134,13 @@ public final class AlarmSummary extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.overrides == null ? 43 : this.overrides.hashCode());
+        result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationVersion == null
+                                ? 43
+                                : this.notificationVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

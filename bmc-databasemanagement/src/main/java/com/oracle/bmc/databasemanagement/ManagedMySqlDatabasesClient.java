@@ -90,6 +90,43 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public GetHeatWaveFleetMetricResponse getHeatWaveFleetMetric(
+            GetHeatWaveFleetMetricRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetHeatWaveFleetMetricResponse::builder)
+                .logger(LOG, "getHeatWaveFleetMetric")
+                .serviceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetHeatWaveFleetMetric",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HeatWaveFleetMetrics/GetHeatWaveFleetMetric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHeatWaveFleetMetricRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("heatWaveFleetMetrics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendEnumQueryParam("filterByHeatWaveStatus", request.getFilterByHeatWaveStatus())
+                .appendQueryParam("filterByHeatWaveShape", request.getFilterByHeatWaveShape())
+                .appendQueryParam(
+                        "isHeatWaveLakehouseEnabled", request.getIsHeatWaveLakehouseEnabled())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.HeatWaveFleetMetrics.class,
+                        GetHeatWaveFleetMetricResponse.Builder::heatWaveFleetMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetHeatWaveFleetMetricResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetManagedMySqlDatabaseResponse getManagedMySqlDatabase(
             GetManagedMySqlDatabaseRequest request) {
 
@@ -147,6 +184,7 @@ public class ManagedMySqlDatabasesClient extends com.oracle.bmc.http.internal.Ba
                 .appendEnumQueryParam("filterByMySqlStatus", request.getFilterByMySqlStatus())
                 .appendQueryParam(
                         "filterByMySqlDatabaseVersion", request.getFilterByMySqlDatabaseVersion())
+                .appendQueryParam("isHeatWaveEnabled", request.getIsHeatWaveEnabled())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

@@ -29,6 +29,7 @@ public final class UpdateNetworkLoadBalancerDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "isPreserveSourceDestination",
+        "isSymmetricHashEnabled",
         "nlbIpVersion",
         "freeformTags",
         "definedTags"
@@ -36,12 +37,14 @@ public final class UpdateNetworkLoadBalancerDetails
     public UpdateNetworkLoadBalancerDetails(
             String displayName,
             Boolean isPreserveSourceDestination,
+            Boolean isSymmetricHashEnabled,
             NlbIpVersion nlbIpVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.isPreserveSourceDestination = isPreserveSourceDestination;
+        this.isSymmetricHashEnabled = isSymmetricHashEnabled;
         this.nlbIpVersion = nlbIpVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -91,6 +94,27 @@ public final class UpdateNetworkLoadBalancerDetails
         public Builder isPreserveSourceDestination(Boolean isPreserveSourceDestination) {
             this.isPreserveSourceDestination = isPreserveSourceDestination;
             this.__explicitlySet__.add("isPreserveSourceDestination");
+            return this;
+        }
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination
+         * header preservation enabled. This removes the additional dependency from NLB
+         * backends(like Firewalls) to perform SNAT.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+        private Boolean isSymmetricHashEnabled;
+
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination
+         * header preservation enabled. This removes the additional dependency from NLB
+         * backends(like Firewalls) to perform SNAT.
+         *
+         * @param isSymmetricHashEnabled the value to set
+         * @return this builder
+         */
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
+            this.__explicitlySet__.add("isSymmetricHashEnabled");
             return this;
         }
         /** IP version associated with the NLB. */
@@ -168,6 +192,7 @@ public final class UpdateNetworkLoadBalancerDetails
                     new UpdateNetworkLoadBalancerDetails(
                             this.displayName,
                             this.isPreserveSourceDestination,
+                            this.isSymmetricHashEnabled,
                             this.nlbIpVersion,
                             this.freeformTags,
                             this.definedTags);
@@ -184,6 +209,9 @@ public final class UpdateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("isPreserveSourceDestination")) {
                 this.isPreserveSourceDestination(model.getIsPreserveSourceDestination());
+            }
+            if (model.wasPropertyExplicitlySet("isSymmetricHashEnabled")) {
+                this.isSymmetricHashEnabled(model.getIsSymmetricHashEnabled());
             }
             if (model.wasPropertyExplicitlySet("nlbIpVersion")) {
                 this.nlbIpVersion(model.getNlbIpVersion());
@@ -245,6 +273,25 @@ public final class UpdateNetworkLoadBalancerDetails
      */
     public Boolean getIsPreserveSourceDestination() {
         return isPreserveSourceDestination;
+    }
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination
+     * header preservation enabled. This removes the additional dependency from NLB backends(like
+     * Firewalls) to perform SNAT.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+    private final Boolean isSymmetricHashEnabled;
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination
+     * header preservation enabled. This removes the additional dependency from NLB backends(like
+     * Firewalls) to perform SNAT.
+     *
+     * @return the value
+     */
+    public Boolean getIsSymmetricHashEnabled() {
+        return isSymmetricHashEnabled;
     }
 
     /** IP version associated with the NLB. */
@@ -324,6 +371,7 @@ public final class UpdateNetworkLoadBalancerDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", isPreserveSourceDestination=")
                 .append(String.valueOf(this.isPreserveSourceDestination));
+        sb.append(", isSymmetricHashEnabled=").append(String.valueOf(this.isSymmetricHashEnabled));
         sb.append(", nlbIpVersion=").append(String.valueOf(this.nlbIpVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -344,6 +392,8 @@ public final class UpdateNetworkLoadBalancerDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.isPreserveSourceDestination, other.isPreserveSourceDestination)
+                && java.util.Objects.equals(
+                        this.isSymmetricHashEnabled, other.isSymmetricHashEnabled)
                 && java.util.Objects.equals(this.nlbIpVersion, other.nlbIpVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -360,6 +410,11 @@ public final class UpdateNetworkLoadBalancerDetails
                         + (this.isPreserveSourceDestination == null
                                 ? 43
                                 : this.isPreserveSourceDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricHashEnabled == null
+                                ? 43
+                                : this.isSymmetricHashEnabled.hashCode());
         result = (result * PRIME) + (this.nlbIpVersion == null ? 43 : this.nlbIpVersion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

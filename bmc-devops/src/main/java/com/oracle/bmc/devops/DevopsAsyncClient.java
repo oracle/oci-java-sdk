@@ -1015,6 +1015,7 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                         "opc-work-request-id", DeleteRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteRefResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("Sunset", DeleteRefResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -1634,6 +1635,7 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                         GetRefResponse.Builder::repositoryRef)
                 .handleResponseHeaderString("etag", GetRefResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", GetRefResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("Sunset", GetRefResponse.Builder::sunset)
                 .callAsync(handler);
     }
 
@@ -2777,6 +2779,7 @@ public class DevopsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
                         "opc-work-request-id", PutRepositoryRefResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PutRepositoryRefResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("Sunset", PutRepositoryRefResponse.Builder::sunset)
                 .callAsync(handler);
     }
 

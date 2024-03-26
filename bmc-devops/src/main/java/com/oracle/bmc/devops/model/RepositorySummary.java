@@ -103,12 +103,12 @@ public final class RepositorySummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique name of a repository. This value is mutable. */
+        /** Name of the repository. Should be unique within the project. This value is mutable. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository. This value is mutable.
+         * Name of the repository. Should be unique within the project. This value is mutable.
          *
          * @param name the value to set
          * @return this builder
@@ -517,12 +517,12 @@ public final class RepositorySummary
         return id;
     }
 
-    /** Unique name of a repository. This value is mutable. */
+    /** Name of the repository. Should be unique within the project. This value is mutable. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository. This value is mutable.
+     * Name of the repository. Should be unique within the project. This value is mutable.
      *
      * @return the value
      */
