@@ -183,7 +183,7 @@ public final class SSLConfigurationDetails
          *
          * <p>The Load Balancing service supports the following protocols:
          *
-         * <p>TLSv1 * TLSv1.1 * TLSv1.2
+         * <p>TLSv1 * TLSv1.1 * TLSv1.2 * TLSv1.3
          *
          * <p>If this field is not specified, TLSv1.2 is the default.
          *
@@ -212,7 +212,7 @@ public final class SSLConfigurationDetails
          *
          * <p>The Load Balancing service supports the following protocols:
          *
-         * <p>TLSv1 * TLSv1.1 * TLSv1.2
+         * <p>TLSv1 * TLSv1.1 * TLSv1.2 * TLSv1.3
          *
          * <p>If this field is not specified, TLSv1.2 is the default.
          *
@@ -505,7 +505,7 @@ public final class SSLConfigurationDetails
      *
      * <p>The Load Balancing service supports the following protocols:
      *
-     * <p>TLSv1 * TLSv1.1 * TLSv1.2
+     * <p>TLSv1 * TLSv1.1 * TLSv1.2 * TLSv1.3
      *
      * <p>If this field is not specified, TLSv1.2 is the default.
      *
@@ -534,7 +534,7 @@ public final class SSLConfigurationDetails
      *
      * <p>The Load Balancing service supports the following protocols:
      *
-     * <p>TLSv1 * TLSv1.1 * TLSv1.2
+     * <p>TLSv1 * TLSv1.1 * TLSv1.2 * TLSv1.3
      *
      * <p>If this field is not specified, TLSv1.2 is the default.
      *

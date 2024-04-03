@@ -161,10 +161,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, AddExadataInsightMembersResponse::builder)
                 .logger(LOG, "addExadataInsightMembers")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "AddExadataInsightMembers",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/AddExadataInsightMembers")
+                .serviceDetails("OperationsInsights", "AddExadataInsightMembers", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddExadataInsightMembersRequest::builder)
                 .basePath("/20200630")
@@ -199,9 +196,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, ChangeAutonomousDatabaseInsightAdvancedFeaturesResponse::builder)
                 .logger(LOG, "changeAutonomousDatabaseInsightAdvancedFeatures")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeAutonomousDatabaseInsightAdvancedFeatures",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeAutonomousDatabaseInsightAdvancedFeatures")
+                        "OperationsInsights", "ChangeAutonomousDatabaseInsightAdvancedFeatures", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest::builder)
                 .basePath("/20200630")
@@ -237,10 +232,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeAwrHubSourceCompartmentResponse::builder)
                 .logger(LOG, "changeAwrHubSourceCompartment")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeAwrHubSourceCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ChangeAwrHubSourceCompartment")
+                .serviceDetails("OperationsInsights", "ChangeAwrHubSourceCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeAwrHubSourceCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -274,10 +266,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeDatabaseInsightCompartmentResponse::builder)
                 .logger(LOG, "changeDatabaseInsightCompartment")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeDatabaseInsightCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeDatabaseInsightCompartment")
+                .serviceDetails("OperationsInsights", "ChangeDatabaseInsightCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDatabaseInsightCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -315,9 +304,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, ChangeEnterpriseManagerBridgeCompartmentResponse::builder)
                 .logger(LOG, "changeEnterpriseManagerBridgeCompartment")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeEnterpriseManagerBridgeCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ChangeEnterpriseManagerBridgeCompartment")
+                        "OperationsInsights", "ChangeEnterpriseManagerBridgeCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeEnterpriseManagerBridgeCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -350,10 +337,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeExadataInsightCompartmentResponse::builder)
                 .logger(LOG, "changeExadataInsightCompartment")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeExadataInsightCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ChangeExadataInsightCompartment")
+                .serviceDetails("OperationsInsights", "ChangeExadataInsightCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeExadataInsightCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -387,10 +371,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeHostInsightCompartmentResponse::builder)
                 .logger(LOG, "changeHostInsightCompartment")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeHostInsightCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ChangeHostInsightCompartment")
+                .serviceDetails("OperationsInsights", "ChangeHostInsightCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeHostInsightCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -424,10 +405,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeNewsReportCompartmentResponse::builder)
                 .logger(LOG, "changeNewsReportCompartment")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeNewsReportCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/ChangeNewsReportCompartment")
+                .serviceDetails("OperationsInsights", "ChangeNewsReportCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeNewsReportCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -468,7 +446,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "ChangeOperationsInsightsPrivateEndpointCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ChangeOperationsInsightsPrivateEndpointCompartment")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOperationsInsightsPrivateEndpointCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -508,9 +486,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, ChangeOperationsInsightsWarehouseCompartmentResponse::builder)
                 .logger(LOG, "changeOperationsInsightsWarehouseCompartment")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeOperationsInsightsWarehouseCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ChangeOperationsInsightsWarehouseCompartment")
+                        "OperationsInsights", "ChangeOperationsInsightsWarehouseCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOperationsInsightsWarehouseCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -546,10 +522,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangeOpsiConfigurationCompartmentResponse::builder)
                 .logger(LOG, "changeOpsiConfigurationCompartment")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangeOpsiConfigurationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ChangeOpsiConfigurationCompartment")
+                .serviceDetails("OperationsInsights", "ChangeOpsiConfigurationCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOpsiConfigurationCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -583,10 +556,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ChangePeComanagedDatabaseInsightResponse::builder)
                 .logger(LOG, "changePeComanagedDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ChangePeComanagedDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangePeComanagedDatabaseInsight")
+                .serviceDetails("OperationsInsights", "ChangePeComanagedDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangePeComanagedDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -615,10 +585,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateAwrHubResponse::builder)
                 .logger(LOG, "createAwrHub")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateAwrHub",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/CreateAwrHub")
+                .serviceDetails("OperationsInsights", "CreateAwrHub", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAwrHubRequest::builder)
                 .basePath("/20200630")
@@ -649,10 +616,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateAwrHubSourceResponse::builder)
                 .logger(LOG, "createAwrHubSource")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateAwrHubSource",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/CreateAwrHubSource")
+                .serviceDetails("OperationsInsights", "CreateAwrHubSource", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateAwrHubSourceRequest::builder)
                 .basePath("/20200630")
@@ -682,10 +646,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateDatabaseInsightResponse::builder)
                 .logger(LOG, "createDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/CreateDatabaseInsight")
+                .serviceDetails("OperationsInsights", "CreateDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -720,10 +681,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateEnterpriseManagerBridgeResponse::builder)
                 .logger(LOG, "createEnterpriseManagerBridge")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateEnterpriseManagerBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/CreateEnterpriseManagerBridge")
+                .serviceDetails("OperationsInsights", "CreateEnterpriseManagerBridge", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateEnterpriseManagerBridgeRequest::builder)
                 .basePath("/20200630")
@@ -760,10 +718,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateExadataInsightResponse::builder)
                 .logger(LOG, "createExadataInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateExadataInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/CreateExadataInsight")
+                .serviceDetails("OperationsInsights", "CreateExadataInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateExadataInsightRequest::builder)
                 .basePath("/20200630")
@@ -796,10 +751,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateHostInsightResponse::builder)
                 .logger(LOG, "createHostInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateHostInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/CreateHostInsight")
+                .serviceDetails("OperationsInsights", "CreateHostInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateHostInsightRequest::builder)
                 .basePath("/20200630")
@@ -830,10 +782,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateNewsReportResponse::builder)
                 .logger(LOG, "createNewsReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateNewsReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/CreateNewsReport")
+                .serviceDetails("OperationsInsights", "CreateNewsReport", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateNewsReportRequest::builder)
                 .basePath("/20200630")
@@ -866,10 +815,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateOperationsInsightsPrivateEndpointResponse::builder)
                 .logger(LOG, "createOperationsInsightsPrivateEndpoint")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateOperationsInsightsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/CreateOperationsInsightsPrivateEndpoint")
+                .serviceDetails("OperationsInsights", "CreateOperationsInsightsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOperationsInsightsPrivateEndpointRequest::builder)
                 .basePath("/20200630")
@@ -909,10 +855,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateOperationsInsightsWarehouseResponse::builder)
                 .logger(LOG, "createOperationsInsightsWarehouse")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateOperationsInsightsWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/CreateOperationsInsightsWarehouse")
+                .serviceDetails("OperationsInsights", "CreateOperationsInsightsWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOperationsInsightsWarehouseRequest::builder)
                 .basePath("/20200630")
@@ -951,10 +894,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateOperationsInsightsWarehouseUserResponse::builder)
                 .logger(LOG, "createOperationsInsightsWarehouseUser")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateOperationsInsightsWarehouseUser",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/CreateOperationsInsightsWarehouseUser")
+                .serviceDetails("OperationsInsights", "CreateOperationsInsightsWarehouseUser", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOperationsInsightsWarehouseUserRequest::builder)
                 .basePath("/20200630")
@@ -993,10 +933,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, CreateOpsiConfigurationResponse::builder)
                 .logger(LOG, "createOpsiConfiguration")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "CreateOpsiConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/CreateOpsiConfiguration")
+                .serviceDetails("OperationsInsights", "CreateOpsiConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOpsiConfigurationRequest::builder)
                 .basePath("/20200630")
@@ -1041,10 +978,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteAwrHubResponse::builder)
                 .logger(LOG, "deleteAwrHub")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteAwrHub",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/DeleteAwrHub")
+                .serviceDetails("OperationsInsights", "DeleteAwrHub", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAwrHubRequest::builder)
                 .basePath("/20200630")
@@ -1070,10 +1004,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteAwrHubObjectResponse::builder)
                 .logger(LOG, "deleteAwrHubObject")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteAwrHubObject",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/DeleteAwrHubObject")
+                .serviceDetails("OperationsInsights", "DeleteAwrHubObject", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAwrHubObjectRequest::builder)
                 .basePath("/20200630")
@@ -1107,10 +1038,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteAwrHubSourceResponse::builder)
                 .logger(LOG, "deleteAwrHubSource")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteAwrHubSource",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DeleteAwrHubSource")
+                .serviceDetails("OperationsInsights", "DeleteAwrHubSource", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteAwrHubSourceRequest::builder)
                 .basePath("/20200630")
@@ -1135,10 +1063,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteDatabaseInsightResponse::builder)
                 .logger(LOG, "deleteDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DeleteDatabaseInsight")
+                .serviceDetails("OperationsInsights", "DeleteDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -1166,10 +1091,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteEnterpriseManagerBridgeResponse::builder)
                 .logger(LOG, "deleteEnterpriseManagerBridge")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteEnterpriseManagerBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/DeleteEnterpriseManagerBridge")
+                .serviceDetails("OperationsInsights", "DeleteEnterpriseManagerBridge", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteEnterpriseManagerBridgeRequest::builder)
                 .basePath("/20200630")
@@ -1195,10 +1117,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteExadataInsightResponse::builder)
                 .logger(LOG, "deleteExadataInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteExadataInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DeleteExadataInsight")
+                .serviceDetails("OperationsInsights", "DeleteExadataInsight", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteExadataInsightRequest::builder)
                 .basePath("/20200630")
@@ -1223,10 +1142,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteHostInsightResponse::builder)
                 .logger(LOG, "deleteHostInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteHostInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DeleteHostInsight")
+                .serviceDetails("OperationsInsights", "DeleteHostInsight", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteHostInsightRequest::builder)
                 .basePath("/20200630")
@@ -1250,10 +1166,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteNewsReportResponse::builder)
                 .logger(LOG, "deleteNewsReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteNewsReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/DeleteNewsReport")
+                .serviceDetails("OperationsInsights", "DeleteNewsReport", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNewsReportRequest::builder)
                 .basePath("/20200630")
@@ -1280,10 +1193,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteOperationsInsightsPrivateEndpointResponse::builder)
                 .logger(LOG, "deleteOperationsInsightsPrivateEndpoint")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteOperationsInsightsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/DeleteOperationsInsightsPrivateEndpoint")
+                .serviceDetails("OperationsInsights", "DeleteOperationsInsightsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOperationsInsightsPrivateEndpointRequest::builder)
                 .basePath("/20200630")
@@ -1312,10 +1222,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteOperationsInsightsWarehouseResponse::builder)
                 .logger(LOG, "deleteOperationsInsightsWarehouse")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteOperationsInsightsWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DeleteOperationsInsightsWarehouse")
+                .serviceDetails("OperationsInsights", "DeleteOperationsInsightsWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOperationsInsightsWarehouseRequest::builder)
                 .basePath("/20200630")
@@ -1344,10 +1251,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteOperationsInsightsWarehouseUserResponse::builder)
                 .logger(LOG, "deleteOperationsInsightsWarehouseUser")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteOperationsInsightsWarehouseUser",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/DeleteOperationsInsightsWarehouseUser")
+                .serviceDetails("OperationsInsights", "DeleteOperationsInsightsWarehouseUser", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOperationsInsightsWarehouseUserRequest::builder)
                 .basePath("/20200630")
@@ -1375,10 +1279,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DeleteOpsiConfigurationResponse::builder)
                 .logger(LOG, "deleteOpsiConfiguration")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DeleteOpsiConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/DeleteOpsiConfiguration")
+                .serviceDetails("OperationsInsights", "DeleteOpsiConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOpsiConfigurationRequest::builder)
                 .basePath("/20200630")
@@ -1409,7 +1310,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "DisableAutonomousDatabaseInsightAdvancedFeatures",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableAutonomousDatabaseInsightAdvancedFeatures")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableAutonomousDatabaseInsightAdvancedFeaturesRequest::builder)
                 .basePath("/20200630")
@@ -1440,10 +1341,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DisableAwrHubSourceResponse::builder)
                 .logger(LOG, "disableAwrHubSource")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DisableAwrHubSource",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/DisableAwrHubSource")
+                .serviceDetails("OperationsInsights", "DisableAwrHubSource", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableAwrHubSourceRequest::builder)
                 .basePath("/20200630")
@@ -1472,10 +1370,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DisableDatabaseInsightResponse::builder)
                 .logger(LOG, "disableDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DisableDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/DisableDatabaseInsight")
+                .serviceDetails("OperationsInsights", "DisableDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -1504,10 +1399,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DisableExadataInsightResponse::builder)
                 .logger(LOG, "disableExadataInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DisableExadataInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/DisableExadataInsight")
+                .serviceDetails("OperationsInsights", "DisableExadataInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableExadataInsightRequest::builder)
                 .basePath("/20200630")
@@ -1535,10 +1427,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, DisableHostInsightResponse::builder)
                 .logger(LOG, "disableHostInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "DisableHostInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/DisableHostInsight")
+                .serviceDetails("OperationsInsights", "DisableHostInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableHostInsightRequest::builder)
                 .basePath("/20200630")
@@ -1573,9 +1462,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, DownloadOperationsInsightsWarehouseWalletResponse::builder)
                 .logger(LOG, "downloadOperationsInsightsWarehouseWallet")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "DownloadOperationsInsightsWarehouseWallet",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/DownloadOperationsInsightsWarehouseWallet")
+                        "OperationsInsights", "DownloadOperationsInsightsWarehouseWallet", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DownloadOperationsInsightsWarehouseWalletRequest::builder)
                 .basePath("/20200630")
@@ -1618,9 +1505,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, EnableAutonomousDatabaseInsightAdvancedFeaturesResponse::builder)
                 .logger(LOG, "enableAutonomousDatabaseInsightAdvancedFeatures")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "EnableAutonomousDatabaseInsightAdvancedFeatures",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableAutonomousDatabaseInsightAdvancedFeatures")
+                        "OperationsInsights", "EnableAutonomousDatabaseInsightAdvancedFeatures", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableAutonomousDatabaseInsightAdvancedFeaturesRequest::builder)
                 .basePath("/20200630")
@@ -1652,10 +1537,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, EnableAwrHubSourceResponse::builder)
                 .logger(LOG, "enableAwrHubSource")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "EnableAwrHubSource",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/EnableAwrHubSource")
+                .serviceDetails("OperationsInsights", "EnableAwrHubSource", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableAwrHubSourceRequest::builder)
                 .basePath("/20200630")
@@ -1686,10 +1568,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, EnableDatabaseInsightResponse::builder)
                 .logger(LOG, "enableDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "EnableDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/EnableDatabaseInsight")
+                .serviceDetails("OperationsInsights", "EnableDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -1721,10 +1600,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, EnableExadataInsightResponse::builder)
                 .logger(LOG, "enableExadataInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "EnableExadataInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/EnableExadataInsight")
+                .serviceDetails("OperationsInsights", "EnableExadataInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableExadataInsightRequest::builder)
                 .basePath("/20200630")
@@ -1755,10 +1631,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, EnableHostInsightResponse::builder)
                 .logger(LOG, "enableHostInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "EnableHostInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/EnableHostInsight")
+                .serviceDetails("OperationsInsights", "EnableHostInsight", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableHostInsightRequest::builder)
                 .basePath("/20200630")
@@ -1789,10 +1662,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetAwrDatabaseReportResponse::builder)
                 .logger(LOG, "getAwrDatabaseReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetAwrDatabaseReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseReport")
+                .serviceDetails("OperationsInsights", "GetAwrDatabaseReport", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAwrDatabaseReportRequest::builder)
                 .basePath("/20200630")
@@ -1836,10 +1706,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetAwrDatabaseSqlReportResponse::builder)
                 .logger(LOG, "getAwrDatabaseSqlReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetAwrDatabaseSqlReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrDatabaseSqlReport")
+                .serviceDetails("OperationsInsights", "GetAwrDatabaseSqlReport", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAwrDatabaseSqlReportRequest::builder)
                 .basePath("/20200630")
@@ -1877,10 +1744,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetAwrHubResponse::builder)
                 .logger(LOG, "getAwrHub")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetAwrHub",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrHub")
+                .serviceDetails("OperationsInsights", "GetAwrHub", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAwrHubRequest::builder)
                 .basePath("/20200630")
@@ -1906,10 +1770,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetAwrHubObjectResponse::builder)
                 .logger(LOG, "getAwrHubObject")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetAwrHubObject",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/GetAwrHubObject")
+                .serviceDetails("OperationsInsights", "GetAwrHubObject", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAwrHubObjectRequest::builder)
                 .basePath("/20200630")
@@ -1972,10 +1833,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetAwrHubSourceResponse::builder)
                 .logger(LOG, "getAwrHubSource")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetAwrHubSource",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/GetAwrHubSource")
+                .serviceDetails("OperationsInsights", "GetAwrHubSource", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAwrHubSourceRequest::builder)
                 .basePath("/20200630")
@@ -2003,10 +1861,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetAwrReportResponse::builder)
                 .logger(LOG, "getAwrReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetAwrReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/GetAwrReport")
+                .serviceDetails("OperationsInsights", "GetAwrReport", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAwrReportRequest::builder)
                 .basePath("/20200630")
@@ -2043,10 +1898,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetDatabaseInsightResponse::builder)
                 .logger(LOG, "getDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/GetDatabaseInsight")
+                .serviceDetails("OperationsInsights", "GetDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -2074,10 +1926,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetEnterpriseManagerBridgeResponse::builder)
                 .logger(LOG, "getEnterpriseManagerBridge")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetEnterpriseManagerBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/GetEnterpriseManagerBridge")
+                .serviceDetails("OperationsInsights", "GetEnterpriseManagerBridge", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetEnterpriseManagerBridgeRequest::builder)
                 .basePath("/20200630")
@@ -2103,10 +1952,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetExadataInsightResponse::builder)
                 .logger(LOG, "getExadataInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetExadataInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/GetExadataInsight")
+                .serviceDetails("OperationsInsights", "GetExadataInsight", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExadataInsightRequest::builder)
                 .basePath("/20200630")
@@ -2131,10 +1977,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetHostInsightResponse::builder)
                 .logger(LOG, "getHostInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetHostInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/GetHostInsight")
+                .serviceDetails("OperationsInsights", "GetHostInsight", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetHostInsightRequest::builder)
                 .basePath("/20200630")
@@ -2159,10 +2002,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetNewsReportResponse::builder)
                 .logger(LOG, "getNewsReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetNewsReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/GetNewsReport")
+                .serviceDetails("OperationsInsights", "GetNewsReport", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNewsReportRequest::builder)
                 .basePath("/20200630")
@@ -2190,10 +2030,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetOperationsInsightsPrivateEndpointResponse::builder)
                 .logger(LOG, "getOperationsInsightsPrivateEndpoint")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetOperationsInsightsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/GetOperationsInsightsPrivateEndpoint")
+                .serviceDetails("OperationsInsights", "GetOperationsInsightsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperationsInsightsPrivateEndpointRequest::builder)
                 .basePath("/20200630")
@@ -2224,10 +2061,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetOperationsInsightsWarehouseResponse::builder)
                 .logger(LOG, "getOperationsInsightsWarehouse")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetOperationsInsightsWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/GetOperationsInsightsWarehouse")
+                .serviceDetails("OperationsInsights", "GetOperationsInsightsWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperationsInsightsWarehouseRequest::builder)
                 .basePath("/20200630")
@@ -2257,10 +2091,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetOperationsInsightsWarehouseUserResponse::builder)
                 .logger(LOG, "getOperationsInsightsWarehouseUser")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetOperationsInsightsWarehouseUser",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/GetOperationsInsightsWarehouseUser")
+                .serviceDetails("OperationsInsights", "GetOperationsInsightsWarehouseUser", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperationsInsightsWarehouseUserRequest::builder)
                 .basePath("/20200630")
@@ -2289,10 +2120,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetOpsiConfigurationResponse::builder)
                 .logger(LOG, "getOpsiConfiguration")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetOpsiConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/GetOpsiConfiguration")
+                .serviceDetails("OperationsInsights", "GetOpsiConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOpsiConfigurationRequest::builder)
                 .basePath("/20200630")
@@ -2336,10 +2164,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetOpsiDataObjectResponse::builder)
                 .logger(LOG, "getOpsiDataObject")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetOpsiDataObject",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/GetOpsiDataObject")
+                .serviceDetails("OperationsInsights", "GetOpsiDataObject", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOpsiDataObjectRequest::builder)
                 .basePath("/20200630")
@@ -2364,10 +2189,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/GetWorkRequest")
+                .serviceDetails("OperationsInsights", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20200630")
@@ -2396,10 +2218,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, HeadAwrHubObjectResponse::builder)
                 .logger(LOG, "headAwrHubObject")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "HeadAwrHubObject",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/HeadAwrHubObject")
+                .serviceDetails("OperationsInsights", "HeadAwrHubObject", "")
                 .method(com.oracle.bmc.http.client.Method.HEAD)
                 .requestBuilder(HeadAwrHubObjectRequest::builder)
                 .basePath("/20200630")
@@ -2459,10 +2278,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestAddmReportsResponse::builder)
                 .logger(LOG, "ingestAddmReports")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestAddmReports",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestAddmReports")
+                .serviceDetails("OperationsInsights", "IngestAddmReports", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestAddmReportsRequest::builder)
                 .basePath("/20200630")
@@ -2495,10 +2311,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestDatabaseConfigurationResponse::builder)
                 .logger(LOG, "ingestDatabaseConfiguration")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestDatabaseConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestDatabaseConfiguration")
+                .serviceDetails("OperationsInsights", "IngestDatabaseConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestDatabaseConfigurationRequest::builder)
                 .basePath("/20200630")
@@ -2535,10 +2348,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestHostConfigurationResponse::builder)
                 .logger(LOG, "ingestHostConfiguration")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestHostConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostConfiguration")
+                .serviceDetails("OperationsInsights", "IngestHostConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestHostConfigurationRequest::builder)
                 .basePath("/20200630")
@@ -2571,10 +2381,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestHostMetricsResponse::builder)
                 .logger(LOG, "ingestHostMetrics")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestHostMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/IngestHostMetrics")
+                .serviceDetails("OperationsInsights", "IngestHostMetrics", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestHostMetricsRequest::builder)
                 .basePath("/20200630")
@@ -2604,10 +2411,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestSqlBucketResponse::builder)
                 .logger(LOG, "ingestSqlBucket")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestSqlBucket",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlBucket")
+                .serviceDetails("OperationsInsights", "IngestSqlBucket", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestSqlBucketRequest::builder)
                 .basePath("/20200630")
@@ -2639,10 +2443,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestSqlPlanLinesResponse::builder)
                 .logger(LOG, "ingestSqlPlanLines")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestSqlPlanLines",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlPlanLines")
+                .serviceDetails("OperationsInsights", "IngestSqlPlanLines", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestSqlPlanLinesRequest::builder)
                 .basePath("/20200630")
@@ -2674,10 +2475,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestSqlStatsResponse::builder)
                 .logger(LOG, "ingestSqlStats")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestSqlStats",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlStats")
+                .serviceDetails("OperationsInsights", "IngestSqlStats", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestSqlStatsRequest::builder)
                 .basePath("/20200630")
@@ -2708,10 +2506,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, IngestSqlTextResponse::builder)
                 .logger(LOG, "ingestSqlText")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "IngestSqlText",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestSqlText")
+                .serviceDetails("OperationsInsights", "IngestSqlText", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(IngestSqlTextRequest::builder)
                 .basePath("/20200630")
@@ -2743,10 +2538,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAddmDbFindingCategoriesResponse::builder)
                 .logger(LOG, "listAddmDbFindingCategories")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAddmDbFindingCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingCategories")
+                .serviceDetails("OperationsInsights", "ListAddmDbFindingCategories", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddmDbFindingCategoriesRequest::builder)
                 .basePath("/20200630")
@@ -2803,10 +2595,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAddmDbFindingsTimeSeriesResponse::builder)
                 .logger(LOG, "listAddmDbFindingsTimeSeries")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAddmDbFindingsTimeSeries",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbFindingsTimeSeries")
+                .serviceDetails("OperationsInsights", "ListAddmDbFindingsTimeSeries", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddmDbFindingsTimeSeriesRequest::builder)
                 .basePath("/20200630")
@@ -2868,10 +2657,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAddmDbParameterCategoriesResponse::builder)
                 .logger(LOG, "listAddmDbParameterCategories")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAddmDbParameterCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbParameterCategories")
+                .serviceDetails("OperationsInsights", "ListAddmDbParameterCategories", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddmDbParameterCategoriesRequest::builder)
                 .basePath("/20200630")
@@ -2929,10 +2715,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAddmDbRecommendationCategoriesResponse::builder)
                 .logger(LOG, "listAddmDbRecommendationCategories")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAddmDbRecommendationCategories",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationCategories")
+                .serviceDetails("OperationsInsights", "ListAddmDbRecommendationCategories", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddmDbRecommendationCategoriesRequest::builder)
                 .basePath("/20200630")
@@ -2991,10 +2774,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAddmDbRecommendationsTimeSeriesResponse::builder)
                 .logger(LOG, "listAddmDbRecommendationsTimeSeries")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAddmDbRecommendationsTimeSeries",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbRecommendationsTimeSeries")
+                .serviceDetails("OperationsInsights", "ListAddmDbRecommendationsTimeSeries", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddmDbRecommendationsTimeSeriesRequest::builder)
                 .basePath("/20200630")
@@ -3060,10 +2840,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAddmDbsResponse::builder)
                 .logger(LOG, "listAddmDbs")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAddmDbs",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListAddmDbs")
+                .serviceDetails("OperationsInsights", "ListAddmDbs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddmDbsRequest::builder)
                 .basePath("/20200630")
@@ -3125,10 +2902,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAwrDatabaseSnapshotsResponse::builder)
                 .logger(LOG, "listAwrDatabaseSnapshots")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAwrDatabaseSnapshots",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabaseSnapshots")
+                .serviceDetails("OperationsInsights", "ListAwrDatabaseSnapshots", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAwrDatabaseSnapshotsRequest::builder)
                 .basePath("/20200630")
@@ -3170,10 +2944,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAwrDatabasesResponse::builder)
                 .logger(LOG, "listAwrDatabases")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAwrDatabases",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrDatabases")
+                .serviceDetails("OperationsInsights", "ListAwrDatabases", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAwrDatabasesRequest::builder)
                 .basePath("/20200630")
@@ -3207,10 +2978,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAwrHubObjectsResponse::builder)
                 .logger(LOG, "listAwrHubObjects")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAwrHubObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/ListAwrHubObjects")
+                .serviceDetails("OperationsInsights", "ListAwrHubObjects", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAwrHubObjectsRequest::builder)
                 .basePath("/20200630")
@@ -3248,10 +3016,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAwrHubSourcesResponse::builder)
                 .logger(LOG, "listAwrHubSources")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAwrHubSources",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/ListAwrHubSources")
+                .serviceDetails("OperationsInsights", "ListAwrHubSources", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAwrHubSourcesRequest::builder)
                 .basePath("/20200630")
@@ -3297,10 +3062,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAwrHubsResponse::builder)
                 .logger(LOG, "listAwrHubs")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAwrHubs",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrHubs")
+                .serviceDetails("OperationsInsights", "ListAwrHubs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAwrHubsRequest::builder)
                 .basePath("/20200630")
@@ -3341,10 +3103,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListAwrSnapshotsResponse::builder)
                 .logger(LOG, "listAwrSnapshots")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListAwrSnapshots",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/ListAwrSnapshots")
+                .serviceDetails("OperationsInsights", "ListAwrSnapshots", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAwrSnapshotsRequest::builder)
                 .basePath("/20200630")
@@ -3378,10 +3137,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListDatabaseConfigurationsResponse::builder)
                 .logger(LOG, "listDatabaseConfigurations")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListDatabaseConfigurations",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseConfigurations")
+                .serviceDetails("OperationsInsights", "ListDatabaseConfigurations", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseConfigurationsRequest::builder)
                 .basePath("/20200630")
@@ -3460,10 +3216,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListDatabaseInsightsResponse::builder)
                 .logger(LOG, "listDatabaseInsights")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListDatabaseInsights",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListDatabaseInsights")
+                .serviceDetails("OperationsInsights", "ListDatabaseInsights", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDatabaseInsightsRequest::builder)
                 .basePath("/20200630")
@@ -3523,10 +3276,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListEnterpriseManagerBridgesResponse::builder)
                 .logger(LOG, "listEnterpriseManagerBridges")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListEnterpriseManagerBridges",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListEnterpriseManagerBridges")
+                .serviceDetails("OperationsInsights", "ListEnterpriseManagerBridges", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListEnterpriseManagerBridgesRequest::builder)
                 .basePath("/20200630")
@@ -3564,10 +3314,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListExadataConfigurationsResponse::builder)
                 .logger(LOG, "listExadataConfigurations")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListExadataConfigurations",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataConfigurations")
+                .serviceDetails("OperationsInsights", "ListExadataConfigurations", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExadataConfigurationsRequest::builder)
                 .basePath("/20200630")
@@ -3622,10 +3369,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListExadataInsightsResponse::builder)
                 .logger(LOG, "listExadataInsights")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListExadataInsights",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/ListExadataInsights")
+                .serviceDetails("OperationsInsights", "ListExadataInsights", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExadataInsightsRequest::builder)
                 .basePath("/20200630")
@@ -3675,10 +3419,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListHostConfigurationsResponse::builder)
                 .logger(LOG, "listHostConfigurations")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListHostConfigurations",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostConfigurations")
+                .serviceDetails("OperationsInsights", "ListHostConfigurations", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListHostConfigurationsRequest::builder)
                 .basePath("/20200630")
@@ -3749,10 +3490,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListHostInsightsResponse::builder)
                 .logger(LOG, "listHostInsights")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListHostInsights",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostInsights")
+                .serviceDetails("OperationsInsights", "ListHostInsights", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListHostInsightsRequest::builder)
                 .basePath("/20200630")
@@ -3809,10 +3547,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListHostedEntitiesResponse::builder)
                 .logger(LOG, "listHostedEntities")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListHostedEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListHostedEntities")
+                .serviceDetails("OperationsInsights", "ListHostedEntities", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListHostedEntitiesRequest::builder)
                 .basePath("/20200630")
@@ -3857,10 +3592,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListImportableAgentEntitiesResponse::builder)
                 .logger(LOG, "listImportableAgentEntities")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListImportableAgentEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableAgentEntities")
+                .serviceDetails("OperationsInsights", "ListImportableAgentEntities", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListImportableAgentEntitiesRequest::builder)
                 .basePath("/20200630")
@@ -3891,10 +3623,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListImportableComputeEntitiesResponse::builder)
                 .logger(LOG, "listImportableComputeEntities")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListImportableComputeEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/ListImportableComputeEntities")
+                .serviceDetails("OperationsInsights", "ListImportableComputeEntities", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListImportableComputeEntitiesRequest::builder)
                 .basePath("/20200630")
@@ -3929,10 +3658,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListImportableEnterpriseManagerEntitiesResponse::builder)
                 .logger(LOG, "listImportableEnterpriseManagerEntities")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListImportableEnterpriseManagerEntities",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/ListImportableEnterpriseManagerEntities")
+                .serviceDetails("OperationsInsights", "ListImportableEnterpriseManagerEntities", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListImportableEnterpriseManagerEntitiesRequest::builder)
                 .basePath("/20200630")
@@ -3971,10 +3697,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListNewsReportsResponse::builder)
                 .logger(LOG, "listNewsReports")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListNewsReports",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReport/ListNewsReports")
+                .serviceDetails("OperationsInsights", "ListNewsReports", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNewsReportsRequest::builder)
                 .basePath("/20200630")
@@ -4015,10 +3738,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListOperationsInsightsPrivateEndpointsResponse::builder)
                 .logger(LOG, "listOperationsInsightsPrivateEndpoints")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListOperationsInsightsPrivateEndpoints",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/ListOperationsInsightsPrivateEndpoints")
+                .serviceDetails("OperationsInsights", "ListOperationsInsightsPrivateEndpoints", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperationsInsightsPrivateEndpointsRequest::builder)
                 .basePath("/20200630")
@@ -4062,10 +3782,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListOperationsInsightsWarehouseUsersResponse::builder)
                 .logger(LOG, "listOperationsInsightsWarehouseUsers")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListOperationsInsightsWarehouseUsers",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/ListOperationsInsightsWarehouseUsers")
+                .serviceDetails("OperationsInsights", "ListOperationsInsightsWarehouseUsers", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperationsInsightsWarehouseUsersRequest::builder)
                 .basePath("/20200630")
@@ -4106,10 +3823,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListOperationsInsightsWarehousesResponse::builder)
                 .logger(LOG, "listOperationsInsightsWarehouses")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListOperationsInsightsWarehouses",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/ListOperationsInsightsWarehouses")
+                .serviceDetails("OperationsInsights", "ListOperationsInsightsWarehouses", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperationsInsightsWarehousesRequest::builder)
                 .basePath("/20200630")
@@ -4149,10 +3863,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListOpsiConfigurationsResponse::builder)
                 .logger(LOG, "listOpsiConfigurations")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListOpsiConfigurations",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/ListOpsiConfigurations")
+                .serviceDetails("OperationsInsights", "ListOpsiConfigurations", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOpsiConfigurationsRequest::builder)
                 .basePath("/20200630")
@@ -4190,10 +3901,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListOpsiDataObjectsResponse::builder)
                 .logger(LOG, "listOpsiDataObjects")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListOpsiDataObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/ListOpsiDataObjects")
+                .serviceDetails("OperationsInsights", "ListOpsiDataObjects", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOpsiDataObjectsRequest::builder)
                 .basePath("/20200630")
@@ -4233,10 +3941,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListSqlPlansResponse::builder)
                 .logger(LOG, "listSqlPlans")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListSqlPlans",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlPlans")
+                .serviceDetails("OperationsInsights", "ListSqlPlans", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSqlPlansRequest::builder)
                 .basePath("/20200630")
@@ -4272,10 +3977,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListSqlSearchesResponse::builder)
                 .logger(LOG, "listSqlSearches")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListSqlSearches",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlSearches")
+                .serviceDetails("OperationsInsights", "ListSqlSearches", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSqlSearchesRequest::builder)
                 .basePath("/20200630")
@@ -4325,10 +4027,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListSqlTextsResponse::builder)
                 .logger(LOG, "listSqlTexts")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListSqlTexts",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ListSqlTexts")
+                .serviceDetails("OperationsInsights", "ListSqlTexts", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSqlTextsRequest::builder)
                 .basePath("/20200630")
@@ -4388,10 +4087,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListWarehouseDataObjectsResponse::builder)
                 .logger(LOG, "listWarehouseDataObjects")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListWarehouseDataObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/ListWarehouseDataObjects")
+                .serviceDetails("OperationsInsights", "ListWarehouseDataObjects", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWarehouseDataObjectsRequest::builder)
                 .basePath("/20200630")
@@ -4433,10 +4129,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestErrors")
+                .serviceDetails("OperationsInsights", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20200630")
@@ -4467,10 +4160,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequestLogs")
+                .serviceDetails("OperationsInsights", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20200630")
@@ -4499,10 +4189,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/WorkRequests/ListWorkRequests")
+                .serviceDetails("OperationsInsights", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20200630")
@@ -4539,10 +4226,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, PutAwrHubObjectResponse::builder)
                 .logger(LOG, "putAwrHubObject")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "PutAwrHubObject",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubObjects/PutAwrHubObject")
+                .serviceDetails("OperationsInsights", "PutAwrHubObject", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(PutAwrHubObjectRequest::builder)
                 .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
@@ -4583,10 +4267,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, QueryOpsiDataObjectDataResponse::builder)
                 .logger(LOG, "queryOpsiDataObjectData")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "QueryOpsiDataObjectData",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiDataObjects/QueryOpsiDataObjectData")
+                .serviceDetails("OperationsInsights", "QueryOpsiDataObjectData", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(QueryOpsiDataObjectDataRequest::builder)
                 .basePath("/20200630")
@@ -4624,10 +4305,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, QueryWarehouseDataObjectDataResponse::builder)
                 .logger(LOG, "queryWarehouseDataObjectData")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "QueryWarehouseDataObjectData",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/QueryWarehouseDataObjectData")
+                .serviceDetails("OperationsInsights", "QueryWarehouseDataObjectData", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(QueryWarehouseDataObjectDataRequest::builder)
                 .basePath("/20200630")
@@ -4663,10 +4341,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, RotateOperationsInsightsWarehouseWalletResponse::builder)
                 .logger(LOG, "rotateOperationsInsightsWarehouseWallet")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "RotateOperationsInsightsWarehouseWallet",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/RotateOperationsInsightsWarehouseWallet")
+                .serviceDetails("OperationsInsights", "RotateOperationsInsightsWarehouseWallet", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RotateOperationsInsightsWarehouseWalletRequest::builder)
                 .basePath("/20200630")
@@ -4694,10 +4369,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAddmDbFindingsResponse::builder)
                 .logger(LOG, "summarizeAddmDbFindings")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAddmDbFindings",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbFindings")
+                .serviceDetails("OperationsInsights", "SummarizeAddmDbFindings", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAddmDbFindingsRequest::builder)
                 .basePath("/20200630")
@@ -4759,10 +4431,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAddmDbParameterChangesResponse::builder)
                 .logger(LOG, "summarizeAddmDbParameterChanges")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAddmDbParameterChanges",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameterChanges")
+                .serviceDetails("OperationsInsights", "SummarizeAddmDbParameterChanges", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAddmDbParameterChangesRequest::builder)
                 .basePath("/20200630")
@@ -4826,10 +4495,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAddmDbParametersResponse::builder)
                 .logger(LOG, "summarizeAddmDbParameters")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAddmDbParameters",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbParameters")
+                .serviceDetails("OperationsInsights", "SummarizeAddmDbParameters", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAddmDbParametersRequest::builder)
                 .basePath("/20200630")
@@ -4894,10 +4560,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAddmDbRecommendationsResponse::builder)
                 .logger(LOG, "summarizeAddmDbRecommendations")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAddmDbRecommendations",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbRecommendations")
+                .serviceDetails("OperationsInsights", "SummarizeAddmDbRecommendations", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAddmDbRecommendationsRequest::builder)
                 .basePath("/20200630")
@@ -4967,10 +4630,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAddmDbSchemaObjectsResponse::builder)
                 .logger(LOG, "summarizeAddmDbSchemaObjects")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAddmDbSchemaObjects",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSchemaObjects")
+                .serviceDetails("OperationsInsights", "SummarizeAddmDbSchemaObjects", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAddmDbSchemaObjectsRequest::builder)
                 .basePath("/20200630")
@@ -5033,10 +4693,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAddmDbSqlStatementsResponse::builder)
                 .logger(LOG, "summarizeAddmDbSqlStatements")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAddmDbSqlStatements",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeAddmDbSqlStatements")
+                .serviceDetails("OperationsInsights", "SummarizeAddmDbSqlStatements", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAddmDbSqlStatementsRequest::builder)
                 .basePath("/20200630")
@@ -5101,10 +4758,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseCpuUsagesResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseCpuUsages")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseCpuUsages",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseCpuUsages")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseCpuUsages", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseCpuUsagesRequest::builder)
                 .basePath("/20200630")
@@ -5155,10 +4809,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseMetricsResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseMetrics")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseMetrics")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseMetrics", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseMetricsRequest::builder)
                 .basePath("/20200630")
@@ -5210,10 +4861,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseParameterChangesResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseParameterChanges")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseParameterChanges",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameterChanges")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseParameterChanges", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseParameterChangesRequest::builder)
                 .basePath("/20200630")
@@ -5263,10 +4911,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseParametersResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseParameters")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseParameters",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseParameters")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseParameters", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseParametersRequest::builder)
                 .basePath("/20200630")
@@ -5320,10 +4965,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseSnapshotRangesResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseSnapshotRanges")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseSnapshotRanges",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSnapshotRanges")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseSnapshotRanges", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseSnapshotRangesRequest::builder)
                 .basePath("/20200630")
@@ -5366,10 +5008,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseSysstatsResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseSysstats")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseSysstats",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseSysstats")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseSysstats", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseSysstatsRequest::builder)
                 .basePath("/20200630")
@@ -5420,10 +5059,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseTopWaitEventsResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseTopWaitEvents")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseTopWaitEvents",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseTopWaitEvents")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseTopWaitEvents", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseTopWaitEventsRequest::builder)
                 .basePath("/20200630")
@@ -5474,10 +5110,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseWaitEventBucketsResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseWaitEventBuckets")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseWaitEventBuckets",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEventBuckets")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseWaitEventBuckets", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseWaitEventBucketsRequest::builder)
                 .basePath("/20200630")
@@ -5530,10 +5163,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrDatabaseWaitEventsResponse::builder)
                 .logger(LOG, "summarizeAwrDatabaseWaitEvents")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrDatabaseWaitEvents",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrDatabaseWaitEvents")
+                .serviceDetails("OperationsInsights", "SummarizeAwrDatabaseWaitEvents", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrDatabaseWaitEventsRequest::builder)
                 .basePath("/20200630")
@@ -5584,10 +5214,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeAwrSourcesSummariesResponse::builder)
                 .logger(LOG, "summarizeAwrSourcesSummaries")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeAwrSourcesSummaries",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/SummarizeAwrSourcesSummaries")
+                .serviceDetails("OperationsInsights", "SummarizeAwrSourcesSummaries", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeAwrSourcesSummariesRequest::builder)
                 .basePath("/20200630")
@@ -5621,10 +5248,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeConfigurationItemsResponse::builder)
                 .logger(LOG, "summarizeConfigurationItems")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeConfigurationItems",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/SummarizeConfigurationItems")
+                .serviceDetails("OperationsInsights", "SummarizeConfigurationItems", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeConfigurationItemsRequest::builder)
                 .basePath("/20200630")
@@ -5667,9 +5291,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeDatabaseInsightResourceCapacityTrendResponse::builder)
                 .logger(LOG, "summarizeDatabaseInsightResourceCapacityTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeDatabaseInsightResourceCapacityTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceCapacityTrend")
+                        "OperationsInsights", "SummarizeDatabaseInsightResourceCapacityTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightResourceCapacityTrendRequest::builder)
                 .basePath("/20200630")
@@ -5764,9 +5386,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeDatabaseInsightResourceForecastTrendResponse::builder)
                 .logger(LOG, "summarizeDatabaseInsightResourceForecastTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeDatabaseInsightResourceForecastTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceForecastTrend")
+                        "OperationsInsights", "SummarizeDatabaseInsightResourceForecastTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightResourceForecastTrendRequest::builder)
                 .basePath("/20200630")
@@ -5862,9 +5482,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeDatabaseInsightResourceStatisticsResponse::builder)
                 .logger(LOG, "summarizeDatabaseInsightResourceStatistics")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeDatabaseInsightResourceStatistics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceStatistics")
+                        "OperationsInsights", "SummarizeDatabaseInsightResourceStatistics", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightResourceStatisticsRequest::builder)
                 .basePath("/20200630")
@@ -5959,10 +5577,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeDatabaseInsightResourceUsageResponse::builder)
                 .logger(LOG, "summarizeDatabaseInsightResourceUsage")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeDatabaseInsightResourceUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsage")
+                .serviceDetails("OperationsInsights", "SummarizeDatabaseInsightResourceUsage", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightResourceUsageRequest::builder)
                 .basePath("/20200630")
@@ -6051,9 +5666,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeDatabaseInsightResourceUsageTrendResponse::builder)
                 .logger(LOG, "summarizeDatabaseInsightResourceUsageTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeDatabaseInsightResourceUsageTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUsageTrend")
+                        "OperationsInsights", "SummarizeDatabaseInsightResourceUsageTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightResourceUsageTrendRequest::builder)
                 .basePath("/20200630")
@@ -6148,7 +5761,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "SummarizeDatabaseInsightResourceUtilizationInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightResourceUtilizationInsight")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightResourceUtilizationInsightRequest::builder)
                 .basePath("/20200630")
@@ -6240,9 +5853,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeDatabaseInsightTablespaceUsageTrendResponse::builder)
                 .logger(LOG, "summarizeDatabaseInsightTablespaceUsageTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeDatabaseInsightTablespaceUsageTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeDatabaseInsightTablespaceUsageTrend")
+                        "OperationsInsights", "SummarizeDatabaseInsightTablespaceUsageTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDatabaseInsightTablespaceUsageTrendRequest::builder)
                 .basePath("/20200630")
@@ -6287,9 +5898,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeExadataInsightResourceCapacityTrendResponse::builder)
                 .logger(LOG, "summarizeExadataInsightResourceCapacityTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeExadataInsightResourceCapacityTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrend")
+                        "OperationsInsights", "SummarizeExadataInsightResourceCapacityTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataInsightResourceCapacityTrendRequest::builder)
                 .basePath("/20200630")
@@ -6362,7 +5971,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "SummarizeExadataInsightResourceCapacityTrendAggregated",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceCapacityTrendAggregated")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         SummarizeExadataInsightResourceCapacityTrendAggregatedRequest::builder)
@@ -6442,9 +6051,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeExadataInsightResourceForecastTrendResponse::builder)
                 .logger(LOG, "summarizeExadataInsightResourceForecastTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeExadataInsightResourceForecastTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrend")
+                        "OperationsInsights", "SummarizeExadataInsightResourceForecastTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataInsightResourceForecastTrendRequest::builder)
                 .basePath("/20200630")
@@ -6521,7 +6128,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "SummarizeExadataInsightResourceForecastTrendAggregated",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceForecastTrendAggregated")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(
                         SummarizeExadataInsightResourceForecastTrendAggregatedRequest::builder)
@@ -6604,9 +6211,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeExadataInsightResourceStatisticsResponse::builder)
                 .logger(LOG, "summarizeExadataInsightResourceStatistics")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeExadataInsightResourceStatistics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceStatistics")
+                        "OperationsInsights", "SummarizeExadataInsightResourceStatistics", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataInsightResourceStatisticsRequest::builder)
                 .basePath("/20200630")
@@ -6667,10 +6272,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeExadataInsightResourceUsageResponse::builder)
                 .logger(LOG, "summarizeExadataInsightResourceUsage")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeExadataInsightResourceUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsage")
+                .serviceDetails("OperationsInsights", "SummarizeExadataInsightResourceUsage", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataInsightResourceUsageRequest::builder)
                 .basePath("/20200630")
@@ -6749,9 +6351,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeExadataInsightResourceUsageAggregatedResponse::builder)
                 .logger(LOG, "summarizeExadataInsightResourceUsageAggregated")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeExadataInsightResourceUsageAggregated",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUsageAggregated")
+                        "OperationsInsights", "SummarizeExadataInsightResourceUsageAggregated", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataInsightResourceUsageAggregatedRequest::builder)
                 .basePath("/20200630")
@@ -6831,7 +6431,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "SummarizeExadataInsightResourceUtilizationInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataInsightResourceUtilizationInsight")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataInsightResourceUtilizationInsightRequest::builder)
                 .basePath("/20200630")
@@ -6909,10 +6509,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeExadataMembersResponse::builder)
                 .logger(LOG, "summarizeExadataMembers")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeExadataMembers",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/SummarizeExadataMembers")
+                .serviceDetails("OperationsInsights", "SummarizeExadataMembers", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeExadataMembersRequest::builder)
                 .basePath("/20200630")
@@ -6951,10 +6548,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightDiskStatisticsResponse::builder)
                 .logger(LOG, "summarizeHostInsightDiskStatistics")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightDiskStatistics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightDiskStatistics")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightDiskStatistics", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightDiskStatisticsRequest::builder)
                 .basePath("/20200630")
@@ -6995,10 +6589,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightHostRecommendationResponse::builder)
                 .logger(LOG, "summarizeHostInsightHostRecommendation")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightHostRecommendation",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightHostRecommendation")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightHostRecommendation", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightHostRecommendationRequest::builder)
                 .basePath("/20200630")
@@ -7039,10 +6630,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightNetworkUsageTrendResponse::builder)
                 .logger(LOG, "summarizeHostInsightNetworkUsageTrend")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightNetworkUsageTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightNetworkUsageTrend")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightNetworkUsageTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightNetworkUsageTrendRequest::builder)
                 .basePath("/20200630")
@@ -7085,9 +6673,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeHostInsightResourceCapacityTrendResponse::builder)
                 .logger(LOG, "summarizeHostInsightResourceCapacityTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightResourceCapacityTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceCapacityTrend")
+                        "OperationsInsights", "SummarizeHostInsightResourceCapacityTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightResourceCapacityTrendRequest::builder)
                 .basePath("/20200630")
@@ -7171,9 +6757,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeHostInsightResourceForecastTrendResponse::builder)
                 .logger(LOG, "summarizeHostInsightResourceForecastTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightResourceForecastTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceForecastTrend")
+                        "OperationsInsights", "SummarizeHostInsightResourceForecastTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightResourceForecastTrendRequest::builder)
                 .basePath("/20200630")
@@ -7255,10 +6839,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightResourceStatisticsResponse::builder)
                 .logger(LOG, "summarizeHostInsightResourceStatistics")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightResourceStatistics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceStatistics")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightResourceStatistics", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightResourceStatisticsRequest::builder)
                 .basePath("/20200630")
@@ -7342,10 +6923,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightResourceUsageResponse::builder)
                 .logger(LOG, "summarizeHostInsightResourceUsage")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightResourceUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsage")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightResourceUsage", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightResourceUsageRequest::builder)
                 .basePath("/20200630")
@@ -7419,10 +6997,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightResourceUsageTrendResponse::builder)
                 .logger(LOG, "summarizeHostInsightResourceUsageTrend")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightResourceUsageTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUsageTrend")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightResourceUsageTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightResourceUsageTrendRequest::builder)
                 .basePath("/20200630")
@@ -7502,9 +7077,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeHostInsightResourceUtilizationInsightResponse::builder)
                 .logger(LOG, "summarizeHostInsightResourceUtilizationInsight")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightResourceUtilizationInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightResourceUtilizationInsight")
+                        "OperationsInsights", "SummarizeHostInsightResourceUtilizationInsight", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightResourceUtilizationInsightRequest::builder)
                 .basePath("/20200630")
@@ -7581,10 +7154,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightStorageUsageTrendResponse::builder)
                 .logger(LOG, "summarizeHostInsightStorageUsageTrend")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightStorageUsageTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightStorageUsageTrend")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightStorageUsageTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightStorageUsageTrendRequest::builder)
                 .basePath("/20200630")
@@ -7629,10 +7199,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeHostInsightTopProcessesUsageResponse::builder)
                 .logger(LOG, "summarizeHostInsightTopProcessesUsage")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightTopProcessesUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsage")
+                .serviceDetails("OperationsInsights", "SummarizeHostInsightTopProcessesUsage", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightTopProcessesUsageRequest::builder)
                 .basePath("/20200630")
@@ -7683,9 +7250,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
         return clientCall(request, SummarizeHostInsightTopProcessesUsageTrendResponse::builder)
                 .logger(LOG, "summarizeHostInsightTopProcessesUsageTrend")
                 .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeHostInsightTopProcessesUsageTrend",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightTopProcessesUsageTrend")
+                        "OperationsInsights", "SummarizeHostInsightTopProcessesUsageTrend", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeHostInsightTopProcessesUsageTrendRequest::builder)
                 .basePath("/20200630")
@@ -7738,7 +7303,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .serviceDetails(
                         "OperationsInsights",
                         "SummarizeOperationsInsightsWarehouseResourceUsage",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/SummarizeOperationsInsightsWarehouseResourceUsage")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeOperationsInsightsWarehouseResourceUsageRequest::builder)
                 .basePath("/20200630")
@@ -7769,10 +7334,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeSqlInsightsResponse::builder)
                 .logger(LOG, "summarizeSqlInsights")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeSqlInsights",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlInsights")
+                .serviceDetails("OperationsInsights", "SummarizeSqlInsights", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSqlInsightsRequest::builder)
                 .basePath("/20200630")
@@ -7852,10 +7414,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeSqlPlanInsightsResponse::builder)
                 .logger(LOG, "summarizeSqlPlanInsights")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeSqlPlanInsights",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlPlanInsights")
+                .serviceDetails("OperationsInsights", "SummarizeSqlPlanInsights", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSqlPlanInsightsRequest::builder)
                 .basePath("/20200630")
@@ -7892,10 +7451,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeSqlResponseTimeDistributionsResponse::builder)
                 .logger(LOG, "summarizeSqlResponseTimeDistributions")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeSqlResponseTimeDistributions",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlResponseTimeDistributions")
+                .serviceDetails("OperationsInsights", "SummarizeSqlResponseTimeDistributions", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSqlResponseTimeDistributionsRequest::builder)
                 .basePath("/20200630")
@@ -7933,10 +7489,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeSqlStatisticsResponse::builder)
                 .logger(LOG, "summarizeSqlStatistics")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeSqlStatistics",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatistics")
+                .serviceDetails("OperationsInsights", "SummarizeSqlStatistics", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSqlStatisticsRequest::builder)
                 .basePath("/20200630")
@@ -8027,10 +7580,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeSqlStatisticsTimeSeriesResponse::builder)
                 .logger(LOG, "summarizeSqlStatisticsTimeSeries")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeSqlStatisticsTimeSeries",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeries")
+                .serviceDetails("OperationsInsights", "SummarizeSqlStatisticsTimeSeries", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSqlStatisticsTimeSeriesRequest::builder)
                 .basePath("/20200630")
@@ -8109,10 +7659,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, SummarizeSqlStatisticsTimeSeriesByPlanResponse::builder)
                 .logger(LOG, "summarizeSqlStatisticsTimeSeriesByPlan")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "SummarizeSqlStatisticsTimeSeriesByPlan",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/SummarizeSqlStatisticsTimeSeriesByPlan")
+                .serviceDetails("OperationsInsights", "SummarizeSqlStatisticsTimeSeriesByPlan", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeSqlStatisticsTimeSeriesByPlanRequest::builder)
                 .basePath("/20200630")
@@ -8151,10 +7698,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateAwrHubResponse::builder)
                 .logger(LOG, "updateAwrHub")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateAwrHub",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubs/UpdateAwrHub")
+                .serviceDetails("OperationsInsights", "UpdateAwrHub", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAwrHubRequest::builder)
                 .basePath("/20200630")
@@ -8181,10 +7725,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateAwrHubSourceResponse::builder)
                 .logger(LOG, "updateAwrHubSource")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateAwrHubSource",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/AwrHubSources/UpdateAwrHubSource")
+                .serviceDetails("OperationsInsights", "UpdateAwrHubSource", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAwrHubSourceRequest::builder)
                 .basePath("/20200630")
@@ -8213,10 +7754,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateDatabaseInsightResponse::builder)
                 .logger(LOG, "updateDatabaseInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateDatabaseInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/UpdateDatabaseInsight")
+                .serviceDetails("OperationsInsights", "UpdateDatabaseInsight", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDatabaseInsightRequest::builder)
                 .basePath("/20200630")
@@ -8248,10 +7786,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateEnterpriseManagerBridgeResponse::builder)
                 .logger(LOG, "updateEnterpriseManagerBridge")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateEnterpriseManagerBridge",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/EnterpriseManagerBridges/UpdateEnterpriseManagerBridge")
+                .serviceDetails("OperationsInsights", "UpdateEnterpriseManagerBridge", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateEnterpriseManagerBridgeRequest::builder)
                 .basePath("/20200630")
@@ -8281,10 +7816,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateExadataInsightResponse::builder)
                 .logger(LOG, "updateExadataInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateExadataInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/ExadataInsights/UpdateExadataInsight")
+                .serviceDetails("OperationsInsights", "UpdateExadataInsight", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateExadataInsightRequest::builder)
                 .basePath("/20200630")
@@ -8312,10 +7844,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateHostInsightResponse::builder)
                 .logger(LOG, "updateHostInsight")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateHostInsight",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/UpdateHostInsight")
+                .serviceDetails("OperationsInsights", "UpdateHostInsight", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateHostInsightRequest::builder)
                 .basePath("/20200630")
@@ -8342,10 +7871,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateNewsReportResponse::builder)
                 .logger(LOG, "updateNewsReport")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateNewsReport",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/NewsReports/UpdateNewsReport")
+                .serviceDetails("OperationsInsights", "UpdateNewsReport", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateNewsReportRequest::builder)
                 .basePath("/20200630")
@@ -8376,10 +7902,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateOperationsInsightsPrivateEndpointResponse::builder)
                 .logger(LOG, "updateOperationsInsightsPrivateEndpoint")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateOperationsInsightsPrivateEndpoint",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsPrivateEndpoint/UpdateOperationsInsightsPrivateEndpoint")
+                .serviceDetails("OperationsInsights", "UpdateOperationsInsightsPrivateEndpoint", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOperationsInsightsPrivateEndpointRequest::builder)
                 .basePath("/20200630")
@@ -8412,10 +7935,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateOperationsInsightsWarehouseResponse::builder)
                 .logger(LOG, "updateOperationsInsightsWarehouse")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateOperationsInsightsWarehouse",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouses/UpdateOperationsInsightsWarehouse")
+                .serviceDetails("OperationsInsights", "UpdateOperationsInsightsWarehouse", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOperationsInsightsWarehouseRequest::builder)
                 .basePath("/20200630")
@@ -8448,10 +7968,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateOperationsInsightsWarehouseUserResponse::builder)
                 .logger(LOG, "updateOperationsInsightsWarehouseUser")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateOperationsInsightsWarehouseUser",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OperationsInsightsWarehouseUsers/UpdateOperationsInsightsWarehouseUser")
+                .serviceDetails("OperationsInsights", "UpdateOperationsInsightsWarehouseUser", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOperationsInsightsWarehouseUserRequest::builder)
                 .basePath("/20200630")
@@ -8483,10 +8000,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
 
         return clientCall(request, UpdateOpsiConfigurationResponse::builder)
                 .logger(LOG, "updateOpsiConfiguration")
-                .serviceDetails(
-                        "OperationsInsights",
-                        "UpdateOpsiConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiConfigurations/UpdateOpsiConfiguration")
+                .serviceDetails("OperationsInsights", "UpdateOpsiConfiguration", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOpsiConfigurationRequest::builder)
                 .basePath("/20200630")

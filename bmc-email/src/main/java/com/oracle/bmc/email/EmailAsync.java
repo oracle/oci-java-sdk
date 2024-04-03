@@ -8,8 +8,9 @@ import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
 
 /**
- * API for the Email Delivery service. Use this API to send high-volume, application-generated
- * emails. For more information, see [Overview of the Email Delivery
+ * Use the Email Delivery API to do the necessary set up to send high-volume and
+ * application-generated emails through the OCI Email Delivery service. For more information, see
+ * [Overview of the Email Delivery
  * Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  * <p>*Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be
@@ -68,12 +69,12 @@ public interface EmailAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a email domain into a different compartment. When provided, If-Match is checked against
-     * ETag value of the resource. For information about moving resources between compartments, see
-     * [Moving Resources to a Different
+     * Moves an email domain into a different compartment. When provided, If-Match is checked
+     * against ETag value of the resource. For information about moving resources between
+     * compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
-     * <p>*Note:** All Dkim objects associated with this email domain will also be moved into the
+     * <p>*Note:** All DKIM objects associated with this email domain will also be moved into the
      * provided compartment.
      *
      * @param request The request object containing the details to send
@@ -108,10 +109,10 @@ public interface EmailAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new DKIM for a email domain. This DKIM will sign all approved senders in the
-     * tenancy that are in this email domain. Best security practices indicate to periodically
-     * rotate the DKIM that is doing the signing. When a second DKIM is applied, all senders will
-     * seamlessly pick up the new key without interruption in signing.
+     * Creates a new DKIM for an email domain. This DKIM signs all approved senders in the tenancy
+     * that are in this email domain. Best security practices indicate to periodically rotate the
+     * DKIM that is doing the signing. When a second DKIM is applied, all senders seamlessly pick up
+     * the new key without interruption in signing.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -177,8 +178,8 @@ public interface EmailAsync extends AutoCloseable {
     /**
      * Deletes a DKIM. If this key is currently the active key for the email domain, deleting the
      * key will stop signing the domain's outgoing mail. DKIM keys are left in DELETING state for
-     * about a day to allow DKIM signatures on in-transit mail to be validated. Consider instead of
-     * deletion creating a new DKIM for this domain so the signing can be rotated to it.
+     * about a day to allow DKIM signatures on in-transit mail to be validated. Consider creating a
+     * new DKIM for this domain so the signing can be rotated to it instead of deletion.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -192,7 +193,7 @@ public interface EmailAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteDkimRequest, DeleteDkimResponse> handler);
 
     /**
-     * Deletes a email domain.
+     * Deletes an email domain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -252,6 +253,22 @@ public interface EmailAsync extends AutoCloseable {
     java.util.concurrent.Future<GetDkimResponse> getDkim(
             GetDkimRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetDkimRequest, GetDkimResponse> handler);
+
+    /**
+     * Returns email configuration associated with the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailConfigurationResponse> getEmailConfiguration(
+            GetEmailConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailConfigurationRequest, GetEmailConfigurationResponse>
+                    handler);
 
     /**
      * Retrieves the specified email domain.
@@ -314,7 +331,7 @@ public interface EmailAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -435,7 +452,7 @@ public interface EmailAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateDkimRequest, UpdateDkimResponse> handler);
 
     /**
-     * Modifies a email domain.
+     * Modifies an email domain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

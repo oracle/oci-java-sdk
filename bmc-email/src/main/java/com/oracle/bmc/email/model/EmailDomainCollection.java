@@ -5,7 +5,7 @@
 package com.oracle.bmc.email.model;
 
 /**
- * Results of an EmailDomain search. Contains boh EmailDomainSummary items and other information,
+ * Results of an EmailDomain search. Contains both EmailDomainSummary items and other information,
  * such as metadata. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

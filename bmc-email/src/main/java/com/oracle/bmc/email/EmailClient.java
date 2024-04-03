@@ -427,6 +427,32 @@ public class EmailClient extends com.oracle.bmc.http.internal.BaseSyncClient imp
     }
 
     @Override
+    public GetEmailConfigurationResponse getEmailConfiguration(
+            GetEmailConfigurationRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetEmailConfigurationResponse::builder)
+                .logger(LOG, "getEmailConfiguration")
+                .serviceDetails(
+                        "Email",
+                        "GetEmailConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Configuration/GetEmailConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailConfigurationRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.Configuration.class,
+                        GetEmailConfigurationResponse.Builder::configuration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetEmailDomainResponse getEmailDomain(GetEmailDomainRequest request) {
 
         Validate.notBlank(request.getEmailDomainId(), "emailDomainId must not be blank");

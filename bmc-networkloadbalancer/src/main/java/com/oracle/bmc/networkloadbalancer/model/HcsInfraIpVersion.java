@@ -9,6 +9,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 public enum HcsInfraIpVersion implements com.oracle.bmc.http.internal.BmcEnum {
     Ipv4("IPV4"),
     Ipv4AndIpv6("IPV4_AND_IPV6"),
+    Ipv6("IPV6"),
     ;
 
     private final String value;

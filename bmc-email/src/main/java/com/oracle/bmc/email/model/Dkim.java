@@ -246,7 +246,7 @@ public final class Dkim extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * The name of the DNS subdomain that must be provisioned to enable email recipients to
          * verify DKIM signatures. It is usually created with a CNAME record set to the
-         * cnameRecordValue
+         * cnameRecordValue.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsSubdomainName")
         private String dnsSubdomainName;
@@ -254,7 +254,7 @@ public final class Dkim extends com.oracle.bmc.http.client.internal.ExplicitlySe
         /**
          * The name of the DNS subdomain that must be provisioned to enable email recipients to
          * verify DKIM signatures. It is usually created with a CNAME record set to the
-         * cnameRecordValue
+         * cnameRecordValue.
          *
          * @param dnsSubdomainName the value to set
          * @return this builder
@@ -285,22 +285,20 @@ public final class Dkim extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME
-         * record. This is used in cases where a CNAME can not be used, such as when the
-         * cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used
-         * by customers who have an existing procedure to directly provision TXT records for DKIM.
-         * Be aware that many DNS APIs will require you to break this string into segments of less
-         * than 255 characters.
+         * record. This is used in cases where a CNAME cannot be used, such as when the
+         * cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this
+         * if you have an existing procedure to directly provision TXT records for DKIM. Many DNS
+         * APIs require you to break this string into segments of fewer than 255 characters.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("txtRecordValue")
         private String txtRecordValue;
 
         /**
          * The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME
-         * record. This is used in cases where a CNAME can not be used, such as when the
-         * cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used
-         * by customers who have an existing procedure to directly provision TXT records for DKIM.
-         * Be aware that many DNS APIs will require you to break this string into segments of less
-         * than 255 characters.
+         * record. This is used in cases where a CNAME cannot be used, such as when the
+         * cnameRecordValue would exceed the maximum length for a DNS entry. You can also use this
+         * if you have an existing procedure to directly provision TXT records for DKIM. Many DNS
+         * APIs require you to break this string into segments of fewer than 255 characters.
          *
          * @param txtRecordValue the value to set
          * @return this builder
@@ -673,14 +671,14 @@ public final class Dkim extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The name of the DNS subdomain that must be provisioned to enable email recipients to verify
-     * DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsSubdomainName")
     private final String dnsSubdomainName;
 
     /**
      * The name of the DNS subdomain that must be provisioned to enable email recipients to verify
-     * DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue
+     * DKIM signatures. It is usually created with a CNAME record set to the cnameRecordValue.
      *
      * @return the value
      */
@@ -707,22 +705,20 @@ public final class Dkim extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME
-     * record. This is used in cases where a CNAME can not be used, such as when the
-     * cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by
-     * customers who have an existing procedure to directly provision TXT records for DKIM. Be aware
-     * that many DNS APIs will require you to break this string into segments of less than 255
-     * characters.
+     * record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue
+     * would exceed the maximum length for a DNS entry. You can also use this if you have an
+     * existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to
+     * break this string into segments of fewer than 255 characters.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("txtRecordValue")
     private final String txtRecordValue;
 
     /**
      * The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME
-     * record. This is used in cases where a CNAME can not be used, such as when the
-     * cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by
-     * customers who have an existing procedure to directly provision TXT records for DKIM. Be aware
-     * that many DNS APIs will require you to break this string into segments of less than 255
-     * characters.
+     * record. This is used in cases where a CNAME cannot be used, such as when the cnameRecordValue
+     * would exceed the maximum length for a DNS entry. You can also use this if you have an
+     * existing procedure to directly provision TXT records for DKIM. Many DNS APIs require you to
+     * break this string into segments of fewer than 255 characters.
      *
      * @return the value
      */

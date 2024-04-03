@@ -33,15 +33,17 @@ public final class WorkRequestError
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occurred. Refer to [API
+         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+         * error codes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occurred. Refer to [API
+         * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+         * error codes.
          *
          * @param code the value to set
          * @return this builder
@@ -66,12 +68,12 @@ public final class WorkRequestError
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the error occured. An RFC3339 formatted datetime string. */
+        /** The time the error occurred. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occurred. An RFC3339 formatted datetime string.
          *
          * @param timestamp the value to set
          * @return this builder
@@ -118,15 +120,17 @@ public final class WorkRequestError
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occurred. Refer to [API
+     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+     * error codes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occurred. Refer to [API
+     * Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of
+     * error codes.
      *
      * @return the value
      */
@@ -147,12 +151,12 @@ public final class WorkRequestError
         return message;
     }
 
-    /** The time the error occured. An RFC3339 formatted datetime string. */
+    /** The time the error occurred. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occurred. An RFC3339 formatted datetime string.
      *
      * @return the value
      */

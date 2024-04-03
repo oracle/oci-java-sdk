@@ -45,6 +45,9 @@ public final class CreateNetworkLoadBalancerDetails
         "subnetId",
         "networkSecurityGroupIds",
         "nlbIpVersion",
+        "subnetIpv6Cidr",
+        "assignedPrivateIpv4",
+        "assignedIpv6",
         "listeners",
         "backendSets",
         "freeformTags",
@@ -60,6 +63,9 @@ public final class CreateNetworkLoadBalancerDetails
             String subnetId,
             java.util.List<String> networkSecurityGroupIds,
             NlbIpVersion nlbIpVersion,
+            String subnetIpv6Cidr,
+            String assignedPrivateIpv4,
+            String assignedIpv6,
             java.util.Map<String, ListenerDetails> listeners,
             java.util.Map<String, BackendSetDetails> backendSets,
             java.util.Map<String, String> freeformTags,
@@ -74,6 +80,9 @@ public final class CreateNetworkLoadBalancerDetails
         this.subnetId = subnetId;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.nlbIpVersion = nlbIpVersion;
+        this.subnetIpv6Cidr = subnetIpv6Cidr;
+        this.assignedPrivateIpv4 = assignedPrivateIpv4;
+        this.assignedIpv6 = assignedIpv6;
         this.listeners = listeners;
         this.backendSets = backendSets;
         this.freeformTags = freeformTags;
@@ -301,6 +310,67 @@ public final class CreateNetworkLoadBalancerDetails
             this.__explicitlySet__.add("nlbIpVersion");
             return this;
         }
+        /**
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+         * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
+        private String subnetIpv6Cidr;
+
+        /**
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+         * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         *
+         * @param subnetIpv6Cidr the value to set
+         * @return this builder
+         */
+        public Builder subnetIpv6Cidr(String subnetIpv6Cidr) {
+            this.subnetIpv6Cidr = subnetIpv6Cidr;
+            this.__explicitlySet__.add("subnetIpv6Cidr");
+            return this;
+        }
+        /**
+         * Private IP address to be assigned to the network load balancer being created. This IP
+         * address has to be in the CIDR range of the subnet where network load balancer is being
+         * created Example: "10.0.0.1"
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedPrivateIpv4")
+        private String assignedPrivateIpv4;
+
+        /**
+         * Private IP address to be assigned to the network load balancer being created. This IP
+         * address has to be in the CIDR range of the subnet where network load balancer is being
+         * created Example: "10.0.0.1"
+         *
+         * @param assignedPrivateIpv4 the value to set
+         * @return this builder
+         */
+        public Builder assignedPrivateIpv4(String assignedPrivateIpv4) {
+            this.assignedPrivateIpv4 = assignedPrivateIpv4;
+            this.__explicitlySet__.add("assignedPrivateIpv4");
+            return this;
+        }
+        /**
+         * IPv6 address to be assigned to the network load balancer being created. This IP address
+         * has to be part of one of the prefixes supported by the subnet. Example:
+         * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
+        private String assignedIpv6;
+
+        /**
+         * IPv6 address to be assigned to the network load balancer being created. This IP address
+         * has to be part of one of the prefixes supported by the subnet. Example:
+         * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         *
+         * @param assignedIpv6 the value to set
+         * @return this builder
+         */
+        public Builder assignedIpv6(String assignedIpv6) {
+            this.assignedIpv6 = assignedIpv6;
+            this.__explicitlySet__.add("assignedIpv6");
+            return this;
+        }
         /** Listeners associated with the network load balancer. */
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
         private java.util.Map<String, ListenerDetails> listeners;
@@ -386,6 +456,9 @@ public final class CreateNetworkLoadBalancerDetails
                             this.subnetId,
                             this.networkSecurityGroupIds,
                             this.nlbIpVersion,
+                            this.subnetIpv6Cidr,
+                            this.assignedPrivateIpv4,
+                            this.assignedIpv6,
                             this.listeners,
                             this.backendSets,
                             this.freeformTags,
@@ -424,6 +497,15 @@ public final class CreateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("nlbIpVersion")) {
                 this.nlbIpVersion(model.getNlbIpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("subnetIpv6Cidr")) {
+                this.subnetIpv6Cidr(model.getSubnetIpv6Cidr());
+            }
+            if (model.wasPropertyExplicitlySet("assignedPrivateIpv4")) {
+                this.assignedPrivateIpv4(model.getAssignedPrivateIpv4());
+            }
+            if (model.wasPropertyExplicitlySet("assignedIpv6")) {
+                this.assignedIpv6(model.getAssignedIpv6());
             }
             if (model.wasPropertyExplicitlySet("listeners")) {
                 this.listeners(model.getListeners());
@@ -649,6 +731,61 @@ public final class CreateNetworkLoadBalancerDetails
         return nlbIpVersion;
     }
 
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+     * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
+    private final String subnetIpv6Cidr;
+
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+     * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     *
+     * @return the value
+     */
+    public String getSubnetIpv6Cidr() {
+        return subnetIpv6Cidr;
+    }
+
+    /**
+     * Private IP address to be assigned to the network load balancer being created. This IP address
+     * has to be in the CIDR range of the subnet where network load balancer is being created
+     * Example: "10.0.0.1"
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedPrivateIpv4")
+    private final String assignedPrivateIpv4;
+
+    /**
+     * Private IP address to be assigned to the network load balancer being created. This IP address
+     * has to be in the CIDR range of the subnet where network load balancer is being created
+     * Example: "10.0.0.1"
+     *
+     * @return the value
+     */
+    public String getAssignedPrivateIpv4() {
+        return assignedPrivateIpv4;
+    }
+
+    /**
+     * IPv6 address to be assigned to the network load balancer being created. This IP address has
+     * to be part of one of the prefixes supported by the subnet. Example:
+     * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
+    private final String assignedIpv6;
+
+    /**
+     * IPv6 address to be assigned to the network load balancer being created. This IP address has
+     * to be part of one of the prefixes supported by the subnet. Example:
+     * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     *
+     * @return the value
+     */
+    public String getAssignedIpv6() {
+        return assignedIpv6;
+    }
+
     /** Listeners associated with the network load balancer. */
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
     private final java.util.Map<String, ListenerDetails> listeners;
@@ -735,6 +872,9 @@ public final class CreateNetworkLoadBalancerDetails
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", nlbIpVersion=").append(String.valueOf(this.nlbIpVersion));
+        sb.append(", subnetIpv6Cidr=").append(String.valueOf(this.subnetIpv6Cidr));
+        sb.append(", assignedPrivateIpv4=").append(String.valueOf(this.assignedPrivateIpv4));
+        sb.append(", assignedIpv6=").append(String.valueOf(this.assignedIpv6));
         sb.append(", listeners=").append(String.valueOf(this.listeners));
         sb.append(", backendSets=").append(String.valueOf(this.backendSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -765,6 +905,9 @@ public final class CreateNetworkLoadBalancerDetails
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.nlbIpVersion, other.nlbIpVersion)
+                && java.util.Objects.equals(this.subnetIpv6Cidr, other.subnetIpv6Cidr)
+                && java.util.Objects.equals(this.assignedPrivateIpv4, other.assignedPrivateIpv4)
+                && java.util.Objects.equals(this.assignedIpv6, other.assignedIpv6)
                 && java.util.Objects.equals(this.listeners, other.listeners)
                 && java.util.Objects.equals(this.backendSets, other.backendSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -799,6 +942,15 @@ public final class CreateNetworkLoadBalancerDetails
                                 ? 43
                                 : this.networkSecurityGroupIds.hashCode());
         result = (result * PRIME) + (this.nlbIpVersion == null ? 43 : this.nlbIpVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subnetIpv6Cidr == null ? 43 : this.subnetIpv6Cidr.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignedPrivateIpv4 == null
+                                ? 43
+                                : this.assignedPrivateIpv4.hashCode());
+        result = (result * PRIME) + (this.assignedIpv6 == null ? 43 : this.assignedIpv6.hashCode());
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
         result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

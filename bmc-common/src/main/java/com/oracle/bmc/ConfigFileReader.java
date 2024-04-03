@@ -196,6 +196,49 @@ public final class ConfigFileReader {
                     ? accumulator.configurationsByProfile.get(DEFAULT_PROFILE_NAME).get(key)
                     : null;
         }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+
+            if (accumulator.foundDefaultProfile) {
+                sb.append('[')
+                        .append(DEFAULT_PROFILE_NAME)
+                        .append(']')
+                        .append(System.lineSeparator());
+                accumulator
+                        .configurationsByProfile
+                        .get(DEFAULT_PROFILE_NAME)
+                        .entrySet()
+                        .forEach(
+                                e ->
+                                        sb.append(e.getKey())
+                                                .append(" = ")
+                                                .append(e.getValue())
+                                                .append(System.lineSeparator()));
+            }
+
+            accumulator.configurationsByProfile.entrySet().stream()
+                    .filter(e -> !e.getKey().equals(DEFAULT_PROFILE_NAME))
+                    .forEach(
+                            profileEntry -> {
+                                sb.append(System.lineSeparator());
+                                sb.append('[')
+                                        .append(profileEntry.getKey())
+                                        .append(']')
+                                        .append(System.lineSeparator());
+                                profileEntry
+                                        .getValue()
+                                        .entrySet()
+                                        .forEach(
+                                                e ->
+                                                        sb.append(e.getKey())
+                                                                .append(" = ")
+                                                                .append(e.getValue())
+                                                                .append(System.lineSeparator()));
+                            });
+            return sb.toString();
+        }
     }
 
     private static final class ConfigAccumulator {

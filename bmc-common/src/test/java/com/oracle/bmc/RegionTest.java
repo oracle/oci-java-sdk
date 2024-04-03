@@ -528,7 +528,7 @@ public class RegionTest {
 
     @Test
     @Ignore("This test retries 8 times with execution time >5 minutes")
-    public void testImdsRetriesWithDealyAndJitter() {
+    public void testImdsRetriesWithDelayAndJitter() {
         try {
             Region.hasUsedInstanceMetadataService = false;
             final ConcurrentMap<String, Boolean> resultMap = new ConcurrentHashMap<>();

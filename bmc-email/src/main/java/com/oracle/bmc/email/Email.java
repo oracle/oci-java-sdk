@@ -8,8 +8,9 @@ import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
 
 /**
- * API for the Email Delivery service. Use this API to send high-volume, application-generated
- * emails. For more information, see [Overview of the Email Delivery
+ * Use the Email Delivery API to do the necessary set up to send high-volume and
+ * application-generated emails through the OCI Email Delivery service. For more information, see
+ * [Overview of the Email Delivery
  * Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  * <p>*Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be
@@ -71,12 +72,12 @@ public interface Email extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a email domain into a different compartment. When provided, If-Match is checked against
-     * ETag value of the resource. For information about moving resources between compartments, see
-     * [Moving Resources to a Different
+     * Moves an email domain into a different compartment. When provided, If-Match is checked
+     * against ETag value of the resource. For information about moving resources between
+     * compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
-     * <p>*Note:** All Dkim objects associated with this email domain will also be moved into the
+     * <p>*Note:** All DKIM objects associated with this email domain will also be moved into the
      * provided compartment.
      *
      * @param request The request object containing the details to send
@@ -111,10 +112,10 @@ public interface Email extends AutoCloseable {
     ChangeSenderCompartmentResponse changeSenderCompartment(ChangeSenderCompartmentRequest request);
 
     /**
-     * Creates a new DKIM for a email domain. This DKIM will sign all approved senders in the
-     * tenancy that are in this email domain. Best security practices indicate to periodically
-     * rotate the DKIM that is doing the signing. When a second DKIM is applied, all senders will
-     * seamlessly pick up the new key without interruption in signing.
+     * Creates a new DKIM for an email domain. This DKIM signs all approved senders in the tenancy
+     * that are in this email domain. Best security practices indicate to periodically rotate the
+     * DKIM that is doing the signing. When a second DKIM is applied, all senders seamlessly pick up
+     * the new key without interruption in signing.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -181,8 +182,8 @@ public interface Email extends AutoCloseable {
     /**
      * Deletes a DKIM. If this key is currently the active key for the email domain, deleting the
      * key will stop signing the domain's outgoing mail. DKIM keys are left in DELETING state for
-     * about a day to allow DKIM signatures on in-transit mail to be validated. Consider instead of
-     * deletion creating a new DKIM for this domain so the signing can be rotated to it.
+     * about a day to allow DKIM signatures on in-transit mail to be validated. Consider creating a
+     * new DKIM for this domain so the signing can be rotated to it instead of deletion.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -197,7 +198,7 @@ public interface Email extends AutoCloseable {
     DeleteDkimResponse deleteDkim(DeleteDkimRequest request);
 
     /**
-     * Deletes a email domain.
+     * Deletes an email domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -258,6 +259,22 @@ public interface Email extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDkim API.
      */
     GetDkimResponse getDkim(GetDkimRequest request);
+
+    /**
+     * Returns email configuration associated with the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetEmailConfiguration API.
+     */
+    GetEmailConfigurationResponse getEmailConfiguration(GetEmailConfigurationRequest request);
 
     /**
      * Retrieves the specified email domain.
@@ -321,7 +338,7 @@ public interface Email extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -448,7 +465,7 @@ public interface Email extends AutoCloseable {
     UpdateDkimResponse updateDkim(UpdateDkimRequest request);
 
     /**
-     * Modifies a email domain.
+     * Modifies an email domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

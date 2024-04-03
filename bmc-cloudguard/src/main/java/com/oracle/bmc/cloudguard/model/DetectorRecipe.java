@@ -5,7 +5,10 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of Detector recipe <br>
+ * A detector recipe is a collection of rules that can be configured to trigger problems that appear
+ * on the Cloud Guard Problems page. A DetectorRecipe object contains settings for a specific
+ * detector recipe, plus a list of the detector rules (DetectorRecipeDetectorRule objects) belonging
+ * to the DetectorRecipe object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
