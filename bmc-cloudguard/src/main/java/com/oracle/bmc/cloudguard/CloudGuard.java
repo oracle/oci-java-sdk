@@ -121,7 +121,8 @@ public interface CloudGuard extends AutoCloseable {
             ChangeDataSourceCompartmentRequest request);
 
     /**
-     * Moves the DetectorRecipe from current compartment to another.
+     * Moves the detector recipe (DetectorRecipe object), identified by detectorRecipeId, from the
+     * current compartment to another compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -138,7 +139,8 @@ public interface CloudGuard extends AutoCloseable {
             ChangeDetectorRecipeCompartmentRequest request);
 
     /**
-     * Moves the ManagedList from current compartment to another.
+     * Moves the managed list (ManagedList object), identified by managedListId, from the current
+     * compartment to another compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -208,7 +210,7 @@ public interface CloudGuard extends AutoCloseable {
             ChangeSecurityZoneCompartmentRequest request);
 
     /**
-     * Creates a new Data Mask Rule Definition
+     * Creates a new DataMaskRule object definition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -240,7 +242,7 @@ public interface CloudGuard extends AutoCloseable {
     CreateDataSourceResponse createDataSource(CreateDataSourceRequest request);
 
     /**
-     * Creates a DetectorRecipe
+     * Creates a new DetectorRecipe object.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -273,7 +275,7 @@ public interface CloudGuard extends AutoCloseable {
             CreateDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Creates a new ManagedList.
+     * Creates a new ManagedList object.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -389,7 +391,7 @@ public interface CloudGuard extends AutoCloseable {
             CreateTargetResponderRecipeRequest request);
 
     /**
-     * Deletes a DataMaskRule identified by dataMaskRuleId
+     * Deletes a DataMaskRule object, identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -421,7 +423,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request);
 
     /**
-     * Deletes a DetectorRecipe identified by detectorRecipeId
+     * Deletes a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -471,7 +473,7 @@ public interface CloudGuard extends AutoCloseable {
             DeleteDetectorRecipeDetectorRuleDataSourceRequest request);
 
     /**
-     * Deletes a managed list identified by managedListId
+     * Deletes a managed list identified by managedListId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -603,7 +605,7 @@ public interface CloudGuard extends AutoCloseable {
             ExecuteResponderExecutionRequest request);
 
     /**
-     * Returns ConditionType with its details.
+     * Returns a ConditionMetatDataType object with its details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -620,7 +622,8 @@ public interface CloudGuard extends AutoCloseable {
             GetConditionMetadataTypeRequest request);
 
     /**
-     * GET Cloud Guard Configuration Details for a Tenancy.
+     * Returns the configuration details for a Cloud Guard tenancy, identified by root compartment
+     * OCID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -636,7 +639,7 @@ public interface CloudGuard extends AutoCloseable {
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
     /**
-     * Returns a DataMaskRule identified by DataMaskRuleId
+     * Returns a DataMaskRule object, identified by DataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -667,7 +670,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDataSourceResponse getDataSource(GetDataSourceRequest request);
 
     /**
-     * Returns a Detector identified by detectorId.
+     * Returns a Detector object, identified by detectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -682,7 +685,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDetectorResponse getDetector(GetDetectorRequest request);
 
     /**
-     * Returns a DetectorRecipe identified by detectorRecipeId
+     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -698,7 +701,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDetectorRecipeResponse getDetectorRecipe(GetDetectorRecipeRequest request);
 
     /**
-     * Get DetectorRule by identifier
+     * Returns a detector rule (DetectorRule object) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -715,7 +718,7 @@ public interface CloudGuard extends AutoCloseable {
             GetDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Returns a Detector Rule identified by detectorRuleId
+     * Returns a detector rule (DetectorRule object) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -731,7 +734,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDetectorRuleResponse getDetectorRule(GetDetectorRuleRequest request);
 
     /**
-     * Returns a managed list identified by managedListId
+     * Returns a managed list identified by managedListId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -746,7 +749,7 @@ public interface CloudGuard extends AutoCloseable {
     GetManagedListResponse getManagedList(GetManagedListRequest request);
 
     /**
-     * Returns a Problems response
+     * Returns the Problem object identified by a problemId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1006,7 +1009,7 @@ public interface CloudGuard extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Returns a list of condition types.
+     * Returns a list of ConditionMetadataType objects.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1023,7 +1026,8 @@ public interface CloudGuard extends AutoCloseable {
             ListConditionMetadataTypesRequest request);
 
     /**
-     * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its
+     * subcompartments.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1086,7 +1090,8 @@ public interface CloudGuard extends AutoCloseable {
     ListDataSourcesResponse listDataSources(ListDataSourcesRequest request);
 
     /**
-     * Returns a list of DetectorRule associated with DetectorRecipe.
+     * Returns a list of detector rules (DetectorRule objects) for a detector recipe (DetectorRecipe
+     * object), identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1103,7 +1108,8 @@ public interface CloudGuard extends AutoCloseable {
             ListDetectorRecipeDetectorRulesRequest request);
 
     /**
-     * Returns a list of all Detector Recipes in a compartment
+     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified
+     * by compartmentId.
      *
      * <p>The ListDetectorRecipes operation returns only the detector recipes in `compartmentId`
      * passed. The list does not include any subcompartments of the compartmentId passed.
@@ -1134,7 +1140,7 @@ public interface CloudGuard extends AutoCloseable {
     ListDetectorRecipesResponse listDetectorRecipes(ListDetectorRecipesRequest request);
 
     /**
-     * Returns a list of detector rules for the detectorId passed.
+     * Returns a list of detector rules for the DetectorRecipe object identified by detectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1150,7 +1156,8 @@ public interface CloudGuard extends AutoCloseable {
     ListDetectorRulesResponse listDetectorRules(ListDetectorRulesRequest request);
 
     /**
-     * Returns detector catalog - list of detectors supported by Cloud Guard
+     * Returns a detector catalog (DetectorCollection object) with a list of DetectorSummary
+     * objects.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1165,7 +1172,7 @@ public interface CloudGuard extends AutoCloseable {
     ListDetectorsResponse listDetectors(ListDetectorsRequest request);
 
     /**
-     * Returns a list of Impacted Resources for a CloudGuard Problem
+     * Returns a list of impacted resources for a Cloud Guard problem with a specified problem ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1181,7 +1188,7 @@ public interface CloudGuard extends AutoCloseable {
     ListImpactedResourcesResponse listImpactedResources(ListImpactedResourcesRequest request);
 
     /**
-     * Returns all ManagedList types supported by Cloud Guard
+     * Returns all managed list types (listType parameter) that Cloud Guard supports.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1197,9 +1204,9 @@ public interface CloudGuard extends AutoCloseable {
     ListManagedListTypesResponse listManagedListTypes(ListManagedListTypesRequest request);
 
     /**
-     * Returns a list of ListManagedLists. The ListManagedLists operation returns only the managed
-     * lists in `compartmentId` passed. The list does not include any subcompartments of the
-     * compartmentId passed.
+     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId. The
+     * ListManagedLists operation returns only the managed lists in `compartmentId` passed. The list
+     * does not include any subcompartments of the compartmentId passed.
      *
      * <p>The parameter `accessLevel` specifies whether to return ManagedLists in only those
      * compartments for which the requestor has INSPECT permissions on at least one resource
@@ -1227,7 +1234,8 @@ public interface CloudGuard extends AutoCloseable {
     ListManagedListsResponse listManagedLists(ListManagedListsRequest request);
 
     /**
-     * Returns the list of global policy statements needed by Cloud Guard when enabling
+     * Returns the list of global policy statements (policy attributes) needed to fully enable Cloud
+     * Guard.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1242,7 +1250,7 @@ public interface CloudGuard extends AutoCloseable {
     ListPoliciesResponse listPolicies(ListPoliciesRequest request);
 
     /**
-     * Returns a list of endpoints associated with a cloud guard problem
+     * Returns a list of endpoints associated with a problem, identified by problemId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1274,7 +1282,7 @@ public interface CloudGuard extends AutoCloseable {
     ListProblemEntitiesResponse listProblemEntities(ListProblemEntitiesRequest request);
 
     /**
-     * Returns a list of Actions done on CloudGuard Problem
+     * Returns a list of actions taken on a Cloud Guard problem.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1290,7 +1298,8 @@ public interface CloudGuard extends AutoCloseable {
     ListProblemHistoriesResponse listProblemHistories(ListProblemHistoriesRequest request);
 
     /**
-     * Returns a list of all Problems identified by the Cloud Guard
+     * Returns a list of all Problems identified by Cloud Guard which are currently in the database
+     * and meet the filtering criteria.
      *
      * <p>The ListProblems operation returns only the problems in `compartmentId` passed. The list
      * does not include any subcompartments of the compartmentId passed.
@@ -1867,8 +1876,8 @@ public interface CloudGuard extends AutoCloseable {
     RequestSecurityScoresResponse requestSecurityScores(RequestSecurityScoresRequest request);
 
     /**
-     * Returns the summary of Activity type problems identified by cloud guard, for a given set of
-     * dimensions.
+     * Returns the summary of problems generated by OCI Activity Detector rules, identified by
+     * parameters specified.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -1900,7 +1909,7 @@ public interface CloudGuard extends AutoCloseable {
             RequestSummarizedActivityProblemsRequest request);
 
     /**
-     * Returns the number of problems identified by cloud guard, for a given set of dimensions.
+     * Returns the number of problems matching the key-value pairs in dimensionMap.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -2011,7 +2020,9 @@ public interface CloudGuard extends AutoCloseable {
                     RequestSummarizedTopTrendResourceProfileRiskScoresRequest request);
 
     /**
-     * Returns the number of problems identified by cloud guard, for a given time period.
+     * Returns a ProblemTrendAggregationCollection resource for a compartment, identified by
+     * compartmentId, for the specified time period. The ProblemTrendAggregationCollection resource
+     * contains a list of ProblemTrendAggregation resources.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -2138,7 +2149,9 @@ public interface CloudGuard extends AutoCloseable {
     SkipResponderExecutionResponse skipResponderExecution(SkipResponderExecutionRequest request);
 
     /**
-     * push the problem to responder
+     * Sends the problem identified by problemId to the responder engine, to be processed by rule
+     * that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource
+     * that\u2019s passed.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2154,7 +2167,9 @@ public interface CloudGuard extends AutoCloseable {
     TriggerResponderResponse triggerResponder(TriggerResponderRequest request);
 
     /**
-     * Updates the statuses in bulk for a list of problems The operation is atomic in nature
+     * Changes the status for all problems listed in the problemIds array, passed through the
+     * UpdateBulkProblemStatusDetails resource, from the current status to the status set in
+     * UpdateBulkProblemStatusDetails.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2170,7 +2185,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateBulkProblemStatusResponse updateBulkProblemStatus(UpdateBulkProblemStatusRequest request);
 
     /**
-     * Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
+     * Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * The reporting region cannot be updated once created.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2186,7 +2202,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 
     /**
-     * Updates a DataMaskRule identified by dataMaskRuleId
+     * Updates a data mask rule (DataMaskRule object) identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2218,7 +2234,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request);
 
     /**
-     * Updates a detector recipe identified by detectorRecipeId
+     * Updates a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2234,7 +2250,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateDetectorRecipeResponse updateDetectorRecipe(UpdateDetectorRecipeRequest request);
 
     /**
-     * Update the DetectorRule by identifier
+     * Updates a detector rule (DetectorRule object) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2251,7 +2267,7 @@ public interface CloudGuard extends AutoCloseable {
             UpdateDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Updates a managed list identified by managedListId
+     * Updates a ManagedList object, identified by managedList.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2267,7 +2283,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateManagedListResponse updateManagedList(UpdateManagedListRequest request);
 
     /**
-     * updates the problem details
+     * Changes the current status of the problem, identified by problemId, to the status specified
+     * in the UpdateProblemStatusDetails resource that you pass.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

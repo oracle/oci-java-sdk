@@ -31,6 +31,8 @@ public final class UpdateNetworkLoadBalancerDetails
         "isPreserveSourceDestination",
         "isSymmetricHashEnabled",
         "nlbIpVersion",
+        "subnetIpv6Cidr",
+        "assignedIpv6",
         "freeformTags",
         "definedTags"
     })
@@ -39,6 +41,8 @@ public final class UpdateNetworkLoadBalancerDetails
             Boolean isPreserveSourceDestination,
             Boolean isSymmetricHashEnabled,
             NlbIpVersion nlbIpVersion,
+            String subnetIpv6Cidr,
+            String assignedIpv6,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -46,6 +50,8 @@ public final class UpdateNetworkLoadBalancerDetails
         this.isPreserveSourceDestination = isPreserveSourceDestination;
         this.isSymmetricHashEnabled = isSymmetricHashEnabled;
         this.nlbIpVersion = nlbIpVersion;
+        this.subnetIpv6Cidr = subnetIpv6Cidr;
+        this.assignedIpv6 = assignedIpv6;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -133,6 +139,46 @@ public final class UpdateNetworkLoadBalancerDetails
             return this;
         }
         /**
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+         * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
+        private String subnetIpv6Cidr;
+
+        /**
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+         * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         *
+         * @param subnetIpv6Cidr the value to set
+         * @return this builder
+         */
+        public Builder subnetIpv6Cidr(String subnetIpv6Cidr) {
+            this.subnetIpv6Cidr = subnetIpv6Cidr;
+            this.__explicitlySet__.add("subnetIpv6Cidr");
+            return this;
+        }
+        /**
+         * IPv6 address to be assigned to the network load balancer being created. This IP address
+         * has to be part of one of the prefixes supported by the subnet. Example:
+         * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
+        private String assignedIpv6;
+
+        /**
+         * IPv6 address to be assigned to the network load balancer being created. This IP address
+         * has to be part of one of the prefixes supported by the subnet. Example:
+         * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         *
+         * @param assignedIpv6 the value to set
+         * @return this builder
+         */
+        public Builder assignedIpv6(String assignedIpv6) {
+            this.assignedIpv6 = assignedIpv6;
+            this.__explicitlySet__.add("assignedIpv6");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -194,6 +240,8 @@ public final class UpdateNetworkLoadBalancerDetails
                             this.isPreserveSourceDestination,
                             this.isSymmetricHashEnabled,
                             this.nlbIpVersion,
+                            this.subnetIpv6Cidr,
+                            this.assignedIpv6,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -215,6 +263,12 @@ public final class UpdateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("nlbIpVersion")) {
                 this.nlbIpVersion(model.getNlbIpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("subnetIpv6Cidr")) {
+                this.subnetIpv6Cidr(model.getSubnetIpv6Cidr());
+            }
+            if (model.wasPropertyExplicitlySet("assignedIpv6")) {
+                this.assignedIpv6(model.getAssignedIpv6());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -308,6 +362,42 @@ public final class UpdateNetworkLoadBalancerDetails
     }
 
     /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+     * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
+    private final String subnetIpv6Cidr;
+
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
+     * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     *
+     * @return the value
+     */
+    public String getSubnetIpv6Cidr() {
+        return subnetIpv6Cidr;
+    }
+
+    /**
+     * IPv6 address to be assigned to the network load balancer being created. This IP address has
+     * to be part of one of the prefixes supported by the subnet. Example:
+     * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
+    private final String assignedIpv6;
+
+    /**
+     * IPv6 address to be assigned to the network load balancer being created. This IP address has
+     * to be part of one of the prefixes supported by the subnet. Example:
+     * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     *
+     * @return the value
+     */
+    public String getAssignedIpv6() {
+        return assignedIpv6;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -373,6 +463,8 @@ public final class UpdateNetworkLoadBalancerDetails
                 .append(String.valueOf(this.isPreserveSourceDestination));
         sb.append(", isSymmetricHashEnabled=").append(String.valueOf(this.isSymmetricHashEnabled));
         sb.append(", nlbIpVersion=").append(String.valueOf(this.nlbIpVersion));
+        sb.append(", subnetIpv6Cidr=").append(String.valueOf(this.subnetIpv6Cidr));
+        sb.append(", assignedIpv6=").append(String.valueOf(this.assignedIpv6));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -395,6 +487,8 @@ public final class UpdateNetworkLoadBalancerDetails
                 && java.util.Objects.equals(
                         this.isSymmetricHashEnabled, other.isSymmetricHashEnabled)
                 && java.util.Objects.equals(this.nlbIpVersion, other.nlbIpVersion)
+                && java.util.Objects.equals(this.subnetIpv6Cidr, other.subnetIpv6Cidr)
+                && java.util.Objects.equals(this.assignedIpv6, other.assignedIpv6)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -416,6 +510,10 @@ public final class UpdateNetworkLoadBalancerDetails
                                 ? 43
                                 : this.isSymmetricHashEnabled.hashCode());
         result = (result * PRIME) + (this.nlbIpVersion == null ? 43 : this.nlbIpVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subnetIpv6Cidr == null ? 43 : this.subnetIpv6Cidr.hashCode());
+        result = (result * PRIME) + (this.assignedIpv6 == null ? 43 : this.assignedIpv6.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -51,8 +51,8 @@ public final class CreateDkimDetails
          * The DKIM selector. This selector is required to be globally unique for this email domain.
          * If you do not provide the selector, we will generate one for you. If you do provide the
          * selector, we suggest adding a short region indicator to differentiate from your signing
-         * of emails in other regions you may be subscribed to. Selectors limited to ASCII
-         * characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector
+         * of emails in other regions you might be subscribed to. Selectors limited to ASCII
+         * characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector
          * names should adopt IDNA2008 normalization (RFC 5891-5892).
          *
          * <p>Avoid entering confidential information.
@@ -66,8 +66,8 @@ public final class CreateDkimDetails
          * The DKIM selector. This selector is required to be globally unique for this email domain.
          * If you do not provide the selector, we will generate one for you. If you do provide the
          * selector, we suggest adding a short region indicator to differentiate from your signing
-         * of emails in other regions you may be subscribed to. Selectors limited to ASCII
-         * characters may use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector
+         * of emails in other regions you might be subscribed to. Selectors limited to ASCII
+         * characters can use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector
          * names should adopt IDNA2008 normalization (RFC 5891-5892).
          *
          * <p>Avoid entering confidential information.
@@ -223,7 +223,7 @@ public final class CreateDkimDetails
      * The DKIM selector. This selector is required to be globally unique for this email domain. If
      * you do not provide the selector, we will generate one for you. If you do provide the
      * selector, we suggest adding a short region indicator to differentiate from your signing of
-     * emails in other regions you may be subscribed to. Selectors limited to ASCII characters may
+     * emails in other regions you might be subscribed to. Selectors limited to ASCII characters can
      * use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt
      * IDNA2008 normalization (RFC 5891-5892).
      *
@@ -238,7 +238,7 @@ public final class CreateDkimDetails
      * The DKIM selector. This selector is required to be globally unique for this email domain. If
      * you do not provide the selector, we will generate one for you. If you do provide the
      * selector, we suggest adding a short region indicator to differentiate from your signing of
-     * emails in other regions you may be subscribed to. Selectors limited to ASCII characters may
+     * emails in other regions you might be subscribed to. Selectors limited to ASCII characters can
      * use alphanumeric, dash ("-"), and dot (".") characters. Non-ASCII selector names should adopt
      * IDNA2008 normalization (RFC 5891-5892).
      *

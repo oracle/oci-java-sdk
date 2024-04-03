@@ -438,6 +438,35 @@ public class EmailAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClie
     }
 
     @Override
+    public java.util.concurrent.Future<GetEmailConfigurationResponse> getEmailConfiguration(
+            GetEmailConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailConfigurationRequest, GetEmailConfigurationResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetEmailConfigurationResponse::builder)
+                .logger(LOG, "getEmailConfiguration")
+                .serviceDetails(
+                        "Email",
+                        "GetEmailConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Configuration/GetEmailConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailConfigurationRequest::builder)
+                .basePath("/20170907")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.email.model.Configuration.class,
+                        GetEmailConfigurationResponse.Builder::configuration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEmailDomainResponse> getEmailDomain(
             GetEmailDomainRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

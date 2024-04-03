@@ -36,7 +36,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
             String compartmentId,
             String emailAddress,
             String id,
-            Reason reason,
+            SuppressionReason reason,
             java.util.Date timeCreated,
             java.util.Date timeLastSuppressed,
             String messageId,
@@ -111,7 +111,7 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
          * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
-        private Reason reason;
+        private SuppressionReason reason;
 
         /**
          * The reason that the email address was suppressed. For more information on the types of
@@ -121,21 +121,21 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
          * @param reason the value to set
          * @return this builder
          */
-        public Builder reason(Reason reason) {
+        public Builder reason(SuppressionReason reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
         /**
          * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z
-         * offset, as defined by RFC 3339.
+         * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z
-         * offset, as defined by RFC 3339.
+         * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -147,14 +147,14 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-         * with a Z offset, as defined by RFC 3339.
+         * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
         private java.util.Date timeLastSuppressed;
 
         /**
          * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-         * with a Z offset, as defined by RFC 3339.
+         * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeLastSuppressed the value to set
          * @return this builder
@@ -345,61 +345,8 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
      * bounces, see [Suppression
      * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
      */
-    public enum Reason implements com.oracle.bmc.http.internal.BmcEnum {
-        Unknown("UNKNOWN"),
-        Hardbounce("HARDBOUNCE"),
-        Complaint("COMPLAINT"),
-        Manual("MANUAL"),
-        Softbounce("SOFTBOUNCE"),
-        Unsubscribe("UNSUBSCRIBE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Reason.class);
-
-        private final String value;
-        private static java.util.Map<String, Reason> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Reason v : Reason.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Reason(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Reason create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Reason', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The reason that the email address was suppressed. For more information on the types of
-     * bounces, see [Suppression
-     * List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
-     */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
-    private final Reason reason;
+    private final SuppressionReason reason;
 
     /**
      * The reason that the email address was suppressed. For more information on the types of
@@ -408,20 +355,20 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
      *
      * @return the value
      */
-    public Reason getReason() {
+    public SuppressionReason getReason() {
         return reason;
     }
 
     /**
      * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the suppression was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
      */
@@ -431,14 +378,14 @@ public final class Suppression extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-     * with a Z offset, as defined by RFC 3339.
+     * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSuppressed")
     private final java.util.Date timeLastSuppressed;
 
     /**
      * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format
-     * with a Z offset, as defined by RFC 3339.
+     * with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
      */

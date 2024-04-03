@@ -5,7 +5,11 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Problem Definition. <br>
+ * Problems are at the core of Cloud Guard\u2019s functionality. A Problem object is created
+ * whenever an action or a configuration on a resource triggers a rule in a detector that\u2019s
+ * attached to the target containing the compartment where the resource is located. Each Problem
+ * object contains all the details for a single problem. This is the information for the problem
+ * that appears on the Cloud Guard Problems page. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

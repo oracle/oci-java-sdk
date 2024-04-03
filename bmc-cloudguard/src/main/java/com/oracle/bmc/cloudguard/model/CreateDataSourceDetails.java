@@ -25,6 +25,7 @@ public final class CreateDataSourceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "status",
         "compartmentId",
         "dataSourceFeedProvider",
         "dataSourceDetails",
@@ -33,6 +34,7 @@ public final class CreateDataSourceDetails
     })
     public CreateDataSourceDetails(
             String displayName,
+            DataSourceStatus status,
             String compartmentId,
             DataSourceFeedProvider dataSourceFeedProvider,
             DataSourceDetails dataSourceDetails,
@@ -40,6 +42,7 @@ public final class CreateDataSourceDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.status = status;
         this.compartmentId = compartmentId;
         this.dataSourceFeedProvider = dataSourceFeedProvider;
         this.dataSourceDetails = dataSourceDetails;
@@ -62,6 +65,21 @@ public final class CreateDataSourceDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** Status of DataSource. Default value is DISABLED. */
+        @com.fasterxml.jackson.annotation.JsonProperty("status")
+        private DataSourceStatus status;
+
+        /**
+         * Status of DataSource. Default value is DISABLED.
+         *
+         * @param status the value to set
+         * @return this builder
+         */
+        public Builder status(DataSourceStatus status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
             return this;
         }
         /** CompartmentId of Data Source. */
@@ -154,6 +172,7 @@ public final class CreateDataSourceDetails
             CreateDataSourceDetails model =
                     new CreateDataSourceDetails(
                             this.displayName,
+                            this.status,
                             this.compartmentId,
                             this.dataSourceFeedProvider,
                             this.dataSourceDetails,
@@ -169,6 +188,9 @@ public final class CreateDataSourceDetails
         public Builder copy(CreateDataSourceDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -209,6 +231,19 @@ public final class CreateDataSourceDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** Status of DataSource. Default value is DISABLED. */
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    private final DataSourceStatus status;
+
+    /**
+     * Status of DataSource. Default value is DISABLED.
+     *
+     * @return the value
+     */
+    public DataSourceStatus getStatus() {
+        return status;
     }
 
     /** CompartmentId of Data Source. */
@@ -298,6 +333,7 @@ public final class CreateDataSourceDetails
         sb.append("CreateDataSourceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataSourceFeedProvider=").append(String.valueOf(this.dataSourceFeedProvider));
         sb.append(", dataSourceDetails=").append(String.valueOf(this.dataSourceDetails));
@@ -318,6 +354,7 @@ public final class CreateDataSourceDetails
 
         CreateDataSourceDetails other = (CreateDataSourceDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.dataSourceFeedProvider, other.dataSourceFeedProvider)
@@ -332,6 +369,7 @@ public final class CreateDataSourceDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

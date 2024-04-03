@@ -13,6 +13,8 @@ import com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.WebTarget;
+import org.apache.http.conn.HttpClientConnectionManager;
+
 import java.util.List;
 
 final class Jersey3HttpClient implements HttpClient {
@@ -21,7 +23,7 @@ final class Jersey3HttpClient implements HttpClient {
     private final WebTarget baseTarget;
     final Client client;
     final boolean isApacheNonBufferingClient;
-    final IdleConnectionMonitor idleConnectionMonitor;
+    final HttpClientConnectionManager httpClientConnectionManager;
 
     Jersey3HttpClient(
             Client client,
@@ -36,12 +38,12 @@ final class Jersey3HttpClient implements HttpClient {
             WebTarget baseTarget,
             List<RequestInterceptor> requestInterceptors,
             boolean isApacheNonBufferingClient,
-            IdleConnectionMonitor idleConnectionMonitor) {
+            HttpClientConnectionManager httpClientConnectionManager) {
         this.client = client;
         this.baseTarget = baseTarget;
         this.requestInterceptors = requestInterceptors;
         this.isApacheNonBufferingClient = isApacheNonBufferingClient;
-        this.idleConnectionMonitor = idleConnectionMonitor;
+        this.httpClientConnectionManager = httpClientConnectionManager;
     }
 
     @Override
@@ -51,8 +53,8 @@ final class Jersey3HttpClient implements HttpClient {
 
     @Override
     public void close() {
-        if (this.idleConnectionMonitor != null) {
-            idleConnectionMonitor.shutdown();
+        if (this.httpClientConnectionManager != null) {
+            IdleConnectionMonitor.removeConnectionManager(this.httpClientConnectionManager);
         }
         client.close();
     }

@@ -39,6 +39,11 @@ public final class UpdateSSLCipherSuiteDetails
          *
          * <p>The following ciphers are valid values for this property:
          *
+         * <p>__TLSv1.3 ciphers__
+         *
+         * <p>"TLS-AES-128-GCM-SHA256" "TLS-AES-256-GCM-SHA384" "TLS-CHACHA20-POLY1305-SHA256"
+         * "TLS-AES-128-CCM-SHA256" "TLS-AES-128-CCM-8-SHA256"
+         *
          * <p>__TLSv1.2 ciphers__
          *
          * <p>"AES128-GCM-SHA256" "AES128-SHA256" "AES256-GCM-SHA384" "AES256-SHA256"
@@ -83,6 +88,11 @@ public final class UpdateSSLCipherSuiteDetails
          * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
          *
          * <p>The following ciphers are valid values for this property:
+         *
+         * <p>__TLSv1.3 ciphers__
+         *
+         * <p>"TLS-AES-128-GCM-SHA256" "TLS-AES-256-GCM-SHA384" "TLS-CHACHA20-POLY1305-SHA256"
+         * "TLS-AES-128-CCM-SHA256" "TLS-AES-128-CCM-8-SHA256"
          *
          * <p>__TLSv1.2 ciphers__
          *
@@ -164,6 +174,11 @@ public final class UpdateSSLCipherSuiteDetails
      *
      * <p>The following ciphers are valid values for this property:
      *
+     * <p>__TLSv1.3 ciphers__
+     *
+     * <p>"TLS-AES-128-GCM-SHA256" "TLS-AES-256-GCM-SHA384" "TLS-CHACHA20-POLY1305-SHA256"
+     * "TLS-AES-128-CCM-SHA256" "TLS-AES-128-CCM-8-SHA256"
+     *
      * <p>__TLSv1.2 ciphers__
      *
      * <p>"AES128-GCM-SHA256" "AES128-SHA256" "AES256-GCM-SHA384" "AES256-SHA256"
@@ -207,6 +222,11 @@ public final class UpdateSSLCipherSuiteDetails
      * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
      *
      * <p>The following ciphers are valid values for this property:
+     *
+     * <p>__TLSv1.3 ciphers__
+     *
+     * <p>"TLS-AES-128-GCM-SHA256" "TLS-AES-256-GCM-SHA384" "TLS-CHACHA20-POLY1305-SHA256"
+     * "TLS-AES-128-CCM-SHA256" "TLS-AES-128-CCM-8-SHA256"
      *
      * <p>__TLSv1.2 ciphers__
      *

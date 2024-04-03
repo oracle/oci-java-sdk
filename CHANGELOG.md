@@ -3,6 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.39.0 - 2024-04-02
+### Fixed
+- Fixed a thread leak in `IdleConnectionMonitor`
+ 
+### Added
+- Support for assigned private IP and single stack IPV6 feature for Network Load Balancer Service
+- Support for Configuration API in Email Delivery Service
+- Support for the status field in creating data source resource for Cloud Guard Service
+- Support for TLSv1.3 in Load Balancer Service
+- Support for sending mails via HTTPS for Email Delivery Service
+  
+### Breaking Changes
+- Return type of method `public com.oracle.bmc.email.model.SenderSummary$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.email.model.Sender$LifecycleState` in the model `com.oracle.bmc.email.model.SenderSummary` in the Email Delivery Service
+- Return type of method `public com.oracle.bmc.email.model.Suppression$Reason getReason()` has been changed to `com.oracle.bmc.email.model.SuppressionReason` in the model `com.oracle.bmc.email.model.Suppression` in the Email Delivery Service
+- Return type of method `public com.oracle.bmc.email.model.SuppressionSummary$Reason getReason()` has been changed to `com.oracle.bmc.email.model.SuppressionReason` in the model `com.oracle.bmc.email.model.SuppressionSummary` in the Email Delivery Service
+- Class `com.oracle.bmc.email.model.SenderSummary$LifecycleState` has been removed in the Email Delivery Service
+- Class `com.oracle.bmc.email.model.Suppression$Reason` has been removed in the Email Delivery Service
+- Class `com.oracle.bmc.email.model.SuppressionSummary$Reason` has been removed in the Email Delivery Service
+
 ## 3.38.0 - 2024-03-26
 ### Added
 - Support for creating and updating a refreshable clone with auto-refresh for an Autonomous Database in the Database service

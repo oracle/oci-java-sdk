@@ -7,26 +7,32 @@ package com.oracle.bmc.http.client.jersey3;
 import com.oracle.bmc.http.client.HttpClientBuilder;
 import com.oracle.bmc.http.client.internal.ClientThreadFactory;
 import com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class Jersey3HttpClientTest {
 
     @Test
-    public void validateEnabledIdleConnectionMonitorThread() {
+    public void validateEnabledIdleConnectionMonitorThread() throws InterruptedException {
 
         HttpClientBuilder builder = Jersey3HttpProvider.getInstance().newBuilder();
         Jersey3HttpClient client = (Jersey3HttpClient) builder.baseUri("test").build();
-        IdleConnectionMonitor idleConnectionMonitor = client.idleConnectionMonitor;
-        assertTrue(idleConnectionMonitor != null);
-        assertTrue(!idleConnectionMonitor.isIdleMonitorThreadShutdown());
+        HttpClientConnectionManager httpClientConnectionManager =
+                client.httpClientConnectionManager;
+        assertNotNull(httpClientConnectionManager);
+        IdleConnectionMonitor icm = IdleConnectionMonitor.getInstance();
+        assertTrue(!icm.isIdleMonitorThreadShutdown());
         client.close();
-        assertTrue(idleConnectionMonitor.isIdleMonitorThreadShutdown());
+        assertTrue(icm.isIdleMonitorThreadShutdown());
+        assertNull(IdleConnectionMonitor.getInstance());
     }
 
     @Test
@@ -41,8 +47,9 @@ public class Jersey3HttpClientTest {
                                                 .APACHE_IDLE_CONNECTION_MONITOR_THREAD_ENABLED,
                                         false)
                                 .build();
-        IdleConnectionMonitor idleConnectionMonitor = client.idleConnectionMonitor;
-        assertTrue(idleConnectionMonitor == null);
+        HttpClientConnectionManager httpClientConnectionManager =
+                client.httpClientConnectionManager;
+        assertNull(httpClientConnectionManager);
         client.close();
     }
 

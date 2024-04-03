@@ -115,7 +115,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
     private boolean apacheIdleConnectionMonitorThreadEnabled = false;
     private int apacheIdleConnectionMonitorThreadWaitTimeInSeconds;
     private int apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds;
-    private IdleConnectionMonitor idleConnectionMonitor;
+    private HttpClientConnectionManager httpClientConnectionManager;
 
     Jersey3HttpClientBuilder() {
         // buffer by default, for signing and better error messages.
@@ -296,33 +296,13 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
         }
         Object connectionManagerObject = properties.get(ApacheClientProperties.CONNECTION_MANAGER);
 
+        this.httpClientConnectionManager = null;
         if (apacheIdleConnectionMonitorThreadEnabled && connectionManagerObject != null) {
-            HttpClientConnectionManager connectionManager =
-                    (HttpClientConnectionManager) connectionManagerObject;
-            try {
-                idleConnectionMonitor =
-                        new IdleConnectionMonitor(
-                                connectionManager,
-                                apacheIdleConnectionMonitorThreadWaitTimeInSeconds,
-                                apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds);
-
-                ExecutorService executorService =
-                        Executors.newFixedThreadPool(
-                                1,
-                                ClientThreadFactory.builder()
-                                        .nameFormat(
-                                                "idle-connection-monitor-thread-"
-                                                        + System.currentTimeMillis()
-                                                        + "-%d")
-                                        .isDaemon(true)
-                                        .build());
-
-                executorService.execute(idleConnectionMonitor);
-                // Gracefully close the ExecutorService once IdleConnectionMonitor is shutdown
-                executorService.shutdown();
-            } catch (Exception ex) {
-                LOG.info("Error creating/executing idle connection monitor thread", ex);
-            }
+            httpClientConnectionManager = (HttpClientConnectionManager) connectionManagerObject;
+            IdleConnectionMonitor.registerConnectionManager(
+                    httpClientConnectionManager,
+                    apacheIdleConnectionMonitorThreadWaitTimeInSeconds,
+                    apacheIdleConnectionMonitorThreadIdleTimeoutInSeconds);
         }
         ClientBuilder clientBuilder = ClientBuilder.newBuilder();
         ClientConfig clientConfig = new ClientConfig();
@@ -429,7 +409,7 @@ final class Jersey3HttpClientBuilder implements HttpClientBuilder {
                         .map(p -> p.value)
                         .collect(Collectors.toList()),
                 isApacheNonBufferingClient,
-                idleConnectionMonitor);
+                httpClientConnectionManager);
     }
 
     private boolean shouldUseApacheConnector() {

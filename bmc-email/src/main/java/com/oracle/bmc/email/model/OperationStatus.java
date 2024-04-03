@@ -9,6 +9,8 @@ package com.oracle.bmc.email.model;
 public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
+    Waiting("WAITING"),
+    NeedsAttention("NEEDS_ATTENTION"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
     Canceling("CANCELING"),

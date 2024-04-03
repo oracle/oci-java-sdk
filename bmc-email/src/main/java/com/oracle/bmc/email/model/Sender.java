@@ -30,7 +30,8 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         "timeCreated",
         "emailDomainId",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public Sender(
             String compartmentId,
@@ -41,7 +42,8 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
             java.util.Date timeCreated,
             String emailDomainId,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.compartmentId = compartmentId;
         this.emailAddress = emailAddress;
@@ -52,6 +54,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         this.emailDomainId = emailDomainId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -137,14 +140,14 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z
-         * offset, as defined by RFC 3339.
+         * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z
-         * offset, as defined by RFC 3339.
+         * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -220,6 +223,25 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -235,7 +257,8 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
                             this.timeCreated,
                             this.emailDomainId,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -270,6 +293,9 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -403,14 +429,14 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z
-     * offset, as defined by RFC 3339.
+     * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z
-     * offset, as defined by RFC 3339.
+     * offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
      */
@@ -477,6 +503,23 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -501,6 +544,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", emailDomainId=").append(String.valueOf(this.emailDomainId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -524,6 +568,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.emailDomainId, other.emailDomainId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -546,6 +591,7 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.emailDomainId == null ? 43 : this.emailDomainId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

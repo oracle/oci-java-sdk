@@ -496,6 +496,8 @@ public final class TargetDetectorRecipeDetectorRuleSummary
         City("CITY"),
         Tags("TAGS"),
         Generic("GENERIC"),
+        FusionAppsRole("FUSION_APPS_ROLE"),
+        FusionAppsPermission("FUSION_APPS_PERMISSION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

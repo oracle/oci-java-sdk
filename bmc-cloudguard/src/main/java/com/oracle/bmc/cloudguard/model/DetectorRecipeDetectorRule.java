@@ -5,7 +5,8 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Detector Recipe Rule <br>
+ * A DetectorRecipeDetectorRule object defines a single recipe rule in the collection for a
+ * DetectorRecipe object. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -522,6 +523,8 @@ public final class DetectorRecipeDetectorRule
         City("CITY"),
         Tags("TAGS"),
         Generic("GENERIC"),
+        FusionAppsRole("FUSION_APPS_ROLE"),
+        FusionAppsPermission("FUSION_APPS_PERMISSION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

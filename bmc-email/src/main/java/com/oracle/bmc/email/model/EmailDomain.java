@@ -5,7 +5,7 @@
 package com.oracle.bmc.email.model;
 
 /**
- * The properties that define a email domain. A Email Domain contains configuration used to assert
+ * The properties that define an email domain. An email domain contains configuration used to assert
  * responsibility for emails sent from that domain. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -66,7 +66,7 @@ public final class EmailDomain extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The name of the email domain in the Internet Domain Name System (DNS).
          *
-         * <p>Example: {@code example.net}
+         * <p>Example: {@code mydomain.example.com}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -74,7 +74,7 @@ public final class EmailDomain extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The name of the email domain in the Internet Domain Name System (DNS).
          *
-         * <p>Example: {@code example.net}
+         * <p>Example: {@code mydomain.example.com}
          *
          * @param name the value to set
          * @return this builder
@@ -175,12 +175,12 @@ public final class EmailDomain extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("isSpf");
             return this;
         }
-        /** The description of a email domain. */
+        /** The description of an email domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of a email domain.
+         * The description of an email domain.
          *
          * @param description the value to set
          * @return this builder
@@ -358,7 +358,7 @@ public final class EmailDomain extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      *
-     * <p>Example: {@code example.net}
+     * <p>Example: {@code mydomain.example.com}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
@@ -366,7 +366,7 @@ public final class EmailDomain extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      *
-     * <p>Example: {@code example.net}
+     * <p>Example: {@code mydomain.example.com}
      *
      * @return the value
      */
@@ -505,12 +505,12 @@ public final class EmailDomain extends com.oracle.bmc.http.client.internal.Expli
         return isSpf;
     }
 
-    /** The description of a email domain. */
+    /** The description of an email domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of a email domain.
+     * The description of an email domain.
      *
      * @return the value
      */

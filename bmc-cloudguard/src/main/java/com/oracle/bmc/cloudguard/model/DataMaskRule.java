@@ -5,7 +5,9 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Description of DataMaskRule. <br>
+ * A data mask rule specifies the conditions in which the value for a sensitive data field in the UI
+ * is to be hidden or displayed when viewed by specified groups of users. The DataMaskRule object
+ * contains the parameters for a data mask rule. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
