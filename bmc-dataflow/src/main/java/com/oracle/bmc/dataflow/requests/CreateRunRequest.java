@@ -53,6 +53,19 @@ public class CreateRunRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control
+     * plane endpoint used to exchange for upper level resource principal token.
+     */
+    private String opcParentRptUrl;
+
+    /**
+     * (Optional header param, required for Resource Principal version 3.0+) Parent resource control
+     * plane endpoint used to exchange for upper level resource principal token.
+     */
+    public String getOpcParentRptUrl() {
+        return opcParentRptUrl;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -129,6 +142,24 @@ public class CreateRunRequest
         }
 
         /**
+         * (Optional header param, required for Resource Principal version 3.0+) Parent resource
+         * control plane endpoint used to exchange for upper level resource principal token.
+         */
+        private String opcParentRptUrl = null;
+
+        /**
+         * (Optional header param, required for Resource Principal version 3.0+) Parent resource
+         * control plane endpoint used to exchange for upper level resource principal token.
+         *
+         * @param opcParentRptUrl the value to set
+         * @return this builder instance
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -161,6 +192,7 @@ public class CreateRunRequest
             createRunDetails(o.getCreateRunDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcParentRptUrl(o.getOpcParentRptUrl());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -210,8 +242,9 @@ public class CreateRunRequest
             request.createRunDetails = createRunDetails;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcParentRptUrl = opcParentRptUrl;
             return request;
-            // new CreateRunRequest(createRunDetails, opcRetryToken, opcRequestId);
+            // new CreateRunRequest(createRunDetails, opcRetryToken, opcRequestId, opcParentRptUrl);
         }
     }
 
@@ -224,7 +257,8 @@ public class CreateRunRequest
         return new Builder()
                 .createRunDetails(createRunDetails)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcParentRptUrl(opcParentRptUrl);
     }
 
     /**
@@ -244,6 +278,7 @@ public class CreateRunRequest
         sb.append(",createRunDetails=").append(String.valueOf(this.createRunDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcParentRptUrl=").append(String.valueOf(this.opcParentRptUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -261,7 +296,8 @@ public class CreateRunRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.createRunDetails, other.createRunDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcParentRptUrl, other.opcParentRptUrl);
     }
 
     @Override
@@ -275,6 +311,9 @@ public class CreateRunRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcParentRptUrl == null ? 43 : this.opcParentRptUrl.hashCode());
         return result;
     }
 }

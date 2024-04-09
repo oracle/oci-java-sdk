@@ -34,6 +34,8 @@ public final class AssociatedResourcesSummary
         "managementAgentId",
         "lifecycleState",
         "license",
+        "sourceType",
+        "resourceCategory",
         "associatedResources"
     })
     public AssociatedResourcesSummary(
@@ -47,6 +49,8 @@ public final class AssociatedResourcesSummary
             String managementAgentId,
             ResourceLifecycleState lifecycleState,
             LicenseType license,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             java.util.List<AssociatedMonitoredResource> associatedResources) {
         super();
         this.id = id;
@@ -59,6 +63,8 @@ public final class AssociatedResourcesSummary
         this.managementAgentId = managementAgentId;
         this.lifecycleState = lifecycleState;
         this.license = license;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.associatedResources = associatedResources;
     }
 
@@ -236,6 +242,40 @@ public final class AssociatedResourcesSummary
             this.__explicitlySet__.add("license");
             return this;
         }
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /** Resource Category to indicate the kind of resource type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         */
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
+            return this;
+        }
         /** List of associated monitored resources. */
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResources")
         private java.util.List<AssociatedMonitoredResource> associatedResources;
@@ -269,6 +309,8 @@ public final class AssociatedResourcesSummary
                             this.managementAgentId,
                             this.lifecycleState,
                             this.license,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.associatedResources);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -307,6 +349,12 @@ public final class AssociatedResourcesSummary
             }
             if (model.wasPropertyExplicitlySet("license")) {
                 this.license(model.getLicense());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
             }
             if (model.wasPropertyExplicitlySet("associatedResources")) {
                 this.associatedResources(model.getAssociatedResources());
@@ -474,6 +522,36 @@ public final class AssociatedResourcesSummary
         return license;
     }
 
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Resource Category to indicate the kind of resource type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     * @return the value
+     */
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
+    }
+
     /** List of associated monitored resources. */
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResources")
     private final java.util.List<AssociatedMonitoredResource> associatedResources;
@@ -512,6 +590,8 @@ public final class AssociatedResourcesSummary
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", license=").append(String.valueOf(this.license));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", associatedResources=").append(String.valueOf(this.associatedResources));
         sb.append(")");
         return sb.toString();
@@ -537,6 +617,8 @@ public final class AssociatedResourcesSummary
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.license, other.license)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.associatedResources, other.associatedResources)
                 && super.equals(other);
     }
@@ -561,6 +643,10 @@ public final class AssociatedResourcesSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result =
                 (result * PRIME)
                         + (this.associatedResources == null

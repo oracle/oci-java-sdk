@@ -31,6 +31,8 @@ public final class MonitoredResourceTypeSummary
         "metricNamespace",
         "compartmentId",
         "lifecycleState",
+        "sourceType",
+        "resourceCategory",
         "metadata",
         "timeCreated",
         "timeUpdated",
@@ -46,6 +48,8 @@ public final class MonitoredResourceTypeSummary
             String metricNamespace,
             String compartmentId,
             ResourceTypeLifecycleState lifecycleState,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             ResourceTypeMetadataDetails metadata,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -60,6 +64,8 @@ public final class MonitoredResourceTypeSummary
         this.metricNamespace = metricNamespace;
         this.compartmentId = compartmentId;
         this.lifecycleState = lifecycleState;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.metadata = metadata;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -187,6 +193,40 @@ public final class MonitoredResourceTypeSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /** Resource Category to indicate the kind of resource type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         */
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private ResourceTypeMetadataDetails metadata;
@@ -306,6 +346,8 @@ public final class MonitoredResourceTypeSummary
                             this.metricNamespace,
                             this.compartmentId,
                             this.lifecycleState,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.metadata,
                             this.timeCreated,
                             this.timeUpdated,
@@ -340,6 +382,12 @@ public final class MonitoredResourceTypeSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
@@ -475,6 +523,36 @@ public final class MonitoredResourceTypeSummary
         return lifecycleState;
     }
 
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Resource Category to indicate the kind of resource type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     * @return the value
+     */
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final ResourceTypeMetadataDetails metadata;
 
@@ -589,6 +667,8 @@ public final class MonitoredResourceTypeSummary
         sb.append(", metricNamespace=").append(String.valueOf(this.metricNamespace));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -616,6 +696,8 @@ public final class MonitoredResourceTypeSummary
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -642,6 +724,10 @@ public final class MonitoredResourceTypeSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
