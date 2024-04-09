@@ -104,7 +104,10 @@ public class EmailDPAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
 
         return clientCall(request, SubmitEmailResponse::builder)
                 .logger(LOG, "submitEmail")
-                .serviceDetails("EmailDP", "SubmitEmail", "")
+                .serviceDetails(
+                        "EmailDP",
+                        "SubmitEmail",
+                        "https://docs.oracle.com/iaas/api/#/en/emaildeliverysubmission/20220926/EmailSubmittedResponse/SubmitEmail")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SubmitEmailRequest::builder)
                 .basePath("/20220926")

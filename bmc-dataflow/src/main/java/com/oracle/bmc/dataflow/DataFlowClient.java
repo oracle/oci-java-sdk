@@ -420,6 +420,7 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .hasBody()
                 .handleBody(com.oracle.bmc.dataflow.model.Run.class, CreateRunResponse.Builder::run)
                 .handleResponseHeaderString("etag", CreateRunResponse.Builder::etag)

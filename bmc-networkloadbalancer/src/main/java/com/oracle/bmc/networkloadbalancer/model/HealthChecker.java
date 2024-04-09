@@ -33,7 +33,8 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
         "responseBodyRegex",
         "returnCode",
         "requestData",
-        "responseData"
+        "responseData",
+        "dns"
     })
     public HealthChecker(
             HealthCheckProtocols protocol,
@@ -45,7 +46,8 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
             String responseBodyRegex,
             Integer returnCode,
             byte[] requestData,
-            byte[] responseData) {
+            byte[] responseData,
+            DnsHealthCheckerDetails dns) {
         super();
         this.protocol = protocol;
         this.port = port;
@@ -57,6 +59,7 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
         this.returnCode = returnCode;
         this.requestData = requestData;
         this.responseData = responseData;
+        this.dns = dns;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -276,6 +279,15 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dns")
+        private DnsHealthCheckerDetails dns;
+
+        public Builder dns(DnsHealthCheckerDetails dns) {
+            this.dns = dns;
+            this.__explicitlySet__.add("dns");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -291,7 +303,8 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
                             this.responseBodyRegex,
                             this.returnCode,
                             this.requestData,
-                            this.responseData);
+                            this.responseData,
+                            this.dns);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -329,6 +342,9 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("responseData")) {
                 this.responseData(model.getResponseData());
+            }
+            if (model.wasPropertyExplicitlySet("dns")) {
+                this.dns(model.getDns());
             }
             return this;
         }
@@ -533,6 +549,13 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
         return responseData;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dns")
+    private final DnsHealthCheckerDetails dns;
+
+    public DnsHealthCheckerDetails getDns() {
+        return dns;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -572,6 +595,7 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
                                         + (this.responseData != null
                                                 ? " (byte[" + this.responseData.length + "])"
                                                 : ""))));
+        sb.append(", dns=").append(String.valueOf(this.dns));
         sb.append(")");
         return sb.toString();
     }
@@ -596,6 +620,7 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.returnCode, other.returnCode)
                 && java.util.Arrays.equals(this.requestData, other.requestData)
                 && java.util.Arrays.equals(this.responseData, other.responseData)
+                && java.util.Objects.equals(this.dns, other.dns)
                 && super.equals(other);
     }
 
@@ -619,6 +644,7 @@ public final class HealthChecker extends com.oracle.bmc.http.client.internal.Exp
         result = (result * PRIME) + (this.returnCode == null ? 43 : this.returnCode.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.requestData);
         result = (result * PRIME) + java.util.Arrays.hashCode(this.responseData);
+        result = (result * PRIME) + (this.dns == null ? 43 : this.dns.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

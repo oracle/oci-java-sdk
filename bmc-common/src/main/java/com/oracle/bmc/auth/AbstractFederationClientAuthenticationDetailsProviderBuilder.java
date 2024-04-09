@@ -353,7 +353,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             WaiterConfiguration.WaitContext context =
                     new WaiterConfiguration.WaitContext(System.currentTimeMillis());
 
-            for (int retry = 0; retry < detectEndpointRetries; retry++) {
+            if (detectEndpointRetries < 0) {
+                lastException =
+                        new RuntimeException(
+                                "detectEndpointRetries is "
+                                        + detectEndpointRetries
+                                        + ". Retries cannot be negative.");
+            }
+            for (int retry = 0; retry <= detectEndpointRetries; retry++) {
                 try {
                     SyncFutureWaiter waiter = new SyncFutureWaiter();
                     try (HttpResponse response =
@@ -395,8 +402,10 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
         if (lastException instanceof RuntimeException) {
             throw (RuntimeException) lastException;
-        } else {
+        } else if (lastException != null) {
             throw new RuntimeException(lastException);
+        } else {
+            throw new RuntimeException("Failed to fetch region, lastException was null");
         }
     }
 

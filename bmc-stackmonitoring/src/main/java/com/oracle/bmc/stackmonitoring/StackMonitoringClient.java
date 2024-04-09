@@ -301,7 +301,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "StackMonitoring",
                         "ChangeMonitoredResourceTaskCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/monitoredResourceTask/ChangeMonitoredResourceTaskCompartment")
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/ChangeMonitoredResourceTaskCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMonitoredResourceTaskCompartmentRequest::builder)
                 .basePath("/20210330")
@@ -1550,6 +1550,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())

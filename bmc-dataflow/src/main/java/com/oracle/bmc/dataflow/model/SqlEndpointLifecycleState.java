@@ -9,7 +9,9 @@ package com.oracle.bmc.dataflow.model;
  * and might not be usable until the entire metadata is defined. ACTIVE - The resource is valid and
  * available for access. DELETING - The resource is being deleted, and might require a deep clean of
  * any children. DELETED - The resource has been deleted, and isn't available. FAILED - The resource
- * is in a failed state due to validation or other errors.
+ * is in a failed state due to validation or other errors. UPDATING - The resource is being updated
+ * and might not be usable until all changes are commited. NEEDS_ATTENTION - The resource needs
+ * customer/operator intervention.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public enum SqlEndpointLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
@@ -18,6 +20,8 @@ public enum SqlEndpointLifecycleState implements com.oracle.bmc.http.internal.Bm
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),
+    Updating("UPDATING"),
+    NeedsAttention("NEEDS_ATTENTION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

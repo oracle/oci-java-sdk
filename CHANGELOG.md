@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.39.1 - 2024-04-09
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the ap-dcc-gazipur-1 region
+- Support for the DNS-based backend health check in the Network Load Balancer service
+- Support for Fail Open in the Network Load Balancer service
+- Support for adding and updating Instant failover in the Network Load Balancer service
+- Support for adding and updating source type and resource category for resource types in the Stack Monitoring service
+- Support for searching resources based on resource category,  source type, multiple compartments, multiple lifecycle states in the Stack Monitoring service
+- Support for filtering listed resources based on lifecycle status in the Stack Monitoring service
+- Support for creating tasks with new config parameters in the Stack Monitoring service
+- Support for Composite Resource Principal integration in the Data Flow service
+
 ## 3.39.0 - 2024-04-02
 ### Fixed
 - Fixed a thread leak in `IdleConnectionMonitor`

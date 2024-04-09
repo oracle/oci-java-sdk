@@ -132,10 +132,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/CancelWorkRequest")
+                .serviceDetails("ApplicationMigration", "CancelWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20191031")
@@ -160,10 +157,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ChangeMigrationCompartmentResponse::builder)
                 .logger(LOG, "changeMigrationCompartment")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ChangeMigrationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/ChangeMigrationCompartment")
+                .serviceDetails("ApplicationMigration", "ChangeMigrationCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeMigrationCompartmentRequest::builder)
                 .basePath("/20191031")
@@ -195,10 +189,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ChangeSourceCompartmentResponse::builder)
                 .logger(LOG, "changeSourceCompartment")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ChangeSourceCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/ChangeSourceCompartment")
+                .serviceDetails("ApplicationMigration", "ChangeSourceCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSourceCompartmentRequest::builder)
                 .basePath("/20191031")
@@ -279,10 +270,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteMigrationResponse::builder)
                 .logger(LOG, "deleteMigration")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "DeleteMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/DeleteMigration")
+                .serviceDetails("ApplicationMigration", "DeleteMigration", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMigrationRequest::builder)
                 .basePath("/20191031")
@@ -305,10 +293,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteSourceResponse::builder)
                 .logger(LOG, "deleteSource")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "DeleteSource",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/DeleteSource")
+                .serviceDetails("ApplicationMigration", "DeleteSource", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSourceRequest::builder)
                 .basePath("/20191031")
@@ -331,10 +316,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetMigrationResponse::builder)
                 .logger(LOG, "getMigration")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "GetMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/GetMigration")
+                .serviceDetails("ApplicationMigration", "GetMigration", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMigrationRequest::builder)
                 .basePath("/20191031")
@@ -358,10 +340,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetSourceResponse::builder)
                 .logger(LOG, "getSource")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "GetSource",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/GetSource")
+                .serviceDetails("ApplicationMigration", "GetSource", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSourceRequest::builder)
                 .basePath("/20191031")
@@ -385,10 +364,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequest/GetWorkRequest")
+                .serviceDetails("ApplicationMigration", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20191031")
@@ -411,10 +387,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListMigrationsResponse::builder)
                 .logger(LOG, "listMigrations")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ListMigrations",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/MigrationSummary/ListMigrations")
+                .serviceDetails("ApplicationMigration", "ListMigrations", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMigrationsRequest::builder)
                 .basePath("/20191031")
@@ -448,10 +421,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListSourceApplicationsResponse::builder)
                 .logger(LOG, "listSourceApplications")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ListSourceApplications",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceApplicationSummary/ListSourceApplications")
+                .serviceDetails("ApplicationMigration", "ListSourceApplications", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSourceApplicationsRequest::builder)
                 .basePath("/20191031")
@@ -482,10 +452,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListSourcesResponse::builder)
                 .logger(LOG, "listSources")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ListSources",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/SourceSummary/ListSources")
+                .serviceDetails("ApplicationMigration", "ListSources", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSourcesRequest::builder)
                 .basePath("/20191031")
@@ -518,10 +485,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("ApplicationMigration", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20191031")
@@ -550,10 +514,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("ApplicationMigration", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20191031")
@@ -581,10 +542,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/WorkRequestSummary/ListWorkRequests")
+                .serviceDetails("ApplicationMigration", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20191031")
@@ -612,10 +570,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, MigrateApplicationResponse::builder)
                 .logger(LOG, "migrateApplication")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "MigrateApplication",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/MigrateApplication")
+                .serviceDetails("ApplicationMigration", "MigrateApplication", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(MigrateApplicationRequest::builder)
                 .basePath("/20191031")
@@ -643,10 +598,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateMigrationResponse::builder)
                 .logger(LOG, "updateMigration")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "UpdateMigration",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Migration/UpdateMigration")
+                .serviceDetails("ApplicationMigration", "UpdateMigration", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMigrationRequest::builder)
                 .basePath("/20191031")
@@ -672,10 +624,7 @@ public class ApplicationMigrationClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateSourceResponse::builder)
                 .logger(LOG, "updateSource")
-                .serviceDetails(
-                        "ApplicationMigration",
-                        "UpdateSource",
-                        "https://docs.oracle.com/iaas/api/#/en/applicationmigration/20191031/Source/UpdateSource")
+                .serviceDetails("ApplicationMigration", "UpdateSource", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSourceRequest::builder)
                 .basePath("/20191031")

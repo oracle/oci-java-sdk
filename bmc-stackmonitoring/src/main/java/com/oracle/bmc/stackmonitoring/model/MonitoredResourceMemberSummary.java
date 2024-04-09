@@ -34,6 +34,8 @@ public final class MonitoredResourceMemberSummary
         "parentId",
         "lifecycleState",
         "license",
+        "sourceType",
+        "resourceCategory",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -49,6 +51,8 @@ public final class MonitoredResourceMemberSummary
             String parentId,
             ResourceLifecycleState lifecycleState,
             LicenseType license,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -63,6 +67,8 @@ public final class MonitoredResourceMemberSummary
         this.parentId = parentId;
         this.lifecycleState = lifecycleState;
         this.license = license;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -243,6 +249,40 @@ public final class MonitoredResourceMemberSummary
             return this;
         }
         /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native
+         * resource, etc.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /** Resource Category to indicate the kind of resource type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         */
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -317,6 +357,8 @@ public final class MonitoredResourceMemberSummary
                             this.parentId,
                             this.lifecycleState,
                             this.license,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -357,6 +399,12 @@ public final class MonitoredResourceMemberSummary
             }
             if (model.wasPropertyExplicitlySet("license")) {
                 this.license(model.getLicense());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -531,6 +579,36 @@ public final class MonitoredResourceMemberSummary
     }
 
     /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
+     * etc.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Resource Category to indicate the kind of resource type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     * @return the value
+     */
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -606,6 +684,8 @@ public final class MonitoredResourceMemberSummary
         sb.append(", parentId=").append(String.valueOf(this.parentId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", license=").append(String.valueOf(this.license));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -633,6 +713,8 @@ public final class MonitoredResourceMemberSummary
                 && java.util.Objects.equals(this.parentId, other.parentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.license, other.license)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -661,6 +743,10 @@ public final class MonitoredResourceMemberSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

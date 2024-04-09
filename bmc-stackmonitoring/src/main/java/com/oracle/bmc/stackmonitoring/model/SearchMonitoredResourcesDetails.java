@@ -25,6 +25,10 @@ public final class SearchMonitoredResourcesDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
+        "compartmentIds",
+        "lifecycleStates",
+        "sourceType",
+        "resourceCategory",
         "name",
         "nameContains",
         "type",
@@ -45,6 +49,10 @@ public final class SearchMonitoredResourcesDetails
     })
     public SearchMonitoredResourcesDetails(
             String compartmentId,
+            java.util.List<String> compartmentIds,
+            java.util.List<ResourceLifecycleState> lifecycleStates,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             String name,
             String nameContains,
             String type,
@@ -64,6 +72,10 @@ public final class SearchMonitoredResourcesDetails
             java.util.Map<String, String> propertyEquals) {
         super();
         this.compartmentId = compartmentId;
+        this.compartmentIds = compartmentIds;
+        this.lifecycleStates = lifecycleStates;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.name = name;
         this.nameContains = nameContains;
         this.type = type;
@@ -102,6 +114,70 @@ public final class SearchMonitoredResourcesDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Multiple compartment identifiers
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
+        private java.util.List<String> compartmentIds;
+
+        /**
+         * Multiple compartment identifiers
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param compartmentIds the value to set
+         * @return this builder
+         */
+        public Builder compartmentIds(java.util.List<String> compartmentIds) {
+            this.compartmentIds = compartmentIds;
+            this.__explicitlySet__.add("compartmentIds");
+            return this;
+        }
+        /** Multiple lifecycle states filter. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStates")
+        private java.util.List<ResourceLifecycleState> lifecycleStates;
+
+        /**
+         * Multiple lifecycle states filter.
+         *
+         * @param lifecycleStates the value to set
+         * @return this builder
+         */
+        public Builder lifecycleStates(java.util.List<ResourceLifecycleState> lifecycleStates) {
+            this.lifecycleStates = lifecycleStates;
+            this.__explicitlySet__.add("lifecycleStates");
+            return this;
+        }
+        /** Source type filter. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type filter.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         */
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /** Resource category filter. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource category filter.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         */
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
             return this;
         }
         /** A filter to return resources that match exact resource name. */
@@ -453,6 +529,10 @@ public final class SearchMonitoredResourcesDetails
             SearchMonitoredResourcesDetails model =
                     new SearchMonitoredResourcesDetails(
                             this.compartmentId,
+                            this.compartmentIds,
+                            this.lifecycleStates,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.name,
                             this.nameContains,
                             this.type,
@@ -480,6 +560,18 @@ public final class SearchMonitoredResourcesDetails
         public Builder copy(SearchMonitoredResourcesDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("compartmentIds")) {
+                this.compartmentIds(model.getCompartmentIds());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleStates")) {
+                this.lifecycleStates(model.getLifecycleStates());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
@@ -560,6 +652,62 @@ public final class SearchMonitoredResourcesDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * Multiple compartment identifiers
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
+    private final java.util.List<String> compartmentIds;
+
+    /**
+     * Multiple compartment identifiers
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     */
+    public java.util.List<String> getCompartmentIds() {
+        return compartmentIds;
+    }
+
+    /** Multiple lifecycle states filter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStates")
+    private final java.util.List<ResourceLifecycleState> lifecycleStates;
+
+    /**
+     * Multiple lifecycle states filter.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLifecycleState> getLifecycleStates() {
+        return lifecycleStates;
+    }
+
+    /** Source type filter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type filter.
+     *
+     * @return the value
+     */
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /** Resource category filter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource category filter.
+     *
+     * @return the value
+     */
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
     }
 
     /** A filter to return resources that match exact resource name. */
@@ -917,6 +1065,10 @@ public final class SearchMonitoredResourcesDetails
         sb.append("SearchMonitoredResourcesDetails(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", compartmentIds=").append(String.valueOf(this.compartmentIds));
+        sb.append(", lifecycleStates=").append(String.valueOf(this.lifecycleStates));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", nameContains=").append(String.valueOf(this.nameContains));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -951,6 +1103,10 @@ public final class SearchMonitoredResourcesDetails
 
         SearchMonitoredResourcesDetails other = (SearchMonitoredResourcesDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.compartmentIds, other.compartmentIds)
+                && java.util.Objects.equals(this.lifecycleStates, other.lifecycleStates)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.nameContains, other.nameContains)
                 && java.util.Objects.equals(this.type, other.type)
@@ -980,6 +1136,16 @@ public final class SearchMonitoredResourcesDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIds == null ? 43 : this.compartmentIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStates == null ? 43 : this.lifecycleStates.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.nameContains == null ? 43 : this.nameContains.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
