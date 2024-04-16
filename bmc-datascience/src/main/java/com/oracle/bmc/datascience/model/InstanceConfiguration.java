@@ -25,14 +25,17 @@ public final class InstanceConfiguration
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceShapeName",
-        "modelDeploymentInstanceShapeConfigDetails"
+        "modelDeploymentInstanceShapeConfigDetails",
+        "subnetId"
     })
     public InstanceConfiguration(
             String instanceShapeName,
-            ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails) {
+            ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails,
+            String subnetId) {
         super();
         this.instanceShapeName = instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+        this.subnetId = subnetId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -64,6 +67,29 @@ public final class InstanceConfiguration
             this.__explicitlySet__.add("modelDeploymentInstanceShapeConfigDetails");
             return this;
         }
+        /**
+         * A model deployment instance is provided with a VNIC for network access. This specifies
+         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway
+         * for egress.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        /**
+         * A model deployment instance is provided with a VNIC for network access. This specifies
+         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway
+         * for egress.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         */
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -71,7 +97,9 @@ public final class InstanceConfiguration
         public InstanceConfiguration build() {
             InstanceConfiguration model =
                     new InstanceConfiguration(
-                            this.instanceShapeName, this.modelDeploymentInstanceShapeConfigDetails);
+                            this.instanceShapeName,
+                            this.modelDeploymentInstanceShapeConfigDetails,
+                            this.subnetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -86,6 +114,9 @@ public final class InstanceConfiguration
             if (model.wasPropertyExplicitlySet("modelDeploymentInstanceShapeConfigDetails")) {
                 this.modelDeploymentInstanceShapeConfigDetails(
                         model.getModelDeploymentInstanceShapeConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             return this;
         }
@@ -122,6 +153,25 @@ public final class InstanceConfiguration
         return modelDeploymentInstanceShapeConfigDetails;
     }
 
+    /**
+     * A model deployment instance is provided with a VNIC for network access. This specifies the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * A model deployment instance is provided with a VNIC for network access. This specifies the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT/SGW gateway for egress.
+     *
+     * @return the value
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -140,6 +190,7 @@ public final class InstanceConfiguration
         sb.append("instanceShapeName=").append(String.valueOf(this.instanceShapeName));
         sb.append(", modelDeploymentInstanceShapeConfigDetails=")
                 .append(String.valueOf(this.modelDeploymentInstanceShapeConfigDetails));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +209,7 @@ public final class InstanceConfiguration
                 && java.util.Objects.equals(
                         this.modelDeploymentInstanceShapeConfigDetails,
                         other.modelDeploymentInstanceShapeConfigDetails)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && super.equals(other);
     }
 
@@ -173,6 +225,7 @@ public final class InstanceConfiguration
                         + (this.modelDeploymentInstanceShapeConfigDetails == null
                                 ? 43
                                 : this.modelDeploymentInstanceShapeConfigDetails.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

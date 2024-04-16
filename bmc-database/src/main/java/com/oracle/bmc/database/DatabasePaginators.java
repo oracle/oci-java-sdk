@@ -1101,6 +1101,140 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAutonomousDatabaseSoftwareImages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAutonomousDatabaseSoftwareImagesResponse>
+            listAutonomousDatabaseSoftwareImagesResponseIterator(
+                    final ListAutonomousDatabaseSoftwareImagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDatabaseSoftwareImagesRequest.Builder,
+                ListAutonomousDatabaseSoftwareImagesRequest,
+                ListAutonomousDatabaseSoftwareImagesResponse>(
+                new java.util.function.Supplier<
+                        ListAutonomousDatabaseSoftwareImagesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseSoftwareImagesRequest.Builder get() {
+                        return ListAutonomousDatabaseSoftwareImagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseSoftwareImagesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabaseSoftwareImagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseSoftwareImagesRequest.Builder>,
+                        ListAutonomousDatabaseSoftwareImagesRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseSoftwareImagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseSoftwareImagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseSoftwareImagesRequest,
+                        ListAutonomousDatabaseSoftwareImagesResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseSoftwareImagesResponse apply(
+                            ListAutonomousDatabaseSoftwareImagesRequest request) {
+                        return client.listAutonomousDatabaseSoftwareImages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImageSummary} objects contained in
+     * responses from the listAutonomousDatabaseSoftwareImages operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImageSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImageSummary>
+            listAutonomousDatabaseSoftwareImagesRecordIterator(
+                    final ListAutonomousDatabaseSoftwareImagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDatabaseSoftwareImagesRequest.Builder,
+                ListAutonomousDatabaseSoftwareImagesRequest,
+                ListAutonomousDatabaseSoftwareImagesResponse,
+                com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImageSummary>(
+                new java.util.function.Supplier<
+                        ListAutonomousDatabaseSoftwareImagesRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabaseSoftwareImagesRequest.Builder get() {
+                        return ListAutonomousDatabaseSoftwareImagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseSoftwareImagesResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabaseSoftwareImagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabaseSoftwareImagesRequest.Builder>,
+                        ListAutonomousDatabaseSoftwareImagesRequest>() {
+                    @Override
+                    public ListAutonomousDatabaseSoftwareImagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabaseSoftwareImagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseSoftwareImagesRequest,
+                        ListAutonomousDatabaseSoftwareImagesResponse>() {
+                    @Override
+                    public ListAutonomousDatabaseSoftwareImagesResponse apply(
+                            ListAutonomousDatabaseSoftwareImagesRequest request) {
+                        return client.listAutonomousDatabaseSoftwareImages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabaseSoftwareImagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousDatabaseSoftwareImageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .AutonomousDatabaseSoftwareImageSummary>
+                            apply(ListAutonomousDatabaseSoftwareImagesResponse response) {
+                        return response.getAutonomousDatabaseSoftwareImageCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousDatabases operation. This iterable will fetch more data from the server as
      * needed.
      *

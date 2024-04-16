@@ -631,6 +631,74 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest,
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+            forChangeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request) {
+        return forChangeAutonomousDatabaseSoftwareImageCompartment(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest,
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+            forChangeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>() {
+                    @Override
+                    public ChangeAutonomousDatabaseSoftwareImageCompartmentResponse call()
+                            throws Exception {
+                        final ChangeAutonomousDatabaseSoftwareImageCompartmentResponse response =
+                                client.changeAutonomousDatabaseSoftwareImageCompartment(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ChangeAutonomousExadataInfrastructureCompartmentRequest,
                     ChangeAutonomousExadataInfrastructureCompartmentResponse>
             forChangeAutonomousExadataInfrastructureCompartment(
@@ -2515,6 +2583,72 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    CreateAutonomousDatabaseSoftwareImageRequest,
+                    CreateAutonomousDatabaseSoftwareImageResponse>
+            forCreateAutonomousDatabaseSoftwareImage(
+                    CreateAutonomousDatabaseSoftwareImageRequest request) {
+        return forCreateAutonomousDatabaseSoftwareImage(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    CreateAutonomousDatabaseSoftwareImageRequest,
+                    CreateAutonomousDatabaseSoftwareImageResponse>
+            forCreateAutonomousDatabaseSoftwareImage(
+                    CreateAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<CreateAutonomousDatabaseSoftwareImageResponse>() {
+                    @Override
+                    public CreateAutonomousDatabaseSoftwareImageResponse call() throws Exception {
+                        final CreateAutonomousDatabaseSoftwareImageResponse response =
+                                client.createAutonomousDatabaseSoftwareImage(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     CreateAutonomousVmClusterRequest, CreateAutonomousVmClusterResponse>
             forCreateAutonomousVmCluster(CreateAutonomousVmClusterRequest request) {
         return forCreateAutonomousVmCluster(
@@ -4040,6 +4174,72 @@ public class DatabaseWaiters {
                     public DeleteAutonomousDatabaseBackupResponse call() throws Exception {
                         final DeleteAutonomousDatabaseBackupResponse response =
                                 client.deleteAutonomousDatabaseBackup(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DeleteAutonomousDatabaseSoftwareImageRequest,
+                    DeleteAutonomousDatabaseSoftwareImageResponse>
+            forDeleteAutonomousDatabaseSoftwareImage(
+                    DeleteAutonomousDatabaseSoftwareImageRequest request) {
+        return forDeleteAutonomousDatabaseSoftwareImage(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    DeleteAutonomousDatabaseSoftwareImageRequest,
+                    DeleteAutonomousDatabaseSoftwareImageResponse>
+            forDeleteAutonomousDatabaseSoftwareImage(
+                    DeleteAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<DeleteAutonomousDatabaseSoftwareImageResponse>() {
+                    @Override
+                    public DeleteAutonomousDatabaseSoftwareImageResponse call() throws Exception {
+                        final DeleteAutonomousDatabaseSoftwareImageResponse response =
+                                client.deleteAutonomousDatabaseSoftwareImage(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
@@ -7843,6 +8043,132 @@ public class DatabaseWaiters {
                         },
                         targetStatesSet.contains(
                                 com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation
+                                        .LifecycleState.Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseSoftwareImageRequest,
+                    GetAutonomousDatabaseSoftwareImageResponse>
+            forAutonomousDatabaseSoftwareImage(
+                    GetAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAutonomousDatabaseSoftwareImage(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseSoftwareImageRequest,
+                    GetAutonomousDatabaseSoftwareImageResponse>
+            forAutonomousDatabaseSoftwareImage(
+                    GetAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forAutonomousDatabaseSoftwareImage(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseSoftwareImageRequest,
+                    GetAutonomousDatabaseSoftwareImageResponse>
+            forAutonomousDatabaseSoftwareImage(
+                    GetAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forAutonomousDatabaseSoftwareImage(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AutonomousDatabaseSoftwareImage.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseSoftwareImageRequest,
+                    GetAutonomousDatabaseSoftwareImageResponse>
+            forAutonomousDatabaseSoftwareImage(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAutonomousDatabaseSoftwareImageRequest request,
+                    final com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage
+                                            .LifecycleState
+                                    ...
+                            targetStates) {
+        final java.util.Set<
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage
+                                .LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetAutonomousDatabaseSoftwareImageRequest,
+                                GetAutonomousDatabaseSoftwareImageResponse>() {
+                            @Override
+                            public GetAutonomousDatabaseSoftwareImageResponse apply(
+                                    GetAutonomousDatabaseSoftwareImageRequest request) {
+                                return client.getAutonomousDatabaseSoftwareImage(request);
+                            }
+                        },
+                        new java.util.function.Predicate<
+                                GetAutonomousDatabaseSoftwareImageResponse>() {
+                            @Override
+                            public boolean test(
+                                    GetAutonomousDatabaseSoftwareImageResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAutonomousDatabaseSoftwareImage()
+                                                .getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage
                                         .LifecycleState.Terminated)),
                 request);
     }

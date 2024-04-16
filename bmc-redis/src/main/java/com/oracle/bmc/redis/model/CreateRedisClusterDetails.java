@@ -32,6 +32,7 @@ public final class CreateRedisClusterDetails
         "softwareVersion",
         "nodeMemoryInGBs",
         "subnetId",
+        "nsgIds",
         "freeformTags",
         "definedTags"
     })
@@ -42,6 +43,7 @@ public final class CreateRedisClusterDetails
             RedisCluster.SoftwareVersion softwareVersion,
             Float nodeMemoryInGBs,
             String subnetId,
+            java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -51,6 +53,7 @@ public final class CreateRedisClusterDetails
         this.softwareVersion = softwareVersion;
         this.nodeMemoryInGBs = nodeMemoryInGBs;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -163,6 +166,21 @@ public final class CreateRedisClusterDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /** OCIDs of the NSGs to control access in the customer network */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * OCIDs of the NSGs to control access in the customer network
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -215,6 +233,7 @@ public final class CreateRedisClusterDetails
                             this.softwareVersion,
                             this.nodeMemoryInGBs,
                             this.subnetId,
+                            this.nsgIds,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -242,6 +261,9 @@ public final class CreateRedisClusterDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -356,6 +378,19 @@ public final class CreateRedisClusterDetails
         return subnetId;
     }
 
+    /** OCIDs of the NSGs to control access in the customer network */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * OCIDs of the NSGs to control access in the customer network
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
@@ -411,6 +446,7 @@ public final class CreateRedisClusterDetails
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
         sb.append(", nodeMemoryInGBs=").append(String.valueOf(this.nodeMemoryInGBs));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -433,6 +469,7 @@ public final class CreateRedisClusterDetails
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
                 && java.util.Objects.equals(this.nodeMemoryInGBs, other.nodeMemoryInGBs)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -454,6 +491,7 @@ public final class CreateRedisClusterDetails
                 (result * PRIME)
                         + (this.nodeMemoryInGBs == null ? 43 : this.nodeMemoryInGBs.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

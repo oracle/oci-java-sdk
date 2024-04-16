@@ -819,6 +819,7 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
+        Inactive("INACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

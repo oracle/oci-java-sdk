@@ -232,6 +232,25 @@ public interface Database extends AutoCloseable {
             ChangeAutonomousDatabaseCompartmentRequest request);
 
     /**
+     * Move the Autonomous Database Software Image and its dependent resources to the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSoftwareImageCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeAutonomousDatabaseSoftwareImageCompartment API.
+     */
+    ChangeAutonomousDatabaseSoftwareImageCompartmentResponse
+            changeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request);
+
+    /**
      * **Deprecated.** Use the {@link
      * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest)
      * changeCloudExadataInfrastructureCompartment} operation to move an Exadata infrastructure
@@ -802,6 +821,23 @@ public interface Database extends AutoCloseable {
             CreateAutonomousDatabaseBackupRequest request);
 
     /**
+     * create Autonomous Database Software Image in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseSoftwareImageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateAutonomousDatabaseSoftwareImage API.
+     */
+    CreateAutonomousDatabaseSoftwareImageResponse createAutonomousDatabaseSoftwareImage(
+            CreateAutonomousDatabaseSoftwareImageRequest request);
+
+    /**
      * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM
      * Cluster in the Oracle cloud, see {@link
      * #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest)
@@ -1314,6 +1350,23 @@ public interface Database extends AutoCloseable {
      */
     DeleteAutonomousDatabaseBackupResponse deleteAutonomousDatabaseBackup(
             DeleteAutonomousDatabaseBackupRequest request);
+
+    /**
+     * Delete an Autonomous Database Software Image
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteAutonomousDatabaseSoftwareImageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteAutonomousDatabaseSoftwareImage API.
+     */
+    DeleteAutonomousDatabaseSoftwareImageResponse deleteAutonomousDatabaseSoftwareImage(
+            DeleteAutonomousDatabaseSoftwareImageRequest request);
 
     /**
      * Deletes the specified Autonomous VM cluster in an Exadata Cloud@Customer system. To delete an
@@ -2447,6 +2500,23 @@ public interface Database extends AutoCloseable {
      */
     GetAutonomousDatabaseRegionalWalletResponse getAutonomousDatabaseRegionalWallet(
             GetAutonomousDatabaseRegionalWalletRequest request);
+
+    /**
+     * Gets information about the specified Autonomous Database Software Image.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetAutonomousDatabaseSoftwareImageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAutonomousDatabaseSoftwareImage API.
+     */
+    GetAutonomousDatabaseSoftwareImageResponse getAutonomousDatabaseSoftwareImage(
+            GetAutonomousDatabaseSoftwareImageRequest request);
 
     /**
      * Gets the wallet details for the specified Autonomous Database.
@@ -3609,6 +3679,23 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousDatabaseRefreshableClonesResponse listAutonomousDatabaseRefreshableClones(
             ListAutonomousDatabaseRefreshableClonesRequest request);
+
+    /**
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseSoftwareImagesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAutonomousDatabaseSoftwareImages API.
+     */
+    ListAutonomousDatabaseSoftwareImagesResponse listAutonomousDatabaseSoftwareImages(
+            ListAutonomousDatabaseSoftwareImagesRequest request);
 
     /**
      * Gets a list of Autonomous Databases based on the query parameters specified.
@@ -5425,6 +5512,23 @@ public interface Database extends AutoCloseable {
      */
     UpdateAutonomousDatabaseRegionalWalletResponse updateAutonomousDatabaseRegionalWallet(
             UpdateAutonomousDatabaseRegionalWalletRequest request);
+
+    /**
+     * Updates the properties of an Autonomous Database Software Image, like add tags
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseSoftwareImageExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateAutonomousDatabaseSoftwareImage API.
+     */
+    UpdateAutonomousDatabaseSoftwareImageResponse updateAutonomousDatabaseSoftwareImage(
+            UpdateAutonomousDatabaseSoftwareImageRequest request);
 
     /**
      * Updates the wallet for the specified Autonomous Database.

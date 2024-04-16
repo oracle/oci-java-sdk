@@ -158,6 +158,130 @@ public class UsageapiPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listEmailRecipientsGroups operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListEmailRecipientsGroupsResponse> listEmailRecipientsGroupsResponseIterator(
+            final ListEmailRecipientsGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailRecipientsGroupsRequest.Builder,
+                ListEmailRecipientsGroupsRequest,
+                ListEmailRecipientsGroupsResponse>(
+                new java.util.function.Supplier<ListEmailRecipientsGroupsRequest.Builder>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest.Builder get() {
+                        return ListEmailRecipientsGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailRecipientsGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailRecipientsGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailRecipientsGroupsRequest.Builder>,
+                        ListEmailRecipientsGroupsRequest>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailRecipientsGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>() {
+                    @Override
+                    public ListEmailRecipientsGroupsResponse apply(
+                            ListEmailRecipientsGroupsRequest request) {
+                        return client.listEmailRecipientsGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects contained in responses
+     * from the listEmailRecipientsGroups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>
+            listEmailRecipientsGroupsRecordIterator(
+                    final ListEmailRecipientsGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailRecipientsGroupsRequest.Builder,
+                ListEmailRecipientsGroupsRequest,
+                ListEmailRecipientsGroupsResponse,
+                com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>(
+                new java.util.function.Supplier<ListEmailRecipientsGroupsRequest.Builder>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest.Builder get() {
+                        return ListEmailRecipientsGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailRecipientsGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailRecipientsGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailRecipientsGroupsRequest.Builder>,
+                        ListEmailRecipientsGroupsRequest>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailRecipientsGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>() {
+                    @Override
+                    public ListEmailRecipientsGroupsResponse apply(
+                            ListEmailRecipientsGroupsRequest request) {
+                        return client.listEmailRecipientsGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailRecipientsGroupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>
+                            apply(ListEmailRecipientsGroupsResponse response) {
+                        return response.getEmailRecipientsGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listQueries
      * operation. This iterable will fetch more data from the server as needed.
      *

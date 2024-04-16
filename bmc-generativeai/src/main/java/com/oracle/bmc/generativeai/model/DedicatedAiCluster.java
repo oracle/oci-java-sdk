@@ -45,6 +45,7 @@ public final class DedicatedAiCluster
         "unitCount",
         "unitShape",
         "capacity",
+        "previousState",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -62,6 +63,7 @@ public final class DedicatedAiCluster
             Integer unitCount,
             UnitShape unitShape,
             DedicatedAiClusterCapacity capacity,
+            DedicatedAiCluster previousState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -78,6 +80,7 @@ public final class DedicatedAiCluster
         this.unitCount = unitCount;
         this.unitShape = unitShape;
         this.capacity = capacity;
+        this.previousState = previousState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -279,6 +282,15 @@ public final class DedicatedAiCluster
             this.__explicitlySet__.add("capacity");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("previousState")
+        private DedicatedAiCluster previousState;
+
+        public Builder previousState(DedicatedAiCluster previousState) {
+            this.previousState = previousState;
+            this.__explicitlySet__.add("previousState");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -370,6 +382,7 @@ public final class DedicatedAiCluster
                             this.unitCount,
                             this.unitShape,
                             this.capacity,
+                            this.previousState,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -416,6 +429,9 @@ public final class DedicatedAiCluster
             }
             if (model.wasPropertyExplicitlySet("capacity")) {
                 this.capacity(model.getCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("previousState")) {
+                this.previousState(model.getPreviousState());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -686,6 +702,7 @@ public final class DedicatedAiCluster
         SmallCohere("SMALL_COHERE"),
         EmbedCohere("EMBED_COHERE"),
         Llama270("LLAMA2_70"),
+        LargeCohereV2("LARGE_COHERE_V2"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -750,6 +767,13 @@ public final class DedicatedAiCluster
 
     public DedicatedAiClusterCapacity getCapacity() {
         return capacity;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("previousState")
+    private final DedicatedAiCluster previousState;
+
+    public DedicatedAiCluster getPreviousState() {
+        return previousState;
     }
 
     /**
@@ -844,6 +868,7 @@ public final class DedicatedAiCluster
         sb.append(", unitCount=").append(String.valueOf(this.unitCount));
         sb.append(", unitShape=").append(String.valueOf(this.unitShape));
         sb.append(", capacity=").append(String.valueOf(this.capacity));
+        sb.append(", previousState=").append(String.valueOf(this.previousState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -873,6 +898,7 @@ public final class DedicatedAiCluster
                 && java.util.Objects.equals(this.unitCount, other.unitCount)
                 && java.util.Objects.equals(this.unitShape, other.unitShape)
                 && java.util.Objects.equals(this.capacity, other.capacity)
+                && java.util.Objects.equals(this.previousState, other.previousState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -901,6 +927,9 @@ public final class DedicatedAiCluster
         result = (result * PRIME) + (this.unitCount == null ? 43 : this.unitCount.hashCode());
         result = (result * PRIME) + (this.unitShape == null ? 43 : this.unitShape.hashCode());
         result = (result * PRIME) + (this.capacity == null ? 43 : this.capacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.previousState == null ? 43 : this.previousState.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

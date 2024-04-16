@@ -155,6 +155,35 @@ public class AIServiceLanguageClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public BatchDetectHealthEntityResponse batchDetectHealthEntity(
+            BatchDetectHealthEntityRequest request) {
+        Objects.requireNonNull(
+                request.getBatchDetectHealthEntityDetails(),
+                "batchDetectHealthEntityDetails is required");
+
+        return clientCall(request, BatchDetectHealthEntityResponse::builder)
+                .logger(LOG, "batchDetectHealthEntity")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectHealthEntity",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectHealthEntityDetails/BatchDetectHealthEntity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectHealthEntityRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectHealthEntities")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectHealthEntityResult.class,
+                        BatchDetectHealthEntityResponse.Builder::batchDetectHealthEntityResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", BatchDetectHealthEntityResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public BatchDetectLanguageEntitiesResponse batchDetectLanguageEntities(
             BatchDetectLanguageEntitiesRequest request) {
         Objects.requireNonNull(

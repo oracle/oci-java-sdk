@@ -21,9 +21,11 @@ package com.oracle.bmc.ailanguage.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class PiiEntity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"offset", "length", "text", "type", "score"})
-    public PiiEntity(Integer offset, Integer length, String text, String type, Double score) {
+    @java.beans.ConstructorProperties({"id", "offset", "length", "text", "type", "score"})
+    public PiiEntity(
+            String id, Integer offset, Integer length, String text, String type, Double score) {
         super();
+        this.id = id;
         this.offset = offset;
         this.length = length;
         this.text = text;
@@ -33,6 +35,21 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** Unique id of the entity. */
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        /**
+         * Unique id of the entity.
+         *
+         * @param id the value to set
+         * @return this builder
+         */
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
         /** The number of Unicode code points preceding this entity in the submitted text. */
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
@@ -78,12 +95,28 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** Type of PII entity text like PER, LOC. */
+        /**
+         * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL
+         * PASSPORT_NUMBER_US TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT
+         * BANK_ROUTING CREDIT_DEBIT_NUMBER IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC
+         * AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY
+         * OCI_SMTP_USERNAME OCI_OCID_REFERENCE OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST
+         * OCI_STORAGE_SIGNED_URL OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER
+         * HEALTH_PLAN_ID URL CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US
+         * VEHICLE_IDENTIFIER_US
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Type of PII entity text like PER, LOC.
+         * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL
+         * PASSPORT_NUMBER_US TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT
+         * BANK_ROUTING CREDIT_DEBIT_NUMBER IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC
+         * AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY
+         * OCI_SMTP_USERNAME OCI_OCID_REFERENCE OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST
+         * OCI_STORAGE_SIGNED_URL OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER
+         * HEALTH_PLAN_ID URL CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US
+         * VEHICLE_IDENTIFIER_US
          *
          * @param type the value to set
          * @return this builder
@@ -114,7 +147,8 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
 
         public PiiEntity build() {
             PiiEntity model =
-                    new PiiEntity(this.offset, this.length, this.text, this.type, this.score);
+                    new PiiEntity(
+                            this.id, this.offset, this.length, this.text, this.type, this.score);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -123,6 +157,9 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PiiEntity model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
             if (model.wasPropertyExplicitlySet("offset")) {
                 this.offset(model.getOffset());
             }
@@ -149,6 +186,19 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /** Unique id of the entity. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
+    /**
+     * Unique id of the entity.
+     *
+     * @return the value
+     */
+    public String getId() {
+        return id;
     }
 
     /** The number of Unicode code points preceding this entity in the submitted text. */
@@ -190,12 +240,26 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         return text;
     }
 
-    /** Type of PII entity text like PER, LOC. */
+    /**
+     * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL PASSPORT_NUMBER_US
+     * TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT BANK_ROUTING CREDIT_DEBIT_NUMBER
+     * IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY
+     * PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY OCI_SMTP_USERNAME OCI_OCID_REFERENCE
+     * OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST OCI_STORAGE_SIGNED_URL
+     * OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER HEALTH_PLAN_ID URL
+     * CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US VEHICLE_IDENTIFIER_US
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Type of PII entity text like PER, LOC.
+     * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL PASSPORT_NUMBER_US
+     * TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT BANK_ROUTING CREDIT_DEBIT_NUMBER
+     * IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY
+     * PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY OCI_SMTP_USERNAME OCI_OCID_REFERENCE
+     * OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST OCI_STORAGE_SIGNED_URL
+     * OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER HEALTH_PLAN_ID URL
+     * CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US VEHICLE_IDENTIFIER_US
      *
      * @return the value
      */
@@ -231,7 +295,8 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PiiEntity(");
         sb.append("super=").append(super.toString());
-        sb.append("offset=").append(String.valueOf(this.offset));
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
         sb.append(", text=").append(String.valueOf(this.text));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -250,7 +315,8 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         }
 
         PiiEntity other = (PiiEntity) o;
-        return java.util.Objects.equals(this.offset, other.offset)
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.length, other.length)
                 && java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.type, other.type)
@@ -262,6 +328,7 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());

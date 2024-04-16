@@ -9,9 +9,11 @@ import com.oracle.bmc.usageapi.responses.*;
 
 /**
  * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data
- * that meets the specified filter criteria, and to group that data by the dimension of your
- * choosing. The Usage API is used by the Cost Analysis tool in the Console. Also see [Using the
- * Usage
+ * that meets the specified filter criteria, and to group that data by the chosen dimension. The
+ * Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See
+ * [Cost Analysis
+ * Overview](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm) and
+ * [Using the Usage
  * API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api)
  * for more information.
  */
@@ -83,6 +85,22 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Add a list of email recipients that can receive usage statements for the subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateEmailRecipientsGroupResponse> createEmailRecipientsGroup(
+            CreateEmailRecipientsGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailRecipientsGroupRequest, CreateEmailRecipientsGroupResponse>
+                    handler);
+
+    /**
      * Returns the created query.
      *
      * @param request The request object containing the details to send
@@ -146,6 +164,22 @@ public interface UsageapiAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete the email recipients group for the usage statement subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteEmailRecipientsGroupResponse> deleteEmailRecipientsGroup(
+            DeleteEmailRecipientsGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailRecipientsGroupRequest, DeleteEmailRecipientsGroupResponse>
+                    handler);
+
+    /**
      * Delete a saved query by the OCID.
      *
      * @param request The request object containing the details to send
@@ -205,6 +239,22 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<GetCustomTableResponse> getCustomTable(
             GetCustomTableRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetCustomTableRequest, GetCustomTableResponse>
+                    handler);
+
+    /**
+     * Return the saved usage statement email recipient group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailRecipientsGroupResponse> getEmailRecipientsGroup(
+            GetEmailRecipientsGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailRecipientsGroupRequest, GetEmailRecipientsGroupResponse>
                     handler);
 
     /**
@@ -280,6 +330,22 @@ public interface UsageapiAsync extends AutoCloseable {
     java.util.concurrent.Future<ListCustomTablesResponse> listCustomTables(
             ListCustomTablesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListCustomTablesRequest, ListCustomTablesResponse>
+                    handler);
+
+    /**
+     * Return the saved usage statement email recipient group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEmailRecipientsGroupsResponse> listEmailRecipientsGroups(
+            ListEmailRecipientsGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>
                     handler);
 
     /**
@@ -460,6 +526,22 @@ public interface UsageapiAsync extends AutoCloseable {
             UpdateCustomTableRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateCustomTableRequest, UpdateCustomTableResponse>
+                    handler);
+
+    /**
+     * Update a saved email recipients group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateEmailRecipientsGroupResponse> updateEmailRecipientsGroup(
+            UpdateEmailRecipientsGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailRecipientsGroupRequest, UpdateEmailRecipientsGroupResponse>
                     handler);
 
     /**

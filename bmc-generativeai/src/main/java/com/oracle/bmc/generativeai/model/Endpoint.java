@@ -41,6 +41,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         "lifecycleState",
         "lifecycleDetails",
         "contentModerationConfig",
+        "previousState",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -57,6 +58,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             LifecycleState lifecycleState,
             String lifecycleDetails,
             ContentModerationConfig contentModerationConfig,
+            Endpoint previousState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -72,6 +74,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.contentModerationConfig = contentModerationConfig;
+        this.previousState = previousState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -250,6 +253,15 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("contentModerationConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("previousState")
+        private Endpoint previousState;
+
+        public Builder previousState(Endpoint previousState) {
+            this.previousState = previousState;
+            this.__explicitlySet__.add("previousState");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -340,6 +352,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.contentModerationConfig,
+                            this.previousState,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -383,6 +396,9 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("contentModerationConfig")) {
                 this.contentModerationConfig(model.getContentModerationConfig());
+            }
+            if (model.wasPropertyExplicitlySet("previousState")) {
+                this.previousState(model.getPreviousState());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -601,6 +617,13 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         return contentModerationConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("previousState")
+    private final Endpoint previousState;
+
+    public Endpoint getPreviousState() {
+        return previousState;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -693,6 +716,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", contentModerationConfig=")
                 .append(String.valueOf(this.contentModerationConfig));
+        sb.append(", previousState=").append(String.valueOf(this.previousState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -722,6 +746,7 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.contentModerationConfig, other.contentModerationConfig)
+                && java.util.Objects.equals(this.previousState, other.previousState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -757,6 +782,9 @@ public final class Endpoint extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.contentModerationConfig == null
                                 ? 43
                                 : this.contentModerationConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.previousState == null ? 43 : this.previousState.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

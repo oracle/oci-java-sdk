@@ -28,11 +28,21 @@ public final class NfsDataTransferMediumDetails extends DataTransferMediumDetail
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucket")
+        private ObjectStoreBucket objectStorageBucket;
+
+        public Builder objectStorageBucket(ObjectStoreBucket objectStorageBucket) {
+            this.objectStorageBucket = objectStorageBucket;
+            this.__explicitlySet__.add("objectStorageBucket");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NfsDataTransferMediumDetails build() {
-            NfsDataTransferMediumDetails model = new NfsDataTransferMediumDetails();
+            NfsDataTransferMediumDetails model =
+                    new NfsDataTransferMediumDetails(this.objectStorageBucket);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -41,6 +51,9 @@ public final class NfsDataTransferMediumDetails extends DataTransferMediumDetail
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NfsDataTransferMediumDetails model) {
+            if (model.wasPropertyExplicitlySet("objectStorageBucket")) {
+                this.objectStorageBucket(model.getObjectStorageBucket());
+            }
             return this;
         }
     }
@@ -55,8 +68,16 @@ public final class NfsDataTransferMediumDetails extends DataTransferMediumDetail
     }
 
     @Deprecated
-    public NfsDataTransferMediumDetails() {
+    public NfsDataTransferMediumDetails(ObjectStoreBucket objectStorageBucket) {
         super();
+        this.objectStorageBucket = objectStorageBucket;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucket")
+    private final ObjectStoreBucket objectStorageBucket;
+
+    public ObjectStoreBucket getObjectStorageBucket() {
+        return objectStorageBucket;
     }
 
     @Override
@@ -74,6 +95,7 @@ public final class NfsDataTransferMediumDetails extends DataTransferMediumDetail
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("NfsDataTransferMediumDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", objectStorageBucket=").append(String.valueOf(this.objectStorageBucket));
         sb.append(")");
         return sb.toString();
     }
@@ -88,13 +110,19 @@ public final class NfsDataTransferMediumDetails extends DataTransferMediumDetail
         }
 
         NfsDataTransferMediumDetails other = (NfsDataTransferMediumDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.objectStorageBucket, other.objectStorageBucket)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.objectStorageBucket == null
+                                ? 43
+                                : this.objectStorageBucket.hashCode());
         return result;
     }
 }

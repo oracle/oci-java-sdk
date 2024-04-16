@@ -151,6 +151,41 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateEmailRecipientsGroupResponse createEmailRecipientsGroup(
+            CreateEmailRecipientsGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateEmailRecipientsGroupDetails(),
+                "createEmailRecipientsGroupDetails is required");
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+
+        return clientCall(request, CreateEmailRecipientsGroupResponse::builder)
+                .logger(LOG, "createEmailRecipientsGroup")
+                .serviceDetails(
+                        "Usageapi",
+                        "CreateEmailRecipientsGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/CreateEmailRecipientsGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateEmailRecipientsGroupRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageStatements")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("emailRecipientsGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.EmailRecipientsGroup.class,
+                        CreateEmailRecipientsGroupResponse.Builder::emailRecipientsGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateEmailRecipientsGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateEmailRecipientsGroupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateQueryResponse createQuery(CreateQueryRequest request) {
         Objects.requireNonNull(request.getCreateQueryDetails(), "createQueryDetails is required");
 
@@ -262,6 +297,38 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteEmailRecipientsGroupResponse deleteEmailRecipientsGroup(
+            DeleteEmailRecipientsGroupRequest request) {
+
+        Validate.notBlank(
+                request.getEmailRecipientsGroupId(), "emailRecipientsGroupId must not be blank");
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, DeleteEmailRecipientsGroupResponse::builder)
+                .logger(LOG, "deleteEmailRecipientsGroup")
+                .serviceDetails(
+                        "Usageapi",
+                        "DeleteEmailRecipientsGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/DeleteEmailRecipientsGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteEmailRecipientsGroupRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageStatements")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("emailRecipientsGroups")
+                .appendPathParam(request.getEmailRecipientsGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteEmailRecipientsGroupResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteQueryResponse deleteQuery(DeleteQueryRequest request) {
 
         Validate.notBlank(request.getQueryId(), "queryId must not be blank");
@@ -361,6 +428,41 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", GetCustomTableResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetCustomTableResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetEmailRecipientsGroupResponse getEmailRecipientsGroup(
+            GetEmailRecipientsGroupRequest request) {
+
+        Validate.notBlank(
+                request.getEmailRecipientsGroupId(), "emailRecipientsGroupId must not be blank");
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetEmailRecipientsGroupResponse::builder)
+                .logger(LOG, "getEmailRecipientsGroup")
+                .serviceDetails(
+                        "Usageapi",
+                        "GetEmailRecipientsGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/GetEmailRecipientsGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEmailRecipientsGroupRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageStatements")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("emailRecipientsGroups")
+                .appendPathParam(request.getEmailRecipientsGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.EmailRecipientsGroup.class,
+                        GetEmailRecipientsGroupResponse.Builder::emailRecipientsGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEmailRecipientsGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetEmailRecipientsGroupResponse.Builder::etag)
                 .callSync();
     }
 
@@ -507,6 +609,43 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListCustomTablesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListCustomTablesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListEmailRecipientsGroupsResponse listEmailRecipientsGroups(
+            ListEmailRecipientsGroupsRequest request) {
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListEmailRecipientsGroupsResponse::builder)
+                .logger(LOG, "listEmailRecipientsGroups")
+                .serviceDetails(
+                        "Usageapi",
+                        "ListEmailRecipientsGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/ListEmailRecipientsGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEmailRecipientsGroupsRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageStatements")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("emailRecipientsGroups")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.EmailRecipientsGroupCollection.class,
+                        ListEmailRecipientsGroupsResponse.Builder::emailRecipientsGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEmailRecipientsGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEmailRecipientsGroupsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -844,6 +983,47 @@ public class UsageapiClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateCustomTableResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateCustomTableResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateEmailRecipientsGroupResponse updateEmailRecipientsGroup(
+            UpdateEmailRecipientsGroupRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateEmailRecipientsGroupDetails(),
+                "updateEmailRecipientsGroupDetails is required");
+
+        Validate.notBlank(
+                request.getEmailRecipientsGroupId(), "emailRecipientsGroupId must not be blank");
+
+        Validate.notBlank(request.getSubscriptionId(), "subscriptionId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, UpdateEmailRecipientsGroupResponse::builder)
+                .logger(LOG, "updateEmailRecipientsGroup")
+                .serviceDetails(
+                        "Usageapi",
+                        "UpdateEmailRecipientsGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/UpdateEmailRecipientsGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateEmailRecipientsGroupRequest::builder)
+                .basePath("/20200107")
+                .appendPathParam("usageStatements")
+                .appendPathParam(request.getSubscriptionId())
+                .appendPathParam("emailRecipientsGroups")
+                .appendPathParam(request.getEmailRecipientsGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.usageapi.model.EmailRecipientsGroup.class,
+                        UpdateEmailRecipientsGroupResponse.Builder::emailRecipientsGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateEmailRecipientsGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateEmailRecipientsGroupResponse.Builder::etag)
                 .callSync();
     }
 

@@ -23,17 +23,25 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchDetectLanguagePiiEntitiesDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"endpointId", "compartmentId", "documents", "masking"})
+    @java.beans.ConstructorProperties({
+        "endpointId",
+        "compartmentId",
+        "documents",
+        "masking",
+        "profile"
+    })
     public BatchDetectLanguagePiiEntitiesDetails(
             String endpointId,
             String compartmentId,
             java.util.List<TextDocument> documents,
-            java.util.Map<String, PiiEntityMasking> masking) {
+            java.util.Map<String, PiiEntityMasking> masking,
+            Profile profile) {
         super();
         this.endpointId = endpointId;
         this.compartmentId = compartmentId;
         this.documents = documents;
         this.masking = masking;
+        this.profile = profile;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -109,13 +117,26 @@ public final class BatchDetectLanguagePiiEntitiesDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("profile")
+        private Profile profile;
+
+        public Builder profile(Profile profile) {
+            this.profile = profile;
+            this.__explicitlySet__.add("profile");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BatchDetectLanguagePiiEntitiesDetails build() {
             BatchDetectLanguagePiiEntitiesDetails model =
                     new BatchDetectLanguagePiiEntitiesDetails(
-                            this.endpointId, this.compartmentId, this.documents, this.masking);
+                            this.endpointId,
+                            this.compartmentId,
+                            this.documents,
+                            this.masking,
+                            this.profile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -135,6 +156,9 @@ public final class BatchDetectLanguagePiiEntitiesDetails
             }
             if (model.wasPropertyExplicitlySet("masking")) {
                 this.masking(model.getMasking());
+            }
+            if (model.wasPropertyExplicitlySet("profile")) {
+                this.profile(model.getProfile());
             }
             return this;
         }
@@ -209,6 +233,13 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         return masking;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("profile")
+    private final Profile profile;
+
+    public Profile getProfile() {
+        return profile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -228,6 +259,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(", masking=").append(String.valueOf(this.masking));
+        sb.append(", profile=").append(String.valueOf(this.profile));
         sb.append(")");
         return sb.toString();
     }
@@ -246,6 +278,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.masking, other.masking)
+                && java.util.Objects.equals(this.profile, other.profile)
                 && super.equals(other);
     }
 
@@ -259,6 +292,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result = (result * PRIME) + (this.masking == null ? 43 : this.masking.hashCode());
+        result = (result * PRIME) + (this.profile == null ? 43 : this.profile.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
