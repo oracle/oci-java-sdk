@@ -97,6 +97,35 @@ public class GenerativeAiInferenceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<ChatResponse> chat(
+            ChatRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ChatRequest, ChatResponse> handler) {
+        Objects.requireNonNull(request.getChatDetails(), "chatDetails is required");
+
+        return clientCall(request, ChatResponse::builder)
+                .logger(LOG, "chat")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "Chat",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/ChatResult/Chat")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChatRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("actions")
+                .appendPathParam("chat")
+                .accept("application/json, text/event-stream")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.ChatResult.class,
+                        ChatResponse.Builder::chatResult)
+                .handleResponseHeaderString("etag", ChatResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", ChatResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<EmbedTextResponse> embedText(
             EmbedTextRequest request,
             final com.oracle.bmc.responses.AsyncHandler<EmbedTextRequest, EmbedTextResponse>

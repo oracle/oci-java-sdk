@@ -87,6 +87,34 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public ChatResponse chat(ChatRequest request) {
+        Objects.requireNonNull(request.getChatDetails(), "chatDetails is required");
+
+        return clientCall(request, ChatResponse::builder)
+                .logger(LOG, "chat")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "Chat",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/ChatResult/Chat")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChatRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("actions")
+                .appendPathParam("chat")
+                .accept("application/json, text/event-stream")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.ChatResult.class,
+                        ChatResponse.Builder::chatResult)
+                .handleResponseHeaderString("etag", ChatResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", ChatResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public EmbedTextResponse embedText(EmbedTextRequest request) {
         Objects.requireNonNull(request.getEmbedTextDetails(), "embedTextDetails is required");
 

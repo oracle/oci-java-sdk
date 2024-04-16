@@ -14,12 +14,11 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.SessionTokenAuthenticationDetailsProvider;
 import com.oracle.bmc.generativeaiinference.GenerativeAiInferenceClient;
-import com.oracle.bmc.generativeaiinference.GenerateTextResultSseHelper;
+import com.oracle.bmc.generativeaiinference.GenerativeAiInferenceSseHelper;
 import com.oracle.bmc.generativeaiinference.model.*;
 import com.oracle.bmc.generativeaiinference.requests.GenerateTextRequest;
 import com.oracle.bmc.generativeaiinference.responses.GenerateTextResponse;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.jersey.sse.SseSupport;
 import com.oracle.bmc.retrier.RetryConfiguration;
 
 /**
@@ -33,7 +32,8 @@ import com.oracle.bmc.retrier.RetryConfiguration;
  *       (~/.oci/config) and the CONFIG_PROFILE profile will be used.
  * </ul>
  */
-public class GenerativeAiInferenceExample {
+public class GenerateTextExample {
+
     private static final String ENDPOINT = "endpoint";
     private static final Region REGION = Region.US_CHICAGO_1;
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -69,7 +69,7 @@ public class GenerativeAiInferenceExample {
         // Create and add new additional client configurator for sse support by using appropriate
         // reader function
         SseSupport sseSupport =
-                new SseSupport(GenerateTextResultSseHelper.generateTextResultReader);
+                new SseSupport(GenerativeAiInferenceSseHelper.generateTextResultReader);
         ClientConfigurator clientConfigurator = sseSupport.getClientConfigurator();
         final GenerativeAiInferenceClient generativeAiInferenceClient =
                 GenerativeAiInferenceClient.builder()
@@ -113,7 +113,7 @@ public class GenerativeAiInferenceExample {
                 (CohereLlmInferenceResponse)
                         generateTextResponse.getGenerateTextResult().getInferenceResponse();
         for (GeneratedText genText : res.getGeneratedTexts()) {
-            System.out.println(genText.getText());
+            System.out.print(genText.getText());
         }
 
         generativeAiInferenceClient.close();

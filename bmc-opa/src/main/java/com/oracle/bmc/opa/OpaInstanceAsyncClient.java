@@ -435,6 +435,70 @@ public class OpaInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<StartOpaInstanceResponse> startOpaInstance(
+            StartOpaInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartOpaInstanceRequest, StartOpaInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOpaInstanceId(), "opaInstanceId must not be blank");
+
+        return clientCall(request, StartOpaInstanceResponse::builder)
+                .logger(LOG, "startOpaInstance")
+                .serviceDetails(
+                        "OpaInstance",
+                        "StartOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StartOpaInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartOpaInstanceRequest::builder)
+                .basePath("/20210621")
+                .appendPathParam("opaInstances")
+                .appendPathParam(request.getOpaInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartOpaInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StartOpaInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopOpaInstanceResponse> stopOpaInstance(
+            StopOpaInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopOpaInstanceRequest, StopOpaInstanceResponse>
+                    handler) {
+
+        Validate.notBlank(request.getOpaInstanceId(), "opaInstanceId must not be blank");
+
+        return clientCall(request, StopOpaInstanceResponse::builder)
+                .logger(LOG, "stopOpaInstance")
+                .serviceDetails(
+                        "OpaInstance",
+                        "StopOpaInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StopOpaInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopOpaInstanceRequest::builder)
+                .basePath("/20210621")
+                .appendPathParam("opaInstances")
+                .appendPathParam(request.getOpaInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopOpaInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopOpaInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateOpaInstanceResponse> updateOpaInstance(
             UpdateOpaInstanceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

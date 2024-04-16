@@ -92,6 +92,26 @@ public interface AIServiceLanguage extends AutoCloseable {
             BatchDetectDominantLanguageRequest request);
 
     /**
+     * The API extracts health entities in text records. For each entity, its type and confidence
+     * score (between 0 and 1) is returned. It supports passing a batch of records.
+     *
+     * <p>Limitations: - A batch may have up to 100 records. - A record may be up to 5000 characters
+     * long. - The total of characters to process in a request can be up to 20,000 characters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectHealthEntityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BatchDetectHealthEntity API.
+     */
+    BatchDetectHealthEntityResponse batchDetectHealthEntity(BatchDetectHealthEntityRequest request);
+
+    /**
      * The API extracts entities in text records. For each entity, its type/subtype and confidence
      * score (between 0 and 1) is returned. It supports passing a batch of records.
      *

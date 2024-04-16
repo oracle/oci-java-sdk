@@ -9,9 +9,11 @@ import com.oracle.bmc.usageapi.responses.*;
 
 /**
  * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data
- * that meets the specified filter criteria, and to group that data by the dimension of your
- * choosing. The Usage API is used by the Cost Analysis tool in the Console. Also see [Using the
- * Usage
+ * that meets the specified filter criteria, and to group that data by the chosen dimension. The
+ * Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See
+ * [Cost Analysis
+ * Overview](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm) and
+ * [Using the Usage
  * API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api)
  * for more information. This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for
  * all the operations by default if no circuit breaker configuration is defined by the user.
@@ -84,6 +86,23 @@ public interface Usageapi extends AutoCloseable {
     CreateCustomTableResponse createCustomTable(CreateCustomTableRequest request);
 
     /**
+     * Add a list of email recipients that can receive usage statements for the subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateEmailRecipientsGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateEmailRecipientsGroup API.
+     */
+    CreateEmailRecipientsGroupResponse createEmailRecipientsGroup(
+            CreateEmailRecipientsGroupRequest request);
+
+    /**
      * Returns the created query.
      *
      * @param request The request object containing the details to send
@@ -147,6 +166,23 @@ public interface Usageapi extends AutoCloseable {
     DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request);
 
     /**
+     * Delete the email recipients group for the usage statement subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteEmailRecipientsGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteEmailRecipientsGroup API.
+     */
+    DeleteEmailRecipientsGroupResponse deleteEmailRecipientsGroup(
+            DeleteEmailRecipientsGroupRequest request);
+
+    /**
      * Delete a saved query by the OCID.
      *
      * @param request The request object containing the details to send
@@ -207,6 +243,22 @@ public interface Usageapi extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomTable API.
      */
     GetCustomTableResponse getCustomTable(GetCustomTableRequest request);
+
+    /**
+     * Return the saved usage statement email recipient group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetEmailRecipientsGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetEmailRecipientsGroup API.
+     */
+    GetEmailRecipientsGroupResponse getEmailRecipientsGroup(GetEmailRecipientsGroupRequest request);
 
     /**
      * Returns the saved query.
@@ -286,6 +338,23 @@ public interface Usageapi extends AutoCloseable {
      *     API.
      */
     ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request);
+
+    /**
+     * Return the saved usage statement email recipient group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListEmailRecipientsGroupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListEmailRecipientsGroups API.
+     */
+    ListEmailRecipientsGroupsResponse listEmailRecipientsGroups(
+            ListEmailRecipientsGroupsRequest request);
 
     /**
      * Returns the saved query list.
@@ -465,6 +534,23 @@ public interface Usageapi extends AutoCloseable {
      *     API.
      */
     UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request);
+
+    /**
+     * Update a saved email recipients group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateEmailRecipientsGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateEmailRecipientsGroup API.
+     */
+    UpdateEmailRecipientsGroupResponse updateEmailRecipientsGroup(
+            UpdateEmailRecipientsGroupRequest request);
 
     /**
      * Update a saved query by the OCID.

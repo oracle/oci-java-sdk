@@ -103,13 +103,26 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucket")
+        private ObjectStoreBucket objectStorageBucket;
+
+        public Builder objectStorageBucket(ObjectStoreBucket objectStorageBucket) {
+            this.objectStorageBucket = objectStorageBucket;
+            this.__explicitlySet__.add("objectStorageBucket");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AwsS3DataTransferMediumDetails build() {
             AwsS3DataTransferMediumDetails model =
                     new AwsS3DataTransferMediumDetails(
-                            this.name, this.region, this.accessKeyId, this.secretAccessKey);
+                            this.name,
+                            this.region,
+                            this.accessKeyId,
+                            this.secretAccessKey,
+                            this.objectStorageBucket);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -130,6 +143,9 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
             if (model.wasPropertyExplicitlySet("secretAccessKey")) {
                 this.secretAccessKey(model.getSecretAccessKey());
             }
+            if (model.wasPropertyExplicitlySet("objectStorageBucket")) {
+                this.objectStorageBucket(model.getObjectStorageBucket());
+            }
             return this;
         }
     }
@@ -145,12 +161,17 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
 
     @Deprecated
     public AwsS3DataTransferMediumDetails(
-            String name, String region, String accessKeyId, String secretAccessKey) {
+            String name,
+            String region,
+            String accessKeyId,
+            String secretAccessKey,
+            ObjectStoreBucket objectStorageBucket) {
         super();
         this.name = name;
         this.region = region;
         this.accessKeyId = accessKeyId;
         this.secretAccessKey = secretAccessKey;
+        this.objectStorageBucket = objectStorageBucket;
     }
 
     /** S3 bucket name. */
@@ -219,6 +240,13 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
         return secretAccessKey;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("objectStorageBucket")
+    private final ObjectStoreBucket objectStorageBucket;
+
+    public ObjectStoreBucket getObjectStorageBucket() {
+        return objectStorageBucket;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -238,6 +266,7 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", accessKeyId=").append("<redacted>");
         sb.append(", secretAccessKey=").append("<redacted>");
+        sb.append(", objectStorageBucket=").append(String.valueOf(this.objectStorageBucket));
         sb.append(")");
         return sb.toString();
     }
@@ -256,6 +285,7 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
                 && java.util.Objects.equals(this.secretAccessKey, other.secretAccessKey)
+                && java.util.Objects.equals(this.objectStorageBucket, other.objectStorageBucket)
                 && super.equals(other);
     }
 
@@ -269,6 +299,11 @@ public final class AwsS3DataTransferMediumDetails extends DataTransferMediumDeta
         result =
                 (result * PRIME)
                         + (this.secretAccessKey == null ? 43 : this.secretAccessKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.objectStorageBucket == null
+                                ? 43
+                                : this.objectStorageBucket.hashCode());
         return result;
     }
 }

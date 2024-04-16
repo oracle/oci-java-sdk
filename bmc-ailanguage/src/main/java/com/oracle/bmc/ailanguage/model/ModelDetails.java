@@ -35,6 +35,9 @@ package com.oracle.bmc.ailanguage.model;
             value = NamedEntityRecognitionModelDetails.class,
             name = "NAMED_ENTITY_RECOGNITION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PiiModelDetails.class,
+            name = "PII"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PreTrainedLanguageDetectionModelDetails.class,
             name = "PRE_TRAINED_LANGUAGE_DETECTION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -136,6 +139,7 @@ public class ModelDetails extends com.oracle.bmc.http.client.internal.Explicitly
         PreTrainedHealthNlu("PRE_TRAINED_HEALTH_NLU"),
         PreTrainedSummarization("PRE_TRAINED_SUMMARIZATION"),
         PreTrainedUniversal("PRE_TRAINED_UNIVERSAL"),
+        Pii("PII"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

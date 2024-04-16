@@ -64,6 +64,7 @@ public final class AutonomousContainerDatabase
         "totalCpus",
         "reclaimableCpus",
         "provisionableCpus",
+        "listOneOffPatches",
         "computeModel",
         "provisionedCpus",
         "reservedCpus",
@@ -115,6 +116,7 @@ public final class AutonomousContainerDatabase
             Integer totalCpus,
             Float reclaimableCpus,
             java.util.List<Float> provisionableCpus,
+            java.util.List<String> listOneOffPatches,
             ComputeModel computeModel,
             Float provisionedCpus,
             Float reservedCpus,
@@ -165,6 +167,7 @@ public final class AutonomousContainerDatabase
         this.totalCpus = totalCpus;
         this.reclaimableCpus = reclaimableCpus;
         this.provisionableCpus = provisionableCpus;
+        this.listOneOffPatches = listOneOffPatches;
         this.computeModel = computeModel;
         this.provisionedCpus = provisionedCpus;
         this.reservedCpus = reservedCpus;
@@ -881,6 +884,25 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
+         * List of One-Off patches that has been successfully applied to Autonomous Container
+         * Database
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("listOneOffPatches")
+        private java.util.List<String> listOneOffPatches;
+
+        /**
+         * List of One-Off patches that has been successfully applied to Autonomous Container
+         * Database
+         *
+         * @param listOneOffPatches the value to set
+         * @return this builder
+         */
+        public Builder listOneOffPatches(java.util.List<String> listOneOffPatches) {
+            this.listOneOffPatches = listOneOffPatches;
+            this.__explicitlySet__.add("listOneOffPatches");
+            return this;
+        }
+        /**
          * The compute model of the Autonomous Container Database. For Autonomous Database on
          * Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the
          * parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the
@@ -1107,6 +1129,7 @@ public final class AutonomousContainerDatabase
                             this.totalCpus,
                             this.reclaimableCpus,
                             this.provisionableCpus,
+                            this.listOneOffPatches,
                             this.computeModel,
                             this.provisionedCpus,
                             this.reservedCpus,
@@ -1244,6 +1267,9 @@ public final class AutonomousContainerDatabase
             }
             if (model.wasPropertyExplicitlySet("provisionableCpus")) {
                 this.provisionableCpus(model.getProvisionableCpus());
+            }
+            if (model.wasPropertyExplicitlySet("listOneOffPatches")) {
+                this.listOneOffPatches(model.getListOneOffPatches());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
@@ -2198,6 +2224,21 @@ public final class AutonomousContainerDatabase
     }
 
     /**
+     * List of One-Off patches that has been successfully applied to Autonomous Container Database
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("listOneOffPatches")
+    private final java.util.List<String> listOneOffPatches;
+
+    /**
+     * List of One-Off patches that has been successfully applied to Autonomous Container Database
+     *
+     * @return the value
+     */
+    public java.util.List<String> getListOneOffPatches() {
+        return listOneOffPatches;
+    }
+
+    /**
      * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated
      * Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous
      * Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU
@@ -2562,6 +2603,7 @@ public final class AutonomousContainerDatabase
         sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
+        sb.append(", listOneOffPatches=").append(String.valueOf(this.listOneOffPatches));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", provisionedCpus=").append(String.valueOf(this.provisionedCpus));
         sb.append(", reservedCpus=").append(String.valueOf(this.reservedCpus));
@@ -2635,6 +2677,7 @@ public final class AutonomousContainerDatabase
                 && java.util.Objects.equals(this.totalCpus, other.totalCpus)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
+                && java.util.Objects.equals(this.listOneOffPatches, other.listOneOffPatches)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.provisionedCpus, other.provisionedCpus)
                 && java.util.Objects.equals(this.reservedCpus, other.reservedCpus)
@@ -2768,6 +2811,9 @@ public final class AutonomousContainerDatabase
         result =
                 (result * PRIME)
                         + (this.provisionableCpus == null ? 43 : this.provisionableCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listOneOffPatches == null ? 43 : this.listOneOffPatches.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result =
                 (result * PRIME)

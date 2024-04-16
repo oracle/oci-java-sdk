@@ -506,6 +506,51 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeAutonomousDatabaseSoftwareImageCompartmentResponse
+            changeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request) {
+        Objects.requireNonNull(
+                request.getChangeAutonomousDatabaseSoftwareImageCompartmentDetails(),
+                "changeAutonomousDatabaseSoftwareImageCompartmentDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+
+        return clientCall(
+                        request, ChangeAutonomousDatabaseSoftwareImageCompartmentResponse::builder)
+                .logger(LOG, "changeAutonomousDatabaseSoftwareImageCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseSoftwareImageCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/ChangeAutonomousDatabaseSoftwareImageCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAutonomousDatabaseSoftwareImageCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag",
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAutonomousDatabaseSoftwareImageCompartmentResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeAutonomousExadataInfrastructureCompartmentResponse
             changeAutonomousExadataInfrastructureCompartment(
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request) {
@@ -1604,6 +1649,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateAutonomousDatabaseSoftwareImageResponse createAutonomousDatabaseSoftwareImage(
+            CreateAutonomousDatabaseSoftwareImageRequest request) {
+        Objects.requireNonNull(
+                request.getCreateAutonomousDatabaseSoftwareImageDetails(),
+                "createAutonomousDatabaseSoftwareImageDetails is required");
+
+        return clientCall(request, CreateAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "createAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "CreateAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/CreateAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.class,
+                        CreateAutonomousDatabaseSoftwareImageResponse.Builder
+                                ::autonomousDatabaseSoftwareImage)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAutonomousDatabaseSoftwareImageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateAutonomousDatabaseSoftwareImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateAutonomousVmClusterResponse createAutonomousVmCluster(
             CreateAutonomousVmClusterRequest request) {
         Objects.requireNonNull(
@@ -2509,6 +2590,37 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteAutonomousDatabaseBackupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteAutonomousDatabaseSoftwareImageResponse deleteAutonomousDatabaseSoftwareImage(
+            DeleteAutonomousDatabaseSoftwareImageRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+
+        return clientCall(request, DeleteAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "deleteAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "DeleteAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/DeleteAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteAutonomousDatabaseSoftwareImageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -4748,6 +4860,39 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetAutonomousDatabaseSoftwareImageResponse getAutonomousDatabaseSoftwareImage(
+            GetAutonomousDatabaseSoftwareImageRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+
+        return clientCall(request, GetAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "getAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "GetAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/GetAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.class,
+                        GetAutonomousDatabaseSoftwareImageResponse.Builder
+                                ::autonomousDatabaseSoftwareImage)
+                .handleResponseHeaderString(
+                        "etag", GetAutonomousDatabaseSoftwareImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetAutonomousDatabaseWalletResponse getAutonomousDatabaseWallet(
             GetAutonomousDatabaseWalletRequest request) {
 
@@ -6798,6 +6943,47 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListAutonomousDatabaseRefreshableClonesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListAutonomousDatabaseSoftwareImagesResponse listAutonomousDatabaseSoftwareImages(
+            ListAutonomousDatabaseSoftwareImagesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getImageShapeFamily(), "imageShapeFamily is required");
+
+        return clientCall(request, ListAutonomousDatabaseSoftwareImagesResponse::builder)
+                .logger(LOG, "listAutonomousDatabaseSoftwareImages")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabaseSoftwareImages",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/ListAutonomousDatabaseSoftwareImages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousDatabaseSoftwareImagesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("imageShapeFamily", request.getImageShapeFamily())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImageCollection
+                                .class,
+                        ListAutonomousDatabaseSoftwareImagesResponse.Builder
+                                ::autonomousDatabaseSoftwareImageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAutonomousDatabaseSoftwareImagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListAutonomousDatabaseSoftwareImagesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -10460,6 +10646,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateAutonomousDatabaseRegionalWalletResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateAutonomousDatabaseSoftwareImageResponse updateAutonomousDatabaseSoftwareImage(
+            UpdateAutonomousDatabaseSoftwareImageRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseSoftwareImageId(),
+                "autonomousDatabaseSoftwareImageId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAutonomousDatabaseSoftwareImageDetails(),
+                "updateAutonomousDatabaseSoftwareImageDetails is required");
+
+        return clientCall(request, UpdateAutonomousDatabaseSoftwareImageResponse::builder)
+                .logger(LOG, "updateAutonomousDatabaseSoftwareImage")
+                .serviceDetails(
+                        "Database",
+                        "UpdateAutonomousDatabaseSoftwareImage",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabaseSoftwareImage/UpdateAutonomousDatabaseSoftwareImage")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAutonomousDatabaseSoftwareImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabaseSoftwareImages")
+                .appendPathParam(request.getAutonomousDatabaseSoftwareImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabaseSoftwareImage.class,
+                        UpdateAutonomousDatabaseSoftwareImageResponse.Builder
+                                ::autonomousDatabaseSoftwareImage)
+                .handleResponseHeaderString(
+                        "etag", UpdateAutonomousDatabaseSoftwareImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateAutonomousDatabaseSoftwareImageResponse.Builder::opcRequestId)
                 .callSync();
     }
 

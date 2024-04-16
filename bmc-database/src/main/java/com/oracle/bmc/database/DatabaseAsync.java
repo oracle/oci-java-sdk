@@ -234,6 +234,25 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Move the Autonomous Database Software Image and its dependent resources to the specified
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+            changeAutonomousDatabaseSoftwareImageCompartment(
+                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSoftwareImageCompartmentRequest,
+                                    ChangeAutonomousDatabaseSoftwareImageCompartmentResponse>
+                            handler);
+
+    /**
      * **Deprecated.** Use the {@link
      * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest,
      * Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation to move an Exadata
@@ -813,6 +832,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * create Autonomous Database Software Image in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAutonomousDatabaseSoftwareImageResponse>
+            createAutonomousDatabaseSoftwareImage(
+                    CreateAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAutonomousDatabaseSoftwareImageRequest,
+                                    CreateAutonomousDatabaseSoftwareImageResponse>
+                            handler);
+
+    /**
      * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM
      * Cluster in the Oracle cloud, see {@link
      * #createCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest, Consumer, Consumer)
@@ -1328,6 +1365,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DeleteAutonomousDatabaseBackupRequest,
                                     DeleteAutonomousDatabaseBackupResponse>
+                            handler);
+
+    /**
+     * Delete an Autonomous Database Software Image
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAutonomousDatabaseSoftwareImageResponse>
+            deleteAutonomousDatabaseSoftwareImage(
+                    DeleteAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAutonomousDatabaseSoftwareImageRequest,
+                                    DeleteAutonomousDatabaseSoftwareImageResponse>
                             handler);
 
     /**
@@ -2475,6 +2530,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     GetAutonomousDatabaseRegionalWalletRequest,
                                     GetAutonomousDatabaseRegionalWalletResponse>
+                            handler);
+
+    /**
+     * Gets information about the specified Autonomous Database Software Image.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousDatabaseSoftwareImageResponse>
+            getAutonomousDatabaseSoftwareImage(
+                    GetAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousDatabaseSoftwareImageRequest,
+                                    GetAutonomousDatabaseSoftwareImageResponse>
                             handler);
 
     /**
@@ -3641,6 +3714,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListAutonomousDatabaseRefreshableClonesRequest,
                                     ListAutonomousDatabaseRefreshableClonesResponse>
+                            handler);
+
+    /**
+     * Gets a list of the Autonomous Database Software Images in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabaseSoftwareImagesResponse>
+            listAutonomousDatabaseSoftwareImages(
+                    ListAutonomousDatabaseSoftwareImagesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabaseSoftwareImagesRequest,
+                                    ListAutonomousDatabaseSoftwareImagesResponse>
                             handler);
 
     /**
@@ -5480,6 +5571,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateAutonomousDatabaseRegionalWalletRequest,
                                     UpdateAutonomousDatabaseRegionalWalletResponse>
+                            handler);
+
+    /**
+     * Updates the properties of an Autonomous Database Software Image, like add tags
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutonomousDatabaseSoftwareImageResponse>
+            updateAutonomousDatabaseSoftwareImage(
+                    UpdateAutonomousDatabaseSoftwareImageRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseSoftwareImageRequest,
+                                    UpdateAutonomousDatabaseSoftwareImageResponse>
                             handler);
 
     /**

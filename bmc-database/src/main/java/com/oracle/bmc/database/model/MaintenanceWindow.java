@@ -34,7 +34,8 @@ public final class MaintenanceWindow
         "weeksOfMonth",
         "daysOfWeek",
         "hoursOfDay",
-        "leadTimeInWeeks"
+        "leadTimeInWeeks",
+        "skipRu"
     })
     public MaintenanceWindow(
             Preference preference,
@@ -46,7 +47,8 @@ public final class MaintenanceWindow
             java.util.List<Integer> weeksOfMonth,
             java.util.List<DayOfWeek> daysOfWeek,
             java.util.List<Integer> hoursOfDay,
-            Integer leadTimeInWeeks) {
+            Integer leadTimeInWeeks,
+            java.util.List<Boolean> skipRu) {
         super();
         this.preference = preference;
         this.patchingMode = patchingMode;
@@ -58,6 +60,7 @@ public final class MaintenanceWindow
         this.daysOfWeek = daysOfWeek;
         this.hoursOfDay = hoursOfDay;
         this.leadTimeInWeeks = leadTimeInWeeks;
+        this.skipRu = skipRu;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -266,6 +269,27 @@ public final class MaintenanceWindow
             this.__explicitlySet__.add("leadTimeInWeeks");
             return this;
         }
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive
+         * quarters. An RU skip request will only be honoured if the current version of the
+         * Autonomous Container Database is supported for current quarter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("skipRu")
+        private java.util.List<Boolean> skipRu;
+
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive
+         * quarters. An RU skip request will only be honoured if the current version of the
+         * Autonomous Container Database is supported for current quarter.
+         *
+         * @param skipRu the value to set
+         * @return this builder
+         */
+        public Builder skipRu(java.util.List<Boolean> skipRu) {
+            this.skipRu = skipRu;
+            this.__explicitlySet__.add("skipRu");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -282,7 +306,8 @@ public final class MaintenanceWindow
                             this.weeksOfMonth,
                             this.daysOfWeek,
                             this.hoursOfDay,
-                            this.leadTimeInWeeks);
+                            this.leadTimeInWeeks,
+                            this.skipRu);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -320,6 +345,9 @@ public final class MaintenanceWindow
             }
             if (model.wasPropertyExplicitlySet("leadTimeInWeeks")) {
                 this.leadTimeInWeeks(model.getLeadTimeInWeeks());
+            }
+            if (model.wasPropertyExplicitlySet("skipRu")) {
+                this.skipRu(model.getSkipRu());
             }
             return this;
         }
@@ -616,6 +644,25 @@ public final class MaintenanceWindow
         return leadTimeInWeeks;
     }
 
+    /**
+     * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive
+     * quarters. An RU skip request will only be honoured if the current version of the Autonomous
+     * Container Database is supported for current quarter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("skipRu")
+    private final java.util.List<Boolean> skipRu;
+
+    /**
+     * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive
+     * quarters. An RU skip request will only be honoured if the current version of the Autonomous
+     * Container Database is supported for current quarter.
+     *
+     * @return the value
+     */
+    public java.util.List<Boolean> getSkipRu() {
+        return skipRu;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -644,6 +691,7 @@ public final class MaintenanceWindow
         sb.append(", daysOfWeek=").append(String.valueOf(this.daysOfWeek));
         sb.append(", hoursOfDay=").append(String.valueOf(this.hoursOfDay));
         sb.append(", leadTimeInWeeks=").append(String.valueOf(this.leadTimeInWeeks));
+        sb.append(", skipRu=").append(String.valueOf(this.skipRu));
         sb.append(")");
         return sb.toString();
     }
@@ -671,6 +719,7 @@ public final class MaintenanceWindow
                 && java.util.Objects.equals(this.daysOfWeek, other.daysOfWeek)
                 && java.util.Objects.equals(this.hoursOfDay, other.hoursOfDay)
                 && java.util.Objects.equals(this.leadTimeInWeeks, other.leadTimeInWeeks)
+                && java.util.Objects.equals(this.skipRu, other.skipRu)
                 && super.equals(other);
     }
 
@@ -702,6 +751,7 @@ public final class MaintenanceWindow
         result =
                 (result * PRIME)
                         + (this.leadTimeInWeeks == null ? 43 : this.leadTimeInWeeks.hashCode());
+        result = (result * PRIME) + (this.skipRu == null ? 43 : this.skipRu.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

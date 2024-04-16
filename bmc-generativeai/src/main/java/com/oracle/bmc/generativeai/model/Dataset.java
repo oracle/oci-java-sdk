@@ -7,7 +7,7 @@ package com.oracle.bmc.generativeai.model;
 /**
  * The dataset used to fine-tune the model.
  *
- * <p>Only one dataset is allowed per custom model, which is split 90-10 for training and
+ * <p>Only one dataset is allowed per custom model, which is split 80-20 for training and
  * validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL
  * file must have the format:
  *

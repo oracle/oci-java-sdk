@@ -30,6 +30,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         "serviceLevelAgreementType",
         "autonomousExadataInfrastructureId",
         "dbVersion",
+        "databaseSoftwareImageId",
         "peerAutonomousExadataInfrastructureId",
         "peerAutonomousContainerDatabaseDisplayName",
         "protectionMode",
@@ -67,6 +68,7 @@ public final class CreateAutonomousContainerDatabaseDetails
             ServiceLevelAgreementType serviceLevelAgreementType,
             String autonomousExadataInfrastructureId,
             String dbVersion,
+            String databaseSoftwareImageId,
             String peerAutonomousExadataInfrastructureId,
             String peerAutonomousContainerDatabaseDisplayName,
             ProtectionMode protectionMode,
@@ -103,6 +105,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         this.serviceLevelAgreementType = serviceLevelAgreementType;
         this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
         this.dbVersion = dbVersion;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
         this.peerAutonomousContainerDatabaseDisplayName =
                 peerAutonomousContainerDatabaseDisplayName;
@@ -254,6 +257,25 @@ public final class CreateAutonomousContainerDatabaseDetails
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
             return this;
         }
         /**
@@ -819,6 +841,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                             this.serviceLevelAgreementType,
                             this.autonomousExadataInfrastructureId,
                             this.dbVersion,
+                            this.databaseSoftwareImageId,
                             this.peerAutonomousExadataInfrastructureId,
                             this.peerAutonomousContainerDatabaseDisplayName,
                             this.protectionMode,
@@ -874,6 +897,9 @@ public final class CreateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("dbVersion")) {
                 this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
             if (model.wasPropertyExplicitlySet("peerAutonomousExadataInfrastructureId")) {
                 this.peerAutonomousExadataInfrastructureId(
@@ -1117,6 +1143,23 @@ public final class CreateAutonomousContainerDatabaseDetails
      */
     public String getDbVersion() {
         return dbVersion;
+    }
+
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    private final String databaseSoftwareImageId;
+
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @return the value
+     */
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
     }
 
     /**
@@ -1793,6 +1836,8 @@ public final class CreateAutonomousContainerDatabaseDetails
         sb.append(", autonomousExadataInfrastructureId=")
                 .append(String.valueOf(this.autonomousExadataInfrastructureId));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", peerAutonomousExadataInfrastructureId=")
                 .append(String.valueOf(this.peerAutonomousExadataInfrastructureId));
         sb.append(", peerAutonomousContainerDatabaseDisplayName=")
@@ -1858,6 +1903,8 @@ public final class CreateAutonomousContainerDatabaseDetails
                         this.autonomousExadataInfrastructureId,
                         other.autonomousExadataInfrastructureId)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(
                         this.peerAutonomousExadataInfrastructureId,
                         other.peerAutonomousExadataInfrastructureId)
@@ -1926,6 +1973,11 @@ public final class CreateAutonomousContainerDatabaseDetails
                                 ? 43
                                 : this.autonomousExadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerAutonomousExadataInfrastructureId == null

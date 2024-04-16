@@ -49,6 +49,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         "modelMetrics",
         "isLongTermSupported",
         "timeDeprecated",
+        "previousState",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -71,6 +72,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             ModelMetrics modelMetrics,
             Boolean isLongTermSupported,
             java.util.Date timeDeprecated,
+            Model previousState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -92,6 +94,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.modelMetrics = modelMetrics;
         this.isLongTermSupported = isLongTermSupported;
         this.timeDeprecated = timeDeprecated;
+        this.previousState = previousState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -364,6 +367,15 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("timeDeprecated");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("previousState")
+        private Model previousState;
+
+        public Builder previousState(Model previousState) {
+            this.previousState = previousState;
+            this.__explicitlySet__.add("previousState");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -460,6 +472,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                             this.modelMetrics,
                             this.isLongTermSupported,
                             this.timeDeprecated,
+                            this.previousState,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -521,6 +534,9 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("timeDeprecated")) {
                 this.timeDeprecated(model.getTimeDeprecated());
+            }
+            if (model.wasPropertyExplicitlySet("previousState")) {
+                this.previousState(model.getPreviousState());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -865,6 +881,13 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return timeDeprecated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("previousState")
+    private final Model previousState;
+
+    public Model getPreviousState() {
+        return previousState;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -962,6 +985,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         sb.append(", modelMetrics=").append(String.valueOf(this.modelMetrics));
         sb.append(", isLongTermSupported=").append(String.valueOf(this.isLongTermSupported));
         sb.append(", timeDeprecated=").append(String.valueOf(this.timeDeprecated));
+        sb.append(", previousState=").append(String.valueOf(this.previousState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -996,6 +1020,7 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
                 && java.util.Objects.equals(this.modelMetrics, other.modelMetrics)
                 && java.util.Objects.equals(this.isLongTermSupported, other.isLongTermSupported)
                 && java.util.Objects.equals(this.timeDeprecated, other.timeDeprecated)
+                && java.util.Objects.equals(this.previousState, other.previousState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1037,6 +1062,9 @@ public final class Model extends com.oracle.bmc.http.client.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.timeDeprecated == null ? 43 : this.timeDeprecated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.previousState == null ? 43 : this.previousState.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
