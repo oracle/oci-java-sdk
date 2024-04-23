@@ -16,11 +16,11 @@ public class UpdateBulkProblemStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails> {
 
-    /** A list of problem ids to be passed in to update the Problem status */
+    /** A list of Problem IDs to be passed in to update the Problem status */
     private com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
             updateBulkProblemStatusDetails;
 
-    /** A list of problem ids to be passed in to update the Problem status */
+    /** A list of Problem IDs to be passed in to update the Problem status */
     public com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
             getUpdateBulkProblemStatusDetails() {
         return updateBulkProblemStatusDetails;
@@ -51,12 +51,12 @@ public class UpdateBulkProblemStatusRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A list of problem ids to be passed in to update the Problem status */
+        /** A list of Problem IDs to be passed in to update the Problem status */
         private com.oracle.bmc.cloudguard.model.UpdateBulkProblemStatusDetails
                 updateBulkProblemStatusDetails = null;
 
         /**
-         * A list of problem ids to be passed in to update the Problem status
+         * A list of Problem IDs to be passed in to update the Problem status
          *
          * @param updateBulkProblemStatusDetails the value to set
          * @return this builder instance

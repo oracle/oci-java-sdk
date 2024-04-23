@@ -123,6 +123,40 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ChangeScheduledJobCompartmentResponse changeScheduledJobCompartment(
+            ChangeScheduledJobCompartmentRequest request) {
+
+        Validate.notBlank(request.getScheduledJobId(), "scheduledJobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeScheduledJobCompartmentDetails(),
+                "changeScheduledJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeScheduledJobCompartmentResponse::builder)
+                .logger(LOG, "changeScheduledJobCompartment")
+                .serviceDetails(
+                        "ScheduledJob",
+                        "ChangeScheduledJobCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ChangeScheduledJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeScheduledJobCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("scheduledJobs")
+                .appendPathParam(request.getScheduledJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeScheduledJobCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateScheduledJobResponse createScheduledJob(CreateScheduledJobRequest request) {
         Objects.requireNonNull(
                 request.getCreateScheduledJobDetails(), "createScheduledJobDetails is required");
@@ -240,6 +274,16 @@ public class ScheduledJobClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("isRestricted", request.getIsRestricted())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

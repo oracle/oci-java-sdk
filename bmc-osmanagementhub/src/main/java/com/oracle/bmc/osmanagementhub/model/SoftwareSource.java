@@ -5,7 +5,9 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software source contains a collection of packages. <br>
+ * The object that defines a software source. A software source contains a collection of packages.
+ * For more information, see [Managing Software
+ * Sources](https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -43,6 +45,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         "timeCreated",
         "description",
         "availability",
+        "availabilityAtOci",
         "repoId",
         "osFamily",
         "archType",
@@ -53,6 +56,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         "gpgKeyUrl",
         "gpgKeyId",
         "gpgKeyFingerprint",
+        "size",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -64,6 +68,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
             java.util.Date timeCreated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             String repoId,
             OsFamily osFamily,
             ArchType archType,
@@ -74,6 +79,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
             String gpgKeyUrl,
             String gpgKeyId,
             String gpgKeyFingerprint,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -84,6 +90,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         this.timeCreated = timeCreated;
         this.description = description;
         this.availability = availability;
+        this.availabilityAtOci = availabilityAtOci;
         this.repoId = repoId;
         this.osFamily = osFamily;
         this.archType = archType;
@@ -94,17 +101,22 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         this.gpgKeyUrl = gpgKeyUrl;
         this.gpgKeyId = gpgKeyId;
         this.gpgKeyFingerprint = gpgKeyFingerprint;
+        this.size = size;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
     }
 
-    /** OCID for the software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
      *
      * @return the value
      */
@@ -112,12 +124,16 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return id;
     }
 
-    /** The OCID of the tenancy containing the software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
      *
      * @return the value
      */
@@ -125,12 +141,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return compartmentId;
     }
 
-    /** User friendly name for the software source. */
+    /** User-friendly name for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source.
      *
      * @return the value
      */
@@ -139,15 +155,15 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The date and time the software source was created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the software source was created, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the software source was created (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -155,12 +171,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return timeCreated;
     }
 
-    /** Information specified by the user about the software source. */
+    /** User-specified description for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the software source.
+     * User-specified description for the software source.
      *
      * @return the value
      */
@@ -168,12 +184,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return description;
     }
 
-    /** Possible availabilities of a software source. */
+    /** Availability of the software source (for non-OCI environments). */
     @com.fasterxml.jackson.annotation.JsonProperty("availability")
     private final Availability availability;
 
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source (for non-OCI environments).
      *
      * @return the value
      */
@@ -181,12 +197,25 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return availability;
     }
 
-    /** The Repo ID for the software source. */
+    /** Availability of the software source (for OCI environments). */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+    private final Availability availabilityAtOci;
+
+    /**
+     * Availability of the software source (for OCI environments).
+     *
+     * @return the value
+     */
+    public Availability getAvailabilityAtOci() {
+        return availabilityAtOci;
+    }
+
+    /** The repository ID for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("repoId")
     private final String repoId;
 
     /**
-     * The Repo ID for the software source.
+     * The repository ID for the software source.
      *
      * @return the value
      */
@@ -225,6 +254,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
+        Inactive("INACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
@@ -283,12 +313,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return lifecycleState;
     }
 
-    /** Number of packages. */
+    /** Number of packages the software source contains. */
     @com.fasterxml.jackson.annotation.JsonProperty("packageCount")
     private final Long packageCount;
 
     /**
-     * Number of packages.
+     * Number of packages the software source contains.
      *
      * @return the value
      */
@@ -296,12 +326,16 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return packageCount;
     }
 
-    /** URL for the repository. */
+    /**
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum
+     * server. For custom software sources, this is 'custom/<repoId>'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * URL for the repository.
+     * URL for the repository. For vendor software sources, this is the URL to the regional yum
+     * server. For custom software sources, this is 'custom/<repoId>'.
      *
      * @return the value
      */
@@ -359,6 +393,19 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
      */
     public String getGpgKeyFingerprint() {
         return gpgKeyFingerprint;
+    }
+
+    /** The size of the software source in gigabytes (GB). */
+    @com.fasterxml.jackson.annotation.JsonProperty("size")
+    private final Double size;
+
+    /**
+     * The size of the software source in gigabytes (GB).
+     *
+     * @return the value
+     */
+    public Double getSize() {
+        return size;
     }
 
     /**
@@ -441,6 +488,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", availability=").append(String.valueOf(this.availability));
+        sb.append(", availabilityAtOci=").append(String.valueOf(this.availabilityAtOci));
         sb.append(", repoId=").append(String.valueOf(this.repoId));
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", archType=").append(String.valueOf(this.archType));
@@ -451,6 +499,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", gpgKeyUrl=").append(String.valueOf(this.gpgKeyUrl));
         sb.append(", gpgKeyId=").append(String.valueOf(this.gpgKeyId));
         sb.append(", gpgKeyFingerprint=").append(String.valueOf(this.gpgKeyFingerprint));
+        sb.append(", size=").append(String.valueOf(this.size));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -474,6 +523,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.availability, other.availability)
+                && java.util.Objects.equals(this.availabilityAtOci, other.availabilityAtOci)
                 && java.util.Objects.equals(this.repoId, other.repoId)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.archType, other.archType)
@@ -484,6 +534,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.gpgKeyUrl, other.gpgKeyUrl)
                 && java.util.Objects.equals(this.gpgKeyId, other.gpgKeyId)
                 && java.util.Objects.equals(this.gpgKeyFingerprint, other.gpgKeyFingerprint)
+                && java.util.Objects.equals(this.size, other.size)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -502,6 +553,9 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.availability == null ? 43 : this.availability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityAtOci == null ? 43 : this.availabilityAtOci.hashCode());
         result = (result * PRIME) + (this.repoId == null ? 43 : this.repoId.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
@@ -516,6 +570,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.gpgKeyFingerprint == null ? 43 : this.gpgKeyFingerprint.hashCode());
+        result = (result * PRIME) + (this.size == null ? 43 : this.size.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

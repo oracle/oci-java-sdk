@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Technique summary. <br>
+ * Summary information for a technique. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class TechniqueSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the technique. */
+        /** Unique identifier for the technique */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for the technique.
+         * Unique identifier for the technique
          *
          * @param id the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class TechniqueSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the technique. */
+    /** Unique identifier for the technique */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for the technique.
+     * Unique identifier for the technique
      *
      * @return the value
      */

@@ -15,17 +15,17 @@ public class AddCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.AddCompartmentDetails> {
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     private String securityZoneId;
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     public String getSecurityZoneId() {
         return securityZoneId;
     }
-    /** The compartment to add to the security zone. */
+    /** Parameters for an existing compartment to be added to a security zone */
     private com.oracle.bmc.cloudguard.model.AddCompartmentDetails addCompartmentDetails;
 
-    /** The compartment to add to the security zone. */
+    /** Parameters for an existing compartment to be added to a security zone */
     public com.oracle.bmc.cloudguard.model.AddCompartmentDetails getAddCompartmentDetails() {
         return addCompartmentDetails;
     }
@@ -90,11 +90,11 @@ public class AddCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone ({@code SecurityZone}) */
+        /** The unique identifier of the security zone ({@code SecurityZone} resource). */
         private String securityZoneId = null;
 
         /**
-         * The unique identifier of the security zone ({@code SecurityZone})
+         * The unique identifier of the security zone ({@code SecurityZone} resource).
          *
          * @param securityZoneId the value to set
          * @return this builder instance
@@ -104,11 +104,11 @@ public class AddCompartmentRequest
             return this;
         }
 
-        /** The compartment to add to the security zone. */
+        /** Parameters for an existing compartment to be added to a security zone */
         private com.oracle.bmc.cloudguard.model.AddCompartmentDetails addCompartmentDetails = null;
 
         /**
-         * The compartment to add to the security zone.
+         * Parameters for an existing compartment to be added to a security zone
          *
          * @param addCompartmentDetails the value to set
          * @return this builder instance

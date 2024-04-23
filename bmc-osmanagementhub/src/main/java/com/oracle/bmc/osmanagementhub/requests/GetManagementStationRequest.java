@@ -14,10 +14,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class GetManagementStationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station.
+     */
     private String managementStationId;
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station.
+     */
     public String getManagementStationId() {
         return managementStationId;
     }
@@ -41,11 +47,15 @@ public class GetManagementStationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the management station. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station.
+         */
         private String managementStationId = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station.
          *
          * @param managementStationId the value to set
          * @return this builder instance

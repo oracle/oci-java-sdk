@@ -15,17 +15,17 @@ public class UpdateProblemStatusRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails> {
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     private String problemId;
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     public String getProblemId() {
         return problemId;
     }
-    /** The additional details for the problem. */
+    /** The additional details for the problem */
     private com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails updateProblemStatusDetails;
 
-    /** The additional details for the problem. */
+    /** The additional details for the problem */
     public com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails
             getUpdateProblemStatusDetails() {
         return updateProblemStatusDetails;
@@ -92,11 +92,11 @@ public class UpdateProblemStatusRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCId of the problem. */
+        /** OCID of the problem. */
         private String problemId = null;
 
         /**
-         * OCId of the problem.
+         * OCID of the problem.
          *
          * @param problemId the value to set
          * @return this builder instance
@@ -106,12 +106,12 @@ public class UpdateProblemStatusRequest
             return this;
         }
 
-        /** The additional details for the problem. */
+        /** The additional details for the problem */
         private com.oracle.bmc.cloudguard.model.UpdateProblemStatusDetails
                 updateProblemStatusDetails = null;
 
         /**
-         * The additional details for the problem.
+         * The additional details for the problem
          *
          * @param updateProblemStatusDetails the value to set
          * @return this builder instance

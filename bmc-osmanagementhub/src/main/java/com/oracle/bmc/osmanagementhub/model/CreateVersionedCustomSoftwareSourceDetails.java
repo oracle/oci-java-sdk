@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Description of a versioned custom software source to be created. <br>
+ * Provides the information used to create a versioned custom software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -112,6 +112,67 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
             this.__explicitlySet__.add("softwareSourceVersion");
             return this;
         }
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when
+         * including specific packages in the software source.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+        private Boolean isAutoResolveDependencies;
+
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when
+         * including specific packages in the software source.
+         *
+         * @param isAutoResolveDependencies the value to set
+         * @return this builder
+         */
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            this.isAutoResolveDependencies = isAutoResolveDependencies;
+            this.__explicitlySet__.add("isAutoResolveDependencies");
+            return this;
+        }
+        /**
+         * Indicates whether the service should create the software source from a list of packages
+         * provided by the user.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+        private Boolean isCreatedFromPackageList;
+
+        /**
+         * Indicates whether the service should create the software source from a list of packages
+         * provided by the user.
+         *
+         * @param isCreatedFromPackageList the value to set
+         * @return this builder
+         */
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            this.isCreatedFromPackageList = isCreatedFromPackageList;
+            this.__explicitlySet__.add("isCreatedFromPackageList");
+            return this;
+        }
+        /**
+         * A property used for compatibility only. It doesn't provide a complete list of packages.
+         * See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest)
+         * addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the
+         * software source when isCreatedFromPackageList is set to true.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("packages")
+        private java.util.List<String> packages;
+
+        /**
+         * A property used for compatibility only. It doesn't provide a complete list of packages.
+         * See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest)
+         * addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the
+         * software source when isCreatedFromPackageList is set to true.
+         *
+         * @param packages the value to set
+         * @return this builder
+         */
+        public Builder packages(java.util.List<String> packages) {
+            this.packages = packages;
+            this.__explicitlySet__.add("packages");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -126,7 +187,10 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                             this.definedTags,
                             this.vendorSoftwareSources,
                             this.customSoftwareSourceFilter,
-                            this.softwareSourceVersion);
+                            this.softwareSourceVersion,
+                            this.isAutoResolveDependencies,
+                            this.isCreatedFromPackageList,
+                            this.packages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -159,6 +223,15 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
             if (model.wasPropertyExplicitlySet("softwareSourceVersion")) {
                 this.softwareSourceVersion(model.getSoftwareSourceVersion());
             }
+            if (model.wasPropertyExplicitlySet("isAutoResolveDependencies")) {
+                this.isAutoResolveDependencies(model.getIsAutoResolveDependencies());
+            }
+            if (model.wasPropertyExplicitlySet("isCreatedFromPackageList")) {
+                this.isCreatedFromPackageList(model.getIsCreatedFromPackageList());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
             return this;
         }
     }
@@ -181,11 +254,17 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Id> vendorSoftwareSources,
             CustomSoftwareSourceFilter customSoftwareSourceFilter,
-            String softwareSourceVersion) {
+            String softwareSourceVersion,
+            Boolean isAutoResolveDependencies,
+            Boolean isCreatedFromPackageList,
+            java.util.List<String> packages) {
         super(compartmentId, displayName, description, freeformTags, definedTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
         this.softwareSourceVersion = softwareSourceVersion;
+        this.isAutoResolveDependencies = isAutoResolveDependencies;
+        this.isCreatedFromPackageList = isCreatedFromPackageList;
+        this.packages = packages;
     }
 
     /** List of vendor software sources. */
@@ -221,6 +300,61 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
         return softwareSourceVersion;
     }
 
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when
+     * including specific packages in the software source.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+    private final Boolean isAutoResolveDependencies;
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when
+     * including specific packages in the software source.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoResolveDependencies() {
+        return isAutoResolveDependencies;
+    }
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages
+     * provided by the user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+    private final Boolean isCreatedFromPackageList;
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages
+     * provided by the user.
+     *
+     * @return the value
+     */
+    public Boolean getIsCreatedFromPackageList() {
+        return isCreatedFromPackageList;
+    }
+
+    /**
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See
+     * {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest)
+     * addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the
+     * software source when isCreatedFromPackageList is set to true.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("packages")
+    private final java.util.List<String> packages;
+
+    /**
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See
+     * {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest)
+     * addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the
+     * software source when isCreatedFromPackageList is set to true.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPackages() {
+        return packages;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -240,6 +374,11 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
         sb.append(", customSoftwareSourceFilter=")
                 .append(String.valueOf(this.customSoftwareSourceFilter));
         sb.append(", softwareSourceVersion=").append(String.valueOf(this.softwareSourceVersion));
+        sb.append(", isAutoResolveDependencies=")
+                .append(String.valueOf(this.isAutoResolveDependencies));
+        sb.append(", isCreatedFromPackageList=")
+                .append(String.valueOf(this.isCreatedFromPackageList));
+        sb.append(", packages=").append(String.valueOf(this.packages));
         sb.append(")");
         return sb.toString();
     }
@@ -259,6 +398,11 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                 && java.util.Objects.equals(
                         this.customSoftwareSourceFilter, other.customSoftwareSourceFilter)
                 && java.util.Objects.equals(this.softwareSourceVersion, other.softwareSourceVersion)
+                && java.util.Objects.equals(
+                        this.isAutoResolveDependencies, other.isAutoResolveDependencies)
+                && java.util.Objects.equals(
+                        this.isCreatedFromPackageList, other.isCreatedFromPackageList)
+                && java.util.Objects.equals(this.packages, other.packages)
                 && super.equals(other);
     }
 
@@ -281,6 +425,17 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                         + (this.softwareSourceVersion == null
                                 ? 43
                                 : this.softwareSourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoResolveDependencies == null
+                                ? 43
+                                : this.isAutoResolveDependencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCreatedFromPackageList == null
+                                ? 43
+                                : this.isCreatedFromPackageList.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
         return result;
     }
 }

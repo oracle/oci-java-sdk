@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The information to be updated. <br>
+ * Provides the information used to update the lifecycle stage. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -38,12 +38,16 @@ public final class UpdateLifecycleStageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The lifecycle stage OCID that is immutable on creation. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The lifecycle stage OCID that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage.
          *
          * @param id the value to set
          * @return this builder
@@ -54,14 +58,14 @@ public final class UpdateLifecycleStageDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * A user-friendly name for the lifecycle stage. Does not have to be unique. Avoid entering
          * confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * A user-friendly name for the lifecycle stage. Does not have to be unique. Avoid entering
          * confidential information.
          *
          * @param displayName the value to set
@@ -160,12 +164,16 @@ public final class UpdateLifecycleStageDetails
         return new Builder().copy(this);
     }
 
-    /** The lifecycle stage OCID that is immutable on creation. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The lifecycle stage OCID that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage.
      *
      * @return the value
      */
@@ -174,14 +182,14 @@ public final class UpdateLifecycleStageDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * A user-friendly name for the lifecycle stage. Does not have to be unique. Avoid entering
      * confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * A user-friendly name for the lifecycle stage. Does not have to be unique. Avoid entering
      * confidential information.
      *
      * @return the value

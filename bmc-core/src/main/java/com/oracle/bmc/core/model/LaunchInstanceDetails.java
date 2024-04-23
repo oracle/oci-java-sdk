@@ -34,6 +34,7 @@ public final class LaunchInstanceDetails
         "displayName",
         "extendedMetadata",
         "faultDomain",
+        "clusterPlacementGroupId",
         "freeformTags",
         "computeClusterId",
         "hostnameLabel",
@@ -64,6 +65,7 @@ public final class LaunchInstanceDetails
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
+            String clusterPlacementGroupId,
             java.util.Map<String, String> freeformTags,
             String computeClusterId,
             String hostnameLabel,
@@ -93,6 +95,7 @@ public final class LaunchInstanceDetails
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.freeformTags = freeformTags;
         this.computeClusterId = computeClusterId;
         this.hostnameLabel = hostnameLabel;
@@ -314,6 +317,21 @@ public final class LaunchInstanceDetails
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+        /** The OCID of the cluster placement group of the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
@@ -770,6 +788,7 @@ public final class LaunchInstanceDetails
                             this.displayName,
                             this.extendedMetadata,
                             this.faultDomain,
+                            this.clusterPlacementGroupId,
                             this.freeformTags,
                             this.computeClusterId,
                             this.hostnameLabel,
@@ -823,6 +842,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1071,6 +1093,19 @@ public final class LaunchInstanceDetails
      */
     public String getFaultDomain() {
         return faultDomain;
+    }
+
+    /** The OCID of the cluster placement group of the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /**
@@ -1488,6 +1523,8 @@ public final class LaunchInstanceDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
@@ -1534,6 +1571,8 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
@@ -1589,6 +1628,11 @@ public final class LaunchInstanceDetails
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result =
                 (result * PRIME)

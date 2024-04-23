@@ -15,18 +15,24 @@ public class UpdateScheduledJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails> {
 
-    /** The OCID of the scheduled job. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the scheduled job.
+     */
     private String scheduledJobId;
 
-    /** The OCID of the scheduled job. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the scheduled job.
+     */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
-    /** The information to be updated. */
+    /** Provides the information used to update the job. */
     private com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails
             updateScheduledJobDetails;
 
-    /** The information to be updated. */
+    /** Provides the information used to update the job. */
     public com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails
             getUpdateScheduledJobDetails() {
         return updateScheduledJobDetails;
@@ -80,11 +86,15 @@ public class UpdateScheduledJobRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the scheduled job. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the scheduled job.
+         */
         private String scheduledJobId = null;
 
         /**
-         * The OCID of the scheduled job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the scheduled job.
          *
          * @param scheduledJobId the value to set
          * @return this builder instance
@@ -94,12 +104,12 @@ public class UpdateScheduledJobRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** Provides the information used to update the job. */
         private com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails
                 updateScheduledJobDetails = null;
 
         /**
-         * The information to be updated.
+         * Provides the information used to update the job.
          *
          * @param updateScheduledJobDetails the value to set
          * @return this builder instance

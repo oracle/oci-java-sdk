@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software package installed on a managed instance. <br>
+ * Provides summary information for a software package installed on a managed instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -100,15 +100,15 @@ public final class InstalledPackageSummary extends PackageSummary {
             return this;
         }
         /**
-         * The date and time the package was issued by a providing erratum (if available), as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the package was issued by a providing erratum (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * The date and time the package was issued by a providing erratum (if available), as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the package was issued by a providing erratum (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeIssued the value to set
          * @return this builder
@@ -211,15 +211,15 @@ public final class InstalledPackageSummary extends PackageSummary {
     }
 
     /**
-     * The date and time the package was issued by a providing erratum (if available), as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the package was issued by a providing erratum (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * The date and time the package was issued by a providing erratum (if available), as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the package was issued by a providing erratum (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */

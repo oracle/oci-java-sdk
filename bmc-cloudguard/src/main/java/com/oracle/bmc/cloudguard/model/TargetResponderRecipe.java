@@ -5,7 +5,18 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of Target ResponderRecipe <br>
+ * A TargetResponderRecipe resource contains a specific instance of one of the supported detector
+ * types (for example, activity, configuration, or threat) in which some settings can be modified
+ * specifically for a single target.
+ *
+ * <p>A TargetResponderRecipe resource: * Is effectively a copy of a ResponderRecipe resource in
+ * which users can make very limited changes if it\u2019s Oracle-managed, and more changes if
+ * it\u2019s user-managed. * Is visible on the Cloud Guard Targets, Target Details page. * Is
+ * located in a specific OCI compartment. * Can be modified by users, programmatically or through
+ * the UI. * Changes that can be made here override any settings in the corresponding
+ * ResponderRecipe, of which the TargetResponderRecipe resource is effectively a copy of the
+ * ResponderRecipe resource (effectively created when the detector recipe is attached to the
+ * target). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,7 +44,8 @@ public final class TargetResponderRecipe
         "timeCreated",
         "timeUpdated",
         "responderRules",
-        "effectiveResponderRules"
+        "effectiveResponderRules",
+        "locks"
     })
     public TargetResponderRecipe(
             String id,
@@ -45,7 +57,8 @@ public final class TargetResponderRecipe
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.List<TargetResponderRecipeResponderRule> responderRules,
-            java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules) {
+            java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.responderRecipeId = responderRecipeId;
@@ -57,16 +70,17 @@ public final class TargetResponderRecipe
         this.timeUpdated = timeUpdated;
         this.responderRules = responderRules;
         this.effectiveResponderRules = effectiveResponderRules;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier of TargetResponderRecipe that can't be changed after creation. */
+        /** Unique identifier of target responder recipe that can't be changed after creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         * Unique identifier of target responder recipe that can't be changed after creation
          *
          * @param id the value to set
          * @return this builder
@@ -76,12 +90,16 @@ public final class TargetResponderRecipe
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique identifier for Responder Recipe of which this is an extension. */
+        /**
+         * Unique identifier for the Oracle-managed responder recipe from which this recipe was
+         * cloned
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
         private String responderRecipeId;
 
         /**
-         * Unique identifier for Responder Recipe of which this is an extension.
+         * Unique identifier for the Oracle-managed responder recipe from which this recipe was
+         * cloned
          *
          * @param responderRecipeId the value to set
          * @return this builder
@@ -91,12 +109,12 @@ public final class TargetResponderRecipe
             this.__explicitlySet__.add("responderRecipeId");
             return this;
         }
-        /** Compartment Identifier */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -106,12 +124,12 @@ public final class TargetResponderRecipe
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** ResponderRecipe display name. */
+        /** Target responder recipe display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ResponderRecipe display name.
+         * Target responder recipe display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -121,12 +139,12 @@ public final class TargetResponderRecipe
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** ResponderRecipe description. */
+        /** Target responder description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ResponderRecipe description.
+         * Target responder description
          *
          * @param description the value to set
          * @return this builder
@@ -136,12 +154,12 @@ public final class TargetResponderRecipe
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Owner of ResponderRecipe */
+        /** Owner of target responder recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
-         * Owner of ResponderRecipe
+         * Owner of target responder recipe
          *
          * @param owner the value to set
          * @return this builder
@@ -171,14 +189,14 @@ public final class TargetResponderRecipe
             return this;
         }
         /**
-         * The date and time the target responder recipe rule was updated. Format defined by
+         * The date and time the target responder recipe rule was last updated. Format defined by
          * RFC3339.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the target responder recipe rule was updated. Format defined by
+         * The date and time the target responder recipe rule was last updated. Format defined by
          * RFC3339.
          *
          * @param timeUpdated the value to set
@@ -205,12 +223,16 @@ public final class TargetResponderRecipe
             this.__explicitlySet__.add("responderRules");
             return this;
         }
-        /** List of responder rules associated with the recipe after applying all defaults */
+        /**
+         * List of currently enabled responder rules for the responder type for recipe after
+         * applying defaults
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
         private java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules;
 
         /**
-         * List of responder rules associated with the recipe after applying all defaults
+         * List of currently enabled responder rules for the responder type for recipe after
+         * applying defaults
          *
          * @param effectiveResponderRules the value to set
          * @return this builder
@@ -219,6 +241,21 @@ public final class TargetResponderRecipe
                 java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules) {
             this.effectiveResponderRules = effectiveResponderRules;
             this.__explicitlySet__.add("effectiveResponderRules");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -237,7 +274,8 @@ public final class TargetResponderRecipe
                             this.timeCreated,
                             this.timeUpdated,
                             this.responderRules,
-                            this.effectiveResponderRules);
+                            this.effectiveResponderRules,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -276,6 +314,9 @@ public final class TargetResponderRecipe
             if (model.wasPropertyExplicitlySet("effectiveResponderRules")) {
                 this.effectiveResponderRules(model.getEffectiveResponderRules());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -289,12 +330,12 @@ public final class TargetResponderRecipe
         return new Builder().copy(this);
     }
 
-    /** Unique identifier of TargetResponderRecipe that can't be changed after creation. */
+    /** Unique identifier of target responder recipe that can't be changed after creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+     * Unique identifier of target responder recipe that can't be changed after creation
      *
      * @return the value
      */
@@ -302,12 +343,14 @@ public final class TargetResponderRecipe
         return id;
     }
 
-    /** Unique identifier for Responder Recipe of which this is an extension. */
+    /**
+     * Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
     private final String responderRecipeId;
 
     /**
-     * Unique identifier for Responder Recipe of which this is an extension.
+     * Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
      *
      * @return the value
      */
@@ -315,12 +358,12 @@ public final class TargetResponderRecipe
         return responderRecipeId;
     }
 
-    /** Compartment Identifier */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      *
      * @return the value
      */
@@ -328,12 +371,12 @@ public final class TargetResponderRecipe
         return compartmentId;
     }
 
-    /** ResponderRecipe display name. */
+    /** Target responder recipe display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ResponderRecipe display name.
+     * Target responder recipe display name
      *
      * @return the value
      */
@@ -341,12 +384,12 @@ public final class TargetResponderRecipe
         return displayName;
     }
 
-    /** ResponderRecipe description. */
+    /** Target responder description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ResponderRecipe description.
+     * Target responder description
      *
      * @return the value
      */
@@ -354,12 +397,12 @@ public final class TargetResponderRecipe
         return description;
     }
 
-    /** Owner of ResponderRecipe */
+    /** Owner of target responder recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of target responder recipe
      *
      * @return the value
      */
@@ -383,13 +426,15 @@ public final class TargetResponderRecipe
     }
 
     /**
-     * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+     * The date and time the target responder recipe rule was last updated. Format defined by
+     * RFC3339.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+     * The date and time the target responder recipe rule was last updated. Format defined by
+     * RFC3339.
      *
      * @return the value
      */
@@ -410,17 +455,34 @@ public final class TargetResponderRecipe
         return responderRules;
     }
 
-    /** List of responder rules associated with the recipe after applying all defaults */
+    /**
+     * List of currently enabled responder rules for the responder type for recipe after applying
+     * defaults
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
     private final java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules;
 
     /**
-     * List of responder rules associated with the recipe after applying all defaults
+     * List of currently enabled responder rules for the responder type for recipe after applying
+     * defaults
      *
      * @return the value
      */
     public java.util.List<TargetResponderRecipeResponderRule> getEffectiveResponderRules() {
         return effectiveResponderRules;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -449,6 +511,7 @@ public final class TargetResponderRecipe
         sb.append(", responderRules=").append(String.valueOf(this.responderRules));
         sb.append(", effectiveResponderRules=")
                 .append(String.valueOf(this.effectiveResponderRules));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -474,6 +537,7 @@ public final class TargetResponderRecipe
                 && java.util.Objects.equals(this.responderRules, other.responderRules)
                 && java.util.Objects.equals(
                         this.effectiveResponderRules, other.effectiveResponderRules)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -501,6 +565,7 @@ public final class TargetResponderRecipe
                         + (this.effectiveResponderRules == null
                                 ? 43
                                 : this.effectiveResponderRules.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

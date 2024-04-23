@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The additional details for the problem <br>
+ * The additional details to be updated for the problem. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,12 +47,12 @@ public final class UpdateProblemStatusDetails
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** User Comments */
+        /** User comments */
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
-         * User Comments
+         * User comments
          *
          * @param comment the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class UpdateProblemStatusDetails
         return status;
     }
 
-    /** User Comments */
+    /** User comments */
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
-     * User Comments
+     * User comments
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Provides the summary of sighting endpoints <br>
+ * Collection of sighting endpoint summaries. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class SightingEndpointCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of SightingEndpointSummary */
+        /** List of SightingEndpointSummary resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SightingEndpointSummary> items;
 
         /**
-         * List of SightingEndpointSummary
+         * List of SightingEndpointSummary resources
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class SightingEndpointCollection
         return new Builder().copy(this);
     }
 
-    /** List of SightingEndpointSummary */
+    /** List of SightingEndpointSummary resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SightingEndpointSummary> items;
 
     /**
-     * List of SightingEndpointSummary
+     * List of SightingEndpointSummary resources
      *
      * @return the value
      */

@@ -35,7 +35,8 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "locks"
     })
     public DetectorRule(
             String id,
@@ -51,7 +52,8 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -67,16 +69,17 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of the detector rule. */
+        /** The unique identifier of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique identifier of the detector rule.
+         * The unique identifier of the detector rule
          *
          * @param id the value to set
          * @return this builder
@@ -86,12 +89,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Display name for DetectorRule. */
+        /** Display name for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for DetectorRule.
+         * Display name for the detector rule
          *
          * @param displayName the value to set
          * @return this builder
@@ -101,12 +104,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description for DetectorRule. */
+        /** Description for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description for DetectorRule.
+         * Description for the detector rule
          *
          * @param description the value to set
          * @return this builder
@@ -116,12 +119,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** recommendation for DetectorRule */
+        /** Recommendation for the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
         /**
-         * recommendation for DetectorRule
+         * Recommendation for the detector rule
          *
          * @param recommendation the value to set
          * @return this builder
@@ -131,12 +134,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("recommendation");
             return this;
         }
-        /** detector for the rule */
+        /** Detector recipe for the rule */
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
         /**
-         * detector for the rule
+         * Detector recipe for the rule
          *
          * @param detector the value to set
          * @return this builder
@@ -146,12 +149,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("detector");
             return this;
         }
-        /** service type of the configuration to which the rule is applied */
+        /** Service type of the configuration to which the rule is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
         private String serviceType;
 
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          *
          * @param serviceType the value to set
          * @return this builder
@@ -161,12 +164,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("serviceType");
             return this;
         }
-        /** resource type of the configuration to which the rule is applied */
+        /** Resource type of the configuration to which the rule is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * resource type of the configuration to which the rule is applied
+         * Resource type of the configuration to which the rule is applied
          *
          * @param resourceType the value to set
          * @return this builder
@@ -185,12 +188,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("detectorDetails");
             return this;
         }
-        /** List of cloudguard managed list types related to this rule */
+        /** List of managed list types related to this rule */
         @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
         private java.util.List<ManagedListTypes> managedListTypes;
 
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          *
          * @param managedListTypes the value to set
          * @return this builder
@@ -200,12 +203,16 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("managedListTypes");
             return this;
         }
-        /** List of CandidateResponderRule related to this rule */
+        /**
+         * List of responder rules that could be used to remediate a problem triggered by this
+         * detector rule
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
         private java.util.List<CandidateResponderRule> candidateResponderRules;
 
         /**
-         * List of CandidateResponderRule related to this rule
+         * List of responder rules that could be used to remediate a problem triggered by this
+         * detector rule
          *
          * @param candidateResponderRules the value to set
          * @return this builder
@@ -246,12 +253,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the DetectorRule. */
+        /** The current state of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the DetectorRule.
+         * The current state of the detector rule
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -280,6 +287,21 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -300,7 +322,8 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -351,6 +374,9 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -364,12 +390,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of the detector rule. */
+    /** The unique identifier of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique identifier of the detector rule.
+     * The unique identifier of the detector rule
      *
      * @return the value
      */
@@ -377,12 +403,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return id;
     }
 
-    /** Display name for DetectorRule. */
+    /** Display name for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for DetectorRule.
+     * Display name for the detector rule
      *
      * @return the value
      */
@@ -390,12 +416,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return displayName;
     }
 
-    /** Description for DetectorRule. */
+    /** Description for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description for DetectorRule.
+     * Description for the detector rule
      *
      * @return the value
      */
@@ -403,12 +429,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return description;
     }
 
-    /** recommendation for DetectorRule */
+    /** Recommendation for the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
     /**
-     * recommendation for DetectorRule
+     * Recommendation for the detector rule
      *
      * @return the value
      */
@@ -416,12 +442,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return recommendation;
     }
 
-    /** detector for the rule */
+    /** Detector recipe for the rule */
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
     /**
-     * detector for the rule
+     * Detector recipe for the rule
      *
      * @return the value
      */
@@ -429,12 +455,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return detector;
     }
 
-    /** service type of the configuration to which the rule is applied */
+    /** Service type of the configuration to which the rule is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
     private final String serviceType;
 
     /**
-     * service type of the configuration to which the rule is applied
+     * Service type of the configuration to which the rule is applied
      *
      * @return the value
      */
@@ -442,12 +468,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return serviceType;
     }
 
-    /** resource type of the configuration to which the rule is applied */
+    /** Resource type of the configuration to which the rule is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * resource type of the configuration to which the rule is applied
+     * Resource type of the configuration to which the rule is applied
      *
      * @return the value
      */
@@ -520,12 +546,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** List of cloudguard managed list types related to this rule */
+    /** List of managed list types related to this rule */
     @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
     private final java.util.List<ManagedListTypes> managedListTypes;
 
     /**
-     * List of cloudguard managed list types related to this rule
+     * List of managed list types related to this rule
      *
      * @return the value
      */
@@ -533,12 +559,16 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return managedListTypes;
     }
 
-    /** List of CandidateResponderRule related to this rule */
+    /**
+     * List of responder rules that could be used to remediate a problem triggered by this detector
+     * rule
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
     private final java.util.List<CandidateResponderRule> candidateResponderRules;
 
     /**
-     * List of CandidateResponderRule related to this rule
+     * List of responder rules that could be used to remediate a problem triggered by this detector
+     * rule
      *
      * @return the value
      */
@@ -572,12 +602,12 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         return timeUpdated;
     }
 
-    /** The current state of the DetectorRule. */
+    /** The current state of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the DetectorRule.
+     * The current state of the detector rule
      *
      * @return the value
      */
@@ -600,6 +630,19 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
      */
     public String getLifecycleDetails() {
         return lifecycleDetails;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -632,6 +675,7 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -661,6 +705,7 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -696,6 +741,7 @@ public final class DetectorRule extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -15,10 +15,10 @@ public class CreateDetectorRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails> {
 
-    /** Details for the new DetectorRecipe. */
+    /** Details for the new DetectorRecipe */
     private com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails createDetectorRecipeDetails;
 
-    /** Details for the new DetectorRecipe. */
+    /** Details for the new DetectorRecipe */
     public com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails
             getCreateDetectorRecipeDetails() {
         return createDetectorRecipeDetails;
@@ -68,12 +68,12 @@ public class CreateDetectorRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new DetectorRecipe. */
+        /** Details for the new DetectorRecipe */
         private com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails
                 createDetectorRecipeDetails = null;
 
         /**
-         * Details for the new DetectorRecipe.
+         * Details for the new DetectorRecipe
          *
          * @param createDetectorRecipeDetails the value to set
          * @return this builder instance

@@ -15,17 +15,17 @@ public class RemoveCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails> {
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     private String securityZoneId;
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     public String getSecurityZoneId() {
         return securityZoneId;
     }
-    /** The compartment to remove from the security zone. */
+    /** The compartment to remove from the security zone */
     private com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails removeCompartmentDetails;
 
-    /** The compartment to remove from the security zone. */
+    /** The compartment to remove from the security zone */
     public com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails getRemoveCompartmentDetails() {
         return removeCompartmentDetails;
     }
@@ -91,11 +91,11 @@ public class RemoveCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone ({@code SecurityZone}) */
+        /** The unique identifier of the security zone ({@code SecurityZone} resource). */
         private String securityZoneId = null;
 
         /**
-         * The unique identifier of the security zone ({@code SecurityZone})
+         * The unique identifier of the security zone ({@code SecurityZone} resource).
          *
          * @param securityZoneId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class RemoveCompartmentRequest
             return this;
         }
 
-        /** The compartment to remove from the security zone. */
+        /** The compartment to remove from the security zone */
         private com.oracle.bmc.cloudguard.model.RemoveCompartmentDetails removeCompartmentDetails =
                 null;
 
         /**
-         * The compartment to remove from the security zone.
+         * The compartment to remove from the security zone
          *
          * @param removeCompartmentDetails the value to set
          * @return this builder instance

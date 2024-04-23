@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -68,7 +67,8 @@ public interface ReportingManagedInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Returns a CSV format report of managed instances matching the given filters.
+     * Returns a report of managed instances matching the given filters. You can select CSV, XML, or
+     * JSON format.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,8 +85,8 @@ public interface ReportingManagedInstance extends AutoCloseable {
             GetManagedInstanceAnalyticContentRequest request);
 
     /**
-     * Returns a CSV format report of a single managed instance whose associated Erratas match the
-     * given filters.
+     * Returns a report for a single managed instance whose associated erratas match the given
+     * filters. You can select CSV, XML, or JSON format.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

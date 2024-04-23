@@ -16,18 +16,18 @@ public class UpdateResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails> {
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     private String responderRecipeId;
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
-    /** The details to be updated. */
+    /** The details to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
             updateResponderRecipeDetails;
 
-    /** The details to be updated. */
+    /** The details to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
             getUpdateResponderRecipeDetails() {
         return updateResponderRecipeDetails;
@@ -75,11 +75,11 @@ public class UpdateResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of ResponderRecipe */
+        /** OCID of the responder recipe. */
         private String responderRecipeId = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          *
          * @param responderRecipeId the value to set
          * @return this builder instance
@@ -89,12 +89,12 @@ public class UpdateResponderRecipeRequest
             return this;
         }
 
-        /** The details to be updated. */
+        /** The details to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeDetails
                 updateResponderRecipeDetails = null;
 
         /**
-         * The details to be updated.
+         * The details to be updated
          *
          * @param updateResponderRecipeDetails the value to set
          * @return this builder instance

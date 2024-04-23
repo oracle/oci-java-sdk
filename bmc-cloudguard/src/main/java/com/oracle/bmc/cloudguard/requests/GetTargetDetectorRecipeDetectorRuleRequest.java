@@ -15,24 +15,24 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetTargetDetectorRecipeDetectorRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of TargetDetectorRecipe */
+    /** OCID of the target detector recipe. */
     private String targetDetectorRecipeId;
 
-    /** OCID of TargetDetectorRecipe */
+    /** OCID of the target detector recipe. */
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
-    /** The id of DetectorRule */
+    /** The unique identifier of the detector rule. */
     private String detectorRuleId;
 
-    /** The id of DetectorRule */
+    /** The unique identifier of the detector rule. */
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
@@ -50,11 +50,11 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -64,11 +64,11 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** OCID of TargetDetectorRecipe */
+        /** OCID of the target detector recipe. */
         private String targetDetectorRecipeId = null;
 
         /**
-         * OCID of TargetDetectorRecipe
+         * OCID of the target detector recipe.
          *
          * @param targetDetectorRecipeId the value to set
          * @return this builder instance
@@ -78,11 +78,11 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** The id of DetectorRule */
+        /** The unique identifier of the detector rule. */
         private String detectorRuleId = null;
 
         /**
-         * The id of DetectorRule
+         * The unique identifier of the detector rule.
          *
          * @param detectorRuleId the value to set
          * @return this builder instance

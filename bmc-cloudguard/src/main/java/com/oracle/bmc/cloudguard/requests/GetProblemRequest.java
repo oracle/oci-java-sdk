@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetProblemRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     private String problemId;
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     public String getProblemId() {
         return problemId;
     }
@@ -34,11 +34,11 @@ public class GetProblemRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCId of the problem. */
+        /** OCID of the problem. */
         private String problemId = null;
 
         /**
-         * OCId of the problem.
+         * OCID of the problem.
          *
          * @param problemId the value to set
          * @return this builder instance

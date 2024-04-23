@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface SoftwareSourceAsync extends AutoCloseable {
@@ -65,6 +64,25 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds packages to a software source. This operation can only be done for custom and versioned
+     * custom software sources that are not created using filters. For a versioned custom software
+     * source, you can only add packages when the source is created. Once content is added to a
+     * versioned custom software source, it is immutable.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddPackagesToSoftwareSourceResponse> addPackagesToSoftwareSource(
+            AddPackagesToSoftwareSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddPackagesToSoftwareSourceRequest, AddPackagesToSoftwareSourceResponse>
+                    handler);
+
+    /**
      * Updates the availability for a list of specified software sources.
      *
      * @param request The request object containing the details to send
@@ -80,6 +98,26 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeAvailabilityOfSoftwareSourcesRequest,
                                     ChangeAvailabilityOfSoftwareSourcesResponse>
+                            handler);
+
+    /**
+     * Moves the specified software sources to a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSoftwareSourceCompartmentResponse>
+            changeSoftwareSourceCompartment(
+                    ChangeSoftwareSourceCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSoftwareSourceCompartmentRequest,
+                                    ChangeSoftwareSourceCompartmentResponse>
                             handler);
 
     /**
@@ -131,7 +169,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified erratum by its advisory name.
+     * Returns information about the specified erratum based on its advisory name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -145,7 +183,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetErratumRequest, GetErratumResponse> handler);
 
     /**
-     * Gets information about the specified module stream in a software source.
+     * Returns information about the specified module stream in a software source.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -160,7 +198,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified module stream profile in a software source.
+     * Returns information about the specified module stream profile in a software source.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -176,7 +214,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified package group from a software source.
+     * Returns information about the specified package group from a software source.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -191,7 +229,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified software package.
+     * Returns information about the specified software package.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -207,7 +245,23 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified software source.
+     * Returns information about the specified software package based on its fully qualified name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSoftwarePackageByNameResponse> getSoftwarePackageByName(
+            GetSoftwarePackageByNameRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSoftwarePackageByNameRequest, GetSoftwarePackageByNameResponse>
+                    handler);
+
+    /**
+     * Returns information about the specified software source.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -223,8 +277,27 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists entitlements in the specified tenancy OCID. Filter the list against a variety of
-     * criteria including but not limited to its CSI, and vendor name.
+     * Lists software packages available through the OS Management Hub service. Filter the list
+     * against a variety of criteria including but not limited to its name.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAllSoftwarePackagesResponse> listAllSoftwarePackages(
+            ListAllSoftwarePackagesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>
+                    handler);
+
+    /**
+     * Lists entitlements in the specified tenancy
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against a variety of criteria including but not limited to its Customer Support
+     * Identifier (CSI), and vendor name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -254,9 +327,10 @@ public interface SoftwareSourceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse> handler);
 
     /**
-     * Lists module stream profiles from the specified software source OCID. Filter the list against
-     * a variety of criteria including but not limited to its module name, stream name, and
-     * (profile) name.
+     * Lists module stream profiles from the specified software source
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against a variety of criteria including but not limited to its module name, stream
+     * name, and profile name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -272,8 +346,10 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists module streams from the specified software source OCID. Filter the list against a
-     * variety of criteria including but not limited to its module name and (stream) name.
+     * Lists module streams from the specified software source
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against a variety of criteria including but not limited to its module name and
+     * (stream) name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -289,8 +365,10 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists package groups that associate with the specified software source OCID. Filter the list
-     * against a variety of criteria including but not limited to its name, and package group type.
+     * Lists package groups that are associated with the specified software source
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against a variety of criteria including but not limited to its name, and package
+     * group type.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -304,6 +382,26 @@ public interface SoftwareSourceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListPackageGroupsRequest, ListPackageGroupsResponse>
                     handler);
+
+    /**
+     * Lists the software sources in the tenancy that contain the software package. Filter the list
+     * against a variety of criteria including but not limited to its name, type, architecture, and
+     * OS family.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSoftwarePackageSoftwareSourcesResponse>
+            listSoftwarePackageSoftwareSources(
+                    ListSoftwarePackageSoftwareSourcesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSoftwarePackageSoftwareSourcesRequest,
+                                    ListSoftwarePackageSoftwareSourcesResponse>
+                            handler);
 
     /**
      * Lists software packages in the specified software source. Filter the list against a variety
@@ -340,8 +438,9 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists software sources that match the specified tenancy or software source OCID. Filter the
-     * list against a variety of criteria including but not limited to its name, status,
+     * Lists software sources that match the specified tenancy or software source
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against a variety of criteria including but not limited to its name, status,
      * architecture, and OS family.
      *
      * @param request The request object containing the details to send
@@ -358,8 +457,8 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists modules from a list of software sources. Filter the list against a variety of criteria
-     * including the module name.
+     * Returns a list of module streams from the specified software sources. Filter the list against
+     * a variety of criteria including the module name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -378,7 +477,7 @@ public interface SoftwareSourceAsync extends AutoCloseable {
 
     /**
      * Lists modules from a list of software sources. Filter the list against a variety of criteria
-     * including the (module) name.
+     * including the module name.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

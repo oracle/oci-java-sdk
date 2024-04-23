@@ -42,10 +42,10 @@ public class ListWorkRequestErrorsRequest
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
@@ -98,10 +98,10 @@ public class ListWorkRequestErrorsRequest
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -158,11 +158,11 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance
@@ -190,11 +190,11 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /** The sort order to use */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          *
          * @param sortOrder the value to set
          * @return this builder instance

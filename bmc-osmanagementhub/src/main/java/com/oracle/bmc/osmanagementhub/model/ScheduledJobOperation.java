@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Defines an operation in a scheduled job. <br>
+ * Defines an operation that is performed by a scheduled job. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -26,6 +26,7 @@ public final class ScheduledJobOperation
     @java.beans.ConstructorProperties({
         "operationType",
         "packageNames",
+        "windowsUpdateNames",
         "manageModuleStreamsDetails",
         "switchModuleStreamsDetails",
         "softwareSourceIds"
@@ -33,12 +34,14 @@ public final class ScheduledJobOperation
     public ScheduledJobOperation(
             OperationTypes operationType,
             java.util.List<String> packageNames,
+            java.util.List<String> windowsUpdateNames,
             ManageModuleStreamsInScheduledJobDetails manageModuleStreamsDetails,
             ModuleStreamDetails switchModuleStreamsDetails,
             java.util.List<String> softwareSourceIds) {
         super();
         this.operationType = operationType;
         this.packageNames = packageNames;
+        this.windowsUpdateNames = windowsUpdateNames;
         this.manageModuleStreamsDetails = manageModuleStreamsDetails;
         this.switchModuleStreamsDetails = switchModuleStreamsDetails;
         this.softwareSourceIds = softwareSourceIds;
@@ -62,15 +65,15 @@ public final class ScheduledJobOperation
             return this;
         }
         /**
-         * The names of the target packages (only if operation type is
-         * INSTALL_PACKAGES/UPDATE_PACKAGES/REMOVE_PACKAGES).
+         * The names of the target packages. This parameter only applies when the scheduled job is
+         * for installing, updating, or removing packages.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
         private java.util.List<String> packageNames;
 
         /**
-         * The names of the target packages (only if operation type is
-         * INSTALL_PACKAGES/UPDATE_PACKAGES/REMOVE_PACKAGES).
+         * The names of the target packages. This parameter only applies when the scheduled job is
+         * for installing, updating, or removing packages.
          *
          * @param packageNames the value to set
          * @return this builder
@@ -78,6 +81,27 @@ public final class ScheduledJobOperation
         public Builder packageNames(java.util.List<String> packageNames) {
             this.packageNames = packageNames;
             this.__explicitlySet__.add("packageNames");
+            return this;
+        }
+        /**
+         * Unique identifier for the Windows update. This parameter only applies if the scheduled
+         * job is for installing Windows updates. Note that this is not an OCID, but is a unique
+         * identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("windowsUpdateNames")
+        private java.util.List<String> windowsUpdateNames;
+
+        /**
+         * Unique identifier for the Windows update. This parameter only applies if the scheduled
+         * job is for installing Windows updates. Note that this is not an OCID, but is a unique
+         * identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+         *
+         * @param windowsUpdateNames the value to set
+         * @return this builder
+         */
+        public Builder windowsUpdateNames(java.util.List<String> windowsUpdateNames) {
+            this.windowsUpdateNames = windowsUpdateNames;
+            this.__explicitlySet__.add("windowsUpdateNames");
             return this;
         }
 
@@ -100,15 +124,19 @@ public final class ScheduledJobOperation
             return this;
         }
         /**
-         * The OCIDs for the software sources (only if operation type is
-         * ATTACH_SOFTWARE_SOURCES/DETACH_SOFTWARE_SOURCES).
+         * The software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * This parameter only applies when the scheduled job is for attaching or detaching software
+         * sources.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
-         * The OCIDs for the software sources (only if operation type is
-         * ATTACH_SOFTWARE_SOURCES/DETACH_SOFTWARE_SOURCES).
+         * The software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * This parameter only applies when the scheduled job is for attaching or detaching software
+         * sources.
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -127,6 +155,7 @@ public final class ScheduledJobOperation
                     new ScheduledJobOperation(
                             this.operationType,
                             this.packageNames,
+                            this.windowsUpdateNames,
                             this.manageModuleStreamsDetails,
                             this.switchModuleStreamsDetails,
                             this.softwareSourceIds);
@@ -143,6 +172,9 @@ public final class ScheduledJobOperation
             }
             if (model.wasPropertyExplicitlySet("packageNames")) {
                 this.packageNames(model.getPackageNames());
+            }
+            if (model.wasPropertyExplicitlySet("windowsUpdateNames")) {
+                this.windowsUpdateNames(model.getWindowsUpdateNames());
             }
             if (model.wasPropertyExplicitlySet("manageModuleStreamsDetails")) {
                 this.manageModuleStreamsDetails(model.getManageModuleStreamsDetails());
@@ -180,20 +212,39 @@ public final class ScheduledJobOperation
     }
 
     /**
-     * The names of the target packages (only if operation type is
-     * INSTALL_PACKAGES/UPDATE_PACKAGES/REMOVE_PACKAGES).
+     * The names of the target packages. This parameter only applies when the scheduled job is for
+     * installing, updating, or removing packages.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     private final java.util.List<String> packageNames;
 
     /**
-     * The names of the target packages (only if operation type is
-     * INSTALL_PACKAGES/UPDATE_PACKAGES/REMOVE_PACKAGES).
+     * The names of the target packages. This parameter only applies when the scheduled job is for
+     * installing, updating, or removing packages.
      *
      * @return the value
      */
     public java.util.List<String> getPackageNames() {
         return packageNames;
+    }
+
+    /**
+     * Unique identifier for the Windows update. This parameter only applies if the scheduled job is
+     * for installing Windows updates. Note that this is not an OCID, but is a unique identifier
+     * assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("windowsUpdateNames")
+    private final java.util.List<String> windowsUpdateNames;
+
+    /**
+     * Unique identifier for the Windows update. This parameter only applies if the scheduled job is
+     * for installing Windows updates. Note that this is not an OCID, but is a unique identifier
+     * assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getWindowsUpdateNames() {
+        return windowsUpdateNames;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("manageModuleStreamsDetails")
@@ -211,15 +262,17 @@ public final class ScheduledJobOperation
     }
 
     /**
-     * The OCIDs for the software sources (only if operation type is
-     * ATTACH_SOFTWARE_SOURCES/DETACH_SOFTWARE_SOURCES).
+     * The software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+     * parameter only applies when the scheduled job is for attaching or detaching software sources.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
-     * The OCIDs for the software sources (only if operation type is
-     * ATTACH_SOFTWARE_SOURCES/DETACH_SOFTWARE_SOURCES).
+     * The software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
+     * parameter only applies when the scheduled job is for attaching or detaching software sources.
      *
      * @return the value
      */
@@ -244,6 +297,7 @@ public final class ScheduledJobOperation
         sb.append("super=").append(super.toString());
         sb.append("operationType=").append(String.valueOf(this.operationType));
         sb.append(", packageNames=").append(String.valueOf(this.packageNames));
+        sb.append(", windowsUpdateNames=").append(String.valueOf(this.windowsUpdateNames));
         sb.append(", manageModuleStreamsDetails=")
                 .append(String.valueOf(this.manageModuleStreamsDetails));
         sb.append(", switchModuleStreamsDetails=")
@@ -265,6 +319,7 @@ public final class ScheduledJobOperation
         ScheduledJobOperation other = (ScheduledJobOperation) o;
         return java.util.Objects.equals(this.operationType, other.operationType)
                 && java.util.Objects.equals(this.packageNames, other.packageNames)
+                && java.util.Objects.equals(this.windowsUpdateNames, other.windowsUpdateNames)
                 && java.util.Objects.equals(
                         this.manageModuleStreamsDetails, other.manageModuleStreamsDetails)
                 && java.util.Objects.equals(
@@ -281,6 +336,11 @@ public final class ScheduledJobOperation
                 (result * PRIME)
                         + (this.operationType == null ? 43 : this.operationType.hashCode());
         result = (result * PRIME) + (this.packageNames == null ? 43 : this.packageNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.windowsUpdateNames == null
+                                ? 43
+                                : this.windowsUpdateNames.hashCode());
         result =
                 (result * PRIME)
                         + (this.manageModuleStreamsDetails == null

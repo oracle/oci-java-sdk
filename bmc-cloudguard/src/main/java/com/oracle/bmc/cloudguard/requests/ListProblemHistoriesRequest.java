@@ -14,24 +14,24 @@ import com.oracle.bmc.cloudguard.model.*;
 public class ListProblemHistoriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     private String problemId;
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     public String getProblemId() {
         return problemId;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
@@ -48,10 +48,10 @@ public class ListProblemHistoriesRequest
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -118,11 +118,11 @@ public class ListProblemHistoriesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /** The OCID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -132,11 +132,11 @@ public class ListProblemHistoriesRequest
             return this;
         }
 
-        /** OCId of the problem. */
+        /** OCID of the problem. */
         private String problemId = null;
 
         /**
-         * OCId of the problem.
+         * OCID of the problem.
          *
          * @param problemId the value to set
          * @return this builder instance
@@ -146,11 +146,11 @@ public class ListProblemHistoriesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance
@@ -178,11 +178,11 @@ public class ListProblemHistoriesRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /** The sort order to use */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          *
          * @param sortOrder the value to set
          * @return this builder instance

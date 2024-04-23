@@ -15,10 +15,10 @@ import com.oracle.bmc.cloudguard.model.*;
 public class DeleteResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     private String responderRecipeId;
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
@@ -53,11 +53,11 @@ public class DeleteResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of ResponderRecipe */
+        /** OCID of the responder recipe. */
         private String responderRecipeId = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          *
          * @param responderRecipeId the value to set
          * @return this builder instance

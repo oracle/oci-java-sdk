@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Definition of a registration profile of type LIFECYCLE. <br>
+ * Provides the information for a lifecycle environment registration profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -116,6 +116,33 @@ public final class LifecycleProfile extends Profile {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
+        private RegistrationType registrationType;
+
+        public Builder registrationType(RegistrationType registrationType) {
+            this.registrationType = registrationType;
+            this.__explicitlySet__.add("registrationType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+        private Boolean isDefaultProfile;
+
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            this.isDefaultProfile = isDefaultProfile;
+            this.__explicitlySet__.add("isDefaultProfile");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
+        private Boolean isServiceProvidedProfile;
+
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
+            this.__explicitlySet__.add("isServiceProvidedProfile");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -178,6 +205,9 @@ public final class LifecycleProfile extends Profile {
                             this.archType,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.registrationType,
+                            this.isDefaultProfile,
+                            this.isServiceProvidedProfile,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -221,6 +251,15 @@ public final class LifecycleProfile extends Profile {
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("registrationType")) {
+                this.registrationType(model.getRegistrationType());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultProfile")) {
+                this.isDefaultProfile(model.getIsDefaultProfile());
+            }
+            if (model.wasPropertyExplicitlySet("isServiceProvidedProfile")) {
+                this.isServiceProvidedProfile(model.getIsServiceProvidedProfile());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -261,6 +300,9 @@ public final class LifecycleProfile extends Profile {
             ArchType archType,
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
+            RegistrationType registrationType,
+            Boolean isDefaultProfile,
+            Boolean isServiceProvidedProfile,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -277,6 +319,9 @@ public final class LifecycleProfile extends Profile {
                 archType,
                 timeCreated,
                 lifecycleState,
+                registrationType,
+                isDefaultProfile,
+                isServiceProvidedProfile,
                 freeformTags,
                 definedTags,
                 systemTags);

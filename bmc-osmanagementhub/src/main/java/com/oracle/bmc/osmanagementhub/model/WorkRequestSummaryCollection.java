@@ -32,12 +32,12 @@ public final class WorkRequestSummaryCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of work request summary objects. */
+        /** List of work requests. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestSummary> items;
 
         /**
-         * List of work request summary objects.
+         * List of work requests.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class WorkRequestSummaryCollection
         return new Builder().copy(this);
     }
 
-    /** List of work request summary objects. */
+    /** List of work requests. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestSummary> items;
 
     /**
-     * List of work request summary objects.
+     * List of work requests.
      *
      * @return the value
      */

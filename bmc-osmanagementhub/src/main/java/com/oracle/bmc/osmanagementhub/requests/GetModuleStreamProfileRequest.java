@@ -15,17 +15,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class GetModuleStreamProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
-    /** The name of the profile of the containing module stream. */
+    /** The name of the module stream profile. */
     private String profileName;
 
-    /** The name of the profile of the containing module stream. */
+    /** The name of the module stream profile. */
     public String getProfileName() {
         return profileName;
     }
@@ -63,11 +69,15 @@ public class GetModuleStreamProfileRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance
@@ -77,11 +87,11 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /** The name of the profile of the containing module stream. */
+        /** The name of the module stream profile. */
         private String profileName = null;
 
         /**
-         * The name of the profile of the containing module stream.
+         * The name of the module stream profile.
          *
          * @param profileName the value to set
          * @return this builder instance

@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Data Source Feed Provider */
+/** Provider of data source feed */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum DataSourceFeedProvider implements com.oracle.bmc.http.internal.BmcEnum {
     Loggingquery("LOGGINGQUERY"),
+    Scheduledquery("SCHEDULEDQUERY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

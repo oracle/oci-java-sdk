@@ -5,7 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Used to select groups from VendorSoftwareSources to create/update CustomSoftwareSources. <br>
+ * Provides the information used to create a filter for groups from a vendor software source to
+ * create or update a custom software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,12 +48,12 @@ public final class PackageGroupFilter
             this.__explicitlySet__.add("packageGroups");
             return this;
         }
-        /** The type of the filter, which can be of two types - INCLUDE or EXCLUDE. */
+        /** The type of the filter. */
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private FilterType filterType;
 
         /**
-         * The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * The type of the filter.
          *
          * @param filterType the value to set
          * @return this builder
@@ -108,12 +109,12 @@ public final class PackageGroupFilter
         return packageGroups;
     }
 
-    /** The type of the filter, which can be of two types - INCLUDE or EXCLUDE. */
+    /** The type of the filter. */
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final FilterType filterType;
 
     /**
-     * The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * The type of the filter.
      *
      * @return the value
      */

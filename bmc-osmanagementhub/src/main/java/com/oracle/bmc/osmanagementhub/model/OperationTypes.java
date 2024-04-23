@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible scheduled job operation types. */
+/** Type of operation the scheduled job is performing. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     InstallPackages("INSTALL_PACKAGES"),
@@ -23,6 +23,12 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     DetachSoftwareSources("DETACH_SOFTWARE_SOURCES"),
     SyncManagementStationMirror("SYNC_MANAGEMENT_STATION_MIRROR"),
     PromoteLifecycle("PROMOTE_LIFECYCLE"),
+    InstallWindowsUpdates("INSTALL_WINDOWS_UPDATES"),
+    InstallAllWindowsUpdates("INSTALL_ALL_WINDOWS_UPDATES"),
+    InstallSecurityWindowsUpdates("INSTALL_SECURITY_WINDOWS_UPDATES"),
+    InstallBugfixWindowsUpdates("INSTALL_BUGFIX_WINDOWS_UPDATES"),
+    InstallEnhancementWindowsUpdates("INSTALL_ENHANCEMENT_WINDOWS_UPDATES"),
+    InstallOtherWindowsUpdates("INSTALL_OTHER_WINDOWS_UPDATES"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

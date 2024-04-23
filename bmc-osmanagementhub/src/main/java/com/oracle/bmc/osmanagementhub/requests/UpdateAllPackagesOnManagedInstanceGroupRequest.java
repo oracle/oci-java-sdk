@@ -17,10 +17,16 @@ public class UpdateAllPackagesOnManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .UpdateAllPackagesOnManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
@@ -103,11 +109,15 @@ public class UpdateAllPackagesOnManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance

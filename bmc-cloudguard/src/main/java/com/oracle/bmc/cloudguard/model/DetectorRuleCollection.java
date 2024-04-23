@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the DetectorRule. <br>
+ * Summary information for the collection of detector rules. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class DetectorRuleCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of DetectorRuleSummary */
+        /** List of DetectorRuleSummary resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DetectorRuleSummary> items;
 
         /**
-         * List of DetectorRuleSummary
+         * List of DetectorRuleSummary resources
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class DetectorRuleCollection
         return new Builder().copy(this);
     }
 
-    /** List of DetectorRuleSummary */
+    /** List of DetectorRuleSummary resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DetectorRuleSummary> items;
 
     /**
-     * List of DetectorRuleSummary
+     * List of DetectorRuleSummary resources
      *
      * @return the value
      */

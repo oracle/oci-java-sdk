@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Conditions related to the parameter data type <br>
+ * Conditions related to the parameter data type. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class ConditionOperator
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** operator name */
+        /** Operator name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private ConditionOperatorName name;
 
         /**
-         * operator name
+         * Operator name
          *
          * @param name the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class ConditionOperator
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** display name of the operator */
+        /** Display name of the operator */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * display name of the operator
+         * Display name of the operator
          *
          * @param displayName the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class ConditionOperator
         return new Builder().copy(this);
     }
 
-    /** operator name */
+    /** Operator name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final ConditionOperatorName name;
 
     /**
-     * operator name
+     * Operator name
      *
      * @return the value
      */
@@ -108,12 +108,12 @@ public final class ConditionOperator
         return name;
     }
 
-    /** display name of the operator */
+    /** Display name of the operator */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * display name of the operator
+     * Display name of the operator
      *
      * @return the value
      */

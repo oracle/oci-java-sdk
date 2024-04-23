@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary specific to the data source type. <br>
+ * Summary information for a data source of a specified data source type. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -22,6 +22,9 @@ package com.oracle.bmc.cloudguard.model;
         property = "dataSourceFeedProvider",
         defaultImpl = DataSourceSummaryDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ScheduledQueryDataSourceSummaryObjDetails.class,
+            name = "SCHEDULEDQUERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = LoggingQueryDataSourceSummaryDetails.class,
             name = "LOGGINGQUERY")

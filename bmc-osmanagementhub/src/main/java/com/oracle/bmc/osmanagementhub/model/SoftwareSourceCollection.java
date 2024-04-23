@@ -5,8 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Results of a SoftwareSource search. Contains boh SoftwareSourceSummary items and other
- * information, such as metadata. <br>
+ * A set of software sources returned for the {@link
+ * #listSoftwareSources(ListSoftwareSourcesRequest) listSoftwareSources} operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class SoftwareSourceCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of SoftwareSources. */
+        /** List of software sources. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SoftwareSourceSummary> items;
 
         /**
-         * List of SoftwareSources.
+         * List of software sources.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class SoftwareSourceCollection
         return new Builder().copy(this);
     }
 
-    /** List of SoftwareSources. */
+    /** List of software sources. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SoftwareSourceSummary> items;
 
     /**
-     * List of SoftwareSources.
+     * List of software sources.
      *
      * @return the value
      */

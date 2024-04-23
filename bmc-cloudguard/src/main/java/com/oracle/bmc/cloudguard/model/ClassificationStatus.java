@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Indicates the classification status of the Sighitng */
+/** The classification status of the sighitng. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ClassificationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     FalseNegative("FALSE_NEGATIVE"),

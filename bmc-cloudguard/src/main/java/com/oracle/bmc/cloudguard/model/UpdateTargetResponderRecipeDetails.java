@@ -5,7 +5,10 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information to be updated in ResponderRecipe. <br>
+ * Parameters to update a responder recipe attached to a target. UpdateTargetResponderRecipe
+ * contains the responder rules to be updated that are associated with a responder recipe in a
+ * target. whereas UpdateTargetResponderRecipeDetails refers to the information to be updated in
+ * ResponderRecipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +35,12 @@ public final class UpdateTargetResponderRecipeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Update responder rules associated with responder recipe in a target. */
+        /** List of responder rules to be updated in a target responder recipe. */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
         /**
-         * Update responder rules associated with responder recipe in a target.
+         * List of responder rules to be updated in a target responder recipe.
          *
          * @param responderRules the value to set
          * @return this builder
@@ -79,12 +82,12 @@ public final class UpdateTargetResponderRecipeDetails
         return new Builder().copy(this);
     }
 
-    /** Update responder rules associated with responder recipe in a target. */
+    /** List of responder rules to be updated in a target responder recipe. */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
     /**
-     * Update responder rules associated with responder recipe in a target.
+     * List of responder rules to be updated in a target responder recipe.
      *
      * @return the value
      */

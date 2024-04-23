@@ -15,10 +15,10 @@ public class CreateDataMaskRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails> {
 
-    /** Definition for the new Data Mask Rule. */
+    /** Definition for the new data mask rule */
     private com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails createDataMaskRuleDetails;
 
-    /** Definition for the new Data Mask Rule. */
+    /** Definition for the new data mask rule */
     public com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails
             getCreateDataMaskRuleDetails() {
         return createDataMaskRuleDetails;
@@ -68,12 +68,12 @@ public class CreateDataMaskRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Definition for the new Data Mask Rule. */
+        /** Definition for the new data mask rule */
         private com.oracle.bmc.cloudguard.model.CreateDataMaskRuleDetails
                 createDataMaskRuleDetails = null;
 
         /**
-         * Definition for the new Data Mask Rule.
+         * Definition for the new data mask rule
          *
          * @param createDataMaskRuleDetails the value to set
          * @return this builder instance

@@ -43,6 +43,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         "kmsKeyId",
         "lifecycleState",
         "vpusPerGB",
+        "clusterPlacementGroupId",
         "sizeInGBs",
         "sizeInMBs",
         "sourceDetails",
@@ -65,6 +66,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             String kmsKeyId,
             LifecycleState lifecycleState,
             Long vpusPerGB,
+            String clusterPlacementGroupId,
             Long sizeInGBs,
             Long sizeInMBs,
             VolumeSourceDetails sourceDetails,
@@ -86,6 +88,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         this.kmsKeyId = kmsKeyId;
         this.lifecycleState = lifecycleState;
         this.vpusPerGB = vpusPerGB;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.sizeInGBs = sizeInGBs;
         this.sizeInMBs = sizeInMBs;
         this.sourceDetails = sourceDetails;
@@ -337,6 +340,21 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             this.__explicitlySet__.add("vpusPerGB");
             return this;
         }
+        /** The clusterPlacementGroup Id of the volume for volume placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
         /** The size of the volume in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
@@ -497,6 +515,7 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                             this.kmsKeyId,
                             this.lifecycleState,
                             this.vpusPerGB,
+                            this.clusterPlacementGroupId,
                             this.sizeInGBs,
                             this.sizeInMBs,
                             this.sourceDetails,
@@ -546,6 +565,9 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("sizeInGBs")) {
                 this.sizeInGBs(model.getSizeInGBs());
@@ -852,6 +874,19 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         return vpusPerGB;
     }
 
+    /** The clusterPlacementGroup Id of the volume for volume placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     /** The size of the volume in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
@@ -999,6 +1034,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
         sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
@@ -1033,6 +1070,8 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
                 && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
@@ -1068,6 +1107,11 @@ public final class Volume extends com.oracle.bmc.http.client.internal.Explicitly
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
         result = (result * PRIME) + (this.sizeInMBs == null ? 43 : this.sizeInMBs.hashCode());
         result =

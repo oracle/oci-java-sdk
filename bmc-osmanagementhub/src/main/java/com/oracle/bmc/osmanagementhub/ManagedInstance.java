@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -68,6 +67,24 @@ public interface ManagedInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds profile to a managed instance. After the profile has been added, the instance can be
+     * registered as a managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AttachProfileToManagedInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AttachProfileToManagedInstance API.
+     */
+    AttachProfileToManagedInstanceResponse attachProfileToManagedInstance(
+            AttachProfileToManagedInstanceRequest request);
+
+    /**
      * Adds software sources to a managed instance. After the software source has been added, then
      * packages from that software source can be installed on the managed instance.
      *
@@ -84,6 +101,42 @@ public interface ManagedInstance extends AutoCloseable {
      */
     AttachSoftwareSourcesToManagedInstanceResponse attachSoftwareSourcesToManagedInstance(
             AttachSoftwareSourcesToManagedInstanceRequest request);
+
+    /**
+     * Unregisters the specified managed instance from the service. Once unregistered, the service
+     * will no longer manage the instance. For Linux instances, yum or DNF repository files will be
+     * restored to their state prior to registration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteManagedInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteManagedInstance API.
+     */
+    DeleteManagedInstanceResponse deleteManagedInstance(DeleteManagedInstanceRequest request);
+
+    /**
+     * Detaches profile from a managed instance. After the profile has been removed, the instance
+     * cannot be registered as a managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DetachProfileFromManagedInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DetachProfileFromManagedInstance API.
+     */
+    DetachProfileFromManagedInstanceResponse detachProfileFromManagedInstance(
+            DetachProfileFromManagedInstanceRequest request);
 
     /**
      * Removes software sources from a managed instance. Packages will no longer be able to be
@@ -159,6 +212,42 @@ public interface ManagedInstance extends AutoCloseable {
     GetManagedInstanceResponse getManagedInstance(GetManagedInstanceRequest request);
 
     /**
+     * Returns a Windows Update object.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetWindowsUpdateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWindowsUpdate
+     *     API.
+     */
+    GetWindowsUpdateResponse getWindowsUpdate(GetWindowsUpdateRequest request);
+
+    /**
+     * Installs all of the available Windows updates for managed instances in a compartment. This
+     * applies only to standalone Windows instances. This will not update instances that belong to a
+     * group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallAllWindowsUpdatesOnManagedInstancesInCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     InstallAllWindowsUpdatesOnManagedInstancesInCompartment API.
+     */
+    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse
+            installAllWindowsUpdatesOnManagedInstancesInCompartment(
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest request);
+
+    /**
      * Installs a profile for an module stream. The stream must be enabled before a profile can be
      * installed. If a module stream defines multiple profiles, each one can be installed
      * independently.
@@ -195,7 +284,24 @@ public interface ManagedInstance extends AutoCloseable {
             InstallPackagesOnManagedInstanceRequest request);
 
     /**
-     * Returns a list of available packages for a managed instance.
+     * Installs Windows updates on the specified managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallWindowsUpdatesOnManagedInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     InstallWindowsUpdatesOnManagedInstance API.
+     */
+    InstallWindowsUpdatesOnManagedInstanceResponse installWindowsUpdatesOnManagedInstance(
+            InstallWindowsUpdatesOnManagedInstanceRequest request);
+
+    /**
+     * Returns a list of packages that are available for installation on a managed instance.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -212,7 +318,8 @@ public interface ManagedInstance extends AutoCloseable {
             ListManagedInstanceAvailablePackagesRequest request);
 
     /**
-     * Returns a list of available software sources for a managed instance.
+     * Returns a list of software sources that can be attached to the specified managed instance.
+     * Any software sources already attached to the instance are not included in the list.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -227,6 +334,23 @@ public interface ManagedInstance extends AutoCloseable {
      */
     ListManagedInstanceAvailableSoftwareSourcesResponse listManagedInstanceAvailableSoftwareSources(
             ListManagedInstanceAvailableSoftwareSourcesRequest request);
+
+    /**
+     * Returns a list of Windows updates that can be installed on the specified managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceAvailableWindowsUpdatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListManagedInstanceAvailableWindowsUpdates API.
+     */
+    ListManagedInstanceAvailableWindowsUpdatesResponse listManagedInstanceAvailableWindowsUpdates(
+            ListManagedInstanceAvailableWindowsUpdatesRequest request);
 
     /**
      * Returns a list of applicable errata on the managed instance.
@@ -263,16 +387,25 @@ public interface ManagedInstance extends AutoCloseable {
             ListManagedInstanceInstalledPackagesRequest request);
 
     /**
-     * Retrieve a list of modules, along with streams of the modules, from a managed instance.
+     * Returns a list of Windows updates that have been installed on the specified managed instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListManagedInstanceInstalledWindowsUpdatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListManagedInstanceInstalledWindowsUpdates API.
+     */
+    ListManagedInstanceInstalledWindowsUpdatesResponse listManagedInstanceInstalledWindowsUpdates(
+            ListManagedInstanceInstalledWindowsUpdatesRequest request);
+
+    /**
+     * Retrieves a list of modules, along with streams of the modules, from a managed instance.
      * Filters may be applied to select a subset of modules based on the filter criteria.
-     *
-     * <p>The 'name' attribute filters against the name of a module. It accepts strings of the
-     * format \"<string>\".
-     *
-     * <p>The 'nameContains' attribute filters against the name of a module based on partial match.
-     * It accepts strings of the format \"<string>\". If this attribute is defined, only matching
-     * modules are included in the result set. If it is not defined, the request is not subject to
-     * this filter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -324,55 +457,31 @@ public interface ManagedInstance extends AutoCloseable {
     ListManagedInstancesResponse listManagedInstances(ListManagedInstancesRequest request);
 
     /**
-     * Perform an operation involving modules, streams, and profiles on a managed instance. Each
-     * operation may enable or disable an arbitrary amount of module streams, and install or remove
-     * an arbitrary number of module stream profiles. When the operation is complete, the state of
-     * the modules, streams, and profiles on the managed instance will match the state indicated in
-     * the operation.
+     * Lists Windows updates that have been reported to the service.
      *
-     * <p>Each module stream specified in the list of module streams to enable will be in the
-     * \"ENABLED\" state upon completion of the operation. If there was already a stream of that
-     * module enabled, any work required to switch from the current stream to the new stream is
-     * performed implicitly.
-     *
-     * <p>Each module stream specified in the list of module streams to disable will be in the
-     * \"DISABLED\" state upon completion of the operation. Any profiles that are installed for the
-     * module stream will be removed as part of the operation.
-     *
-     * <p>Each module stream profile specified in the list of profiles to install will be in the
-     * \"INSTALLED\" state upon completion of the operation, indicating that any packages that are
-     * part of the profile are installed on the managed instance. If the module stream containing
-     * the profile is not enabled, it will be enabled as part of the operation. There is an
-     * exception when attempting to install a stream of a profile when another stream of the same
-     * module is enabled. It is an error to attempt to install a profile of another module stream,
-     * unless enabling the new module stream is explicitly included in this operation.
-     *
-     * <p>Each module stream profile specified in the list of profiles to remove will be in the
-     * \"AVAILABLE\" state upon completion of the operation. The status of packages within the
-     * profile after the operation is complete is defined by the package manager on the managed
-     * instance.
-     *
-     * <p>Operations that contain one or more elements that are not allowed are rejected.
-     *
-     * <p>The result of this request is a work request object. The returned work request is the
-     * parent of a structure of other WorkRequests. Taken as a whole, this structure indicates the
-     * entire set of work to be performed to complete the operation.
-     *
-     * <p>This interface can also be used to perform a dry run of the operation rather than
-     * committing it to a managed instance. If a dry run is requested, the OS Management Hub service
-     * will evaluate the operation against the current module, stream, and profile state on the
-     * managed instance. It will calculate the impact of the operation on all modules, streams, and
-     * profiles on the managed instance, including those that are implicitly impacted by the
-     * operation.
-     *
-     * <p>The WorkRequest resulting from a dry run behaves differently than a WorkRequest resulting
-     * from a committable operation. Dry run WorkRequests are always singletons and never have
-     * children. The impact of the operation is returned using the log and error facilities of work
-     * requests. The impact of operations that are allowed by the OS Management Hub service are
-     * communicated as one or more work request log entries. Operations that are not allowed by the
-     * OS Management Hub service are communicated as one or more work request error entries. Each
-     * entry, for either logs or errors, contains a structured message containing the results of one
-     * or more operations.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListWindowsUpdatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWindowsUpdates
+     *     API.
+     */
+    ListWindowsUpdatesResponse listWindowsUpdates(ListWindowsUpdatesRequest request);
+
+    /**
+     * Enables or disables module streams and installs or removes module stream profiles. Once
+     * complete, the state of the modules, streams, and profiles will match the state indicated in
+     * the operation. See {@link
+     * #manageModuleStreamsOnManagedInstanceDetails(ManageModuleStreamsOnManagedInstanceDetailsRequest)
+     * manageModuleStreamsOnManagedInstanceDetails} for more information. You can preform this
+     * operation as a dry run. For a dry run, the service evaluates the operation against the
+     * current module, stream, and profile state on the managed instance, but does not commit the
+     * changes. Instead, the service returns work request log or error entries indicating the impact
+     * of the operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -389,7 +498,9 @@ public interface ManagedInstance extends AutoCloseable {
             ManageModuleStreamsOnManagedInstanceRequest request);
 
     /**
-     * Refresh all installed and updatable software information on a managed instance.
+     * Refreshes the package or Windows update information on a managed instance with the latest
+     * data from the software source. This does not update packages on the instance. It provides the
+     * service with the latest package data.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -463,7 +574,8 @@ public interface ManagedInstance extends AutoCloseable {
 
     /**
      * Install all of the available package updates for all of the managed instances in a
-     * compartment.
+     * compartment. This applies only to standalone non-Windows instances. This will not update
+     * instances that belong to a group or lifecycle environment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -481,7 +593,8 @@ public interface ManagedInstance extends AutoCloseable {
                     UpdateAllPackagesOnManagedInstancesInCompartmentRequest request);
 
     /**
-     * Updates the managed instance.
+     * Updates the specified managed instance information, such as description, ONS topic, and
+     * associated management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

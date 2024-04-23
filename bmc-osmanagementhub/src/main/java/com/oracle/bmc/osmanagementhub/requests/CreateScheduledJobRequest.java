@@ -15,11 +15,11 @@ public class CreateScheduledJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails> {
 
-    /** Details for the new scheduled job. */
+    /** Provides the information used to create the scheduled job. */
     private com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails
             createScheduledJobDetails;
 
-    /** Details for the new scheduled job. */
+    /** Provides the information used to create the scheduled job. */
     public com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails
             getCreateScheduledJobDetails() {
         return createScheduledJobDetails;
@@ -75,12 +75,12 @@ public class CreateScheduledJobRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new scheduled job. */
+        /** Provides the information used to create the scheduled job. */
         private com.oracle.bmc.osmanagementhub.model.CreateScheduledJobDetails
                 createScheduledJobDetails = null;
 
         /**
-         * Details for the new scheduled job.
+         * Provides the information used to create the scheduled job.
          *
          * @param createScheduledJobDetails the value to set
          * @return this builder instance

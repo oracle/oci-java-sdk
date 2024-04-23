@@ -15,10 +15,16 @@ public class UpdateSoftwareSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.UpdateSoftwareSourceDetails> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -80,11 +86,15 @@ public class UpdateSoftwareSourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance

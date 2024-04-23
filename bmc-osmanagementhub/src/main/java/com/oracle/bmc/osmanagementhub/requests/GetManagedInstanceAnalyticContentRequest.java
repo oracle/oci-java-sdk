@@ -16,45 +16,65 @@ public class GetManagedInstanceAnalyticContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * This compartmentId is used to list managed instances within a compartment. Or serve as an
-     * additional filter to restrict only managed instances with in certain compartment if other
-     * filter presents.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This filter returns only resources contained within the specified
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * This compartmentId is used to list managed instances within a compartment. Or serve as an
-     * additional filter to restrict only managed instances with in certain compartment if other
-     * filter presents.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This filter returns only resources contained within the specified
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID of the managed instance group for which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group. This filter returns resources associated with this group.
+     */
     private String managedInstanceGroupId;
 
-    /** The OCID of the managed instance group for which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group. This filter returns resources associated with this group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle environment. This filter returns only resource contained with the specified
+     * lifecycle environment.
+     */
     private String lifecycleEnvironmentId;
 
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle environment. This filter returns only resource contained with the specified
+     * lifecycle environment.
+     */
     public String getLifecycleEnvironmentId() {
         return lifecycleEnvironmentId;
     }
-    /** The OCID of the lifecycle stage for which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage. This resource returns resources associated with this lifecycle stage.
+     */
     private String lifecycleStageId;
 
-    /** The OCID of the lifecycle stage for which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage. This resource returns resources associated with this lifecycle stage.
+     */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
-    /** A filter to return only instances whose managed instance status matches the given status. */
+    /** A filter to return only managed instances whose status matches the status provided. */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceStatus> status;
 
-    /** A filter to return only instances whose managed instance status matches the given status. */
+    /** A filter to return only managed instances whose status matches the status provided. */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceStatus> getStatus() {
         return status;
     }
@@ -72,64 +92,163 @@ public class GetManagedInstanceAnalyticContentRequest
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** Filter instances by Location. Used when report target type is compartment or group. */
-    private com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation instanceLocation;
-
-    /** Filter instances by Location. Used when report target type is compartment or group. */
-    public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation() {
-        return instanceLocation;
-    }
     /**
-     * A filter to return instances with number of available security updates equals to the number
-     * specified.
+     * A filter to return instances that have the specified number of available security updates.
      */
     private Integer securityUpdatesAvailableEqualsTo;
 
     /**
-     * A filter to return instances with number of available security updates equals to the number
-     * specified.
+     * A filter to return instances that have the specified number of available security updates.
      */
     public Integer getSecurityUpdatesAvailableEqualsTo() {
         return securityUpdatesAvailableEqualsTo;
     }
-    /**
-     * A filter to return instances with number of available bug updates equals to the number
-     * specified.
-     */
+    /** A filter to return instances that have the specified number of available bug updates. */
     private Integer bugUpdatesAvailableEqualsTo;
 
-    /**
-     * A filter to return instances with number of available bug updates equals to the number
-     * specified.
-     */
+    /** A filter to return instances that have the specified number of available bug updates. */
     public Integer getBugUpdatesAvailableEqualsTo() {
         return bugUpdatesAvailableEqualsTo;
     }
     /**
-     * A filter to return instances with number of available security updates greater than the
-     * number specified.
+     * A filter to return instances that have more available security updates than the number
+     * specified.
      */
     private Integer securityUpdatesAvailableGreaterThan;
 
     /**
-     * A filter to return instances with number of available security updates greater than the
-     * number specified.
+     * A filter to return instances that have more available security updates than the number
+     * specified.
      */
     public Integer getSecurityUpdatesAvailableGreaterThan() {
         return securityUpdatesAvailableGreaterThan;
     }
     /**
-     * A filter to return instances with number of available bug updates greater than the number
-     * specified.
+     * A filter to return instances that have more available bug updates than the number specified.
      */
     private Integer bugUpdatesAvailableGreaterThan;
 
     /**
-     * A filter to return instances with number of available bug updates greater than the number
-     * specified.
+     * A filter to return instances that have more available bug updates than the number specified.
      */
     public Integer getBugUpdatesAvailableGreaterThan() {
         return bugUpdatesAvailableGreaterThan;
+    }
+    /** A filter to return only resources whose location matches the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation> location;
+
+    /** A filter to return only resources whose location matches the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocation() {
+        return location;
+    }
+    /** A filter to return only resources whose location does not match the given value. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            locationNotEqualTo;
+
+    /** A filter to return only resources whose location does not match the given value. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+            getLocationNotEqualTo() {
+        return locationNotEqualTo;
+    }
+    /** A filter to return only resources that match the given operating system family. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily;
+
+    /** A filter to return only resources that match the given operating system family. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> getOsFamily() {
+        return osFamily;
+    }
+    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    private Boolean isManagedByAutonomousLinux;
+
+    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
+    }
+    /** The format of the report to download. Default is CSV. */
+    private ReportFormat reportFormat;
+
+    /** The format of the report to download. Default is CSV. */
+    public enum ReportFormat implements com.oracle.bmc.http.internal.BmcEnum {
+        Csv("csv"),
+        Json("json"),
+        Xml("xml"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ReportFormat> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReportFormat v : ReportFormat.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ReportFormat(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReportFormat create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ReportFormat: " + key);
+        }
+    };
+
+    /** The format of the report to download. Default is CSV. */
+    public ReportFormat getReportFormat() {
+        return reportFormat;
+    }
+    /** The type of the report the user wants to download. Default is ALL. */
+    private ReportType reportType;
+
+    /** The type of the report the user wants to download. Default is ALL. */
+    public enum ReportType implements com.oracle.bmc.http.internal.BmcEnum {
+        Security("SECURITY"),
+        Bugfix("BUGFIX"),
+        Activity("ACTIVITY"),
+        All("ALL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ReportType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReportType v : ReportType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ReportType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReportType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ReportType: " + key);
+        }
+    };
+
+    /** The type of the report the user wants to download. Default is ALL. */
+    public ReportType getReportType() {
+        return reportType;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -152,16 +271,16 @@ public class GetManagedInstanceAnalyticContentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * This compartmentId is used to list managed instances within a compartment. Or serve as an
-         * additional filter to restrict only managed instances with in certain compartment if other
-         * filter presents.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This filter returns only resources contained within the specified
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * This compartmentId is used to list managed instances within a compartment. Or serve as an
-         * additional filter to restrict only managed instances with in certain compartment if other
-         * filter presents.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This filter returns only resources contained within the specified
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -171,11 +290,15 @@ public class GetManagedInstanceAnalyticContentRequest
             return this;
         }
 
-        /** The OCID of the managed instance group for which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group. This filter returns resources associated with this group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The OCID of the managed instance group for which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group. This filter returns resources associated with this group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -185,11 +308,17 @@ public class GetManagedInstanceAnalyticContentRequest
             return this;
         }
 
-        /** The OCID of the lifecycle environment. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle environment. This filter returns only resource contained with the
+         * specified lifecycle environment.
+         */
         private String lifecycleEnvironmentId = null;
 
         /**
-         * The OCID of the lifecycle environment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle environment. This filter returns only resource contained with the
+         * specified lifecycle environment.
          *
          * @param lifecycleEnvironmentId the value to set
          * @return this builder instance
@@ -199,11 +328,17 @@ public class GetManagedInstanceAnalyticContentRequest
             return this;
         }
 
-        /** The OCID of the lifecycle stage for which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage. This resource returns resources associated with this lifecycle
+         * stage.
+         */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage for which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage. This resource returns resources associated with this lifecycle
+         * stage.
          *
          * @param lifecycleStageId the value to set
          * @return this builder instance
@@ -213,14 +348,12 @@ public class GetManagedInstanceAnalyticContentRequest
             return this;
         }
 
-        /**
-         * A filter to return only instances whose managed instance status matches the given status.
-         */
+        /** A filter to return only managed instances whose status matches the status provided. */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceStatus> status =
                 null;
 
         /**
-         * A filter to return only instances whose managed instance status matches the given status.
+         * A filter to return only managed instances whose status matches the status provided.
          *
          * @param status the value to set
          * @return this builder instance
@@ -232,8 +365,8 @@ public class GetManagedInstanceAnalyticContentRequest
         }
 
         /**
-         * Singular setter. A filter to return only instances whose managed instance status matches
-         * the given status.
+         * Singular setter. A filter to return only managed instances whose status matches the
+         * status provided.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -280,31 +413,15 @@ public class GetManagedInstanceAnalyticContentRequest
             return this;
         }
 
-        /** Filter instances by Location. Used when report target type is compartment or group. */
-        private com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation instanceLocation =
-                null;
-
         /**
-         * Filter instances by Location. Used when report target type is compartment or group.
-         *
-         * @param instanceLocation the value to set
-         * @return this builder instance
-         */
-        public Builder instanceLocation(
-                com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation instanceLocation) {
-            this.instanceLocation = instanceLocation;
-            return this;
-        }
-
-        /**
-         * A filter to return instances with number of available security updates equals to the
-         * number specified.
+         * A filter to return instances that have the specified number of available security
+         * updates.
          */
         private Integer securityUpdatesAvailableEqualsTo = null;
 
         /**
-         * A filter to return instances with number of available security updates equals to the
-         * number specified.
+         * A filter to return instances that have the specified number of available security
+         * updates.
          *
          * @param securityUpdatesAvailableEqualsTo the value to set
          * @return this builder instance
@@ -314,15 +431,11 @@ public class GetManagedInstanceAnalyticContentRequest
             return this;
         }
 
-        /**
-         * A filter to return instances with number of available bug updates equals to the number
-         * specified.
-         */
+        /** A filter to return instances that have the specified number of available bug updates. */
         private Integer bugUpdatesAvailableEqualsTo = null;
 
         /**
-         * A filter to return instances with number of available bug updates equals to the number
-         * specified.
+         * A filter to return instances that have the specified number of available bug updates.
          *
          * @param bugUpdatesAvailableEqualsTo the value to set
          * @return this builder instance
@@ -333,14 +446,14 @@ public class GetManagedInstanceAnalyticContentRequest
         }
 
         /**
-         * A filter to return instances with number of available security updates greater than the
-         * number specified.
+         * A filter to return instances that have more available security updates than the number
+         * specified.
          */
         private Integer securityUpdatesAvailableGreaterThan = null;
 
         /**
-         * A filter to return instances with number of available security updates greater than the
-         * number specified.
+         * A filter to return instances that have more available security updates than the number
+         * specified.
          *
          * @param securityUpdatesAvailableGreaterThan the value to set
          * @return this builder instance
@@ -352,13 +465,13 @@ public class GetManagedInstanceAnalyticContentRequest
         }
 
         /**
-         * A filter to return instances with number of available bug updates greater than the number
+         * A filter to return instances that have more available bug updates than the number
          * specified.
          */
         private Integer bugUpdatesAvailableGreaterThan = null;
 
         /**
-         * A filter to return instances with number of available bug updates greater than the number
+         * A filter to return instances that have more available bug updates than the number
          * specified.
          *
          * @param bugUpdatesAvailableGreaterThan the value to set
@@ -366,6 +479,130 @@ public class GetManagedInstanceAnalyticContentRequest
          */
         public Builder bugUpdatesAvailableGreaterThan(Integer bugUpdatesAvailableGreaterThan) {
             this.bugUpdatesAvailableGreaterThan = bugUpdatesAvailableGreaterThan;
+            return this;
+        }
+
+        /** A filter to return only resources whose location matches the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                location = null;
+
+        /**
+         * A filter to return only resources whose location matches the given value.
+         *
+         * @param location the value to set
+         * @return this builder instance
+         */
+        public Builder location(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        location) {
+            this.location = location;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location matches the given
+         * value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder location(ManagedInstanceLocation singularValue) {
+            return this.location(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources whose location does not match the given value. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                locationNotEqualTo = null;
+
+        /**
+         * A filter to return only resources whose location does not match the given value.
+         *
+         * @param locationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
+                        locationNotEqualTo) {
+            this.locationNotEqualTo = locationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources whose location does not match the
+         * given value.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder locationNotEqualTo(ManagedInstanceLocation singularValue) {
+            return this.locationNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
+        /** A filter to return only resources that match the given operating system family. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily = null;
+
+        /**
+         * A filter to return only resources that match the given operating system family.
+         *
+         * @param osFamily the value to set
+         * @return this builder instance
+         */
+        public Builder osFamily(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.OsFamily> osFamily) {
+            this.osFamily = osFamily;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only resources that match the given operating system
+         * family.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder osFamily(OsFamily singularValue) {
+            return this.osFamily(java.util.Arrays.asList(singularValue));
+        }
+
+        /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+        private Boolean isManagedByAutonomousLinux = null;
+
+        /**
+         * Indicates whether to list only resources managed by the Autonomous Linux service.
+         *
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder instance
+         */
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            return this;
+        }
+
+        /** The format of the report to download. Default is CSV. */
+        private ReportFormat reportFormat = null;
+
+        /**
+         * The format of the report to download. Default is CSV.
+         *
+         * @param reportFormat the value to set
+         * @return this builder instance
+         */
+        public Builder reportFormat(ReportFormat reportFormat) {
+            this.reportFormat = reportFormat;
+            return this;
+        }
+
+        /** The type of the report the user wants to download. Default is ALL. */
+        private ReportType reportType = null;
+
+        /**
+         * The type of the report the user wants to download. Default is ALL.
+         *
+         * @param reportType the value to set
+         * @return this builder instance
+         */
+        public Builder reportType(ReportType reportType) {
+            this.reportType = reportType;
             return this;
         }
 
@@ -424,11 +661,16 @@ public class GetManagedInstanceAnalyticContentRequest
             status(o.getStatus());
             displayName(o.getDisplayName());
             displayNameContains(o.getDisplayNameContains());
-            instanceLocation(o.getInstanceLocation());
             securityUpdatesAvailableEqualsTo(o.getSecurityUpdatesAvailableEqualsTo());
             bugUpdatesAvailableEqualsTo(o.getBugUpdatesAvailableEqualsTo());
             securityUpdatesAvailableGreaterThan(o.getSecurityUpdatesAvailableGreaterThan());
             bugUpdatesAvailableGreaterThan(o.getBugUpdatesAvailableGreaterThan());
+            location(o.getLocation());
+            locationNotEqualTo(o.getLocationNotEqualTo());
+            osFamily(o.getOsFamily());
+            isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
+            reportFormat(o.getReportFormat());
+            reportType(o.getReportType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -474,17 +716,24 @@ public class GetManagedInstanceAnalyticContentRequest
             request.status = status;
             request.displayName = displayName;
             request.displayNameContains = displayNameContains;
-            request.instanceLocation = instanceLocation;
             request.securityUpdatesAvailableEqualsTo = securityUpdatesAvailableEqualsTo;
             request.bugUpdatesAvailableEqualsTo = bugUpdatesAvailableEqualsTo;
             request.securityUpdatesAvailableGreaterThan = securityUpdatesAvailableGreaterThan;
             request.bugUpdatesAvailableGreaterThan = bugUpdatesAvailableGreaterThan;
+            request.location = location;
+            request.locationNotEqualTo = locationNotEqualTo;
+            request.osFamily = osFamily;
+            request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            request.reportFormat = reportFormat;
+            request.reportType = reportType;
             request.opcRequestId = opcRequestId;
             return request;
             // new GetManagedInstanceAnalyticContentRequest(compartmentId, managedInstanceGroupId,
             // lifecycleEnvironmentId, lifecycleStageId, status, displayName, displayNameContains,
-            // instanceLocation, securityUpdatesAvailableEqualsTo, bugUpdatesAvailableEqualsTo,
-            // securityUpdatesAvailableGreaterThan, bugUpdatesAvailableGreaterThan, opcRequestId);
+            // securityUpdatesAvailableEqualsTo, bugUpdatesAvailableEqualsTo,
+            // securityUpdatesAvailableGreaterThan, bugUpdatesAvailableGreaterThan, location,
+            // locationNotEqualTo, osFamily, isManagedByAutonomousLinux, reportFormat, reportType,
+            // opcRequestId);
         }
     }
 
@@ -502,11 +751,16 @@ public class GetManagedInstanceAnalyticContentRequest
                 .status(status)
                 .displayName(displayName)
                 .displayNameContains(displayNameContains)
-                .instanceLocation(instanceLocation)
                 .securityUpdatesAvailableEqualsTo(securityUpdatesAvailableEqualsTo)
                 .bugUpdatesAvailableEqualsTo(bugUpdatesAvailableEqualsTo)
                 .securityUpdatesAvailableGreaterThan(securityUpdatesAvailableGreaterThan)
                 .bugUpdatesAvailableGreaterThan(bugUpdatesAvailableGreaterThan)
+                .location(location)
+                .locationNotEqualTo(locationNotEqualTo)
+                .osFamily(osFamily)
+                .isManagedByAutonomousLinux(isManagedByAutonomousLinux)
+                .reportFormat(reportFormat)
+                .reportType(reportType)
                 .opcRequestId(opcRequestId);
     }
 
@@ -531,7 +785,6 @@ public class GetManagedInstanceAnalyticContentRequest
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
-        sb.append(",instanceLocation=").append(String.valueOf(this.instanceLocation));
         sb.append(",securityUpdatesAvailableEqualsTo=")
                 .append(String.valueOf(this.securityUpdatesAvailableEqualsTo));
         sb.append(",bugUpdatesAvailableEqualsTo=")
@@ -540,6 +793,13 @@ public class GetManagedInstanceAnalyticContentRequest
                 .append(String.valueOf(this.securityUpdatesAvailableGreaterThan));
         sb.append(",bugUpdatesAvailableGreaterThan=")
                 .append(String.valueOf(this.bugUpdatesAvailableGreaterThan));
+        sb.append(",location=").append(String.valueOf(this.location));
+        sb.append(",locationNotEqualTo=").append(String.valueOf(this.locationNotEqualTo));
+        sb.append(",osFamily=").append(String.valueOf(this.osFamily));
+        sb.append(",isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(",reportFormat=").append(String.valueOf(this.reportFormat));
+        sb.append(",reportType=").append(String.valueOf(this.reportType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -566,7 +826,6 @@ public class GetManagedInstanceAnalyticContentRequest
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
-                && java.util.Objects.equals(this.instanceLocation, other.instanceLocation)
                 && java.util.Objects.equals(
                         this.securityUpdatesAvailableEqualsTo,
                         other.securityUpdatesAvailableEqualsTo)
@@ -577,6 +836,13 @@ public class GetManagedInstanceAnalyticContentRequest
                         other.securityUpdatesAvailableGreaterThan)
                 && java.util.Objects.equals(
                         this.bugUpdatesAvailableGreaterThan, other.bugUpdatesAvailableGreaterThan)
+                && java.util.Objects.equals(this.location, other.location)
+                && java.util.Objects.equals(this.locationNotEqualTo, other.locationNotEqualTo)
+                && java.util.Objects.equals(this.osFamily, other.osFamily)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.reportFormat, other.reportFormat)
+                && java.util.Objects.equals(this.reportType, other.reportType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -609,9 +875,6 @@ public class GetManagedInstanceAnalyticContentRequest
                                 : this.displayNameContains.hashCode());
         result =
                 (result * PRIME)
-                        + (this.instanceLocation == null ? 43 : this.instanceLocation.hashCode());
-        result =
-                (result * PRIME)
                         + (this.securityUpdatesAvailableEqualsTo == null
                                 ? 43
                                 : this.securityUpdatesAvailableEqualsTo.hashCode());
@@ -630,6 +893,20 @@ public class GetManagedInstanceAnalyticContentRequest
                         + (this.bugUpdatesAvailableGreaterThan == null
                                 ? 43
                                 : this.bugUpdatesAvailableGreaterThan.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.locationNotEqualTo == null
+                                ? 43
+                                : this.locationNotEqualTo.hashCode());
+        result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
+        result = (result * PRIME) + (this.reportFormat == null ? 43 : this.reportFormat.hashCode());
+        result = (result * PRIME) + (this.reportType == null ? 43 : this.reportType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

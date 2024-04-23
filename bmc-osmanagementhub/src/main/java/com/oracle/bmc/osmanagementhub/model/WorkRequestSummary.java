@@ -34,7 +34,9 @@ public final class WorkRequestSummary
         "childrenId",
         "compartmentId",
         "percentComplete",
-        "timeCreated"
+        "timeCreated",
+        "timeScheduled",
+        "isManagedByAutonomousLinux"
     })
     public WorkRequestSummary(
             WorkRequestOperationType operationType,
@@ -47,7 +49,9 @@ public final class WorkRequestSummary
             java.util.List<String> childrenId,
             String compartmentId,
             Float percentComplete,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.Date timeScheduled,
+            Boolean isManagedByAutonomousLinux) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -60,6 +64,8 @@ public final class WorkRequestSummary
         this.compartmentId = compartmentId;
         this.percentComplete = percentComplete;
         this.timeCreated = timeCreated;
+        this.timeScheduled = timeScheduled;
+        this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -94,12 +100,16 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The OCID of the work request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
          *
          * @param id the value to set
          * @return this builder
@@ -154,12 +164,16 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The OCID of the parent work request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent work request, if there is any.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The OCID of the parent work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent work request, if there is any.
          *
          * @param parentId the value to set
          * @return this builder
@@ -169,12 +183,18 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("parentId");
             return this;
         }
-        /** The list of OCIDs for the child work requests. */
+        /**
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * child work requests.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
         private java.util.List<String> childrenId;
 
         /**
-         * The list of OCIDs for the child work requests.
+         * The list of
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+         * child work requests.
          *
          * @param childrenId the value to set
          * @return this builder
@@ -185,21 +205,21 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the work request. Work requests should be scoped to the
+         * same compartment as the resource it affects. If the work request affects multiple
+         * resources the different compartments, the services selects the compartment of the primary
+         * resource.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request affects multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the work request. Work requests should be scoped to the
+         * same compartment as the resource it affects. If the work request affects multiple
+         * resources the different compartments, the services selects the compartment of the primary
+         * resource.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -243,6 +263,40 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * The scheduled date and time to retry the work request (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
+        private java.util.Date timeScheduled;
+
+        /**
+         * The scheduled date and time to retry the work request (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         * @param timeScheduled the value to set
+         * @return this builder
+         */
+        public Builder timeScheduled(java.util.Date timeScheduled) {
+            this.timeScheduled = timeScheduled;
+            this.__explicitlySet__.add("timeScheduled");
+            return this;
+        }
+        /** Indicates whether this work request is managed by Autonomous Linux */
+        @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+        private Boolean isManagedByAutonomousLinux;
+
+        /**
+         * Indicates whether this work request is managed by Autonomous Linux
+         *
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder
+         */
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            this.__explicitlySet__.add("isManagedByAutonomousLinux");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -260,7 +314,9 @@ public final class WorkRequestSummary
                             this.childrenId,
                             this.compartmentId,
                             this.percentComplete,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.timeScheduled,
+                            this.isManagedByAutonomousLinux);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -302,6 +358,12 @@ public final class WorkRequestSummary
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("timeScheduled")) {
+                this.timeScheduled(model.getTimeScheduled());
+            }
+            if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
+                this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
             return this;
         }
     }
@@ -341,12 +403,16 @@ public final class WorkRequestSummary
         return status;
     }
 
-    /** The OCID of the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
      *
      * @return the value
      */
@@ -393,12 +459,16 @@ public final class WorkRequestSummary
         return message;
     }
 
-    /** The OCID of the parent work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent work request, if there is any.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The OCID of the parent work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent work request, if there is any.
      *
      * @return the value
      */
@@ -406,12 +476,18 @@ public final class WorkRequestSummary
         return parentId;
     }
 
-    /** The list of OCIDs for the child work requests. */
+    /**
+     * The list of
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * child work requests.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
     private final java.util.List<String> childrenId;
 
     /**
-     * The list of OCIDs for the child work requests.
+     * The list of
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * child work requests.
      *
      * @return the value
      */
@@ -420,19 +496,19 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the work request. Work requests should be scoped to the same
+     * compartment as the resource it affects. If the work request affects multiple resources the
+     * different compartments, the services selects the compartment of the primary resource.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the work request. Work requests should be scoped to the same
+     * compartment as the resource it affects. If the work request affects multiple resources the
+     * different compartments, the services selects the compartment of the primary resource.
      *
      * @return the value
      */
@@ -470,6 +546,36 @@ public final class WorkRequestSummary
         return timeCreated;
     }
 
+    /**
+     * The scheduled date and time to retry the work request (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
+    private final java.util.Date timeScheduled;
+
+    /**
+     * The scheduled date and time to retry the work request (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeScheduled() {
+        return timeScheduled;
+    }
+
+    /** Indicates whether this work request is managed by Autonomous Linux */
+    @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+    private final Boolean isManagedByAutonomousLinux;
+
+    /**
+     * Indicates whether this work request is managed by Autonomous Linux
+     *
+     * @return the value
+     */
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -496,6 +602,9 @@ public final class WorkRequestSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", percentComplete=").append(String.valueOf(this.percentComplete));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
+        sb.append(", isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(")");
         return sb.toString();
     }
@@ -521,6 +630,9 @@ public final class WorkRequestSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.percentComplete, other.percentComplete)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && super.equals(other);
     }
 
@@ -545,6 +657,14 @@ public final class WorkRequestSummary
                 (result * PRIME)
                         + (this.percentComplete == null ? 43 : this.percentComplete.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduled == null ? 43 : this.timeScheduled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

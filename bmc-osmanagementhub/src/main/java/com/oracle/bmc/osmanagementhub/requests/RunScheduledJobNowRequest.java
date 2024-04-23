@@ -13,10 +13,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class RunScheduledJobNowRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the scheduled job. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the scheduled job.
+     */
     private String scheduledJobId;
 
-    /** The OCID of the scheduled job. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the scheduled job.
+     */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
@@ -76,11 +82,15 @@ public class RunScheduledJobNowRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the scheduled job. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the scheduled job.
+         */
         private String scheduledJobId = null;
 
         /**
-         * The OCID of the scheduled job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the scheduled job.
          *
          * @param scheduledJobId the value to set
          * @return this builder instance

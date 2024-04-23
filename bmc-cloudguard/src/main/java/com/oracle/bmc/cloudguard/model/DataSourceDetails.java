@@ -23,6 +23,9 @@ package com.oracle.bmc.cloudguard.model;
         defaultImpl = DataSourceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ScheduledQueryDataSourceObjDetails.class,
+            name = "SCHEDULEDQUERY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = LoggingQueryDataSourceDetails.class,
             name = "LOGGINGQUERY")
 })

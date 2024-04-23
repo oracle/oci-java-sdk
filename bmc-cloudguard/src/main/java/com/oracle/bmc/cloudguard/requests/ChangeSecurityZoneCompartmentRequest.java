@@ -16,18 +16,18 @@ public class ChangeSecurityZoneCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails> {
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     private String securityZoneId;
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     public String getSecurityZoneId() {
         return securityZoneId;
     }
-    /** The compartment to which you want to move the security zone. */
+    /** The compartment to which you want to move the security zone */
     private com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails
             changeSecurityZoneCompartmentDetails;
 
-    /** The compartment to which you want to move the security zone. */
+    /** The compartment to which you want to move the security zone */
     public com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails
             getChangeSecurityZoneCompartmentDetails() {
         return changeSecurityZoneCompartmentDetails;
@@ -94,11 +94,11 @@ public class ChangeSecurityZoneCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone ({@code SecurityZone}) */
+        /** The unique identifier of the security zone ({@code SecurityZone} resource). */
         private String securityZoneId = null;
 
         /**
-         * The unique identifier of the security zone ({@code SecurityZone})
+         * The unique identifier of the security zone ({@code SecurityZone} resource).
          *
          * @param securityZoneId the value to set
          * @return this builder instance
@@ -108,12 +108,12 @@ public class ChangeSecurityZoneCompartmentRequest
             return this;
         }
 
-        /** The compartment to which you want to move the security zone. */
+        /** The compartment to which you want to move the security zone */
         private com.oracle.bmc.cloudguard.model.ChangeSecurityZoneCompartmentDetails
                 changeSecurityZoneCompartmentDetails = null;
 
         /**
-         * The compartment to which you want to move the security zone.
+         * The compartment to which you want to move the security zone
          *
          * @param changeSecurityZoneCompartmentDetails the value to set
          * @return this builder instance

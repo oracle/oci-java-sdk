@@ -4,13 +4,14 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible registration profile types. */
+/** Registration profile type. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum ProfileType implements com.oracle.bmc.http.internal.BmcEnum {
     Softwaresource("SOFTWARESOURCE"),
     Group("GROUP"),
     Lifecycle("LIFECYCLE"),
     Station("STATION"),
+    WindowsStandalone("WINDOWS_STANDALONE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

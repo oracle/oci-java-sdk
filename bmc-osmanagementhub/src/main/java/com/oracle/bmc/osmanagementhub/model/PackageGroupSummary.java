@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Yum/DNF package group that associated with a software source. <br>
+ * The yum or DNF package group that is associated with a software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -85,12 +85,12 @@ public final class PackageGroupSummary
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** description of the package group. */
+        /** Description of the package group. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * description of the package group.
+         * Description of the package group.
          *
          * @param description the value to set
          * @return this builder
@@ -100,12 +100,12 @@ public final class PackageGroupSummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Indicates if this package group is visible by users. */
+        /** Indicates if this package group is visible to users. */
         @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
         private Boolean isUserVisible;
 
         /**
-         * Indicates if this package group is visible by users.
+         * Indicates if this package group is visible to users.
          *
          * @param isUserVisible the value to set
          * @return this builder
@@ -130,12 +130,12 @@ public final class PackageGroupSummary
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** the IDs of the package group's repositories. */
+        /** The repository IDs of the package group. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositories")
         private java.util.List<String> repositories;
 
         /**
-         * the IDs of the package group's repositories.
+         * The repository IDs of the package group.
          *
          * @param repositories the value to set
          * @return this builder
@@ -261,12 +261,12 @@ public final class PackageGroupSummary
         return name;
     }
 
-    /** description of the package group. */
+    /** Description of the package group. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * description of the package group.
+     * Description of the package group.
      *
      * @return the value
      */
@@ -274,12 +274,12 @@ public final class PackageGroupSummary
         return description;
     }
 
-    /** Indicates if this package group is visible by users. */
+    /** Indicates if this package group is visible to users. */
     @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
     private final Boolean isUserVisible;
 
     /**
-     * Indicates if this package group is visible by users.
+     * Indicates if this package group is visible to users.
      *
      * @return the value
      */
@@ -300,12 +300,12 @@ public final class PackageGroupSummary
         return isDefault;
     }
 
-    /** the IDs of the package group's repositories. */
+    /** The repository IDs of the package group. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositories")
     private final java.util.List<String> repositories;
 
     /**
-     * the IDs of the package group's repositories.
+     * The repository IDs of the package group.
      *
      * @return the value
      */

@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible package classification types. */
+/** Type of software update. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum ClassificationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Security("SECURITY"),

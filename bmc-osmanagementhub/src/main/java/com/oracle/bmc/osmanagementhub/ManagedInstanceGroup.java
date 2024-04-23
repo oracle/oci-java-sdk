@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -68,9 +67,8 @@ public interface ManagedInstanceGroup extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Adds managed instances to the specified managed instance group. After the managed instances
-     * have been added, then operations can be performed on the managed instance group which will
-     * then apply to all managed instances in the group.
+     * Adds managed instances to the specified managed instance group. After adding instances to the
+     * group, any operation applied to the group will be applied to all instances in the group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -89,7 +87,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
 
     /**
      * Attaches software sources to the specified managed instance group. The software sources must
-     * be compatible with the content for the managed instance group.
+     * be compatible with the type of instances in the group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -104,6 +102,26 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      */
     AttachSoftwareSourcesToManagedInstanceGroupResponse attachSoftwareSourcesToManagedInstanceGroup(
             AttachSoftwareSourcesToManagedInstanceGroupRequest request);
+
+    /**
+     * Moves the specified managed instance group to a different compartment within the same
+     * tenancy. For information about moving resources between compartments, see [Moving Resources
+     * to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagedInstanceGroupCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeManagedInstanceGroupCompartment API.
+     */
+    ChangeManagedInstanceGroupCompartmentResponse changeManagedInstanceGroupCompartment(
+            ChangeManagedInstanceGroupCompartmentRequest request);
 
     /**
      * Creates a new managed instance group.
@@ -123,7 +141,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
             CreateManagedInstanceGroupRequest request);
 
     /**
-     * Deletes a specified managed instance group.
+     * Deletes the specified managed instance group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -158,7 +176,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
                     DetachManagedInstancesFromManagedInstanceGroupRequest request);
 
     /**
-     * Detaches software sources from a group.
+     * Detaches the specified software sources from a managed instance group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -176,9 +194,11 @@ public interface ManagedInstanceGroup extends AutoCloseable {
                     DetachSoftwareSourcesFromManagedInstanceGroupRequest request);
 
     /**
-     * Disables a module stream on a managed instance group. After the stream is disabled, it is no
-     * longer possible to install the profiles that are contained by the stream. All installed
-     * profiles must be removed prior to disabling a module stream.
+     * Disables a module stream on a managed instance group. After the stream is disabled, you can
+     * no longer install the profiles contained by the stream. Before removing the stream, you must
+     * remove all installed profiles for the stream by using the {@link
+     * #removeModuleStreamProfileFromManagedInstanceGroup(RemoveModuleStreamProfileFromManagedInstanceGroupRequest)
+     * removeModuleStreamProfileFromManagedInstanceGroup} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -195,10 +215,12 @@ public interface ManagedInstanceGroup extends AutoCloseable {
             DisableModuleStreamOnManagedInstanceGroupRequest request);
 
     /**
-     * Enables a module stream on a managed instance group. After the stream is enabled, it is
-     * possible to install the profiles that are contained by the stream. Enabling a stream that is
-     * already enabled will succeed. Attempting to enable a different stream for a module that
-     * already has a stream enabled results in an error.
+     * Enables a module stream on a managed instance group. After the stream is enabled, you can
+     * install a module stream profile. Enabling a stream that is already enabled will succeed.
+     * Enabling a different stream for a module that already has a stream enabled results in an
+     * error. Instead, use the {@link
+     * #switchModuleStreamOnManagedInstanceGroup(SwitchModuleStreamOnManagedInstanceGroupRequest)
+     * switchModuleStreamOnManagedInstanceGroup} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -231,9 +253,8 @@ public interface ManagedInstanceGroup extends AutoCloseable {
     GetManagedInstanceGroupResponse getManagedInstanceGroup(GetManagedInstanceGroupRequest request);
 
     /**
-     * Installs a profile for an module stream. The stream must be enabled before a profile can be
-     * installed. If a module stream defines multiple profiles, each one can be installed
-     * independently.
+     * Installs a profile for an enabled module stream. If a module stream defines multiple
+     * profiles, you can install each one independently.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -251,8 +272,8 @@ public interface ManagedInstanceGroup extends AutoCloseable {
                     InstallModuleStreamProfileOnManagedInstanceGroupRequest request);
 
     /**
-     * Installs package(s) on each managed instance in a managed instance group. The package must be
-     * compatible with the instances in the managed instance group.
+     * Installs the specified packages on each managed instance in a managed instance group. The
+     * package must be compatible with the instances in the group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -269,8 +290,25 @@ public interface ManagedInstanceGroup extends AutoCloseable {
             InstallPackagesOnManagedInstanceGroupRequest request);
 
     /**
-     * Lists available modules that for the specified managed instance group. Filter the list
-     * against a variety of criteria including but not limited to its name.
+     * Installs Windows updates on each managed instance in the managed instance group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/InstallWindowsUpdatesOnManagedInstanceGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     InstallWindowsUpdatesOnManagedInstanceGroup API.
+     */
+    InstallWindowsUpdatesOnManagedInstanceGroupResponse installWindowsUpdatesOnManagedInstanceGroup(
+            InstallWindowsUpdatesOnManagedInstanceGroupRequest request);
+
+    /**
+     * List modules that are available for installation on the specified managed instance group.
+     * Filter the list against a variety of criteria including but not limited to module name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -306,7 +344,8 @@ public interface ManagedInstanceGroup extends AutoCloseable {
 
     /**
      * Lists available software sources for a specified managed instance group. Filter the list
-     * against a variety of criteria including but not limited to its name.
+     * against a variety of criteria including but not limited to the software source name. The
+     * results list only software sources that have not already been added to the group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -377,8 +416,9 @@ public interface ManagedInstanceGroup extends AutoCloseable {
 
     /**
      * Lists managed instance groups that match the specified compartment or managed instance group
-     * OCID. Filter the list against a variety of criteria including but not limited to its name,
-     * status, architecture, and OS family.
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against a variety of criteria including but not limited to name, status,
+     * architecture, and OS family.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -395,55 +435,15 @@ public interface ManagedInstanceGroup extends AutoCloseable {
             ListManagedInstanceGroupsRequest request);
 
     /**
-     * Perform an operation involving modules, streams, and profiles on a managed instance group.
-     * Each operation may enable or disable an arbitrary amount of module streams, and install or
-     * remove an arbitrary number of module stream profiles. When the operation is complete, the
-     * state of the modules, streams, and profiles on the managed instance group will match the
-     * state indicated in the operation.
-     *
-     * <p>Each module stream specified in the list of module streams to enable will be in the
-     * \"ENABLED\" state upon completion of the operation. If there was already a stream of that
-     * module enabled, any work required to switch from the current stream to the new stream is
-     * performed implicitly.
-     *
-     * <p>Each module stream specified in the list of module streams to disable will be in the
-     * \"DISABLED\" state upon completion of the operation. Any profiles that are installed for the
-     * module stream will be removed as part of the operation.
-     *
-     * <p>Each module stream profile specified in the list of profiles to install will be in the
-     * \"INSTALLED\" state upon completion of the operation, indicating that any packages that are
-     * part of the profile are installed on the managed instance. If the module stream containing
-     * the profile is not enabled, it will be enabled as part of the operation. There is an
-     * exception when attempting to install a stream of a profile when another stream of the same
-     * module is enabled. It is an error to attempt to install a profile of another module stream,
-     * unless enabling the new module stream is explicitly included in this operation.
-     *
-     * <p>Each module stream profile specified in the list of profiles to remove will be in the
-     * \"AVAILABLE\" state upon completion of the operation. The status of packages within the
-     * profile after the operation is complete is defined by the package manager on the managed
-     * instance group.
-     *
-     * <p>Operations that contain one or more elements that are not allowed are rejected.
-     *
-     * <p>The result of this request is a work request object. The returned work request is the
-     * parent of a structure of other work requests. Taken as a whole, this structure indicates the
-     * entire set of work to be performed to complete the operation.
-     *
-     * <p>This interface can also be used to perform a dry run of the operation rather than
-     * committing it to a managed instance group. If a dry run is requested, the OS Management Hub
-     * service will evaluate the operation against the current module, stream, and profile state on
-     * the managed instance. It will calculate the impact of the operation on all modules, streams,
-     * and profiles on the managed instance, including those that are implicitly impacted by the
-     * operation.
-     *
-     * <p>The work request resulting from a dry run behaves differently than a work request
-     * resulting from a committable operation. Dry run work requests are always singletons and never
-     * have children. The impact of the operation is returned using the log and error facilities of
-     * work requests. The impact of operations that are allowed by the OS Management Hub service are
-     * communicated as one or more work request log entries. Operations that are not allowed by the
-     * OS Management Hub service are communicated as one or more work request error entries. Each
-     * entry, for either logs or errors, contains a structured message containing the results of one
-     * or more operations.
+     * Enables or disables module streams and installs or removes module stream profiles. Once
+     * complete, the state of the modules, streams, and profiles will match the state indicated in
+     * the operation. See {@link
+     * #manageModuleStreamsOnManagedInstanceGroupDetails(ManageModuleStreamsOnManagedInstanceGroupDetailsRequest)
+     * manageModuleStreamsOnManagedInstanceGroupDetails} for more information. You can preform this
+     * operation as a dry run. For a dry run, the service evaluates the operation against the
+     * current module, stream, and profile state on the managed instance, but does not commit the
+     * changes. Instead, the service returns work request log or error entries indicating the impact
+     * of the operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -460,9 +460,9 @@ public interface ManagedInstanceGroup extends AutoCloseable {
             ManageModuleStreamsOnManagedInstanceGroupRequest request);
 
     /**
-     * Removes a profile for a module stream that is installed on a managed instance group. If a
-     * module stream is provided, rather than a fully qualified profile, all profiles that have been
-     * installed for the module stream will be removed.
+     * Removes a profile for a module stream that is installed on a managed instance group.
+     * Providing the module stream name (without specifying a profile name) removes all profiles
+     * that have been installed for the module stream.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -480,7 +480,7 @@ public interface ManagedInstanceGroup extends AutoCloseable {
                     RemoveModuleStreamProfileFromManagedInstanceGroupRequest request);
 
     /**
-     * Removes package(s) from each managed instance in a specified managed instance group.
+     * Removes the specified packages from each managed instance in a managed instance group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -495,6 +495,25 @@ public interface ManagedInstanceGroup extends AutoCloseable {
      */
     RemovePackagesFromManagedInstanceGroupResponse removePackagesFromManagedInstanceGroup(
             RemovePackagesFromManagedInstanceGroupRequest request);
+
+    /**
+     * Enables a new stream for a module that already has a stream enabled. If any profiles or
+     * packages from the original module are installed, switching to a new stream will remove the
+     * existing packages and install their counterparts in the new stream.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/SwitchModuleStreamOnManagedInstanceGroupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SwitchModuleStreamOnManagedInstanceGroup API.
+     */
+    SwitchModuleStreamOnManagedInstanceGroupResponse switchModuleStreamOnManagedInstanceGroup(
+            SwitchModuleStreamOnManagedInstanceGroupRequest request);
 
     /**
      * Updates all packages on each managed instance in the specified managed instance group.

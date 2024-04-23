@@ -15,10 +15,10 @@ public class CreateTargetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateTargetDetails> {
 
-    /** Details for the new Target. */
+    /** Contains generic target information which is required for all target types */
     private com.oracle.bmc.cloudguard.model.CreateTargetDetails createTargetDetails;
 
-    /** Details for the new Target. */
+    /** Contains generic target information which is required for all target types */
     public com.oracle.bmc.cloudguard.model.CreateTargetDetails getCreateTargetDetails() {
         return createTargetDetails;
     }
@@ -66,11 +66,11 @@ public class CreateTargetRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new Target. */
+        /** Contains generic target information which is required for all target types */
         private com.oracle.bmc.cloudguard.model.CreateTargetDetails createTargetDetails = null;
 
         /**
-         * Details for the new Target.
+         * Contains generic target information which is required for all target types
          *
          * @param createTargetDetails the value to set
          * @return this builder instance

@@ -16,32 +16,32 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of TargetDetectorRecipe */
+    /** OCID of the target detector recipe. */
     private String targetDetectorRecipeId;
 
-    /** OCID of TargetDetectorRecipe */
+    /** OCID of the target detector recipe. */
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
-    /** The id of DetectorRule */
+    /** The unique identifier of the detector rule. */
     private String detectorRuleId;
 
-    /** The id of DetectorRule */
+    /** The unique identifier of the detector rule. */
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
-    /** The details to be updated for DetectorRule. */
+    /** The details to be updated for the detector rule */
     private com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails
             updateTargetDetectorRecipeDetectorRuleDetails;
 
-    /** The details to be updated for DetectorRule. */
+    /** The details to be updated for the detector rule */
     public com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails
             getUpdateTargetDetectorRecipeDetectorRuleDetails() {
         return updateTargetDetectorRecipeDetectorRuleDetails;
@@ -90,11 +90,11 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -104,11 +104,11 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** OCID of TargetDetectorRecipe */
+        /** OCID of the target detector recipe. */
         private String targetDetectorRecipeId = null;
 
         /**
-         * OCID of TargetDetectorRecipe
+         * OCID of the target detector recipe.
          *
          * @param targetDetectorRecipeId the value to set
          * @return this builder instance
@@ -118,11 +118,11 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** The id of DetectorRule */
+        /** The unique identifier of the detector rule. */
         private String detectorRuleId = null;
 
         /**
-         * The id of DetectorRule
+         * The unique identifier of the detector rule.
          *
          * @param detectorRuleId the value to set
          * @return this builder instance
@@ -132,12 +132,12 @@ public class UpdateTargetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** The details to be updated for DetectorRule. */
+        /** The details to be updated for the detector rule */
         private com.oracle.bmc.cloudguard.model.UpdateTargetDetectorRecipeDetectorRuleDetails
                 updateTargetDetectorRecipeDetectorRuleDetails = null;
 
         /**
-         * The details to be updated for DetectorRule.
+         * The details to be updated for the detector rule
          *
          * @param updateTargetDetectorRecipeDetectorRuleDetails the value to set
          * @return this builder instance

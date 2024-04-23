@@ -29,20 +29,23 @@ public final class InstanceReservationConfigDetails
         "instanceShapeConfig",
         "faultDomain",
         "clusterConfig",
-        "reservedCount"
+        "reservedCount",
+        "clusterPlacementGroupId"
     })
     public InstanceReservationConfigDetails(
             String instanceShape,
             InstanceReservationShapeConfigDetails instanceShapeConfig,
             String faultDomain,
             ClusterConfigDetails clusterConfig,
-            Long reservedCount) {
+            Long reservedCount,
+            String clusterPlacementGroupId) {
         super();
         this.instanceShape = instanceShape;
         this.instanceShapeConfig = instanceShapeConfig;
         this.faultDomain = faultDomain;
         this.clusterConfig = clusterConfig;
         this.reservedCount = reservedCount;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -143,6 +146,25 @@ public final class InstanceReservationConfigDetails
             this.__explicitlySet__.add("reservedCount");
             return this;
         }
+        /**
+         * The OCID of the cluster placement group for this instance reservation capacity
+         * configuration.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group for this instance reservation capacity
+         * configuration.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -154,7 +176,8 @@ public final class InstanceReservationConfigDetails
                             this.instanceShapeConfig,
                             this.faultDomain,
                             this.clusterConfig,
-                            this.reservedCount);
+                            this.reservedCount,
+                            this.clusterPlacementGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -177,6 +200,9 @@ public final class InstanceReservationConfigDetails
             }
             if (model.wasPropertyExplicitlySet("reservedCount")) {
                 this.reservedCount(model.getReservedCount());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             return this;
         }
@@ -274,6 +300,21 @@ public final class InstanceReservationConfigDetails
         return reservedCount;
     }
 
+    /**
+     * The OCID of the cluster placement group for this instance reservation capacity configuration.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group for this instance reservation capacity configuration.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -294,6 +335,8 @@ public final class InstanceReservationConfigDetails
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
         sb.append(", clusterConfig=").append(String.valueOf(this.clusterConfig));
         sb.append(", reservedCount=").append(String.valueOf(this.reservedCount));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -313,6 +356,8 @@ public final class InstanceReservationConfigDetails
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
                 && java.util.Objects.equals(this.clusterConfig, other.clusterConfig)
                 && java.util.Objects.equals(this.reservedCount, other.reservedCount)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && super.equals(other);
     }
 
@@ -335,6 +380,11 @@ public final class InstanceReservationConfigDetails
         result =
                 (result * PRIME)
                         + (this.reservedCount == null ? 43 : this.reservedCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

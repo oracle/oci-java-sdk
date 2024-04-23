@@ -15,17 +15,17 @@ import com.oracle.bmc.cloudguard.model.*;
 public class SkipResponderExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The identifier of the responder execution. */
+    /** The unique identifier of the responder execution. */
     private String responderExecutionId;
 
-    /** The identifier of the responder execution. */
+    /** The unique identifier of the responder execution. */
     public String getResponderExecutionId() {
         return responderExecutionId;
     }
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -79,11 +79,11 @@ public class SkipResponderExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The identifier of the responder execution. */
+        /** The unique identifier of the responder execution. */
         private String responderExecutionId = null;
 
         /**
-         * The identifier of the responder execution.
+         * The unique identifier of the responder execution.
          *
          * @param responderExecutionId the value to set
          * @return this builder instance
@@ -93,11 +93,11 @@ public class SkipResponderExecutionRequest
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /** The OCID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance

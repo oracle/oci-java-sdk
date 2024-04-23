@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -28,35 +28,35 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
         return displayName;
     }
     /**
-     * Default is false. When set to true, the list of all Oracle Managed Resources Metadata
-     * supported by Cloud Guard are returned.
+     * Default is false. When set to true, the list of all Oracle-managed resources metadata
+     * supported by Cloud Guard is returned.
      */
     private Boolean resourceMetadataOnly;
 
     /**
-     * Default is false. When set to true, the list of all Oracle Managed Resources Metadata
-     * supported by Cloud Guard are returned.
+     * Default is false. When set to true, the list of all Oracle-managed resources metadata
+     * supported by Cloud Guard is returned.
      */
     public Boolean getResourceMetadataOnly() {
         return resourceMetadataOnly;
     }
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is
-     * active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active.
+     * If no value is specified state is active.
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is
-     * active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active.
+     * If no value is specified state is active.
      */
     public com.oracle.bmc.cloudguard.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
@@ -75,14 +75,14 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
     }
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the the setting of
+     * compartments and subcompartments in the tenancy are returned depending on the setting of
      * {@code accessLevel}.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the the setting of
+     * compartments and subcompartments in the tenancy are returned depending on the setting of
      * {@code accessLevel}.
      */
     public Boolean getCompartmentIdInSubtree() {
@@ -147,10 +147,10 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -221,11 +221,11 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /** The OCID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -250,14 +250,14 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Default is false. When set to true, the list of all Oracle Managed Resources Metadata
-         * supported by Cloud Guard are returned.
+         * Default is false. When set to true, the list of all Oracle-managed resources metadata
+         * supported by Cloud Guard is returned.
          */
         private Boolean resourceMetadataOnly = null;
 
         /**
-         * Default is false. When set to true, the list of all Oracle Managed Resources Metadata
-         * supported by Cloud Guard are returned.
+         * Default is false. When set to true, the list of all Oracle-managed resources metadata
+         * supported by Cloud Guard is returned.
          *
          * @param resourceMetadataOnly the value to set
          * @return this builder instance
@@ -268,13 +268,13 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is
+         * The field lifecycle state. Only one state can be provided. Default value for state is
          * active. If no value is specified state is active.
          */
         private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState = null;
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is
+         * The field lifecycle state. Only one state can be provided. Default value for state is
          * active. If no value is specified state is active.
          *
          * @param lifecycleState the value to set
@@ -286,11 +286,11 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance
@@ -320,15 +320,15 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the the setting
-         * of {@code accessLevel}.
+         * compartments and subcompartments in the tenancy are returned depending on the setting of
+         * {@code accessLevel}.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the the setting
-         * of {@code accessLevel}.
+         * compartments and subcompartments in the tenancy are returned depending on the setting of
+         * {@code accessLevel}.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -362,11 +362,11 @@ public class ListDetectorRecipesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /** The sort order to use */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          *
          * @param sortOrder the value to set
          * @return this builder instance

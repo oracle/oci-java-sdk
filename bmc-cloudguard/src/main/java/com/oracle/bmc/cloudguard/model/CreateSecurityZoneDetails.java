@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details for a new security zone <br>
+ * Parameters to be used to create a new security zone. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +49,12 @@ public final class CreateSecurityZoneDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The security zone's name */
+        /** The security zone's display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The security zone's name
+         * The security zone's display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -79,12 +79,16 @@ public final class CreateSecurityZoneDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the recipe ({@code SecurityRecipe}) for the security zone */
+        /**
+         * The OCID of the security zone recipe ({@code SecurityRecipe} resource) for the security
+         * zone
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
         private String securityZoneRecipeId;
 
         /**
-         * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+         * The OCID of the security zone recipe ({@code SecurityRecipe} resource) for the security
+         * zone
          *
          * @param securityZoneRecipeId the value to set
          * @return this builder
@@ -204,12 +208,12 @@ public final class CreateSecurityZoneDetails
         return new Builder().copy(this);
     }
 
-    /** The security zone's name */
+    /** The security zone's display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The security zone's name
+     * The security zone's display name
      *
      * @return the value
      */
@@ -230,12 +234,14 @@ public final class CreateSecurityZoneDetails
         return description;
     }
 
-    /** The OCID of the recipe ({@code SecurityRecipe}) for the security zone */
+    /**
+     * The OCID of the security zone recipe ({@code SecurityRecipe} resource) for the security zone
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
     private final String securityZoneRecipeId;
 
     /**
-     * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+     * The OCID of the security zone recipe ({@code SecurityRecipe} resource) for the security zone
      *
      * @return the value
      */

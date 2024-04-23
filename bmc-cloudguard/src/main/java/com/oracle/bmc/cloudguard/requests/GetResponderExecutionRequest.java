@@ -15,10 +15,10 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetResponderExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The identifier of the responder execution. */
+    /** The unique identifier of the responder execution. */
     private String responderExecutionId;
 
-    /** The identifier of the responder execution. */
+    /** The unique identifier of the responder execution. */
     public String getResponderExecutionId() {
         return responderExecutionId;
     }
@@ -36,11 +36,11 @@ public class GetResponderExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The identifier of the responder execution. */
+        /** The unique identifier of the responder execution. */
         private String responderExecutionId = null;
 
         /**
-         * The identifier of the responder execution.
+         * The unique identifier of the responder execution.
          *
          * @param responderExecutionId the value to set
          * @return this builder instance

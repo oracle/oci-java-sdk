@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A summary of the status of a work request. <br>
+ * Summary information about a work request. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -73,12 +73,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Status of current work request. */
+        /** Status of current work request */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
-         * Status of current work request.
+         * Status of current work request
          *
          * @param status the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The id of the work request. */
+        /** Unique identifier of the work request */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the work request.
+         * Unique identifier of the work request
          *
          * @param id the value to set
          * @return this builder
@@ -104,21 +104,21 @@ public final class WorkRequestSummary
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
+         * The OCID of the compartment that contains the work request. Work requests should be
          * scoped to the same compartment as the resource the work request affects. If the work
          * request affects multiple resources, and those resources are not in the same compartment,
          * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
+         * The OCID of the compartment that contains the work request. Work requests should be
          * scoped to the same compartment as the resource the work request affects. If the work
          * request affects multiple resources, and those resources are not in the same compartment,
          * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * used.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The resources affected by this work request. */
+        /** List of resources affected by this work request */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
-         * The resources affected by this work request.
+         * List of resources affected by this work request
          *
          * @param resources the value to set
          * @return this builder
@@ -143,12 +143,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("resources");
             return this;
         }
-        /** Percentage of the request completed. */
+        /** Percentage of work request completed */
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
-         * Percentage of the request completed.
+         * Percentage of work request completed
          *
          * @param percentComplete the value to set
          * @return this builder
@@ -188,12 +188,12 @@ public final class WorkRequestSummary
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The date and time the object was finished */
+        /** The date and time the request was finished */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the object was finished
+         * The date and time the request was finished
          *
          * @param timeFinished the value to set
          * @return this builder
@@ -280,12 +280,12 @@ public final class WorkRequestSummary
         return operationType;
     }
 
-    /** Status of current work request. */
+    /** Status of current work request */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
-     * Status of current work request.
+     * Status of current work request
      *
      * @return the value
      */
@@ -293,12 +293,12 @@ public final class WorkRequestSummary
         return status;
     }
 
-    /** The id of the work request. */
+    /** Unique identifier of the work request */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the work request.
+     * Unique identifier of the work request
      *
      * @return the value
      */
@@ -307,19 +307,19 @@ public final class WorkRequestSummary
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects
      * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * service team to pick the primary resource whose compartment should be used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects
      * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * service team to pick the primary resource whose compartment should be used.
      *
      * @return the value
      */
@@ -327,12 +327,12 @@ public final class WorkRequestSummary
         return compartmentId;
     }
 
-    /** The resources affected by this work request. */
+    /** List of resources affected by this work request */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
-     * The resources affected by this work request.
+     * List of resources affected by this work request
      *
      * @return the value
      */
@@ -340,12 +340,12 @@ public final class WorkRequestSummary
         return resources;
     }
 
-    /** Percentage of the request completed. */
+    /** Percentage of work request completed */
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
-     * Percentage of the request completed.
+     * Percentage of work request completed
      *
      * @return the value
      */
@@ -379,12 +379,12 @@ public final class WorkRequestSummary
         return timeStarted;
     }
 
-    /** The date and time the object was finished */
+    /** The date and time the request was finished */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the object was finished
+     * The date and time the request was finished
      *
      * @return the value
      */

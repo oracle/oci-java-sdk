@@ -16,18 +16,18 @@ public class ChangeSecurityRecipeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails> {
 
-    /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+    /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
     private String securityRecipeId;
 
-    /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+    /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
     public String getSecurityRecipeId() {
         return securityRecipeId;
     }
-    /** The compartment to which you want to move the recipe. */
+    /** The compartment to which you want to move the {@code SecurityRecipe} resource */
     private com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails
             changeSecurityRecipeCompartmentDetails;
 
-    /** The compartment to which you want to move the recipe. */
+    /** The compartment to which you want to move the {@code SecurityRecipe} resource */
     public com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails
             getChangeSecurityRecipeCompartmentDetails() {
         return changeSecurityRecipeCompartmentDetails;
@@ -94,11 +94,11 @@ public class ChangeSecurityRecipeCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+        /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
         private String securityRecipeId = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          *
          * @param securityRecipeId the value to set
          * @return this builder instance
@@ -108,12 +108,12 @@ public class ChangeSecurityRecipeCompartmentRequest
             return this;
         }
 
-        /** The compartment to which you want to move the recipe. */
+        /** The compartment to which you want to move the {@code SecurityRecipe} resource */
         private com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails
                 changeSecurityRecipeCompartmentDetails = null;
 
         /**
-         * The compartment to which you want to move the recipe.
+         * The compartment to which you want to move the {@code SecurityRecipe} resource
          *
          * @param changeSecurityRecipeCompartmentDetails the value to set
          * @return this builder instance

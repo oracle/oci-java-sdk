@@ -10,6 +10,7 @@ public enum ConditionTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     ActivityCondition("ActivityCondition"),
     SecurityCondition("SecurityCondition"),
     CloudGuardCondition("CloudGuardCondition"),
+    InstanceSecurityCondition("InstanceSecurityCondition"),
     ThreatCondition("ThreatCondition"),
     ;
 

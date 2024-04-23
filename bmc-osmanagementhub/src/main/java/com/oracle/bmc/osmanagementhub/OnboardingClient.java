@@ -123,6 +123,39 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public ChangeProfileCompartmentResponse changeProfileCompartment(
+            ChangeProfileCompartmentRequest request) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProfileCompartmentDetails(),
+                "changeProfileCompartmentDetails is required");
+
+        return clientCall(request, ChangeProfileCompartmentResponse::builder)
+                .logger(LOG, "changeProfileCompartment")
+                .serviceDetails(
+                        "Onboarding",
+                        "ChangeProfileCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ChangeProfileCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProfileCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProfileCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateProfileResponse createProfile(CreateProfileRequest request) {
         Objects.requireNonNull(
                 request.getCreateProfileDetails(), "createProfileDetails is required");
@@ -230,6 +263,12 @@ public class OnboardingClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("profileId", request.getProfileId())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
                 .appendEnumQueryParam("archType", request.getArchType())
+                .appendListQueryParam(
+                        "registrationType",
+                        request.getRegistrationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isDefaultProfile", request.getIsDefaultProfile())
+                .appendQueryParam("isServiceProvidedProfile", request.getIsServiceProvidedProfile())
                 .appendEnumQueryParam("vendorName", request.getVendorName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())

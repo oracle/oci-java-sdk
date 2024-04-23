@@ -15,10 +15,10 @@ public class CreateProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.CreateProfileDetails> {
 
-    /** Details for the new registration profile. */
+    /** Provides the information used to create the registration profile. */
     private com.oracle.bmc.osmanagementhub.model.CreateProfileDetails createProfileDetails;
 
-    /** Details for the new registration profile. */
+    /** Provides the information used to create the registration profile. */
     public com.oracle.bmc.osmanagementhub.model.CreateProfileDetails getCreateProfileDetails() {
         return createProfileDetails;
     }
@@ -73,12 +73,12 @@ public class CreateProfileRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new registration profile. */
+        /** Provides the information used to create the registration profile. */
         private com.oracle.bmc.osmanagementhub.model.CreateProfileDetails createProfileDetails =
                 null;
 
         /**
-         * Details for the new registration profile.
+         * Provides the information used to create the registration profile.
          *
          * @param createProfileDetails the value to set
          * @return this builder instance

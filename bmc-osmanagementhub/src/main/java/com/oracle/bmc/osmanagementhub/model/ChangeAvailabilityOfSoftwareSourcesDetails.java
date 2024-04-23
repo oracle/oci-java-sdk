@@ -5,8 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Request body that contains a list of software sources whose availability needs to be updated.
- * <br>
+ * Provides the information used to update the availability of a list of software sources. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +32,12 @@ public final class ChangeAvailabilityOfSoftwareSourcesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of objects containing software source ids and its availability. */
+        /** List of vendor software sources and their availability statuses. */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceAvailabilities")
         private java.util.List<SoftwareSourceAvailability> softwareSourceAvailabilities;
 
         /**
-         * List of objects containing software source ids and its availability.
+         * List of vendor software sources and their availability statuses.
          *
          * @param softwareSourceAvailabilities the value to set
          * @return this builder
@@ -81,12 +80,12 @@ public final class ChangeAvailabilityOfSoftwareSourcesDetails
         return new Builder().copy(this);
     }
 
-    /** List of objects containing software source ids and its availability. */
+    /** List of vendor software sources and their availability statuses. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceAvailabilities")
     private final java.util.List<SoftwareSourceAvailability> softwareSourceAvailabilities;
 
     /**
-     * List of objects containing software source ids and its availability.
+     * List of vendor software sources and their availability statuses.
      *
      * @return the value
      */

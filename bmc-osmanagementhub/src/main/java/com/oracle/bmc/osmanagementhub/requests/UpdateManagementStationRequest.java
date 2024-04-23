@@ -16,18 +16,24 @@ public class UpdateManagementStationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.UpdateManagementStationDetails> {
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station.
+     */
     private String managementStationId;
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station.
+     */
     public String getManagementStationId() {
         return managementStationId;
     }
-    /** The information to be updated. */
+    /** The information used to update the management station. */
     private com.oracle.bmc.osmanagementhub.model.UpdateManagementStationDetails
             updateManagementStationDetails;
 
-    /** The information to be updated. */
+    /** The information used to update the management station. */
     public com.oracle.bmc.osmanagementhub.model.UpdateManagementStationDetails
             getUpdateManagementStationDetails() {
         return updateManagementStationDetails;
@@ -81,11 +87,15 @@ public class UpdateManagementStationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the management station. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station.
+         */
         private String managementStationId = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station.
          *
          * @param managementStationId the value to set
          * @return this builder instance
@@ -95,12 +105,12 @@ public class UpdateManagementStationRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** The information used to update the management station. */
         private com.oracle.bmc.osmanagementhub.model.UpdateManagementStationDetails
                 updateManagementStationDetails = null;
 
         /**
-         * The information to be updated.
+         * The information used to update the management station.
          *
          * @param updateManagementStationDetails the value to set
          * @return this builder instance

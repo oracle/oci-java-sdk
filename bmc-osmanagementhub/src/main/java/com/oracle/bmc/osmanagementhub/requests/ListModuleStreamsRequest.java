@@ -13,10 +13,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListModuleStreamsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -35,16 +41,14 @@ public class ListModuleStreamsRequest extends com.oracle.bmc.requests.BmcRequest
         return name;
     }
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams,
-     * and stream profiles when set to true. All packages, module streams, and stream profiles are
-     * returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream
+     * profiles.
      */
     private Boolean isLatest;
 
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams,
-     * and stream profiles when set to true. All packages, module streams, and stream profiles are
-     * returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream
+     * profiles.
      */
     public Boolean getIsLatest() {
         return isLatest;
@@ -170,11 +174,15 @@ public class ListModuleStreamsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance
@@ -213,16 +221,14 @@ public class ListModuleStreamsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A boolean variable that is used to list only the latest versions of packages, module
-         * streams, and stream profiles when set to true. All packages, module streams, and stream
-         * profiles are returned when set to false.
+         * Indicates whether to list only the latest versions of packages, module streams, and
+         * stream profiles.
          */
         private Boolean isLatest = null;
 
         /**
-         * A boolean variable that is used to list only the latest versions of packages, module
-         * streams, and stream profiles when set to true. All packages, module streams, and stream
-         * profiles are returned when set to false.
+         * Indicates whether to list only the latest versions of packages, module streams, and
+         * stream profiles.
          *
          * @param isLatest the value to set
          * @return this builder instance

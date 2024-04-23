@@ -66,12 +66,14 @@ public final class WorkRequestError
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the error occured. An RFC3339 formatted datetime string. */
+        /**
+         * The time the error occured. (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occured. (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timestamp the value to set
          * @return this builder
@@ -147,12 +149,12 @@ public final class WorkRequestError
         return message;
     }
 
-    /** The time the error occured. An RFC3339 formatted datetime string. */
+    /** The time the error occured. (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format). */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occured. (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */

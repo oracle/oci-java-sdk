@@ -35,6 +35,7 @@ public final class BootVolumeAttachment
         "instanceId",
         "lifecycleState",
         "timeCreated",
+        "timeUpdated",
         "isPvEncryptionInTransitEnabled",
         "encryptionInTransitType"
     })
@@ -47,6 +48,7 @@ public final class BootVolumeAttachment
             String instanceId,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
+            java.util.Date timeUpdated,
             Boolean isPvEncryptionInTransitEnabled,
             EncryptionInTransitType encryptionInTransitType) {
         super();
@@ -58,6 +60,7 @@ public final class BootVolumeAttachment
         this.instanceId = instanceId;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.encryptionInTransitType = encryptionInTransitType;
     }
@@ -203,6 +206,29 @@ public final class BootVolumeAttachment
             return this;
         }
         /**
+         * The date and time the boot volume attachment was updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the boot volume attachment was updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
          * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled
          * or not.
          */
@@ -251,6 +277,7 @@ public final class BootVolumeAttachment
                             this.instanceId,
                             this.lifecycleState,
                             this.timeCreated,
+                            this.timeUpdated,
                             this.isPvEncryptionInTransitEnabled,
                             this.encryptionInTransitType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -284,6 +311,9 @@ public final class BootVolumeAttachment
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
@@ -475,6 +505,27 @@ public final class BootVolumeAttachment
     }
 
     /**
+     * The date and time the boot volume attachment was updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the boot volume attachment was updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /**
      * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or
      * not.
      */
@@ -527,6 +578,7 @@ public final class BootVolumeAttachment
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", encryptionInTransitType=")
@@ -553,6 +605,7 @@ public final class BootVolumeAttachment
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(
@@ -580,6 +633,7 @@ public final class BootVolumeAttachment
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPvEncryptionInTransitEnabled == null

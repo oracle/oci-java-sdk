@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -68,8 +67,8 @@ public interface LifecycleEnvironment extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Attach(add) managed instances to a lifecycle stage. Once added operations can be applied to
-     * all managed instances in the lifecycle stage.
+     * Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations
+     * to all managed instances in the lifecycle stage.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -86,7 +85,27 @@ public interface LifecycleEnvironment extends AutoCloseable {
             AttachManagedInstancesToLifecycleStageRequest request);
 
     /**
-     * Creates a new lifecycle environment.
+     * Moves a lifecycle environment into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeLifecycleEnvironmentCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeLifecycleEnvironmentCompartment API.
+     */
+    ChangeLifecycleEnvironmentCompartmentResponse changeLifecycleEnvironmentCompartment(
+            ChangeLifecycleEnvironmentCompartmentRequest request);
+
+    /**
+     * Creates a lifecycle environment. A lifecycle environment is a user-defined pipeline to
+     * deliver curated, versioned content in a prescribed, methodical manner.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -103,7 +122,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
             CreateLifecycleEnvironmentRequest request);
 
     /**
-     * Deletes a lifecycle environment.
+     * Deletes the specified lifecycle environment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -120,7 +139,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
             DeleteLifecycleEnvironmentRequest request);
 
     /**
-     * Detach(remove) managed instance from a lifecycle stage.
+     * Detaches (removes) a managed instance from a lifecycle stage.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -153,7 +172,7 @@ public interface LifecycleEnvironment extends AutoCloseable {
     GetLifecycleEnvironmentResponse getLifecycleEnvironment(GetLifecycleEnvironmentRequest request);
 
     /**
-     * Gets information about the specified lifecycle stage.
+     * Returns information about the specified lifecycle stage.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -206,9 +225,9 @@ public interface LifecycleEnvironment extends AutoCloseable {
             ListLifecycleStageInstalledPackagesRequest request);
 
     /**
-     * Lists lifecycle stages that match the specified compartment or lifecycle stage OCID. Filter
-     * the list against a variety of criteria including but not limited to its name, status,
-     * architecture, and OS family.
+     * Lists lifecycle stages that match the specified compartment or lifecycle stage
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter
+     * the list against
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -224,7 +243,16 @@ public interface LifecycleEnvironment extends AutoCloseable {
     ListLifecycleStagesResponse listLifecycleStages(ListLifecycleStagesRequest request);
 
     /**
-     * Updates the versioned custom software source content for specified lifecycle stage.
+     * Updates the versioned custom software source content to the specified lifecycle stage. A
+     * versioned custom software source OCID (softwareSourceId) is required when promoting content
+     * to the first lifecycle stage. You must promote content to the first stage before promoting to
+     * subsequent stages, otherwise the service returns an error. The softwareSourceId is optional
+     * when promoting content to the second, third, forth, or fifth stages. If you provide a
+     * softwareSourceId, the service validates that it matches the softwareSourceId of the previous
+     * stage. If it does not match, the service returns an error. If you don't provide a
+     * softwareSourceId, the service promotes the versioned software source from the previous
+     * lifecycle stage. If the previous lifecycle stage has no software source, the service returns
+     * an error.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

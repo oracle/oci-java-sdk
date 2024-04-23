@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Target selection on basis of TargetResourceTypes. <br>
+ * Target selection on basis of target resource types. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,12 @@ package com.oracle.bmc.cloudguard.model;
 public final class TargetResourceTypesSelected extends TargetSelected {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Types of Targets */
+        /** Types of targets */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<TargetResourceType> values;
 
         /**
-         * Types of Targets
+         * Types of targets
          *
          * @param values the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class TargetResourceTypesSelected extends TargetSelected {
         this.values = values;
     }
 
-    /** Types of Targets */
+    /** Types of targets */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<TargetResourceType> values;
 
     /**
-     * Types of Targets
+     * Types of targets
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A simple representation of a package using its displayName and NEVRA parts. <br>
+ * Provides summary information about a package. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -36,12 +36,12 @@ public final class PackageNameSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Full package NEVRA name - this value should be unique. */
+        /** Full package name in NERVA format. This value should be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Full package NEVRA name - this value should be unique.
+         * Full package name in NERVA format. This value should be unique.
          *
          * @param displayName the value to set
          * @return this builder
@@ -81,12 +81,12 @@ public final class PackageNameSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Version of the installed package. */
+        /** The version of the software package. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Version of the installed package.
+         * The version of the software package.
          *
          * @param version the value to set
          * @return this builder
@@ -96,12 +96,12 @@ public final class PackageNameSummary
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The architecture for which this package was built. */
+        /** The CPU architecture type for which this package was built. */
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private ArchType architecture;
 
         /**
-         * The architecture for which this package was built.
+         * The CPU architecture type for which this package was built.
          *
          * @param architecture the value to set
          * @return this builder
@@ -159,12 +159,12 @@ public final class PackageNameSummary
         return new Builder().copy(this);
     }
 
-    /** Full package NEVRA name - this value should be unique. */
+    /** Full package name in NERVA format. This value should be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Full package NEVRA name - this value should be unique.
+     * Full package name in NERVA format. This value should be unique.
      *
      * @return the value
      */
@@ -198,12 +198,12 @@ public final class PackageNameSummary
         return type;
     }
 
-    /** Version of the installed package. */
+    /** The version of the software package. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Version of the installed package.
+     * The version of the software package.
      *
      * @return the value
      */
@@ -211,12 +211,12 @@ public final class PackageNameSummary
         return version;
     }
 
-    /** The architecture for which this package was built. */
+    /** The CPU architecture type for which this package was built. */
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchType architecture;
 
     /**
-     * The architecture for which this package was built.
+     * The CPU architecture type for which this package was built.
      *
      * @return the value
      */

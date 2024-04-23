@@ -162,6 +162,41 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public ChangeLifecycleEnvironmentCompartmentResponse changeLifecycleEnvironmentCompartment(
+            ChangeLifecycleEnvironmentCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLifecycleEnvironmentCompartmentDetails(),
+                "changeLifecycleEnvironmentCompartmentDetails is required");
+
+        return clientCall(request, ChangeLifecycleEnvironmentCompartmentResponse::builder)
+                .logger(LOG, "changeLifecycleEnvironmentCompartment")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "ChangeLifecycleEnvironmentCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ChangeLifecycleEnvironmentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLifecycleEnvironmentCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleEnvironments")
+                .appendPathParam(request.getLifecycleEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLifecycleEnvironmentCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateLifecycleEnvironmentResponse createLifecycleEnvironment(
             CreateLifecycleEnvironmentRequest request) {
         Objects.requireNonNull(
@@ -339,6 +374,14 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
                 .appendEnumQueryParam("archType", request.getArchType())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
@@ -425,6 +468,14 @@ public class LifecycleEnvironmentClient extends com.oracle.bmc.http.internal.Bas
                 .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
                 .appendEnumQueryParam("archType", request.getArchType())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())

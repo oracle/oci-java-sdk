@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Problem. <br>
+ * Summary information for a problem. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,7 +39,8 @@ public final class ProblemSummary
         "detectorId",
         "region",
         "regions",
-        "targetId"
+        "targetId",
+        "locks"
     })
     public ProblemSummary(
             String id,
@@ -58,7 +59,8 @@ public final class ProblemSummary
             DetectorEnum detectorId,
             String region,
             java.util.List<String> regions,
-            String targetId) {
+            String targetId,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -77,16 +79,17 @@ public final class ProblemSummary
         this.region = region;
         this.regions = regions;
         this.targetId = targetId;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** Unique identifier that can't be changed after creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          *
          * @param id the value to set
          * @return this builder
@@ -96,12 +99,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Compartment Identifier where the resource is created */
+        /** Compartment OCID where the resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -111,12 +114,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Identifier of the rule */
+        /** Unique identifier of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
-         * Identifier of the rule
+         * Unique identifier of the detector rule
          *
          * @param detectorRuleId the value to set
          * @return this builder
@@ -126,12 +129,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("detectorRuleId");
             return this;
         }
-        /** The Risk Level */
+        /** The risk level of the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level of the problem
          *
          * @param riskLevel the value to set
          * @return this builder
@@ -141,12 +144,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("riskLevel");
             return this;
         }
-        /** Risk Score for the problem */
+        /** The risk score for the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
-         * Risk Score for the problem
+         * The risk score for the problem
          *
          * @param riskScore the value to set
          * @return this builder
@@ -156,12 +159,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("riskScore");
             return this;
         }
-        /** Identifier of the Resource */
+        /** Unique identifier of the resource that's impacted by the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Identifier of the Resource
+         * Unique identifier of the resource that's impacted by the problem
          *
          * @param resourceId the value to set
          * @return this builder
@@ -171,12 +174,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** DisplayName of the Resource */
+        /** Display name of the resource impacted by the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
-         * DisplayName of the Resource
+         * Display name of the resource impacted by the problem
          *
          * @param resourceName the value to set
          * @return this builder
@@ -186,12 +189,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** Type of the Resource */
+        /** Type of the resource impacted by the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * Type of the Resource
+         * Type of the resource impacted by the problem
          *
          * @param resourceType the value to set
          * @return this builder
@@ -201,12 +204,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** user defined labels on the problem */
+        /** User-defined labels on the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * user defined labels on the problem
+         * User-defined labels on the problem
          *
          * @param labels the value to set
          * @return this builder
@@ -246,12 +249,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** The current state of the Problem. */
+        /** The current lifecycle state of the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ProblemLifecycleState lifecycleState;
 
         /**
-         * The current state of the Problem.
+         * The current lifecycle state of the problem
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -261,12 +264,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The lifecycleDetail will give more detail on the substate of the lifecycleState. */
+        /** Additional details on the substate of the lifecycle state */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private ProblemLifecycleDetail lifecycleDetail;
 
         /**
-         * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+         * Additional details on the substate of the lifecycle state
          *
          * @param lifecycleDetail the value to set
          * @return this builder
@@ -276,12 +279,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("lifecycleDetail");
             return this;
         }
-        /** Id of detector associated with the Problem. */
+        /** Unique identifier of the detector associated with the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
         private DetectorEnum detectorId;
 
         /**
-         * Id of detector associated with the Problem.
+         * Unique identifier of the detector associated with the problem
          *
          * @param detectorId the value to set
          * @return this builder
@@ -306,12 +309,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Regions where the problem is found */
+        /** List of regions where the problem is found */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Regions where the problem is found
+         * List of regions where the problem is found
          *
          * @param regions the value to set
          * @return this builder
@@ -321,12 +324,12 @@ public final class ProblemSummary
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** targetId associated with the problem. */
+        /** Unique target identifier associated with the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * targetId associated with the problem.
+         * Unique target identifier associated with the problem
          *
          * @param targetId the value to set
          * @return this builder
@@ -334,6 +337,21 @@ public final class ProblemSummary
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -359,7 +377,8 @@ public final class ProblemSummary
                             this.detectorId,
                             this.region,
                             this.regions,
-                            this.targetId);
+                            this.targetId,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -419,6 +438,9 @@ public final class ProblemSummary
             if (model.wasPropertyExplicitlySet("targetId")) {
                 this.targetId(model.getTargetId());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -432,12 +454,12 @@ public final class ProblemSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** Unique identifier that can't be changed after creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      *
      * @return the value
      */
@@ -445,12 +467,12 @@ public final class ProblemSummary
         return id;
     }
 
-    /** Compartment Identifier where the resource is created */
+    /** Compartment OCID where the resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      *
      * @return the value
      */
@@ -458,12 +480,12 @@ public final class ProblemSummary
         return compartmentId;
     }
 
-    /** Identifier of the rule */
+    /** Unique identifier of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
-     * Identifier of the rule
+     * Unique identifier of the detector rule
      *
      * @return the value
      */
@@ -471,12 +493,12 @@ public final class ProblemSummary
         return detectorRuleId;
     }
 
-    /** The Risk Level */
+    /** The risk level of the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level of the problem
      *
      * @return the value
      */
@@ -484,12 +506,12 @@ public final class ProblemSummary
         return riskLevel;
     }
 
-    /** Risk Score for the problem */
+    /** The risk score for the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
-     * Risk Score for the problem
+     * The risk score for the problem
      *
      * @return the value
      */
@@ -497,12 +519,12 @@ public final class ProblemSummary
         return riskScore;
     }
 
-    /** Identifier of the Resource */
+    /** Unique identifier of the resource that's impacted by the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Identifier of the Resource
+     * Unique identifier of the resource that's impacted by the problem
      *
      * @return the value
      */
@@ -510,12 +532,12 @@ public final class ProblemSummary
         return resourceId;
     }
 
-    /** DisplayName of the Resource */
+    /** Display name of the resource impacted by the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
-     * DisplayName of the Resource
+     * Display name of the resource impacted by the problem
      *
      * @return the value
      */
@@ -523,12 +545,12 @@ public final class ProblemSummary
         return resourceName;
     }
 
-    /** Type of the Resource */
+    /** Type of the resource impacted by the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * Type of the Resource
+     * Type of the resource impacted by the problem
      *
      * @return the value
      */
@@ -536,12 +558,12 @@ public final class ProblemSummary
         return resourceType;
     }
 
-    /** user defined labels on the problem */
+    /** User-defined labels on the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * user defined labels on the problem
+     * User-defined labels on the problem
      *
      * @return the value
      */
@@ -575,12 +597,12 @@ public final class ProblemSummary
         return timeLastDetected;
     }
 
-    /** The current state of the Problem. */
+    /** The current lifecycle state of the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ProblemLifecycleState lifecycleState;
 
     /**
-     * The current state of the Problem.
+     * The current lifecycle state of the problem
      *
      * @return the value
      */
@@ -588,12 +610,12 @@ public final class ProblemSummary
         return lifecycleState;
     }
 
-    /** The lifecycleDetail will give more detail on the substate of the lifecycleState. */
+    /** Additional details on the substate of the lifecycle state */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final ProblemLifecycleDetail lifecycleDetail;
 
     /**
-     * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+     * Additional details on the substate of the lifecycle state
      *
      * @return the value
      */
@@ -601,12 +623,12 @@ public final class ProblemSummary
         return lifecycleDetail;
     }
 
-    /** Id of detector associated with the Problem. */
+    /** Unique identifier of the detector associated with the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
     private final DetectorEnum detectorId;
 
     /**
-     * Id of detector associated with the Problem.
+     * Unique identifier of the detector associated with the problem
      *
      * @return the value
      */
@@ -627,12 +649,12 @@ public final class ProblemSummary
         return region;
     }
 
-    /** Regions where the problem is found */
+    /** List of regions where the problem is found */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Regions where the problem is found
+     * List of regions where the problem is found
      *
      * @return the value
      */
@@ -640,17 +662,30 @@ public final class ProblemSummary
         return regions;
     }
 
-    /** targetId associated with the problem. */
+    /** Unique target identifier associated with the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * targetId associated with the problem.
+     * Unique target identifier associated with the problem
      *
      * @return the value
      */
     public String getTargetId() {
         return targetId;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -685,6 +720,7 @@ public final class ProblemSummary
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -716,6 +752,7 @@ public final class ProblemSummary
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.regions, other.regions)
                 && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -752,6 +789,7 @@ public final class ProblemSummary
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

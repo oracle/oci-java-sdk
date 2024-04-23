@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Results of a security zone search. Contains {@code SecurityZoneSummary} items. <br>
+ * A collection of security zones. Results of a security zone search. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,20 +23,22 @@ package com.oracle.bmc.cloudguard.model;
 public final class SecurityZoneCollection
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"items"})
-    public SecurityZoneCollection(java.util.List<SecurityZoneSummary> items) {
+    @java.beans.ConstructorProperties({"items", "locks"})
+    public SecurityZoneCollection(
+            java.util.List<SecurityZoneSummary> items, java.util.List<ResourceLock> locks) {
         super();
         this.items = items;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of security zone summaries */
+        /** List of SecurityZoneSummary resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SecurityZoneSummary> items;
 
         /**
-         * List of security zone summaries
+         * List of SecurityZoneSummary resources
          *
          * @param items the value to set
          * @return this builder
@@ -46,12 +48,27 @@ public final class SecurityZoneCollection
             this.__explicitlySet__.add("items");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SecurityZoneCollection build() {
-            SecurityZoneCollection model = new SecurityZoneCollection(this.items);
+            SecurityZoneCollection model = new SecurityZoneCollection(this.items, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +79,9 @@ public final class SecurityZoneCollection
         public Builder copy(SecurityZoneCollection model) {
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -76,17 +96,30 @@ public final class SecurityZoneCollection
         return new Builder().copy(this);
     }
 
-    /** List of security zone summaries */
+    /** List of SecurityZoneSummary resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SecurityZoneSummary> items;
 
     /**
-     * List of security zone summaries
+     * List of SecurityZoneSummary resources
      *
      * @return the value
      */
     public java.util.List<SecurityZoneSummary> getItems() {
         return items;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -105,6 +138,7 @@ public final class SecurityZoneCollection
         sb.append("SecurityZoneCollection(");
         sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +153,9 @@ public final class SecurityZoneCollection
         }
 
         SecurityZoneCollection other = (SecurityZoneCollection) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +163,7 @@ public final class SecurityZoneCollection
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

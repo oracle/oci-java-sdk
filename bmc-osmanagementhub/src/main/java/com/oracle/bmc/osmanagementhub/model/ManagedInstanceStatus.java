@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** status of the managed instance. */
+/** Status of the managed instance. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum ManagedInstanceStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Normal("NORMAL"),
@@ -12,6 +12,8 @@ public enum ManagedInstanceStatus implements com.oracle.bmc.http.internal.BmcEnu
     Error("ERROR"),
     Warning("WARNING"),
     RegistrationError("REGISTRATION_ERROR"),
+    Deleting("DELETING"),
+    Onboarding("ONBOARDING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the ResponderRecipe. <br>
+ * Collection of responder recipe summary information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,20 +23,22 @@ package com.oracle.bmc.cloudguard.model;
 public final class ResponderRecipeCollection
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"items"})
-    public ResponderRecipeCollection(java.util.List<ResponderRecipeSummary> items) {
+    @java.beans.ConstructorProperties({"items", "locks"})
+    public ResponderRecipeCollection(
+            java.util.List<ResponderRecipeSummary> items, java.util.List<ResourceLock> locks) {
         super();
         this.items = items;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of ResponderRecipeSummary */
+        /** List of ResponderRecipeSummary resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResponderRecipeSummary> items;
 
         /**
-         * List of ResponderRecipeSummary
+         * List of ResponderRecipeSummary resources
          *
          * @param items the value to set
          * @return this builder
@@ -46,12 +48,27 @@ public final class ResponderRecipeCollection
             this.__explicitlySet__.add("items");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResponderRecipeCollection build() {
-            ResponderRecipeCollection model = new ResponderRecipeCollection(this.items);
+            ResponderRecipeCollection model = new ResponderRecipeCollection(this.items, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +79,9 @@ public final class ResponderRecipeCollection
         public Builder copy(ResponderRecipeCollection model) {
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -76,17 +96,30 @@ public final class ResponderRecipeCollection
         return new Builder().copy(this);
     }
 
-    /** List of ResponderRecipeSummary */
+    /** List of ResponderRecipeSummary resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResponderRecipeSummary> items;
 
     /**
-     * List of ResponderRecipeSummary
+     * List of ResponderRecipeSummary resources
      *
      * @return the value
      */
     public java.util.List<ResponderRecipeSummary> getItems() {
         return items;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -105,6 +138,7 @@ public final class ResponderRecipeCollection
         sb.append("ResponderRecipeCollection(");
         sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +153,9 @@ public final class ResponderRecipeCollection
         }
 
         ResponderRecipeCollection other = (ResponderRecipeCollection) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +163,7 @@ public final class ResponderRecipeCollection
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

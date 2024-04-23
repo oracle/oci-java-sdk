@@ -15,17 +15,17 @@ public class UpdateTargetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateTargetDetails> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** The information to be updated. */
+    /** The information to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateTargetDetails updateTargetDetails;
 
-    /** The information to be updated. */
+    /** The information to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateTargetDetails getUpdateTargetDetails() {
         return updateTargetDetails;
     }
@@ -71,11 +71,11 @@ public class UpdateTargetRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -85,11 +85,11 @@ public class UpdateTargetRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** The information to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateTargetDetails updateTargetDetails = null;
 
         /**
-         * The information to be updated.
+         * The information to be updated
          *
          * @param updateTargetDetails the value to set
          * @return this builder instance

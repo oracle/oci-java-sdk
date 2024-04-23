@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Update of Data Source <br>
+ * Parameters to update a data source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +46,12 @@ public final class UpdateDataSourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Data Source display name. */
+        /** Display name for data source */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Source display name.
+         * Display name for data source
          *
          * @param displayName the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class UpdateDataSourceDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Status of DataSource. */
+        /** Enablement status of data source */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DataSourceStatus status;
 
         /**
-         * Status of DataSource.
+         * Enablement status of data source
          *
          * @param status the value to set
          * @return this builder
@@ -176,12 +176,12 @@ public final class UpdateDataSourceDetails
         return new Builder().copy(this);
     }
 
-    /** Data Source display name. */
+    /** Display name for data source */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Source display name.
+     * Display name for data source
      *
      * @return the value
      */
@@ -189,12 +189,12 @@ public final class UpdateDataSourceDetails
         return displayName;
     }
 
-    /** Status of DataSource. */
+    /** Enablement status of data source */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DataSourceStatus status;
 
     /**
-     * Status of DataSource.
+     * Enablement status of data source
      *
      * @return the value
      */

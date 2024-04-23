@@ -24,6 +24,18 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
     /** The returned {@code java.io.InputStream} instance. */
     private java.io.InputStream inputStream;
 
@@ -40,15 +52,18 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
+        "etag",
         "inputStream"
     })
     private ExportAccessRequestsResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
+            String etag,
             java.io.InputStream inputStream) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
         this.inputStream = inputStream;
     }
 
@@ -88,6 +103,20 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
         /** The returned {@code java.io.InputStream} instance. */
         private java.io.InputStream inputStream;
 
@@ -112,6 +141,7 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             inputStream(o.getInputStream());
 
             return this;
@@ -125,7 +155,7 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
         @Override
         public ExportAccessRequestsResponse build() {
             return new ExportAccessRequestsResponse(
-                    __httpStatusCode__, headers, opcRequestId, inputStream);
+                    __httpStatusCode__, headers, opcRequestId, etag, inputStream);
         }
     }
 
@@ -144,6 +174,7 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",inputStream=").append(String.valueOf(inputStream));
         sb.append(")");
         return sb.toString();
@@ -161,6 +192,7 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
         ExportAccessRequestsResponse other = (ExportAccessRequestsResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.inputStream, other.inputStream);
     }
 
@@ -169,6 +201,7 @@ public class ExportAccessRequestsResponse extends com.oracle.bmc.responses.BmcRe
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.inputStream == null ? 43 : this.inputStream.hashCode());
         return result;
     }

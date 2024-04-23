@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class DeleteSecurityZoneRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     private String securityZoneId;
 
-    /** The unique identifier of the security zone ({@code SecurityZone}) */
+    /** The unique identifier of the security zone ({@code SecurityZone} resource). */
     public String getSecurityZoneId() {
         return securityZoneId;
     }
@@ -51,11 +51,11 @@ public class DeleteSecurityZoneRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone ({@code SecurityZone}) */
+        /** The unique identifier of the security zone ({@code SecurityZone} resource). */
         private String securityZoneId = null;
 
         /**
-         * The unique identifier of the security zone ({@code SecurityZone})
+         * The unique identifier of the security zone ({@code SecurityZone} resource).
          *
          * @param securityZoneId the value to set
          * @return this builder instance

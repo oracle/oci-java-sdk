@@ -15,10 +15,16 @@ public class UpdateProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.UpdateProfileDetails> {
 
-    /** The OCID of the registration profile. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the registration profile.
+     */
     private String profileId;
 
-    /** The OCID of the registration profile. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the registration profile.
+     */
     public String getProfileId() {
         return profileId;
     }
@@ -78,11 +84,15 @@ public class UpdateProfileRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the registration profile. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the registration profile.
+         */
         private String profileId = null;
 
         /**
-         * The OCID of the registration profile.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the registration profile.
          *
          * @param profileId the value to set
          * @return this builder instance

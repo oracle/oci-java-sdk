@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating an ManagementStation <br>
+ * Provides the information used to update the management station. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,12 +52,16 @@ public final class UpdateManagementStationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ManagementStation name */
+        /**
+         * User-friendly name for the management station. Does not have to be unique. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ManagementStation name
+         * User-friendly name for the management station. Does not have to be unique. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -67,12 +71,16 @@ public final class UpdateManagementStationDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Details describing the ManagementStation config. */
+        /**
+         * User-specified description of the management station. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the ManagementStation config.
+         * User-specified description of the management station. Avoid entering confidential
+         * information.
          *
          * @param description the value to set
          * @return this builder
@@ -82,12 +90,12 @@ public final class UpdateManagementStationDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Name of the host */
+        /** Hostname of the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * Name of the host
+         * Hostname of the management station.
          *
          * @param hostname the value to set
          * @return this builder
@@ -218,12 +226,16 @@ public final class UpdateManagementStationDetails
         return new Builder().copy(this);
     }
 
-    /** ManagementStation name */
+    /**
+     * User-friendly name for the management station. Does not have to be unique. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ManagementStation name
+     * User-friendly name for the management station. Does not have to be unique. Avoid entering
+     * confidential information.
      *
      * @return the value
      */
@@ -231,12 +243,16 @@ public final class UpdateManagementStationDetails
         return displayName;
     }
 
-    /** Details describing the ManagementStation config. */
+    /**
+     * User-specified description of the management station. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the ManagementStation config.
+     * User-specified description of the management station. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -244,12 +260,12 @@ public final class UpdateManagementStationDetails
         return description;
     }
 
-    /** Name of the host */
+    /** Hostname of the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * Name of the host
+     * Hostname of the management station.
      *
      * @return the value
      */

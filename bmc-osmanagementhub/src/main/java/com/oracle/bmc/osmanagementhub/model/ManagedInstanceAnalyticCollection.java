@@ -5,7 +5,9 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Collection of ManagedInstanceAnalyticSummary. <br>
+ * A set of managed instance metrics returned for the {@link
+ * #summarizeManagedInstanceAnalytics(SummarizeManagedInstanceAnalyticsRequest)
+ * summarizeManagedInstanceAnalytics} operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +33,12 @@ public final class ManagedInstanceAnalyticCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of managed instance analytic summary. */
+        /** List of managed instance analytic summary objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagedInstanceAnalyticSummary> items;
 
         /**
-         * List of managed instance analytic summary.
+         * List of managed instance analytic summary objects.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +79,12 @@ public final class ManagedInstanceAnalyticCollection
         return new Builder().copy(this);
     }
 
-    /** List of managed instance analytic summary. */
+    /** List of managed instance analytic summary objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagedInstanceAnalyticSummary> items;
 
     /**
-     * List of managed instance analytic summary.
+     * List of managed instance analytic summary objects.
      *
      * @return the value
      */

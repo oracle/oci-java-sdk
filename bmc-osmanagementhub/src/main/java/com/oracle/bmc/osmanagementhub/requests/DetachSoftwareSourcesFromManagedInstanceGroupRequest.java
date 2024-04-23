@@ -17,19 +17,33 @@ public class DetachSoftwareSourcesFromManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .DetachSoftwareSourcesFromManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for software sources to attach to the specified managed instance group. */
+    /**
+     * The software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * detach from the managed instance group.
+     */
     private com.oracle.bmc.osmanagementhub.model
                     .DetachSoftwareSourcesFromManagedInstanceGroupDetails
             detachSoftwareSourcesFromManagedInstanceGroupDetails;
 
-    /** Details for software sources to attach to the specified managed instance group. */
+    /**
+     * The software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * detach from the managed instance group.
+     */
     public com.oracle.bmc.osmanagementhub.model.DetachSoftwareSourcesFromManagedInstanceGroupDetails
             getDetachSoftwareSourcesFromManagedInstanceGroupDetails() {
         return detachSoftwareSourcesFromManagedInstanceGroupDetails;
@@ -104,11 +118,15 @@ public class DetachSoftwareSourcesFromManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -118,13 +136,19 @@ public class DetachSoftwareSourcesFromManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for software sources to attach to the specified managed instance group. */
+        /**
+         * The software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * detach from the managed instance group.
+         */
         private com.oracle.bmc.osmanagementhub.model
                         .DetachSoftwareSourcesFromManagedInstanceGroupDetails
                 detachSoftwareSourcesFromManagedInstanceGroupDetails = null;
 
         /**
-         * Details for software sources to attach to the specified managed instance group.
+         * The software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * detach from the managed instance group.
          *
          * @param detachSoftwareSourcesFromManagedInstanceGroupDetails the value to set
          * @return this builder instance

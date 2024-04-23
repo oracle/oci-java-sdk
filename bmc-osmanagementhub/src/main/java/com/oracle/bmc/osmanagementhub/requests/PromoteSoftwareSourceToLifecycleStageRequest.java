@@ -16,10 +16,16 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.PromoteSoftwareSourceToLifecycleStageDetails> {
 
-    /** The OCID of the lifecycle stage. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage.
+     */
     private String lifecycleStageId;
 
-    /** The OCID of the lifecycle stage. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage.
+     */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
@@ -32,10 +38,16 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
             getPromoteSoftwareSourceToLifecycleStageDetails() {
         return promoteSoftwareSourceToLifecycleStageDetails;
     }
-    /** The OCID for the software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source. This filter returns resources associated with this software source.
+     */
     private String softwareSourceId;
 
-    /** The OCID for the software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source. This filter returns resources associated with this software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -109,11 +121,15 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the lifecycle stage. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage.
+         */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage.
          *
          * @param lifecycleStageId the value to set
          * @return this builder instance
@@ -141,11 +157,17 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
             return this;
         }
 
-        /** The OCID for the software source. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source. This filter returns resources associated with this software
+         * source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The OCID for the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source. This filter returns resources associated with this software
+         * source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance

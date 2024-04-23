@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Continuous query start policy object <br>
+ * Start policy for continuous query <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,7 +79,7 @@ public class ContinuousQueryStartPolicy
         return result;
     }
 
-    /** policy used for deciding the query start time */
+    /** Start policy delay timing */
     public enum StartPolicyType implements com.oracle.bmc.http.internal.BmcEnum {
         NoDelayStartPolicy("NO_DELAY_START_POLICY"),
         AbsoluteTimeStartPolicy("ABSOLUTE_TIME_START_POLICY"),

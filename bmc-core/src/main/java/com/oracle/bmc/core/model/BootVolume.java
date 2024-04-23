@@ -41,6 +41,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         "id",
         "imageId",
         "isHydrated",
+        "clusterPlacementGroupId",
         "vpusPerGB",
         "lifecycleState",
         "sizeInGBs",
@@ -64,6 +65,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
             String id,
             String imageId,
             Boolean isHydrated,
+            String clusterPlacementGroupId,
             Long vpusPerGB,
             LifecycleState lifecycleState,
             Long sizeInGBs,
@@ -86,6 +88,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         this.id = id;
         this.imageId = imageId;
         this.isHydrated = isHydrated;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.vpusPerGB = vpusPerGB;
         this.lifecycleState = lifecycleState;
         this.sizeInGBs = sizeInGBs;
@@ -274,6 +277,21 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         public Builder isHydrated(Boolean isHydrated) {
             this.isHydrated = isHydrated;
             this.__explicitlySet__.add("isHydrated");
+            return this;
+        }
+        /** The clusterPlacementGroup Id of the volume for volume placement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
@@ -515,6 +533,7 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
                             this.id,
                             this.imageId,
                             this.isHydrated,
+                            this.clusterPlacementGroupId,
                             this.vpusPerGB,
                             this.lifecycleState,
                             this.sizeInGBs,
@@ -561,6 +580,9 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isHydrated")) {
                 this.isHydrated(model.getIsHydrated());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
@@ -764,6 +786,19 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
      */
     public Boolean getIsHydrated() {
         return isHydrated;
+    }
+
+    /** The clusterPlacementGroup Id of the volume for volume placement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /**
@@ -1036,6 +1071,8 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
@@ -1071,6 +1108,8 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
@@ -1105,6 +1144,11 @@ public final class BootVolume extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
         result = (result * PRIME) + (this.isHydrated == null ? 43 : this.isHydrated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
         result =
                 (result * PRIME)

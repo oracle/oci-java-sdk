@@ -73,9 +73,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CancelWorkRequestExample.java.html"
@@ -90,9 +90,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ChangeApprovalTemplateCompartmentExample.java.html"
@@ -108,9 +108,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ChangeLockboxCompartmentExample.java.html"
@@ -125,9 +125,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateAccessRequestExample.java.html"
@@ -141,9 +141,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateApprovalTemplateExample.java.html"
@@ -157,9 +157,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateLockboxExample.java.html"
@@ -172,9 +172,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/DeleteApprovalTemplateExample.java.html"
@@ -188,9 +188,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/DeleteLockboxExample.java.html"
@@ -204,9 +204,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ExportAccessRequestsExample.java.html"
@@ -220,9 +220,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessMaterialsExample.java.html"
@@ -236,9 +236,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessRequestExample.java.html"
@@ -248,13 +248,30 @@ public interface Lockbox extends AutoCloseable {
     GetAccessRequestResponse getAccessRequest(GetAccessRequestRequest request);
 
     /**
+     * Retrieves an access request identified by the access request ID for internal use.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessRequestInternalExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAccessRequestInternal API.
+     */
+    GetAccessRequestInternalResponse getAccessRequestInternal(
+            GetAccessRequestInternalRequest request);
+
+    /**
      * Retrieves an approval template identified by the approval template ID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetApprovalTemplateExample.java.html"
@@ -268,9 +285,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetLockboxExample.java.html"
@@ -283,9 +300,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetWorkRequestExample.java.html"
@@ -298,9 +315,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/HandleAccessRequestExample.java.html"
@@ -314,9 +331,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListAccessRequestsExample.java.html"
@@ -330,9 +347,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListApprovalTemplatesExample.java.html"
@@ -346,9 +363,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListLockboxesExample.java.html"
@@ -361,9 +378,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestErrorsExample.java.html"
@@ -377,9 +394,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestLogsExample.java.html"
@@ -393,9 +410,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestsExample.java.html"
@@ -409,9 +426,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/UpdateApprovalTemplateExample.java.html"
@@ -425,9 +442,9 @@ public interface Lockbox extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
      *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *     <p><b>Example: </b>Click <a
      *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/UpdateLockboxExample.java.html"

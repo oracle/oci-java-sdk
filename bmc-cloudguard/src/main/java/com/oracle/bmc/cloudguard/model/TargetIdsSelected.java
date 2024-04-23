@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Target selection on basis of TargetIds. <br>
+ * Target selection on basis of target IDs. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,12 @@ package com.oracle.bmc.cloudguard.model;
 public final class TargetIdsSelected extends TargetSelected {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Ids of Target */
+        /** IDs of targets */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * Ids of Target
+         * IDs of targets
          *
          * @param values the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class TargetIdsSelected extends TargetSelected {
         this.values = values;
     }
 
-    /** Ids of Target */
+    /** IDs of targets */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * Ids of Target
+     * IDs of targets
      *
      * @return the value
      */

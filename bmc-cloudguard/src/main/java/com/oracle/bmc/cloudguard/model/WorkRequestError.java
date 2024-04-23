@@ -5,7 +5,8 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * An error encountered while executing a work request. <br>
+ * Summary information for an error (WorkRequestError resource) encountered while executing a work
+ * request <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,14 +35,14 @@ public final class WorkRequestError
     public static class Builder {
         /**
          * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
          * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
          * @return this builder
@@ -51,12 +52,12 @@ public final class WorkRequestError
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** A human readable description of the issue encountered. */
+        /** A human readable description of the issue encountered */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A human readable description of the issue encountered.
+         * A human readable description of the issue encountered
          *
          * @param message the value to set
          * @return this builder
@@ -66,12 +67,12 @@ public final class WorkRequestError
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The time the error occured. */
+        /** The time the error occured */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured.
+         * The time the error occured
          *
          * @param timestamp the value to set
          * @return this builder
@@ -119,14 +120,14 @@ public final class WorkRequestError
 
     /**
      * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
      * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      *
      * @return the value
      */
@@ -134,12 +135,12 @@ public final class WorkRequestError
         return code;
     }
 
-    /** A human readable description of the issue encountered. */
+    /** A human readable description of the issue encountered */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A human readable description of the issue encountered.
+     * A human readable description of the issue encountered
      *
      * @return the value
      */
@@ -147,12 +148,12 @@ public final class WorkRequestError
         return message;
     }
 
-    /** The time the error occured. */
+    /** The time the error occured */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured.
+     * The time the error occured
      *
      * @return the value
      */

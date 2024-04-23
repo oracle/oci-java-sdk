@@ -423,6 +423,7 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                         ExportAccessRequestsResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportAccessRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ExportAccessRequestsResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -485,6 +486,38 @@ public class LockboxAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCl
                 .handleResponseHeaderString("etag", GetAccessRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAccessRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessRequestInternalResponse> getAccessRequestInternal(
+            GetAccessRequestInternalRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAccessRequestInternalRequest, GetAccessRequestInternalResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");
+
+        return clientCall(request, GetAccessRequestInternalResponse::builder)
+                .logger(LOG, "getAccessRequestInternal")
+                .serviceDetails(
+                        "Lockbox",
+                        "GetAccessRequestInternal",
+                        "https://docs.oracle.com/iaas/api/#/en/managed-access/20220126/AccessRequestExt/GetAccessRequestInternal")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAccessRequestInternalRequest::builder)
+                .basePath("/20220126")
+                .appendPathParam("accessRequests")
+                .appendPathParam(request.getAccessRequestId())
+                .appendPathParam("internal")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.lockbox.model.AccessRequestExt.class,
+                        GetAccessRequestInternalResponse.Builder::accessRequestExt)
+                .handleResponseHeaderString("etag", GetAccessRequestInternalResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAccessRequestInternalResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

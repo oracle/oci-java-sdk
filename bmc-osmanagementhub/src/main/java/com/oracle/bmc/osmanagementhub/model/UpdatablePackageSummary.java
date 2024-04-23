@@ -5,7 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software package available for install on a managed instance. <br>
+ * Provides summary information for a software package available for installation on a managed
+ * instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -80,12 +81,12 @@ public final class UpdatablePackageSummary extends PackageSummary {
             this.__explicitlySet__.add("softwareSources");
             return this;
         }
-        /** The version of this upgradable package already installed on the instance. */
+        /** The version of the package that is currently installed on the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
         private String installedVersion;
 
         /**
-         * The version of this upgradable package already installed on the instance.
+         * The version of the package that is currently installed on the instance.
          *
          * @param installedVersion the value to set
          * @return this builder
@@ -95,12 +96,12 @@ public final class UpdatablePackageSummary extends PackageSummary {
             this.__explicitlySet__.add("installedVersion");
             return this;
         }
-        /** The classification of this update. */
+        /** The type of update. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private ClassificationTypes updateType;
 
         /**
-         * The classification of this update.
+         * The type of update.
          *
          * @param updateType the value to set
          * @return this builder
@@ -110,12 +111,12 @@ public final class UpdatablePackageSummary extends PackageSummary {
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /** List of errata containing this update. */
+        /** List of errata applicable to this update. */
         @com.fasterxml.jackson.annotation.JsonProperty("errata")
         private java.util.List<String> errata;
 
         /**
-         * List of errata containing this update.
+         * List of errata applicable to this update.
          *
          * @param errata the value to set
          * @return this builder
@@ -227,12 +228,12 @@ public final class UpdatablePackageSummary extends PackageSummary {
         this.relatedCves = relatedCves;
     }
 
-    /** The version of this upgradable package already installed on the instance. */
+    /** The version of the package that is currently installed on the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
     private final String installedVersion;
 
     /**
-     * The version of this upgradable package already installed on the instance.
+     * The version of the package that is currently installed on the instance.
      *
      * @return the value
      */
@@ -240,12 +241,12 @@ public final class UpdatablePackageSummary extends PackageSummary {
         return installedVersion;
     }
 
-    /** The classification of this update. */
+    /** The type of update. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final ClassificationTypes updateType;
 
     /**
-     * The classification of this update.
+     * The type of update.
      *
      * @return the value
      */
@@ -253,12 +254,12 @@ public final class UpdatablePackageSummary extends PackageSummary {
         return updateType;
     }
 
-    /** List of errata containing this update. */
+    /** List of errata applicable to this update. */
     @com.fasterxml.jackson.annotation.JsonProperty("errata")
     private final java.util.List<String> errata;
 
     /**
-     * List of errata containing this update.
+     * List of errata applicable to this update.
      *
      * @return the value
      */

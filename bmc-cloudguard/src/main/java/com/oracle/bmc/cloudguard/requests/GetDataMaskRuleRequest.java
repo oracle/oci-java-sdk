@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetDataMaskRuleRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of dataMaskRule */
+    /** OCID of the data mask rule */
     private String dataMaskRuleId;
 
-    /** OCID of dataMaskRule */
+    /** OCID of the data mask rule */
     public String getDataMaskRuleId() {
         return dataMaskRuleId;
     }
@@ -34,11 +34,11 @@ public class GetDataMaskRuleRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of dataMaskRule */
+        /** OCID of the data mask rule */
         private String dataMaskRuleId = null;
 
         /**
-         * OCID of dataMaskRule
+         * OCID of the data mask rule
          *
          * @param dataMaskRuleId the value to set
          * @return this builder instance

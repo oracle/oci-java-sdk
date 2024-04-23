@@ -16,11 +16,11 @@ public class CreateManagementStationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails> {
 
-    /** Details for the new ManagementStation. */
+    /** Provides the information used to create a management station. */
     private com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails
             createManagementStationDetails;
 
-    /** Details for the new ManagementStation. */
+    /** Provides the information used to create a management station. */
     public com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails
             getCreateManagementStationDetails() {
         return createManagementStationDetails;
@@ -76,12 +76,12 @@ public class CreateManagementStationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new ManagementStation. */
+        /** Provides the information used to create a management station. */
         private com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails
                 createManagementStationDetails = null;
 
         /**
-         * Details for the new ManagementStation.
+         * Provides the information used to create a management station.
          *
          * @param createManagementStationDetails the value to set
          * @return this builder instance

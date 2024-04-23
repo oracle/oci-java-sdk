@@ -172,8 +172,51 @@ public class ManagedInstanceGroupAsyncClient extends com.oracle.bmc.http.interna
                 .appendHeader("if-match", request.getIfMatch())
                 .hasBody()
                 .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AttachSoftwareSourcesToManagedInstanceGroupResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
                         "opc-request-id",
                         AttachSoftwareSourcesToManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeManagedInstanceGroupCompartmentResponse>
+            changeManagedInstanceGroupCompartment(
+                    ChangeManagedInstanceGroupCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeManagedInstanceGroupCompartmentRequest,
+                                    ChangeManagedInstanceGroupCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeManagedInstanceGroupCompartmentDetails(),
+                "changeManagedInstanceGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeManagedInstanceGroupCompartmentResponse::builder)
+                .logger(LOG, "changeManagedInstanceGroupCompartment")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "ChangeManagedInstanceGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeManagedInstanceGroupCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeManagedInstanceGroupCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -527,6 +570,49 @@ public class ManagedInstanceGroupAsyncClient extends com.oracle.bmc.http.interna
     }
 
     @Override
+    public java.util.concurrent.Future<InstallWindowsUpdatesOnManagedInstanceGroupResponse>
+            installWindowsUpdatesOnManagedInstanceGroup(
+                    InstallWindowsUpdatesOnManagedInstanceGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallWindowsUpdatesOnManagedInstanceGroupRequest,
+                                    InstallWindowsUpdatesOnManagedInstanceGroupResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getInstallWindowsUpdatesOnManagedInstanceGroupDetails(),
+                "installWindowsUpdatesOnManagedInstanceGroupDetails is required");
+
+        return clientCall(request, InstallWindowsUpdatesOnManagedInstanceGroupResponse::builder)
+                .logger(LOG, "installWindowsUpdatesOnManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "InstallWindowsUpdatesOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallWindowsUpdatesOnManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InstallWindowsUpdatesOnManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("installWindowsUpdates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        InstallWindowsUpdatesOnManagedInstanceGroupResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        InstallWindowsUpdatesOnManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceGroupAvailableModulesResponse>
             listManagedInstanceGroupAvailableModules(
                     ListManagedInstanceGroupAvailableModulesRequest request,
@@ -810,6 +896,16 @@ public class ManagedInstanceGroupAsyncClient extends com.oracle.bmc.http.interna
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
@@ -950,6 +1046,49 @@ public class ManagedInstanceGroupAsyncClient extends com.oracle.bmc.http.interna
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemovePackagesFromManagedInstanceGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SwitchModuleStreamOnManagedInstanceGroupResponse>
+            switchModuleStreamOnManagedInstanceGroup(
+                    SwitchModuleStreamOnManagedInstanceGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SwitchModuleStreamOnManagedInstanceGroupRequest,
+                                    SwitchModuleStreamOnManagedInstanceGroupResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagedInstanceGroupId(), "managedInstanceGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchModuleStreamOnManagedInstanceGroupDetails(),
+                "switchModuleStreamOnManagedInstanceGroupDetails is required");
+
+        return clientCall(request, SwitchModuleStreamOnManagedInstanceGroupResponse::builder)
+                .logger(LOG, "switchModuleStreamOnManagedInstanceGroup")
+                .serviceDetails(
+                        "ManagedInstanceGroup",
+                        "SwitchModuleStreamOnManagedInstanceGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/SwitchModuleStreamOnManagedInstanceGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchModuleStreamOnManagedInstanceGroupRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstanceGroups")
+                .appendPathParam(request.getManagedInstanceGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("moduleStreams")
+                .appendPathParam("switchModuleStream")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchModuleStreamOnManagedInstanceGroupResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SwitchModuleStreamOnManagedInstanceGroupResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

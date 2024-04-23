@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software package summary. <br>
+ * Provides summary information for a software package. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -125,12 +125,12 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
         return architecture;
     }
 
-    /** list of software sources that provide the software package. */
+    /** List of software sources that provide the software package. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceDetails> softwareSources;
 
     /**
-     * list of software sources that provide the software package.
+     * List of software sources that provide the software package.
      *
      * @return the value
      */
@@ -198,7 +198,7 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
         return result;
     }
 
-    /** classifier for child instances of this object. */
+    /** Status of the software package. */
     public enum PackageClassification implements com.oracle.bmc.http.internal.BmcEnum {
         Installed("INSTALLED"),
         Available("AVAILABLE"),

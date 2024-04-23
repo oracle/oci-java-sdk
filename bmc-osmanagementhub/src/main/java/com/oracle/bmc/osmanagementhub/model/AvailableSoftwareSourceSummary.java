@@ -5,8 +5,9 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software source which can be added to a managed instance. Once a software source is added,
- * packages from that software source can be installed on that managed instance. <br>
+ * Provides summary information about an available software source. An available software source can
+ * be added to a managed instance. After a software source is added, packages from that software
+ * source can be installed on that managed instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,12 +35,16 @@ public final class AvailableSoftwareSourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** unique identifier that is immutable on creation. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * unique identifier that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param id the value to set
          * @return this builder
@@ -49,12 +54,16 @@ public final class AvailableSoftwareSourceSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID for the compartment. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID for the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the software source.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -64,12 +73,12 @@ public final class AvailableSoftwareSourceSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** User friendly name for the software source. */
+        /** User-friendly name for the software source. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * User friendly name for the software source.
+         * User-friendly name for the software source.
          *
          * @param displayName the value to set
          * @return this builder
@@ -117,12 +126,16 @@ public final class AvailableSoftwareSourceSummary
         return new Builder().copy(this);
     }
 
-    /** unique identifier that is immutable on creation. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * unique identifier that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
      *
      * @return the value
      */
@@ -130,12 +143,16 @@ public final class AvailableSoftwareSourceSummary
         return id;
     }
 
-    /** The OCID for the compartment. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID for the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
      *
      * @return the value
      */
@@ -143,12 +160,12 @@ public final class AvailableSoftwareSourceSummary
         return compartmentId;
     }
 
-    /** User friendly name for the software source. */
+    /** User-friendly name for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source.
      *
      * @return the value
      */

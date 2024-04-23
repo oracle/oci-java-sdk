@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details about a new security zone recipe <br>
+ * Parameters to be used to create a security recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +49,18 @@ public final class CreateSecurityRecipeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The recipe's name */
+        /**
+         * The recipe's display name.
+         *
+         * <p>Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The recipe's name
+         * The recipe's display name.
+         *
+         * <p>Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -79,12 +85,12 @@ public final class CreateSecurityRecipeDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The list of {@code SecurityPolicy} ids to include in the recipe */
+        /** The list of security policy IDs to include in the recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
         private java.util.List<String> securityPolicies;
 
         /**
-         * The list of {@code SecurityPolicy} ids to include in the recipe
+         * The list of security policy IDs to include in the recipe
          *
          * @param securityPolicies the value to set
          * @return this builder
@@ -94,12 +100,12 @@ public final class CreateSecurityRecipeDetails
             this.__explicitlySet__.add("securityPolicies");
             return this;
         }
-        /** The compartment in which to create the recipe */
+        /** The OCID of the compartment in which to create the recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment in which to create the recipe
+         * The OCID of the compartment in which to create the recipe
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -204,12 +210,18 @@ public final class CreateSecurityRecipeDetails
         return new Builder().copy(this);
     }
 
-    /** The recipe's name */
+    /**
+     * The recipe's display name.
+     *
+     * <p>Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The recipe's name
+     * The recipe's display name.
+     *
+     * <p>Avoid entering confidential information.
      *
      * @return the value
      */
@@ -230,12 +242,12 @@ public final class CreateSecurityRecipeDetails
         return description;
     }
 
-    /** The list of {@code SecurityPolicy} ids to include in the recipe */
+    /** The list of security policy IDs to include in the recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
     private final java.util.List<String> securityPolicies;
 
     /**
-     * The list of {@code SecurityPolicy} ids to include in the recipe
+     * The list of security policy IDs to include in the recipe
      *
      * @return the value
      */
@@ -243,12 +255,12 @@ public final class CreateSecurityRecipeDetails
         return securityPolicies;
     }
 
-    /** The compartment in which to create the recipe */
+    /** The OCID of the compartment in which to create the recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment in which to create the recipe
+     * The OCID of the compartment in which to create the recipe
      *
      * @return the value
      */

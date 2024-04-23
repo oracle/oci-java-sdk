@@ -15,10 +15,10 @@ public class UpdateDetectorRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateDetectorRecipeDetails> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
@@ -92,11 +92,11 @@ public class UpdateDetectorRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance

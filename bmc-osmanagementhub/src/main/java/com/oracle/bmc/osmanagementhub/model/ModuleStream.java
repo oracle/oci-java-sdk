@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A module stream provided by a software source. <br>
+ * An object that defines a module stream provided by a software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -101,12 +101,16 @@ public final class ModuleStream extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** The OCID of the software source that provides this module stream. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source that provides this module stream.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The OCID of the software source that provides this module stream.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source that provides this module stream.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -306,12 +310,16 @@ public final class ModuleStream extends com.oracle.bmc.http.client.internal.Expl
         return isDefault;
     }
 
-    /** The OCID of the software source that provides this module stream. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source that provides this module stream.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The OCID of the software source that provides this module stream.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source that provides this module stream.
      *
      * @return the value
      */

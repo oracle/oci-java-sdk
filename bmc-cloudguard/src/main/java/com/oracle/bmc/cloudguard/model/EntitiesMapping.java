@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Data Source Entities mappings <br>
+ * Parameters for entities mapping to data source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class EntitiesMapping
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The display name of entity */
+        /** Display name of the entity */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of entity
+         * Display name of the entity
          *
          * @param displayName the value to set
          * @return this builder
@@ -62,12 +62,12 @@ public final class EntitiesMapping
             this.__explicitlySet__.add("queryField");
             return this;
         }
-        /** Possible type of entity */
+        /** Type of entity */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
         /**
-         * Possible type of entity
+         * Type of entity
          *
          * @param entityType the value to set
          * @return this builder
@@ -114,12 +114,12 @@ public final class EntitiesMapping
         return new Builder().copy(this);
     }
 
-    /** The display name of entity */
+    /** Display name of the entity */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of entity
+     * Display name of the entity
      *
      * @return the value
      */
@@ -140,12 +140,12 @@ public final class EntitiesMapping
         return queryField;
     }
 
-    /** Possible type of entity */
+    /** Type of entity */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
     /**
-     * Possible type of entity
+     * Type of entity
      *
      * @return the value
      */

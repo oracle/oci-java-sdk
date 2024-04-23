@@ -17,18 +17,24 @@ public class DisableModuleStreamOnManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .DisableModuleStreamOnManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for modules to disable on the managed instance group. */
+    /** The details used to disable modules on the managed instance group. */
     private com.oracle.bmc.osmanagementhub.model.DisableModuleStreamOnManagedInstanceGroupDetails
             disableModuleStreamOnManagedInstanceGroupDetails;
 
-    /** Details for modules to disable on the managed instance group. */
+    /** The details used to disable modules on the managed instance group. */
     public com.oracle.bmc.osmanagementhub.model.DisableModuleStreamOnManagedInstanceGroupDetails
             getDisableModuleStreamOnManagedInstanceGroupDetails() {
         return disableModuleStreamOnManagedInstanceGroupDetails;
@@ -103,11 +109,15 @@ public class DisableModuleStreamOnManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -117,13 +127,13 @@ public class DisableModuleStreamOnManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for modules to disable on the managed instance group. */
+        /** The details used to disable modules on the managed instance group. */
         private com.oracle.bmc.osmanagementhub.model
                         .DisableModuleStreamOnManagedInstanceGroupDetails
                 disableModuleStreamOnManagedInstanceGroupDetails = null;
 
         /**
-         * Details for modules to disable on the managed instance group.
+         * The details used to disable modules on the managed instance group.
          *
          * @param disableModuleStreamOnManagedInstanceGroupDetails the value to set
          * @return this builder instance

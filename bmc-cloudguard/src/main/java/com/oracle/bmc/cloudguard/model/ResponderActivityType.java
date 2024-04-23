@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible Responder activity types */
+/** Possible Responder activity types. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ResponderActivityType implements com.oracle.bmc.http.internal.BmcEnum {
     Started("STARTED"),

@@ -4,12 +4,13 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible availabilities of a software source. */
+/** Availability status of a software source. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum Availability implements com.oracle.bmc.http.internal.BmcEnum {
     Available("AVAILABLE"),
     Selected("SELECTED"),
     Restricted("RESTRICTED"),
+    Unavailable("UNAVAILABLE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

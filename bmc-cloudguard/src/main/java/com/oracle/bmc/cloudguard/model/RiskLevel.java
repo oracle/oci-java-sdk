@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Risk Levels */
+/** Possible risk level values */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum RiskLevel implements com.oracle.bmc.http.internal.BmcEnum {
     Critical("CRITICAL"),
