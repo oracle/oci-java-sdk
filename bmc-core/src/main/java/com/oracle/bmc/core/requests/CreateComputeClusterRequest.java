@@ -25,8 +25,8 @@ public class CreateComputeClusterRequest
      * in the compute cluster. The instances must be created in the same compartment and
      * availability domain as the cluster.
      *
-     * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-     * when you want to use different types of instances in the RDMA network group.
+     * <p>Use compute clusters when you want to manage instances in the cluster individually in the
+     * RDMA network group.
      *
      * <p>For details about creating a cluster network that uses instance pools to manage groups of
      * identical instances, see {@link
@@ -45,8 +45,8 @@ public class CreateComputeClusterRequest
      * in the compute cluster. The instances must be created in the same compartment and
      * availability domain as the cluster.
      *
-     * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-     * when you want to use different types of instances in the RDMA network group.
+     * <p>Use compute clusters when you want to manage instances in the cluster individually in the
+     * RDMA network group.
      *
      * <p>For details about creating a cluster network that uses instance pools to manage groups of
      * identical instances, see {@link
@@ -117,8 +117,8 @@ public class CreateComputeClusterRequest
          * instances in the compute cluster. The instances must be created in the same compartment
          * and availability domain as the cluster.
          *
-         * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-         * when you want to use different types of instances in the RDMA network group.
+         * <p>Use compute clusters when you want to manage instances in the cluster individually in
+         * the RDMA network group.
          *
          * <p>For details about creating a cluster network that uses instance pools to manage groups
          * of identical instances, see {@link
@@ -138,8 +138,8 @@ public class CreateComputeClusterRequest
          * instances in the compute cluster. The instances must be created in the same compartment
          * and availability domain as the cluster.
          *
-         * <p>Use compute clusters when you want to manage instances in the cluster individually, or
-         * when you want to use different types of instances in the RDMA network group.
+         * <p>Use compute clusters when you want to manage instances in the cluster individually in
+         * the RDMA network group.
          *
          * <p>For details about creating a cluster network that uses instance pools to manage groups
          * of identical instances, see {@link

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Overriden settings of a Detector Rule applied on target <br>
+ * Overriden settings of a detector rule in recipe attached to target. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -58,12 +58,12 @@ public final class TargetDetectorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Enables the control */
+        /** Enablement state of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Enables the control
+         * Enablement state of the detector rule
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -73,12 +73,12 @@ public final class TargetDetectorDetails
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** The Risk Level */
+        /** The risk level of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level of the detector rule
          *
          * @param riskLevel the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class TargetDetectorDetails
             this.__explicitlySet__.add("riskLevel");
             return this;
         }
-        /** Configuration details */
+        /** List of detector rule configurations */
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<DetectorConfiguration> configurations;
 
         /**
-         * Configuration details
+         * List of detector rule configurations
          *
          * @param configurations the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class TargetDetectorDetails
             this.__explicitlySet__.add("conditionGroups");
             return this;
         }
-        /** user defined labels for a detector rule */
+        /** User-defined labels for a detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for a detector rule
          *
          * @param labels the value to set
          * @return this builder
@@ -133,12 +133,12 @@ public final class TargetDetectorDetails
             this.__explicitlySet__.add("labels");
             return this;
         }
-        /** configuration allowed or not */
+        /** Configuration allowed or not */
         @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
         private Boolean isConfigurationAllowed;
 
         /**
-         * configuration allowed or not
+         * Configuration allowed or not
          *
          * @param isConfigurationAllowed the value to set
          * @return this builder
@@ -148,12 +148,12 @@ public final class TargetDetectorDetails
             this.__explicitlySet__.add("isConfigurationAllowed");
             return this;
         }
-        /** Cutover point for an elevated resource Risk Score to create a Problem */
+        /** Point at which an elevated resource risk score creates a problem */
         @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
         private Integer problemThreshold;
 
         /**
-         * Cutover point for an elevated resource Risk Score to create a Problem
+         * Point at which an elevated resource risk score creates a problem
          *
          * @param problemThreshold the value to set
          * @return this builder
@@ -257,12 +257,12 @@ public final class TargetDetectorDetails
         return new Builder().copy(this);
     }
 
-    /** Enables the control */
+    /** Enablement state of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Enables the control
+     * Enablement state of the detector rule
      *
      * @return the value
      */
@@ -270,12 +270,12 @@ public final class TargetDetectorDetails
         return isEnabled;
     }
 
-    /** The Risk Level */
+    /** The risk level of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level of the detector rule
      *
      * @return the value
      */
@@ -283,12 +283,12 @@ public final class TargetDetectorDetails
         return riskLevel;
     }
 
-    /** Configuration details */
+    /** List of detector rule configurations */
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<DetectorConfiguration> configurations;
 
     /**
-     * Configuration details
+     * List of detector rule configurations
      *
      * @return the value
      */
@@ -309,12 +309,12 @@ public final class TargetDetectorDetails
         return conditionGroups;
     }
 
-    /** user defined labels for a detector rule */
+    /** User-defined labels for a detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * user defined labels for a detector rule
+     * User-defined labels for a detector rule
      *
      * @return the value
      */
@@ -322,12 +322,12 @@ public final class TargetDetectorDetails
         return labels;
     }
 
-    /** configuration allowed or not */
+    /** Configuration allowed or not */
     @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
     private final Boolean isConfigurationAllowed;
 
     /**
-     * configuration allowed or not
+     * Configuration allowed or not
      *
      * @return the value
      */
@@ -335,12 +335,12 @@ public final class TargetDetectorDetails
         return isConfigurationAllowed;
     }
 
-    /** Cutover point for an elevated resource Risk Score to create a Problem */
+    /** Point at which an elevated resource risk score creates a problem */
     @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
     private final Integer problemThreshold;
 
     /**
-     * Cutover point for an elevated resource Risk Score to create a Problem
+     * Point at which an elevated resource risk score creates a problem
      *
      * @return the value
      */

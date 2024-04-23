@@ -3,6 +3,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.40.0 - 2024-04-23
+### Added
+- Support for the Cluster Placement Groups service
+- Support for new optional parameter for managing approval template in the Managed Access service
+- Support for cluster placement groups in the Compute service
+- Support for replacing boot volume for virtual machines in the Compute service
+- Support for assigning a cluster placement group to boot and block volumes in the Block Storage service
+- Support for container workload integration in the Cloud Guard service
+- Support for instances in OCI and 3rd party clouds in the OS Management service
+
+### Breaking Changes
+- The Application Migration service was decommissioned and removed
+- Support for default retries on the operations of the Managed Access service
+- Return type of method `public java.lang.String getArchitecture()` has been changed to `com.oracle.bmc.osmanagementhub.model.SoftwarePackageArchitecture` in the model `com.oracle.bmc.osmanagementhub.model.SoftwarePackage` in the OS Management service
+- Return type of method `public java.lang.String getArchitecture()` has been changed to `com.oracle.bmc.osmanagementhub.model.SoftwarePackageArchitecture` in the model `com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary` in the OS Management service
+- Method `public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation()` has been removed from `com.oracle.bmc.osmanagementhub.requests.GetManagedInstanceAnalyticContentRequest` in the OS Management service
+- Method `public java.util.List getAdvisoryType()` has been removed from `com.oracle.bmc.osmanagementhub.requests.ListManagedInstanceErrataRequest` in the OS Management service
+- Method `public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation()` has been removed from `com.oracle.bmc.osmanagementhub.requests.SummarizeManagedInstanceAnalyticsRequest` in the OS Management service
+- Class `com.oracle.bmc.osmanagementhub.requests.GetManagedInstanceContentRequest$AdvisoryType` has been removed in the OS Management service
+- Class `com.oracle.bmc.osmanagementhub.requests.ListManagedInstanceErrataRequest$AdvisoryType` has been removed in the OS Management service
+
 ## 3.39.2 - 2024-04-16
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the me-abudhabi-3 region

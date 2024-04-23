@@ -240,6 +240,13 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                         request.getOperationType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("retryOfId", request.getRetryOfId())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

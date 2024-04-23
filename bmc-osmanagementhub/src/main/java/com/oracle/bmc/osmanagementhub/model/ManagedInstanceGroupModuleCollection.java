@@ -5,8 +5,9 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Results of a search for module streams on a managed instance group. Contains both
- * ModuleStreamOnManagedInstanceGroupSummary items and other data. <br>
+ * A set of module streams returned for the {@link
+ * #listManagedInstanceGroupModules(ListManagedInstanceGroupModulesRequest)
+ * listManagedInstanceGroupModules} operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

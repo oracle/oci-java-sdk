@@ -43,12 +43,12 @@ public final class ProblemTrendAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key-value pairs of dimensions and their names. */
+        /** The key-value pairs of dimensions and their names */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
         /**
-         * The key-value pairs of dimensions and their names.
+         * The key-value pairs of dimensions and their names
          *
          * @param dimensionsMap the value to set
          * @return this builder
@@ -58,12 +58,12 @@ public final class ProblemTrendAggregation
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-        /** Start Time in epoch seconds */
+        /** Start time in epoch seconds */
         @com.fasterxml.jackson.annotation.JsonProperty("startTimestamp")
         private java.math.BigDecimal startTimestamp;
 
         /**
-         * Start Time in epoch seconds
+         * Start time in epoch seconds
          *
          * @param startTimestamp the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class ProblemTrendAggregation
             this.__explicitlySet__.add("durationInSeconds");
             return this;
         }
-        /** The number of occurences with for the corresponding time range and dimensions. */
+        /** The number of occurrences for the corresponding time range and dimensions. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * The number of occurences with for the corresponding time range and dimensions.
+         * The number of occurrences for the corresponding time range and dimensions.
          *
          * @param count the value to set
          * @return this builder
@@ -147,12 +147,12 @@ public final class ProblemTrendAggregation
         return new Builder().copy(this);
     }
 
-    /** The key-value pairs of dimensions and their names. */
+    /** The key-value pairs of dimensions and their names */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
     /**
-     * The key-value pairs of dimensions and their names.
+     * The key-value pairs of dimensions and their names
      *
      * @return the value
      */
@@ -160,12 +160,12 @@ public final class ProblemTrendAggregation
         return dimensionsMap;
     }
 
-    /** Start Time in epoch seconds */
+    /** Start time in epoch seconds */
     @com.fasterxml.jackson.annotation.JsonProperty("startTimestamp")
     private final java.math.BigDecimal startTimestamp;
 
     /**
-     * Start Time in epoch seconds
+     * Start time in epoch seconds
      *
      * @return the value
      */
@@ -186,12 +186,12 @@ public final class ProblemTrendAggregation
         return durationInSeconds;
     }
 
-    /** The number of occurences with for the corresponding time range and dimensions. */
+    /** The number of occurrences for the corresponding time range and dimensions. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * The number of occurences with for the corresponding time range and dimensions.
+     * The number of occurrences for the corresponding time range and dimensions.
      *
      * @return the value
      */

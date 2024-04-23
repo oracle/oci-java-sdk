@@ -15,25 +15,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagementStationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     private String displayName;
 
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -44,18 +42,24 @@ public class ListManagementStationsRequest
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** The current lifecycle state for the object. */
+    /** A filter that returns information for management stations in the specified state. */
     private com.oracle.bmc.osmanagementhub.model.ManagementStation.LifecycleState lifecycleState;
 
-    /** The current lifecycle state for the object. */
+    /** A filter that returns information for management stations in the specified state. */
     public com.oracle.bmc.osmanagementhub.model.ManagementStation.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
-    /** The OCID of the managed instance for which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance. This filter returns resources associated with this managed instance.
+     */
     private String managedInstanceId;
 
-    /** The OCID of the managed instance for which to list resources. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance. This filter returns resources associated with this managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -170,10 +174,18 @@ public class ListManagementStationsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station. A filter that returns information about the specified management
+     * station.
+     */
     private String id;
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station. A filter that returns information about the specified management
+     * station.
+     */
     public String getId() {
         return id;
     }
@@ -184,11 +196,15 @@ public class ListManagementStationsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -198,17 +214,11 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
-         */
+        /** A filter to return resources that match the given user-friendly name. */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * A filter to return resources that match the given user-friendly name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -232,12 +242,12 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /** The current lifecycle state for the object. */
+        /** A filter that returns information for management stations in the specified state. */
         private com.oracle.bmc.osmanagementhub.model.ManagementStation.LifecycleState
                 lifecycleState = null;
 
         /**
-         * The current lifecycle state for the object.
+         * A filter that returns information for management stations in the specified state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -249,11 +259,17 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /** The OCID of the managed instance for which to list resources. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance. This filter returns resources associated with this managed
+         * instance.
+         */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance for which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance. This filter returns resources associated with this managed
+         * instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance
@@ -363,11 +379,17 @@ public class ListManagementStationsRequest
             return this;
         }
 
-        /** The OCID of the management station. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station. A filter that returns information about the specified
+         * management station.
+         */
         private String id = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station. A filter that returns information about the specified
+         * management station.
          *
          * @param id the value to set
          * @return this builder instance

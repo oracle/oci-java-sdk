@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating a software source. <br>
+ * Provides the information used to update a software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,6 +25,9 @@ package com.oracle.bmc.osmanagementhub.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateCustomSoftwareSourceDetails.class,
             name = "CUSTOM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateVersionedCustomSoftwareSourceDetails.class,
+            name = "VERSIONED"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateVendorSoftwareSourceDetails.class,
             name = "VENDOR")
@@ -55,12 +58,16 @@ public class UpdateSoftwareSourceDetails
         this.definedTags = definedTags;
     }
 
-    /** The OCID of the tenancy containing the software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
      *
      * @return the value
      */
@@ -68,12 +75,12 @@ public class UpdateSoftwareSourceDetails
         return compartmentId;
     }
 
-    /** User friendly name for the software source. */
+    /** User-friendly name for the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source.
      *
      * @return the value
      */
@@ -81,12 +88,12 @@ public class UpdateSoftwareSourceDetails
         return displayName;
     }
 
-    /** Information specified by the user about the software source. */
+    /** User-specified description of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the software source.
+     * User-specified description of the software source.
      *
      * @return the value
      */

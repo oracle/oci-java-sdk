@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListModuleStreamProfilesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -29,16 +35,10 @@ public class ListModuleStreamProfilesRequest
     public String getModuleName() {
         return moduleName;
     }
-    /**
-     * The name of the stream of the containing module. This parameter is required if a profileName
-     * is specified.
-     */
+    /** The name of the module stream. This parameter is required if a profile name is specified. */
     private String streamName;
 
-    /**
-     * The name of the stream of the containing module. This parameter is required if a profileName
-     * is specified.
-     */
+    /** The name of the module stream. This parameter is required if a profile name is specified. */
     public String getStreamName() {
         return streamName;
     }
@@ -163,11 +163,15 @@ public class ListModuleStreamProfilesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance
@@ -192,14 +196,12 @@ public class ListModuleStreamProfilesRequest
         }
 
         /**
-         * The name of the stream of the containing module. This parameter is required if a
-         * profileName is specified.
+         * The name of the module stream. This parameter is required if a profile name is specified.
          */
         private String streamName = null;
 
         /**
-         * The name of the stream of the containing module. This parameter is required if a
-         * profileName is specified.
+         * The name of the module stream. This parameter is required if a profile name is specified.
          *
          * @param streamName the value to set
          * @return this builder instance

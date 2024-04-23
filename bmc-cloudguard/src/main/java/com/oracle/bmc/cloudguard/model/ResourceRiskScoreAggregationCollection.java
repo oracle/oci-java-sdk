@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Collection of Resource risk scores <br>
+ * Collection of risk score aggregations. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -38,12 +38,12 @@ public final class ResourceRiskScoreAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of filter. Valid Values - problem_id and resource_id */
+        /** Type of filter */
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private String filterType;
 
         /**
-         * Type of filter. Valid Values - problem_id and resource_id
+         * Type of filter
          *
          * @param filterType the value to set
          * @return this builder
@@ -53,12 +53,12 @@ public final class ResourceRiskScoreAggregationCollection
             this.__explicitlySet__.add("filterType");
             return this;
         }
-        /** Id value on which risk scores are filtered */
+        /** ID for filter that to be used to filter risk scores */
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
         /**
-         * Id value on which risk scores are filtered
+         * ID for filter that to be used to filter risk scores
          *
          * @param filterId the value to set
          * @return this builder
@@ -68,12 +68,12 @@ public final class ResourceRiskScoreAggregationCollection
             this.__explicitlySet__.add("filterId");
             return this;
         }
-        /** Risk Score */
+        /** Risk score value that triggers a problem */
         @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
         private Integer riskThreshold;
 
         /**
-         * Risk Score
+         * Risk score value that triggers a problem
          *
          * @param riskThreshold the value to set
          * @return this builder
@@ -83,12 +83,12 @@ public final class ResourceRiskScoreAggregationCollection
             this.__explicitlySet__.add("riskThreshold");
             return this;
         }
-        /** List of ResourceRiskScoreAggregation */
+        /** List of ResourceRiskScoreAggregation resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceRiskScoreAggregation> items;
 
         /**
-         * List of ResourceRiskScoreAggregation
+         * List of ResourceRiskScoreAggregation resources
          *
          * @param items the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class ResourceRiskScoreAggregationCollection
         return new Builder().copy(this);
     }
 
-    /** Type of filter. Valid Values - problem_id and resource_id */
+    /** Type of filter */
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final String filterType;
 
     /**
-     * Type of filter. Valid Values - problem_id and resource_id
+     * Type of filter
      *
      * @return the value
      */
@@ -152,12 +152,12 @@ public final class ResourceRiskScoreAggregationCollection
         return filterType;
     }
 
-    /** Id value on which risk scores are filtered */
+    /** ID for filter that to be used to filter risk scores */
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
     /**
-     * Id value on which risk scores are filtered
+     * ID for filter that to be used to filter risk scores
      *
      * @return the value
      */
@@ -165,12 +165,12 @@ public final class ResourceRiskScoreAggregationCollection
         return filterId;
     }
 
-    /** Risk Score */
+    /** Risk score value that triggers a problem */
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
     private final Integer riskThreshold;
 
     /**
-     * Risk Score
+     * Risk score value that triggers a problem
      *
      * @return the value
      */
@@ -178,12 +178,12 @@ public final class ResourceRiskScoreAggregationCollection
         return riskThreshold;
     }
 
-    /** List of ResourceRiskScoreAggregation */
+    /** List of ResourceRiskScoreAggregation resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceRiskScoreAggregation> items;
 
     /**
-     * List of ResourceRiskScoreAggregation
+     * List of ResourceRiskScoreAggregation resources
      *
      * @return the value
      */

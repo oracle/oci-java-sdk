@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of Operator <br>
+ * Summary information on available operators. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -51,12 +51,12 @@ public final class OperatorSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** name of the operand */
+        /** Name of the operand */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * name of the operand
+         * Name of the operand
          *
          * @param name the value to set
          * @return this builder
@@ -66,12 +66,12 @@ public final class OperatorSummary
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** display name of the operand */
+        /** Display name of the operand */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * display name of the operand
+         * Display name of the operand
          *
          * @param displayName the value to set
          * @return this builder
@@ -81,12 +81,12 @@ public final class OperatorSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** data type of operand */
+        /** Data type of the operand */
         @com.fasterxml.jackson.annotation.JsonProperty("datatype")
         private String datatype;
 
         /**
-         * data type of operand
+         * Data type of the operand
          *
          * @param datatype the value to set
          * @return this builder
@@ -96,12 +96,12 @@ public final class OperatorSummary
             this.__explicitlySet__.add("datatype");
             return this;
         }
-        /** operand list type */
+        /** Operand list type */
         @com.fasterxml.jackson.annotation.JsonProperty("managedListtype")
         private String managedListtype;
 
         /**
-         * operand list type
+         * Operand list type
          *
          * @param managedListtype the value to set
          * @return this builder
@@ -111,12 +111,12 @@ public final class OperatorSummary
             this.__explicitlySet__.add("managedListtype");
             return this;
         }
-        /** Filter type can be config filter or condition filter */
+        /** Type of filter */
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private ConditionFilterType filterType;
 
         /**
-         * Filter type can be config filter or condition filter
+         * Type of filter
          *
          * @param filterType the value to set
          * @return this builder
@@ -141,12 +141,12 @@ public final class OperatorSummary
             this.__explicitlySet__.add("operators");
             return this;
         }
-        /** configuration value type list for multilist data type */
+        /** Configuration value type list for multi-list data type */
         @com.fasterxml.jackson.annotation.JsonProperty("multiListTypes")
         private java.util.List<String> multiListTypes;
 
         /**
-         * configuration value type list for multilist data type
+         * Configuration value type list for multi-list data type
          *
          * @param multiListTypes the value to set
          * @return this builder
@@ -212,12 +212,12 @@ public final class OperatorSummary
         return new Builder().copy(this);
     }
 
-    /** name of the operand */
+    /** Name of the operand */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * name of the operand
+     * Name of the operand
      *
      * @return the value
      */
@@ -225,12 +225,12 @@ public final class OperatorSummary
         return name;
     }
 
-    /** display name of the operand */
+    /** Display name of the operand */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * display name of the operand
+     * Display name of the operand
      *
      * @return the value
      */
@@ -238,12 +238,12 @@ public final class OperatorSummary
         return displayName;
     }
 
-    /** data type of operand */
+    /** Data type of the operand */
     @com.fasterxml.jackson.annotation.JsonProperty("datatype")
     private final String datatype;
 
     /**
-     * data type of operand
+     * Data type of the operand
      *
      * @return the value
      */
@@ -251,12 +251,12 @@ public final class OperatorSummary
         return datatype;
     }
 
-    /** operand list type */
+    /** Operand list type */
     @com.fasterxml.jackson.annotation.JsonProperty("managedListtype")
     private final String managedListtype;
 
     /**
-     * operand list type
+     * Operand list type
      *
      * @return the value
      */
@@ -264,12 +264,12 @@ public final class OperatorSummary
         return managedListtype;
     }
 
-    /** Filter type can be config filter or condition filter */
+    /** Type of filter */
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final ConditionFilterType filterType;
 
     /**
-     * Filter type can be config filter or condition filter
+     * Type of filter
      *
      * @return the value
      */
@@ -290,12 +290,12 @@ public final class OperatorSummary
         return operators;
     }
 
-    /** configuration value type list for multilist data type */
+    /** Configuration value type list for multi-list data type */
     @com.fasterxml.jackson.annotation.JsonProperty("multiListTypes")
     private final java.util.List<String> multiListTypes;
 
     /**
-     * configuration value type list for multilist data type
+     * Configuration value type list for multi-list data type
      *
      * @return the value
      */

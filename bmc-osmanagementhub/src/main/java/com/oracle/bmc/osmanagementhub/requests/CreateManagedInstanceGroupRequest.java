@@ -16,11 +16,11 @@ public class CreateManagedInstanceGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.CreateManagedInstanceGroupDetails> {
 
-    /** Details for the new managed instance group. */
+    /** Provides the information used to create the managed instance group. */
     private com.oracle.bmc.osmanagementhub.model.CreateManagedInstanceGroupDetails
             createManagedInstanceGroupDetails;
 
-    /** Details for the new managed instance group. */
+    /** Provides the information used to create the managed instance group. */
     public com.oracle.bmc.osmanagementhub.model.CreateManagedInstanceGroupDetails
             getCreateManagedInstanceGroupDetails() {
         return createManagedInstanceGroupDetails;
@@ -76,12 +76,12 @@ public class CreateManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new managed instance group. */
+        /** Provides the information used to create the managed instance group. */
         private com.oracle.bmc.osmanagementhub.model.CreateManagedInstanceGroupDetails
                 createManagedInstanceGroupDetails = null;
 
         /**
-         * Details for the new managed instance group.
+         * Provides the information used to create the managed instance group.
          *
          * @param createManagedInstanceGroupDetails the value to set
          * @return this builder instance

@@ -15,17 +15,17 @@ public class UpdateManagedListRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateManagedListDetails> {
 
-    /** The cloudguard list OCID to be passed in the request. */
+    /** The managed list OCID to be passed in the request. */
     private String managedListId;
 
-    /** The cloudguard list OCID to be passed in the request. */
+    /** The managed list OCID to be passed in the request. */
     public String getManagedListId() {
         return managedListId;
     }
-    /** Details for the ManagedList to be updated */
+    /** Details for the ManagedList resource to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateManagedListDetails updateManagedListDetails;
 
-    /** Details for the ManagedList to be updated */
+    /** Details for the ManagedList resource to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateManagedListDetails getUpdateManagedListDetails() {
         return updateManagedListDetails;
     }
@@ -91,11 +91,11 @@ public class UpdateManagedListRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The cloudguard list OCID to be passed in the request. */
+        /** The managed list OCID to be passed in the request. */
         private String managedListId = null;
 
         /**
-         * The cloudguard list OCID to be passed in the request.
+         * The managed list OCID to be passed in the request.
          *
          * @param managedListId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class UpdateManagedListRequest
             return this;
         }
 
-        /** Details for the ManagedList to be updated */
+        /** Details for the ManagedList resource to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateManagedListDetails updateManagedListDetails =
                 null;
 
         /**
-         * Details for the ManagedList to be updated
+         * Details for the ManagedList resource to be updated
          *
          * @param updateManagedListDetails the value to set
          * @return this builder instance

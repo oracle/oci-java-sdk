@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The details about the software packages to be updated. <br>
+ * Provides the information used to update software packages on a managed instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -51,12 +51,12 @@ public final class UpdatePackagesOnManagedInstanceDetails
             this.__explicitlySet__.add("packageNames");
             return this;
         }
-        /** The type of updates to be applied. */
+        /** The types of updates to be applied. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateTypes")
         private java.util.List<UpdateTypes> updateTypes;
 
         /**
-         * The type of updates to be applied.
+         * The types of updates to be applied.
          *
          * @param updateTypes the value to set
          * @return this builder
@@ -126,12 +126,12 @@ public final class UpdatePackagesOnManagedInstanceDetails
         return packageNames;
     }
 
-    /** The type of updates to be applied. */
+    /** The types of updates to be applied. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateTypes")
     private final java.util.List<UpdateTypes> updateTypes;
 
     /**
-     * The type of updates to be applied.
+     * The types of updates to be applied.
      *
      * @return the value
      */

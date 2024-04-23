@@ -5,19 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A versioned custom software source OCID (softwareSourceId) is required when promoting software
- * source content to lifecycle stage rank one. Software source content must be promoted to lifecycle
- * stage rank one before being eligible for promotion to subsequent lifecycle stages, else an error
- * is returned. Software source content is expected to be promoted in order starting with lifecycle
- * stage rank one, followed by rank two, then rank three and so on.
- *
- * <p>When promoting software source content to lifecycle stage rank two, three, four or five,
- * softwareSourceId is optional. If a softwareSourceId is provided for a lifecycle stage between two
- * and five, the system validates that the softwareSourceId is already promoted to the previous
- * lifecycle stage. If the softwareSourceId from the previous lifecycle stage does not match the
- * provided softwareSourceId an error returns. If a softwareSourceId is not provided for a lifecycle
- * stage between two and five, the system promotes the softwareSourceId from the previous lifecycle
- * stage. If the previous lifecycle stage has no SourceSource content an error returns. <br>
+ * Provides detailed information about the lifecycle stage promotion. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

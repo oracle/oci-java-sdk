@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible software source types. */
+/** Type of software source. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum SoftwareSourceType implements com.oracle.bmc.http.internal.BmcEnum {
     Vendor("VENDOR"),

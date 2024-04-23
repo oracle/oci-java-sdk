@@ -5,8 +5,9 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A security zone recipe is a collection of security zone policies. Oracle Cloud Infrastructure
- * enforces these policies on security zones that use the recipe. <br>
+ * A security zone recipe (SecurityRecipe resource) is a collection of security zone policies
+ * (SecurityPolicy resources). Oracle Cloud Infrastructure enforces these policies on security zones
+ * that use the recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -70,12 +71,12 @@ public final class SecurityRecipe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** Unique identifier that can\u2019t be changed after creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can\u2019t be changed after creation
          *
          * @param id the value to set
          * @return this builder
@@ -85,12 +86,12 @@ public final class SecurityRecipe
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The recipe's name */
+        /** The recipe's display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The recipe's name
+         * The recipe's display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -115,12 +116,12 @@ public final class SecurityRecipe
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The id of the compartment that contains the recipe */
+        /** The OCID of the compartment that contains the recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The id of the compartment that contains the recipe
+         * The OCID of the compartment that contains the recipe
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -145,12 +146,12 @@ public final class SecurityRecipe
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The list of {@code SecurityPolicy} ids that are included in the recipe */
+        /** The list of security policy IDs that are included in the recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
         private java.util.List<String> securityPolicies;
 
         /**
-         * The list of {@code SecurityPolicy} ids that are included in the recipe
+         * The list of security policy IDs that are included in the recipe
          *
          * @param securityPolicies the value to set
          * @return this builder
@@ -190,12 +191,12 @@ public final class SecurityRecipe
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the recipe */
+        /** The current lifecycle state of the recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the recipe
+         * The current lifecycle state of the recipe
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -374,12 +375,12 @@ public final class SecurityRecipe
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** Unique identifier that can\u2019t be changed after creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can\u2019t be changed after creation
      *
      * @return the value
      */
@@ -387,12 +388,12 @@ public final class SecurityRecipe
         return id;
     }
 
-    /** The recipe's name */
+    /** The recipe's display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The recipe's name
+     * The recipe's display name
      *
      * @return the value
      */
@@ -413,12 +414,12 @@ public final class SecurityRecipe
         return description;
     }
 
-    /** The id of the compartment that contains the recipe */
+    /** The OCID of the compartment that contains the recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The id of the compartment that contains the recipe
+     * The OCID of the compartment that contains the recipe
      *
      * @return the value
      */
@@ -439,12 +440,12 @@ public final class SecurityRecipe
         return owner;
     }
 
-    /** The list of {@code SecurityPolicy} ids that are included in the recipe */
+    /** The list of security policy IDs that are included in the recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
     private final java.util.List<String> securityPolicies;
 
     /**
-     * The list of {@code SecurityPolicy} ids that are included in the recipe
+     * The list of security policy IDs that are included in the recipe
      *
      * @return the value
      */
@@ -478,12 +479,12 @@ public final class SecurityRecipe
         return timeUpdated;
     }
 
-    /** The current state of the recipe */
+    /** The current lifecycle state of the recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      *
      * @return the value
      */

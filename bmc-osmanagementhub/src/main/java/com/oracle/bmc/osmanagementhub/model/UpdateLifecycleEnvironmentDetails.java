@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The information to be updated. <br>
+ * Provides the information used to update the lifecycle environment. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,15 +47,15 @@ public final class UpdateLifecycleEnvironmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid
+         * entering confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid
+         * entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -66,15 +66,15 @@ public final class UpdateLifecycleEnvironmentDetails
             return this;
         }
         /**
-         * User specified information about the lifecycle environment. Does not have to be unique,
-         * and it's changeable. Avoid entering confidential information.
+         * User-specified list of lifecycle stages used within the lifecycle environment. Avoid
+         * entering confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User specified information about the lifecycle environment. Does not have to be unique,
-         * and it's changeable. Avoid entering confidential information.
+         * User-specified list of lifecycle stages used within the lifecycle environment. Avoid
+         * entering confidential information.
          *
          * @param description the value to set
          * @return this builder
@@ -195,15 +195,15 @@ public final class UpdateLifecycleEnvironmentDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid
+     * entering confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid
+     * entering confidential information.
      *
      * @return the value
      */
@@ -212,15 +212,15 @@ public final class UpdateLifecycleEnvironmentDetails
     }
 
     /**
-     * User specified information about the lifecycle environment. Does not have to be unique, and
-     * it's changeable. Avoid entering confidential information.
+     * User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering
+     * confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User specified information about the lifecycle environment. Does not have to be unique, and
-     * it's changeable. Avoid entering confidential information.
+     * User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering
+     * confidential information.
      *
      * @return the value
      */

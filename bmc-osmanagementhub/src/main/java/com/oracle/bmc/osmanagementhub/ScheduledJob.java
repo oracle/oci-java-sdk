@@ -8,10 +8,9 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system
- * environments in your private data centers through a single management console. For more
- * information, see [Overview of OS Management
- * Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
+ * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
+ * Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -68,6 +67,23 @@ public interface ScheduledJob extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Moves a scheduled job to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeScheduledJobCompartment API.
+     */
+    ChangeScheduledJobCompartmentResponse changeScheduledJobCompartment(
+            ChangeScheduledJobCompartmentRequest request);
+
+    /**
      * Creates a new scheduled job.
      *
      * @param request The request object containing the details to send
@@ -116,9 +132,8 @@ public interface ScheduledJob extends AutoCloseable {
     GetScheduledJobResponse getScheduledJob(GetScheduledJobRequest request);
 
     /**
-     * Lists scheduled jobs that match the specified compartment or scheduled job OCID. Filter the
-     * list against a variety of criteria including but not limited to its display name, lifecycle
-     * state, operation type, and schedule type.
+     * Lists scheduled jobs that match the specified compartment or scheduled job
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -134,8 +149,9 @@ public interface ScheduledJob extends AutoCloseable {
     ListScheduledJobsResponse listScheduledJobs(ListScheduledJobsRequest request);
 
     /**
-     * Triggers an already created RECURRING scheduled job to run immediately instead of waiting for
-     * its next regularly scheduled time. This operation does not support ONETIME scheduled job.
+     * Triggers an already created recurring scheduled job to run immediately instead of waiting for
+     * its next regularly scheduled time. This operation only applies to recurring jobs, not
+     * one-time scheduled jobs.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

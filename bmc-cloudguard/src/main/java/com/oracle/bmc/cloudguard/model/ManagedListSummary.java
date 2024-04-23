@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of ManagedList <br>
+ * Summary information for a managed list. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,12 +79,12 @@ public final class ManagedListSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /** Unique identifier that can't be changed after creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          *
          * @param id the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** ManagedList display name */
+        /** Managed list display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ManagedList display name
+         * Managed list display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** ManagedList description */
+        /** Managed list description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ManagedList description
+         * Managed list description
          *
          * @param description the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Compartment Identifier where the resource is created */
+        /** Compartment OCID where the resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of the Source ManagedList */
+        /** OCID of the source managed list */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
         private String sourceManagedListId;
 
         /**
-         * OCID of the Source ManagedList
+         * OCID of the source managed list
          *
          * @param sourceManagedListId the value to set
          * @return this builder
@@ -154,12 +154,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("sourceManagedListId");
             return this;
         }
-        /** type of the list */
+        /** Type of information stored in the managed list */
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ManagedListType listType;
 
         /**
-         * type of the list
+         * Type of information stored in the managed list
          *
          * @param listType the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("listType");
             return this;
         }
-        /** provider of the feed */
+        /** Provider of the feed */
         @com.fasterxml.jackson.annotation.JsonProperty("feedProvider")
         private FeedProviderType feedProvider;
 
         /**
-         * provider of the feed
+         * Provider of the feed
          *
          * @param feedProvider the value to set
          * @return this builder
@@ -184,12 +184,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("feedProvider");
             return this;
         }
-        /** If this list is editable or not */
+        /** Is this list editable? */
         @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
         private Boolean isEditable;
 
         /**
-         * If this list is editable or not
+         * Is this list editable?
          *
          * @param isEditable the value to set
          * @return this builder
@@ -199,12 +199,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("isEditable");
             return this;
         }
-        /** List of ManagedListItem */
+        /** List of items in the managed list */
         @com.fasterxml.jackson.annotation.JsonProperty("listItems")
         private java.util.List<String> listItems;
 
         /**
-         * List of ManagedListItem
+         * List of items in the managed list
          *
          * @param listItems the value to set
          * @return this builder
@@ -229,12 +229,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the managed list was updated. Format defined by RFC3339. */
+        /** The date and time the managed list was last updated. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the managed list was updated. Format defined by RFC3339.
+         * The date and time the managed list was last updated. Format defined by RFC3339.
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -244,12 +244,12 @@ public final class ManagedListSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the resource. */
+        /** The current lifecycle state of the resource */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -261,14 +261,14 @@ public final class ManagedListSummary
         }
         /**
          * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * provide actionable information for a resource in Failed state. [DEPRECATE]
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
          * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * provide actionable information for a resource in Failed state. [DEPRECATE]
          *
          * @param lifecyleDetails the value to set
          * @return this builder
@@ -440,12 +440,12 @@ public final class ManagedListSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /** Unique identifier that can't be changed after creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      *
      * @return the value
      */
@@ -453,12 +453,12 @@ public final class ManagedListSummary
         return id;
     }
 
-    /** ManagedList display name */
+    /** Managed list display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ManagedList display name
+     * Managed list display name
      *
      * @return the value
      */
@@ -466,12 +466,12 @@ public final class ManagedListSummary
         return displayName;
     }
 
-    /** ManagedList description */
+    /** Managed list description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ManagedList description
+     * Managed list description
      *
      * @return the value
      */
@@ -479,12 +479,12 @@ public final class ManagedListSummary
         return description;
     }
 
-    /** Compartment Identifier where the resource is created */
+    /** Compartment OCID where the resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      *
      * @return the value
      */
@@ -492,12 +492,12 @@ public final class ManagedListSummary
         return compartmentId;
     }
 
-    /** OCID of the Source ManagedList */
+    /** OCID of the source managed list */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
     private final String sourceManagedListId;
 
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      *
      * @return the value
      */
@@ -505,12 +505,12 @@ public final class ManagedListSummary
         return sourceManagedListId;
     }
 
-    /** type of the list */
+    /** Type of information stored in the managed list */
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ManagedListType listType;
 
     /**
-     * type of the list
+     * Type of information stored in the managed list
      *
      * @return the value
      */
@@ -518,12 +518,12 @@ public final class ManagedListSummary
         return listType;
     }
 
-    /** provider of the feed */
+    /** Provider of the feed */
     @com.fasterxml.jackson.annotation.JsonProperty("feedProvider")
     private final FeedProviderType feedProvider;
 
     /**
-     * provider of the feed
+     * Provider of the feed
      *
      * @return the value
      */
@@ -531,12 +531,12 @@ public final class ManagedListSummary
         return feedProvider;
     }
 
-    /** If this list is editable or not */
+    /** Is this list editable? */
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     private final Boolean isEditable;
 
     /**
-     * If this list is editable or not
+     * Is this list editable?
      *
      * @return the value
      */
@@ -544,12 +544,12 @@ public final class ManagedListSummary
         return isEditable;
     }
 
-    /** List of ManagedListItem */
+    /** List of items in the managed list */
     @com.fasterxml.jackson.annotation.JsonProperty("listItems")
     private final java.util.List<String> listItems;
 
     /**
-     * List of ManagedListItem
+     * List of items in the managed list
      *
      * @return the value
      */
@@ -570,12 +570,12 @@ public final class ManagedListSummary
         return timeCreated;
     }
 
-    /** The date and time the managed list was updated. Format defined by RFC3339. */
+    /** The date and time the managed list was last updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      *
      * @return the value
      */
@@ -583,12 +583,12 @@ public final class ManagedListSummary
         return timeUpdated;
     }
 
-    /** The current state of the resource. */
+    /** The current lifecycle state of the resource */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      *
      * @return the value
      */
@@ -598,14 +598,14 @@ public final class ManagedListSummary
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * actionable information for a resource in Failed state. [DEPRECATE]
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
      * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * actionable information for a resource in Failed state. [DEPRECATE]
      *
      * @return the value
      */

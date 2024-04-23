@@ -15,17 +15,17 @@ public class UpdateDataMaskRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails> {
 
-    /** OCID of dataMaskRule */
+    /** OCID of the data mask rule */
     private String dataMaskRuleId;
 
-    /** OCID of dataMaskRule */
+    /** OCID of the data mask rule */
     public String getDataMaskRuleId() {
         return dataMaskRuleId;
     }
-    /** The information to be updated. */
+    /** The data mask rule information to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails updateDataMaskRuleDetails;
 
-    /** The information to be updated. */
+    /** The data mask rule information to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails
             getUpdateDataMaskRuleDetails() {
         return updateDataMaskRuleDetails;
@@ -73,11 +73,11 @@ public class UpdateDataMaskRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of dataMaskRule */
+        /** OCID of the data mask rule */
         private String dataMaskRuleId = null;
 
         /**
-         * OCID of dataMaskRule
+         * OCID of the data mask rule
          *
          * @param dataMaskRuleId the value to set
          * @return this builder instance
@@ -87,12 +87,12 @@ public class UpdateDataMaskRuleRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** The data mask rule information to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateDataMaskRuleDetails
                 updateDataMaskRuleDetails = null;
 
         /**
-         * The information to be updated.
+         * The data mask rule information to be updated
          *
          * @param updateDataMaskRuleDetails the value to set
          * @return this builder instance

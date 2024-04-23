@@ -96,6 +96,46 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<AddPackagesToSoftwareSourceResponse>
+            addPackagesToSoftwareSource(
+                    AddPackagesToSoftwareSourceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddPackagesToSoftwareSourceRequest,
+                                    AddPackagesToSoftwareSourceResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
+        Objects.requireNonNull(
+                request.getAddPackagesToSoftwareSourceDetails(),
+                "addPackagesToSoftwareSourceDetails is required");
+
+        return clientCall(request, AddPackagesToSoftwareSourceResponse::builder)
+                .logger(LOG, "addPackagesToSoftwareSource")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "AddPackagesToSoftwareSource",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/AddPackagesToSoftwareSource")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddPackagesToSoftwareSourceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("softwareSources")
+                .appendPathParam(request.getSoftwareSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("addPackages")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddPackagesToSoftwareSourceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddPackagesToSoftwareSourceResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAvailabilityOfSoftwareSourcesResponse>
             changeAvailabilityOfSoftwareSources(
                     ChangeAvailabilityOfSoftwareSourcesRequest request,
@@ -126,6 +166,44 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeAvailabilityOfSoftwareSourcesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSoftwareSourceCompartmentResponse>
+            changeSoftwareSourceCompartment(
+                    ChangeSoftwareSourceCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSoftwareSourceCompartmentRequest,
+                                    ChangeSoftwareSourceCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSoftwareSourceCompartmentDetails(),
+                "changeSoftwareSourceCompartmentDetails is required");
+
+        return clientCall(request, ChangeSoftwareSourceCompartmentResponse::builder)
+                .logger(LOG, "changeSoftwareSourceCompartment")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ChangeSoftwareSourceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeSoftwareSourceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSoftwareSourceCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("softwareSources")
+                .appendPathParam(request.getSoftwareSourceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSoftwareSourceCompartmentResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -399,6 +477,37 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetSoftwarePackageByNameResponse> getSoftwarePackageByName(
+            GetSoftwarePackageByNameRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSoftwarePackageByNameRequest, GetSoftwarePackageByNameResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSoftwarePackageName(), "softwarePackageName must not be blank");
+
+        return clientCall(request, GetSoftwarePackageByNameResponse::builder)
+                .logger(LOG, "getSoftwarePackageByName")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "GetSoftwarePackageByName",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackageByName")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSoftwarePackageByNameRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("softwarePackages")
+                .appendPathParam(request.getSoftwarePackageName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.SoftwarePackage.class,
+                        GetSoftwarePackageByNameResponse.Builder::softwarePackage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSoftwarePackageByNameResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSoftwareSourceResponse> getSoftwareSource(
             GetSoftwareSourceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -428,6 +537,45 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
                         "opc-request-id", GetSoftwareSourceResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", GetSoftwareSourceResponse.Builder::retryAfter)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllSoftwarePackagesResponse> listAllSoftwarePackages(
+            ListAllSoftwarePackagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>
+                    handler) {
+
+        return clientCall(request, ListAllSoftwarePackagesResponse::builder)
+                .logger(LOG, "listAllSoftwarePackages")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListAllSoftwarePackages",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAllSoftwarePackages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAllSoftwarePackagesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("softwarePackages")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("version", request.getVersion())
+                .appendEnumQueryParam("architecture", request.getArchitecture())
+                .appendQueryParam("isLatest", request.getIsLatest())
+                .appendEnumQueryParam("osFamily", request.getOsFamily())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection.class,
+                        ListAllSoftwarePackagesResponse.Builder::softwarePackageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAllSoftwarePackagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAllSoftwarePackagesResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -494,6 +642,10 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendListQueryParam(
                         "classificationType",
                         request.getClassificationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "advisoryType",
+                        request.getAdvisoryType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
                 .appendListQueryParam(
@@ -644,6 +796,81 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<ListSoftwarePackageSoftwareSourcesResponse>
+            listSoftwarePackageSoftwareSources(
+                    ListSoftwarePackageSoftwareSourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSoftwarePackageSoftwareSourcesRequest,
+                                    ListSoftwarePackageSoftwareSourcesResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSoftwarePackageName(), "softwarePackageName must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSoftwarePackageSoftwareSourcesResponse::builder)
+                .logger(LOG, "listSoftwarePackageSoftwareSources")
+                .serviceDetails(
+                        "SoftwareSource",
+                        "ListSoftwarePackageSoftwareSources",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackageSoftwareSources")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSoftwarePackageSoftwareSourcesRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("softwarePackages")
+                .appendPathParam(request.getSoftwarePackageName())
+                .appendPathParam("softwareSources")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "softwareSourceType",
+                        request.getSoftwareSourceType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "osFamily",
+                        request.getOsFamily(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "archType",
+                        request.getArchType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "availability",
+                        request.getAvailability(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "availabilityAtOci",
+                        request.getAvailabilityAtOci(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "availabilityAnywhere",
+                        request.getAvailabilityAnywhere(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.osmanagementhub.model.SoftwareSourceCollection.class,
+                        ListSoftwarePackageSoftwareSourcesResponse.Builder
+                                ::softwareSourceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSoftwarePackageSoftwareSourcesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSoftwarePackageSoftwareSourcesResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSoftwarePackagesResponse> listSoftwarePackages(
             ListSoftwarePackagesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -751,6 +978,16 @@ public class SoftwareSourceAsyncClient extends com.oracle.bmc.http.internal.Base
                         "availability",
                         request.getAvailability(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "availabilityAtOci",
+                        request.getAvailabilityAtOci(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "availabilityAnywhere",
+                        request.getAvailabilityAnywhere(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isMandatoryForAutonomousLinux", request.getIsMandatoryForAutonomousLinux())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
                 .appendListQueryParam(

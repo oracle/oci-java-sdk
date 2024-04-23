@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagedInstanceInstalledPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
     private String managedInstanceId;
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -52,24 +58,32 @@ public class ListManagedInstanceInstalledPackagesRequest
         return timeInstallDateStart;
     }
     /**
-     * The install date before which to list all packages, in ISO 8601 format.
+     * A filter to return only packages that were installed on or before the date provided, in ISO
+     * 8601 format.
      *
      * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeInstallDateEnd;
 
     /**
-     * The install date before which to list all packages, in ISO 8601 format.
+     * A filter to return only packages that were installed on or before the date provided, in ISO
+     * 8601 format.
      *
      * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeInstallDateEnd() {
         return timeInstallDateEnd;
     }
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -189,11 +203,15 @@ public class ListManagedInstanceInstalledPackagesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the managed instance. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance
@@ -262,14 +280,16 @@ public class ListManagedInstanceInstalledPackagesRequest
         }
 
         /**
-         * The install date before which to list all packages, in ISO 8601 format.
+         * A filter to return only packages that were installed on or before the date provided, in
+         * ISO 8601 format.
          *
          * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeInstallDateEnd = null;
 
         /**
-         * The install date before which to list all packages, in ISO 8601 format.
+         * A filter to return only packages that were installed on or before the date provided, in
+         * ISO 8601 format.
          *
          * <p>Example: 2017-07-14T02:40:00.000Z
          *
@@ -281,11 +301,15 @@ public class ListManagedInstanceInstalledPackagesRequest
             return this;
         }
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance

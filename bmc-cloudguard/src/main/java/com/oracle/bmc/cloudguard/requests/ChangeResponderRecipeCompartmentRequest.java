@@ -16,18 +16,18 @@ public class ChangeResponderRecipeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails> {
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     private String responderRecipeId;
 
-    /** OCID of ResponderRecipe */
+    /** OCID of the responder recipe. */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
-    /** The target compartment id. */
+    /** The target compartment OCID */
     private com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails
             changeResponderRecipeCompartmentDetails;
 
-    /** The target compartment id. */
+    /** The target compartment OCID */
     public com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails
             getChangeResponderRecipeCompartmentDetails() {
         return changeResponderRecipeCompartmentDetails;
@@ -94,11 +94,11 @@ public class ChangeResponderRecipeCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of ResponderRecipe */
+        /** OCID of the responder recipe. */
         private String responderRecipeId = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          *
          * @param responderRecipeId the value to set
          * @return this builder instance
@@ -108,12 +108,12 @@ public class ChangeResponderRecipeCompartmentRequest
             return this;
         }
 
-        /** The target compartment id. */
+        /** The target compartment OCID */
         private com.oracle.bmc.cloudguard.model.ChangeResponderRecipeCompartmentDetails
                 changeResponderRecipeCompartmentDetails = null;
 
         /**
-         * The target compartment id.
+         * The target compartment OCID
          *
          * @param changeResponderRecipeCompartmentDetails the value to set
          * @return this builder instance

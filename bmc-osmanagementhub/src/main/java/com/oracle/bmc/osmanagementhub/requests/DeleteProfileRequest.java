@@ -13,10 +13,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class DeleteProfileRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the registration profile. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the registration profile.
+     */
     private String profileId;
 
-    /** The OCID of the registration profile. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the registration profile.
+     */
     public String getProfileId() {
         return profileId;
     }
@@ -57,11 +63,15 @@ public class DeleteProfileRequest extends com.oracle.bmc.requests.BmcRequest<jav
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the registration profile. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the registration profile.
+         */
         private String profileId = null;
 
         /**
-         * The OCID of the registration profile.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the registration profile.
          *
          * @param profileId the value to set
          * @return this builder instance

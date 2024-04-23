@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A description of workrequest status <br>
+ * Detailed information about a work request (WorkRequest resource). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,7 +30,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         "percentComplete",
         "timeAccepted",
         "timeStarted",
-        "timeFinished"
+        "timeFinished",
+        "locks"
     })
     public WorkRequest(
             String id,
@@ -41,7 +42,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             Float percentComplete,
             java.util.Date timeAccepted,
             java.util.Date timeStarted,
-            java.util.Date timeFinished) {
+            java.util.Date timeFinished,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -52,16 +54,17 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         this.timeAccepted = timeAccepted;
         this.timeStarted = timeStarted;
         this.timeFinished = timeFinished;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the work request. */
+        /** Unique identifier of the work request */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The id of the work request.
+         * Unique identifier of the work request
          *
          * @param id the value to set
          * @return this builder
@@ -72,21 +75,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
+         * The OCID of the compartment that contains the work request. Work requests should be
          * scoped to the same compartment as the resource the work request affects. If the work
          * request affects multiple resources, and those resources are not in the same compartment,
          * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * used.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The ocid of the compartment that contains the work request. Work requests should be
+         * The OCID of the compartment that contains the work request. Work requests should be
          * scoped to the same compartment as the resource the work request affects. If the work
          * request affects multiple resources, and those resources are not in the same compartment,
          * it is up to the service team to pick the primary resource whose compartment should be
-         * used
+         * used.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -96,12 +99,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Operation type of the work request. */
+        /** Operation type of the work request */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
-         * Operation type of the work request.
+         * Operation type of the work request
          *
          * @param operationType the value to set
          * @return this builder
@@ -111,12 +114,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Operation status of the work request. */
+        /** Operation status of the work request */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
-         * Operation status of the work request.
+         * Operation status of the work request
          *
          * @param status the value to set
          * @return this builder
@@ -126,12 +129,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The resources affected by this work request. */
+        /** List of resources affected by the work request */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
-         * The resources affected by this work request.
+         * List of resources affected by the work request
          *
          * @param resources the value to set
          * @return this builder
@@ -141,12 +144,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("resources");
             return this;
         }
-        /** Percentage of the request completed. */
+        /** Percentage of the work request that's completed */
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
-         * Percentage of the request completed.
+         * Percentage of the work request that's completed
          *
          * @param percentComplete the value to set
          * @return this builder
@@ -156,12 +159,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /** The date and time the request was created */
+        /** The date and time the work request was created */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
-         * The date and time the request was created
+         * The date and time the work request was created
          *
          * @param timeAccepted the value to set
          * @return this builder
@@ -171,12 +174,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** The date and time the request was started */
+        /** The date and time the work request was started */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time the request was started
+         * The date and time the work request was started
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -186,12 +189,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The date and time the object was finished */
+        /** The date and time the work request was finished */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the object was finished
+         * The date and time the work request was finished
          *
          * @param timeFinished the value to set
          * @return this builder
@@ -199,6 +202,21 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -216,7 +234,8 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
                             this.percentComplete,
                             this.timeAccepted,
                             this.timeStarted,
-                            this.timeFinished);
+                            this.timeFinished,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -252,6 +271,9 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("timeFinished")) {
                 this.timeFinished(model.getTimeFinished());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -265,12 +287,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The id of the work request. */
+    /** Unique identifier of the work request */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The id of the work request.
+     * Unique identifier of the work request
      *
      * @return the value
      */
@@ -279,19 +301,19 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects
      * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * service team to pick the primary resource whose compartment should be used.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The ocid of the compartment that contains the work request. Work requests should be scoped to
+     * The OCID of the compartment that contains the work request. Work requests should be scoped to
      * the same compartment as the resource the work request affects. If the work request affects
      * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used
+     * service team to pick the primary resource whose compartment should be used.
      *
      * @return the value
      */
@@ -299,12 +321,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return compartmentId;
     }
 
-    /** Operation type of the work request. */
+    /** Operation type of the work request */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
-     * Operation type of the work request.
+     * Operation type of the work request
      *
      * @return the value
      */
@@ -312,12 +334,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return operationType;
     }
 
-    /** Operation status of the work request. */
+    /** Operation status of the work request */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
-     * Operation status of the work request.
+     * Operation status of the work request
      *
      * @return the value
      */
@@ -325,12 +347,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return status;
     }
 
-    /** The resources affected by this work request. */
+    /** List of resources affected by the work request */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
-     * The resources affected by this work request.
+     * List of resources affected by the work request
      *
      * @return the value
      */
@@ -338,12 +360,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return resources;
     }
 
-    /** Percentage of the request completed. */
+    /** Percentage of the work request that's completed */
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
-     * Percentage of the request completed.
+     * Percentage of the work request that's completed
      *
      * @return the value
      */
@@ -351,12 +373,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return percentComplete;
     }
 
-    /** The date and time the request was created */
+    /** The date and time the work request was created */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
-     * The date and time the request was created
+     * The date and time the work request was created
      *
      * @return the value
      */
@@ -364,12 +386,12 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return timeAccepted;
     }
 
-    /** The date and time the request was started */
+    /** The date and time the work request was started */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the request was started
+     * The date and time the work request was started
      *
      * @return the value
      */
@@ -377,17 +399,30 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return timeStarted;
     }
 
-    /** The date and time the object was finished */
+    /** The date and time the work request was finished */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the object was finished
+     * The date and time the work request was finished
      *
      * @return the value
      */
     public java.util.Date getTimeFinished() {
         return timeFinished;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -414,6 +449,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -437,6 +473,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -459,6 +496,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

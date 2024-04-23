@@ -43,6 +43,130 @@ public class SoftwareSourcePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAllSoftwarePackages operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAllSoftwarePackagesResponse> listAllSoftwarePackagesResponseIterator(
+            final ListAllSoftwarePackagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAllSoftwarePackagesRequest.Builder,
+                ListAllSoftwarePackagesRequest,
+                ListAllSoftwarePackagesResponse>(
+                new java.util.function.Supplier<ListAllSoftwarePackagesRequest.Builder>() {
+                    @Override
+                    public ListAllSoftwarePackagesRequest.Builder get() {
+                        return ListAllSoftwarePackagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAllSoftwarePackagesResponse, String>() {
+                    @Override
+                    public String apply(ListAllSoftwarePackagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAllSoftwarePackagesRequest.Builder>,
+                        ListAllSoftwarePackagesRequest>() {
+                    @Override
+                    public ListAllSoftwarePackagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAllSoftwarePackagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>() {
+                    @Override
+                    public ListAllSoftwarePackagesResponse apply(
+                            ListAllSoftwarePackagesRequest request) {
+                        return client.listAllSoftwarePackages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary} objects contained in responses
+     * from the listAllSoftwarePackages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>
+            listAllSoftwarePackagesRecordIterator(final ListAllSoftwarePackagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAllSoftwarePackagesRequest.Builder,
+                ListAllSoftwarePackagesRequest,
+                ListAllSoftwarePackagesResponse,
+                com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>(
+                new java.util.function.Supplier<ListAllSoftwarePackagesRequest.Builder>() {
+                    @Override
+                    public ListAllSoftwarePackagesRequest.Builder get() {
+                        return ListAllSoftwarePackagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAllSoftwarePackagesResponse, String>() {
+                    @Override
+                    public String apply(ListAllSoftwarePackagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAllSoftwarePackagesRequest.Builder>,
+                        ListAllSoftwarePackagesRequest>() {
+                    @Override
+                    public ListAllSoftwarePackagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAllSoftwarePackagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>() {
+                    @Override
+                    public ListAllSoftwarePackagesResponse apply(
+                            ListAllSoftwarePackagesRequest request) {
+                        return client.listAllSoftwarePackages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAllSoftwarePackagesResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary>
+                            apply(ListAllSoftwarePackagesResponse response) {
+                        return response.getSoftwarePackageCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listEntitlements operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
@@ -632,6 +756,138 @@ public class SoftwareSourcePaginators {
                     public java.util.List<com.oracle.bmc.osmanagementhub.model.PackageGroupSummary>
                             apply(ListPackageGroupsResponse response) {
                         return response.getPackageGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSoftwarePackageSoftwareSources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListSoftwarePackageSoftwareSourcesResponse>
+            listSoftwarePackageSoftwareSourcesResponseIterator(
+                    final ListSoftwarePackageSoftwareSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSoftwarePackageSoftwareSourcesRequest.Builder,
+                ListSoftwarePackageSoftwareSourcesRequest,
+                ListSoftwarePackageSoftwareSourcesResponse>(
+                new java.util.function.Supplier<
+                        ListSoftwarePackageSoftwareSourcesRequest.Builder>() {
+                    @Override
+                    public ListSoftwarePackageSoftwareSourcesRequest.Builder get() {
+                        return ListSoftwarePackageSoftwareSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwarePackageSoftwareSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListSoftwarePackageSoftwareSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSoftwarePackageSoftwareSourcesRequest.Builder>,
+                        ListSoftwarePackageSoftwareSourcesRequest>() {
+                    @Override
+                    public ListSoftwarePackageSoftwareSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSoftwarePackageSoftwareSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwarePackageSoftwareSourcesRequest,
+                        ListSoftwarePackageSoftwareSourcesResponse>() {
+                    @Override
+                    public ListSoftwarePackageSoftwareSourcesResponse apply(
+                            ListSoftwarePackageSoftwareSourcesRequest request) {
+                        return client.listSoftwarePackageSoftwareSources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagementhub.model.SoftwareSourceSummary} objects contained in responses
+     * from the listSoftwarePackageSoftwareSources operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagementhub.model.SoftwareSourceSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.osmanagementhub.model.SoftwareSourceSummary>
+            listSoftwarePackageSoftwareSourcesRecordIterator(
+                    final ListSoftwarePackageSoftwareSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSoftwarePackageSoftwareSourcesRequest.Builder,
+                ListSoftwarePackageSoftwareSourcesRequest,
+                ListSoftwarePackageSoftwareSourcesResponse,
+                com.oracle.bmc.osmanagementhub.model.SoftwareSourceSummary>(
+                new java.util.function.Supplier<
+                        ListSoftwarePackageSoftwareSourcesRequest.Builder>() {
+                    @Override
+                    public ListSoftwarePackageSoftwareSourcesRequest.Builder get() {
+                        return ListSoftwarePackageSoftwareSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwarePackageSoftwareSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListSoftwarePackageSoftwareSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSoftwarePackageSoftwareSourcesRequest.Builder>,
+                        ListSoftwarePackageSoftwareSourcesRequest>() {
+                    @Override
+                    public ListSoftwarePackageSoftwareSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSoftwarePackageSoftwareSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwarePackageSoftwareSourcesRequest,
+                        ListSoftwarePackageSoftwareSourcesResponse>() {
+                    @Override
+                    public ListSoftwarePackageSoftwareSourcesResponse apply(
+                            ListSoftwarePackageSoftwareSourcesRequest request) {
+                        return client.listSoftwarePackageSoftwareSources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSoftwarePackageSoftwareSourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.osmanagementhub.model.SoftwareSourceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.osmanagementhub.model.SoftwareSourceSummary>
+                            apply(ListSoftwarePackageSoftwareSourcesResponse response) {
+                        return response.getSoftwareSourceCollection().getItems();
                     }
                 });
     }

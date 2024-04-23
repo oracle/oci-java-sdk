@@ -15,10 +15,10 @@ public class CreateSecurityRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails> {
 
-    /** Details for the new {@code SecurityRecipe}. */
+    /** Details for the new {@code SecurityRecipe} resource */
     private com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails createSecurityRecipeDetails;
 
-    /** Details for the new {@code SecurityRecipe}. */
+    /** Details for the new {@code SecurityRecipe} resource */
     public com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails
             getCreateSecurityRecipeDetails() {
         return createSecurityRecipeDetails;
@@ -68,12 +68,12 @@ public class CreateSecurityRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new {@code SecurityRecipe}. */
+        /** Details for the new {@code SecurityRecipe} resource */
         private com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails
                 createSecurityRecipeDetails = null;
 
         /**
-         * Details for the new {@code SecurityRecipe}.
+         * Details for the new {@code SecurityRecipe} resource
          *
          * @param createSecurityRecipeDetails the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The information about new registration profile. <br>
+ * Provides the information used to create a new registration profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -45,6 +45,8 @@ public class CreateProfileDetails
         "compartmentId",
         "description",
         "managementStationId",
+        "registrationType",
+        "isDefaultProfile",
         "freeformTags",
         "definedTags"
     })
@@ -53,6 +55,8 @@ public class CreateProfileDetails
             String compartmentId,
             String description,
             String managementStationId,
+            Profile.RegistrationType registrationType,
+            Boolean isDefaultProfile,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -60,6 +64,8 @@ public class CreateProfileDetails
         this.compartmentId = compartmentId;
         this.description = description;
         this.managementStationId = managementStationId;
+        this.registrationType = registrationType;
+        this.isDefaultProfile = isDefaultProfile;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -81,12 +87,16 @@ public class CreateProfileDetails
         return displayName;
     }
 
-    /** The OCID of the tenancy containing the registration profile. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the registration profile.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the registration profile.
      *
      * @return the value
      */
@@ -94,12 +104,12 @@ public class CreateProfileDetails
         return compartmentId;
     }
 
-    /** The description of the registration profile. */
+    /** User-specified description of the registration profile. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the registration profile.
+     * User-specified description of the registration profile.
      *
      * @return the value
      */
@@ -107,17 +117,57 @@ public class CreateProfileDetails
         return description;
     }
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station to associate with an instance once registered. Associating with a
+     * management station applies only to non-OCI instances.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station to associate with an instance once registered. Associating with a
+     * management station applies only to non-OCI instances.
      *
      * @return the value
      */
     public String getManagementStationId() {
         return managementStationId;
+    }
+
+    /** The type of instance to register. */
+    @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
+    private final Profile.RegistrationType registrationType;
+
+    /**
+     * The type of instance to register.
+     *
+     * @return the value
+     */
+    public Profile.RegistrationType getRegistrationType() {
+        return registrationType;
+    }
+
+    /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a
+     * specified architecture, OS family, registration type, and vendor. When registering an
+     * instance with the corresonding characteristics, the default profile is used, unless another
+     * profile is specified.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+    private final Boolean isDefaultProfile;
+
+    /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a
+     * specified architecture, OS family, registration type, and vendor. When registering an
+     * instance with the corresonding characteristics, the default profile is used, unless another
+     * profile is specified.
+     *
+     * @return the value
+     */
+    public Boolean getIsDefaultProfile() {
+        return isDefaultProfile;
     }
 
     /**
@@ -181,6 +231,8 @@ public class CreateProfileDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", managementStationId=").append(String.valueOf(this.managementStationId));
+        sb.append(", registrationType=").append(String.valueOf(this.registrationType));
+        sb.append(", isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -201,6 +253,8 @@ public class CreateProfileDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.managementStationId, other.managementStationId)
+                && java.util.Objects.equals(this.registrationType, other.registrationType)
+                && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -220,6 +274,12 @@ public class CreateProfileDetails
                         + (this.managementStationId == null
                                 ? 43
                                 : this.managementStationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registrationType == null ? 43 : this.registrationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultProfile == null ? 43 : this.isDefaultProfile.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

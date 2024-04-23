@@ -5,7 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Detailed information about a scheduled job. <br>
+ * The object that defines a scheduled job. For more information about jobs, see [Managing
+ * Jobs](https://docs.cloud.oracle.com/iaas/osmh/doc/jobs.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,6 +28,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         "compartmentId",
         "description",
         "scheduleType",
+        "locations",
         "timeNextExecution",
         "timeLastExecution",
         "recurringRule",
@@ -40,10 +42,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "isManagedByAutonomousLinux",
         "freeformTags",
         "definedTags",
         "systemTags",
-        "isRestricted"
+        "isRestricted",
+        "retryIntervals"
     })
     public ScheduledJob(
             String id,
@@ -51,6 +55,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             String compartmentId,
             String description,
             ScheduleTypes scheduleType,
+            java.util.List<ManagedInstanceLocation> locations,
             java.util.Date timeNextExecution,
             java.util.Date timeLastExecution,
             String recurringRule,
@@ -64,16 +69,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            Boolean isManagedByAutonomousLinux,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
-            Boolean isRestricted) {
+            Boolean isRestricted,
+            java.util.List<Integer> retryIntervals) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.description = description;
         this.scheduleType = scheduleType;
+        this.locations = locations;
         this.timeNextExecution = timeNextExecution;
         this.timeLastExecution = timeLastExecution;
         this.recurringRule = recurringRule;
@@ -87,20 +95,26 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.isRestricted = isRestricted;
+        this.retryIntervals = retryIntervals;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the scheduled job. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the scheduled job.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the scheduled job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the scheduled job.
          *
          * @param id the value to set
          * @return this builder
@@ -110,12 +124,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Scheduled job name. */
+        /** User-friendly name for the scheduled job. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Scheduled job name.
+         * User-friendly name for the scheduled job.
          *
          * @param displayName the value to set
          * @return this builder
@@ -125,12 +139,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment containing the scheduled job. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the scheduled job.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment containing the scheduled job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the scheduled job.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -140,12 +158,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Details describing the scheduled job. */
+        /** User-specified description for the scheduled job. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the scheduled job.
+         * User-specified description for the scheduled job.
          *
          * @param description the value to set
          * @return this builder
@@ -155,12 +173,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The type of scheduling this scheduled job follows. */
+        /** The type of scheduling frequency for the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
         private ScheduleTypes scheduleType;
 
         /**
-         * The type of scheduling this scheduled job follows.
+         * The type of scheduling frequency for the job.
          *
          * @param scheduleType the value to set
          * @return this builder
@@ -170,12 +188,37 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("scheduleType");
             return this;
         }
-        /** The time of the next execution of this scheduled job. */
+        /**
+         * The list of locations this scheduled job should operate on for a job targeting on
+         * compartments. (Empty list means apply to all locations). This can only be set when
+         * managedCompartmentIds is not empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("locations")
+        private java.util.List<ManagedInstanceLocation> locations;
+
+        /**
+         * The list of locations this scheduled job should operate on for a job targeting on
+         * compartments. (Empty list means apply to all locations). This can only be set when
+         * managedCompartmentIds is not empty.
+         *
+         * @param locations the value to set
+         * @return this builder
+         */
+        public Builder locations(java.util.List<ManagedInstanceLocation> locations) {
+            this.locations = locations;
+            this.__explicitlySet__.add("locations");
+            return this;
+        }
+        /**
+         * The time of the next execution of this scheduled job (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
         private java.util.Date timeNextExecution;
 
         /**
-         * The time of the next execution of this scheduled job.
+         * The time of the next execution of this scheduled job (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeNextExecution the value to set
          * @return this builder
@@ -185,12 +228,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeNextExecution");
             return this;
         }
-        /** The time of the last execution of this scheduled job. */
+        /**
+         * The time of the last execution of this scheduled job (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecution")
         private java.util.Date timeLastExecution;
 
         /**
-         * The time of the last execution of this scheduled job.
+         * The time of the last execution of this scheduled job (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeLastExecution the value to set
          * @return this builder
@@ -200,12 +247,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeLastExecution");
             return this;
         }
-        /** The recurring rule for a RECURRING scheduled job. */
+        /** The frequency schedule for a recurring scheduled job. */
         @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
         private String recurringRule;
 
         /**
-         * The recurring rule for a RECURRING scheduled job.
+         * The frequency schedule for a recurring scheduled job.
          *
          * @param recurringRule the value to set
          * @return this builder
@@ -216,15 +263,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The list of managed instance OCIDs this scheduled job operates on (mutually exclusive
-         * with managedInstanceGroupIds, managedCompartmentIds and lifecycleStageIds).
+         * The managed instance
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceGroupIds,
+         * managedCompartmentIds, and lifecycleStageIds.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
         private java.util.List<String> managedInstanceIds;
 
         /**
-         * The list of managed instance OCIDs this scheduled job operates on (mutually exclusive
-         * with managedInstanceGroupIds, managedCompartmentIds and lifecycleStageIds).
+         * The managed instance
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceGroupIds,
+         * managedCompartmentIds, and lifecycleStageIds.
          *
          * @param managedInstanceIds the value to set
          * @return this builder
@@ -235,15 +288,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The list of managed instance group OCIDs this scheduled job operates on (mutually
-         * exclusive with managedInstances, managedCompartmentIds and lifecycleStageIds).
+         * The managed instance group
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceIds,
+         * managedCompartmentIds, and lifecycleStageIds.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupIds")
         private java.util.List<String> managedInstanceGroupIds;
 
         /**
-         * The list of managed instance group OCIDs this scheduled job operates on (mutually
-         * exclusive with managedInstances, managedCompartmentIds and lifecycleStageIds).
+         * The managed instance group
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceIds,
+         * managedCompartmentIds, and lifecycleStageIds.
          *
          * @param managedInstanceGroupIds the value to set
          * @return this builder
@@ -254,17 +313,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The list of target compartment OCIDs if this scheduled job operates on a compartment
-         * level (mutually exclusive with managedInstances, managedInstanceGroupIds and
-         * lifecycleStageIds).
+         * The compartment
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceIds,
+         * managedInstanceGroupIds, and lifecycleStageIds.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managedCompartmentIds")
         private java.util.List<String> managedCompartmentIds;
 
         /**
-         * The list of target compartment OCIDs if this scheduled job operates on a compartment
-         * level (mutually exclusive with managedInstances, managedInstanceGroupIds and
-         * lifecycleStageIds).
+         * The compartment
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceIds,
+         * managedInstanceGroupIds, and lifecycleStageIds.
          *
          * @param managedCompartmentIds the value to set
          * @return this builder
@@ -275,17 +338,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The list of target lifecycle stage OCIDs if this scheduled job operates on lifecycle
-         * stages (mutually exclusive with managedInstances, managedInstanceGroupIds and
-         * managedCompartmentIds).
+         * The lifecycle stage
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceIds,
+         * managedInstanceGroupIds, and managedCompartmentIds.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
         private java.util.List<String> lifecycleStageIds;
 
         /**
-         * The list of target lifecycle stage OCIDs if this scheduled job operates on lifecycle
-         * stages (mutually exclusive with managedInstances, managedInstanceGroupIds and
-         * managedCompartmentIds).
+         * The lifecycle stage
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+         * this scheduled job operates on. A scheduled job can only operate on one type of target,
+         * therefore this parameter is mutually exclusive with managedInstanceIds,
+         * managedInstanceGroupIds, and managedCompartmentIds.
          *
          * @param lifecycleStageIds the value to set
          * @return this builder
@@ -296,15 +363,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * Whether to create jobs for all compartments in the tenancy when managedCompartmentIds
-         * specifies the tenancy OCID.
+         * Indicates whether to apply the scheduled job to all compartments in the tenancy when
+         * managedCompartmentIds specifies the tenancy
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root
+         * compartment).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isSubcompartmentIncluded")
         private Boolean isSubcompartmentIncluded;
 
         /**
-         * Whether to create jobs for all compartments in the tenancy when managedCompartmentIds
-         * specifies the tenancy OCID.
+         * Indicates whether to apply the scheduled job to all compartments in the tenancy when
+         * managedCompartmentIds specifies the tenancy
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root
+         * compartment).
          *
          * @param isSubcompartmentIncluded the value to set
          * @return this builder
@@ -315,17 +386,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * The list of operations this scheduled job needs to perform (can only support one
-         * operation if the operationType is not
-         * UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+         * The list of operations this scheduled job needs to perform. A scheduled job supports only
+         * one operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
+         * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
+         * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
          */
         @com.fasterxml.jackson.annotation.JsonProperty("operations")
         private java.util.List<ScheduledJobOperation> operations;
 
         /**
-         * The list of operations this scheduled job needs to perform (can only support one
-         * operation if the operationType is not
-         * UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+         * The list of operations this scheduled job needs to perform. A scheduled job supports only
+         * one operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
+         * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
+         * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
          *
          * @param operations the value to set
          * @return this builder
@@ -335,12 +408,18 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("operations");
             return this;
         }
-        /** The list of work request OCIDs associated with this scheduled job. */
+        /**
+         * The list of work request
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this scheduled job.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
         private java.util.List<String> workRequestIds;
 
         /**
-         * The list of work request OCIDs associated with this scheduled job.
+         * The list of work request
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this scheduled job.
          *
          * @param workRequestIds the value to set
          * @return this builder
@@ -350,12 +429,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("workRequestIds");
             return this;
         }
-        /** The time this scheduled job was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time this scheduled job was created (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time this scheduled job was created. An RFC3339 formatted datetime string.
+         * The time this scheduled job was created (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -365,12 +448,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time this scheduled job was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time this scheduled job was updated (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time this scheduled job was updated. An RFC3339 formatted datetime string.
+         * The time this scheduled job was updated (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -393,6 +480,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** Indicates whether this scheduled job is managed by the Autonomous Linux service. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+        private Boolean isManagedByAutonomousLinux;
+
+        /**
+         * Indicates whether this scheduled job is managed by the Autonomous Linux service.
+         *
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder
+         */
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
         /**
@@ -462,15 +564,17 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * true, if the schedule job has its update/deletion capabilities restricted. (Used to track
-         * scheduled job for management station syncing).
+         * Indicates if the schedule job has restricted update and deletion capabilities. For
+         * restricted scheduled jobs, you can update only the timeNextExecution, recurringRule, and
+         * tags.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
         private Boolean isRestricted;
 
         /**
-         * true, if the schedule job has its update/deletion capabilities restricted. (Used to track
-         * scheduled job for management station syncing).
+         * Indicates if the schedule job has restricted update and deletion capabilities. For
+         * restricted scheduled jobs, you can update only the timeNextExecution, recurringRule, and
+         * tags.
          *
          * @param isRestricted the value to set
          * @return this builder
@@ -478,6 +582,31 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         public Builder isRestricted(Boolean isRestricted) {
             this.isRestricted = isRestricted;
             this.__explicitlySet__.add("isRestricted");
+            return this;
+        }
+        /**
+         * The amount of time in minutes to wait until retrying the scheduled job. If set, the
+         * service will automatically retry a failed scheduled job after the interval. For example,
+         * you could set the interval to [2,5,10]. If the initial execution of the job fails, the
+         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
+         * then retries. If that fails, the service waits 10 minutes and then retries.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
+        private java.util.List<Integer> retryIntervals;
+
+        /**
+         * The amount of time in minutes to wait until retrying the scheduled job. If set, the
+         * service will automatically retry a failed scheduled job after the interval. For example,
+         * you could set the interval to [2,5,10]. If the initial execution of the job fails, the
+         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
+         * then retries. If that fails, the service waits 10 minutes and then retries.
+         *
+         * @param retryIntervals the value to set
+         * @return this builder
+         */
+        public Builder retryIntervals(java.util.List<Integer> retryIntervals) {
+            this.retryIntervals = retryIntervals;
+            this.__explicitlySet__.add("retryIntervals");
             return this;
         }
 
@@ -492,6 +621,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
                             this.compartmentId,
                             this.description,
                             this.scheduleType,
+                            this.locations,
                             this.timeNextExecution,
                             this.timeLastExecution,
                             this.recurringRule,
@@ -505,10 +635,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.isManagedByAutonomousLinux,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
-                            this.isRestricted);
+                            this.isRestricted,
+                            this.retryIntervals);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -531,6 +663,9 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("scheduleType")) {
                 this.scheduleType(model.getScheduleType());
+            }
+            if (model.wasPropertyExplicitlySet("locations")) {
+                this.locations(model.getLocations());
             }
             if (model.wasPropertyExplicitlySet("timeNextExecution")) {
                 this.timeNextExecution(model.getTimeNextExecution());
@@ -571,6 +706,9 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
+                this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -582,6 +720,9 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("isRestricted")) {
                 this.isRestricted(model.getIsRestricted());
+            }
+            if (model.wasPropertyExplicitlySet("retryIntervals")) {
+                this.retryIntervals(model.getRetryIntervals());
             }
             return this;
         }
@@ -596,12 +737,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the scheduled job. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the scheduled job.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the scheduled job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the scheduled job.
      *
      * @return the value
      */
@@ -609,12 +754,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return id;
     }
 
-    /** Scheduled job name. */
+    /** User-friendly name for the scheduled job. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Scheduled job name.
+     * User-friendly name for the scheduled job.
      *
      * @return the value
      */
@@ -622,12 +767,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return displayName;
     }
 
-    /** The OCID of the compartment containing the scheduled job. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the scheduled job.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment containing the scheduled job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the scheduled job.
      *
      * @return the value
      */
@@ -635,12 +784,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return compartmentId;
     }
 
-    /** Details describing the scheduled job. */
+    /** User-specified description for the scheduled job. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the scheduled job.
+     * User-specified description for the scheduled job.
      *
      * @return the value
      */
@@ -648,12 +797,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return description;
     }
 
-    /** The type of scheduling this scheduled job follows. */
+    /** The type of scheduling frequency for the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleTypes scheduleType;
 
     /**
-     * The type of scheduling this scheduled job follows.
+     * The type of scheduling frequency for the job.
      *
      * @return the value
      */
@@ -661,12 +810,35 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return scheduleType;
     }
 
-    /** The time of the next execution of this scheduled job. */
+    /**
+     * The list of locations this scheduled job should operate on for a job targeting on
+     * compartments. (Empty list means apply to all locations). This can only be set when
+     * managedCompartmentIds is not empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("locations")
+    private final java.util.List<ManagedInstanceLocation> locations;
+
+    /**
+     * The list of locations this scheduled job should operate on for a job targeting on
+     * compartments. (Empty list means apply to all locations). This can only be set when
+     * managedCompartmentIds is not empty.
+     *
+     * @return the value
+     */
+    public java.util.List<ManagedInstanceLocation> getLocations() {
+        return locations;
+    }
+
+    /**
+     * The time of the next execution of this scheduled job (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
     private final java.util.Date timeNextExecution;
 
     /**
-     * The time of the next execution of this scheduled job.
+     * The time of the next execution of this scheduled job (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -674,12 +846,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return timeNextExecution;
     }
 
-    /** The time of the last execution of this scheduled job. */
+    /**
+     * The time of the last execution of this scheduled job (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecution")
     private final java.util.Date timeLastExecution;
 
     /**
-     * The time of the last execution of this scheduled job.
+     * The time of the last execution of this scheduled job (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */
@@ -687,12 +863,12 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return timeLastExecution;
     }
 
-    /** The recurring rule for a RECURRING scheduled job. */
+    /** The frequency schedule for a recurring scheduled job. */
     @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
     private final String recurringRule;
 
     /**
-     * The recurring rule for a RECURRING scheduled job.
+     * The frequency schedule for a recurring scheduled job.
      *
      * @return the value
      */
@@ -701,15 +877,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The list of managed instance OCIDs this scheduled job operates on (mutually exclusive with
-     * managedInstanceGroupIds, managedCompartmentIds and lifecycleStageIds).
+     * The managed instance
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceGroupIds,
+     * managedCompartmentIds, and lifecycleStageIds.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
     private final java.util.List<String> managedInstanceIds;
 
     /**
-     * The list of managed instance OCIDs this scheduled job operates on (mutually exclusive with
-     * managedInstanceGroupIds, managedCompartmentIds and lifecycleStageIds).
+     * The managed instance
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceGroupIds,
+     * managedCompartmentIds, and lifecycleStageIds.
      *
      * @return the value
      */
@@ -718,15 +900,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The list of managed instance group OCIDs this scheduled job operates on (mutually exclusive
-     * with managedInstances, managedCompartmentIds and lifecycleStageIds).
+     * The managed instance group
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceIds,
+     * managedCompartmentIds, and lifecycleStageIds.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroupIds")
     private final java.util.List<String> managedInstanceGroupIds;
 
     /**
-     * The list of managed instance group OCIDs this scheduled job operates on (mutually exclusive
-     * with managedInstances, managedCompartmentIds and lifecycleStageIds).
+     * The managed instance group
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceIds,
+     * managedCompartmentIds, and lifecycleStageIds.
      *
      * @return the value
      */
@@ -735,15 +923,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The list of target compartment OCIDs if this scheduled job operates on a compartment level
-     * (mutually exclusive with managedInstances, managedInstanceGroupIds and lifecycleStageIds).
+     * The compartment
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceIds,
+     * managedInstanceGroupIds, and lifecycleStageIds.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managedCompartmentIds")
     private final java.util.List<String> managedCompartmentIds;
 
     /**
-     * The list of target compartment OCIDs if this scheduled job operates on a compartment level
-     * (mutually exclusive with managedInstances, managedInstanceGroupIds and lifecycleStageIds).
+     * The compartment
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceIds,
+     * managedInstanceGroupIds, and lifecycleStageIds.
      *
      * @return the value
      */
@@ -752,17 +946,21 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The list of target lifecycle stage OCIDs if this scheduled job operates on lifecycle stages
-     * (mutually exclusive with managedInstances, managedInstanceGroupIds and
-     * managedCompartmentIds).
+     * The lifecycle stage
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceIds,
+     * managedInstanceGroupIds, and managedCompartmentIds.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStageIds")
     private final java.util.List<String> lifecycleStageIds;
 
     /**
-     * The list of target lifecycle stage OCIDs if this scheduled job operates on lifecycle stages
-     * (mutually exclusive with managedInstances, managedInstanceGroupIds and
-     * managedCompartmentIds).
+     * The lifecycle stage
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
+     * this scheduled job operates on. A scheduled job can only operate on one type of target,
+     * therefore this parameter is mutually exclusive with managedInstanceIds,
+     * managedInstanceGroupIds, and managedCompartmentIds.
      *
      * @return the value
      */
@@ -771,15 +969,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * Whether to create jobs for all compartments in the tenancy when managedCompartmentIds
-     * specifies the tenancy OCID.
+     * Indicates whether to apply the scheduled job to all compartments in the tenancy when
+     * managedCompartmentIds specifies the tenancy
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root
+     * compartment).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isSubcompartmentIncluded")
     private final Boolean isSubcompartmentIncluded;
 
     /**
-     * Whether to create jobs for all compartments in the tenancy when managedCompartmentIds
-     * specifies the tenancy OCID.
+     * Indicates whether to apply the scheduled job to all compartments in the tenancy when
+     * managedCompartmentIds specifies the tenancy
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root
+     * compartment).
      *
      * @return the value
      */
@@ -788,17 +990,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * The list of operations this scheduled job needs to perform (can only support one operation if
-     * the operationType is not
-     * UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+     * The list of operations this scheduled job needs to perform. A scheduled job supports only one
+     * operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
+     * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
+     * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
      */
     @com.fasterxml.jackson.annotation.JsonProperty("operations")
     private final java.util.List<ScheduledJobOperation> operations;
 
     /**
-     * The list of operations this scheduled job needs to perform (can only support one operation if
-     * the operationType is not
-     * UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+     * The list of operations this scheduled job needs to perform. A scheduled job supports only one
+     * operation type, unless it is one of the following: * UPDATE_PACKAGES * UPDATE_ALL *
+     * UPDATE_SECURITY * UPDATE_BUGFIX * UPDATE_ENHANCEMENT * UPDATE_OTHER *
+     * UPDATE_KSPLICE_USERSPACE * UPDATE_KSPLICE_KERNEL
      *
      * @return the value
      */
@@ -806,12 +1010,18 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return operations;
     }
 
-    /** The list of work request OCIDs associated with this scheduled job. */
+    /**
+     * The list of work request
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this scheduled job.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestIds")
     private final java.util.List<String> workRequestIds;
 
     /**
-     * The list of work request OCIDs associated with this scheduled job.
+     * The list of work request
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this scheduled job.
      *
      * @return the value
      */
@@ -819,12 +1029,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return workRequestIds;
     }
 
-    /** The time this scheduled job was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * format).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time this scheduled job was created. An RFC3339 formatted datetime string.
+     * The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * format).
      *
      * @return the value
      */
@@ -832,12 +1046,16 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return timeCreated;
     }
 
-    /** The time this scheduled job was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * format).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time this scheduled job was updated. An RFC3339 formatted datetime string.
+     * The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * format).
      *
      * @return the value
      */
@@ -909,6 +1127,19 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         return lifecycleState;
     }
 
+    /** Indicates whether this scheduled job is managed by the Autonomous Linux service. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+    private final Boolean isManagedByAutonomousLinux;
+
+    /**
+     * Indicates whether this scheduled job is managed by the Autonomous Linux service.
+     *
+     * @return the value
+     */
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -969,20 +1200,43 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
-     * true, if the schedule job has its update/deletion capabilities restricted. (Used to track
-     * scheduled job for management station syncing).
+     * Indicates if the schedule job has restricted update and deletion capabilities. For restricted
+     * scheduled jobs, you can update only the timeNextExecution, recurringRule, and tags.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isRestricted")
     private final Boolean isRestricted;
 
     /**
-     * true, if the schedule job has its update/deletion capabilities restricted. (Used to track
-     * scheduled job for management station syncing).
+     * Indicates if the schedule job has restricted update and deletion capabilities. For restricted
+     * scheduled jobs, you can update only the timeNextExecution, recurringRule, and tags.
      *
      * @return the value
      */
     public Boolean getIsRestricted() {
         return isRestricted;
+    }
+
+    /**
+     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service
+     * will automatically retry a failed scheduled job after the interval. For example, you could
+     * set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2
+     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
+     * that fails, the service waits 10 minutes and then retries.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
+    private final java.util.List<Integer> retryIntervals;
+
+    /**
+     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service
+     * will automatically retry a failed scheduled job after the interval. For example, you could
+     * set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2
+     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
+     * that fails, the service waits 10 minutes and then retries.
+     *
+     * @return the value
+     */
+    public java.util.List<Integer> getRetryIntervals() {
+        return retryIntervals;
     }
 
     @Override
@@ -1005,6 +1259,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", scheduleType=").append(String.valueOf(this.scheduleType));
+        sb.append(", locations=").append(String.valueOf(this.locations));
         sb.append(", timeNextExecution=").append(String.valueOf(this.timeNextExecution));
         sb.append(", timeLastExecution=").append(String.valueOf(this.timeLastExecution));
         sb.append(", recurringRule=").append(String.valueOf(this.recurringRule));
@@ -1020,10 +1275,13 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isRestricted=").append(String.valueOf(this.isRestricted));
+        sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
         sb.append(")");
         return sb.toString();
     }
@@ -1043,6 +1301,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.scheduleType, other.scheduleType)
+                && java.util.Objects.equals(this.locations, other.locations)
                 && java.util.Objects.equals(this.timeNextExecution, other.timeNextExecution)
                 && java.util.Objects.equals(this.timeLastExecution, other.timeLastExecution)
                 && java.util.Objects.equals(this.recurringRule, other.recurringRule)
@@ -1058,10 +1317,13 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isRestricted, other.isRestricted)
+                && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
                 && super.equals(other);
     }
 
@@ -1076,6 +1338,7 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.scheduleType == null ? 43 : this.scheduleType.hashCode());
+        result = (result * PRIME) + (this.locations == null ? 43 : this.locations.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeNextExecution == null ? 43 : this.timeNextExecution.hashCode());
@@ -1117,10 +1380,18 @@ public final class ScheduledJob extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.isRestricted == null ? 43 : this.isRestricted.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retryIntervals == null ? 43 : this.retryIntervals.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

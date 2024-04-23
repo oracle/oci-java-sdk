@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible status values of Cloud Guard Tenants. */
+/** Enablement status values of Cloud Guard tenant. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum CloudGuardStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Enabled("ENABLED"),

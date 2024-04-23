@@ -1571,6 +1571,7 @@ public class BlockstorageClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("volumeGroupId", request.getVolumeGroupId())
+                .appendQueryParam("clusterPlacementGroupId", request.getClusterPlacementGroupId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .accept("application/json")
                 .handleBodyList(

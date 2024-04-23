@@ -17,18 +17,24 @@ public class RemovePackagesFromManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .RemovePackagesFromManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for packages to remove from the managed instance group. */
+    /** The names of packages to remove from the specified managed instance group. */
     private com.oracle.bmc.osmanagementhub.model.RemovePackagesFromManagedInstanceGroupDetails
             removePackagesFromManagedInstanceGroupDetails;
 
-    /** Details for packages to remove from the managed instance group. */
+    /** The names of packages to remove from the specified managed instance group. */
     public com.oracle.bmc.osmanagementhub.model.RemovePackagesFromManagedInstanceGroupDetails
             getRemovePackagesFromManagedInstanceGroupDetails() {
         return removePackagesFromManagedInstanceGroupDetails;
@@ -103,11 +109,15 @@ public class RemovePackagesFromManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -117,12 +127,12 @@ public class RemovePackagesFromManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for packages to remove from the managed instance group. */
+        /** The names of packages to remove from the specified managed instance group. */
         private com.oracle.bmc.osmanagementhub.model.RemovePackagesFromManagedInstanceGroupDetails
                 removePackagesFromManagedInstanceGroupDetails = null;
 
         /**
-         * Details for packages to remove from the managed instance group.
+         * The names of packages to remove from the specified managed instance group.
          *
          * @param removePackagesFromManagedInstanceGroupDetails the value to set
          * @return this builder instance

@@ -17,10 +17,16 @@ public class AttachManagedInstancesToLifecycleStageRequest
                 com.oracle.bmc.osmanagementhub.model
                         .AttachManagedInstancesToLifecycleStageDetails> {
 
-    /** The OCID of the lifecycle stage. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage.
+     */
     private String lifecycleStageId;
 
-    /** The OCID of the lifecycle stage. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle stage.
+     */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
@@ -103,11 +109,15 @@ public class AttachManagedInstancesToLifecycleStageRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the lifecycle stage. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage.
+         */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle stage.
          *
          * @param lifecycleStageId the value to set
          * @return this builder instance

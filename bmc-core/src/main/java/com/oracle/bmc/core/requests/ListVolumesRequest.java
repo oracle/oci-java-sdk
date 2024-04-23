@@ -208,6 +208,17 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return volumeGroupId;
     }
     /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     */
+    private String clusterPlacementGroupId;
+
+    /**
+     * A filter to return only resources that match the given cluster placement group Id exactly.
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+    /**
      * A filter to only return resources that match the given lifecycle state. The state value is
      * case-insensitive.
      */
@@ -388,6 +399,24 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * A filter to return only resources that match the given cluster placement group Id
+         * exactly.
+         */
+        private String clusterPlacementGroupId = null;
+
+        /**
+         * A filter to return only resources that match the given cluster placement group Id
+         * exactly.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
          * A filter to only return resources that match the given lifecycle state. The state value
          * is case-insensitive.
          */
@@ -444,6 +473,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             volumeGroupId(o.getVolumeGroupId());
+            clusterPlacementGroupId(o.getClusterPlacementGroupId());
             lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -487,10 +517,11 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.volumeGroupId = volumeGroupId;
+            request.clusterPlacementGroupId = clusterPlacementGroupId;
             request.lifecycleState = lifecycleState;
             return request;
             // new ListVolumesRequest(availabilityDomain, compartmentId, limit, page, displayName,
-            // sortBy, sortOrder, volumeGroupId, lifecycleState);
+            // sortBy, sortOrder, volumeGroupId, clusterPlacementGroupId, lifecycleState);
         }
     }
 
@@ -509,6 +540,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .volumeGroupId(volumeGroupId)
+                .clusterPlacementGroupId(clusterPlacementGroupId)
                 .lifecycleState(lifecycleState);
     }
 
@@ -534,6 +566,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",volumeGroupId=").append(String.valueOf(this.volumeGroupId));
+        sb.append(",clusterPlacementGroupId=").append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(")");
         return sb.toString();
@@ -558,6 +591,8 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.volumeGroupId, other.volumeGroupId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
     }
 
@@ -581,6 +616,11 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result =
                 (result * PRIME)
                         + (this.volumeGroupId == null ? 43 : this.volumeGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

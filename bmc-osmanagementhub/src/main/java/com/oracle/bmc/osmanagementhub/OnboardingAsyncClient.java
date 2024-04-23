@@ -95,6 +95,41 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeProfileCompartmentResponse> changeProfileCompartment(
+            ChangeProfileCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeProfileCompartmentRequest, ChangeProfileCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProfileId(), "profileId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProfileCompartmentDetails(),
+                "changeProfileCompartmentDetails is required");
+
+        return clientCall(request, ChangeProfileCompartmentResponse::builder)
+                .logger(LOG, "changeProfileCompartment")
+                .serviceDetails(
+                        "Onboarding",
+                        "ChangeProfileCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ChangeProfileCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProfileCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("profiles")
+                .appendPathParam(request.getProfileId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProfileCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProfileResponse> createProfile(
             CreateProfileRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateProfileRequest, CreateProfileResponse>
@@ -211,6 +246,12 @@ public class OnboardingAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendQueryParam("profileId", request.getProfileId())
                 .appendEnumQueryParam("osFamily", request.getOsFamily())
                 .appendEnumQueryParam("archType", request.getArchType())
+                .appendListQueryParam(
+                        "registrationType",
+                        request.getRegistrationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isDefaultProfile", request.getIsDefaultProfile())
+                .appendQueryParam("isServiceProvidedProfile", request.getIsServiceProvidedProfile())
                 .appendEnumQueryParam("vendorName", request.getVendorName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())

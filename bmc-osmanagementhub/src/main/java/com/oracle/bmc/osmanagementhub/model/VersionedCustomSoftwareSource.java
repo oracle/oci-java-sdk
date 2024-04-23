@@ -5,8 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An immutable custom software source that is assigned a version and contains a custom collection
- * of packages. <br>
+ * The object that defines a versioned custom software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,6 +78,15 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         public Builder availability(Availability availability) {
             this.availability = availability;
             this.__explicitlySet__.add("availability");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
             return this;
         }
 
@@ -172,6 +180,15 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -199,12 +216,16 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** List of vendor software sources. */
+        /**
+         * List of vendor software sources that are used for the basis of the versioned custom
+         * software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources.
+         * List of vendor software sources that are used for the basis of the versioned custom
+         * software source.
          *
          * @param vendorSoftwareSources the value to set
          * @return this builder
@@ -239,6 +260,59 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("softwareSourceVersion");
             return this;
         }
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when
+         * including specific packages in the software source.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+        private Boolean isAutoResolveDependencies;
+
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when
+         * including specific packages in the software source.
+         *
+         * @param isAutoResolveDependencies the value to set
+         * @return this builder
+         */
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            this.isAutoResolveDependencies = isAutoResolveDependencies;
+            this.__explicitlySet__.add("isAutoResolveDependencies");
+            return this;
+        }
+        /**
+         * Indicates whether the service should create the software source from a list of packages
+         * provided by the user.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+        private Boolean isCreatedFromPackageList;
+
+        /**
+         * Indicates whether the service should create the software source from a list of packages
+         * provided by the user.
+         *
+         * @param isCreatedFromPackageList the value to set
+         * @return this builder
+         */
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            this.isCreatedFromPackageList = isCreatedFromPackageList;
+            this.__explicitlySet__.add("isCreatedFromPackageList");
+            return this;
+        }
+        /** The packages in the software source. */
+        @com.fasterxml.jackson.annotation.JsonProperty("packages")
+        private java.util.List<String> packages;
+
+        /**
+         * The packages in the software source.
+         *
+         * @param packages the value to set
+         * @return this builder
+         */
+        public Builder packages(java.util.List<String> packages) {
+            this.packages = packages;
+            this.__explicitlySet__.add("packages");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -252,6 +326,7 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                             this.timeCreated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.repoId,
                             this.osFamily,
                             this.archType,
@@ -262,12 +337,16 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                             this.gpgKeyUrl,
                             this.gpgKeyId,
                             this.gpgKeyFingerprint,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
                             this.vendorSoftwareSources,
                             this.customSoftwareSourceFilter,
-                            this.softwareSourceVersion);
+                            this.softwareSourceVersion,
+                            this.isAutoResolveDependencies,
+                            this.isCreatedFromPackageList,
+                            this.packages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -293,6 +372,9 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
             }
             if (model.wasPropertyExplicitlySet("repoId")) {
                 this.repoId(model.getRepoId());
@@ -324,6 +406,9 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             if (model.wasPropertyExplicitlySet("gpgKeyFingerprint")) {
                 this.gpgKeyFingerprint(model.getGpgKeyFingerprint());
             }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -341,6 +426,15 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("softwareSourceVersion")) {
                 this.softwareSourceVersion(model.getSoftwareSourceVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoResolveDependencies")) {
+                this.isAutoResolveDependencies(model.getIsAutoResolveDependencies());
+            }
+            if (model.wasPropertyExplicitlySet("isCreatedFromPackageList")) {
+                this.isCreatedFromPackageList(model.getIsCreatedFromPackageList());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
             }
             return this;
         }
@@ -363,6 +457,7 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             java.util.Date timeCreated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             String repoId,
             OsFamily osFamily,
             ArchType archType,
@@ -373,12 +468,16 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
             String gpgKeyUrl,
             String gpgKeyId,
             String gpgKeyFingerprint,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<Id> vendorSoftwareSources,
             CustomSoftwareSourceFilter customSoftwareSourceFilter,
-            String softwareSourceVersion) {
+            String softwareSourceVersion,
+            Boolean isAutoResolveDependencies,
+            Boolean isCreatedFromPackageList,
+            java.util.List<String> packages) {
         super(
                 id,
                 compartmentId,
@@ -386,6 +485,7 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                 timeCreated,
                 description,
                 availability,
+                availabilityAtOci,
                 repoId,
                 osFamily,
                 archType,
@@ -396,20 +496,28 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                 gpgKeyUrl,
                 gpgKeyId,
                 gpgKeyFingerprint,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
         this.softwareSourceVersion = softwareSourceVersion;
+        this.isAutoResolveDependencies = isAutoResolveDependencies;
+        this.isCreatedFromPackageList = isCreatedFromPackageList;
+        this.packages = packages;
     }
 
-    /** List of vendor software sources. */
+    /**
+     * List of vendor software sources that are used for the basis of the versioned custom software
+     * source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the versioned custom software
+     * source.
      *
      * @return the value
      */
@@ -437,6 +545,53 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         return softwareSourceVersion;
     }
 
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when
+     * including specific packages in the software source.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+    private final Boolean isAutoResolveDependencies;
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when
+     * including specific packages in the software source.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoResolveDependencies() {
+        return isAutoResolveDependencies;
+    }
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages
+     * provided by the user.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+    private final Boolean isCreatedFromPackageList;
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages
+     * provided by the user.
+     *
+     * @return the value
+     */
+    public Boolean getIsCreatedFromPackageList() {
+        return isCreatedFromPackageList;
+    }
+
+    /** The packages in the software source. */
+    @com.fasterxml.jackson.annotation.JsonProperty("packages")
+    private final java.util.List<String> packages;
+
+    /**
+     * The packages in the software source.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getPackages() {
+        return packages;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -456,6 +611,11 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
         sb.append(", customSoftwareSourceFilter=")
                 .append(String.valueOf(this.customSoftwareSourceFilter));
         sb.append(", softwareSourceVersion=").append(String.valueOf(this.softwareSourceVersion));
+        sb.append(", isAutoResolveDependencies=")
+                .append(String.valueOf(this.isAutoResolveDependencies));
+        sb.append(", isCreatedFromPackageList=")
+                .append(String.valueOf(this.isCreatedFromPackageList));
+        sb.append(", packages=").append(String.valueOf(this.packages));
         sb.append(")");
         return sb.toString();
     }
@@ -474,6 +634,11 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                 && java.util.Objects.equals(
                         this.customSoftwareSourceFilter, other.customSoftwareSourceFilter)
                 && java.util.Objects.equals(this.softwareSourceVersion, other.softwareSourceVersion)
+                && java.util.Objects.equals(
+                        this.isAutoResolveDependencies, other.isAutoResolveDependencies)
+                && java.util.Objects.equals(
+                        this.isCreatedFromPackageList, other.isCreatedFromPackageList)
+                && java.util.Objects.equals(this.packages, other.packages)
                 && super.equals(other);
     }
 
@@ -496,6 +661,17 @@ public final class VersionedCustomSoftwareSource extends SoftwareSource {
                         + (this.softwareSourceVersion == null
                                 ? 43
                                 : this.softwareSourceVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoResolveDependencies == null
+                                ? 43
+                                : this.isAutoResolveDependencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCreatedFromPackageList == null
+                                ? 43
+                                : this.isCreatedFromPackageList.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
         return result;
     }
 }

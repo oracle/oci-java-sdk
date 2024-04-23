@@ -17,18 +17,32 @@ public class AttachManagedInstancesToManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .AttachManagedInstancesToManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for managed instances to attach to the managed instance group. */
+    /**
+     * The managed instances
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * attach to the managed instance group.
+     */
     private com.oracle.bmc.osmanagementhub.model.AttachManagedInstancesToManagedInstanceGroupDetails
             attachManagedInstancesToManagedInstanceGroupDetails;
 
-    /** Details for managed instances to attach to the managed instance group. */
+    /**
+     * The managed instances
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * attach to the managed instance group.
+     */
     public com.oracle.bmc.osmanagementhub.model.AttachManagedInstancesToManagedInstanceGroupDetails
             getAttachManagedInstancesToManagedInstanceGroupDetails() {
         return attachManagedInstancesToManagedInstanceGroupDetails;
@@ -103,11 +117,15 @@ public class AttachManagedInstancesToManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -117,13 +135,19 @@ public class AttachManagedInstancesToManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for managed instances to attach to the managed instance group. */
+        /**
+         * The managed instances
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * attach to the managed instance group.
+         */
         private com.oracle.bmc.osmanagementhub.model
                         .AttachManagedInstancesToManagedInstanceGroupDetails
                 attachManagedInstancesToManagedInstanceGroupDetails = null;
 
         /**
-         * Details for managed instances to attach to the managed instance group.
+         * The managed instances
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * attach to the managed instance group.
          *
          * @param attachManagedInstancesToManagedInstanceGroupDetails the value to set
          * @return this builder instance

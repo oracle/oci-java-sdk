@@ -14,12 +14,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListEntitlementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -31,10 +35,10 @@ public class ListEntitlementsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getCsi() {
         return csi;
     }
-    /** A filter to return only profiles that match the given vendorName. */
+    /** A filter to return only resources that match the given vendor name. */
     private com.oracle.bmc.osmanagementhub.model.VendorName vendorName;
 
-    /** A filter to return only profiles that match the given vendorName. */
+    /** A filter to return only resources that match the given vendor name. */
     public com.oracle.bmc.osmanagementhub.model.VendorName getVendorName() {
         return vendorName;
     }
@@ -145,14 +149,16 @@ public class ListEntitlementsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This parameter is required and returns only resources contained
+         * within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This parameter is required and returns only resources contained
+         * within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -176,11 +182,11 @@ public class ListEntitlementsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only profiles that match the given vendorName. */
+        /** A filter to return only resources that match the given vendor name. */
         private com.oracle.bmc.osmanagementhub.model.VendorName vendorName = null;
 
         /**
-         * A filter to return only profiles that match the given vendorName.
+         * A filter to return only resources that match the given vendor name.
          *
          * @param vendorName the value to set
          * @return this builder instance

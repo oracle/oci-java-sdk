@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Create ManagedList <br>
+ * Parameters to use to create details for a new managed list. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -76,12 +76,12 @@ public final class CreateManagedListDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -91,12 +91,12 @@ public final class CreateManagedListDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of the Source ManagedList */
+        /** OCID of the source managed list */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
         private String sourceManagedListId;
 
         /**
-         * OCID of the Source ManagedList
+         * OCID of the source managed list
          *
          * @param sourceManagedListId the value to set
          * @return this builder
@@ -107,7 +107,7 @@ public final class CreateManagedListDetails
             return this;
         }
         /**
-         * Managed list description.
+         * Managed list description
          *
          * <p>Avoid entering confidential information.
          */
@@ -115,7 +115,7 @@ public final class CreateManagedListDetails
         private String description;
 
         /**
-         * Managed list description.
+         * Managed list description
          *
          * <p>Avoid entering confidential information.
          *
@@ -127,12 +127,12 @@ public final class CreateManagedListDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** type of the list */
+        /** Type of information stored in the list */
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ManagedListType listType;
 
         /**
-         * type of the list
+         * Type of information stored in the list
          *
          * @param listType the value to set
          * @return this builder
@@ -142,12 +142,12 @@ public final class CreateManagedListDetails
             this.__explicitlySet__.add("listType");
             return this;
         }
-        /** List of ManagedListItem */
+        /** List of items in the managed list */
         @com.fasterxml.jackson.annotation.JsonProperty("listItems")
         private java.util.List<String> listItems;
 
         /**
-         * List of ManagedListItem
+         * List of items in the managed list
          *
          * @param listItems the value to set
          * @return this builder
@@ -279,12 +279,12 @@ public final class CreateManagedListDetails
         return displayName;
     }
 
-    /** Compartment Identifier */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      *
      * @return the value
      */
@@ -292,12 +292,12 @@ public final class CreateManagedListDetails
         return compartmentId;
     }
 
-    /** OCID of the Source ManagedList */
+    /** OCID of the source managed list */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
     private final String sourceManagedListId;
 
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      *
      * @return the value
      */
@@ -306,7 +306,7 @@ public final class CreateManagedListDetails
     }
 
     /**
-     * Managed list description.
+     * Managed list description
      *
      * <p>Avoid entering confidential information.
      */
@@ -314,7 +314,7 @@ public final class CreateManagedListDetails
     private final String description;
 
     /**
-     * Managed list description.
+     * Managed list description
      *
      * <p>Avoid entering confidential information.
      *
@@ -324,12 +324,12 @@ public final class CreateManagedListDetails
         return description;
     }
 
-    /** type of the list */
+    /** Type of information stored in the list */
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ManagedListType listType;
 
     /**
-     * type of the list
+     * Type of information stored in the list
      *
      * @return the value
      */
@@ -337,12 +337,12 @@ public final class CreateManagedListDetails
         return listType;
     }
 
-    /** List of ManagedListItem */
+    /** List of items in the managed list */
     @com.fasterxml.jackson.annotation.JsonProperty("listItems")
     private final java.util.List<String> listItems;
 
     /**
-     * List of ManagedListItem
+     * List of items in the managed list
      *
      * @return the value
      */

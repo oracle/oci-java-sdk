@@ -32,12 +32,12 @@ public final class Detector extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** detector key */
+        /** Unique identifier for detector */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * detector key
+         * Unique identifier for detector
          *
          * @param id the value to set
          * @return this builder
@@ -47,12 +47,12 @@ public final class Detector extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** detector description */
+        /** Detector description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * detector description
+         * Detector description
          *
          * @param description the value to set
          * @return this builder
@@ -62,12 +62,12 @@ public final class Detector extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The current state of the resource. */
+        /** The current lifecycle state of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -113,12 +113,12 @@ public final class Detector extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** detector key */
+    /** Unique identifier for detector */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * detector key
+     * Unique identifier for detector
      *
      * @return the value
      */
@@ -126,12 +126,12 @@ public final class Detector extends com.oracle.bmc.http.client.internal.Explicit
         return id;
     }
 
-    /** detector description */
+    /** Detector description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * detector description
+     * Detector description
      *
      * @return the value
      */
@@ -139,12 +139,12 @@ public final class Detector extends com.oracle.bmc.http.client.internal.Explicit
         return description;
     }
 
-    /** The current state of the resource. */
+    /** The current lifecycle state of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      *
      * @return the value
      */

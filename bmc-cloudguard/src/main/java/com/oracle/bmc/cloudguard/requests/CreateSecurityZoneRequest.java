@@ -15,10 +15,10 @@ public class CreateSecurityZoneRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateSecurityZoneDetails> {
 
-    /** Details for the new {@code SecurityZone}. */
+    /** Details for the new {@code SecurityZone} resource */
     private com.oracle.bmc.cloudguard.model.CreateSecurityZoneDetails createSecurityZoneDetails;
 
-    /** Details for the new {@code SecurityZone}. */
+    /** Details for the new {@code SecurityZone} resource */
     public com.oracle.bmc.cloudguard.model.CreateSecurityZoneDetails
             getCreateSecurityZoneDetails() {
         return createSecurityZoneDetails;
@@ -68,12 +68,12 @@ public class CreateSecurityZoneRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new {@code SecurityZone}. */
+        /** Details for the new {@code SecurityZone} resource */
         private com.oracle.bmc.cloudguard.model.CreateSecurityZoneDetails
                 createSecurityZoneDetails = null;
 
         /**
-         * Details for the new {@code SecurityZone}.
+         * Details for the new {@code SecurityZone} resource
          *
          * @param createSecurityZoneDetails the value to set
          * @return this builder instance

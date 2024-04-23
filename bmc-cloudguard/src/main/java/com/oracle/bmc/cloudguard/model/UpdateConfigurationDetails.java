@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Update cloud guard configuration details for a tenancy. <br>
+ * Parameters to update Cloud Guard configuration details for a tenancy. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,23 +23,32 @@ package com.oracle.bmc.cloudguard.model;
 public final class UpdateConfigurationDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"reportingRegion", "status", "selfManageResources"})
+    @java.beans.ConstructorProperties({
+        "reportingRegion",
+        "status",
+        "serviceConfigurations",
+        "selfManageResources"
+    })
     public UpdateConfigurationDetails(
-            String reportingRegion, CloudGuardStatus status, Boolean selfManageResources) {
+            String reportingRegion,
+            CloudGuardStatus status,
+            java.util.List<ServiceConfiguration> serviceConfigurations,
+            Boolean selfManageResources) {
         super();
         this.reportingRegion = reportingRegion;
         this.status = status;
+        this.serviceConfigurations = serviceConfigurations;
         this.selfManageResources = selfManageResources;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The reporting region value */
+        /** The reporting region */
         @com.fasterxml.jackson.annotation.JsonProperty("reportingRegion")
         private String reportingRegion;
 
         /**
-         * The reporting region value
+         * The reporting region
          *
          * @param reportingRegion the value to set
          * @return this builder
@@ -49,12 +58,12 @@ public final class UpdateConfigurationDetails
             this.__explicitlySet__.add("reportingRegion");
             return this;
         }
-        /** Status of Cloud Guard Tenant */
+        /** Status of Cloud Guard tenant */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private CloudGuardStatus status;
 
         /**
-         * Status of Cloud Guard Tenant
+         * Status of Cloud Guard tenant
          *
          * @param status the value to set
          * @return this builder
@@ -62,6 +71,22 @@ public final class UpdateConfigurationDetails
         public Builder status(CloudGuardStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
+            return this;
+        }
+        /** List of service configurations for tenant */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceConfigurations")
+        private java.util.List<ServiceConfiguration> serviceConfigurations;
+
+        /**
+         * List of service configurations for tenant
+         *
+         * @param serviceConfigurations the value to set
+         * @return this builder
+         */
+        public Builder serviceConfigurations(
+                java.util.List<ServiceConfiguration> serviceConfigurations) {
+            this.serviceConfigurations = serviceConfigurations;
+            this.__explicitlySet__.add("serviceConfigurations");
             return this;
         }
         /**
@@ -90,7 +115,10 @@ public final class UpdateConfigurationDetails
         public UpdateConfigurationDetails build() {
             UpdateConfigurationDetails model =
                     new UpdateConfigurationDetails(
-                            this.reportingRegion, this.status, this.selfManageResources);
+                            this.reportingRegion,
+                            this.status,
+                            this.serviceConfigurations,
+                            this.selfManageResources);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -104,6 +132,9 @@ public final class UpdateConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("serviceConfigurations")) {
+                this.serviceConfigurations(model.getServiceConfigurations());
             }
             if (model.wasPropertyExplicitlySet("selfManageResources")) {
                 this.selfManageResources(model.getSelfManageResources());
@@ -121,12 +152,12 @@ public final class UpdateConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** The reporting region value */
+    /** The reporting region */
     @com.fasterxml.jackson.annotation.JsonProperty("reportingRegion")
     private final String reportingRegion;
 
     /**
-     * The reporting region value
+     * The reporting region
      *
      * @return the value
      */
@@ -134,17 +165,30 @@ public final class UpdateConfigurationDetails
         return reportingRegion;
     }
 
-    /** Status of Cloud Guard Tenant */
+    /** Status of Cloud Guard tenant */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final CloudGuardStatus status;
 
     /**
-     * Status of Cloud Guard Tenant
+     * Status of Cloud Guard tenant
      *
      * @return the value
      */
     public CloudGuardStatus getStatus() {
         return status;
+    }
+
+    /** List of service configurations for tenant */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceConfigurations")
+    private final java.util.List<ServiceConfiguration> serviceConfigurations;
+
+    /**
+     * List of service configurations for tenant
+     *
+     * @return the value
+     */
+    public java.util.List<ServiceConfiguration> getServiceConfigurations() {
+        return serviceConfigurations;
     }
 
     /**
@@ -181,6 +225,7 @@ public final class UpdateConfigurationDetails
         sb.append("super=").append(super.toString());
         sb.append("reportingRegion=").append(String.valueOf(this.reportingRegion));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", serviceConfigurations=").append(String.valueOf(this.serviceConfigurations));
         sb.append(", selfManageResources=").append(String.valueOf(this.selfManageResources));
         sb.append(")");
         return sb.toString();
@@ -198,6 +243,7 @@ public final class UpdateConfigurationDetails
         UpdateConfigurationDetails other = (UpdateConfigurationDetails) o;
         return java.util.Objects.equals(this.reportingRegion, other.reportingRegion)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.serviceConfigurations, other.serviceConfigurations)
                 && java.util.Objects.equals(this.selfManageResources, other.selfManageResources)
                 && super.equals(other);
     }
@@ -210,6 +256,11 @@ public final class UpdateConfigurationDetails
                 (result * PRIME)
                         + (this.reportingRegion == null ? 43 : this.reportingRegion.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceConfigurations == null
+                                ? 43
+                                : this.serviceConfigurations.hashCode());
         result =
                 (result * PRIME)
                         + (this.selfManageResources == null

@@ -15,10 +15,10 @@ public class CreateManagedListRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateManagedListDetails> {
 
-    /** Details for the new ManagedList. */
+    /** Details for the new ManagedList resources */
     private com.oracle.bmc.cloudguard.model.CreateManagedListDetails createManagedListDetails;
 
-    /** Details for the new ManagedList. */
+    /** Details for the new ManagedList resources */
     public com.oracle.bmc.cloudguard.model.CreateManagedListDetails getCreateManagedListDetails() {
         return createManagedListDetails;
     }
@@ -67,12 +67,12 @@ public class CreateManagedListRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new ManagedList. */
+        /** Details for the new ManagedList resources */
         private com.oracle.bmc.cloudguard.model.CreateManagedListDetails createManagedListDetails =
                 null;
 
         /**
-         * Details for the new ManagedList.
+         * Details for the new ManagedList resources
          *
          * @param createManagedListDetails the value to set
          * @return this builder instance

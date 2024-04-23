@@ -15,10 +15,10 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetConditionMetadataTypeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The type of the condition meta data. */
+    /** The type of the condition metadata. */
     private com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId;
 
-    /** The type of the condition meta data. */
+    /** The type of the condition metadata. */
     public com.oracle.bmc.cloudguard.model.ConditionTypeEnum getConditionMetadataTypeId() {
         return conditionMetadataTypeId;
     }
@@ -29,17 +29,17 @@ public class GetConditionMetadataTypeRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** ServiceType filter for the condition meta data. */
+    /** Service type filter for the condition metadata. */
     private String serviceType;
 
-    /** ServiceType filter for the condition meta data. */
+    /** Service type filter for the condition metadata. */
     public String getServiceType() {
         return serviceType;
     }
-    /** Resource filter for the condition meta data. */
+    /** Resource filter for the condition metadata. */
     private String resourceType;
 
-    /** Resource filter for the condition meta data. */
+    /** Resource filter for the condition metadata. */
     public String getResourceType() {
         return resourceType;
     }
@@ -50,11 +50,11 @@ public class GetConditionMetadataTypeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The type of the condition meta data. */
+        /** The type of the condition metadata. */
         private com.oracle.bmc.cloudguard.model.ConditionTypeEnum conditionMetadataTypeId = null;
 
         /**
-         * The type of the condition meta data.
+         * The type of the condition metadata.
          *
          * @param conditionMetadataTypeId the value to set
          * @return this builder instance
@@ -79,11 +79,11 @@ public class GetConditionMetadataTypeRequest
             return this;
         }
 
-        /** ServiceType filter for the condition meta data. */
+        /** Service type filter for the condition metadata. */
         private String serviceType = null;
 
         /**
-         * ServiceType filter for the condition meta data.
+         * Service type filter for the condition metadata.
          *
          * @param serviceType the value to set
          * @return this builder instance
@@ -93,11 +93,11 @@ public class GetConditionMetadataTypeRequest
             return this;
         }
 
-        /** Resource filter for the condition meta data. */
+        /** Resource filter for the condition metadata. */
         private String resourceType = null;
 
         /**
-         * Resource filter for the condition meta data.
+         * Resource filter for the condition metadata.
          *
          * @param resourceType the value to set
          * @return this builder instance

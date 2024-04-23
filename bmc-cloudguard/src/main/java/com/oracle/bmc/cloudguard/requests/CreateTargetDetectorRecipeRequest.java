@@ -16,18 +16,18 @@ public class CreateTargetDetectorRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** Details for associating DetectorRecipe to Target */
+    /** Details for associating DetectorRecipe with Target */
     private com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails
             attachTargetDetectorRecipeDetails;
 
-    /** Details for associating DetectorRecipe to Target */
+    /** Details for associating DetectorRecipe with Target */
     public com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails
             getAttachTargetDetectorRecipeDetails() {
         return attachTargetDetectorRecipeDetails;
@@ -77,11 +77,11 @@ public class CreateTargetDetectorRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -91,12 +91,12 @@ public class CreateTargetDetectorRecipeRequest
             return this;
         }
 
-        /** Details for associating DetectorRecipe to Target */
+        /** Details for associating DetectorRecipe with Target */
         private com.oracle.bmc.cloudguard.model.AttachTargetDetectorRecipeDetails
                 attachTargetDetectorRecipeDetails = null;
 
         /**
-         * Details for associating DetectorRecipe to Target
+         * Details for associating DetectorRecipe with Target
          *
          * @param attachTargetDetectorRecipeDetails the value to set
          * @return this builder instance

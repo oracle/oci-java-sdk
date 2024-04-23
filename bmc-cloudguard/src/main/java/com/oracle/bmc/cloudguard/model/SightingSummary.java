@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Sighting summary Definition. <br>
+ * Sighting summary definition. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -84,12 +84,12 @@ public final class SightingSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for finding event */
+        /** Unique identifier for sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for finding event
+         * Unique identifier for sighting
          *
          * @param id the value to set
          * @return this builder
@@ -99,12 +99,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Compartment Id where the resource is created */
+        /** Compartment OCID where the impacted resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id where the resource is created
+         * Compartment OCID where the impacted resource is created
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -114,12 +114,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Problem Id to which the Sighting is associated */
+        /** Problem ID associated with sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id to which the Sighting is associated
+         * Problem ID associated with sighting
          *
          * @param problemId the value to set
          * @return this builder
@@ -144,12 +144,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("actorPrincipalId");
             return this;
         }
-        /** Name of the principal actor */
+        /** Name of principal actor */
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
         private String actorPrincipalName;
 
         /**
-         * Name of the principal actor
+         * Name of principal actor
          *
          * @param actorPrincipalName the value to set
          * @return this builder
@@ -159,12 +159,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("actorPrincipalName");
             return this;
         }
-        /** Type of the principal actor */
+        /** Type of principal actor */
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
         private String actorPrincipalType;
 
         /**
-         * Type of the principal actor
+         * Type of principal actor
          *
          * @param actorPrincipalType the value to set
          * @return this builder
@@ -174,12 +174,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("actorPrincipalType");
             return this;
         }
-        /** Unique identifier of the rule */
+        /** Unique identifier of the detector rule that was triggered */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
-         * Unique identifier of the rule
+         * Unique identifier of the detector rule that was triggered
          *
          * @param detectorRuleId the value to set
          * @return this builder
@@ -189,12 +189,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("detectorRuleId");
             return this;
         }
-        /** ClassificationStatus of the sighting event */
+        /** Classification status of the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
         private ClassificationStatus classificationStatus;
 
         /**
-         * ClassificationStatus of the sighting event
+         * Classification status of the sighting
          *
          * @param classificationStatus the value to set
          * @return this builder
@@ -204,12 +204,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("classificationStatus");
             return this;
         }
-        /** Identifier for the sighting type */
+        /** Type of sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Type of sighting
          *
          * @param sightingType the value to set
          * @return this builder
@@ -219,12 +219,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("sightingType");
             return this;
         }
-        /** Name of the sighting type */
+        /** Display name of the sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          *
          * @param sightingTypeDisplayName the value to set
          * @return this builder
@@ -234,12 +234,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("sightingTypeDisplayName");
             return this;
         }
-        /** Name of the Mitre att&ck tactic */
+        /** Name of the MITRE ATT@CK framework tactic */
         @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
         private String tacticName;
 
         /**
-         * Name of the Mitre att&ck tactic
+         * Name of the MITRE ATT@CK framework tactic
          *
          * @param tacticName the value to set
          * @return this builder
@@ -249,12 +249,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("tacticName");
             return this;
         }
-        /** Name of the Mitre att&ck technique */
+        /** Name of the MITRE ATT@CK framework technique */
         @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
         private String techniqueName;
 
         /**
-         * Name of the Mitre att&ck technique
+         * Name of the MITRE ATT@CK framework technique
          *
          * @param techniqueName the value to set
          * @return this builder
@@ -294,12 +294,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** Confidence of the sighting */
+        /** Confidence level that the sighting is not a false positive */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Confidence confidence;
 
         /**
-         * Confidence of the sighting
+         * Confidence level that the sighting is not a false positive
          *
          * @param confidence the value to set
          * @return this builder
@@ -339,12 +339,12 @@ public final class SightingSummary
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** Regions involved in the sighting */
+        /** List of regions involved in the sighting */
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Regions involved in the sighting
+         * List of regions involved in the sighting
          *
          * @param regions the value to set
          * @return this builder
@@ -454,12 +454,12 @@ public final class SightingSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for finding event */
+    /** Unique identifier for sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for finding event
+     * Unique identifier for sighting
      *
      * @return the value
      */
@@ -467,12 +467,12 @@ public final class SightingSummary
         return id;
     }
 
-    /** Compartment Id where the resource is created */
+    /** Compartment OCID where the impacted resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id where the resource is created
+     * Compartment OCID where the impacted resource is created
      *
      * @return the value
      */
@@ -480,12 +480,12 @@ public final class SightingSummary
         return compartmentId;
     }
 
-    /** Problem Id to which the Sighting is associated */
+    /** Problem ID associated with sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id to which the Sighting is associated
+     * Problem ID associated with sighting
      *
      * @return the value
      */
@@ -506,12 +506,12 @@ public final class SightingSummary
         return actorPrincipalId;
     }
 
-    /** Name of the principal actor */
+    /** Name of principal actor */
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
     private final String actorPrincipalName;
 
     /**
-     * Name of the principal actor
+     * Name of principal actor
      *
      * @return the value
      */
@@ -519,12 +519,12 @@ public final class SightingSummary
         return actorPrincipalName;
     }
 
-    /** Type of the principal actor */
+    /** Type of principal actor */
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
     private final String actorPrincipalType;
 
     /**
-     * Type of the principal actor
+     * Type of principal actor
      *
      * @return the value
      */
@@ -532,12 +532,12 @@ public final class SightingSummary
         return actorPrincipalType;
     }
 
-    /** Unique identifier of the rule */
+    /** Unique identifier of the detector rule that was triggered */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
-     * Unique identifier of the rule
+     * Unique identifier of the detector rule that was triggered
      *
      * @return the value
      */
@@ -545,12 +545,12 @@ public final class SightingSummary
         return detectorRuleId;
     }
 
-    /** ClassificationStatus of the sighting event */
+    /** Classification status of the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
     private final ClassificationStatus classificationStatus;
 
     /**
-     * ClassificationStatus of the sighting event
+     * Classification status of the sighting
      *
      * @return the value
      */
@@ -558,12 +558,12 @@ public final class SightingSummary
         return classificationStatus;
     }
 
-    /** Identifier for the sighting type */
+    /** Type of sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting
      *
      * @return the value
      */
@@ -571,12 +571,12 @@ public final class SightingSummary
         return sightingType;
     }
 
-    /** Name of the sighting type */
+    /** Display name of the sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      *
      * @return the value
      */
@@ -584,12 +584,12 @@ public final class SightingSummary
         return sightingTypeDisplayName;
     }
 
-    /** Name of the Mitre att&ck tactic */
+    /** Name of the MITRE ATT@CK framework tactic */
     @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
     private final String tacticName;
 
     /**
-     * Name of the Mitre att&ck tactic
+     * Name of the MITRE ATT@CK framework tactic
      *
      * @return the value
      */
@@ -597,12 +597,12 @@ public final class SightingSummary
         return tacticName;
     }
 
-    /** Name of the Mitre att&ck technique */
+    /** Name of the MITRE ATT@CK framework technique */
     @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
     private final String techniqueName;
 
     /**
-     * Name of the Mitre att&ck technique
+     * Name of the MITRE ATT@CK framework technique
      *
      * @return the value
      */
@@ -636,12 +636,12 @@ public final class SightingSummary
         return severity;
     }
 
-    /** Confidence of the sighting */
+    /** Confidence level that the sighting is not a false positive */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Confidence confidence;
 
     /**
-     * Confidence of the sighting
+     * Confidence level that the sighting is not a false positive
      *
      * @return the value
      */
@@ -675,12 +675,12 @@ public final class SightingSummary
         return timeLastDetected;
     }
 
-    /** Regions involved in the sighting */
+    /** List of regions involved in the sighting */
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Regions involved in the sighting
+     * List of regions involved in the sighting
      *
      * @return the value
      */

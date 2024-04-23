@@ -5,8 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Contains a list of software sources to get the combined list of module streams from all of those
- * software sources. <br>
+ * Provides the information used to search for a set of module streams from a list software sources.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -39,12 +39,16 @@ public final class SearchSoftwareSourceModuleStreamsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of software source OCIDs. */
+        /**
+         * List of software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
-         * List of software source OCIDs.
+         * List of software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param softwareSourceIds the value to set
          * @return this builder
@@ -140,12 +144,16 @@ public final class SearchSoftwareSourceModuleStreamsDetails
         return new Builder().copy(this);
     }
 
-    /** List of software source OCIDs. */
+    /**
+     * List of software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
-     * List of software source OCIDs.
+     * List of software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

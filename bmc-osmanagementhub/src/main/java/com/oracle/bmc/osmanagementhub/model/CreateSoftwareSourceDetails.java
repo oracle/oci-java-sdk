@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Description of a software source to be created. <br>
+ * Provides the information used to create a software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,6 +25,9 @@ package com.oracle.bmc.osmanagementhub.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateCustomSoftwareSourceDetails.class,
             name = "CUSTOM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateVendorSoftwareSourceDetails.class,
+            name = "VENDOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateVersionedCustomSoftwareSourceDetails.class,
             name = "VERSIONED")
@@ -55,12 +58,16 @@ public class CreateSoftwareSourceDetails
         this.definedTags = definedTags;
     }
 
-    /** The OCID of the tenancy containing the software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the software source.
      *
      * @return the value
      */
@@ -68,12 +75,16 @@ public class CreateSoftwareSourceDetails
         return compartmentId;
     }
 
-    /** User friendly name for the software source. */
+    /**
+     * User-friendly name for the software source. Does not have to be unique and you can change the
+     * name later. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source. Does not have to be unique and you can change the
+     * name later. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -81,12 +92,14 @@ public class CreateSoftwareSourceDetails
         return displayName;
     }
 
-    /** Information specified by the user about the software source. */
+    /**
+     * User-specified description for the software source. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the software source.
+     * User-specified description for the software source. Avoid entering confidential information.
      *
      * @return the value
      */

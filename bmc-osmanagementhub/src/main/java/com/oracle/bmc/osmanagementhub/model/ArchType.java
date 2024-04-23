@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible CPU architecture types. */
+/** CPU architecture type. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum ArchType implements com.oracle.bmc.http.internal.BmcEnum {
     X8664("X86_64"),

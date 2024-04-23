@@ -17,18 +17,32 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .AttachSoftwareSourcesToManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for software sources to attach to the managed instance group. */
+    /**
+     * The software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * attach to the managed instance group.
+     */
     private com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToManagedInstanceGroupDetails
             attachSoftwareSourcesToManagedInstanceGroupDetails;
 
-    /** Details for software sources to attach to the managed instance group. */
+    /**
+     * The software source
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * attach to the managed instance group.
+     */
     public com.oracle.bmc.osmanagementhub.model.AttachSoftwareSourcesToManagedInstanceGroupDetails
             getAttachSoftwareSourcesToManagedInstanceGroupDetails() {
         return attachSoftwareSourcesToManagedInstanceGroupDetails;
@@ -103,11 +117,15 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -117,13 +135,19 @@ public class AttachSoftwareSourcesToManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for software sources to attach to the managed instance group. */
+        /**
+         * The software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * attach to the managed instance group.
+         */
         private com.oracle.bmc.osmanagementhub.model
                         .AttachSoftwareSourcesToManagedInstanceGroupDetails
                 attachSoftwareSourcesToManagedInstanceGroupDetails = null;
 
         /**
-         * Details for software sources to attach to the managed instance group.
+         * The software source
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * attach to the managed instance group.
          *
          * @param attachSoftwareSourcesToManagedInstanceGroupDetails the value to set
          * @return this builder instance

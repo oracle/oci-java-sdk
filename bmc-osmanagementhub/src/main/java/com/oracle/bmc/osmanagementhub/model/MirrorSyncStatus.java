@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Status summary of all repos <br>
+ * Status summary of the mirror sync. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,12 +35,12 @@ public final class MirrorSyncStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total of mirrors in 'failed' state */
+        /** Total number of software sources that have not yet been synced. */
         @com.fasterxml.jackson.annotation.JsonProperty("unsynced")
         private Integer unsynced;
 
         /**
-         * Total of mirrors in 'failed' state
+         * Total number of software sources that have not yet been synced.
          *
          * @param unsynced the value to set
          * @return this builder
@@ -50,12 +50,12 @@ public final class MirrorSyncStatus
             this.__explicitlySet__.add("unsynced");
             return this;
         }
-        /** Total of mirrors in 'queued' state */
+        /** Total number of software sources that are queued for sync. */
         @com.fasterxml.jackson.annotation.JsonProperty("queued")
         private Integer queued;
 
         /**
-         * Total of mirrors in 'queued' state
+         * Total number of software sources that are queued for sync.
          *
          * @param queued the value to set
          * @return this builder
@@ -65,12 +65,12 @@ public final class MirrorSyncStatus
             this.__explicitlySet__.add("queued");
             return this;
         }
-        /** Total of mirrors in 'syncing' state */
+        /** Total number of software sources currently syncing. */
         @com.fasterxml.jackson.annotation.JsonProperty("syncing")
         private Integer syncing;
 
         /**
-         * Total of mirrors in 'syncing' state
+         * Total number of software sources currently syncing.
          *
          * @param syncing the value to set
          * @return this builder
@@ -80,12 +80,12 @@ public final class MirrorSyncStatus
             this.__explicitlySet__.add("syncing");
             return this;
         }
-        /** Total of mirrors in 'synced' state */
+        /** Total number of software sources that successfully synced. */
         @com.fasterxml.jackson.annotation.JsonProperty("synced")
         private Integer synced;
 
         /**
-         * Total of mirrors in 'synced' state
+         * Total number of software sources that successfully synced.
          *
          * @param synced the value to set
          * @return this builder
@@ -95,12 +95,12 @@ public final class MirrorSyncStatus
             this.__explicitlySet__.add("synced");
             return this;
         }
-        /** Total of mirrors in 'failed' state */
+        /** Total number of software sources that failed to sync. */
         @com.fasterxml.jackson.annotation.JsonProperty("failed")
         private Integer failed;
 
         /**
-         * Total of mirrors in 'failed' state
+         * Total number of software sources that failed to sync.
          *
          * @param failed the value to set
          * @return this builder
@@ -154,12 +154,12 @@ public final class MirrorSyncStatus
         return new Builder().copy(this);
     }
 
-    /** Total of mirrors in 'failed' state */
+    /** Total number of software sources that have not yet been synced. */
     @com.fasterxml.jackson.annotation.JsonProperty("unsynced")
     private final Integer unsynced;
 
     /**
-     * Total of mirrors in 'failed' state
+     * Total number of software sources that have not yet been synced.
      *
      * @return the value
      */
@@ -167,12 +167,12 @@ public final class MirrorSyncStatus
         return unsynced;
     }
 
-    /** Total of mirrors in 'queued' state */
+    /** Total number of software sources that are queued for sync. */
     @com.fasterxml.jackson.annotation.JsonProperty("queued")
     private final Integer queued;
 
     /**
-     * Total of mirrors in 'queued' state
+     * Total number of software sources that are queued for sync.
      *
      * @return the value
      */
@@ -180,12 +180,12 @@ public final class MirrorSyncStatus
         return queued;
     }
 
-    /** Total of mirrors in 'syncing' state */
+    /** Total number of software sources currently syncing. */
     @com.fasterxml.jackson.annotation.JsonProperty("syncing")
     private final Integer syncing;
 
     /**
-     * Total of mirrors in 'syncing' state
+     * Total number of software sources currently syncing.
      *
      * @return the value
      */
@@ -193,12 +193,12 @@ public final class MirrorSyncStatus
         return syncing;
     }
 
-    /** Total of mirrors in 'synced' state */
+    /** Total number of software sources that successfully synced. */
     @com.fasterxml.jackson.annotation.JsonProperty("synced")
     private final Integer synced;
 
     /**
-     * Total of mirrors in 'synced' state
+     * Total number of software sources that successfully synced.
      *
      * @return the value
      */
@@ -206,12 +206,12 @@ public final class MirrorSyncStatus
         return synced;
     }
 
-    /** Total of mirrors in 'failed' state */
+    /** Total number of software sources that failed to sync. */
     @com.fasterxml.jackson.annotation.JsonProperty("failed")
     private final Integer failed;
 
     /**
-     * Total of mirrors in 'failed' state
+     * Total number of software sources that failed to sync.
      *
      * @return the value
      */

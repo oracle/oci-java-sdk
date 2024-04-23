@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRecipe. <br>
+ * Parameters for creating a responder recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -94,12 +94,12 @@ public final class CreateResponderRecipeDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The id of the source responder recipe. */
+        /** The unique identifier of the source responder recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
         private String sourceResponderRecipeId;
 
         /**
-         * The id of the source responder recipe.
+         * The unique identifier of the source responder recipe
          *
          * @param sourceResponderRecipeId the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class CreateResponderRecipeDetails
             this.__explicitlySet__.add("sourceResponderRecipeId");
             return this;
         }
-        /** Compartment Identifier */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class CreateResponderRecipeDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Responder Rules to override from source responder recipe */
+        /** List of responder rules to override from source responder recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateResponderRecipeResponderRule> responderRules;
 
         /**
-         * Responder Rules to override from source responder recipe
+         * List of responder rules to override from source responder recipe
          *
          * @param responderRules the value to set
          * @return this builder
@@ -277,12 +277,12 @@ public final class CreateResponderRecipeDetails
         return description;
     }
 
-    /** The id of the source responder recipe. */
+    /** The unique identifier of the source responder recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
     private final String sourceResponderRecipeId;
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      *
      * @return the value
      */
@@ -290,12 +290,12 @@ public final class CreateResponderRecipeDetails
         return sourceResponderRecipeId;
     }
 
-    /** Compartment Identifier */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      *
      * @return the value
      */
@@ -303,12 +303,12 @@ public final class CreateResponderRecipeDetails
         return compartmentId;
     }
 
-    /** Responder Rules to override from source responder recipe */
+    /** List of responder rules to override from source responder recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateResponderRecipeResponderRule> responderRules;
 
     /**
-     * Responder Rules to override from source responder recipe
+     * List of responder rules to override from source responder recipe
      *
      * @return the value
      */

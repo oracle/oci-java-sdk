@@ -15,54 +15,27 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagedInstanceErrataRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
     private String managedInstanceId;
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
-    /** A filter to return only errata that match the given advisory types. */
-    private java.util.List<AdvisoryType> advisoryType;
+    /** A filter to return only packages that match the given update classification type. */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.ClassificationTypes>
+            classificationType;
 
-    /** A filter to return only errata that match the given advisory types. */
-    public enum AdvisoryType implements com.oracle.bmc.http.internal.BmcEnum {
-        Security("SECURITY"),
-        Bugfix("BUGFIX"),
-        Enhancement("ENHANCEMENT"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, AdvisoryType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (AdvisoryType v : AdvisoryType.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        AdvisoryType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static AdvisoryType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new IllegalArgumentException("Invalid AdvisoryType: " + key);
-        }
-    };
-
-    /** A filter to return only errata that match the given advisory types. */
-    public java.util.List<AdvisoryType> getAdvisoryType() {
-        return advisoryType;
+    /** A filter to return only packages that match the given update classification type. */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.ClassificationTypes>
+            getClassificationType() {
+        return classificationType;
     }
     /**
      * The assigned erratum name. It's unique and not changeable.
@@ -86,10 +59,16 @@ public class ListManagedInstanceErrataRequest
     public String getNameContains() {
         return nameContains;
     }
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -211,11 +190,15 @@ public class ListManagedInstanceErrataRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the managed instance. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance
@@ -225,28 +208,32 @@ public class ListManagedInstanceErrataRequest
             return this;
         }
 
-        /** A filter to return only errata that match the given advisory types. */
-        private java.util.List<AdvisoryType> advisoryType = null;
+        /** A filter to return only packages that match the given update classification type. */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.ClassificationTypes>
+                classificationType = null;
 
         /**
-         * A filter to return only errata that match the given advisory types.
+         * A filter to return only packages that match the given update classification type.
          *
-         * @param advisoryType the value to set
+         * @param classificationType the value to set
          * @return this builder instance
          */
-        public Builder advisoryType(java.util.List<AdvisoryType> advisoryType) {
-            this.advisoryType = advisoryType;
+        public Builder classificationType(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.ClassificationTypes>
+                        classificationType) {
+            this.classificationType = classificationType;
             return this;
         }
 
         /**
-         * Singular setter. A filter to return only errata that match the given advisory types.
+         * Singular setter. A filter to return only packages that match the given update
+         * classification type.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder advisoryType(AdvisoryType singularValue) {
-            return this.advisoryType(java.util.Arrays.asList(singularValue));
+        public Builder classificationType(ClassificationTypes singularValue) {
+            return this.classificationType(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -295,11 +282,15 @@ public class ListManagedInstanceErrataRequest
             return this;
         }
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -440,7 +431,7 @@ public class ListManagedInstanceErrataRequest
          */
         public Builder copy(ListManagedInstanceErrataRequest o) {
             managedInstanceId(o.getManagedInstanceId());
-            advisoryType(o.getAdvisoryType());
+            classificationType(o.getClassificationType());
             name(o.getName());
             nameContains(o.getNameContains());
             compartmentId(o.getCompartmentId());
@@ -484,7 +475,7 @@ public class ListManagedInstanceErrataRequest
         public ListManagedInstanceErrataRequest buildWithoutInvocationCallback() {
             ListManagedInstanceErrataRequest request = new ListManagedInstanceErrataRequest();
             request.managedInstanceId = managedInstanceId;
-            request.advisoryType = advisoryType;
+            request.classificationType = classificationType;
             request.name = name;
             request.nameContains = nameContains;
             request.compartmentId = compartmentId;
@@ -494,7 +485,7 @@ public class ListManagedInstanceErrataRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListManagedInstanceErrataRequest(managedInstanceId, advisoryType, name,
+            // new ListManagedInstanceErrataRequest(managedInstanceId, classificationType, name,
             // nameContains, compartmentId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
@@ -507,7 +498,7 @@ public class ListManagedInstanceErrataRequest
     public Builder toBuilder() {
         return new Builder()
                 .managedInstanceId(managedInstanceId)
-                .advisoryType(advisoryType)
+                .classificationType(classificationType)
                 .name(name)
                 .nameContains(nameContains)
                 .compartmentId(compartmentId)
@@ -533,7 +524,7 @@ public class ListManagedInstanceErrataRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
-        sb.append(",advisoryType=").append(String.valueOf(this.advisoryType));
+        sb.append(",classificationType=").append(String.valueOf(this.classificationType));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",nameContains=").append(String.valueOf(this.nameContains));
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
@@ -558,7 +549,7 @@ public class ListManagedInstanceErrataRequest
         ListManagedInstanceErrataRequest other = (ListManagedInstanceErrataRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
-                && java.util.Objects.equals(this.advisoryType, other.advisoryType)
+                && java.util.Objects.equals(this.classificationType, other.classificationType)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.nameContains, other.nameContains)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -576,7 +567,11 @@ public class ListManagedInstanceErrataRequest
         result =
                 (result * PRIME)
                         + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
-        result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.classificationType == null
+                                ? 43
+                                : this.classificationType.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.nameContains == null ? 43 : this.nameContains.hashCode());
         result =

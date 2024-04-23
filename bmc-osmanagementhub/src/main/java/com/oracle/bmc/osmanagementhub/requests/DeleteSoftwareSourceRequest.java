@@ -14,10 +14,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class DeleteSoftwareSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -58,11 +64,15 @@ public class DeleteSoftwareSourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance

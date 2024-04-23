@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Resource profile risk score trend-line <br>
+ * Summary of resource profile risk score aggregations. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -73,12 +73,12 @@ public final class ResourceProfileRiskScoreAggregationSummary
             this.__explicitlySet__.add("resourceProfileDisplayName");
             return this;
         }
-        /** Risk threshold */
+        /** Risk score value that triggers a problem */
         @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
         private Integer riskThreshold;
 
         /**
-         * Risk threshold
+         * Risk score value that triggers a problem
          *
          * @param riskThreshold the value to set
          * @return this builder
@@ -88,12 +88,12 @@ public final class ResourceProfileRiskScoreAggregationSummary
             this.__explicitlySet__.add("riskThreshold");
             return this;
         }
-        /** List of ResourceRiskScoreAggregation */
+        /** List of ResourceRiskScoreAggregation resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceRiskScoreAggregation> items;
 
         /**
-         * List of ResourceRiskScoreAggregation
+         * List of ResourceRiskScoreAggregation resources
          *
          * @param items the value to set
          * @return this builder
@@ -173,12 +173,12 @@ public final class ResourceProfileRiskScoreAggregationSummary
         return resourceProfileDisplayName;
     }
 
-    /** Risk threshold */
+    /** Risk score value that triggers a problem */
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
     private final Integer riskThreshold;
 
     /**
-     * Risk threshold
+     * Risk score value that triggers a problem
      *
      * @return the value
      */
@@ -186,12 +186,12 @@ public final class ResourceProfileRiskScoreAggregationSummary
         return riskThreshold;
     }
 
-    /** List of ResourceRiskScoreAggregation */
+    /** List of ResourceRiskScoreAggregation resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceRiskScoreAggregation> items;
 
     /**
-     * List of ResourceRiskScoreAggregation
+     * List of ResourceRiskScoreAggregation resources
      *
      * @return the value
      */

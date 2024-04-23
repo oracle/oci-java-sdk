@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetManagedListRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The cloudguard list OCID to be passed in the request. */
+    /** The managed list OCID to be passed in the request. */
     private String managedListId;
 
-    /** The cloudguard list OCID to be passed in the request. */
+    /** The managed list OCID to be passed in the request. */
     public String getManagedListId() {
         return managedListId;
     }
@@ -34,11 +34,11 @@ public class GetManagedListRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The cloudguard list OCID to be passed in the request. */
+        /** The managed list OCID to be passed in the request. */
         private String managedListId = null;
 
         /**
-         * The cloudguard list OCID to be passed in the request.
+         * The managed list OCID to be passed in the request.
          *
          * @param managedListId the value to set
          * @return this builder instance

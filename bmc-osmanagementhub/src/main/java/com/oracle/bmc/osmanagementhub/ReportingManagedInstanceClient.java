@@ -141,7 +141,6 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                         request.getDisplayName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendEnumQueryParam("instanceLocation", request.getInstanceLocation())
                 .appendQueryParam(
                         "securityUpdatesAvailableEqualsTo",
                         request.getSecurityUpdatesAvailableEqualsTo())
@@ -153,6 +152,22 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                 .appendQueryParam(
                         "bugUpdatesAvailableGreaterThan",
                         request.getBugUpdatesAvailableGreaterThan())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "osFamily",
+                        request.getOsFamily(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendEnumQueryParam("reportFormat", request.getReportFormat())
+                .appendEnumQueryParam("reportType", request.getReportType())
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -172,6 +187,7 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
             GetManagedInstanceContentRequest request) {
 
         Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(request.getVulnerabilityType(), "vulnerabilityType is required");
 
         return clientCall(request, GetManagedInstanceContentResponse::builder)
                 .logger(LOG, "getManagedInstanceContent")
@@ -194,6 +210,17 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                         "advisoryType",
                         request.getAdvisoryType(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "vulnerabilityName",
+                        request.getVulnerabilityName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "vulnerabilityNameContains", request.getVulnerabilityNameContains())
+                .appendListQueryParam(
+                        "vulnerabilityType",
+                        request.getVulnerabilityType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("reportFormat", request.getReportFormat())
                 .accept("application/x-yaml")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -234,11 +261,24 @@ public class ReportingManagedInstanceClient extends com.oracle.bmc.http.internal
                         request.getStatus(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "osFamily",
+                        request.getOsFamily(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendListQueryParam(
                         "displayName",
                         request.getDisplayName(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendEnumQueryParam("instanceLocation", request.getInstanceLocation())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortBy", request.getSortBy())

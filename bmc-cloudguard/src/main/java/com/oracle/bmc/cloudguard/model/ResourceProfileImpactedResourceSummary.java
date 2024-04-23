@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Resource Profile impacted resource summary. <br>
+ * Summary information on impacted resource in resource profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -79,12 +79,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Resource profile Id associated with the imacted resource */
+        /** Resource profile ID associated with the impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
         private String resourceProfileId;
 
         /**
-         * Resource profile Id associated with the imacted resource
+         * Resource profile ID associated with the impacted resource
          *
          * @param resourceProfileId the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("resourceProfileId");
             return this;
         }
-        /** Problem Id for impacted resource */
+        /** Problem ID associated with the impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id for impacted resource
+         * Problem ID associated with the impacted resource
          *
          * @param problemId the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /** Compartment Id for impacted resource */
+        /** Compartment ID for impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id for impacted resource
+         * Compartment ID for impacted resource
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -124,12 +124,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Impacted resource Id */
+        /** Impacted resource ID */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Impacted resource Id
+         * Impacted resource ID
          *
          * @param resourceId the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Resource name */
+        /** Impacted resource name */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
-         * Resource name
+         * Impacted resource name
          *
          * @param resourceName the value to set
          * @return this builder
@@ -154,12 +154,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** Resource type */
+        /** Impacted resource type */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * Resource type
+         * Impacted resource type
          *
          * @param resourceType the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Identifier for the sighting type */
+        /** Sighting type for impacted resource */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Sighting type for impacted resource
          *
          * @param sightingType the value to set
          * @return this builder
@@ -184,12 +184,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("sightingType");
             return this;
         }
-        /** Name of the sighting type */
+        /** Display name of the sighting type */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          *
          * @param sightingTypeDisplayName the value to set
          * @return this builder
@@ -214,12 +214,12 @@ public final class ResourceProfileImpactedResourceSummary
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Time when the impacted resource is identified for given resource profile. */
+        /** Time when the impacted resource is identified for the resource profile. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
         private java.util.Date timeIdentified;
 
         /**
-         * Time when the impacted resource is identified for given resource profile.
+         * Time when the impacted resource is identified for the resource profile.
          *
          * @param timeIdentified the value to set
          * @return this builder
@@ -314,12 +314,12 @@ public final class ResourceProfileImpactedResourceSummary
         return id;
     }
 
-    /** Resource profile Id associated with the imacted resource */
+    /** Resource profile ID associated with the impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
     private final String resourceProfileId;
 
     /**
-     * Resource profile Id associated with the imacted resource
+     * Resource profile ID associated with the impacted resource
      *
      * @return the value
      */
@@ -327,12 +327,12 @@ public final class ResourceProfileImpactedResourceSummary
         return resourceProfileId;
     }
 
-    /** Problem Id for impacted resource */
+    /** Problem ID associated with the impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id for impacted resource
+     * Problem ID associated with the impacted resource
      *
      * @return the value
      */
@@ -340,12 +340,12 @@ public final class ResourceProfileImpactedResourceSummary
         return problemId;
     }
 
-    /** Compartment Id for impacted resource */
+    /** Compartment ID for impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id for impacted resource
+     * Compartment ID for impacted resource
      *
      * @return the value
      */
@@ -353,12 +353,12 @@ public final class ResourceProfileImpactedResourceSummary
         return compartmentId;
     }
 
-    /** Impacted resource Id */
+    /** Impacted resource ID */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Impacted resource Id
+     * Impacted resource ID
      *
      * @return the value
      */
@@ -366,12 +366,12 @@ public final class ResourceProfileImpactedResourceSummary
         return resourceId;
     }
 
-    /** Resource name */
+    /** Impacted resource name */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
-     * Resource name
+     * Impacted resource name
      *
      * @return the value
      */
@@ -379,12 +379,12 @@ public final class ResourceProfileImpactedResourceSummary
         return resourceName;
     }
 
-    /** Resource type */
+    /** Impacted resource type */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * Resource type
+     * Impacted resource type
      *
      * @return the value
      */
@@ -392,12 +392,12 @@ public final class ResourceProfileImpactedResourceSummary
         return resourceType;
     }
 
-    /** Identifier for the sighting type */
+    /** Sighting type for impacted resource */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Sighting type for impacted resource
      *
      * @return the value
      */
@@ -405,12 +405,12 @@ public final class ResourceProfileImpactedResourceSummary
         return sightingType;
     }
 
-    /** Name of the sighting type */
+    /** Display name of the sighting type */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      *
      * @return the value
      */
@@ -431,12 +431,12 @@ public final class ResourceProfileImpactedResourceSummary
         return region;
     }
 
-    /** Time when the impacted resource is identified for given resource profile. */
+    /** Time when the impacted resource is identified for the resource profile. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIdentified")
     private final java.util.Date timeIdentified;
 
     /**
-     * Time when the impacted resource is identified for given resource profile.
+     * Time when the impacted resource is identified for the resource profile.
      *
      * @return the value
      */

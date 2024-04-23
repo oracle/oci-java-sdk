@@ -13,25 +13,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station.
+     */
     private String managementStationId;
 
-    /** The OCID of the management station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station.
+     */
     public String getManagementStationId() {
         return managementStationId;
     }
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     private String displayName;
 
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -167,11 +165,15 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the management station. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station.
+         */
         private String managementStationId = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station.
          *
          * @param managementStationId the value to set
          * @return this builder instance
@@ -181,17 +183,11 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
-         */
+        /** A filter to return resources that match the given user-friendly name. */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * A filter to return resources that match the given user-friendly name.
          *
          * @param displayName the value to set
          * @return this builder instance

@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetDetectorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Name of Detector. */
+    /** Detector name. */
     private String detectorId;
 
-    /** The Name of Detector. */
+    /** Detector name. */
     public String getDetectorId() {
         return detectorId;
     }
@@ -34,11 +34,11 @@ public class GetDetectorRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Name of Detector. */
+        /** Detector name. */
         private String detectorId = null;
 
         /**
-         * The Name of Detector.
+         * Detector name.
          *
          * @param detectorId the value to set
          * @return this builder instance

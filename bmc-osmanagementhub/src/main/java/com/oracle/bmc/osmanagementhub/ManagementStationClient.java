@@ -124,6 +124,41 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ChangeManagementStationCompartmentResponse changeManagementStationCompartment(
+            ChangeManagementStationCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeManagementStationCompartmentDetails(),
+                "changeManagementStationCompartmentDetails is required");
+
+        return clientCall(request, ChangeManagementStationCompartmentResponse::builder)
+                .logger(LOG, "changeManagementStationCompartment")
+                .serviceDetails(
+                        "ManagementStation",
+                        "ChangeManagementStationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ChangeManagementStationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeManagementStationCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeManagementStationCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateManagementStationResponse createManagementStation(
             CreateManagementStationRequest request) {
         Objects.requireNonNull(
@@ -287,6 +322,40 @@ public class ManagementStationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", ListMirrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMirrorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public RefreshManagementStationConfigResponse refreshManagementStationConfig(
+            RefreshManagementStationConfigRequest request) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+
+        return clientCall(request, RefreshManagementStationConfigResponse::builder)
+                .logger(LOG, "refreshManagementStationConfig")
+                .serviceDetails(
+                        "ManagementStation",
+                        "RefreshManagementStationConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/RefreshManagementStationConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshManagementStationConfigRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshManagementStationConfigResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshManagementStationConfigResponse.Builder::opcRequestId)
                 .callSync();
     }
 

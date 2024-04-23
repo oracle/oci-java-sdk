@@ -32,12 +32,12 @@ public final class RiskScoreAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key-value pairs of dimensions and their names. */
+        /** The key-value pairs of dimensions and their names */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
         /**
-         * The key-value pairs of dimensions and their names.
+         * The key-value pairs of dimensions and their names
          *
          * @param dimensionsMap the value to set
          * @return this builder
@@ -96,12 +96,12 @@ public final class RiskScoreAggregation
         return new Builder().copy(this);
     }
 
-    /** The key-value pairs of dimensions and their names. */
+    /** The key-value pairs of dimensions and their names */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
     /**
-     * The key-value pairs of dimensions and their names.
+     * The key-value pairs of dimensions and their names
      *
      * @return the value
      */

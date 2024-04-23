@@ -5,8 +5,10 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Results of a lifecycle environment search. Contains both lifecycle environment summary items and
- * other data. <br>
+ * A set of lifecycle environments returned for the {@link
+ * #listLifecycleEnvironments(ListLifecycleEnvironmentsRequest) listLifecycleEnvironments}
+ * operation. The list contains a summary of each lifecycle environment and other information, such
+ * as metadata. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

@@ -15,18 +15,18 @@ public class UpdateConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateConfigurationDetails> {
 
-    /** Update Configuration Details of Cloud Guard for a Tenancy. */
+    /** Updates configuration details of Cloud Guard for a Tenancy. */
     private com.oracle.bmc.cloudguard.model.UpdateConfigurationDetails updateConfigurationDetails;
 
-    /** Update Configuration Details of Cloud Guard for a Tenancy. */
+    /** Updates configuration details of Cloud Guard for a Tenancy. */
     public com.oracle.bmc.cloudguard.model.UpdateConfigurationDetails
             getUpdateConfigurationDetails() {
         return updateConfigurationDetails;
     }
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -92,12 +92,12 @@ public class UpdateConfigurationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Update Configuration Details of Cloud Guard for a Tenancy. */
+        /** Updates configuration details of Cloud Guard for a Tenancy. */
         private com.oracle.bmc.cloudguard.model.UpdateConfigurationDetails
                 updateConfigurationDetails = null;
 
         /**
-         * Update Configuration Details of Cloud Guard for a Tenancy.
+         * Updates configuration details of Cloud Guard for a Tenancy.
          *
          * @param updateConfigurationDetails the value to set
          * @return this builder instance
@@ -109,11 +109,11 @@ public class UpdateConfigurationRequest
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /** The OCID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance

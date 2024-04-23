@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Creation of Data Source. <br>
+ * Parameters for creating a data source (DataSource resource). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,12 +52,12 @@ public final class CreateDataSourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Data Source display name. */
+        /** Data source display name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Source display name.
+         * Data source display name
          *
          * @param displayName the value to set
          * @return this builder
@@ -67,12 +67,12 @@ public final class CreateDataSourceDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Status of DataSource. Default value is DISABLED. */
+        /** Enablement status of data source. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DataSourceStatus status;
 
         /**
-         * Status of DataSource. Default value is DISABLED.
+         * Enablement status of data source.
          *
          * @param status the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class CreateDataSourceDetails
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** CompartmentId of Data Source. */
+        /** Compartment OCID of the data source */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * CompartmentId of Data Source.
+         * Compartment OCID of the data source
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class CreateDataSourceDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Possible type of dataSourceFeed Provider(LoggingQuery) */
+        /** Type of data source feed provider (LoggingQuery) */
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
         private DataSourceFeedProvider dataSourceFeedProvider;
 
         /**
-         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         * Type of data source feed provider (LoggingQuery)
          *
          * @param dataSourceFeedProvider the value to set
          * @return this builder
@@ -220,12 +220,12 @@ public final class CreateDataSourceDetails
         return new Builder().copy(this);
     }
 
-    /** Data Source display name. */
+    /** Data source display name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Source display name.
+     * Data source display name
      *
      * @return the value
      */
@@ -233,12 +233,12 @@ public final class CreateDataSourceDetails
         return displayName;
     }
 
-    /** Status of DataSource. Default value is DISABLED. */
+    /** Enablement status of data source. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DataSourceStatus status;
 
     /**
-     * Status of DataSource. Default value is DISABLED.
+     * Enablement status of data source.
      *
      * @return the value
      */
@@ -246,12 +246,12 @@ public final class CreateDataSourceDetails
         return status;
     }
 
-    /** CompartmentId of Data Source. */
+    /** Compartment OCID of the data source */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * CompartmentId of Data Source.
+     * Compartment OCID of the data source
      *
      * @return the value
      */
@@ -259,12 +259,12 @@ public final class CreateDataSourceDetails
         return compartmentId;
     }
 
-    /** Possible type of dataSourceFeed Provider(LoggingQuery) */
+    /** Type of data source feed provider (LoggingQuery) */
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
     private final DataSourceFeedProvider dataSourceFeedProvider;
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      *
      * @return the value
      */

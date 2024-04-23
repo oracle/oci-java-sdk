@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Update ManagedList <br>
+ * Parameters to use to update details for a managed list. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -82,12 +82,12 @@ public final class UpdateManagedListDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** List of ManagedListItem */
+        /** List of managed list items */
         @com.fasterxml.jackson.annotation.JsonProperty("listItems")
         private java.util.List<String> listItems;
 
         /**
-         * List of ManagedListItem
+         * List of managed list items
          *
          * @param listItems the value to set
          * @return this builder
@@ -220,12 +220,12 @@ public final class UpdateManagedListDetails
         return description;
     }
 
-    /** List of ManagedListItem */
+    /** List of managed list items */
     @com.fasterxml.jackson.annotation.JsonProperty("listItems")
     private final java.util.List<String> listItems;
 
     /**
-     * List of ManagedListItem
+     * List of managed list items
      *
      * @return the value
      */

@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListManagedInstanceGroupAvailablePackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
@@ -36,10 +42,16 @@ public class ListManagedInstanceGroupAvailablePackagesRequest
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -139,16 +151,14 @@ public class ListManagedInstanceGroupAvailablePackagesRequest
         return sortBy;
     }
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams,
-     * and stream profiles when set to true. All packages, module streams, and stream profiles are
-     * returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream
+     * profiles.
      */
     private Boolean isLatest;
 
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams,
-     * and stream profiles when set to true. All packages, module streams, and stream profiles are
-     * returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream
+     * profiles.
      */
     public Boolean getIsLatest() {
         return isLatest;
@@ -173,11 +183,15 @@ public class ListManagedInstanceGroupAvailablePackagesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -225,11 +239,15 @@ public class ListManagedInstanceGroupAvailablePackagesRequest
             return this;
         }
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -320,16 +338,14 @@ public class ListManagedInstanceGroupAvailablePackagesRequest
         }
 
         /**
-         * A boolean variable that is used to list only the latest versions of packages, module
-         * streams, and stream profiles when set to true. All packages, module streams, and stream
-         * profiles are returned when set to false.
+         * Indicates whether to list only the latest versions of packages, module streams, and
+         * stream profiles.
          */
         private Boolean isLatest = null;
 
         /**
-         * A boolean variable that is used to list only the latest versions of packages, module
-         * streams, and stream profiles when set to true. All packages, module streams, and stream
-         * profiles are returned when set to false.
+         * Indicates whether to list only the latest versions of packages, module streams, and
+         * stream profiles.
          *
          * @param isLatest the value to set
          * @return this builder instance

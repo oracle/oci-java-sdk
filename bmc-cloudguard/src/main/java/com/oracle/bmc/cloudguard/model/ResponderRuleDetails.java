@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRule. <br>
+ * Detailed information for a responder rule <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,12 +47,12 @@ public final class ResponderRuleDetails
             this.__explicitlySet__.add("condition");
             return this;
         }
-        /** ResponderRule configurations */
+        /** List of responder rule configurations */
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          *
          * @param configurations the value to set
          * @return this builder
@@ -62,12 +62,12 @@ public final class ResponderRuleDetails
             this.__explicitlySet__.add("configurations");
             return this;
         }
-        /** Identifies state for ResponderRule */
+        /** Enabled state for the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ResponderRuleDetails
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** Execution Mode for ResponderRule */
+        /** Execution mode for the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private ResponderModeTypes mode;
 
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          *
          * @param mode the value to set
          * @return this builder
@@ -140,12 +140,12 @@ public final class ResponderRuleDetails
         return condition;
     }
 
-    /** ResponderRule configurations */
+    /** List of responder rule configurations */
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      *
      * @return the value
      */
@@ -153,12 +153,12 @@ public final class ResponderRuleDetails
         return configurations;
     }
 
-    /** Identifies state for ResponderRule */
+    /** Enabled state for the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Identifies state for ResponderRule
+     * Enabled state for the responder rule
      *
      * @return the value
      */
@@ -166,12 +166,12 @@ public final class ResponderRuleDetails
         return isEnabled;
     }
 
-    /** Execution Mode for ResponderRule */
+    /** Execution mode for the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final ResponderModeTypes mode;
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      *
      * @return the value
      */

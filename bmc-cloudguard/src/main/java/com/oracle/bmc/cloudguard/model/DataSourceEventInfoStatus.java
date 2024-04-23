@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible problem info states. */
+/** Success/failure status of data source event. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum DataSourceEventInfoStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Success("SUCCESS"),

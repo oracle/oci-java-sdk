@@ -16,25 +16,25 @@ public class UpdateTargetResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     private String targetResponderRecipeId;
 
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
-    /** The details to be updated. */
+    /** The details to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
             updateTargetResponderRecipeDetails;
 
-    /** The details to be updated. */
+    /** The details to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
             getUpdateTargetResponderRecipeDetails() {
         return updateTargetResponderRecipeDetails;
@@ -82,11 +82,11 @@ public class UpdateTargetResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -96,11 +96,11 @@ public class UpdateTargetResponderRecipeRequest
             return this;
         }
 
-        /** OCID of TargetResponderRecipe */
+        /** OCID of the target responder recipe. */
         private String targetResponderRecipeId = null;
 
         /**
-         * OCID of TargetResponderRecipe
+         * OCID of the target responder recipe.
          *
          * @param targetResponderRecipeId the value to set
          * @return this builder instance
@@ -110,12 +110,12 @@ public class UpdateTargetResponderRecipeRequest
             return this;
         }
 
-        /** The details to be updated. */
+        /** The details to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateTargetResponderRecipeDetails
                 updateTargetResponderRecipeDetails = null;
 
         /**
-         * The details to be updated.
+         * The details to be updated
          *
          * @param updateTargetResponderRecipeDetails the value to set
          * @return this builder instance

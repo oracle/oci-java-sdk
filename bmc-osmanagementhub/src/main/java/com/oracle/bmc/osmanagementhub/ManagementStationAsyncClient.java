@@ -96,6 +96,45 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeManagementStationCompartmentResponse>
+            changeManagementStationCompartment(
+                    ChangeManagementStationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeManagementStationCompartmentRequest,
+                                    ChangeManagementStationCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeManagementStationCompartmentDetails(),
+                "changeManagementStationCompartmentDetails is required");
+
+        return clientCall(request, ChangeManagementStationCompartmentResponse::builder)
+                .logger(LOG, "changeManagementStationCompartment")
+                .serviceDetails(
+                        "ManagementStation",
+                        "ChangeManagementStationCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ChangeManagementStationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeManagementStationCompartmentRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeManagementStationCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateManagementStationResponse> createManagementStation(
             CreateManagementStationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -270,6 +309,44 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
                         "opc-request-id", ListMirrorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListMirrorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshManagementStationConfigResponse>
+            refreshManagementStationConfig(
+                    RefreshManagementStationConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshManagementStationConfigRequest,
+                                    RefreshManagementStationConfigResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+
+        return clientCall(request, RefreshManagementStationConfigResponse::builder)
+                .logger(LOG, "refreshManagementStationConfig")
+                .serviceDetails(
+                        "ManagementStation",
+                        "RefreshManagementStationConfig",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/RefreshManagementStationConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshManagementStationConfigRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshManagementStationConfigResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshManagementStationConfigResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.internal.SpiClientConfigurator;
 import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.ClientRuntime;
@@ -42,6 +43,8 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
@@ -73,6 +76,15 @@ abstract class BaseClient implements AutoCloseable {
 
     /** Minimum compatible SDK version, maybe provided by the codegen. */
     public final Optional<String> minimumClientCommonLibraryVersionFromClient;
+
+    private static final String JAVASDK_DISABLED_SPI_CLASSES_PROPERTY =
+            "oci.javasdk.disabled.spi.classes";
+
+    private static final String DISABLED_SPI_CLASSES_STRING;
+
+    static {
+        DISABLED_SPI_CLASSES_STRING = System.getProperty(JAVASDK_DISABLED_SPI_CLASSES_PROPERTY, "");
+    }
 
     protected BaseClient(
             ClientBuilderBase<?, ?> builder,
@@ -120,6 +132,24 @@ abstract class BaseClient implements AutoCloseable {
         }
         List<ClientConfigurator> additionalClientConfigurators =
                 InternalBuilderAccess.getAdditionalClientConfigurators(builder);
+
+        List<SpiClientConfigurator> additionalSpiClientConfigurator =
+                SpiClientConfigurator.getSpiClientConfigurators();
+        HashSet<String> disabledSpiClasses =
+                new HashSet<>(Arrays.asList(DISABLED_SPI_CLASSES_STRING.split(",")));
+        for (SpiClientConfigurator spiClientConfigurator : additionalSpiClientConfigurator) {
+            if (!disabledSpiClasses.contains(spiClientConfigurator.getClass().getName())) {
+                additionalClientConfigurators.add(spiClientConfigurator);
+                logger.info(
+                        "Additional client configurator loaded using SPI: {}",
+                        spiClientConfigurator.getClass());
+            } else {
+                logger.info(
+                        "Did not load additional client configurator using SPI since it was disabled using the oci.javasdk.disabled.spi.classes system property: {}",
+                        spiClientConfigurator.getClass());
+            }
+        }
+
         if (!additionalClientConfigurators.isEmpty()) {
             List<ClientConfigurator> composedList =
                     new ArrayList<>(additionalClientConfigurators.size() + 1);

@@ -167,6 +167,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
                 .callSync();
@@ -198,6 +199,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id",
@@ -231,6 +233,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeLockboxCompartmentResponse.Builder::opcRequestId)
@@ -255,6 +258,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.AccessRequest.class,
@@ -290,6 +294,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.ApprovalTemplate.class,
@@ -320,6 +325,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.Lockbox.class,
@@ -351,6 +357,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteApprovalTemplateResponse.Builder::opcRequestId)
                 .callSync();
@@ -376,6 +383,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteLockboxResponse.Builder::opcRequestId)
                 .callSync();
@@ -411,12 +419,14 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("text/csv")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         java.io.InputStream.class,
                         ExportAccessRequestsResponse.Builder::inputStream)
                 .handleResponseHeaderString(
                         "opc-request-id", ExportAccessRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", ExportAccessRequestsResponse.Builder::etag)
                 .callSync();
     }
 
@@ -439,6 +449,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam("accessMaterials")
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.AccessMaterials.class,
                         GetAccessMaterialsResponse.Builder::accessMaterials)
@@ -465,12 +476,43 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getAccessRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.AccessRequest.class,
                         GetAccessRequestResponse.Builder::accessRequest)
                 .handleResponseHeaderString("etag", GetAccessRequestResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAccessRequestResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetAccessRequestInternalResponse getAccessRequestInternal(
+            GetAccessRequestInternalRequest request) {
+
+        Validate.notBlank(request.getAccessRequestId(), "accessRequestId must not be blank");
+
+        return clientCall(request, GetAccessRequestInternalResponse::builder)
+                .logger(LOG, "getAccessRequestInternal")
+                .serviceDetails(
+                        "Lockbox",
+                        "GetAccessRequestInternal",
+                        "https://docs.oracle.com/iaas/api/#/en/managed-access/20220126/AccessRequestExt/GetAccessRequestInternal")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAccessRequestInternalRequest::builder)
+                .basePath("/20220126")
+                .appendPathParam("accessRequests")
+                .appendPathParam(request.getAccessRequestId())
+                .appendPathParam("internal")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.lockbox.model.AccessRequestExt.class,
+                        GetAccessRequestInternalResponse.Builder::accessRequestExt)
+                .handleResponseHeaderString("etag", GetAccessRequestInternalResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAccessRequestInternalResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -492,6 +534,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getApprovalTemplateId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.ApprovalTemplate.class,
                         GetApprovalTemplateResponse.Builder::approvalTemplate)
@@ -519,6 +562,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getLockboxId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.Lockbox.class,
                         GetLockboxResponse.Builder::lockbox)
@@ -546,6 +590,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendPathParam(request.getWorkRequestId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.WorkRequest.class,
                         GetWorkRequestResponse.Builder::workRequest)
@@ -581,6 +626,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
@@ -618,6 +664,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendQueryParam("timeCreatedBefore", request.getTimeCreatedBefore())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.AccessRequestCollection.class,
                         ListAccessRequestsResponse.Builder::accessRequestCollection)
@@ -652,6 +699,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.ApprovalTemplateCollection.class,
                         ListApprovalTemplatesResponse.Builder::approvalTemplateCollection)
@@ -688,6 +736,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.LockboxCollection.class,
                         ListLockboxesResponse.Builder::lockboxCollection)
@@ -722,6 +771,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.WorkRequestErrorCollection.class,
                         ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
@@ -755,6 +805,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.WorkRequestLogEntryCollection.class,
                         ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
@@ -788,6 +839,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.WorkRequestSummaryCollection.class,
                         ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
@@ -821,6 +873,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.ApprovalTemplate.class,
@@ -852,6 +905,7 @@ public class LockboxClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.lockbox.model.Lockbox.class,

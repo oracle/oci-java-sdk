@@ -15,17 +15,17 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetDetectorRecipeDetectorRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
-    /** The key of Detector Rule. */
+    /** The unique identifier of a detector rule. */
     private String detectorRuleId;
 
-    /** The key of Detector Rule. */
+    /** The unique identifier of a detector rule. */
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
@@ -43,11 +43,11 @@ public class GetDetectorRecipeDetectorRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance
@@ -57,11 +57,11 @@ public class GetDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** The key of Detector Rule. */
+        /** The unique identifier of a detector rule. */
         private String detectorRuleId = null;
 
         /**
-         * The key of Detector Rule.
+         * The unique identifier of a detector rule.
          *
          * @param detectorRuleId the value to set
          * @return this builder instance

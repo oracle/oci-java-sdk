@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The details of the module stream to be version switched on a managed instance. <br>
+ * Provides the information used to switch module streams on a managed instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,13 +23,22 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class SwitchModuleStreamOnManagedInstanceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"workRequestDetails", "moduleName", "streamName"})
+    @java.beans.ConstructorProperties({
+        "workRequestDetails",
+        "moduleName",
+        "streamName",
+        "softwareSourceId"
+    })
     public SwitchModuleStreamOnManagedInstanceDetails(
-            WorkRequestDetails workRequestDetails, String moduleName, String streamName) {
+            WorkRequestDetails workRequestDetails,
+            String moduleName,
+            String streamName,
+            String softwareSourceId) {
         super();
         this.workRequestDetails = workRequestDetails;
         this.moduleName = moduleName;
         this.streamName = streamName;
+        this.softwareSourceId = softwareSourceId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,6 +82,25 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
             this.__explicitlySet__.add("streamName");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source that contains the module stream.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
+        private String softwareSourceId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source that contains the module stream.
+         *
+         * @param softwareSourceId the value to set
+         * @return this builder
+         */
+        public Builder softwareSourceId(String softwareSourceId) {
+            this.softwareSourceId = softwareSourceId;
+            this.__explicitlySet__.add("softwareSourceId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -80,7 +108,10 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
         public SwitchModuleStreamOnManagedInstanceDetails build() {
             SwitchModuleStreamOnManagedInstanceDetails model =
                     new SwitchModuleStreamOnManagedInstanceDetails(
-                            this.workRequestDetails, this.moduleName, this.streamName);
+                            this.workRequestDetails,
+                            this.moduleName,
+                            this.streamName,
+                            this.softwareSourceId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -97,6 +128,9 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("streamName")) {
                 this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceId")) {
+                this.softwareSourceId(model.getSoftwareSourceId());
             }
             return this;
         }
@@ -144,6 +178,23 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
         return streamName;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source that contains the module stream.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
+    private final String softwareSourceId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source that contains the module stream.
+     *
+     * @return the value
+     */
+    public String getSoftwareSourceId() {
+        return softwareSourceId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -162,6 +213,7 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
         sb.append("workRequestDetails=").append(String.valueOf(this.workRequestDetails));
         sb.append(", moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
+        sb.append(", softwareSourceId=").append(String.valueOf(this.softwareSourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -180,6 +232,7 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
         return java.util.Objects.equals(this.workRequestDetails, other.workRequestDetails)
                 && java.util.Objects.equals(this.moduleName, other.moduleName)
                 && java.util.Objects.equals(this.streamName, other.streamName)
+                && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
                 && super.equals(other);
     }
 
@@ -194,6 +247,9 @@ public final class SwitchModuleStreamOnManagedInstanceDetails
                                 : this.workRequestDetails.hashCode());
         result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
         result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -17,18 +17,24 @@ public class EnableModuleStreamOnManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model
                         .EnableModuleStreamOnManagedInstanceGroupDetails> {
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     private String managedInstanceGroupId;
 
-    /** The managed instance group OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance group.
+     */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /** Details for modules to enable on the managed instance group. */
+    /** The details used to enable the module stream on the managed instance group. */
     private com.oracle.bmc.osmanagementhub.model.EnableModuleStreamOnManagedInstanceGroupDetails
             enableModuleStreamOnManagedInstanceGroupDetails;
 
-    /** Details for modules to enable on the managed instance group. */
+    /** The details used to enable the module stream on the managed instance group. */
     public com.oracle.bmc.osmanagementhub.model.EnableModuleStreamOnManagedInstanceGroupDetails
             getEnableModuleStreamOnManagedInstanceGroupDetails() {
         return enableModuleStreamOnManagedInstanceGroupDetails;
@@ -103,11 +109,15 @@ public class EnableModuleStreamOnManagedInstanceGroupRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The managed instance group OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
+         */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance group.
          *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
@@ -117,12 +127,12 @@ public class EnableModuleStreamOnManagedInstanceGroupRequest
             return this;
         }
 
-        /** Details for modules to enable on the managed instance group. */
+        /** The details used to enable the module stream on the managed instance group. */
         private com.oracle.bmc.osmanagementhub.model.EnableModuleStreamOnManagedInstanceGroupDetails
                 enableModuleStreamOnManagedInstanceGroupDetails = null;
 
         /**
-         * Details for modules to enable on the managed instance group.
+         * The details used to enable the module stream on the managed instance group.
          *
          * @param enableModuleStreamOnManagedInstanceGroupDetails the value to set
          * @return this builder instance

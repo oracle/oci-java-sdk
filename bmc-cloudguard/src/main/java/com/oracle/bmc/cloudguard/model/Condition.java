@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Base condition object <br>
+ * The base condition resource. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -78,7 +78,7 @@ public class Condition extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return result;
     }
 
-    /** Type of condition object */
+    /** Type of condition resource */
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Composite("COMPOSITE"),
         Simple("SIMPLE"),

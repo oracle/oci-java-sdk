@@ -4,12 +4,17 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Operating system types. */
+/** Type of operating system. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum OsFamily implements com.oracle.bmc.http.internal.BmcEnum {
     OracleLinux9("ORACLE_LINUX_9"),
     OracleLinux8("ORACLE_LINUX_8"),
     OracleLinux7("ORACLE_LINUX_7"),
+    OracleLinux6("ORACLE_LINUX_6"),
+    WindowsServer2016("WINDOWS_SERVER_2016"),
+    WindowsServer2019("WINDOWS_SERVER_2019"),
+    WindowsServer2022("WINDOWS_SERVER_2022"),
+    All("ALL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

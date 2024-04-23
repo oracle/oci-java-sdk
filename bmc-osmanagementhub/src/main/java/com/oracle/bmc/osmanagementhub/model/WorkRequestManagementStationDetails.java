@@ -51,12 +51,12 @@ public final class WorkRequestManagementStationDetails
             this.__explicitlySet__.add("managementStationVersion");
             return this;
         }
-        /** Target config needed for set management station config. */
+        /** The configuration of the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private byte[] config;
 
         /**
-         * Target config needed for set management station config.
+         * The configuration of the management station.
          *
          * @param config the value to set
          * @return this builder
@@ -132,12 +132,12 @@ public final class WorkRequestManagementStationDetails
         return managementStationVersion;
     }
 
-    /** Target config needed for set management station config. */
+    /** The configuration of the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final byte[] config;
 
     /**
-     * Target config needed for set management station config.
+     * The configuration of the management station.
      *
      * @return the value
      */

@@ -33,6 +33,7 @@ public final class UpdateInstanceDetails
         "extendedMetadata",
         "shape",
         "shapeConfig",
+        "sourceDetails",
         "updateOperationConstraint",
         "instanceOptions",
         "faultDomain",
@@ -52,6 +53,7 @@ public final class UpdateInstanceDetails
             java.util.Map<String, Object> extendedMetadata,
             String shape,
             UpdateInstanceShapeConfigDetails shapeConfig,
+            UpdateInstanceSourceDetails sourceDetails,
             UpdateOperationConstraint updateOperationConstraint,
             InstanceOptions instanceOptions,
             String faultDomain,
@@ -70,6 +72,7 @@ public final class UpdateInstanceDetails
         this.extendedMetadata = extendedMetadata;
         this.shape = shape;
         this.shapeConfig = shapeConfig;
+        this.sourceDetails = sourceDetails;
         this.updateOperationConstraint = updateOperationConstraint;
         this.instanceOptions = instanceOptions;
         this.faultDomain = faultDomain;
@@ -326,6 +329,15 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("shapeConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private UpdateInstanceSourceDetails sourceDetails;
+
+        public Builder sourceDetails(UpdateInstanceSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
         /**
          * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
          * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot
@@ -524,6 +536,7 @@ public final class UpdateInstanceDetails
                             this.extendedMetadata,
                             this.shape,
                             this.shapeConfig,
+                            this.sourceDetails,
                             this.updateOperationConstraint,
                             this.instanceOptions,
                             this.faultDomain,
@@ -566,6 +579,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("shapeConfig")) {
                 this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
             }
             if (model.wasPropertyExplicitlySet("updateOperationConstraint")) {
                 this.updateOperationConstraint(model.getUpdateOperationConstraint());
@@ -829,6 +845,13 @@ public final class UpdateInstanceDetails
         return shapeConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    private final UpdateInstanceSourceDetails sourceDetails;
+
+    public UpdateInstanceSourceDetails getSourceDetails() {
+        return sourceDetails;
+    }
+
     /**
      * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running
      * instance. The default is ALLOW_DOWNTIME. * {@code ALLOW_DOWNTIME} - Compute might reboot the
@@ -1053,6 +1076,7 @@ public final class UpdateInstanceDetails
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", updateOperationConstraint=")
                 .append(String.valueOf(this.updateOperationConstraint));
         sb.append(", instanceOptions=").append(String.valueOf(this.instanceOptions));
@@ -1086,6 +1110,7 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(
                         this.updateOperationConstraint, other.updateOperationConstraint)
                 && java.util.Objects.equals(this.instanceOptions, other.instanceOptions)
@@ -1118,6 +1143,9 @@ public final class UpdateInstanceDetails
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.updateOperationConstraint == null

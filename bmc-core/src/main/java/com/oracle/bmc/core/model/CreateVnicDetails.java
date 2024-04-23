@@ -257,17 +257,18 @@ public final class CreateVnicDetails
          * {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be
          * unique across all VNICs in the subnet and comply with [RFC
          * 952](https://tools.ietf.org/html/rfc952) and [RFC
-         * 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
-         * and also the {@link PrivateIp} object returned by {@link
-         * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
-         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+         * 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@code {@link Vnic}}
+         * object and also the {@code {@link PrivateIp}} object returned by {@code {@link
+         * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and {@code {@link
+         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
          * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
-         * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
-         * launchInstanceDetails}. If you provide both, the values must match.
+         * {@code hostnameLabel} in {@code {@link
+         * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}}. If you
+         * provide both, the values must match.
          *
          * <p>Example: {@code bminstance1}
          *
@@ -283,17 +284,18 @@ public final class CreateVnicDetails
          * {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be
          * unique across all VNICs in the subnet and comply with [RFC
          * 952](https://tools.ietf.org/html/rfc952) and [RFC
-         * 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
-         * and also the {@link PrivateIp} object returned by {@link
-         * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
-         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+         * 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@code {@link Vnic}}
+         * object and also the {@code {@link PrivateIp}} object returned by {@code {@link
+         * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and {@code {@link
+         * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
          *
          * <p>For more information, see [DNS in Your Virtual Cloud
          * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          *
          * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
-         * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
-         * launchInstanceDetails}. If you provide both, the values must match.
+         * {@code hostnameLabel} in {@code {@link
+         * #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}}. If you
+         * provide both, the values must match.
          *
          * <p>Example: {@code bminstance1}
          *
@@ -367,9 +369,9 @@ public final class CreateVnicDetails
          * A private IP address of your choice to assign to the VNIC. Must be an available IP
          * address within the subnet's CIDR. If you don't specify a value, Oracle automatically
          * assigns a private IP address from the subnet. This is the VNIC's *primary* private IP
-         * address. The value appears in the {@link Vnic} object and also the {@link PrivateIp}
-         * object returned by {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
-         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+         * address. The value appears in the {@code {@link Vnic}} object and also the {@code {@link
+         * PrivateIp}} object returned by {@code {@link #listPrivateIps(ListPrivateIpsRequest)
+         * listPrivateIps}} and {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
          *
          * <p>If you specify a {@code vlanId}, the {@code privateIp} cannot be specified. See {@link
          * Vlan}.
@@ -383,9 +385,9 @@ public final class CreateVnicDetails
          * A private IP address of your choice to assign to the VNIC. Must be an available IP
          * address within the subnet's CIDR. If you don't specify a value, Oracle automatically
          * assigns a private IP address from the subnet. This is the VNIC's *primary* private IP
-         * address. The value appears in the {@link Vnic} object and also the {@link PrivateIp}
-         * object returned by {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and
-         * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+         * address. The value appears in the {@code {@link Vnic}} object and also the {@code {@link
+         * PrivateIp}} object returned by {@code {@link #listPrivateIps(ListPrivateIpsRequest)
+         * listPrivateIps}} and {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
          *
          * <p>If you specify a {@code vlanId}, the {@code privateIp} cannot be specified. See {@link
          * Vlan}.
@@ -747,17 +749,17 @@ public final class CreateVnicDetails
      * portion of the primary private IP's fully qualified domain name (FQDN) (for example, {@code
      * bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be unique across
      * all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and
-     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
-     * and also the {@link PrivateIp} object returned by {@link
-     * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
-     * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@code {@link
+     * Vnic}} object and also the {@code {@link PrivateIp}} object returned by {@code {@link
+     * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and {@code {@link
+     * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
      * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
-     * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
-     * launchInstanceDetails}. If you provide both, the values must match.
+     * {@code hostnameLabel} in {@code {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
+     * launchInstanceDetails}}. If you provide both, the values must match.
      *
      * <p>Example: {@code bminstance1}
      *
@@ -772,17 +774,17 @@ public final class CreateVnicDetails
      * portion of the primary private IP's fully qualified domain name (FQDN) (for example, {@code
      * bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be unique across
      * all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and
-     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@link Vnic} object
-     * and also the {@link PrivateIp} object returned by {@link
-     * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
-     * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the {@code {@link
+     * Vnic}} object and also the {@code {@link PrivateIp}} object returned by {@code {@link
+     * #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and {@code {@link
+     * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
      *
      * <p>For more information, see [DNS in Your Virtual Cloud
      * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      *
      * <p>When launching an instance, use this {@code hostnameLabel} instead of the deprecated
-     * {@code hostnameLabel} in {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
-     * launchInstanceDetails}. If you provide both, the values must match.
+     * {@code hostnameLabel} in {@code {@link #launchInstanceDetails(LaunchInstanceDetailsRequest)
+     * launchInstanceDetails}}. If you provide both, the values must match.
      *
      * <p>Example: {@code bminstance1}
      *
@@ -847,9 +849,9 @@ public final class CreateVnicDetails
      * A private IP address of your choice to assign to the VNIC. Must be an available IP address
      * within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a
      * private IP address from the subnet. This is the VNIC's *primary* private IP address. The
-     * value appears in the {@link Vnic} object and also the {@link PrivateIp} object returned by
-     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
-     * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+     * value appears in the {@code {@link Vnic}} object and also the {@code {@link PrivateIp}}
+     * object returned by {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
+     * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
      *
      * <p>If you specify a {@code vlanId}, the {@code privateIp} cannot be specified. See {@link
      * Vlan}.
@@ -863,9 +865,9 @@ public final class CreateVnicDetails
      * A private IP address of your choice to assign to the VNIC. Must be an available IP address
      * within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a
      * private IP address from the subnet. This is the VNIC's *primary* private IP address. The
-     * value appears in the {@link Vnic} object and also the {@link PrivateIp} object returned by
-     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and {@link
-     * #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
+     * value appears in the {@code {@link Vnic}} object and also the {@code {@link PrivateIp}}
+     * object returned by {@code {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}} and
+     * {@code {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}}.
      *
      * <p>If you specify a {@code vlanId}, the {@code privateIp} cannot be specified. See {@link
      * Vlan}.

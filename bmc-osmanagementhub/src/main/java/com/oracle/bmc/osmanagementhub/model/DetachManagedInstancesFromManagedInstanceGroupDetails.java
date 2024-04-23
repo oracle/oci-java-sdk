@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The managed instance OCIDs to detach from the managed instance group. <br>
+ * Provides the information used to detach managed instances from a group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,18 @@ public final class DetachManagedInstancesFromManagedInstanceGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of managed instance OCIDs to be detached. */
+        /**
+         * List of managed instance
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * detach from the group.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
         private java.util.List<String> managedInstances;
 
         /**
-         * The list of managed instance OCIDs to be detached.
+         * List of managed instance
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+         * detach from the group.
          *
          * @param managedInstances the value to set
          * @return this builder
@@ -79,12 +85,18 @@ public final class DetachManagedInstancesFromManagedInstanceGroupDetails
         return new Builder().copy(this);
     }
 
-    /** The list of managed instance OCIDs to be detached. */
+    /**
+     * List of managed instance
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * detach from the group.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final java.util.List<String> managedInstances;
 
     /**
-     * The list of managed instance OCIDs to be detached.
+     * List of managed instance
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to
+     * detach from the group.
      *
      * @return the value
      */

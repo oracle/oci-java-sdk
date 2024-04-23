@@ -137,14 +137,14 @@ public final class CreateDrgRouteDistributionDetails
         }
         /**
          * Whether this distribution defines how routes get imported into route tables or exported
-         * through DRG Attachments
+         * through DRG attachments.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
         private DistributionType distributionType;
 
         /**
          * Whether this distribution defines how routes get imported into route tables or exported
-         * through DRG Attachments
+         * through DRG attachments.
          *
          * @param distributionType the value to set
          * @return this builder
@@ -284,7 +284,7 @@ public final class CreateDrgRouteDistributionDetails
 
     /**
      * Whether this distribution defines how routes get imported into route tables or exported
-     * through DRG Attachments
+     * through DRG attachments.
      */
     public enum DistributionType implements com.oracle.bmc.http.internal.BmcEnum {
         Import("IMPORT"),
@@ -319,14 +319,14 @@ public final class CreateDrgRouteDistributionDetails
     };
     /**
      * Whether this distribution defines how routes get imported into route tables or exported
-     * through DRG Attachments
+     * through DRG attachments.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
     private final DistributionType distributionType;
 
     /**
      * Whether this distribution defines how routes get imported into route tables or exported
-     * through DRG Attachments
+     * through DRG attachments.
      *
      * @return the value
      */

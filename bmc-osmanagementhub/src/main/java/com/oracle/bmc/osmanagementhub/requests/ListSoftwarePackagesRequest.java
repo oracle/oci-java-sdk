@@ -14,25 +14,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListSoftwarePackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     private String softwareSourceId;
 
-    /** The software source OCID. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     private String displayName;
 
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     *
-     * <p>Example: {@code My new resource}
-     */
+    /** A filter to return resources that match the given user-friendly name. */
     public String getDisplayName() {
         return displayName;
     }
@@ -44,16 +42,14 @@ public class ListSoftwarePackagesRequest
         return displayNameContains;
     }
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams,
-     * and stream profiles when set to true. All packages, module streams, and stream profiles are
-     * returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream
+     * profiles.
      */
     private Boolean isLatest;
 
     /**
-     * A boolean variable that is used to list only the latest versions of packages, module streams,
-     * and stream profiles when set to true. All packages, module streams, and stream profiles are
-     * returned when set to false.
+     * Indicates whether to list only the latest versions of packages, module streams, and stream
+     * profiles.
      */
     public Boolean getIsLatest() {
         return isLatest;
@@ -173,11 +169,15 @@ public class ListSoftwarePackagesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The software source OCID. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder instance
@@ -187,17 +187,11 @@ public class ListSoftwarePackagesRequest
             return this;
         }
 
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
-         */
+        /** A filter to return resources that match the given user-friendly name. */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * A filter to return resources that match the given user-friendly name.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -222,16 +216,14 @@ public class ListSoftwarePackagesRequest
         }
 
         /**
-         * A boolean variable that is used to list only the latest versions of packages, module
-         * streams, and stream profiles when set to true. All packages, module streams, and stream
-         * profiles are returned when set to false.
+         * Indicates whether to list only the latest versions of packages, module streams, and
+         * stream profiles.
          */
         private Boolean isLatest = null;
 
         /**
-         * A boolean variable that is used to list only the latest versions of packages, module
-         * streams, and stream profiles when set to true. All packages, module streams, and stream
-         * profiles are returned when set to false.
+         * Indicates whether to list only the latest versions of packages, module streams, and
+         * stream profiles.
          *
          * @param isLatest the value to set
          * @return this builder instance

@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class ListProblemEntitiesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     private String problemId;
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     public String getProblemId() {
         return problemId;
     }
@@ -33,17 +33,17 @@ public class ListProblemEntitiesRequest extends com.oracle.bmc.requests.BmcReque
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -110,11 +110,11 @@ public class ListProblemEntitiesRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCId of the problem. */
+        /** OCID of the problem. */
         private String problemId = null;
 
         /**
-         * OCId of the problem.
+         * OCID of the problem.
          *
          * @param problemId the value to set
          * @return this builder instance
@@ -142,11 +142,11 @@ public class ListProblemEntitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance
@@ -156,11 +156,11 @@ public class ListProblemEntitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /** The sort order to use */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          *
          * @param sortOrder the value to set
          * @return this builder instance

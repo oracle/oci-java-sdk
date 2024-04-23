@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible CustomSoftwareSource filter types. */
+/** Filter type for packages of a custom software source. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum FilterType implements com.oracle.bmc.http.internal.BmcEnum {
     Include("INCLUDE"),

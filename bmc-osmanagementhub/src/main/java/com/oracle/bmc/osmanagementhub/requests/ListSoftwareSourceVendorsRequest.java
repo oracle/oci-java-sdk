@@ -16,12 +16,16 @@ public class ListSoftwareSourceVendorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -110,14 +114,16 @@ public class ListSoftwareSourceVendorsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This parameter is required and returns only resources contained
+         * within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This parameter is required and returns only resources contained
+         * within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Update of detector recipe <br>
+ * Parameters to use to update details for a detector recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -88,12 +88,12 @@ public final class UpdateDetectorRecipeDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Detector Rules to update */
+        /** List of detector rules to update */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateDetectorRecipeDetectorRule> detectorRules;
 
         /**
-         * Detector Rules to update
+         * List of detector rules to update
          *
          * @param detectorRules the value to set
          * @return this builder
@@ -233,12 +233,12 @@ public final class UpdateDetectorRecipeDetails
         return description;
     }
 
-    /** Detector Rules to update */
+    /** List of detector rules to update */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateDetectorRecipeDetectorRule> detectorRules;
 
     /**
-     * Detector Rules to update
+     * List of detector rules to update
      *
      * @return the value
      */

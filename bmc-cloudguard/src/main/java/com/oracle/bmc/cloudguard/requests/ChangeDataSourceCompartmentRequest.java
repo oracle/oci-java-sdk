@@ -16,18 +16,18 @@ public class ChangeDataSourceCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ChangeDataSourceCompartmentDetails> {
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     private String dataSourceId;
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     public String getDataSourceId() {
         return dataSourceId;
     }
-    /** The compartment id of the DataSource */
+    /** The compartment OCID of the DataSource resource */
     private com.oracle.bmc.cloudguard.model.ChangeDataSourceCompartmentDetails
             changeDataSourceCompartmentDetails;
 
-    /** The compartment id of the DataSource */
+    /** The compartment OCID of the DataSource resource */
     public com.oracle.bmc.cloudguard.model.ChangeDataSourceCompartmentDetails
             getChangeDataSourceCompartmentDetails() {
         return changeDataSourceCompartmentDetails;
@@ -94,11 +94,11 @@ public class ChangeDataSourceCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DataSource OCID */
+        /** Data source OCID. */
         private String dataSourceId = null;
 
         /**
-         * DataSource OCID
+         * Data source OCID.
          *
          * @param dataSourceId the value to set
          * @return this builder instance
@@ -108,12 +108,12 @@ public class ChangeDataSourceCompartmentRequest
             return this;
         }
 
-        /** The compartment id of the DataSource */
+        /** The compartment OCID of the DataSource resource */
         private com.oracle.bmc.cloudguard.model.ChangeDataSourceCompartmentDetails
                 changeDataSourceCompartmentDetails = null;
 
         /**
-         * The compartment id of the DataSource
+         * The compartment OCID of the DataSource resource
          *
          * @param changeDataSourceCompartmentDetails the value to set
          * @return this builder instance

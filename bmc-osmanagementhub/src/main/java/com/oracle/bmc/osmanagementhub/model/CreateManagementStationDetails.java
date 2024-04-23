@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for creating an ManagementStation <br>
+ * Provides the information used to create a management station. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +55,16 @@ public final class CreateManagementStationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the tenancy containing the Management Station. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the management station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the Management Station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment that contains the management station.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -70,12 +74,16 @@ public final class CreateManagementStationDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Management Station name */
+        /**
+         * User-friendly name for the management station. Does not have to be unique and you can
+         * change the name later. Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Management Station name
+         * User-friendly name for the management station. Does not have to be unique and you can
+         * change the name later. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -85,12 +93,16 @@ public final class CreateManagementStationDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Details describing the Management Station config. */
+        /**
+         * User-specified description of the management station. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the Management Station config.
+         * User-specified description of the management station. Avoid entering confidential
+         * information.
          *
          * @param description the value to set
          * @return this builder
@@ -100,12 +112,12 @@ public final class CreateManagementStationDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Name of the host */
+        /** Hostname of the management station. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * Name of the host
+         * Hostname of the management station.
          *
          * @param hostname the value to set
          * @return this builder
@@ -240,12 +252,16 @@ public final class CreateManagementStationDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the tenancy containing the Management Station. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the management station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the Management Station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment that contains the management station.
      *
      * @return the value
      */
@@ -253,12 +269,16 @@ public final class CreateManagementStationDetails
         return compartmentId;
     }
 
-    /** Management Station name */
+    /**
+     * User-friendly name for the management station. Does not have to be unique and you can change
+     * the name later. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Management Station name
+     * User-friendly name for the management station. Does not have to be unique and you can change
+     * the name later. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -266,12 +286,16 @@ public final class CreateManagementStationDetails
         return displayName;
     }
 
-    /** Details describing the Management Station config. */
+    /**
+     * User-specified description of the management station. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the Management Station config.
+     * User-specified description of the management station. Avoid entering confidential
+     * information.
      *
      * @return the value
      */
@@ -279,12 +303,12 @@ public final class CreateManagementStationDetails
         return description;
     }
 
-    /** Name of the host */
+    /** Hostname of the management station. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * Name of the host
+     * Hostname of the management station.
      *
      * @return the value
      */

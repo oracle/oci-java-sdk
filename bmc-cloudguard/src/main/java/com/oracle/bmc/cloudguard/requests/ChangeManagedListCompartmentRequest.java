@@ -16,18 +16,18 @@ public class ChangeManagedListCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ChangeManagedListCompartmentDetails> {
 
-    /** The cloudguard list OCID to be passed in the request. */
+    /** The managed list OCID to be passed in the request. */
     private String managedListId;
 
-    /** The cloudguard list OCID to be passed in the request. */
+    /** The managed list OCID to be passed in the request. */
     public String getManagedListId() {
         return managedListId;
     }
-    /** The compartment id of the ManagedList */
+    /** The compartment OCID of the ManagedList */
     private com.oracle.bmc.cloudguard.model.ChangeManagedListCompartmentDetails
             changeManagedListCompartmentDetails;
 
-    /** The compartment id of the ManagedList */
+    /** The compartment OCID of the ManagedList */
     public com.oracle.bmc.cloudguard.model.ChangeManagedListCompartmentDetails
             getChangeManagedListCompartmentDetails() {
         return changeManagedListCompartmentDetails;
@@ -94,11 +94,11 @@ public class ChangeManagedListCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The cloudguard list OCID to be passed in the request. */
+        /** The managed list OCID to be passed in the request. */
         private String managedListId = null;
 
         /**
-         * The cloudguard list OCID to be passed in the request.
+         * The managed list OCID to be passed in the request.
          *
          * @param managedListId the value to set
          * @return this builder instance
@@ -108,12 +108,12 @@ public class ChangeManagedListCompartmentRequest
             return this;
         }
 
-        /** The compartment id of the ManagedList */
+        /** The compartment OCID of the ManagedList */
         private com.oracle.bmc.cloudguard.model.ChangeManagedListCompartmentDetails
                 changeManagedListCompartmentDetails = null;
 
         /**
-         * The compartment id of the ManagedList
+         * The compartment OCID of the ManagedList
          *
          * @param changeManagedListCompartmentDetails the value to set
          * @return this builder instance

@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetResponderRuleRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     private String responderRuleId;
 
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     public String getResponderRuleId() {
         return responderRuleId;
     }
@@ -34,11 +34,11 @@ public class GetResponderRuleRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The id of ResponderRule */
+        /** Unique identifier of the responder rule. */
         private String responderRuleId = null;
 
         /**
-         * The id of ResponderRule
+         * Unique identifier of the responder rule.
          *
          * @param responderRuleId the value to set
          * @return this builder instance

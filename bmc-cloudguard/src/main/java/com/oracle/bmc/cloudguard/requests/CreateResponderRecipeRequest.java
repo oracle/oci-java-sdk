@@ -16,11 +16,11 @@ public class CreateResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails> {
 
-    /** Details for ResponderRecipe. */
+    /** Details for ResponderRecipe */
     private com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails
             createResponderRecipeDetails;
 
-    /** Details for ResponderRecipe. */
+    /** Details for ResponderRecipe */
     public com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails
             getCreateResponderRecipeDetails() {
         return createResponderRecipeDetails;
@@ -70,12 +70,12 @@ public class CreateResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for ResponderRecipe. */
+        /** Details for ResponderRecipe */
         private com.oracle.bmc.cloudguard.model.CreateResponderRecipeDetails
                 createResponderRecipeDetails = null;
 
         /**
-         * Details for ResponderRecipe.
+         * Details for ResponderRecipe
          *
          * @param createResponderRecipeDetails the value to set
          * @return this builder instance

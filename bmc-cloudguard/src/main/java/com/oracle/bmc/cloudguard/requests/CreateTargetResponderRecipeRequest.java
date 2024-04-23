@@ -16,18 +16,18 @@ public class CreateTargetResponderRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** Details for associating ResponderRecipe to Target */
+    /** Details for attaching a responder recipe to a target */
     private com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
             attachTargetResponderRecipeDetails;
 
-    /** Details for associating ResponderRecipe to Target */
+    /** Details for attaching a responder recipe to a target */
     public com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
             getAttachTargetResponderRecipeDetails() {
         return attachTargetResponderRecipeDetails;
@@ -77,11 +77,11 @@ public class CreateTargetResponderRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -91,12 +91,12 @@ public class CreateTargetResponderRecipeRequest
             return this;
         }
 
-        /** Details for associating ResponderRecipe to Target */
+        /** Details for attaching a responder recipe to a target */
         private com.oracle.bmc.cloudguard.model.AttachTargetResponderRecipeDetails
                 attachTargetResponderRecipeDetails = null;
 
         /**
-         * Details for associating ResponderRecipe to Target
+         * Details for attaching a responder recipe to a target
          *
          * @param attachTargetResponderRecipeDetails the value to set
          * @return this builder instance

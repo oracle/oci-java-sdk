@@ -60,12 +60,12 @@ public final class ResponderExecutionAggregation
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-        /** The number of occurences with given dimension(s) */
+        /** The number of occurrences with given dimensions */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * The number of occurences with given dimension(s)
+         * The number of occurrences with given dimensions
          *
          * @param count the value to set
          * @return this builder
@@ -134,12 +134,12 @@ public final class ResponderExecutionAggregation
         return dimensionsMap;
     }
 
-    /** The number of occurences with given dimension(s) */
+    /** The number of occurrences with given dimensions */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * The number of occurences with given dimension(s)
+     * The number of occurrences with given dimensions
      *
      * @return the value
      */

@@ -16,18 +16,18 @@ public class CreateDetectorRecipeDetectorRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetectorRuleDetails> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
-    /** The details with which detector rule has to be created. */
+    /** The details with which detector rule is to be created. */
     private com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetectorRuleDetails
             createDetectorRecipeDetectorRuleDetails;
 
-    /** The details with which detector rule has to be created. */
+    /** The details with which detector rule is to be created. */
     public com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetectorRuleDetails
             getCreateDetectorRecipeDetectorRuleDetails() {
         return createDetectorRecipeDetectorRuleDetails;
@@ -77,11 +77,11 @@ public class CreateDetectorRecipeDetectorRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance
@@ -91,12 +91,12 @@ public class CreateDetectorRecipeDetectorRuleRequest
             return this;
         }
 
-        /** The details with which detector rule has to be created. */
+        /** The details with which detector rule is to be created. */
         private com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetectorRuleDetails
                 createDetectorRecipeDetectorRuleDetails = null;
 
         /**
-         * The details with which detector rule has to be created.
+         * The details with which detector rule is to be created.
          *
          * @param createDetectorRecipeDetectorRuleDetails the value to set
          * @return this builder instance

@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Operation names supported for Condition Operator */
+/** Operation names supported for condition operator. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ConditionOperatorName implements com.oracle.bmc.http.internal.BmcEnum {
     And("AND"),

@@ -14,10 +14,10 @@ import com.oracle.bmc.cloudguard.model.*;
 public class DeleteSecurityRecipeRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+    /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
     private String securityRecipeId;
 
-    /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+    /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
     public String getSecurityRecipeId() {
         return securityRecipeId;
     }
@@ -52,11 +52,11 @@ public class DeleteSecurityRecipeRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+        /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
         private String securityRecipeId = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          *
          * @param securityRecipeId the value to set
          * @return this builder instance

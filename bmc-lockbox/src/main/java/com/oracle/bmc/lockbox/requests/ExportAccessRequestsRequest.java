@@ -15,8 +15,10 @@ public class ExportAccessRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails> {
 
+    /** Exports the list of access requests for given date range in text format */
     private com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails exportAccessRequestsDetails;
 
+    /** Exports the list of access requests for given date range in text format */
     public com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails
             getExportAccessRequestsDetails() {
         return exportAccessRequestsDetails;
@@ -171,10 +173,13 @@ public class ExportAccessRequestsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
+        /** Exports the list of access requests for given date range in text format */
         private com.oracle.bmc.lockbox.model.ExportAccessRequestsDetails
                 exportAccessRequestsDetails = null;
 
         /**
+         * Exports the list of access requests for given date range in text format
+         *
          * @param exportAccessRequestsDetails the value to set
          * @return this builder instance
          */

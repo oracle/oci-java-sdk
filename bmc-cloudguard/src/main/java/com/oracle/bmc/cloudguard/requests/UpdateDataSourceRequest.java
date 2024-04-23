@@ -15,17 +15,17 @@ public class UpdateDataSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails> {
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     private String dataSourceId;
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     public String getDataSourceId() {
         return dataSourceId;
     }
-    /** Details for the DataSource to be updated */
+    /** Details for the DataSource resource to be updated */
     private com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails updateDataSourceDetails;
 
-    /** Details for the DataSource to be updated */
+    /** Details for the DataSource resource to be updated */
     public com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails getUpdateDataSourceDetails() {
         return updateDataSourceDetails;
     }
@@ -91,11 +91,11 @@ public class UpdateDataSourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DataSource OCID */
+        /** Data source OCID. */
         private String dataSourceId = null;
 
         /**
-         * DataSource OCID
+         * Data source OCID.
          *
          * @param dataSourceId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class UpdateDataSourceRequest
             return this;
         }
 
-        /** Details for the DataSource to be updated */
+        /** Details for the DataSource resource to be updated */
         private com.oracle.bmc.cloudguard.model.UpdateDataSourceDetails updateDataSourceDetails =
                 null;
 
         /**
-         * Details for the DataSource to be updated
+         * Details for the DataSource resource to be updated
          *
          * @param updateDataSourceDetails the value to set
          * @return this builder instance

@@ -15,24 +15,24 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetTargetResponderRecipeResponderRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** OCID of target */
+    /** OCID of the target */
     private String targetId;
 
-    /** OCID of target */
+    /** OCID of the target */
     public String getTargetId() {
         return targetId;
     }
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     private String targetResponderRecipeId;
 
-    /** OCID of TargetResponderRecipe */
+    /** OCID of the target responder recipe. */
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     private String responderRuleId;
 
-    /** The id of ResponderRule */
+    /** Unique identifier of the responder rule. */
     public String getResponderRuleId() {
         return responderRuleId;
     }
@@ -50,11 +50,11 @@ public class GetTargetResponderRecipeResponderRuleRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID of target */
+        /** OCID of the target */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          *
          * @param targetId the value to set
          * @return this builder instance
@@ -64,11 +64,11 @@ public class GetTargetResponderRecipeResponderRuleRequest
             return this;
         }
 
-        /** OCID of TargetResponderRecipe */
+        /** OCID of the target responder recipe. */
         private String targetResponderRecipeId = null;
 
         /**
-         * OCID of TargetResponderRecipe
+         * OCID of the target responder recipe.
          *
          * @param targetResponderRecipeId the value to set
          * @return this builder instance
@@ -78,11 +78,11 @@ public class GetTargetResponderRecipeResponderRuleRequest
             return this;
         }
 
-        /** The id of ResponderRule */
+        /** Unique identifier of the responder rule. */
         private String responderRuleId = null;
 
         /**
-         * The id of ResponderRule
+         * Unique identifier of the responder rule.
          *
          * @param responderRuleId the value to set
          * @return this builder instance

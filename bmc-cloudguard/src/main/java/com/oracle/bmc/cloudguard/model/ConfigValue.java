@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * configuration item for multi list data type <br>
+ * Details for a configuration value for a managed list. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class ConfigValue extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** configuration list item type, either CUSTOM or MANAGED */
+        /** Configuration list item type (CUSTOM or MANAGED) */
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ConfigurationListItemType listType;
 
         /**
-         * configuration list item type, either CUSTOM or MANAGED
+         * Configuration list item type (CUSTOM or MANAGED)
          *
          * @param listType the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class ConfigValue extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("listType");
             return this;
         }
-        /** type of the managed list */
+        /** Type of content in the managed list */
         @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
         private String managedListType;
 
         /**
-         * type of the managed list
+         * Type of content in the managed list
          *
          * @param managedListType the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class ConfigValue extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("managedListType");
             return this;
         }
-        /** configuration value */
+        /** Configuration value */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * configuration value
+         * Configuration value
          *
          * @param value the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class ConfigValue extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** configuration list item type, either CUSTOM or MANAGED */
+    /** Configuration list item type (CUSTOM or MANAGED) */
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ConfigurationListItemType listType;
 
     /**
-     * configuration list item type, either CUSTOM or MANAGED
+     * Configuration list item type (CUSTOM or MANAGED)
      *
      * @return the value
      */
@@ -125,12 +125,12 @@ public final class ConfigValue extends com.oracle.bmc.http.client.internal.Expli
         return listType;
     }
 
-    /** type of the managed list */
+    /** Type of content in the managed list */
     @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
     private final String managedListType;
 
     /**
-     * type of the managed list
+     * Type of content in the managed list
      *
      * @return the value
      */
@@ -138,12 +138,12 @@ public final class ConfigValue extends com.oracle.bmc.http.client.internal.Expli
         return managedListType;
     }
 
-    /** configuration value */
+    /** Configuration value */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * configuration value
+     * Configuration value
      *
      * @return the value
      */

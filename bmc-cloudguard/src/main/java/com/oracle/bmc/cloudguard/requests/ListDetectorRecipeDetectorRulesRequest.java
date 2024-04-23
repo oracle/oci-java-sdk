@@ -15,17 +15,17 @@ import com.oracle.bmc.cloudguard.model.*;
 public class ListDetectorRecipeDetectorRulesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /** The OCID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -37,22 +37,22 @@ public class ListDetectorRecipeDetectorRulesRequest
         return displayName;
     }
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is
-     * active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active.
+     * If no value is specified state is active.
      */
     private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState;
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is
-     * active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active.
+     * If no value is specified state is active.
      */
     public com.oracle.bmc.cloudguard.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /** The maximum number of items to return */
     public Integer getLimit() {
         return limit;
     }
@@ -69,10 +69,10 @@ public class ListDetectorRecipeDetectorRulesRequest
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /** The sort order to use */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
@@ -140,11 +140,11 @@ public class ListDetectorRecipeDetectorRulesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance
@@ -154,11 +154,11 @@ public class ListDetectorRecipeDetectorRulesRequest
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /** The OCID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -183,13 +183,13 @@ public class ListDetectorRecipeDetectorRulesRequest
         }
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is
+         * The field lifecycle state. Only one state can be provided. Default value for state is
          * active. If no value is specified state is active.
          */
         private com.oracle.bmc.cloudguard.model.LifecycleState lifecycleState = null;
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is
+         * The field lifecycle state. Only one state can be provided. Default value for state is
          * active. If no value is specified state is active.
          *
          * @param lifecycleState the value to set
@@ -201,11 +201,11 @@ public class ListDetectorRecipeDetectorRulesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /** The maximum number of items to return */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          *
          * @param limit the value to set
          * @return this builder instance
@@ -233,11 +233,11 @@ public class ListDetectorRecipeDetectorRulesRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /** The sort order to use */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          *
          * @param sortOrder the value to set
          * @return this builder instance

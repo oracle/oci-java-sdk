@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Recommendation Definition. <br>
+ * Recommendation definition. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -73,12 +73,12 @@ public final class RecommendationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for Recommendation */
+        /** Unique identifier for the recommendation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for Recommendation
+         * Unique identifier for the recommendation
          *
          * @param id the value to set
          * @return this builder
@@ -103,12 +103,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Tenant Identifier */
+        /** Tenant identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenant Identifier
+         * Tenant identifier
          *
          * @param tenantId the value to set
          * @return this builder
@@ -118,12 +118,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** Compartment Identifier */
+        /** Compartment OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -133,12 +133,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** targetId associated with the problem */
+        /** Target ID associated with the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * targetId associated with the problem
+         * Target ID associated with the problem
          *
          * @param targetId the value to set
          * @return this builder
@@ -163,12 +163,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("details");
             return this;
         }
-        /** The Risk Level */
+        /** The risk level of the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level of the problem
          *
          * @param riskLevel the value to set
          * @return this builder
@@ -193,12 +193,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("problemCount");
             return this;
         }
-        /** The current state of the Recommendation. */
+        /** The current lifecycle state of the recommendation */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Recommendation.
+         * The current lifecycle state of the recommendation
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -208,12 +208,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The lifecycleDetail will give more detail on the substate of the lifecycleState. */
+        /** Additional details on the substate of the lifecycle state */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private RecommendationLifecycleDetail lifecycleDetail;
 
         /**
-         * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+         * Additional details on the substate of the lifecycle state
          *
          * @param lifecycleDetail the value to set
          * @return this builder
@@ -223,12 +223,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("lifecycleDetail");
             return this;
         }
-        /** problem creating time */
+        /** The date and time the problem was first created */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * problem creating time
+         * The date and time the problem was first created
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -238,12 +238,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** problem updating time */
+        /** The date and time the problem was last updated */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * problem updating time
+         * The date and time the problem was last updated
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -253,12 +253,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** recommendation string showing on UX */
+        /** Recommendation string that appears in the UI for the problem */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * recommendation string showing on UX
+         * Recommendation string that appears in the UI for the problem
          *
          * @param name the value to set
          * @return this builder
@@ -268,12 +268,12 @@ public final class RecommendationSummary
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** description of the recommendation */
+        /** Description of the recommendation */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * description of the recommendation
+         * Description of the recommendation
          *
          * @param description the value to set
          * @return this builder
@@ -367,12 +367,12 @@ public final class RecommendationSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for Recommendation */
+    /** Unique identifier for the recommendation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for Recommendation
+     * Unique identifier for the recommendation
      *
      * @return the value
      */
@@ -393,12 +393,12 @@ public final class RecommendationSummary
         return type;
     }
 
-    /** Tenant Identifier */
+    /** Tenant identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenant Identifier
+     * Tenant identifier
      *
      * @return the value
      */
@@ -406,12 +406,12 @@ public final class RecommendationSummary
         return tenantId;
     }
 
-    /** Compartment Identifier */
+    /** Compartment OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      *
      * @return the value
      */
@@ -419,12 +419,12 @@ public final class RecommendationSummary
         return compartmentId;
     }
 
-    /** targetId associated with the problem */
+    /** Target ID associated with the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * targetId associated with the problem
+     * Target ID associated with the problem
      *
      * @return the value
      */
@@ -445,12 +445,12 @@ public final class RecommendationSummary
         return details;
     }
 
-    /** The Risk Level */
+    /** The risk level of the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level of the problem
      *
      * @return the value
      */
@@ -471,12 +471,12 @@ public final class RecommendationSummary
         return problemCount;
     }
 
-    /** The current state of the Recommendation. */
+    /** The current lifecycle state of the recommendation */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Recommendation.
+     * The current lifecycle state of the recommendation
      *
      * @return the value
      */
@@ -484,12 +484,12 @@ public final class RecommendationSummary
         return lifecycleState;
     }
 
-    /** The lifecycleDetail will give more detail on the substate of the lifecycleState. */
+    /** Additional details on the substate of the lifecycle state */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final RecommendationLifecycleDetail lifecycleDetail;
 
     /**
-     * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+     * Additional details on the substate of the lifecycle state
      *
      * @return the value
      */
@@ -497,12 +497,12 @@ public final class RecommendationSummary
         return lifecycleDetail;
     }
 
-    /** problem creating time */
+    /** The date and time the problem was first created */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * problem creating time
+     * The date and time the problem was first created
      *
      * @return the value
      */
@@ -510,12 +510,12 @@ public final class RecommendationSummary
         return timeCreated;
     }
 
-    /** problem updating time */
+    /** The date and time the problem was last updated */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * problem updating time
+     * The date and time the problem was last updated
      *
      * @return the value
      */
@@ -523,12 +523,12 @@ public final class RecommendationSummary
         return timeUpdated;
     }
 
-    /** recommendation string showing on UX */
+    /** Recommendation string that appears in the UI for the problem */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * recommendation string showing on UX
+     * Recommendation string that appears in the UI for the problem
      *
      * @return the value
      */
@@ -536,12 +536,12 @@ public final class RecommendationSummary
         return name;
     }
 
-    /** description of the recommendation */
+    /** Description of the recommendation */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * description of the recommendation
+     * Description of the recommendation
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * List of responder execution ids to skip the execution <br>
+ * Details of responders to skip execution. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class SkipBulkResponderExecutionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of responder execution ids to skip the execution */
+        /** List of responder execution IDs to skip execution */
         @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionIds")
         private java.util.List<String> responderExecutionIds;
 
         /**
-         * List of responder execution ids to skip the execution
+         * List of responder execution IDs to skip execution
          *
          * @param responderExecutionIds the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class SkipBulkResponderExecutionDetails
         return new Builder().copy(this);
     }
 
-    /** List of responder execution ids to skip the execution */
+    /** List of responder execution IDs to skip execution */
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionIds")
     private final java.util.List<String> responderExecutionIds;
 
     /**
-     * List of responder execution ids to skip the execution
+     * List of responder execution IDs to skip execution
      *
      * @return the value
      */

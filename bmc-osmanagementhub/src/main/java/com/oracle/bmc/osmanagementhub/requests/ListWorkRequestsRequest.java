@@ -13,17 +13,29 @@ import com.oracle.bmc.osmanagementhub.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment that contains the resources to list. */
+    /**
+     * The OCID of the compartment that contains the resources to list. This filter returns only
+     * resources contained within the specified compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID of the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
+     */
     private String workRequestId;
 
-    /** The OCID of the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
@@ -34,10 +46,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public java.util.List<com.oracle.bmc.osmanagementhub.model.OperationStatus> getStatus() {
         return status;
     }
-    /** The OCID of the resource affected by the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the resource. This filter returns resources associated with the specified resource.
+     */
     private String resourceId;
 
-    /** The OCID of the resource affected by the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the resource. This filter returns resources associated with the specified resource.
+     */
     public String getResourceId() {
         return resourceId;
     }
@@ -149,29 +167,43 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The OCID of the schedule job that initiated the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the schedule job that initiated the work request.
+     */
     private String initiatorId;
 
-    /** The OCID of the schedule job that initiated the work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the schedule job that initiated the work request.
+     */
     public String getInitiatorId() {
         return initiatorId;
     }
-    /** The OCID of the parent work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent work request.
+     */
     private String parentId;
 
-    /** The OCID of the parent work request. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent work request.
+     */
     public String getParentId() {
         return parentId;
     }
     /**
      * A filter to return the resources whose parent resources are not the same as the given
-     * resource OCID(s).
+     * resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> parentResourcesNotEqualTo;
 
     /**
      * A filter to return the resources whose parent resources are not the same as the given
-     * resource OCID(s).
+     * resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getParentResourcesNotEqualTo() {
         return parentResourcesNotEqualTo;
@@ -198,6 +230,52 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getDisplayNameContains() {
         return displayNameContains;
     }
+    /**
+     * A filter to return the work requests that are a retry of the given work request
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    private String retryOfId;
+
+    /**
+     * A filter to return the work requests that are a retry of the given work request
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public String getRetryOfId() {
+        return retryOfId;
+    }
+    /**
+     * A filter to return work requests that were created before the date provided (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+     */
+    private java.util.Date timeCreatedLessThan;
+
+    /**
+     * A filter to return work requests that were created before the date provided (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+     */
+    public java.util.Date getTimeCreatedLessThan() {
+        return timeCreatedLessThan;
+    }
+    /**
+     * A filter to return work requests that were created on or after the date provided (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+     */
+    private java.util.Date timeCreatedGreaterThanOrEqualTo;
+
+    /**
+     * A filter to return work requests that were created on or after the date provided (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+     */
+    public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
+        return timeCreatedGreaterThanOrEqualTo;
+    }
+    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    private Boolean isManagedByAutonomousLinux;
+
+    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -205,11 +283,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment that contains the resources to list. */
+        /**
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
+         */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only
+         * resources contained within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -219,11 +301,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The OCID of the work request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
+         */
         private String workRequestId = null;
 
         /**
-         * The OCID of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
          *
          * @param workRequestId the value to set
          * @return this builder instance
@@ -258,11 +344,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
-        /** The OCID of the resource affected by the work request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the resource. This filter returns resources associated with the specified resource.
+         */
         private String resourceId = null;
 
         /**
-         * The OCID of the resource affected by the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the resource. This filter returns resources associated with the specified resource.
          *
          * @param resourceId the value to set
          * @return this builder instance
@@ -370,11 +460,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The OCID of the schedule job that initiated the work request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the schedule job that initiated the work request.
+         */
         private String initiatorId = null;
 
         /**
-         * The OCID of the schedule job that initiated the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the schedule job that initiated the work request.
          *
          * @param initiatorId the value to set
          * @return this builder instance
@@ -384,11 +478,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The OCID of the parent work request. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent work request.
+         */
         private String parentId = null;
 
         /**
-         * The OCID of the parent work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent work request.
          *
          * @param parentId the value to set
          * @return this builder instance
@@ -400,13 +498,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * A filter to return the resources whose parent resources are not the same as the given
-         * resource OCID(s).
+         * resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> parentResourcesNotEqualTo = null;
 
         /**
          * A filter to return the resources whose parent resources are not the same as the given
-         * resource OCID(s).
+         * resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param parentResourcesNotEqualTo the value to set
          * @return this builder instance
@@ -418,7 +518,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Singular setter. A filter to return the resources whose parent resources are not the same
-         * as the given resource OCID(s).
+         * as the given resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -474,6 +575,75 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * A filter to return the work requests that are a retry of the given work request
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        private String retryOfId = null;
+
+        /**
+         * A filter to return the work requests that are a retry of the given work request
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param retryOfId the value to set
+         * @return this builder instance
+         */
+        public Builder retryOfId(String retryOfId) {
+            this.retryOfId = retryOfId;
+            return this;
+        }
+
+        /**
+         * A filter to return work requests that were created before the date provided (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+         */
+        private java.util.Date timeCreatedLessThan = null;
+
+        /**
+         * A filter to return work requests that were created before the date provided (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+         *
+         * @param timeCreatedLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
+            this.timeCreatedLessThan = timeCreatedLessThan;
+            return this;
+        }
+
+        /**
+         * A filter to return work requests that were created on or after the date provided (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+         */
+        private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter to return work requests that were created on or after the date provided (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format). Example: '2023-08-25T21:10:29.600Z'
+         *
+         * @param timeCreatedGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeCreatedGreaterThanOrEqualTo(
+                java.util.Date timeCreatedGreaterThanOrEqualTo) {
+            this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+        private Boolean isManagedByAutonomousLinux = null;
+
+        /**
+         * Indicates whether to list only resources managed by the Autonomous Linux service.
+         *
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder instance
+         */
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -517,6 +687,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             parentResourcesNotEqualTo(o.getParentResourcesNotEqualTo());
             operationType(o.getOperationType());
             displayNameContains(o.getDisplayNameContains());
+            retryOfId(o.getRetryOfId());
+            timeCreatedLessThan(o.getTimeCreatedLessThan());
+            timeCreatedGreaterThanOrEqualTo(o.getTimeCreatedGreaterThanOrEqualTo());
+            isManagedByAutonomousLinux(o.getIsManagedByAutonomousLinux());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -565,10 +739,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.parentResourcesNotEqualTo = parentResourcesNotEqualTo;
             request.operationType = operationType;
             request.displayNameContains = displayNameContains;
+            request.retryOfId = retryOfId;
+            request.timeCreatedLessThan = timeCreatedLessThan;
+            request.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             return request;
             // new ListWorkRequestsRequest(compartmentId, workRequestId, status, resourceId,
             // opcRequestId, page, limit, sortOrder, sortBy, initiatorId, parentId,
-            // parentResourcesNotEqualTo, operationType, displayNameContains);
+            // parentResourcesNotEqualTo, operationType, displayNameContains, retryOfId,
+            // timeCreatedLessThan, timeCreatedGreaterThanOrEqualTo, isManagedByAutonomousLinux);
         }
     }
 
@@ -592,7 +771,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .parentId(parentId)
                 .parentResourcesNotEqualTo(parentResourcesNotEqualTo)
                 .operationType(operationType)
-                .displayNameContains(displayNameContains);
+                .displayNameContains(displayNameContains)
+                .retryOfId(retryOfId)
+                .timeCreatedLessThan(timeCreatedLessThan)
+                .timeCreatedGreaterThanOrEqualTo(timeCreatedGreaterThanOrEqualTo)
+                .isManagedByAutonomousLinux(isManagedByAutonomousLinux);
     }
 
     /**
@@ -624,6 +807,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .append(String.valueOf(this.parentResourcesNotEqualTo));
         sb.append(",operationType=").append(String.valueOf(this.operationType));
         sb.append(",displayNameContains=").append(String.valueOf(this.displayNameContains));
+        sb.append(",retryOfId=").append(String.valueOf(this.retryOfId));
+        sb.append(",timeCreatedLessThan=").append(String.valueOf(this.timeCreatedLessThan));
+        sb.append(",timeCreatedGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeCreatedGreaterThanOrEqualTo));
+        sb.append(",isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(")");
         return sb.toString();
     }
@@ -653,7 +842,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(
                         this.parentResourcesNotEqualTo, other.parentResourcesNotEqualTo)
                 && java.util.Objects.equals(this.operationType, other.operationType)
-                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains);
+                && java.util.Objects.equals(this.displayNameContains, other.displayNameContains)
+                && java.util.Objects.equals(this.retryOfId, other.retryOfId)
+                && java.util.Objects.equals(this.timeCreatedLessThan, other.timeCreatedLessThan)
+                && java.util.Objects.equals(
+                        this.timeCreatedGreaterThanOrEqualTo, other.timeCreatedGreaterThanOrEqualTo)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux);
     }
 
     @Override
@@ -688,6 +883,22 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                         + (this.displayNameContains == null
                                 ? 43
                                 : this.displayNameContains.hashCode());
+        result = (result * PRIME) + (this.retryOfId == null ? 43 : this.retryOfId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedLessThan == null
+                                ? 43
+                                : this.timeCreatedLessThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCreatedGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeCreatedGreaterThanOrEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
         return result;
     }
 }

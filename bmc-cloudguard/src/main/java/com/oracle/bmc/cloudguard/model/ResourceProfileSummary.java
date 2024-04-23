@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Resource profile summary. <br>
+ * Summary information for a resource profile. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -61,12 +61,12 @@ public final class ResourceProfileSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of sightings associated with this resource profile */
+        /** Number of sightings associated with the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("sightingsCount")
         private Integer sightingsCount;
 
         /**
-         * Number of sightings associated with this resource profile
+         * Number of sightings associated with the resource profile
          *
          * @param sightingsCount the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("sightingsCount");
             return this;
         }
-        /** Unique identifier for resource profile */
+        /** Unique identifier for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for resource profile
+         * Unique identifier for the resource profile
          *
          * @param id the value to set
          * @return this builder
@@ -91,12 +91,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique identifier for resource profile */
+        /** Unique identifier for the resource associated with the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Unique identifier for resource profile
+         * Unique identifier for the resource associated with the resource profile
          *
          * @param resourceId the value to set
          * @return this builder
@@ -106,12 +106,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Resource name for resource profile */
+        /** Display name for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Resource name for resource profile
+         * Display name for the resource profile
          *
          * @param displayName the value to set
          * @return this builder
@@ -121,12 +121,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Resource type for resource profile */
+        /** Resource type for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Resource type for resource profile
+         * Resource type for the resource profile
          *
          * @param type the value to set
          * @return this builder
@@ -136,12 +136,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Risk Score for the resource profile */
+        /** Risk score for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
-         * Risk Score for the resource profile
+         * Risk score for the resource profile
          *
          * @param riskScore the value to set
          * @return this builder
@@ -151,12 +151,12 @@ public final class ResourceProfileSummary
             this.__explicitlySet__.add("riskScore");
             return this;
         }
-        /** List of tactic summary associated with the resource profile. */
+        /** List of tactic summaries associated with the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("tactics")
         private java.util.List<TacticSummary> tactics;
 
         /**
-         * List of tactic summary associated with the resource profile.
+         * List of tactic summaries associated with the resource profile
          *
          * @param tactics the value to set
          * @return this builder
@@ -279,12 +279,12 @@ public final class ResourceProfileSummary
         return new Builder().copy(this);
     }
 
-    /** Number of sightings associated with this resource profile */
+    /** Number of sightings associated with the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("sightingsCount")
     private final Integer sightingsCount;
 
     /**
-     * Number of sightings associated with this resource profile
+     * Number of sightings associated with the resource profile
      *
      * @return the value
      */
@@ -292,12 +292,12 @@ public final class ResourceProfileSummary
         return sightingsCount;
     }
 
-    /** Unique identifier for resource profile */
+    /** Unique identifier for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for resource profile
+     * Unique identifier for the resource profile
      *
      * @return the value
      */
@@ -305,12 +305,12 @@ public final class ResourceProfileSummary
         return id;
     }
 
-    /** Unique identifier for resource profile */
+    /** Unique identifier for the resource associated with the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Unique identifier for resource profile
+     * Unique identifier for the resource associated with the resource profile
      *
      * @return the value
      */
@@ -318,12 +318,12 @@ public final class ResourceProfileSummary
         return resourceId;
     }
 
-    /** Resource name for resource profile */
+    /** Display name for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Resource name for resource profile
+     * Display name for the resource profile
      *
      * @return the value
      */
@@ -331,12 +331,12 @@ public final class ResourceProfileSummary
         return displayName;
     }
 
-    /** Resource type for resource profile */
+    /** Resource type for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Resource type for resource profile
+     * Resource type for the resource profile
      *
      * @return the value
      */
@@ -344,12 +344,12 @@ public final class ResourceProfileSummary
         return type;
     }
 
-    /** Risk Score for the resource profile */
+    /** Risk score for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
-     * Risk Score for the resource profile
+     * Risk score for the resource profile
      *
      * @return the value
      */
@@ -357,12 +357,12 @@ public final class ResourceProfileSummary
         return riskScore;
     }
 
-    /** List of tactic summary associated with the resource profile. */
+    /** List of tactic summaries associated with the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
     private final java.util.List<TacticSummary> tactics;
 
     /**
-     * List of tactic summary associated with the resource profile.
+     * List of tactic summaries associated with the resource profile
      *
      * @return the value
      */

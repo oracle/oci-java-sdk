@@ -16,10 +16,16 @@ public class EnableModuleStreamOnManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagementhub.model.EnableModuleStreamOnManagedInstanceDetails> {
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
     private String managedInstanceId;
 
-    /** The OCID of the managed instance. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -102,11 +108,15 @@ public class EnableModuleStreamOnManagedInstanceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the managed instance. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder instance

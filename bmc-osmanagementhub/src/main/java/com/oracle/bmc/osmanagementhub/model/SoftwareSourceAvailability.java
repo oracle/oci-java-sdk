@@ -5,7 +5,9 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An object that contains a software source OCID and its availability. <br>
+ * An object that defines the
+ * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) and the
+ * availability of a vendor software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,21 +25,27 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class SoftwareSourceAvailability
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"softwareSourceId", "availability"})
-    public SoftwareSourceAvailability(String softwareSourceId, Availability availability) {
+    @java.beans.ConstructorProperties({"softwareSourceId", "availability", "availabilityAtOci"})
+    public SoftwareSourceAvailability(
+            String softwareSourceId, Availability availability, Availability availabilityAtOci) {
         super();
         this.softwareSourceId = softwareSourceId;
         this.availability = availability;
+        this.availabilityAtOci = availabilityAtOci;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID for a vendor software source. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the vendor software source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The OCID for a vendor software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the vendor software source.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -47,12 +55,16 @@ public final class SoftwareSourceAvailability
             this.__explicitlySet__.add("softwareSourceId");
             return this;
         }
-        /** Possible availabilities of a software source. */
+        /**
+         * Availability of the software source to instances in private data centers or third-party
+         * clouds.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availability")
         private Availability availability;
 
         /**
-         * Possible availabilities of a software source.
+         * Availability of the software source to instances in private data centers or third-party
+         * clouds.
          *
          * @param availability the value to set
          * @return this builder
@@ -62,13 +74,29 @@ public final class SoftwareSourceAvailability
             this.__explicitlySet__.add("availability");
             return this;
         }
+        /** Availability of the software source to OCI instances. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        /**
+         * Availability of the software source to OCI instances.
+         *
+         * @param availabilityAtOci the value to set
+         * @return this builder
+         */
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SoftwareSourceAvailability build() {
             SoftwareSourceAvailability model =
-                    new SoftwareSourceAvailability(this.softwareSourceId, this.availability);
+                    new SoftwareSourceAvailability(
+                            this.softwareSourceId, this.availability, this.availabilityAtOci);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +111,9 @@ public final class SoftwareSourceAvailability
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
             }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
+            }
             return this;
         }
     }
@@ -96,12 +127,16 @@ public final class SoftwareSourceAvailability
         return new Builder().copy(this);
     }
 
-    /** The OCID for a vendor software source. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the vendor software source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The OCID for a vendor software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the vendor software source.
      *
      * @return the value
      */
@@ -109,17 +144,34 @@ public final class SoftwareSourceAvailability
         return softwareSourceId;
     }
 
-    /** Possible availabilities of a software source. */
+    /**
+     * Availability of the software source to instances in private data centers or third-party
+     * clouds.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availability")
     private final Availability availability;
 
     /**
-     * Possible availabilities of a software source.
+     * Availability of the software source to instances in private data centers or third-party
+     * clouds.
      *
      * @return the value
      */
     public Availability getAvailability() {
         return availability;
+    }
+
+    /** Availability of the software source to OCI instances. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+    private final Availability availabilityAtOci;
+
+    /**
+     * Availability of the software source to OCI instances.
+     *
+     * @return the value
+     */
+    public Availability getAvailabilityAtOci() {
+        return availabilityAtOci;
     }
 
     @Override
@@ -139,6 +191,7 @@ public final class SoftwareSourceAvailability
         sb.append("super=").append(super.toString());
         sb.append("softwareSourceId=").append(String.valueOf(this.softwareSourceId));
         sb.append(", availability=").append(String.valueOf(this.availability));
+        sb.append(", availabilityAtOci=").append(String.valueOf(this.availabilityAtOci));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +208,7 @@ public final class SoftwareSourceAvailability
         SoftwareSourceAvailability other = (SoftwareSourceAvailability) o;
         return java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
                 && java.util.Objects.equals(this.availability, other.availability)
+                && java.util.Objects.equals(this.availabilityAtOci, other.availabilityAtOci)
                 && super.equals(other);
     }
 
@@ -166,6 +220,9 @@ public final class SoftwareSourceAvailability
                 (result * PRIME)
                         + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
         result = (result * PRIME) + (this.availability == null ? 43 : this.availability.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityAtOci == null ? 43 : this.availabilityAtOci.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

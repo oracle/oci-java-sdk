@@ -15,17 +15,17 @@ public class TriggerResponderRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.TriggerResponderDetails> {
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     private String problemId;
 
-    /** OCId of the problem. */
+    /** OCID of the problem. */
     public String getProblemId() {
         return problemId;
     }
-    /** The responder may update the problem. */
+    /** The responder may update the problem */
     private com.oracle.bmc.cloudguard.model.TriggerResponderDetails triggerResponderDetails;
 
-    /** The responder may update the problem. */
+    /** The responder may update the problem */
     public com.oracle.bmc.cloudguard.model.TriggerResponderDetails getTriggerResponderDetails() {
         return triggerResponderDetails;
     }
@@ -91,11 +91,11 @@ public class TriggerResponderRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCId of the problem. */
+        /** OCID of the problem. */
         private String problemId = null;
 
         /**
-         * OCId of the problem.
+         * OCID of the problem.
          *
          * @param problemId the value to set
          * @return this builder instance
@@ -105,12 +105,12 @@ public class TriggerResponderRequest
             return this;
         }
 
-        /** The responder may update the problem. */
+        /** The responder may update the problem */
         private com.oracle.bmc.cloudguard.model.TriggerResponderDetails triggerResponderDetails =
                 null;
 
         /**
-         * The responder may update the problem.
+         * The responder may update the problem
          *
          * @param triggerResponderDetails the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary information pertaining to a module stream provided by a software source. <br>
+ * Provides the summary information for a module stream contained within a software source. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -106,12 +106,16 @@ public final class ModuleStreamSummary
             this.__explicitlySet__.add("isLatest");
             return this;
         }
-        /** The software source id for the the module stream. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source that contains the the module stream.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The software source id for the the module stream.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the software source that contains the the module stream.
          *
          * @param softwareSourceId the value to set
          * @return this builder
@@ -221,12 +225,16 @@ public final class ModuleStreamSummary
         return isLatest;
     }
 
-    /** The software source id for the the module stream. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source that contains the the module stream.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The software source id for the the module stream.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the software source that contains the the module stream.
      *
      * @return the value
      */

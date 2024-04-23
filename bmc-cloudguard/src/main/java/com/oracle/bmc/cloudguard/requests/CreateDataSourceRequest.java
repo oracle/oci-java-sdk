@@ -15,10 +15,10 @@ public class CreateDataSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.CreateDataSourceDetails> {
 
-    /** Details for the new DataSource. */
+    /** Details for the new DataSource resource */
     private com.oracle.bmc.cloudguard.model.CreateDataSourceDetails createDataSourceDetails;
 
-    /** Details for the new DataSource. */
+    /** Details for the new DataSource resource */
     public com.oracle.bmc.cloudguard.model.CreateDataSourceDetails getCreateDataSourceDetails() {
         return createDataSourceDetails;
     }
@@ -67,12 +67,12 @@ public class CreateDataSourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new DataSource. */
+        /** Details for the new DataSource resource */
         private com.oracle.bmc.cloudguard.model.CreateDataSourceDetails createDataSourceDetails =
                 null;
 
         /**
-         * Details for the new DataSource.
+         * Details for the new DataSource resource
          *
          * @param createDataSourceDetails the value to set
          * @return this builder instance

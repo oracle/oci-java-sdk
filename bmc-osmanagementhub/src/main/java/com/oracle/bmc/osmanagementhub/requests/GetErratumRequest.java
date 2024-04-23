@@ -14,20 +14,24 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment. This parameter is required and returns only resources contained within the
+     * specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The erratum name (e.g. ELSA-2023-34678). */
+    /** The erratum name (such as ELSA-2023-34678). */
     private String name;
 
-    /** The erratum name (e.g. ELSA-2023-34678). */
+    /** The erratum name (such as ELSA-2023-34678). */
     public String getName() {
         return name;
     }
@@ -52,14 +56,16 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This parameter is required and returns only resources contained
+         * within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is
-         * required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment. This parameter is required and returns only resources contained
+         * within the specified compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -69,11 +75,11 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The erratum name (e.g. ELSA-2023-34678). */
+        /** The erratum name (such as ELSA-2023-34678). */
         private String name = null;
 
         /**
-         * The erratum name (e.g. ELSA-2023-34678).
+         * The erratum name (such as ELSA-2023-34678).
          *
          * @param name the value to set
          * @return this builder instance

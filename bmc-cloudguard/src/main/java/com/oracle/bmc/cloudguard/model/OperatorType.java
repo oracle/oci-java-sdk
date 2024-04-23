@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible operators */
+/** Logical operator in the rule. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum OperatorType implements com.oracle.bmc.http.internal.BmcEnum {
     In("IN"),

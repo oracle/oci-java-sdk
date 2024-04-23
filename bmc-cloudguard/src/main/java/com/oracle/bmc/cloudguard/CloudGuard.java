@@ -71,9 +71,11 @@ public interface CloudGuard extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Add an existing compartment to a security zone. If you previously removed a subcompartment
-     * from a security zone, you can add it back to the same security zone. The security zone
-     * ensures that resources in the subcompartment comply with the security zone's policies.
+     * Adds a compartment to an existing security zone (SecurityZone resource), identified by
+     * securityZoneId. Specify parameters in an AddCompartmentDetails resource that you pass. If you
+     * previously removed a subcompartment from a security zone, you can add it back to the same
+     * security zone. The security zone ensures that resources in the subcompartment comply with the
+     * security zone's policies.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -88,7 +90,7 @@ public interface CloudGuard extends AutoCloseable {
     AddCompartmentResponse addCompartment(AddCompartmentRequest request);
 
     /**
-     * Cancels the work request with the given ID.
+     * Cancels a work request identified by workRequestId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -104,7 +106,8 @@ public interface CloudGuard extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
-     * Moves the DataSource from current compartment to another.
+     * Moves a data source (DataSource resource), identified by parameters passed in a
+     * ChangeDataSourceCompartmentDetails resource, from the current compartment to another.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -121,8 +124,9 @@ public interface CloudGuard extends AutoCloseable {
             ChangeDataSourceCompartmentRequest request);
 
     /**
-     * Moves the detector recipe (DetectorRecipe object), identified by detectorRecipeId, from the
-     * current compartment to another compartment.
+     * Moves the detector recipe (DetectorRecipe resource), identified by detectorRecipeId, from the
+     * current compartment to another compartment. When provided, If-Match is checked against etag
+     * values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -139,7 +143,7 @@ public interface CloudGuard extends AutoCloseable {
             ChangeDetectorRecipeCompartmentRequest request);
 
     /**
-     * Moves the managed list (ManagedList object), identified by managedListId, from the current
+     * Moves the managed list (ManagedList resource), identified by managedListId, from the current
      * compartment to another compartment.
      *
      * @param request The request object containing the details to send
@@ -157,7 +161,9 @@ public interface CloudGuard extends AutoCloseable {
             ChangeManagedListCompartmentRequest request);
 
     /**
-     * Moves the ResponderRecipe from current compartment to another.
+     * Moves the responder recipe (ResponderRecipe resource), identified by responderRecipeId in a
+     * ChangeResponderRecipeCompartmentDetails resource, from the current compartment to another
+     * compartment. When provided, if-match is checked against etag values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -174,8 +180,27 @@ public interface CloudGuard extends AutoCloseable {
             ChangeResponderRecipeCompartmentRequest request);
 
     /**
-     * Moves a security zone recipe to a different compartment. When provided, `If-Match` is checked
-     * against `ETag` values of the resource.
+     * Moves the SavedQuery resource into a different compartment. When provided, If-Match is
+     * checked against etag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ChangeSavedQueryCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSavedQueryCompartment API.
+     */
+    ChangeSavedQueryCompartmentResponse changeSavedQueryCompartment(
+            ChangeSavedQueryCompartmentRequest request);
+
+    /**
+     * Moves the security recipe (SecurityRecipe resource), identified by securityRecipeId, from the
+     * current compartment to another compartment. When provided, `if-match` is checked against
+     * `etag` values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -192,8 +217,9 @@ public interface CloudGuard extends AutoCloseable {
             ChangeSecurityRecipeCompartmentRequest request);
 
     /**
-     * Moves a security zone to a different compartment. When provided, `If-Match` is checked
-     * against `ETag` values of the resource.
+     * Moves a security zone, identified by securityZoneId, to a different compartment. Pass
+     * parameters through a ChangeSecurityZoneCompartmentDetails resource. When provided, `if-match`
+     * is checked against `etag` values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -210,7 +236,23 @@ public interface CloudGuard extends AutoCloseable {
             ChangeSecurityZoneCompartmentRequest request);
 
     /**
-     * Creates a new DataMaskRule object definition.
+     * Creates a AdhocQuery resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateAdhocQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAdhocQuery
+     *     API.
+     */
+    CreateAdhocQueryResponse createAdhocQuery(CreateAdhocQueryRequest request);
+
+    /**
+     * Creates a new DataMaskRule resource definition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -226,7 +268,8 @@ public interface CloudGuard extends AutoCloseable {
     CreateDataMaskRuleResponse createDataMaskRule(CreateDataMaskRuleRequest request);
 
     /**
-     * Creates a DataSource
+     * Creates a data source (DataSource resource), using parameters passed through a
+     * CreateDataSourceDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -242,7 +285,7 @@ public interface CloudGuard extends AutoCloseable {
     CreateDataSourceResponse createDataSource(CreateDataSourceRequest request);
 
     /**
-     * Creates a new DetectorRecipe object.
+     * Creates a new DetectorRecipe resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -258,7 +301,7 @@ public interface CloudGuard extends AutoCloseable {
     CreateDetectorRecipeResponse createDetectorRecipe(CreateDetectorRecipeRequest request);
 
     /**
-     * Create the DetectorRule
+     * Creates a detector rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -275,7 +318,7 @@ public interface CloudGuard extends AutoCloseable {
             CreateDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Creates a new ManagedList object.
+     * Creates a new ManagedList resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -291,7 +334,8 @@ public interface CloudGuard extends AutoCloseable {
     CreateManagedListResponse createManagedList(CreateManagedListRequest request);
 
     /**
-     * Create a ResponderRecipe.
+     * Creates a responder recipe (ResponderRecipe resource), from values passed in a
+     * CreateResponderRecipeDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -307,8 +351,24 @@ public interface CloudGuard extends AutoCloseable {
     CreateResponderRecipeResponse createResponderRecipe(CreateResponderRecipeRequest request);
 
     /**
-     * Creates a security zone recipe. A security zone recipe is a collection of security zone
-     * policies.
+     * Creates a SavedQuery resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateSavedQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSavedQuery
+     *     API.
+     */
+    CreateSavedQueryResponse createSavedQuery(CreateSavedQueryRequest request);
+
+    /**
+     * Creates a security zone recipe (SecurityRecipe resource), using parameters passed in a
+     * CreateSecurityRecipeDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -324,9 +384,8 @@ public interface CloudGuard extends AutoCloseable {
     CreateSecurityRecipeResponse createSecurityRecipe(CreateSecurityRecipeRequest request);
 
     /**
-     * Creates a security zone for a compartment. A security zone enforces all security zone
-     * policies in a given security zone recipe. Any actions that violate a policy are denied. By
-     * default, any subcompartments are also in the same security zone.
+     * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters through a
+     * CreateSecurityZoneDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -342,7 +401,8 @@ public interface CloudGuard extends AutoCloseable {
     CreateSecurityZoneResponse createSecurityZone(CreateSecurityZoneRequest request);
 
     /**
-     * Creates a new Target
+     * Creates a target (Target resource), using parameters passed in a CreateTargetDetails
+     * resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -357,7 +417,9 @@ public interface CloudGuard extends AutoCloseable {
     CreateTargetResponse createTarget(CreateTargetRequest request);
 
     /**
-     * Attach a DetectorRecipe with the Target
+     * Attaches a DetectorRecipe to a target (Target resource) identified by targetId, using
+     * parameters passed in a TargetAttachTargetDetectorRecipeDetails resource. Attach a
+     * DetectorRecipe with the Target
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -374,7 +436,7 @@ public interface CloudGuard extends AutoCloseable {
             CreateTargetDetectorRecipeRequest request);
 
     /**
-     * Attach a ResponderRecipe with the Target
+     * Attaches a responder recipe to a target.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -391,7 +453,38 @@ public interface CloudGuard extends AutoCloseable {
             CreateTargetResponderRecipeRequest request);
 
     /**
-     * Deletes a DataMaskRule object, identified by dataMaskRuleId.
+     * Creates and registers a WLP agent for an on-premise resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/CreateWlpAgentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWlpAgent API.
+     */
+    CreateWlpAgentResponse createWlpAgent(CreateWlpAgentRequest request);
+
+    /**
+     * Deletes a AdhocQuery resource identified by adhocQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteAdhocQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAdhocQuery
+     *     API.
+     */
+    DeleteAdhocQueryResponse deleteAdhocQuery(DeleteAdhocQueryRequest request);
+
+    /**
+     * Deletes a DataMaskRule resource, identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -407,7 +500,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteDataMaskRuleResponse deleteDataMaskRule(DeleteDataMaskRuleRequest request);
 
     /**
-     * Deletes a DataSource identified by dataSourceId
+     * Deletes a data source (DataSource resource) identified by dataSourceId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -423,7 +516,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request);
 
     /**
-     * Deletes a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Deletes a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -439,7 +532,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteDetectorRecipeResponse deleteDetectorRecipe(DeleteDetectorRecipeRequest request);
 
     /**
-     * Deletes DetectorRecipeDetectorRule
+     * Deletes the DetectorRecipeDetectorRule resource identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -456,7 +549,7 @@ public interface CloudGuard extends AutoCloseable {
             DeleteDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Delete the DetectorRecipeDetectorRuleDataSource resource by identifier
+     * Deletes the DetectorRecipeDetectorRuleDataSource resource by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -489,7 +582,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteManagedListResponse deleteManagedList(DeleteManagedListRequest request);
 
     /**
-     * Delete the ResponderRecipe resource by identifier
+     * Deletes a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -505,8 +598,24 @@ public interface CloudGuard extends AutoCloseable {
     DeleteResponderRecipeResponse deleteResponderRecipe(DeleteResponderRecipeRequest request);
 
     /**
-     * Deletes a security zone recipe. The recipe can't be associated with an existing security
-     * zone.
+     * Deletes a SavedQuery resource identified by savedQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteSavedQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSavedQuery
+     *     API.
+     */
+    DeleteSavedQueryResponse deleteSavedQuery(DeleteSavedQueryRequest request);
+
+    /**
+     * Deletes a security zone recipe, identified by securityRecipeId. The recipe can't be
+     * associated with an existing security zone.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -522,7 +631,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteSecurityRecipeResponse deleteSecurityRecipe(DeleteSecurityRecipeRequest request);
 
     /**
-     * Deletes an existing security zone with a given identifier.
+     * Deletes a security zone, identified by securityZoneId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -538,7 +647,7 @@ public interface CloudGuard extends AutoCloseable {
     DeleteSecurityZoneResponse deleteSecurityZone(DeleteSecurityZoneRequest request);
 
     /**
-     * Deletes a Target identified by targetId
+     * Deletes a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -553,7 +662,8 @@ public interface CloudGuard extends AutoCloseable {
     DeleteTargetResponse deleteTarget(DeleteTargetRequest request);
 
     /**
-     * Delete the TargetDetectorRecipe resource by identifier
+     * Deletes the target detector recipe (TargetDetectorRecipe resource) identified by
+     * targetDetectorRecipeId, from a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -570,7 +680,8 @@ public interface CloudGuard extends AutoCloseable {
             DeleteTargetDetectorRecipeRequest request);
 
     /**
-     * Delete the TargetResponderRecipe resource by identifier
+     * Detaches a target responder recipe (TargetResponderRecipe resource) identified by
+     * targetResponderRecipeId, from a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -587,7 +698,31 @@ public interface CloudGuard extends AutoCloseable {
             DeleteTargetResponderRecipeRequest request);
 
     /**
-     * Executes the responder execution. When provided, If-Match is checked against ETag values of
+     * Deletes and unregisters the WLP agent for an on-premise resource. x-obmcs-splat: routing:
+     * strategy: route-to-any-ad serviceList: [ 'cloudguard-cp-SPLAT_ENV' ] resources: wlpAgent:
+     * serviceResourceName: WlpAgent targetCompartmentId:
+     * downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent',
+     * request.resourceId).compartmentId actionKind: delete resourceOcid: request.resourceId
+     * reconciliationCanStartAfterSecs: 30 permissions: [ \"WLP_AGENT_DELETE\" ] authorization:
+     * mode: automated check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
+     * allowCrossTenancy: true tagStore: mode: automated maximumAttemptCount: 3 throttling:
+     * perUserLimit: rpsLimit: 15 perTenantLimit: rpsLimit: 30 quotas: mode: automated search: mode:
+     * backfilling operationResourceName: wlpAgent lock: mode: test operationResourceName: wlpAgent
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/DeleteWlpAgentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWlpAgent API.
+     */
+    DeleteWlpAgentResponse deleteWlpAgent(DeleteWlpAgentRequest request);
+
+    /**
+     * Executes the responder execution. When provided, if-match is checked against etag values of
      * the resource.
      *
      * @param request The request object containing the details to send
@@ -605,7 +740,40 @@ public interface CloudGuard extends AutoCloseable {
             ExecuteResponderExecutionRequest request);
 
     /**
-     * Returns a ConditionMetatDataType object with its details.
+     * Returns an adhoc query identified by adhocQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetAdhocQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAdhocQuery API.
+     */
+    GetAdhocQueryResponse getAdhocQuery(GetAdhocQueryRequest request);
+
+    /**
+     * Downloads the results for a given adhoc ID (from includes results from all monitoring
+     * regions).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetAdhocQueryResultContentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetAdhocQueryResultContent API.
+     */
+    GetAdhocQueryResultContentResponse getAdhocQueryResultContent(
+            GetAdhocQueryResultContentRequest request);
+
+    /**
+     * Returns a ConditionMetatDataType resource with its details.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -639,7 +807,7 @@ public interface CloudGuard extends AutoCloseable {
     GetConfigurationResponse getConfiguration(GetConfigurationRequest request);
 
     /**
-     * Returns a DataMaskRule object, identified by DataMaskRuleId.
+     * Returns a DataMaskRule resource, identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -655,7 +823,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDataMaskRuleResponse getDataMaskRule(GetDataMaskRuleRequest request);
 
     /**
-     * Returns a DataSource identified by dataSourceId
+     * Returns a data source (DataSource resource) identified by dataSourceId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -670,7 +838,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDataSourceResponse getDataSource(GetDataSourceRequest request);
 
     /**
-     * Returns a Detector object, identified by detectorId.
+     * Returns a Detector resource, identified by detectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -685,7 +853,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDetectorResponse getDetector(GetDetectorRequest request);
 
     /**
-     * Returns a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -701,7 +869,7 @@ public interface CloudGuard extends AutoCloseable {
     GetDetectorRecipeResponse getDetectorRecipe(GetDetectorRecipeRequest request);
 
     /**
-     * Returns a detector rule (DetectorRule object) identified by detectorRuleId.
+     * Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -718,7 +886,7 @@ public interface CloudGuard extends AutoCloseable {
             GetDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Returns a detector rule (DetectorRule object) identified by detectorRuleId.
+     * Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -749,7 +917,7 @@ public interface CloudGuard extends AutoCloseable {
     GetManagedListResponse getManagedList(GetManagedListRequest request);
 
     /**
-     * Returns the Problem object identified by a problemId.
+     * Returns the Problem resource identified by problemId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -764,7 +932,22 @@ public interface CloudGuard extends AutoCloseable {
     GetProblemResponse getProblem(GetProblemRequest request);
 
     /**
-     * Returns resource profile details
+     * Returns a resource identified by resourceId
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResource API.
+     */
+    GetResourceResponse getResource(GetResourceRequest request);
+
+    /**
+     * Returns details for a resource profile, identified by resourceProfileId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -780,7 +963,24 @@ public interface CloudGuard extends AutoCloseable {
     GetResourceProfileResponse getResourceProfile(GetResourceProfileRequest request);
 
     /**
-     * Returns a Responder Execution identified by responderExecutionId
+     * Returns the vulnerability details associated with the cveId where resource is an instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetResourceVulnerabilityExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetResourceVulnerability API.
+     */
+    GetResourceVulnerabilityResponse getResourceVulnerability(
+            GetResourceVulnerabilityRequest request);
+
+    /**
+     * Returns a responder execution identified by responderExecutionId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -796,7 +996,7 @@ public interface CloudGuard extends AutoCloseable {
     GetResponderExecutionResponse getResponderExecution(GetResponderExecutionRequest request);
 
     /**
-     * Get a ResponderRecipe by identifier
+     * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -812,7 +1012,7 @@ public interface CloudGuard extends AutoCloseable {
     GetResponderRecipeResponse getResponderRecipe(GetResponderRecipeRequest request);
 
     /**
-     * Get ResponderRule by identifier
+     * Returns a responder rule (ResponderRule resource) identified by responderRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -829,7 +1029,7 @@ public interface CloudGuard extends AutoCloseable {
             GetResponderRecipeResponderRuleRequest request);
 
     /**
-     * Get a ResponderRule by identifier
+     * Returns a responder rule (ResponderRule resource) identified by resonderRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -845,8 +1045,24 @@ public interface CloudGuard extends AutoCloseable {
     GetResponderRuleResponse getResponderRule(GetResponderRuleRequest request);
 
     /**
-     * Gets a security zone policy using its identifier. When a policy is enabled in a security
-     * zone, then any action in the zone that attempts to violate that policy is denied.
+     * Returns a SavedQuery resource identified by savedQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetSavedQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSavedQuery API.
+     */
+    GetSavedQueryResponse getSavedQuery(GetSavedQueryRequest request);
+
+    /**
+     * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in the zone
+     * that attempts to violate that policy is blocked.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -862,8 +1078,7 @@ public interface CloudGuard extends AutoCloseable {
     GetSecurityPolicyResponse getSecurityPolicy(GetSecurityPolicyRequest request);
 
     /**
-     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security
-     * zone policies.
+     * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -879,9 +1094,7 @@ public interface CloudGuard extends AutoCloseable {
     GetSecurityRecipeResponse getSecurityRecipe(GetSecurityRecipeRequest request);
 
     /**
-     * Gets a security zone by its identifier. A security zone is associated with a security zone
-     * recipe and enforces all security zone policies in the recipe. Any actions in the zone's
-     * compartments that violate a policy are denied.
+     * Returns a security zone (SecurityZone resource) identified by securityZoneId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -897,7 +1110,7 @@ public interface CloudGuard extends AutoCloseable {
     GetSecurityZoneResponse getSecurityZone(GetSecurityZoneRequest request);
 
     /**
-     * Returns Sighting details
+     * Returns a single sighting (Sighting resource) identified by sightingId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -912,7 +1125,7 @@ public interface CloudGuard extends AutoCloseable {
     GetSightingResponse getSighting(GetSightingRequest request);
 
     /**
-     * Returns a Target identified by targetId
+     * Returns a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -927,7 +1140,8 @@ public interface CloudGuard extends AutoCloseable {
     GetTargetResponse getTarget(GetTargetRequest request);
 
     /**
-     * Get a TargetDetectorRecipe by identifier
+     * Returns a target detector recipe (TargetDetectorRecipe resource) identified by
+     * targetDetectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -943,7 +1157,7 @@ public interface CloudGuard extends AutoCloseable {
     GetTargetDetectorRecipeResponse getTargetDetectorRecipe(GetTargetDetectorRecipeRequest request);
 
     /**
-     * Get DetectorRule by identifier
+     * Returns DetectorRule resource by identified by targetDetectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -960,7 +1174,8 @@ public interface CloudGuard extends AutoCloseable {
             GetTargetDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Get a TargetResponderRecipe by identifier
+     * Returns a target responder recipe (TargetResponderRecipe) identified by
+     * targetResponderRecipeId for a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -977,7 +1192,9 @@ public interface CloudGuard extends AutoCloseable {
             GetTargetResponderRecipeRequest request);
 
     /**
-     * Get ResponderRule by identifier
+     * Returns a responder rule (ResponderRule resource) identified by responderRuleId, from a
+     * target responder recipe (TargetResponderRecipe resource) identified by
+     * targetResponderRecipeId, attached to a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -994,7 +1211,22 @@ public interface CloudGuard extends AutoCloseable {
             GetTargetResponderRecipeResponderRuleRequest request);
 
     /**
-     * Gets details of the work request with the given ID.
+     * Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/GetWlpAgentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWlpAgent API.
+     */
+    GetWlpAgentResponse getWlpAgent(GetWlpAgentRequest request);
+
+    /**
+     * Returns details for a work request (WorkRequest resource) identified by workRequestId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1009,7 +1241,56 @@ public interface CloudGuard extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Returns a list of ConditionMetadataType objects.
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment identified by
+     * compartmentId. List is returned in a AdhocQueryCollection resource with page of
+     * AdhocQuerySummary resources.
+     *
+     * <p>The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListAdhocQueriesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAdhocQueries
+     *     API.
+     */
+    ListAdhocQueriesResponse listAdhocQueries(ListAdhocQueriesRequest request);
+
+    /**
+     * Lists the results for a given adhoc ID (from includes results from all monitoring regions).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListAdhocQueryResultsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListAdhocQueryResults API.
+     */
+    ListAdhocQueryResultsResponse listAdhocQueryResults(ListAdhocQueryResultsRequest request);
+
+    /**
+     * Returns a list of ConditionMetadataType resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1026,7 +1307,7 @@ public interface CloudGuard extends AutoCloseable {
             ListConditionMetadataTypesRequest request);
 
     /**
-     * Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its
      * subcompartments.
      *
      * @param request The request object containing the details to send
@@ -1043,7 +1324,8 @@ public interface CloudGuard extends AutoCloseable {
     ListDataMaskRulesResponse listDataMaskRules(ListDataMaskRulesRequest request);
 
     /**
-     * Returns a list of events from CloudGuard DataSource
+     * Returns a list of data source events (DataSourceEventCollection resource) from the data
+     * source (DataSource resource) identified by dataSourceId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1059,10 +1341,12 @@ public interface CloudGuard extends AutoCloseable {
     ListDataSourceEventsResponse listDataSourceEvents(ListDataSourceEventsRequest request);
 
     /**
-     * Returns a list of all Data Sources in a compartment
+     * Returns a list of all data sources (DataSource resources) for a compartment identified by
+     * compartmentId. List is returned in a DataSourceCollection resource with page of
+     * DataSourceSummary resources.
      *
-     * <p>The ListDataSources operation returns only the data Sources in `compartmentId` passed. The
-     * list does not include any subcompartments of the compartmentId passed.
+     * <p>The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+     * The list does not include any subcompartments of the compartmentId passed.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -1070,7 +1354,7 @@ public interface CloudGuard extends AutoCloseable {
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
      * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
      * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
@@ -1090,8 +1374,8 @@ public interface CloudGuard extends AutoCloseable {
     ListDataSourcesResponse listDataSources(ListDataSourcesRequest request);
 
     /**
-     * Returns a list of detector rules (DetectorRule objects) for a detector recipe (DetectorRecipe
-     * object), identified by detectorRecipeId.
+     * Returns a list of detector rules (DetectorRule resources) for a detector recipe
+     * (DetectorRecipe resource), identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1108,8 +1392,8 @@ public interface CloudGuard extends AutoCloseable {
             ListDetectorRecipeDetectorRulesRequest request);
 
     /**
-     * Returns a list of all detector recipes (DetectorRecipe objects) in a compartment, identified
-     * by compartmentId.
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment,
+     * identified by compartmentId.
      *
      * <p>The ListDetectorRecipes operation returns only the detector recipes in `compartmentId`
      * passed. The list does not include any subcompartments of the compartmentId passed.
@@ -1140,7 +1424,7 @@ public interface CloudGuard extends AutoCloseable {
     ListDetectorRecipesResponse listDetectorRecipes(ListDetectorRecipesRequest request);
 
     /**
-     * Returns a list of detector rules for the DetectorRecipe object identified by detectorId.
+     * Returns a list of detector rules for the DetectorRecipe resource identified by detectorId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1156,8 +1440,8 @@ public interface CloudGuard extends AutoCloseable {
     ListDetectorRulesResponse listDetectorRules(ListDetectorRulesRequest request);
 
     /**
-     * Returns a detector catalog (DetectorCollection object) with a list of DetectorSummary
-     * objects.
+     * Returns a detector catalog (DetectorCollection resource) with a list of DetectorSummary
+     * resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1172,7 +1456,7 @@ public interface CloudGuard extends AutoCloseable {
     ListDetectorsResponse listDetectors(ListDetectorsRequest request);
 
     /**
-     * Returns a list of impacted resources for a Cloud Guard problem with a specified problem ID.
+     * Returns a list of impacted resources for a problem identified by problemId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1204,9 +1488,9 @@ public interface CloudGuard extends AutoCloseable {
     ListManagedListTypesResponse listManagedListTypes(ListManagedListTypesRequest request);
 
     /**
-     * Returns a list of all ManagedList objects in a compartment, identified by compartmentId. The
-     * ListManagedLists operation returns only the managed lists in `compartmentId` passed. The list
-     * does not include any subcompartments of the compartmentId passed.
+     * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
+     * The ListManagedLists operation returns only the managed lists in `compartmentId` passed. The
+     * list does not include any subcompartments of the compartmentId passed.
      *
      * <p>The parameter `accessLevel` specifies whether to return ManagedLists in only those
      * compartments for which the requestor has INSPECT permissions on at least one resource
@@ -1266,7 +1550,7 @@ public interface CloudGuard extends AutoCloseable {
     ListProblemEndpointsResponse listProblemEndpoints(ListProblemEndpointsRequest request);
 
     /**
-     * Returns a list of entities for a CloudGuard Problem
+     * Returns a list of entities for a problem.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1282,7 +1566,7 @@ public interface CloudGuard extends AutoCloseable {
     ListProblemEntitiesResponse listProblemEntities(ListProblemEntitiesRequest request);
 
     /**
-     * Returns a list of actions taken on a Cloud Guard problem.
+     * Returns a list of actions taken on a problem.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1329,7 +1613,8 @@ public interface CloudGuard extends AutoCloseable {
     ListProblemsResponse listProblems(ListProblemsRequest request);
 
     /**
-     * Returns a list of all Recommendations.
+     * Returns a list of recommendations (RecommendationSummaryCollection resource with a page of
+     * RecommendationSummary resources) for a specified compartment OCID.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1345,7 +1630,25 @@ public interface CloudGuard extends AutoCloseable {
     ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request);
 
     /**
-     * Returns a list of endpoints for Cloud Guard resource profile
+     * Returns the list of open ports associated with the resourceId where resource is an instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcePortsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResourcePorts
+     *     API.
+     */
+    ListResourcePortsResponse listResourcePorts(ListResourcePortsRequest request);
+
+    /**
+     * Returns a list of endpoints (ResourceProfileEndpointCollection resource with a page of
+     * ResourceProfileEndpointSummary resources) for a resource profile identified by
+     * resourceProfileId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1362,7 +1665,9 @@ public interface CloudGuard extends AutoCloseable {
             ListResourceProfileEndpointsRequest request);
 
     /**
-     * Returns a list of impacted resources for Cloud Guard resource profile
+     * Returns a list of impacted resources (ResourceProfileImpactedResourceCollection resource with
+     * a page of ResourceProfileImpactedResourceSummary resources) for a resource profile identified
+     * by resourceProfileId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1379,8 +1684,9 @@ public interface CloudGuard extends AutoCloseable {
             ListResourceProfileImpactedResourcesRequest request);
 
     /**
-     * Returns a list of all resource profiles identified by the Cloud Guard The
-     * ListResourceProfiles operation returns only resource profiles that match the passed filters.
+     * Returns a list of all resource profile summaries (ResourceProfileCollection resource with a
+     * page of ResourceProfileSummary resources) for a compartment, identified by compartmentId and
+     * filtered as specified.
      *
      * <p>The ListResourceProfiles operation returns only the resource profiles in `compartmentId`
      * passed. The parameter `accessLevel` specifies whether to return only those compartments for
@@ -1409,7 +1715,8 @@ public interface CloudGuard extends AutoCloseable {
     ListResourceProfilesResponse listResourceProfiles(ListResourceProfilesRequest request);
 
     /**
-     * Returns a list of resource types.
+     * Returns a single ResourceTypeCollection resource, containing a list of resource types,
+     * identified by parameters specified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1425,7 +1732,56 @@ public interface CloudGuard extends AutoCloseable {
     ListResourceTypesResponse listResourceTypes(ListResourceTypesRequest request);
 
     /**
-     * Returns a list of Responder activities done on CloudGuard Problem
+     * Returns the list of vulnerabilities associated with the resourceId where resource is an
+     * instance
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourceVulnerabilitiesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListResourceVulnerabilities API.
+     */
+    ListResourceVulnerabilitiesResponse listResourceVulnerabilities(
+            ListResourceVulnerabilitiesRequest request);
+
+    /**
+     * Returns a list of all resources in a compartment
+     *
+     * <p>The ListResources operation returns only the resources in `compartmentId` passed. The list
+     * does not include any subcompartments of the compartmentId passed.
+     *
+     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
+     * the requestor has INSPECT permissions on at least one resource directly or indirectly
+     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     *
+     * <p>The parameter `compartmentIdInSubtree` applies when you perform ListResources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
+     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
+     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
+     * ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResources API.
+     */
+    ListResourcesResponse listResources(ListResourcesRequest request);
+
+    /**
+     * Returns a list of responder activities for a problem, identified by problemId, in a
+     * ResponderActivityCollection resource, with a page of ResponderActivitySummary resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1441,8 +1797,8 @@ public interface CloudGuard extends AutoCloseable {
     ListResponderActivitiesResponse listResponderActivities(ListResponderActivitiesRequest request);
 
     /**
-     * Returns a list of Responder Executions. A Responder Execution is an entity that tracks the
-     * collective execution of multiple Responder Rule Executions for a given Problem.
+     * Returns a list of responder executions. A responder execution is an entity that tracks the
+     * collective execution of multiple responder rule executions for a given problem.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1458,7 +1814,10 @@ public interface CloudGuard extends AutoCloseable {
     ListResponderExecutionsResponse listResponderExecutions(ListResponderExecutionsRequest request);
 
     /**
-     * Returns a list of ResponderRule associated with ResponderRecipe.
+     * Returns a list of responder rules (ResponderRule resources in a
+     * responderRecipeResponderRuleCollection resource, with page of ResponderRuleSummary
+     * resources), for a responder recipe (ResponderRecipe resource), identified by
+     * responderRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1475,9 +1834,11 @@ public interface CloudGuard extends AutoCloseable {
             ListResponderRecipeResponderRulesRequest request);
 
     /**
-     * Returns a list of all ResponderRecipes in a compartment The ListResponderRecipe operation
-     * returns only the targets in `compartmentId` passed. The list does not include any
-     * subcompartments of the compartmentId passed.
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary
+     * resources) of all responder recipes (RespponderRecipe resources) in a compartment, identified
+     * by compartmentId. The ListResponderRecipe operation returns only the targets in
+     * `compartmentId` passed. The list does not include any subcompartments of the compartmentId
+     * passed.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -1505,7 +1866,9 @@ public interface CloudGuard extends AutoCloseable {
     ListResponderRecipesResponse listResponderRecipes(ListResponderRecipesRequest request);
 
     /**
-     * Returns a list of ResponderRule.
+     * Returns a list of responder rules for the ResponderRecipe resource identified by responderId.
+     * The list is contained in a ResponderRuleCollection resource with a page of
+     * ResponderRuleSummary resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1521,7 +1884,24 @@ public interface CloudGuard extends AutoCloseable {
     ListResponderRulesResponse listResponderRules(ListResponderRulesRequest request);
 
     /**
-     * Returns a list of security zone policies. Specify any compartment.
+     * Returns a list of saved queries run in a tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListSavedQueriesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSavedQueries
+     *     API.
+     */
+    ListSavedQueriesResponse listSavedQueries(ListSavedQueriesRequest request);
+
+    /**
+     * Returns a list of security zone policies (SecurityPolicySummary resources), identified by
+     * compartmentId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1537,7 +1917,8 @@ public interface CloudGuard extends AutoCloseable {
     ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request);
 
     /**
-     * Gets a list of all security zone recipes in a compartment.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a compartment,
+     * identified by compartmentId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1553,7 +1934,8 @@ public interface CloudGuard extends AutoCloseable {
     ListSecurityRecipesResponse listSecurityRecipes(ListSecurityRecipesRequest request);
 
     /**
-     * Gets a list of all security zones in a compartment.
+     * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+     * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1569,7 +1951,8 @@ public interface CloudGuard extends AutoCloseable {
     ListSecurityZonesResponse listSecurityZones(ListSecurityZonesRequest request);
 
     /**
-     * Returns Sighting endpoints details
+     * Returns sighting endpoints details in a SightingEndpointsCollection resource with a page of
+     * SightingEndpointSummary resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1585,7 +1968,9 @@ public interface CloudGuard extends AutoCloseable {
     ListSightingEndpointsResponse listSightingEndpoints(ListSightingEndpointsRequest request);
 
     /**
-     * Return a list of Impacted Resources for a CloudGuard Sighting
+     * Returns a list of impacted resources for a sighting, identified by sightingId, in a
+     * SightingImpactedResourceCollection resource with a page of SightingImpactedResourceSummary
+     * resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1602,8 +1987,8 @@ public interface CloudGuard extends AutoCloseable {
             ListSightingImpactedResourcesRequest request);
 
     /**
-     * Returns a list of all Sightings identified by the Cloud Guard The ListSightings operation
-     * returns only sightings that match the passed filters.
+     * For the parameters passed, returns a list of sightings (SightingCollection resource) with a
+     * page of SightingSummary resources.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -1630,7 +2015,7 @@ public interface CloudGuard extends AutoCloseable {
     ListSightingsResponse listSightings(ListSightingsRequest request);
 
     /**
-     * Returns a list of tactics associated with detector rules.
+     * Returns a list of TacticSummary resources for a compartment, identified by compartmentId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1662,7 +2047,9 @@ public interface CloudGuard extends AutoCloseable {
             ListTargetDetectorRecipeDetectorRulesRequest request);
 
     /**
-     * Returns a list of all detector recipes associated with the target identified by targetId
+     * Returns a list of all target detector recipes (TargetDetectorRecipe resources) associated
+     * with a target (Target resource), identified by targetId. The list is contained in a
+     * TargetDetectorRecipeCollection resource with page of TargetDetectorRecipeSummary resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1679,7 +2066,10 @@ public interface CloudGuard extends AutoCloseable {
             ListTargetDetectorRecipesRequest request);
 
     /**
-     * Returns a list of ResponderRule associated with ResponderRecipe within a Target.
+     * Returns a list of responder rules (ResponderRule resources) associated with a responder
+     * recipe (ResponderRecipe resource) attached to a Target. List is returned in a
+     * TargetResponderRecipeResponderRuleCollection resource with page of
+     * TargetResponderRecipeResponderRuleSummary resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1696,7 +2086,10 @@ public interface CloudGuard extends AutoCloseable {
             ListTargetResponderRecipeResponderRulesRequest request);
 
     /**
-     * Returns a list of all responder recipes associated with the target identified by targetId
+     * Returns a list of summary information for all responder recipes
+     * (TargetResponderRecipeCollection resource, with a page of TargetResponderRecipeSummary
+     * resources) attached to a target identified by targetId, located in a compartment identified
+     * by compartmentId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1713,9 +2106,10 @@ public interface CloudGuard extends AutoCloseable {
             ListTargetResponderRecipesRequest request);
 
     /**
-     * Returns a list of all Targets in a compartment The ListTargets operation returns only the
-     * targets in `compartmentId` passed. The list does not include any subcompartments of the
-     * compartmentId passed.
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary resources)
+     * for the target identified by compartmentId. By default, only the target associated with the
+     * compartment is returned. Setting compartmentIdInSubtree to true returns the entire hierarchy
+     * of targets in subcompartments.
      *
      * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
      * the requestor has INSPECT permissions on at least one resource directly or indirectly
@@ -1725,9 +2119,9 @@ public interface CloudGuard extends AutoCloseable {
      *
      * <p>The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
+     * be returned. To get a full list of all targets in compartments and subcompartments in the
+     * tenancy (root compartment), set the parameter `compartmentIdInSubtree` to true and
+     * `accessLevel` to ACCESSIBLE.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1757,7 +2151,22 @@ public interface CloudGuard extends AutoCloseable {
     ListTechniquesResponse listTechniques(ListTechniquesRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a list of WLP agents in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListWlpAgentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWlpAgents API.
+     */
+    ListWlpAgentsResponse listWlpAgents(ListWlpAgentsRequest request);
+
+    /**
+     * Returns a list of errors for a work request identified by workRequestId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1773,7 +2182,8 @@ public interface CloudGuard extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list (WorkRequestLogEntryCollection resource) of log entries for a
+     * request, identified by workRequestId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1789,7 +2199,8 @@ public interface CloudGuard extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * Lists the work requests in a compartment.
+     * Returns a list of work requests (WorkRequestSummaryCollection resource), in a compartment
+     * identified by compartmentId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1805,10 +2216,11 @@ public interface CloudGuard extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Removes an existing compartment from a security zone. When you remove a subcompartment from a
-     * security zone, it no longer enforces security zone policies on the resources in the
-     * subcompartment. You can't remove the primary compartment that was used to create the security
-     * zone.
+     * Removes a compartment from a security zone (SecurityZone resource), identified by
+     * securityZoneId. Pass compartmentId of compartment to remove through a
+     * RemoveCompartmentDetails resource. When you remove a subcompartment from a security zone, it
+     * no longer enforces security zone policies on the resources in the subcompartment. You can't
+     * remove the primary compartment that was used to create the security zone.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1824,8 +2236,8 @@ public interface CloudGuard extends AutoCloseable {
     RemoveCompartmentResponse removeCompartment(RemoveCompartmentRequest request);
 
     /**
-     * Examines the number of problems related to the resource and the relative severity of those
-     * problems.
+     * Returns a page of RiskScoreAggregation resources for a compartment, identified by
+     * compartmentId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1841,8 +2253,8 @@ public interface CloudGuard extends AutoCloseable {
     RequestRiskScoresResponse requestRiskScores(RequestRiskScoresRequest request);
 
     /**
-     * Measures the number of resources examined across all regions and compares it with the number
-     * of problems detected, for a given time period.
+     * Returns a page of SecurityScoreTrendAggregation resources. These measure the number of
+     * resources examined across all regions and compare it with the number of problems detected.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1859,8 +2271,8 @@ public interface CloudGuard extends AutoCloseable {
             RequestSecurityScoreSummarizedTrendRequest request);
 
     /**
-     * Measures the number of resources examined across all regions and compares it with the number
-     * of problems detected.
+     * Returns a page of SecurityScoreAggregation resources. These measure the number of resources
+     * examined across all regions and compare it with the number of problems detected.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1938,19 +2350,22 @@ public interface CloudGuard extends AutoCloseable {
             RequestSummarizedProblemsRequest request);
 
     /**
-     * Returns the number of Responder Executions, for a given set of dimensions.
+     * Returns the number of responder executions, identified by parameters specified, in a page of
+     * ResponderExecutionAggregation resources.
      *
-     * <p>The parameter `accessLevel` specifies whether to return only those compartments for which
-     * the requestor has INSPECT permissions on at least one resource directly or indirectly
-     * (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-     * Principal doesn't have access to even one of the child compartments. This is valid only when
-     * `compartmentIdInSubtree` is set to `true`.
+     * <p>Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has
+     * INSPECT permissions, directly or indirectly (permissions can be on a resource in a
+     * subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have access to at
+     * least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are
+     * checked and no partial results are displayed. This is valid only when compartmentIdInSubtree
+     * is set to true.
      *
-     * <p>The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can
-     * be returned. To get a full list of all compartments and subcompartments in the tenancy (root
-     * compartment), set the parameter `compartmentIdInSubtree` to true and `accessLevel` to
-     * ACCESSIBLE.
+     * <p>Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has
+     * INSPECT permissions, directly or indirectly (permissions can be on a resource in a
+     * subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have access to at
+     * least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are
+     * checked and no partial results are displayed. This is valid only when compartmentIdInSubtree
+     * is set to true.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2001,8 +2416,9 @@ public interface CloudGuard extends AutoCloseable {
             RequestSummarizedSecurityScoresRequest request);
 
     /**
-     * Summarizes the resource profile risk score top trends for the given time range based on the
-     * search filters.
+     * Returns a list of resource profile risk score aggregation summaries
+     * (ResourceProfileRiskScoreAggregationSummaryCollection resource with a page of
+     * ResourceProfileRiskScoreAggregationSummary resources) for a specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2051,8 +2467,9 @@ public interface CloudGuard extends AutoCloseable {
             RequestSummarizedTrendProblemsRequest request);
 
     /**
-     * Summarizes the resource risk score trend for the given time range based on the search
-     * filters.
+     * Returns a summary of risk score trends in a ResourceRiskScoreAggregationCollection resource,
+     * with a page of ResourceRiskScoreAggregation resources, filtered by parameters that you
+     * specify in a RequestSummarizedTrendResourceRiskScoresDetailsresource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2115,7 +2532,7 @@ public interface CloudGuard extends AutoCloseable {
             RequestSummarizedTrendSecurityScoresRequest request);
 
     /**
-     * Skips the execution for a bulk of responder executions The operation is atomic in nature
+     * Skips the execution for a bulk of responder executions.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2133,7 +2550,7 @@ public interface CloudGuard extends AutoCloseable {
 
     /**
      * Skips the execution of the responder execution. When provided, If-Match is checked against
-     * ETag values of the resource.
+     * etag values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2185,7 +2602,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateBulkProblemStatusResponse updateBulkProblemStatus(UpdateBulkProblemStatusRequest request);
 
     /**
-     * Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
      * The reporting region cannot be updated once created.
      *
      * @param request The request object containing the details to send
@@ -2202,7 +2619,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request);
 
     /**
-     * Updates a data mask rule (DataMaskRule object) identified by dataMaskRuleId.
+     * Updates a data mask rule (DataMaskRule resource) identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2218,7 +2635,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateDataMaskRuleResponse updateDataMaskRule(UpdateDataMaskRuleRequest request);
 
     /**
-     * Updates a data source identified by dataSourceId
+     * Updates a data source (DataSource resource) identified by dataSourceId, using values passed
+     * in an UpdateDataSourceDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2234,7 +2652,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request);
 
     /**
-     * Updates a detector recipe (DetectorRecipe object) identified by detectorRecipeId.
+     * Updates a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2250,7 +2668,7 @@ public interface CloudGuard extends AutoCloseable {
     UpdateDetectorRecipeResponse updateDetectorRecipe(UpdateDetectorRecipeRequest request);
 
     /**
-     * Updates a detector rule (DetectorRule object) identified by detectorRuleId.
+     * Updates a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2267,7 +2685,7 @@ public interface CloudGuard extends AutoCloseable {
             UpdateDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Updates a ManagedList object, identified by managedList.
+     * Updates a ManagedList resource, identified by managedList.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2300,7 +2718,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateProblemStatusResponse updateProblemStatus(UpdateProblemStatusRequest request);
 
     /**
-     * Update the ResponderRecipe resource by identifier
+     * Updates a responder recipe (ResponderRecipe resource) identified by responderRecipeId, passed
+     * in an UpdateResponderRecipeDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2316,7 +2735,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateResponderRecipeResponse updateResponderRecipe(UpdateResponderRecipeRequest request);
 
     /**
-     * Update the ResponderRule by identifier
+     * Updates a responder rule (ResponderRule resource) identified by responderRuleId, passed in a
+     * UpdateResponderRecipeResponderRuleDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2333,8 +2753,24 @@ public interface CloudGuard extends AutoCloseable {
             UpdateResponderRecipeResponderRuleRequest request);
 
     /**
-     * Updates a security zone recipe. A security zone recipe is a collection of security zone
-     * policies.
+     * Updates a saved query identified by savedQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateSavedQueryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSavedQuery
+     *     API.
+     */
+    UpdateSavedQueryResponse updateSavedQuery(UpdateSavedQueryRequest request);
+
+    /**
+     * Updates a security zone recipe (SecurityRecipe resource), identified by securityRecipeId,
+     * using parameters passed in an UpdateSecurityRecipeDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2350,7 +2786,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateSecurityRecipeResponse updateSecurityRecipe(UpdateSecurityRecipeRequest request);
 
     /**
-     * Updates the security zone identified by its id
+     * Updates a security zone (SecurityZone resource) identified by securityZoneId. Pass parameters
+     * through an UpdateSecurityZoneDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2366,7 +2803,8 @@ public interface CloudGuard extends AutoCloseable {
     UpdateSecurityZoneResponse updateSecurityZone(UpdateSecurityZoneRequest request);
 
     /**
-     * Updates a Target identified by targetId
+     * Updates a target (Target resource) identified by targetId, using parameters passed in an
+     * UpdateTargetDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2381,7 +2819,9 @@ public interface CloudGuard extends AutoCloseable {
     UpdateTargetResponse updateTarget(UpdateTargetRequest request);
 
     /**
-     * Update the TargetDetectorRecipe resource by identifier
+     * Updates a target detector recipe (TargtetDetectorRecipe resource) identified by
+     * targetDetectorRecipeId, using parameters passed in an UpdateTargetDetectorRecipeDetails
+     * resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2398,7 +2838,7 @@ public interface CloudGuard extends AutoCloseable {
             UpdateTargetDetectorRecipeRequest request);
 
     /**
-     * Update the DetectorRule by identifier
+     * Updates the DetectorRule resource identified by targetDetectorRecipeId
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2415,7 +2855,9 @@ public interface CloudGuard extends AutoCloseable {
             UpdateTargetDetectorRecipeDetectorRuleRequest request);
 
     /**
-     * Update the TargetResponderRecipe resource by identifier
+     * Updates the target responder recipe (TargetResponderRecipe resource) identified by
+     * targetResponderRecipeId, attached to a target identified by targetId. Pass parameters for the
+     * update through an UpdateTargetResponderRecipeDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2432,7 +2874,10 @@ public interface CloudGuard extends AutoCloseable {
             UpdateTargetResponderRecipeRequest request);
 
     /**
-     * Update the ResponderRule by identifier
+     * Updates a responder rule (ResponderRule resource) identified by responderRuleId, for a target
+     * responder recipe (TargetResponderRecipe resource) identified by targetResponderRecipeId, for
+     * a target (Target resource) identified by targetId. Parameters for the update are passed
+     * through an UpdateTargetResponderRecipeResponderRuleDetails resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2447,6 +2892,21 @@ public interface CloudGuard extends AutoCloseable {
      */
     UpdateTargetResponderRecipeResponderRuleResponse updateTargetResponderRecipeResponderRule(
             UpdateTargetResponderRecipeResponderRuleRequest request);
+
+    /**
+     * Updates and renews the certificate for an on-premise WLP agent identified by wlpAgentId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/UpdateWlpAgentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWlpAgent API.
+     */
+    UpdateWlpAgentResponse updateWlpAgent(UpdateWlpAgentRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -5,7 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A custom software source contains a custom collection of packages. <br>
+ * Indicates whether the service should create the software source from a list of packages provided
+ * by the user. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -108,6 +109,15 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
@@ -144,6 +154,15 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -171,12 +190,16 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** List of vendor software sources. */
+        /**
+         * List of vendor software sources that are used for the basis of the custom software
+         * source..
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources.
+         * List of vendor software sources that are used for the basis of the custom software
+         * source..
          *
          * @param vendorSoftwareSources the value to set
          * @return this builder
@@ -202,10 +225,12 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
                             this.timeUpdated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.osFamily,
                             this.archType,
                             this.packageCount,
                             this.lifecycleState,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -245,6 +270,9 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
             }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
+            }
             if (model.wasPropertyExplicitlySet("osFamily")) {
                 this.osFamily(model.getOsFamily());
             }
@@ -256,6 +284,9 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -293,10 +324,12 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
             java.util.Date timeUpdated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             OsFamily osFamily,
             ArchType archType,
             Long packageCount,
             SoftwareSource.LifecycleState lifecycleState,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -311,22 +344,26 @@ public final class CustomSoftwareSourceSummary extends SoftwareSourceSummary {
                 timeUpdated,
                 description,
                 availability,
+                availabilityAtOci,
                 osFamily,
                 archType,
                 packageCount,
                 lifecycleState,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
     }
 
-    /** List of vendor software sources. */
+    /**
+     * List of vendor software sources that are used for the basis of the custom software source..
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the custom software source..
      *
      * @return the value
      */

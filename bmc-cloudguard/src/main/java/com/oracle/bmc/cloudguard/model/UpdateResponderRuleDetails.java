@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of UpdateResponderRuleDetails. <br>
+ * Parameters to be updated for a responder rule within a responder recipe. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class UpdateResponderRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifies state for ResponderRule */
+        /** Enablement state for the responder rule */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Identifies state for ResponderRule
+         * Enablement state for the responder rule
          *
          * @param isEnabled the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class UpdateResponderRuleDetails
         return new Builder().copy(this);
     }
 
-    /** Identifies state for ResponderRule */
+    /** Enablement state for the responder rule */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Identifies state for ResponderRule
+     * Enablement state for the responder rule
      *
      * @return the value
      */

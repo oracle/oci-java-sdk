@@ -5,8 +5,8 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Results of a Entitlement search. Contains boh EntitlementSummary items and other information,
- * such as metadata. <br>
+ * The set of entitlements returned for the {@link #listEntitlements(ListEntitlementsRequest)
+ * listEntitlements}. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +32,12 @@ public final class EntitlementCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Entitlement. */
+        /** List of entitlements. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<EntitlementSummary> items;
 
         /**
-         * List of Entitlement.
+         * List of entitlements.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class EntitlementCollection
         return new Builder().copy(this);
     }
 
-    /** List of Entitlement. */
+    /** List of entitlements. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<EntitlementSummary> items;
 
     /**
-     * List of Entitlement.
+     * List of entitlements.
      *
      * @return the value
      */

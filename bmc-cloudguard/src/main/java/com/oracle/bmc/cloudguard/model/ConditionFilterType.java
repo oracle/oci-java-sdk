@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Filter type can be config filter or condition filter */
+/** Filter type (config filter or condition filter). */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public enum ConditionFilterType implements com.oracle.bmc.http.internal.BmcEnum {
     Condition("CONDITION"),

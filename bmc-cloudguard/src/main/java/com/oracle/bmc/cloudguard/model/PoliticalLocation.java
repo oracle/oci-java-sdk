@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Political location of a problem <br>
+ * The geographical location of a problem in terms of political units. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,12 @@ public final class PoliticalLocation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** City */
+        /** City of problem's location */
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
         /**
-         * City
+         * City of problem's location
          *
          * @param city the value to set
          * @return this builder
@@ -48,12 +48,12 @@ public final class PoliticalLocation
             this.__explicitlySet__.add("city");
             return this;
         }
-        /** State */
+        /** State or province of problem's location */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
-         * State
+         * State or province of problem's location
          *
          * @param state the value to set
          * @return this builder
@@ -63,12 +63,12 @@ public final class PoliticalLocation
             this.__explicitlySet__.add("state");
             return this;
         }
-        /** Country */
+        /** Country of problem's location */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
-         * Country
+         * Country of problem's location
          *
          * @param country the value to set
          * @return this builder
@@ -114,12 +114,12 @@ public final class PoliticalLocation
         return new Builder().copy(this);
     }
 
-    /** City */
+    /** City of problem's location */
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
     /**
-     * City
+     * City of problem's location
      *
      * @return the value
      */
@@ -127,12 +127,12 @@ public final class PoliticalLocation
         return city;
     }
 
-    /** State */
+    /** State or province of problem's location */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
-     * State
+     * State or province of problem's location
      *
      * @return the value
      */
@@ -140,12 +140,12 @@ public final class PoliticalLocation
         return state;
     }
 
-    /** Country */
+    /** Country of problem's location */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
-     * Country
+     * Country of problem's location
      *
      * @return the value
      */

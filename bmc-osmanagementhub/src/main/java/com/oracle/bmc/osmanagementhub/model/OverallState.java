@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Mirror overall state. */
+/** Overall state of the mirror. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum OverallState implements com.oracle.bmc.http.internal.BmcEnum {
     Normal("NORMAL"),

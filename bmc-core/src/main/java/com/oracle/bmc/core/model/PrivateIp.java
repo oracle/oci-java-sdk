@@ -25,7 +25,7 @@ package com.oracle.bmc.core.model;
  * primary private IP's properties come from the values you specify in {@link CreateVnicDetails}
  * when calling either {@link #launchInstance(LaunchInstanceRequest) launchInstance} or {@link
  * #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname for a primary private IP, you
- * use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
+ * use {@code {@link #updateVnic(UpdateVnicRequest) updateVnic}}.
  *
  * <p>{@code PrivateIp} objects that are created for use with the Oracle Cloud VMware Solution are
  * assigned to a VLAN and not a VNIC in a subnet. See the descriptions of the relevant attributes in

@@ -13,10 +13,10 @@ import com.oracle.bmc.cloudguard.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class GetSecurityRecipeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+    /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
     private String securityRecipeId;
 
-    /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+    /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
     public String getSecurityRecipeId() {
         return securityRecipeId;
     }
@@ -34,11 +34,11 @@ public class GetSecurityRecipeRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique identifier of the security zone recipe ({@code SecurityRecipe}) */
+        /** The unique identifier of the security zone recipe. ({@code SecurityRecipe}) */
         private String securityRecipeId = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          *
          * @param securityRecipeId the value to set
          * @return this builder instance

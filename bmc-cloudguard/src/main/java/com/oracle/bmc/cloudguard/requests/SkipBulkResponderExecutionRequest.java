@@ -16,11 +16,11 @@ public class SkipBulkResponderExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
 
-    /** A list of responder execution ids to skip the execution */
+    /** A list of responder execution IDs to skip the execution */
     private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             skipBulkResponderExecutionDetails;
 
-    /** A list of responder execution ids to skip the execution */
+    /** A list of responder execution IDs to skip the execution */
     public com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             getSkipBulkResponderExecutionDetails() {
         return skipBulkResponderExecutionDetails;
@@ -51,12 +51,12 @@ public class SkipBulkResponderExecutionRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A list of responder execution ids to skip the execution */
+        /** A list of responder execution IDs to skip the execution */
         private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
                 skipBulkResponderExecutionDetails = null;
 
         /**
-         * A list of responder execution ids to skip the execution
+         * A list of responder execution IDs to skip the execution
          *
          * @param skipBulkResponderExecutionDetails the value to set
          * @return this builder instance

@@ -5,8 +5,9 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Results of a module stream profile search. Contains both ModuleStreamProfileSummary items and
- * other information, such as metadata. <br>
+ * A set of modules returned for the {@link
+ * #listManagedInstanceGroupAvailableModules(ListManagedInstanceGroupAvailableModulesRequest)
+ * listManagedInstanceGroupAvailableModules} operation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +34,12 @@ public final class ManagedInstanceGroupAvailableModuleCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of module stream profile. */
+        /** List of available modules. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ManagedInstanceGroupAvailableModuleSummary> items;
 
         /**
-         * List of module stream profile.
+         * List of available modules.
          *
          * @param items the value to set
          * @return this builder
@@ -79,12 +80,12 @@ public final class ManagedInstanceGroupAvailableModuleCollection
         return new Builder().copy(this);
     }
 
-    /** List of module stream profile. */
+    /** List of available modules. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ManagedInstanceGroupAvailableModuleSummary> items;
 
     /**
-     * List of module stream profile.
+     * List of available modules.
      *
      * @return the value
      */

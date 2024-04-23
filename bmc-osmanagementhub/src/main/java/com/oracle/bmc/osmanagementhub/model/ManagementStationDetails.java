@@ -5,7 +5,7 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The config details of the management stations to be configured for a managed instance. <br>
+ * Provides the management station details used to configure a managed instance. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -40,12 +40,16 @@ public final class ManagementStationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of a management station to be used as the preferred primary. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station for the instance to use as primary management station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("primaryManagementStationId")
         private String primaryManagementStationId;
 
         /**
-         * The OCID of a management station to be used as the preferred primary.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station for the instance to use as primary management station.
          *
          * @param primaryManagementStationId the value to set
          * @return this builder
@@ -55,12 +59,16 @@ public final class ManagementStationDetails
             this.__explicitlySet__.add("primaryManagementStationId");
             return this;
         }
-        /** The OCID of a management station to be used as the preferred secondary. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station for the instance to use as secondary managment station.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryManagementStationId")
         private String secondaryManagementStationId;
 
         /**
-         * The OCID of a management station to be used as the preferred secondary.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the management station for the instance to use as secondary managment station.
          *
          * @param secondaryManagementStationId the value to set
          * @return this builder
@@ -119,12 +127,16 @@ public final class ManagementStationDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of a management station to be used as the preferred primary. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station for the instance to use as primary management station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("primaryManagementStationId")
     private final String primaryManagementStationId;
 
     /**
-     * The OCID of a management station to be used as the preferred primary.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station for the instance to use as primary management station.
      *
      * @return the value
      */
@@ -132,12 +144,16 @@ public final class ManagementStationDetails
         return primaryManagementStationId;
     }
 
-    /** The OCID of a management station to be used as the preferred secondary. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station for the instance to use as secondary managment station.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryManagementStationId")
     private final String secondaryManagementStationId;
 
     /**
-     * The OCID of a management station to be used as the preferred secondary.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the management station for the instance to use as secondary managment station.
      *
      * @return the value
      */

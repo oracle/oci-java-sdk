@@ -15,10 +15,16 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class DeleteLifecycleEnvironmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle environment.
+     */
     private String lifecycleEnvironmentId;
 
-    /** The OCID of the lifecycle environment. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the lifecycle environment.
+     */
     public String getLifecycleEnvironmentId() {
         return lifecycleEnvironmentId;
     }
@@ -59,11 +65,15 @@ public class DeleteLifecycleEnvironmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the lifecycle environment. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle environment.
+         */
         private String lifecycleEnvironmentId = null;
 
         /**
-         * The OCID of the lifecycle environment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the lifecycle environment.
          *
          * @param lifecycleEnvironmentId the value to set
          * @return this builder instance

@@ -4,13 +4,14 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible managed instance locations. */
+/** Location of the managed instance. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public enum ManagedInstanceLocation implements com.oracle.bmc.http.internal.BmcEnum {
     OnPremise("ON_PREMISE"),
     OciCompute("OCI_COMPUTE"),
     Azure("AZURE"),
     Ec2("EC2"),
+    Gcp("GCP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

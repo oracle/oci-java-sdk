@@ -16,18 +16,18 @@ public class ChangeDetectorRecipeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
-    /** The target compartment id. */
+    /** The target compartment OCID */
     private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
             changeDetectorRecipeCompartmentDetails;
 
-    /** The target compartment id. */
+    /** The target compartment OCID */
     public com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
             getChangeDetectorRecipeCompartmentDetails() {
         return changeDetectorRecipeCompartmentDetails;
@@ -94,11 +94,11 @@ public class ChangeDetectorRecipeCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance
@@ -108,12 +108,12 @@ public class ChangeDetectorRecipeCompartmentRequest
             return this;
         }
 
-        /** The target compartment id. */
+        /** The target compartment OCID */
         private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
                 changeDetectorRecipeCompartmentDetails = null;
 
         /**
-         * The target compartment id.
+         * The target compartment OCID
          *
          * @param changeDetectorRecipeCompartmentDetails the value to set
          * @return this builder instance

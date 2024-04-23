@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Provides the summary of sighting <br>
+ * Collection of sighting summaries. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,20 +23,22 @@ package com.oracle.bmc.cloudguard.model;
 public final class SightingCollection
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"items"})
-    public SightingCollection(java.util.List<SightingSummary> items) {
+    @java.beans.ConstructorProperties({"items", "locks"})
+    public SightingCollection(
+            java.util.List<SightingSummary> items, java.util.List<ResourceLock> locks) {
         super();
         this.items = items;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of SightingSummary */
+        /** List of SightingSummary resources */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SightingSummary> items;
 
         /**
-         * List of SightingSummary
+         * List of SightingSummary resources
          *
          * @param items the value to set
          * @return this builder
@@ -46,12 +48,27 @@ public final class SightingCollection
             this.__explicitlySet__.add("items");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SightingCollection build() {
-            SightingCollection model = new SightingCollection(this.items);
+            SightingCollection model = new SightingCollection(this.items, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +79,9 @@ public final class SightingCollection
         public Builder copy(SightingCollection model) {
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -76,17 +96,30 @@ public final class SightingCollection
         return new Builder().copy(this);
     }
 
-    /** List of SightingSummary */
+    /** List of SightingSummary resources */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SightingSummary> items;
 
     /**
-     * List of SightingSummary
+     * List of SightingSummary resources
      *
      * @return the value
      */
     public java.util.List<SightingSummary> getItems() {
         return items;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -105,6 +138,7 @@ public final class SightingCollection
         sb.append("SightingCollection(");
         sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -119,7 +153,9 @@ public final class SightingCollection
         }
 
         SightingCollection other = (SightingCollection) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && super.equals(other);
     }
 
     @Override
@@ -127,6 +163,7 @@ public final class SightingCollection
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

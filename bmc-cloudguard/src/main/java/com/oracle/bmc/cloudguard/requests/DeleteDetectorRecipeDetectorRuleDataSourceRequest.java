@@ -15,24 +15,24 @@ import com.oracle.bmc.cloudguard.model.*;
 public class DeleteDetectorRecipeDetectorRuleDataSourceRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     private String detectorRecipeId;
 
-    /** DetectorRecipe OCID */
+    /** Detector recipe OCID */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
-    /** The key of Detector Rule. */
+    /** The unique identifier of a detector rule. */
     private String detectorRuleId;
 
-    /** The key of Detector Rule. */
+    /** The unique identifier of a detector rule. */
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
-    /** DataSource OCID */
+    /** Data source OCID. */
     private String dataSourceId;
 
-    /** DataSource OCID */
+    /** Data source OCID. */
     public String getDataSourceId() {
         return dataSourceId;
     }
@@ -67,11 +67,11 @@ public class DeleteDetectorRecipeDetectorRuleDataSourceRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** DetectorRecipe OCID */
+        /** Detector recipe OCID */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          *
          * @param detectorRecipeId the value to set
          * @return this builder instance
@@ -81,11 +81,11 @@ public class DeleteDetectorRecipeDetectorRuleDataSourceRequest
             return this;
         }
 
-        /** The key of Detector Rule. */
+        /** The unique identifier of a detector rule. */
         private String detectorRuleId = null;
 
         /**
-         * The key of Detector Rule.
+         * The unique identifier of a detector rule.
          *
          * @param detectorRuleId the value to set
          * @return this builder instance
@@ -95,11 +95,11 @@ public class DeleteDetectorRecipeDetectorRuleDataSourceRequest
             return this;
         }
 
-        /** DataSource OCID */
+        /** Data source OCID. */
         private String dataSourceId = null;
 
         /**
-         * DataSource OCID
+         * Data source OCID.
          *
          * @param dataSourceId the value to set
          * @return this builder instance
