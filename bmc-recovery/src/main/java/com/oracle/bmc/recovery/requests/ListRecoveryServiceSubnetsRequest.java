@@ -22,16 +22,10 @@ public class ListRecoveryServiceSubnetsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed
-     * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
-     */
+    /** A filter to return only the resources that match the specified lifecycle state. */
     private com.oracle.bmc.recovery.model.LifecycleState lifecycleState;
 
-    /**
-     * A filter to return only the resources that match the specified lifecycle state. Allowed
-     * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
-     */
+    /** A filter to return only the resources that match the specified lifecycle state. */
     public com.oracle.bmc.recovery.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -173,15 +167,11 @@ public class ListRecoveryServiceSubnetsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the specified lifecycle state. Allowed
-         * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
-         */
+        /** A filter to return only the resources that match the specified lifecycle state. */
         private com.oracle.bmc.recovery.model.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only the resources that match the specified lifecycle state. Allowed
-         * values are: - CREATING - UPDATING - ACTIVE - DELETING - DELETED - FAILED
+         * A filter to return only the resources that match the specified lifecycle state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance

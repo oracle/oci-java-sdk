@@ -91,6 +91,15 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * VM cluster.
@@ -164,6 +173,7 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                             this.freeformTags,
                             this.definedTags,
                             this.isDesupportedVersion,
+                            this.isUnifiedAuditingEnabled,
                             this.vmClusterId,
                             this.dbVersion,
                             this.database);
@@ -196,6 +206,9 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             if (model.wasPropertyExplicitlySet("isDesupportedVersion")) {
                 this.isDesupportedVersion(model.getIsDesupportedVersion());
             }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("vmClusterId")) {
                 this.vmClusterId(model.getVmClusterId());
             }
@@ -227,6 +240,7 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isDesupportedVersion,
+            Boolean isUnifiedAuditingEnabled,
             String vmClusterId,
             String dbVersion,
             CreateDatabaseDetails database) {
@@ -237,7 +251,8 @@ public final class CreateDbHomeWithVmClusterIdDetails extends CreateDbHomeBase {
                 databaseSoftwareImageId,
                 freeformTags,
                 definedTags,
-                isDesupportedVersion);
+                isDesupportedVersion,
+                isUnifiedAuditingEnabled);
         this.vmClusterId = vmClusterId;
         this.dbVersion = dbVersion;
         this.database = database;

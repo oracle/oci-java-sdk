@@ -89,6 +89,7 @@ public final class FetchProtectedDatabaseConfigurationDetails
         Cabundle("CABUNDLE"),
         Tnsnames("TNSNAMES"),
         Hosts("HOSTS"),
+        Rcvconf("RCVCONF"),
         All("ALL"),
         ;
 

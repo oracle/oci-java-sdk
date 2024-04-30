@@ -191,12 +191,12 @@ public final class MySqlDatabaseUsageMetrics
             this.__explicitlySet__.add("databaseStatus");
             return this;
         }
-        /** If HeatWave is enabled for this db system or not. */
+        /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
         private Boolean isHeatWaveEnabled;
 
         /**
-         * If HeatWave is enabled for this db system or not.
+         * Indicates whether HeatWave is enabled for the MySQL Database System or not.
          *
          * @param isHeatWaveEnabled the value to set
          * @return this builder
@@ -435,12 +435,12 @@ public final class MySqlDatabaseUsageMetrics
         return databaseStatus;
     }
 
-    /** If HeatWave is enabled for this db system or not. */
+    /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
     private final Boolean isHeatWaveEnabled;
 
     /**
-     * If HeatWave is enabled for this db system or not.
+     * Indicates whether HeatWave is enabled for the MySQL Database System or not.
      *
      * @return the value
      */

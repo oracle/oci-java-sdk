@@ -29,7 +29,8 @@ public final class MetricsSummary
         "dbSizeInGBs",
         "isRedoLogsEnabled",
         "retentionPeriodInDays",
-        "currentRetentionPeriodInSeconds"
+        "currentRetentionPeriodInSeconds",
+        "minimumRecoveryNeededInDays"
     })
     public MetricsSummary(
             Float backupSpaceUsedInGBs,
@@ -38,7 +39,8 @@ public final class MetricsSummary
             Float dbSizeInGBs,
             Boolean isRedoLogsEnabled,
             Float retentionPeriodInDays,
-            Float currentRetentionPeriodInSeconds) {
+            Float currentRetentionPeriodInSeconds,
+            Float minimumRecoveryNeededInDays) {
         super();
         this.backupSpaceUsedInGBs = backupSpaceUsedInGBs;
         this.backupSpaceEstimateInGBs = backupSpaceEstimateInGBs;
@@ -47,6 +49,7 @@ public final class MetricsSummary
         this.isRedoLogsEnabled = isRedoLogsEnabled;
         this.retentionPeriodInDays = retentionPeriodInDays;
         this.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
+        this.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -182,6 +185,21 @@ public final class MetricsSummary
             this.__explicitlySet__.add("currentRetentionPeriodInSeconds");
             return this;
         }
+        /** Number of days of redo/archive to be applied to recover database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumRecoveryNeededInDays")
+        private Float minimumRecoveryNeededInDays;
+
+        /**
+         * Number of days of redo/archive to be applied to recover database.
+         *
+         * @param minimumRecoveryNeededInDays the value to set
+         * @return this builder
+         */
+        public Builder minimumRecoveryNeededInDays(Float minimumRecoveryNeededInDays) {
+            this.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
+            this.__explicitlySet__.add("minimumRecoveryNeededInDays");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -195,7 +213,8 @@ public final class MetricsSummary
                             this.dbSizeInGBs,
                             this.isRedoLogsEnabled,
                             this.retentionPeriodInDays,
-                            this.currentRetentionPeriodInSeconds);
+                            this.currentRetentionPeriodInSeconds,
+                            this.minimumRecoveryNeededInDays);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -224,6 +243,9 @@ public final class MetricsSummary
             }
             if (model.wasPropertyExplicitlySet("currentRetentionPeriodInSeconds")) {
                 this.currentRetentionPeriodInSeconds(model.getCurrentRetentionPeriodInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("minimumRecoveryNeededInDays")) {
+                this.minimumRecoveryNeededInDays(model.getMinimumRecoveryNeededInDays());
             }
             return this;
         }
@@ -355,6 +377,19 @@ public final class MetricsSummary
         return currentRetentionPeriodInSeconds;
     }
 
+    /** Number of days of redo/archive to be applied to recover database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumRecoveryNeededInDays")
+    private final Float minimumRecoveryNeededInDays;
+
+    /**
+     * Number of days of redo/archive to be applied to recover database.
+     *
+     * @return the value
+     */
+    public Float getMinimumRecoveryNeededInDays() {
+        return minimumRecoveryNeededInDays;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -380,6 +415,8 @@ public final class MetricsSummary
         sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
         sb.append(", currentRetentionPeriodInSeconds=")
                 .append(String.valueOf(this.currentRetentionPeriodInSeconds));
+        sb.append(", minimumRecoveryNeededInDays=")
+                .append(String.valueOf(this.minimumRecoveryNeededInDays));
         sb.append(")");
         return sb.toString();
     }
@@ -404,6 +441,8 @@ public final class MetricsSummary
                 && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
                 && java.util.Objects.equals(
                         this.currentRetentionPeriodInSeconds, other.currentRetentionPeriodInSeconds)
+                && java.util.Objects.equals(
+                        this.minimumRecoveryNeededInDays, other.minimumRecoveryNeededInDays)
                 && super.equals(other);
     }
 
@@ -440,6 +479,11 @@ public final class MetricsSummary
                         + (this.currentRetentionPeriodInSeconds == null
                                 ? 43
                                 : this.currentRetentionPeriodInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumRecoveryNeededInDays == null
+                                ? 43
+                                : this.minimumRecoveryNeededInDays.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -37,6 +37,7 @@ public final class ProtectionPolicySummary
         "compartmentId",
         "backupRetentionPeriodInDays",
         "isPredefinedPolicy",
+        "policyLockedDateTime",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -51,6 +52,7 @@ public final class ProtectionPolicySummary
             String compartmentId,
             Integer backupRetentionPeriodInDays,
             Boolean isPredefinedPolicy,
+            String policyLockedDateTime,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -64,6 +66,7 @@ public final class ProtectionPolicySummary
         this.compartmentId = compartmentId;
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.isPredefinedPolicy = isPredefinedPolicy;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -152,6 +155,27 @@ public final class ProtectionPolicySummary
         public Builder isPredefinedPolicy(Boolean isPredefinedPolicy) {
             this.isPredefinedPolicy = isPredefinedPolicy;
             this.__explicitlySet__.add("isPredefinedPolicy");
+            return this;
+        }
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         */
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
             return this;
         }
         /** The time the Protection Policy was created. An RFC3339 formatted datetime string */
@@ -296,6 +320,7 @@ public final class ProtectionPolicySummary
                             this.compartmentId,
                             this.backupRetentionPeriodInDays,
                             this.isPredefinedPolicy,
+                            this.policyLockedDateTime,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -325,6 +350,9 @@ public final class ProtectionPolicySummary
             }
             if (model.wasPropertyExplicitlySet("isPredefinedPolicy")) {
                 this.isPredefinedPolicy(model.getIsPredefinedPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -427,6 +455,23 @@ public final class ProtectionPolicySummary
      */
     public Boolean getIsPredefinedPolicy() {
         return isPredefinedPolicy;
+    }
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * @return the value
+     */
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
     }
 
     /** The time the Protection Policy was created. An RFC3339 formatted datetime string */
@@ -561,6 +606,7 @@ public final class ProtectionPolicySummary
         sb.append(", backupRetentionPeriodInDays=")
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", isPredefinedPolicy=").append(String.valueOf(this.isPredefinedPolicy));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -588,6 +634,7 @@ public final class ProtectionPolicySummary
                 && java.util.Objects.equals(
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.isPredefinedPolicy, other.isPredefinedPolicy)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -617,6 +664,11 @@ public final class ProtectionPolicySummary
                         + (this.isPredefinedPolicy == null
                                 ? 43
                                 : this.isPredefinedPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

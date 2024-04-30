@@ -39,7 +39,8 @@ public final class CreateWorkspaceDetails
         "registryName",
         "registryCompartmentId",
         "endpointName",
-        "endpointCompartmentId"
+        "endpointCompartmentId",
+        "workspaceProperties"
     })
     public CreateWorkspaceDetails(
             String vcnId,
@@ -57,7 +58,8 @@ public final class CreateWorkspaceDetails
             String registryName,
             String registryCompartmentId,
             String endpointName,
-            String endpointCompartmentId) {
+            String endpointCompartmentId,
+            java.util.Map<String, String> workspaceProperties) {
         super();
         this.vcnId = vcnId;
         this.subnetId = subnetId;
@@ -75,6 +77,7 @@ public final class CreateWorkspaceDetails
         this.registryCompartmentId = registryCompartmentId;
         this.endpointName = endpointName;
         this.endpointCompartmentId = endpointCompartmentId;
+        this.workspaceProperties = workspaceProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -338,6 +341,21 @@ public final class CreateWorkspaceDetails
             this.__explicitlySet__.add("endpointCompartmentId");
             return this;
         }
+        /** Key-values pairs of workspace for storing properties on the workspace. */
+        @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+        private java.util.Map<String, String> workspaceProperties;
+
+        /**
+         * Key-values pairs of workspace for storing properties on the workspace.
+         *
+         * @param workspaceProperties the value to set
+         * @return this builder
+         */
+        public Builder workspaceProperties(java.util.Map<String, String> workspaceProperties) {
+            this.workspaceProperties = workspaceProperties;
+            this.__explicitlySet__.add("workspaceProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -360,7 +378,8 @@ public final class CreateWorkspaceDetails
                             this.registryName,
                             this.registryCompartmentId,
                             this.endpointName,
-                            this.endpointCompartmentId);
+                            this.endpointCompartmentId,
+                            this.workspaceProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -416,6 +435,9 @@ public final class CreateWorkspaceDetails
             }
             if (model.wasPropertyExplicitlySet("endpointCompartmentId")) {
                 this.endpointCompartmentId(model.getEndpointCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("workspaceProperties")) {
+                this.workspaceProperties(model.getWorkspaceProperties());
             }
             return this;
         }
@@ -656,6 +678,19 @@ public final class CreateWorkspaceDetails
         return endpointCompartmentId;
     }
 
+    /** Key-values pairs of workspace for storing properties on the workspace. */
+    @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+    private final java.util.Map<String, String> workspaceProperties;
+
+    /**
+     * Key-values pairs of workspace for storing properties on the workspace.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getWorkspaceProperties() {
+        return workspaceProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -688,6 +723,7 @@ public final class CreateWorkspaceDetails
         sb.append(", registryCompartmentId=").append(String.valueOf(this.registryCompartmentId));
         sb.append(", endpointName=").append(String.valueOf(this.endpointName));
         sb.append(", endpointCompartmentId=").append(String.valueOf(this.endpointCompartmentId));
+        sb.append(", workspaceProperties=").append(String.valueOf(this.workspaceProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -719,6 +755,7 @@ public final class CreateWorkspaceDetails
                 && java.util.Objects.equals(this.registryCompartmentId, other.registryCompartmentId)
                 && java.util.Objects.equals(this.endpointName, other.endpointName)
                 && java.util.Objects.equals(this.endpointCompartmentId, other.endpointCompartmentId)
+                && java.util.Objects.equals(this.workspaceProperties, other.workspaceProperties)
                 && super.equals(other);
     }
 
@@ -758,6 +795,11 @@ public final class CreateWorkspaceDetails
                         + (this.endpointCompartmentId == null
                                 ? 43
                                 : this.endpointCompartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workspaceProperties == null
+                                ? 43
+                                : this.workspaceProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

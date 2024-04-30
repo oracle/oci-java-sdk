@@ -1006,17 +1006,15 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The value above which an Autonomous Database will be split across multiple nodes. This
-         * value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater
-         * than 16. Otherwise, it defaults to the "CPU per VM" value.
+         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes.
+         * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
         private Integer dbSplitThreshold;
 
         /**
-         * The value above which an Autonomous Database will be split across multiple nodes. This
-         * value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater
-         * than 16. Otherwise, it defaults to the "CPU per VM" value.
+         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes.
+         * The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          *
          * @param dbSplitThreshold the value to set
          * @return this builder
@@ -1027,15 +1025,15 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of
-         * 25.
+         * The percentage of CPUs reserved across nodes to support node failover. Allowed values are
+         * 0%, 25%, and 50%, with 50% being the default option.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
         private Integer vmFailoverReservation;
 
         /**
-         * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of
-         * 25.
+         * The percentage of CPUs reserved across nodes to support node failover. Allowed values are
+         * 0%, 25%, and 50%, with 50% being the default option.
          *
          * @param vmFailoverReservation the value to set
          * @return this builder
@@ -1046,15 +1044,15 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
-         * This option determines whether to open an Autonomous Database across the maximum number
-         * of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * Determines whether an Autonomous Database must be opened across the maximum number of
+         * nodes or the least number of nodes. By default, Minimum nodes is selected.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
         private DistributionAffinity distributionAffinity;
 
         /**
-         * This option determines whether to open an Autonomous Database across the maximum number
-         * of nodes or the least number of nodes. The default will be for the minimum number of VMs.
+         * Determines whether an Autonomous Database must be opened across the maximum number of
+         * nodes or the least number of nodes. By default, Minimum nodes is selected.
          *
          * @param distributionAffinity the value to set
          * @return this builder
@@ -2380,17 +2378,15 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value
-     * defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16.
-     * Otherwise, it defaults to the "CPU per VM" value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The
+     * default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
     private final Integer dbSplitThreshold;
 
     /**
-     * The value above which an Autonomous Database will be split across multiple nodes. This value
-     * defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16.
-     * Otherwise, it defaults to the "CPU per VM" value.
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The
+     * default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      *
      * @return the value
      */
@@ -2399,13 +2395,15 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%,
+     * 25%, and 50%, with 50% being the default option.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
     private final Integer vmFailoverReservation;
 
     /**
-     * The percentage of CPUs to reserve for a single node Autonomous Database, in increments of 25.
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%,
+     * 25%, and 50%, with 50% being the default option.
      *
      * @return the value
      */
@@ -2414,8 +2412,8 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of
-     * nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across the maximum number of nodes
+     * or the least number of nodes. By default, Minimum nodes is selected.
      */
     public enum DistributionAffinity implements com.oracle.bmc.http.internal.BmcEnum {
         MinimumDistribution("MINIMUM_DISTRIBUTION"),
@@ -2463,15 +2461,15 @@ public final class AutonomousContainerDatabaseSummary
         }
     };
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of
-     * nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across the maximum number of nodes
+     * or the least number of nodes. By default, Minimum nodes is selected.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
     private final DistributionAffinity distributionAffinity;
 
     /**
-     * This option determines whether to open an Autonomous Database across the maximum number of
-     * nodes or the least number of nodes. The default will be for the minimum number of VMs.
+     * Determines whether an Autonomous Database must be opened across the maximum number of nodes
+     * or the least number of nodes. By default, Minimum nodes is selected.
      *
      * @return the value
      */

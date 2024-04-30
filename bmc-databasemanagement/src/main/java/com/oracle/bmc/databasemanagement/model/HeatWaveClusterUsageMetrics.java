@@ -77,12 +77,12 @@ public final class HeatWaveClusterUsageMetrics
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The OCID for the DB system associated with the HeatWave cluster. */
+        /** The OCID of the MySQL Database System associated with the HeatWave cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The OCID for the DB system associated with the HeatWave cluster.
+         * The OCID of the MySQL Database System associated with the HeatWave cluster.
          *
          * @param dbSystemId the value to set
          * @return this builder
@@ -92,12 +92,12 @@ public final class HeatWaveClusterUsageMetrics
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-        /** The name of the DB system associated with the HeatWave cluster. */
+        /** The name of the MySQL Database System associated with the HeatWave cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemName")
         private String dbSystemName;
 
         /**
-         * The name of the DB system associated with the HeatWave cluster.
+         * The name of the MySQL Database System associated with the HeatWave cluster.
          *
          * @param dbSystemName the value to set
          * @return this builder
@@ -122,12 +122,12 @@ public final class HeatWaveClusterUsageMetrics
             this.__explicitlySet__.add("heatWaveClusterDisplayName");
             return this;
         }
-        /** Number of nodes in the HeatWave cluster. */
+        /** The number of nodes in the HeatWave cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
-         * Number of nodes in the HeatWave cluster.
+         * The number of nodes in the HeatWave cluster.
          *
          * @param nodeCount the value to set
          * @return this builder
@@ -137,12 +137,12 @@ public final class HeatWaveClusterUsageMetrics
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** If Lakehouse is enabled for the HeatWave cluster or not. */
+        /** Indicates whether Lakehouse is enabled for the HeatWave cluster or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
         private Boolean isLakehouseEnabled;
 
         /**
-         * If Lakehouse is enabled for the HeatWave cluster or not.
+         * Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
          *
          * @param isLakehouseEnabled the value to set
          * @return this builder
@@ -152,12 +152,12 @@ public final class HeatWaveClusterUsageMetrics
             this.__explicitlySet__.add("isLakehouseEnabled");
             return this;
         }
-        /** Shape of the nodes in the HeatWave cluster. */
+        /** The shape of the nodes in the HeatWave cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
         private String heatWaveNodeShape;
 
         /**
-         * Shape of the nodes in the HeatWave cluster.
+         * The shape of the nodes in the HeatWave cluster.
          *
          * @param heatWaveNodeShape the value to set
          * @return this builder
@@ -182,12 +182,12 @@ public final class HeatWaveClusterUsageMetrics
             this.__explicitlySet__.add("memorySize");
             return this;
         }
-        /** A list of the database health metrics like CPU and Memory. */
+        /** A list of the HeatWave cluster health metrics like CPU and Memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<HeatWaveFleetMetricDefinition> metrics;
 
         /**
-         * A list of the database health metrics like CPU and Memory.
+         * A list of the HeatWave cluster health metrics like CPU and Memory.
          *
          * @param metrics the value to set
          * @return this builder
@@ -278,12 +278,12 @@ public final class HeatWaveClusterUsageMetrics
         return status;
     }
 
-    /** The OCID for the DB system associated with the HeatWave cluster. */
+    /** The OCID of the MySQL Database System associated with the HeatWave cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The OCID for the DB system associated with the HeatWave cluster.
+     * The OCID of the MySQL Database System associated with the HeatWave cluster.
      *
      * @return the value
      */
@@ -291,12 +291,12 @@ public final class HeatWaveClusterUsageMetrics
         return dbSystemId;
     }
 
-    /** The name of the DB system associated with the HeatWave cluster. */
+    /** The name of the MySQL Database System associated with the HeatWave cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemName")
     private final String dbSystemName;
 
     /**
-     * The name of the DB system associated with the HeatWave cluster.
+     * The name of the MySQL Database System associated with the HeatWave cluster.
      *
      * @return the value
      */
@@ -317,12 +317,12 @@ public final class HeatWaveClusterUsageMetrics
         return heatWaveClusterDisplayName;
     }
 
-    /** Number of nodes in the HeatWave cluster. */
+    /** The number of nodes in the HeatWave cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * Number of nodes in the HeatWave cluster.
+     * The number of nodes in the HeatWave cluster.
      *
      * @return the value
      */
@@ -330,12 +330,12 @@ public final class HeatWaveClusterUsageMetrics
         return nodeCount;
     }
 
-    /** If Lakehouse is enabled for the HeatWave cluster or not. */
+    /** Indicates whether Lakehouse is enabled for the HeatWave cluster or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
     private final Boolean isLakehouseEnabled;
 
     /**
-     * If Lakehouse is enabled for the HeatWave cluster or not.
+     * Indicates whether Lakehouse is enabled for the HeatWave cluster or not.
      *
      * @return the value
      */
@@ -343,12 +343,12 @@ public final class HeatWaveClusterUsageMetrics
         return isLakehouseEnabled;
     }
 
-    /** Shape of the nodes in the HeatWave cluster. */
+    /** The shape of the nodes in the HeatWave cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
     private final String heatWaveNodeShape;
 
     /**
-     * Shape of the nodes in the HeatWave cluster.
+     * The shape of the nodes in the HeatWave cluster.
      *
      * @return the value
      */
@@ -369,12 +369,12 @@ public final class HeatWaveClusterUsageMetrics
         return memorySize;
     }
 
-    /** A list of the database health metrics like CPU and Memory. */
+    /** A list of the HeatWave cluster health metrics like CPU and Memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<HeatWaveFleetMetricDefinition> metrics;
 
     /**
-     * A list of the database health metrics like CPU and Memory.
+     * A list of the HeatWave cluster health metrics like CPU and Memory.
      *
      * @return the value
      */

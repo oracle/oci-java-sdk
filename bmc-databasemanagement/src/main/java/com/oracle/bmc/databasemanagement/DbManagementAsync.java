@@ -8,9 +8,9 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
- * Use the Database Management API to perform tasks such as obtaining performance and resource usage
- * metrics for a fleet of Managed Databases or a specific Managed Database, creating Managed
- * Database Groups, and running a SQL job on a Managed Database or Managed Database Group.
+ * Use the Database Management API to monitor and manage resources such as Oracle Databases, MySQL
+ * Databases, and External Database Systems. For more information, see [Database
+ * Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public interface DbManagementAsync extends AutoCloseable {
@@ -760,6 +760,42 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disables a Database Management feature for the specified Oracle cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableDatabaseManagementFeatureResponse>
+            disableDatabaseManagementFeature(
+                    DisableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableDatabaseManagementFeatureRequest,
+                                    DisableDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
+     * Disables a Database Management feature for the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalContainerDatabaseManagementFeatureResponse>
+            disableExternalContainerDatabaseManagementFeature(
+                    DisableExternalContainerDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalContainerDatabaseManagementFeatureRequest,
+                                    DisableExternalContainerDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
      * Disables Database Management service for all the components of the specified external DB
      * system (except databases).
      *
@@ -822,6 +858,42 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disables a Database Management feature for the specified external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalNonContainerDatabaseManagementFeatureResponse>
+            disableExternalNonContainerDatabaseManagementFeature(
+                    DisableExternalNonContainerDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalNonContainerDatabaseManagementFeatureRequest,
+                                    DisableExternalNonContainerDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
+     * Disables a Database Management feature for the specified external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalPluggableDatabaseManagementFeatureResponse>
+            disableExternalPluggableDatabaseManagementFeature(
+                    DisableExternalPluggableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalPluggableDatabaseManagementFeatureRequest,
+                                    DisableExternalPluggableDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
      * Disables the high-frequency Automatic SPM Evolve Advisor task.
      *
      * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
@@ -840,6 +912,24 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest,
                                     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler);
+
+    /**
+     * Disables a Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisablePluggableDatabaseManagementFeatureResponse>
+            disablePluggableDatabaseManagementFeature(
+                    DisablePluggableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisablePluggableDatabaseManagementFeatureRequest,
+                                    DisablePluggableDatabaseManagementFeatureResponse>
                             handler);
 
     /**
@@ -985,6 +1075,42 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enables a Database Management feature for the specified cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableDatabaseManagementFeatureResponse>
+            enableDatabaseManagementFeature(
+                    EnableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableDatabaseManagementFeatureRequest,
+                                    EnableDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
+     * Enables a Database Management feature for the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalContainerDatabaseManagementFeatureResponse>
+            enableExternalContainerDatabaseManagementFeature(
+                    EnableExternalContainerDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalContainerDatabaseManagementFeatureRequest,
+                                    EnableExternalContainerDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
      * Enables Database Management service for all the components of the specified external DB
      * system (except databases).
      *
@@ -1044,6 +1170,42 @@ public interface DbManagementAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Enables Database Management feature for the specified external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalNonContainerDatabaseManagementFeatureResponse>
+            enableExternalNonContainerDatabaseManagementFeature(
+                    EnableExternalNonContainerDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalNonContainerDatabaseManagementFeatureRequest,
+                                    EnableExternalNonContainerDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
+     * Enables a Database Management feature for the specified external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalPluggableDatabaseManagementFeatureResponse>
+            enableExternalPluggableDatabaseManagementFeature(
+                    EnableExternalPluggableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalPluggableDatabaseManagementFeatureRequest,
+                                    EnableExternalPluggableDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
      * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency task runs
      * every hour and runs for no longer than 30 minutes. These settings are not configurable.
      *
@@ -1066,6 +1228,24 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest,
                                     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse>
+                            handler);
+
+    /**
+     * Enables a Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnablePluggableDatabaseManagementFeatureResponse>
+            enablePluggableDatabaseManagementFeature(
+                    EnablePluggableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnablePluggableDatabaseManagementFeatureRequest,
+                                    EnablePluggableDatabaseManagementFeatureResponse>
                             handler);
 
     /**
@@ -2661,6 +2841,42 @@ public interface DbManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     LoadSqlPlanBaselinesFromCursorCacheRequest,
                                     LoadSqlPlanBaselinesFromCursorCacheResponse>
+                            handler);
+
+    /**
+     * Modifies a Database Management feature for the specified Oracle cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ModifyDatabaseManagementFeatureResponse>
+            modifyDatabaseManagementFeature(
+                    ModifyDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyDatabaseManagementFeatureRequest,
+                                    ModifyDatabaseManagementFeatureResponse>
+                            handler);
+
+    /**
+     * Modifies the Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ModifyPluggableDatabaseManagementFeatureResponse>
+            modifyPluggableDatabaseManagementFeature(
+                    ModifyPluggableDatabaseManagementFeatureRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyPluggableDatabaseManagementFeatureRequest,
+                                    ModifyPluggableDatabaseManagementFeatureResponse>
                             handler);
 
     /**

@@ -42,7 +42,8 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         "id",
         "endpointId",
         "endpointName",
-        "registryId"
+        "registryId",
+        "workspaceProperties"
     })
     public Workspace(
             String vcnId,
@@ -62,7 +63,8 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
             String id,
             String endpointId,
             String endpointName,
-            String registryId) {
+            String registryId,
+            java.util.Map<String, String> workspaceProperties) {
         super();
         this.vcnId = vcnId;
         this.subnetId = subnetId;
@@ -82,6 +84,7 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         this.endpointId = endpointId;
         this.endpointName = endpointName;
         this.registryId = registryId;
+        this.workspaceProperties = workspaceProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -407,6 +410,21 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("registryId");
             return this;
         }
+        /** key-value pairs of workspace properties */
+        @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+        private java.util.Map<String, String> workspaceProperties;
+
+        /**
+         * key-value pairs of workspace properties
+         *
+         * @param workspaceProperties the value to set
+         * @return this builder
+         */
+        public Builder workspaceProperties(java.util.Map<String, String> workspaceProperties) {
+            this.workspaceProperties = workspaceProperties;
+            this.__explicitlySet__.add("workspaceProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -431,7 +449,8 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
                             this.id,
                             this.endpointId,
                             this.endpointName,
-                            this.registryId);
+                            this.registryId,
+                            this.workspaceProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -493,6 +512,9 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("registryId")) {
                 this.registryId(model.getRegistryId());
+            }
+            if (model.wasPropertyExplicitlySet("workspaceProperties")) {
+                this.workspaceProperties(model.getWorkspaceProperties());
             }
             return this;
         }
@@ -852,6 +874,19 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         return registryId;
     }
 
+    /** key-value pairs of workspace properties */
+    @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+    private final java.util.Map<String, String> workspaceProperties;
+
+    /**
+     * key-value pairs of workspace properties
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getWorkspaceProperties() {
+        return workspaceProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -886,6 +921,7 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", endpointId=").append(String.valueOf(this.endpointId));
         sb.append(", endpointName=").append(String.valueOf(this.endpointName));
         sb.append(", registryId=").append(String.valueOf(this.registryId));
+        sb.append(", workspaceProperties=").append(String.valueOf(this.workspaceProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -919,6 +955,7 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.endpointId, other.endpointId)
                 && java.util.Objects.equals(this.endpointName, other.endpointName)
                 && java.util.Objects.equals(this.registryId, other.registryId)
+                && java.util.Objects.equals(this.workspaceProperties, other.workspaceProperties)
                 && super.equals(other);
     }
 
@@ -954,6 +991,11 @@ public final class Workspace extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result = (result * PRIME) + (this.endpointName == null ? 43 : this.endpointName.hashCode());
         result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workspaceProperties == null
+                                ? 43
+                                : this.workspaceProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

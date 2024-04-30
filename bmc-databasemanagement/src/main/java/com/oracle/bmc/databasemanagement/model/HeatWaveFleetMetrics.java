@@ -84,15 +84,15 @@ public final class HeatWaveFleetMetrics
             return this;
         }
         /**
-         * A summary of the inventory count and the metrics that describe the aggregated usage of
-         * CPU, storage, and so on of all the HeatWave clusters in the fleet.
+         * The number of HeatWave clusters in the fleet and a summary of the metrics that provide
+         * the aggregated usage of CPU, storage, and so on of all the clusters.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("fleetSummary")
         private java.util.List<HeatWaveFleetSummary> fleetSummary;
 
         /**
-         * A summary of the inventory count and the metrics that describe the aggregated usage of
-         * CPU, storage, and so on of all the HeatWave clusters in the fleet.
+         * The number of HeatWave clusters in the fleet and a summary of the metrics that provide
+         * the aggregated usage of CPU, storage, and so on of all the clusters.
          *
          * @param fleetSummary the value to set
          * @return this builder
@@ -183,15 +183,15 @@ public final class HeatWaveFleetMetrics
     }
 
     /**
-     * A summary of the inventory count and the metrics that describe the aggregated usage of CPU,
-     * storage, and so on of all the HeatWave clusters in the fleet.
+     * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the
+     * aggregated usage of CPU, storage, and so on of all the clusters.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("fleetSummary")
     private final java.util.List<HeatWaveFleetSummary> fleetSummary;
 
     /**
-     * A summary of the inventory count and the metrics that describe the aggregated usage of CPU,
-     * storage, and so on of all the HeatWave clusters in the fleet.
+     * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the
+     * aggregated usage of CPU, storage, and so on of all the clusters.
      *
      * @return the value
      */

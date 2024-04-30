@@ -69,7 +69,8 @@ public final class CloudVmCluster
         "zoneId",
         "scanListenerPortTcp",
         "scanListenerPortTcpSsl",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "giSoftwareImageId"
     })
     public CloudVmCluster(
             ExadataIormConfig iormConfigCache,
@@ -118,7 +119,8 @@ public final class CloudVmCluster
             String zoneId,
             Integer scanListenerPortTcp,
             Integer scanListenerPortTcpSsl,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String giSoftwareImageId) {
         super();
         this.iormConfigCache = iormConfigCache;
         this.id = id;
@@ -167,6 +169,7 @@ public final class CloudVmCluster
         this.scanListenerPortTcp = scanListenerPortTcp;
         this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.giSoftwareImageId = giSoftwareImageId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1047,6 +1050,27 @@ public final class CloudVmCluster
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         *
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1100,7 +1124,8 @@ public final class CloudVmCluster
                             this.zoneId,
                             this.scanListenerPortTcp,
                             this.scanListenerPortTcpSsl,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.giSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1249,6 +1274,9 @@ public final class CloudVmCluster
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
             }
             return this;
         }
@@ -2185,6 +2213,25 @@ public final class CloudVmCluster
         return dataCollectionOptions;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     *
+     * @return the value
+     */
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2250,6 +2297,7 @@ public final class CloudVmCluster
         sb.append(", scanListenerPortTcp=").append(String.valueOf(this.scanListenerPortTcp));
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -2316,6 +2364,7 @@ public final class CloudVmCluster
                 && java.util.Objects.equals(
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && super.equals(other);
     }
 
@@ -2440,6 +2489,9 @@ public final class CloudVmCluster
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -27,6 +27,7 @@ public final class CreateProtectionPolicyDetails
         "displayName",
         "backupRetentionPeriodInDays",
         "compartmentId",
+        "policyLockedDateTime",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class CreateProtectionPolicyDetails
             String displayName,
             Integer backupRetentionPeriodInDays,
             String compartmentId,
+            String policyLockedDateTime,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.compartmentId = compartmentId;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -96,6 +99,51 @@ public final class CreateProtectionPolicyDetails
             return this;
         }
         /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. * Recovery Service enforces a 14-day delay before the retention lock
+         * set for a policy can take effect. Therefore, you must set policyLockedDateTime to a date
+         * that occurs 14 days after the current date. * For example, assuming that the current date
+         * is Aug 1, 2023 9 pm, you can set policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug
+         * 15, 2023, 9:00 pm), or greater. * During the 14-day delay period, you can either increase
+         * or decrease the retention period in the policy. * However, you are only allowed to
+         * increase the retention period on or after the retention lock date. * You cannot change
+         * the value of policyLockedDateTime if the retention lock is already in effect.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the
+         * retention lock to take effect and permanently lock the retention period defined in the
+         * policy.
+         *
+         * <p>The retention lock feature controls whether Recovery Service strictly preserves
+         * backups for the duration defined in a policy. Retention lock is useful to enforce
+         * recovery window compliance and to prevent unintentional modifications to protected
+         * database backups. * Recovery Service enforces a 14-day delay before the retention lock
+         * set for a policy can take effect. Therefore, you must set policyLockedDateTime to a date
+         * that occurs 14 days after the current date. * For example, assuming that the current date
+         * is Aug 1, 2023 9 pm, you can set policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug
+         * 15, 2023, 9:00 pm), or greater. * During the 14-day delay period, you can either increase
+         * or decrease the retention period in the policy. * However, you are only allowed to
+         * increase the retention period on or after the retention lock date. * You cannot change
+         * the value of policyLockedDateTime if the retention lock is already in effect.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         */
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -148,6 +196,7 @@ public final class CreateProtectionPolicyDetails
                             this.displayName,
                             this.backupRetentionPeriodInDays,
                             this.compartmentId,
+                            this.policyLockedDateTime,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -166,6 +215,9 @@ public final class CreateProtectionPolicyDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -230,6 +282,47 @@ public final class CreateProtectionPolicyDetails
     }
 
     /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. *
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take
+     * effect. Therefore, you must set policyLockedDateTime to a date that occurs 14 days after the
+     * current date. * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set
+     * policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater. *
+     * During the 14-day delay period, you can either increase or decrease the retention period in
+     * the policy. * However, you are only allowed to increase the retention period on or after the
+     * retention lock date. * You cannot change the value of policyLockedDateTime if the retention
+     * lock is already in effect.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
+     * lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
+     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
+     * compliance and to prevent unintentional modifications to protected database backups. *
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take
+     * effect. Therefore, you must set policyLockedDateTime to a date that occurs 14 days after the
+     * current date. * For example, assuming that the current date is Aug 1, 2023 9 pm, you can set
+     * policyLockedDateTime to '2023-08-15T21:00:00.600Z' (Aug 15, 2023, 9:00 pm), or greater. *
+     * During the 14-day delay period, you can either increase or decrease the retention period in
+     * the policy. * However, you are only allowed to increase the retention period on or after the
+     * retention lock date. * You cannot change the value of policyLockedDateTime if the retention
+     * lock is already in effect.
+     *
+     * @return the value
+     */
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -284,6 +377,7 @@ public final class CreateProtectionPolicyDetails
         sb.append(", backupRetentionPeriodInDays=")
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -304,6 +398,7 @@ public final class CreateProtectionPolicyDetails
                 && java.util.Objects.equals(
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -322,6 +417,11 @@ public final class CreateProtectionPolicyDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

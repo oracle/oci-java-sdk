@@ -24,17 +24,25 @@ package com.oracle.bmc.dataintegration.model;
 public final class UpdateWorkspaceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"freeformTags", "definedTags", "description", "displayName"})
+    @java.beans.ConstructorProperties({
+        "freeformTags",
+        "definedTags",
+        "description",
+        "displayName",
+        "workspaceProperties"
+    })
     public UpdateWorkspaceDetails(
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String description,
-            String displayName) {
+            String displayName,
+            java.util.Map<String, String> workspaceProperties) {
         super();
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.description = description;
         this.displayName = displayName;
+        this.workspaceProperties = workspaceProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -118,6 +126,21 @@ public final class UpdateWorkspaceDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /** Key-values pairs of workspace for storing properties on the workspace. */
+        @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+        private java.util.Map<String, String> workspaceProperties;
+
+        /**
+         * Key-values pairs of workspace for storing properties on the workspace.
+         *
+         * @param workspaceProperties the value to set
+         * @return this builder
+         */
+        public Builder workspaceProperties(java.util.Map<String, String> workspaceProperties) {
+            this.workspaceProperties = workspaceProperties;
+            this.__explicitlySet__.add("workspaceProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -128,7 +151,8 @@ public final class UpdateWorkspaceDetails
                             this.freeformTags,
                             this.definedTags,
                             this.description,
-                            this.displayName);
+                            this.displayName,
+                            this.workspaceProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -148,6 +172,9 @@ public final class UpdateWorkspaceDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("workspaceProperties")) {
+                this.workspaceProperties(model.getWorkspaceProperties());
             }
             return this;
         }
@@ -232,6 +259,19 @@ public final class UpdateWorkspaceDetails
         return displayName;
     }
 
+    /** Key-values pairs of workspace for storing properties on the workspace. */
+    @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+    private final java.util.Map<String, String> workspaceProperties;
+
+    /**
+     * Key-values pairs of workspace for storing properties on the workspace.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getWorkspaceProperties() {
+        return workspaceProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -251,6 +291,7 @@ public final class UpdateWorkspaceDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", workspaceProperties=").append(String.valueOf(this.workspaceProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -269,6 +310,7 @@ public final class UpdateWorkspaceDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.workspaceProperties, other.workspaceProperties)
                 && super.equals(other);
     }
 
@@ -280,6 +322,11 @@ public final class UpdateWorkspaceDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workspaceProperties == null
+                                ? 43
+                                : this.workspaceProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

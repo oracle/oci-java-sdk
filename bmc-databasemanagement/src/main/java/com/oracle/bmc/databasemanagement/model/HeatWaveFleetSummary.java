@@ -5,8 +5,8 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of the inventory count and the metrics that describe the aggregated usage of CPU,
- * storage, and so on of all the HeatWave clusters in the fleet. <br>
+ * The inventory count of HeatWave clusters in the fleet and a summary of the metrics that provide
+ * the aggregated usage of CPU, storage, and so on of all the clusters. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,12 +35,12 @@ public final class HeatWaveFleetSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The usage metrics for the Managed HeatWave clusters in the fleet. */
+        /** The usage metrics for the HeatWave clusters in the fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedMetrics")
         private java.util.List<HeatWaveFleetMetricSummaryDefinition> aggregatedMetrics;
 
         /**
-         * The usage metrics for the Managed HeatWave clusters in the fleet.
+         * The usage metrics for the HeatWave clusters in the fleet.
          *
          * @param aggregatedMetrics the value to set
          * @return this builder
@@ -51,12 +51,16 @@ public final class HeatWaveFleetSummary
             this.__explicitlySet__.add("aggregatedMetrics");
             return this;
         }
-        /** Summary counts of HeatWave clusters in the fleet grouped by cluster type. */
+        /**
+         * The number of HeatWave clusters in the fleet, grouped by cluster type or other
+         * properties.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("inventory")
         private java.util.List<HeatWaveFleetByCategory> inventory;
 
         /**
-         * Summary counts of HeatWave clusters in the fleet grouped by cluster type.
+         * The number of HeatWave clusters in the fleet, grouped by cluster type or other
+         * properties.
          *
          * @param inventory the value to set
          * @return this builder
@@ -100,12 +104,12 @@ public final class HeatWaveFleetSummary
         return new Builder().copy(this);
     }
 
-    /** The usage metrics for the Managed HeatWave clusters in the fleet. */
+    /** The usage metrics for the HeatWave clusters in the fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedMetrics")
     private final java.util.List<HeatWaveFleetMetricSummaryDefinition> aggregatedMetrics;
 
     /**
-     * The usage metrics for the Managed HeatWave clusters in the fleet.
+     * The usage metrics for the HeatWave clusters in the fleet.
      *
      * @return the value
      */
@@ -113,12 +117,14 @@ public final class HeatWaveFleetSummary
         return aggregatedMetrics;
     }
 
-    /** Summary counts of HeatWave clusters in the fleet grouped by cluster type. */
+    /**
+     * The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("inventory")
     private final java.util.List<HeatWaveFleetByCategory> inventory;
 
     /**
-     * Summary counts of HeatWave clusters in the fleet grouped by cluster type.
+     * The number of HeatWave clusters in the fleet, grouped by cluster type or other properties.
      *
      * @return the value
      */

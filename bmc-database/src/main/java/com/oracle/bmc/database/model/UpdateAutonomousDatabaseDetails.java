@@ -319,21 +319,29 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
-         * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
-         * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to
-         * use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For
-         * ADB-Dev , memory and CPU cannot be scaled
+         * Autonomous Database for Developers are free Autonomous Databases that developers can use
+         * to build and test new applications.With Autonomous these database instancess instances,
+         * you can try new Autonomous Database features for free and apply them to ongoing or new
+         * development projects. Developer database comes with limited resources and is, therefore,
+         * not suitable for large-scale testing and production deployments. When you need more
+         * compute or storage resources, you can transition to a paid database licensing by cloning
+         * your developer database into a regular Autonomous Database. See [Autonomous Database
+         * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
+         * for more details.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
         private Boolean isDevTier;
 
         /**
-         * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
-         * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
-         * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to
-         * use ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For
-         * ADB-Dev , memory and CPU cannot be scaled
+         * Autonomous Database for Developers are free Autonomous Databases that developers can use
+         * to build and test new applications.With Autonomous these database instancess instances,
+         * you can try new Autonomous Database features for free and apply them to ongoing or new
+         * development projects. Developer database comes with limited resources and is, therefore,
+         * not suitable for large-scale testing and production deployments. When you need more
+         * compute or storage resources, you can transition to a paid database licensing by cloning
+         * your developer database into a regular Autonomous Database. See [Autonomous Database
+         * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
+         * for more details.
          *
          * @param isDevTier the value to set
          * @return this builder
@@ -1572,7 +1580,8 @@ public final class UpdateAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The Oracle Database Edition that applies to the Autonomous databases.
+         * The Oracle Database Edition that applies to the Autonomous databases. This parameter
+         * accepts options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
@@ -1583,7 +1592,8 @@ public final class UpdateAutonomousDatabaseDetails
         private AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
         /**
-         * The Oracle Database Edition that applies to the Autonomous databases.
+         * The Oracle Database Edition that applies to the Autonomous databases. This parameter
+         * accepts options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
          *
          * <p>This cannot be updated in parallel with any of the following: cpuCoreCount,
          * computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired,
@@ -2043,21 +2053,29 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
-     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
-     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
-     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
-     * , memory and CPU cannot be scaled
+     * Autonomous Database for Developers are free Autonomous Databases that developers can use to
+     * build and test new applications.With Autonomous these database instancess instances, you can
+     * try new Autonomous Database features for free and apply them to ongoing or new development
+     * projects. Developer database comes with limited resources and is, therefore, not suitable for
+     * large-scale testing and production deployments. When you need more compute or storage
+     * resources, you can transition to a paid database licensing by cloning your developer database
+     * into a regular Autonomous Database. See [Autonomous Database
+     * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
+     * for more details.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
     private final Boolean isDevTier;
 
     /**
-     * This project introduces Autonomous Database for Developers (ADB-Dev), a free tier on
-     * dedicated infrastructure, and Cloud@Customer for database development purposes. ADB-Dev
-     * enables ExaDB customers to experiment with ADB for free and incentivizes enterprises to use
-     * ADB for new development projects.Note that ADB-Dev have 4 CPU and 20GB of memory. For ADB-Dev
-     * , memory and CPU cannot be scaled
+     * Autonomous Database for Developers are free Autonomous Databases that developers can use to
+     * build and test new applications.With Autonomous these database instancess instances, you can
+     * try new Autonomous Database features for free and apply them to ongoing or new development
+     * projects. Developer database comes with limited resources and is, therefore, not suitable for
+     * large-scale testing and production deployments. When you need more compute or storage
+     * resources, you can transition to a paid database licensing by cloning your developer database
+     * into a regular Autonomous Database. See [Autonomous Database
+     * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
+     * for more details.
      *
      * @return the value
      */
@@ -3391,7 +3409,8 @@ public final class UpdateAutonomousDatabaseDetails
     }
 
     /**
-     * The Oracle Database Edition that applies to the Autonomous databases.
+     * The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts
+     * options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload,
@@ -3402,7 +3421,8 @@ public final class UpdateAutonomousDatabaseDetails
     private final AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database Edition that applies to the Autonomous databases.
+     * The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts
+     * options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
      *
      * <p>This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount,
      * computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload,

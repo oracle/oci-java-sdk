@@ -52,7 +52,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         "databaseSoftwareImageId",
         "freeformTags",
         "definedTags",
-        "isDesupportedVersion"
+        "isDesupportedVersion",
+        "isUnifiedAuditingEnabled"
     })
     protected CreateDbHomeBase(
             String displayName,
@@ -61,7 +62,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
             String databaseSoftwareImageId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Boolean isDesupportedVersion) {
+            Boolean isDesupportedVersion,
+            Boolean isUnifiedAuditingEnabled) {
         super();
         this.displayName = displayName;
         this.kmsKeyId = kmsKeyId;
@@ -70,6 +72,7 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isDesupportedVersion = isDesupportedVersion;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
     /** The user-provided name of the Database Home. */
@@ -201,6 +204,23 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         return isDesupportedVersion;
     }
 
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
+     * on respective DBHome.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
+     * on respective DBHome.
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -224,6 +244,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isDesupportedVersion=").append(String.valueOf(this.isDesupportedVersion));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -246,6 +268,8 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isDesupportedVersion, other.isDesupportedVersion)
+                && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && super.equals(other);
     }
 
@@ -270,6 +294,11 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
                         + (this.isDesupportedVersion == null
                                 ? 43
                                 : this.isDesupportedVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

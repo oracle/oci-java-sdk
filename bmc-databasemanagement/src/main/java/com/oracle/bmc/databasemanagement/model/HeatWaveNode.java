@@ -65,12 +65,12 @@ public final class HeatWaveNode extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The date and time the node was created. */
+        /** The date and time the HeatWave node was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the node was created.
+         * The date and time the HeatWave node was created.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class HeatWaveNode extends com.oracle.bmc.http.client.internal.Expl
         return status;
     }
 
-    /** The date and time the node was created. */
+    /** The date and time the HeatWave node was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the node was created.
+     * The date and time the HeatWave node was created.
      *
      * @return the value
      */

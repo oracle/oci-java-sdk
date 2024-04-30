@@ -1391,6 +1391,7 @@ public final class LoadSqlTuningSetDetails
     public enum UpdateCondition implements com.oracle.bmc.http.internal.BmcEnum {
         Old("OLD"),
         New("NEW"),
+        Null("NULL"),
         ;
 
         private final String value;
