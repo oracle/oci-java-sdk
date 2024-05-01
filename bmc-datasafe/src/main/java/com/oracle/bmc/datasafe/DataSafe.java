@@ -367,6 +367,24 @@ public interface DataSafe extends AutoCloseable {
             ChangeMaskingPolicyCompartmentRequest request);
 
     /**
+     * Moves the specified masking policy health report and its dependent resources into a different
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeMaskingPolicyHealthReportCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeMaskingPolicyHealthReportCompartment API.
+     */
+    ChangeMaskingPolicyHealthReportCompartmentResponse changeMaskingPolicyHealthReportCompartment(
+            ChangeMaskingPolicyHealthReportCompartmentRequest request);
+
+    /**
      * Moves the specified on-premises connector into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -1190,6 +1208,23 @@ public interface DataSafe extends AutoCloseable {
     DeleteMaskingPolicyResponse deleteMaskingPolicy(DeleteMaskingPolicyRequest request);
 
     /**
+     * Deletes the specified masking policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteMaskingPolicyHealthReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteMaskingPolicyHealthReport API.
+     */
+    DeleteMaskingPolicyHealthReportResponse deleteMaskingPolicyHealthReport(
+            DeleteMaskingPolicyHealthReportRequest request);
+
+    /**
      * Deletes the specified on-premises connector.
      *
      * @param request The request object containing the details to send
@@ -1620,6 +1655,22 @@ public interface DataSafe extends AutoCloseable {
      */
     GenerateDiscoveryReportForDownloadResponse generateDiscoveryReportForDownload(
             GenerateDiscoveryReportForDownloadRequest request);
+
+    /**
+     * Performs health check on the masking policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateHealthReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GenerateHealthReport API.
+     */
+    GenerateHealthReportResponse generateHealthReport(GenerateHealthReportRequest request);
 
     /**
      * Generates a downloadable file corresponding to the specified masking policy. It's a
@@ -2083,6 +2134,23 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     GetMaskingPolicyResponse getMaskingPolicy(GetMaskingPolicyRequest request);
+
+    /**
+     * Gets the details of the specified masking policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetMaskingPolicyHealthReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMaskingPolicyHealthReport API.
+     */
+    GetMaskingPolicyHealthReportResponse getMaskingPolicyHealthReport(
+            GetMaskingPolicyHealthReportRequest request);
 
     /**
      * Gets the details of the specified masking report.
@@ -3189,6 +3257,40 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     ListMaskingPoliciesResponse listMaskingPolicies(ListMaskingPoliciesRequest request);
+
+    /**
+     * Gets a list of errors and warnings from a masking policy health check.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportLogsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMaskingPolicyHealthReportLogs API.
+     */
+    ListMaskingPolicyHealthReportLogsResponse listMaskingPolicyHealthReportLogs(
+            ListMaskingPolicyHealthReportLogsRequest request);
+
+    /**
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyHealthReportsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMaskingPolicyHealthReports API.
+     */
+    ListMaskingPolicyHealthReportsResponse listMaskingPolicyHealthReports(
+            ListMaskingPolicyHealthReportsRequest request);
 
     /**
      * Gets a list of masking reports based on the specified query parameters.

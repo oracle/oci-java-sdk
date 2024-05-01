@@ -25,6 +25,7 @@ public final class MySqlFleetMetricDefinition
     @Deprecated
     @java.beans.ConstructorProperties({
         "metricValue",
+        "metricValueDouble",
         "metricName",
         "timestamp",
         "dimensions",
@@ -32,12 +33,14 @@ public final class MySqlFleetMetricDefinition
     })
     public MySqlFleetMetricDefinition(
             Integer metricValue,
+            Double metricValueDouble,
             String metricName,
             java.util.Date timestamp,
             java.util.List<MetricDimensionDefinition> dimensions,
             String unit) {
         super();
         this.metricValue = metricValue;
+        this.metricValueDouble = metricValueDouble;
         this.metricName = metricName;
         this.timestamp = timestamp;
         this.dimensions = dimensions;
@@ -59,6 +62,21 @@ public final class MySqlFleetMetricDefinition
         public Builder metricValue(Integer metricValue) {
             this.metricValue = metricValue;
             this.__explicitlySet__.add("metricValue");
+            return this;
+        }
+        /** The value of the metric. */
+        @com.fasterxml.jackson.annotation.JsonProperty("metricValueDouble")
+        private Double metricValueDouble;
+
+        /**
+         * The value of the metric.
+         *
+         * @param metricValueDouble the value to set
+         * @return this builder
+         */
+        public Builder metricValueDouble(Double metricValueDouble) {
+            this.metricValueDouble = metricValueDouble;
+            this.__explicitlySet__.add("metricValueDouble");
             return this;
         }
         /** The name of the metric. */
@@ -129,6 +147,7 @@ public final class MySqlFleetMetricDefinition
             MySqlFleetMetricDefinition model =
                     new MySqlFleetMetricDefinition(
                             this.metricValue,
+                            this.metricValueDouble,
                             this.metricName,
                             this.timestamp,
                             this.dimensions,
@@ -143,6 +162,9 @@ public final class MySqlFleetMetricDefinition
         public Builder copy(MySqlFleetMetricDefinition model) {
             if (model.wasPropertyExplicitlySet("metricValue")) {
                 this.metricValue(model.getMetricValue());
+            }
+            if (model.wasPropertyExplicitlySet("metricValueDouble")) {
+                this.metricValueDouble(model.getMetricValueDouble());
             }
             if (model.wasPropertyExplicitlySet("metricName")) {
                 this.metricName(model.getMetricName());
@@ -180,6 +202,19 @@ public final class MySqlFleetMetricDefinition
      */
     public Integer getMetricValue() {
         return metricValue;
+    }
+
+    /** The value of the metric. */
+    @com.fasterxml.jackson.annotation.JsonProperty("metricValueDouble")
+    private final Double metricValueDouble;
+
+    /**
+     * The value of the metric.
+     *
+     * @return the value
+     */
+    public Double getMetricValueDouble() {
+        return metricValueDouble;
     }
 
     /** The name of the metric. */
@@ -250,6 +285,7 @@ public final class MySqlFleetMetricDefinition
         sb.append("MySqlFleetMetricDefinition(");
         sb.append("super=").append(super.toString());
         sb.append("metricValue=").append(String.valueOf(this.metricValue));
+        sb.append(", metricValueDouble=").append(String.valueOf(this.metricValueDouble));
         sb.append(", metricName=").append(String.valueOf(this.metricName));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
@@ -269,6 +305,7 @@ public final class MySqlFleetMetricDefinition
 
         MySqlFleetMetricDefinition other = (MySqlFleetMetricDefinition) o;
         return java.util.Objects.equals(this.metricValue, other.metricValue)
+                && java.util.Objects.equals(this.metricValueDouble, other.metricValueDouble)
                 && java.util.Objects.equals(this.metricName, other.metricName)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
@@ -281,6 +318,9 @@ public final class MySqlFleetMetricDefinition
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.metricValue == null ? 43 : this.metricValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metricValueDouble == null ? 43 : this.metricValueDouble.hashCode());
         result = (result * PRIME) + (this.metricName == null ? 43 : this.metricName.hashCode());
         result = (result * PRIME) + (this.timestamp == null ? 43 : this.timestamp.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());

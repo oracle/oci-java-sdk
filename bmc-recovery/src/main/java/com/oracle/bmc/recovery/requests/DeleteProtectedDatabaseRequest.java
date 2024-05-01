@@ -23,6 +23,25 @@ public class DeleteProtectedDatabaseRequest
         return protectedDatabaseId;
     }
     /**
+     * Defines a preferred schedule to delete a protected database after you terminate the source
+     * database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can
+     * occur 72 hours (3 days) after the source database is terminated . * The alternate schedule is
+     * DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database
+     * only after the policy-defined backup retention period expires.
+     */
+    private com.oracle.bmc.recovery.model.DeletionSchedule deletionSchedule;
+
+    /**
+     * Defines a preferred schedule to delete a protected database after you terminate the source
+     * database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can
+     * occur 72 hours (3 days) after the source database is terminated . * The alternate schedule is
+     * DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database
+     * only after the policy-defined backup retention period expires.
+     */
+    public com.oracle.bmc.recovery.model.DeletionSchedule getDeletionSchedule() {
+        return deletionSchedule;
+    }
+    /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
      * if-match} parameter to the value of the etag from a previous GET or POST response for that
      * resource. The resource will be updated or deleted only if the etag you provide matches the
@@ -64,6 +83,33 @@ public class DeleteProtectedDatabaseRequest
          */
         public Builder protectedDatabaseId(String protectedDatabaseId) {
             this.protectedDatabaseId = protectedDatabaseId;
+            return this;
+        }
+
+        /**
+         * Defines a preferred schedule to delete a protected database after you terminate the
+         * source database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete
+         * operation can occur 72 hours (3 days) after the source database is terminated . * The
+         * alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to
+         * delete a protected database only after the policy-defined backup retention period
+         * expires.
+         */
+        private com.oracle.bmc.recovery.model.DeletionSchedule deletionSchedule = null;
+
+        /**
+         * Defines a preferred schedule to delete a protected database after you terminate the
+         * source database. * The default schedule is DELETE_AFTER_72_HOURS, so that the delete
+         * operation can occur 72 hours (3 days) after the source database is terminated . * The
+         * alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to
+         * delete a protected database only after the policy-defined backup retention period
+         * expires.
+         *
+         * @param deletionSchedule the value to set
+         * @return this builder instance
+         */
+        public Builder deletionSchedule(
+                com.oracle.bmc.recovery.model.DeletionSchedule deletionSchedule) {
+            this.deletionSchedule = deletionSchedule;
             return this;
         }
 
@@ -134,6 +180,7 @@ public class DeleteProtectedDatabaseRequest
          */
         public Builder copy(DeleteProtectedDatabaseRequest o) {
             protectedDatabaseId(o.getProtectedDatabaseId());
+            deletionSchedule(o.getDeletionSchedule());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -171,10 +218,12 @@ public class DeleteProtectedDatabaseRequest
         public DeleteProtectedDatabaseRequest buildWithoutInvocationCallback() {
             DeleteProtectedDatabaseRequest request = new DeleteProtectedDatabaseRequest();
             request.protectedDatabaseId = protectedDatabaseId;
+            request.deletionSchedule = deletionSchedule;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteProtectedDatabaseRequest(protectedDatabaseId, ifMatch, opcRequestId);
+            // new DeleteProtectedDatabaseRequest(protectedDatabaseId, deletionSchedule, ifMatch,
+            // opcRequestId);
         }
     }
 
@@ -186,6 +235,7 @@ public class DeleteProtectedDatabaseRequest
     public Builder toBuilder() {
         return new Builder()
                 .protectedDatabaseId(protectedDatabaseId)
+                .deletionSchedule(deletionSchedule)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -205,6 +255,7 @@ public class DeleteProtectedDatabaseRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",protectedDatabaseId=").append(String.valueOf(this.protectedDatabaseId));
+        sb.append(",deletionSchedule=").append(String.valueOf(this.deletionSchedule));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -223,6 +274,7 @@ public class DeleteProtectedDatabaseRequest
         DeleteProtectedDatabaseRequest other = (DeleteProtectedDatabaseRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.protectedDatabaseId, other.protectedDatabaseId)
+                && java.util.Objects.equals(this.deletionSchedule, other.deletionSchedule)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -236,6 +288,9 @@ public class DeleteProtectedDatabaseRequest
                         + (this.protectedDatabaseId == null
                                 ? 43
                                 : this.protectedDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deletionSchedule == null ? 43 : this.deletionSchedule.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

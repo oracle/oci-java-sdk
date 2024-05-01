@@ -51,6 +51,71 @@ public class CreateProtectedDatabaseRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Indicates if the request is to test the preparedness for creating a protected database,
+     * without actually creating a protected database.
+     *
+     * <p>If you set the {@code opcDryRun} option as {@code true}, then Recovery Service only
+     * performs a test run to check for any missing prerequisites or configurations required to
+     * create a protected database, and then returns error messages to warn you about any missing
+     * requirements.
+     *
+     * <p>If an error occurs, you can review, correct, and repeat the dry run until the {@code
+     * createProtectedDatabase} request does not return any errors.
+     *
+     * <p>These are the common issues that you can identify by performing a dry run of the {@code
+     * createProtectedDatabase} request:
+     *
+     * <p>The Recovery Service subnet has insufficient free IP addresses to support the required
+     * number of private endpoints. See,
+     * [troubleshooting](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/troubleshoot-backup-failures-recovery-service.html#GUID-05FA08B8-421D-4E52-B84B-7AFB84ADECF9)
+     * information * Recovery Service does not have permissions to manage the network resources in a
+     * chosen compartment * Recovery Service is out of capacity. See, [Service
+     * Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) for
+     * more information * Recovery Service resources exceed quota limits * A protected database,
+     * having the same database ID, already exists * The specified protection policy does not exist,
+     * or it is not in an Active state * The specified Recovery Service subnet does not exist, or it
+     * is not in an Active state
+     *
+     * <p>See, [Prerequisites for Using Recovery
+     * Service](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/backup-recover-recovery-service.html#GUID-B2ABF281-DFF8-4A4E-AC85-629801AAF36A)
+     * for more information.
+     */
+    private Boolean opcDryRun;
+
+    /**
+     * Indicates if the request is to test the preparedness for creating a protected database,
+     * without actually creating a protected database.
+     *
+     * <p>If you set the {@code opcDryRun} option as {@code true}, then Recovery Service only
+     * performs a test run to check for any missing prerequisites or configurations required to
+     * create a protected database, and then returns error messages to warn you about any missing
+     * requirements.
+     *
+     * <p>If an error occurs, you can review, correct, and repeat the dry run until the {@code
+     * createProtectedDatabase} request does not return any errors.
+     *
+     * <p>These are the common issues that you can identify by performing a dry run of the {@code
+     * createProtectedDatabase} request:
+     *
+     * <p>The Recovery Service subnet has insufficient free IP addresses to support the required
+     * number of private endpoints. See,
+     * [troubleshooting](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/troubleshoot-backup-failures-recovery-service.html#GUID-05FA08B8-421D-4E52-B84B-7AFB84ADECF9)
+     * information * Recovery Service does not have permissions to manage the network resources in a
+     * chosen compartment * Recovery Service is out of capacity. See, [Service
+     * Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm) for
+     * more information * Recovery Service resources exceed quota limits * A protected database,
+     * having the same database ID, already exists * The specified protection policy does not exist,
+     * or it is not in an Active state * The specified Recovery Service subnet does not exist, or it
+     * is not in an Active state
+     *
+     * <p>See, [Prerequisites for Using Recovery
+     * Service](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/backup-recover-recovery-service.html#GUID-B2ABF281-DFF8-4A4E-AC85-629801AAF36A)
+     * for more information.
+     */
+    public Boolean getOpcDryRun() {
+        return opcDryRun;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -126,6 +191,76 @@ public class CreateProtectedDatabaseRequest
         }
 
         /**
+         * Indicates if the request is to test the preparedness for creating a protected database,
+         * without actually creating a protected database.
+         *
+         * <p>If you set the {@code opcDryRun} option as {@code true}, then Recovery Service only
+         * performs a test run to check for any missing prerequisites or configurations required to
+         * create a protected database, and then returns error messages to warn you about any
+         * missing requirements.
+         *
+         * <p>If an error occurs, you can review, correct, and repeat the dry run until the {@code
+         * createProtectedDatabase} request does not return any errors.
+         *
+         * <p>These are the common issues that you can identify by performing a dry run of the
+         * {@code createProtectedDatabase} request:
+         *
+         * <p>The Recovery Service subnet has insufficient free IP addresses to support the required
+         * number of private endpoints. See,
+         * [troubleshooting](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/troubleshoot-backup-failures-recovery-service.html#GUID-05FA08B8-421D-4E52-B84B-7AFB84ADECF9)
+         * information * Recovery Service does not have permissions to manage the network resources
+         * in a chosen compartment * Recovery Service is out of capacity. See, [Service
+         * Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm)
+         * for more information * Recovery Service resources exceed quota limits * A protected
+         * database, having the same database ID, already exists * The specified protection policy
+         * does not exist, or it is not in an Active state * The specified Recovery Service subnet
+         * does not exist, or it is not in an Active state
+         *
+         * <p>See, [Prerequisites for Using Recovery
+         * Service](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/backup-recover-recovery-service.html#GUID-B2ABF281-DFF8-4A4E-AC85-629801AAF36A)
+         * for more information.
+         */
+        private Boolean opcDryRun = null;
+
+        /**
+         * Indicates if the request is to test the preparedness for creating a protected database,
+         * without actually creating a protected database.
+         *
+         * <p>If you set the {@code opcDryRun} option as {@code true}, then Recovery Service only
+         * performs a test run to check for any missing prerequisites or configurations required to
+         * create a protected database, and then returns error messages to warn you about any
+         * missing requirements.
+         *
+         * <p>If an error occurs, you can review, correct, and repeat the dry run until the {@code
+         * createProtectedDatabase} request does not return any errors.
+         *
+         * <p>These are the common issues that you can identify by performing a dry run of the
+         * {@code createProtectedDatabase} request:
+         *
+         * <p>The Recovery Service subnet has insufficient free IP addresses to support the required
+         * number of private endpoints. See,
+         * [troubleshooting](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/troubleshoot-backup-failures-recovery-service.html#GUID-05FA08B8-421D-4E52-B84B-7AFB84ADECF9)
+         * information * Recovery Service does not have permissions to manage the network resources
+         * in a chosen compartment * Recovery Service is out of capacity. See, [Service
+         * Limits](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/servicelimits.htm)
+         * for more information * Recovery Service resources exceed quota limits * A protected
+         * database, having the same database ID, already exists * The specified protection policy
+         * does not exist, or it is not in an Active state * The specified Recovery Service subnet
+         * does not exist, or it is not in an Active state
+         *
+         * <p>See, [Prerequisites for Using Recovery
+         * Service](https://docs.oracle.com/en/cloud/paas/recovery-service/dbrsu/backup-recover-recovery-service.html#GUID-B2ABF281-DFF8-4A4E-AC85-629801AAF36A)
+         * for more information.
+         *
+         * @param opcDryRun the value to set
+         * @return this builder instance
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -158,6 +293,7 @@ public class CreateProtectedDatabaseRequest
             createProtectedDatabaseDetails(o.getCreateProtectedDatabaseDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcDryRun(o.getOpcDryRun());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -207,9 +343,10 @@ public class CreateProtectedDatabaseRequest
             request.createProtectedDatabaseDetails = createProtectedDatabaseDetails;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcDryRun = opcDryRun;
             return request;
             // new CreateProtectedDatabaseRequest(createProtectedDatabaseDetails, opcRetryToken,
-            // opcRequestId);
+            // opcRequestId, opcDryRun);
         }
     }
 
@@ -222,7 +359,8 @@ public class CreateProtectedDatabaseRequest
         return new Builder()
                 .createProtectedDatabaseDetails(createProtectedDatabaseDetails)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcDryRun(opcDryRun);
     }
 
     /**
@@ -243,6 +381,7 @@ public class CreateProtectedDatabaseRequest
                 .append(String.valueOf(this.createProtectedDatabaseDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcDryRun=").append(String.valueOf(this.opcDryRun));
         sb.append(")");
         return sb.toString();
     }
@@ -261,7 +400,8 @@ public class CreateProtectedDatabaseRequest
                 && java.util.Objects.equals(
                         this.createProtectedDatabaseDetails, other.createProtectedDatabaseDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcDryRun, other.opcDryRun);
     }
 
     @Override
@@ -277,6 +417,7 @@ public class CreateProtectedDatabaseRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.opcDryRun == null ? 43 : this.opcDryRun.hashCode());
         return result;
     }
 }

@@ -91,6 +91,15 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * DB system.
@@ -133,6 +142,7 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
                             this.freeformTags,
                             this.definedTags,
                             this.isDesupportedVersion,
+                            this.isUnifiedAuditingEnabled,
                             this.dbSystemId,
                             this.database);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -164,6 +174,9 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
             if (model.wasPropertyExplicitlySet("isDesupportedVersion")) {
                 this.isDesupportedVersion(model.getIsDesupportedVersion());
             }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("dbSystemId")) {
                 this.dbSystemId(model.getDbSystemId());
             }
@@ -192,6 +205,7 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isDesupportedVersion,
+            Boolean isUnifiedAuditingEnabled,
             String dbSystemId,
             CreateDatabaseFromAnotherDatabaseDetails database) {
         super(
@@ -201,7 +215,8 @@ public final class CreateDbHomeWithDbSystemIdFromDatabaseDetails extends CreateD
                 databaseSoftwareImageId,
                 freeformTags,
                 definedTags,
-                isDesupportedVersion);
+                isDesupportedVersion,
+                isUnifiedAuditingEnabled);
         this.dbSystemId = dbSystemId;
         this.database = database;
     }

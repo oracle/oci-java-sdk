@@ -19,18 +19,7 @@ package com.oracle.bmc.database.model;
  * contain the same values as the source Autonomous Database: - customerContacts -
  * scheduledOperations - isAutoScalingForStorageEnabled - definedTags - freeformTags - licenseModel
  * - whitelistedIps - isMtlsConnectionRequired - dbName - adminPassword - cpuCoreCount -
- * dataStorageSizeInTB - dbVersion Example I - Creating a cross-region standby with required
- * parameters only, with OCPU: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "cpuCoreCount": 1, "dbName":
- * "adatabasedb1", "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- * "dataStorageSizeInTBs": 1, "source": "CROSS_REGION_DATAGUARD", "adminPassword" :
- * "<var>&lt;password&gt;</var>", }} Example II - Creating a cross-region standby that specifies
- * optional parameters in addition to the required parameters, with ECPU: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "computeModel": "ECPU", "computeCount": 2,
- * "dbName": "adatabasedb1", "sourceId":
- * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "dataStorageSizeInTBs": 1,
- * "source": "CROSS_REGION_DATAGUARD", "adminPassword" : "<var>&lt;password&gt;</var>", "dbVersion":
- * "19c", "licenseModel": "LICENSE_INCLUDED", "isAutoScalingForStorageEnabled": "true" }} <br>
+ * dataStorageSizeInTB - dbVersion <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -491,16 +480,16 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the
-         * Data Guard association.
+         * source Autonomous Database that will be used to create a new peer database for the Data
+         * Guard association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the
-         * Data Guard association.
+         * source Autonomous Database that will be used to create a new peer database for the Data
+         * Guard association.
          *
          * @param sourceId the value to set
          * @return this builder
@@ -841,16 +830,16 @@ public final class CreateCrossRegionAutonomousDatabaseDataGuardDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the Data
-     * Guard association.
+     * source Autonomous Database that will be used to create a new peer database for the Data Guard
+     * association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the Data
-     * Guard association.
+     * source Autonomous Database that will be used to create a new peer database for the Data Guard
+     * association.
      *
      * @return the value
      */

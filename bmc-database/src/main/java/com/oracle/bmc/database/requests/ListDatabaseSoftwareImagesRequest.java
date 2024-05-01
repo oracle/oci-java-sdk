@@ -45,18 +45,19 @@ public class ListDatabaseSoftwareImagesRequest
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * order is case sensitive. Default order for PATCHSET is descending.
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * order is case sensitive. Default order for PATCHSET is descending.
      */
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
+        Patchset("PATCHSET"),
         ;
 
         private final String value;
@@ -90,7 +91,7 @@ public class ListDatabaseSoftwareImagesRequest
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * order is case sensitive. Default order for PATCHSET is descending.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -175,6 +176,17 @@ public class ListDatabaseSoftwareImagesRequest
         return imageShapeFamily;
     }
     /**
+     * A filter to return only resources with {@code patchSet} greater than or equal to given value.
+     */
+    private String patchSetGreaterThanOrEqualTo;
+
+    /**
+     * A filter to return only resources with {@code patchSet} greater than or equal to given value.
+     */
+    public String getPatchSetGreaterThanOrEqualTo() {
+        return patchSetGreaterThanOrEqualTo;
+    }
+    /**
      * If provided, filters the results to the set of database versions which are supported for
      * Upgrade.
      */
@@ -243,14 +255,14 @@ public class ListDatabaseSoftwareImagesRequest
         /**
          * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
          * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * DISPLAYNAME sort order is case sensitive. Default order for PATCHSET is descending.
          */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
          * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * DISPLAYNAME sort order is case sensitive. Default order for PATCHSET is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -343,6 +355,24 @@ public class ListDatabaseSoftwareImagesRequest
         }
 
         /**
+         * A filter to return only resources with {@code patchSet} greater than or equal to given
+         * value.
+         */
+        private String patchSetGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter to return only resources with {@code patchSet} greater than or equal to given
+         * value.
+         *
+         * @param patchSetGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder patchSetGreaterThanOrEqualTo(String patchSetGreaterThanOrEqualTo) {
+            this.patchSetGreaterThanOrEqualTo = patchSetGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
          * If provided, filters the results to the set of database versions which are supported for
          * Upgrade.
          */
@@ -399,6 +429,7 @@ public class ListDatabaseSoftwareImagesRequest
             displayName(o.getDisplayName());
             imageType(o.getImageType());
             imageShapeFamily(o.getImageShapeFamily());
+            patchSetGreaterThanOrEqualTo(o.getPatchSetGreaterThanOrEqualTo());
             isUpgradeSupported(o.getIsUpgradeSupported());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -443,10 +474,12 @@ public class ListDatabaseSoftwareImagesRequest
             request.displayName = displayName;
             request.imageType = imageType;
             request.imageShapeFamily = imageShapeFamily;
+            request.patchSetGreaterThanOrEqualTo = patchSetGreaterThanOrEqualTo;
             request.isUpgradeSupported = isUpgradeSupported;
             return request;
             // new ListDatabaseSoftwareImagesRequest(compartmentId, limit, page, sortBy, sortOrder,
-            // lifecycleState, displayName, imageType, imageShapeFamily, isUpgradeSupported);
+            // lifecycleState, displayName, imageType, imageShapeFamily,
+            // patchSetGreaterThanOrEqualTo, isUpgradeSupported);
         }
     }
 
@@ -466,6 +499,7 @@ public class ListDatabaseSoftwareImagesRequest
                 .displayName(displayName)
                 .imageType(imageType)
                 .imageShapeFamily(imageShapeFamily)
+                .patchSetGreaterThanOrEqualTo(patchSetGreaterThanOrEqualTo)
                 .isUpgradeSupported(isUpgradeSupported);
     }
 
@@ -492,6 +526,8 @@ public class ListDatabaseSoftwareImagesRequest
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",imageType=").append(String.valueOf(this.imageType));
         sb.append(",imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
+        sb.append(",patchSetGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.patchSetGreaterThanOrEqualTo));
         sb.append(",isUpgradeSupported=").append(String.valueOf(this.isUpgradeSupported));
         sb.append(")");
         return sb.toString();
@@ -517,6 +553,8 @@ public class ListDatabaseSoftwareImagesRequest
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.imageType, other.imageType)
                 && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
+                && java.util.Objects.equals(
+                        this.patchSetGreaterThanOrEqualTo, other.patchSetGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.isUpgradeSupported, other.isUpgradeSupported);
     }
 
@@ -539,6 +577,11 @@ public class ListDatabaseSoftwareImagesRequest
         result =
                 (result * PRIME)
                         + (this.imageShapeFamily == null ? 43 : this.imageShapeFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchSetGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.patchSetGreaterThanOrEqualTo.hashCode());
         result =
                 (result * PRIME)
                         + (this.isUpgradeSupported == null

@@ -7711,6 +7711,8 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("imageType", request.getImageType())
                 .appendEnumQueryParam("imageShapeFamily", request.getImageShapeFamily())
+                .appendQueryParam(
+                        "patchSetGreaterThanOrEqualTo", request.getPatchSetGreaterThanOrEqualTo())
                 .appendQueryParam("isUpgradeSupported", request.getIsUpgradeSupported())
                 .accept("application/json")
                 .handleBodyList(

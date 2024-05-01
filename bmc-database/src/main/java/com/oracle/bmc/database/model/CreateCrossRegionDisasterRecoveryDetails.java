@@ -18,18 +18,7 @@ package com.oracle.bmc.database.model;
  * standby database. If included in the request, these parameters must contain the same values as
  * the source Autonomous Database: - dbName - dbVersion - ecpuCount - dataStorageSizeInTB -
  * customerContacts - scheduledOperations - isAutoScalingForStorageEnabled - definedTags -
- * freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired Example I - Creating a
- * cross-region standby with required parameters only: {@code { "compartmentId":
- * "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>", "sourceId":
- * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "source":
- * "CROSS_REGION_DISASTER_RECOVERY", "remoteDisasterRecoveryType": "BACKUP_BASED" }} Example II -
- * Creating a cross-region standby that specifies optional parameters in addition to the required
- * parameters: {@code { "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- * "ecpuCount": 2, "dbName": "adatabasedb1", "sourceId":
- * "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>", "dataStorageSizeInTBs": 1,
- * "source": "CROSS_REGION_DISASTER_RECOVERY", "adminPassword" : "<var>&lt;password&gt;</var>",
- * "dbVersion": "19c", "licenseModel": "LICENSE_INCLUDED", "isAutoScalingForStorageEnabled": "true",
- * "remoteDisasterRecoveryType": "BACKUP_BASED" }} <br>
+ * freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -489,7 +478,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the DR
+         * source Autonomous Database that will be used to create a new peer database for the DR
          * association.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
@@ -497,7 +486,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new standby database for the DR
+         * source Autonomous Database that will be used to create a new peer database for the DR
          * association.
          *
          * @param sourceId the value to set
@@ -896,7 +885,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the DR
+     * source Autonomous Database that will be used to create a new peer database for the DR
      * association.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
@@ -904,7 +893,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new standby database for the DR
+     * source Autonomous Database that will be used to create a new peer database for the DR
      * association.
      *
      * @return the value

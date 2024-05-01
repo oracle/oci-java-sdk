@@ -3449,6 +3449,45 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
     }
 
     @Override
+    public java.util.concurrent.Future<ImportLineageResponse> importLineage(
+            ImportLineageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ImportLineageRequest, ImportLineageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getCatalogId(), "catalogId must not be blank");
+
+        Validate.notBlank(request.getDataAssetKey(), "dataAssetKey must not be blank");
+        Objects.requireNonNull(
+                request.getImportLineageDetails(), "importLineageDetails is required");
+
+        return clientCall(request, ImportLineageResponse::builder)
+                .logger(LOG, "importLineage")
+                .serviceDetails(
+                        "DataCatalog",
+                        "ImportLineage",
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportLineage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportLineageRequest::builder)
+                .basePath("/20190325")
+                .appendPathParam("catalogs")
+                .appendPathParam(request.getCatalogId())
+                .appendPathParam("dataAssets")
+                .appendPathParam(request.getDataAssetKey())
+                .appendPathParam("actions")
+                .appendPathParam("importLineage")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datacatalog.model.ImportLineageJobResult.class,
+                        ImportLineageResponse.Builder::importLineageJobResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportLineageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAggregatedPhysicalEntitiesResponse>
             listAggregatedPhysicalEntities(
                     ListAggregatedPhysicalEntitiesRequest request,
@@ -4017,6 +4056,7 @@ public class DataCatalogAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendQueryParam("isProcess", request.getIsProcess())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

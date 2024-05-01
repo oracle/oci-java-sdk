@@ -10,6 +10,7 @@ public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),
+    DeleteScheduled("DELETE_SCHEDULED"),
     Deleting("DELETING"),
     Deleted("DELETED"),
     Failed("FAILED"),

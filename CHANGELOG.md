@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.41.0 - 2024-04-30
+### Added
+- Support for enabling unified auditing for DBHome in the Database service
+- Support for listing minor Grid Infrastructure (GI) versions available for custom GI software image creation in the Database service
+- Support for network security groups in the Recovery Cloud service
+- Support for lineage metadata import in the Data Catalog service
+- Support for workspace properties in workspace create and update operations in the Data Integration service
+- Support for monitoring ExaCC databases in the Database Management service
+- Support for validations on target and policy before the masking process in the Data Safe service
+  
+### Breaking Changes
+- Return type of method `public java.lang.String getAccepted()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Accepted` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
+- Return type of method `public java.lang.String getAdaptive()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Adaptive` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
+- Return type of method `public java.lang.String getAutoPurge()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$AutoPurge` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
+- Return type of method `public java.lang.String getEnabled()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Enabled` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
+- Return type of method `public java.lang.String getFixed()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Fixed` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
+- Return type of method `public java.lang.String getReproduced()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Reproduced` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
+- Return type of method `public java.lang.String getAccepted()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Accepted` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
+- Return type of method `public java.lang.String getAdaptive()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$Adaptive` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
+- Return type of method `public java.lang.String getAutoPurge()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$AutoPurge` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
+- Return type of method `public java.lang.String getEnabled()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$Enabled` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
+- Return type of method `public java.lang.String getFixed()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$Fixed` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
+- Return type of method `public java.lang.String getReproduced()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$Reproduced` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
+- Return type of method `public java.lang.String getAllSqlStatementsFetched()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlTuningSet$AllSqlStatementsFetched` in the model `com.oracle.bmc.databasemanagement.model.SqlTuningSet` in the Database Management service
+
 ## 3.40.0 - 2024-04-23
 ### Added
 - Support for the Cluster Placement Groups service

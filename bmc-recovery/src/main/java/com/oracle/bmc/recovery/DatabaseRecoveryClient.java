@@ -149,6 +149,36 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
     }
 
     @Override
+    public CancelProtectedDatabaseDeletionResponse cancelProtectedDatabaseDeletion(
+            CancelProtectedDatabaseDeletionRequest request) {
+
+        Validate.notBlank(
+                request.getProtectedDatabaseId(), "protectedDatabaseId must not be blank");
+
+        return clientCall(request, CancelProtectedDatabaseDeletionResponse::builder)
+                .logger(LOG, "cancelProtectedDatabaseDeletion")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "CancelProtectedDatabaseDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CancelProtectedDatabaseDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelProtectedDatabaseDeletionRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("protectedDatabases")
+                .appendPathParam(request.getProtectedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelProtectedDatabaseDeletionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeProtectedDatabaseCompartmentResponse changeProtectedDatabaseCompartment(
             ChangeProtectedDatabaseCompartmentRequest request) {
 
@@ -278,6 +308,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-dry-run", request.getOpcDryRun())
                 .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
@@ -385,6 +416,7 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .basePath("/20210216")
                 .appendPathParam("protectedDatabases")
                 .appendPathParam(request.getProtectedDatabaseId())
+                .appendEnumQueryParam("deletionSchedule", request.getDeletionSchedule())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -489,6 +521,12 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .handleResponseHeaderString(
                         "opc-request-id",
                         FetchProtectedDatabaseConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-filename",
+                        FetchProtectedDatabaseConfigurationResponse.Builder::opcFilename)
+                .handleResponseHeaderString(
+                        "opc-checksum",
+                        FetchProtectedDatabaseConfigurationResponse.Builder::opcChecksum)
                 .callSync();
     }
 
@@ -821,6 +859,40 @@ public class DatabaseRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ScheduleProtectedDatabaseDeletionResponse scheduleProtectedDatabaseDeletion(
+            ScheduleProtectedDatabaseDeletionRequest request) {
+
+        Validate.notBlank(
+                request.getProtectedDatabaseId(), "protectedDatabaseId must not be blank");
+
+        return clientCall(request, ScheduleProtectedDatabaseDeletionResponse::builder)
+                .logger(LOG, "scheduleProtectedDatabaseDeletion")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ScheduleProtectedDatabaseDeletion",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ScheduleProtectedDatabaseDeletion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleProtectedDatabaseDeletionRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("protectedDatabases")
+                .appendPathParam(request.getProtectedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleDeletion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ScheduleProtectedDatabaseDeletionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ScheduleProtectedDatabaseDeletionResponse.Builder::opcRequestId)
                 .callSync();
     }
 

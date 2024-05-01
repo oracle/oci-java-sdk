@@ -21,6 +21,15 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     EnableExadataInfrastructure("ENABLE_EXADATA_INFRASTRUCTURE"),
     DeleteExadataInfrastructure("DELETE_EXADATA_INFRASTRUCTURE"),
     ChangeExadataCompartment("CHANGE_EXADATA_COMPARTMENT"),
+    EnableSqlWatch("ENABLE_SQL_WATCH"),
+    DisableSqlWatch("DISABLE_SQL_WATCH"),
+    ModifySqlWatch("MODIFY_SQL_WATCH"),
+    EnableDblm("ENABLE_DBLM"),
+    DisableDblm("DISABLE_DBLM"),
+    ModifyDblm("MODIFY_DBLM"),
+    EnableDbmgmt("ENABLE_DBMGMT"),
+    DisableDbmgmt("DISABLE_DBMGMT"),
+    ModifyDbmgmt("MODIFY_DBMGMT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

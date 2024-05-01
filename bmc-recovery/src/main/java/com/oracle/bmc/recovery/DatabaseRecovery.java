@@ -64,6 +64,25 @@ public interface DatabaseRecovery extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Cancels the scheduled deletion of a protected database, and returns the protected database to
+     * an ACTIVE state. You can cancel the deletion only if the protected database is in the DELETE
+     * SCHEDULED state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CancelProtectedDatabaseDeletionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelProtectedDatabaseDeletion API.
+     */
+    CancelProtectedDatabaseDeletionResponse cancelProtectedDatabaseDeletion(
+            CancelProtectedDatabaseDeletionRequest request);
+
+    /**
      * Moves a protected database resource from the existing compartment to the specified
      * compartment. When provided, If-Match is checked against ETag values of the resource.
      *
@@ -394,6 +413,27 @@ public interface DatabaseRecovery extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Defines a preferred schedule to delete a protected database after you terminate the source
+     * database. The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can
+     * occur 72 hours (3 days) after the source database is terminated. The alternate schedule is
+     * DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database
+     * only after the policy-defined backup retention period expires.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ScheduleProtectedDatabaseDeletionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ScheduleProtectedDatabaseDeletion API.
+     */
+    ScheduleProtectedDatabaseDeletionResponse scheduleProtectedDatabaseDeletion(
+            ScheduleProtectedDatabaseDeletionRequest request);
 
     /**
      * Updates the Protected Database

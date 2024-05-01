@@ -23,13 +23,23 @@ package com.oracle.bmc.recovery.model;
 public final class UpdateRecoveryServiceSubnetDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "subnets",
+        "nsgIds",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateRecoveryServiceSubnetDetails(
             String displayName,
+            java.util.List<String> subnets,
+            java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.subnets = subnets;
+        this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -53,6 +63,46 @@ public final class UpdateRecoveryServiceSubnetDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** A list of OCIDs of the subnets associated with the recovery service subnet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subnets")
+        private java.util.List<String> subnets;
+
+        /**
+         * A list of OCIDs of the subnets associated with the recovery service subnet.
+         *
+         * @param subnets the value to set
+         * @return this builder
+         */
+        public Builder subnets(java.util.List<String> subnets) {
+            this.subnets = subnets;
+            this.__explicitlySet__.add("subnets");
+            return this;
+        }
+        /**
+         * A list of network security group (NSG) OCIDs that are associated with the Recovery
+         * Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can
+         * associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if
+         * you want to remove all the associated NSGs from a Recovery Service subnet. See {@link
+         * NetworkSecurityGroup} for more information.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * A list of network security group (NSG) OCIDs that are associated with the Recovery
+         * Service subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can
+         * associate a maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if
+         * you want to remove all the associated NSGs from a Recovery Service subnet. See {@link
+         * NetworkSecurityGroup} for more information.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         */
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
@@ -105,7 +155,11 @@ public final class UpdateRecoveryServiceSubnetDetails
         public UpdateRecoveryServiceSubnetDetails build() {
             UpdateRecoveryServiceSubnetDetails model =
                     new UpdateRecoveryServiceSubnetDetails(
-                            this.displayName, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.subnets,
+                            this.nsgIds,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -116,6 +170,12 @@ public final class UpdateRecoveryServiceSubnetDetails
         public Builder copy(UpdateRecoveryServiceSubnetDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("subnets")) {
+                this.subnets(model.getSubnets());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -151,6 +211,42 @@ public final class UpdateRecoveryServiceSubnetDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** A list of OCIDs of the subnets associated with the recovery service subnet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subnets")
+    private final java.util.List<String> subnets;
+
+    /**
+     * A list of OCIDs of the subnets associated with the recovery service subnet.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getSubnets() {
+        return subnets;
+    }
+
+    /**
+     * A list of network security group (NSG) OCIDs that are associated with the Recovery Service
+     * subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a
+     * maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to
+     * remove all the associated NSGs from a Recovery Service subnet. See {@link
+     * NetworkSecurityGroup} for more information.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * A list of network security group (NSG) OCIDs that are associated with the Recovery Service
+     * subnet. You can specify a maximum of 5 unique OCIDs, which implies that you can associate a
+     * maximum of 5 NSGs to each Recovery Service subnet. Specify an empty array if you want to
+     * remove all the associated NSGs from a Recovery Service subnet. See {@link
+     * NetworkSecurityGroup} for more information.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /**
@@ -205,6 +301,8 @@ public final class UpdateRecoveryServiceSubnetDetails
         sb.append("UpdateRecoveryServiceSubnetDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", subnets=").append(String.valueOf(this.subnets));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -222,6 +320,8 @@ public final class UpdateRecoveryServiceSubnetDetails
 
         UpdateRecoveryServiceSubnetDetails other = (UpdateRecoveryServiceSubnetDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.subnets, other.subnets)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -232,6 +332,8 @@ public final class UpdateRecoveryServiceSubnetDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.subnets == null ? 43 : this.subnets.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

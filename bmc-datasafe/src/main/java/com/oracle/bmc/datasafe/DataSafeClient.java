@@ -751,6 +751,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeMaskingPolicyHealthReportCompartmentResponse
+            changeMaskingPolicyHealthReportCompartment(
+                    ChangeMaskingPolicyHealthReportCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMaskingPolicyHealthReportCompartmentDetails(),
+                "changeMaskingPolicyHealthReportCompartmentDetails is required");
+
+        return clientCall(request, ChangeMaskingPolicyHealthReportCompartmentResponse::builder)
+                .logger(LOG, "changeMaskingPolicyHealthReportCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeMaskingPolicyHealthReportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ChangeMaskingPolicyHealthReportCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMaskingPolicyHealthReportCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMaskingPolicyHealthReportCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeOnPremConnectorCompartmentResponse changeOnPremConnectorCompartment(
             ChangeOnPremConnectorCompartmentRequest request) {
 
@@ -2255,6 +2292,38 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteMaskingPolicyHealthReportResponse deleteMaskingPolicyHealthReport(
+            DeleteMaskingPolicyHealthReportRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, DeleteMaskingPolicyHealthReportResponse::builder)
+                .logger(LOG, "deleteMaskingPolicyHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteMaskingPolicyHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/DeleteMaskingPolicyHealthReport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMaskingPolicyHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMaskingPolicyHealthReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteMaskingPolicyHealthReportResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteOnPremConnectorResponse deleteOnPremConnector(
             DeleteOnPremConnectorRequest request) {
 
@@ -3033,6 +3102,40 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GenerateDiscoveryReportForDownloadResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GenerateHealthReportResponse generateHealthReport(GenerateHealthReportRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getGenerateHealthReportDetails(),
+                "generateHealthReportDetails is required");
+
+        return clientCall(request, GenerateHealthReportResponse::builder)
+                .logger(LOG, "generateHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GenerateHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GenerateHealthReport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("generateHealthReport")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        GenerateHealthReportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateHealthReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3917,6 +4020,39 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetMaskingPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetMaskingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetMaskingPolicyHealthReportResponse getMaskingPolicyHealthReport(
+            GetMaskingPolicyHealthReportRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, GetMaskingPolicyHealthReportResponse::builder)
+                .logger(LOG, "getMaskingPolicyHealthReport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetMaskingPolicyHealthReport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GetMaskingPolicyHealthReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMaskingPolicyHealthReportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyHealthReport.class,
+                        GetMaskingPolicyHealthReportResponse.Builder::maskingPolicyHealthReport)
+                .handleResponseHeaderString(
+                        "etag", GetMaskingPolicyHealthReportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMaskingPolicyHealthReportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6200,6 +6336,97 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListMaskingPoliciesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListMaskingPoliciesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMaskingPolicyHealthReportLogsResponse listMaskingPolicyHealthReportLogs(
+            ListMaskingPolicyHealthReportLogsRequest request) {
+
+        Validate.notBlank(
+                request.getMaskingPolicyHealthReportId(),
+                "maskingPolicyHealthReportId must not be blank");
+
+        return clientCall(request, ListMaskingPolicyHealthReportLogsResponse::builder)
+                .logger(LOG, "listMaskingPolicyHealthReportLogs")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReportLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReportLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingPolicyHealthReportLogsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendPathParam(request.getMaskingPolicyHealthReportId())
+                .appendPathParam("logs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("messageType", request.getMessageType())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogCollection.class,
+                        ListMaskingPolicyHealthReportLogsResponse.Builder
+                                ::maskingPolicyHealthReportLogCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMaskingPolicyHealthReportLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMaskingPolicyHealthReportLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListMaskingPolicyHealthReportLogsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMaskingPolicyHealthReportsResponse listMaskingPolicyHealthReports(
+            ListMaskingPolicyHealthReportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMaskingPolicyHealthReportsResponse::builder)
+                .logger(LOG, "listMaskingPolicyHealthReports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingPolicyHealthReportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicyHealthReports")
+                .appendQueryParam(
+                        "maskingPolicyHealthReportId", request.getMaskingPolicyHealthReportId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("maskingPolicyId", request.getMaskingPolicyId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportCollection.class,
+                        ListMaskingPolicyHealthReportsResponse.Builder
+                                ::maskingPolicyHealthReportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMaskingPolicyHealthReportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMaskingPolicyHealthReportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListMaskingPolicyHealthReportsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 

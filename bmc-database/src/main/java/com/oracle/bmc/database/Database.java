@@ -4434,7 +4434,7 @@ public interface Database extends AutoCloseable {
     ListFlexComponentsResponse listFlexComponents(ListFlexComponentsRequest request);
 
     /**
-     * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+     * Gets a list of supported GI versions.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -5935,7 +5935,7 @@ public interface Database extends AutoCloseable {
             UpdateExternalPluggableDatabaseRequest request);
 
     /**
-     * If no database is associated with the key store, edit the key store.
+     * Edit the key store.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

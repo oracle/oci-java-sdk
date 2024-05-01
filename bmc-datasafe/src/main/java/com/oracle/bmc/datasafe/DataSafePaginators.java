@@ -4138,6 +4138,268 @@ public class DataSafePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listMaskingPolicyHealthReportLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMaskingPolicyHealthReportLogsResponse>
+            listMaskingPolicyHealthReportLogsResponseIterator(
+                    final ListMaskingPolicyHealthReportLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMaskingPolicyHealthReportLogsRequest.Builder,
+                ListMaskingPolicyHealthReportLogsRequest,
+                ListMaskingPolicyHealthReportLogsResponse>(
+                new java.util.function.Supplier<
+                        ListMaskingPolicyHealthReportLogsRequest.Builder>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportLogsRequest.Builder get() {
+                        return ListMaskingPolicyHealthReportLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportLogsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingPolicyHealthReportLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingPolicyHealthReportLogsRequest.Builder>,
+                        ListMaskingPolicyHealthReportLogsRequest>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingPolicyHealthReportLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportLogsRequest,
+                        ListMaskingPolicyHealthReportLogsResponse>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportLogsResponse apply(
+                            ListMaskingPolicyHealthReportLogsRequest request) {
+                        return client.listMaskingPolicyHealthReportLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary} objects contained in
+     * responses from the listMaskingPolicyHealthReportLogs operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary>
+            listMaskingPolicyHealthReportLogsRecordIterator(
+                    final ListMaskingPolicyHealthReportLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMaskingPolicyHealthReportLogsRequest.Builder,
+                ListMaskingPolicyHealthReportLogsRequest,
+                ListMaskingPolicyHealthReportLogsResponse,
+                com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary>(
+                new java.util.function.Supplier<
+                        ListMaskingPolicyHealthReportLogsRequest.Builder>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportLogsRequest.Builder get() {
+                        return ListMaskingPolicyHealthReportLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportLogsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingPolicyHealthReportLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingPolicyHealthReportLogsRequest.Builder>,
+                        ListMaskingPolicyHealthReportLogsRequest>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingPolicyHealthReportLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportLogsRequest,
+                        ListMaskingPolicyHealthReportLogsResponse>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportLogsResponse apply(
+                            ListMaskingPolicyHealthReportLogsRequest request) {
+                        return client.listMaskingPolicyHealthReportLogs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportLogsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .MaskingPolicyHealthReportLogSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .MaskingPolicyHealthReportLogSummary>
+                            apply(ListMaskingPolicyHealthReportLogsResponse response) {
+                        return response.getMaskingPolicyHealthReportLogCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMaskingPolicyHealthReports operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMaskingPolicyHealthReportsResponse>
+            listMaskingPolicyHealthReportsResponseIterator(
+                    final ListMaskingPolicyHealthReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMaskingPolicyHealthReportsRequest.Builder,
+                ListMaskingPolicyHealthReportsRequest,
+                ListMaskingPolicyHealthReportsResponse>(
+                new java.util.function.Supplier<ListMaskingPolicyHealthReportsRequest.Builder>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportsRequest.Builder get() {
+                        return ListMaskingPolicyHealthReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingPolicyHealthReportsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingPolicyHealthReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingPolicyHealthReportsRequest.Builder>,
+                        ListMaskingPolicyHealthReportsRequest>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingPolicyHealthReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportsRequest,
+                        ListMaskingPolicyHealthReportsResponse>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportsResponse apply(
+                            ListMaskingPolicyHealthReportsRequest request) {
+                        return client.listMaskingPolicyHealthReports(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary} objects contained in
+     * responses from the listMaskingPolicyHealthReports operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary>
+            listMaskingPolicyHealthReportsRecordIterator(
+                    final ListMaskingPolicyHealthReportsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMaskingPolicyHealthReportsRequest.Builder,
+                ListMaskingPolicyHealthReportsRequest,
+                ListMaskingPolicyHealthReportsResponse,
+                com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary>(
+                new java.util.function.Supplier<ListMaskingPolicyHealthReportsRequest.Builder>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportsRequest.Builder get() {
+                        return ListMaskingPolicyHealthReportsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaskingPolicyHealthReportsResponse, String>() {
+                    @Override
+                    public String apply(ListMaskingPolicyHealthReportsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaskingPolicyHealthReportsRequest.Builder>,
+                        ListMaskingPolicyHealthReportsRequest>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaskingPolicyHealthReportsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportsRequest,
+                        ListMaskingPolicyHealthReportsResponse>() {
+                    @Override
+                    public ListMaskingPolicyHealthReportsResponse apply(
+                            ListMaskingPolicyHealthReportsRequest request) {
+                        return client.listMaskingPolicyHealthReports(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaskingPolicyHealthReportsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary>
+                            apply(ListMaskingPolicyHealthReportsResponse response) {
+                        return response.getMaskingPolicyHealthReportCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listMaskingReports operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

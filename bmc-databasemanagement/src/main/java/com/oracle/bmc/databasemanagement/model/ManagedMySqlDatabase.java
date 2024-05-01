@@ -178,12 +178,12 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("heatWaveClusterDisplayName");
             return this;
         }
-        /** If HeatWave is enabled for this db system or not. */
+        /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
         private Boolean isHeatWaveEnabled;
 
         /**
-         * If HeatWave is enabled for this db system or not.
+         * Indicates whether HeatWave is enabled for the MySQL Database System or not.
          *
          * @param isHeatWaveEnabled the value to set
          * @return this builder
@@ -193,12 +193,12 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("isHeatWaveEnabled");
             return this;
         }
-        /** If HeatWave Lakehouse is enabled for the db system or not. */
+        /** Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
         private Boolean isLakehouseEnabled;
 
         /**
-         * If HeatWave Lakehouse is enabled for the db system or not.
+         * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
          *
          * @param isLakehouseEnabled the value to set
          * @return this builder
@@ -208,12 +208,12 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("isLakehouseEnabled");
             return this;
         }
-        /** Shape of the nodes in the HeatWave cluster. */
+        /** The shape of the nodes in the HeatWave cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
         private String heatWaveNodeShape;
 
         /**
-         * Shape of the nodes in the HeatWave cluster.
+         * The shape of the nodes in the HeatWave cluster.
          *
          * @param heatWaveNodeShape the value to set
          * @return this builder
@@ -238,12 +238,12 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("heatWaveMemorySize");
             return this;
         }
-        /** The information about an individual HeatWave nodes in the cluster. */
+        /** The information about individual HeatWave nodes in the cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
         private java.util.List<HeatWaveNode> heatWaveNodes;
 
         /**
-         * The information about an individual HeatWave nodes in the cluster.
+         * The information about individual HeatWave nodes in the cluster.
          *
          * @param heatWaveNodes the value to set
          * @return this builder
@@ -253,12 +253,12 @@ public final class ManagedMySqlDatabase
             this.__explicitlySet__.add("heatWaveNodes");
             return this;
         }
-        /** If the HeatWave cluster is active or not. */
+        /** Indicates whether the HeatWave cluster is active or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
         private Boolean isHeatWaveActive;
 
         /**
-         * If the HeatWave cluster is active or not.
+         * Indicates whether the HeatWave cluster is active or not.
          *
          * @param isHeatWaveActive the value to set
          * @return this builder
@@ -458,12 +458,12 @@ public final class ManagedMySqlDatabase
         return heatWaveClusterDisplayName;
     }
 
-    /** If HeatWave is enabled for this db system or not. */
+    /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
     private final Boolean isHeatWaveEnabled;
 
     /**
-     * If HeatWave is enabled for this db system or not.
+     * Indicates whether HeatWave is enabled for the MySQL Database System or not.
      *
      * @return the value
      */
@@ -471,12 +471,12 @@ public final class ManagedMySqlDatabase
         return isHeatWaveEnabled;
     }
 
-    /** If HeatWave Lakehouse is enabled for the db system or not. */
+    /** Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
     private final Boolean isLakehouseEnabled;
 
     /**
-     * If HeatWave Lakehouse is enabled for the db system or not.
+     * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
      *
      * @return the value
      */
@@ -484,12 +484,12 @@ public final class ManagedMySqlDatabase
         return isLakehouseEnabled;
     }
 
-    /** Shape of the nodes in the HeatWave cluster. */
+    /** The shape of the nodes in the HeatWave cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
     private final String heatWaveNodeShape;
 
     /**
-     * Shape of the nodes in the HeatWave cluster.
+     * The shape of the nodes in the HeatWave cluster.
      *
      * @return the value
      */
@@ -510,12 +510,12 @@ public final class ManagedMySqlDatabase
         return heatWaveMemorySize;
     }
 
-    /** The information about an individual HeatWave nodes in the cluster. */
+    /** The information about individual HeatWave nodes in the cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
     private final java.util.List<HeatWaveNode> heatWaveNodes;
 
     /**
-     * The information about an individual HeatWave nodes in the cluster.
+     * The information about individual HeatWave nodes in the cluster.
      *
      * @return the value
      */
@@ -523,12 +523,12 @@ public final class ManagedMySqlDatabase
         return heatWaveNodes;
     }
 
-    /** If the HeatWave cluster is active or not. */
+    /** Indicates whether the HeatWave cluster is active or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
     private final Boolean isHeatWaveActive;
 
     /**
-     * If the HeatWave cluster is active or not.
+     * Indicates whether the HeatWave cluster is active or not.
      *
      * @return the value
      */

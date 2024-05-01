@@ -8,6 +8,7 @@ package com.oracle.bmc.recovery.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
+    Waiting("WAITING"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),

@@ -4482,7 +4482,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+     * Gets a list of supported GI versions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -6006,7 +6006,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * If no database is associated with the key store, edit the key store.
+     * Edit the key store.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

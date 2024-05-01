@@ -8,9 +8,9 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
- * Use the Database Management API to perform tasks such as obtaining performance and resource usage
- * metrics for a fleet of Managed Databases or a specific Managed Database, creating Managed
- * Database Groups, and running a SQL job on a Managed Database or Managed Database Group.
+ * Use the Database Management API to monitor and manage resources such as Oracle Databases, MySQL
+ * Databases, and External Database Systems. For more information, see [Database
+ * Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -751,6 +751,41 @@ public interface DbManagement extends AutoCloseable {
             DisableAutomaticSpmEvolveAdvisorTaskRequest request);
 
     /**
+     * Disables a Database Management feature for the specified Oracle cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableDatabaseManagementFeature API.
+     */
+    DisableDatabaseManagementFeatureResponse disableDatabaseManagementFeature(
+            DisableDatabaseManagementFeatureRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalContainerDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableExternalContainerDatabaseManagementFeature API.
+     */
+    DisableExternalContainerDatabaseManagementFeatureResponse
+            disableExternalContainerDatabaseManagementFeature(
+                    DisableExternalContainerDatabaseManagementFeatureRequest request);
+
+    /**
      * Disables Database Management service for all the components of the specified external DB
      * system (except databases).
      *
@@ -811,6 +846,42 @@ public interface DbManagement extends AutoCloseable {
                     DisableExternalExadataInfrastructureManagementRequest request);
 
     /**
+     * Disables a Database Management feature for the specified external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalNonContainerDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableExternalNonContainerDatabaseManagementFeature API.
+     */
+    DisableExternalNonContainerDatabaseManagementFeatureResponse
+            disableExternalNonContainerDatabaseManagementFeature(
+                    DisableExternalNonContainerDatabaseManagementFeatureRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalPluggableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableExternalPluggableDatabaseManagementFeature API.
+     */
+    DisableExternalPluggableDatabaseManagementFeatureResponse
+            disableExternalPluggableDatabaseManagementFeature(
+                    DisableExternalPluggableDatabaseManagementFeatureRequest request);
+
+    /**
      * Disables the high-frequency Automatic SPM Evolve Advisor task.
      *
      * <p>It is available only on Oracle Exadata Database Machine, Oracle Database Exadata Cloud
@@ -830,6 +901,23 @@ public interface DbManagement extends AutoCloseable {
     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
             disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
                     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisablePluggableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisablePluggableDatabaseManagementFeature API.
+     */
+    DisablePluggableDatabaseManagementFeatureResponse disablePluggableDatabaseManagementFeature(
+            DisablePluggableDatabaseManagementFeatureRequest request);
 
     /**
      * Disables the use of SQL plan baselines stored in SQL Management Base.
@@ -971,6 +1059,41 @@ public interface DbManagement extends AutoCloseable {
             EnableAutomaticSpmEvolveAdvisorTaskRequest request);
 
     /**
+     * Enables a Database Management feature for the specified cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableDatabaseManagementFeature API.
+     */
+    EnableDatabaseManagementFeatureResponse enableDatabaseManagementFeature(
+            EnableDatabaseManagementFeatureRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalContainerDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableExternalContainerDatabaseManagementFeature API.
+     */
+    EnableExternalContainerDatabaseManagementFeatureResponse
+            enableExternalContainerDatabaseManagementFeature(
+                    EnableExternalContainerDatabaseManagementFeatureRequest request);
+
+    /**
      * Enables Database Management service for all the components of the specified external DB
      * system (except databases).
      *
@@ -1028,6 +1151,42 @@ public interface DbManagement extends AutoCloseable {
                     EnableExternalExadataInfrastructureManagementRequest request);
 
     /**
+     * Enables Database Management feature for the specified external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalNonContainerDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableExternalNonContainerDatabaseManagementFeature API.
+     */
+    EnableExternalNonContainerDatabaseManagementFeatureResponse
+            enableExternalNonContainerDatabaseManagementFeature(
+                    EnableExternalNonContainerDatabaseManagementFeatureRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalPluggableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableExternalPluggableDatabaseManagementFeature API.
+     */
+    EnableExternalPluggableDatabaseManagementFeatureResponse
+            enableExternalPluggableDatabaseManagementFeature(
+                    EnableExternalPluggableDatabaseManagementFeatureRequest request);
+
+    /**
      * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency task runs
      * every hour and runs for no longer than 30 minutes. These settings are not configurable.
      *
@@ -1051,6 +1210,23 @@ public interface DbManagement extends AutoCloseable {
     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
             enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
                     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnablePluggableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnablePluggableDatabaseManagementFeature API.
+     */
+    EnablePluggableDatabaseManagementFeatureResponse enablePluggableDatabaseManagementFeature(
+            EnablePluggableDatabaseManagementFeatureRequest request);
 
     /**
      * Enables the use of SQL plan baselines stored in SQL Management Base.
@@ -2652,6 +2828,40 @@ public interface DbManagement extends AutoCloseable {
      */
     LoadSqlPlanBaselinesFromCursorCacheResponse loadSqlPlanBaselinesFromCursorCache(
             LoadSqlPlanBaselinesFromCursorCacheRequest request);
+
+    /**
+     * Modifies a Database Management feature for the specified Oracle cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ModifyDatabaseManagementFeature API.
+     */
+    ModifyDatabaseManagementFeatureResponse modifyDatabaseManagementFeature(
+            ModifyDatabaseManagementFeatureRequest request);
+
+    /**
+     * Modifies the Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyPluggableDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ModifyPluggableDatabaseManagementFeature API.
+     */
+    ModifyPluggableDatabaseManagementFeatureResponse modifyPluggableDatabaseManagementFeature(
+            ModifyPluggableDatabaseManagementFeatureRequest request);
 
     /**
      * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.

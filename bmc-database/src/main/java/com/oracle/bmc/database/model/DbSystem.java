@@ -32,6 +32,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "backupSubnetId",
         "nsgIds",
         "backupNetworkNsgIds",
+        "giSoftwareImageId",
         "memorySizeInGBs",
         "storageVolumePerformanceMode",
         "shape",
@@ -83,6 +84,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             String backupSubnetId,
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
+            String giSoftwareImageId,
             Integer memorySizeInGBs,
             StorageVolumePerformanceMode storageVolumePerformanceMode,
             String shape,
@@ -133,6 +135,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.backupSubnetId = backupSubnetId;
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
+        this.giSoftwareImageId = giSoftwareImageId;
         this.memorySizeInGBs = memorySizeInGBs;
         this.storageVolumePerformanceMode = storageVolumePerformanceMode;
         this.shape = shape;
@@ -386,6 +389,27 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
             this.backupNetworkNsgIds = backupNetworkNsgIds;
             this.__explicitlySet__.add("backupNetworkNsgIds");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * grid infrastructure software image. This is a database software image of the type {@code
+         * GRID_IMAGE}.
+         *
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
             return this;
         }
         /** Memory allocated to the DB system, in gigabytes. */
@@ -1103,6 +1127,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.backupSubnetId,
                             this.nsgIds,
                             this.backupNetworkNsgIds,
+                            this.giSoftwareImageId,
                             this.memorySizeInGBs,
                             this.storageVolumePerformanceMode,
                             this.shape,
@@ -1179,6 +1204,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("backupNetworkNsgIds")) {
                 this.backupNetworkNsgIds(model.getBackupNetworkNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
             }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
@@ -1495,6 +1523,25 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
      */
     public java.util.List<String> getBackupNetworkNsgIds() {
         return backupNetworkNsgIds;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid
+     * infrastructure software image. This is a database software image of the type {@code
+     * GRID_IMAGE}.
+     *
+     * @return the value
+     */
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
     }
 
     /** Memory allocated to the DB system, in gigabytes. */
@@ -2384,6 +2431,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", storageVolumePerformanceMode=")
                 .append(String.valueOf(this.storageVolumePerformanceMode));
@@ -2450,6 +2498,7 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
                         this.storageVolumePerformanceMode, other.storageVolumePerformanceMode)
@@ -2524,6 +2573,9 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.backupNetworkNsgIds == null
                                 ? 43
                                 : this.backupNetworkNsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
         result =
                 (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());

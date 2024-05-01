@@ -392,6 +392,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         UpdateDifference("UPDATE_DIFFERENCE"),
         PatchDifference("PATCH_DIFFERENCE"),
         ApplyDifference("APPLY_DIFFERENCE"),
+        MaskPolicyGenerateHealthReport("MASK_POLICY_GENERATE_HEALTH_REPORT"),
         AbortMasking("ABORT_MASKING"),
         CreateSecurityPolicyReport("CREATE_SECURITY_POLICY_REPORT"),
         RefreshSecurityPolicyCache("REFRESH_SECURITY_POLICY_CACHE"),

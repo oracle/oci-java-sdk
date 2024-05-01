@@ -371,6 +371,25 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified masking policy health report and its dependent resources into a different
+     * compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMaskingPolicyHealthReportCompartmentResponse>
+            changeMaskingPolicyHealthReportCompartment(
+                    ChangeMaskingPolicyHealthReportCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMaskingPolicyHealthReportCompartmentRequest,
+                                    ChangeMaskingPolicyHealthReportCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified on-premises connector into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -1198,6 +1217,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified masking policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMaskingPolicyHealthReportResponse>
+            deleteMaskingPolicyHealthReport(
+                    DeleteMaskingPolicyHealthReportRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMaskingPolicyHealthReportRequest,
+                                    DeleteMaskingPolicyHealthReportResponse>
+                            handler);
+
+    /**
      * Deletes the specified on-premises connector.
      *
      * @param request The request object containing the details to send
@@ -1627,6 +1664,22 @@ public interface DataSafeAsync extends AutoCloseable {
                                     GenerateDiscoveryReportForDownloadRequest,
                                     GenerateDiscoveryReportForDownloadResponse>
                             handler);
+
+    /**
+     * Performs health check on the masking policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateHealthReportResponse> generateHealthReport(
+            GenerateHealthReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateHealthReportRequest, GenerateHealthReportResponse>
+                    handler);
 
     /**
      * Generates a downloadable file corresponding to the specified masking policy. It's a
@@ -2084,6 +2137,23 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<GetMaskingPolicyResponse> getMaskingPolicy(
             GetMaskingPolicyRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetMaskingPolicyRequest, GetMaskingPolicyResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified masking policy health report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMaskingPolicyHealthReportResponse> getMaskingPolicyHealthReport(
+            GetMaskingPolicyHealthReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMaskingPolicyHealthReportRequest,
+                            GetMaskingPolicyHealthReportResponse>
                     handler);
 
     /**
@@ -3174,6 +3244,42 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListMaskingPoliciesRequest, ListMaskingPoliciesResponse>
                     handler);
+
+    /**
+     * Gets a list of errors and warnings from a masking policy health check.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingPolicyHealthReportLogsResponse>
+            listMaskingPolicyHealthReportLogs(
+                    ListMaskingPolicyHealthReportLogsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyHealthReportLogsRequest,
+                                    ListMaskingPolicyHealthReportLogsResponse>
+                            handler);
+
+    /**
+     * Gets a list of masking policy health reports based on the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingPolicyHealthReportsResponse>
+            listMaskingPolicyHealthReports(
+                    ListMaskingPolicyHealthReportsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyHealthReportsRequest,
+                                    ListMaskingPolicyHealthReportsResponse>
+                            handler);
 
     /**
      * Gets a list of masking reports based on the specified query parameters.

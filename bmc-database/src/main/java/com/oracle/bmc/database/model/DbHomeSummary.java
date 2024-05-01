@@ -50,7 +50,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         "oneOffPatches",
         "freeformTags",
         "definedTags",
-        "databaseSoftwareImageId"
+        "databaseSoftwareImageId",
+        "isUnifiedAuditingEnabled"
     })
     public DbHomeSummary(
             String id,
@@ -68,7 +69,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
             java.util.List<String> oneOffPatches,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String databaseSoftwareImageId) {
+            String databaseSoftwareImageId,
+            Boolean isUnifiedAuditingEnabled) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -86,6 +88,7 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -375,6 +378,21 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("databaseSoftwareImageId");
             return this;
         }
+        /** Indicates whether unified autiding is enabled or not. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        /**
+         * Indicates whether unified autiding is enabled or not.
+         *
+         * @param isUnifiedAuditingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -397,7 +415,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.oneOffPatches,
                             this.freeformTags,
                             this.definedTags,
-                            this.databaseSoftwareImageId);
+                            this.databaseSoftwareImageId,
+                            this.isUnifiedAuditingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -453,6 +472,9 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
             }
             return this;
         }
@@ -769,6 +791,19 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         return databaseSoftwareImageId;
     }
 
+    /** Indicates whether unified autiding is enabled or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified autiding is enabled or not.
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -802,6 +837,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -834,6 +871,8 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && super.equals(other);
     }
 
@@ -875,6 +914,11 @@ public final class DbHomeSummary extends com.oracle.bmc.http.client.internal.Exp
                         + (this.databaseSoftwareImageId == null
                                 ? 43
                                 : this.databaseSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
