@@ -28,6 +28,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
         "ipAddress",
         "port",
         "weight",
+        "maxConnections",
         "drain",
         "backup",
         "offline"
@@ -37,6 +38,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
             String ipAddress,
             Integer port,
             Integer weight,
+            Integer maxConnections,
             Boolean drain,
             Boolean backup,
             Boolean offline) {
@@ -45,6 +47,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
         this.ipAddress = ipAddress;
         this.port = port;
         this.weight = weight;
+        this.maxConnections = maxConnections;
         this.drain = drain;
         this.backup = backup;
         this.offline = offline;
@@ -147,6 +150,27 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
+         * The maximum number of simultaneous connections the load balancer can make to the backend.
+         *
+         * <p>Example: {@code 300}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
+        private Integer maxConnections;
+
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to the backend.
+         *
+         * <p>Example: {@code 300}
+         *
+         * @param maxConnections the value to set
+         * @return this builder
+         */
+        public Builder maxConnections(Integer maxConnections) {
+            this.maxConnections = maxConnections;
+            this.__explicitlySet__.add("maxConnections");
+            return this;
+        }
+        /**
          * Whether the load balancer should drain this server. Servers marked "drain" receive no new
          * incoming traffic.
          *
@@ -234,6 +258,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
                             this.ipAddress,
                             this.port,
                             this.weight,
+                            this.maxConnections,
                             this.drain,
                             this.backup,
                             this.offline);
@@ -256,6 +281,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("weight")) {
                 this.weight(model.getWeight());
+            }
+            if (model.wasPropertyExplicitlySet("maxConnections")) {
+                this.maxConnections(model.getMaxConnections());
             }
             if (model.wasPropertyExplicitlySet("drain")) {
                 this.drain(model.getDrain());
@@ -366,6 +394,25 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
+     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     *
+     * <p>Example: {@code 300}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
+    private final Integer maxConnections;
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     *
+     * <p>Example: {@code 300}
+     *
+     * @return the value
+     */
+    public Integer getMaxConnections() {
+        return maxConnections;
+    }
+
+    /**
      * Whether the load balancer should drain this server. Servers marked "drain" receive no new
      * incoming traffic.
      *
@@ -455,6 +502,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append(", maxConnections=").append(String.valueOf(this.maxConnections));
         sb.append(", drain=").append(String.valueOf(this.drain));
         sb.append(", backup=").append(String.valueOf(this.backup));
         sb.append(", offline=").append(String.valueOf(this.offline));
@@ -476,6 +524,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.maxConnections, other.maxConnections)
                 && java.util.Objects.equals(this.drain, other.drain)
                 && java.util.Objects.equals(this.backup, other.backup)
                 && java.util.Objects.equals(this.offline, other.offline)
@@ -490,6 +539,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxConnections == null ? 43 : this.maxConnections.hashCode());
         result = (result * PRIME) + (this.drain == null ? 43 : this.drain.hashCode());
         result = (result * PRIME) + (this.backup == null ? 43 : this.backup.hashCode());
         result = (result * PRIME) + (this.offline == null ? 43 : this.offline.hashCode());

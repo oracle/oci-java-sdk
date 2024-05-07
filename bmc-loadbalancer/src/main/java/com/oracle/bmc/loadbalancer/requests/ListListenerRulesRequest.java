@@ -26,10 +26,10 @@ public class ListListenerRulesRequest extends com.oracle.bmc.requests.BmcRequest
     public String getLoadBalancerId() {
         return loadBalancerId;
     }
-    /** The name of the listener the rules are associated with. */
+    /** The name of the listener the rules are associated with. Example: {@code example_listener} */
     private String listenerName;
 
-    /** The name of the listener the rules are associated with. */
+    /** The name of the listener the rules are associated with. Example: {@code example_listener} */
     public String getListenerName() {
         return listenerName;
     }
@@ -102,11 +102,13 @@ public class ListListenerRulesRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The name of the listener the rules are associated with. */
+        /**
+         * The name of the listener the rules are associated with. Example: {@code example_listener}
+         */
         private String listenerName = null;
 
         /**
-         * The name of the listener the rules are associated with.
+         * The name of the listener the rules are associated with. Example: {@code example_listener}
          *
          * @param listenerName the value to set
          * @return this builder instance

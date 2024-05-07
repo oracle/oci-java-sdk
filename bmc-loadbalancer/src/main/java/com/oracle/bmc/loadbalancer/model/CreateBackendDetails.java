@@ -25,11 +25,20 @@ package com.oracle.bmc.loadbalancer.model;
 public final class CreateBackendDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ipAddress", "port", "weight", "backup", "drain", "offline"})
+    @java.beans.ConstructorProperties({
+        "ipAddress",
+        "port",
+        "weight",
+        "maxConnections",
+        "backup",
+        "drain",
+        "offline"
+    })
     public CreateBackendDetails(
             String ipAddress,
             Integer port,
             Integer weight,
+            Integer maxConnections,
             Boolean backup,
             Boolean drain,
             Boolean offline) {
@@ -37,6 +46,7 @@ public final class CreateBackendDetails
         this.ipAddress = ipAddress;
         this.port = port;
         this.weight = weight;
+        this.maxConnections = maxConnections;
         this.backup = backup;
         this.drain = drain;
         this.offline = offline;
@@ -113,6 +123,27 @@ public final class CreateBackendDetails
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
+            return this;
+        }
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to the backend.
+         *
+         * <p>Example: {@code 300}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
+        private Integer maxConnections;
+
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to the backend.
+         *
+         * <p>Example: {@code 300}
+         *
+         * @param maxConnections the value to set
+         * @return this builder
+         */
+        public Builder maxConnections(Integer maxConnections) {
+            this.maxConnections = maxConnections;
+            this.__explicitlySet__.add("maxConnections");
             return this;
         }
         /**
@@ -202,6 +233,7 @@ public final class CreateBackendDetails
                             this.ipAddress,
                             this.port,
                             this.weight,
+                            this.maxConnections,
                             this.backup,
                             this.drain,
                             this.offline);
@@ -221,6 +253,9 @@ public final class CreateBackendDetails
             }
             if (model.wasPropertyExplicitlySet("weight")) {
                 this.weight(model.getWeight());
+            }
+            if (model.wasPropertyExplicitlySet("maxConnections")) {
+                this.maxConnections(model.getMaxConnections());
             }
             if (model.wasPropertyExplicitlySet("backup")) {
                 this.backup(model.getBackup());
@@ -307,6 +342,25 @@ public final class CreateBackendDetails
      */
     public Integer getWeight() {
         return weight;
+    }
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     *
+     * <p>Example: {@code 300}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
+    private final Integer maxConnections;
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     *
+     * <p>Example: {@code 300}
+     *
+     * @return the value
+     */
+    public Integer getMaxConnections() {
+        return maxConnections;
     }
 
     /**
@@ -398,6 +452,7 @@ public final class CreateBackendDetails
         sb.append("ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", weight=").append(String.valueOf(this.weight));
+        sb.append(", maxConnections=").append(String.valueOf(this.maxConnections));
         sb.append(", backup=").append(String.valueOf(this.backup));
         sb.append(", drain=").append(String.valueOf(this.drain));
         sb.append(", offline=").append(String.valueOf(this.offline));
@@ -418,6 +473,7 @@ public final class CreateBackendDetails
         return java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.maxConnections, other.maxConnections)
                 && java.util.Objects.equals(this.backup, other.backup)
                 && java.util.Objects.equals(this.drain, other.drain)
                 && java.util.Objects.equals(this.offline, other.offline)
@@ -431,6 +487,9 @@ public final class CreateBackendDetails
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxConnections == null ? 43 : this.maxConnections.hashCode());
         result = (result * PRIME) + (this.backup == null ? 43 : this.backup.hashCode());
         result = (result * PRIME) + (this.drain == null ? 43 : this.drain.hashCode());
         result = (result * PRIME) + (this.offline == null ? 43 : this.offline.hashCode());

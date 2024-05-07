@@ -11,8 +11,8 @@ package com.oracle.bmc.disasterrecovery.model;
  * COMPUTE_INSTANCE_NON_MOVABLE - A compute instance that does not move across regions or ADs during
  * DR. - VOLUME_GROUP - A volume group. - DATABASE - An Oracle Database instance from Base Database
  * service, or Exadata Database service. - AUTONOMOUS_DATABASE - An Oracle Autonomous Database
- * Serverless instance. - LOAD_BALANCER - A load balancer. - NETWORK_LOAD_BALANCER - A network load
- * balancer. - FILE_SYSTEM - A file system.
+ * Serverless. - LOAD_BALANCER - A load balancer. - NETWORK_LOAD_BALANCER - A network load balancer.
+ * - FILE_SYSTEM - A file system.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupMemberType implements com.oracle.bmc.http.internal.BmcEnum {

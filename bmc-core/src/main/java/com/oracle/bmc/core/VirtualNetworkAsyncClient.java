@@ -4283,6 +4283,42 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceIpInventoryResponse> getResourceIpInventory(
+            GetResourceIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getDataRequestId(), "dataRequestId must not be blank");
+
+        return clientCall(request, GetResourceIpInventoryResponse::builder)
+                .logger(LOG, "getResourceIpInventory")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetResourceIpInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/GetResourceIpInventory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetResourceIpInventoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipinventory")
+                .appendPathParam("DataRequestId")
+                .appendPathParam(request.getDataRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryCollection.class,
+                        GetResourceIpInventoryResponse.Builder::ipInventoryCollection)
+                .handleResponseHeaderString("etag", GetResourceIpInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetResourceIpInventoryResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetResourceIpInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", GetResourceIpInventoryResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRouteTableResponse> getRouteTable(
             GetRouteTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
@@ -4425,6 +4461,74 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", GetSubnetResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSubnetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrUtilizationResponse> getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, GetSubnetCidrUtilizationResponse::builder)
+                .logger(LOG, "getSubnetCidrUtilization")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetCidrUtilization",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCidrUtilizationCollection/GetSubnetCidrUtilization")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetCidrUtilizationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("cidrs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryCidrUtilizationCollection.class,
+                        GetSubnetCidrUtilizationResponse.Builder
+                                ::ipInventoryCidrUtilizationCollection)
+                .handleResponseHeaderString("etag", GetSubnetCidrUtilizationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetCidrUtilizationResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", GetSubnetCidrUtilizationResponse.Builder::opcTotalItems)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetIpInventoryResponse> getSubnetIpInventory(
+            GetSubnetIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, GetSubnetIpInventoryResponse::builder)
+                .logger(LOG, "getSubnetIpInventory")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetIpInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventorySubnetResourceCollection/GetSubnetIpInventory")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetIpInventoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventorySubnetResourceCollection.class,
+                        GetSubnetIpInventoryResponse.Builder::ipInventorySubnetResourceCollection)
+                .handleResponseHeaderString("etag", GetSubnetIpInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetIpInventoryResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4630,6 +4734,52 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString(
                         "opc-request-id",
                         GetVcnDnsResolverAssociationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVcnOverlapResponse> getVcnOverlap(
+            GetVcnOverlapRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetVcnOverlapRequest, GetVcnOverlapResponse>
+                    handler) {
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getGetVcnOverlapDetails(), "getVcnOverlapDetails is required");
+
+        return clientCall(request, GetVcnOverlapResponse::builder)
+                .logger(LOG, "getVcnOverlap")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "GetVcnOverlap",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryVcnOverlapCollection/GetVcnOverlap")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetVcnOverlapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("overlaps")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryVcnOverlapCollection.class,
+                        GetVcnOverlapResponse.Builder::ipInventoryVcnOverlapCollection)
+                .handleResponseHeaderString("etag", GetVcnOverlapResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVcnOverlapResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", GetVcnOverlapResponse.Builder::opcTotalItems)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", GetVcnOverlapResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderEnum(
+                        "lifecycle-state",
+                        com.oracle.bmc.core.responses.GetVcnOverlapResponse.LifecycleState::create,
+                        GetVcnOverlapResponse.Builder::lifecycleState)
+                .handleResponseHeaderString(
+                        "data-request-id", GetVcnOverlapResponse.Builder::dataRequestId)
                 .callAsync(handler);
     }
 
@@ -5681,6 +5831,50 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListInternetGatewaysResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListInternetGatewaysResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpInventoryResponse> listIpInventory(
+            ListIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListIpInventoryRequest, ListIpInventoryResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getListIpInventoryDetails(), "listIpInventoryDetails is required");
+
+        return clientCall(request, ListIpInventoryResponse::builder)
+                .logger(LOG, "listIpInventory")
+                .serviceDetails(
+                        "VirtualNetwork",
+                        "ListIpInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListIpInventory")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ListIpInventoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipInventory")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IpInventoryCollection.class,
+                        ListIpInventoryResponse.Builder::ipInventoryCollection)
+                .handleResponseHeaderString("etag", ListIpInventoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIpInventoryResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIpInventoryResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListIpInventoryResponse.Builder::opcTotalItems)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ListIpInventoryResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderEnum(
+                        "lifecycle-state",
+                        com.oracle.bmc.core.responses.ListIpInventoryResponse.LifecycleState
+                                ::create,
+                        ListIpInventoryResponse.Builder::lifecycleState)
+                .handleResponseHeaderString(
+                        "data-request-id", ListIpInventoryResponse.Builder::dataRequestId)
                 .callAsync(handler);
     }
 

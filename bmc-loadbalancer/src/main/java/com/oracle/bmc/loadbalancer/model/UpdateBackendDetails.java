@@ -23,10 +23,16 @@ package com.oracle.bmc.loadbalancer.model;
 public final class UpdateBackendDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"weight", "backup", "drain", "offline"})
-    public UpdateBackendDetails(Integer weight, Boolean backup, Boolean drain, Boolean offline) {
+    @java.beans.ConstructorProperties({"weight", "maxConnections", "backup", "drain", "offline"})
+    public UpdateBackendDetails(
+            Integer weight,
+            Integer maxConnections,
+            Boolean backup,
+            Boolean drain,
+            Boolean offline) {
         super();
         this.weight = weight;
+        this.maxConnections = maxConnections;
         this.backup = backup;
         this.drain = drain;
         this.offline = offline;
@@ -61,6 +67,27 @@ public final class UpdateBackendDetails
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
+            return this;
+        }
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to the backend.
+         *
+         * <p>Example: {@code 300}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
+        private Integer maxConnections;
+
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to the backend.
+         *
+         * <p>Example: {@code 300}
+         *
+         * @param maxConnections the value to set
+         * @return this builder
+         */
+        public Builder maxConnections(Integer maxConnections) {
+            this.maxConnections = maxConnections;
+            this.__explicitlySet__.add("maxConnections");
             return this;
         }
         /**
@@ -146,7 +173,12 @@ public final class UpdateBackendDetails
 
         public UpdateBackendDetails build() {
             UpdateBackendDetails model =
-                    new UpdateBackendDetails(this.weight, this.backup, this.drain, this.offline);
+                    new UpdateBackendDetails(
+                            this.weight,
+                            this.maxConnections,
+                            this.backup,
+                            this.drain,
+                            this.offline);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -157,6 +189,9 @@ public final class UpdateBackendDetails
         public Builder copy(UpdateBackendDetails model) {
             if (model.wasPropertyExplicitlySet("weight")) {
                 this.weight(model.getWeight());
+            }
+            if (model.wasPropertyExplicitlySet("maxConnections")) {
+                this.maxConnections(model.getMaxConnections());
             }
             if (model.wasPropertyExplicitlySet("backup")) {
                 this.backup(model.getBackup());
@@ -205,6 +240,25 @@ public final class UpdateBackendDetails
      */
     public Integer getWeight() {
         return weight;
+    }
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     *
+     * <p>Example: {@code 300}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
+    private final Integer maxConnections;
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     *
+     * <p>Example: {@code 300}
+     *
+     * @return the value
+     */
+    public Integer getMaxConnections() {
+        return maxConnections;
     }
 
     /**
@@ -294,6 +348,7 @@ public final class UpdateBackendDetails
         sb.append("UpdateBackendDetails(");
         sb.append("super=").append(super.toString());
         sb.append("weight=").append(String.valueOf(this.weight));
+        sb.append(", maxConnections=").append(String.valueOf(this.maxConnections));
         sb.append(", backup=").append(String.valueOf(this.backup));
         sb.append(", drain=").append(String.valueOf(this.drain));
         sb.append(", offline=").append(String.valueOf(this.offline));
@@ -312,6 +367,7 @@ public final class UpdateBackendDetails
 
         UpdateBackendDetails other = (UpdateBackendDetails) o;
         return java.util.Objects.equals(this.weight, other.weight)
+                && java.util.Objects.equals(this.maxConnections, other.maxConnections)
                 && java.util.Objects.equals(this.backup, other.backup)
                 && java.util.Objects.equals(this.drain, other.drain)
                 && java.util.Objects.equals(this.offline, other.offline)
@@ -323,6 +379,9 @@ public final class UpdateBackendDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.weight == null ? 43 : this.weight.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxConnections == null ? 43 : this.maxConnections.hashCode());
         result = (result * PRIME) + (this.backup == null ? 43 : this.backup.hashCode());
         result = (result * PRIME) + (this.drain == null ? 43 : this.drain.hashCode());
         result = (result * PRIME) + (this.offline == null ? 43 : this.offline.hashCode());

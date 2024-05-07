@@ -32,6 +32,7 @@ public final class CreateLoadBalancerDetails
         "shapeName",
         "shapeDetails",
         "isPrivate",
+        "isDeleteProtectionEnabled",
         "ipMode",
         "reservedIps",
         "listeners",
@@ -52,6 +53,7 @@ public final class CreateLoadBalancerDetails
             String shapeName,
             ShapeDetails shapeDetails,
             Boolean isPrivate,
+            Boolean isDeleteProtectionEnabled,
             IpMode ipMode,
             java.util.List<ReservedIP> reservedIps,
             java.util.Map<String, ListenerDetails> listeners,
@@ -71,6 +73,7 @@ public final class CreateLoadBalancerDetails
         this.shapeName = shapeName;
         this.shapeDetails = shapeDetails;
         this.isPrivate = isPrivate;
+        this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
         this.ipMode = ipMode;
         this.reservedIps = reservedIps;
         this.listeners = listeners;
@@ -135,7 +138,7 @@ public final class CreateLoadBalancerDetails
          * get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
          * operation.
          *
-         * <p>Example: {@code flexible} NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps,
+         * <p>Example: {@code flexible} NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps,
          * 400Mbps, 8000Mbps would be deprecated and only shape allowed would be {@code Flexible}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
@@ -146,7 +149,7 @@ public final class CreateLoadBalancerDetails
          * get a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
          * operation.
          *
-         * <p>Example: {@code flexible} NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps,
+         * <p>Example: {@code flexible} NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps,
          * 400Mbps, 8000Mbps would be deprecated and only shape allowed would be {@code Flexible}
          *
          * @param shapeName the value to set
@@ -215,6 +218,39 @@ public final class CreateLoadBalancerDetails
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = isPrivate;
             this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
+        /**
+         * Whether or not the load balancer has delete protection enabled.
+         *
+         * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
+         * traffic.
+         *
+         * <p>If "false", the loadbalancer will not be protected against deletion.
+         *
+         * <p>Delete protection will not be enabled unless a value of "true" is provided. Example:
+         * {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtectionEnabled")
+        private Boolean isDeleteProtectionEnabled;
+
+        /**
+         * Whether or not the load balancer has delete protection enabled.
+         *
+         * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
+         * traffic.
+         *
+         * <p>If "false", the loadbalancer will not be protected against deletion.
+         *
+         * <p>Delete protection will not be enabled unless a value of "true" is provided. Example:
+         * {@code true}
+         *
+         * @param isDeleteProtectionEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDeleteProtectionEnabled(Boolean isDeleteProtectionEnabled) {
+            this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
+            this.__explicitlySet__.add("isDeleteProtectionEnabled");
             return this;
         }
         /**
@@ -458,6 +494,7 @@ public final class CreateLoadBalancerDetails
                             this.shapeName,
                             this.shapeDetails,
                             this.isPrivate,
+                            this.isDeleteProtectionEnabled,
                             this.ipMode,
                             this.reservedIps,
                             this.listeners,
@@ -493,6 +530,9 @@ public final class CreateLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("isPrivate")) {
                 this.isPrivate(model.getIsPrivate());
+            }
+            if (model.wasPropertyExplicitlySet("isDeleteProtectionEnabled")) {
+                this.isDeleteProtectionEnabled(model.getIsDeleteProtectionEnabled());
             }
             if (model.wasPropertyExplicitlySet("ipMode")) {
                 this.ipMode(model.getIpMode());
@@ -589,8 +629,8 @@ public final class CreateLoadBalancerDetails
      * a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
      * operation.
      *
-     * <p>Example: {@code flexible} NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps,
-     * 400Mbps, 8000Mbps would be deprecated and only shape allowed would be {@code Flexible}
+     * <p>Example: {@code flexible} NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps,
+     * 8000Mbps would be deprecated and only shape allowed would be {@code Flexible}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
@@ -600,8 +640,8 @@ public final class CreateLoadBalancerDetails
      * a list of available shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
      * operation.
      *
-     * <p>Example: {@code flexible} NOTE: Starting May 2023, Fixed shapes - 10Mbps, 100Mbps,
-     * 400Mbps, 8000Mbps would be deprecated and only shape allowed would be {@code Flexible}
+     * <p>Example: {@code flexible} NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps,
+     * 8000Mbps would be deprecated and only shape allowed would be {@code Flexible}
      *
      * @return the value
      */
@@ -661,6 +701,37 @@ public final class CreateLoadBalancerDetails
      */
     public Boolean getIsPrivate() {
         return isPrivate;
+    }
+
+    /**
+     * Whether or not the load balancer has delete protection enabled.
+     *
+     * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
+     * traffic.
+     *
+     * <p>If "false", the loadbalancer will not be protected against deletion.
+     *
+     * <p>Delete protection will not be enabled unless a value of "true" is provided. Example:
+     * {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtectionEnabled")
+    private final Boolean isDeleteProtectionEnabled;
+
+    /**
+     * Whether or not the load balancer has delete protection enabled.
+     *
+     * <p>If "true", the loadbalancer will be protected against deletion if configured to accept
+     * traffic.
+     *
+     * <p>If "false", the loadbalancer will not be protected against deletion.
+     *
+     * <p>Delete protection will not be enabled unless a value of "true" is provided. Example:
+     * {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getIsDeleteProtectionEnabled() {
+        return isDeleteProtectionEnabled;
     }
 
     /**
@@ -927,6 +998,8 @@ public final class CreateLoadBalancerDetails
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", shapeDetails=").append(String.valueOf(this.shapeDetails));
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
+        sb.append(", isDeleteProtectionEnabled=")
+                .append(String.valueOf(this.isDeleteProtectionEnabled));
         sb.append(", ipMode=").append(String.valueOf(this.ipMode));
         sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
         sb.append(", listeners=").append(String.valueOf(this.listeners));
@@ -960,6 +1033,8 @@ public final class CreateLoadBalancerDetails
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.shapeDetails, other.shapeDetails)
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
+                && java.util.Objects.equals(
+                        this.isDeleteProtectionEnabled, other.isDeleteProtectionEnabled)
                 && java.util.Objects.equals(this.ipMode, other.ipMode)
                 && java.util.Objects.equals(this.reservedIps, other.reservedIps)
                 && java.util.Objects.equals(this.listeners, other.listeners)
@@ -988,6 +1063,11 @@ public final class CreateLoadBalancerDetails
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
         result = (result * PRIME) + (this.shapeDetails == null ? 43 : this.shapeDetails.hashCode());
         result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeleteProtectionEnabled == null
+                                ? 43
+                                : this.isDeleteProtectionEnabled.hashCode());
         result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
         result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());

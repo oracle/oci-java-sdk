@@ -54,7 +54,8 @@ public final class CreateCloudVmClusterDetails
         "freeformTags",
         "definedTags",
         "dataCollectionOptions",
-        "systemVersion"
+        "systemVersion",
+        "fileSystemConfigurationDetails"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
@@ -86,7 +87,8 @@ public final class CreateCloudVmClusterDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             DataCollectionOptions dataCollectionOptions,
-            String systemVersion) {
+            String systemVersion,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
         super();
         this.compartmentId = compartmentId;
         this.subnetId = subnetId;
@@ -118,6 +120,7 @@ public final class CreateCloudVmClusterDetails
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
         this.systemVersion = systemVersion;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -717,6 +720,22 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("systemVersion");
             return this;
         }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -753,7 +772,8 @@ public final class CreateCloudVmClusterDetails
                             this.freeformTags,
                             this.definedTags,
                             this.dataCollectionOptions,
-                            this.systemVersion);
+                            this.systemVersion,
+                            this.fileSystemConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -851,6 +871,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("systemVersion")) {
                 this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
             }
             return this;
         }
@@ -1425,6 +1448,19 @@ public final class CreateCloudVmClusterDetails
         return systemVersion;
     }
 
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1472,6 +1508,8 @@ public final class CreateCloudVmClusterDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1520,6 +1558,8 @@ public final class CreateCloudVmClusterDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -1609,6 +1649,11 @@ public final class CreateCloudVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
