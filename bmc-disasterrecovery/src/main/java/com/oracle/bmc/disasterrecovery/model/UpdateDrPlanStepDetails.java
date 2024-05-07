@@ -91,12 +91,16 @@ public final class UpdateDrPlanStepDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The error mode for this step. */
+        /**
+         * The error mode for this step. The default error mode for the step is {@code
+         * STOP_ON_ERROR}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
         private DrPlanStepErrorMode errorMode;
 
         /**
-         * The error mode for this step.
+         * The error mode for this step. The default error mode for the step is {@code
+         * STOP_ON_ERROR}.
          *
          * @param errorMode the value to set
          * @return this builder
@@ -107,7 +111,8 @@ public final class UpdateDrPlanStepDetails
             return this;
         }
         /**
-         * The timeout in seconds for executing this step.
+         * The timeout in seconds for executing this step. When creating a new step, if no timeout
+         * is specified, the default timeout is set to {@code 3600} seconds.
          *
          * <p>Example: {@code 600}
          */
@@ -115,7 +120,8 @@ public final class UpdateDrPlanStepDetails
         private Integer timeout;
 
         /**
-         * The timeout in seconds for executing this step.
+         * The timeout in seconds for executing this step. When creating a new step, if no timeout
+         * is specified, the default timeout is set to {@code 3600} seconds.
          *
          * <p>Example: {@code 600}
          *
@@ -128,7 +134,8 @@ public final class UpdateDrPlanStepDetails
             return this;
         }
         /**
-         * A flag indicating whether this step should be enabled for execution.
+         * A flag indicating whether this step should be enabled for execution. The default value
+         * for the isEnabled flag is {@code true}.
          *
          * <p>Example: {@code true}
          */
@@ -136,7 +143,8 @@ public final class UpdateDrPlanStepDetails
         private Boolean isEnabled;
 
         /**
-         * A flag indicating whether this step should be enabled for execution.
+         * A flag indicating whether this step should be enabled for execution. The default value
+         * for the isEnabled flag is {@code true}.
          *
          * <p>Example: {@code true}
          *
@@ -247,12 +255,14 @@ public final class UpdateDrPlanStepDetails
         return displayName;
     }
 
-    /** The error mode for this step. */
+    /**
+     * The error mode for this step. The default error mode for the step is {@code STOP_ON_ERROR}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
     private final DrPlanStepErrorMode errorMode;
 
     /**
-     * The error mode for this step.
+     * The error mode for this step. The default error mode for the step is {@code STOP_ON_ERROR}.
      *
      * @return the value
      */
@@ -261,7 +271,8 @@ public final class UpdateDrPlanStepDetails
     }
 
     /**
-     * The timeout in seconds for executing this step.
+     * The timeout in seconds for executing this step. When creating a new step, if no timeout is
+     * specified, the default timeout is set to {@code 3600} seconds.
      *
      * <p>Example: {@code 600}
      */
@@ -269,7 +280,8 @@ public final class UpdateDrPlanStepDetails
     private final Integer timeout;
 
     /**
-     * The timeout in seconds for executing this step.
+     * The timeout in seconds for executing this step. When creating a new step, if no timeout is
+     * specified, the default timeout is set to {@code 3600} seconds.
      *
      * <p>Example: {@code 600}
      *
@@ -280,7 +292,8 @@ public final class UpdateDrPlanStepDetails
     }
 
     /**
-     * A flag indicating whether this step should be enabled for execution.
+     * A flag indicating whether this step should be enabled for execution. The default value for
+     * the isEnabled flag is {@code true}.
      *
      * <p>Example: {@code true}
      */
@@ -288,7 +301,8 @@ public final class UpdateDrPlanStepDetails
     private final Boolean isEnabled;
 
     /**
-     * A flag indicating whether this step should be enabled for execution.
+     * A flag indicating whether this step should be enabled for execution. The default value for
+     * the isEnabled flag is {@code true}.
      *
      * <p>Example: {@code true}
      *

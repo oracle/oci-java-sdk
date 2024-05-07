@@ -58,7 +58,8 @@ public final class CloudExadataInfrastructure
         "storageServerVersion",
         "dbServerVersion",
         "monthlyStorageServerVersion",
-        "monthlyDbServerVersion"
+        "monthlyDbServerVersion",
+        "definedFileSystemConfigurations"
     })
     public CloudExadataInfrastructure(
             String id,
@@ -94,7 +95,8 @@ public final class CloudExadataInfrastructure
             String storageServerVersion,
             String dbServerVersion,
             String monthlyStorageServerVersion,
-            String monthlyDbServerVersion) {
+            String monthlyDbServerVersion,
+            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -130,6 +132,7 @@ public final class CloudExadataInfrastructure
         this.dbServerVersion = dbServerVersion;
         this.monthlyStorageServerVersion = monthlyStorageServerVersion;
         this.monthlyDbServerVersion = monthlyDbServerVersion;
+        this.definedFileSystemConfigurations = definedFileSystemConfigurations;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -727,6 +730,22 @@ public final class CloudExadataInfrastructure
             this.__explicitlySet__.add("monthlyDbServerVersion");
             return this;
         }
+        /** Details of the file system configuration of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedFileSystemConfigurations")
+        private java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations;
+
+        /**
+         * Details of the file system configuration of the Exadata infrastructure.
+         *
+         * @param definedFileSystemConfigurations the value to set
+         * @return this builder
+         */
+        public Builder definedFileSystemConfigurations(
+                java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+            this.__explicitlySet__.add("definedFileSystemConfigurations");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -767,7 +786,8 @@ public final class CloudExadataInfrastructure
                             this.storageServerVersion,
                             this.dbServerVersion,
                             this.monthlyStorageServerVersion,
-                            this.monthlyDbServerVersion);
+                            this.monthlyDbServerVersion,
+                            this.definedFileSystemConfigurations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -877,6 +897,9 @@ public final class CloudExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("monthlyDbServerVersion")) {
                 this.monthlyDbServerVersion(model.getMonthlyDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("definedFileSystemConfigurations")) {
+                this.definedFileSystemConfigurations(model.getDefinedFileSystemConfigurations());
             }
             return this;
         }
@@ -1462,6 +1485,19 @@ public final class CloudExadataInfrastructure
         return monthlyDbServerVersion;
     }
 
+    /** Details of the file system configuration of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedFileSystemConfigurations")
+    private final java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations;
+
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public java.util.List<DefinedFileSystemConfiguration> getDefinedFileSystemConfigurations() {
+        return definedFileSystemConfigurations;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1514,6 +1550,8 @@ public final class CloudExadataInfrastructure
         sb.append(", monthlyStorageServerVersion=")
                 .append(String.valueOf(this.monthlyStorageServerVersion));
         sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
+        sb.append(", definedFileSystemConfigurations=")
+                .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(")");
         return sb.toString();
     }
@@ -1568,6 +1606,8 @@ public final class CloudExadataInfrastructure
                         this.monthlyStorageServerVersion, other.monthlyStorageServerVersion)
                 && java.util.Objects.equals(
                         this.monthlyDbServerVersion, other.monthlyDbServerVersion)
+                && java.util.Objects.equals(
+                        this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && super.equals(other);
     }
 
@@ -1685,6 +1725,11 @@ public final class CloudExadataInfrastructure
                         + (this.monthlyDbServerVersion == null
                                 ? 43
                                 : this.monthlyDbServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedFileSystemConfigurations == null
+                                ? 43
+                                : this.definedFileSystemConfigurations.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

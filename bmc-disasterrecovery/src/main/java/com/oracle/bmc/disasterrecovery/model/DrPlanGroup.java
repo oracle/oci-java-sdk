@@ -21,13 +21,18 @@ package com.oracle.bmc.disasterrecovery.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "type", "displayName", "steps"})
+    @java.beans.ConstructorProperties({"id", "type", "displayName", "isPauseEnabled", "steps"})
     public DrPlanGroup(
-            String id, DrPlanGroupType type, String displayName, java.util.List<DrPlanStep> steps) {
+            String id,
+            DrPlanGroupType type,
+            String displayName,
+            Boolean isPauseEnabled,
+            java.util.List<DrPlanStep> steps) {
         super();
         this.id = id;
         this.type = type;
         this.displayName = displayName;
+        this.isPauseEnabled = isPauseEnabled;
         this.steps = steps;
     }
 
@@ -96,6 +101,31 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * A flag indicating whether this group should be enabled for execution. This flag is only
+         * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the
+         * remaining group types.
+         *
+         * <p>Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
+        private Boolean isPauseEnabled;
+
+        /**
+         * A flag indicating whether this group should be enabled for execution. This flag is only
+         * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the
+         * remaining group types.
+         *
+         * <p>Example: {@code true}
+         *
+         * @param isPauseEnabled the value to set
+         * @return this builder
+         */
+        public Builder isPauseEnabled(Boolean isPauseEnabled) {
+            this.isPauseEnabled = isPauseEnabled;
+            this.__explicitlySet__.add("isPauseEnabled");
+            return this;
+        }
         /** The list of steps in the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<DrPlanStep> steps;
@@ -116,7 +146,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrPlanGroup build() {
-            DrPlanGroup model = new DrPlanGroup(this.id, this.type, this.displayName, this.steps);
+            DrPlanGroup model =
+                    new DrPlanGroup(
+                            this.id, this.type, this.displayName, this.isPauseEnabled, this.steps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +165,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isPauseEnabled")) {
+                this.isPauseEnabled(model.getIsPauseEnabled());
             }
             if (model.wasPropertyExplicitlySet("steps")) {
                 this.steps(model.getSteps());
@@ -207,6 +242,29 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         return displayName;
     }
 
+    /**
+     * A flag indicating whether this group should be enabled for execution. This flag is only
+     * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining
+     * group types.
+     *
+     * <p>Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
+    private final Boolean isPauseEnabled;
+
+    /**
+     * A flag indicating whether this group should be enabled for execution. This flag is only
+     * applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining
+     * group types.
+     *
+     * <p>Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getIsPauseEnabled() {
+        return isPauseEnabled;
+    }
+
     /** The list of steps in the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<DrPlanStep> steps;
@@ -238,6 +296,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isPauseEnabled=").append(String.valueOf(this.isPauseEnabled));
         sb.append(", steps=").append(String.valueOf(this.steps));
         sb.append(")");
         return sb.toString();
@@ -256,6 +315,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isPauseEnabled, other.isPauseEnabled)
                 && java.util.Objects.equals(this.steps, other.steps)
                 && super.equals(other);
     }
@@ -267,6 +327,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPauseEnabled == null ? 43 : this.isPauseEnabled.hashCode());
         result = (result * PRIME) + (this.steps == null ? 43 : this.steps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

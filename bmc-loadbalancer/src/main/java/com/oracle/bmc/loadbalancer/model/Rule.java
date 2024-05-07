@@ -42,6 +42,9 @@ package com.oracle.bmc.loadbalancer.model;
             name = "CONTROL_ACCESS_USING_HTTP_METHODS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AllowRule.class, name = "ALLOW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = IpBasedMaxConnectionsRule.class,
+            name = "IP_BASED_MAX_CONNECTIONS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HttpHeaderRule.class,
             name = "HTTP_HEADER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -112,6 +115,7 @@ public class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMo
         ControlAccessUsingHttpMethods("CONTROL_ACCESS_USING_HTTP_METHODS"),
         Redirect("REDIRECT"),
         HttpHeader("HTTP_HEADER"),
+        IpBasedMaxConnections("IP_BASED_MAX_CONNECTIONS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

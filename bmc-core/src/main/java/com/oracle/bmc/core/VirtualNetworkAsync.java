@@ -2844,6 +2844,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the `IpInventory` resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourceIpInventoryResponse> getResourceIpInventory(
+            GetResourceIpInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>
+                    handler);
+
+    /**
      * Gets the specified route table's information.
      *
      * @param request The request object containing the details to send
@@ -2916,6 +2932,40 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSubnetResponse> getSubnet(
             GetSubnetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler);
+
+    /**
+     * Gets the CIDR utilization data of the specified subnet. Specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubnetCidrUtilizationResponse> getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>
+                    handler);
+
+    /**
+     * Gets the IP Inventory data of the specified subnet. Specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubnetIpInventoryResponse> getSubnetIpInventory(
+            GetSubnetIpInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>
+                    handler);
 
     /**
      * Gets a topology for a given subnet.
@@ -3037,6 +3087,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetVcnDnsResolverAssociationRequest,
                             GetVcnDnsResolverAssociationResponse>
+                    handler);
+
+    /**
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVcnOverlapResponse> getVcnOverlap(
+            GetVcnOverlapRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVcnOverlapRequest, GetVcnOverlapResponse>
                     handler);
 
     /**
@@ -3575,6 +3641,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             ListInternetGatewaysRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListInternetGatewaysRequest, ListInternetGatewaysResponse>
+                    handler);
+
+    /**
+     * Lists the IP Inventory information in the selected compartments.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIpInventoryResponse> listIpInventory(
+            ListIpInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListIpInventoryRequest, ListIpInventoryResponse>
                     handler);
 
     /**

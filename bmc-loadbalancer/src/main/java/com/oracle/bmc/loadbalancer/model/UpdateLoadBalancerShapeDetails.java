@@ -39,7 +39,7 @@ public final class UpdateLoadBalancerShapeDetails
          *
          * <p>Example: {@code flexible}
          *
-         * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May
+         * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May
          * 2023. This api * will only support {@code Flexible} shape after that date.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
@@ -52,7 +52,7 @@ public final class UpdateLoadBalancerShapeDetails
          *
          * <p>Example: {@code flexible}
          *
-         * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May
+         * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May
          * 2023. This api * will only support {@code Flexible} shape after that date.
          *
          * @param shapeName the value to set
@@ -119,7 +119,7 @@ public final class UpdateLoadBalancerShapeDetails
      *
      * <p>Example: {@code flexible}
      *
-     * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023.
+     * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023.
      * This api * will only support {@code Flexible} shape after that date.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
@@ -132,7 +132,7 @@ public final class UpdateLoadBalancerShapeDetails
      *
      * <p>Example: {@code flexible}
      *
-     * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated from May 2023.
+     * <p>NOTE: Fixed shapes 10Mbps, 100Mbps, 400Mbps, 8000Mbps will be deprecated after May 2023.
      * This api * will only support {@code Flexible} shape after that date.
      *
      * @return the value

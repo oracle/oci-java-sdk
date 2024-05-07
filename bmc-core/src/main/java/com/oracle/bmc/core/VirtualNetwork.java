@@ -2862,6 +2862,22 @@ public interface VirtualNetwork extends AutoCloseable {
             GetRemotePeeringConnectionRequest request);
 
     /**
+     * Gets the `IpInventory` resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetResourceIpInventoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetResourceIpInventory API.
+     */
+    GetResourceIpInventoryResponse getResourceIpInventory(GetResourceIpInventoryRequest request);
+
+    /**
      * Gets the specified route table's information.
      *
      * @param request The request object containing the details to send
@@ -2937,6 +2953,41 @@ public interface VirtualNetwork extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnet API.
      */
     GetSubnetResponse getSubnet(GetSubnetRequest request);
+
+    /**
+     * Gets the CIDR utilization data of the specified subnet. Specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetCidrUtilizationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSubnetCidrUtilization API.
+     */
+    GetSubnetCidrUtilizationResponse getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request);
+
+    /**
+     * Gets the IP Inventory data of the specified subnet. Specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetIpInventoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSubnetIpInventory API.
+     */
+    GetSubnetIpInventoryResponse getSubnetIpInventory(GetSubnetIpInventoryRequest request);
 
     /**
      * Gets a topology for a given subnet.
@@ -3060,6 +3111,22 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
             GetVcnDnsResolverAssociationRequest request);
+
+    /**
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnOverlapExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnOverlap API.
+     */
+    GetVcnOverlapResponse getVcnOverlap(GetVcnOverlapRequest request);
 
     /**
      * Gets a virtual network topology for a given VCN.
@@ -3604,6 +3671,22 @@ public interface VirtualNetwork extends AutoCloseable {
      *     ListInternetGateways API.
      */
     ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request);
+
+    /**
+     * Lists the IP Inventory information in the selected compartments.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpInventoryExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIpInventory
+     *     API.
+     */
+    ListIpInventoryResponse listIpInventory(ListIpInventoryRequest request);
 
     /**
      * Lists the {@link Ipv6} objects based on one of these filters:

@@ -70,7 +70,8 @@ public final class CloudVmClusterSummary
         "scanListenerPortTcp",
         "scanListenerPortTcpSsl",
         "dataCollectionOptions",
-        "giSoftwareImageId"
+        "giSoftwareImageId",
+        "fileSystemConfigurationDetails"
     })
     public CloudVmClusterSummary(
             String id,
@@ -119,7 +120,8 @@ public final class CloudVmClusterSummary
             Integer scanListenerPortTcp,
             Integer scanListenerPortTcpSsl,
             DataCollectionOptions dataCollectionOptions,
-            String giSoftwareImageId) {
+            String giSoftwareImageId,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -168,6 +170,7 @@ public final class CloudVmClusterSummary
         this.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
         this.dataCollectionOptions = dataCollectionOptions;
         this.giSoftwareImageId = giSoftwareImageId;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1060,6 +1063,22 @@ public final class CloudVmClusterSummary
             this.__explicitlySet__.add("giSoftwareImageId");
             return this;
         }
+        /** Details of the file system configuration of the VM cluster. */
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         *
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1113,7 +1132,8 @@ public final class CloudVmClusterSummary
                             this.scanListenerPortTcp,
                             this.scanListenerPortTcpSsl,
                             this.dataCollectionOptions,
-                            this.giSoftwareImageId);
+                            this.giSoftwareImageId,
+                            this.fileSystemConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1262,6 +1282,9 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
                 this.giSoftwareImageId(model.getGiSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
             }
             return this;
         }
@@ -2210,6 +2233,19 @@ public final class CloudVmClusterSummary
         return giSoftwareImageId;
     }
 
+    /** Details of the file system configuration of the VM cluster. */
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     *
+     * @return the value
+     */
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2275,6 +2311,8 @@ public final class CloudVmClusterSummary
         sb.append(", scanListenerPortTcpSsl=").append(String.valueOf(this.scanListenerPortTcpSsl));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -2341,6 +2379,8 @@ public final class CloudVmClusterSummary
                         this.scanListenerPortTcpSsl, other.scanListenerPortTcpSsl)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -2465,6 +2505,11 @@ public final class CloudVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
