@@ -30,6 +30,7 @@ public final class SSLConfiguration
     @java.beans.ConstructorProperties({
         "verifyDepth",
         "verifyPeerCertificate",
+        "hasSessionResumption",
         "trustedCertificateAuthorityIds",
         "certificateIds",
         "certificateName",
@@ -40,6 +41,7 @@ public final class SSLConfiguration
     public SSLConfiguration(
             Integer verifyDepth,
             Boolean verifyPeerCertificate,
+            Boolean hasSessionResumption,
             java.util.List<String> trustedCertificateAuthorityIds,
             java.util.List<String> certificateIds,
             String certificateName,
@@ -49,6 +51,7 @@ public final class SSLConfiguration
         super();
         this.verifyDepth = verifyDepth;
         this.verifyPeerCertificate = verifyPeerCertificate;
+        this.hasSessionResumption = hasSessionResumption;
         this.trustedCertificateAuthorityIds = trustedCertificateAuthorityIds;
         this.certificateIds = certificateIds;
         this.certificateName = certificateName;
@@ -99,6 +102,37 @@ public final class SSLConfiguration
         public Builder verifyPeerCertificate(Boolean verifyPeerCertificate) {
             this.verifyPeerCertificate = verifyPeerCertificate;
             this.__explicitlySet__.add("verifyPeerCertificate");
+            return this;
+        }
+        /**
+         * Whether the load balancer listener should resume an encrypted session by reusing the
+         * cryptographic parameters of a previous TLS session, without having to perform a full
+         * handshake again. If "true", the service resumes the previous TLS encrypted session. If
+         * "false", the service starts a new TLS encrypted session. Enabling session resumption
+         * improves performance but provides a lower level of security. Disabling session resumption
+         * improves security but reduces performance.
+         *
+         * <p>Example: {@code true}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("hasSessionResumption")
+        private Boolean hasSessionResumption;
+
+        /**
+         * Whether the load balancer listener should resume an encrypted session by reusing the
+         * cryptographic parameters of a previous TLS session, without having to perform a full
+         * handshake again. If "true", the service resumes the previous TLS encrypted session. If
+         * "false", the service starts a new TLS encrypted session. Enabling session resumption
+         * improves performance but provides a lower level of security. Disabling session resumption
+         * improves security but reduces performance.
+         *
+         * <p>Example: {@code true}
+         *
+         * @param hasSessionResumption the value to set
+         * @return this builder
+         */
+        public Builder hasSessionResumption(Boolean hasSessionResumption) {
+            this.hasSessionResumption = hasSessionResumption;
+            this.__explicitlySet__.add("hasSessionResumption");
             return this;
         }
         /**
@@ -343,6 +377,7 @@ public final class SSLConfiguration
                     new SSLConfiguration(
                             this.verifyDepth,
                             this.verifyPeerCertificate,
+                            this.hasSessionResumption,
                             this.trustedCertificateAuthorityIds,
                             this.certificateIds,
                             this.certificateName,
@@ -362,6 +397,9 @@ public final class SSLConfiguration
             }
             if (model.wasPropertyExplicitlySet("verifyPeerCertificate")) {
                 this.verifyPeerCertificate(model.getVerifyPeerCertificate());
+            }
+            if (model.wasPropertyExplicitlySet("hasSessionResumption")) {
+                this.hasSessionResumption(model.getHasSessionResumption());
             }
             if (model.wasPropertyExplicitlySet("trustedCertificateAuthorityIds")) {
                 this.trustedCertificateAuthorityIds(model.getTrustedCertificateAuthorityIds());
@@ -430,6 +468,35 @@ public final class SSLConfiguration
      */
     public Boolean getVerifyPeerCertificate() {
         return verifyPeerCertificate;
+    }
+
+    /**
+     * Whether the load balancer listener should resume an encrypted session by reusing the
+     * cryptographic parameters of a previous TLS session, without having to perform a full
+     * handshake again. If "true", the service resumes the previous TLS encrypted session. If
+     * "false", the service starts a new TLS encrypted session. Enabling session resumption improves
+     * performance but provides a lower level of security. Disabling session resumption improves
+     * security but reduces performance.
+     *
+     * <p>Example: {@code true}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("hasSessionResumption")
+    private final Boolean hasSessionResumption;
+
+    /**
+     * Whether the load balancer listener should resume an encrypted session by reusing the
+     * cryptographic parameters of a previous TLS session, without having to perform a full
+     * handshake again. If "true", the service resumes the previous TLS encrypted session. If
+     * "false", the service starts a new TLS encrypted session. Enabling session resumption improves
+     * performance but provides a lower level of security. Disabling session resumption improves
+     * security but reduces performance.
+     *
+     * <p>Example: {@code true}
+     *
+     * @return the value
+     */
+    public Boolean getHasSessionResumption() {
+        return hasSessionResumption;
     }
 
     /**
@@ -716,6 +783,7 @@ public final class SSLConfiguration
         sb.append("super=").append(super.toString());
         sb.append("verifyDepth=").append(String.valueOf(this.verifyDepth));
         sb.append(", verifyPeerCertificate=").append(String.valueOf(this.verifyPeerCertificate));
+        sb.append(", hasSessionResumption=").append(String.valueOf(this.hasSessionResumption));
         sb.append(", trustedCertificateAuthorityIds=")
                 .append(String.valueOf(this.trustedCertificateAuthorityIds));
         sb.append(", certificateIds=").append(String.valueOf(this.certificateIds));
@@ -739,6 +807,7 @@ public final class SSLConfiguration
         SSLConfiguration other = (SSLConfiguration) o;
         return java.util.Objects.equals(this.verifyDepth, other.verifyDepth)
                 && java.util.Objects.equals(this.verifyPeerCertificate, other.verifyPeerCertificate)
+                && java.util.Objects.equals(this.hasSessionResumption, other.hasSessionResumption)
                 && java.util.Objects.equals(
                         this.trustedCertificateAuthorityIds, other.trustedCertificateAuthorityIds)
                 && java.util.Objects.equals(this.certificateIds, other.certificateIds)
@@ -759,6 +828,11 @@ public final class SSLConfiguration
                         + (this.verifyPeerCertificate == null
                                 ? 43
                                 : this.verifyPeerCertificate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hasSessionResumption == null
+                                ? 43
+                                : this.hasSessionResumption.hashCode());
         result =
                 (result * PRIME)
                         + (this.trustedCertificateAuthorityIds == null

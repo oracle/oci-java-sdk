@@ -370,6 +370,9 @@ public final class Sender extends com.oracle.bmc.http.client.internal.Explicitly
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
+        NeedsAttention("NEEDS_ATTENTION"),
+        Inactive("INACTIVE"),
+        Failed("FAILED"),
         Deleting("DELETING"),
         Deleted("DELETED"),
 

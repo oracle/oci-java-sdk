@@ -15,6 +15,9 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     DeleteEmailDomain("DELETE_EMAIL_DOMAIN"),
     MoveEmailDomain("MOVE_EMAIL_DOMAIN"),
     UpdateEmailDomain("UPDATE_EMAIL_DOMAIN"),
+    CreateReturnPath("CREATE_RETURN_PATH"),
+    DeleteReturnPath("DELETE_RETURN_PATH"),
+    UpdateReturnPath("UPDATE_RETURN_PATH"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
