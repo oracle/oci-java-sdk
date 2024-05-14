@@ -146,6 +146,22 @@ public interface Email extends AutoCloseable {
     CreateEmailDomainResponse createEmailDomain(CreateEmailDomainRequest request);
 
     /**
+     * Creates a new email return path. Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailReturnPathExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateEmailReturnPath API.
+     */
+    CreateEmailReturnPathResponse createEmailReturnPath(CreateEmailReturnPathRequest request);
+
+    /**
      * Creates a sender for a tenancy in a given compartment.
      *
      * @param request The request object containing the details to send
@@ -212,6 +228,22 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     DeleteEmailDomainResponse deleteEmailDomain(DeleteEmailDomainRequest request);
+
+    /**
+     * Deletes an email return path.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailReturnPathExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteEmailReturnPath API.
+     */
+    DeleteEmailReturnPathResponse deleteEmailReturnPath(DeleteEmailReturnPathRequest request);
 
     /**
      * Deletes an approved sender for a tenancy in a given compartment for a provided `senderId`.
@@ -292,6 +324,22 @@ public interface Email extends AutoCloseable {
     GetEmailDomainResponse getEmailDomain(GetEmailDomainRequest request);
 
     /**
+     * Retrieves the specified email return path.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailReturnPathExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailReturnPath
+     *     API.
+     */
+    GetEmailReturnPathResponse getEmailReturnPath(GetEmailReturnPathRequest request);
+
+    /**
      * Gets an approved sender for a given `senderId`.
      *
      * @param request The request object containing the details to send
@@ -367,6 +415,22 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     ListEmailDomainsResponse listEmailDomains(ListEmailDomainsRequest request);
+
+    /**
+     * Lists email return paths in the specified compartment or emaildomain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailReturnPathsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListEmailReturnPaths API.
+     */
+    ListEmailReturnPathsResponse listEmailReturnPaths(ListEmailReturnPathsRequest request);
 
     /**
      * Gets a collection of approved sender email addresses and sender IDs.
@@ -479,6 +543,22 @@ public interface Email extends AutoCloseable {
      *     API.
      */
     UpdateEmailDomainResponse updateEmailDomain(UpdateEmailDomainRequest request);
+
+    /**
+     * Modifies an email return path.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateEmailReturnPath API.
+     */
+    UpdateEmailReturnPathResponse updateEmailReturnPath(UpdateEmailReturnPathRequest request);
 
     /**
      * Replaces the set of tags for a sender with the tags provided. If either freeform or defined

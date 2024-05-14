@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.41.2 - 2024-05-14
+### Added
+- Support for the Marketplace Private Offer service
+- Support for resizing local file systems in the Database service
+- Support for PPv2 (Proxy Protocol version 2) in the Load Balancer service
+- Support for custom return path for sent emails in the Email Delivery service
+- Support for session resumption in the Load Balancer service
+
 ## 3.41.1 - 2024-05-07
 ### Added
 - Support for resizing of local file systems in the Database service

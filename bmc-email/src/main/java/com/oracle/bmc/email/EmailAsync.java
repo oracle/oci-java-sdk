@@ -142,6 +142,22 @@ public interface EmailAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new email return path. Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateEmailReturnPathResponse> createEmailReturnPath(
+            CreateEmailReturnPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailReturnPathRequest, CreateEmailReturnPathResponse>
+                    handler);
+
+    /**
      * Creates a sender for a tenancy in a given compartment.
      *
      * @param request The request object containing the details to send
@@ -206,6 +222,22 @@ public interface EmailAsync extends AutoCloseable {
             DeleteEmailDomainRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteEmailDomainRequest, DeleteEmailDomainResponse>
+                    handler);
+
+    /**
+     * Deletes an email return path.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteEmailReturnPathResponse> deleteEmailReturnPath(
+            DeleteEmailReturnPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailReturnPathRequest, DeleteEmailReturnPathResponse>
                     handler);
 
     /**
@@ -286,6 +318,22 @@ public interface EmailAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves the specified email return path.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetEmailReturnPathResponse> getEmailReturnPath(
+            GetEmailReturnPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailReturnPathRequest, GetEmailReturnPathResponse>
+                    handler);
+
+    /**
      * Gets an approved sender for a given `senderId`.
      *
      * @param request The request object containing the details to send
@@ -357,6 +405,22 @@ public interface EmailAsync extends AutoCloseable {
     java.util.concurrent.Future<ListEmailDomainsResponse> listEmailDomains(
             ListEmailDomainsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListEmailDomainsRequest, ListEmailDomainsResponse>
+                    handler);
+
+    /**
+     * Lists email return paths in the specified compartment or emaildomain.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListEmailReturnPathsResponse> listEmailReturnPaths(
+            ListEmailReturnPathsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>
                     handler);
 
     /**
@@ -465,6 +529,22 @@ public interface EmailAsync extends AutoCloseable {
             UpdateEmailDomainRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateEmailDomainRequest, UpdateEmailDomainResponse>
+                    handler);
+
+    /**
+     * Modifies an email return path.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateEmailReturnPathResponse> updateEmailReturnPath(
+            UpdateEmailReturnPathRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailReturnPathRequest, UpdateEmailReturnPathResponse>
                     handler);
 
     /**

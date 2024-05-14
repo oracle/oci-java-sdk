@@ -30,20 +30,23 @@ public final class ListenerSummary
         "defaultBackendSetName",
         "port",
         "protocol",
-        "ipVersion"
+        "ipVersion",
+        "isPpv2Enabled"
     })
     public ListenerSummary(
             String name,
             String defaultBackendSetName,
             Integer port,
             ListenerProtocols protocol,
-            IpVersion ipVersion) {
+            IpVersion ipVersion,
+            Boolean isPpv2Enabled) {
         super();
         this.name = name;
         this.defaultBackendSetName = defaultBackendSetName;
         this.port = port;
         this.protocol = protocol;
         this.ipVersion = ipVersion;
+        this.isPpv2Enabled = isPpv2Enabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +160,21 @@ public final class ListenerSummary
             this.__explicitlySet__.add("ipVersion");
             return this;
         }
+        /** Property to enable/disable PPv2 feature for this listener. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isPpv2Enabled")
+        private Boolean isPpv2Enabled;
+
+        /**
+         * Property to enable/disable PPv2 feature for this listener.
+         *
+         * @param isPpv2Enabled the value to set
+         * @return this builder
+         */
+        public Builder isPpv2Enabled(Boolean isPpv2Enabled) {
+            this.isPpv2Enabled = isPpv2Enabled;
+            this.__explicitlySet__.add("isPpv2Enabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -168,7 +186,8 @@ public final class ListenerSummary
                             this.defaultBackendSetName,
                             this.port,
                             this.protocol,
-                            this.ipVersion);
+                            this.ipVersion,
+                            this.isPpv2Enabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -191,6 +210,9 @@ public final class ListenerSummary
             }
             if (model.wasPropertyExplicitlySet("ipVersion")) {
                 this.ipVersion(model.getIpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isPpv2Enabled")) {
+                this.isPpv2Enabled(model.getIsPpv2Enabled());
             }
             return this;
         }
@@ -304,6 +326,19 @@ public final class ListenerSummary
         return ipVersion;
     }
 
+    /** Property to enable/disable PPv2 feature for this listener. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isPpv2Enabled")
+    private final Boolean isPpv2Enabled;
+
+    /**
+     * Property to enable/disable PPv2 feature for this listener.
+     *
+     * @return the value
+     */
+    public Boolean getIsPpv2Enabled() {
+        return isPpv2Enabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -324,6 +359,7 @@ public final class ListenerSummary
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
+        sb.append(", isPpv2Enabled=").append(String.valueOf(this.isPpv2Enabled));
         sb.append(")");
         return sb.toString();
     }
@@ -343,6 +379,7 @@ public final class ListenerSummary
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.ipVersion, other.ipVersion)
+                && java.util.Objects.equals(this.isPpv2Enabled, other.isPpv2Enabled)
                 && super.equals(other);
     }
 
@@ -359,6 +396,9 @@ public final class ListenerSummary
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
         result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPpv2Enabled == null ? 43 : this.isPpv2Enabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
