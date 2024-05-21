@@ -458,6 +458,334 @@ public class BdsWaiters {
     }
 
     /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetNodeBackupRequest, GetNodeBackupResponse> forNodeBackup(
+            GetNodeBackupRequest request,
+            com.oracle.bmc.bds.model.NodeBackup.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forNodeBackup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetNodeBackupRequest, GetNodeBackupResponse> forNodeBackup(
+            GetNodeBackupRequest request,
+            com.oracle.bmc.bds.model.NodeBackup.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forNodeBackup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetNodeBackupRequest, GetNodeBackupResponse> forNodeBackup(
+            GetNodeBackupRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.bds.model.NodeBackup.LifecycleState... targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forNodeBackup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for NodeBackup.
+    private com.oracle.bmc.waiter.Waiter<GetNodeBackupRequest, GetNodeBackupResponse> forNodeBackup(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetNodeBackupRequest request,
+            final com.oracle.bmc.bds.model.NodeBackup.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.bds.model.NodeBackup.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetNodeBackupRequest, GetNodeBackupResponse>() {
+                            @Override
+                            public GetNodeBackupResponse apply(GetNodeBackupRequest request) {
+                                return client.getNodeBackup(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetNodeBackupResponse>() {
+                            @Override
+                            public boolean test(GetNodeBackupResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getNodeBackup().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.bds.model.NodeBackup.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetNodeBackupConfigurationRequest, GetNodeBackupConfigurationResponse>
+            forNodeBackupConfiguration(
+                    GetNodeBackupConfigurationRequest request,
+                    com.oracle.bmc.bds.model.NodeBackupConfiguration.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forNodeBackupConfiguration(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetNodeBackupConfigurationRequest, GetNodeBackupConfigurationResponse>
+            forNodeBackupConfiguration(
+                    GetNodeBackupConfigurationRequest request,
+                    com.oracle.bmc.bds.model.NodeBackupConfiguration.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forNodeBackupConfiguration(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetNodeBackupConfigurationRequest, GetNodeBackupConfigurationResponse>
+            forNodeBackupConfiguration(
+                    GetNodeBackupConfigurationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.bds.model.NodeBackupConfiguration.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forNodeBackupConfiguration(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for NodeBackupConfiguration.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetNodeBackupConfigurationRequest, GetNodeBackupConfigurationResponse>
+            forNodeBackupConfiguration(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetNodeBackupConfigurationRequest request,
+                    final com.oracle.bmc.bds.model.NodeBackupConfiguration.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.bds.model.NodeBackupConfiguration.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetNodeBackupConfigurationRequest,
+                                GetNodeBackupConfigurationResponse>() {
+                            @Override
+                            public GetNodeBackupConfigurationResponse apply(
+                                    GetNodeBackupConfigurationRequest request) {
+                                return client.getNodeBackupConfiguration(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetNodeBackupConfigurationResponse>() {
+                            @Override
+                            public boolean test(GetNodeBackupConfigurationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getNodeBackupConfiguration().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.bds.model.NodeBackupConfiguration.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetNodeReplaceConfigurationRequest, GetNodeReplaceConfigurationResponse>
+            forNodeReplaceConfiguration(
+                    GetNodeReplaceConfigurationRequest request,
+                    com.oracle.bmc.bds.model.NodeReplaceConfiguration.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forNodeReplaceConfiguration(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetNodeReplaceConfigurationRequest, GetNodeReplaceConfigurationResponse>
+            forNodeReplaceConfiguration(
+                    GetNodeReplaceConfigurationRequest request,
+                    com.oracle.bmc.bds.model.NodeReplaceConfiguration.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forNodeReplaceConfiguration(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetNodeReplaceConfigurationRequest, GetNodeReplaceConfigurationResponse>
+            forNodeReplaceConfiguration(
+                    GetNodeReplaceConfigurationRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.bds.model.NodeReplaceConfiguration.LifecycleState...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forNodeReplaceConfiguration(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for NodeReplaceConfiguration.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetNodeReplaceConfigurationRequest, GetNodeReplaceConfigurationResponse>
+            forNodeReplaceConfiguration(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetNodeReplaceConfigurationRequest request,
+                    final com.oracle.bmc.bds.model.NodeReplaceConfiguration.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.bds.model.NodeReplaceConfiguration.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetNodeReplaceConfigurationRequest,
+                                GetNodeReplaceConfigurationResponse>() {
+                            @Override
+                            public GetNodeReplaceConfigurationResponse apply(
+                                    GetNodeReplaceConfigurationRequest request) {
+                                return client.getNodeReplaceConfiguration(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetNodeReplaceConfigurationResponse>() {
+                            @Override
+                            public boolean test(GetNodeReplaceConfigurationResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getNodeReplaceConfiguration().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.bds.model.NodeReplaceConfiguration.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
      *
      * @param request the request to send

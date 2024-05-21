@@ -43,7 +43,9 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "localDisksTotalSizeInGBs",
         "timeMaintenanceRebootDue",
         "osVersion",
-        "isRebootRequired"
+        "isRebootRequired",
+        "timeReplaced",
+        "nodeBackupId"
     })
     public Node(
             String instanceId,
@@ -67,7 +69,9 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             Double localDisksTotalSizeInGBs,
             java.util.Date timeMaintenanceRebootDue,
             String osVersion,
-            Boolean isRebootRequired) {
+            Boolean isRebootRequired,
+            java.util.Date timeReplaced,
+            String nodeBackupId) {
         super();
         this.instanceId = instanceId;
         this.displayName = displayName;
@@ -91,6 +95,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.osVersion = osVersion;
         this.isRebootRequired = isRebootRequired;
+        this.timeReplaced = timeReplaced;
+        this.nodeBackupId = nodeBackupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -440,6 +446,36 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("isRebootRequired");
             return this;
         }
+        /** The date and time the instance was replaced by a new vm with a node backup. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
+        private java.util.Date timeReplaced;
+
+        /**
+         * The date and time the instance was replaced by a new vm with a node backup.
+         *
+         * @param timeReplaced the value to set
+         * @return this builder
+         */
+        public Builder timeReplaced(java.util.Date timeReplaced) {
+            this.timeReplaced = timeReplaced;
+            this.__explicitlySet__.add("timeReplaced");
+            return this;
+        }
+        /** The node back id that was used for replacing the node. */
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
+        private String nodeBackupId;
+
+        /**
+         * The node back id that was used for replacing the node.
+         *
+         * @param nodeBackupId the value to set
+         * @return this builder
+         */
+        public Builder nodeBackupId(String nodeBackupId) {
+            this.nodeBackupId = nodeBackupId;
+            this.__explicitlySet__.add("nodeBackupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -468,7 +504,9 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.localDisksTotalSizeInGBs,
                             this.timeMaintenanceRebootDue,
                             this.osVersion,
-                            this.isRebootRequired);
+                            this.isRebootRequired,
+                            this.timeReplaced,
+                            this.nodeBackupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -542,6 +580,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("isRebootRequired")) {
                 this.isRebootRequired(model.getIsRebootRequired());
+            }
+            if (model.wasPropertyExplicitlySet("timeReplaced")) {
+                this.timeReplaced(model.getTimeReplaced());
+            }
+            if (model.wasPropertyExplicitlySet("nodeBackupId")) {
+                this.nodeBackupId(model.getNodeBackupId());
             }
             return this;
         }
@@ -960,6 +1004,32 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return isRebootRequired;
     }
 
+    /** The date and time the instance was replaced by a new vm with a node backup. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
+    private final java.util.Date timeReplaced;
+
+    /**
+     * The date and time the instance was replaced by a new vm with a node backup.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeReplaced() {
+        return timeReplaced;
+    }
+
+    /** The node back id that was used for replacing the node. */
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
+    private final String nodeBackupId;
+
+    /**
+     * The node back id that was used for replacing the node.
+     *
+     * @return the value
+     */
+    public String getNodeBackupId() {
+        return nodeBackupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -999,6 +1069,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(", osVersion=").append(String.valueOf(this.osVersion));
         sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
+        sb.append(", timeReplaced=").append(String.valueOf(this.timeReplaced));
+        sb.append(", nodeBackupId=").append(String.valueOf(this.nodeBackupId));
         sb.append(")");
         return sb.toString();
     }
@@ -1037,6 +1109,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.osVersion, other.osVersion)
                 && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
+                && java.util.Objects.equals(this.timeReplaced, other.timeReplaced)
+                && java.util.Objects.equals(this.nodeBackupId, other.nodeBackupId)
                 && super.equals(other);
     }
 
@@ -1088,6 +1162,8 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
+        result = (result * PRIME) + (this.timeReplaced == null ? 43 : this.timeReplaced.hashCode());
+        result = (result * PRIME) + (this.nodeBackupId == null ? 43 : this.nodeBackupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

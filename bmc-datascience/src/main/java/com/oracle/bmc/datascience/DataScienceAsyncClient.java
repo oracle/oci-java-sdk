@@ -272,6 +272,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendPathParam(request.getPipelineRunId())
                 .appendPathParam("actions")
                 .appendPathParam("cancelPipelineRun")
+                .appendQueryParam("terminateGracefully", request.getTerminateGracefully())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -804,6 +805,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.JobRun.class,
@@ -904,6 +906,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.ModelDeployment.class,
@@ -1081,6 +1084,7 @@ public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.datascience.model.PipelineRun.class,

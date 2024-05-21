@@ -27,7 +27,10 @@ package com.oracle.bmc.datascience.model;
             name = "ML_JOB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PipelineCustomScriptStepUpdateDetails.class,
-            name = "CUSTOM_SCRIPT")
+            name = "CUSTOM_SCRIPT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PipelineContainerStepUpdateDetails.class,
+            name = "CONTAINER")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -137,6 +140,7 @@ public class PipelineStepUpdateDetails
     public enum StepType implements com.oracle.bmc.http.internal.BmcEnum {
         MlJob("ML_JOB"),
         CustomScript("CUSTOM_SCRIPT"),
+        Container("CONTAINER"),
         ;
 
         private final String value;

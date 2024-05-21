@@ -386,6 +386,37 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public BackupNodeResponse backupNode(BackupNodeRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getBackupNodeDetails(), "backupNodeDetails is required");
+
+        return clientCall(request, BackupNodeResponse::builder)
+                .logger(LOG, "backupNode")
+                .serviceDetails(
+                        "Bds",
+                        "BackupNode",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/BackupNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BackupNodeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("backupNodes")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", BackupNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", BackupNodeResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CertificateServiceInfoResponse certificateServiceInfo(
             CertificateServiceInfoRequest request) {
 
@@ -579,6 +610,74 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public CreateNodeBackupConfigurationResponse createNodeBackupConfiguration(
+            CreateNodeBackupConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateNodeBackupConfigurationDetails(),
+                "createNodeBackupConfigurationDetails is required");
+
+        return clientCall(request, CreateNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "createNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateNodeBackupConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateNodeReplaceConfigurationResponse createNodeReplaceConfiguration(
+            CreateNodeReplaceConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateNodeReplaceConfigurationDetails(),
+                "createNodeReplaceConfigurationDetails is required");
+
+        return clientCall(request, CreateNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "createNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateNodeReplaceConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request) {
 
         Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
@@ -664,6 +763,71 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteNodeBackupResponse deleteNodeBackup(DeleteNodeBackupRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getNodeBackupId(), "nodeBackupId must not be blank");
+
+        return clientCall(request, DeleteNodeBackupResponse::builder)
+                .logger(LOG, "deleteNodeBackup")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteNodeBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/NodeBackup/DeleteNodeBackup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNodeBackupRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackups")
+                .appendPathParam(request.getNodeBackupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNodeBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteNodeBackupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteNodeBackupConfigurationResponse deleteNodeBackupConfiguration(
+            DeleteNodeBackupConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeBackupConfigurationId(),
+                "nodeBackupConfigurationId must not be blank");
+
+        return clientCall(request, DeleteNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "deleteNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/NodeBackupConfiguration/DeleteNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendPathParam(request.getNodeBackupConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteNodeBackupConfigurationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -890,6 +1054,107 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         GetBdsMetastoreConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetBdsMetastoreConfigurationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetNodeBackupResponse getNodeBackup(GetNodeBackupRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(request.getNodeBackupId(), "nodeBackupId must not be blank");
+
+        return clientCall(request, GetNodeBackupResponse::builder)
+                .logger(LOG, "getNodeBackup")
+                .serviceDetails(
+                        "Bds",
+                        "GetNodeBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetNodeBackup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNodeBackupRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackups")
+                .appendPathParam(request.getNodeBackupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.NodeBackup.class,
+                        GetNodeBackupResponse.Builder::nodeBackup)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNodeBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetNodeBackupResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetNodeBackupConfigurationResponse getNodeBackupConfiguration(
+            GetNodeBackupConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeBackupConfigurationId(),
+                "nodeBackupConfigurationId must not be blank");
+
+        return clientCall(request, GetNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "getNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendPathParam(request.getNodeBackupConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.NodeBackupConfiguration.class,
+                        GetNodeBackupConfigurationResponse.Builder::nodeBackupConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetNodeBackupConfigurationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetNodeReplaceConfigurationResponse getNodeReplaceConfiguration(
+            GetNodeReplaceConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeReplaceConfigurationId(),
+                "nodeReplaceConfigurationId must not be blank");
+
+        return clientCall(request, GetNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "getNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendPathParam(request.getNodeReplaceConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.NodeReplaceConfiguration.class,
+                        GetNodeReplaceConfigurationResponse.Builder::nodeReplaceConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetNodeReplaceConfigurationResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1163,6 +1428,116 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListBdsMetastoreConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListNodeBackupConfigurationsResponse listNodeBackupConfigurations(
+            ListNodeBackupConfigurationsRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListNodeBackupConfigurationsResponse::builder)
+                .logger(LOG, "listNodeBackupConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListNodeBackupConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListNodeBackupConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeBackupConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.NodeBackupConfigurationSummary.class,
+                        ListNodeBackupConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNodeBackupConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeBackupConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListNodeBackupsResponse listNodeBackups(ListNodeBackupsRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListNodeBackupsResponse::builder)
+                .logger(LOG, "listNodeBackups")
+                .serviceDetails(
+                        "Bds",
+                        "ListNodeBackups",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListNodeBackups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeBackupsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackups")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("nodeHostName", request.getNodeHostName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.NodeBackupSummary.class,
+                        ListNodeBackupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNodeBackupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeBackupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListNodeReplaceConfigurationsResponse listNodeReplaceConfigurations(
+            ListNodeReplaceConfigurationsRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        return clientCall(request, ListNodeReplaceConfigurationsResponse::builder)
+                .logger(LOG, "listNodeReplaceConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListNodeReplaceConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListNodeReplaceConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNodeReplaceConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary.class,
+                        ListNodeReplaceConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNodeReplaceConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNodeReplaceConfigurationsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1505,6 +1880,48 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public RemoveNodeReplaceConfigurationResponse removeNodeReplaceConfiguration(
+            RemoveNodeReplaceConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeReplaceConfigurationId(),
+                "nodeReplaceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveNodeReplaceConfigurationDetails(),
+                "removeNodeReplaceConfigurationDetails is required");
+
+        return clientCall(request, RemoveNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "removeNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "RemoveNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/NodeReplaceConfiguration/RemoveNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendPathParam(request.getNodeReplaceConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("remove")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveNodeReplaceConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public RenewCertificateResponse renewCertificate(RenewCertificateRequest request) {
 
         Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
@@ -1533,6 +1950,37 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", RenewCertificateResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", RenewCertificateResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReplaceNodeResponse replaceNode(ReplaceNodeRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getReplaceNodeDetails(), "replaceNodeDetails is required");
+
+        return clientCall(request, ReplaceNodeResponse::builder)
+                .logger(LOG, "replaceNode")
+                .serviceDetails(
+                        "Bds",
+                        "ReplaceNode",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ReplaceNode")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReplaceNodeRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("replaceNode")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ReplaceNodeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ReplaceNodeResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1809,6 +2257,86 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateNodeBackupConfigurationResponse updateNodeBackupConfiguration(
+            UpdateNodeBackupConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeBackupConfigurationId(),
+                "nodeBackupConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNodeBackupConfigurationDetails(),
+                "updateNodeBackupConfigurationDetails is required");
+
+        return clientCall(request, UpdateNodeBackupConfigurationResponse::builder)
+                .logger(LOG, "updateNodeBackupConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateNodeBackupConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateNodeBackupConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNodeBackupConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeBackupConfigurations")
+                .appendPathParam(request.getNodeBackupConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateNodeBackupConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateNodeBackupConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateNodeReplaceConfigurationResponse updateNodeReplaceConfiguration(
+            UpdateNodeReplaceConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getNodeReplaceConfigurationId(),
+                "nodeReplaceConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNodeReplaceConfigurationDetails(),
+                "updateNodeReplaceConfigurationDetails is required");
+
+        return clientCall(request, UpdateNodeReplaceConfigurationResponse::builder)
+                .logger(LOG, "updateNodeReplaceConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateNodeReplaceConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateNodeReplaceConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNodeReplaceConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("nodeReplaceConfigurations")
+                .appendPathParam(request.getNodeReplaceConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateNodeReplaceConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateNodeReplaceConfigurationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

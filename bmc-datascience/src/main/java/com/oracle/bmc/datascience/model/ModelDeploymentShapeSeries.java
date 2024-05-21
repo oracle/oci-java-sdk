@@ -10,6 +10,7 @@ public enum ModelDeploymentShapeSeries implements com.oracle.bmc.http.internal.B
     AmdRome("AMD_ROME"),
     IntelSkylake("INTEL_SKYLAKE"),
     NvidiaGpu("NVIDIA_GPU"),
+    Generic("GENERIC"),
     Legacy("LEGACY"),
     Arm("ARM"),
 

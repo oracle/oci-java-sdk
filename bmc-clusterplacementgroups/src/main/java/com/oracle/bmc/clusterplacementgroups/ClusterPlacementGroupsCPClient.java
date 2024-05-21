@@ -134,7 +134,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ActivateClusterPlacementGroupResponse::builder)
                 .logger(LOG, "activateClusterPlacementGroup")
-                .serviceDetails("ClusterPlacementGroupsCP", "ActivateClusterPlacementGroup", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "ActivateClusterPlacementGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/ActivateClusterPlacementGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateClusterPlacementGroupRequest::builder)
                 .basePath("/20230801")
@@ -165,7 +168,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("ClusterPlacementGroupsCP", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20230801")
@@ -193,7 +199,9 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
         return clientCall(request, ChangeClusterPlacementGroupCompartmentResponse::builder)
                 .logger(LOG, "changeClusterPlacementGroupCompartment")
                 .serviceDetails(
-                        "ClusterPlacementGroupsCP", "ChangeClusterPlacementGroupCompartment", "")
+                        "ClusterPlacementGroupsCP",
+                        "ChangeClusterPlacementGroupCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/ChangeClusterPlacementGroupCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeClusterPlacementGroupCompartmentRequest::builder)
                 .basePath("/20230801")
@@ -222,7 +230,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CreateClusterPlacementGroupResponse::builder)
                 .logger(LOG, "createClusterPlacementGroup")
-                .serviceDetails("ClusterPlacementGroupsCP", "CreateClusterPlacementGroup", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "CreateClusterPlacementGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/CreateClusterPlacementGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateClusterPlacementGroupRequest::builder)
                 .basePath("/20230801")
@@ -260,7 +271,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeactivateClusterPlacementGroupResponse::builder)
                 .logger(LOG, "deactivateClusterPlacementGroup")
-                .serviceDetails("ClusterPlacementGroupsCP", "DeactivateClusterPlacementGroup", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "DeactivateClusterPlacementGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/DeactivateClusterPlacementGroup")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DeactivateClusterPlacementGroupRequest::builder)
                 .basePath("/20230801")
@@ -293,7 +307,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeleteClusterPlacementGroupResponse::builder)
                 .logger(LOG, "deleteClusterPlacementGroup")
-                .serviceDetails("ClusterPlacementGroupsCP", "DeleteClusterPlacementGroup", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "DeleteClusterPlacementGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/DeleteClusterPlacementGroup")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteClusterPlacementGroupRequest::builder)
                 .basePath("/20230801")
@@ -320,7 +337,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetClusterPlacementGroupResponse::builder)
                 .logger(LOG, "getClusterPlacementGroup")
-                .serviceDetails("ClusterPlacementGroupsCP", "GetClusterPlacementGroup", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "GetClusterPlacementGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/GetClusterPlacementGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetClusterPlacementGroupRequest::builder)
                 .basePath("/20230801")
@@ -345,7 +365,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("ClusterPlacementGroupsCP", "GetWorkRequest", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20230801")
@@ -371,7 +394,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListClusterPlacementGroupsResponse::builder)
                 .logger(LOG, "listClusterPlacementGroups")
-                .serviceDetails("ClusterPlacementGroupsCP", "ListClusterPlacementGroups", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "ListClusterPlacementGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroupCollection/ListClusterPlacementGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListClusterPlacementGroupsRequest::builder)
                 .basePath("/20230801")
@@ -408,7 +434,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("ClusterPlacementGroupsCP", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20230801")
@@ -440,7 +469,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("ClusterPlacementGroupsCP", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20230801")
@@ -470,7 +502,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("ClusterPlacementGroupsCP", "ListWorkRequests", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20230801")
@@ -509,7 +544,10 @@ public class ClusterPlacementGroupsCPClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdateClusterPlacementGroupResponse::builder)
                 .logger(LOG, "updateClusterPlacementGroup")
-                .serviceDetails("ClusterPlacementGroupsCP", "UpdateClusterPlacementGroup", "")
+                .serviceDetails(
+                        "ClusterPlacementGroupsCP",
+                        "UpdateClusterPlacementGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/clusterplacementgroups/20230801/ClusterPlacementGroup/UpdateClusterPlacementGroup")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateClusterPlacementGroupRequest::builder)
                 .basePath("/20230801")

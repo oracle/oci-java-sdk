@@ -285,6 +285,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getPipelineRunId())
                 .appendPathParam("actions")
                 .appendPathParam("cancelPipelineRun")
+                .appendQueryParam("terminateGracefully", request.getTerminateGracefully())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
@@ -762,6 +763,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
@@ -855,6 +857,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(
@@ -1020,6 +1023,7 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-parent-rpt-url", request.getOpcParentRptUrl())
                 .operationUsesDefaultRetries()
                 .hasBody()
                 .handleBody(

@@ -23,6 +23,9 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = PipelineStepRun.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PipelineContainerStepRun.class,
+            name = "CONTAINER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PipelineCustomScriptStepRun.class,
             name = "CUSTOM_SCRIPT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -243,6 +246,7 @@ public class PipelineStepRun extends com.oracle.bmc.http.client.internal.Explici
     public enum StepType implements com.oracle.bmc.http.internal.BmcEnum {
         MlJob("ML_JOB"),
         CustomScript("CUSTOM_SCRIPT"),
+        Container("CONTAINER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

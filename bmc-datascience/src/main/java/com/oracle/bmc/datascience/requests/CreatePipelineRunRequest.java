@@ -54,6 +54,13 @@ public class CreatePipelineRunRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** URL to fetch the Resource Principal Token from the parent resource. */
+    private String opcParentRptUrl;
+
+    /** URL to fetch the Resource Principal Token from the parent resource. */
+    public String getOpcParentRptUrl() {
+        return opcParentRptUrl;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -132,6 +139,20 @@ public class CreatePipelineRunRequest
             return this;
         }
 
+        /** URL to fetch the Resource Principal Token from the parent resource. */
+        private String opcParentRptUrl = null;
+
+        /**
+         * URL to fetch the Resource Principal Token from the parent resource.
+         *
+         * @param opcParentRptUrl the value to set
+         * @return this builder instance
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -165,6 +186,7 @@ public class CreatePipelineRunRequest
             createPipelineRunDetails(o.getCreatePipelineRunDetails());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcParentRptUrl(o.getOpcParentRptUrl());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -214,8 +236,10 @@ public class CreatePipelineRunRequest
             request.createPipelineRunDetails = createPipelineRunDetails;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcParentRptUrl = opcParentRptUrl;
             return request;
-            // new CreatePipelineRunRequest(createPipelineRunDetails, opcRetryToken, opcRequestId);
+            // new CreatePipelineRunRequest(createPipelineRunDetails, opcRetryToken, opcRequestId,
+            // opcParentRptUrl);
         }
     }
 
@@ -228,7 +252,8 @@ public class CreatePipelineRunRequest
         return new Builder()
                 .createPipelineRunDetails(createPipelineRunDetails)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcParentRptUrl(opcParentRptUrl);
     }
 
     /**
@@ -249,6 +274,7 @@ public class CreatePipelineRunRequest
                 .append(String.valueOf(this.createPipelineRunDetails));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcParentRptUrl=").append(String.valueOf(this.opcParentRptUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -267,7 +293,8 @@ public class CreatePipelineRunRequest
                 && java.util.Objects.equals(
                         this.createPipelineRunDetails, other.createPipelineRunDetails)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcParentRptUrl, other.opcParentRptUrl);
     }
 
     @Override
@@ -283,6 +310,9 @@ public class CreatePipelineRunRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcParentRptUrl == null ? 43 : this.opcParentRptUrl.hashCode());
         return result;
     }
 }

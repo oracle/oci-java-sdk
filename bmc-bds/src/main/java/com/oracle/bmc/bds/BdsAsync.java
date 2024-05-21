@@ -197,6 +197,20 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Takes a backup of of given nodes.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BackupNodeResponse> backupNode(
+            BackupNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<BackupNodeRequest, BackupNodeResponse> handler);
+
+    /**
      * A list of services and their certificate details.
      *
      * @param request The request object containing the details to send
@@ -296,6 +310,42 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Add a node volume backup configuration to the cluster for an indicated node type or node.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNodeBackupConfigurationResponse>
+            createNodeBackupConfiguration(
+                    CreateNodeBackupConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateNodeBackupConfigurationRequest,
+                                    CreateNodeBackupConfigurationResponse>
+                            handler);
+
+    /**
+     * Add a nodeReplaceConfigurations to the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNodeReplaceConfigurationResponse>
+            createNodeReplaceConfiguration(
+                    CreateNodeReplaceConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateNodeReplaceConfigurationRequest,
+                                    CreateNodeReplaceConfigurationResponse>
+                            handler);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -342,6 +392,39 @@ public interface BdsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     DeleteBdsMetastoreConfigurationRequest,
                                     DeleteBdsMetastoreConfigurationResponse>
+                            handler);
+
+    /**
+     * Delete the NodeBackup represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNodeBackupResponse> deleteNodeBackup(
+            DeleteNodeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteNodeBackupRequest, DeleteNodeBackupResponse>
+                    handler);
+
+    /**
+     * Delete the NodeBackupConfiguration represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNodeBackupConfigurationResponse>
+            deleteNodeBackupConfiguration(
+                    DeleteNodeBackupConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteNodeBackupConfigurationRequest,
+                                    DeleteNodeBackupConfigurationResponse>
                             handler);
 
     /**
@@ -453,6 +536,53 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetBdsMetastoreConfigurationRequest,
                             GetBdsMetastoreConfigurationResponse>
+                    handler);
+
+    /**
+     * Returns details of NodeBackup identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNodeBackupResponse> getNodeBackup(
+            GetNodeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetNodeBackupRequest, GetNodeBackupResponse>
+                    handler);
+
+    /**
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNodeBackupConfigurationResponse> getNodeBackupConfiguration(
+            GetNodeBackupConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNodeBackupConfigurationRequest, GetNodeBackupConfigurationResponse>
+                    handler);
+
+    /**
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNodeReplaceConfigurationResponse> getNodeReplaceConfiguration(
+            GetNodeReplaceConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNodeReplaceConfigurationRequest, GetNodeReplaceConfigurationResponse>
                     handler);
 
     /**
@@ -580,6 +710,56 @@ public interface BdsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListBdsMetastoreConfigurationsRequest,
                                     ListBdsMetastoreConfigurationsResponse>
+                            handler);
+
+    /**
+     * Returns information about the NodeBackupConfigurations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNodeBackupConfigurationsResponse> listNodeBackupConfigurations(
+            ListNodeBackupConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNodeBackupConfigurationsRequest,
+                            ListNodeBackupConfigurationsResponse>
+                    handler);
+
+    /**
+     * Returns information about the node Backups.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNodeBackupsResponse> listNodeBackups(
+            ListNodeBackupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListNodeBackupsRequest, ListNodeBackupsResponse>
+                    handler);
+
+    /**
+     * Returns information about the NodeReplaceConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNodeReplaceConfigurationsResponse>
+            listNodeReplaceConfigurations(
+                    ListNodeReplaceConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListNodeReplaceConfigurationsRequest,
+                                    ListNodeReplaceConfigurationsResponse>
                             handler);
 
     /**
@@ -736,6 +916,24 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<RemoveNodeRequest, RemoveNodeResponse> handler);
 
     /**
+     * Deletes a nodeReplaceConfiguration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveNodeReplaceConfigurationResponse>
+            removeNodeReplaceConfiguration(
+                    RemoveNodeReplaceConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveNodeReplaceConfigurationRequest,
+                                    RemoveNodeReplaceConfigurationResponse>
+                            handler);
+
+    /**
      * Renewing TLS/SSL for various ODH services running on the BDS cluster.
      *
      * @param request The request object containing the details to send
@@ -749,6 +947,20 @@ public interface BdsAsync extends AutoCloseable {
             RenewCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<RenewCertificateRequest, RenewCertificateResponse>
                     handler);
+
+    /**
+     * Replaces a node of a Big Data Service cluster from backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplaceNodeResponse> replaceNode(
+            ReplaceNodeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ReplaceNodeRequest, ReplaceNodeResponse> handler);
 
     /**
      * Restarts a single node of a Big Data Service cluster
@@ -881,5 +1093,41 @@ public interface BdsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateBdsMetastoreConfigurationRequest,
                                     UpdateBdsMetastoreConfigurationResponse>
+                            handler);
+
+    /**
+     * Updates fields on NodeBackupConfiguration, including the name, the schedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNodeBackupConfigurationResponse>
+            updateNodeBackupConfiguration(
+                    UpdateNodeBackupConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateNodeBackupConfigurationRequest,
+                                    UpdateNodeBackupConfigurationResponse>
+                            handler);
+
+    /**
+     * Updates fields on nodeReplaceConfigurations, including the name, the schedule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNodeReplaceConfigurationResponse>
+            updateNodeReplaceConfiguration(
+                    UpdateNodeReplaceConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateNodeReplaceConfigurationRequest,
+                                    UpdateNodeReplaceConfigurationResponse>
                             handler);
 }

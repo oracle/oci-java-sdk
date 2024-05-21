@@ -204,6 +204,21 @@ public interface Bds extends AutoCloseable {
     AddWorkerNodesResponse addWorkerNodes(AddWorkerNodesRequest request);
 
     /**
+     * Takes a backup of of given nodes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/BackupNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use BackupNode API.
+     */
+    BackupNodeResponse backupNode(BackupNodeRequest request);
+
+    /**
      * A list of services and their certificate details.
      *
      * @param request The request object containing the details to send
@@ -304,6 +319,40 @@ public interface Bds extends AutoCloseable {
             CreateBdsMetastoreConfigurationRequest request);
 
     /**
+     * Add a node volume backup configuration to the cluster for an indicated node type or node.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeBackupConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateNodeBackupConfiguration API.
+     */
+    CreateNodeBackupConfigurationResponse createNodeBackupConfiguration(
+            CreateNodeBackupConfigurationRequest request);
+
+    /**
+     * Add a nodeReplaceConfigurations to the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeReplaceConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateNodeReplaceConfiguration API.
+     */
+    CreateNodeReplaceConfigurationResponse createNodeReplaceConfiguration(
+            CreateNodeReplaceConfigurationRequest request);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -351,6 +400,39 @@ public interface Bds extends AutoCloseable {
      */
     DeleteBdsMetastoreConfigurationResponse deleteBdsMetastoreConfiguration(
             DeleteBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Delete the NodeBackup represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteNodeBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNodeBackup
+     *     API.
+     */
+    DeleteNodeBackupResponse deleteNodeBackup(DeleteNodeBackupRequest request);
+
+    /**
+     * Delete the NodeBackupConfiguration represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteNodeBackupConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteNodeBackupConfiguration API.
+     */
+    DeleteNodeBackupConfigurationResponse deleteNodeBackupConfiguration(
+            DeleteNodeBackupConfigurationRequest request);
 
     /**
      * Disabling TLS/SSL for various ODH services running on the BDS cluster.
@@ -463,6 +545,55 @@ public interface Bds extends AutoCloseable {
      */
     GetBdsMetastoreConfigurationResponse getBdsMetastoreConfiguration(
             GetBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Returns details of NodeBackup identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeBackupExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNodeBackup API.
+     */
+    GetNodeBackupResponse getNodeBackup(GetNodeBackupRequest request);
+
+    /**
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeBackupConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetNodeBackupConfiguration API.
+     */
+    GetNodeBackupConfigurationResponse getNodeBackupConfiguration(
+            GetNodeBackupConfigurationRequest request);
+
+    /**
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetNodeReplaceConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetNodeReplaceConfiguration API.
+     */
+    GetNodeReplaceConfigurationResponse getNodeReplaceConfiguration(
+            GetNodeReplaceConfigurationRequest request);
 
     /**
      * Get the details of an os patch
@@ -589,6 +720,56 @@ public interface Bds extends AutoCloseable {
      */
     ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
             ListBdsMetastoreConfigurationsRequest request);
+
+    /**
+     * Returns information about the NodeBackupConfigurations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeBackupConfigurationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListNodeBackupConfigurations API.
+     */
+    ListNodeBackupConfigurationsResponse listNodeBackupConfigurations(
+            ListNodeBackupConfigurationsRequest request);
+
+    /**
+     * Returns information about the node Backups.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeBackupsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNodeBackups
+     *     API.
+     */
+    ListNodeBackupsResponse listNodeBackups(ListNodeBackupsRequest request);
+
+    /**
+     * Returns information about the NodeReplaceConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListNodeReplaceConfigurationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListNodeReplaceConfigurations API.
+     */
+    ListNodeReplaceConfigurationsResponse listNodeReplaceConfigurations(
+            ListNodeReplaceConfigurationsRequest request);
 
     /**
      * List all available os patches for a given cluster
@@ -747,6 +928,23 @@ public interface Bds extends AutoCloseable {
     RemoveNodeResponse removeNode(RemoveNodeRequest request);
 
     /**
+     * Deletes a nodeReplaceConfiguration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveNodeReplaceConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveNodeReplaceConfiguration API.
+     */
+    RemoveNodeReplaceConfigurationResponse removeNodeReplaceConfiguration(
+            RemoveNodeReplaceConfigurationRequest request);
+
+    /**
      * Renewing TLS/SSL for various ODH services running on the BDS cluster.
      *
      * @param request The request object containing the details to send
@@ -761,6 +959,21 @@ public interface Bds extends AutoCloseable {
      *     API.
      */
     RenewCertificateResponse renewCertificate(RenewCertificateRequest request);
+
+    /**
+     * Replaces a node of a Big Data Service cluster from backup.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ReplaceNodeExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplaceNode API.
+     */
+    ReplaceNodeResponse replaceNode(ReplaceNodeRequest request);
 
     /**
      * Restarts a single node of a Big Data Service cluster
@@ -893,6 +1106,40 @@ public interface Bds extends AutoCloseable {
      */
     UpdateBdsMetastoreConfigurationResponse updateBdsMetastoreConfiguration(
             UpdateBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Updates fields on NodeBackupConfiguration, including the name, the schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateNodeBackupConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateNodeBackupConfiguration API.
+     */
+    UpdateNodeBackupConfigurationResponse updateNodeBackupConfiguration(
+            UpdateNodeBackupConfigurationRequest request);
+
+    /**
+     * Updates fields on nodeReplaceConfigurations, including the name, the schedule
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateNodeReplaceConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateNodeReplaceConfiguration API.
+     */
+    UpdateNodeReplaceConfigurationResponse updateNodeReplaceConfiguration(
+            UpdateNodeReplaceConfigurationRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.
