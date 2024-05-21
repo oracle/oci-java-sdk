@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -23,14 +23,25 @@ package com.oracle.bmc.databasemigration.model;
 public final class MigrationObjectSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"owner", "objectName", "type", "objectStatus"})
+    @java.beans.ConstructorProperties({
+        "owner",
+        "objectName",
+        "type",
+        "objectStatus",
+        "isOmitExcludedTableFromReplication"
+    })
     public MigrationObjectSummary(
-            String owner, String objectName, String type, ObjectStatus objectStatus) {
+            String owner,
+            String objectName,
+            String type,
+            ObjectStatus objectStatus,
+            Boolean isOmitExcludedTableFromReplication) {
         super();
         this.owner = owner;
         this.objectName = objectName;
         this.type = type;
         this.objectStatus = objectStatus;
+        this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -109,6 +120,25 @@ public final class MigrationObjectSummary
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and object status EXCLUDE.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isOmitExcludedTableFromReplication")
+        private Boolean isOmitExcludedTableFromReplication;
+
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and object status EXCLUDE.
+         *
+         * @param isOmitExcludedTableFromReplication the value to set
+         * @return this builder
+         **/
+        public Builder isOmitExcludedTableFromReplication(
+                Boolean isOmitExcludedTableFromReplication) {
+            this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
+            this.__explicitlySet__.add("isOmitExcludedTableFromReplication");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +146,11 @@ public final class MigrationObjectSummary
         public MigrationObjectSummary build() {
             MigrationObjectSummary model =
                     new MigrationObjectSummary(
-                            this.owner, this.objectName, this.type, this.objectStatus);
+                            this.owner,
+                            this.objectName,
+                            this.type,
+                            this.objectStatus,
+                            this.isOmitExcludedTableFromReplication);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -136,6 +170,10 @@ public final class MigrationObjectSummary
             }
             if (model.wasPropertyExplicitlySet("objectStatus")) {
                 this.objectStatus(model.getObjectStatus());
+            }
+            if (model.wasPropertyExplicitlySet("isOmitExcludedTableFromReplication")) {
+                this.isOmitExcludedTableFromReplication(
+                        model.getIsOmitExcludedTableFromReplication());
             }
             return this;
         }
@@ -218,6 +256,22 @@ public final class MigrationObjectSummary
         return objectStatus;
     }
 
+    /**
+     * Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and object status EXCLUDE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isOmitExcludedTableFromReplication")
+    private final Boolean isOmitExcludedTableFromReplication;
+
+    /**
+     * Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and object status EXCLUDE.
+     *
+     * @return the value
+     **/
+    public Boolean getIsOmitExcludedTableFromReplication() {
+        return isOmitExcludedTableFromReplication;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -236,6 +290,8 @@ public final class MigrationObjectSummary
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", objectStatus=").append(String.valueOf(this.objectStatus));
+        sb.append(", isOmitExcludedTableFromReplication=")
+                .append(String.valueOf(this.isOmitExcludedTableFromReplication));
         sb.append(")");
         return sb.toString();
     }
@@ -254,6 +310,9 @@ public final class MigrationObjectSummary
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.objectStatus, other.objectStatus)
+                && java.util.Objects.equals(
+                        this.isOmitExcludedTableFromReplication,
+                        other.isOmitExcludedTableFromReplication)
                 && super.equals(other);
     }
 
@@ -265,6 +324,11 @@ public final class MigrationObjectSummary
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.objectStatus == null ? 43 : this.objectStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOmitExcludedTableFromReplication == null
+                                ? 43
+                                : this.isOmitExcludedTableFromReplication.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent;
@@ -465,6 +465,58 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDataSourceResponse> createDataSource(
+            CreateDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDataSourceRequest, CreateDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async createDataSource");
+        final CreateDataSourceRequest interceptedRequest =
+                CreateDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "CreateDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/CreateDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDataSourceResponse>
+                transformer =
+                        CreateDataSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateDataSourceRequest, CreateDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDataSourceRequest, CreateDataSourceResponse>,
+                        java.util.concurrent.Future<CreateDataSourceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDataSourceRequest, CreateDataSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateManagementAgentInstallKeyResponse>
             createManagementAgentInstallKey(
                     CreateManagementAgentInstallKeyRequest request,
@@ -511,6 +563,52 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateManagementAgentInstallKeyRequest,
                     CreateManagementAgentInstallKeyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResponse> deleteDataSource(
+            DeleteDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDataSourceRequest, DeleteDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async deleteDataSource");
+        final DeleteDataSourceRequest interceptedRequest =
+                DeleteDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "DeleteDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/DeleteDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDataSourceResponse>
+                transformer =
+                        DeleteDataSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDataSourceRequest, DeleteDataSourceResponse>,
+                        java.util.concurrent.Future<DeleteDataSourceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDataSourceRequest, DeleteDataSourceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -768,6 +866,51 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataSourceResponse> getDataSource(
+            GetDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async getDataSource");
+        final GetDataSourceRequest interceptedRequest =
+                GetDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "GetDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/GetDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDataSourceResponse>
+                transformer =
+                        GetDataSourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetDataSourceRequest, GetDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataSourceRequest, GetDataSourceResponse>,
+                        java.util.concurrent.Future<GetDataSourceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataSourceRequest, GetDataSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetManagementAgentResponse> getManagementAgent(
             GetManagementAgentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1000,6 +1143,52 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAvailabilityHistoriesRequest, ListAvailabilityHistoriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResponse> listDataSources(
+            ListDataSourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDataSourcesRequest, ListDataSourcesResponse>
+                    handler) {
+        LOG.trace("Called async listDataSources");
+        final ListDataSourcesRequest interceptedRequest =
+                ListDataSourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataSourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "ListDataSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/ListDataSources");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDataSourcesResponse>
+                transformer =
+                        ListDataSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataSourcesRequest, ListDataSourcesResponse>,
+                        java.util.concurrent.Future<ListDataSourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataSourcesRequest, ListDataSourcesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1500,6 +1689,58 @@ public class ManagementAgentAsyncClient implements ManagementAgentAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     SummarizeManagementAgentPluginCountsRequest,
                     SummarizeManagementAgentPluginCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResponse> updateDataSource(
+            UpdateDataSourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDataSourceRequest, UpdateDataSourceResponse>
+                    handler) {
+        LOG.trace("Called async updateDataSource");
+        final UpdateDataSourceRequest interceptedRequest =
+                UpdateDataSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementAgent",
+                        "UpdateDataSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/management-agent/20200202/ManagementAgent/UpdateDataSource");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDataSourceResponse>
+                transformer =
+                        UpdateDataSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDataSourceRequest, UpdateDataSourceResponse>,
+                        java.util.concurrent.Future<UpdateDataSourceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDataSourceRequest, UpdateDataSourceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

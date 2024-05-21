@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -14,24 +14,24 @@ public class UpdateScheduledJobRequest
                 com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails> {
 
     /**
-     * The OCID of the scheduled job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
      */
     private String scheduledJobId;
 
     /**
-     * The OCID of the scheduled job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
      */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
     /**
-     * The information to be updated.
+     * Provides the information used to update the job.
      */
     private com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails
             updateScheduledJobDetails;
 
     /**
-     * The information to be updated.
+     * Provides the information used to update the job.
      */
     public com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails
             getUpdateScheduledJobDetails() {
@@ -89,12 +89,12 @@ public class UpdateScheduledJobRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the scheduled job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
          */
         private String scheduledJobId = null;
 
         /**
-         * The OCID of the scheduled job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
          * @param scheduledJobId the value to set
          * @return this builder instance
          */
@@ -104,13 +104,13 @@ public class UpdateScheduledJobRequest
         }
 
         /**
-         * The information to be updated.
+         * Provides the information used to update the job.
          */
         private com.oracle.bmc.osmanagementhub.model.UpdateScheduledJobDetails
                 updateScheduledJobDetails = null;
 
         /**
-         * The information to be updated.
+         * Provides the information used to update the job.
          * @param updateScheduledJobDetails the value to set
          * @return this builder instance
          */

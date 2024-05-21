@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.responses;
@@ -21,21 +21,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
      */
     public String getEtag() {
         return etag;
-    }
-
-    /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
-     */
-    private String opcWorkRequestId;
-
-    /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
-     * @return the value
-     */
-    public String getOpcWorkRequestId() {
-        return opcWorkRequestId;
     }
 
     /**
@@ -72,7 +57,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
         "__httpStatusCode__",
         "headers",
         "etag",
-        "opcWorkRequestId",
         "opcRequestId",
         "streamPackagingConfig"
     })
@@ -80,12 +64,10 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
-            String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.StreamPackagingConfig streamPackagingConfig) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
-        this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
         this.streamPackagingConfig = streamPackagingConfig;
     }
@@ -119,23 +101,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
          */
         public Builder etag(String etag) {
             this.etag = etag;
-            return this;
-        }
-
-        /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
-         */
-        private String opcWorkRequestId;
-
-        /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
-         * @param opcWorkRequestId the value to set
-         * @return this builder
-         */
-        public Builder opcWorkRequestId(String opcWorkRequestId) {
-            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -182,7 +147,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             etag(o.getEtag());
-            opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
             streamPackagingConfig(o.getStreamPackagingConfig());
 
@@ -195,12 +159,7 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
          */
         public UpdateStreamPackagingConfigResponse build() {
             return new UpdateStreamPackagingConfigResponse(
-                    __httpStatusCode__,
-                    headers,
-                    etag,
-                    opcWorkRequestId,
-                    opcRequestId,
-                    streamPackagingConfig);
+                    __httpStatusCode__, headers, etag, opcRequestId, streamPackagingConfig);
         }
     }
 
@@ -218,7 +177,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",etag=").append(String.valueOf(etag));
-        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",streamPackagingConfig=").append(String.valueOf(streamPackagingConfig));
         sb.append(")");
@@ -237,7 +195,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
         UpdateStreamPackagingConfigResponse other = (UpdateStreamPackagingConfigResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
-                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
                         this.streamPackagingConfig, other.streamPackagingConfig);
@@ -248,9 +205,6 @@ public class UpdateStreamPackagingConfigResponse extends com.oracle.bmc.response
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)

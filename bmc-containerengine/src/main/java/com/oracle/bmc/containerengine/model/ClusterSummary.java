@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -377,13 +377,13 @@ public final class ClusterSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Type of cluster
+         * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ClusterType type;
 
         /**
-         * Type of cluster
+         * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
          * @param type the value to set
          * @return this builder
          **/
@@ -753,13 +753,13 @@ public final class ClusterSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Type of cluster
+     * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ClusterType type;
 
     /**
-     * Type of cluster
+     * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * @return the value
      **/
     public ClusterType getType() {

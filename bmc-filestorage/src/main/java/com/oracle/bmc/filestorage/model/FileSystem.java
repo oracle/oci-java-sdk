@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -369,7 +369,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Specifies whether the file system can be used as a target file system for replication.
+         * Specifies whether the file system can be used as a target file system for replication. The system sets this value to {@code true} if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to {@code false}.
          * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          *
          **/
@@ -377,7 +377,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
         private Boolean isTargetable;
 
         /**
-         * Specifies whether the file system can be used as a target file system for replication.
+         * Specifies whether the file system can be used as a target file system for replication. The system sets this value to {@code true} if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to {@code false}.
          * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
          *
          * @param isTargetable the value to set
@@ -829,7 +829,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Specifies whether the file system can be used as a target file system for replication.
+     * Specifies whether the file system can be used as a target file system for replication. The system sets this value to {@code true} if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to {@code false}.
      * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      *
      **/
@@ -837,7 +837,7 @@ public final class FileSystem extends com.oracle.bmc.http.internal.ExplicitlySet
     private final Boolean isTargetable;
 
     /**
-     * Specifies whether the file system can be used as a target file system for replication.
+     * Specifies whether the file system can be used as a target file system for replication. The system sets this value to {@code true} if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to {@code false}.
      * For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      *
      * @return the value

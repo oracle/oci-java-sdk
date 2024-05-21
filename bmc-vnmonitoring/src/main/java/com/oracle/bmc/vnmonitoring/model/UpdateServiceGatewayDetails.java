@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,6 +27,7 @@ public final class UpdateServiceGatewayDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "routeTableId",
         "services"
     })
     public UpdateServiceGatewayDetails(
@@ -34,12 +35,14 @@ public final class UpdateServiceGatewayDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            String routeTableId,
             java.util.List<ServiceIdRequestDetails> services) {
         super();
         this.blockTraffic = blockTraffic;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.routeTableId = routeTableId;
         this.services = services;
     }
 
@@ -131,6 +134,28 @@ public final class UpdateServiceGatewayDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+         * For information about why you would associate a route table with a service gateway, see
+         * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+         * For information about why you would associate a route table with a service gateway, see
+         * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+        /**
          * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
          * means you want to disable all services. Omitting this parameter entirely keeps the
          * existing list of services intact.
@@ -179,6 +204,7 @@ public final class UpdateServiceGatewayDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.routeTableId,
                             this.services);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -199,6 +225,9 @@ public final class UpdateServiceGatewayDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("services")) {
                 this.services(model.getServices());
@@ -295,6 +324,26 @@ public final class UpdateServiceGatewayDetails
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
+    /**
      * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
      * means you want to disable all services. Omitting this parameter entirely keeps the
      * existing list of services intact.
@@ -348,6 +397,7 @@ public final class UpdateServiceGatewayDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", services=").append(String.valueOf(this.services));
         sb.append(")");
         return sb.toString();
@@ -367,6 +417,7 @@ public final class UpdateServiceGatewayDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.services, other.services)
                 && super.equals(other);
     }
@@ -379,6 +430,7 @@ public final class UpdateServiceGatewayDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

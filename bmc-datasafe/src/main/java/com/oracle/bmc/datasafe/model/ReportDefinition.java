@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -237,13 +237,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies the data and time the report definition was created.
+         * Specifies the date and time the report definition was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Specifies the data and time the report definition was created.
+         * Specifies the date and time the report definition was created.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -253,13 +253,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The date and time the report definition was update.
+         * The date and time the report definition was updated.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the report definition was update.
+         * The date and time the report definition was updated.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -425,13 +425,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies the format of the report ( either XLS or PDF )
+         * Specifies the format of the report ( either .xls or .pdf )
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of the report ( either XLS or PDF )
+         * Specifies the format of the report ( either .xls or .pdf )
          * @param scheduledReportMimeType the value to set
          * @return this builder
          **/
@@ -473,14 +473,14 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The OCID of the compartment in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource will be created.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
         private String scheduledReportCompartmentId;
 
         /**
-         * The OCID of the compartment in which the scheduled resource should be created.
+         * The OCID of the compartment in which the scheduled resource will be created.
          *
          * @param scheduledReportCompartmentId the value to set
          * @return this builder
@@ -792,6 +792,8 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         CustomReports("CUSTOM_REPORTS"),
         Summary("SUMMARY"),
         ActivityAuditing("ACTIVITY_AUDITING"),
+        FirewallViolations("FIREWALL_VIOLATIONS"),
+        AllowedSql("ALLOWED_SQL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -905,13 +907,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -919,13 +921,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -1073,7 +1075,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      **/
     public enum ScheduledReportMimeType {
         Pdf("PDF"),
@@ -1121,13 +1123,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      * @return the value
      **/
     public ScheduledReportMimeType getScheduledReportMimeType() {
@@ -1163,14 +1165,14 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportCompartmentId")
     private final String scheduledReportCompartmentId;
 
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      *
      * @return the value
      **/

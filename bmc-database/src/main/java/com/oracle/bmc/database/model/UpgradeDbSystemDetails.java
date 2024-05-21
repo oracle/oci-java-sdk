@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -27,17 +27,20 @@ public final class UpgradeDbSystemDetails
         "action",
         "snapshotRetentionPeriodInDays",
         "newGiVersion",
+        "newOsVersion",
         "isSnapshotRetentionDaysForceUpdated"
     })
     public UpgradeDbSystemDetails(
             Action action,
             Integer snapshotRetentionPeriodInDays,
             String newGiVersion,
+            String newOsVersion,
             Boolean isSnapshotRetentionDaysForceUpdated) {
         super();
         this.action = action;
         this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
         this.newGiVersion = newGiVersion;
+        this.newOsVersion = newOsVersion;
         this.isSnapshotRetentionDaysForceUpdated = isSnapshotRetentionDaysForceUpdated;
     }
 
@@ -92,6 +95,22 @@ public final class UpgradeDbSystemDetails
             return this;
         }
         /**
+         * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("newOsVersion")
+        private String newOsVersion;
+
+        /**
+         * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+         * @param newOsVersion the value to set
+         * @return this builder
+         **/
+        public Builder newOsVersion(String newOsVersion) {
+            this.newOsVersion = newOsVersion;
+            this.__explicitlySet__.add("newOsVersion");
+            return this;
+        }
+        /**
          * If true, rollback time is updated even if operating system upgrade history contains errors.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotRetentionDaysForceUpdated")
@@ -118,6 +137,7 @@ public final class UpgradeDbSystemDetails
                             this.action,
                             this.snapshotRetentionPeriodInDays,
                             this.newGiVersion,
+                            this.newOsVersion,
                             this.isSnapshotRetentionDaysForceUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -135,6 +155,9 @@ public final class UpgradeDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("newGiVersion")) {
                 this.newGiVersion(model.getNewGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("newOsVersion")) {
+                this.newOsVersion(model.getNewOsVersion());
             }
             if (model.wasPropertyExplicitlySet("isSnapshotRetentionDaysForceUpdated")) {
                 this.isSnapshotRetentionDaysForceUpdated(
@@ -235,6 +258,20 @@ public final class UpgradeDbSystemDetails
     }
 
     /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("newOsVersion")
+    private final String newOsVersion;
+
+    /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * @return the value
+     **/
+    public String getNewOsVersion() {
+        return newOsVersion;
+    }
+
+    /**
      * If true, rollback time is updated even if operating system upgrade history contains errors.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotRetentionDaysForceUpdated")
@@ -266,6 +303,7 @@ public final class UpgradeDbSystemDetails
         sb.append(", snapshotRetentionPeriodInDays=")
                 .append(String.valueOf(this.snapshotRetentionPeriodInDays));
         sb.append(", newGiVersion=").append(String.valueOf(this.newGiVersion));
+        sb.append(", newOsVersion=").append(String.valueOf(this.newOsVersion));
         sb.append(", isSnapshotRetentionDaysForceUpdated=")
                 .append(String.valueOf(this.isSnapshotRetentionDaysForceUpdated));
         sb.append(")");
@@ -286,6 +324,7 @@ public final class UpgradeDbSystemDetails
                 && java.util.Objects.equals(
                         this.snapshotRetentionPeriodInDays, other.snapshotRetentionPeriodInDays)
                 && java.util.Objects.equals(this.newGiVersion, other.newGiVersion)
+                && java.util.Objects.equals(this.newOsVersion, other.newOsVersion)
                 && java.util.Objects.equals(
                         this.isSnapshotRetentionDaysForceUpdated,
                         other.isSnapshotRetentionDaysForceUpdated)
@@ -303,6 +342,7 @@ public final class UpgradeDbSystemDetails
                                 ? 43
                                 : this.snapshotRetentionPeriodInDays.hashCode());
         result = (result * PRIME) + (this.newGiVersion == null ? 43 : this.newGiVersion.hashCode());
+        result = (result * PRIME) + (this.newOsVersion == null ? 43 : this.newOsVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSnapshotRetentionDaysForceUpdated == null

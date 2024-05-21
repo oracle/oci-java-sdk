@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -13,34 +13,34 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * OCID of target
+     * OCID of the target
      */
     private String targetId;
 
     /**
-     * OCID of target
+     * OCID of the target
      */
     public String getTargetId() {
         return targetId;
     }
     /**
-     * OCID of TargetDetectorRecipe
+     * OCID of the target detector recipe.
      */
     private String targetDetectorRecipeId;
 
     /**
-     * OCID of TargetDetectorRecipe
+     * OCID of the target detector recipe.
      */
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
     /**
-     * The id of DetectorRule
+     * The unique identifier of the detector rule.
      */
     private String detectorRuleId;
 
     /**
-     * The id of DetectorRule
+     * The unique identifier of the detector rule.
      */
     public String getDetectorRuleId() {
         return detectorRuleId;
@@ -65,12 +65,12 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          */
         private String targetId = null;
 
         /**
-         * OCID of target
+         * OCID of the target
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -80,12 +80,12 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
         }
 
         /**
-         * OCID of TargetDetectorRecipe
+         * OCID of the target detector recipe.
          */
         private String targetDetectorRecipeId = null;
 
         /**
-         * OCID of TargetDetectorRecipe
+         * OCID of the target detector recipe.
          * @param targetDetectorRecipeId the value to set
          * @return this builder instance
          */
@@ -95,12 +95,12 @@ public class GetTargetDetectorRecipeDetectorRuleRequest
         }
 
         /**
-         * The id of DetectorRule
+         * The unique identifier of the detector rule.
          */
         private String detectorRuleId = null;
 
         /**
-         * The id of DetectorRule
+         * The unique identifier of the detector rule.
          * @param detectorRuleId the value to set
          * @return this builder instance
          */

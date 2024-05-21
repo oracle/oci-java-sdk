@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -43,6 +43,7 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "updatedById",
         "timeExternal",
         "lifecycleState",
+        "lifecycleDetails",
         "harvestStatus",
         "lastJobKey",
         "uri",
@@ -68,6 +69,7 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             String updatedById,
             java.util.Date timeExternal,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             HarvestStatus harvestStatus,
             String lastJobKey,
             String uri,
@@ -92,6 +94,7 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.updatedById = updatedById;
         this.timeExternal = timeExternal;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.harvestStatus = harvestStatus;
         this.lastJobKey = lastJobKey;
         this.uri = uri;
@@ -428,6 +431,26 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * Status of the object as updated by the harvest process.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
@@ -517,6 +540,7 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.updatedById,
                             this.timeExternal,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.harvestStatus,
                             this.lastJobKey,
                             this.uri,
@@ -585,6 +609,9 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("harvestStatus")) {
                 this.harvestStatus(model.getHarvestStatus());
@@ -902,6 +929,24 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * Status of the object as updated by the harvest process.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
@@ -990,6 +1035,7 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", updatedById=").append(String.valueOf(this.updatedById));
         sb.append(", timeExternal=").append(String.valueOf(this.timeExternal));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", harvestStatus=").append(String.valueOf(this.harvestStatus));
         sb.append(", lastJobKey=").append(String.valueOf(this.lastJobKey));
         sb.append(", uri=").append(String.valueOf(this.uri));
@@ -1027,6 +1073,7 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.updatedById, other.updatedById)
                 && java.util.Objects.equals(this.timeExternal, other.timeExternal)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.harvestStatus, other.harvestStatus)
                 && java.util.Objects.equals(this.lastJobKey, other.lastJobKey)
                 && java.util.Objects.equals(this.uri, other.uri)
@@ -1071,6 +1118,9 @@ public final class Folder extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.harvestStatus == null ? 43 : this.harvestStatus.hashCode());

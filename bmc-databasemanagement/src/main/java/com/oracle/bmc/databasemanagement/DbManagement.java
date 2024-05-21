@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -8,9 +8,9 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
- * Use the Database Management API to perform tasks such as obtaining performance and resource usage metrics
- * for a fleet of Managed Databases or a specific Managed Database, creating Managed Database Groups, and
- * running a SQL job on a Managed Database or Managed Database Group.
+ * Use the Database Management API to monitor and manage resources such as
+ * Oracle Databases, MySQL Databases, and External Database Systems.
+ * For more information, see [Database Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -202,6 +202,22 @@ public interface DbManagement extends AutoCloseable {
      */
     ChangeManagedDatabaseGroupCompartmentResponse changeManagedDatabaseGroupCompartment(
             ChangeManagedDatabaseGroupCompartmentRequest request);
+
+    /**
+     * Moves a named credential to a different compartment.
+     * The destination compartment must not have a named credential
+     * with the same name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ChangeNamedCredentialCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNamedCredentialCompartment API.
+     */
+    ChangeNamedCredentialCompartmentResponse changeNamedCredentialCompartment(
+            ChangeNamedCredentialCompartmentRequest request);
 
     /**
      * Changes the retention period of unused plans. The period can range
@@ -427,6 +443,19 @@ public interface DbManagement extends AutoCloseable {
             CreateManagedDatabaseGroupRequest request);
 
     /**
+     * Creates a named credential.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateNamedCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNamedCredential API.
+     */
+    CreateNamedCredentialResponse createNamedCredential(CreateNamedCredentialRequest request);
+
+    /**
      * Creates a tablespace within the Managed Database specified by managedDatabaseId.
      *
      * @param request The request object containing the details to send
@@ -549,6 +578,19 @@ public interface DbManagement extends AutoCloseable {
             DeleteManagedDatabaseGroupRequest request);
 
     /**
+     * Deletes the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteNamedCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNamedCredential API.
+     */
+    DeleteNamedCredentialResponse deleteNamedCredential(DeleteNamedCredentialRequest request);
+
+    /**
      * Deletes the preferred credential based on the credentialName.
      *
      * @param request The request object containing the details to send
@@ -592,6 +634,35 @@ public interface DbManagement extends AutoCloseable {
      */
     DisableAutomaticSpmEvolveAdvisorTaskResponse disableAutomaticSpmEvolveAdvisorTask(
             DisableAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified Oracle cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableDatabaseManagementFeature API.
+     */
+    DisableDatabaseManagementFeatureResponse disableDatabaseManagementFeature(
+            DisableDatabaseManagementFeatureRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalContainerDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalContainerDatabaseManagementFeature API.
+     */
+    DisableExternalContainerDatabaseManagementFeatureResponse
+            disableExternalContainerDatabaseManagementFeature(
+                    DisableExternalContainerDatabaseManagementFeatureRequest request);
 
     /**
      * Disables Database Management service for all the components of the specified
@@ -646,6 +717,36 @@ public interface DbManagement extends AutoCloseable {
                     DisableExternalExadataInfrastructureManagementRequest request);
 
     /**
+     * Disables a Database Management feature for the specified external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalNonContainerDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalNonContainerDatabaseManagementFeature API.
+     */
+    DisableExternalNonContainerDatabaseManagementFeatureResponse
+            disableExternalNonContainerDatabaseManagementFeature(
+                    DisableExternalNonContainerDatabaseManagementFeatureRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalPluggableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableExternalPluggableDatabaseManagementFeature API.
+     */
+    DisableExternalPluggableDatabaseManagementFeatureResponse
+            disableExternalPluggableDatabaseManagementFeature(
+                    DisableExternalPluggableDatabaseManagementFeatureRequest request);
+
+    /**
      * Disables the high-frequency Automatic SPM Evolve Advisor task.
      * <p>
      * It is available only on Oracle Exadata Database Machine, Oracle Database Exadata
@@ -662,6 +763,20 @@ public interface DbManagement extends AutoCloseable {
     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
             disableHighFrequencyAutomaticSpmEvolveAdvisorTask(
                     DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Disables a Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisablePluggableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisablePluggableDatabaseManagementFeature API.
+     */
+    DisablePluggableDatabaseManagementFeatureResponse disablePluggableDatabaseManagementFeature(
+            DisablePluggableDatabaseManagementFeatureRequest request);
 
     /**
      * Disables the use of SQL plan baselines stored in SQL Management Base.
@@ -785,6 +900,35 @@ public interface DbManagement extends AutoCloseable {
             EnableAutomaticSpmEvolveAdvisorTaskRequest request);
 
     /**
+     * Enables a Database Management feature for the specified cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableDatabaseManagementFeature API.
+     */
+    EnableDatabaseManagementFeatureResponse enableDatabaseManagementFeature(
+            EnableDatabaseManagementFeatureRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified external container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalContainerDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalContainerDatabaseManagementFeature API.
+     */
+    EnableExternalContainerDatabaseManagementFeatureResponse
+            enableExternalContainerDatabaseManagementFeature(
+                    EnableExternalContainerDatabaseManagementFeatureRequest request);
+
+    /**
      * Enables Database Management service for all the components of the specified
      * external DB system (except databases).
      *
@@ -835,6 +979,36 @@ public interface DbManagement extends AutoCloseable {
                     EnableExternalExadataInfrastructureManagementRequest request);
 
     /**
+     * Enables Database Management feature for the specified external non-container database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalNonContainerDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalNonContainerDatabaseManagementFeature API.
+     */
+    EnableExternalNonContainerDatabaseManagementFeatureResponse
+            enableExternalNonContainerDatabaseManagementFeature(
+                    EnableExternalNonContainerDatabaseManagementFeatureRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified external pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalPluggableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableExternalPluggableDatabaseManagementFeature API.
+     */
+    EnableExternalPluggableDatabaseManagementFeatureResponse
+            enableExternalPluggableDatabaseManagementFeature(
+                    EnableExternalPluggableDatabaseManagementFeatureRequest request);
+
+    /**
      * Enables the high-frequency Automatic SPM Evolve Advisor task. The high-frequency
      * task runs every hour and runs for no longer than 30 minutes. These settings
      * are not configurable.
@@ -856,6 +1030,20 @@ public interface DbManagement extends AutoCloseable {
     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskResponse
             enableHighFrequencyAutomaticSpmEvolveAdvisorTask(
                     EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnablePluggableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnablePluggableDatabaseManagementFeature API.
+     */
+    EnablePluggableDatabaseManagementFeatureResponse enablePluggableDatabaseManagementFeature(
+            EnablePluggableDatabaseManagementFeatureRequest request);
 
     /**
      * Enables the use of SQL plan baselines stored in SQL Management Base.
@@ -1249,6 +1437,19 @@ public interface DbManagement extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetManagedDatabaseGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetManagedDatabaseGroup API.
      */
     GetManagedDatabaseGroupResponse getManagedDatabaseGroup(GetManagedDatabaseGroupRequest request);
+
+    /**
+     * Gets the details for the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetNamedCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamedCredential API.
+     */
+    GetNamedCredentialResponse getNamedCredential(GetNamedCredentialRequest request);
 
     /**
      * Gets the open alerts from the specified Exadata storage server.
@@ -1849,6 +2050,19 @@ public interface DbManagement extends AutoCloseable {
     ListManagedDatabasesResponse listManagedDatabases(ListManagedDatabasesRequest request);
 
     /**
+     * Gets a single named credential specified by the name or all the named credentials in a specific compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListNamedCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNamedCredentials API.
+     */
+    ListNamedCredentialsResponse listNamedCredentials(ListNamedCredentialsRequest request);
+
+    /**
      * Gets the list of object privileges granted to a specific user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2114,6 +2328,34 @@ public interface DbManagement extends AutoCloseable {
      */
     LoadSqlPlanBaselinesFromCursorCacheResponse loadSqlPlanBaselinesFromCursorCache(
             LoadSqlPlanBaselinesFromCursorCacheRequest request);
+
+    /**
+     * Modifies a Database Management feature for the specified Oracle cloud database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyDatabaseManagementFeature API.
+     */
+    ModifyDatabaseManagementFeatureResponse modifyDatabaseManagementFeature(
+            ModifyDatabaseManagementFeatureRequest request);
+
+    /**
+     * Modifies the Database Management feature for the specified Oracle cloud pluggable database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyPluggableDatabaseManagementFeatureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ModifyPluggableDatabaseManagementFeature API.
+     */
+    ModifyPluggableDatabaseManagementFeatureResponse modifyPluggableDatabaseManagementFeature(
+            ModifyPluggableDatabaseManagementFeatureRequest request);
 
     /**
      * Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
@@ -2465,6 +2707,19 @@ public interface DbManagement extends AutoCloseable {
             SummarizeSqlPlanBaselinesByLastExecutionRequest request);
 
     /**
+     * Tests the named credential.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/TestNamedCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestNamedCredential API.
+     */
+    TestNamedCredentialResponse testNamedCredential(TestNamedCredentialRequest request);
+
+    /**
      * Tests the preferred credential.
      *
      * @param request The request object containing the details to send
@@ -2504,6 +2759,20 @@ public interface DbManagement extends AutoCloseable {
     UpdateExternalAsmResponse updateExternalAsm(UpdateExternalAsmRequest request);
 
     /**
+     * Updates the external ASM instance specified by `externalAsmInstanceId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalAsmInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalAsmInstance API.
+     */
+    UpdateExternalAsmInstanceResponse updateExternalAsmInstance(
+            UpdateExternalAsmInstanceRequest request);
+
+    /**
      * Updates the external cluster specified by `externalClusterId`.
      *
      * @param request The request object containing the details to send
@@ -2529,6 +2798,19 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateExternalClusterInstanceResponse updateExternalClusterInstance(
             UpdateExternalClusterInstanceRequest request);
+
+    /**
+     * Updates the external DB home specified by `externalDbHomeId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalDbHomeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalDbHome API.
+     */
+    UpdateExternalDbHomeResponse updateExternalDbHome(UpdateExternalDbHomeRequest request);
 
     /**
      * Updates the external DB node specified by `externalDbNodeId`.
@@ -2612,6 +2894,34 @@ public interface DbManagement extends AutoCloseable {
             UpdateExternalExadataStorageConnectorRequest request);
 
     /**
+     * Updates the Exadata storage server grid specified by exadataStorageGridId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalExadataStorageGridExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalExadataStorageGrid API.
+     */
+    UpdateExternalExadataStorageGridResponse updateExternalExadataStorageGrid(
+            UpdateExternalExadataStorageGridRequest request);
+
+    /**
+     * Updates the Exadata storage server specified by exadataStorageServerId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalExadataStorageServerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExternalExadataStorageServer API.
+     */
+    UpdateExternalExadataStorageServerResponse updateExternalExadataStorageServer(
+            UpdateExternalExadataStorageServerRequest request);
+
+    /**
      * Updates the external listener specified by `externalListenerId`.
      *
      * @param request The request object containing the details to send
@@ -2638,6 +2948,19 @@ public interface DbManagement extends AutoCloseable {
     UpdateJobResponse updateJob(UpdateJobRequest request);
 
     /**
+     * Updates the Managed Database specified by managedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateManagedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateManagedDatabase API.
+     */
+    UpdateManagedDatabaseResponse updateManagedDatabase(UpdateManagedDatabaseRequest request);
+
+    /**
      * Updates the Managed Database Group specified by managedDatabaseGroupId.
      *
      * @param request The request object containing the details to send
@@ -2650,6 +2973,19 @@ public interface DbManagement extends AutoCloseable {
      */
     UpdateManagedDatabaseGroupResponse updateManagedDatabaseGroup(
             UpdateManagedDatabaseGroupRequest request);
+
+    /**
+     * Updates the named credential specified by namedCredentialId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateNamedCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNamedCredential API.
+     */
+    UpdateNamedCredentialResponse updateNamedCredential(UpdateNamedCredentialRequest request);
 
     /**
      * Updates the preferred credential based on the credentialName.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.internal.http;
@@ -92,6 +92,32 @@ public class ListSoftwareSourcesConverter {
                             "availability",
                             request.getAvailability(),
                             com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getAvailabilityAtOci() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "availabilityAtOci",
+                            request.getAvailabilityAtOci(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getAvailabilityAnywhere() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "availabilityAnywhere",
+                            request.getAvailabilityAnywhere(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIsMandatoryForAutonomousLinux() != null) {
+            target =
+                    target.queryParam(
+                            "isMandatoryForAutonomousLinux",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsMandatoryForAutonomousLinux()));
         }
 
         if (request.getDisplayName() != null) {

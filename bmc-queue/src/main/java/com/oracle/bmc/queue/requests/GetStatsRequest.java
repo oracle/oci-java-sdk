@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.requests;
@@ -12,26 +12,37 @@ import com.oracle.bmc.queue.model.*;
 public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     private String queueId;
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     public String getQueueId() {
         return queueId;
     }
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Id to specify channel.
+     */
+    private String channelId;
+
+    /**
+     * Id to specify channel.
+     */
+    public String getChannelId() {
+        return channelId;
     }
 
     public static class Builder
@@ -41,12 +52,12 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * unique Queue identifier
+         * The unique queue identifier.
          */
         private String queueId = null;
 
         /**
-         * unique Queue identifier
+         * The unique queue identifier.
          * @param queueId the value to set
          * @return this builder instance
          */
@@ -56,17 +67,32 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Id to specify channel.
+         */
+        private String channelId = null;
+
+        /**
+         * Id to specify channel.
+         * @param channelId the value to set
+         * @return this builder instance
+         */
+        public Builder channelId(String channelId) {
+            this.channelId = channelId;
             return this;
         }
 
@@ -100,6 +126,7 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         public Builder copy(GetStatsRequest o) {
             queueId(o.getQueueId());
             opcRequestId(o.getOpcRequestId());
+            channelId(o.getChannelId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -134,8 +161,9 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             GetStatsRequest request = new GetStatsRequest();
             request.queueId = queueId;
             request.opcRequestId = opcRequestId;
+            request.channelId = channelId;
             return request;
-            // new GetStatsRequest(queueId, opcRequestId);
+            // new GetStatsRequest(queueId, opcRequestId, channelId);
         }
     }
 
@@ -144,7 +172,7 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().queueId(queueId).opcRequestId(opcRequestId);
+        return new Builder().queueId(queueId).opcRequestId(opcRequestId).channelId(channelId);
     }
 
     /**
@@ -162,6 +190,7 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         sb.append("super=").append(super.toString());
         sb.append(",queueId=").append(String.valueOf(this.queueId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",channelId=").append(String.valueOf(this.channelId));
         sb.append(")");
         return sb.toString();
     }
@@ -178,7 +207,8 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         GetStatsRequest other = (GetStatsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.queueId, other.queueId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.channelId, other.channelId);
     }
 
     @Override
@@ -187,6 +217,7 @@ public class GetStatsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         int result = super.hashCode();
         result = (result * PRIME) + (this.queueId == null ? 43 : this.queueId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.channelId == null ? 43 : this.channelId.hashCode());
         return result;
     }
 }

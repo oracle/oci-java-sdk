@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -43,6 +43,7 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
         "uri",
         "objectStorageUrl",
         "lifecycleState",
+        "lifecycleDetails",
         "properties"
     })
     public EntitySummary(
@@ -66,6 +67,7 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
             String uri,
             String objectStorageUrl,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             java.util.Map<String, java.util.Map<String, String>> properties) {
         super();
         this.key = key;
@@ -88,6 +90,7 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
         this.uri = uri;
         this.objectStorageUrl = objectStorageUrl;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.properties = properties;
     }
 
@@ -428,6 +431,26 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * A map of maps that contains the properties which are specific to the entity type. Each entity type
          * definition defines it's set of required and optional properties. The map keys are category names and the
          * values are maps of property name to property value. Every property is contained inside of a category. Most
@@ -480,6 +503,7 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
                             this.uri,
                             this.objectStorageUrl,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.properties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -548,6 +572,9 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
@@ -862,6 +889,24 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * A map of maps that contains the properties which are specific to the entity type. Each entity type
      * definition defines it's set of required and optional properties. The map keys are category names and the
      * values are maps of property name to property value. Every property is contained inside of a category. Most
@@ -919,6 +964,7 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", objectStorageUrl=").append(String.valueOf(this.objectStorageUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(")");
         return sb.toString();
@@ -954,6 +1000,7 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.uri, other.uri)
                 && java.util.Objects.equals(this.objectStorageUrl, other.objectStorageUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.properties, other.properties)
                 && super.equals(other);
     }
@@ -990,6 +1037,9 @@ public final class EntitySummary extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

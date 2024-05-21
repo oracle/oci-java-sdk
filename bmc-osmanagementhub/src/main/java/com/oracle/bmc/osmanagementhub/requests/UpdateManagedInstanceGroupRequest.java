@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -14,24 +14,24 @@ public class UpdateManagedInstanceGroupRequest
                 com.oracle.bmc.osmanagementhub.model.UpdateManagedInstanceGroupDetails> {
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     private String managedInstanceGroupId;
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
     /**
-     * The information to be updated.
+     * Provides the details used to update the managed instance group.
      */
     private com.oracle.bmc.osmanagementhub.model.UpdateManagedInstanceGroupDetails
             updateManagedInstanceGroupDetails;
 
     /**
-     * The information to be updated.
+     * Provides the details used to update the managed instance group.
      */
     public com.oracle.bmc.osmanagementhub.model.UpdateManagedInstanceGroupDetails
             getUpdateManagedInstanceGroupDetails() {
@@ -89,12 +89,12 @@ public class UpdateManagedInstanceGroupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
@@ -104,13 +104,13 @@ public class UpdateManagedInstanceGroupRequest
         }
 
         /**
-         * The information to be updated.
+         * Provides the details used to update the managed instance group.
          */
         private com.oracle.bmc.osmanagementhub.model.UpdateManagedInstanceGroupDetails
                 updateManagedInstanceGroupDetails = null;
 
         /**
-         * The information to be updated.
+         * Provides the details used to update the managed instance group.
          * @param updateManagedInstanceGroupDetails the value to set
          * @return this builder instance
          */

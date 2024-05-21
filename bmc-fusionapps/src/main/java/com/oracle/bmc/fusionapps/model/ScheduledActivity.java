@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -35,7 +35,9 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
         "delayInHours",
         "timeCreated",
         "timeUpdated",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "scheduledActivityPhase",
+        "scheduledActivityAssociationId"
     })
     public ScheduledActivity(
             String id,
@@ -51,7 +53,9 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
             Integer delayInHours,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
-            LifecycleDetails lifecycleDetails) {
+            LifecycleDetails lifecycleDetails,
+            ScheduledActivityPhase scheduledActivityPhase,
+            String scheduledActivityAssociationId) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -67,6 +71,8 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleDetails = lifecycleDetails;
+        this.scheduledActivityPhase = scheduledActivityPhase;
+        this.scheduledActivityAssociationId = scheduledActivityAssociationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -295,6 +301,38 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * A property describing the phase of the scheduled activity.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityPhase")
+        private ScheduledActivityPhase scheduledActivityPhase;
+
+        /**
+         * A property describing the phase of the scheduled activity.
+         * @param scheduledActivityPhase the value to set
+         * @return this builder
+         **/
+        public Builder scheduledActivityPhase(ScheduledActivityPhase scheduledActivityPhase) {
+            this.scheduledActivityPhase = scheduledActivityPhase;
+            this.__explicitlySet__.add("scheduledActivityPhase");
+            return this;
+        }
+        /**
+         * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityAssociationId")
+        private String scheduledActivityAssociationId;
+
+        /**
+         * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+         * @param scheduledActivityAssociationId the value to set
+         * @return this builder
+         **/
+        public Builder scheduledActivityAssociationId(String scheduledActivityAssociationId) {
+            this.scheduledActivityAssociationId = scheduledActivityAssociationId;
+            this.__explicitlySet__.add("scheduledActivityAssociationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -315,7 +353,9 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
                             this.delayInHours,
                             this.timeCreated,
                             this.timeUpdated,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.scheduledActivityPhase,
+                            this.scheduledActivityAssociationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -365,6 +405,12 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledActivityPhase")) {
+                this.scheduledActivityPhase(model.getScheduledActivityPhase());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledActivityAssociationId")) {
+                this.scheduledActivityAssociationId(model.getScheduledActivityAssociationId());
             }
             return this;
         }
@@ -777,6 +823,83 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
         return lifecycleDetails;
     }
 
+    /**
+     * A property describing the phase of the scheduled activity.
+     **/
+    public enum ScheduledActivityPhase {
+        PreMaintenance("PRE_MAINTENANCE"),
+        Maintenance("MAINTENANCE"),
+        PostMaintenance("POST_MAINTENANCE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ScheduledActivityPhase.class);
+
+        private final String value;
+        private static java.util.Map<String, ScheduledActivityPhase> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ScheduledActivityPhase v : ScheduledActivityPhase.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ScheduledActivityPhase(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ScheduledActivityPhase create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ScheduledActivityPhase', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * A property describing the phase of the scheduled activity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityPhase")
+    private final ScheduledActivityPhase scheduledActivityPhase;
+
+    /**
+     * A property describing the phase of the scheduled activity.
+     * @return the value
+     **/
+    public ScheduledActivityPhase getScheduledActivityPhase() {
+        return scheduledActivityPhase;
+    }
+
+    /**
+     * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityAssociationId")
+    private final String scheduledActivityAssociationId;
+
+    /**
+     * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+     * @return the value
+     **/
+    public String getScheduledActivityAssociationId() {
+        return scheduledActivityAssociationId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -805,6 +928,9 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", scheduledActivityPhase=").append(String.valueOf(this.scheduledActivityPhase));
+        sb.append(", scheduledActivityAssociationId=")
+                .append(String.valueOf(this.scheduledActivityAssociationId));
         sb.append(")");
         return sb.toString();
     }
@@ -833,6 +959,10 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.scheduledActivityPhase, other.scheduledActivityPhase)
+                && java.util.Objects.equals(
+                        this.scheduledActivityAssociationId, other.scheduledActivityAssociationId)
                 && super.equals(other);
     }
 
@@ -874,6 +1004,16 @@ public final class ScheduledActivity extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledActivityPhase == null
+                                ? 43
+                                : this.scheduledActivityPhase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledActivityAssociationId == null
+                                ? 43
+                                : this.scheduledActivityAssociationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

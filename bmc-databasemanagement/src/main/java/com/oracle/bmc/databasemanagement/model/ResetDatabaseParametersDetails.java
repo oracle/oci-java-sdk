@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details required to reset database parameter values.
+ * It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,13 +24,15 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ResetDatabaseParametersDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"credentials", "scope", "parameters"})
+    @java.beans.ConstructorProperties({"credentials", "databaseCredential", "scope", "parameters"})
     public ResetDatabaseParametersDetails(
             DatabaseCredentials credentials,
+            DatabaseCredentialDetails databaseCredential,
             ParameterScope scope,
             java.util.List<String> parameters) {
         super();
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
         this.scope = scope;
         this.parameters = parameters;
     }
@@ -42,6 +46,15 @@ public final class ResetDatabaseParametersDetails
         public Builder credentials(DatabaseCredentials credentials) {
             this.credentials = credentials;
             this.__explicitlySet__.add("credentials");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /**
@@ -101,7 +114,7 @@ public final class ResetDatabaseParametersDetails
         public ResetDatabaseParametersDetails build() {
             ResetDatabaseParametersDetails model =
                     new ResetDatabaseParametersDetails(
-                            this.credentials, this.scope, this.parameters);
+                            this.credentials, this.databaseCredential, this.scope, this.parameters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -112,6 +125,9 @@ public final class ResetDatabaseParametersDetails
         public Builder copy(ResetDatabaseParametersDetails model) {
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("scope")) {
                 this.scope(model.getScope());
@@ -139,6 +155,13 @@ public final class ResetDatabaseParametersDetails
 
     public DatabaseCredentials getCredentials() {
         return credentials;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /**
@@ -202,6 +225,7 @@ public final class ResetDatabaseParametersDetails
         sb.append("ResetDatabaseParametersDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(")");
@@ -219,6 +243,7 @@ public final class ResetDatabaseParametersDetails
 
         ResetDatabaseParametersDetails other = (ResetDatabaseParametersDetails) o;
         return java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && super.equals(other);
@@ -229,6 +254,11 @@ public final class ResetDatabaseParametersDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + super.hashCode();

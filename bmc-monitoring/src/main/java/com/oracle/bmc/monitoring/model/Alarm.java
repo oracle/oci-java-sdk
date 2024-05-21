@@ -1,19 +1,21 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
 
 /**
  * The properties that define an alarm.
- * For information about alarms, see [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
+ * For information about alarms, see
+ * [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  * For information about endpoints and signing API requests, see
- * [About the API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+ * [About the API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm).
+ * For information about available SDKs and tools, see
  * [SDKS and Other Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm).
  *
  * <br/>
@@ -50,6 +52,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "isEnabled",
         "freeformTags",
         "definedTags",
+        "overrides",
+        "ruleName",
+        "notificationVersion",
         "lifecycleState",
         "timeCreated",
         "timeUpdated"
@@ -75,6 +80,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             Boolean isEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AlarmOverride> overrides,
+            String ruleName,
+            String notificationVersion,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             java.util.Date timeUpdated) {
@@ -99,6 +107,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.isEnabled = isEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.overrides = overrides;
+        this.ruleName = ruleName;
+        this.notificationVersion = notificationVersion;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -127,7 +138,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         /**
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
          * <p>
-         * This name is sent as the title for notifications related to this alarm.
+         * This value determines the title of each alarm notification.
          * <p>
          * Example: {@code High CPU Utilization}
          *
@@ -138,7 +149,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         /**
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
          * <p>
-         * This name is sent as the title for notifications related to this alarm.
+         * This value determines the title of each alarm notification.
          * <p>
          * Example: {@code High CPU Utilization}
          *
@@ -272,9 +283,12 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
          * rule (threshold or absence). Supported values for interval depend on the specified time range. More
          * interval values are supported for smaller time ranges. You can optionally
          * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-         * For available dimensions, review the metric definition for the supported service.
-         * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * For information about writing MQL expressions, see
+         * [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see
+         * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+         * For available dimensions, review the metric definition for the supported service. See
+         * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          * <p>
          * Example of threshold alarm:
          * <p>
@@ -304,9 +318,12 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
          * rule (threshold or absence). Supported values for interval depend on the specified time range. More
          * interval values are supported for smaller time ranges. You can optionally
          * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-         * For available dimensions, review the metric definition for the supported service.
-         * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * For information about writing MQL expressions, see
+         * [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+         * For details about MQL, see
+         * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+         * For available dimensions, review the metric definition for the supported service. See
+         * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          * <p>
          * Example of threshold alarm:
          * <p>
@@ -419,9 +436,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * The human-readable content of the notification delivered. Oracle recommends providing guidance
+         * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
          * to operators for resolving the alarm condition. Consider adding links to standard runbook
-         * practices.
+         * practices. Avoid entering confidential information.
          * <p>
          * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
@@ -430,9 +447,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         private String body;
 
         /**
-         * The human-readable content of the notification delivered. Oracle recommends providing guidance
+         * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
          * to operators for resolving the alarm condition. Consider adding links to standard runbook
-         * practices.
+         * practices. Avoid entering confidential information.
          * <p>
          * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
@@ -445,16 +462,16 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-         * Example: {@code true}
+         * When set to {@code true}, splits alarm notifications per metric stream.
+         * When set to {@code false}, groups alarm notifications across metric streams.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
         private Boolean isNotificationsPerMetricDimensionEnabled;
 
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-         * Example: {@code true}
+         * When set to {@code true}, splits alarm notifications per metric stream.
+         * When set to {@code false}, groups alarm notifications across metric streams.
          *
          * @param isNotificationsPerMetricDimensionEnabled the value to set
          * @return this builder
@@ -467,20 +484,20 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * The format to use for notification messages sent from this alarm. The formats are:
-         * * {@code RAW} - Raw JSON blob. Default value.
-         * * {@code PRETTY_JSON}: JSON with new lines and indents.
-         * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+         * The format to use for alarm notifications. The formats are:
+         * * {@code RAW} - Raw JSON blob. Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm notifications use this format.
+         * * {@code PRETTY_JSON}: JSON with new lines and indents. Available when the {@code destinations} attribute specifies {@code Notifications} only.
+         * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code destinations} attribute specifies {@code Notifications} only. Applies to Email subscription types only.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
         private MessageFormat messageFormat;
 
         /**
-         * The format to use for notification messages sent from this alarm. The formats are:
-         * * {@code RAW} - Raw JSON blob. Default value.
-         * * {@code PRETTY_JSON}: JSON with new lines and indents.
-         * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+         * The format to use for alarm notifications. The formats are:
+         * * {@code RAW} - Raw JSON blob. Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm notifications use this format.
+         * * {@code PRETTY_JSON}: JSON with new lines and indents. Available when the {@code destinations} attribute specifies {@code Notifications} only.
+         * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code destinations} attribute specifies {@code Notifications} only. Applies to Email subscription types only.
          *
          * @param messageFormat the value to set
          * @return this builder
@@ -491,20 +508,22 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered.
-         * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-         * For example, a destination using the Notifications service is represented by a topic OCID.
-         * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations for alarm notifications.
+         * Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of a related resource, such as a {@link NotificationTopic}.
+         * Supported destination services: Notifications, Streaming.
+         * Limit: One destination per supported destination service.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered.
-         * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-         * For example, a destination using the Notifications service is represented by a topic OCID.
-         * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations for alarm notifications.
+         * Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of a related resource, such as a {@link NotificationTopic}.
+         * Supported destination services: Notifications, Streaming.
+         * Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
@@ -515,7 +534,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
          * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
          * Minimum: PT1M. Maximum: P30D.
          * <p>
@@ -528,7 +547,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         private String repeatNotificationDuration;
 
         /**
-         * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
          * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
          * Minimum: PT1M. Maximum: P30D.
          * <p>
@@ -626,6 +645,74 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
+         * A set of overrides that control evaluations of the alarm.
+         * <p>
+         * Each override can specify values for query, severity, body, and pending duration.
+         * When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position {@code 0}),
+         * and then evaluates the alarm's base values ({@code ruleName} value of {@code BASE}).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("overrides")
+        private java.util.List<AlarmOverride> overrides;
+
+        /**
+         * A set of overrides that control evaluations of the alarm.
+         * <p>
+         * Each override can specify values for query, severity, body, and pending duration.
+         * When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position {@code 0}),
+         * and then evaluates the alarm's base values ({@code ruleName} value of {@code BASE}).
+         *
+         * @param overrides the value to set
+         * @return this builder
+         **/
+        public Builder overrides(java.util.List<AlarmOverride> overrides) {
+            this.overrides = overrides;
+            this.__explicitlySet__.add("overrides");
+            return this;
+        }
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+        private String ruleName;
+
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         * @param ruleName the value to set
+         * @return this builder
+         **/
+        public Builder ruleName(String ruleName) {
+            this.ruleName = ruleName;
+            this.__explicitlySet__.add("ruleName");
+            return this;
+        }
+        /**
+         * The version of the alarm notification to be delivered. Allowed value: {@code 1.X}
+         * The value must start with a number (up to four digits), followed by a period and an uppercase X.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationVersion")
+        private String notificationVersion;
+
+        /**
+         * The version of the alarm notification to be delivered. Allowed value: {@code 1.X}
+         * The value must start with a number (up to four digits), followed by a period and an uppercase X.
+         *
+         * @param notificationVersion the value to set
+         * @return this builder
+         **/
+        public Builder notificationVersion(String notificationVersion) {
+            this.notificationVersion = notificationVersion;
+            this.__explicitlySet__.add("notificationVersion");
+            return this;
+        }
+        /**
          * The current lifecycle state of the alarm.
          * <p>
          * Example: {@code DELETED}
@@ -650,7 +737,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         /**
          * The date and time the alarm was created. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -659,7 +746,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         /**
          * The date and time the alarm was created. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -672,7 +759,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         /**
          * The date and time the alarm was last updated. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-03T01:02:29.600Z}
+         * Example: {@code 2023-02-03T01:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -681,7 +768,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         /**
          * The date and time the alarm was last updated. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-03T01:02:29.600Z}
+         * Example: {@code 2023-02-03T01:02:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -718,6 +805,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.isEnabled,
                             this.freeformTags,
                             this.definedTags,
+                            this.overrides,
+                            this.ruleName,
+                            this.notificationVersion,
                             this.lifecycleState,
                             this.timeCreated,
                             this.timeUpdated);
@@ -790,6 +880,15 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("overrides")) {
+                this.overrides(model.getOverrides());
+            }
+            if (model.wasPropertyExplicitlySet("ruleName")) {
+                this.ruleName(model.getRuleName());
+            }
+            if (model.wasPropertyExplicitlySet("notificationVersion")) {
+                this.notificationVersion(model.getNotificationVersion());
+            }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
@@ -833,7 +932,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
      * <p>
-     * This name is sent as the title for notifications related to this alarm.
+     * This value determines the title of each alarm notification.
      * <p>
      * Example: {@code High CPU Utilization}
      *
@@ -844,7 +943,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
      * <p>
-     * This name is sent as the title for notifications related to this alarm.
+     * This value determines the title of each alarm notification.
      * <p>
      * Example: {@code High CPU Utilization}
      *
@@ -966,9 +1065,12 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
      * rule (threshold or absence). Supported values for interval depend on the specified time range. More
      * interval values are supported for smaller time ranges. You can optionally
      * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-     * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-     * For available dimensions, review the metric definition for the supported service.
-     * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * For information about writing MQL expressions, see
+     * [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+     * For details about MQL, see
+     * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * For available dimensions, review the metric definition for the supported service. See
+     * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
      * Example of threshold alarm:
      * <p>
@@ -998,9 +1100,12 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
      * rule (threshold or absence). Supported values for interval depend on the specified time range. More
      * interval values are supported for smaller time ranges. You can optionally
      * specify dimensions and grouping functions. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-     * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-     * For available dimensions, review the metric definition for the supported service.
-     * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * For information about writing MQL expressions, see
+     * [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
+     * For details about MQL, see
+     * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * For available dimensions, review the metric definition for the supported service. See
+     * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
      * Example of threshold alarm:
      * <p>
@@ -1158,9 +1263,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The human-readable content of the notification delivered. Oracle recommends providing guidance
+     * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
      * to operators for resolving the alarm condition. Consider adding links to standard runbook
-     * practices.
+     * practices. Avoid entering confidential information.
      * <p>
      * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
@@ -1169,9 +1274,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     private final String body;
 
     /**
-     * The human-readable content of the notification delivered. Oracle recommends providing guidance
+     * The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
      * to operators for resolving the alarm condition. Consider adding links to standard runbook
-     * practices.
+     * practices. Avoid entering confidential information.
      * <p>
      * Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
@@ -1182,16 +1287,16 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-     * Example: {@code true}
+     * When set to {@code true}, splits alarm notifications per metric stream.
+     * When set to {@code false}, groups alarm notifications across metric streams.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
     private final Boolean isNotificationsPerMetricDimensionEnabled;
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-     * Example: {@code true}
+     * When set to {@code true}, splits alarm notifications per metric stream.
+     * When set to {@code false}, groups alarm notifications across metric streams.
      *
      * @return the value
      **/
@@ -1200,10 +1305,10 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The format to use for notification messages sent from this alarm. The formats are:
-     * * {@code RAW} - Raw JSON blob. Default value.
-     * * {@code PRETTY_JSON}: JSON with new lines and indents.
-     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     * The format to use for alarm notifications. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm notifications use this format.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents. Available when the {@code destinations} attribute specifies {@code Notifications} only.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code destinations} attribute specifies {@code Notifications} only. Applies to Email subscription types only.
      *
      **/
     public enum MessageFormat {
@@ -1253,20 +1358,20 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         }
     };
     /**
-     * The format to use for notification messages sent from this alarm. The formats are:
-     * * {@code RAW} - Raw JSON blob. Default value.
-     * * {@code PRETTY_JSON}: JSON with new lines and indents.
-     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     * The format to use for alarm notifications. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm notifications use this format.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents. Available when the {@code destinations} attribute specifies {@code Notifications} only.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code destinations} attribute specifies {@code Notifications} only. Applies to Email subscription types only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     private final MessageFormat messageFormat;
 
     /**
-     * The format to use for notification messages sent from this alarm. The formats are:
-     * * {@code RAW} - Raw JSON blob. Default value.
-     * * {@code PRETTY_JSON}: JSON with new lines and indents.
-     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+     * The format to use for alarm notifications. The formats are:
+     * * {@code RAW} - Raw JSON blob. Default value. When the {@code destinations} attribute specifies {@code Streaming}, all alarm notifications use this format.
+     * * {@code PRETTY_JSON}: JSON with new lines and indents. Available when the {@code destinations} attribute specifies {@code Notifications} only.
+     * * {@code ONS_OPTIMIZED}: Simplified, user-friendly layout. Available when the {@code destinations} attribute specifies {@code Notifications} only. Applies to Email subscription types only.
      *
      * @return the value
      **/
@@ -1275,20 +1380,22 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered.
-     * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-     * For example, a destination using the Notifications service is represented by a topic OCID.
-     * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+     * A list of destinations for alarm notifications.
+     * Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of a related resource, such as a {@link NotificationTopic}.
+     * Supported destination services: Notifications, Streaming.
+     * Limit: One destination per supported destination service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered.
-     * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-     * For example, a destination using the Notifications service is represented by a topic OCID.
-     * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+     * A list of destinations for alarm notifications.
+     * Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * of a related resource, such as a {@link NotificationTopic}.
+     * Supported destination services: Notifications, Streaming.
+     * Limit: One destination per supported destination service.
      *
      * @return the value
      **/
@@ -1297,7 +1404,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
      * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
      * Minimum: PT1M. Maximum: P30D.
      * <p>
@@ -1310,7 +1417,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     private final String repeatNotificationDuration;
 
     /**
-     * The frequency at which notifications are re-submitted, if the alarm keeps firing without
+     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
      * interruption. Format defined by ISO 8601. For example, {@code PT4H} indicates four hours.
      * Minimum: PT1M. Maximum: P30D.
      * <p>
@@ -1397,6 +1504,68 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
+     * A set of overrides that control evaluations of the alarm.
+     * <p>
+     * Each override can specify values for query, severity, body, and pending duration.
+     * When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position {@code 0}),
+     * and then evaluates the alarm's base values ({@code ruleName} value of {@code BASE}).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("overrides")
+    private final java.util.List<AlarmOverride> overrides;
+
+    /**
+     * A set of overrides that control evaluations of the alarm.
+     * <p>
+     * Each override can specify values for query, severity, body, and pending duration.
+     * When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position {@code 0}),
+     * and then evaluates the alarm's base values ({@code ruleName} value of {@code BASE}).
+     *
+     * @return the value
+     **/
+    public java.util.List<AlarmOverride> getOverrides() {
+        return overrides;
+    }
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+    private final String ruleName;
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     * @return the value
+     **/
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    /**
+     * The version of the alarm notification to be delivered. Allowed value: {@code 1.X}
+     * The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationVersion")
+    private final String notificationVersion;
+
+    /**
+     * The version of the alarm notification to be delivered. Allowed value: {@code 1.X}
+     * The value must start with a number (up to four digits), followed by a period and an uppercase X.
+     *
+     * @return the value
+     **/
+    public String getNotificationVersion() {
+        return notificationVersion;
+    }
+
+    /**
      * The current lifecycle state of the alarm.
      * <p>
      * Example: {@code DELETED}
@@ -1471,7 +1640,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     /**
      * The date and time the alarm was created. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -1480,7 +1649,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     /**
      * The date and time the alarm was created. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      **/
@@ -1491,7 +1660,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-03T01:02:29.600Z}
+     * Example: {@code 2023-02-03T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
@@ -1500,7 +1669,7 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     /**
      * The date and time the alarm was last updated. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-03T01:02:29.600Z}
+     * Example: {@code 2023-02-03T01:02:29.600Z}
      *
      * @return the value
      **/
@@ -1545,6 +1714,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", overrides=").append(String.valueOf(this.overrides));
+        sb.append(", ruleName=").append(String.valueOf(this.ruleName));
+        sb.append(", notificationVersion=").append(String.valueOf(this.notificationVersion));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -1586,6 +1758,9 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.overrides, other.overrides)
+                && java.util.Objects.equals(this.ruleName, other.ruleName)
+                && java.util.Objects.equals(this.notificationVersion, other.notificationVersion)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -1640,6 +1815,13 @@ public final class Alarm extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.overrides == null ? 43 : this.overrides.hashCode());
+        result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationVersion == null
+                                ? 43
+                                : this.notificationVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

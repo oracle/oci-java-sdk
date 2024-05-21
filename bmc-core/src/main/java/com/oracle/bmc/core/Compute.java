@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -179,8 +179,23 @@ public interface Compute extends AutoCloseable {
             ChangeComputeCapacityReservationCompartmentRequest request);
 
     /**
+     * Moves a compute capacity topology into a different compartment. For information about moving resources between
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeCapacityTopologyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeCapacityTopologyCompartment API.
+     */
+    ChangeComputeCapacityTopologyCompartmentResponse changeComputeCapacityTopologyCompartment(
+            ChangeComputeCapacityTopologyCompartmentRequest request);
+
+    /**
      * Moves a compute cluster into a different compartment within the same tenancy.
-     * A compute cluster is a remote direct memory access (RDMA) network group.
+     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      * <p>
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -312,13 +327,37 @@ public interface Compute extends AutoCloseable {
             CreateComputeCapacityReservationRequest request);
 
     /**
-     * Creates an empty compute cluster, which is a remote direct memory access (RDMA) network group.
+     * Creates a new compute capacity topology in the specified compartment and availability domain.
+     * <p>
+     * Compute capacity topologies provide the RDMA network topology of your bare metal hosts so that you can launch
+     * instances on your bare metal hosts with targeted network locations.
+     * <p>
+     * Compute capacity topologies report the health status of your bare metal hosts.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityTopology API.
+     */
+    CreateComputeCapacityTopologyResponse createComputeCapacityTopology(
+            CreateComputeCapacityTopologyRequest request);
+
+    /**
+     * Creates an empty [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+     * is a remote direct memory access (RDMA) network group.
+     * <p>
      * After the compute cluster is created, you can use the compute cluster's OCID with the
      * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
-     * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+     * The instances must be created in the same compartment and availability domain as the cluster.
      * <p>
-     * To create a cluster network that uses intance pools to manage groups of identical instances,
-     * see {@link #createClusterNetwork(CreateClusterNetworkRequest) createClusterNetwork}.
+     * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+     * <p>
+     * If you want predictable capacity for a specific number of identical instances that are managed as a group,
+     * create a cluster network that uses instance pools by using the
+     * {@link #createClusterNetwork(CreateClusterNetworkRequest) createClusterNetwork} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -440,8 +479,24 @@ public interface Compute extends AutoCloseable {
             DeleteComputeCapacityReservationRequest request);
 
     /**
-     * Deletes the compute cluster, which is a remote direct memory access (RDMA) network group.
-     * To delete a compute cluster, all instances in the cluster must be deleted first.
+     * Deletes the specified compute capacity topology.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCapacityTopology API.
+     */
+    DeleteComputeCapacityTopologyResponse deleteComputeCapacityTopology(
+            DeleteComputeCapacityTopologyRequest request);
+
+    /**
+     * Deletes a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
+     * <p>
+     * Before you delete a compute cluster, first delete all instances in the cluster by using
+     * the {@link #terminateInstance(TerminateInstanceRequest) terminateInstance} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -661,7 +716,22 @@ public interface Compute extends AutoCloseable {
             GetComputeCapacityReservationRequest request);
 
     /**
-     * Gets information about the specified compute cluster.
+     * Gets information about the specified compute capacity topology.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCapacityTopology API.
+     */
+    GetComputeCapacityTopologyResponse getComputeCapacityTopology(
+            GetComputeCapacityTopologyRequest request);
+
+    /**
+     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * is a remote direct memory access (RDMA) network group.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1085,6 +1155,63 @@ public interface Compute extends AutoCloseable {
             ListComputeCapacityReservationsRequest request);
 
     /**
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+     * capacity topology display name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologies API.
+     */
+    ListComputeCapacityTopologiesResponse listComputeCapacityTopologies(
+            ListComputeCapacityTopologiesRequest request);
+
+    /**
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeBareMetalHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeBareMetalHosts API.
+     */
+    ListComputeCapacityTopologyComputeBareMetalHostsResponse
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request);
+
+    /**
+     * Lists compute HPC islands in the specified compute capacity topology.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeHpcIslandsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeHpcIslands API.
+     */
+    ListComputeCapacityTopologyComputeHpcIslandsResponse
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request);
+
+    /**
+     * Lists compute network blocks in the specified compute capacity topology.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeNetworkBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeNetworkBlocks API.
+     */
+    ListComputeCapacityTopologyComputeNetworkBlocksResponse
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request);
+
+    /**
      * Lists the compute clusters in the specified compartment.
      * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      *
@@ -1355,11 +1482,14 @@ public interface Compute extends AutoCloseable {
             RemoveImageShapeCompatibilityEntryRequest request);
 
     /**
-     * Terminates (deletes) the specified instance. Any attached VNICs and volumes are automatically detached
+     * Permanently terminates (deletes) the specified instance. Any attached VNICs and volumes are automatically detached
      * when the instance terminates.
      * <p>
      * To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
      * To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
+     * <p>
+     * To preserve data volumes created with the instance, specify `true` or do not specify a value for `PreserveDataVolumesQueryParam`.
+     * To delete the data volumes when the instance itself is deleted, specify `false` for `PreserveDataVolumesQueryParam`.
      * <p>
      * This is an asynchronous operation. The instance's `lifecycleState` changes to TERMINATING temporarily
      * until the instance is completely deleted. After the instance is deleted, the record remains visible in the list of instances
@@ -1392,7 +1522,29 @@ public interface Compute extends AutoCloseable {
             UpdateComputeCapacityReservationRequest request);
 
     /**
-     * Updates the specified compute cluster.
+     * Updates the specified compute capacity topology. Fields that are not provided in the request will not be updated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCapacityTopology API.
+     */
+    UpdateComputeCapacityTopologyResponse updateComputeCapacityTopology(
+            UpdateComputeCapacityTopologyRequest request);
+
+    /**
+     * Updates a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * remote direct memory access (RDMA) network group.
+     * <p>
+     * To create instances within a compute cluster, use the {@link #launchInstance(LaunchInstanceRequest) launchInstance}
+     * operation.
+     * <p>
+     * To delete instances from a compute cluster, use the {@link #terminateInstance(TerminateInstanceRequest) terminateInstance}
+     * operation.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -28,6 +28,14 @@ package com.oracle.bmc.databasemigration.model;
 public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransferDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("walletLocation")
+        private String walletLocation;
+
+        public Builder walletLocation(String walletLocation) {
+            this.walletLocation = walletLocation;
+            this.__explicitlySet__.add("walletLocation");
+            return this;
+        }
         /**
          * Path to the OCI CLI installation in the node.
          *
@@ -52,7 +60,7 @@ public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransfe
 
         public UpdateOciCliDumpTransferDetails build() {
             UpdateOciCliDumpTransferDetails model =
-                    new UpdateOciCliDumpTransferDetails(this.ociHome);
+                    new UpdateOciCliDumpTransferDetails(this.walletLocation, this.ociHome);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +69,9 @@ public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransfe
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateOciCliDumpTransferDetails model) {
+            if (model.wasPropertyExplicitlySet("walletLocation")) {
+                this.walletLocation(model.getWalletLocation());
+            }
             if (model.wasPropertyExplicitlySet("ociHome")) {
                 this.ociHome(model.getOciHome());
             }
@@ -80,8 +91,8 @@ public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransfe
     }
 
     @Deprecated
-    public UpdateOciCliDumpTransferDetails(String ociHome) {
-        super();
+    public UpdateOciCliDumpTransferDetails(String walletLocation, String ociHome) {
+        super(walletLocation);
         this.ociHome = ociHome;
     }
 

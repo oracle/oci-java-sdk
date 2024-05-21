@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A container on a Container Instance.
+ * A container on a container instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -33,13 +33,13 @@ public final class ContainerInstanceContainer
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The ID of the Container on this Instance.
+         * The OCID of the container.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerId")
         private String containerId;
 
         /**
-         * The ID of the Container on this Instance.
+         * The OCID of the container.
          * @param containerId the value to set
          * @return this builder
          **/
@@ -101,13 +101,13 @@ public final class ContainerInstanceContainer
     }
 
     /**
-     * The ID of the Container on this Instance.
+     * The OCID of the container.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerId")
     private final String containerId;
 
     /**
-     * The ID of the Container on this Instance.
+     * The OCID of the container.
      * @return the value
      **/
     public String getContainerId() {

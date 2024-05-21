@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -92,6 +92,15 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -101,12 +110,12 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
 
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
             return this;
         }
         /**
@@ -275,6 +284,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         }
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+         * The supported file formats are .pem and .crt.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
@@ -282,6 +292,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
         /**
          * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+         * The supported file formats are .pem and .crt.
          *
          * @param sslCa the value to set
          * @return this builder
@@ -292,14 +303,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
-         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
 
         /**
-         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -310,14 +321,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
-         * The base64 encoded certificate of the PostgreSQL server.
+         * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
         private String sslCert;
 
         /**
-         * The base64 encoded certificate of the PostgreSQL server.
+         * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
          *
          * @param sslCert the value to set
          * @return this builder
@@ -328,14 +339,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
-         * The base64 encoded private key of the PostgreSQL server.
+         * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
         private String sslKey;
 
         /**
-         * The base64 encoded private key of the PostgreSQL server.
+         * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
          *
          * @param sslKey the value to set
          * @return this builder
@@ -346,6 +357,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             return this;
         }
         /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -357,6 +371,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
         private String privateIp;
 
         /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -385,8 +402,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.databaseName,
                             this.host,
@@ -430,11 +448,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -502,8 +523,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             PostgresqlConnection.TechnologyType technologyType,
             String databaseName,
             String host,
@@ -526,8 +548,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
                 definedTags,
                 vaultId,
                 keyId,
+                nsgIds,
                 subnetId,
-                nsgIds);
+                routingMethod);
         this.technologyType = technologyType;
         this.databaseName = databaseName;
         this.host = host;
@@ -692,6 +715,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+     * The supported file formats are .pem and .crt.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCa")
@@ -699,6 +723,7 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
 
     /**
      * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+     * The supported file formats are .pem and .crt.
      *
      * @return the value
      **/
@@ -707,14 +732,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
-     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
 
     /**
-     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
      *
      * @return the value
      **/
@@ -723,14 +748,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
-     * The base64 encoded certificate of the PostgreSQL server.
+     * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCert")
     private final String sslCert;
 
     /**
-     * The base64 encoded certificate of the PostgreSQL server.
+     * The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
      *
      * @return the value
      **/
@@ -739,14 +764,14 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
-     * The base64 encoded private key of the PostgreSQL server.
+     * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
     private final String sslKey;
 
     /**
-     * The base64 encoded private key of the PostgreSQL server.
+     * The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
      *
      * @return the value
      **/
@@ -755,6 +780,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     }
 
     /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.
@@ -766,6 +794,9 @@ public final class CreatePostgresqlConnectionDetails extends CreateConnectionDet
     private final String privateIp;
 
     /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.

@@ -1,11 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
  * Defines the representation of a virtual network topology for a region.
+ * See [Network Visualizer Documentation](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/network_visualizer.htm) for more information, including
+ * conventions and pictures of symbols.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,6 +48,15 @@ public final class NetworkingTopology extends Topology {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+        private java.util.List<String> limitedEntities;
+
+        public Builder limitedEntities(java.util.List<String> limitedEntities) {
+            this.limitedEntities = limitedEntities;
+            this.__explicitlySet__.add("limitedEntities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -59,7 +71,11 @@ public final class NetworkingTopology extends Topology {
 
         public NetworkingTopology build() {
             NetworkingTopology model =
-                    new NetworkingTopology(this.entities, this.relationships, this.timeCreated);
+                    new NetworkingTopology(
+                            this.entities,
+                            this.relationships,
+                            this.limitedEntities,
+                            this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -73,6 +89,9 @@ public final class NetworkingTopology extends Topology {
             }
             if (model.wasPropertyExplicitlySet("relationships")) {
                 this.relationships(model.getRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("limitedEntities")) {
+                this.limitedEntities(model.getLimitedEntities());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -96,8 +115,9 @@ public final class NetworkingTopology extends Topology {
     public NetworkingTopology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated) {
-        super(entities, relationships, timeCreated);
+        super(entities, relationships, limitedEntities, timeCreated);
     }
 
     @Override

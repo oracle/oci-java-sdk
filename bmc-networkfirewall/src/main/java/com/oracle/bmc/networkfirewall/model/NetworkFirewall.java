@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Description of Network Firewall.
+ * A network firewall is a security resource that exists in a subnet of your choice and controls incoming and outgoing network traffic based on a set of security rules. Each firewall is associated with a policy. Traffic is routed to and from the firewall from resources such as internet gateways and dynamic routing gateways (DRGs). For more information, see [Overview of Network Firewall](https://docs.cloud.oracle.com/iaas/Content/network-firewall/overview.htm)
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +15,7 @@ package com.oracle.bmc.networkfirewall.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NetworkFirewall.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NetworkFirewall extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -189,7 +190,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Availability Domain where Network Firewall instance is created.
-         * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
+         * To get a list of availability domains for a tenancy, use the {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
          * Example: {@code kIdk:PHX-AD-1}
          *
          **/
@@ -198,7 +199,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Availability Domain where Network Firewall instance is created.
-         * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
+         * To get a list of availability domains for a tenancy, use the {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
          * Example: {@code kIdk:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
@@ -226,7 +227,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          **/
@@ -234,7 +235,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         private java.util.Date timeCreated;
 
         /**
-         * The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
@@ -246,7 +247,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          **/
@@ -254,7 +255,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         private java.util.Date timeUpdated;
 
         /**
-         * The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
@@ -282,13 +283,13 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
          * @param lifecycleDetails the value to set
          * @return this builder
          **/
@@ -298,16 +299,18 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -319,7 +322,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -327,7 +331,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -552,7 +557,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Availability Domain where Network Firewall instance is created.
-     * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
+     * To get a list of availability domains for a tenancy, use the {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
      * Example: {@code kIdk:PHX-AD-1}
      *
      **/
@@ -561,7 +566,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Availability Domain where Network Firewall instance is created.
-     * To get a list of availability domains for a tenancy, use {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
+     * To get a list of availability domains for a tenancy, use the {@link #listAvailabilityDomains(ListAvailabilityDomainsRequest) listAvailabilityDomains} operation.
      * Example: {@code kIdk:PHX-AD-1}
      *
      * @return the value
@@ -585,7 +590,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
@@ -593,7 +598,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Date timeCreated;
 
     /**
-     * The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
@@ -603,7 +608,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
@@ -611,7 +616,7 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Date timeUpdated;
 
     /**
-     * The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
@@ -635,13 +640,13 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'FAILED' state.
      * @return the value
      **/
     public String getLifecycleDetails() {
@@ -649,16 +654,18 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
      **/
@@ -668,7 +675,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -676,7 +684,8 @@ public final class NetworkFirewall extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      **/

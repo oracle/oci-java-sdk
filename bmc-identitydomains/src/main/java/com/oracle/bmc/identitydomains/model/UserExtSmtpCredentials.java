@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of smtp credentials corresponding to user.
+ * A list of SMTP credentials corresponding to user.
  * <p>
  **Added In:** 2012271618
  * <p>
@@ -45,7 +45,7 @@ public final class UserExtSmtpCredentials
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's smtp credential.
+         * The user's SMTP credential identifier.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -63,7 +63,7 @@ public final class UserExtSmtpCredentials
         private String value;
 
         /**
-         * The identifier of the User's smtp credential.
+         * The user's SMTP credential identifier.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -85,7 +85,7 @@ public final class UserExtSmtpCredentials
             return this;
         }
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -103,7 +103,7 @@ public final class UserExtSmtpCredentials
         private String ocid;
 
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -125,7 +125,7 @@ public final class UserExtSmtpCredentials
             return this;
         }
         /**
-         * The URI of the corresponding SmtpCredential resource to which the user belongs
+         * The URI of the corresponding SmtpCredential resource to which the user belongs.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -142,7 +142,7 @@ public final class UserExtSmtpCredentials
         private String ref;
 
         /**
-         * The URI of the corresponding SmtpCredential resource to which the user belongs
+         * The URI of the corresponding SmtpCredential resource to which the user belongs.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -202,7 +202,7 @@ public final class UserExtSmtpCredentials
     }
 
     /**
-     * The identifier of the User's smtp credential.
+     * The user's SMTP credential identifier.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -220,7 +220,7 @@ public final class UserExtSmtpCredentials
     private final String value;
 
     /**
-     * The identifier of the User's smtp credential.
+     * The user's SMTP credential identifier.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -240,7 +240,7 @@ public final class UserExtSmtpCredentials
     }
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -258,7 +258,7 @@ public final class UserExtSmtpCredentials
     private final String ocid;
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -278,7 +278,7 @@ public final class UserExtSmtpCredentials
     }
 
     /**
-     * The URI of the corresponding SmtpCredential resource to which the user belongs
+     * The URI of the corresponding SmtpCredential resource to which the user belongs.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -295,7 +295,7 @@ public final class UserExtSmtpCredentials
     private final String ref;
 
     /**
-     * The URI of the corresponding SmtpCredential resource to which the user belongs
+     * The URI of the corresponding SmtpCredential resource to which the user belongs.
      * <p>
      **Added In:** 2012271618
      * <p>

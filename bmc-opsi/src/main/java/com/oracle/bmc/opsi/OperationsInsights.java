@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -90,6 +90,19 @@ public interface OperationsInsights extends AutoCloseable {
                     ChangeAutonomousDatabaseInsightAdvancedFeaturesRequest request);
 
     /**
+     * Moves an AwrHubSource resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeAwrHubSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAwrHubSourceCompartment API.
+     */
+    ChangeAwrHubSourceCompartmentResponse changeAwrHubSourceCompartment(
+            ChangeAwrHubSourceCompartmentRequest request);
+
+    /**
      * Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -142,6 +155,19 @@ public interface OperationsInsights extends AutoCloseable {
             ChangeHostInsightCompartmentRequest request);
 
     /**
+     * Moves a news report resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeNewsReportCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNewsReportCompartment API.
+     */
+    ChangeNewsReportCompartmentResponse changeNewsReportCompartment(
+            ChangeNewsReportCompartmentRequest request);
+
+    /**
      * Moves a private endpoint from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -154,6 +180,20 @@ public interface OperationsInsights extends AutoCloseable {
     ChangeOperationsInsightsPrivateEndpointCompartmentResponse
             changeOperationsInsightsPrivateEndpointCompartment(
                     ChangeOperationsInsightsPrivateEndpointCompartmentRequest request);
+
+    /**
+     * Moves a Operations Insights Warehouse resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeOperationsInsightsWarehouseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOperationsInsightsWarehouseCompartment API.
+     */
+    ChangeOperationsInsightsWarehouseCompartmentResponse
+            changeOperationsInsightsWarehouseCompartment(
+                    ChangeOperationsInsightsWarehouseCompartmentRequest request);
 
     /**
      * Moves an OpsiConfiguration resource from one compartment to another.
@@ -194,6 +234,19 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateAwrHubExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAwrHub API.
      */
     CreateAwrHubResponse createAwrHub(CreateAwrHubRequest request);
+
+    /**
+     * Register Awr Hub source
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateAwrHubSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAwrHubSource API.
+     */
+    CreateAwrHubSourceResponse createAwrHubSource(CreateAwrHubSourceRequest request);
 
     /**
      * Create a Database Insight resource for a database in Operations Insights. The database will be enabled in Operations Insights. Database metric collection and analysis will be started.
@@ -247,6 +300,19 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateHostInsight API.
      */
     CreateHostInsightResponse createHostInsight(CreateHostInsightRequest request);
+
+    /**
+     * Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/CreateNewsReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNewsReport API.
+     */
+    CreateNewsReportResponse createNewsReport(CreateNewsReportRequest request);
 
     /**
      * Create a private endpoint resource for the tenant in Operations Insights.
@@ -320,6 +386,30 @@ public interface OperationsInsights extends AutoCloseable {
     DeleteAwrHubResponse deleteAwrHub(DeleteAwrHubRequest request);
 
     /**
+     * Deletes an Awr Hub object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteAwrHubObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAwrHubObject API.
+     */
+    DeleteAwrHubObjectResponse deleteAwrHubObject(DeleteAwrHubObjectRequest request);
+
+    /**
+     * Deletes an Awr Hub source object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteAwrHubSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAwrHubSource API.
+     */
+    DeleteAwrHubSourceResponse deleteAwrHubSource(DeleteAwrHubSourceRequest request);
+
+    /**
      * Deletes a database insight. The database insight will be deleted and cannot be enabled again.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -367,6 +457,18 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteHostInsight API.
      */
     DeleteHostInsightResponse deleteHostInsight(DeleteHostInsightRequest request);
+
+    /**
+     * Deletes a news report. The news report will be deleted and cannot be enabled again.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DeleteNewsReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNewsReport API.
+     */
+    DeleteNewsReportResponse deleteNewsReport(DeleteNewsReportRequest request);
 
     /**
      * Deletes a private endpoint.
@@ -438,6 +540,18 @@ public interface OperationsInsights extends AutoCloseable {
                     DisableAutonomousDatabaseInsightAdvancedFeaturesRequest request);
 
     /**
+     * Disables a Awr Hub source database in Operations Insights. This will stop the Awr data flow for the given Awr Hub source.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/DisableAwrHubSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisableAwrHubSource API.
+     */
+    DisableAwrHubSourceResponse disableAwrHubSource(DisableAwrHubSourceRequest request);
+
+    /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -499,6 +613,18 @@ public interface OperationsInsights extends AutoCloseable {
     EnableAutonomousDatabaseInsightAdvancedFeaturesResponse
             enableAutonomousDatabaseInsightAdvancedFeatures(
                     EnableAutonomousDatabaseInsightAdvancedFeaturesRequest request);
+
+    /**
+     * Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow for the given Awr Hub source if it was stopped earlier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/EnableAwrHubSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableAwrHubSource API.
+     */
+    EnableAwrHubSourceResponse enableAwrHubSource(EnableAwrHubSourceRequest request);
 
     /**
      * Enables a database in Operations Insights. Database metric collection and analysis will be started.
@@ -575,6 +701,30 @@ public interface OperationsInsights extends AutoCloseable {
     GetAwrHubResponse getAwrHub(GetAwrHubRequest request);
 
     /**
+     * Gets the Awr Hub object metadata and body.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrHubObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAwrHubObject API.
+     */
+    GetAwrHubObjectResponse getAwrHubObject(GetAwrHubObjectRequest request);
+
+    /**
+     * Gets the Awr Hub source object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetAwrHubSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAwrHubSource API.
+     */
+    GetAwrHubSourceResponse getAwrHubSource(GetAwrHubSourceRequest request);
+
+    /**
      * Gets the AWR report for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not be greater than 7 days.
      * Either beginSnapshotIdentifierGreaterThanOrEqualTo & endSnapshotIdentifierLessThanOrEqualTo params Or timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are required.
      *
@@ -636,6 +786,18 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHostInsight API.
      */
     GetHostInsightResponse getHostInsight(GetHostInsightRequest request);
+
+    /**
+     * Gets details of a news report.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetNewsReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNewsReport API.
+     */
+    GetNewsReportResponse getNewsReport(GetNewsReportRequest request);
 
     /**
      * Gets the details of the specified private endpoint.
@@ -716,6 +878,19 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Gets the Awr Hub object's user-defined metadata and entity tag (ETag).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/HeadAwrHubObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadAwrHubObject API.
+     */
+    HeadAwrHubObjectResponse headAwrHubObject(HeadAwrHubObjectRequest request);
 
     /**
      * This endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
@@ -936,6 +1111,31 @@ public interface OperationsInsights extends AutoCloseable {
     ListAwrDatabasesResponse listAwrDatabases(ListAwrDatabasesRequest request);
 
     /**
+     * Gets a list of Awr Hub objects. Awr Hub id needs to specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrHubObjects API.
+     */
+    ListAwrHubObjectsResponse listAwrHubObjects(ListAwrHubObjectsRequest request);
+
+    /**
+     * Gets a list of Awr Hub source objects.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListAwrHubSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAwrHubSources API.
+     */
+    ListAwrHubSourcesResponse listAwrHubSources(ListAwrHubSourcesRequest request);
+
+    /**
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      *
      * @param request The request object containing the details to send
@@ -1127,6 +1327,19 @@ public interface OperationsInsights extends AutoCloseable {
             ListImportableEnterpriseManagerEntitiesRequest request);
 
     /**
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListNewsReportsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNewsReports API.
+     */
+    ListNewsReportsResponse listNewsReports(ListNewsReportsRequest request);
+
+    /**
      * Gets a list of Operation Insights private endpoints.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1236,6 +1449,20 @@ public interface OperationsInsights extends AutoCloseable {
     ListSqlTextsResponse listSqlTexts(ListSqlTextsRequest request);
 
     /**
+     * Gets a list of Warehouse data objects (e.g: views, tables), based on the query parameters specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListWarehouseDataObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWarehouseDataObjects API.
+     */
+    ListWarehouseDataObjectsResponse listWarehouseDataObjects(
+            ListWarehouseDataObjectsRequest request);
+
+    /**
      * Return a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send
@@ -1275,6 +1502,46 @@ public interface OperationsInsights extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Creates a new object or overwrites an existing object with the same name to the Awr Hub.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/PutAwrHubObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutAwrHubObject API.
+     */
+    PutAwrHubObjectResponse putAwrHubObject(PutAwrHubObjectRequest request);
+
+    /**
      * Queries an OPSI data object with the inputs provided and sends the result set back. Either analysisTimeInterval
      * or timeIntervalStart and timeIntervalEnd parameters need to be passed as well.
      *
@@ -1287,6 +1554,21 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/QueryOpsiDataObjectDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use QueryOpsiDataObjectData API.
      */
     QueryOpsiDataObjectDataResponse queryOpsiDataObjectData(QueryOpsiDataObjectDataRequest request);
+
+    /**
+     * Queries Warehouse data objects (e.g: views, tables) with the inputs provided and sends the result set back.
+     * Any data to which an OperationsInsightsWarehouseUser with a permission to the corresponding Warehouse can be queried.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/QueryWarehouseDataObjectDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use QueryWarehouseDataObjectData API.
+     */
+    QueryWarehouseDataObjectDataResponse queryWarehouseDataObjectData(
+            QueryWarehouseDataObjectDataRequest request);
 
     /**
      * Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
@@ -1841,6 +2123,34 @@ public interface OperationsInsights extends AutoCloseable {
     SummarizeExadataMembersResponse summarizeExadataMembers(SummarizeExadataMembersRequest request);
 
     /**
+     * Returns response with disk(s) statistics for a host.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightDiskStatisticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeHostInsightDiskStatistics API.
+     */
+    SummarizeHostInsightDiskStatisticsResponse summarizeHostInsightDiskStatistics(
+            SummarizeHostInsightDiskStatisticsRequest request);
+
+    /**
+     * Returns response with some recommendations if apply for a host.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeHostInsightHostRecommendationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeHostInsightHostRecommendation API.
+     */
+    SummarizeHostInsightHostRecommendationResponse summarizeHostInsightHostRecommendation(
+            SummarizeHostInsightHostRecommendationRequest request);
+
+    /**
      * Returns response with usage time series data with breakdown by network interface for the time period specified.
      *
      * @param request The request object containing the details to send
@@ -2112,6 +2422,18 @@ public interface OperationsInsights extends AutoCloseable {
     UpdateAwrHubResponse updateAwrHub(UpdateAwrHubRequest request);
 
     /**
+     * Update Awr Hub Source object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateAwrHubSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAwrHubSource API.
+     */
+    UpdateAwrHubSourceResponse updateAwrHubSource(UpdateAwrHubSourceRequest request);
+
+    /**
      * Updates configuration of a database insight.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2159,6 +2481,18 @@ public interface OperationsInsights extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateHostInsightExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHostInsight API.
      */
     UpdateHostInsightResponse updateHostInsight(UpdateHostInsightRequest request);
+
+    /**
+     * Updates the  configuration of a news report.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/UpdateNewsReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNewsReport API.
+     */
+    UpdateNewsReportResponse updateNewsReport(UpdateNewsReportRequest request);
 
     /**
      * Updates one or more attributes of the specified private endpoint.

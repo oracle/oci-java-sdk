@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -371,7 +371,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
             return this;
         }
         /**
-         * Number of domain levels IDCS should use for origin comparision
+         * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
          * <p>
          **Added In:** 2109020413
          * <p>
@@ -390,7 +390,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
         private Integer domainValidationLevel;
 
         /**
-         * Number of domain levels IDCS should use for origin comparision
+         * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
          * <p>
          **Added In:** 2109020413
          * <p>
@@ -1064,7 +1064,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
     }
 
     /**
-     * Number of domain levels IDCS should use for origin comparision
+     * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * <p>
      **Added In:** 2109020413
      * <p>
@@ -1083,7 +1083,7 @@ public final class ExtensionFidoAuthenticationFactorSettings
     private final Integer domainValidationLevel;
 
     /**
-     * Number of domain levels IDCS should use for origin comparision
+     * Number of domain levels Oracle Identity Cloud Service should use for origin comparision
      * <p>
      **Added In:** 2109020413
      * <p>

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Detail of resources which are mapped to DataSource.
+ * Details of the detector recipe and detector rule mapped to the data source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,13 +32,13 @@ public final class DataSourceMappingInfo
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Id of the attached detectorRecipeId to the Data Source.
+         * ID of the detector recipe attached to the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
         /**
-         * Id of the attached detectorRecipeId to the Data Source.
+         * ID of the detector recipe attached to the data source
          * @param detectorRecipeId the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class DataSourceMappingInfo
             return this;
         }
         /**
-         * Id of the attached detectorRuleId to the Data Source.
+         * ID of the detector rule attached to the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
-         * Id of the attached detectorRuleId to the Data Source.
+         * ID of the detector rule attached to the data source
          * @param detectorRuleId the value to set
          * @return this builder
          **/
@@ -100,13 +100,13 @@ public final class DataSourceMappingInfo
     }
 
     /**
-     * Id of the attached detectorRecipeId to the Data Source.
+     * ID of the detector recipe attached to the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
     /**
-     * Id of the attached detectorRecipeId to the Data Source.
+     * ID of the detector recipe attached to the data source
      * @return the value
      **/
     public String getDetectorRecipeId() {
@@ -114,13 +114,13 @@ public final class DataSourceMappingInfo
     }
 
     /**
-     * Id of the attached detectorRuleId to the Data Source.
+     * ID of the detector rule attached to the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
-     * Id of the attached detectorRuleId to the Data Source.
+     * ID of the detector rule attached to the data source
      * @return the value
      **/
     public String getDetectorRuleId() {

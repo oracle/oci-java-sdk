@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
@@ -32,7 +32,7 @@ public final class DimensionDetails extends com.oracle.bmc.http.internal.Explici
         /**
          * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
          * Custom dimension keys are acceptable. Avoid entering confidential information.
-         * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+         * Due to use by Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
          * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
          * Example: {@code type}
          *
@@ -43,7 +43,7 @@ public final class DimensionDetails extends com.oracle.bmc.http.internal.Explici
         /**
          * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
          * Custom dimension keys are acceptable. Avoid entering confidential information.
-         * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+         * Due to use by Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
          * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
          * Example: {@code type}
          *
@@ -102,7 +102,7 @@ public final class DimensionDetails extends com.oracle.bmc.http.internal.Explici
     /**
      * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
      * Custom dimension keys are acceptable. Avoid entering confidential information.
-     * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+     * Due to use by Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
      * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
      * Example: {@code type}
      *
@@ -113,7 +113,7 @@ public final class DimensionDetails extends com.oracle.bmc.http.internal.Explici
     /**
      * Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces.
      * Custom dimension keys are acceptable. Avoid entering confidential information.
-     * Due to use by Service Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
+     * Due to use by Connector Hub, the following dimension names are reserved: {@code connectorId}, {@code connectorName}, {@code connectorSourceType}.
      * For information on valid dimension keys and values, see {@link #metricDataDetails(MetricDataDetailsRequest) metricDataDetails}.
      * Example: {@code type}
      *

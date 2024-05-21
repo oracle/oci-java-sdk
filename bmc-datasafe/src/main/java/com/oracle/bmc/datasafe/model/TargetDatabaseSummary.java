@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -163,13 +163,13 @@ public final class TargetDatabaseSummary
             return this;
         }
         /**
-         * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * The OCIDs of associated resources like database, Data Safe private endpoint etc.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
         private java.util.List<String> associatedResourceIds;
 
         /**
-         * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * The OCIDs of associated resources like database, Data Safe private endpoint etc.
          * @param associatedResourceIds the value to set
          * @return this builder
          **/
@@ -434,13 +434,13 @@ public final class TargetDatabaseSummary
     }
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
     private final java.util.List<String> associatedResourceIds;
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * @return the value
      **/
     public java.util.List<String> getAssociatedResourceIds() {

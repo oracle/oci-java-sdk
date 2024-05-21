@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -91,6 +91,15 @@ public final class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbH
             this.__explicitlySet__.add("isDesupportedVersion");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
          **/
@@ -130,6 +139,7 @@ public final class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbH
                             this.freeformTags,
                             this.definedTags,
                             this.isDesupportedVersion,
+                            this.isUnifiedAuditingEnabled,
                             this.dbSystemId,
                             this.database);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -161,6 +171,9 @@ public final class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbH
             if (model.wasPropertyExplicitlySet("isDesupportedVersion")) {
                 this.isDesupportedVersion(model.getIsDesupportedVersion());
             }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
+            }
             if (model.wasPropertyExplicitlySet("dbSystemId")) {
                 this.dbSystemId(model.getDbSystemId());
             }
@@ -191,6 +204,7 @@ public final class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbH
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isDesupportedVersion,
+            Boolean isUnifiedAuditingEnabled,
             String dbSystemId,
             CreateDatabaseFromBackupDetails database) {
         super(
@@ -200,7 +214,8 @@ public final class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbH
                 databaseSoftwareImageId,
                 freeformTags,
                 definedTags,
-                isDesupportedVersion);
+                isDesupportedVersion,
+                isUnifiedAuditingEnabled);
         this.dbSystemId = dbSystemId;
         this.database = database;
     }

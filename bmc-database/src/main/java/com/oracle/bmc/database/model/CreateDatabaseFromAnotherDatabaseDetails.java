@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -28,7 +28,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         "adminPassword",
         "dbUniqueName",
         "dbName",
-        "timeStampForPointInTimeRecovery"
+        "timeStampForPointInTimeRecovery",
+        "pluggableDatabases"
     })
     public CreateDatabaseFromAnotherDatabaseDetails(
             String databaseId,
@@ -36,7 +37,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             String adminPassword,
             String dbUniqueName,
             String dbName,
-            java.util.Date timeStampForPointInTimeRecovery) {
+            java.util.Date timeStampForPointInTimeRecovery,
+            java.util.List<String> pluggableDatabases) {
         super();
         this.databaseId = databaseId;
         this.backupTDEPassword = backupTDEPassword;
@@ -44,6 +46,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         this.dbUniqueName = dbUniqueName;
         this.dbName = dbName;
         this.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+        this.pluggableDatabases = pluggableDatabases;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -145,6 +148,22 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             this.__explicitlySet__.add("timeStampForPointInTimeRecovery");
             return this;
         }
+        /**
+         * The list of pluggable databases that needs to be restored into new database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabases")
+        private java.util.List<String> pluggableDatabases;
+
+        /**
+         * The list of pluggable databases that needs to be restored into new database.
+         * @param pluggableDatabases the value to set
+         * @return this builder
+         **/
+        public Builder pluggableDatabases(java.util.List<String> pluggableDatabases) {
+            this.pluggableDatabases = pluggableDatabases;
+            this.__explicitlySet__.add("pluggableDatabases");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -157,7 +176,8 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                             this.adminPassword,
                             this.dbUniqueName,
                             this.dbName,
-                            this.timeStampForPointInTimeRecovery);
+                            this.timeStampForPointInTimeRecovery,
+                            this.pluggableDatabases);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -183,6 +203,9 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("timeStampForPointInTimeRecovery")) {
                 this.timeStampForPointInTimeRecovery(model.getTimeStampForPointInTimeRecovery());
+            }
+            if (model.wasPropertyExplicitlySet("pluggableDatabases")) {
+                this.pluggableDatabases(model.getPluggableDatabases());
             }
             return this;
         }
@@ -283,6 +306,20 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         return timeStampForPointInTimeRecovery;
     }
 
+    /**
+     * The list of pluggable databases that needs to be restored into new database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabases")
+    private final java.util.List<String> pluggableDatabases;
+
+    /**
+     * The list of pluggable databases that needs to be restored into new database.
+     * @return the value
+     **/
+    public java.util.List<String> getPluggableDatabases() {
+        return pluggableDatabases;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -304,6 +341,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", timeStampForPointInTimeRecovery=")
                 .append(String.valueOf(this.timeStampForPointInTimeRecovery));
+        sb.append(", pluggableDatabases=").append(String.valueOf(this.pluggableDatabases));
         sb.append(")");
         return sb.toString();
     }
@@ -326,6 +364,7 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(
                         this.timeStampForPointInTimeRecovery, other.timeStampForPointInTimeRecovery)
+                && java.util.Objects.equals(this.pluggableDatabases, other.pluggableDatabases)
                 && super.equals(other);
     }
 
@@ -347,6 +386,11 @@ public final class CreateDatabaseFromAnotherDatabaseDetails
                         + (this.timeStampForPointInTimeRecovery == null
                                 ? 43
                                 : this.timeStampForPointInTimeRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pluggableDatabases == null
+                                ? 43
+                                : this.pluggableDatabases.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -431,7 +431,8 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -568,7 +569,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "AttachManagedInstancesToManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachManagedInstancesToManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AttachManagedInstancesToManagedInstanceGroupResponse>
@@ -616,7 +617,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "AttachSoftwareSourcesToManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/AttachSoftwareSourcesToManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         AttachSoftwareSourcesToManagedInstanceGroupResponse>
@@ -644,6 +645,52 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
     }
 
     @Override
+    public ChangeManagedInstanceGroupCompartmentResponse changeManagedInstanceGroupCompartment(
+            ChangeManagedInstanceGroupCompartmentRequest request) {
+        LOG.trace("Called changeManagedInstanceGroupCompartment");
+        final ChangeManagedInstanceGroupCompartmentRequest interceptedRequest =
+                ChangeManagedInstanceGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeManagedInstanceGroupCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstanceGroup",
+                        "ChangeManagedInstanceGroupCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeManagedInstanceGroupCompartmentResponse>
+                transformer =
+                        ChangeManagedInstanceGroupCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeManagedInstanceGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateManagedInstanceGroupResponse createManagedInstanceGroup(
             CreateManagedInstanceGroupRequest request) {
         LOG.trace("Called createManagedInstanceGroup");
@@ -662,7 +709,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "CreateManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/CreateManagedInstanceGroup");
         java.util.function.Function<javax.ws.rs.core.Response, CreateManagedInstanceGroupResponse>
                 transformer =
                         CreateManagedInstanceGroupConverter.fromResponse(
@@ -705,7 +752,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "DeleteManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DeleteManagedInstanceGroup");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteManagedInstanceGroupResponse>
                 transformer =
                         DeleteManagedInstanceGroupConverter.fromResponse(
@@ -747,7 +794,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "DetachManagedInstancesFromManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachManagedInstancesFromManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DetachManagedInstancesFromManagedInstanceGroupResponse>
@@ -795,7 +842,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "DetachSoftwareSourcesFromManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DetachSoftwareSourcesFromManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DetachSoftwareSourcesFromManagedInstanceGroupResponse>
@@ -843,7 +890,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "DisableModuleStreamOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/DisableModuleStreamOnManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         DisableModuleStreamOnManagedInstanceGroupResponse>
@@ -891,7 +938,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "EnableModuleStreamOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/EnableModuleStreamOnManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceGroupResponse>
                 transformer =
@@ -935,7 +982,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "GetManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/GetManagedInstanceGroup");
         java.util.function.Function<javax.ws.rs.core.Response, GetManagedInstanceGroupResponse>
                 transformer =
                         GetManagedInstanceGroupConverter.fromResponse(
@@ -976,7 +1023,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "InstallModuleStreamProfileOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallModuleStreamProfileOnManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         InstallModuleStreamProfileOnManagedInstanceGroupResponse>
@@ -1023,7 +1070,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "InstallPackagesOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallPackagesOnManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response, InstallPackagesOnManagedInstanceGroupResponse>
                 transformer =
@@ -1050,6 +1097,54 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
     }
 
     @Override
+    public InstallWindowsUpdatesOnManagedInstanceGroupResponse
+            installWindowsUpdatesOnManagedInstanceGroup(
+                    InstallWindowsUpdatesOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called installWindowsUpdatesOnManagedInstanceGroup");
+        final InstallWindowsUpdatesOnManagedInstanceGroupRequest interceptedRequest =
+                InstallWindowsUpdatesOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallWindowsUpdatesOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstanceGroup",
+                        "InstallWindowsUpdatesOnManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/InstallWindowsUpdatesOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        InstallWindowsUpdatesOnManagedInstanceGroupResponse>
+                transformer =
+                        InstallWindowsUpdatesOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallWindowsUpdatesOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListManagedInstanceGroupAvailableModulesResponse
             listManagedInstanceGroupAvailableModules(
                     ListManagedInstanceGroupAvailableModulesRequest request) {
@@ -1069,7 +1164,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailableModules",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableModules");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceGroupAvailableModulesResponse>
                 transformer =
@@ -1110,7 +1205,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailablePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailablePackages");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListManagedInstanceGroupAvailablePackagesResponse>
@@ -1152,7 +1247,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupAvailableSoftwareSources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupAvailableSoftwareSources");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListManagedInstanceGroupAvailableSoftwareSourcesResponse>
@@ -1194,7 +1289,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupInstalledPackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupInstalledPackages");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListManagedInstanceGroupInstalledPackagesResponse>
@@ -1234,7 +1329,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroupModules",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroupModules");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceGroupModulesResponse>
                 transformer =
@@ -1273,7 +1368,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ListManagedInstanceGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ListManagedInstanceGroups");
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstanceGroupsResponse>
                 transformer =
                         ListManagedInstanceGroupsConverter.fromResponse(
@@ -1314,7 +1409,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "ManageModuleStreamsOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/ManageModuleStreamsOnManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ManageModuleStreamsOnManagedInstanceGroupResponse>
@@ -1363,7 +1458,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "RemoveModuleStreamProfileFromManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemoveModuleStreamProfileFromManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RemoveModuleStreamProfileFromManagedInstanceGroupResponse>
@@ -1410,7 +1505,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "RemovePackagesFromManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/RemovePackagesFromManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RemovePackagesFromManagedInstanceGroupResponse>
                 transformer =
@@ -1437,6 +1532,53 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
     }
 
     @Override
+    public SwitchModuleStreamOnManagedInstanceGroupResponse
+            switchModuleStreamOnManagedInstanceGroup(
+                    SwitchModuleStreamOnManagedInstanceGroupRequest request) {
+        LOG.trace("Called switchModuleStreamOnManagedInstanceGroup");
+        final SwitchModuleStreamOnManagedInstanceGroupRequest interceptedRequest =
+                SwitchModuleStreamOnManagedInstanceGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SwitchModuleStreamOnManagedInstanceGroupConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstanceGroup",
+                        "SwitchModuleStreamOnManagedInstanceGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/SwitchModuleStreamOnManagedInstanceGroup");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceGroupResponse>
+                transformer =
+                        SwitchModuleStreamOnManagedInstanceGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSwitchModuleStreamOnManagedInstanceGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateAllPackagesOnManagedInstanceGroupResponse updateAllPackagesOnManagedInstanceGroup(
             UpdateAllPackagesOnManagedInstanceGroupRequest request) {
         LOG.trace("Called updateAllPackagesOnManagedInstanceGroup");
@@ -1456,7 +1598,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "UpdateAllPackagesOnManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateAllPackagesOnManagedInstanceGroup");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateAllPackagesOnManagedInstanceGroupResponse>
                 transformer =
@@ -1500,7 +1642,7 @@ public class ManagedInstanceGroupClient implements ManagedInstanceGroup {
                         "ManagedInstanceGroup",
                         "UpdateManagedInstanceGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstanceGroup/UpdateManagedInstanceGroup");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateManagedInstanceGroupResponse>
                 transformer =
                         UpdateManagedInstanceGroupConverter.fromResponse(

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -250,6 +250,119 @@ public class EmailPaginators {
                     public java.util.List<com.oracle.bmc.email.model.EmailDomainSummary> apply(
                             ListEmailDomainsResponse response) {
                         return response.getEmailDomainCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listEmailReturnPaths operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListEmailReturnPathsResponse> listEmailReturnPathsResponseIterator(
+            final ListEmailReturnPathsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailReturnPathsRequest.Builder, ListEmailReturnPathsRequest,
+                ListEmailReturnPathsResponse>(
+                new java.util.function.Supplier<ListEmailReturnPathsRequest.Builder>() {
+                    @Override
+                    public ListEmailReturnPathsRequest.Builder get() {
+                        return ListEmailReturnPathsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailReturnPathsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailReturnPathsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailReturnPathsRequest.Builder>,
+                        ListEmailReturnPathsRequest>() {
+                    @Override
+                    public ListEmailReturnPathsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailReturnPathsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>() {
+                    @Override
+                    public ListEmailReturnPathsResponse apply(ListEmailReturnPathsRequest request) {
+                        return client.listEmailReturnPaths(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.email.model.EmailReturnPathSummary} objects
+     * contained in responses from the listEmailReturnPaths operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.email.model.EmailReturnPathSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.email.model.EmailReturnPathSummary>
+            listEmailReturnPathsRecordIterator(final ListEmailReturnPathsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailReturnPathsRequest.Builder, ListEmailReturnPathsRequest,
+                ListEmailReturnPathsResponse, com.oracle.bmc.email.model.EmailReturnPathSummary>(
+                new java.util.function.Supplier<ListEmailReturnPathsRequest.Builder>() {
+                    @Override
+                    public ListEmailReturnPathsRequest.Builder get() {
+                        return ListEmailReturnPathsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailReturnPathsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailReturnPathsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailReturnPathsRequest.Builder>,
+                        ListEmailReturnPathsRequest>() {
+                    @Override
+                    public ListEmailReturnPathsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailReturnPathsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>() {
+                    @Override
+                    public ListEmailReturnPathsResponse apply(ListEmailReturnPathsRequest request) {
+                        return client.listEmailReturnPaths(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailReturnPathsResponse,
+                        java.util.List<com.oracle.bmc.email.model.EmailReturnPathSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.email.model.EmailReturnPathSummary> apply(
+                            ListEmailReturnPathsResponse response) {
+                        return response.getEmailReturnPathCollection().getItems();
                     }
                 });
     }

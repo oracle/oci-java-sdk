@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class SenderInvitationClient implements SenderInvitation {
     /**
      * Service instance for SenderInvitation.
@@ -431,7 +431,8 @@ public class SenderInvitationClient implements SenderInvitation {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -566,7 +567,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "SenderInvitation",
                         "CancelSenderInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CancelSenderInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SenderInvitation/CancelSenderInvitation");
         java.util.function.Function<javax.ws.rs.core.Response, CancelSenderInvitationResponse>
                 transformer =
                         CancelSenderInvitationConverter.fromResponse(
@@ -606,7 +607,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "SenderInvitation",
                         "CreateSenderInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CreateSenderInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SenderInvitation/CreateSenderInvitation");
         java.util.function.Function<javax.ws.rs.core.Response, CreateSenderInvitationResponse>
                 transformer =
                         CreateSenderInvitationConverter.fromResponse(
@@ -647,7 +648,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "SenderInvitation",
                         "GetSenderInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/GetSenderInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SenderInvitation/GetSenderInvitation");
         java.util.function.Function<javax.ws.rs.core.Response, GetSenderInvitationResponse>
                 transformer =
                         GetSenderInvitationConverter.fromResponse(
@@ -685,7 +686,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "SenderInvitation",
                         "ListSenderInvitations",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/ListSenderInvitations");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SenderInvitation/ListSenderInvitations");
         java.util.function.Function<javax.ws.rs.core.Response, ListSenderInvitationsResponse>
                 transformer =
                         ListSenderInvitationsConverter.fromResponse(
@@ -723,7 +724,7 @@ public class SenderInvitationClient implements SenderInvitation {
                         "SenderInvitation",
                         "UpdateSenderInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/UpdateSenderInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SenderInvitation/UpdateSenderInvitation");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateSenderInvitationResponse>
                 transformer =
                         UpdateSenderInvitationConverter.fromResponse(

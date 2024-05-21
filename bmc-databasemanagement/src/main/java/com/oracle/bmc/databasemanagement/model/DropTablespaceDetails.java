@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details required to drop a tablespace.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,17 +26,20 @@ public final class DropTablespaceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "isIncludingContents",
         "isDroppingDataFiles",
         "isCascadeConstraints"
     })
     public DropTablespaceDetails(
             TablespaceAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             Boolean isIncludingContents,
             Boolean isDroppingDataFiles,
             Boolean isCascadeConstraints) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.isIncludingContents = isIncludingContents;
         this.isDroppingDataFiles = isDroppingDataFiles;
         this.isCascadeConstraints = isCascadeConstraints;
@@ -49,6 +54,15 @@ public final class DropTablespaceDetails
         public Builder credentialDetails(TablespaceAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /**
@@ -113,6 +127,7 @@ public final class DropTablespaceDetails
             DropTablespaceDetails model =
                     new DropTablespaceDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.isIncludingContents,
                             this.isDroppingDataFiles,
                             this.isCascadeConstraints);
@@ -126,6 +141,9 @@ public final class DropTablespaceDetails
         public Builder copy(DropTablespaceDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("isIncludingContents")) {
                 this.isIncludingContents(model.getIsIncludingContents());
@@ -156,6 +174,13 @@ public final class DropTablespaceDetails
 
     public TablespaceAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /**
@@ -221,6 +246,7 @@ public final class DropTablespaceDetails
         sb.append("DropTablespaceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", isIncludingContents=").append(String.valueOf(this.isIncludingContents));
         sb.append(", isDroppingDataFiles=").append(String.valueOf(this.isDroppingDataFiles));
         sb.append(", isCascadeConstraints=").append(String.valueOf(this.isCascadeConstraints));
@@ -239,6 +265,7 @@ public final class DropTablespaceDetails
 
         DropTablespaceDetails other = (DropTablespaceDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.isIncludingContents, other.isIncludingContents)
                 && java.util.Objects.equals(this.isDroppingDataFiles, other.isDroppingDataFiles)
                 && java.util.Objects.equals(this.isCascadeConstraints, other.isCascadeConstraints)
@@ -252,6 +279,11 @@ public final class DropTablespaceDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result =
                 (result * PRIME)
                         + (this.isIncludingContents == null

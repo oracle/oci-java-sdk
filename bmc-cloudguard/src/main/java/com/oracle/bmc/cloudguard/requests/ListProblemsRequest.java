@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.cloudguard.model.*;
 public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -67,56 +67,56 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return timeFirstDetectedLessThanOrEqualTo;
     }
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field life cycle state. Only one state can be provided. Default value for state is active.
      */
     private com.oracle.bmc.cloudguard.model.ProblemLifecycleDetail lifecycleDetail;
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field life cycle state. Only one state can be provided. Default value for state is active.
      */
     public com.oracle.bmc.cloudguard.model.ProblemLifecycleDetail getLifecycleDetail() {
         return lifecycleDetail;
     }
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     private com.oracle.bmc.cloudguard.model.ProblemLifecycleState lifecycleState;
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     public com.oracle.bmc.cloudguard.model.ProblemLifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * OCI Monitoring region.
+     * OCI monitoring region.
      */
     private String region;
 
     /**
-     * OCI Monitoring region.
+     * OCI monitoring region.
      */
     public String getRegion() {
         return region;
     }
     /**
-     * Risk level of the Problem.
+     * Risk level of the problem.
      */
     private String riskLevel;
 
     /**
-     * Risk level of the Problem.
+     * Risk level of the problem.
      */
     public String getRiskLevel() {
         return riskLevel;
     }
     /**
-     * Resource Type associated with the resource.
+     * Resource type associated with the resource.
      */
     private String resourceType;
 
     /**
-     * Resource Type associated with the resource.
+     * Resource type associated with the resource.
      */
     public String getResourceType() {
         return resourceType;
@@ -133,12 +133,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return city;
     }
     /**
-     * State of the problem.
+     * State or province of the problem.
      */
     private String state;
 
     /**
-     * State of the problem.
+     * State or province of the problem.
      */
     public String getState() {
         return state;
@@ -155,35 +155,35 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return country;
     }
     /**
-     * Label associated with the Problem.
+     * User-defined label associated with the problem.
      */
     private String label;
 
     /**
-     * Label associated with the Problem.
+     * User-defined label associated with the problem.
      */
     public String getLabel() {
         return label;
     }
     /**
-     * Comma seperated list of detector rule ids to be passed in to match against Problems.
+     * Comma seperated list of detector rule IDs to be passed in to match against Problems.
      */
     private java.util.List<String> detectorRuleIdList;
 
     /**
-     * Comma seperated list of detector rule ids to be passed in to match against Problems.
+     * Comma seperated list of detector rule IDs to be passed in to match against Problems.
      */
     public java.util.List<String> getDetectorRuleIdList() {
         return detectorRuleIdList;
     }
     /**
-     * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+     * The field to list the problems by detector type.
      *
      */
     private com.oracle.bmc.cloudguard.model.DetectorEnum detectorType;
 
     /**
-     * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+     * The field to list the problems by detector type.
      *
      */
     public com.oracle.bmc.cloudguard.model.DetectorEnum getDetectorType() {
@@ -201,13 +201,13 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return targetId;
     }
     /**
-     * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+     * Setting this to {@code SECURITY_ZONE} returns only security zone-related violations.
      *
      */
     private com.oracle.bmc.cloudguard.model.ProblemCategoryEnum problemCategory;
 
     /**
-     * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+     * Setting this to {@code SECURITY_ZONE} returns only security zone-related violations.
      *
      */
     public com.oracle.bmc.cloudguard.model.ProblemCategoryEnum getProblemCategory() {
@@ -217,7 +217,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
      * and all compartments and subcompartments in the tenancy are
-     * returned depending on the the setting of {@code accessLevel}.
+     * returned depending on the setting of {@code accessLevel}.
      *
      */
     private Boolean compartmentIdInSubtree;
@@ -226,7 +226,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * Default is false.
      * When set to true, the hierarchy of compartments is traversed
      * and all compartments and subcompartments in the tenancy are
-     * returned depending on the the setting of {@code accessLevel}.
+     * returned depending on the setting of {@code accessLevel}.
      *
      */
     public Boolean getCompartmentIdInSubtree() {
@@ -306,12 +306,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return resourceId;
     }
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return
      */
     public Integer getLimit() {
         return limit;
@@ -328,12 +328,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return page;
     }
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use
      */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
@@ -409,12 +409,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -488,12 +488,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * The field life cycle state. Only one state can be provided. Default value for state is active.
          */
         private com.oracle.bmc.cloudguard.model.ProblemLifecycleDetail lifecycleDetail = null;
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * The field life cycle state. Only one state can be provided. Default value for state is active.
          * @param lifecycleDetail the value to set
          * @return this builder instance
          */
@@ -504,12 +504,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          */
         private com.oracle.bmc.cloudguard.model.ProblemLifecycleState lifecycleState = null;
 
         /**
-         * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -520,12 +520,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * OCI Monitoring region.
+         * OCI monitoring region.
          */
         private String region = null;
 
         /**
-         * OCI Monitoring region.
+         * OCI monitoring region.
          * @param region the value to set
          * @return this builder instance
          */
@@ -535,12 +535,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Risk level of the Problem.
+         * Risk level of the problem.
          */
         private String riskLevel = null;
 
         /**
-         * Risk level of the Problem.
+         * Risk level of the problem.
          * @param riskLevel the value to set
          * @return this builder instance
          */
@@ -550,12 +550,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Resource Type associated with the resource.
+         * Resource type associated with the resource.
          */
         private String resourceType = null;
 
         /**
-         * Resource Type associated with the resource.
+         * Resource type associated with the resource.
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -580,12 +580,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * State of the problem.
+         * State or province of the problem.
          */
         private String state = null;
 
         /**
-         * State of the problem.
+         * State or province of the problem.
          * @param state the value to set
          * @return this builder instance
          */
@@ -610,12 +610,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Label associated with the Problem.
+         * User-defined label associated with the problem.
          */
         private String label = null;
 
         /**
-         * Label associated with the Problem.
+         * User-defined label associated with the problem.
          * @param label the value to set
          * @return this builder instance
          */
@@ -625,12 +625,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * Comma seperated list of detector rule IDs to be passed in to match against Problems.
          */
         private java.util.List<String> detectorRuleIdList = null;
 
         /**
-         * Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * Comma seperated list of detector rule IDs to be passed in to match against Problems.
          * @param detectorRuleIdList the value to set
          * @return this builder instance
          */
@@ -640,7 +640,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Singular setter. Comma seperated list of detector rule ids to be passed in to match against Problems.
+         * Singular setter. Comma seperated list of detector rule IDs to be passed in to match against Problems.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -649,13 +649,13 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+         * The field to list the problems by detector type.
          *
          */
         private com.oracle.bmc.cloudguard.model.DetectorEnum detectorType = null;
 
         /**
-         * The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
+         * The field to list the problems by detector type.
          *
          * @param detectorType the value to set
          * @return this builder instance
@@ -681,13 +681,13 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+         * Setting this to {@code SECURITY_ZONE} returns only security zone-related violations.
          *
          */
         private com.oracle.bmc.cloudguard.model.ProblemCategoryEnum problemCategory = null;
 
         /**
-         * Setting this to {@code SECURITY_ZONE} returns only security-zone related violations.
+         * Setting this to {@code SECURITY_ZONE} returns only security zone-related violations.
          *
          * @param problemCategory the value to set
          * @return this builder instance
@@ -702,7 +702,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed
          * and all compartments and subcompartments in the tenancy are
-         * returned depending on the the setting of {@code accessLevel}.
+         * returned depending on the setting of {@code accessLevel}.
          *
          */
         private Boolean compartmentIdInSubtree = null;
@@ -711,7 +711,7 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
          * Default is false.
          * When set to true, the hierarchy of compartments is traversed
          * and all compartments and subcompartments in the tenancy are
-         * returned depending on the the setting of {@code accessLevel}.
+         * returned depending on the setting of {@code accessLevel}.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -762,12 +762,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          * @param limit the value to set
          * @return this builder instance
          */
@@ -792,12 +792,12 @@ public class ListProblemsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          * @param sortOrder the value to set
          * @return this builder instance
          */

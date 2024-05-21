@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * A compute instance's source and destination VNIC mapping.
+ * Deprecated. Source VNIC to destination subnet mapping for a compute instance.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,7 +43,7 @@ public final class ComputeInstanceVnicMapping
         /**
          * The OCID of the VNIC.
          * <p>
-         * Example: {@code ocid1.vnic.oc1.phx.exampleocid}
+         * Example: {@code ocid1.vnic.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
@@ -51,7 +52,7 @@ public final class ComputeInstanceVnicMapping
         /**
          * The OCID of the VNIC.
          * <p>
-         * Example: {@code ocid1.vnic.oc1.phx.exampleocid}
+         * Example: {@code ocid1.vnic.oc1..uniqueID}
          *
          * @param sourceVnicId the value to set
          * @return this builder
@@ -62,18 +63,18 @@ public final class ComputeInstanceVnicMapping
             return this;
         }
         /**
-         * The OCID of the destination (remote) subnet to which this VNIC should connect.
+         * The OCID of the destination subnet to which the source VNIC should connect.
          * <p>
-         * Example: {@code ocid1.subnet.oc1.iad.exampleocid}
+         * Example: {@code ocid1.subnet.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
         private String destinationSubnetId;
 
         /**
-         * The OCID of the destination (remote) subnet to which this VNIC should connect.
+         * The OCID of the destination subnet to which the source VNIC should connect.
          * <p>
-         * Example: {@code ocid1.subnet.oc1.iad.exampleocid}
+         * Example: {@code ocid1.subnet.oc1..uniqueID}
          *
          * @param destinationSubnetId the value to set
          * @return this builder
@@ -84,18 +85,20 @@ public final class ComputeInstanceVnicMapping
             return this;
         }
         /**
-         * A list of destination region's network security group (NSG) OCIDs which this VNIC should use.
+         * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+         * the source VNIC.
          * <p>
-         * Example: {@code [ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]}
+         * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
         private java.util.List<String> destinationNsgIdList;
 
         /**
-         * A list of destination region's network security group (NSG) OCIDs which this VNIC should use.
+         * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+         * the source VNIC.
          * <p>
-         * Example: {@code [ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]}
+         * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
          *
          * @param destinationNsgIdList the value to set
          * @return this builder
@@ -148,7 +151,7 @@ public final class ComputeInstanceVnicMapping
     /**
      * The OCID of the VNIC.
      * <p>
-     * Example: {@code ocid1.vnic.oc1.phx.exampleocid}
+     * Example: {@code ocid1.vnic.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
@@ -157,7 +160,7 @@ public final class ComputeInstanceVnicMapping
     /**
      * The OCID of the VNIC.
      * <p>
-     * Example: {@code ocid1.vnic.oc1.phx.exampleocid}
+     * Example: {@code ocid1.vnic.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -166,18 +169,18 @@ public final class ComputeInstanceVnicMapping
     }
 
     /**
-     * The OCID of the destination (remote) subnet to which this VNIC should connect.
+     * The OCID of the destination subnet to which the source VNIC should connect.
      * <p>
-     * Example: {@code ocid1.subnet.oc1.iad.exampleocid}
+     * Example: {@code ocid1.subnet.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
     private final String destinationSubnetId;
 
     /**
-     * The OCID of the destination (remote) subnet to which this VNIC should connect.
+     * The OCID of the destination subnet to which the source VNIC should connect.
      * <p>
-     * Example: {@code ocid1.subnet.oc1.iad.exampleocid}
+     * Example: {@code ocid1.subnet.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -186,18 +189,20 @@ public final class ComputeInstanceVnicMapping
     }
 
     /**
-     * A list of destination region's network security group (NSG) OCIDs which this VNIC should use.
+     * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+     * the source VNIC.
      * <p>
-     * Example: {@code [ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]}
+     * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
     private final java.util.List<String> destinationNsgIdList;
 
     /**
-     * A list of destination region's network security group (NSG) OCIDs which this VNIC should use.
+     * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+     * the source VNIC.
      * <p>
-     * Example: {@code [ ocid1.networksecuritygroup.oc1.iad.exampleocid1, ocid1.networksecuritygroup.oc1.iad.exampleocid2 ]}
+     * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
      *
      * @return the value
      **/

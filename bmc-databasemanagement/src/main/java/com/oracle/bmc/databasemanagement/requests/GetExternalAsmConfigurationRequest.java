@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -33,6 +33,17 @@ public class GetExternalAsmConfigurationRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * The OCID of the Named Credential.
+     */
+    private String opcNamedCredentialId;
+
+    /**
+     * The OCID of the Named Credential.
+     */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
     }
 
     public static class Builder
@@ -73,6 +84,21 @@ public class GetExternalAsmConfigurationRequest
         }
 
         /**
+         * The OCID of the Named Credential.
+         */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -102,6 +128,7 @@ public class GetExternalAsmConfigurationRequest
         public Builder copy(GetExternalAsmConfigurationRequest o) {
             externalAsmId(o.getExternalAsmId());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -136,8 +163,9 @@ public class GetExternalAsmConfigurationRequest
             GetExternalAsmConfigurationRequest request = new GetExternalAsmConfigurationRequest();
             request.externalAsmId = externalAsmId;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetExternalAsmConfigurationRequest(externalAsmId, opcRequestId);
+            // new GetExternalAsmConfigurationRequest(externalAsmId, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -146,7 +174,10 @@ public class GetExternalAsmConfigurationRequest
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().externalAsmId(externalAsmId).opcRequestId(opcRequestId);
+        return new Builder()
+                .externalAsmId(externalAsmId)
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -164,6 +195,7 @@ public class GetExternalAsmConfigurationRequest
         sb.append("super=").append(super.toString());
         sb.append(",externalAsmId=").append(String.valueOf(this.externalAsmId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -180,7 +212,8 @@ public class GetExternalAsmConfigurationRequest
         GetExternalAsmConfigurationRequest other = (GetExternalAsmConfigurationRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.externalAsmId, other.externalAsmId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -191,6 +224,11 @@ public class GetExternalAsmConfigurationRequest
                 (result * PRIME)
                         + (this.externalAsmId == null ? 43 : this.externalAsmId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

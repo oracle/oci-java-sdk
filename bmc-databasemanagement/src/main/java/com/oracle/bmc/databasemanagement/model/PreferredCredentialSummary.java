@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -28,7 +28,8 @@ public final class PreferredCredentialSummary
         "isAccessible",
         "userName",
         "role",
-        "passwordSecretId"
+        "passwordSecretId",
+        "namedCredentialId"
     })
     public PreferredCredentialSummary(
             String credentialName,
@@ -36,7 +37,8 @@ public final class PreferredCredentialSummary
             Boolean isAccessible,
             String userName,
             Role role,
-            String passwordSecretId) {
+            String passwordSecretId,
+            String namedCredentialId) {
         super();
         this.credentialName = credentialName;
         this.status = status;
@@ -44,6 +46,7 @@ public final class PreferredCredentialSummary
         this.userName = userName;
         this.role = role;
         this.passwordSecretId = passwordSecretId;
+        this.namedCredentialId = namedCredentialId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -144,6 +147,22 @@ public final class PreferredCredentialSummary
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+        private String namedCredentialId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+         * @param namedCredentialId the value to set
+         * @return this builder
+         **/
+        public Builder namedCredentialId(String namedCredentialId) {
+            this.namedCredentialId = namedCredentialId;
+            this.__explicitlySet__.add("namedCredentialId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -156,7 +175,8 @@ public final class PreferredCredentialSummary
                             this.isAccessible,
                             this.userName,
                             this.role,
-                            this.passwordSecretId);
+                            this.passwordSecretId,
+                            this.namedCredentialId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -182,6 +202,9 @@ public final class PreferredCredentialSummary
             }
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("namedCredentialId")) {
+                this.namedCredentialId(model.getNamedCredentialId());
             }
             return this;
         }
@@ -282,6 +305,20 @@ public final class PreferredCredentialSummary
         return passwordSecretId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
+    private final String namedCredentialId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Named Credential that contains the database user password metadata.
+     * @return the value
+     **/
+    public String getNamedCredentialId() {
+        return namedCredentialId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -302,6 +339,7 @@ public final class PreferredCredentialSummary
         sb.append(", userName=").append(String.valueOf(this.userName));
         sb.append(", role=").append(String.valueOf(this.role));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", namedCredentialId=").append(String.valueOf(this.namedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -322,6 +360,7 @@ public final class PreferredCredentialSummary
                 && java.util.Objects.equals(this.userName, other.userName)
                 && java.util.Objects.equals(this.role, other.role)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.namedCredentialId, other.namedCredentialId)
                 && super.equals(other);
     }
 
@@ -339,6 +378,9 @@ public final class PreferredCredentialSummary
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.namedCredentialId == null ? 43 : this.namedCredentialId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

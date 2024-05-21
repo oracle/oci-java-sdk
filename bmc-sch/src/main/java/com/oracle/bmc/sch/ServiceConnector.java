@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch;
@@ -8,9 +8,10 @@ import com.oracle.bmc.sch.requests.*;
 import com.oracle.bmc.sch.responses.*;
 
 /**
- * Use the Service Connector Hub API to transfer data between services in Oracle Cloud Infrastructure.
- * For more information about Service Connector Hub, see
- * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+ * Use the Connector Hub API to transfer data between services in Oracle Cloud Infrastructure.
+ * For more information about Connector Hub, see
+ * [the Connector Hub documentation](https://docs.cloud.oracle.com/iaas/Content/connector-hub/home.htm).
+ * Connector Hub is formerly known as Service Connector Hub.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -63,18 +64,18 @@ public interface ServiceConnector extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Activates the specified service connector.
+     * Activates the specified connector.
      * <p>
-     * After you send your request, the service connector's state is temporarily
+     * After you send your request, the connector's state is temporarily
      * UPDATING. When the state changes to ACTIVE, data begins transferring from the
-     * source service to the target service. For instructions on activating service
-     * connectors, see
-     * [To activate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#activate).
+     * source service to the target service.
+     * For more information, see
+     * [Activating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ActivateServiceConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateServiceConnector API.
@@ -83,16 +84,16 @@ public interface ServiceConnector extends AutoCloseable {
             ActivateServiceConnectorRequest request);
 
     /**
-     * Moves a service connector into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves a connector into a different compartment within the same tenancy.
+     * For more information, see
+     * [Moving a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/change-compartment-service-connector.htm).
      * <p>
      * When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ChangeServiceConnectorCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeServiceConnectorCompartment API.
@@ -101,31 +102,31 @@ public interface ServiceConnector extends AutoCloseable {
             ChangeServiceConnectorCompartmentRequest request);
 
     /**
-     * Creates a new service connector in the specified compartment.
-     * A service connector is a logically defined flow for moving data from
+     * Creates a new connector in the specified compartment.
+     * A connector is a logically defined flow for moving data from
      * a source service to a destination service in Oracle Cloud Infrastructure.
-     * For instructions, see
-     * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
-     * For general information about service connectors, see
-     * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+     * For more information, see
+     * [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+     * For general information about connectors, see
+     * [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm).
      * <p>
      * For purposes of access control, you must provide the
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where
-     * you want the service connector to reside. Notice that the service connector
+     * you want the connector to reside. Notice that the connector
      * doesn't have to be in the same compartment as the source or target services.
      * For information about access control and compartments, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
-     * After you send your request, the new service connector's state is temporarily
+     * After you send your request, the new connector's state is temporarily
      * CREATING. When the state changes to ACTIVE, data begins transferring from the
      * source service to the target service. For instructions on deactivating and
-     * activating service connectors, see
-     * [To activate or deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+     * activating connectors, see
+     * [Activating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/activate-service-connector.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/CreateServiceConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateServiceConnector API.
@@ -133,17 +134,17 @@ public interface ServiceConnector extends AutoCloseable {
     CreateServiceConnectorResponse createServiceConnector(CreateServiceConnectorRequest request);
 
     /**
-     * Deactivates the specified service connector.
+     * Deactivates the specified connector.
      * <p>
-     * After you send your request, the service connector's state is temporarily
+     * After you send your request, the connector's state is temporarily
      * UPDATING and any data transfer stops. The state then changes to INACTIVE.
-     * For instructions on deactivating service connectors, see
-     * [To deactivate a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#deactivate).
+     * For more information, see
+     * [Deactivating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/deactivate-service-connector.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/DeactivateServiceConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateServiceConnector API.
@@ -152,15 +153,17 @@ public interface ServiceConnector extends AutoCloseable {
             DeactivateServiceConnectorRequest request);
 
     /**
-     * Deletes the specified service connector.
+     * Deletes the specified connector.
+     * For more information, see
+     * [Deleting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/delete-service-connector.htm).
      * <p>
-     * After you send your request, the service connector's state is temporarily
+     * After you send your request, the connector's state is temporarily
      * DELETING and any data transfer stops. The state then changes to DELETED.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/DeleteServiceConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteServiceConnector API.
@@ -168,12 +171,14 @@ public interface ServiceConnector extends AutoCloseable {
     DeleteServiceConnectorResponse deleteServiceConnector(DeleteServiceConnectorRequest request);
 
     /**
-     * Gets the specified service connector's configuration information.
+     * Gets the specified connector's configuration information.
+     * For more information, see
+     * [Getting a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-service-connector.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/GetServiceConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceConnector API.
@@ -182,11 +187,13 @@ public interface ServiceConnector extends AutoCloseable {
 
     /**
      * Gets the details of the specified work request.
+     * For more information, see
+     * [Getting a Work Request's Details](https://docs.cloud.oracle.com/iaas/Content/connector-hub/get-work-request.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
@@ -194,12 +201,14 @@ public interface ServiceConnector extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Lists service connectors in the specified compartment.
+     * Lists connectors in the specified compartment.
+     * For more information, see
+     * [Listing Connectors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-service-connector.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListServiceConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceConnectors API.
@@ -208,11 +217,13 @@ public interface ServiceConnector extends AutoCloseable {
 
     /**
      * Lists work request errors for the specified work request. Results are paginated.
+     * For more information, see
+     * [Listing Work Request Errors](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-work-request-error.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
@@ -221,11 +232,13 @@ public interface ServiceConnector extends AutoCloseable {
 
     /**
      * Lists logs for the specified work request. Results are paginated.
+     * For more information, see
+     * [Listing Work Request Log Entries](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-work-request-log-entry.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
@@ -234,11 +247,13 @@ public interface ServiceConnector extends AutoCloseable {
 
     /**
      * Lists the work requests in the specified compartment.
+     * For more information, see
+     * [Listing Work Requests](https://docs.cloud.oracle.com/iaas/Content/connector-hub/list-work-request.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
@@ -246,16 +261,18 @@ public interface ServiceConnector extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Updates the configuration information for the specified service connector.
+     * Updates the configuration information for the specified connector.
+     * For more information, see
+     * [Updating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/update-service-connector.htm).
      * <p>
-     * After you send your request, the service connector's state is temporarily
+     * After you send your request, the connector's state is temporarily
      * UPDATING and any data transfer pauses. The state then changes back to its
      * original value: if ACTIVE, then data transfer resumes.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/sch/UpdateServiceConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateServiceConnector API.

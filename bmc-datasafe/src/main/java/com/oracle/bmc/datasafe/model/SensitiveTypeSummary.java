@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -34,6 +34,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
         "entityType",
         "parentCategoryId",
         "defaultMaskingFormatId",
+        "isCommon",
         "freeformTags",
         "definedTags"
     })
@@ -50,6 +51,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
             SensitiveTypeEntity entityType,
             String parentCategoryId,
             String defaultMaskingFormatId,
+            Boolean isCommon,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -65,6 +67,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
         this.entityType = entityType;
         this.parentCategoryId = parentCategoryId;
         this.defaultMaskingFormatId = defaultMaskingFormatId;
+        this.isCommon = isCommon;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -268,6 +271,26 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * Specifies whether the sensitive type is common. Common sensitive types belong to
+         * library sensitive types which are frequently used to perform sensitive data discovery.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
+        private Boolean isCommon;
+
+        /**
+         * Specifies whether the sensitive type is common. Common sensitive types belong to
+         * library sensitive types which are frequently used to perform sensitive data discovery.
+         *
+         * @param isCommon the value to set
+         * @return this builder
+         **/
+        public Builder isCommon(Boolean isCommon) {
+            this.isCommon = isCommon;
+            this.__explicitlySet__.add("isCommon");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -331,6 +354,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
                             this.entityType,
                             this.parentCategoryId,
                             this.defaultMaskingFormatId,
+                            this.isCommon,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -376,6 +400,9 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("defaultMaskingFormatId")) {
                 this.defaultMaskingFormatId(model.getDefaultMaskingFormatId());
+            }
+            if (model.wasPropertyExplicitlySet("isCommon")) {
+                this.isCommon(model.getIsCommon());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -571,6 +598,24 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
+    private final Boolean isCommon;
+
+    /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     *
+     * @return the value
+     **/
+    public Boolean getIsCommon() {
+        return isCommon;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -636,6 +681,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", entityType=").append(String.valueOf(this.entityType));
         sb.append(", parentCategoryId=").append(String.valueOf(this.parentCategoryId));
         sb.append(", defaultMaskingFormatId=").append(String.valueOf(this.defaultMaskingFormatId));
+        sb.append(", isCommon=").append(String.valueOf(this.isCommon));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -665,6 +711,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.parentCategoryId, other.parentCategoryId)
                 && java.util.Objects.equals(
                         this.defaultMaskingFormatId, other.defaultMaskingFormatId)
+                && java.util.Objects.equals(this.isCommon, other.isCommon)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -696,6 +743,7 @@ public final class SensitiveTypeSummary extends com.oracle.bmc.http.internal.Exp
                         + (this.defaultMaskingFormatId == null
                                 ? 43
                                 : this.defaultMaskingFormatId.hashCode());
+        result = (result * PRIME) + (this.isCommon == null ? 43 : this.isCommon.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

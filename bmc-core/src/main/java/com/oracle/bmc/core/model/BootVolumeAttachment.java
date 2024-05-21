@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -34,6 +34,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
         "instanceId",
         "lifecycleState",
         "timeCreated",
+        "timeUpdated",
         "isPvEncryptionInTransitEnabled",
         "encryptionInTransitType"
     })
@@ -46,6 +47,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
             String instanceId,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
+            java.util.Date timeUpdated,
             Boolean isPvEncryptionInTransitEnabled,
             EncryptionInTransitType encryptionInTransitType) {
         super();
@@ -57,6 +59,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
         this.instanceId = instanceId;
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.encryptionInTransitType = encryptionInTransitType;
     }
@@ -208,6 +211,28 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
          * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
          *
          **/
@@ -260,6 +285,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
                             this.instanceId,
                             this.lifecycleState,
                             this.timeCreated,
+                            this.timeUpdated,
                             this.isPvEncryptionInTransitEnabled,
                             this.encryptionInTransitType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -293,6 +319,9 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
@@ -494,6 +523,26 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the boot volume attachment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /**
      * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
      *
      **/
@@ -549,6 +598,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
         sb.append(", instanceId=").append(String.valueOf(this.instanceId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", encryptionInTransitType=")
@@ -575,6 +625,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.instanceId, other.instanceId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(
@@ -602,6 +653,7 @@ public final class BootVolumeAttachment extends com.oracle.bmc.http.internal.Exp
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPvEncryptionInTransitEnabled == null

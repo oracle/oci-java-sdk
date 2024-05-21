@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Types of error modes for steps in a DR Plan.
- * - STOP_ON_ERROR - Stop DR Plan execution if this step fails.
- * - CONTINUE_ON_ERROR - Continue DR Plan execution even if this step fails.
+ * The types of error modes for steps in a DR plan.
+ * - STOP_ON_ERROR - Stop DR plan execution if the step fails.
+ * - CONTINUE_ON_ERROR - Continue executing the DR plan even if the step fails.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")

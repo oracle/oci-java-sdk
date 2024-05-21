@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * For a flexible shape, the amount of memory available for instances that use this shape.
+ * For a flexible shape, the amount of memory available for container instances that use this shape.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,14 +46,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The minimum amount of memory, in gigabytes.
+         * The minimum amount of memory (GB).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
         private Float minInGBs;
 
         /**
-         * The minimum amount of memory, in gigabytes.
+         * The minimum amount of memory (GB).
          *
          * @param minInGBs the value to set
          * @return this builder
@@ -64,14 +64,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The maximum amount of memory, in gigabytes.
+         * The maximum amount of memory (GB).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
         private Float maxInGBs;
 
         /**
-         * The maximum amount of memory, in gigabytes.
+         * The maximum amount of memory (GB).
          *
          * @param maxInGBs the value to set
          * @return this builder
@@ -82,14 +82,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The default amount of memory per OCPU available for this shape, in gigabytes.
+         * The default amount of memory per OCPU available for this shape (GB).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
         private Float defaultPerOcpuInGBs;
 
         /**
-         * The default amount of memory per OCPU available for this shape, in gigabytes.
+         * The default amount of memory per OCPU available for this shape (GB).
          *
          * @param defaultPerOcpuInGBs the value to set
          * @return this builder
@@ -100,14 +100,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+         * The minimum amount of memory per OCPU available for this shape (GB).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
         private Float minPerOcpuInGBs;
 
         /**
-         * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+         * The minimum amount of memory per OCPU available for this shape (GB).
          *
          * @param minPerOcpuInGBs the value to set
          * @return this builder
@@ -118,14 +118,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+         * The maximum amount of memory per OCPU available for this shape (GB).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
         private Float maxPerOcpuInGBs;
 
         /**
-         * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+         * The maximum amount of memory per OCPU available for this shape (GB).
          *
          * @param maxPerOcpuInGBs the value to set
          * @return this builder
@@ -186,14 +186,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The minimum amount of memory, in gigabytes.
+     * The minimum amount of memory (GB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
     private final Float minInGBs;
 
     /**
-     * The minimum amount of memory, in gigabytes.
+     * The minimum amount of memory (GB).
      *
      * @return the value
      **/
@@ -202,14 +202,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The maximum amount of memory, in gigabytes.
+     * The maximum amount of memory (GB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
     private final Float maxInGBs;
 
     /**
-     * The maximum amount of memory, in gigabytes.
+     * The maximum amount of memory (GB).
      *
      * @return the value
      **/
@@ -218,14 +218,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The default amount of memory per OCPU available for this shape, in gigabytes.
+     * The default amount of memory per OCPU available for this shape (GB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
     private final Float defaultPerOcpuInGBs;
 
     /**
-     * The default amount of memory per OCPU available for this shape, in gigabytes.
+     * The default amount of memory per OCPU available for this shape (GB).
      *
      * @return the value
      **/
@@ -234,14 +234,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     * The minimum amount of memory per OCPU available for this shape (GB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
     private final Float minPerOcpuInGBs;
 
     /**
-     * The minimum amount of memory per OCPU available for this shape, in gigabytes.
+     * The minimum amount of memory per OCPU available for this shape (GB).
      *
      * @return the value
      **/
@@ -250,14 +250,14 @@ public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     * The maximum amount of memory per OCPU available for this shape (GB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
     private final Float maxPerOcpuInGBs;
 
     /**
-     * The maximum amount of memory per OCPU available for this shape, in gigabytes.
+     * The maximum amount of memory per OCPU available for this shape (GB).
      *
      * @return the value
      **/

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+ * The details for associating a DR protection group with a peer DR protection group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,18 +34,18 @@ public final class AssociateDrProtectionGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the peer (remote) DR Protection Group.
+         * The OCID of the peer DR protection group.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerId")
         private String peerId;
 
         /**
-         * The OCID of the peer (remote) DR Protection Group.
+         * The OCID of the peer DR protection group.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param peerId the value to set
          * @return this builder
@@ -56,7 +56,7 @@ public final class AssociateDrProtectionGroupDetails
             return this;
         }
         /**
-         * The region of the peer (remote) DR Protection Group.
+         * The region of the peer DR protection group.
          * <p>
          * Example: {@code us-ashburn-1}
          *
@@ -65,7 +65,7 @@ public final class AssociateDrProtectionGroupDetails
         private String peerRegion;
 
         /**
-         * The region of the peer (remote) DR Protection Group.
+         * The region of the peer DR protection group.
          * <p>
          * Example: {@code us-ashburn-1}
          *
@@ -78,14 +78,18 @@ public final class AssociateDrProtectionGroupDetails
             return this;
         }
         /**
-         * The role of this DR Protection Group.
+         * The role of the DR protection group.
+         * <p>
+         * Example: {@code STANDBY}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private DrProtectionGroupRole role;
 
         /**
-         * The role of this DR Protection Group.
+         * The role of the DR protection group.
+         * <p>
+         * Example: {@code STANDBY}
          *
          * @param role the value to set
          * @return this builder
@@ -135,18 +139,18 @@ public final class AssociateDrProtectionGroupDetails
     }
 
     /**
-     * The OCID of the peer (remote) DR Protection Group.
+     * The OCID of the peer DR protection group.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     private final String peerId;
 
     /**
-     * The OCID of the peer (remote) DR Protection Group.
+     * The OCID of the peer DR protection group.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -155,7 +159,7 @@ public final class AssociateDrProtectionGroupDetails
     }
 
     /**
-     * The region of the peer (remote) DR Protection Group.
+     * The region of the peer DR protection group.
      * <p>
      * Example: {@code us-ashburn-1}
      *
@@ -164,7 +168,7 @@ public final class AssociateDrProtectionGroupDetails
     private final String peerRegion;
 
     /**
-     * The region of the peer (remote) DR Protection Group.
+     * The region of the peer DR protection group.
      * <p>
      * Example: {@code us-ashburn-1}
      *
@@ -175,14 +179,18 @@ public final class AssociateDrProtectionGroupDetails
     }
 
     /**
-     * The role of this DR Protection Group.
+     * The role of the DR protection group.
+     * <p>
+     * Example: {@code STANDBY}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final DrProtectionGroupRole role;
 
     /**
-     * The role of this DR Protection Group.
+     * The role of the DR protection group.
+     * <p>
+     * Example: {@code STANDBY}
      *
      * @return the value
      **/

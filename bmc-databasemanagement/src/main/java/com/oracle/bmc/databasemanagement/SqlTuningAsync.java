@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -8,9 +8,9 @@ import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
 /**
- * Use the Database Management API to perform tasks such as obtaining performance and resource usage metrics
- * for a fleet of Managed Databases or a specific Managed Database, creating Managed Database Groups, and
- * running a SQL job on a Managed Database or Managed Database Group.
+ * Use the Database Management API to monitor and manage resources such as
+ * Oracle Databases, MySQL Databases, and External Database Systems.
+ * For more information, see [Database Management](https://docs.cloud.oracle.com/iaas/database-management/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
@@ -79,6 +79,39 @@ public interface SqlTuningAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an empty Sql tuning set within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSqlTuningSetResponse> createSqlTuningSet(
+            CreateSqlTuningSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSqlTuningSetRequest, CreateSqlTuningSetResponse>
+                    handler);
+
+    /**
+     * Drops the Sql tuning set specified by sqlTuningSet within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DropSqlTuningSetResponse> dropSqlTuningSet(
+            DropSqlTuningSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DropSqlTuningSetRequest, DropSqlTuningSetResponse>
+                    handler);
+
+    /**
      * Drops a SQL tuning task and its related results from the database.
      *
      *
@@ -93,6 +126,41 @@ public interface SqlTuningAsync extends AutoCloseable {
             DropSqlTuningTaskRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DropSqlTuningTaskRequest, DropSqlTuningTaskResponse>
+                    handler);
+
+    /**
+     * Deletes the Sqls in the specified Sql tuning set that matches the filter criteria provided in the basicFilter.
+     * If basicFilter criteria is not provided, then entire Sqls in the Sql tuning set is deleted.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DropSqlsInSqlTuningSetResponse> dropSqlsInSqlTuningSet(
+            DropSqlsInSqlTuningSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DropSqlsInSqlTuningSetRequest, DropSqlsInSqlTuningSetResponse>
+                    handler);
+
+    /**
+     * Fetch the details of Sql statements in the Sql tuning set specified by name, owner and optional filter parameters.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<FetchSqlTuningSetResponse> fetchSqlTuningSet(
+            FetchSqlTuningSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            FetchSqlTuningSetRequest, FetchSqlTuningSetResponse>
                     handler);
 
     /**
@@ -226,6 +294,39 @@ public interface SqlTuningAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Load Sql statements into the Sql tuning set specified by name and optional filter parameters within the Managed Database specified by managedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<LoadSqlTuningSetResponse> loadSqlTuningSet(
+            LoadSqlTuningSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<LoadSqlTuningSetRequest, LoadSqlTuningSetResponse>
+                    handler);
+
+    /**
+     * Saves the specified list of Sqls statements into another new Sql tuning set or loads into an existing Sql tuning set'.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SaveSqlTuningSetAsResponse> saveSqlTuningSetAs(
+            SaveSqlTuningSetAsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SaveSqlTuningSetAsRequest, SaveSqlTuningSetAsResponse>
+                    handler);
+
+    /**
      * Starts a SQL tuning task for a given set of SQL statements from the active session history top SQL statements.
      *
      *
@@ -240,5 +341,22 @@ public interface SqlTuningAsync extends AutoCloseable {
             StartSqlTuningTaskRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             StartSqlTuningTaskRequest, StartSqlTuningTaskResponse>
+                    handler);
+
+    /**
+     * Executes a SQL query to check whether user entered basic filter criteria is valid or not.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateBasicFilterResponse> validateBasicFilter(
+            ValidateBasicFilterRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ValidateBasicFilterRequest, ValidateBasicFilterResponse>
                     handler);
 }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A single Detector
+ * Information for a single detector category. For example, IAAS_ACTIVITY_DETECTOR or IAAS_CONFIGURATION_DETECTOR.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,13 +30,13 @@ public final class Detector extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * detector key
+         * Unique identifier for detector
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * detector key
+         * Unique identifier for detector
          * @param id the value to set
          * @return this builder
          **/
@@ -46,13 +46,13 @@ public final class Detector extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * detector description
+         * Detector description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * detector description
+         * Detector description
          * @param description the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class Detector extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -116,13 +116,13 @@ public final class Detector extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * detector key
+     * Unique identifier for detector
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * detector key
+     * Unique identifier for detector
      * @return the value
      **/
     public String getId() {
@@ -130,13 +130,13 @@ public final class Detector extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * detector description
+     * Detector description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * detector description
+     * Detector description
      * @return the value
      **/
     public String getDescription() {
@@ -144,13 +144,13 @@ public final class Detector extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

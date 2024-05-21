@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.internal;
 
+import java.security.PrivateKey;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.AuthCachingPolicy;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.YubikeyAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -50,6 +52,17 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         AuthCachingPolicy policy = getAuthCachingPolicy(authProvider);
 
         Supplier<String> keyIdSupplier = createKeyIdSupplier(authProvider, policy);
+
+        if (abstractAuthProvider instanceof YubikeyAuthenticationDetailsProvider) {
+            // YubikeyAuthenticationDetailsProvider requires a different request signer constructor
+            KeySupplier<PrivateKey> keySupplier =
+                    keyId ->
+                            Optional.ofNullable(
+                                    ((YubikeyAuthenticationDetailsProvider) abstractAuthProvider)
+                                            .getYubikeyPrivateKey());
+            return new RequestSignerImpl(signingStrategy, keySupplier, keyIdSupplier);
+        }
+
         KeySupplier<RSAPrivateKey> keySupplier = createKeySupplier(authProvider, policy);
 
         return new RequestSignerImpl(keySupplier, signingStrategy, keyIdSupplier);

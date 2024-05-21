@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SubscriptionSku.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SubscriptionSku extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -58,13 +58,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Stock keeping unit ID.
+         * Stock Keeping Unit (SKU) ID.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sku")
         private String sku;
 
         /**
-         * Stock keeping unit ID.
+         * Stock Keeping Unit (SKU) ID.
          * @param sku the value to set
          * @return this builder
          **/
@@ -154,13 +154,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Denotes if the SKU is considered as a parent or child.
+         * Specifies if the SKU is considered as a parent or child.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBaseServiceComponent")
         private Boolean isBaseServiceComponent;
 
         /**
-         * Denotes if the SKU is considered as a parent or child.
+         * Specifies if the SKU is considered as a parent or child.
          * @param isBaseServiceComponent the value to set
          * @return this builder
          **/
@@ -170,13 +170,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Denotes if an additional test instance can be provisioned by the SAAS application.
+         * Specifies if an additional test instance can be provisioned by the SaaS application.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdditionalInstance")
         private Boolean isAdditionalInstance;
 
         /**
-         * Denotes if an additional test instance can be provisioned by the SAAS application.
+         * Specifies if an additional test instance can be provisioned by the SaaS application.
          * @param isAdditionalInstance the value to set
          * @return this builder
          **/
@@ -186,13 +186,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Date-time when the SKU was created.
+         * Date and time when the SKU was created.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("startDate")
         private java.util.Date startDate;
 
         /**
-         * Date-time when the SKU was created.
+         * Date and time when the SKU was created.
          * @param startDate the value to set
          * @return this builder
          **/
@@ -202,13 +202,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Date-time when the SKU ended.
+         * Date and time when the SKU ended.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("endDate")
         private java.util.Date endDate;
 
         /**
-         * Date-time when the SKU ended.
+         * Date and time when the SKU ended.
          * @param endDate the value to set
          * @return this builder
          **/
@@ -288,13 +288,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Stock keeping unit ID.
+     * Stock Keeping Unit (SKU) ID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sku")
     private final String sku;
 
     /**
-     * Stock keeping unit ID.
+     * Stock Keeping Unit (SKU) ID.
      * @return the value
      **/
     public String getSku() {
@@ -372,13 +372,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Denotes if the SKU is considered as a parent or child.
+     * Specifies if the SKU is considered as a parent or child.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBaseServiceComponent")
     private final Boolean isBaseServiceComponent;
 
     /**
-     * Denotes if the SKU is considered as a parent or child.
+     * Specifies if the SKU is considered as a parent or child.
      * @return the value
      **/
     public Boolean getIsBaseServiceComponent() {
@@ -386,13 +386,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Denotes if an additional test instance can be provisioned by the SAAS application.
+     * Specifies if an additional test instance can be provisioned by the SaaS application.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdditionalInstance")
     private final Boolean isAdditionalInstance;
 
     /**
-     * Denotes if an additional test instance can be provisioned by the SAAS application.
+     * Specifies if an additional test instance can be provisioned by the SaaS application.
      * @return the value
      **/
     public Boolean getIsAdditionalInstance() {
@@ -400,13 +400,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Date-time when the SKU was created.
+     * Date and time when the SKU was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startDate")
     private final java.util.Date startDate;
 
     /**
-     * Date-time when the SKU was created.
+     * Date and time when the SKU was created.
      * @return the value
      **/
     public java.util.Date getStartDate() {
@@ -414,13 +414,13 @@ public final class SubscriptionSku extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Date-time when the SKU ended.
+     * Date and time when the SKU ended.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endDate")
     private final java.util.Date endDate;
 
     /**
-     * Date-time when the SKU ended.
+     * Date and time when the SKU ended.
      * @return the value
      **/
     public java.util.Date getEndDate() {

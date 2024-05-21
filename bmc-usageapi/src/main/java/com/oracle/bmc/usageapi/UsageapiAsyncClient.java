@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi;
@@ -510,6 +510,63 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEmailRecipientsGroupResponse>
+            createEmailRecipientsGroup(
+                    CreateEmailRecipientsGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateEmailRecipientsGroupRequest,
+                                    CreateEmailRecipientsGroupResponse>
+                            handler) {
+        LOG.trace("Called async createEmailRecipientsGroup");
+        final CreateEmailRecipientsGroupRequest interceptedRequest =
+                CreateEmailRecipientsGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "CreateEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/CreateEmailRecipientsGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateEmailRecipientsGroupResponse>
+                transformer =
+                        CreateEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateEmailRecipientsGroupRequest, CreateEmailRecipientsGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateEmailRecipientsGroupRequest,
+                                CreateEmailRecipientsGroupResponse>,
+                        java.util.concurrent.Future<CreateEmailRecipientsGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEmailRecipientsGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateEmailRecipientsGroupRequest, CreateEmailRecipientsGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateQueryResponse> createQuery(
             CreateQueryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateQueryRequest, CreateQueryResponse>
@@ -611,6 +668,65 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUsageCarbonEmissionsQueryResponse>
+            createUsageCarbonEmissionsQuery(
+                    CreateUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateUsageCarbonEmissionsQueryRequest,
+                                    CreateUsageCarbonEmissionsQueryResponse>
+                            handler) {
+        LOG.trace("Called async createUsageCarbonEmissionsQuery");
+        final CreateUsageCarbonEmissionsQueryRequest interceptedRequest =
+                CreateUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "CreateUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/CreateUsageCarbonEmissionsQuery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        CreateUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateUsageCarbonEmissionsQueryRequest,
+                        CreateUsageCarbonEmissionsQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateUsageCarbonEmissionsQueryRequest,
+                                CreateUsageCarbonEmissionsQueryResponse>,
+                        java.util.concurrent.Future<CreateUsageCarbonEmissionsQueryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUsageCarbonEmissionsQueryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateUsageCarbonEmissionsQueryRequest,
+                    CreateUsageCarbonEmissionsQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCustomTableResponse> deleteCustomTable(
             DeleteCustomTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -644,6 +760,57 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteCustomTableRequest, DeleteCustomTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailRecipientsGroupResponse>
+            deleteEmailRecipientsGroup(
+                    DeleteEmailRecipientsGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteEmailRecipientsGroupRequest,
+                                    DeleteEmailRecipientsGroupResponse>
+                            handler) {
+        LOG.trace("Called async deleteEmailRecipientsGroup");
+        final DeleteEmailRecipientsGroupRequest interceptedRequest =
+                DeleteEmailRecipientsGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "DeleteEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/DeleteEmailRecipientsGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteEmailRecipientsGroupResponse>
+                transformer =
+                        DeleteEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteEmailRecipientsGroupRequest, DeleteEmailRecipientsGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteEmailRecipientsGroupRequest,
+                                DeleteEmailRecipientsGroupResponse>,
+                        java.util.concurrent.Future<DeleteEmailRecipientsGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteEmailRecipientsGroupRequest, DeleteEmailRecipientsGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -746,6 +913,59 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteUsageCarbonEmissionsQueryResponse>
+            deleteUsageCarbonEmissionsQuery(
+                    DeleteUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteUsageCarbonEmissionsQueryRequest,
+                                    DeleteUsageCarbonEmissionsQueryResponse>
+                            handler) {
+        LOG.trace("Called async deleteUsageCarbonEmissionsQuery");
+        final DeleteUsageCarbonEmissionsQueryRequest interceptedRequest =
+                DeleteUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "DeleteUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/DeleteUsageCarbonEmissionsQuery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        DeleteUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteUsageCarbonEmissionsQueryRequest,
+                        DeleteUsageCarbonEmissionsQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteUsageCarbonEmissionsQueryRequest,
+                                DeleteUsageCarbonEmissionsQueryResponse>,
+                        java.util.concurrent.Future<DeleteUsageCarbonEmissionsQueryResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteUsageCarbonEmissionsQueryRequest,
+                    DeleteUsageCarbonEmissionsQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCustomTableResponse> getCustomTable(
             GetCustomTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -778,6 +998,54 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetCustomTableRequest, GetCustomTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailRecipientsGroupResponse> getEmailRecipientsGroup(
+            GetEmailRecipientsGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailRecipientsGroupRequest, GetEmailRecipientsGroupResponse>
+                    handler) {
+        LOG.trace("Called async getEmailRecipientsGroup");
+        final GetEmailRecipientsGroupRequest interceptedRequest =
+                GetEmailRecipientsGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "GetEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/GetEmailRecipientsGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetEmailRecipientsGroupResponse>
+                transformer =
+                        GetEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetEmailRecipientsGroupRequest, GetEmailRecipientsGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailRecipientsGroupRequest, GetEmailRecipientsGroupResponse>,
+                        java.util.concurrent.Future<GetEmailRecipientsGroupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailRecipientsGroupRequest, GetEmailRecipientsGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -922,6 +1190,57 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetUsageCarbonEmissionsQueryResponse>
+            getUsageCarbonEmissionsQuery(
+                    GetUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetUsageCarbonEmissionsQueryRequest,
+                                    GetUsageCarbonEmissionsQueryResponse>
+                            handler) {
+        LOG.trace("Called async getUsageCarbonEmissionsQuery");
+        final GetUsageCarbonEmissionsQueryRequest interceptedRequest =
+                GetUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "GetUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/GetUsageCarbonEmissionsQuery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        GetUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetUsageCarbonEmissionsQueryRequest, GetUsageCarbonEmissionsQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUsageCarbonEmissionsQueryRequest,
+                                GetUsageCarbonEmissionsQueryResponse>,
+                        java.util.concurrent.Future<GetUsageCarbonEmissionsQueryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUsageCarbonEmissionsQueryRequest, GetUsageCarbonEmissionsQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCustomTablesResponse> listCustomTables(
             ListCustomTablesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -955,6 +1274,56 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListCustomTablesRequest, ListCustomTablesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEmailRecipientsGroupsResponse> listEmailRecipientsGroups(
+            ListEmailRecipientsGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listEmailRecipientsGroups");
+        final ListEmailRecipientsGroupsRequest interceptedRequest =
+                ListEmailRecipientsGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEmailRecipientsGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "ListEmailRecipientsGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/ListEmailRecipientsGroups");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListEmailRecipientsGroupsResponse>
+                transformer =
+                        ListEmailRecipientsGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEmailRecipientsGroupsRequest,
+                                ListEmailRecipientsGroupsResponse>,
+                        java.util.concurrent.Future<ListEmailRecipientsGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1102,6 +1471,158 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListUsageCarbonEmissionsQueriesResponse>
+            listUsageCarbonEmissionsQueries(
+                    ListUsageCarbonEmissionsQueriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListUsageCarbonEmissionsQueriesRequest,
+                                    ListUsageCarbonEmissionsQueriesResponse>
+                            handler) {
+        LOG.trace("Called async listUsageCarbonEmissionsQueries");
+        final ListUsageCarbonEmissionsQueriesRequest interceptedRequest =
+                ListUsageCarbonEmissionsQueriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUsageCarbonEmissionsQueriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "ListUsageCarbonEmissionsQueries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/ListUsageCarbonEmissionsQueries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListUsageCarbonEmissionsQueriesResponse>
+                transformer =
+                        ListUsageCarbonEmissionsQueriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListUsageCarbonEmissionsQueriesRequest,
+                        ListUsageCarbonEmissionsQueriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUsageCarbonEmissionsQueriesRequest,
+                                ListUsageCarbonEmissionsQueriesResponse>,
+                        java.util.concurrent.Future<ListUsageCarbonEmissionsQueriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUsageCarbonEmissionsQueriesRequest,
+                    ListUsageCarbonEmissionsQueriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestAverageCarbonEmissionResponse>
+            requestAverageCarbonEmission(
+                    RequestAverageCarbonEmissionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestAverageCarbonEmissionRequest,
+                                    RequestAverageCarbonEmissionResponse>
+                            handler) {
+        LOG.trace("Called async requestAverageCarbonEmission");
+        final RequestAverageCarbonEmissionRequest interceptedRequest =
+                RequestAverageCarbonEmissionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestAverageCarbonEmissionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestAverageCarbonEmission",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/AverageCarbonEmission/RequestAverageCarbonEmission");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestAverageCarbonEmissionResponse>
+                transformer =
+                        RequestAverageCarbonEmissionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestAverageCarbonEmissionRequest, RequestAverageCarbonEmissionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestAverageCarbonEmissionRequest,
+                                RequestAverageCarbonEmissionResponse>,
+                        java.util.concurrent.Future<RequestAverageCarbonEmissionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestAverageCarbonEmissionRequest, RequestAverageCarbonEmissionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestCleanEnergyUsageResponse> requestCleanEnergyUsage(
+            RequestCleanEnergyUsageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RequestCleanEnergyUsageRequest, RequestCleanEnergyUsageResponse>
+                    handler) {
+        LOG.trace("Called async requestCleanEnergyUsage");
+        final RequestCleanEnergyUsageRequest interceptedRequest =
+                RequestCleanEnergyUsageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestCleanEnergyUsageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestCleanEnergyUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CleanEnergyUsage/RequestCleanEnergyUsage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestCleanEnergyUsageResponse>
+                transformer =
+                        RequestCleanEnergyUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestCleanEnergyUsageRequest, RequestCleanEnergyUsageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestCleanEnergyUsageRequest, RequestCleanEnergyUsageResponse>,
+                        java.util.concurrent.Future<RequestCleanEnergyUsageResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestCleanEnergyUsageRequest, RequestCleanEnergyUsageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestSummarizedConfigurationsResponse>
             requestSummarizedConfigurations(
                     RequestSummarizedConfigurationsRequest request,
@@ -1208,6 +1729,115 @@ public class UsageapiAsyncClient implements UsageapiAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RequestUsageCarbonEmissionConfigResponse>
+            requestUsageCarbonEmissionConfig(
+                    RequestUsageCarbonEmissionConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestUsageCarbonEmissionConfigRequest,
+                                    RequestUsageCarbonEmissionConfigResponse>
+                            handler) {
+        LOG.trace("Called async requestUsageCarbonEmissionConfig");
+        final RequestUsageCarbonEmissionConfigRequest interceptedRequest =
+                RequestUsageCarbonEmissionConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestUsageCarbonEmissionConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestUsageCarbonEmissionConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestUsageCarbonEmissionConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestUsageCarbonEmissionConfigResponse>
+                transformer =
+                        RequestUsageCarbonEmissionConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestUsageCarbonEmissionConfigRequest,
+                        RequestUsageCarbonEmissionConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestUsageCarbonEmissionConfigRequest,
+                                RequestUsageCarbonEmissionConfigResponse>,
+                        java.util.concurrent.Future<RequestUsageCarbonEmissionConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestUsageCarbonEmissionConfigRequest,
+                    RequestUsageCarbonEmissionConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestUsageCarbonEmissionsResponse>
+            requestUsageCarbonEmissions(
+                    RequestUsageCarbonEmissionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestUsageCarbonEmissionsRequest,
+                                    RequestUsageCarbonEmissionsResponse>
+                            handler) {
+        LOG.trace("Called async requestUsageCarbonEmissions");
+        final RequestUsageCarbonEmissionsRequest interceptedRequest =
+                RequestUsageCarbonEmissionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestUsageCarbonEmissionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestUsageCarbonEmissions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionSummary/RequestUsageCarbonEmissions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestUsageCarbonEmissionsResponse>
+                transformer =
+                        RequestUsageCarbonEmissionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestUsageCarbonEmissionsRequest, RequestUsageCarbonEmissionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestUsageCarbonEmissionsRequest,
+                                RequestUsageCarbonEmissionsResponse>,
+                        java.util.concurrent.Future<RequestUsageCarbonEmissionsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestUsageCarbonEmissionsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestUsageCarbonEmissionsRequest, RequestUsageCarbonEmissionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateCustomTableResponse> updateCustomTable(
             UpdateCustomTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1246,6 +1876,62 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateCustomTableRequest, UpdateCustomTableResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailRecipientsGroupResponse>
+            updateEmailRecipientsGroup(
+                    UpdateEmailRecipientsGroupRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateEmailRecipientsGroupRequest,
+                                    UpdateEmailRecipientsGroupResponse>
+                            handler) {
+        LOG.trace("Called async updateEmailRecipientsGroup");
+        final UpdateEmailRecipientsGroupRequest interceptedRequest =
+                UpdateEmailRecipientsGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "UpdateEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/UpdateEmailRecipientsGroup");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateEmailRecipientsGroupResponse>
+                transformer =
+                        UpdateEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateEmailRecipientsGroupRequest, UpdateEmailRecipientsGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateEmailRecipientsGroupRequest,
+                                UpdateEmailRecipientsGroupResponse>,
+                        java.util.concurrent.Future<UpdateEmailRecipientsGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEmailRecipientsGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateEmailRecipientsGroupRequest, UpdateEmailRecipientsGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1345,6 +2031,64 @@ public class UsageapiAsyncClient implements UsageapiAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateScheduleRequest, UpdateScheduleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUsageCarbonEmissionsQueryResponse>
+            updateUsageCarbonEmissionsQuery(
+                    UpdateUsageCarbonEmissionsQueryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateUsageCarbonEmissionsQueryRequest,
+                                    UpdateUsageCarbonEmissionsQueryResponse>
+                            handler) {
+        LOG.trace("Called async updateUsageCarbonEmissionsQuery");
+        final UpdateUsageCarbonEmissionsQueryRequest interceptedRequest =
+                UpdateUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "UpdateUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/UpdateUsageCarbonEmissionsQuery");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        UpdateUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateUsageCarbonEmissionsQueryRequest,
+                        UpdateUsageCarbonEmissionsQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateUsageCarbonEmissionsQueryRequest,
+                                UpdateUsageCarbonEmissionsQueryResponse>,
+                        java.util.concurrent.Future<UpdateUsageCarbonEmissionsQueryResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUsageCarbonEmissionsQueryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateUsageCarbonEmissionsQueryRequest,
+                    UpdateUsageCarbonEmissionsQueryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

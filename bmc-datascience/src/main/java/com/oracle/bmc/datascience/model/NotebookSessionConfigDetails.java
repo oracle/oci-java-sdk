@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -26,17 +26,20 @@ public final class NotebookSessionConfigDetails
         "shape",
         "blockStorageSizeInGBs",
         "subnetId",
+        "privateEndpointId",
         "notebookSessionShapeConfigDetails"
     })
     public NotebookSessionConfigDetails(
             String shape,
             Integer blockStorageSizeInGBs,
             String subnetId,
+            String privateEndpointId,
             NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails) {
         super();
         this.shape = shape;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
         this.subnetId = subnetId;
+        this.privateEndpointId = privateEndpointId;
         this.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
     }
 
@@ -96,6 +99,24 @@ public final class NotebookSessionConfigDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /**
+         * The OCID of a Data Science private endpoint.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+        private String privateEndpointId;
+
+        /**
+         * The OCID of a Data Science private endpoint.
+         *
+         * @param privateEndpointId the value to set
+         * @return this builder
+         **/
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
+            this.__explicitlySet__.add("privateEndpointId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
         private NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
@@ -116,6 +137,7 @@ public final class NotebookSessionConfigDetails
                             this.shape,
                             this.blockStorageSizeInGBs,
                             this.subnetId,
+                            this.privateEndpointId,
                             this.notebookSessionShapeConfigDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -133,6 +155,9 @@ public final class NotebookSessionConfigDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointId")) {
+                this.privateEndpointId(model.getPrivateEndpointId());
             }
             if (model.wasPropertyExplicitlySet("notebookSessionShapeConfigDetails")) {
                 this.notebookSessionShapeConfigDetails(
@@ -201,6 +226,22 @@ public final class NotebookSessionConfigDetails
         return subnetId;
     }
 
+    /**
+     * The OCID of a Data Science private endpoint.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+    private final String privateEndpointId;
+
+    /**
+     * The OCID of a Data Science private endpoint.
+     *
+     * @return the value
+     **/
+    public String getPrivateEndpointId() {
+        return privateEndpointId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionShapeConfigDetails")
     private final NotebookSessionShapeConfigDetails notebookSessionShapeConfigDetails;
 
@@ -225,6 +266,7 @@ public final class NotebookSessionConfigDetails
         sb.append("shape=").append(String.valueOf(this.shape));
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(", notebookSessionShapeConfigDetails=")
                 .append(String.valueOf(this.notebookSessionShapeConfigDetails));
         sb.append(")");
@@ -244,6 +286,7 @@ public final class NotebookSessionConfigDetails
         return java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && java.util.Objects.equals(
                         this.notebookSessionShapeConfigDetails,
                         other.notebookSessionShapeConfigDetails)
@@ -261,6 +304,9 @@ public final class NotebookSessionConfigDetails
                                 ? 43
                                 : this.blockStorageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.notebookSessionShapeConfigDetails == null

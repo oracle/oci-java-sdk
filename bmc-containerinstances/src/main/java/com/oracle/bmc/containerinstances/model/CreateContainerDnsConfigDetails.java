@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Allow customers to define DNS settings for containers. If this is not provided, the containers will use
+ * Allow customers to define DNS settings for containers. If this is not provided, the containers use
  * the default DNS settings of the subnet.
  *
  * <br/>
@@ -39,7 +39,7 @@ public final class CreateContainerDnsConfigDetails
     public static class Builder {
         /**
          * IP address of a name server that the resolver should query, either an IPv4 address
-         * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
+         * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
          * nameservers from subnet dhcpDnsOptions.
          *
          **/
@@ -48,7 +48,7 @@ public final class CreateContainerDnsConfigDetails
 
         /**
          * IP address of a name server that the resolver should query, either an IPv4 address
-         * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
+         * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
          * nameservers from subnet dhcpDnsOptions.
          *
          * @param nameservers the value to set
@@ -77,7 +77,7 @@ public final class CreateContainerDnsConfigDetails
         }
         /**
          * Options allows certain internal resolver variables to be modified. Options are a list of objects in
-         * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+         * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
@@ -85,7 +85,7 @@ public final class CreateContainerDnsConfigDetails
 
         /**
          * Options allows certain internal resolver variables to be modified. Options are a list of objects in
-         * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+         * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
          *
          * @param options the value to set
          * @return this builder
@@ -137,7 +137,7 @@ public final class CreateContainerDnsConfigDetails
 
     /**
      * IP address of a name server that the resolver should query, either an IPv4 address
-     * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
+     * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
      * nameservers from subnet dhcpDnsOptions.
      *
      **/
@@ -146,7 +146,7 @@ public final class CreateContainerDnsConfigDetails
 
     /**
      * IP address of a name server that the resolver should query, either an IPv4 address
-     * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
+     * (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
      * nameservers from subnet dhcpDnsOptions.
      *
      * @return the value
@@ -171,7 +171,7 @@ public final class CreateContainerDnsConfigDetails
 
     /**
      * Options allows certain internal resolver variables to be modified. Options are a list of objects in
-     * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+     * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
@@ -179,7 +179,7 @@ public final class CreateContainerDnsConfigDetails
 
     /**
      * Options allows certain internal resolver variables to be modified. Options are a list of objects in
-     * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"]
+     * https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
      *
      * @return the value
      **/

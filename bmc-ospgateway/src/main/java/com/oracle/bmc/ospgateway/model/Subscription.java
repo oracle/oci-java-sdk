@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ospgateway.model;
@@ -34,11 +34,13 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         "organizationId",
         "upgradeState",
         "upgradeStateDetails",
+        "accountType",
         "taxInfo",
         "paymentOptions",
         "paymentGateway",
         "billingAddress",
-        "timePlanUpgrade"
+        "timePlanUpgrade",
+        "timePersonalToCorporateConv"
     })
     public Subscription(
             String id,
@@ -55,11 +57,13 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
             String organizationId,
             UpgradeState upgradeState,
             UpgradeStateDetails upgradeStateDetails,
+            AccountType accountType,
             TaxInfo taxInfo,
             java.util.List<PaymentOption> paymentOptions,
             PaymentGateway paymentGateway,
-            BillingAddress billingAddress,
-            java.util.Date timePlanUpgrade) {
+            Address billingAddress,
+            java.util.Date timePlanUpgrade,
+            java.util.Date timePersonalToCorporateConv) {
         super();
         this.id = id;
         this.subscriptionPlanNumber = subscriptionPlanNumber;
@@ -75,11 +79,13 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         this.organizationId = organizationId;
         this.upgradeState = upgradeState;
         this.upgradeStateDetails = upgradeStateDetails;
+        this.accountType = accountType;
         this.taxInfo = taxInfo;
         this.paymentOptions = paymentOptions;
         this.paymentGateway = paymentGateway;
         this.billingAddress = billingAddress;
         this.timePlanUpgrade = timePlanUpgrade;
+        this.timePersonalToCorporateConv = timePersonalToCorporateConv;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -308,6 +314,22 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("upgradeStateDetails");
             return this;
         }
+        /**
+         * Account type.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("accountType")
+        private AccountType accountType;
+
+        /**
+         * Account type.
+         * @param accountType the value to set
+         * @return this builder
+         **/
+        public Builder accountType(AccountType accountType) {
+            this.accountType = accountType;
+            this.__explicitlySet__.add("accountType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("taxInfo")
         private TaxInfo taxInfo;
@@ -344,9 +366,9 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("billingAddress")
-        private BillingAddress billingAddress;
+        private Address billingAddress;
 
-        public Builder billingAddress(BillingAddress billingAddress) {
+        public Builder billingAddress(Address billingAddress) {
             this.billingAddress = billingAddress;
             this.__explicitlySet__.add("billingAddress");
             return this;
@@ -365,6 +387,22 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         public Builder timePlanUpgrade(java.util.Date timePlanUpgrade) {
             this.timePlanUpgrade = timePlanUpgrade;
             this.__explicitlySet__.add("timePlanUpgrade");
+            return this;
+        }
+        /**
+         * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timePersonalToCorporateConv")
+        private java.util.Date timePersonalToCorporateConv;
+
+        /**
+         * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         * @param timePersonalToCorporateConv the value to set
+         * @return this builder
+         **/
+        public Builder timePersonalToCorporateConv(java.util.Date timePersonalToCorporateConv) {
+            this.timePersonalToCorporateConv = timePersonalToCorporateConv;
+            this.__explicitlySet__.add("timePersonalToCorporateConv");
             return this;
         }
 
@@ -388,11 +426,13 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.organizationId,
                             this.upgradeState,
                             this.upgradeStateDetails,
+                            this.accountType,
                             this.taxInfo,
                             this.paymentOptions,
                             this.paymentGateway,
                             this.billingAddress,
-                            this.timePlanUpgrade);
+                            this.timePlanUpgrade,
+                            this.timePersonalToCorporateConv);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -443,6 +483,9 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("upgradeStateDetails")) {
                 this.upgradeStateDetails(model.getUpgradeStateDetails());
             }
+            if (model.wasPropertyExplicitlySet("accountType")) {
+                this.accountType(model.getAccountType());
+            }
             if (model.wasPropertyExplicitlySet("taxInfo")) {
                 this.taxInfo(model.getTaxInfo());
             }
@@ -457,6 +500,9 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("timePlanUpgrade")) {
                 this.timePlanUpgrade(model.getTimePlanUpgrade());
+            }
+            if (model.wasPropertyExplicitlySet("timePersonalToCorporateConv")) {
+                this.timePersonalToCorporateConv(model.getTimePersonalToCorporateConv());
             }
             return this;
         }
@@ -815,6 +861,69 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         return upgradeStateDetails;
     }
 
+    /**
+     * Account type.
+     **/
+    public enum AccountType {
+        Personal("PERSONAL"),
+        Corporate("CORPORATE"),
+        CorporateSubmitted("CORPORATE_SUBMITTED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AccountType.class);
+
+        private final String value;
+        private static java.util.Map<String, AccountType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccountType v : AccountType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AccountType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccountType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AccountType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Account type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("accountType")
+    private final AccountType accountType;
+
+    /**
+     * Account type.
+     * @return the value
+     **/
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("taxInfo")
     private final TaxInfo taxInfo;
 
@@ -844,9 +953,9 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("billingAddress")
-    private final BillingAddress billingAddress;
+    private final Address billingAddress;
 
-    public BillingAddress getBillingAddress() {
+    public Address getBillingAddress() {
         return billingAddress;
     }
 
@@ -862,6 +971,20 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public java.util.Date getTimePlanUpgrade() {
         return timePlanUpgrade;
+    }
+
+    /**
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timePersonalToCorporateConv")
+    private final java.util.Date timePersonalToCorporateConv;
+
+    /**
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * @return the value
+     **/
+    public java.util.Date getTimePersonalToCorporateConv() {
+        return timePersonalToCorporateConv;
     }
 
     @Override
@@ -892,11 +1015,14 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", organizationId=").append(String.valueOf(this.organizationId));
         sb.append(", upgradeState=").append(String.valueOf(this.upgradeState));
         sb.append(", upgradeStateDetails=").append(String.valueOf(this.upgradeStateDetails));
+        sb.append(", accountType=").append(String.valueOf(this.accountType));
         sb.append(", taxInfo=").append(String.valueOf(this.taxInfo));
         sb.append(", paymentOptions=").append(String.valueOf(this.paymentOptions));
         sb.append(", paymentGateway=").append(String.valueOf(this.paymentGateway));
         sb.append(", billingAddress=").append(String.valueOf(this.billingAddress));
         sb.append(", timePlanUpgrade=").append(String.valueOf(this.timePlanUpgrade));
+        sb.append(", timePersonalToCorporateConv=")
+                .append(String.valueOf(this.timePersonalToCorporateConv));
         sb.append(")");
         return sb.toString();
     }
@@ -926,11 +1052,14 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.organizationId, other.organizationId)
                 && java.util.Objects.equals(this.upgradeState, other.upgradeState)
                 && java.util.Objects.equals(this.upgradeStateDetails, other.upgradeStateDetails)
+                && java.util.Objects.equals(this.accountType, other.accountType)
                 && java.util.Objects.equals(this.taxInfo, other.taxInfo)
                 && java.util.Objects.equals(this.paymentOptions, other.paymentOptions)
                 && java.util.Objects.equals(this.paymentGateway, other.paymentGateway)
                 && java.util.Objects.equals(this.billingAddress, other.billingAddress)
                 && java.util.Objects.equals(this.timePlanUpgrade, other.timePlanUpgrade)
+                && java.util.Objects.equals(
+                        this.timePersonalToCorporateConv, other.timePersonalToCorporateConv)
                 && super.equals(other);
     }
 
@@ -976,6 +1105,7 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.upgradeStateDetails == null
                                 ? 43
                                 : this.upgradeStateDetails.hashCode());
+        result = (result * PRIME) + (this.accountType == null ? 43 : this.accountType.hashCode());
         result = (result * PRIME) + (this.taxInfo == null ? 43 : this.taxInfo.hashCode());
         result =
                 (result * PRIME)
@@ -989,6 +1119,11 @@ public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.timePlanUpgrade == null ? 43 : this.timePlanUpgrade.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePersonalToCorporateConv == null
+                                ? 43
+                                : this.timePersonalToCorporateConv.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

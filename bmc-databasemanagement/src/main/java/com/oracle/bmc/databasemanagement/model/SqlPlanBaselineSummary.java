@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -45,12 +45,12 @@ public final class SqlPlanBaselineSummary
             java.util.Date timeCreated,
             java.util.Date timeLastModified,
             java.util.Date timeLastExecuted,
-            String enabled,
-            String accepted,
-            String fixed,
-            String reproduced,
-            String autoPurge,
-            String adaptive) {
+            Enabled enabled,
+            Accepted accepted,
+            Fixed fixed,
+            Reproduced reproduced,
+            AutoPurge autoPurge,
+            Adaptive adaptive) {
         super();
         this.planName = planName;
         this.sqlHandle = sqlHandle;
@@ -195,14 +195,14 @@ public final class SqlPlanBaselineSummary
          * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabled")
-        private String enabled;
+        private Enabled enabled;
 
         /**
          * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
          * @param enabled the value to set
          * @return this builder
          **/
-        public Builder enabled(String enabled) {
+        public Builder enabled(Enabled enabled) {
             this.enabled = enabled;
             this.__explicitlySet__.add("enabled");
             return this;
@@ -211,14 +211,14 @@ public final class SqlPlanBaselineSummary
          * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accepted")
-        private String accepted;
+        private Accepted accepted;
 
         /**
          * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
          * @param accepted the value to set
          * @return this builder
          **/
-        public Builder accepted(String accepted) {
+        public Builder accepted(Accepted accepted) {
             this.accepted = accepted;
             this.__explicitlySet__.add("accepted");
             return this;
@@ -227,14 +227,14 @@ public final class SqlPlanBaselineSummary
          * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("fixed")
-        private String fixed;
+        private Fixed fixed;
 
         /**
          * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
          * @param fixed the value to set
          * @return this builder
          **/
-        public Builder fixed(String fixed) {
+        public Builder fixed(Fixed fixed) {
             this.fixed = fixed;
             this.__explicitlySet__.add("fixed");
             return this;
@@ -245,7 +245,7 @@ public final class SqlPlanBaselineSummary
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reproduced")
-        private String reproduced;
+        private Reproduced reproduced;
 
         /**
          * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
@@ -254,7 +254,7 @@ public final class SqlPlanBaselineSummary
          * @param reproduced the value to set
          * @return this builder
          **/
-        public Builder reproduced(String reproduced) {
+        public Builder reproduced(Reproduced reproduced) {
             this.reproduced = reproduced;
             this.__explicitlySet__.add("reproduced");
             return this;
@@ -263,14 +263,14 @@ public final class SqlPlanBaselineSummary
          * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoPurge")
-        private String autoPurge;
+        private AutoPurge autoPurge;
 
         /**
          * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
          * @param autoPurge the value to set
          * @return this builder
          **/
-        public Builder autoPurge(String autoPurge) {
+        public Builder autoPurge(AutoPurge autoPurge) {
             this.autoPurge = autoPurge;
             this.__explicitlySet__.add("autoPurge");
             return this;
@@ -287,7 +287,7 @@ public final class SqlPlanBaselineSummary
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adaptive")
-        private String adaptive;
+        private Adaptive adaptive;
 
         /**
          * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
@@ -302,7 +302,7 @@ public final class SqlPlanBaselineSummary
          * @param adaptive the value to set
          * @return this builder
          **/
-        public Builder adaptive(String adaptive) {
+        public Builder adaptive(Adaptive adaptive) {
             this.adaptive = adaptive;
             this.__explicitlySet__.add("adaptive");
             return this;
@@ -500,42 +500,185 @@ public final class SqlPlanBaselineSummary
     /**
      * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
      **/
+    public enum Enabled {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Enabled.class);
+
+        private final String value;
+        private static java.util.Map<String, Enabled> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Enabled v : Enabled.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Enabled(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Enabled create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Enabled', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabled")
-    private final String enabled;
+    private final Enabled enabled;
 
     /**
      * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
      * @return the value
      **/
-    public String getEnabled() {
+    public Enabled getEnabled() {
         return enabled;
     }
 
     /**
      * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
      **/
+    public enum Accepted {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Accepted.class);
+
+        private final String value;
+        private static java.util.Map<String, Accepted> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Accepted v : Accepted.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Accepted(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Accepted create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Accepted', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accepted")
-    private final String accepted;
+    private final Accepted accepted;
 
     /**
      * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
      * @return the value
      **/
-    public String getAccepted() {
+    public Accepted getAccepted() {
         return accepted;
     }
 
     /**
      * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
      **/
+    public enum Fixed {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Fixed.class);
+
+        private final String value;
+        private static java.util.Map<String, Fixed> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Fixed v : Fixed.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Fixed(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Fixed create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Fixed', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fixed")
-    private final String fixed;
+    private final Fixed fixed;
 
     /**
      * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
      * @return the value
      **/
-    public String getFixed() {
+    public Fixed getFixed() {
         return fixed;
     }
 
@@ -544,8 +687,58 @@ public final class SqlPlanBaselineSummary
      * The value is set to {@code YES} when a plan is initially added to the plan baseline.
      *
      **/
+    public enum Reproduced {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Reproduced.class);
+
+        private final String value;
+        private static java.util.Map<String, Reproduced> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Reproduced v : Reproduced.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Reproduced(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Reproduced create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Reproduced', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
+     * The value is set to {@code YES} when a plan is initially added to the plan baseline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reproduced")
-    private final String reproduced;
+    private final Reproduced reproduced;
 
     /**
      * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
@@ -553,21 +746,69 @@ public final class SqlPlanBaselineSummary
      *
      * @return the value
      **/
-    public String getReproduced() {
+    public Reproduced getReproduced() {
         return reproduced;
     }
 
     /**
      * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
      **/
+    public enum AutoPurge {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutoPurge.class);
+
+        private final String value;
+        private static java.util.Map<String, AutoPurge> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutoPurge v : AutoPurge.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutoPurge(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutoPurge create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutoPurge', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoPurge")
-    private final String autoPurge;
+    private final AutoPurge autoPurge;
 
     /**
      * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
      * @return the value
      **/
-    public String getAutoPurge() {
+    public AutoPurge getAutoPurge() {
         return autoPurge;
     }
 
@@ -582,8 +823,64 @@ public final class SqlPlanBaselineSummary
      * is no longer adaptive, but resolved.
      *
      **/
+    public enum Adaptive {
+        Yes("YES"),
+        No("NO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Adaptive.class);
+
+        private final String value;
+        private static java.util.Map<String, Adaptive> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Adaptive v : Adaptive.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Adaptive(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Adaptive create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Adaptive', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+     * <p>
+     * When a new adaptive plan is found for a SQL statement that has an existing SQL plan baseline, that new plan
+     * will be added to the SQL plan baseline as an unaccepted plan, and the {@code ADAPTIVE} property will be marked {@code YES}.
+     * When this new plan is verified (either manually or via the auto evolve task), the plan will be test executed
+     * and the final plan determined at execution will become an accepted plan if its performance is better than
+     * the existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to {@code NO} since the plan
+     * is no longer adaptive, but resolved.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adaptive")
-    private final String adaptive;
+    private final Adaptive adaptive;
 
     /**
      * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
@@ -597,7 +894,7 @@ public final class SqlPlanBaselineSummary
      *
      * @return the value
      **/
-    public String getAdaptive() {
+    public Adaptive getAdaptive() {
         return adaptive;
     }
 

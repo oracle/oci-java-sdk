@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -84,6 +84,7 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
          * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
@@ -92,6 +93,7 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
          * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
          *
          * @param scheduleCronExpression the value to set
          * @return this builder
@@ -238,6 +240,7 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
      * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
@@ -246,6 +249,7 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
      * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
      *
      * @return the value
      **/

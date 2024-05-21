@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydataplane;
@@ -8,7 +8,7 @@ import com.oracle.bmc.identitydataplane.requests.*;
 import com.oracle.bmc.identitydataplane.responses.*;
 
 /**
- * API for the Identity Dataplane
+ * APIs for managing identity data plane services. For example, use this API to create a scoped-access security token. To manage identity domains (for example, creating or deleting an identity domain) or to manage resources (for example, users and groups) within the default identity domain, see [IAM API](https://docs.oracle.com/iaas/api/#/en/identity/).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public interface DataplaneAsync extends AutoCloseable {
@@ -59,7 +59,7 @@ public interface DataplaneAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Based on the calling principal and the input payload, derive the claims and create a security token.
+     * Based on the calling Principal and the input payload, derive the claims, and generate a scoped-access token for specific resources. For example, set scope to urn:oracle:db::id::<compartment-id> for access to a database in a compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -73,5 +73,24 @@ public interface DataplaneAsync extends AutoCloseable {
             GenerateScopedAccessTokenRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GenerateScopedAccessTokenRequest, GenerateScopedAccessTokenResponse>
+                    handler);
+
+    /**
+     * Exchanges a valid user token-based signature (API key and UPST) for a short-lived UPST of the authenticated
+     * user principal. When not specified, the user session duration is set to a default of 60 minutes in all realms. Resulting UPSTs
+     * are refreshable while the user session has not expired.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateUserSecurityTokenResponse> generateUserSecurityToken(
+            GenerateUserSecurityTokenRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateUserSecurityTokenRequest, GenerateUserSecurityTokenResponse>
                     handler);
 }

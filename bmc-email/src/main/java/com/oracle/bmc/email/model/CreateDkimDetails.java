@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -50,8 +50,8 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
          * The DKIM selector. This selector is required to be globally unique for this email domain.
          * If you do not provide the selector, we will generate one for you.
          * If you do provide the selector, we suggest adding a short region indicator
-         * to differentiate from your signing of emails in other regions you may be subscribed to.
-         * Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters.
+         * to differentiate from your signing of emails in other regions you might be subscribed to.
+         * Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters.
          * Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
          * <p>
          * Avoid entering confidential information.
@@ -66,8 +66,8 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
          * The DKIM selector. This selector is required to be globally unique for this email domain.
          * If you do not provide the selector, we will generate one for you.
          * If you do provide the selector, we suggest adding a short region indicator
-         * to differentiate from your signing of emails in other regions you may be subscribed to.
-         * Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters.
+         * to differentiate from your signing of emails in other regions you might be subscribed to.
+         * Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters.
          * Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
          * <p>
          * Avoid entering confidential information.
@@ -223,8 +223,8 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
      * The DKIM selector. This selector is required to be globally unique for this email domain.
      * If you do not provide the selector, we will generate one for you.
      * If you do provide the selector, we suggest adding a short region indicator
-     * to differentiate from your signing of emails in other regions you may be subscribed to.
-     * Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters.
+     * to differentiate from your signing of emails in other regions you might be subscribed to.
+     * Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters.
      * Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
      * <p>
      * Avoid entering confidential information.
@@ -239,8 +239,8 @@ public final class CreateDkimDetails extends com.oracle.bmc.http.internal.Explic
      * The DKIM selector. This selector is required to be globally unique for this email domain.
      * If you do not provide the selector, we will generate one for you.
      * If you do provide the selector, we suggest adding a short region indicator
-     * to differentiate from your signing of emails in other regions you may be subscribed to.
-     * Selectors limited to ASCII characters may use alphanumeric, dash ("-"), and dot (".") characters.
+     * to differentiate from your signing of emails in other regions you might be subscribed to.
+     * Selectors limited to ASCII characters can use alphanumeric, dash ("-"), and dot (".") characters.
      * Non-ASCII selector names should adopt IDNA2008 normalization (RFC 5891-5892).
      * <p>
      * Avoid entering confidential information.

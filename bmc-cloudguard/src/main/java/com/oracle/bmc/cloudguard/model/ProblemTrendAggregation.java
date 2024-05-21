@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Provides the dimensions and their corresponding time and count.
+ * Provides aggregated information on trends for counts of problems by specified parameters.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -43,13 +43,13 @@ public final class ProblemTrendAggregation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The key-value pairs of dimensions and their names.
+         * The key-value pairs of dimensions and their names
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
         /**
-         * The key-value pairs of dimensions and their names.
+         * The key-value pairs of dimensions and their names
          * @param dimensionsMap the value to set
          * @return this builder
          **/
@@ -59,13 +59,13 @@ public final class ProblemTrendAggregation
             return this;
         }
         /**
-         * Start Time in epoch seconds
+         * Start time in epoch seconds
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimestamp")
         private java.math.BigDecimal startTimestamp;
 
         /**
-         * Start Time in epoch seconds
+         * Start time in epoch seconds
          * @param startTimestamp the value to set
          * @return this builder
          **/
@@ -91,13 +91,13 @@ public final class ProblemTrendAggregation
             return this;
         }
         /**
-         * The number of occurences with for the corresponding time range and dimensions.
+         * The number of occurrences for the corresponding time range and dimensions.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * The number of occurences with for the corresponding time range and dimensions.
+         * The number of occurrences for the corresponding time range and dimensions.
          * @param count the value to set
          * @return this builder
          **/
@@ -153,13 +153,13 @@ public final class ProblemTrendAggregation
     }
 
     /**
-     * The key-value pairs of dimensions and their names.
+     * The key-value pairs of dimensions and their names
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
     /**
-     * The key-value pairs of dimensions and their names.
+     * The key-value pairs of dimensions and their names
      * @return the value
      **/
     public java.util.Map<String, String> getDimensionsMap() {
@@ -167,13 +167,13 @@ public final class ProblemTrendAggregation
     }
 
     /**
-     * Start Time in epoch seconds
+     * Start time in epoch seconds
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimestamp")
     private final java.math.BigDecimal startTimestamp;
 
     /**
-     * Start Time in epoch seconds
+     * Start time in epoch seconds
      * @return the value
      **/
     public java.math.BigDecimal getStartTimestamp() {
@@ -195,13 +195,13 @@ public final class ProblemTrendAggregation
     }
 
     /**
-     * The number of occurences with for the corresponding time range and dimensions.
+     * The number of occurrences for the corresponding time range and dimensions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * The number of occurences with for the corresponding time range and dimensions.
+     * The number of occurrences for the corresponding time range and dimensions.
      * @return the value
      **/
     public Integer getCount() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.requests;
@@ -14,30 +14,30 @@ public class AssociateDrProtectionGroupRequest
                 com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails> {
 
     /**
-     * Details for creating an association between two DR Protection Groups.
+     * Details for creating an association between two DR protection groups.
      */
     private com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails
             associateDrProtectionGroupDetails;
 
     /**
-     * Details for creating an association between two DR Protection Groups.
+     * Details for creating an association between two DR protection groups.
      */
     public com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails
             getAssociateDrProtectionGroupDetails() {
         return associateDrProtectionGroupDetails;
     }
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group.
+     * The OCID of the DR protection group.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      */
     public String getDrProtectionGroupId() {
@@ -118,13 +118,13 @@ public class AssociateDrProtectionGroupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for creating an association between two DR Protection Groups.
+         * Details for creating an association between two DR protection groups.
          */
         private com.oracle.bmc.disasterrecovery.model.AssociateDrProtectionGroupDetails
                 associateDrProtectionGroupDetails = null;
 
         /**
-         * Details for creating an association between two DR Protection Groups.
+         * Details for creating an association between two DR protection groups.
          * @param associateDrProtectionGroupDetails the value to set
          * @return this builder instance
          */
@@ -136,17 +136,17 @@ public class AssociateDrProtectionGroupRequest
         }
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group.
+         * The OCID of the DR protection group.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance

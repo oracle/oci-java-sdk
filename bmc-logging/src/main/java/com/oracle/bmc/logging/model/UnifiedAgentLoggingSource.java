@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
@@ -23,6 +23,10 @@ package com.oracle.bmc.logging.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UnifiedAgentCustomPluginLogSource.class,
+        name = "CUSTOM_PLUGIN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UnifiedAgentWindowsEventSource.class,
         name = "WINDOWS_EVENT_LOG"
     ),
@@ -41,13 +45,13 @@ public class UnifiedAgentLoggingSource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * unique name for the source
+     * Unique name for the source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * unique name for the source
+     * Unique name for the source.
      * @return the value
      **/
     public String getName() {
@@ -101,6 +105,7 @@ public class UnifiedAgentLoggingSource extends com.oracle.bmc.http.internal.Expl
     public enum SourceType {
         LogTail("LOG_TAIL"),
         WindowsEventLog("WINDOWS_EVENT_LOG"),
+        CustomPlugin("CUSTOM_PLUGIN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.requests;
@@ -13,17 +13,17 @@ public class DeleteDrPlanExecutionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     public String getDrPlanExecutionId() {
@@ -72,17 +72,17 @@ public class DeleteDrPlanExecutionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

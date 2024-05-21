@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User preferred device
+ * The user's preferred device.
  * <p>
  **Added In:** 18.3.6
  * <p>
@@ -45,7 +45,7 @@ public final class UserExtPreferredDevice
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's preferred device
+         * The user's preferred device identifier.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -63,7 +63,7 @@ public final class UserExtPreferredDevice
         private String value;
 
         /**
-         * The identifier of the User's preferred device
+         * The user's preferred device identifier.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -85,7 +85,7 @@ public final class UserExtPreferredDevice
             return this;
         }
         /**
-         * The URI that corresponds to the device resource
+         * The URI that corresponds to the device resource.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -102,7 +102,7 @@ public final class UserExtPreferredDevice
         private String ref;
 
         /**
-         * The URI that corresponds to the device resource
+         * The URI that corresponds to the device resource.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -123,7 +123,7 @@ public final class UserExtPreferredDevice
             return this;
         }
         /**
-         * Device display name
+         * The device display name.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -141,7 +141,7 @@ public final class UserExtPreferredDevice
         private String display;
 
         /**
-         * Device display name
+         * The device display name.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -202,7 +202,7 @@ public final class UserExtPreferredDevice
     }
 
     /**
-     * The identifier of the User's preferred device
+     * The user's preferred device identifier.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -220,7 +220,7 @@ public final class UserExtPreferredDevice
     private final String value;
 
     /**
-     * The identifier of the User's preferred device
+     * The user's preferred device identifier.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -240,7 +240,7 @@ public final class UserExtPreferredDevice
     }
 
     /**
-     * The URI that corresponds to the device resource
+     * The URI that corresponds to the device resource.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -257,7 +257,7 @@ public final class UserExtPreferredDevice
     private final String ref;
 
     /**
-     * The URI that corresponds to the device resource
+     * The URI that corresponds to the device resource.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -276,7 +276,7 @@ public final class UserExtPreferredDevice
     }
 
     /**
-     * Device display name
+     * The device display name.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -294,7 +294,7 @@ public final class UserExtPreferredDevice
     private final String display;
 
     /**
-     * Device display name
+     * The device display name.
      * <p>
      **Added In:** 18.3.6
      * <p>

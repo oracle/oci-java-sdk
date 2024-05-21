@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -79,27 +79,35 @@ public final class TranslationDocumentResult
          * Automatically detect language - auto
          * Arabic - ar
          * Brazilian Portuguese -  pt-BR
+         * Canadian French - fr-CA
+         * Croatian - hr
          * Czech - cs
          * Danish - da
          * Dutch - nl
          * English - en
          * Finnish - fi
          * French - fr
-         * Canadian French - fr-CA
          * German - de
+         * Greek - el
+         * Hebrew - he
+         * Hungarian - hu
          * Italian - it
          * Japanese - ja
          * Korean - ko
          * Norwegian - no
          * Polish - pl
+         * Portuguese - pt
          * Romanian - ro
+         * Russian - ru
          * Simplified Chinese - zh-CN
+         * Slovak - sk
+         * Slovenian - sl
          * Spanish - es
          * Swedish - sv
+         * Thai - th
          * Traditional Chinese - zh-TW
          * Turkish - tr
-         * Greek - el
-         * Hebrew - he
+         * Vietnamese - vi
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
@@ -110,27 +118,35 @@ public final class TranslationDocumentResult
          * Automatically detect language - auto
          * Arabic - ar
          * Brazilian Portuguese -  pt-BR
+         * Canadian French - fr-CA
+         * Croatian - hr
          * Czech - cs
          * Danish - da
          * Dutch - nl
          * English - en
          * Finnish - fi
          * French - fr
-         * Canadian French - fr-CA
          * German - de
+         * Greek - el
+         * Hebrew - he
+         * Hungarian - hu
          * Italian - it
          * Japanese - ja
          * Korean - ko
          * Norwegian - no
          * Polish - pl
+         * Portuguese - pt
          * Romanian - ro
+         * Russian - ru
          * Simplified Chinese - zh-CN
+         * Slovak - sk
+         * Slovenian - sl
          * Spanish - es
          * Swedish - sv
+         * Thai - th
          * Traditional Chinese - zh-TW
          * Turkish - tr
-         * Greek - el
-         * Hebrew - he
+         * Vietnamese - vi
          *
          * @param sourceLanguageCode the value to set
          * @return this builder
@@ -142,30 +158,37 @@ public final class TranslationDocumentResult
         }
         /**
          * Language code supported
-         * Automatically detect language - auto
          * Arabic - ar
          * Brazilian Portuguese -  pt-BR
+         * Canadian French - fr-CA
+         * Croatian - hr
          * Czech - cs
          * Danish - da
          * Dutch - nl
          * English - en
          * Finnish - fi
          * French - fr
-         * Canadian French - fr-CA
          * German - de
+         * Greek - el
+         * Hebrew - he
+         * Hungarian - hu
          * Italian - it
          * Japanese - ja
          * Korean - ko
          * Norwegian - no
          * Polish - pl
+         * Portuguese - pt
          * Romanian - ro
+         * Russian - ru
          * Simplified Chinese - zh-CN
+         * Slovak - sk
+         * Slovenian - sl
          * Spanish - es
          * Swedish - sv
+         * Thai - th
          * Traditional Chinese - zh-TW
          * Turkish - tr
-         * Greek - el
-         * Hebrew - he
+         * Vietnamese - vi
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
@@ -173,30 +196,37 @@ public final class TranslationDocumentResult
 
         /**
          * Language code supported
-         * Automatically detect language - auto
          * Arabic - ar
          * Brazilian Portuguese -  pt-BR
+         * Canadian French - fr-CA
+         * Croatian - hr
          * Czech - cs
          * Danish - da
          * Dutch - nl
          * English - en
          * Finnish - fi
          * French - fr
-         * Canadian French - fr-CA
          * German - de
+         * Greek - el
+         * Hebrew - he
+         * Hungarian - hu
          * Italian - it
          * Japanese - ja
          * Korean - ko
          * Norwegian - no
          * Polish - pl
+         * Portuguese - pt
          * Romanian - ro
+         * Russian - ru
          * Simplified Chinese - zh-CN
+         * Slovak - sk
+         * Slovenian - sl
          * Spanish - es
          * Swedish - sv
+         * Thai - th
          * Traditional Chinese - zh-TW
          * Turkish - tr
-         * Greek - el
-         * Hebrew - he
+         * Vietnamese - vi
          *
          * @param targetLanguageCode the value to set
          * @return this builder
@@ -285,27 +315,35 @@ public final class TranslationDocumentResult
      * Automatically detect language - auto
      * Arabic - ar
      * Brazilian Portuguese -  pt-BR
+     * Canadian French - fr-CA
+     * Croatian - hr
      * Czech - cs
      * Danish - da
      * Dutch - nl
      * English - en
      * Finnish - fi
      * French - fr
-     * Canadian French - fr-CA
      * German - de
+     * Greek - el
+     * Hebrew - he
+     * Hungarian - hu
      * Italian - it
      * Japanese - ja
      * Korean - ko
      * Norwegian - no
      * Polish - pl
+     * Portuguese - pt
      * Romanian - ro
+     * Russian - ru
      * Simplified Chinese - zh-CN
+     * Slovak - sk
+     * Slovenian - sl
      * Spanish - es
      * Swedish - sv
+     * Thai - th
      * Traditional Chinese - zh-TW
      * Turkish - tr
-     * Greek - el
-     * Hebrew - he
+     * Vietnamese - vi
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceLanguageCode")
@@ -316,27 +354,35 @@ public final class TranslationDocumentResult
      * Automatically detect language - auto
      * Arabic - ar
      * Brazilian Portuguese -  pt-BR
+     * Canadian French - fr-CA
+     * Croatian - hr
      * Czech - cs
      * Danish - da
      * Dutch - nl
      * English - en
      * Finnish - fi
      * French - fr
-     * Canadian French - fr-CA
      * German - de
+     * Greek - el
+     * Hebrew - he
+     * Hungarian - hu
      * Italian - it
      * Japanese - ja
      * Korean - ko
      * Norwegian - no
      * Polish - pl
+     * Portuguese - pt
      * Romanian - ro
+     * Russian - ru
      * Simplified Chinese - zh-CN
+     * Slovak - sk
+     * Slovenian - sl
      * Spanish - es
      * Swedish - sv
+     * Thai - th
      * Traditional Chinese - zh-TW
      * Turkish - tr
-     * Greek - el
-     * Hebrew - he
+     * Vietnamese - vi
      *
      * @return the value
      **/
@@ -346,30 +392,37 @@ public final class TranslationDocumentResult
 
     /**
      * Language code supported
-     * Automatically detect language - auto
      * Arabic - ar
      * Brazilian Portuguese -  pt-BR
+     * Canadian French - fr-CA
+     * Croatian - hr
      * Czech - cs
      * Danish - da
      * Dutch - nl
      * English - en
      * Finnish - fi
      * French - fr
-     * Canadian French - fr-CA
      * German - de
+     * Greek - el
+     * Hebrew - he
+     * Hungarian - hu
      * Italian - it
      * Japanese - ja
      * Korean - ko
      * Norwegian - no
      * Polish - pl
+     * Portuguese - pt
      * Romanian - ro
+     * Russian - ru
      * Simplified Chinese - zh-CN
+     * Slovak - sk
+     * Slovenian - sl
      * Spanish - es
      * Swedish - sv
+     * Thai - th
      * Traditional Chinese - zh-TW
      * Turkish - tr
-     * Greek - el
-     * Hebrew - he
+     * Vietnamese - vi
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetLanguageCode")
@@ -377,30 +430,37 @@ public final class TranslationDocumentResult
 
     /**
      * Language code supported
-     * Automatically detect language - auto
      * Arabic - ar
      * Brazilian Portuguese -  pt-BR
+     * Canadian French - fr-CA
+     * Croatian - hr
      * Czech - cs
      * Danish - da
      * Dutch - nl
      * English - en
      * Finnish - fi
      * French - fr
-     * Canadian French - fr-CA
      * German - de
+     * Greek - el
+     * Hebrew - he
+     * Hungarian - hu
      * Italian - it
      * Japanese - ja
      * Korean - ko
      * Norwegian - no
      * Polish - pl
+     * Portuguese - pt
      * Romanian - ro
+     * Russian - ru
      * Simplified Chinese - zh-CN
+     * Slovak - sk
+     * Slovenian - sl
      * Spanish - es
      * Swedish - sv
+     * Thai - th
      * Traditional Chinese - zh-TW
      * Turkish - tr
-     * Greek - el
-     * Hebrew - he
+     * Vietnamese - vi
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -28,7 +28,8 @@ public final class UpdateFleetAgentConfigurationDetails
         "workRequestValidityPeriodInDays",
         "agentPollingIntervalInMinutes",
         "linuxConfiguration",
-        "windowsConfiguration"
+        "windowsConfiguration",
+        "macOsConfiguration"
     })
     public UpdateFleetAgentConfigurationDetails(
             Integer jreScanFrequencyInMinutes,
@@ -36,7 +37,8 @@ public final class UpdateFleetAgentConfigurationDetails
             Integer workRequestValidityPeriodInDays,
             Integer agentPollingIntervalInMinutes,
             FleetAgentOsConfiguration linuxConfiguration,
-            FleetAgentOsConfiguration windowsConfiguration) {
+            FleetAgentOsConfiguration windowsConfiguration,
+            FleetAgentOsConfiguration macOsConfiguration) {
         super();
         this.jreScanFrequencyInMinutes = jreScanFrequencyInMinutes;
         this.javaUsageTrackerProcessingFrequencyInMinutes =
@@ -45,6 +47,7 @@ public final class UpdateFleetAgentConfigurationDetails
         this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
         this.linuxConfiguration = linuxConfiguration;
         this.windowsConfiguration = windowsConfiguration;
+        this.macOsConfiguration = macOsConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -143,6 +146,15 @@ public final class UpdateFleetAgentConfigurationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("macOsConfiguration")
+        private FleetAgentOsConfiguration macOsConfiguration;
+
+        public Builder macOsConfiguration(FleetAgentOsConfiguration macOsConfiguration) {
+            this.macOsConfiguration = macOsConfiguration;
+            this.__explicitlySet__.add("macOsConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -154,7 +166,8 @@ public final class UpdateFleetAgentConfigurationDetails
                             this.workRequestValidityPeriodInDays,
                             this.agentPollingIntervalInMinutes,
                             this.linuxConfiguration,
-                            this.windowsConfiguration);
+                            this.windowsConfiguration,
+                            this.macOsConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -181,6 +194,9 @@ public final class UpdateFleetAgentConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("windowsConfiguration")) {
                 this.windowsConfiguration(model.getWindowsConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("macOsConfiguration")) {
+                this.macOsConfiguration(model.getMacOsConfiguration());
             }
             return this;
         }
@@ -275,6 +291,13 @@ public final class UpdateFleetAgentConfigurationDetails
         return windowsConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("macOsConfiguration")
+    private final FleetAgentOsConfiguration macOsConfiguration;
+
+    public FleetAgentOsConfiguration getMacOsConfiguration() {
+        return macOsConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -299,6 +322,7 @@ public final class UpdateFleetAgentConfigurationDetails
                 .append(String.valueOf(this.agentPollingIntervalInMinutes));
         sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
         sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
+        sb.append(", macOsConfiguration=").append(String.valueOf(this.macOsConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -324,6 +348,7 @@ public final class UpdateFleetAgentConfigurationDetails
                         this.agentPollingIntervalInMinutes, other.agentPollingIntervalInMinutes)
                 && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
                 && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
+                && java.util.Objects.equals(this.macOsConfiguration, other.macOsConfiguration)
                 && super.equals(other);
     }
 
@@ -361,6 +386,11 @@ public final class UpdateFleetAgentConfigurationDetails
                         + (this.windowsConfiguration == null
                                 ? 43
                                 : this.windowsConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.macOsConfiguration == null
+                                ? 43
+                                : this.macOsConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

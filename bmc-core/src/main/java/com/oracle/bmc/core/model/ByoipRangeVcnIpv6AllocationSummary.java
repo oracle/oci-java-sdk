@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
- * A summary of IPv6 CIDR block subranges currently allocated to a VCN.
+ * A summary of IPv6 prefix subranges currently allocated to a VCN.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -70,7 +70,7 @@ public final class ByoipRangeVcnIpv6AllocationSummary
             return this;
         }
         /**
-         * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+         * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 prefix.
          * Each VCN allocation must be /64 or larger.
          *
          **/
@@ -78,7 +78,7 @@ public final class ByoipRangeVcnIpv6AllocationSummary
         private String ipv6CidrBlock;
 
         /**
-         * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+         * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 prefix.
          * Each VCN allocation must be /64 or larger.
          *
          * @param ipv6CidrBlock the value to set
@@ -181,7 +181,7 @@ public final class ByoipRangeVcnIpv6AllocationSummary
     }
 
     /**
-     * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+     * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 prefix.
      * Each VCN allocation must be /64 or larger.
      *
      **/
@@ -189,7 +189,7 @@ public final class ByoipRangeVcnIpv6AllocationSummary
     private final String ipv6CidrBlock;
 
     /**
-     * The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+     * The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 prefix.
      * Each VCN allocation must be /64 or larger.
      *
      * @return the value

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.requests;
@@ -259,18 +259,32 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return fields;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The key of the object type.
+     */
+    private String typeKey;
+
+    /**
+     * The key of the object type.
+     */
+    public String getTypeKey() {
+        return typeKey;
+    }
+    /**
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+     * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+     * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
      *
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
+        Displayorbusinessname("DISPLAYORBUSINESSNAME"),
         ;
 
         private final String value;
@@ -302,7 +316,8 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+     * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
      *
      */
     public SortBy getSortBy() {
@@ -677,13 +692,30 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         * The key of the object type.
+         */
+        private String typeKey = null;
+
+        /**
+         * The key of the object type.
+         * @param typeKey the value to set
+         * @return this builder instance
+         */
+        public Builder typeKey(String typeKey) {
+            this.typeKey = typeKey;
+            return this;
+        }
+
+        /**
+         * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+         * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+         * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -798,6 +830,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             harvestStatus(o.getHarvestStatus());
             lastJobKey(o.getLastJobKey());
             fields(o.getFields());
+            typeKey(o.getTypeKey());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
@@ -852,13 +885,14 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.harvestStatus = harvestStatus;
             request.lastJobKey = lastJobKey;
             request.fields = fields;
+            request.typeKey = typeKey;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFoldersRequest(catalogId, dataAssetKey, displayName, businessName, displayOrBusinessNameContains, displayNameContains, lifecycleState, parentFolderKey, path, externalKey, timeCreated, timeUpdated, createdById, updatedById, harvestStatus, lastJobKey, fields, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListFoldersRequest(catalogId, dataAssetKey, displayName, businessName, displayOrBusinessNameContains, displayNameContains, lifecycleState, parentFolderKey, path, externalKey, timeCreated, timeUpdated, createdById, updatedById, harvestStatus, lastJobKey, fields, typeKey, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
@@ -885,6 +919,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .harvestStatus(harvestStatus)
                 .lastJobKey(lastJobKey)
                 .fields(fields)
+                .typeKey(typeKey)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
@@ -923,6 +958,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",harvestStatus=").append(String.valueOf(this.harvestStatus));
         sb.append(",lastJobKey=").append(String.valueOf(this.lastJobKey));
         sb.append(",fields=").append(String.valueOf(this.fields));
+        sb.append(",typeKey=").append(String.valueOf(this.typeKey));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -961,6 +997,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.harvestStatus, other.harvestStatus)
                 && java.util.Objects.equals(this.lastJobKey, other.lastJobKey)
                 && java.util.Objects.equals(this.fields, other.fields)
+                && java.util.Objects.equals(this.typeKey, other.typeKey)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -1003,6 +1040,7 @@ public class ListFoldersRequest extends com.oracle.bmc.requests.BmcRequest<java.
                         + (this.harvestStatus == null ? 43 : this.harvestStatus.hashCode());
         result = (result * PRIME) + (this.lastJobKey == null ? 43 : this.lastJobKey.hashCode());
         result = (result * PRIME) + (this.fields == null ? 43 : this.fields.hashCode());
+        result = (result * PRIME) + (this.typeKey == null ? 43 : this.typeKey.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

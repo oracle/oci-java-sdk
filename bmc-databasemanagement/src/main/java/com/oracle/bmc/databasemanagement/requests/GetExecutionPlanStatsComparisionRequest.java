@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -68,6 +68,17 @@ public class GetExecutionPlanStatsComparisionRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * The OCID of the Named Credential.
+     */
+    private String opcNamedCredentialId;
+
+    /**
+     * The OCID of the Named Credential.
+     */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
     }
 
     public static class Builder
@@ -155,6 +166,21 @@ public class GetExecutionPlanStatsComparisionRequest
         }
 
         /**
+         * The OCID of the Named Credential.
+         */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -187,6 +213,7 @@ public class GetExecutionPlanStatsComparisionRequest
             sqlObjectId(o.getSqlObjectId());
             executionId(o.getExecutionId());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -225,8 +252,9 @@ public class GetExecutionPlanStatsComparisionRequest
             request.sqlObjectId = sqlObjectId;
             request.executionId = executionId;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetExecutionPlanStatsComparisionRequest(managedDatabaseId, sqlTuningAdvisorTaskId, sqlObjectId, executionId, opcRequestId);
+            // new GetExecutionPlanStatsComparisionRequest(managedDatabaseId, sqlTuningAdvisorTaskId, sqlObjectId, executionId, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -240,7 +268,8 @@ public class GetExecutionPlanStatsComparisionRequest
                 .sqlTuningAdvisorTaskId(sqlTuningAdvisorTaskId)
                 .sqlObjectId(sqlObjectId)
                 .executionId(executionId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -261,6 +290,7 @@ public class GetExecutionPlanStatsComparisionRequest
         sb.append(",sqlObjectId=").append(String.valueOf(this.sqlObjectId));
         sb.append(",executionId=").append(String.valueOf(this.executionId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -281,7 +311,8 @@ public class GetExecutionPlanStatsComparisionRequest
                         this.sqlTuningAdvisorTaskId, other.sqlTuningAdvisorTaskId)
                 && java.util.Objects.equals(this.sqlObjectId, other.sqlObjectId)
                 && java.util.Objects.equals(this.executionId, other.executionId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -299,6 +330,11 @@ public class GetExecutionPlanStatsComparisionRequest
         result = (result * PRIME) + (this.sqlObjectId == null ? 43 : this.sqlObjectId.hashCode());
         result = (result * PRIME) + (this.executionId == null ? 43 : this.executionId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

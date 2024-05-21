@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,7 +27,10 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         "displayName",
         "freeformTags",
         "routeTableId",
-        "securityListIds"
+        "securityListIds",
+        "cidrBlock",
+        "ipv6CidrBlock",
+        "ipv6CidrBlocks"
     })
     public UpdateSubnetDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -35,7 +38,10 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
             String displayName,
             java.util.Map<String, String> freeformTags,
             String routeTableId,
-            java.util.List<String> securityListIds) {
+            java.util.List<String> securityListIds,
+            String cidrBlock,
+            String ipv6CidrBlock,
+            java.util.List<String> ipv6CidrBlocks) {
         super();
         this.definedTags = definedTags;
         this.dhcpOptionsId = dhcpOptionsId;
@@ -43,6 +49,9 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         this.freeformTags = freeformTags;
         this.routeTableId = routeTableId;
         this.securityListIds = securityListIds;
+        this.cidrBlock = cidrBlock;
+        this.ipv6CidrBlock = ipv6CidrBlock;
+        this.ipv6CidrBlocks = ipv6CidrBlocks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -168,6 +177,102 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("securityListIds");
             return this;
         }
+        /**
+         * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
+         * <p>
+         * - Must be valid.
+         * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
+         * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
+         * - Must contain all IP addresses in use in the old CIDR range.
+         * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
+         * <p>
+         **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
+         * <p>
+         * Example: {@code 172.16.0.0/16}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+        private String cidrBlock;
+
+        /**
+         * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
+         * <p>
+         * - Must be valid.
+         * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
+         * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
+         * - Must contain all IP addresses in use in the old CIDR range.
+         * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
+         * <p>
+         **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
+         * <p>
+         * Example: {@code 172.16.0.0/16}
+         *
+         * @param cidrBlock the value to set
+         * @return this builder
+         **/
+        public Builder cidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
+        /**
+         * This is the IPv6 CIDR block for the subnet's IP address space.
+         * The subnet size is always /64.
+         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * The provided CIDR must maintain the following rules -
+         * <p>
+         * a. The IPv6 CIDR block is valid and correctly formatted.
+         * b. The IPv6 CIDR is within the parent VCN IPv6 range.
+         * <p>
+         * Example: {@code 2001:0db8:0123:1111::/64}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        /**
+         * This is the IPv6 CIDR block for the subnet's IP address space.
+         * The subnet size is always /64.
+         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * The provided CIDR must maintain the following rules -
+         * <p>
+         * a. The IPv6 CIDR block is valid and correctly formatted.
+         * b. The IPv6 CIDR is within the parent VCN IPv6 range.
+         * <p>
+         * Example: {@code 2001:0db8:0123:1111::/64}
+         *
+         * @param ipv6CidrBlock the value to set
+         * @return this builder
+         **/
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+        /**
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+         * - The CIDR blocks must be valid.
+         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+        private java.util.List<String> ipv6CidrBlocks;
+
+        /**
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+         * - The CIDR blocks must be valid.
+         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+         *
+         * @param ipv6CidrBlocks the value to set
+         * @return this builder
+         **/
+        public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
+            this.ipv6CidrBlocks = ipv6CidrBlocks;
+            this.__explicitlySet__.add("ipv6CidrBlocks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -180,7 +285,10 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
                             this.displayName,
                             this.freeformTags,
                             this.routeTableId,
-                            this.securityListIds);
+                            this.securityListIds,
+                            this.cidrBlock,
+                            this.ipv6CidrBlock,
+                            this.ipv6CidrBlocks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -206,6 +314,15 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("securityListIds")) {
                 this.securityListIds(model.getSecurityListIds());
+            }
+            if (model.wasPropertyExplicitlySet("cidrBlock")) {
+                this.cidrBlock(model.getCidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlock")) {
+                this.ipv6CidrBlock(model.getIpv6CidrBlock());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6CidrBlocks")) {
+                this.ipv6CidrBlocks(model.getIpv6CidrBlocks());
             }
             return this;
         }
@@ -330,6 +447,96 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         return securityListIds;
     }
 
+    /**
+     * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
+     * <p>
+     * - Must be valid.
+     * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
+     * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
+     * - Must contain all IP addresses in use in the old CIDR range.
+     * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
+     * <p>
+     **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
+     * <p>
+     * Example: {@code 172.16.0.0/16}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    private final String cidrBlock;
+
+    /**
+     * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
+     * <p>
+     * - Must be valid.
+     * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
+     * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
+     * - Must contain all IP addresses in use in the old CIDR range.
+     * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
+     * <p>
+     **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
+     * <p>
+     * Example: {@code 172.16.0.0/16}
+     *
+     * @return the value
+     **/
+    public String getCidrBlock() {
+        return cidrBlock;
+    }
+
+    /**
+     * This is the IPv6 CIDR block for the subnet's IP address space.
+     * The subnet size is always /64.
+     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * The provided CIDR must maintain the following rules -
+     * <p>
+     * a. The IPv6 CIDR block is valid and correctly formatted.
+     * b. The IPv6 CIDR is within the parent VCN IPv6 range.
+     * <p>
+     * Example: {@code 2001:0db8:0123:1111::/64}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    private final String ipv6CidrBlock;
+
+    /**
+     * This is the IPv6 CIDR block for the subnet's IP address space.
+     * The subnet size is always /64.
+     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * The provided CIDR must maintain the following rules -
+     * <p>
+     * a. The IPv6 CIDR block is valid and correctly formatted.
+     * b. The IPv6 CIDR is within the parent VCN IPv6 range.
+     * <p>
+     * Example: {@code 2001:0db8:0123:1111::/64}
+     *
+     * @return the value
+     **/
+    public String getIpv6CidrBlock() {
+        return ipv6CidrBlock;
+    }
+
+    /**
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+     * - The CIDR blocks must be valid.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
+    private final java.util.List<String> ipv6CidrBlocks;
+
+    /**
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+     * - The CIDR blocks must be valid.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getIpv6CidrBlocks() {
+        return ipv6CidrBlocks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -350,6 +557,9 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", securityListIds=").append(String.valueOf(this.securityListIds));
+        sb.append(", cidrBlock=").append(String.valueOf(this.cidrBlock));
+        sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
+        sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
         sb.append(")");
         return sb.toString();
     }
@@ -370,6 +580,9 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.securityListIds, other.securityListIds)
+                && java.util.Objects.equals(this.cidrBlock, other.cidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
+                && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
                 && super.equals(other);
     }
 
@@ -387,6 +600,13 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.securityListIds == null ? 43 : this.securityListIds.hashCode());
+        result = (result * PRIME) + (this.cidrBlock == null ? 43 : this.cidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlock == null ? 43 : this.ipv6CidrBlock.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6CidrBlocks == null ? 43 : this.ipv6CidrBlocks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

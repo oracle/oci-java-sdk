@@ -1,11 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
  * Defines the visualization of a subnet in a VCN.
+ * See [Network Visualizer Documentation](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/network_visualizer.htm) for more information, including
+ * conventions and pictures of symbols.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -43,6 +46,15 @@ public final class SubnetTopology extends Topology {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+        private java.util.List<String> limitedEntities;
+
+        public Builder limitedEntities(java.util.List<String> limitedEntities) {
+            this.limitedEntities = limitedEntities;
+            this.__explicitlySet__.add("limitedEntities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -74,7 +86,11 @@ public final class SubnetTopology extends Topology {
         public SubnetTopology build() {
             SubnetTopology model =
                     new SubnetTopology(
-                            this.entities, this.relationships, this.timeCreated, this.subnetId);
+                            this.entities,
+                            this.relationships,
+                            this.limitedEntities,
+                            this.timeCreated,
+                            this.subnetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -88,6 +104,9 @@ public final class SubnetTopology extends Topology {
             }
             if (model.wasPropertyExplicitlySet("relationships")) {
                 this.relationships(model.getRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("limitedEntities")) {
+                this.limitedEntities(model.getLimitedEntities());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -114,9 +133,10 @@ public final class SubnetTopology extends Topology {
     public SubnetTopology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated,
             String subnetId) {
-        super(entities, relationships, timeCreated);
+        super(entities, relationships, limitedEntities, timeCreated);
         this.subnetId = subnetId;
     }
 

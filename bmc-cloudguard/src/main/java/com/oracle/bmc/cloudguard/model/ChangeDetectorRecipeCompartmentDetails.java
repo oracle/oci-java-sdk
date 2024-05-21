@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Changing compartmentId for DetectorRecipe
+ * Parameters to use to move a detector recipe to a different compartment.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class ChangeDetectorRecipeCompartmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment into which the DetectorRecipe should be moved
+         * The OCID of the compartment into which the detector recipe is to be moved
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment into which the DetectorRecipe should be moved
+         * The OCID of the compartment into which the detector recipe is to be moved
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class ChangeDetectorRecipeCompartmentDetails
     }
 
     /**
-     * The OCID of the compartment into which the DetectorRecipe should be moved
+     * The OCID of the compartment into which the detector recipe is to be moved
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment into which the DetectorRecipe should be moved
+     * The OCID of the compartment into which the detector recipe is to be moved
      * @return the value
      **/
     public String getCompartmentId() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -28,6 +28,7 @@ public final class ExtensionSocialIdentityProvider
         "status",
         "authzUrl",
         "accessTokenUrl",
+        "relayIdpParamMappings",
         "profileUrl",
         "scope",
         "adminScope",
@@ -46,6 +47,7 @@ public final class ExtensionSocialIdentityProvider
             Status status,
             String authzUrl,
             String accessTokenUrl,
+            java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings,
             String profileUrl,
             java.util.List<String> scope,
             java.util.List<String> adminScope,
@@ -63,6 +65,7 @@ public final class ExtensionSocialIdentityProvider
         this.status = status;
         this.authzUrl = authzUrl;
         this.accessTokenUrl = accessTokenUrl;
+        this.relayIdpParamMappings = relayIdpParamMappings;
         this.profileUrl = profileUrl;
         this.scope = scope;
         this.adminScope = adminScope;
@@ -276,6 +279,47 @@ public final class ExtensionSocialIdentityProvider
         public Builder accessTokenUrl(String accessTokenUrl) {
             this.accessTokenUrl = accessTokenUrl;
             this.__explicitlySet__.add("accessTokenUrl");
+            return this;
+        }
+        /**
+         * Relay Param variable for Social IDP
+         * <p>
+         **Added In:** 2305190132
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [relayParamKey]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("relayIdpParamMappings")
+        private java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings;
+
+        /**
+         * Relay Param variable for Social IDP
+         * <p>
+         **Added In:** 2305190132
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [relayParamKey]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         * @param relayIdpParamMappings the value to set
+         * @return this builder
+         **/
+        public Builder relayIdpParamMappings(
+                java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings) {
+            this.relayIdpParamMappings = relayIdpParamMappings;
+            this.__explicitlySet__.add("relayIdpParamMappings");
             return this;
         }
         /**
@@ -730,6 +774,7 @@ public final class ExtensionSocialIdentityProvider
                             this.status,
                             this.authzUrl,
                             this.accessTokenUrl,
+                            this.relayIdpParamMappings,
                             this.profileUrl,
                             this.scope,
                             this.adminScope,
@@ -763,6 +808,9 @@ public final class ExtensionSocialIdentityProvider
             }
             if (model.wasPropertyExplicitlySet("accessTokenUrl")) {
                 this.accessTokenUrl(model.getAccessTokenUrl());
+            }
+            if (model.wasPropertyExplicitlySet("relayIdpParamMappings")) {
+                this.relayIdpParamMappings(model.getRelayIdpParamMappings());
             }
             if (model.wasPropertyExplicitlySet("profileUrl")) {
                 this.profileUrl(model.getProfileUrl());
@@ -1059,6 +1107,44 @@ public final class ExtensionSocialIdentityProvider
      **/
     public String getAccessTokenUrl() {
         return accessTokenUrl;
+    }
+
+    /**
+     * Relay Param variable for Social IDP
+     * <p>
+     **Added In:** 2305190132
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [relayParamKey]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("relayIdpParamMappings")
+    private final java.util.List<IdentityProviderRelayIdpParamMappings> relayIdpParamMappings;
+
+    /**
+     * Relay Param variable for Social IDP
+     * <p>
+     **Added In:** 2305190132
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [relayParamKey]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public java.util.List<IdentityProviderRelayIdpParamMappings> getRelayIdpParamMappings() {
+        return relayIdpParamMappings;
     }
 
     /**
@@ -1498,6 +1584,7 @@ public final class ExtensionSocialIdentityProvider
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", authzUrl=").append(String.valueOf(this.authzUrl));
         sb.append(", accessTokenUrl=").append(String.valueOf(this.accessTokenUrl));
+        sb.append(", relayIdpParamMappings=").append(String.valueOf(this.relayIdpParamMappings));
         sb.append(", profileUrl=").append(String.valueOf(this.profileUrl));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", adminScope=").append(String.valueOf(this.adminScope));
@@ -1529,6 +1616,7 @@ public final class ExtensionSocialIdentityProvider
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.authzUrl, other.authzUrl)
                 && java.util.Objects.equals(this.accessTokenUrl, other.accessTokenUrl)
+                && java.util.Objects.equals(this.relayIdpParamMappings, other.relayIdpParamMappings)
                 && java.util.Objects.equals(this.profileUrl, other.profileUrl)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.adminScope, other.adminScope)
@@ -1563,6 +1651,11 @@ public final class ExtensionSocialIdentityProvider
         result =
                 (result * PRIME)
                         + (this.accessTokenUrl == null ? 43 : this.accessTokenUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.relayIdpParamMappings == null
+                                ? 43
+                                : this.relayIdpParamMappings.hashCode());
         result = (result * PRIME) + (this.profileUrl == null ? 43 : this.profileUrl.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.adminScope == null ? 43 : this.adminScope.hashCode());

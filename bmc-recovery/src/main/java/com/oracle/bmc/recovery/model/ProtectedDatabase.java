@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -33,6 +33,7 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
         "vpcUserName",
         "databaseSize",
         "protectionPolicyId",
+        "policyLockedDateTime",
         "recoveryServiceSubnets",
         "databaseId",
         "databaseSizeInGBs",
@@ -59,6 +60,7 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
             String vpcUserName,
             DatabaseSizes databaseSize,
             String protectionPolicyId,
+            String policyLockedDateTime,
             java.util.List<RecoveryServiceSubnetDetails> recoveryServiceSubnets,
             String databaseId,
             Integer databaseSizeInGBs,
@@ -84,6 +86,7 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
         this.vpcUserName = vpcUserName;
         this.databaseSize = databaseSize;
         this.protectionPolicyId = protectionPolicyId;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.recoveryServiceSubnets = recoveryServiceSubnets;
         this.databaseId = databaseId;
         this.databaseSizeInGBs = databaseSizeInGBs;
@@ -215,6 +218,30 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
         public Builder protectionPolicyId(String protectionPolicyId) {
             this.protectionPolicyId = protectionPolicyId;
             this.__explicitlySet__.add("protectionPolicyId");
+            return this;
+        }
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * <p>
+         * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * <p>
+         * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         **/
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
             return this;
         }
         /**
@@ -373,12 +400,9 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Indicates the protection status of the database. Allowed values are:
-         *  - HEALTHY
-         *  - WARNING
-         *  - ALERT
+         * Indicates the protection status of the database.
          * <p>
-         * A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+         * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
          *  - Less than 10 seconds, if Real-time data protection is enabled
          *  - Less than 70 minutes if Real-time data protection is disabled
          * <p>
@@ -393,12 +417,9 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
         private Health health;
 
         /**
-         * Indicates the protection status of the database. Allowed values are:
-         *  - HEALTHY
-         *  - WARNING
-         *  - ALERT
+         * Indicates the protection status of the database.
          * <p>
-         * A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+         * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
          *  - Less than 10 seconds, if Real-time data protection is enabled
          *  - Less than 70 minutes if Real-time data protection is disabled
          * <p>
@@ -554,6 +575,7 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
                             this.vpcUserName,
                             this.databaseSize,
                             this.protectionPolicyId,
+                            this.policyLockedDateTime,
                             this.recoveryServiceSubnets,
                             this.databaseId,
                             this.databaseSizeInGBs,
@@ -599,6 +621,9 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("protectionPolicyId")) {
                 this.protectionPolicyId(model.getProtectionPolicyId());
+            }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
             }
             if (model.wasPropertyExplicitlySet("recoveryServiceSubnets")) {
                 this.recoveryServiceSubnets(model.getRecoveryServiceSubnets());
@@ -765,6 +790,28 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * <p>
+     * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * <p>
+     * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     *
+     * @return the value
+     **/
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
+    }
+
+    /**
      * List of recovery service subnet resources associated with the protected database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryServiceSubnets")
@@ -901,12 +948,9 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Indicates the protection status of the database. Allowed values are:
-     *  - HEALTHY
-     *  - WARNING
-     *  - ALERT
+     * Indicates the protection status of the database.
      * <p>
-     * A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+     * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
      *  - Less than 10 seconds, if Real-time data protection is enabled
      *  - Less than 70 minutes if Real-time data protection is disabled
      * <p>
@@ -921,12 +965,9 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
     private final Health health;
 
     /**
-     * Indicates the protection status of the database. Allowed values are:
-     *  - HEALTHY
-     *  - WARNING
-     *  - ALERT
+     * Indicates the protection status of the database.
      * <p>
-     * A 'HEALTHY' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+     * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
      *  - Less than 10 seconds, if Real-time data protection is enabled
      *  - Less than 70 minutes if Real-time data protection is disabled
      * <p>
@@ -1072,6 +1113,7 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
         sb.append(", vpcUserName=").append(String.valueOf(this.vpcUserName));
         sb.append(", databaseSize=").append(String.valueOf(this.databaseSize));
         sb.append(", protectionPolicyId=").append(String.valueOf(this.protectionPolicyId));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", recoveryServiceSubnets=").append(String.valueOf(this.recoveryServiceSubnets));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(", databaseSizeInGBs=").append(String.valueOf(this.databaseSizeInGBs));
@@ -1110,6 +1152,7 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.vpcUserName, other.vpcUserName)
                 && java.util.Objects.equals(this.databaseSize, other.databaseSize)
                 && java.util.Objects.equals(this.protectionPolicyId, other.protectionPolicyId)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(
                         this.recoveryServiceSubnets, other.recoveryServiceSubnets)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
@@ -1148,6 +1191,11 @@ public final class ProtectedDatabase extends com.oracle.bmc.http.internal.Explic
                         + (this.protectionPolicyId == null
                                 ? 43
                                 : this.protectionPolicyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
         result =
                 (result * PRIME)
                         + (this.recoveryServiceSubnets == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.requests;
@@ -38,25 +38,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public String getOpcRequestId() {
         return opcRequestId;
-    }
-    /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * If true, return only DB Systems with an Analytics Cluster attached, if false
-     * return only DB Systems with no Analytics Cluster attached. If not
-     * present, return all DB Systems.
-     *
-     */
-    private Boolean isAnalyticsClusterAttached;
-
-    /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * If true, return only DB Systems with an Analytics Cluster attached, if false
-     * return only DB Systems with no Analytics Cluster attached. If not
-     * present, return all DB Systems.
-     *
-     */
-    public Boolean getIsAnalyticsClusterAttached() {
-        return isAnalyticsClusterAttached;
     }
     /**
      * If true, return only DB Systems with a HeatWave cluster attached, if false
@@ -133,6 +114,56 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public Boolean getIsUpToDate() {
         return isUpToDate;
+    }
+    /**
+     * Filter DB Systems by their Database Management configuration.
+     *
+     */
+    private java.util.List<DatabaseManagement> databaseManagement;
+
+    /**
+     * Filter DB Systems by their Database Management configuration.
+     *
+     **/
+    public enum DatabaseManagement {
+        Enabled("ENABLED"),
+        Disabled("DISABLED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DatabaseManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseManagement v : DatabaseManagement.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DatabaseManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DatabaseManagement: " + key);
+        }
+    };
+
+    /**
+     * Filter DB Systems by their Database Management configuration.
+     *
+     */
+    public java.util.List<DatabaseManagement> getDatabaseManagement() {
+        return databaseManagement;
     }
     /**
      * The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
@@ -308,29 +339,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * DEPRECATED -- please use HeatWave API instead.
-         * If true, return only DB Systems with an Analytics Cluster attached, if false
-         * return only DB Systems with no Analytics Cluster attached. If not
-         * present, return all DB Systems.
-         *
-         */
-        private Boolean isAnalyticsClusterAttached = null;
-
-        /**
-         * DEPRECATED -- please use HeatWave API instead.
-         * If true, return only DB Systems with an Analytics Cluster attached, if false
-         * return only DB Systems with no Analytics Cluster attached. If not
-         * present, return all DB Systems.
-         *
-         * @param isAnalyticsClusterAttached the value to set
-         * @return this builder instance
-         */
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            return this;
-        }
-
-        /**
          * If true, return only DB Systems with a HeatWave cluster attached, if false
          * return only DB Systems with no HeatWave cluster attached. If not
          * present, return all DB Systems.
@@ -429,6 +437,33 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder isUpToDate(Boolean isUpToDate) {
             this.isUpToDate = isUpToDate;
             return this;
+        }
+
+        /**
+         * Filter DB Systems by their Database Management configuration.
+         *
+         */
+        private java.util.List<DatabaseManagement> databaseManagement = null;
+
+        /**
+         * Filter DB Systems by their Database Management configuration.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder instance
+         */
+        public Builder databaseManagement(java.util.List<DatabaseManagement> databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            return this;
+        }
+
+        /**
+         * Singular setter. Filter DB Systems by their Database Management configuration.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder databaseManagement(DatabaseManagement singularValue) {
+            return this.databaseManagement(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -533,13 +568,13 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         public Builder copy(ListDbSystemsRequest o) {
             compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
-            isAnalyticsClusterAttached(o.getIsAnalyticsClusterAttached());
             isHeatWaveClusterAttached(o.getIsHeatWaveClusterAttached());
             dbSystemId(o.getDbSystemId());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
             configurationId(o.getConfigurationId());
             isUpToDate(o.getIsUpToDate());
+            databaseManagement(o.getDatabaseManagement());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             limit(o.getLimit());
@@ -578,19 +613,19 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             ListDbSystemsRequest request = new ListDbSystemsRequest();
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
-            request.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
             request.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             request.dbSystemId = dbSystemId;
             request.displayName = displayName;
             request.lifecycleState = lifecycleState;
             request.configurationId = configurationId;
             request.isUpToDate = isUpToDate;
+            request.databaseManagement = databaseManagement;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListDbSystemsRequest(compartmentId, opcRequestId, isAnalyticsClusterAttached, isHeatWaveClusterAttached, dbSystemId, displayName, lifecycleState, configurationId, isUpToDate, sortBy, sortOrder, limit, page);
+            // new ListDbSystemsRequest(compartmentId, opcRequestId, isHeatWaveClusterAttached, dbSystemId, displayName, lifecycleState, configurationId, isUpToDate, databaseManagement, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -602,13 +637,13 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return new Builder()
                 .compartmentId(compartmentId)
                 .opcRequestId(opcRequestId)
-                .isAnalyticsClusterAttached(isAnalyticsClusterAttached)
                 .isHeatWaveClusterAttached(isHeatWaveClusterAttached)
                 .dbSystemId(dbSystemId)
                 .displayName(displayName)
                 .lifecycleState(lifecycleState)
                 .configurationId(configurationId)
                 .isUpToDate(isUpToDate)
+                .databaseManagement(databaseManagement)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .limit(limit)
@@ -630,8 +665,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",isAnalyticsClusterAttached=")
-                .append(String.valueOf(this.isAnalyticsClusterAttached));
         sb.append(",isHeatWaveClusterAttached=")
                 .append(String.valueOf(this.isHeatWaveClusterAttached));
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
@@ -639,6 +672,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",configurationId=").append(String.valueOf(this.configurationId));
         sb.append(",isUpToDate=").append(String.valueOf(this.isUpToDate));
+        sb.append(",databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -661,14 +695,13 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
-                        this.isAnalyticsClusterAttached, other.isAnalyticsClusterAttached)
-                && java.util.Objects.equals(
                         this.isHeatWaveClusterAttached, other.isHeatWaveClusterAttached)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.isUpToDate, other.isUpToDate)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -685,11 +718,6 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.isAnalyticsClusterAttached == null
-                                ? 43
-                                : this.isAnalyticsClusterAttached.hashCode());
-        result =
-                (result * PRIME)
                         + (this.isHeatWaveClusterAttached == null
                                 ? 43
                                 : this.isHeatWaveClusterAttached.hashCode());
@@ -702,6 +730,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.configurationId == null ? 43 : this.configurationId.hashCode());
         result = (result * PRIME) + (this.isUpToDate == null ? 43 : this.isUpToDate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

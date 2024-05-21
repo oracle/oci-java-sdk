@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -14,26 +14,32 @@ public class CreateComputeClusterRequest
                 com.oracle.bmc.core.model.CreateComputeClusterDetails> {
 
     /**
-     * Details for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm), which is a remote direct memory access (RDMA) network group.
-     * When first created, the compute cluster is empty.
-     * After the compute cluster is created, you can use the compute cluster's OCID with the {@link #launchInstance(LaunchInstanceRequest) launchInstance}
-     * operation to create instances in the compute cluster.
-     * Compute clusters allow you to manage instances in the cluster individually.
+     * The data for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+     * is an empty remote direct memory access (RDMA) network group.
      * <p>
-     * For details about creating a cluster network that uses intance pools to manage groups of identical instances,
+     * After the compute cluster is created, you can use the compute cluster's OCID with the
+     * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
+     * The instances must be created in the same compartment and availability domain as the cluster.
+     * <p>
+     * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+     * <p>
+     * For details about creating a cluster network that uses instance pools to manage groups of identical instances,
      * see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest) createClusterNetworkDetails}.
      *
      */
     private com.oracle.bmc.core.model.CreateComputeClusterDetails createComputeClusterDetails;
 
     /**
-     * Details for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm), which is a remote direct memory access (RDMA) network group.
-     * When first created, the compute cluster is empty.
-     * After the compute cluster is created, you can use the compute cluster's OCID with the {@link #launchInstance(LaunchInstanceRequest) launchInstance}
-     * operation to create instances in the compute cluster.
-     * Compute clusters allow you to manage instances in the cluster individually.
+     * The data for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+     * is an empty remote direct memory access (RDMA) network group.
      * <p>
-     * For details about creating a cluster network that uses intance pools to manage groups of identical instances,
+     * After the compute cluster is created, you can use the compute cluster's OCID with the
+     * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
+     * The instances must be created in the same compartment and availability domain as the cluster.
+     * <p>
+     * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+     * <p>
+     * For details about creating a cluster network that uses instance pools to manage groups of identical instances,
      * see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest) createClusterNetworkDetails}.
      *
      */
@@ -96,13 +102,16 @@ public class CreateComputeClusterRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm), which is a remote direct memory access (RDMA) network group.
-         * When first created, the compute cluster is empty.
-         * After the compute cluster is created, you can use the compute cluster's OCID with the {@link #launchInstance(LaunchInstanceRequest) launchInstance}
-         * operation to create instances in the compute cluster.
-         * Compute clusters allow you to manage instances in the cluster individually.
+         * The data for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+         * is an empty remote direct memory access (RDMA) network group.
          * <p>
-         * For details about creating a cluster network that uses intance pools to manage groups of identical instances,
+         * After the compute cluster is created, you can use the compute cluster's OCID with the
+         * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
+         * The instances must be created in the same compartment and availability domain as the cluster.
+         * <p>
+         * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+         * <p>
+         * For details about creating a cluster network that uses instance pools to manage groups of identical instances,
          * see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest) createClusterNetworkDetails}.
          *
          */
@@ -110,13 +119,16 @@ public class CreateComputeClusterRequest
                 null;
 
         /**
-         * Details for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm), which is a remote direct memory access (RDMA) network group.
-         * When first created, the compute cluster is empty.
-         * After the compute cluster is created, you can use the compute cluster's OCID with the {@link #launchInstance(LaunchInstanceRequest) launchInstance}
-         * operation to create instances in the compute cluster.
-         * Compute clusters allow you to manage instances in the cluster individually.
+         * The data for creating a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+         * is an empty remote direct memory access (RDMA) network group.
          * <p>
-         * For details about creating a cluster network that uses intance pools to manage groups of identical instances,
+         * After the compute cluster is created, you can use the compute cluster's OCID with the
+         * {@link #launchInstance(LaunchInstanceRequest) launchInstance} operation to create instances in the compute cluster.
+         * The instances must be created in the same compartment and availability domain as the cluster.
+         * <p>
+         * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+         * <p>
+         * For details about creating a cluster network that uses instance pools to manage groups of identical instances,
          * see {@link #createClusterNetworkDetails(CreateClusterNetworkDetailsRequest) createClusterNetworkDetails}.
          *
          * @param createComputeClusterDetails the value to set

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -58,6 +58,18 @@ public enum OperationType {
     EnableAdbAdvancedFeatures("ENABLE_ADB_ADVANCED_FEATURES"),
     DisableAdbAdvancedFeatures("DISABLE_ADB_ADVANCED_FEATURES"),
     UpdateAdbAdvancedFeatures("UPDATE_ADB_ADVANCED_FEATURES"),
+    CreateNewsReport("CREATE_NEWS_REPORT"),
+    EnableNewsReport("ENABLE_NEWS_REPORT"),
+    DisableNewsReport("DISABLE_NEWS_REPORT"),
+    UpdateNewsReport("UPDATE_NEWS_REPORT"),
+    MoveNewsReport("MOVE_NEWS_REPORT"),
+    DeleteNewsReport("DELETE_NEWS_REPORT"),
+    CreateAwrhubSource("CREATE_AWRHUB_SOURCE"),
+    DeleteAwrhubSource("DELETE_AWRHUB_SOURCE"),
+    UpdateAwrhubSource("UPDATE_AWRHUB_SOURCE"),
+    MoveAwrhubSource("MOVE_AWRHUB_SOURCE"),
+    EnableAwrhubSource("ENABLE_AWRHUB_SOURCE"),
+    DisableAwrhubSource("DISABLE_AWRHUB_SOURCE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

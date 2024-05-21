@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -34,6 +34,18 @@ public enum WorkRequestOperationType {
     LifecyclePromotion("LIFECYCLE_PROMOTION"),
     CreateSoftwareSource("CREATE_SOFTWARE_SOURCE"),
     UpdateSoftwareSource("UPDATE_SOFTWARE_SOURCE"),
+    ImportContent("IMPORT_CONTENT"),
+    SyncAgentConfig("SYNC_AGENT_CONFIG"),
+    InstallWindowsUpdates("INSTALL_WINDOWS_UPDATES"),
+    ListWindowsUpdate("LIST_WINDOWS_UPDATE"),
+    GetWindowsUpdateDetails("GET_WINDOWS_UPDATE_DETAILS"),
+    InstallAllWindowsUpdates("INSTALL_ALL_WINDOWS_UPDATES"),
+    InstallSecurityWindowsUpdates("INSTALL_SECURITY_WINDOWS_UPDATES"),
+    InstallBugfixWindowsUpdates("INSTALL_BUGFIX_WINDOWS_UPDATES"),
+    InstallEnhancementWindowsUpdates("INSTALL_ENHANCEMENT_WINDOWS_UPDATES"),
+    InstallOtherWindowsUpdates("INSTALL_OTHER_WINDOWS_UPDATES"),
+    RemoveContent("REMOVE_CONTENT"),
+    UnregisterManagedInstance("UNREGISTER_MANAGED_INSTANCE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,14 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Enumeration of different roles of a DR Protection Group.
- * - PRIMARY - The DR Protection Group has a primary role in a DR confguration.
- * - STANDBY - The DR Protection Group has a standby role in a DR confguration.
- * - UNCONFIGURED - The DR Protection Group is not part of a DR confguration
+ * Enumeration of the different roles of a DR protection group.
+ * - PRIMARY - The DR protection group has a primary role in the DR configuration.
+ * - STANDBY - The DR protection group has a standby role in the DR configuration.
+ * - UNCONFIGURED - The DR protection group is not part of the DR configuration.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")

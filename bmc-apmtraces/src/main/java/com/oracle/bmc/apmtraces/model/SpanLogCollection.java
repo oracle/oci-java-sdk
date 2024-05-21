@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.model;
@@ -22,10 +22,12 @@ package com.oracle.bmc.apmtraces.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SpanLogCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"timeCreated", "spanLogs"})
-    public SpanLogCollection(java.util.Date timeCreated, java.util.List<SpanLog> spanLogs) {
+    @java.beans.ConstructorProperties({"timeCreated", "eventName", "spanLogs"})
+    public SpanLogCollection(
+            java.util.Date timeCreated, String eventName, java.util.List<SpanLog> spanLogs) {
         super();
         this.timeCreated = timeCreated;
+        this.eventName = eventName;
         this.spanLogs = spanLogs;
     }
 
@@ -47,6 +49,24 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * Name of the event for which the log is created.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("eventName")
+        private String eventName;
+
+        /**
+         * Name of the event for which the log is created.
+         *
+         * @param eventName the value to set
+         * @return this builder
+         **/
+        public Builder eventName(String eventName) {
+            this.eventName = eventName;
+            this.__explicitlySet__.add("eventName");
             return this;
         }
         /**
@@ -72,7 +92,8 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SpanLogCollection build() {
-            SpanLogCollection model = new SpanLogCollection(this.timeCreated, this.spanLogs);
+            SpanLogCollection model =
+                    new SpanLogCollection(this.timeCreated, this.eventName, this.spanLogs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +104,9 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
         public Builder copy(SpanLogCollection model) {
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("eventName")) {
+                this.eventName(model.getEventName());
             }
             if (model.wasPropertyExplicitlySet("spanLogs")) {
                 this.spanLogs(model.getSpanLogs());
@@ -119,6 +143,22 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Name of the event for which the log is created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("eventName")
+    private final String eventName;
+
+    /**
+     * Name of the event for which the log is created.
+     *
+     * @return the value
+     **/
+    public String getEventName() {
+        return eventName;
+    }
+
+    /**
      * List of logs associated with the span at the given timestamp.
      *
      **/
@@ -149,6 +189,7 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
         sb.append("SpanLogCollection(");
         sb.append("super=").append(super.toString());
         sb.append("timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", eventName=").append(String.valueOf(this.eventName));
         sb.append(", spanLogs=").append(String.valueOf(this.spanLogs));
         sb.append(")");
         return sb.toString();
@@ -165,6 +206,7 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
 
         SpanLogCollection other = (SpanLogCollection) o;
         return java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.eventName, other.eventName)
                 && java.util.Objects.equals(this.spanLogs, other.spanLogs)
                 && super.equals(other);
     }
@@ -174,6 +216,7 @@ public final class SpanLogCollection extends com.oracle.bmc.http.internal.Explic
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.eventName == null ? 43 : this.eventName.hashCode());
         result = (result * PRIME) + (this.spanLogs == null ? 43 : this.spanLogs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -113,13 +113,13 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Unique name of a repository. This value is mutable.
+         * Name of the repository. Should be unique within the project. This value is mutable.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique name of a repository. This value is mutable.
+         * Name of the repository. Should be unique within the project. This value is mutable.
          * @param name the value to set
          * @return this builder
          **/
@@ -402,6 +402,8 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * Trigger build events supported for this repository:
          * PUSH - Build is triggered when a push event occurs.
+         * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+         * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
          * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
          *
          **/
@@ -411,6 +413,8 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * Trigger build events supported for this repository:
          * PUSH - Build is triggered when a push event occurs.
+         * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+         * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
          * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
          *
          * @param triggerBuildEvents the value to set
@@ -607,13 +611,13 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Unique name of a repository. This value is mutable.
+     * Name of the repository. Should be unique within the project. This value is mutable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique name of a repository. This value is mutable.
+     * Name of the repository. Should be unique within the project. This value is mutable.
      * @return the value
      **/
     public String getName() {
@@ -962,6 +966,8 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
      **/
     public enum TriggerBuildEvents {
         Push("PUSH"),
+        PullRequestCreated("PULL_REQUEST_CREATED"),
+        PullRequestUpdated("PULL_REQUEST_UPDATED"),
         CommitUpdates("COMMIT_UPDATES"),
 
         /**
@@ -1008,6 +1014,8 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * Trigger build events supported for this repository:
      * PUSH - Build is triggered when a push event occurs.
+     * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+     * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
      * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      *
      **/
@@ -1017,6 +1025,8 @@ public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * Trigger build events supported for this repository:
      * PUSH - Build is triggered when a push event occurs.
+     * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+     * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
      * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      *
      * @return the value

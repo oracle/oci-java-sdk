@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The details of the KeyVersion.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,7 +29,9 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
         "origin",
         "timeCreated",
         "timeOfDeletion",
-        "vaultId"
+        "vaultId",
+        "externalKeyReferenceDetails",
+        "isAutoRotated"
     })
     public KeyVersionSummary(
             String compartmentId,
@@ -39,7 +41,9 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
             Origin origin,
             java.util.Date timeCreated,
             java.util.Date timeOfDeletion,
-            String vaultId) {
+            String vaultId,
+            ExternalKeyReferenceDetails externalKeyReferenceDetails,
+            Boolean isAutoRotated) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -49,6 +53,8 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
         this.timeCreated = timeCreated;
         this.timeOfDeletion = timeOfDeletion;
         this.vaultId = vaultId;
+        this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+        this.isAutoRotated = isAutoRotated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -198,6 +204,32 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+        private ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+        public Builder externalKeyReferenceDetails(
+                ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            this.__explicitlySet__.add("externalKeyReferenceDetails");
+            return this;
+        }
+        /**
+         * An optional property indicating whether this keyversion is generated from auto rotatation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+        private Boolean isAutoRotated;
+
+        /**
+         * An optional property indicating whether this keyversion is generated from auto rotatation.
+         * @param isAutoRotated the value to set
+         * @return this builder
+         **/
+        public Builder isAutoRotated(Boolean isAutoRotated) {
+            this.isAutoRotated = isAutoRotated;
+            this.__explicitlySet__.add("isAutoRotated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -211,7 +243,9 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
                             this.origin,
                             this.timeCreated,
                             this.timeOfDeletion,
-                            this.vaultId);
+                            this.vaultId,
+                            this.externalKeyReferenceDetails,
+                            this.isAutoRotated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -243,6 +277,12 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
+                this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoRotated")) {
+                this.isAutoRotated(model.getIsAutoRotated());
             }
             return this;
         }
@@ -493,6 +533,27 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
         return vaultId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+    private final ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+    public ExternalKeyReferenceDetails getExternalKeyReferenceDetails() {
+        return externalKeyReferenceDetails;
+    }
+
+    /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+    private final Boolean isAutoRotated;
+
+    /**
+     * An optional property indicating whether this keyversion is generated from auto rotatation.
+     * @return the value
+     **/
+    public Boolean getIsAutoRotated() {
+        return isAutoRotated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -515,6 +576,9 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeOfDeletion=").append(String.valueOf(this.timeOfDeletion));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", externalKeyReferenceDetails=")
+                .append(String.valueOf(this.externalKeyReferenceDetails));
+        sb.append(", isAutoRotated=").append(String.valueOf(this.isAutoRotated));
         sb.append(")");
         return sb.toString();
     }
@@ -537,6 +601,9 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeOfDeletion, other.timeOfDeletion)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
+                && java.util.Objects.equals(this.isAutoRotated, other.isAutoRotated)
                 && super.equals(other);
     }
 
@@ -558,6 +625,14 @@ public final class KeyVersionSummary extends com.oracle.bmc.http.internal.Explic
                 (result * PRIME)
                         + (this.timeOfDeletion == null ? 43 : this.timeOfDeletion.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReferenceDetails == null
+                                ? 43
+                                : this.externalKeyReferenceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotated == null ? 43 : this.isAutoRotated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

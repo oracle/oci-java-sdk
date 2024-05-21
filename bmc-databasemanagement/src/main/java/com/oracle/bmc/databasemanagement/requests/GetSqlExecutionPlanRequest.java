@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -105,6 +105,17 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * The OCID of the Named Credential.
+     */
+    private String opcNamedCredentialId;
+
+    /**
+     * The OCID of the Named Credential.
+     */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -189,6 +200,21 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * The OCID of the Named Credential.
+         */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -221,6 +247,7 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
             sqlObjectId(o.getSqlObjectId());
             attribute(o.getAttribute());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -258,8 +285,9 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
             request.sqlObjectId = sqlObjectId;
             request.attribute = attribute;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetSqlExecutionPlanRequest(managedDatabaseId, sqlTuningAdvisorTaskId, sqlObjectId, attribute, opcRequestId);
+            // new GetSqlExecutionPlanRequest(managedDatabaseId, sqlTuningAdvisorTaskId, sqlObjectId, attribute, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -273,7 +301,8 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
                 .sqlTuningAdvisorTaskId(sqlTuningAdvisorTaskId)
                 .sqlObjectId(sqlObjectId)
                 .attribute(attribute)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -294,6 +323,7 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",sqlObjectId=").append(String.valueOf(this.sqlObjectId));
         sb.append(",attribute=").append(String.valueOf(this.attribute));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -314,7 +344,8 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
                         this.sqlTuningAdvisorTaskId, other.sqlTuningAdvisorTaskId)
                 && java.util.Objects.equals(this.sqlObjectId, other.sqlObjectId)
                 && java.util.Objects.equals(this.attribute, other.attribute)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -332,6 +363,11 @@ public class GetSqlExecutionPlanRequest extends com.oracle.bmc.requests.BmcReque
         result = (result * PRIME) + (this.sqlObjectId == null ? 43 : this.sqlObjectId.hashCode());
         result = (result * PRIME) + (this.attribute == null ? 43 : this.attribute.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

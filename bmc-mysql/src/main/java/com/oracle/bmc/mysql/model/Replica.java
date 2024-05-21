@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -20,6 +20,7 @@ package com.oracle.bmc.mysql.model;
 public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "secureConnections",
         "id",
         "dbSystemId",
         "compartmentId",
@@ -37,9 +38,13 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "portX",
         "freeformTags",
         "definedTags",
-        "isDeleteProtected"
+        "isDeleteProtected",
+        "shapeName",
+        "configurationId",
+        "replicaOverrides"
     })
     public Replica(
+            SecureConnectionDetails secureConnections,
             String id,
             String dbSystemId,
             String compartmentId,
@@ -57,8 +62,12 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             Integer portX,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Boolean isDeleteProtected) {
+            Boolean isDeleteProtected,
+            String shapeName,
+            String configurationId,
+            ReplicaOverrides replicaOverrides) {
         super();
+        this.secureConnections = secureConnections;
         this.id = id;
         this.dbSystemId = dbSystemId;
         this.compartmentId = compartmentId;
@@ -77,10 +86,22 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isDeleteProtected = isDeleteProtected;
+        this.shapeName = shapeName;
+        this.configurationId = configurationId;
+        this.replicaOverrides = replicaOverrides;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
         /**
          * The OCID of the read replica.
          **/
@@ -230,13 +251,13 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The MySQL version used by the read replica.
+         * The MySQL version currently in use by the read replica.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
         private String mysqlVersion;
 
         /**
-         * The MySQL version used by the read replica.
+         * The MySQL version currently in use by the read replica.
          * @param mysqlVersion the value to set
          * @return this builder
          **/
@@ -394,6 +415,53 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             this.__explicitlySet__.add("isDeleteProtected");
             return this;
         }
+        /**
+         * The shape currently in use by the read replica. The shape determines the resources allocated:
+         * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+         * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+        private String shapeName;
+
+        /**
+         * The shape currently in use by the read replica. The shape determines the resources allocated:
+         * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+         * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
+         *
+         * @param shapeName the value to set
+         * @return this builder
+         **/
+        public Builder shapeName(String shapeName) {
+            this.shapeName = shapeName;
+            this.__explicitlySet__.add("shapeName");
+            return this;
+        }
+        /**
+         * The OCID of the Configuration currently in use by the read replica.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
+        private String configurationId;
+
+        /**
+         * The OCID of the Configuration currently in use by the read replica.
+         * @param configurationId the value to set
+         * @return this builder
+         **/
+        public Builder configurationId(String configurationId) {
+            this.configurationId = configurationId;
+            this.__explicitlySet__.add("configurationId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("replicaOverrides")
+        private ReplicaOverrides replicaOverrides;
+
+        public Builder replicaOverrides(ReplicaOverrides replicaOverrides) {
+            this.replicaOverrides = replicaOverrides;
+            this.__explicitlySet__.add("replicaOverrides");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -401,6 +469,7 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         public Replica build() {
             Replica model =
                     new Replica(
+                            this.secureConnections,
                             this.id,
                             this.dbSystemId,
                             this.compartmentId,
@@ -418,7 +487,10 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.portX,
                             this.freeformTags,
                             this.definedTags,
-                            this.isDeleteProtected);
+                            this.isDeleteProtected,
+                            this.shapeName,
+                            this.configurationId,
+                            this.replicaOverrides);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -427,6 +499,9 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Replica model) {
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
+            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -481,6 +556,15 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("isDeleteProtected")) {
                 this.isDeleteProtected(model.getIsDeleteProtected());
             }
+            if (model.wasPropertyExplicitlySet("shapeName")) {
+                this.shapeName(model.getShapeName());
+            }
+            if (model.wasPropertyExplicitlySet("configurationId")) {
+                this.configurationId(model.getConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("replicaOverrides")) {
+                this.replicaOverrides(model.getReplicaOverrides());
+            }
             return this;
         }
     }
@@ -494,6 +578,13 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
     }
 
     /**
@@ -681,13 +772,13 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The MySQL version used by the read replica.
+     * The MySQL version currently in use by the read replica.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
     private final String mysqlVersion;
 
     /**
-     * The MySQL version used by the read replica.
+     * The MySQL version currently in use by the read replica.
      * @return the value
      **/
     public String getMysqlVersion() {
@@ -826,6 +917,47 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return isDeleteProtected;
     }
 
+    /**
+     * The shape currently in use by the read replica. The shape determines the resources allocated:
+     * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+     * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+    private final String shapeName;
+
+    /**
+     * The shape currently in use by the read replica. The shape determines the resources allocated:
+     * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+     * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
+     *
+     * @return the value
+     **/
+    public String getShapeName() {
+        return shapeName;
+    }
+
+    /**
+     * The OCID of the Configuration currently in use by the read replica.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
+    private final String configurationId;
+
+    /**
+     * The OCID of the Configuration currently in use by the read replica.
+     * @return the value
+     **/
+    public String getConfigurationId() {
+        return configurationId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("replicaOverrides")
+    private final ReplicaOverrides replicaOverrides;
+
+    public ReplicaOverrides getReplicaOverrides() {
+        return replicaOverrides;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -840,7 +972,8 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("Replica(");
         sb.append("super=").append(super.toString());
-        sb.append("id=").append(String.valueOf(this.id));
+        sb.append("secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -858,6 +991,9 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isDeleteProtected=").append(String.valueOf(this.isDeleteProtected));
+        sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", configurationId=").append(String.valueOf(this.configurationId));
+        sb.append(", replicaOverrides=").append(String.valueOf(this.replicaOverrides));
         sb.append(")");
         return sb.toString();
     }
@@ -872,7 +1008,8 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
 
         Replica other = (Replica) o;
-        return java.util.Objects.equals(this.id, other.id)
+        return java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -890,6 +1027,9 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.isDeleteProtected, other.isDeleteProtected)
+                && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.configurationId, other.configurationId)
+                && java.util.Objects.equals(this.replicaOverrides, other.replicaOverrides)
                 && super.equals(other);
     }
 
@@ -897,6 +1037,9 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         result =
@@ -927,6 +1070,13 @@ public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result =
                 (result * PRIME)
                         + (this.isDeleteProtected == null ? 43 : this.isDeleteProtected.hashCode());
+        result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationId == null ? 43 : this.configurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicaOverrides == null ? 43 : this.replicaOverrides.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

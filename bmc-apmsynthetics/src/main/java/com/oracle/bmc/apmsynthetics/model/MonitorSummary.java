@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -32,6 +32,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         "isRunOnce",
         "timeoutInSeconds",
         "target",
+        "configuration",
         "maintenanceWindowSchedule",
         "timeCreated",
         "timeUpdated",
@@ -54,6 +55,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             Boolean isRunOnce,
             Integer timeoutInSeconds,
             String target,
+            MonitorConfiguration configuration,
             MaintenanceWindowSchedule maintenanceWindowSchedule,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -75,6 +77,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         this.isRunOnce = isRunOnce;
         this.timeoutInSeconds = timeoutInSeconds;
         this.target = target;
+        this.configuration = configuration;
         this.maintenanceWindowSchedule = maintenanceWindowSchedule;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -281,9 +284,10 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         }
         /**
          * Specify the endpoint on which to run the monitor.
-         * For BROWSER and REST monitor types, target is mandatory.
+         * For BROWSER, REST and NETWORK monitor types, target is mandatory.
          * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
          * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
@@ -291,9 +295,10 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
 
         /**
          * Specify the endpoint on which to run the monitor.
-         * For BROWSER and REST monitor types, target is mandatory.
+         * For BROWSER, REST and NETWORK monitor types, target is mandatory.
          * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
          * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          *
          * @param target the value to set
          * @return this builder
@@ -301,6 +306,15 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("configuration")
+        private MonitorConfiguration configuration;
+
+        public Builder configuration(MonitorConfiguration configuration) {
+            this.configuration = configuration;
+            this.__explicitlySet__.add("configuration");
             return this;
         }
 
@@ -399,13 +413,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * If isRunNow is enabled, then the monitor will run now.
+         * If isRunNow is enabled, then the monitor will run immediately.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
         private Boolean isRunNow;
 
         /**
-         * If isRunNow is enabled, then the monitor will run now.
+         * If isRunNow is enabled, then the monitor will run immediately.
          * @param isRunNow the value to set
          * @return this builder
          **/
@@ -415,13 +429,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Scheduling policy on Vantage points.
+         * Scheduling policy to decide the distribution of monitor executions on vantage points.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
         private SchedulingPolicy schedulingPolicy;
 
         /**
-         * Scheduling policy on Vantage points.
+         * Scheduling policy to decide the distribution of monitor executions on vantage points.
          * @param schedulingPolicy the value to set
          * @return this builder
          **/
@@ -431,13 +445,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
         private Integer batchIntervalInSeconds;
 
         /**
-         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
          * @param batchIntervalInSeconds the value to set
          * @return this builder
          **/
@@ -465,6 +479,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.isRunOnce,
                             this.timeoutInSeconds,
                             this.target,
+                            this.configuration,
                             this.maintenanceWindowSchedule,
                             this.timeCreated,
                             this.timeUpdated,
@@ -516,6 +531,9 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("target")) {
                 this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("configuration")) {
+                this.configuration(model.getConfiguration());
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindowSchedule")) {
                 this.maintenanceWindowSchedule(model.getMaintenanceWindowSchedule());
@@ -728,9 +746,10 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Specify the endpoint on which to run the monitor.
-     * For BROWSER and REST monitor types, target is mandatory.
+     * For BROWSER, REST and NETWORK monitor types, target is mandatory.
      * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
      * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
@@ -738,14 +757,22 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Specify the endpoint on which to run the monitor.
-     * For BROWSER and REST monitor types, target is mandatory.
+     * For BROWSER, REST and NETWORK monitor types, target is mandatory.
      * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
      * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      *
      * @return the value
      **/
     public String getTarget() {
         return target;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("configuration")
+    private final MonitorConfiguration configuration;
+
+    public MonitorConfiguration getConfiguration() {
+        return configuration;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowSchedule")
@@ -832,13 +859,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * If isRunNow is enabled, then the monitor will run now.
+     * If isRunNow is enabled, then the monitor will run immediately.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
     private final Boolean isRunNow;
 
     /**
-     * If isRunNow is enabled, then the monitor will run now.
+     * If isRunNow is enabled, then the monitor will run immediately.
      * @return the value
      **/
     public Boolean getIsRunNow() {
@@ -846,13 +873,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Scheduling policy on Vantage points.
+     * Scheduling policy to decide the distribution of monitor executions on vantage points.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
     private final SchedulingPolicy schedulingPolicy;
 
     /**
-     * Scheduling policy on Vantage points.
+     * Scheduling policy to decide the distribution of monitor executions on vantage points.
      * @return the value
      **/
     public SchedulingPolicy getSchedulingPolicy() {
@@ -860,13 +887,13 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
     private final Integer batchIntervalInSeconds;
 
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * @return the value
      **/
     public Integer getBatchIntervalInSeconds() {
@@ -900,6 +927,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", isRunOnce=").append(String.valueOf(this.isRunOnce));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
         sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", configuration=").append(String.valueOf(this.configuration));
         sb.append(", maintenanceWindowSchedule=")
                 .append(String.valueOf(this.maintenanceWindowSchedule));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -936,6 +964,7 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.isRunOnce, other.isRunOnce)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(this.configuration, other.configuration)
                 && java.util.Objects.equals(
                         this.maintenanceWindowSchedule, other.maintenanceWindowSchedule)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -975,6 +1004,9 @@ public final class MonitorSummary extends com.oracle.bmc.http.internal.Explicitl
                 (result * PRIME)
                         + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configuration == null ? 43 : this.configuration.hashCode());
         result =
                 (result * PRIME)
                         + (this.maintenanceWindowSchedule == null

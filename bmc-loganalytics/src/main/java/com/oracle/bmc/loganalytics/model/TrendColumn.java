@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -98,6 +98,15 @@ public final class TrendColumn extends AbstractColumn {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+        private Boolean isHidden;
+
+        public Builder isHidden(Boolean isHidden) {
+            this.isHidden = isHidden;
+            this.__explicitlySet__.add("isHidden");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
@@ -178,29 +187,56 @@ public final class TrendColumn extends AbstractColumn {
             this.__explicitlySet__.add("totalIntervalCounts");
             return this;
         }
-
+        /**
+         * Sum of column values for a given timestamp after applying filter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCountsAfterFilter")
         private java.util.List<Long> totalIntervalCountsAfterFilter;
 
+        /**
+         * Sum of column values for a given timestamp after applying filter.
+         *
+         * @param totalIntervalCountsAfterFilter the value to set
+         * @return this builder
+         **/
         public Builder totalIntervalCountsAfterFilter(
                 java.util.List<Long> totalIntervalCountsAfterFilter) {
             this.totalIntervalCountsAfterFilter = totalIntervalCountsAfterFilter;
             this.__explicitlySet__.add("totalIntervalCountsAfterFilter");
             return this;
         }
-
+        /**
+         * Number of aggregated groups for a given timestamp.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalGroupCounts")
         private java.util.List<Long> intervalGroupCounts;
 
+        /**
+         * Number of aggregated groups for a given timestamp.
+         *
+         * @param intervalGroupCounts the value to set
+         * @return this builder
+         **/
         public Builder intervalGroupCounts(java.util.List<Long> intervalGroupCounts) {
             this.intervalGroupCounts = intervalGroupCounts;
             this.__explicitlySet__.add("intervalGroupCounts");
             return this;
         }
-
+        /**
+         * Number of aggregated groups for a given timestamp after applying filter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalGroupCountsAfterFilter")
         private java.util.List<Long> intervalGroupCountsAfterFilter;
 
+        /**
+         * Number of aggregated groups for a given timestamp after applying filter.
+         *
+         * @param intervalGroupCountsAfterFilter the value to set
+         * @return this builder
+         **/
         public Builder intervalGroupCountsAfterFilter(
                 java.util.List<Long> intervalGroupCountsAfterFilter) {
             this.intervalGroupCountsAfterFilter = intervalGroupCountsAfterFilter;
@@ -222,6 +258,7 @@ public final class TrendColumn extends AbstractColumn {
                             this.isCaseSensitive,
                             this.isGroupable,
                             this.isEvaluable,
+                            this.isHidden,
                             this.valueType,
                             this.originalDisplayName,
                             this.internalName,
@@ -262,6 +299,9 @@ public final class TrendColumn extends AbstractColumn {
             }
             if (model.wasPropertyExplicitlySet("isEvaluable")) {
                 this.isEvaluable(model.getIsEvaluable());
+            }
+            if (model.wasPropertyExplicitlySet("isHidden")) {
+                this.isHidden(model.getIsHidden());
             }
             if (model.wasPropertyExplicitlySet("valueType")) {
                 this.valueType(model.getValueType());
@@ -315,6 +355,7 @@ public final class TrendColumn extends AbstractColumn {
             Boolean isCaseSensitive,
             Boolean isGroupable,
             Boolean isEvaluable,
+            Boolean isHidden,
             ValueType valueType,
             String originalDisplayName,
             String internalName,
@@ -333,6 +374,7 @@ public final class TrendColumn extends AbstractColumn {
                 isCaseSensitive,
                 isGroupable,
                 isEvaluable,
+                isHidden,
                 valueType,
                 originalDisplayName,
                 internalName);
@@ -392,23 +434,50 @@ public final class TrendColumn extends AbstractColumn {
         return totalIntervalCounts;
     }
 
+    /**
+     * Sum of column values for a given timestamp after applying filter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalIntervalCountsAfterFilter")
     private final java.util.List<Long> totalIntervalCountsAfterFilter;
 
+    /**
+     * Sum of column values for a given timestamp after applying filter.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getTotalIntervalCountsAfterFilter() {
         return totalIntervalCountsAfterFilter;
     }
 
+    /**
+     * Number of aggregated groups for a given timestamp.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGroupCounts")
     private final java.util.List<Long> intervalGroupCounts;
 
+    /**
+     * Number of aggregated groups for a given timestamp.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getIntervalGroupCounts() {
         return intervalGroupCounts;
     }
 
+    /**
+     * Number of aggregated groups for a given timestamp after applying filter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalGroupCountsAfterFilter")
     private final java.util.List<Long> intervalGroupCountsAfterFilter;
 
+    /**
+     * Number of aggregated groups for a given timestamp after applying filter.
+     *
+     * @return the value
+     **/
     public java.util.List<Long> getIntervalGroupCountsAfterFilter() {
         return intervalGroupCountsAfterFilter;
     }

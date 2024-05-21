@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Information about an Object Storage script location for a user-defined step in a DR Plan.
+ * The details of an object storage script location for a user-defined step in a DR plan.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,7 +33,7 @@ public final class ObjectStorageScriptLocation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).
+         * The namespace in object storage (Note - this is usually the tenancy name).
          * <p>
          * Example: {@code myocitenancy}
          *
@@ -42,7 +42,7 @@ public final class ObjectStorageScriptLocation
         private String namespace;
 
         /**
-         * The namespace in Object Storage (Note - this is usually the tenancy name).
+         * The namespace in object storage (Note - this is usually the tenancy name).
          * <p>
          * Example: {@code myocitenancy}
          *
@@ -55,7 +55,7 @@ public final class ObjectStorageScriptLocation
             return this;
         }
         /**
-         * The bucket name inside the Object Storage namespace.
+         * The bucket name inside the object storage namespace.
          * <p>
          * Example: {@code custom_dr_scripts}
          *
@@ -64,7 +64,7 @@ public final class ObjectStorageScriptLocation
         private String bucket;
 
         /**
-         * The bucket name inside the Object Storage namespace.
+         * The bucket name inside the object storage namespace.
          * <p>
          * Example: {@code custom_dr_scripts}
          *
@@ -77,7 +77,7 @@ public final class ObjectStorageScriptLocation
             return this;
         }
         /**
-         * The object name inside the Object Storage bucket.
+         * The object name inside the object storage bucket.
          * <p>
          * Example: {@code validate_app_start.sh}
          *
@@ -86,7 +86,7 @@ public final class ObjectStorageScriptLocation
         private String object;
 
         /**
-         * The object name inside the Object Storage bucket.
+         * The object name inside the object storage bucket.
          * <p>
          * Example: {@code validate_app_start.sh}
          *
@@ -138,7 +138,7 @@ public final class ObjectStorageScriptLocation
     }
 
     /**
-     * The namespace in Object Storage (Note - this is usually the tenancy name).
+     * The namespace in object storage (Note - this is usually the tenancy name).
      * <p>
      * Example: {@code myocitenancy}
      *
@@ -147,7 +147,7 @@ public final class ObjectStorageScriptLocation
     private final String namespace;
 
     /**
-     * The namespace in Object Storage (Note - this is usually the tenancy name).
+     * The namespace in object storage (Note - this is usually the tenancy name).
      * <p>
      * Example: {@code myocitenancy}
      *
@@ -158,7 +158,7 @@ public final class ObjectStorageScriptLocation
     }
 
     /**
-     * The bucket name inside the Object Storage namespace.
+     * The bucket name inside the object storage namespace.
      * <p>
      * Example: {@code custom_dr_scripts}
      *
@@ -167,7 +167,7 @@ public final class ObjectStorageScriptLocation
     private final String bucket;
 
     /**
-     * The bucket name inside the Object Storage namespace.
+     * The bucket name inside the object storage namespace.
      * <p>
      * Example: {@code custom_dr_scripts}
      *
@@ -178,7 +178,7 @@ public final class ObjectStorageScriptLocation
     }
 
     /**
-     * The object name inside the Object Storage bucket.
+     * The object name inside the object storage bucket.
      * <p>
      * Example: {@code validate_app_start.sh}
      *
@@ -187,7 +187,7 @@ public final class ObjectStorageScriptLocation
     private final String object;
 
     /**
-     * The object name inside the Object Storage bucket.
+     * The object name inside the object storage bucket.
      * <p>
      * Example: {@code validate_app_start.sh}
      *

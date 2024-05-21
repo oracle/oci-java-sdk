@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
@@ -32,6 +32,17 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     public String getDisplayName() {
         return displayName;
+    }
+    /**
+     * Filter the Java Release Family versions by support status.
+     */
+    private Boolean isSupportedVersion;
+
+    /**
+     * Filter the Java Release Family versions by support status.
+     */
+    public Boolean getIsSupportedVersion() {
+        return isSupportedVersion;
     }
     /**
      * The maximum number of items to return.
@@ -125,6 +136,21 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * Filter the Java Release Family versions by support status.
+         */
+        private Boolean isSupportedVersion = null;
+
+        /**
+         * Filter the Java Release Family versions by support status.
+         * @param isSupportedVersion the value to set
+         * @return this builder instance
+         */
+        public Builder isSupportedVersion(Boolean isSupportedVersion) {
+            this.isSupportedVersion = isSupportedVersion;
             return this;
         }
 
@@ -235,6 +261,7 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
         public Builder copy(ListJavaFamiliesRequest o) {
             familyVersion(o.getFamilyVersion());
             displayName(o.getDisplayName());
+            isSupportedVersion(o.getIsSupportedVersion());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
@@ -274,13 +301,14 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
             ListJavaFamiliesRequest request = new ListJavaFamiliesRequest();
             request.familyVersion = familyVersion;
             request.displayName = displayName;
+            request.isSupportedVersion = isSupportedVersion;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJavaFamiliesRequest(familyVersion, displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListJavaFamiliesRequest(familyVersion, displayName, isSupportedVersion, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -292,6 +320,7 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
         return new Builder()
                 .familyVersion(familyVersion)
                 .displayName(displayName)
+                .isSupportedVersion(isSupportedVersion)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
@@ -314,6 +343,7 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("super=").append(super.toString());
         sb.append(",familyVersion=").append(String.valueOf(this.familyVersion));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",isSupportedVersion=").append(String.valueOf(this.isSupportedVersion));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -336,6 +366,7 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
         return super.equals(o)
                 && java.util.Objects.equals(this.familyVersion, other.familyVersion)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isSupportedVersion, other.isSupportedVersion)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -351,6 +382,11 @@ public class ListJavaFamiliesRequest extends com.oracle.bmc.requests.BmcRequest<
                 (result * PRIME)
                         + (this.familyVersion == null ? 43 : this.familyVersion.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSupportedVersion == null
+                                ? 43
+                                : this.isSupportedVersion.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

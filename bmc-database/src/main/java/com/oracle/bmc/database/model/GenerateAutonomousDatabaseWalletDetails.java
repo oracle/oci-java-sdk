@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -23,11 +23,13 @@ package com.oracle.bmc.database.model;
 public final class GenerateAutonomousDatabaseWalletDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"generateType", "password"})
-    public GenerateAutonomousDatabaseWalletDetails(GenerateType generateType, String password) {
+    @java.beans.ConstructorProperties({"generateType", "password", "isRegional"})
+    public GenerateAutonomousDatabaseWalletDetails(
+            GenerateType generateType, String password, Boolean isRegional) {
         super();
         this.generateType = generateType;
         this.password = password;
+        this.isRegional = isRegional;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -35,7 +37,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
         /**
          * The type of wallet to generate.
          * <p>
-         **Shared Exadata infrastructure usage:**
+         **Serverless instance usage:**
          * * {@code SINGLE} - used to generate a wallet for a single database
          * * {@code ALL} - used to generate wallet for all databases in the region
          * <p>
@@ -48,7 +50,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
         /**
          * The type of wallet to generate.
          * <p>
-         **Shared Exadata infrastructure usage:**
+         **Serverless instance usage:**
          * * {@code SINGLE} - used to generate a wallet for a single database
          * * {@code ALL} - used to generate wallet for all databases in the region
          * <p>
@@ -78,13 +80,30 @@ public final class GenerateAutonomousDatabaseWalletDetails
             this.__explicitlySet__.add("password");
             return this;
         }
+        /**
+         * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRegional")
+        private Boolean isRegional;
+
+        /**
+         * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+         * @param isRegional the value to set
+         * @return this builder
+         **/
+        public Builder isRegional(Boolean isRegional) {
+            this.isRegional = isRegional;
+            this.__explicitlySet__.add("isRegional");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateAutonomousDatabaseWalletDetails build() {
             GenerateAutonomousDatabaseWalletDetails model =
-                    new GenerateAutonomousDatabaseWalletDetails(this.generateType, this.password);
+                    new GenerateAutonomousDatabaseWalletDetails(
+                            this.generateType, this.password, this.isRegional);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -98,6 +117,9 @@ public final class GenerateAutonomousDatabaseWalletDetails
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("isRegional")) {
+                this.isRegional(model.getIsRegional());
             }
             return this;
         }
@@ -117,7 +139,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
     /**
      * The type of wallet to generate.
      * <p>
-     **Shared Exadata infrastructure usage:**
+     **Serverless instance usage:**
      * * {@code SINGLE} - used to generate a wallet for a single database
      * * {@code ALL} - used to generate wallet for all databases in the region
      * <p>
@@ -159,7 +181,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
     /**
      * The type of wallet to generate.
      * <p>
-     **Shared Exadata infrastructure usage:**
+     **Serverless instance usage:**
      * * {@code SINGLE} - used to generate a wallet for a single database
      * * {@code ALL} - used to generate wallet for all databases in the region
      * <p>
@@ -172,7 +194,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
     /**
      * The type of wallet to generate.
      * <p>
-     **Shared Exadata infrastructure usage:**
+     **Serverless instance usage:**
      * * {@code SINGLE} - used to generate a wallet for a single database
      * * {@code ALL} - used to generate wallet for all databases in the region
      * <p>
@@ -198,6 +220,20 @@ public final class GenerateAutonomousDatabaseWalletDetails
         return password;
     }
 
+    /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRegional")
+    private final Boolean isRegional;
+
+    /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     * @return the value
+     **/
+    public Boolean getIsRegional() {
+        return isRegional;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -214,6 +250,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
         sb.append("super=").append(super.toString());
         sb.append("generateType=").append(String.valueOf(this.generateType));
         sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", isRegional=").append(String.valueOf(this.isRegional));
         sb.append(")");
         return sb.toString();
     }
@@ -230,6 +267,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
         GenerateAutonomousDatabaseWalletDetails other = (GenerateAutonomousDatabaseWalletDetails) o;
         return java.util.Objects.equals(this.generateType, other.generateType)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.isRegional, other.isRegional)
                 && super.equals(other);
     }
 
@@ -239,6 +277,7 @@ public final class GenerateAutonomousDatabaseWalletDetails
         int result = 1;
         result = (result * PRIME) + (this.generateType == null ? 43 : this.generateType.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result = (result * PRIME) + (this.isRegional == null ? 43 : this.isRegional.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

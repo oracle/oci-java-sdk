@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.requests;
@@ -53,6 +53,17 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     public static class Builder
@@ -118,6 +129,21 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -148,6 +174,7 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
             catalogId(o.getCatalogId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -183,8 +210,9 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.catalogId = catalogId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteCatalogRequest(catalogId, ifMatch, opcRequestId);
+            // new DeleteCatalogRequest(catalogId, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -193,7 +221,11 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().catalogId(catalogId).ifMatch(ifMatch).opcRequestId(opcRequestId);
+        return new Builder()
+                .catalogId(catalogId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -212,6 +244,7 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",catalogId=").append(String.valueOf(this.catalogId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -229,7 +262,8 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return super.equals(o)
                 && java.util.Objects.equals(this.catalogId, other.catalogId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -239,6 +273,9 @@ public class DeleteCatalogRequest extends com.oracle.bmc.requests.BmcRequest<jav
         result = (result * PRIME) + (this.catalogId == null ? 43 : this.catalogId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

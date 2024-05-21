@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -21,13 +21,17 @@ package com.oracle.bmc.bds.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PatchHistorySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version", "lifecycleState", "timeUpdated"})
+    @java.beans.ConstructorProperties({"version", "lifecycleState", "timeUpdated", "patchType"})
     public PatchHistorySummary(
-            String version, LifecycleState lifecycleState, java.util.Date timeUpdated) {
+            String version,
+            LifecycleState lifecycleState,
+            java.util.Date timeUpdated,
+            PatchType patchType) {
         super();
         this.version = version;
         this.lifecycleState = lifecycleState;
         this.timeUpdated = timeUpdated;
+        this.patchType = patchType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -80,13 +84,38 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /**
+         * The type of current patch history.
+         * DP - Data Plane patch(This history type is internal available only)
+         * ODH - Oracle Distribution of Hadoop patch
+         * OS - Operating System patch
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("patchType")
+        private PatchType patchType;
+
+        /**
+         * The type of current patch history.
+         * DP - Data Plane patch(This history type is internal available only)
+         * ODH - Oracle Distribution of Hadoop patch
+         * OS - Operating System patch
+         *
+         * @param patchType the value to set
+         * @return this builder
+         **/
+        public Builder patchType(PatchType patchType) {
+            this.patchType = patchType;
+            this.__explicitlySet__.add("patchType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchHistorySummary build() {
             PatchHistorySummary model =
-                    new PatchHistorySummary(this.version, this.lifecycleState, this.timeUpdated);
+                    new PatchHistorySummary(
+                            this.version, this.lifecycleState, this.timeUpdated, this.patchType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -103,6 +132,9 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("patchType")) {
+                this.patchType(model.getPatchType());
             }
             return this;
         }
@@ -210,6 +242,80 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         return timeUpdated;
     }
 
+    /**
+     * The type of current patch history.
+     * DP - Data Plane patch(This history type is internal available only)
+     * ODH - Oracle Distribution of Hadoop patch
+     * OS - Operating System patch
+     *
+     **/
+    public enum PatchType {
+        Odh("ODH"),
+        Os("OS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PatchType.class);
+
+        private final String value;
+        private static java.util.Map<String, PatchType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PatchType v : PatchType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PatchType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PatchType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PatchType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of current patch history.
+     * DP - Data Plane patch(This history type is internal available only)
+     * ODH - Oracle Distribution of Hadoop patch
+     * OS - Operating System patch
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchType")
+    private final PatchType patchType;
+
+    /**
+     * The type of current patch history.
+     * DP - Data Plane patch(This history type is internal available only)
+     * ODH - Oracle Distribution of Hadoop patch
+     * OS - Operating System patch
+     *
+     * @return the value
+     **/
+    public PatchType getPatchType() {
+        return patchType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -227,6 +333,7 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", patchType=").append(String.valueOf(this.patchType));
         sb.append(")");
         return sb.toString();
     }
@@ -244,6 +351,7 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.patchType, other.patchType)
                 && super.equals(other);
     }
 
@@ -256,6 +364,7 @@ public final class PatchHistorySummary extends com.oracle.bmc.http.internal.Expl
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

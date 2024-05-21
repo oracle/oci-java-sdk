@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -48,6 +48,8 @@ public final class AutonomousContainerDatabase
         "maintenanceWindow",
         "standbyMaintenanceBufferInDays",
         "versionPreference",
+        "isDstFileUpdateEnabled",
+        "dstFileVersion",
         "freeformTags",
         "definedTags",
         "role",
@@ -61,7 +63,16 @@ public final class AutonomousContainerDatabase
         "totalCpus",
         "reclaimableCpus",
         "provisionableCpus",
-        "computeModel"
+        "listOneOffPatches",
+        "computeModel",
+        "provisionedCpus",
+        "reservedCpus",
+        "largestProvisionableAutonomousDatabaseInCpus",
+        "timeOfLastBackup",
+        "dbSplitThreshold",
+        "vmFailoverReservation",
+        "distributionAffinity",
+        "netServicesArchitecture"
     })
     public AutonomousContainerDatabase(
             String id,
@@ -89,6 +100,8 @@ public final class AutonomousContainerDatabase
             MaintenanceWindow maintenanceWindow,
             Integer standbyMaintenanceBufferInDays,
             VersionPreference versionPreference,
+            Boolean isDstFileUpdateEnabled,
+            String dstFileVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Role role,
@@ -102,7 +115,16 @@ public final class AutonomousContainerDatabase
             Integer totalCpus,
             Float reclaimableCpus,
             java.util.List<Float> provisionableCpus,
-            ComputeModel computeModel) {
+            java.util.List<String> listOneOffPatches,
+            ComputeModel computeModel,
+            Float provisionedCpus,
+            Float reservedCpus,
+            Float largestProvisionableAutonomousDatabaseInCpus,
+            java.util.Date timeOfLastBackup,
+            Integer dbSplitThreshold,
+            Integer vmFailoverReservation,
+            DistributionAffinity distributionAffinity,
+            NetServicesArchitecture netServicesArchitecture) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -129,6 +151,8 @@ public final class AutonomousContainerDatabase
         this.maintenanceWindow = maintenanceWindow;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
         this.versionPreference = versionPreference;
+        this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+        this.dstFileVersion = dstFileVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.role = role;
@@ -142,7 +166,17 @@ public final class AutonomousContainerDatabase
         this.totalCpus = totalCpus;
         this.reclaimableCpus = reclaimableCpus;
         this.provisionableCpus = provisionableCpus;
+        this.listOneOffPatches = listOneOffPatches;
         this.computeModel = computeModel;
+        this.provisionedCpus = provisionedCpus;
+        this.reservedCpus = reservedCpus;
+        this.largestProvisionableAutonomousDatabaseInCpus =
+                largestProvisionableAutonomousDatabaseInCpus;
+        this.timeOfLastBackup = timeOfLastBackup;
+        this.dbSplitThreshold = dbSplitThreshold;
+        this.vmFailoverReservation = vmFailoverReservation;
+        this.distributionAffinity = distributionAffinity;
+        this.netServicesArchitecture = netServicesArchitecture;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -329,13 +363,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          * @param vaultId the value to set
          * @return this builder
          **/
@@ -345,14 +379,14 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -555,6 +589,38 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+        private Boolean isDstFileUpdateEnabled;
+
+        /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         * @param isDstFileUpdateEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            this.__explicitlySet__.add("isDstFileUpdateEnabled");
+            return this;
+        }
+        /**
+         * DST Time-zone File version of the Autonomous Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
+        private String dstFileVersion;
+
+        /**
+         * DST Time-zone File version of the Autonomous Container Database.
+         * @param dstFileVersion the value to set
+         * @return this builder
+         **/
+        public Builder dstFileVersion(String dstFileVersion) {
+            this.dstFileVersion = dstFileVersion;
+            this.__explicitlySet__.add("dstFileVersion");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -659,13 +725,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * @param keyStoreId the value to set
          * @return this builder
          **/
@@ -691,15 +757,13 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-         *
+         * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-         *
+         * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
          **/
@@ -709,16 +773,14 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
          *
          * @param availableCpus the value to set
          * @return this builder
@@ -729,16 +791,14 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The number of CPUs allocated to the Autonomous VM cluster.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The number of CPUs allocated to the Autonomous VM cluster.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
         private Integer totalCpus;
 
         /**
-         * The number of CPUs allocated to the Autonomous VM cluster.<br>
-         * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The number of CPUs allocated to the Autonomous VM cluster.
          *
          * @param totalCpus the value to set
          * @return this builder
@@ -749,18 +809,14 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -771,16 +827,14 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * An array of CPU values that can be used to successfully provision a single Autonomous Database.\\
-         * For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * An array of CPU values that can be used to successfully provision a single Autonomous Database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
-         * An array of CPU values that can be used to successfully provision a single Autonomous Database.\\
-         * For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * An array of CPU values that can be used to successfully provision a single Autonomous Database.
          *
          * @param provisionableCpus the value to set
          * @return this builder
@@ -791,14 +845,30 @@ public final class AutonomousContainerDatabase
             return this;
         }
         /**
-         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * List of One-Off patches that has been successfully applied to Autonomous Container Database
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("listOneOffPatches")
+        private java.util.List<String> listOneOffPatches;
+
+        /**
+         * List of One-Off patches that has been successfully applied to Autonomous Container Database
+         * @param listOneOffPatches the value to set
+         * @return this builder
+         **/
+        public Builder listOneOffPatches(java.util.List<String> listOneOffPatches) {
+            this.listOneOffPatches = listOneOffPatches;
+            this.__explicitlySet__.add("listOneOffPatches");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -806,6 +876,137 @@ public final class AutonomousContainerDatabase
         public Builder computeModel(ComputeModel computeModel) {
             this.computeModel = computeModel;
             this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * The number of CPUs provisioned in an Autonomous Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+        private Float provisionedCpus;
+
+        /**
+         * The number of CPUs provisioned in an Autonomous Container Database.
+         * @param provisionedCpus the value to set
+         * @return this builder
+         **/
+        public Builder provisionedCpus(Float provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
+            this.__explicitlySet__.add("provisionedCpus");
+            return this;
+        }
+        /**
+         * The number of CPUs reserved in an Autonomous Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+        private Float reservedCpus;
+
+        /**
+         * The number of CPUs reserved in an Autonomous Container Database.
+         * @param reservedCpus the value to set
+         * @return this builder
+         **/
+        public Builder reservedCpus(Float reservedCpus) {
+            this.reservedCpus = reservedCpus;
+            this.__explicitlySet__.add("reservedCpus");
+            return this;
+        }
+        /**
+         * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "largestProvisionableAutonomousDatabaseInCpus")
+        private Float largestProvisionableAutonomousDatabaseInCpus;
+
+        /**
+         * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+         * @param largestProvisionableAutonomousDatabaseInCpus the value to set
+         * @return this builder
+         **/
+        public Builder largestProvisionableAutonomousDatabaseInCpus(
+                Float largestProvisionableAutonomousDatabaseInCpus) {
+            this.largestProvisionableAutonomousDatabaseInCpus =
+                    largestProvisionableAutonomousDatabaseInCpus;
+            this.__explicitlySet__.add("largestProvisionableAutonomousDatabaseInCpus");
+            return this;
+        }
+        /**
+         * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastBackup")
+        private java.util.Date timeOfLastBackup;
+
+        /**
+         * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+         * @param timeOfLastBackup the value to set
+         * @return this builder
+         **/
+        public Builder timeOfLastBackup(java.util.Date timeOfLastBackup) {
+            this.timeOfLastBackup = timeOfLastBackup;
+            this.__explicitlySet__.add("timeOfLastBackup");
+            return this;
+        }
+        /**
+         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
+        private Integer dbSplitThreshold;
+
+        /**
+         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         * @param dbSplitThreshold the value to set
+         * @return this builder
+         **/
+        public Builder dbSplitThreshold(Integer dbSplitThreshold) {
+            this.dbSplitThreshold = dbSplitThreshold;
+            this.__explicitlySet__.add("dbSplitThreshold");
+            return this;
+        }
+        /**
+         * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
+        private Integer vmFailoverReservation;
+
+        /**
+         * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+         * @param vmFailoverReservation the value to set
+         * @return this builder
+         **/
+        public Builder vmFailoverReservation(Integer vmFailoverReservation) {
+            this.vmFailoverReservation = vmFailoverReservation;
+            this.__explicitlySet__.add("vmFailoverReservation");
+            return this;
+        }
+        /**
+         * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
+        private DistributionAffinity distributionAffinity;
+
+        /**
+         * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+         * @param distributionAffinity the value to set
+         * @return this builder
+         **/
+        public Builder distributionAffinity(DistributionAffinity distributionAffinity) {
+            this.distributionAffinity = distributionAffinity;
+            this.__explicitlySet__.add("distributionAffinity");
+            return this;
+        }
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+        private NetServicesArchitecture netServicesArchitecture;
+
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         * @param netServicesArchitecture the value to set
+         * @return this builder
+         **/
+        public Builder netServicesArchitecture(NetServicesArchitecture netServicesArchitecture) {
+            this.netServicesArchitecture = netServicesArchitecture;
+            this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
 
@@ -840,6 +1041,8 @@ public final class AutonomousContainerDatabase
                             this.maintenanceWindow,
                             this.standbyMaintenanceBufferInDays,
                             this.versionPreference,
+                            this.isDstFileUpdateEnabled,
+                            this.dstFileVersion,
                             this.freeformTags,
                             this.definedTags,
                             this.role,
@@ -853,7 +1056,16 @@ public final class AutonomousContainerDatabase
                             this.totalCpus,
                             this.reclaimableCpus,
                             this.provisionableCpus,
-                            this.computeModel);
+                            this.listOneOffPatches,
+                            this.computeModel,
+                            this.provisionedCpus,
+                            this.reservedCpus,
+                            this.largestProvisionableAutonomousDatabaseInCpus,
+                            this.timeOfLastBackup,
+                            this.dbSplitThreshold,
+                            this.vmFailoverReservation,
+                            this.distributionAffinity,
+                            this.netServicesArchitecture);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -938,6 +1150,12 @@ public final class AutonomousContainerDatabase
             if (model.wasPropertyExplicitlySet("versionPreference")) {
                 this.versionPreference(model.getVersionPreference());
             }
+            if (model.wasPropertyExplicitlySet("isDstFileUpdateEnabled")) {
+                this.isDstFileUpdateEnabled(model.getIsDstFileUpdateEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("dstFileVersion")) {
+                this.dstFileVersion(model.getDstFileVersion());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -977,8 +1195,36 @@ public final class AutonomousContainerDatabase
             if (model.wasPropertyExplicitlySet("provisionableCpus")) {
                 this.provisionableCpus(model.getProvisionableCpus());
             }
+            if (model.wasPropertyExplicitlySet("listOneOffPatches")) {
+                this.listOneOffPatches(model.getListOneOffPatches());
+            }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedCpus")) {
+                this.provisionedCpus(model.getProvisionedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("reservedCpus")) {
+                this.reservedCpus(model.getReservedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("largestProvisionableAutonomousDatabaseInCpus")) {
+                this.largestProvisionableAutonomousDatabaseInCpus(
+                        model.getLargestProvisionableAutonomousDatabaseInCpus());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastBackup")) {
+                this.timeOfLastBackup(model.getTimeOfLastBackup());
+            }
+            if (model.wasPropertyExplicitlySet("dbSplitThreshold")) {
+                this.dbSplitThreshold(model.getDbSplitThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("vmFailoverReservation")) {
+                this.vmFailoverReservation(model.getVmFailoverReservation());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAffinity")) {
+                this.distributionAffinity(model.getDistributionAffinity());
+            }
+            if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
+                this.netServicesArchitecture(model.getNetServicesArchitecture());
             }
             return this;
         }
@@ -1251,13 +1497,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      * @return the value
      **/
     public String getVaultId() {
@@ -1265,14 +1511,14 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      *
      * @return the value
      **/
@@ -1310,6 +1556,7 @@ public final class AutonomousContainerDatabase
         Restarting("RESTARTING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        EnablingAutonomousDataGuard("ENABLING_AUTONOMOUS_DATA_GUARD"),
         Unavailable("UNAVAILABLE"),
 
         /**
@@ -1604,6 +1851,34 @@ public final class AutonomousContainerDatabase
     }
 
     /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+    private final Boolean isDstFileUpdateEnabled;
+
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * @return the value
+     **/
+    public Boolean getIsDstFileUpdateEnabled() {
+        return isDstFileUpdateEnabled;
+    }
+
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
+    private final String dstFileVersion;
+
+    /**
+     * DST Time-zone File version of the Autonomous Container Database.
+     * @return the value
+     **/
+    public String getDstFileVersion() {
+        return dstFileVersion;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -1745,13 +2020,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * @return the value
      **/
     public String getKeyStoreId() {
@@ -1773,15 +2048,13 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-     *
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.See [Compute Models](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-     *
+     * The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
      * @return the value
      **/
     public Integer getMemoryPerOracleComputeUnitInGBs() {
@@ -1789,16 +2062,14 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      *
      * @return the value
      **/
@@ -1807,16 +2078,14 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The number of CPUs allocated to the Autonomous VM cluster.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The number of CPUs allocated to the Autonomous VM cluster.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
     private final Integer totalCpus;
 
     /**
-     * The number of CPUs allocated to the Autonomous VM cluster.<br>
-     * For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The number of CPUs allocated to the Autonomous VM cluster.
      *
      * @return the value
      **/
@@ -1825,18 +2094,14 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      *
      * @return the value
      **/
@@ -1845,16 +2110,14 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.\\
-     * For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.\\
-     * For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
      *
      * @return the value
      **/
@@ -1863,7 +2126,21 @@ public final class AutonomousContainerDatabase
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * List of One-Off patches that has been successfully applied to Autonomous Container Database
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listOneOffPatches")
+    private final java.util.List<String> listOneOffPatches;
+
+    /**
+     * List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * @return the value
+     **/
+    public java.util.List<String> getListOneOffPatches() {
+        return listOneOffPatches;
+    }
+
+    /**
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      **/
     public enum ComputeModel {
@@ -1912,19 +2189,227 @@ public final class AutonomousContainerDatabase
         }
     };
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      * @return the value
      **/
     public ComputeModel getComputeModel() {
         return computeModel;
+    }
+
+    /**
+     * The number of CPUs provisioned in an Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+    private final Float provisionedCpus;
+
+    /**
+     * The number of CPUs provisioned in an Autonomous Container Database.
+     * @return the value
+     **/
+    public Float getProvisionedCpus() {
+        return provisionedCpus;
+    }
+
+    /**
+     * The number of CPUs reserved in an Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+    private final Float reservedCpus;
+
+    /**
+     * The number of CPUs reserved in an Autonomous Container Database.
+     * @return the value
+     **/
+    public Float getReservedCpus() {
+        return reservedCpus;
+    }
+
+    /**
+     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("largestProvisionableAutonomousDatabaseInCpus")
+    private final Float largestProvisionableAutonomousDatabaseInCpus;
+
+    /**
+     * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+     * @return the value
+     **/
+    public Float getLargestProvisionableAutonomousDatabaseInCpus() {
+        return largestProvisionableAutonomousDatabaseInCpus;
+    }
+
+    /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastBackup")
+    private final java.util.Date timeOfLastBackup;
+
+    /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * @return the value
+     **/
+    public java.util.Date getTimeOfLastBackup() {
+        return timeOfLastBackup;
+    }
+
+    /**
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
+    private final Integer dbSplitThreshold;
+
+    /**
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * @return the value
+     **/
+    public Integer getDbSplitThreshold() {
+        return dbSplitThreshold;
+    }
+
+    /**
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
+    private final Integer vmFailoverReservation;
+
+    /**
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * @return the value
+     **/
+    public Integer getVmFailoverReservation() {
+        return vmFailoverReservation;
+    }
+
+    /**
+     * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     **/
+    public enum DistributionAffinity {
+        MinimumDistribution("MINIMUM_DISTRIBUTION"),
+        MaximumDistribution("MAXIMUM_DISTRIBUTION"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DistributionAffinity.class);
+
+        private final String value;
+        private static java.util.Map<String, DistributionAffinity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAffinity v : DistributionAffinity.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DistributionAffinity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAffinity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DistributionAffinity', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
+    private final DistributionAffinity distributionAffinity;
+
+    /**
+     * Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+     * @return the value
+     **/
+    public DistributionAffinity getDistributionAffinity() {
+        return distributionAffinity;
+    }
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     **/
+    public enum NetServicesArchitecture {
+        Dedicated("DEDICATED"),
+        Shared("SHARED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(NetServicesArchitecture.class);
+
+        private final String value;
+        private static java.util.Map<String, NetServicesArchitecture> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NetServicesArchitecture v : NetServicesArchitecture.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        NetServicesArchitecture(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NetServicesArchitecture create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'NetServicesArchitecture', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+    private final NetServicesArchitecture netServicesArchitecture;
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * @return the value
+     **/
+    public NetServicesArchitecture getNetServicesArchitecture() {
+        return netServicesArchitecture;
     }
 
     @Override
@@ -1971,6 +2456,8 @@ public final class AutonomousContainerDatabase
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
         sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
+        sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
+        sb.append(", dstFileVersion=").append(String.valueOf(this.dstFileVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", role=").append(String.valueOf(this.role));
@@ -1985,7 +2472,18 @@ public final class AutonomousContainerDatabase
         sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
         sb.append(", reclaimableCpus=").append(String.valueOf(this.reclaimableCpus));
         sb.append(", provisionableCpus=").append(String.valueOf(this.provisionableCpus));
+        sb.append(", listOneOffPatches=").append(String.valueOf(this.listOneOffPatches));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", provisionedCpus=").append(String.valueOf(this.provisionedCpus));
+        sb.append(", reservedCpus=").append(String.valueOf(this.reservedCpus));
+        sb.append(", largestProvisionableAutonomousDatabaseInCpus=")
+                .append(String.valueOf(this.largestProvisionableAutonomousDatabaseInCpus));
+        sb.append(", timeOfLastBackup=").append(String.valueOf(this.timeOfLastBackup));
+        sb.append(", dbSplitThreshold=").append(String.valueOf(this.dbSplitThreshold));
+        sb.append(", vmFailoverReservation=").append(String.valueOf(this.vmFailoverReservation));
+        sb.append(", distributionAffinity=").append(String.valueOf(this.distributionAffinity));
+        sb.append(", netServicesArchitecture=")
+                .append(String.valueOf(this.netServicesArchitecture));
         sb.append(")");
         return sb.toString();
     }
@@ -2031,6 +2529,9 @@ public final class AutonomousContainerDatabase
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
                 && java.util.Objects.equals(this.versionPreference, other.versionPreference)
+                && java.util.Objects.equals(
+                        this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
+                && java.util.Objects.equals(this.dstFileVersion, other.dstFileVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.role, other.role)
@@ -2045,7 +2546,19 @@ public final class AutonomousContainerDatabase
                 && java.util.Objects.equals(this.totalCpus, other.totalCpus)
                 && java.util.Objects.equals(this.reclaimableCpus, other.reclaimableCpus)
                 && java.util.Objects.equals(this.provisionableCpus, other.provisionableCpus)
+                && java.util.Objects.equals(this.listOneOffPatches, other.listOneOffPatches)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(this.provisionedCpus, other.provisionedCpus)
+                && java.util.Objects.equals(this.reservedCpus, other.reservedCpus)
+                && java.util.Objects.equals(
+                        this.largestProvisionableAutonomousDatabaseInCpus,
+                        other.largestProvisionableAutonomousDatabaseInCpus)
+                && java.util.Objects.equals(this.timeOfLastBackup, other.timeOfLastBackup)
+                && java.util.Objects.equals(this.dbSplitThreshold, other.dbSplitThreshold)
+                && java.util.Objects.equals(this.vmFailoverReservation, other.vmFailoverReservation)
+                && java.util.Objects.equals(this.distributionAffinity, other.distributionAffinity)
+                && java.util.Objects.equals(
+                        this.netServicesArchitecture, other.netServicesArchitecture)
                 && super.equals(other);
     }
 
@@ -2128,6 +2641,14 @@ public final class AutonomousContainerDatabase
         result =
                 (result * PRIME)
                         + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDstFileUpdateEnabled == null
+                                ? 43
+                                : this.isDstFileUpdateEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dstFileVersion == null ? 43 : this.dstFileVersion.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.role == null ? 43 : this.role.hashCode());
@@ -2159,7 +2680,40 @@ public final class AutonomousContainerDatabase
         result =
                 (result * PRIME)
                         + (this.provisionableCpus == null ? 43 : this.provisionableCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.listOneOffPatches == null ? 43 : this.listOneOffPatches.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedCpus == null ? 43 : this.provisionedCpus.hashCode());
+        result = (result * PRIME) + (this.reservedCpus == null ? 43 : this.reservedCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.largestProvisionableAutonomousDatabaseInCpus == null
+                                ? 43
+                                : this.largestProvisionableAutonomousDatabaseInCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastBackup == null ? 43 : this.timeOfLastBackup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSplitThreshold == null ? 43 : this.dbSplitThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmFailoverReservation == null
+                                ? 43
+                                : this.vmFailoverReservation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAffinity == null
+                                ? 43
+                                : this.distributionAffinity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.netServicesArchitecture == null
+                                ? 43
+                                : this.netServicesArchitecture.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

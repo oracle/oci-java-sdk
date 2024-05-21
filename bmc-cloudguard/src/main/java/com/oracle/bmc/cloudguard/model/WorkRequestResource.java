@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A resource created or operated on by a work request.
+ * Parameters of a work request resource, which is created or operated on by a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,13 +45,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The resource type the work request affects.
+         * The resource type the work request affects
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
-         * The resource type the work request affects.
+         * The resource type the work request affects
          * @param entityType the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The identifier of the resource the work request affects.
+         * The identifier of the resource that the work request affects
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * The identifier of the resource the work request affects.
+         * The identifier of the resource that the work request affects
          * @param identifier the value to set
          * @return this builder
          **/
@@ -117,13 +117,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Additional information that helps to explain the resource.
+         * Additional information that helps to explain the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
-         * Additional information that helps to explain the resource.
+         * Additional information that helps to explain the resource
          * @param metadata the value to set
          * @return this builder
          **/
@@ -183,13 +183,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The resource type the work request affects.
+     * The resource type the work request affects
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
-     * The resource type the work request affects.
+     * The resource type the work request affects
      * @return the value
      **/
     public String getEntityType() {
@@ -219,13 +219,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The identifier of the resource the work request affects.
+     * The identifier of the resource that the work request affects
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * The identifier of the resource the work request affects.
+     * The identifier of the resource that the work request affects
      * @return the value
      **/
     public String getIdentifier() {
@@ -247,13 +247,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Additional information that helps to explain the resource.
+     * Additional information that helps to explain the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
-     * Additional information that helps to explain the resource.
+     * Additional information that helps to explain the resource
      * @return the value
      **/
     public java.util.Map<String, String> getMetadata() {

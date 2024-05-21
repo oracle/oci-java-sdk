@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -12,23 +12,23 @@ import com.oracle.bmc.cloudguard.model.*;
 public class RequestRiskScoresRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return
      */
     public Integer getLimit() {
         return limit;
@@ -64,12 +64,12 @@ public class RequestRiskScoresRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The OCID of the compartment in which to list resources.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -79,12 +79,12 @@ public class RequestRiskScoresRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          * @param limit the value to set
          * @return this builder instance
          */

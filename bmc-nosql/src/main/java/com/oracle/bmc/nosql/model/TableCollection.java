@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.nosql.model;
@@ -24,20 +24,23 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
         "maxAutoReclaimableTables",
         "autoReclaimableTables",
         "onDemandCapacityTables",
-        "maxOnDemandCapacityTables"
+        "maxOnDemandCapacityTables",
+        "availableReplicationRegions"
     })
     public TableCollection(
             java.util.List<TableSummary> items,
             Integer maxAutoReclaimableTables,
             Integer autoReclaimableTables,
             Integer onDemandCapacityTables,
-            Integer maxOnDemandCapacityTables) {
+            Integer maxOnDemandCapacityTables,
+            java.util.List<String> availableReplicationRegions) {
         super();
         this.items = items;
         this.maxAutoReclaimableTables = maxAutoReclaimableTables;
         this.autoReclaimableTables = autoReclaimableTables;
         this.onDemandCapacityTables = onDemandCapacityTables;
         this.maxOnDemandCapacityTables = maxOnDemandCapacityTables;
+        this.availableReplicationRegions = availableReplicationRegions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -122,6 +125,23 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("maxOnDemandCapacityTables");
             return this;
         }
+        /**
+         * An array of regions that are available for replication.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availableReplicationRegions")
+        private java.util.List<String> availableReplicationRegions;
+
+        /**
+         * An array of regions that are available for replication.
+         * @param availableReplicationRegions the value to set
+         * @return this builder
+         **/
+        public Builder availableReplicationRegions(
+                java.util.List<String> availableReplicationRegions) {
+            this.availableReplicationRegions = availableReplicationRegions;
+            this.__explicitlySet__.add("availableReplicationRegions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -133,7 +153,8 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
                             this.maxAutoReclaimableTables,
                             this.autoReclaimableTables,
                             this.onDemandCapacityTables,
-                            this.maxOnDemandCapacityTables);
+                            this.maxOnDemandCapacityTables,
+                            this.availableReplicationRegions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +177,9 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("maxOnDemandCapacityTables")) {
                 this.maxOnDemandCapacityTables(model.getMaxOnDemandCapacityTables());
+            }
+            if (model.wasPropertyExplicitlySet("availableReplicationRegions")) {
+                this.availableReplicationRegions(model.getAvailableReplicationRegions());
             }
             return this;
         }
@@ -242,6 +266,20 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
         return maxOnDemandCapacityTables;
     }
 
+    /**
+     * An array of regions that are available for replication.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableReplicationRegions")
+    private final java.util.List<String> availableReplicationRegions;
+
+    /**
+     * An array of regions that are available for replication.
+     * @return the value
+     **/
+    public java.util.List<String> getAvailableReplicationRegions() {
+        return availableReplicationRegions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -263,6 +301,8 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
         sb.append(", onDemandCapacityTables=").append(String.valueOf(this.onDemandCapacityTables));
         sb.append(", maxOnDemandCapacityTables=")
                 .append(String.valueOf(this.maxOnDemandCapacityTables));
+        sb.append(", availableReplicationRegions=")
+                .append(String.valueOf(this.availableReplicationRegions));
         sb.append(")");
         return sb.toString();
     }
@@ -285,6 +325,8 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
                         this.onDemandCapacityTables, other.onDemandCapacityTables)
                 && java.util.Objects.equals(
                         this.maxOnDemandCapacityTables, other.maxOnDemandCapacityTables)
+                && java.util.Objects.equals(
+                        this.availableReplicationRegions, other.availableReplicationRegions)
                 && super.equals(other);
     }
 
@@ -313,6 +355,11 @@ public final class TableCollection extends com.oracle.bmc.http.internal.Explicit
                         + (this.maxOnDemandCapacityTables == null
                                 ? 43
                                 : this.maxOnDemandCapacityTables.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availableReplicationRegions == null
+                                ? 43
+                                : this.availableReplicationRegions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

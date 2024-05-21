@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Properties for a member in a DR Protection Group.
+ * The properties of a member in a DR protection group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -27,12 +27,32 @@ package com.oracle.bmc.disasterrecovery.model;
         name = "VOLUME_GROUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DrProtectionGroupMemberNetworkLoadBalancer.class,
+        name = "NETWORK_LOAD_BALANCER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DrProtectionGroupMemberFileSystem.class,
+        name = "FILE_SYSTEM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DrProtectionGroupMemberComputeInstanceMovable.class,
+        name = "COMPUTE_INSTANCE_MOVABLE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DrProtectionGroupMemberAutonomousDatabase.class,
         name = "AUTONOMOUS_DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DrProtectionGroupMemberLoadBalancer.class,
+        name = "LOAD_BALANCER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DrProtectionGroupMemberComputeInstance.class,
         name = "COMPUTE_INSTANCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DrProtectionGroupMemberComputeInstanceNonMovable.class,
+        name = "COMPUTE_INSTANCE_NON_MOVABLE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DrProtectionGroupMemberDatabase.class,
@@ -51,7 +71,7 @@ public class DrProtectionGroupMember extends com.oracle.bmc.http.internal.Explic
     /**
      * The OCID of the member.
      * <p>
-     * Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
@@ -60,7 +80,7 @@ public class DrProtectionGroupMember extends com.oracle.bmc.http.internal.Explic
     /**
      * The OCID of the member.
      * <p>
-     * Example: {@code ocid1.instance.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
      **/

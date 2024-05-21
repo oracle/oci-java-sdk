@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -45,34 +45,34 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return displayNameContains;
     }
     /**
-     * A filter to return registration profiles that match the given profileType.
+     * A filter to return registration profiles that match the given profile type.
      */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.ProfileType> profileType;
 
     /**
-     * A filter to return registration profiles that match the given profileType.
+     * A filter to return registration profiles that match the given profile type.
      */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ProfileType> getProfileType() {
         return profileType;
     }
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
     private String profileId;
 
     /**
-     * The OCID of the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
     public String getProfileId() {
         return profileId;
     }
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources that match the given operating system family.
      */
     private com.oracle.bmc.osmanagementhub.model.OsFamily osFamily;
 
     /**
-     * A filter to return only profiles that match the given osFamily.
+     * A filter to return only resources that match the given operating system family.
      */
     public com.oracle.bmc.osmanagementhub.model.OsFamily getOsFamily() {
         return osFamily;
@@ -89,12 +89,51 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return archType;
     }
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return profiles that match the given instance type.
+     */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.Profile.RegistrationType>
+            registrationType;
+
+    /**
+     * A filter to return profiles that match the given instance type.
+     */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.Profile.RegistrationType>
+            getRegistrationType() {
+        return registrationType;
+    }
+    /**
+     * A boolean variable that is used to list only the default profile resources.
+     *
+     */
+    private Boolean isDefaultProfile;
+
+    /**
+     * A boolean variable that is used to list only the default profile resources.
+     *
+     */
+    public Boolean getIsDefaultProfile() {
+        return isDefaultProfile;
+    }
+    /**
+     * A filter to return only service-provided profiles.
+     *
+     */
+    private Boolean isServiceProvidedProfile;
+
+    /**
+     * A filter to return only service-provided profiles.
+     *
+     */
+    public Boolean getIsServiceProvidedProfile() {
+        return isServiceProvidedProfile;
+    }
+    /**
+     * A filter to return only resources that match the given vendor name.
      */
     private com.oracle.bmc.osmanagementhub.model.VendorName vendorName;
 
     /**
-     * A filter to return only profiles that match the given vendorName.
+     * A filter to return only resources that match the given vendor name.
      */
     public com.oracle.bmc.osmanagementhub.model.VendorName getVendorName() {
         return vendorName;
@@ -138,12 +177,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         return page;
     }
     /**
-     * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * A filter to return only registration profiles in the given state.
      */
     private com.oracle.bmc.osmanagementhub.model.Profile.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+     * A filter to return only registration profiles in the given state.
      */
     public com.oracle.bmc.osmanagementhub.model.Profile.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -235,12 +274,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -289,12 +328,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return registration profiles that match the given profileType.
+         * A filter to return registration profiles that match the given profile type.
          */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.ProfileType> profileType = null;
 
         /**
-         * A filter to return registration profiles that match the given profileType.
+         * A filter to return registration profiles that match the given profile type.
          * @param profileType the value to set
          * @return this builder instance
          */
@@ -305,7 +344,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Singular setter. A filter to return registration profiles that match the given profileType.
+         * Singular setter. A filter to return registration profiles that match the given profile type.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -314,12 +353,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The OCID of the registration profile.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
          */
         private String profileId = null;
 
         /**
-         * The OCID of the registration profile.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
          * @param profileId the value to set
          * @return this builder instance
          */
@@ -329,12 +368,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return only profiles that match the given osFamily.
+         * A filter to return only resources that match the given operating system family.
          */
         private com.oracle.bmc.osmanagementhub.model.OsFamily osFamily = null;
 
         /**
-         * A filter to return only profiles that match the given osFamily.
+         * A filter to return only resources that match the given operating system family.
          * @param osFamily the value to set
          * @return this builder instance
          */
@@ -359,12 +398,74 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return only profiles that match the given vendorName.
+         * A filter to return profiles that match the given instance type.
+         */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.Profile.RegistrationType>
+                registrationType = null;
+
+        /**
+         * A filter to return profiles that match the given instance type.
+         * @param registrationType the value to set
+         * @return this builder instance
+         */
+        public Builder registrationType(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.Profile.RegistrationType>
+                        registrationType) {
+            this.registrationType = registrationType;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return profiles that match the given instance type.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder registrationType(
+                com.oracle.bmc.osmanagementhub.model.Profile.RegistrationType singularValue) {
+            return this.registrationType(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A boolean variable that is used to list only the default profile resources.
+         *
+         */
+        private Boolean isDefaultProfile = null;
+
+        /**
+         * A boolean variable that is used to list only the default profile resources.
+         *
+         * @param isDefaultProfile the value to set
+         * @return this builder instance
+         */
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            this.isDefaultProfile = isDefaultProfile;
+            return this;
+        }
+
+        /**
+         * A filter to return only service-provided profiles.
+         *
+         */
+        private Boolean isServiceProvidedProfile = null;
+
+        /**
+         * A filter to return only service-provided profiles.
+         *
+         * @param isServiceProvidedProfile the value to set
+         * @return this builder instance
+         */
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given vendor name.
          */
         private com.oracle.bmc.osmanagementhub.model.VendorName vendorName = null;
 
         /**
-         * A filter to return only profiles that match the given vendorName.
+         * A filter to return only resources that match the given vendor name.
          * @param vendorName the value to set
          * @return this builder instance
          */
@@ -420,12 +521,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+         * A filter to return only registration profiles in the given state.
          */
         private com.oracle.bmc.osmanagementhub.model.Profile.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only registration profile whose lifecycleState matches the given lifecycleState.
+         * A filter to return only registration profiles in the given state.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -521,6 +622,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             profileId(o.getProfileId());
             osFamily(o.getOsFamily());
             archType(o.getArchType());
+            registrationType(o.getRegistrationType());
+            isDefaultProfile(o.getIsDefaultProfile());
+            isServiceProvidedProfile(o.getIsServiceProvidedProfile());
             vendorName(o.getVendorName());
             limit(o.getLimit());
             page(o.getPage());
@@ -567,6 +671,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.profileId = profileId;
             request.osFamily = osFamily;
             request.archType = archType;
+            request.registrationType = registrationType;
+            request.isDefaultProfile = isDefaultProfile;
+            request.isServiceProvidedProfile = isServiceProvidedProfile;
             request.vendorName = vendorName;
             request.limit = limit;
             request.page = page;
@@ -575,7 +682,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProfilesRequest(compartmentId, displayName, displayNameContains, profileType, profileId, osFamily, archType, vendorName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId);
+            // new ListProfilesRequest(compartmentId, displayName, displayNameContains, profileType, profileId, osFamily, archType, registrationType, isDefaultProfile, isServiceProvidedProfile, vendorName, limit, page, lifecycleState, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -592,6 +699,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .profileId(profileId)
                 .osFamily(osFamily)
                 .archType(archType)
+                .registrationType(registrationType)
+                .isDefaultProfile(isDefaultProfile)
+                .isServiceProvidedProfile(isServiceProvidedProfile)
                 .vendorName(vendorName)
                 .limit(limit)
                 .page(page)
@@ -621,6 +731,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",profileId=").append(String.valueOf(this.profileId));
         sb.append(",osFamily=").append(String.valueOf(this.osFamily));
         sb.append(",archType=").append(String.valueOf(this.archType));
+        sb.append(",registrationType=").append(String.valueOf(this.registrationType));
+        sb.append(",isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
+        sb.append(",isServiceProvidedProfile=")
+                .append(String.valueOf(this.isServiceProvidedProfile));
         sb.append(",vendorName=").append(String.valueOf(this.vendorName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -650,6 +764,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.profileId, other.profileId)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.archType, other.archType)
+                && java.util.Objects.equals(this.registrationType, other.registrationType)
+                && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
+                && java.util.Objects.equals(
+                        this.isServiceProvidedProfile, other.isServiceProvidedProfile)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -676,6 +794,17 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.profileId == null ? 43 : this.profileId.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registrationType == null ? 43 : this.registrationType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultProfile == null ? 43 : this.isDefaultProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isServiceProvidedProfile == null
+                                ? 43
+                                : this.isServiceProvidedProfile.hashCode());
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

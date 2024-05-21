@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.oda.model;
@@ -46,6 +46,7 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         "category",
         "description",
         "platformVersion",
+        "dialogVersion",
         "multilingualMode",
         "primaryLanguageTag",
         "freeformTags",
@@ -55,6 +56,7 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
             String category,
             String description,
             String platformVersion,
+            String dialogVersion,
             BotMultilingualMode multilingualMode,
             String primaryLanguageTag,
             java.util.Map<String, String> freeformTags,
@@ -63,6 +65,7 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         this.category = category;
         this.description = description;
         this.platformVersion = platformVersion;
+        this.dialogVersion = dialogVersion;
         this.multilingualMode = multilingualMode;
         this.primaryLanguageTag = primaryLanguageTag;
         this.freeformTags = freeformTags;
@@ -109,6 +112,20 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public String getPlatformVersion() {
         return platformVersion;
+    }
+
+    /**
+     * The resource's dialog version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dialogVersion")
+    private final String dialogVersion;
+
+    /**
+     * The resource's dialog version.
+     * @return the value
+     **/
+    public String getDialogVersion() {
+        return dialogVersion;
     }
 
     /**
@@ -192,6 +209,7 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append("category=").append(String.valueOf(this.category));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", platformVersion=").append(String.valueOf(this.platformVersion));
+        sb.append(", dialogVersion=").append(String.valueOf(this.dialogVersion));
         sb.append(", multilingualMode=").append(String.valueOf(this.multilingualMode));
         sb.append(", primaryLanguageTag=").append(String.valueOf(this.primaryLanguageTag));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -213,6 +231,7 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         return java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.platformVersion, other.platformVersion)
+                && java.util.Objects.equals(this.dialogVersion, other.dialogVersion)
                 && java.util.Objects.equals(this.multilingualMode, other.multilingualMode)
                 && java.util.Objects.equals(this.primaryLanguageTag, other.primaryLanguageTag)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -229,6 +248,9 @@ public class CreateSkillDetails extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.platformVersion == null ? 43 : this.platformVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dialogVersion == null ? 43 : this.dialogVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.multilingualMode == null ? 43 : this.multilingualMode.hashCode());

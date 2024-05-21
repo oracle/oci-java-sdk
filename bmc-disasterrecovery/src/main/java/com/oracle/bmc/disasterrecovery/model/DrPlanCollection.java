@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Contains a list of DR Plans.
+ * A list of DR plan summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,14 +28,14 @@ public final class DrPlanCollection extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of DR Plan objects.
+         * A list of DR plan summaries.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DrPlanSummary> items;
 
         /**
-         * A list of DR Plan objects.
+         * A list of DR plan summaries.
          *
          * @param items the value to set
          * @return this builder
@@ -78,14 +78,14 @@ public final class DrPlanCollection extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A list of DR Plan objects.
+     * A list of DR plan summaries.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DrPlanSummary> items;
 
     /**
-     * A list of DR Plan objects.
+     * A list of DR plan summaries.
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -35,7 +35,8 @@ public final class SecurityAssessmentStatistics
         "lowRisk",
         "advisory",
         "evaluate",
-        "pass"
+        "pass",
+        "deferred"
     })
     public SecurityAssessmentStatistics(
             Integer targetsCount,
@@ -44,7 +45,8 @@ public final class SecurityAssessmentStatistics
             SectionStatistics lowRisk,
             SectionStatistics advisory,
             SectionStatistics evaluate,
-            SectionStatistics pass) {
+            SectionStatistics pass,
+            SectionStatistics deferred) {
         super();
         this.targetsCount = targetsCount;
         this.highRisk = highRisk;
@@ -53,6 +55,7 @@ public final class SecurityAssessmentStatistics
         this.advisory = advisory;
         this.evaluate = evaluate;
         this.pass = pass;
+        this.deferred = deferred;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -128,6 +131,15 @@ public final class SecurityAssessmentStatistics
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("deferred")
+        private SectionStatistics deferred;
+
+        public Builder deferred(SectionStatistics deferred) {
+            this.deferred = deferred;
+            this.__explicitlySet__.add("deferred");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -140,7 +152,8 @@ public final class SecurityAssessmentStatistics
                             this.lowRisk,
                             this.advisory,
                             this.evaluate,
-                            this.pass);
+                            this.pass,
+                            this.deferred);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -169,6 +182,9 @@ public final class SecurityAssessmentStatistics
             }
             if (model.wasPropertyExplicitlySet("pass")) {
                 this.pass(model.getPass());
+            }
+            if (model.wasPropertyExplicitlySet("deferred")) {
+                this.deferred(model.getDeferred());
             }
             return this;
         }
@@ -241,6 +257,13 @@ public final class SecurityAssessmentStatistics
         return pass;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("deferred")
+    private final SectionStatistics deferred;
+
+    public SectionStatistics getDeferred() {
+        return deferred;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -262,6 +285,7 @@ public final class SecurityAssessmentStatistics
         sb.append(", advisory=").append(String.valueOf(this.advisory));
         sb.append(", evaluate=").append(String.valueOf(this.evaluate));
         sb.append(", pass=").append(String.valueOf(this.pass));
+        sb.append(", deferred=").append(String.valueOf(this.deferred));
         sb.append(")");
         return sb.toString();
     }
@@ -283,6 +307,7 @@ public final class SecurityAssessmentStatistics
                 && java.util.Objects.equals(this.advisory, other.advisory)
                 && java.util.Objects.equals(this.evaluate, other.evaluate)
                 && java.util.Objects.equals(this.pass, other.pass)
+                && java.util.Objects.equals(this.deferred, other.deferred)
                 && super.equals(other);
     }
 
@@ -297,6 +322,7 @@ public final class SecurityAssessmentStatistics
         result = (result * PRIME) + (this.advisory == null ? 43 : this.advisory.hashCode());
         result = (result * PRIME) + (this.evaluate == null ? 43 : this.evaluate.hashCode());
         result = (result * PRIME) + (this.pass == null ? 43 : this.pass.hashCode());
+        result = (result * PRIME) + (this.deferred == null ? 43 : this.deferred.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

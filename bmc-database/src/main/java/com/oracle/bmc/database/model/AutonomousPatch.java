@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -29,7 +29,8 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
         "version",
         "patchModel",
         "quarter",
-        "year"
+        "year",
+        "autonomousPatchType"
     })
     public AutonomousPatch(
             String id,
@@ -41,7 +42,8 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
             String version,
             PatchModel patchModel,
             String quarter,
-            String year) {
+            String year,
+            AutonomousPatchType autonomousPatchType) {
         super();
         this.id = id;
         this.description = description;
@@ -53,6 +55,7 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
         this.patchModel = patchModel;
         this.quarter = quarter;
         this.year = year;
+        this.autonomousPatchType = autonomousPatchType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -221,6 +224,24 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("year");
             return this;
         }
+        /**
+         * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousPatchType")
+        private AutonomousPatchType autonomousPatchType;
+
+        /**
+         * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+         *
+         * @param autonomousPatchType the value to set
+         * @return this builder
+         **/
+        public Builder autonomousPatchType(AutonomousPatchType autonomousPatchType) {
+            this.autonomousPatchType = autonomousPatchType;
+            this.__explicitlySet__.add("autonomousPatchType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -237,7 +258,8 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
                             this.version,
                             this.patchModel,
                             this.quarter,
-                            this.year);
+                            this.year,
+                            this.autonomousPatchType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -275,6 +297,9 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("year")) {
                 this.year(model.getYear());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousPatchType")) {
+                this.autonomousPatchType(model.getAutonomousPatchType());
             }
             return this;
         }
@@ -533,6 +558,71 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
         return year;
     }
 
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     *
+     **/
+    public enum AutonomousPatchType {
+        Quarterly("QUARTERLY"),
+        Timezone("TIMEZONE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AutonomousPatchType.class);
+
+        private final String value;
+        private static java.util.Map<String, AutonomousPatchType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousPatchType v : AutonomousPatchType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AutonomousPatchType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousPatchType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AutonomousPatchType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousPatchType")
+    private final AutonomousPatchType autonomousPatchType;
+
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     *
+     * @return the value
+     **/
+    public AutonomousPatchType getAutonomousPatchType() {
+        return autonomousPatchType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -557,6 +647,7 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
         sb.append(", patchModel=").append(String.valueOf(this.patchModel));
         sb.append(", quarter=").append(String.valueOf(this.quarter));
         sb.append(", year=").append(String.valueOf(this.year));
+        sb.append(", autonomousPatchType=").append(String.valueOf(this.autonomousPatchType));
         sb.append(")");
         return sb.toString();
     }
@@ -581,6 +672,7 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.patchModel, other.patchModel)
                 && java.util.Objects.equals(this.quarter, other.quarter)
                 && java.util.Objects.equals(this.year, other.year)
+                && java.util.Objects.equals(this.autonomousPatchType, other.autonomousPatchType)
                 && super.equals(other);
     }
 
@@ -602,6 +694,11 @@ public final class AutonomousPatch extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.patchModel == null ? 43 : this.patchModel.hashCode());
         result = (result * PRIME) + (this.quarter == null ? 43 : this.quarter.hashCode());
         result = (result * PRIME) + (this.year == null ? 43 : this.year.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousPatchType == null
+                                ? 43
+                                : this.autonomousPatchType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

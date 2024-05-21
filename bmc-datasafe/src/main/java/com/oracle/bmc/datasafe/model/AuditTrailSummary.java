@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -36,6 +36,7 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
         "lifecycleDetails",
         "isAutoPurgeEnabled",
         "auditCollectionStartTime",
+        "peerTargetDatabaseKey",
         "freeformTags",
         "definedTags"
     })
@@ -54,6 +55,7 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
             String lifecycleDetails,
             Boolean isAutoPurgeEnabled,
             java.util.Date auditCollectionStartTime,
+            Integer peerTargetDatabaseKey,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -71,6 +73,7 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
         this.lifecycleDetails = lifecycleDetails;
         this.isAutoPurgeEnabled = isAutoPurgeEnabled;
         this.auditCollectionStartTime = auditCollectionStartTime;
+        this.peerTargetDatabaseKey = peerTargetDatabaseKey;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -306,6 +309,22 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * The secondary id assigned for the peer database registered with Data Safe.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+        private Integer peerTargetDatabaseKey;
+
+        /**
+         * The secondary id assigned for the peer database registered with Data Safe.
+         * @param peerTargetDatabaseKey the value to set
+         * @return this builder
+         **/
+        public Builder peerTargetDatabaseKey(Integer peerTargetDatabaseKey) {
+            this.peerTargetDatabaseKey = peerTargetDatabaseKey;
+            this.__explicitlySet__.add("peerTargetDatabaseKey");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -371,6 +390,7 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
                             this.lifecycleDetails,
                             this.isAutoPurgeEnabled,
                             this.auditCollectionStartTime,
+                            this.peerTargetDatabaseKey,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -422,6 +442,9 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("auditCollectionStartTime")) {
                 this.auditCollectionStartTime(model.getAuditCollectionStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("peerTargetDatabaseKey")) {
+                this.peerTargetDatabaseKey(model.getPeerTargetDatabaseKey());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -645,6 +668,20 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseKey")
+    private final Integer peerTargetDatabaseKey;
+
+    /**
+     * The secondary id assigned for the peer database registered with Data Safe.
+     * @return the value
+     **/
+    public Integer getPeerTargetDatabaseKey() {
+        return peerTargetDatabaseKey;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -713,6 +750,7 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", isAutoPurgeEnabled=").append(String.valueOf(this.isAutoPurgeEnabled));
         sb.append(", auditCollectionStartTime=")
                 .append(String.valueOf(this.auditCollectionStartTime));
+        sb.append(", peerTargetDatabaseKey=").append(String.valueOf(this.peerTargetDatabaseKey));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -744,6 +782,7 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.isAutoPurgeEnabled, other.isAutoPurgeEnabled)
                 && java.util.Objects.equals(
                         this.auditCollectionStartTime, other.auditCollectionStartTime)
+                && java.util.Objects.equals(this.peerTargetDatabaseKey, other.peerTargetDatabaseKey)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -785,6 +824,11 @@ public final class AuditTrailSummary extends com.oracle.bmc.http.internal.Explic
                         + (this.auditCollectionStartTime == null
                                 ? 43
                                 : this.auditCollectionStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerTargetDatabaseKey == null
+                                ? 43
+                                : this.peerTargetDatabaseKey.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

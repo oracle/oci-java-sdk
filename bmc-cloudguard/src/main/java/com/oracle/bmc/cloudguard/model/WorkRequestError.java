@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * An error encountered while executing a work request.
+ * Summary information for an error (WorkRequestError resource)
+ * encountered while executing a work request
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,7 +33,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     public static class Builder {
         /**
          * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -39,7 +41,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
 
         /**
          * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
          *
          * @param code the value to set
          * @return this builder
@@ -50,13 +52,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * A human readable description of the issue encountered.
+         * A human readable description of the issue encountered
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A human readable description of the issue encountered.
+         * A human readable description of the issue encountered
          * @param message the value to set
          * @return this builder
          **/
@@ -66,13 +68,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The time the error occured.
+         * The time the error occured
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured.
+         * The time the error occured
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -121,7 +123,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
 
     /**
      * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
@@ -129,7 +131,7 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
 
     /**
      * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm).
      *
      * @return the value
      **/
@@ -138,13 +140,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A human readable description of the issue encountered.
+     * A human readable description of the issue encountered
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A human readable description of the issue encountered.
+     * A human readable description of the issue encountered
      * @return the value
      **/
     public String getMessage() {
@@ -152,13 +154,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The time the error occured.
+     * The time the error occured
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured.
+     * The time the error occured
      * @return the value
      **/
     public java.util.Date getTimestamp() {

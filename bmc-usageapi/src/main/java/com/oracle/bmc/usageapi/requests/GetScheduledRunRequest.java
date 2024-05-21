@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.usageapi.model.*;
 public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The scheduledRun unique OCID.
+     * The scheduledRun unique OCID
      */
     private String scheduledRunId;
 
     /**
-     * The scheduledRun unique OCID.
+     * The scheduledRun unique OCID
      */
     public String getScheduledRunId() {
         return scheduledRunId;
@@ -46,12 +46,12 @@ public class GetScheduledRunRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The scheduledRun unique OCID.
+         * The scheduledRun unique OCID
          */
         private String scheduledRunId = null;
 
         /**
-         * The scheduledRun unique OCID.
+         * The scheduledRun unique OCID
          * @param scheduledRunId the value to set
          * @return this builder instance
          */

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details about Security Zone Target.
+ * Target details for a security zone target.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,13 +28,13 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the security zone to associate this compartment with.
+         * The OCID of the security zone to associate with this compartment
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneId")
         private String securityZoneId;
 
         /**
-         * The OCID of the security zone to associate this compartment with.
+         * The OCID of the security zone to associate with this compartment
          * @param securityZoneId the value to set
          * @return this builder
          **/
@@ -44,13 +44,13 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
             return this;
         }
         /**
-         * The name of the security zone to associate this compartment with.
+         * The name of the security zone to associate with this compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneDisplayName")
         private String securityZoneDisplayName;
 
         /**
-         * The name of the security zone to associate this compartment with.
+         * The name of the security zone to associate with this compartment.
          * @param securityZoneDisplayName the value to set
          * @return this builder
          **/
@@ -60,13 +60,13 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
             return this;
         }
         /**
-         * The list of security zone recipes to associate this compartment with.
+         * The list of security zone recipes to associate with this compartment
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetSecurityZoneRecipes")
         private java.util.List<SecurityRecipe> targetSecurityZoneRecipes;
 
         /**
-         * The list of security zone recipes to associate this compartment with.
+         * The list of security zone recipes to associate with this compartment
          * @param targetSecurityZoneRecipes the value to set
          * @return this builder
          **/
@@ -130,13 +130,13 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
     }
 
     /**
-     * The OCID of the security zone to associate this compartment with.
+     * The OCID of the security zone to associate with this compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneId")
     private final String securityZoneId;
 
     /**
-     * The OCID of the security zone to associate this compartment with.
+     * The OCID of the security zone to associate with this compartment
      * @return the value
      **/
     public String getSecurityZoneId() {
@@ -144,13 +144,13 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
     }
 
     /**
-     * The name of the security zone to associate this compartment with.
+     * The name of the security zone to associate with this compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneDisplayName")
     private final String securityZoneDisplayName;
 
     /**
-     * The name of the security zone to associate this compartment with.
+     * The name of the security zone to associate with this compartment.
      * @return the value
      **/
     public String getSecurityZoneDisplayName() {
@@ -158,13 +158,13 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
     }
 
     /**
-     * The list of security zone recipes to associate this compartment with.
+     * The list of security zone recipes to associate with this compartment
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSecurityZoneRecipes")
     private final java.util.List<SecurityRecipe> targetSecurityZoneRecipes;
 
     /**
-     * The list of security zone recipes to associate this compartment with.
+     * The list of security zone recipes to associate with this compartment
      * @return the value
      **/
     public java.util.List<SecurityRecipe> getTargetSecurityZoneRecipes() {

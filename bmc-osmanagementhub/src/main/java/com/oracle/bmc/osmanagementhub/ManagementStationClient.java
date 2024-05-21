@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -430,7 +430,8 @@ public class ManagementStationClient implements ManagementStation {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -547,6 +548,51 @@ public class ManagementStationClient implements ManagementStation {
     }
 
     @Override
+    public ChangeManagementStationCompartmentResponse changeManagementStationCompartment(
+            ChangeManagementStationCompartmentRequest request) {
+        LOG.trace("Called changeManagementStationCompartment");
+        final ChangeManagementStationCompartmentRequest interceptedRequest =
+                ChangeManagementStationCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeManagementStationCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementStation",
+                        "ChangeManagementStationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ChangeManagementStationCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeManagementStationCompartmentResponse>
+                transformer =
+                        ChangeManagementStationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeManagementStationCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateManagementStationResponse createManagementStation(
             CreateManagementStationRequest request) {
         LOG.trace("Called createManagementStation");
@@ -565,7 +611,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "CreateManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/CreateManagementStation");
         java.util.function.Function<javax.ws.rs.core.Response, CreateManagementStationResponse>
                 transformer =
                         CreateManagementStationConverter.fromResponse(
@@ -607,7 +653,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "DeleteManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/DeleteManagementStation");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteManagementStationResponse>
                 transformer =
                         DeleteManagementStationConverter.fromResponse(
@@ -645,7 +691,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "GetManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/GetManagementStation");
         java.util.function.Function<javax.ws.rs.core.Response, GetManagementStationResponse>
                 transformer =
                         GetManagementStationConverter.fromResponse(
@@ -683,7 +729,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "ListManagementStations",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ListManagementStations");
         java.util.function.Function<javax.ws.rs.core.Response, ListManagementStationsResponse>
                 transformer =
                         ListManagementStationsConverter.fromResponse(
@@ -717,7 +763,10 @@ public class ManagementStationClient implements ManagementStation {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ManagementStation", "ListMirrors", ib.getRequestUri().toString(), "");
+                        "ManagementStation",
+                        "ListMirrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/MirrorsCollection/ListMirrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListMirrorsResponse> transformer =
                 ListMirrorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -730,6 +779,47 @@ public class ManagementStationClient implements ManagementStation {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RefreshManagementStationConfigResponse refreshManagementStationConfig(
+            RefreshManagementStationConfigRequest request) {
+        LOG.trace("Called refreshManagementStationConfig");
+        final RefreshManagementStationConfigRequest interceptedRequest =
+                RefreshManagementStationConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshManagementStationConfigConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementStation",
+                        "RefreshManagementStationConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/RefreshManagementStationConfig");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshManagementStationConfigResponse>
+                transformer =
+                        RefreshManagementStationConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -753,7 +843,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "SynchronizeMirrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/SynchronizeMirrors");
         java.util.function.Function<javax.ws.rs.core.Response, SynchronizeMirrorsResponse>
                 transformer =
                         SynchronizeMirrorsConverter.fromResponse(
@@ -796,7 +886,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "SynchronizeSingleMirrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/SynchronizeSingleMirrors");
         java.util.function.Function<javax.ws.rs.core.Response, SynchronizeSingleMirrorsResponse>
                 transformer =
                         SynchronizeSingleMirrorsConverter.fromResponse(
@@ -835,7 +925,7 @@ public class ManagementStationClient implements ManagementStation {
                         "ManagementStation",
                         "UpdateManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/UpdateManagementStation");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateManagementStationResponse>
                 transformer =
                         UpdateManagementStationConverter.fromResponse(

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Used to select packages from VendorSoftwareSources to create/update CustomSoftwareSources.
+ * Provides the information used to create a filter for packages from a vendor software source to create or update a custom software source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -88,13 +88,13 @@ public final class PackageFilter extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * The type of the filter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private FilterType filterType;
 
         /**
-         * The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+         * The type of the filter.
          * @param filterType the value to set
          * @return this builder
          **/
@@ -192,13 +192,13 @@ public final class PackageFilter extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * The type of the filter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final FilterType filterType;
 
     /**
-     * The type of the filter, which can be of two types - INCLUDE or EXCLUDE.
+     * The type of the filter.
      * @return the value
      **/
     public FilterType getFilterType() {

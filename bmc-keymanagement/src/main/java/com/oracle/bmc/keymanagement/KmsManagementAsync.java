@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -8,8 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
- * Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
+ * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
@@ -284,9 +283,12 @@ public interface KmsManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Imports AES key material to create a new key with. The key material must be base64-encoded and
-     * wrapped by the vault's public RSA wrapping key before you can import it. Key Management supports AES symmetric keys
-     * that are exactly 16, 24, or 32 bytes. Furthermore, the key length must match what you specify at the time of import.
+     * Imports AES and RSA keys to create a new key. The key material must be base64-encoded
+     * and wrapped by the vault's public RSA wrapping key before you can import it.
+     * Key Management supports both RSA and AES keys. The AES keys are symmetric keys
+     * of length 128 bits (16 bytes), 192 bits (24 bytes), or 256 bits (32 bytes), and the RSA keys are asymmetric keys of length 2048 bits (256 bytes), 3072 bits (384 bytes), and 4096 bits (512 bytes).
+     * Furthermore, the key length must match what you specify at the time of import. When importing an asymmetric key,
+     * only private key must be wrapped in PKCS8 format while the corresponding public key is generated internally by KMS.
      *
      *
      * @param request The request object containing the details to send
@@ -301,11 +303,12 @@ public interface KmsManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ImportKeyRequest, ImportKeyResponse> handler);
 
     /**
-     * Imports AES key material to create a new key version with, and then rotates the key to begin using the new
+     * Imports AES key material to create a new key version and then rotate the key to begin using the new
      * key version. The key material must be base64-encoded and wrapped by the vault's public RSA wrapping key
      * before you can import it. Key Management supports AES symmetric keys that are exactly 16, 24, or 32 bytes.
      * Furthermore, the key length must match the length of the specified key and what you specify as the length
-     * at the time of import.
+     * at the time of import. When importing an asymmetric key, only the private key must be wrapped in PKCS8 format
+     * while the corresponding public key is generated internally by KMS.
      *
      *
      * @param request The request object containing the details to send

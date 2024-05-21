@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -13,15 +13,28 @@ public class GetManagedInstanceContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the managed instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     private String managedInstanceId;
 
     /**
-     * The OCID of the managed instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     public String getManagedInstanceId() {
         return managedInstanceId;
+    }
+    /**
+     * A filter to return only vulnerabilities matching the given types.
+     */
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
+            vulnerabilityType;
+
+    /**
+     * A filter to return only vulnerabilities matching the given types.
+     */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
+            getVulnerabilityType() {
+        return vulnerabilityType;
     }
     /**
      * The assigned erratum name. It's unique and not changeable.
@@ -54,28 +67,61 @@ public class GetManagedInstanceContentRequest
     /**
      * A filter to return only errata that match the given advisory types.
      */
-    private java.util.List<AdvisoryType> advisoryType;
+    private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType;
 
     /**
      * A filter to return only errata that match the given advisory types.
+     */
+    public java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> getAdvisoryType() {
+        return advisoryType;
+    }
+    /**
+     * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+     */
+    private java.util.List<String> vulnerabilityName;
+
+    /**
+     * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+     */
+    public java.util.List<String> getVulnerabilityName() {
+        return vulnerabilityName;
+    }
+    /**
+     * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+     */
+    private String vulnerabilityNameContains;
+
+    /**
+     * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+     */
+    public String getVulnerabilityNameContains() {
+        return vulnerabilityNameContains;
+    }
+    /**
+     * The format of the report to download. Default is CSV.
+     */
+    private ReportFormat reportFormat;
+
+    /**
+     * The format of the report to download. Default is CSV.
      **/
-    public enum AdvisoryType {
-        Security("SECURITY"),
-        Bugfix("BUGFIX"),
-        Enhancement("ENHANCEMENT"),
+    public enum ReportFormat {
+        Csv("csv"),
+        Json("json"),
+        Xml("xml"),
         ;
 
         private final String value;
-        private static java.util.Map<String, AdvisoryType> map;
+        private static java.util.Map<String, ReportFormat> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (AdvisoryType v : AdvisoryType.values()) {
+            for (ReportFormat v : ReportFormat.values()) {
                 map.put(v.getValue(), v);
             }
         }
 
-        AdvisoryType(String value) {
+        ReportFormat(String value) {
             this.value = value;
         }
 
@@ -85,19 +131,19 @@ public class GetManagedInstanceContentRequest
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static AdvisoryType create(String key) {
+        public static ReportFormat create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid AdvisoryType: " + key);
+            throw new IllegalArgumentException("Invalid ReportFormat: " + key);
         }
     };
 
     /**
-     * A filter to return only errata that match the given advisory types.
+     * The format of the report to download. Default is CSV.
      */
-    public java.util.List<AdvisoryType> getAdvisoryType() {
-        return advisoryType;
+    public ReportFormat getReportFormat() {
+        return reportFormat;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -119,18 +165,45 @@ public class GetManagedInstanceContentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          */
         private String managedInstanceId = null;
 
         /**
-         * The OCID of the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             return this;
+        }
+
+        /**
+         * A filter to return only vulnerabilities matching the given types.
+         */
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
+                vulnerabilityType = null;
+
+        /**
+         * A filter to return only vulnerabilities matching the given types.
+         * @param vulnerabilityType the value to set
+         * @return this builder instance
+         */
+        public Builder vulnerabilityType(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
+                        vulnerabilityType) {
+            this.vulnerabilityType = vulnerabilityType;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only vulnerabilities matching the given types.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder vulnerabilityType(VulnerabilityTypes singularValue) {
+            return this.vulnerabilityType(java.util.Arrays.asList(singularValue));
         }
 
         /**
@@ -184,14 +257,16 @@ public class GetManagedInstanceContentRequest
         /**
          * A filter to return only errata that match the given advisory types.
          */
-        private java.util.List<AdvisoryType> advisoryType = null;
+        private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType =
+                null;
 
         /**
          * A filter to return only errata that match the given advisory types.
          * @param advisoryType the value to set
          * @return this builder instance
          */
-        public Builder advisoryType(java.util.List<AdvisoryType> advisoryType) {
+        public Builder advisoryType(
+                java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType) {
             this.advisoryType = advisoryType;
             return this;
         }
@@ -201,8 +276,62 @@ public class GetManagedInstanceContentRequest
          * @param singularValue the singular value to set
          * @return this builder instance
          */
-        public Builder advisoryType(AdvisoryType singularValue) {
+        public Builder advisoryType(AdvisoryTypes singularValue) {
             return this.advisoryType(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+         */
+        private java.util.List<String> vulnerabilityName = null;
+
+        /**
+         * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+         * @param vulnerabilityName the value to set
+         * @return this builder instance
+         */
+        public Builder vulnerabilityName(java.util.List<String> vulnerabilityName) {
+            this.vulnerabilityName = vulnerabilityName;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder vulnerabilityName(String singularValue) {
+            return this.vulnerabilityName(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+         */
+        private String vulnerabilityNameContains = null;
+
+        /**
+         * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
+         * @param vulnerabilityNameContains the value to set
+         * @return this builder instance
+         */
+        public Builder vulnerabilityNameContains(String vulnerabilityNameContains) {
+            this.vulnerabilityNameContains = vulnerabilityNameContains;
+            return this;
+        }
+
+        /**
+         * The format of the report to download. Default is CSV.
+         */
+        private ReportFormat reportFormat = null;
+
+        /**
+         * The format of the report to download. Default is CSV.
+         * @param reportFormat the value to set
+         * @return this builder instance
+         */
+        public Builder reportFormat(ReportFormat reportFormat) {
+            this.reportFormat = reportFormat;
+            return this;
         }
 
         /**
@@ -249,9 +378,13 @@ public class GetManagedInstanceContentRequest
          */
         public Builder copy(GetManagedInstanceContentRequest o) {
             managedInstanceId(o.getManagedInstanceId());
+            vulnerabilityType(o.getVulnerabilityType());
             advisoryName(o.getAdvisoryName());
             advisoryNameContains(o.getAdvisoryNameContains());
             advisoryType(o.getAdvisoryType());
+            vulnerabilityName(o.getVulnerabilityName());
+            vulnerabilityNameContains(o.getVulnerabilityNameContains());
+            reportFormat(o.getReportFormat());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -286,12 +419,16 @@ public class GetManagedInstanceContentRequest
         public GetManagedInstanceContentRequest buildWithoutInvocationCallback() {
             GetManagedInstanceContentRequest request = new GetManagedInstanceContentRequest();
             request.managedInstanceId = managedInstanceId;
+            request.vulnerabilityType = vulnerabilityType;
             request.advisoryName = advisoryName;
             request.advisoryNameContains = advisoryNameContains;
             request.advisoryType = advisoryType;
+            request.vulnerabilityName = vulnerabilityName;
+            request.vulnerabilityNameContains = vulnerabilityNameContains;
+            request.reportFormat = reportFormat;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetManagedInstanceContentRequest(managedInstanceId, advisoryName, advisoryNameContains, advisoryType, opcRequestId);
+            // new GetManagedInstanceContentRequest(managedInstanceId, vulnerabilityType, advisoryName, advisoryNameContains, advisoryType, vulnerabilityName, vulnerabilityNameContains, reportFormat, opcRequestId);
         }
     }
 
@@ -302,9 +439,13 @@ public class GetManagedInstanceContentRequest
     public Builder toBuilder() {
         return new Builder()
                 .managedInstanceId(managedInstanceId)
+                .vulnerabilityType(vulnerabilityType)
                 .advisoryName(advisoryName)
                 .advisoryNameContains(advisoryNameContains)
                 .advisoryType(advisoryType)
+                .vulnerabilityName(vulnerabilityName)
+                .vulnerabilityNameContains(vulnerabilityNameContains)
+                .reportFormat(reportFormat)
                 .opcRequestId(opcRequestId);
     }
 
@@ -322,9 +463,14 @@ public class GetManagedInstanceContentRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",vulnerabilityType=").append(String.valueOf(this.vulnerabilityType));
         sb.append(",advisoryName=").append(String.valueOf(this.advisoryName));
         sb.append(",advisoryNameContains=").append(String.valueOf(this.advisoryNameContains));
         sb.append(",advisoryType=").append(String.valueOf(this.advisoryType));
+        sb.append(",vulnerabilityName=").append(String.valueOf(this.vulnerabilityName));
+        sb.append(",vulnerabilityNameContains=")
+                .append(String.valueOf(this.vulnerabilityNameContains));
+        sb.append(",reportFormat=").append(String.valueOf(this.reportFormat));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -342,9 +488,14 @@ public class GetManagedInstanceContentRequest
         GetManagedInstanceContentRequest other = (GetManagedInstanceContentRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.vulnerabilityType, other.vulnerabilityType)
                 && java.util.Objects.equals(this.advisoryName, other.advisoryName)
                 && java.util.Objects.equals(this.advisoryNameContains, other.advisoryNameContains)
                 && java.util.Objects.equals(this.advisoryType, other.advisoryType)
+                && java.util.Objects.equals(this.vulnerabilityName, other.vulnerabilityName)
+                && java.util.Objects.equals(
+                        this.vulnerabilityNameContains, other.vulnerabilityNameContains)
+                && java.util.Objects.equals(this.reportFormat, other.reportFormat)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -355,6 +506,9 @@ public class GetManagedInstanceContentRequest
         result =
                 (result * PRIME)
                         + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilityType == null ? 43 : this.vulnerabilityType.hashCode());
         result = (result * PRIME) + (this.advisoryName == null ? 43 : this.advisoryName.hashCode());
         result =
                 (result * PRIME)
@@ -362,6 +516,15 @@ public class GetManagedInstanceContentRequest
                                 ? 43
                                 : this.advisoryNameContains.hashCode());
         result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilityName == null ? 43 : this.vulnerabilityName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vulnerabilityNameContains == null
+                                ? 43
+                                : this.vulnerabilityNameContains.hashCode());
+        result = (result * PRIME) + (this.reportFormat == null ? 43 : this.reportFormat.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

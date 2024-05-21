@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Contact details for the customer.
+ * Contact details for the customer. Avoid entering confidential information.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,14 +22,20 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     @java.beans.ConstructorProperties({
         "contactName",
         "contactEmail",
+        "email",
         "contactPhone",
         "contactType"
     })
     public Contact(
-            String contactName, String contactEmail, String contactPhone, ContactType contactType) {
+            String contactName,
+            String contactEmail,
+            String email,
+            String contactPhone,
+            ContactType contactType) {
         super();
         this.contactName = contactName;
         this.contactEmail = contactEmail;
+        this.email = email;
         this.contactPhone = contactPhone;
         this.contactType = contactType;
     }
@@ -66,6 +72,22 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = contactEmail;
             this.__explicitlySet__.add("contactEmail");
+            return this;
+        }
+        /**
+         * The email of the contact person.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        /**
+         * The email of the contact person.
+         * @param email the value to set
+         * @return this builder
+         **/
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
             return this;
         }
         /**
@@ -109,6 +131,7 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                     new Contact(
                             this.contactName,
                             this.contactEmail,
+                            this.email,
                             this.contactPhone,
                             this.contactType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -124,6 +147,9 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("contactEmail")) {
                 this.contactEmail(model.getContactEmail());
+            }
+            if (model.wasPropertyExplicitlySet("email")) {
+                this.email(model.getEmail());
             }
             if (model.wasPropertyExplicitlySet("contactPhone")) {
                 this.contactPhone(model.getContactPhone());
@@ -172,6 +198,20 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      **/
     public String getContactEmail() {
         return contactEmail;
+    }
+
+    /**
+     * The email of the contact person.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    private final String email;
+
+    /**
+     * The email of the contact person.
+     * @return the value
+     **/
+    public String getEmail() {
+        return email;
     }
 
     /**
@@ -269,6 +309,7 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append("super=").append(super.toString());
         sb.append("contactName=").append(String.valueOf(this.contactName));
         sb.append(", contactEmail=").append(String.valueOf(this.contactEmail));
+        sb.append(", email=").append(String.valueOf(this.email));
         sb.append(", contactPhone=").append(String.valueOf(this.contactPhone));
         sb.append(", contactType=").append(String.valueOf(this.contactType));
         sb.append(")");
@@ -287,6 +328,7 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         Contact other = (Contact) o;
         return java.util.Objects.equals(this.contactName, other.contactName)
                 && java.util.Objects.equals(this.contactEmail, other.contactEmail)
+                && java.util.Objects.equals(this.email, other.email)
                 && java.util.Objects.equals(this.contactPhone, other.contactPhone)
                 && java.util.Objects.equals(this.contactType, other.contactType)
                 && super.equals(other);
@@ -298,6 +340,7 @@ public final class Contact extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         int result = 1;
         result = (result * PRIME) + (this.contactName == null ? 43 : this.contactName.hashCode());
         result = (result * PRIME) + (this.contactEmail == null ? 43 : this.contactEmail.hashCode());
+        result = (result * PRIME) + (this.email == null ? 43 : this.email.hashCode());
         result = (result * PRIME) + (this.contactPhone == null ? 43 : this.contactPhone.hashCode());
         result = (result * PRIME) + (this.contactType == null ? 43 : this.contactType.hashCode());
         result = (result * PRIME) + super.hashCode();

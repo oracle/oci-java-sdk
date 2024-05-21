@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Group resource.
+ * The Group resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -509,7 +509,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Group display name
+         * The Group display name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -527,7 +527,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         private String displayName;
 
         /**
-         * Group display name
+         * The Group display name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -549,7 +549,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * A human readable name for Group as defined by the Service Consumer
+         * A human readable name for the group as defined by the Service Consumer.
          * <p>
          **Added In:** 2011192329
          * <p>
@@ -567,7 +567,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         private String nonUniqueDisplayName;
 
         /**
-         * A human readable name for Group as defined by the Service Consumer
+         * A human readable name for the group as defined by the Service Consumer.
          * <p>
          **Added In:** 2011192329
          * <p>
@@ -589,7 +589,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+         * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -608,7 +608,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         private java.util.List<MyGroupMembers> members;
 
         /**
-         * Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+         * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -1158,7 +1158,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Group display name
+     * The Group display name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -1176,7 +1176,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     private final String displayName;
 
     /**
-     * Group display name
+     * The Group display name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -1196,7 +1196,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * A human readable name for Group as defined by the Service Consumer
+     * A human readable name for the group as defined by the Service Consumer.
      * <p>
      **Added In:** 2011192329
      * <p>
@@ -1214,7 +1214,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     private final String nonUniqueDisplayName;
 
     /**
-     * A human readable name for Group as defined by the Service Consumer
+     * A human readable name for the group as defined by the Service Consumer.
      * <p>
      **Added In:** 2011192329
      * <p>
@@ -1234,7 +1234,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -1253,7 +1253,7 @@ public final class MyGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     private final java.util.List<MyGroupMembers> members;
 
     /**
-     * Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+     * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false

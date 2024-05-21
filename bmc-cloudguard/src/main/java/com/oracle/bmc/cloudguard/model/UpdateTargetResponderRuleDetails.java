@@ -1,11 +1,15 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRule.
+ * Parameters to update details for a responder rule for a target responder recipe.
+ * TargetResponderRuleDetails contains all configurations associated with the
+ * ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails
+ * refers to the details that are to be updated for ResponderRule.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,13 +49,13 @@ public final class UpdateTargetResponderRuleDetails
             return this;
         }
         /**
-         * Configurations associated with the ResponderRule
+         * List of responder rule configurations
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
         /**
-         * Configurations associated with the ResponderRule
+         * List of responder rule configurations
          * @param configurations the value to set
          * @return this builder
          **/
@@ -61,13 +65,13 @@ public final class UpdateTargetResponderRuleDetails
             return this;
         }
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private ResponderModeTypes mode;
 
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          * @param mode the value to set
          * @return this builder
          **/
@@ -124,13 +128,13 @@ public final class UpdateTargetResponderRuleDetails
     }
 
     /**
-     * Configurations associated with the ResponderRule
+     * List of responder rule configurations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
     /**
-     * Configurations associated with the ResponderRule
+     * List of responder rule configurations
      * @return the value
      **/
     public java.util.List<ResponderConfiguration> getConfigurations() {
@@ -138,13 +142,13 @@ public final class UpdateTargetResponderRuleDetails
     }
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final ResponderModeTypes mode;
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      * @return the value
      **/
     public ResponderModeTypes getMode() {

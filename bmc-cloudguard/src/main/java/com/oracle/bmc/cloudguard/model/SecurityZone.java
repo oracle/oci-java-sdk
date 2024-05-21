@@ -1,11 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartment (and any subcompartments in the zone) that violate a policy are denied.
+ * A security zone is associated with a security zone recipe and enforces
+ * all security zone policies in the recipe. Any actions in the zone's compartment
+ * (and any subcompartments in the zone) that violate a policy are denied.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,13 +73,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can\u2019t be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can\u2019t be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -86,13 +89,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The security zone's name
+         * The security zone's display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The security zone's name
+         * The security zone's display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -134,13 +137,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+         * The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
         private String securityZoneRecipeId;
 
         /**
-         * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+         * The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone
          * @param securityZoneRecipeId the value to set
          * @return this builder
          **/
@@ -214,13 +217,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The current state of the security zone
+         * The current lifecycle state of the security zone
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the security zone
+         * The current lifecycle state of the security zone
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -403,13 +406,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can\u2019t be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can\u2019t be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -417,13 +420,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The security zone's name
+     * The security zone's display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The security zone's name
+     * The security zone's display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -459,13 +462,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+     * The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
     private final String securityZoneRecipeId;
 
     /**
-     * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+     * The OCID of the recipe ({@code SecurityRecipe} resource) for the security zone
      * @return the value
      **/
     public String getSecurityZoneRecipeId() {
@@ -529,13 +532,13 @@ public final class SecurityZone extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

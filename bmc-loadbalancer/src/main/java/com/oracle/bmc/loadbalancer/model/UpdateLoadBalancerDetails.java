@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -25,13 +25,20 @@ package com.oracle.bmc.loadbalancer.model;
 public final class UpdateLoadBalancerDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "isDeleteProtectionEnabled",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateLoadBalancerDetails(
             String displayName,
+            Boolean isDeleteProtectionEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -60,6 +67,40 @@ public final class UpdateLoadBalancerDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Whether or not the load balancer has delete protection enabled.
+         * <p>
+         * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+         * <p>
+         * If "false", the loadbalancer will not be protected against deletion.
+         * <p>
+         * If null or unset, the value for delete protection will not be changed.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtectionEnabled")
+        private Boolean isDeleteProtectionEnabled;
+
+        /**
+         * Whether or not the load balancer has delete protection enabled.
+         * <p>
+         * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+         * <p>
+         * If "false", the loadbalancer will not be protected against deletion.
+         * <p>
+         * If null or unset, the value for delete protection will not be changed.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isDeleteProtectionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDeleteProtectionEnabled(Boolean isDeleteProtectionEnabled) {
+            this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
+            this.__explicitlySet__.add("isDeleteProtectionEnabled");
             return this;
         }
         /**
@@ -118,7 +159,10 @@ public final class UpdateLoadBalancerDetails
         public UpdateLoadBalancerDetails build() {
             UpdateLoadBalancerDetails model =
                     new UpdateLoadBalancerDetails(
-                            this.displayName, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.isDeleteProtectionEnabled,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -129,6 +173,9 @@ public final class UpdateLoadBalancerDetails
         public Builder copy(UpdateLoadBalancerDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isDeleteProtectionEnabled")) {
+                this.isDeleteProtectionEnabled(model.getIsDeleteProtectionEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -171,6 +218,38 @@ public final class UpdateLoadBalancerDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Whether or not the load balancer has delete protection enabled.
+     * <p>
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     * <p>
+     * If "false", the loadbalancer will not be protected against deletion.
+     * <p>
+     * If null or unset, the value for delete protection will not be changed.
+     * <p>
+     * Example: {@code true}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtectionEnabled")
+    private final Boolean isDeleteProtectionEnabled;
+
+    /**
+     * Whether or not the load balancer has delete protection enabled.
+     * <p>
+     * If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
+     * <p>
+     * If "false", the loadbalancer will not be protected against deletion.
+     * <p>
+     * If null or unset, the value for delete protection will not be changed.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
+    public Boolean getIsDeleteProtectionEnabled() {
+        return isDeleteProtectionEnabled;
     }
 
     /**
@@ -232,6 +311,8 @@ public final class UpdateLoadBalancerDetails
         sb.append("UpdateLoadBalancerDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isDeleteProtectionEnabled=")
+                .append(String.valueOf(this.isDeleteProtectionEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -249,6 +330,8 @@ public final class UpdateLoadBalancerDetails
 
         UpdateLoadBalancerDetails other = (UpdateLoadBalancerDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.isDeleteProtectionEnabled, other.isDeleteProtectionEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -259,6 +342,11 @@ public final class UpdateLoadBalancerDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeleteProtectionEnabled == null
+                                ? 43
+                                : this.isDeleteProtectionEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

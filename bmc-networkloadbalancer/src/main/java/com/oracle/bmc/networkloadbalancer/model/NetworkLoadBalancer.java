@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The properties that define a network load balancer. For more information, see
- * [Managing a network load balancer](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm).
+ * [Managing a network load balancer](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
  * contact an administrator. If you are an administrator who writes policies to give users access, then see
@@ -43,6 +43,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
         "ipAddresses",
         "isPrivate",
         "isPreserveSourceDestination",
+        "isSymmetricHashEnabled",
         "subnetId",
         "networkSecurityGroupIds",
         "listeners",
@@ -63,6 +64,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
             java.util.List<IpAddress> ipAddresses,
             Boolean isPrivate,
             Boolean isPreserveSourceDestination,
+            Boolean isSymmetricHashEnabled,
             String subnetId,
             java.util.List<String> networkSecurityGroupIds,
             java.util.Map<String, Listener> listeners,
@@ -82,6 +84,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
         this.ipAddresses = ipAddresses;
         this.isPrivate = isPrivate;
         this.isPreserveSourceDestination = isPreserveSourceDestination;
+        this.isSymmetricHashEnabled = isSymmetricHashEnabled;
         this.subnetId = subnetId;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.listeners = listeners;
@@ -271,7 +274,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
          * A public network load balancer is accessible from the internet, depending the
          * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
          * private network load balancers,
-         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
          * This value is true by default.
          * <p>
          * Example: {@code true}
@@ -290,7 +293,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
          * A public network load balancer is accessible from the internet, depending the
          * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
          * private network load balancers,
-         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
          * This value is true by default.
          * <p>
          * Example: {@code true}
@@ -321,6 +324,26 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
         public Builder isPreserveSourceDestination(Boolean isPreserveSourceDestination) {
             this.isPreserveSourceDestination = isPreserveSourceDestination;
             this.__explicitlySet__.add("isPreserveSourceDestination");
+            return this;
+        }
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+         * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+        private Boolean isSymmetricHashEnabled;
+
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+         * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         *
+         * @param isSymmetricHashEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
+            this.__explicitlySet__.add("isSymmetricHashEnabled");
             return this;
         }
         /**
@@ -500,6 +523,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
                             this.ipAddresses,
                             this.isPrivate,
                             this.isPreserveSourceDestination,
+                            this.isSymmetricHashEnabled,
                             this.subnetId,
                             this.networkSecurityGroupIds,
                             this.listeners,
@@ -547,6 +571,9 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("isPreserveSourceDestination")) {
                 this.isPreserveSourceDestination(model.getIsPreserveSourceDestination());
+            }
+            if (model.wasPropertyExplicitlySet("isSymmetricHashEnabled")) {
+                this.isSymmetricHashEnabled(model.getIsSymmetricHashEnabled());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -744,7 +771,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
      * A public network load balancer is accessible from the internet, depending the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
      * private network load balancers,
-     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
      * This value is true by default.
      * <p>
      * Example: {@code true}
@@ -763,7 +790,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
      * A public network load balancer is accessible from the internet, depending the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
      * private network load balancers,
-     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
      * This value is true by default.
      * <p>
      * Example: {@code true}
@@ -790,6 +817,24 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
      **/
     public Boolean getIsPreserveSourceDestination() {
         return isPreserveSourceDestination;
+    }
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+     * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+    private final Boolean isSymmetricHashEnabled;
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+     * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSymmetricHashEnabled() {
+        return isSymmetricHashEnabled;
     }
 
     /**
@@ -962,6 +1007,7 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(", isPreserveSourceDestination=")
                 .append(String.valueOf(this.isPreserveSourceDestination));
+        sb.append(", isSymmetricHashEnabled=").append(String.valueOf(this.isSymmetricHashEnabled));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
@@ -996,6 +1042,8 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && java.util.Objects.equals(
                         this.isPreserveSourceDestination, other.isPreserveSourceDestination)
+                && java.util.Objects.equals(
+                        this.isSymmetricHashEnabled, other.isSymmetricHashEnabled)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
@@ -1032,6 +1080,11 @@ public final class NetworkLoadBalancer extends com.oracle.bmc.http.internal.Expl
                         + (this.isPreserveSourceDestination == null
                                 ? 43
                                 : this.isPreserveSourceDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricHashEnabled == null
+                                ? 43
+                                : this.isSymmetricHashEnabled.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)

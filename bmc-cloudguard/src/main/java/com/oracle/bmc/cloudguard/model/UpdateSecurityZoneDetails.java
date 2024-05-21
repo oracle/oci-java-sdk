@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Information to update in an existing security zone
+ * Parameters to be used to update a security zone.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +46,13 @@ public final class UpdateSecurityZoneDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The security zone's name
+         * The security zone's display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The security zone's name
+         * The security zone's display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class UpdateSecurityZoneDetails
             return this;
         }
         /**
-         * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+         * The OCID of the security recipe ({@code SecurityRecipe} resource) for the security zone
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
         private String securityZoneRecipeId;
 
         /**
-         * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+         * The OCID of the security recipe ({@code SecurityRecipe} resource) for the security zone
          * @param securityZoneRecipeId the value to set
          * @return this builder
          **/
@@ -189,13 +189,13 @@ public final class UpdateSecurityZoneDetails
     }
 
     /**
-     * The security zone's name
+     * The security zone's display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The security zone's name
+     * The security zone's display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -217,13 +217,13 @@ public final class UpdateSecurityZoneDetails
     }
 
     /**
-     * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+     * The OCID of the security recipe ({@code SecurityRecipe} resource) for the security zone
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneRecipeId")
     private final String securityZoneRecipeId;
 
     /**
-     * The OCID of the recipe ({@code SecurityRecipe}) for the security zone
+     * The OCID of the security recipe ({@code SecurityRecipe} resource) for the security zone
      * @return the value
      **/
     public String getSecurityZoneRecipeId() {

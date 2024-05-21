@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -22,16 +22,33 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchDetectLanguageKeyPhrasesDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "documents"})
+    @java.beans.ConstructorProperties({"endpointId", "compartmentId", "documents"})
     public BatchDetectLanguageKeyPhrasesDetails(
-            String compartmentId, java.util.List<TextDocument> documents) {
+            String endpointId, String compartmentId, java.util.List<TextDocument> documents) {
         super();
+        this.endpointId = endpointId;
         this.compartmentId = compartmentId;
         this.documents = documents;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+         * @param endpointId the value to set
+         * @return this builder
+         **/
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that calls the API, inference will be served from pre trained model
          **/
@@ -70,7 +87,8 @@ public final class BatchDetectLanguageKeyPhrasesDetails
 
         public BatchDetectLanguageKeyPhrasesDetails build() {
             BatchDetectLanguageKeyPhrasesDetails model =
-                    new BatchDetectLanguageKeyPhrasesDetails(this.compartmentId, this.documents);
+                    new BatchDetectLanguageKeyPhrasesDetails(
+                            this.endpointId, this.compartmentId, this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,9 @@ public final class BatchDetectLanguageKeyPhrasesDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguageKeyPhrasesDetails model) {
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -98,6 +119,20 @@ public final class BatchDetectLanguageKeyPhrasesDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+     * @return the value
+     **/
+    public String getEndpointId() {
+        return endpointId;
     }
 
     /**
@@ -142,7 +177,8 @@ public final class BatchDetectLanguageKeyPhrasesDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguageKeyPhrasesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
         return sb.toString();
@@ -158,7 +194,8 @@ public final class BatchDetectLanguageKeyPhrasesDetails
         }
 
         BatchDetectLanguageKeyPhrasesDetails other = (BatchDetectLanguageKeyPhrasesDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && super.equals(other);
     }
@@ -167,6 +204,7 @@ public final class BatchDetectLanguageKeyPhrasesDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

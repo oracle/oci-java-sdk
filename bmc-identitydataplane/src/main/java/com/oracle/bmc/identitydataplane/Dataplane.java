@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydataplane;
@@ -8,7 +8,7 @@ import com.oracle.bmc.identitydataplane.requests.*;
 import com.oracle.bmc.identitydataplane.responses.*;
 
 /**
- * API for the Identity Dataplane
+ * APIs for managing identity data plane services. For example, use this API to create a scoped-access security token. To manage identity domains (for example, creating or deleting an identity domain) or to manage resources (for example, users and groups) within the default identity domain, see [IAM API](https://docs.oracle.com/iaas/api/#/en/identity/).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
@@ -60,7 +60,7 @@ public interface Dataplane extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Based on the calling principal and the input payload, derive the claims and create a security token.
+     * Based on the calling Principal and the input payload, derive the claims, and generate a scoped-access token for specific resources. For example, set scope to urn:oracle:db::id::<compartment-id> for access to a database in a compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -72,4 +72,20 @@ public interface Dataplane extends AutoCloseable {
      */
     GenerateScopedAccessTokenResponse generateScopedAccessToken(
             GenerateScopedAccessTokenRequest request);
+
+    /**
+     * Exchanges a valid user token-based signature (API key and UPST) for a short-lived UPST of the authenticated
+     * user principal. When not specified, the user session duration is set to a default of 60 minutes in all realms. Resulting UPSTs
+     * are refreshable while the user session has not expired.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydataplane/GenerateUserSecurityTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateUserSecurityToken API.
+     */
+    GenerateUserSecurityTokenResponse generateUserSecurityToken(
+            GenerateUserSecurityTokenRequest request);
 }

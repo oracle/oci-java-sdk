@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.internal.http;
@@ -46,6 +46,38 @@ public class GetAggregatedSnapshotConverter {
                         "apmDomainId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getApmDomainId()));
+
+        if (request.getServiceName() != null) {
+            target =
+                    target.queryParam(
+                            "serviceName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getServiceName()));
+        }
+
+        if (request.getServerName() != null) {
+            target =
+                    target.queryParam(
+                            "serverName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getServerName()));
+        }
+
+        if (request.getSpanKey() != null) {
+            target =
+                    target.queryParam(
+                            "spanKey",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSpanKey()));
+        }
+
+        if (request.getSpanName() != null) {
+            target =
+                    target.queryParam(
+                            "spanName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSpanName()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

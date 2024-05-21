@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox;
@@ -8,7 +8,7 @@ import com.oracle.bmc.lockbox.requests.*;
 import com.oracle.bmc.lockbox.responses.*;
 
 /**
- * Use the Managed Access API to approve access requests, create and manage templates, and manage resource approval settings. For more information, see [Managed Access Overview](https://docs.oracle.com/en-us/iaas/managed-access/overview.htm).
+ * Use the Managed Access API to approve access requests, create and manage templates, and manage resource approval settings. For more information, see [Managed Access Overview](https://docs.oracle.com/iaas/Content/managed-access/home.htm).
  *
  * Use the table of contents and search tool to explore the Managed Access API.
  *
@@ -193,6 +193,23 @@ public interface LockboxAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Exports a list of AccessRequestSummary objects within a compartment and during a specified time range in text format. You can filter the results by problem severity.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportAccessRequestsResponse> exportAccessRequests(
+            ExportAccessRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExportAccessRequestsRequest, ExportAccessRequestsResponse>
+                    handler);
+
+    /**
      * Retrieves the access credential/material associated with the access request.
      *
      *
@@ -222,6 +239,22 @@ public interface LockboxAsync extends AutoCloseable {
     java.util.concurrent.Future<GetAccessRequestResponse> getAccessRequest(
             GetAccessRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetAccessRequestRequest, GetAccessRequestResponse>
+                    handler);
+
+    /**
+     * Retrieves an access request identified by the access request ID for internal use.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAccessRequestInternalResponse> getAccessRequestInternal(
+            GetAccessRequestInternalRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAccessRequestInternalRequest, GetAccessRequestInternalResponse>
                     handler);
 
     /**

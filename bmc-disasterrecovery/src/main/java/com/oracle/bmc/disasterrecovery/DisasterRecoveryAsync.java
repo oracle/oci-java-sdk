@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery;
@@ -8,9 +8,10 @@ import com.oracle.bmc.disasterrecovery.requests.*;
 import com.oracle.bmc.disasterrecovery.responses.*;
 
 /**
- * Use the Full Stack Disaster Recovery (FSDR) API to manage disaster recovery for business applications.
- * FSDR is an OCI disaster recovery orchestration and management service that provides comprehensive disaster recovery
- * capabilities for all layers of an application stack, including infrastructure, middleware, database, and application.
+ * Use the Full Stack Disaster Recovery (DR) API to manage disaster recovery for business applications.
+ * Full Stack DR is an OCI disaster recovery orchestration and management service that provides comprehensive disaster
+ * recovery capabilities for all layers of an application stack, including infrastructure, middleware, database,
+ * and application.
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
@@ -62,8 +63,8 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Create an association the DR Protection Group identified by *drProtectionGroupId* and
-     * another DR Protection Group in a different region.
+     * Create an association between the DR protection group identified by *drProtectionGroupId* and
+     * another DR protection group.
      *
      *
      * @param request The request object containing the details to send
@@ -80,7 +81,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancel the DR Plan Execution indentified by *drPlanExecutionId*.
+     * Cancel the DR plan execution identified by *drPlanExecutionId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -112,7 +113,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Move the DR Protection Group identified by *drProtectionGroupId* to a different compartment.
+     * Move the DR protection group identified by *drProtectionGroupId* to a different compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -130,7 +131,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new DR Plan of the specified DR Plan type.
+     * Create a DR plan of the specified DR plan type.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -145,7 +146,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Execute a DR Plan for a DR Protection Group.
+     * Execute a DR plan for a DR protection group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -161,7 +162,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a new DR Protection Group.
+     * Create a DR protection group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -177,7 +178,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the DR Plan identified by *drPlanId*.
+     * Delete the DR plan identified by *drPlanId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -192,7 +193,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the DR Plan Execution identified by *drPlanExecutionId*.
+     * Delete the DR plan execution identified by *drPlanExecutionId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -208,7 +209,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the DR Protection Group identified by *drProtectionGroupId*.
+     * Delete the DR protection group identified by *drProtectionGroupId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -224,8 +225,8 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the association between the DR Protection Group identified by *drProtectionGroupId*.
-     * and its peer DR Protection Group.
+     * Delete the association between the DR protection group identified by *drProtectionGroupId*.
+     * and its peer DR protection group.
      *
      *
      * @param request The request object containing the details to send
@@ -244,7 +245,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get details for the DR Plan identified by *drPlanId*.
+     * Get details for the DR plan identified by *drPlanId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -258,7 +259,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDrPlanRequest, GetDrPlanResponse> handler);
 
     /**
-     * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -274,7 +275,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get the DR Protection Group identified by *drProtectionGroupId*.
+     * Get the DR protection group identified by *drProtectionGroupId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -305,7 +306,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Ignore failed group or step in DR Plan Execution identified by *drPlanExecutionId* and resume execution.
+     * Ignore the failed group or step in DR plan execution identified by *drPlanExecutionId* and resume execution.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -321,7 +322,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get a summary list of all DR Plan Executions for a DR Protection Group.
+     * Get a summary list of all DR plan executions for a DR protection group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -337,7 +338,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a summary list of all DR Plans for a DR Protection Group.
+     * Get a summary list of all DR plans for a DR protection group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -351,7 +352,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListDrPlansRequest, ListDrPlansResponse> handler);
 
     /**
-     * Gets a summary list of all DR Protection Groups in a compartment.
+     * Get a summary list of all DR protection groups in a compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -367,7 +368,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Get a list of work request errors for the work request identified by *workRequestId*.
      *
      *
      * @param request The request object containing the details to send
@@ -384,7 +385,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for the work request identified by *workRequestId*.
+     * Get a list of logs for the work request identified by *workRequestId*.
      *
      *
      * @param request The request object containing the details to send
@@ -417,7 +418,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Pause the DR Plan Execution identified by *drPlanExecutionId*.
+     * Pause the DR plan execution identified by *drPlanExecutionId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -433,7 +434,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Resume the DR Plan Execution identified by *drPlanExecutionId*.
+     * Resume the DR plan execution identified by *drPlanExecutionId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -449,7 +450,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Retry failed group or step in DR Plan Execution identified by *drPlanExecutionId* and resume execution.
+     * Retry the failed group or step in DR plan execution identified by *drPlanExecutionId* and resume execution.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -465,7 +466,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the DR Plan identified by *drPlanId*.
+     * Update the DR plan identified by *drPlanId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -480,7 +481,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the DR Plan Execution identified by *drPlanExecutionId*.
+     * Update the DR plan execution identified by *drPlanExecutionId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -496,7 +497,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the DR Protection Group identified by *drProtectionGroupId*.
+     * Update the DR protection group identified by *drProtectionGroupId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -512,7 +513,7 @@ public interface DisasterRecoveryAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the role of the DR Protection Group identified by *drProtectionGroupId*.
+     * Update the role of the DR protection group identified by *drProtectionGroupId*.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details required to connect to an external Oracle Database.
+ * It takes either connectionCredentials or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +48,24 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalDatabaseConnectionInfo build() {
             ExternalDatabaseConnectionInfo model =
                     new ExternalDatabaseConnectionInfo(
-                            this.connectionString, this.connectionCredentials);
+                            this.connectionString,
+                            this.connectionCredentials,
+                            this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -66,6 +79,9 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
             }
             if (model.wasPropertyExplicitlySet("connectionCredentials")) {
                 this.connectionCredentials(model.getConnectionCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -85,10 +101,12 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
     @Deprecated
     public ExternalDatabaseConnectionInfo(
             DatabaseConnectionString connectionString,
-            DatabaseConnectionCredentials connectionCredentials) {
+            DatabaseConnectionCredentials connectionCredentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.connectionString = connectionString;
         this.connectionCredentials = connectionCredentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
@@ -103,6 +121,13 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
 
     public DatabaseConnectionCredentials getConnectionCredentials() {
         return connectionCredentials;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     @Override
@@ -121,6 +146,7 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", connectionCredentials=").append(String.valueOf(this.connectionCredentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -137,6 +163,7 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
         ExternalDatabaseConnectionInfo other = (ExternalDatabaseConnectionInfo) o;
         return java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.connectionCredentials, other.connectionCredentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -152,6 +179,11 @@ public final class ExternalDatabaseConnectionInfo extends ExternalDbSystemConnec
                         + (this.connectionCredentials == null
                                 ? 43
                                 : this.connectionCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         return result;
     }
 }

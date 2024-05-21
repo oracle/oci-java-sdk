@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -478,7 +478,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "AttachManagedInstancesToLifecycleStage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/AttachManagedInstancesToLifecycleStage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AttachManagedInstancesToLifecycleStageResponse>
                 transformer =
@@ -520,6 +520,67 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeLifecycleEnvironmentCompartmentResponse>
+            changeLifecycleEnvironmentCompartment(
+                    ChangeLifecycleEnvironmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeLifecycleEnvironmentCompartmentRequest,
+                                    ChangeLifecycleEnvironmentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeLifecycleEnvironmentCompartment");
+        final ChangeLifecycleEnvironmentCompartmentRequest interceptedRequest =
+                ChangeLifecycleEnvironmentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLifecycleEnvironmentCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "ChangeLifecycleEnvironmentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ChangeLifecycleEnvironmentCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeLifecycleEnvironmentCompartmentResponse>
+                transformer =
+                        ChangeLifecycleEnvironmentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeLifecycleEnvironmentCompartmentRequest,
+                        ChangeLifecycleEnvironmentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeLifecycleEnvironmentCompartmentRequest,
+                                ChangeLifecycleEnvironmentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeLifecycleEnvironmentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeLifecycleEnvironmentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeLifecycleEnvironmentCompartmentRequest,
+                    ChangeLifecycleEnvironmentCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLifecycleEnvironmentResponse>
             createLifecycleEnvironment(
                     CreateLifecycleEnvironmentRequest request,
@@ -538,7 +599,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "CreateLifecycleEnvironment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/CreateLifecycleEnvironment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateLifecycleEnvironmentResponse>
                 transformer =
@@ -594,7 +655,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "DeleteLifecycleEnvironment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/DeleteLifecycleEnvironment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteLifecycleEnvironmentResponse>
                 transformer =
@@ -647,7 +708,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "DetachManagedInstancesFromLifecycleStage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/DetachManagedInstancesFromLifecycleStage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DetachManagedInstancesFromLifecycleStageResponse>
                 transformer =
@@ -705,7 +766,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "GetLifecycleEnvironment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/GetLifecycleEnvironment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetLifecycleEnvironmentResponse>
                 transformer =
@@ -753,7 +814,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "GetLifecycleStage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/GetLifecycleStage");
         final java.util.function.Function<javax.ws.rs.core.Response, GetLifecycleStageResponse>
                 transformer =
                         GetLifecycleStageConverter.fromResponse(
@@ -799,7 +860,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "ListLifecycleEnvironments",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ListLifecycleEnvironments");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListLifecycleEnvironmentsResponse>
                 transformer =
@@ -851,7 +912,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "ListLifecycleStageInstalledPackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStageInstalledPackages");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListLifecycleStageInstalledPackagesResponse>
                 transformer =
@@ -902,7 +963,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "ListLifecycleStages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStages");
         final java.util.function.Function<javax.ws.rs.core.Response, ListLifecycleStagesResponse>
                 transformer =
                         ListLifecycleStagesConverter.fromResponse(
@@ -953,7 +1014,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "PromoteSoftwareSourceToLifecycleStage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/PromoteSoftwareSourceToLifecycleStage");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PromoteSoftwareSourceToLifecycleStageResponse>
                 transformer =
@@ -1012,7 +1073,7 @@ public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsyn
                         "LifecycleEnvironment",
                         "UpdateLifecycleEnvironment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/UpdateLifecycleEnvironment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateLifecycleEnvironmentResponse>
                 transformer =

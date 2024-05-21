@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Defines the lifecycle stage summary.
+ * Provides summary information for a lifecycle stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,6 +33,7 @@ public final class LifecycleStageSummary
         "archType",
         "vendorName",
         "managedInstances",
+        "location",
         "softwareSourceId",
         "timeCreated",
         "timeModified",
@@ -52,6 +53,7 @@ public final class LifecycleStageSummary
             ArchType archType,
             VendorName vendorName,
             Integer managedInstances,
+            ManagedInstanceLocation location,
             SoftwareSourceDetails softwareSourceId,
             java.util.Date timeCreated,
             java.util.Date timeModified,
@@ -70,6 +72,7 @@ public final class LifecycleStageSummary
         this.archType = archType;
         this.vendorName = vendorName;
         this.managedInstances = managedInstances;
+        this.location = location;
         this.softwareSourceId = softwareSourceId;
         this.timeCreated = timeCreated;
         this.timeModified = timeModified;
@@ -82,13 +85,13 @@ public final class LifecycleStageSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The lifecycle stage OCID that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The lifecycle stage OCID that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * @param id the value to set
          * @return this builder
          **/
@@ -98,13 +101,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The OCID of the tenancy containing the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -114,13 +117,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * The user-friendly name for the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * The user-friendly name for the lifecycle stage.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -130,13 +133,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The OCID of the lifecycle environment for the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleEnvironmentId")
         private String lifecycleEnvironmentId;
 
         /**
-         * The OCID of the lifecycle environment for the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
          * @param lifecycleEnvironmentId the value to set
          * @return this builder
          **/
@@ -146,13 +149,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleEnvironmentDisplayName")
         private String lifecycleEnvironmentDisplayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param lifecycleEnvironmentDisplayName the value to set
          * @return this builder
          **/
@@ -162,16 +165,14 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * User specified rank for the lifecycle stage.
-         * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+         * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rank")
         private Integer rank;
 
         /**
-         * User specified rank for the lifecycle stage.
-         * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+         * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
          *
          * @param rank the value to set
          * @return this builder
@@ -182,13 +183,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The operating system type of the target instances.
+         * The operating system of the managed instances in the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
-         * The operating system type of the target instances.
+         * The operating system of the managed instances in the lifecycle stage.
          * @param osFamily the value to set
          * @return this builder
          **/
@@ -198,13 +199,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The CPU architecture of the target instances.
+         * The CPU architecture of the managed instances in the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("archType")
         private ArchType archType;
 
         /**
-         * The CPU architecture of the target instances.
+         * The CPU architecture of the managed instances in the lifecycle stage.
          * @param archType the value to set
          * @return this builder
          **/
@@ -214,13 +215,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The software source vendor name.
+         * The vendor of the operating system used by the managed instances in the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
-         * The software source vendor name.
+         * The vendor of the operating system used by the managed instances in the lifecycle stage.
          * @param vendorName the value to set
          * @return this builder
          **/
@@ -230,19 +231,35 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The number of managed instances attached to the lifecycle stage.
+         * The list of managed instances associated with the lifecycle stage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
         private Integer managedInstances;
 
         /**
-         * The number of managed instances attached to the lifecycle stage.
+         * The list of managed instances associated with the lifecycle stage.
          * @param managedInstances the value to set
          * @return this builder
          **/
         public Builder managedInstances(Integer managedInstances) {
             this.managedInstances = managedInstances;
             this.__explicitlySet__.add("managedInstances");
+            return this;
+        }
+        /**
+         * The location of managed instances associated with the lifecycle stage.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("location")
+        private ManagedInstanceLocation location;
+
+        /**
+         * The location of managed instances associated with the lifecycle stage.
+         * @param location the value to set
+         * @return this builder
+         **/
+        public Builder location(ManagedInstanceLocation location) {
+            this.location = location;
+            this.__explicitlySet__.add("location");
             return this;
         }
 
@@ -255,13 +272,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+         * The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+         * The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -271,13 +288,13 @@ public final class LifecycleStageSummary
             return this;
         }
         /**
-         * The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+         * The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+         * The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeModified the value to set
          * @return this builder
          **/
@@ -384,6 +401,7 @@ public final class LifecycleStageSummary
                             this.archType,
                             this.vendorName,
                             this.managedInstances,
+                            this.location,
                             this.softwareSourceId,
                             this.timeCreated,
                             this.timeModified,
@@ -429,6 +447,9 @@ public final class LifecycleStageSummary
             if (model.wasPropertyExplicitlySet("managedInstances")) {
                 this.managedInstances(model.getManagedInstances());
             }
+            if (model.wasPropertyExplicitlySet("location")) {
+                this.location(model.getLocation());
+            }
             if (model.wasPropertyExplicitlySet("softwareSourceId")) {
                 this.softwareSourceId(model.getSoftwareSourceId());
             }
@@ -466,13 +487,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The lifecycle stage OCID that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The lifecycle stage OCID that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      * @return the value
      **/
     public String getId() {
@@ -480,13 +501,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The OCID of the tenancy containing the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -494,13 +515,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * The user-friendly name for the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * The user-friendly name for the lifecycle stage.
      * @return the value
      **/
     public String getDisplayName() {
@@ -508,13 +529,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The OCID of the lifecycle environment for the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleEnvironmentId")
     private final String lifecycleEnvironmentId;
 
     /**
-     * The OCID of the lifecycle environment for the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
      * @return the value
      **/
     public String getLifecycleEnvironmentId() {
@@ -522,13 +543,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleEnvironmentDisplayName")
     private final String lifecycleEnvironmentDisplayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * The user-friendly name for the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
      **/
     public String getLifecycleEnvironmentDisplayName() {
@@ -536,16 +557,14 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * User specified rank for the lifecycle stage.
-     * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rank")
     private final Integer rank;
 
     /**
-     * User specified rank for the lifecycle stage.
-     * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      *
      * @return the value
      **/
@@ -554,13 +573,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The operating system type of the target instances.
+     * The operating system of the managed instances in the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The operating system type of the target instances.
+     * The operating system of the managed instances in the lifecycle stage.
      * @return the value
      **/
     public OsFamily getOsFamily() {
@@ -568,13 +587,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The CPU architecture of the target instances.
+     * The CPU architecture of the managed instances in the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
-     * The CPU architecture of the target instances.
+     * The CPU architecture of the managed instances in the lifecycle stage.
      * @return the value
      **/
     public ArchType getArchType() {
@@ -582,13 +601,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the lifecycle stage.
      * @return the value
      **/
     public VendorName getVendorName() {
@@ -596,17 +615,31 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The number of managed instances attached to the lifecycle stage.
+     * The list of managed instances associated with the lifecycle stage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstances")
     private final Integer managedInstances;
 
     /**
-     * The number of managed instances attached to the lifecycle stage.
+     * The list of managed instances associated with the lifecycle stage.
      * @return the value
      **/
     public Integer getManagedInstances() {
         return managedInstances;
+    }
+
+    /**
+     * The location of managed instances associated with the lifecycle stage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("location")
+    private final ManagedInstanceLocation location;
+
+    /**
+     * The location of managed instances associated with the lifecycle stage.
+     * @return the value
+     **/
+    public ManagedInstanceLocation getLocation() {
+        return location;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
@@ -617,13 +650,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+     * The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the lifecycle stage was created. An RFC3339 formatted datetime string.
+     * The time the lifecycle stage was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -631,13 +664,13 @@ public final class LifecycleStageSummary
     }
 
     /**
-     * The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+     * The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The time the lifecycle stage was last modified. An RFC3339 formatted datetime string.
+     * The time the lifecycle stage was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
      **/
     public java.util.Date getTimeModified() {
@@ -741,6 +774,7 @@ public final class LifecycleStageSummary
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
         sb.append(", managedInstances=").append(String.valueOf(this.managedInstances));
+        sb.append(", location=").append(String.valueOf(this.location));
         sb.append(", softwareSourceId=").append(String.valueOf(this.softwareSourceId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeModified=").append(String.valueOf(this.timeModified));
@@ -774,6 +808,7 @@ public final class LifecycleStageSummary
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.managedInstances, other.managedInstances)
+                && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeModified, other.timeModified)
@@ -810,6 +845,7 @@ public final class LifecycleStageSummary
         result =
                 (result * PRIME)
                         + (this.managedInstances == null ? 43 : this.managedInstances.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result =
                 (result * PRIME)
                         + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());

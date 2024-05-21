@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User token returned if userFlowControlledByExternalClient is true
+ * The user token returned if userFlowControlledByExternalClient is set to true.
  * <p>
  **SCIM++ Properties:**
  *  - type: complex
@@ -41,7 +41,7 @@ public final class UserPasswordResetterUserToken
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User Token identifier
+         * The user token identifier.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -57,7 +57,7 @@ public final class UserPasswordResetterUserToken
         private String value;
 
         /**
-         * User Token identifier
+         * The user token identifier.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -77,7 +77,7 @@ public final class UserPasswordResetterUserToken
             return this;
         }
         /**
-         * User Token URI
+         * The user token URI.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
@@ -92,7 +92,7 @@ public final class UserPasswordResetterUserToken
         private String ref;
 
         /**
-         * User Token URI
+         * The user token URI.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
@@ -147,7 +147,7 @@ public final class UserPasswordResetterUserToken
     }
 
     /**
-     * User Token identifier
+     * The user token identifier.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -163,7 +163,7 @@ public final class UserPasswordResetterUserToken
     private final String value;
 
     /**
-     * User Token identifier
+     * The user token identifier.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -181,7 +181,7 @@ public final class UserPasswordResetterUserToken
     }
 
     /**
-     * User Token URI
+     * The user token URI.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
@@ -196,7 +196,7 @@ public final class UserPasswordResetterUserToken
     private final String ref;
 
     /**
-     * User Token URI
+     * The user token URI.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false

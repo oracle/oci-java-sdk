@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -25,6 +25,9 @@ public final class CreateOggDeploymentDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "deploymentName",
+        "credentialStore",
+        "identityDomainId",
+        "passwordSecretId",
         "adminUsername",
         "adminPassword",
         "certificate",
@@ -33,6 +36,9 @@ public final class CreateOggDeploymentDetails
     })
     public CreateOggDeploymentDetails(
             String deploymentName,
+            CredentialStore credentialStore,
+            String identityDomainId,
+            String passwordSecretId,
             String adminUsername,
             String adminPassword,
             String certificate,
@@ -40,6 +46,9 @@ public final class CreateOggDeploymentDetails
             String oggVersion) {
         super();
         this.deploymentName = deploymentName;
+        this.credentialStore = credentialStore;
+        this.identityDomainId = identityDomainId;
+        this.passwordSecretId = passwordSecretId;
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.certificate = certificate;
@@ -70,6 +79,60 @@ public final class CreateOggDeploymentDetails
             return this;
         }
         /**
+         * The type of credential store for OGG.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
+        private CredentialStore credentialStore;
+
+        /**
+         * The type of credential store for OGG.
+         *
+         * @param credentialStore the value to set
+         * @return this builder
+         **/
+        public Builder credentialStore(CredentialStore credentialStore) {
+            this.credentialStore = credentialStore;
+            this.__explicitlySet__.add("credentialStore");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
+        private String identityDomainId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         *
+         * @param identityDomainId the value to set
+         * @return this builder
+         **/
+        public Builder identityDomainId(String identityDomainId) {
+            this.identityDomainId = identityDomainId;
+            this.__explicitlySet__.add("identityDomainId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
          * The GoldenGate deployment console username.
          *
          **/
@@ -91,6 +154,7 @@ public final class CreateOggDeploymentDetails
          * The password associated with the GoldenGate deployment console username.
          * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
          * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * This field will be deprecated and replaced by "passwordSecretId".
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
@@ -100,6 +164,7 @@ public final class CreateOggDeploymentDetails
          * The password associated with the GoldenGate deployment console username.
          * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
          * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * This field will be deprecated and replaced by "passwordSecretId".
          *
          * @param adminPassword the value to set
          * @return this builder
@@ -171,6 +236,9 @@ public final class CreateOggDeploymentDetails
             CreateOggDeploymentDetails model =
                     new CreateOggDeploymentDetails(
                             this.deploymentName,
+                            this.credentialStore,
+                            this.identityDomainId,
+                            this.passwordSecretId,
                             this.adminUsername,
                             this.adminPassword,
                             this.certificate,
@@ -186,6 +254,15 @@ public final class CreateOggDeploymentDetails
         public Builder copy(CreateOggDeploymentDetails model) {
             if (model.wasPropertyExplicitlySet("deploymentName")) {
                 this.deploymentName(model.getDeploymentName());
+            }
+            if (model.wasPropertyExplicitlySet("credentialStore")) {
+                this.credentialStore(model.getCredentialStore());
+            }
+            if (model.wasPropertyExplicitlySet("identityDomainId")) {
+                this.identityDomainId(model.getIdentityDomainId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("adminUsername")) {
                 this.adminUsername(model.getAdminUsername());
@@ -236,6 +313,54 @@ public final class CreateOggDeploymentDetails
     }
 
     /**
+     * The type of credential store for OGG.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
+    private final CredentialStore credentialStore;
+
+    /**
+     * The type of credential store for OGG.
+     *
+     * @return the value
+     **/
+    public CredentialStore getCredentialStore() {
+        return credentialStore;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
+    private final String identityDomainId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     *
+     * @return the value
+     **/
+    public String getIdentityDomainId() {
+        return identityDomainId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
      * The GoldenGate deployment console username.
      *
      **/
@@ -255,6 +380,7 @@ public final class CreateOggDeploymentDetails
      * The password associated with the GoldenGate deployment console username.
      * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
      * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+     * This field will be deprecated and replaced by "passwordSecretId".
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
@@ -264,6 +390,7 @@ public final class CreateOggDeploymentDetails
      * The password associated with the GoldenGate deployment console username.
      * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
      * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+     * This field will be deprecated and replaced by "passwordSecretId".
      *
      * @return the value
      **/
@@ -334,6 +461,9 @@ public final class CreateOggDeploymentDetails
         sb.append("CreateOggDeploymentDetails(");
         sb.append("super=").append(super.toString());
         sb.append("deploymentName=").append(String.valueOf(this.deploymentName));
+        sb.append(", credentialStore=").append(String.valueOf(this.credentialStore));
+        sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
@@ -354,6 +484,9 @@ public final class CreateOggDeploymentDetails
 
         CreateOggDeploymentDetails other = (CreateOggDeploymentDetails) o;
         return java.util.Objects.equals(this.deploymentName, other.deploymentName)
+                && java.util.Objects.equals(this.credentialStore, other.credentialStore)
+                && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.certificate, other.certificate)
@@ -369,6 +502,15 @@ public final class CreateOggDeploymentDetails
         result =
                 (result * PRIME)
                         + (this.deploymentName == null ? 43 : this.deploymentName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.credentialStore == null ? 43 : this.credentialStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.identityDomainId == null ? 43 : this.identityDomainId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminUsername == null ? 43 : this.adminUsername.hashCode());

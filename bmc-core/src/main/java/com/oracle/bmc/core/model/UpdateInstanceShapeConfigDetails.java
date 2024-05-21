@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -30,14 +30,22 @@ package com.oracle.bmc.core.model;
 public final class UpdateInstanceShapeConfigDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "baselineOcpuUtilization", "nvmes"})
+    @java.beans.ConstructorProperties({
+        "ocpus",
+        "vcpus",
+        "memoryInGBs",
+        "baselineOcpuUtilization",
+        "nvmes"
+    })
     public UpdateInstanceShapeConfigDetails(
             Float ocpus,
+            Integer vcpus,
             Float memoryInGBs,
             BaselineOcpuUtilization baselineOcpuUtilization,
             Integer nvmes) {
         super();
         this.ocpus = ocpus;
+        this.vcpus = vcpus;
         this.memoryInGBs = memoryInGBs;
         this.baselineOcpuUtilization = baselineOcpuUtilization;
         this.nvmes = nvmes;
@@ -61,6 +69,28 @@ public final class UpdateInstanceShapeConfigDetails
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
+            return this;
+        }
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+         * in which case the actual number of OCPUs will be calculated based on this value
+         * and the actual hardware. This must be a multiple of 2.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
+        private Integer vcpus;
+
+        /**
+         * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+         * in which case the actual number of OCPUs will be calculated based on this value
+         * and the actual hardware. This must be a multiple of 2.
+         *
+         * @param vcpus the value to set
+         * @return this builder
+         **/
+        public Builder vcpus(Integer vcpus) {
+            this.vcpus = vcpus;
+            this.__explicitlySet__.add("vcpus");
             return this;
         }
         /**
@@ -136,7 +166,11 @@ public final class UpdateInstanceShapeConfigDetails
         public UpdateInstanceShapeConfigDetails build() {
             UpdateInstanceShapeConfigDetails model =
                     new UpdateInstanceShapeConfigDetails(
-                            this.ocpus, this.memoryInGBs, this.baselineOcpuUtilization, this.nvmes);
+                            this.ocpus,
+                            this.vcpus,
+                            this.memoryInGBs,
+                            this.baselineOcpuUtilization,
+                            this.nvmes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -147,6 +181,9 @@ public final class UpdateInstanceShapeConfigDetails
         public Builder copy(UpdateInstanceShapeConfigDetails model) {
             if (model.wasPropertyExplicitlySet("ocpus")) {
                 this.ocpus(model.getOcpus());
+            }
+            if (model.wasPropertyExplicitlySet("vcpus")) {
+                this.vcpus(model.getVcpus());
             }
             if (model.wasPropertyExplicitlySet("memoryInGBs")) {
                 this.memoryInGBs(model.getMemoryInGBs());
@@ -186,6 +223,26 @@ public final class UpdateInstanceShapeConfigDetails
      **/
     public Float getOcpus() {
         return ocpus;
+    }
+
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+     * in which case the actual number of OCPUs will be calculated based on this value
+     * and the actual hardware. This must be a multiple of 2.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
+    private final Integer vcpus;
+
+    /**
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+     * in which case the actual number of OCPUs will be calculated based on this value
+     * and the actual hardware. This must be a multiple of 2.
+     *
+     * @return the value
+     **/
+    public Integer getVcpus() {
+        return vcpus;
     }
 
     /**
@@ -306,6 +363,7 @@ public final class UpdateInstanceShapeConfigDetails
         sb.append("UpdateInstanceShapeConfigDetails(");
         sb.append("super=").append(super.toString());
         sb.append("ocpus=").append(String.valueOf(this.ocpus));
+        sb.append(", vcpus=").append(String.valueOf(this.vcpus));
         sb.append(", memoryInGBs=").append(String.valueOf(this.memoryInGBs));
         sb.append(", baselineOcpuUtilization=")
                 .append(String.valueOf(this.baselineOcpuUtilization));
@@ -325,6 +383,7 @@ public final class UpdateInstanceShapeConfigDetails
 
         UpdateInstanceShapeConfigDetails other = (UpdateInstanceShapeConfigDetails) o;
         return java.util.Objects.equals(this.ocpus, other.ocpus)
+                && java.util.Objects.equals(this.vcpus, other.vcpus)
                 && java.util.Objects.equals(this.memoryInGBs, other.memoryInGBs)
                 && java.util.Objects.equals(
                         this.baselineOcpuUtilization, other.baselineOcpuUtilization)
@@ -337,6 +396,7 @@ public final class UpdateInstanceShapeConfigDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.ocpus == null ? 43 : this.ocpus.hashCode());
+        result = (result * PRIME) + (this.vcpus == null ? 43 : this.vcpus.hashCode());
         result = (result * PRIME) + (this.memoryInGBs == null ? 43 : this.memoryInGBs.hashCode());
         result =
                 (result * PRIME)

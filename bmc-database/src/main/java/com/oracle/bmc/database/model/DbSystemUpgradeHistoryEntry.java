@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -30,6 +30,8 @@ public final class DbSystemUpgradeHistoryEntry
         "action",
         "newGiVersion",
         "oldGiVersion",
+        "oldOsVersion",
+        "newOsVersion",
         "snapshotRetentionPeriodInDays",
         "lifecycleState",
         "lifecycleDetails",
@@ -41,6 +43,8 @@ public final class DbSystemUpgradeHistoryEntry
             Action action,
             String newGiVersion,
             String oldGiVersion,
+            String oldOsVersion,
+            String newOsVersion,
             Integer snapshotRetentionPeriodInDays,
             LifecycleState lifecycleState,
             String lifecycleDetails,
@@ -51,6 +55,8 @@ public final class DbSystemUpgradeHistoryEntry
         this.action = action;
         this.newGiVersion = newGiVersion;
         this.oldGiVersion = oldGiVersion;
+        this.oldOsVersion = oldOsVersion;
+        this.newOsVersion = newOsVersion;
         this.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -122,6 +128,38 @@ public final class DbSystemUpgradeHistoryEntry
         public Builder oldGiVersion(String oldGiVersion) {
             this.oldGiVersion = oldGiVersion;
             this.__explicitlySet__.add("oldGiVersion");
+            return this;
+        }
+        /**
+         * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("oldOsVersion")
+        private String oldOsVersion;
+
+        /**
+         * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+         * @param oldOsVersion the value to set
+         * @return this builder
+         **/
+        public Builder oldOsVersion(String oldOsVersion) {
+            this.oldOsVersion = oldOsVersion;
+            this.__explicitlySet__.add("oldOsVersion");
+            return this;
+        }
+        /**
+         * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("newOsVersion")
+        private String newOsVersion;
+
+        /**
+         * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+         * @param newOsVersion the value to set
+         * @return this builder
+         **/
+        public Builder newOsVersion(String newOsVersion) {
+            this.newOsVersion = newOsVersion;
+            this.__explicitlySet__.add("newOsVersion");
             return this;
         }
         /**
@@ -219,6 +257,8 @@ public final class DbSystemUpgradeHistoryEntry
                             this.action,
                             this.newGiVersion,
                             this.oldGiVersion,
+                            this.oldOsVersion,
+                            this.newOsVersion,
                             this.snapshotRetentionPeriodInDays,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -243,6 +283,12 @@ public final class DbSystemUpgradeHistoryEntry
             }
             if (model.wasPropertyExplicitlySet("oldGiVersion")) {
                 this.oldGiVersion(model.getOldGiVersion());
+            }
+            if (model.wasPropertyExplicitlySet("oldOsVersion")) {
+                this.oldOsVersion(model.getOldOsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("newOsVersion")) {
+                this.newOsVersion(model.getNewOsVersion());
             }
             if (model.wasPropertyExplicitlySet("snapshotRetentionPeriodInDays")) {
                 this.snapshotRetentionPeriodInDays(model.getSnapshotRetentionPeriodInDays());
@@ -377,6 +423,34 @@ public final class DbSystemUpgradeHistoryEntry
      **/
     public String getOldGiVersion() {
         return oldGiVersion;
+    }
+
+    /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oldOsVersion")
+    private final String oldOsVersion;
+
+    /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * @return the value
+     **/
+    public String getOldOsVersion() {
+        return oldOsVersion;
+    }
+
+    /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("newOsVersion")
+    private final String newOsVersion;
+
+    /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * @return the value
+     **/
+    public String getNewOsVersion() {
+        return newOsVersion;
     }
 
     /**
@@ -521,6 +595,8 @@ public final class DbSystemUpgradeHistoryEntry
         sb.append(", action=").append(String.valueOf(this.action));
         sb.append(", newGiVersion=").append(String.valueOf(this.newGiVersion));
         sb.append(", oldGiVersion=").append(String.valueOf(this.oldGiVersion));
+        sb.append(", oldOsVersion=").append(String.valueOf(this.oldOsVersion));
+        sb.append(", newOsVersion=").append(String.valueOf(this.newOsVersion));
         sb.append(", snapshotRetentionPeriodInDays=")
                 .append(String.valueOf(this.snapshotRetentionPeriodInDays));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -545,6 +621,8 @@ public final class DbSystemUpgradeHistoryEntry
                 && java.util.Objects.equals(this.action, other.action)
                 && java.util.Objects.equals(this.newGiVersion, other.newGiVersion)
                 && java.util.Objects.equals(this.oldGiVersion, other.oldGiVersion)
+                && java.util.Objects.equals(this.oldOsVersion, other.oldOsVersion)
+                && java.util.Objects.equals(this.newOsVersion, other.newOsVersion)
                 && java.util.Objects.equals(
                         this.snapshotRetentionPeriodInDays, other.snapshotRetentionPeriodInDays)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -562,6 +640,8 @@ public final class DbSystemUpgradeHistoryEntry
         result = (result * PRIME) + (this.action == null ? 43 : this.action.hashCode());
         result = (result * PRIME) + (this.newGiVersion == null ? 43 : this.newGiVersion.hashCode());
         result = (result * PRIME) + (this.oldGiVersion == null ? 43 : this.oldGiVersion.hashCode());
+        result = (result * PRIME) + (this.oldOsVersion == null ? 43 : this.oldOsVersion.hashCode());
+        result = (result * PRIME) + (this.newOsVersion == null ? 43 : this.newOsVersion.hashCode());
         result =
                 (result * PRIME)
                         + (this.snapshotRetentionPeriodInDays == null

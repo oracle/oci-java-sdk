@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -14,69 +14,57 @@ package com.oracle.bmc.ocvp.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SddcSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
-        "computeAvailabilityDomain",
         "displayName",
         "vmwareSoftwareVersion",
         "compartmentId",
-        "esxiHostsCount",
+        "clustersCount",
         "hcxFqdn",
-        "isHcxEnabled",
+        "hcxMode",
         "vcenterFqdn",
         "nsxManagerFqdn",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "isShieldedInstanceEnabled",
-        "initialHostShapeName",
-        "initialHostOcpuCount",
         "isSingleHostSddc",
         "freeformTags",
         "definedTags"
     })
     public SddcSummary(
             String id,
-            String computeAvailabilityDomain,
             String displayName,
             String vmwareSoftwareVersion,
             String compartmentId,
-            Integer esxiHostsCount,
+            Integer clustersCount,
             String hcxFqdn,
-            Boolean isHcxEnabled,
+            HcxModes hcxMode,
             String vcenterFqdn,
             String nsxManagerFqdn,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleStates lifecycleState,
-            Boolean isShieldedInstanceEnabled,
-            String initialHostShapeName,
-            Float initialHostOcpuCount,
             Boolean isSingleHostSddc,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.id = id;
-        this.computeAvailabilityDomain = computeAvailabilityDomain;
         this.displayName = displayName;
         this.vmwareSoftwareVersion = vmwareSoftwareVersion;
         this.compartmentId = compartmentId;
-        this.esxiHostsCount = esxiHostsCount;
+        this.clustersCount = clustersCount;
         this.hcxFqdn = hcxFqdn;
-        this.isHcxEnabled = isHcxEnabled;
+        this.hcxMode = hcxMode;
         this.vcenterFqdn = vcenterFqdn;
         this.nsxManagerFqdn = nsxManagerFqdn;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
-        this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
-        this.initialHostShapeName = initialHostShapeName;
-        this.initialHostOcpuCount = initialHostOcpuCount;
         this.isSingleHostSddc = isSingleHostSddc;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -102,24 +90,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
-            return this;
-        }
-        /**
-         * The availability domain that the SDDC's ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
-        private String computeAvailabilityDomain;
-
-        /**
-         * The availability domain that the SDDC's ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
-         *
-         * @param computeAvailabilityDomain the value to set
-         * @return this builder
-         **/
-        public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
-            this.computeAvailabilityDomain = computeAvailabilityDomain;
-            this.__explicitlySet__.add("computeAvailabilityDomain");
             return this;
         }
         /**
@@ -211,17 +181,17 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The number of ESXi hosts in the SDDC.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
-        private Integer esxiHostsCount;
+        @com.fasterxml.jackson.annotation.JsonProperty("clustersCount")
+        private Integer clustersCount;
 
         /**
          * The number of ESXi hosts in the SDDC.
-         * @param esxiHostsCount the value to set
+         * @param clustersCount the value to set
          * @return this builder
          **/
-        public Builder esxiHostsCount(Integer esxiHostsCount) {
-            this.esxiHostsCount = esxiHostsCount;
-            this.__explicitlySet__.add("esxiHostsCount");
+        public Builder clustersCount(Integer clustersCount) {
+            this.clustersCount = clustersCount;
+            this.__explicitlySet__.add("clustersCount");
             return this;
         }
         /**
@@ -241,19 +211,21 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Indicates whether HCX is enabled.
+         * HCX configuration of the SDDC.
+         *
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
-        private Boolean isHcxEnabled;
+        @com.fasterxml.jackson.annotation.JsonProperty("hcxMode")
+        private HcxModes hcxMode;
 
         /**
-         * Indicates whether HCX is enabled.
-         * @param isHcxEnabled the value to set
+         * HCX configuration of the SDDC.
+         *
+         * @param hcxMode the value to set
          * @return this builder
          **/
-        public Builder isHcxEnabled(Boolean isHcxEnabled) {
-            this.isHcxEnabled = isHcxEnabled;
-            this.__explicitlySet__.add("isHcxEnabled");
+        public Builder hcxMode(HcxModes hcxMode) {
+            this.hcxMode = hcxMode;
+            this.__explicitlySet__.add("hcxMode");
             return this;
         }
         /**
@@ -361,62 +333,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Indicates whether shielded instance is enabled at the SDDC level.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
-        private Boolean isShieldedInstanceEnabled;
-
-        /**
-         * Indicates whether shielded instance is enabled at the SDDC level.
-         *
-         * @param isShieldedInstanceEnabled the value to set
-         * @return this builder
-         **/
-        public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
-            this.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
-            this.__explicitlySet__.add("isShieldedInstanceEnabled");
-            return this;
-        }
-        /**
-         * The initial compute shape of the SDDC's ESXi hosts.
-         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
-        private String initialHostShapeName;
-
-        /**
-         * The initial compute shape of the SDDC's ESXi hosts.
-         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-         *
-         * @param initialHostShapeName the value to set
-         * @return this builder
-         **/
-        public Builder initialHostShapeName(String initialHostShapeName) {
-            this.initialHostShapeName = initialHostShapeName;
-            this.__explicitlySet__.add("initialHostShapeName");
-            return this;
-        }
-        /**
-         * The initial OCPU count of the SDDC's ESXi hosts.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
-        private Float initialHostOcpuCount;
-
-        /**
-         * The initial OCPU count of the SDDC's ESXi hosts.
-         *
-         * @param initialHostOcpuCount the value to set
-         * @return this builder
-         **/
-        public Builder initialHostOcpuCount(Float initialHostOcpuCount) {
-            this.initialHostOcpuCount = initialHostOcpuCount;
-            this.__explicitlySet__.add("initialHostOcpuCount");
-            return this;
-        }
-        /**
          * Indicates whether this SDDC is designated for only single ESXi host.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
@@ -489,21 +405,17 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             SddcSummary model =
                     new SddcSummary(
                             this.id,
-                            this.computeAvailabilityDomain,
                             this.displayName,
                             this.vmwareSoftwareVersion,
                             this.compartmentId,
-                            this.esxiHostsCount,
+                            this.clustersCount,
                             this.hcxFqdn,
-                            this.isHcxEnabled,
+                            this.hcxMode,
                             this.vcenterFqdn,
                             this.nsxManagerFqdn,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.isShieldedInstanceEnabled,
-                            this.initialHostShapeName,
-                            this.initialHostOcpuCount,
                             this.isSingleHostSddc,
                             this.freeformTags,
                             this.definedTags);
@@ -518,9 +430,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
-            if (model.wasPropertyExplicitlySet("computeAvailabilityDomain")) {
-                this.computeAvailabilityDomain(model.getComputeAvailabilityDomain());
-            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -530,14 +439,14 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("esxiHostsCount")) {
-                this.esxiHostsCount(model.getEsxiHostsCount());
+            if (model.wasPropertyExplicitlySet("clustersCount")) {
+                this.clustersCount(model.getClustersCount());
             }
             if (model.wasPropertyExplicitlySet("hcxFqdn")) {
                 this.hcxFqdn(model.getHcxFqdn());
             }
-            if (model.wasPropertyExplicitlySet("isHcxEnabled")) {
-                this.isHcxEnabled(model.getIsHcxEnabled());
+            if (model.wasPropertyExplicitlySet("hcxMode")) {
+                this.hcxMode(model.getHcxMode());
             }
             if (model.wasPropertyExplicitlySet("vcenterFqdn")) {
                 this.vcenterFqdn(model.getVcenterFqdn());
@@ -553,15 +462,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
-            }
-            if (model.wasPropertyExplicitlySet("isShieldedInstanceEnabled")) {
-                this.isShieldedInstanceEnabled(model.getIsShieldedInstanceEnabled());
-            }
-            if (model.wasPropertyExplicitlySet("initialHostShapeName")) {
-                this.initialHostShapeName(model.getInitialHostShapeName());
-            }
-            if (model.wasPropertyExplicitlySet("initialHostOcpuCount")) {
-                this.initialHostOcpuCount(model.getInitialHostOcpuCount());
             }
             if (model.wasPropertyExplicitlySet("isSingleHostSddc")) {
                 this.isSingleHostSddc(model.getIsSingleHostSddc());
@@ -603,22 +503,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
      **/
     public String getId() {
         return id;
-    }
-
-    /**
-     * The availability domain that the SDDC's ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
-    private final String computeAvailabilityDomain;
-
-    /**
-     * The availability domain that the SDDC's ESXi hosts are running in. For Multi-AD SDDC, it is {@code multi-AD}.
-     *
-     * @return the value
-     **/
-    public String getComputeAvailabilityDomain() {
-        return computeAvailabilityDomain;
     }
 
     /**
@@ -704,15 +588,15 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The number of ESXi hosts in the SDDC.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("esxiHostsCount")
-    private final Integer esxiHostsCount;
+    @com.fasterxml.jackson.annotation.JsonProperty("clustersCount")
+    private final Integer clustersCount;
 
     /**
      * The number of ESXi hosts in the SDDC.
      * @return the value
      **/
-    public Integer getEsxiHostsCount() {
-        return esxiHostsCount;
+    public Integer getClustersCount() {
+        return clustersCount;
     }
 
     /**
@@ -730,17 +614,19 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Indicates whether HCX is enabled.
+     * HCX configuration of the SDDC.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isHcxEnabled")
-    private final Boolean isHcxEnabled;
+    @com.fasterxml.jackson.annotation.JsonProperty("hcxMode")
+    private final HcxModes hcxMode;
 
     /**
-     * Indicates whether HCX is enabled.
+     * HCX configuration of the SDDC.
+     *
      * @return the value
      **/
-    public Boolean getIsHcxEnabled() {
-        return isHcxEnabled;
+    public HcxModes getHcxMode() {
+        return hcxMode;
     }
 
     /**
@@ -838,56 +724,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Indicates whether shielded instance is enabled at the SDDC level.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isShieldedInstanceEnabled")
-    private final Boolean isShieldedInstanceEnabled;
-
-    /**
-     * Indicates whether shielded instance is enabled at the SDDC level.
-     *
-     * @return the value
-     **/
-    public Boolean getIsShieldedInstanceEnabled() {
-        return isShieldedInstanceEnabled;
-    }
-
-    /**
-     * The initial compute shape of the SDDC's ESXi hosts.
-     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("initialHostShapeName")
-    private final String initialHostShapeName;
-
-    /**
-     * The initial compute shape of the SDDC's ESXi hosts.
-     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-     *
-     * @return the value
-     **/
-    public String getInitialHostShapeName() {
-        return initialHostShapeName;
-    }
-
-    /**
-     * The initial OCPU count of the SDDC's ESXi hosts.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("initialHostOcpuCount")
-    private final Float initialHostOcpuCount;
-
-    /**
-     * The initial OCPU count of the SDDC's ESXi hosts.
-     *
-     * @return the value
-     **/
-    public Float getInitialHostOcpuCount() {
-        return initialHostOcpuCount;
-    }
-
-    /**
      * Indicates whether this SDDC is designated for only single ESXi host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddc")
@@ -960,23 +796,17 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append("SddcSummary(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
-        sb.append(", computeAvailabilityDomain=")
-                .append(String.valueOf(this.computeAvailabilityDomain));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", vmwareSoftwareVersion=").append(String.valueOf(this.vmwareSoftwareVersion));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", esxiHostsCount=").append(String.valueOf(this.esxiHostsCount));
+        sb.append(", clustersCount=").append(String.valueOf(this.clustersCount));
         sb.append(", hcxFqdn=").append(String.valueOf(this.hcxFqdn));
-        sb.append(", isHcxEnabled=").append(String.valueOf(this.isHcxEnabled));
+        sb.append(", hcxMode=").append(String.valueOf(this.hcxMode));
         sb.append(", vcenterFqdn=").append(String.valueOf(this.vcenterFqdn));
         sb.append(", nsxManagerFqdn=").append(String.valueOf(this.nsxManagerFqdn));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", isShieldedInstanceEnabled=")
-                .append(String.valueOf(this.isShieldedInstanceEnabled));
-        sb.append(", initialHostShapeName=").append(String.valueOf(this.initialHostShapeName));
-        sb.append(", initialHostOcpuCount=").append(String.valueOf(this.initialHostOcpuCount));
         sb.append(", isSingleHostSddc=").append(String.valueOf(this.isSingleHostSddc));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -995,23 +825,17 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
         SddcSummary other = (SddcSummary) o;
         return java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(
-                        this.computeAvailabilityDomain, other.computeAvailabilityDomain)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.vmwareSoftwareVersion, other.vmwareSoftwareVersion)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.esxiHostsCount, other.esxiHostsCount)
+                && java.util.Objects.equals(this.clustersCount, other.clustersCount)
                 && java.util.Objects.equals(this.hcxFqdn, other.hcxFqdn)
-                && java.util.Objects.equals(this.isHcxEnabled, other.isHcxEnabled)
+                && java.util.Objects.equals(this.hcxMode, other.hcxMode)
                 && java.util.Objects.equals(this.vcenterFqdn, other.vcenterFqdn)
                 && java.util.Objects.equals(this.nsxManagerFqdn, other.nsxManagerFqdn)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(
-                        this.isShieldedInstanceEnabled, other.isShieldedInstanceEnabled)
-                && java.util.Objects.equals(this.initialHostShapeName, other.initialHostShapeName)
-                && java.util.Objects.equals(this.initialHostOcpuCount, other.initialHostOcpuCount)
                 && java.util.Objects.equals(this.isSingleHostSddc, other.isSingleHostSddc)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1023,11 +847,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.computeAvailabilityDomain == null
-                                ? 43
-                                : this.computeAvailabilityDomain.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -1039,9 +858,9 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.esxiHostsCount == null ? 43 : this.esxiHostsCount.hashCode());
+                        + (this.clustersCount == null ? 43 : this.clustersCount.hashCode());
         result = (result * PRIME) + (this.hcxFqdn == null ? 43 : this.hcxFqdn.hashCode());
-        result = (result * PRIME) + (this.isHcxEnabled == null ? 43 : this.isHcxEnabled.hashCode());
+        result = (result * PRIME) + (this.hcxMode == null ? 43 : this.hcxMode.hashCode());
         result = (result * PRIME) + (this.vcenterFqdn == null ? 43 : this.vcenterFqdn.hashCode());
         result =
                 (result * PRIME)
@@ -1051,21 +870,6 @@ public final class SddcSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isShieldedInstanceEnabled == null
-                                ? 43
-                                : this.isShieldedInstanceEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.initialHostShapeName == null
-                                ? 43
-                                : this.initialHostShapeName.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.initialHostOcpuCount == null
-                                ? 43
-                                : this.initialHostOcpuCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.isSingleHostSddc == null ? 43 : this.isSingleHostSddc.hashCode());

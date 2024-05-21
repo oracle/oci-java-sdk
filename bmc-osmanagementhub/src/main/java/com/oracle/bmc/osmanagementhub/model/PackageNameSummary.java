@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A simple representation of a package using its displayName and NEVRA parts.
+ * Provides summary information about a package.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -35,13 +35,13 @@ public final class PackageNameSummary extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Full package NEVRA name - this value should be unique.
+         * Full package name in NERVA format. This value should be unique.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Full package NEVRA name - this value should be unique.
+         * Full package name in NERVA format. This value should be unique.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class PackageNameSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Version of the installed package.
+         * The version of the software package.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Version of the installed package.
+         * The version of the software package.
          * @param version the value to set
          * @return this builder
          **/
@@ -99,13 +99,13 @@ public final class PackageNameSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The architecture for which this package was built.
+         * The CPU architecture type for which this package was built.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private ArchType architecture;
 
         /**
-         * The architecture for which this package was built.
+         * The CPU architecture type for which this package was built.
          * @param architecture the value to set
          * @return this builder
          **/
@@ -165,13 +165,13 @@ public final class PackageNameSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Full package NEVRA name - this value should be unique.
+     * Full package name in NERVA format. This value should be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Full package NEVRA name - this value should be unique.
+     * Full package name in NERVA format. This value should be unique.
      * @return the value
      **/
     public String getDisplayName() {
@@ -207,13 +207,13 @@ public final class PackageNameSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Version of the installed package.
+     * The version of the software package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Version of the installed package.
+     * The version of the software package.
      * @return the value
      **/
     public String getVersion() {
@@ -221,13 +221,13 @@ public final class PackageNameSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The architecture for which this package was built.
+     * The CPU architecture type for which this package was built.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchType architecture;
 
     /**
-     * The architecture for which this package was built.
+     * The CPU architecture type for which this package was built.
      * @return the value
      **/
     public ArchType getArchitecture() {

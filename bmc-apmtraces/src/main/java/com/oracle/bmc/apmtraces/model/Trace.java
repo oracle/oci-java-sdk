@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.model;
@@ -37,6 +37,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "traceErrorType",
         "traceErrorCode",
         "serviceSummaries",
+        "sourceName",
         "spanSummary",
         "spans"
     })
@@ -57,6 +58,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             String traceErrorType,
             String traceErrorCode,
             java.util.List<TraceServiceSummary> serviceSummaries,
+            SourceName sourceName,
             TraceSpanSummary spanSummary,
             java.util.List<Span> spans) {
         super();
@@ -76,6 +78,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.traceErrorType = traceErrorType;
         this.traceErrorCode = traceErrorCode;
         this.serviceSummaries = serviceSummaries;
+        this.sourceName = sourceName;
         this.spanSummary = spanSummary;
         this.spans = spans;
     }
@@ -392,6 +395,24 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("serviceSummaries");
             return this;
         }
+        /**
+         * Source of trace (traces, syn_traces).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
+        private SourceName sourceName;
+
+        /**
+         * Source of trace (traces, syn_traces).
+         *
+         * @param sourceName the value to set
+         * @return this builder
+         **/
+        public Builder sourceName(SourceName sourceName) {
+            this.sourceName = sourceName;
+            this.__explicitlySet__.add("sourceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("spanSummary")
         private TraceSpanSummary spanSummary;
@@ -442,6 +463,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.traceErrorType,
                             this.traceErrorCode,
                             this.serviceSummaries,
+                            this.sourceName,
                             this.spanSummary,
                             this.spans);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -499,6 +521,9 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("serviceSummaries")) {
                 this.serviceSummaries(model.getServiceSummaries());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
             }
             if (model.wasPropertyExplicitlySet("spanSummary")) {
                 this.spanSummary(model.getSpanSummary());
@@ -799,6 +824,71 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return serviceSummaries;
     }
 
+    /**
+     * Source of trace (traces, syn_traces).
+     *
+     **/
+    public enum SourceName {
+        Traces("TRACES"),
+        SynTraces("SYN_TRACES"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceName.class);
+
+        private final String value;
+        private static java.util.Map<String, SourceName> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SourceName v : SourceName.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SourceName(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SourceName create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SourceName', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Source of trace (traces, syn_traces).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
+    private final SourceName sourceName;
+
+    /**
+     * Source of trace (traces, syn_traces).
+     *
+     * @return the value
+     **/
+    public SourceName getSourceName() {
+        return sourceName;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("spanSummary")
     private final TraceSpanSummary spanSummary;
 
@@ -853,6 +943,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", traceErrorType=").append(String.valueOf(this.traceErrorType));
         sb.append(", traceErrorCode=").append(String.valueOf(this.traceErrorCode));
         sb.append(", serviceSummaries=").append(String.valueOf(this.serviceSummaries));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
         sb.append(", spanSummary=").append(String.valueOf(this.spanSummary));
         sb.append(", spans=").append(String.valueOf(this.spans));
         sb.append(")");
@@ -886,6 +977,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.traceErrorType, other.traceErrorType)
                 && java.util.Objects.equals(this.traceErrorCode, other.traceErrorCode)
                 && java.util.Objects.equals(this.serviceSummaries, other.serviceSummaries)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
                 && java.util.Objects.equals(this.spanSummary, other.spanSummary)
                 && java.util.Objects.equals(this.spans, other.spans)
                 && super.equals(other);
@@ -947,6 +1039,7 @@ public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result =
                 (result * PRIME)
                         + (this.serviceSummaries == null ? 43 : this.serviceSummaries.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
         result = (result * PRIME) + (this.spanSummary == null ? 43 : this.spanSummary.hashCode());
         result = (result * PRIME) + (this.spans == null ? 43 : this.spans.hashCode());
         result = (result * PRIME) + super.hashCode();

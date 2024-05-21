@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -66,30 +66,30 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * Language code supported
-         * Automatically detect language - auto
-         * Arabic - ar
-         * Brazilian Portuguese -  pt-BR
-         * Czech - cs
-         * Danish - da
-         * Dutch - nl
-         * English - en
-         * Finnish - fi
-         * French - fr
-         * Canadian French - fr-CA
-         * German - de
-         * Italian - it
-         * Japanese - ja
-         * Korean - ko
-         * Norwegian - no
-         * Polish - pl
-         * Romanian - ro
-         * Simplified Chinese - zh-CN
-         * Spanish - es
-         * Swedish - sv
-         * Traditional Chinese - zh-TW
-         * Turkish - tr
-         * Greek - el
-         * Hebrew - he
+         * - auto : Automatically detect language
+         * - ar : Arabic
+         * - pt-BR : Brazilian Portuguese
+         * - cs : Czech
+         * - da : Danish
+         * - nl : Dutch
+         * - en : English
+         * - fi : Finnish
+         * - fr : French
+         * - fr-CA : Canadian French
+         * - de : German
+         * - it : Italian
+         * - ja : Japanese
+         * - ko : Korean
+         * - no : Norwegian
+         * - pl : Polish
+         * - ro : Romanian
+         * - zh-CN : Simplified Chinese
+         * - es : Spanish
+         * - sv : Swedish
+         * - zh-TW : Traditional Chinese
+         * - tr : Turkish
+         * - el : Greek
+         * - he : Hebrew
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
@@ -97,30 +97,30 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
 
         /**
          * Language code supported
-         * Automatically detect language - auto
-         * Arabic - ar
-         * Brazilian Portuguese -  pt-BR
-         * Czech - cs
-         * Danish - da
-         * Dutch - nl
-         * English - en
-         * Finnish - fi
-         * French - fr
-         * Canadian French - fr-CA
-         * German - de
-         * Italian - it
-         * Japanese - ja
-         * Korean - ko
-         * Norwegian - no
-         * Polish - pl
-         * Romanian - ro
-         * Simplified Chinese - zh-CN
-         * Spanish - es
-         * Swedish - sv
-         * Traditional Chinese - zh-TW
-         * Turkish - tr
-         * Greek - el
-         * Hebrew - he
+         * - auto : Automatically detect language
+         * - ar : Arabic
+         * - pt-BR : Brazilian Portuguese
+         * - cs : Czech
+         * - da : Danish
+         * - nl : Dutch
+         * - en : English
+         * - fi : Finnish
+         * - fr : French
+         * - fr-CA : Canadian French
+         * - de : German
+         * - it : Italian
+         * - ja : Japanese
+         * - ko : Korean
+         * - no : Norwegian
+         * - pl : Polish
+         * - ro : Romanian
+         * - zh-CN : Simplified Chinese
+         * - es : Spanish
+         * - sv : Swedish
+         * - zh-TW : Traditional Chinese
+         * - tr : Turkish
+         * - el : Greek
+         * - he : Hebrew
          *
          * @param languageCode the value to set
          * @return this builder
@@ -199,30 +199,30 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Language code supported
-     * Automatically detect language - auto
-     * Arabic - ar
-     * Brazilian Portuguese -  pt-BR
-     * Czech - cs
-     * Danish - da
-     * Dutch - nl
-     * English - en
-     * Finnish - fi
-     * French - fr
-     * Canadian French - fr-CA
-     * German - de
-     * Italian - it
-     * Japanese - ja
-     * Korean - ko
-     * Norwegian - no
-     * Polish - pl
-     * Romanian - ro
-     * Simplified Chinese - zh-CN
-     * Spanish - es
-     * Swedish - sv
-     * Traditional Chinese - zh-TW
-     * Turkish - tr
-     * Greek - el
-     * Hebrew - he
+     * - auto : Automatically detect language
+     * - ar : Arabic
+     * - pt-BR : Brazilian Portuguese
+     * - cs : Czech
+     * - da : Danish
+     * - nl : Dutch
+     * - en : English
+     * - fi : Finnish
+     * - fr : French
+     * - fr-CA : Canadian French
+     * - de : German
+     * - it : Italian
+     * - ja : Japanese
+     * - ko : Korean
+     * - no : Norwegian
+     * - pl : Polish
+     * - ro : Romanian
+     * - zh-CN : Simplified Chinese
+     * - es : Spanish
+     * - sv : Swedish
+     * - zh-TW : Traditional Chinese
+     * - tr : Turkish
+     * - el : Greek
+     * - he : Hebrew
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
@@ -230,30 +230,30 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Language code supported
-     * Automatically detect language - auto
-     * Arabic - ar
-     * Brazilian Portuguese -  pt-BR
-     * Czech - cs
-     * Danish - da
-     * Dutch - nl
-     * English - en
-     * Finnish - fi
-     * French - fr
-     * Canadian French - fr-CA
-     * German - de
-     * Italian - it
-     * Japanese - ja
-     * Korean - ko
-     * Norwegian - no
-     * Polish - pl
-     * Romanian - ro
-     * Simplified Chinese - zh-CN
-     * Spanish - es
-     * Swedish - sv
-     * Traditional Chinese - zh-TW
-     * Turkish - tr
-     * Greek - el
-     * Hebrew - he
+     * - auto : Automatically detect language
+     * - ar : Arabic
+     * - pt-BR : Brazilian Portuguese
+     * - cs : Czech
+     * - da : Danish
+     * - nl : Dutch
+     * - en : English
+     * - fi : Finnish
+     * - fr : French
+     * - fr-CA : Canadian French
+     * - de : German
+     * - it : Italian
+     * - ja : Japanese
+     * - ko : Korean
+     * - no : Norwegian
+     * - pl : Polish
+     * - ro : Romanian
+     * - zh-CN : Simplified Chinese
+     * - es : Spanish
+     * - sv : Swedish
+     * - zh-TW : Traditional Chinese
+     * - tr : Turkish
+     * - el : Greek
+     * - he : Hebrew
      *
      * @return the value
      **/

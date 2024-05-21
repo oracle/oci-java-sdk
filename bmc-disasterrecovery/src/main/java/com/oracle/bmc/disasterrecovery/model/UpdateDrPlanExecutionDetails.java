@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a DR Plan exection.
+ * The details for updating a DR plan exection.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -36,18 +36,18 @@ public final class UpdateDrPlanExecutionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR Protection Group to update.
+         * The display name of the DR protection group to update.
          * <p>
-         * Example: {@code EBS IAD DRPG}
+         * Example: {@code EBS IAD Group}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the DR Protection Group to update.
+         * The display name of the DR protection group to update.
          * <p>
-         * Example: {@code EBS IAD DRPG}
+         * Example: {@code EBS IAD Group}
          *
          * @param displayName the value to set
          * @return this builder
@@ -59,6 +59,7 @@ public final class UpdateDrPlanExecutionDetails
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -67,6 +68,7 @@ public final class UpdateDrPlanExecutionDetails
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -79,6 +81,7 @@ public final class UpdateDrPlanExecutionDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -87,6 +90,7 @@ public final class UpdateDrPlanExecutionDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -139,18 +143,18 @@ public final class UpdateDrPlanExecutionDetails
     }
 
     /**
-     * The display name of the DR Protection Group to update.
+     * The display name of the DR protection group to update.
      * <p>
-     * Example: {@code EBS IAD DRPG}
+     * Example: {@code EBS IAD Group}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the DR Protection Group to update.
+     * The display name of the DR protection group to update.
      * <p>
-     * Example: {@code EBS IAD DRPG}
+     * Example: {@code EBS IAD Group}
      *
      * @return the value
      **/
@@ -160,6 +164,7 @@ public final class UpdateDrPlanExecutionDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -168,6 +173,7 @@ public final class UpdateDrPlanExecutionDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -178,6 +184,7 @@ public final class UpdateDrPlanExecutionDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -186,6 +193,7 @@ public final class UpdateDrPlanExecutionDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

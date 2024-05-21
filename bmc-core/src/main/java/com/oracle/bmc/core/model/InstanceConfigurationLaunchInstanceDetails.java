@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -30,6 +30,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         "availabilityDomain",
         "capacityReservationId",
         "compartmentId",
+        "clusterPlacementGroupId",
         "createVnicDetails",
         "definedTags",
         "displayName",
@@ -56,6 +57,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
             String availabilityDomain,
             String capacityReservationId,
             String compartmentId,
+            String clusterPlacementGroupId,
             InstanceConfigurationCreateVnicDetails createVnicDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
@@ -81,6 +83,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.createVnicDetails = createVnicDetails;
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -164,6 +167,22 @@ public final class InstanceConfigurationLaunchInstanceDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The OCID of the cluster placement group of the instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
 
@@ -696,6 +715,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
                             this.availabilityDomain,
                             this.capacityReservationId,
                             this.compartmentId,
+                            this.clusterPlacementGroupId,
                             this.createVnicDetails,
                             this.definedTags,
                             this.displayName,
@@ -733,6 +753,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("createVnicDetails")) {
                 this.createVnicDetails(model.getCreateVnicDetails());
@@ -864,6 +887,20 @@ public final class InstanceConfigurationLaunchInstanceDetails
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
@@ -1460,6 +1497,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", createVnicDetails=").append(String.valueOf(this.createVnicDetails));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1502,6 +1541,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.createVnicDetails, other.createVnicDetails)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -1546,6 +1587,11 @@ public final class InstanceConfigurationLaunchInstanceDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.createVnicDetails == null ? 43 : this.createVnicDetails.hashCode());

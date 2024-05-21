@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi;
@@ -8,7 +8,7 @@ import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 
 /**
- * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the dimension of your choosing. The Usage API is used by the Cost Analysis tool in the Console. Also see [Using the Usage API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
+ * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See [Cost Analysis Overview](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm) and [Using the Usage API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
@@ -73,6 +73,20 @@ public interface Usageapi extends AutoCloseable {
     CreateCustomTableResponse createCustomTable(CreateCustomTableRequest request);
 
     /**
+     * Add a list of email recipients that can receive usage statements for the subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailRecipientsGroup API.
+     */
+    CreateEmailRecipientsGroupResponse createEmailRecipientsGroup(
+            CreateEmailRecipientsGroupRequest request);
+
+    /**
      * Returns the created query.
      *
      * @param request The request object containing the details to send
@@ -99,6 +113,20 @@ public interface Usageapi extends AutoCloseable {
     CreateScheduleResponse createSchedule(CreateScheduleRequest request);
 
     /**
+     * Returns the created usage carbon emissions query.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUsageCarbonEmissionsQuery API.
+     */
+    CreateUsageCarbonEmissionsQueryResponse createUsageCarbonEmissionsQuery(
+            CreateUsageCarbonEmissionsQueryRequest request);
+
+    /**
      * Delete a saved custom table by the OCID.
      *
      * @param request The request object containing the details to send
@@ -110,6 +138,20 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomTable API.
      */
     DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request);
+
+    /**
+     * Delete the email recipients group for the usage statement subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailRecipientsGroup API.
+     */
+    DeleteEmailRecipientsGroupResponse deleteEmailRecipientsGroup(
+            DeleteEmailRecipientsGroupRequest request);
 
     /**
      * Delete a saved query by the OCID.
@@ -138,6 +180,20 @@ public interface Usageapi extends AutoCloseable {
     DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
     /**
+     * Delete a usage carbon emissions saved query by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUsageCarbonEmissionsQuery API.
+     */
+    DeleteUsageCarbonEmissionsQueryResponse deleteUsageCarbonEmissionsQuery(
+            DeleteUsageCarbonEmissionsQueryRequest request);
+
+    /**
      * Returns the saved custom table.
      *
      * @param request The request object containing the details to send
@@ -149,6 +205,19 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomTable API.
      */
     GetCustomTableResponse getCustomTable(GetCustomTableRequest request);
+
+    /**
+     * Return the saved usage statement email recipient group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailRecipientsGroup API.
+     */
+    GetEmailRecipientsGroupResponse getEmailRecipientsGroup(GetEmailRecipientsGroupRequest request);
 
     /**
      * Returns the saved query.
@@ -190,6 +259,20 @@ public interface Usageapi extends AutoCloseable {
     GetScheduledRunResponse getScheduledRun(GetScheduledRunRequest request);
 
     /**
+     * Returns the usage carbon emissions saved query.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUsageCarbonEmissionsQuery API.
+     */
+    GetUsageCarbonEmissionsQueryResponse getUsageCarbonEmissionsQuery(
+            GetUsageCarbonEmissionsQueryRequest request);
+
+    /**
      * Returns the saved custom table list.
      *
      * @param request The request object containing the details to send
@@ -201,6 +284,20 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListCustomTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomTables API.
      */
     ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request);
+
+    /**
+     * Return the saved usage statement email recipient group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListEmailRecipientsGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailRecipientsGroups API.
+     */
+    ListEmailRecipientsGroupsResponse listEmailRecipientsGroups(
+            ListEmailRecipientsGroupsRequest request);
 
     /**
      * Returns the saved query list.
@@ -242,6 +339,47 @@ public interface Usageapi extends AutoCloseable {
     ListSchedulesResponse listSchedules(ListSchedulesRequest request);
 
     /**
+     * Returns the usage carbon emissions saved query list.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListUsageCarbonEmissionsQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsageCarbonEmissionsQueries API.
+     */
+    ListUsageCarbonEmissionsQueriesResponse listUsageCarbonEmissionsQueries(
+            ListUsageCarbonEmissionsQueriesRequest request);
+
+    /**
+     * Returns the average carbon emissions summary by SKU.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestAverageCarbonEmissionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestAverageCarbonEmission API.
+     */
+    RequestAverageCarbonEmissionResponse requestAverageCarbonEmission(
+            RequestAverageCarbonEmissionRequest request);
+
+    /**
+     * Returns the clean energy usage summary by region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestCleanEnergyUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestCleanEnergyUsage API.
+     */
+    RequestCleanEnergyUsageResponse requestCleanEnergyUsage(RequestCleanEnergyUsageRequest request);
+
+    /**
      * Returns the configurations list for the UI drop-down list.
      *
      * @param request The request object containing the details to send
@@ -269,6 +407,34 @@ public interface Usageapi extends AutoCloseable {
     RequestSummarizedUsagesResponse requestSummarizedUsages(RequestSummarizedUsagesRequest request);
 
     /**
+     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestUsageCarbonEmissionConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestUsageCarbonEmissionConfig API.
+     */
+    RequestUsageCarbonEmissionConfigResponse requestUsageCarbonEmissionConfig(
+            RequestUsageCarbonEmissionConfigRequest request);
+
+    /**
+     * Returns usage carbon emission for the given account.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestUsageCarbonEmissionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestUsageCarbonEmissions API.
+     */
+    RequestUsageCarbonEmissionsResponse requestUsageCarbonEmissions(
+            RequestUsageCarbonEmissionsRequest request);
+
+    /**
      * Update a saved custom table by table id.
      *
      * @param request The request object containing the details to send
@@ -280,6 +446,20 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomTable API.
      */
     UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request);
+
+    /**
+     * Update a saved email recipients group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailRecipientsGroup API.
+     */
+    UpdateEmailRecipientsGroupResponse updateEmailRecipientsGroup(
+            UpdateEmailRecipientsGroupRequest request);
 
     /**
      * Update a saved query by the OCID.
@@ -306,6 +486,20 @@ public interface Usageapi extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
      */
     UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
+
+    /**
+     * Update a usage carbon emissions saved query by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUsageCarbonEmissionsQuery API.
+     */
+    UpdateUsageCarbonEmissionsQueryResponse updateUsageCarbonEmissionsQuery(
+            UpdateUsageCarbonEmissionsQueryRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

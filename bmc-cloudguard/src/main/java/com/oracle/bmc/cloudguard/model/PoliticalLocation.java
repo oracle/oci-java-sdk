@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Political location of a problem
+ * The geographical location of a problem in terms of political units.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,13 +32,13 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * City
+         * City of problem's location
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
         /**
-         * City
+         * City of problem's location
          * @param city the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * State
+         * State or province of problem's location
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
-         * State
+         * State or province of problem's location
          * @param state the value to set
          * @return this builder
          **/
@@ -64,13 +64,13 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Country
+         * Country of problem's location
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
-         * Country
+         * Country of problem's location
          * @param country the value to set
          * @return this builder
          **/
@@ -118,13 +118,13 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * City
+     * City of problem's location
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
     /**
-     * City
+     * City of problem's location
      * @return the value
      **/
     public String getCity() {
@@ -132,13 +132,13 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * State
+     * State or province of problem's location
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
-     * State
+     * State or province of problem's location
      * @return the value
      **/
     public String getState() {
@@ -146,13 +146,13 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Country
+     * Country of problem's location
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
-     * Country
+     * Country of problem's location
      * @return the value
      **/
     public String getCountry() {

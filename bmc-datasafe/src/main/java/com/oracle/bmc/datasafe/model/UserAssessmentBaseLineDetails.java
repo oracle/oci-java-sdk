@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details reqired to set baseline assessment.
+ * The details required to set the baseline for the assessment.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class UserAssessmentBaseLineDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of user assessment OCIDs that need to be updated while setting the baseline.
+         * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
         private java.util.List<String> assessmentIds;
 
         /**
-         * The list of user assessment OCIDs that need to be updated while setting the baseline.
+         * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
          * @param assessmentIds the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class UserAssessmentBaseLineDetails
     }
 
     /**
-     * The list of user assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentIds")
     private final java.util.List<String> assessmentIds;
 
     /**
-     * The list of user assessment OCIDs that need to be updated while setting the baseline.
+     * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      * @return the value
      **/
     public java.util.List<String> getAssessmentIds() {

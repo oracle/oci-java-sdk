@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -324,20 +324,20 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-         * - The CIDR blocks must be valid.
-         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+         * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+         * - The prefixes must be valid.
+         * - Multiple prefixes must not overlap each other or the on-premises network prefix.
+         * - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
         private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-         * - The CIDR blocks must be valid.
-         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+         * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+         * - The prefixes must be valid.
+         * - Multiple prefixes must not overlap each other or the on-premises network prefix.
+         * - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
          *
          * @param ipv6CidrBlocks the value to set
          * @return this builder
@@ -391,7 +391,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
          * subnet cannot have public IP addresses (that is, it's a private
          * subnet).
          * <p>
-         * If you intend to use an IPv6 CIDR block, you should use the flag {@code prohibitInternetIngress} to
+         * If you intend to use an IPv6 prefix, you should use the flag {@code prohibitInternetIngress} to
          * specify ingress internet traffic behavior of the subnet.
          * <p>
          * Example: {@code true}
@@ -410,7 +410,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
          * subnet cannot have public IP addresses (that is, it's a private
          * subnet).
          * <p>
-         * If you intend to use an IPv6 CIDR block, you should use the flag {@code prohibitInternetIngress} to
+         * If you intend to use an IPv6 prefix, you should use the flag {@code prohibitInternetIngress} to
          * specify ingress internet traffic behavior of the subnet.
          * <p>
          * Example: {@code true}
@@ -804,20 +804,20 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-     * - The CIDR blocks must be valid.
-     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+     * - The prefixes must be valid.
+     * - Multiple prefixes must not overlap each other or the on-premises network prefix.
+     * - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
     private final java.util.List<String> ipv6CidrBlocks;
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-     * - The CIDR blocks must be valid.
-     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+     * - The prefixes must be valid.
+     * - Multiple prefixes must not overlap each other or the on-premises network prefix.
+     * - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
      *
      * @return the value
      **/
@@ -867,7 +867,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
      * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
-     * If you intend to use an IPv6 CIDR block, you should use the flag {@code prohibitInternetIngress} to
+     * If you intend to use an IPv6 prefix, you should use the flag {@code prohibitInternetIngress} to
      * specify ingress internet traffic behavior of the subnet.
      * <p>
      * Example: {@code true}
@@ -886,7 +886,7 @@ public final class CreateSubnetDetails extends com.oracle.bmc.http.internal.Expl
      * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
-     * If you intend to use an IPv6 CIDR block, you should use the flag {@code prohibitInternetIngress} to
+     * If you intend to use an IPv6 prefix, you should use the flag {@code prohibitInternetIngress} to
      * specify ingress internet traffic behavior of the subnet.
      * <p>
      * Example: {@code true}

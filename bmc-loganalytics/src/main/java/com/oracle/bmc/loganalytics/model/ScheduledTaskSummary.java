@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -24,6 +24,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
     @java.beans.ConstructorProperties({
         "id",
         "taskType",
+        "targetService",
         "compartmentId",
         "timeCreated",
         "timeUpdated",
@@ -40,6 +41,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
     public ScheduledTaskSummary(
             String id,
             TaskType taskType,
+            String targetService,
             String compartmentId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -55,6 +57,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         super();
         this.id = id;
         this.taskType = taskType;
+        this.targetService = targetService;
         this.compartmentId = compartmentId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -103,6 +106,22 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         public Builder taskType(TaskType taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
+            return this;
+        }
+        /**
+         * Target Service
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("targetService")
+        private String targetService;
+
+        /**
+         * Target Service
+         * @param targetService the value to set
+         * @return this builder
+         **/
+        public Builder targetService(String targetService) {
+            this.targetService = targetService;
+            this.__explicitlySet__.add("targetService");
             return this;
         }
         /**
@@ -327,6 +346,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
                     new ScheduledTaskSummary(
                             this.id,
                             this.taskType,
+                            this.targetService,
                             this.compartmentId,
                             this.timeCreated,
                             this.timeUpdated,
@@ -352,6 +372,9 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("taskType")) {
                 this.taskType(model.getTaskType());
+            }
+            if (model.wasPropertyExplicitlySet("targetService")) {
+                this.targetService(model.getTargetService());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -432,6 +455,20 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
      **/
     public TaskType getTaskType() {
         return taskType;
+    }
+
+    /**
+     * Target Service
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetService")
+    private final String targetService;
+
+    /**
+     * Target Service
+     * @return the value
+     **/
+    public String getTargetService() {
+        return targetService;
     }
 
     /**
@@ -736,6 +773,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", taskType=").append(String.valueOf(this.taskType));
+        sb.append(", targetService=").append(String.valueOf(this.targetService));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
@@ -764,6 +802,7 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         ScheduledTaskSummary other = (ScheduledTaskSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.taskType, other.taskType)
+                && java.util.Objects.equals(this.targetService, other.targetService)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
@@ -785,6 +824,9 @@ public final class ScheduledTaskSummary extends com.oracle.bmc.http.internal.Exp
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.taskType == null ? 43 : this.taskType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetService == null ? 43 : this.targetService.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

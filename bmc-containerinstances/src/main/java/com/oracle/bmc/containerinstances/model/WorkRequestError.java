@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
@@ -30,16 +30,14 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occured. See [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of error codes.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A machine-usable code for the error that occured. Error codes are listed on
-         * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+         * A machine-usable code for the error that occured. See [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of error codes.
          *
          * @param code the value to set
          * @return this builder
@@ -50,13 +48,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * A human readable description of the issue encountered.
+         * A description of the issue encountered.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A human readable description of the issue encountered.
+         * A description of the issue encountered.
          * @param message the value to set
          * @return this builder
          **/
@@ -66,13 +64,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occured, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the error occured. An RFC3339 formatted datetime string.
+         * The time the error occured, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -120,16 +118,14 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. See [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of error codes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A machine-usable code for the error that occured. Error codes are listed on
-     * (https://docs.cloud.oracle.com/Content/API/References/apierrors.htm)
+     * A machine-usable code for the error that occured. See [API Errors](https://docs.cloud.oracle.com/Content/API/References/apierrors.htm) for a list of error codes.
      *
      * @return the value
      **/
@@ -138,13 +134,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A human readable description of the issue encountered.
+     * A description of the issue encountered.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A human readable description of the issue encountered.
+     * A description of the issue encountered.
      * @return the value
      **/
     public String getMessage() {
@@ -152,13 +148,13 @@ public final class WorkRequestError extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occured, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the error occured. An RFC3339 formatted datetime string.
+     * The time the error occured, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimestamp() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -54,13 +54,35 @@ public final class HostInsightsDataObjectSummary extends OpsiDataObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("groupNames")
+        private java.util.List<String> groupNames;
+
+        public Builder groupNames(java.util.List<String> groupNames) {
+            this.groupNames = groupNames;
+            this.__explicitlySet__.add("groupNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostInsightsDataObjectSummary build() {
             HostInsightsDataObjectSummary model =
                     new HostInsightsDataObjectSummary(
-                            this.identifier, this.displayName, this.description);
+                            this.identifier,
+                            this.displayName,
+                            this.description,
+                            this.name,
+                            this.groupNames);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -77,6 +99,12 @@ public final class HostInsightsDataObjectSummary extends OpsiDataObjectSummary {
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("groupNames")) {
+                this.groupNames(model.getGroupNames());
             }
             return this;
         }
@@ -95,8 +123,12 @@ public final class HostInsightsDataObjectSummary extends OpsiDataObjectSummary {
 
     @Deprecated
     public HostInsightsDataObjectSummary(
-            String identifier, String displayName, String description) {
-        super(identifier, displayName, description);
+            String identifier,
+            String displayName,
+            String description,
+            String name,
+            java.util.List<String> groupNames) {
+        super(identifier, displayName, description, name, groupNames);
     }
 
     @Override

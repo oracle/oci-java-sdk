@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A log message from the execution of a work request.
+ * A log message from a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -47,13 +47,13 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time the log message was written. An RFC3339 formatted datetime string
+         * The time the log message was written, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written. An RFC3339 formatted datetime string
+         * The time the log message was written, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -112,13 +112,13 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * The time the log message was written, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written. An RFC3339 formatted datetime string
+     * The time the log message was written, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimestamp() {

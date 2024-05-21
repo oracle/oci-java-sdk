@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.ocvp.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedVmwareSoftwareVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSupportedVmwareSoftwareVersionsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class ListSupportedVmwareSoftwareVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
@@ -71,6 +71,28 @@ public class ListSupportedVmwareSoftwareVersionsRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A filter to return only resources that match the given VMware software version exactly.
+     */
+    private String version;
+
+    /**
+     * A filter to return only resources that match the given VMware software version exactly.
+     */
+    public String getVersion() {
+        return version;
+    }
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     */
+    private String hostShapeName;
+
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     */
+    public String getHostShapeName() {
+        return hostShapeName;
     }
 
     public static class Builder
@@ -157,6 +179,36 @@ public class ListSupportedVmwareSoftwareVersionsRequest
         }
 
         /**
+         * A filter to return only resources that match the given VMware software version exactly.
+         */
+        private String version = null;
+
+        /**
+         * A filter to return only resources that match the given VMware software version exactly.
+         * @param version the value to set
+         * @return this builder instance
+         */
+        public Builder version(String version) {
+            this.version = version;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match or support the given ESXi host shape.
+         */
+        private String hostShapeName = null;
+
+        /**
+         * A filter to return only resources that match or support the given ESXi host shape.
+         * @param hostShapeName the value to set
+         * @return this builder instance
+         */
+        public Builder hostShapeName(String hostShapeName) {
+            this.hostShapeName = hostShapeName;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -188,6 +240,8 @@ public class ListSupportedVmwareSoftwareVersionsRequest
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            version(o.getVersion());
+            hostShapeName(o.getHostShapeName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -225,8 +279,10 @@ public class ListSupportedVmwareSoftwareVersionsRequest
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.version = version;
+            request.hostShapeName = hostShapeName;
             return request;
-            // new ListSupportedVmwareSoftwareVersionsRequest(compartmentId, limit, page, opcRequestId);
+            // new ListSupportedVmwareSoftwareVersionsRequest(compartmentId, limit, page, opcRequestId, version, hostShapeName);
         }
     }
 
@@ -239,7 +295,9 @@ public class ListSupportedVmwareSoftwareVersionsRequest
                 .compartmentId(compartmentId)
                 .limit(limit)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .version(version)
+                .hostShapeName(hostShapeName);
     }
 
     /**
@@ -259,6 +317,8 @@ public class ListSupportedVmwareSoftwareVersionsRequest
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",version=").append(String.valueOf(this.version));
+        sb.append(",hostShapeName=").append(String.valueOf(this.hostShapeName));
         sb.append(")");
         return sb.toString();
     }
@@ -278,7 +338,9 @@ public class ListSupportedVmwareSoftwareVersionsRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.version, other.version)
+                && java.util.Objects.equals(this.hostShapeName, other.hostShapeName);
     }
 
     @Override
@@ -291,6 +353,10 @@ public class ListSupportedVmwareSoftwareVersionsRequest
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());
         return result;
     }
 }

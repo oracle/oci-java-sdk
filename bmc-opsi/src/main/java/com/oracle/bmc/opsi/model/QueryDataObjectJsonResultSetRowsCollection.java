@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -61,13 +61,34 @@ public final class QueryDataObjectJsonResultSetRowsCollection
             this.__explicitlySet__.add("itemsMetadata");
             return this;
         }
+        /**
+         * Time taken for executing the data object query (in seconds).
+         * Consider optimizing the query or reducing the target data range, if query execution time is longer.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeInSeconds")
+        private Double queryExecutionTimeInSeconds;
+
+        /**
+         * Time taken for executing the data object query (in seconds).
+         * Consider optimizing the query or reducing the target data range, if query execution time is longer.
+         *
+         * @param queryExecutionTimeInSeconds the value to set
+         * @return this builder
+         **/
+        public Builder queryExecutionTimeInSeconds(Double queryExecutionTimeInSeconds) {
+            this.queryExecutionTimeInSeconds = queryExecutionTimeInSeconds;
+            this.__explicitlySet__.add("queryExecutionTimeInSeconds");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryDataObjectJsonResultSetRowsCollection build() {
             QueryDataObjectJsonResultSetRowsCollection model =
-                    new QueryDataObjectJsonResultSetRowsCollection(this.items, this.itemsMetadata);
+                    new QueryDataObjectJsonResultSetRowsCollection(
+                            this.items, this.itemsMetadata, this.queryExecutionTimeInSeconds);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +102,9 @@ public final class QueryDataObjectJsonResultSetRowsCollection
             }
             if (model.wasPropertyExplicitlySet("itemsMetadata")) {
                 this.itemsMetadata(model.getItemsMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("queryExecutionTimeInSeconds")) {
+                this.queryExecutionTimeInSeconds(model.getQueryExecutionTimeInSeconds());
             }
             return this;
         }
@@ -100,10 +124,12 @@ public final class QueryDataObjectJsonResultSetRowsCollection
     @Deprecated
     public QueryDataObjectJsonResultSetRowsCollection(
             java.util.List<Object> items,
-            java.util.List<QueryDataObjectResultSetColumnMetadata> itemsMetadata) {
+            java.util.List<QueryDataObjectResultSetColumnMetadata> itemsMetadata,
+            Double queryExecutionTimeInSeconds) {
         super();
         this.items = items;
         this.itemsMetadata = itemsMetadata;
+        this.queryExecutionTimeInSeconds = queryExecutionTimeInSeconds;
     }
 
     /**
@@ -134,6 +160,24 @@ public final class QueryDataObjectJsonResultSetRowsCollection
         return itemsMetadata;
     }
 
+    /**
+     * Time taken for executing the data object query (in seconds).
+     * Consider optimizing the query or reducing the target data range, if query execution time is longer.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeInSeconds")
+    private final Double queryExecutionTimeInSeconds;
+
+    /**
+     * Time taken for executing the data object query (in seconds).
+     * Consider optimizing the query or reducing the target data range, if query execution time is longer.
+     *
+     * @return the value
+     **/
+    public Double getQueryExecutionTimeInSeconds() {
+        return queryExecutionTimeInSeconds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -150,6 +194,8 @@ public final class QueryDataObjectJsonResultSetRowsCollection
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", items=").append(String.valueOf(this.items));
         sb.append(", itemsMetadata=").append(String.valueOf(this.itemsMetadata));
+        sb.append(", queryExecutionTimeInSeconds=")
+                .append(String.valueOf(this.queryExecutionTimeInSeconds));
         sb.append(")");
         return sb.toString();
     }
@@ -167,6 +213,8 @@ public final class QueryDataObjectJsonResultSetRowsCollection
                 (QueryDataObjectJsonResultSetRowsCollection) o;
         return java.util.Objects.equals(this.items, other.items)
                 && java.util.Objects.equals(this.itemsMetadata, other.itemsMetadata)
+                && java.util.Objects.equals(
+                        this.queryExecutionTimeInSeconds, other.queryExecutionTimeInSeconds)
                 && super.equals(other);
     }
 
@@ -178,6 +226,11 @@ public final class QueryDataObjectJsonResultSetRowsCollection
         result =
                 (result * PRIME)
                         + (this.itemsMetadata == null ? 43 : this.itemsMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryExecutionTimeInSeconds == null
+                                ? 43
+                                : this.queryExecutionTimeInSeconds.hashCode());
         return result;
     }
 }

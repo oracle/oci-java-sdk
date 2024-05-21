@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -386,7 +386,10 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Decrypt",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/DecryptedData/Decrypt");
         java.util.function.Function<javax.ws.rs.core.Response, DecryptResponse> transformer =
                 DecryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -421,7 +424,10 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Encrypt",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/EncryptedData/Encrypt");
         java.util.function.Function<javax.ws.rs.core.Response, EncryptResponse> transformer =
                 EncryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -456,7 +462,10 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "ExportKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/ExportedKeyData/ExportKey");
         java.util.function.Function<javax.ws.rs.core.Response, ExportKeyResponse> transformer =
                 ExportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -496,7 +505,7 @@ public class KmsCryptoClient implements KmsCrypto {
                         "KmsCrypto",
                         "GenerateDataEncryptionKey",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey");
         java.util.function.Function<javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
                 transformer =
                         GenerateDataEncryptionKeyConverter.fromResponse(
@@ -533,7 +542,10 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Sign",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/SignedData/Sign");
         java.util.function.Function<javax.ws.rs.core.Response, SignResponse> transformer =
                 SignConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -568,7 +580,10 @@ public class KmsCryptoClient implements KmsCrypto {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Verify",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/VerifiedData/Verify");
         java.util.function.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
                 VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

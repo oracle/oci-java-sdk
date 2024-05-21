@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Summary of the registration profile.
+ * Provides summary information for a registration profile.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -26,11 +26,14 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
         "compartmentId",
         "managementStationId",
         "profileType",
+        "registrationType",
         "vendorName",
         "osFamily",
         "archType",
         "timeCreated",
         "lifecycleState",
+        "isDefaultProfile",
+        "isServiceProvidedProfile",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -42,11 +45,14 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             String compartmentId,
             String managementStationId,
             ProfileType profileType,
+            Profile.RegistrationType registrationType,
             VendorName vendorName,
             OsFamily osFamily,
             ArchType archType,
             java.util.Date timeCreated,
             Profile.LifecycleState lifecycleState,
+            Boolean isDefaultProfile,
+            Boolean isServiceProvidedProfile,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -57,11 +63,14 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
         this.compartmentId = compartmentId;
         this.managementStationId = managementStationId;
         this.profileType = profileType;
+        this.registrationType = registrationType;
         this.vendorName = vendorName;
         this.osFamily = osFamily;
         this.archType = archType;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.isDefaultProfile = isDefaultProfile;
+        this.isServiceProvidedProfile = isServiceProvidedProfile;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -70,13 +79,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the profile that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the profile that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
          * @param id the value to set
          * @return this builder
          **/
@@ -86,13 +95,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the profile.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -102,13 +111,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The description of the registration profile.
+         * User-specified description of the registration profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of the registration profile.
+         * User-specified description of the registration profile.
          * @param description the value to set
          * @return this builder
          **/
@@ -118,13 +127,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The OCID of the tenancy containing the registration profile.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the registration profile.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -134,13 +143,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
         private String managementStationId;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
          * @param managementStationId the value to set
          * @return this builder
          **/
@@ -150,13 +159,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+         * The type of registration profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileType")
         private ProfileType profileType;
 
         /**
-         * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+         * The type of registration profile.
          * @param profileType the value to set
          * @return this builder
          **/
@@ -166,13 +175,29 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The software source vendor name.
+         * The type of instance to register.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
+        private Profile.RegistrationType registrationType;
+
+        /**
+         * The type of instance to register.
+         * @param registrationType the value to set
+         * @return this builder
+         **/
+        public Builder registrationType(Profile.RegistrationType registrationType) {
+            this.registrationType = registrationType;
+            this.__explicitlySet__.add("registrationType");
+            return this;
+        }
+        /**
+         * The vendor of the operating system for the instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
-         * The software source vendor name.
+         * The vendor of the operating system for the instance.
          * @param vendorName the value to set
          * @return this builder
          **/
@@ -243,6 +268,42 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
         public Builder lifecycleState(Profile.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+        private Boolean isDefaultProfile;
+
+        /**
+         * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+         *
+         * @param isDefaultProfile the value to set
+         * @return this builder
+         **/
+        public Builder isDefaultProfile(Boolean isDefaultProfile) {
+            this.isDefaultProfile = isDefaultProfile;
+            this.__explicitlySet__.add("isDefaultProfile");
+            return this;
+        }
+        /**
+         * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
+        private Boolean isServiceProvidedProfile;
+
+        /**
+         * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+         *
+         * @param isServiceProvidedProfile the value to set
+         * @return this builder
+         **/
+        public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
+            this.isServiceProvidedProfile = isServiceProvidedProfile;
+            this.__explicitlySet__.add("isServiceProvidedProfile");
             return this;
         }
         /**
@@ -323,11 +384,14 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.compartmentId,
                             this.managementStationId,
                             this.profileType,
+                            this.registrationType,
                             this.vendorName,
                             this.osFamily,
                             this.archType,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.isDefaultProfile,
+                            this.isServiceProvidedProfile,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -357,6 +421,9 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             if (model.wasPropertyExplicitlySet("profileType")) {
                 this.profileType(model.getProfileType());
             }
+            if (model.wasPropertyExplicitlySet("registrationType")) {
+                this.registrationType(model.getRegistrationType());
+            }
             if (model.wasPropertyExplicitlySet("vendorName")) {
                 this.vendorName(model.getVendorName());
             }
@@ -371,6 +438,12 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultProfile")) {
+                this.isDefaultProfile(model.getIsDefaultProfile());
+            }
+            if (model.wasPropertyExplicitlySet("isServiceProvidedProfile")) {
+                this.isServiceProvidedProfile(model.getIsServiceProvidedProfile());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -397,13 +470,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The OCID of the profile that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the profile that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      * @return the value
      **/
     public String getId() {
@@ -411,13 +484,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the profile.
      * @return the value
      **/
     public String getDisplayName() {
@@ -425,13 +498,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The description of the registration profile.
+     * User-specified description of the registration profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the registration profile.
+     * User-specified description of the registration profile.
      * @return the value
      **/
     public String getDescription() {
@@ -439,13 +512,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the registration profile.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -453,13 +526,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to associate with an instance once registered. Associating with a management station applies only to non-OCI instances.
      * @return the value
      **/
     public String getManagementStationId() {
@@ -467,13 +540,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of registration profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileType")
     private final ProfileType profileType;
 
     /**
-     * The type of registration profile. Either SOFTWARESOURCE, GROUP or LIFECYCLE.
+     * The type of registration profile.
      * @return the value
      **/
     public ProfileType getProfileType() {
@@ -481,13 +554,27 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The software source vendor name.
+     * The type of instance to register.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("registrationType")
+    private final Profile.RegistrationType registrationType;
+
+    /**
+     * The type of instance to register.
+     * @return the value
+     **/
+    public Profile.RegistrationType getRegistrationType() {
+        return registrationType;
+    }
+
+    /**
+     * The vendor of the operating system for the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system for the instance.
      * @return the value
      **/
     public VendorName getVendorName() {
@@ -548,6 +635,38 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
      **/
     public Profile.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultProfile")
+    private final Boolean isDefaultProfile;
+
+    /**
+     * Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDefaultProfile() {
+        return isDefaultProfile;
+    }
+
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isServiceProvidedProfile")
+    private final Boolean isServiceProvidedProfile;
+
+    /**
+     * Indicates if the profile was created by the service. OS Management Hub provides a limited set of standardized profiles that can be used to register Autonomous Linux or Windows instances.
+     *
+     * @return the value
+     **/
+    public Boolean getIsServiceProvidedProfile() {
+        return isServiceProvidedProfile;
     }
 
     /**
@@ -628,11 +747,15 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", managementStationId=").append(String.valueOf(this.managementStationId));
         sb.append(", profileType=").append(String.valueOf(this.profileType));
+        sb.append(", registrationType=").append(String.valueOf(this.registrationType));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
         sb.append(", osFamily=").append(String.valueOf(this.osFamily));
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
+        sb.append(", isServiceProvidedProfile=")
+                .append(String.valueOf(this.isServiceProvidedProfile));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -656,11 +779,15 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.managementStationId, other.managementStationId)
                 && java.util.Objects.equals(this.profileType, other.profileType)
+                && java.util.Objects.equals(this.registrationType, other.registrationType)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.osFamily, other.osFamily)
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
+                && java.util.Objects.equals(
+                        this.isServiceProvidedProfile, other.isServiceProvidedProfile)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -683,6 +810,9 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
                                 ? 43
                                 : this.managementStationId.hashCode());
         result = (result * PRIME) + (this.profileType == null ? 43 : this.profileType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.registrationType == null ? 43 : this.registrationType.hashCode());
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
         result = (result * PRIME) + (this.osFamily == null ? 43 : this.osFamily.hashCode());
         result = (result * PRIME) + (this.archType == null ? 43 : this.archType.hashCode());
@@ -690,6 +820,14 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultProfile == null ? 43 : this.isDefaultProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isServiceProvidedProfile == null
+                                ? 43
+                                : this.isServiceProvidedProfile.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
@@ -36,13 +36,13 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
             return this;
         }
         /**
-         * Absolute paths for log source files. Wildcard can be used.
+         * Absolute paths for log source files. Wildcards can be used.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("paths")
         private java.util.List<String> paths;
 
         /**
-         * Absolute paths for log source files. Wildcard can be used.
+         * Absolute paths for log source files. Wildcards can be used.
          * @param paths the value to set
          * @return this builder
          **/
@@ -61,12 +61,22 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("advancedOptions")
+        private UnifiedAgentTailSourceAdvancedOptions advancedOptions;
+
+        public Builder advancedOptions(UnifiedAgentTailSourceAdvancedOptions advancedOptions) {
+            this.advancedOptions = advancedOptions;
+            this.__explicitlySet__.add("advancedOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UnifiedAgentTailLogSource build() {
             UnifiedAgentTailLogSource model =
-                    new UnifiedAgentTailLogSource(this.name, this.paths, this.parser);
+                    new UnifiedAgentTailLogSource(
+                            this.name, this.paths, this.parser, this.advancedOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +93,9 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
             }
             if (model.wasPropertyExplicitlySet("parser")) {
                 this.parser(model.getParser());
+            }
+            if (model.wasPropertyExplicitlySet("advancedOptions")) {
+                this.advancedOptions(model.getAdvancedOptions());
             }
             return this;
         }
@@ -101,20 +114,24 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
 
     @Deprecated
     public UnifiedAgentTailLogSource(
-            String name, java.util.List<String> paths, UnifiedAgentParser parser) {
+            String name,
+            java.util.List<String> paths,
+            UnifiedAgentParser parser,
+            UnifiedAgentTailSourceAdvancedOptions advancedOptions) {
         super(name);
         this.paths = paths;
         this.parser = parser;
+        this.advancedOptions = advancedOptions;
     }
 
     /**
-     * Absolute paths for log source files. Wildcard can be used.
+     * Absolute paths for log source files. Wildcards can be used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     private final java.util.List<String> paths;
 
     /**
-     * Absolute paths for log source files. Wildcard can be used.
+     * Absolute paths for log source files. Wildcards can be used.
      * @return the value
      **/
     public java.util.List<String> getPaths() {
@@ -126,6 +143,13 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
 
     public UnifiedAgentParser getParser() {
         return parser;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("advancedOptions")
+    private final UnifiedAgentTailSourceAdvancedOptions advancedOptions;
+
+    public UnifiedAgentTailSourceAdvancedOptions getAdvancedOptions() {
+        return advancedOptions;
     }
 
     @Override
@@ -144,6 +168,7 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", paths=").append(String.valueOf(this.paths));
         sb.append(", parser=").append(String.valueOf(this.parser));
+        sb.append(", advancedOptions=").append(String.valueOf(this.advancedOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -160,6 +185,7 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         UnifiedAgentTailLogSource other = (UnifiedAgentTailLogSource) o;
         return java.util.Objects.equals(this.paths, other.paths)
                 && java.util.Objects.equals(this.parser, other.parser)
+                && java.util.Objects.equals(this.advancedOptions, other.advancedOptions)
                 && super.equals(other);
     }
 
@@ -169,6 +195,9 @@ public final class UnifiedAgentTailLogSource extends UnifiedAgentLoggingSource {
         int result = super.hashCode();
         result = (result * PRIME) + (this.paths == null ? 43 : this.paths.hashCode());
         result = (result * PRIME) + (this.parser == null ? 43 : this.parser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advancedOptions == null ? 43 : this.advancedOptions.hashCode());
         return result;
     }
 }

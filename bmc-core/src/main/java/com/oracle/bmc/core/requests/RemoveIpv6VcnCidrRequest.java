@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -14,12 +14,12 @@ public class RemoveIpv6VcnCidrRequest
                 com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     private String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
     public String getVcnId() {
         return vcnId;
@@ -78,12 +78,12 @@ public class RemoveIpv6VcnCidrRequest
         return ifMatch;
     }
     /**
-     * Details object for removing a VCN ipv6 CIDR.
+     * Details object for removing a VCN IPv6 prefix.
      */
     private com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails removeVcnIpv6CidrDetails;
 
     /**
-     * Details object for removing a VCN ipv6 CIDR.
+     * Details object for removing a VCN IPv6 prefix.
      */
     public com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails getRemoveVcnIpv6CidrDetails() {
         return removeVcnIpv6CidrDetails;
@@ -107,12 +107,12 @@ public class RemoveIpv6VcnCidrRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          */
         private String vcnId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
+         * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * @param vcnId the value to set
          * @return this builder instance
          */
@@ -187,12 +187,12 @@ public class RemoveIpv6VcnCidrRequest
         }
 
         /**
-         * Details object for removing a VCN ipv6 CIDR.
+         * Details object for removing a VCN IPv6 prefix.
          */
         private com.oracle.bmc.core.model.RemoveVcnIpv6CidrDetails removeVcnIpv6CidrDetails = null;
 
         /**
-         * Details object for removing a VCN ipv6 CIDR.
+         * Details object for removing a VCN IPv6 prefix.
          * @param removeVcnIpv6CidrDetails the value to set
          * @return this builder instance
          */

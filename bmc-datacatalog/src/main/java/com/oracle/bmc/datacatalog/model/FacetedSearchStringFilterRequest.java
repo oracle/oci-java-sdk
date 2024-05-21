@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -32,13 +32,17 @@ public final class FacetedSearchStringFilterRequest
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * String/boolean/numerical field name that needs to filtered with
+         * String/boolean/numerical field name that needs to be filtered by.
+         * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private String field;
 
         /**
-         * String/boolean/numerical field name that needs to filtered with
+         * String/boolean/numerical field name that needs to be filtered by.
+         * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
+         *
          * @param field the value to set
          * @return this builder
          **/
@@ -49,12 +53,18 @@ public final class FacetedSearchStringFilterRequest
         }
         /**
          * Array of values that the search results needs to be filtered by.
+         * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+         * For other fields, acceptable values can be derived by inspecting the data object.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
          * Array of values that the search results needs to be filtered by.
+         * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+         * For other fields, acceptable values can be derived by inspecting the data object.
+         *
          * @param values the value to set
          * @return this builder
          **/
@@ -100,13 +110,17 @@ public final class FacetedSearchStringFilterRequest
     }
 
     /**
-     * String/boolean/numerical field name that needs to filtered with
+     * String/boolean/numerical field name that needs to be filtered by.
+     * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("field")
     private final String field;
 
     /**
-     * String/boolean/numerical field name that needs to filtered with
+     * String/boolean/numerical field name that needs to be filtered by.
+     * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
+     *
      * @return the value
      **/
     public String getField() {
@@ -115,12 +129,18 @@ public final class FacetedSearchStringFilterRequest
 
     /**
      * Array of values that the search results needs to be filtered by.
+     * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+     * For other fields, acceptable values can be derived by inspecting the data object.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
      * Array of values that the search results needs to be filtered by.
+     * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+     * For other fields, acceptable values can be derived by inspecting the data object.
+     *
      * @return the value
      **/
     public java.util.List<String> getValues() {

@@ -1,16 +1,18 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
- * A remote direct memory access (RDMA) network group. Compute clusters are groups
- * of high performance computing (HPC) bare metal instances that are connected with an ultra low latency network.
- * Compute clusters allow you to manage instances in the cluster individually.
- * For more information, see [Compute Clusters](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm).
+ * A remote direct memory access (RDMA) network group.
  * <p>
- * For details about cluster networks that use intance pools to manage groups of identical instances,
+ * A cluster network on a [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a group of
+ * high performance computing (HPC), GPU, or optimized instances that are connected with an ultra low-latency network.
+ * <p>
+ * Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
+ * <p>
+ * For details about cluster networks that use instance pools to manage groups of identical instances,
  * see {@link ClusterNetwork}.
  *
  * <br/>
@@ -60,6 +62,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
     public static class Builder {
         /**
          * The availability domain the compute cluster is running in.
+         * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
          **/
@@ -68,6 +71,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
 
         /**
          * The availability domain the compute cluster is running in.
+         * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
@@ -79,13 +83,13 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -164,13 +168,13 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
          * @param id the value to set
          * @return this builder
          **/
@@ -198,6 +202,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
         /**
          * The date and time the compute cluster was created,
          * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          **/
@@ -207,6 +212,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
         /**
          * The date and time the compute cluster was created,
          * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
          * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
@@ -281,6 +287,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * The availability domain the compute cluster is running in.
+     * <p>
      * Example: {@code Uocm:PHX-AD-1}
      *
      **/
@@ -289,6 +296,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * The availability domain the compute cluster is running in.
+     * <p>
      * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
@@ -298,13 +306,13 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute cluster.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -374,13 +382,13 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this compute cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
      * @return the value
      **/
     public String getId() {
@@ -452,6 +460,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
     /**
      * The date and time the compute cluster was created,
      * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      **/
@@ -461,6 +470,7 @@ public final class ComputeCluster extends com.oracle.bmc.http.internal.Explicitl
     /**
      * The date and time the compute cluster was created,
      * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
      * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value

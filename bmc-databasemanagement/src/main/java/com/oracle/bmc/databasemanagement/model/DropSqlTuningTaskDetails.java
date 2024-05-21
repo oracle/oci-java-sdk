@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The request to drop a SQL tuning task.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,11 +24,15 @@ package com.oracle.bmc.databasemanagement.model;
 public final class DropSqlTuningTaskDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"taskId", "credentialDetails"})
-    public DropSqlTuningTaskDetails(Long taskId, SqlTuningTaskCredentialDetails credentialDetails) {
+    @java.beans.ConstructorProperties({"taskId", "credentialDetails", "databaseCredential"})
+    public DropSqlTuningTaskDetails(
+            Long taskId,
+            SqlTuningTaskCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.taskId = taskId;
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,12 +69,22 @@ public final class DropSqlTuningTaskDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DropSqlTuningTaskDetails build() {
             DropSqlTuningTaskDetails model =
-                    new DropSqlTuningTaskDetails(this.taskId, this.credentialDetails);
+                    new DropSqlTuningTaskDetails(
+                            this.taskId, this.credentialDetails, this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +98,9 @@ public final class DropSqlTuningTaskDetails
             }
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -125,6 +144,13 @@ public final class DropSqlTuningTaskDetails
         return credentialDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -141,6 +167,7 @@ public final class DropSqlTuningTaskDetails
         sb.append("super=").append(super.toString());
         sb.append("taskId=").append(String.valueOf(this.taskId));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -157,6 +184,7 @@ public final class DropSqlTuningTaskDetails
         DropSqlTuningTaskDetails other = (DropSqlTuningTaskDetails) o;
         return java.util.Objects.equals(this.taskId, other.taskId)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -168,6 +196,11 @@ public final class DropSqlTuningTaskDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

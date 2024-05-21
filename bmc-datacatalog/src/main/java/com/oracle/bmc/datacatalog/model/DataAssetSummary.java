@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -31,7 +31,8 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
         "uri",
         "timeCreated",
         "typeKey",
-        "lifecycleState"
+        "lifecycleState",
+        "lifecycleDetails"
     })
     public DataAssetSummary(
             String key,
@@ -42,7 +43,8 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
             String uri,
             java.util.Date timeCreated,
             String typeKey,
-            LifecycleState lifecycleState) {
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
         super();
         this.key = key;
         this.displayName = displayName;
@@ -53,6 +55,7 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
         this.timeCreated = timeCreated;
         this.typeKey = typeKey;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -211,6 +214,26 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -226,7 +249,8 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
                             this.uri,
                             this.timeCreated,
                             this.typeKey,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.lifecycleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -261,6 +285,9 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             return this;
         }
@@ -413,6 +440,24 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
         return lifecycleState;
     }
 
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -436,6 +481,7 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", typeKey=").append(String.valueOf(this.typeKey));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -459,6 +505,7 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.typeKey, other.typeKey)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && super.equals(other);
     }
 
@@ -477,6 +524,9 @@ public final class DataAssetSummary extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

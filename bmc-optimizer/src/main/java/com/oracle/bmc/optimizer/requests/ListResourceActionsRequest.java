@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.optimizer.requests;
@@ -263,6 +263,17 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
      */
     public com.oracle.bmc.optimizer.model.Status getStatus() {
         return status;
+    }
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    private Boolean includeResourceMetadata;
+
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    public Boolean getIncludeResourceMetadata() {
+        return includeResourceMetadata;
     }
     /**
      * Unique Oracle-assigned identifier for the request.
@@ -585,6 +596,21 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * Supplement additional resource information in extended metadata response.
+         */
+        private Boolean includeResourceMetadata = null;
+
+        /**
+         * Supplement additional resource information in extended metadata response.
+         * @param includeResourceMetadata the value to set
+         * @return this builder instance
+         */
+        public Builder includeResourceMetadata(Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
+            return this;
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request.
          * If you need to contact Oracle about a particular request, please provide the request ID.
          *
@@ -645,6 +671,7 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             sortBy(o.getSortBy());
             lifecycleState(o.getLifecycleState());
             status(o.getStatus());
+            includeResourceMetadata(o.getIncludeResourceMetadata());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -692,9 +719,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortBy = sortBy;
             request.lifecycleState = lifecycleState;
             request.status = status;
+            request.includeResourceMetadata = includeResourceMetadata;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourceActionsRequest(compartmentId, compartmentIdInSubtree, recommendationId, recommendationName, childTenancyIds, includeOrganization, name, resourceType, limit, page, sortOrder, sortBy, lifecycleState, status, opcRequestId);
+            // new ListResourceActionsRequest(compartmentId, compartmentIdInSubtree, recommendationId, recommendationName, childTenancyIds, includeOrganization, name, resourceType, limit, page, sortOrder, sortBy, lifecycleState, status, includeResourceMetadata, opcRequestId);
         }
     }
 
@@ -718,6 +746,7 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 .sortBy(sortBy)
                 .lifecycleState(lifecycleState)
                 .status(status)
+                .includeResourceMetadata(includeResourceMetadata)
                 .opcRequestId(opcRequestId);
     }
 
@@ -748,6 +777,7 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",includeResourceMetadata=").append(String.valueOf(this.includeResourceMetadata));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -779,6 +809,8 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(
+                        this.includeResourceMetadata, other.includeResourceMetadata)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -820,6 +852,11 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeResourceMetadata == null
+                                ? 43
+                                : this.includeResourceMetadata.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

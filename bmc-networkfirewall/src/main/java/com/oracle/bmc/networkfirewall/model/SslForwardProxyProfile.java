@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.networkfirewall.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SslForwardProxyProfile.Builder.class
 )
@@ -27,6 +27,23 @@ package com.oracle.bmc.networkfirewall.model;
 public final class SslForwardProxyProfile extends DecryptionProfile {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+        private String parentResourceId;
+
+        public Builder parentResourceId(String parentResourceId) {
+            this.parentResourceId = parentResourceId;
+            this.__explicitlySet__.add("parentResourceId");
+            return this;
+        }
         /**
          * Whether to block sessions if server's certificate is expired.
          **/
@@ -183,6 +200,8 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
         public SslForwardProxyProfile build() {
             SslForwardProxyProfile model =
                     new SslForwardProxyProfile(
+                            this.name,
+                            this.parentResourceId,
                             this.isExpiredCertificateBlocked,
                             this.isUntrustedIssuerBlocked,
                             this.isRevocationStatusTimeoutBlocked,
@@ -200,6 +219,12 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SslForwardProxyProfile model) {
+            if (model.wasPropertyExplicitlySet("name")) {
+                this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("parentResourceId")) {
+                this.parentResourceId(model.getParentResourceId());
+            }
             if (model.wasPropertyExplicitlySet("isExpiredCertificateBlocked")) {
                 this.isExpiredCertificateBlocked(model.getIsExpiredCertificateBlocked());
             }
@@ -245,6 +270,8 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
 
     @Deprecated
     public SslForwardProxyProfile(
+            String name,
+            String parentResourceId,
             Boolean isExpiredCertificateBlocked,
             Boolean isUntrustedIssuerBlocked,
             Boolean isRevocationStatusTimeoutBlocked,
@@ -254,7 +281,7 @@ public final class SslForwardProxyProfile extends DecryptionProfile {
             Boolean areCertificateExtensionsRestricted,
             Boolean isAutoIncludeAltName,
             Boolean isOutOfCapacityBlocked) {
-        super();
+        super(name, parentResourceId);
         this.isExpiredCertificateBlocked = isExpiredCertificateBlocked;
         this.isUntrustedIssuerBlocked = isUntrustedIssuerBlocked;
         this.isRevocationStatusTimeoutBlocked = isRevocationStatusTimeoutBlocked;

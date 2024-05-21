@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration;
@@ -277,6 +277,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Export Metadata Object
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExportRequestResponse> createExportRequest(
+            CreateExportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExportRequestRequest, CreateExportRequestResponse>
+                    handler);
+
+    /**
      * Publish a DataFlow in a OCI DataFlow application.
      *
      * @param request The request object containing the details to send
@@ -343,6 +359,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             CreateFunctionLibraryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>
+                    handler);
+
+    /**
+     * Import Metadata Object
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateImportRequestResponse> createImportRequest(
+            CreateImportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateImportRequestRequest, CreateImportRequestResponse>
                     handler);
 
     /**
@@ -699,6 +731,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Delete export object request using the specified identifier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExportRequestResponse> deleteExportRequest(
+            DeleteExportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExportRequestRequest, DeleteExportRequestResponse>
+                    handler);
+
+    /**
      * Removes a published object using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -762,6 +811,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
             DeleteFunctionLibraryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>
+                    handler);
+
+    /**
+     * Delete import object request using the specified identifier.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteImportRequestResponse> deleteImportRequest(
+            DeleteImportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteImportRequestRequest, DeleteImportRequestResponse>
                     handler);
 
     /**
@@ -984,6 +1050,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
                             handler);
 
     /**
+     * This endpoint can be used to get composite state for a given aggregator
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCompositeStateResponse> getCompositeState(
+            GetCompositeStateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCompositeStateRequest, GetCompositeStateResponse>
+                    handler);
+
+    /**
      * Retrieves the connection details using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -1160,6 +1243,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                             handler);
 
     /**
+     * This endpoint can be used to get the summary/details of object being exported.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExportRequestResponse> getExportRequest(
+            GetExportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetExportRequestRequest, GetExportRequestResponse>
+                    handler);
+
+    /**
      * Retrieves a publshed object in an task using the specified identifier.
      *
      * @param request The request object containing the details to send
@@ -1221,6 +1320,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             GetFunctionLibraryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetFunctionLibraryRequest, GetFunctionLibraryResponse>
+                    handler);
+
+    /**
+     * This endpoint can be used to get the summary/details of object being imported.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetImportRequestResponse> getImportRequest(
+            GetImportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetImportRequestRequest, GetImportRequestResponse>
                     handler);
 
     /**
@@ -1689,6 +1804,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This endpoint can be used to get the list of export object requests.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExportRequestsResponse> listExportRequests(
+            ListExportRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExportRequestsRequest, ListExportRequestsResponse>
+                    handler);
+
+    /**
      * Retrieves a lists of external publication validations in a workspace and provides options to filter the list.
      *
      *
@@ -1753,6 +1885,23 @@ public interface DataIntegrationAsync extends AutoCloseable {
             ListFunctionLibrariesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>
+                    handler);
+
+    /**
+     * This endpoint can be used to get the list of import object requests.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListImportRequestsResponse> listImportRequests(
+            ListImportRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListImportRequestsRequest, ListImportRequestsResponse>
                     handler);
 
     /**
@@ -2301,6 +2450,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Updates the status of a export object request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExportRequestResponse> updateExportRequest(
+            UpdateExportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExportRequestRequest, UpdateExportRequestResponse>
+                    handler);
+
+    /**
      * Updates the external publication object.
      *
      * @param request The request object containing the details to send
@@ -2345,6 +2510,22 @@ public interface DataIntegrationAsync extends AutoCloseable {
             UpdateFunctionLibraryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>
+                    handler);
+
+    /**
+     * Updates the status of a import object request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateImportRequestResponse> updateImportRequest(
+            UpdateImportRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateImportRequestRequest, UpdateImportRequestResponse>
                     handler);
 
     /**

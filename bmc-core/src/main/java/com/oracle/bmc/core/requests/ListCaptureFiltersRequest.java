@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -227,6 +227,17 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
     public com.oracle.bmc.core.model.CaptureFilter.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
+    /**
+     * A filter to only return resources that match the given capture {@code filterType}. The {@code filterType} value is the string representation of enum - {@code VTAP}, {@code FLOWLOG}.
+     */
+    private com.oracle.bmc.core.model.CaptureFilter.FilterType filterType;
+
+    /**
+     * A filter to only return resources that match the given capture {@code filterType}. The {@code filterType} value is the string representation of enum - {@code VTAP}, {@code FLOWLOG}.
+     */
+    public com.oracle.bmc.core.model.CaptureFilter.FilterType getFilterType() {
+        return filterType;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -403,6 +414,21 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * A filter to only return resources that match the given capture {@code filterType}. The {@code filterType} value is the string representation of enum - {@code VTAP}, {@code FLOWLOG}.
+         */
+        private com.oracle.bmc.core.model.CaptureFilter.FilterType filterType = null;
+
+        /**
+         * A filter to only return resources that match the given capture {@code filterType}. The {@code filterType} value is the string representation of enum - {@code VTAP}, {@code FLOWLOG}.
+         * @param filterType the value to set
+         * @return this builder instance
+         */
+        public Builder filterType(com.oracle.bmc.core.model.CaptureFilter.FilterType filterType) {
+            this.filterType = filterType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -438,6 +464,7 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
             sortOrder(o.getSortOrder());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
+            filterType(o.getFilterType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -478,8 +505,9 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
             request.sortOrder = sortOrder;
             request.displayName = displayName;
             request.lifecycleState = lifecycleState;
+            request.filterType = filterType;
             return request;
-            // new ListCaptureFiltersRequest(compartmentId, limit, page, opcRequestId, sortBy, sortOrder, displayName, lifecycleState);
+            // new ListCaptureFiltersRequest(compartmentId, limit, page, opcRequestId, sortBy, sortOrder, displayName, lifecycleState, filterType);
         }
     }
 
@@ -496,7 +524,8 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .displayName(displayName)
-                .lifecycleState(lifecycleState);
+                .lifecycleState(lifecycleState)
+                .filterType(filterType);
     }
 
     /**
@@ -520,6 +549,7 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",filterType=").append(String.valueOf(this.filterType));
         sb.append(")");
         return sb.toString();
     }
@@ -542,7 +572,8 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState);
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.filterType, other.filterType);
     }
 
     @Override
@@ -561,6 +592,7 @@ public class ListCaptureFiltersRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.filterType == null ? 43 : this.filterType.hashCode());
         return result;
     }
 }

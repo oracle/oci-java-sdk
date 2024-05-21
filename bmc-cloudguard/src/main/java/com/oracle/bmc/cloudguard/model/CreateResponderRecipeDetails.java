@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRecipe.
+ * Parameters for creating a responder recipe.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -96,13 +96,13 @@ public final class CreateResponderRecipeDetails
             return this;
         }
         /**
-         * The id of the source responder recipe.
+         * The unique identifier of the source responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
         private String sourceResponderRecipeId;
 
         /**
-         * The id of the source responder recipe.
+         * The unique identifier of the source responder recipe
          * @param sourceResponderRecipeId the value to set
          * @return this builder
          **/
@@ -112,13 +112,13 @@ public final class CreateResponderRecipeDetails
             return this;
         }
         /**
-         * Compartment Identifier
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -128,13 +128,13 @@ public final class CreateResponderRecipeDetails
             return this;
         }
         /**
-         * Responder Rules to override from source responder recipe
+         * List of responder rules to override from source responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateResponderRecipeResponderRule> responderRules;
 
         /**
-         * Responder Rules to override from source responder recipe
+         * List of responder rules to override from source responder recipe
          * @param responderRules the value to set
          * @return this builder
          **/
@@ -288,13 +288,13 @@ public final class CreateResponderRecipeDetails
     }
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
     private final String sourceResponderRecipeId;
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      * @return the value
      **/
     public String getSourceResponderRecipeId() {
@@ -302,13 +302,13 @@ public final class CreateResponderRecipeDetails
     }
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -316,13 +316,13 @@ public final class CreateResponderRecipeDetails
     }
 
     /**
-     * Responder Rules to override from source responder recipe
+     * List of responder rules to override from source responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateResponderRecipeResponderRule> responderRules;
 
     /**
-     * Responder Rules to override from source responder recipe
+     * List of responder rules to override from source responder recipe
      * @return the value
      **/
     public java.util.List<UpdateResponderRecipeResponderRule> getResponderRules() {

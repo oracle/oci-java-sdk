@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -20,8 +20,15 @@ public enum OperationType {
     RequestCryptoEventAnalysis("REQUEST_CRYPTO_EVENT_ANALYSIS"),
     RequestPerformanceTuningAnalysis("REQUEST_PERFORMANCE_TUNING_ANALYSIS"),
     RequestJavaMigrationAnalysis("REQUEST_JAVA_MIGRATION_ANALYSIS"),
+    DeleteJmsReport("DELETE_JMS_REPORT"),
     ScanJavaServerUsage("SCAN_JAVA_SERVER_USAGE"),
     ScanLibraryUsage("SCAN_LIBRARY_USAGE"),
+    ExportDataCsv("EXPORT_DATA_CSV"),
+    CreateDrsFile("CREATE_DRS_FILE"),
+    UpdateDrsFile("UPDATE_DRS_FILE"),
+    DeleteDrsFile("DELETE_DRS_FILE"),
+    EnableDrs("ENABLE_DRS"),
+    DisableDrs("DISABLE_DRS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Target.
+ * Summary information for a target.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -67,13 +67,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier for target that can't be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier for target that can't be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * DetectorTemplate Identifier, can be renamed
+         * Target display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DetectorTemplate Identifier, can be renamed
+         * Target display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -99,13 +99,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * Type of resource that's associated with the target(compartment/HCMCloud/ERPCloud)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
-         * possible type of targets(compartment/HCMCloud/ERPCloud)
+         * Type of resource that's associated with the target(compartment/HCMCloud/ERPCloud)
          * @param targetResourceType the value to set
          * @return this builder
          **/
@@ -179,13 +179,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -195,13 +195,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -211,13 +211,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          * @param lifecyleDetails the value to set
          * @return this builder
          **/
@@ -380,13 +380,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier for target that can't be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier for target that can't be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -394,13 +394,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * DetectorTemplate Identifier, can be renamed
+     * Target display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DetectorTemplate Identifier, can be renamed
+     * Target display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -408,13 +408,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -422,13 +422,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * Type of resource that's associated with the target(compartment/HCMCloud/ERPCloud)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
-     * possible type of targets(compartment/HCMCloud/ERPCloud)
+     * Type of resource that's associated with the target(compartment/HCMCloud/ERPCloud)
      * @return the value
      **/
     public TargetResourceType getTargetResourceType() {
@@ -478,13 +478,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -492,13 +492,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -506,13 +506,13 @@ public final class TargetSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * @return the value
      **/
     public String getLifecyleDetails() {

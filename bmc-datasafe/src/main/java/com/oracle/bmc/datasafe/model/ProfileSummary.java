@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -153,13 +153,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Maximum times the user is allowed in fail login before the user account is locked.
+         * Maximum times the user is allowed to fail login before the user account is locked.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
         private String failedLoginAttempts;
 
         /**
-         * Maximum times the user is allowed in fail login before the user account is locked.
+         * Maximum times the user is allowed to fail login before the user account is locked.
          * @param failedLoginAttempts the value to set
          * @return this builder
          **/
@@ -454,13 +454,13 @@ public final class ProfileSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Maximum times the user is allowed in fail login before the user account is locked.
+     * Maximum times the user is allowed to fail login before the user account is locked.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
     private final String failedLoginAttempts;
 
     /**
-     * Maximum times the user is allowed in fail login before the user account is locked.
+     * Maximum times the user is allowed to fail login before the user account is locked.
      * @return the value
      **/
     public String getFailedLoginAttempts() {

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Sighting summary Definition.
+ * Sighting summary definition.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -82,13 +82,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for finding event
+         * Unique identifier for sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for finding event
+         * Unique identifier for sighting
          * @param id the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Compartment Id where the resource is created
+         * Compartment OCID where the impacted resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Id where the resource is created
+         * Compartment OCID where the impacted resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -114,13 +114,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Problem Id to which the Sighting is associated
+         * Problem ID associated with sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id to which the Sighting is associated
+         * Problem ID associated with sighting
          * @param problemId the value to set
          * @return this builder
          **/
@@ -146,13 +146,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Name of the principal actor
+         * Name of principal actor
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
         private String actorPrincipalName;
 
         /**
-         * Name of the principal actor
+         * Name of principal actor
          * @param actorPrincipalName the value to set
          * @return this builder
          **/
@@ -162,13 +162,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Type of the principal actor
+         * Type of principal actor
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
         private String actorPrincipalType;
 
         /**
-         * Type of the principal actor
+         * Type of principal actor
          * @param actorPrincipalType the value to set
          * @return this builder
          **/
@@ -178,13 +178,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Unique identifier of the rule
+         * Unique identifier of the detector rule that was triggered
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
-         * Unique identifier of the rule
+         * Unique identifier of the detector rule that was triggered
          * @param detectorRuleId the value to set
          * @return this builder
          **/
@@ -194,13 +194,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * ClassificationStatus of the sighting event
+         * Classification status of the sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
         private ClassificationStatus classificationStatus;
 
         /**
-         * ClassificationStatus of the sighting event
+         * Classification status of the sighting
          * @param classificationStatus the value to set
          * @return this builder
          **/
@@ -210,13 +210,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Identifier for the sighting type
+         * Type of sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Type of sighting
          * @param sightingType the value to set
          * @return this builder
          **/
@@ -226,13 +226,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          * @param sightingTypeDisplayName the value to set
          * @return this builder
          **/
@@ -242,13 +242,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Name of the Mitre att&ck tactic
+         * Name of the MITRE ATT@CK framework tactic
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
         private String tacticName;
 
         /**
-         * Name of the Mitre att&ck tactic
+         * Name of the MITRE ATT@CK framework tactic
          * @param tacticName the value to set
          * @return this builder
          **/
@@ -258,13 +258,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Name of the Mitre att&ck technique
+         * Name of the MITRE ATT@CK framework technique
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
         private String techniqueName;
 
         /**
-         * Name of the Mitre att&ck technique
+         * Name of the MITRE ATT@CK framework technique
          * @param techniqueName the value to set
          * @return this builder
          **/
@@ -306,13 +306,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Confidence of the sighting
+         * Confidence level that the sighting is not a false positive
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Confidence confidence;
 
         /**
-         * Confidence of the sighting
+         * Confidence level that the sighting is not a false positive
          * @param confidence the value to set
          * @return this builder
          **/
@@ -354,13 +354,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Regions involved in the sighting
+         * List of regions involved in the sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Regions involved in the sighting
+         * List of regions involved in the sighting
          * @param regions the value to set
          * @return this builder
          **/
@@ -472,13 +472,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Unique identifier for finding event
+     * Unique identifier for sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for finding event
+     * Unique identifier for sighting
      * @return the value
      **/
     public String getId() {
@@ -486,13 +486,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Compartment Id where the resource is created
+     * Compartment OCID where the impacted resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Id where the resource is created
+     * Compartment OCID where the impacted resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -500,13 +500,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Problem Id to which the Sighting is associated
+     * Problem ID associated with sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id to which the Sighting is associated
+     * Problem ID associated with sighting
      * @return the value
      **/
     public String getProblemId() {
@@ -528,13 +528,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Name of the principal actor
+     * Name of principal actor
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalName")
     private final String actorPrincipalName;
 
     /**
-     * Name of the principal actor
+     * Name of principal actor
      * @return the value
      **/
     public String getActorPrincipalName() {
@@ -542,13 +542,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Type of the principal actor
+     * Type of principal actor
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorPrincipalType")
     private final String actorPrincipalType;
 
     /**
-     * Type of the principal actor
+     * Type of principal actor
      * @return the value
      **/
     public String getActorPrincipalType() {
@@ -556,13 +556,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Unique identifier of the rule
+     * Unique identifier of the detector rule that was triggered
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
-     * Unique identifier of the rule
+     * Unique identifier of the detector rule that was triggered
      * @return the value
      **/
     public String getDetectorRuleId() {
@@ -570,13 +570,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * ClassificationStatus of the sighting event
+     * Classification status of the sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classificationStatus")
     private final ClassificationStatus classificationStatus;
 
     /**
-     * ClassificationStatus of the sighting event
+     * Classification status of the sighting
      * @return the value
      **/
     public ClassificationStatus getClassificationStatus() {
@@ -584,13 +584,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting
      * @return the value
      **/
     public String getSightingType() {
@@ -598,13 +598,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      * @return the value
      **/
     public String getSightingTypeDisplayName() {
@@ -612,13 +612,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Name of the Mitre att&ck tactic
+     * Name of the MITRE ATT@CK framework tactic
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tacticName")
     private final String tacticName;
 
     /**
-     * Name of the Mitre att&ck tactic
+     * Name of the MITRE ATT@CK framework tactic
      * @return the value
      **/
     public String getTacticName() {
@@ -626,13 +626,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Name of the Mitre att&ck technique
+     * Name of the MITRE ATT@CK framework technique
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("techniqueName")
     private final String techniqueName;
 
     /**
-     * Name of the Mitre att&ck technique
+     * Name of the MITRE ATT@CK framework technique
      * @return the value
      **/
     public String getTechniqueName() {
@@ -668,13 +668,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Confidence of the sighting
+     * Confidence level that the sighting is not a false positive
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Confidence confidence;
 
     /**
-     * Confidence of the sighting
+     * Confidence level that the sighting is not a false positive
      * @return the value
      **/
     public Confidence getConfidence() {
@@ -710,13 +710,13 @@ public final class SightingSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Regions involved in the sighting
+     * List of regions involved in the sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Regions involved in the sighting
+     * List of regions involved in the sighting
      * @return the value
      **/
     public java.util.List<String> getRegions() {

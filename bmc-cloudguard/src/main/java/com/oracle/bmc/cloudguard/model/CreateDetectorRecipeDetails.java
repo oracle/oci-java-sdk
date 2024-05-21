@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Create of Detector recipe.
+ * Parameters to use to create details for a detector recipe.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -99,13 +99,13 @@ public final class CreateDetectorRecipeDetails
             return this;
         }
         /**
-         * detector for the rule
+         * Detector for the rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
         /**
-         * detector for the rule
+         * Detector for the rule
          * @param detector the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class CreateDetectorRecipeDetails
             return this;
         }
         /**
-         * The id of the source detector recipe.
+         * The ID of the source detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
         private String sourceDetectorRecipeId;
 
         /**
-         * The id of the source detector recipe.
+         * The ID of the source detector recipe
          * @param sourceDetectorRecipeId the value to set
          * @return this builder
          **/
@@ -131,13 +131,13 @@ public final class CreateDetectorRecipeDetails
             return this;
         }
         /**
-         * Compartment Identifier
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -147,13 +147,13 @@ public final class CreateDetectorRecipeDetails
             return this;
         }
         /**
-         * Detector Rules to override from source detector recipe
+         * Detector rules to override from source detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateDetectorRecipeDetectorRule> detectorRules;
 
         /**
-         * Detector Rules to override from source detector recipe
+         * Detector rules to override from source detector recipe
          * @param detectorRules the value to set
          * @return this builder
          **/
@@ -311,13 +311,13 @@ public final class CreateDetectorRecipeDetails
     }
 
     /**
-     * detector for the rule
+     * Detector for the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
     /**
-     * detector for the rule
+     * Detector for the rule
      * @return the value
      **/
     public DetectorEnum getDetector() {
@@ -325,13 +325,13 @@ public final class CreateDetectorRecipeDetails
     }
 
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
     private final String sourceDetectorRecipeId;
 
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      * @return the value
      **/
     public String getSourceDetectorRecipeId() {
@@ -339,13 +339,13 @@ public final class CreateDetectorRecipeDetails
     }
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -353,13 +353,13 @@ public final class CreateDetectorRecipeDetails
     }
 
     /**
-     * Detector Rules to override from source detector recipe
+     * Detector rules to override from source detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateDetectorRecipeDetectorRule> detectorRules;
 
     /**
-     * Detector Rules to override from source detector recipe
+     * Detector rules to override from source detector recipe
      * @return the value
      **/
     public java.util.List<UpdateDetectorRecipeDetectorRule> getDetectorRules() {

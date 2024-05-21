@@ -1,12 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
 
 /**
  * The properties that define a metric.
- * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+ * For information about metrics, see
+ * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -136,7 +137,7 @@ public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
          * Each dimension takes the form of a key-value pair.
          * <p>
-         * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
@@ -146,7 +147,7 @@ public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
          * Each dimension takes the form of a key-value pair.
          * <p>
-         * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
@@ -290,7 +291,7 @@ public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
@@ -300,7 +301,7 @@ public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      * Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
      **/

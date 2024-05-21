@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details required to create a tablespace.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,6 +26,7 @@ public final class CreateTablespaceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "name",
         "type",
         "isBigfile",
@@ -47,6 +50,7 @@ public final class CreateTablespaceDetails
     })
     public CreateTablespaceDetails(
             TablespaceAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             String name,
             Type type,
             Boolean isBigfile,
@@ -69,6 +73,7 @@ public final class CreateTablespaceDetails
             Boolean isDefault) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.name = name;
         this.type = type;
         this.isBigfile = isBigfile;
@@ -100,6 +105,15 @@ public final class CreateTablespaceDetails
         public Builder credentialDetails(TablespaceAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /**
@@ -472,6 +486,7 @@ public final class CreateTablespaceDetails
             CreateTablespaceDetails model =
                     new CreateTablespaceDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.name,
                             this.type,
                             this.isBigfile,
@@ -502,6 +517,9 @@ public final class CreateTablespaceDetails
         public Builder copy(CreateTablespaceDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
@@ -583,6 +601,13 @@ public final class CreateTablespaceDetails
 
     public TablespaceAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /**
@@ -1102,6 +1127,7 @@ public final class CreateTablespaceDetails
         sb.append("CreateTablespaceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isBigfile=").append(String.valueOf(this.isBigfile));
@@ -1137,6 +1163,7 @@ public final class CreateTablespaceDetails
 
         CreateTablespaceDetails other = (CreateTablespaceDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isBigfile, other.isBigfile)
@@ -1167,6 +1194,11 @@ public final class CreateTablespaceDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.isBigfile == null ? 43 : this.isBigfile.hashCode());

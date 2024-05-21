@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -233,9 +233,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * Specify the endpoint on which to run the monitor.
-         * For BROWSER and REST monitor types, target is mandatory.
+         * For BROWSER, REST and NETWORK monitor types, target is mandatory.
          * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
          * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
@@ -243,9 +244,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
 
         /**
          * Specify the endpoint on which to run the monitor.
-         * For BROWSER and REST monitor types, target is mandatory.
+         * For BROWSER, REST and NETWORK monitor types, target is mandatory.
          * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
          * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
          *
          * @param target the value to set
          * @return this builder
@@ -348,13 +350,13 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * If isRunNow is enabled, then the monitor will run now.
+         * If isRunNow is enabled, then the monitor will run immediately.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
         private Boolean isRunNow;
 
         /**
-         * If isRunNow is enabled, then the monitor will run now.
+         * If isRunNow is enabled, then the monitor will run immediately.
          * @param isRunNow the value to set
          * @return this builder
          **/
@@ -364,13 +366,13 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Scheduling policy on Vantage points.
+         * Scheduling policy to decide the distribution of monitor executions on vantage points.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
         private SchedulingPolicy schedulingPolicy;
 
         /**
-         * Scheduling policy on Vantage points.
+         * Scheduling policy to decide the distribution of monitor executions on vantage points.
          * @param schedulingPolicy the value to set
          * @return this builder
          **/
@@ -380,13 +382,13 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
         private Integer batchIntervalInSeconds;
 
         /**
-         * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+         * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
          * @param batchIntervalInSeconds the value to set
          * @return this builder
          **/
@@ -631,9 +633,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Specify the endpoint on which to run the monitor.
-     * For BROWSER and REST monitor types, target is mandatory.
+     * For BROWSER, REST and NETWORK monitor types, target is mandatory.
      * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
      * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
@@ -641,9 +644,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Specify the endpoint on which to run the monitor.
-     * For BROWSER and REST monitor types, target is mandatory.
+     * For BROWSER, REST and NETWORK monitor types, target is mandatory.
      * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
      * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
      *
      * @return the value
      **/
@@ -729,13 +733,13 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * If isRunNow is enabled, then the monitor will run now.
+     * If isRunNow is enabled, then the monitor will run immediately.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRunNow")
     private final Boolean isRunNow;
 
     /**
-     * If isRunNow is enabled, then the monitor will run now.
+     * If isRunNow is enabled, then the monitor will run immediately.
      * @return the value
      **/
     public Boolean getIsRunNow() {
@@ -743,13 +747,13 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Scheduling policy on Vantage points.
+     * Scheduling policy to decide the distribution of monitor executions on vantage points.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedulingPolicy")
     private final SchedulingPolicy schedulingPolicy;
 
     /**
-     * Scheduling policy on Vantage points.
+     * Scheduling policy to decide the distribution of monitor executions on vantage points.
      * @return the value
      **/
     public SchedulingPolicy getSchedulingPolicy() {
@@ -757,13 +761,13 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchIntervalInSeconds")
     private final Integer batchIntervalInSeconds;
 
     /**
-     * Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+     * Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * @return the value
      **/
     public Integer getBatchIntervalInSeconds() {

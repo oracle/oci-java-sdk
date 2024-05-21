@@ -1,11 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Results of a workRequestError search. Contains both WorkRequestError items and other information, such as metadata.
+ * The collection of work request error resources. These result from a
+ * workRequestError search. Contains WorkRequestError items and other
+ * information, such as metadata.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +34,13 @@ public final class WorkRequestErrorCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of workRequestError objects.
+         * List of workRequestError resources
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestError> items;
 
         /**
-         * List of workRequestError objects.
+         * List of workRequestError resources
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +82,13 @@ public final class WorkRequestErrorCollection
     }
 
     /**
-     * List of workRequestError objects.
+     * List of workRequestError resources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestError> items;
 
     /**
-     * List of workRequestError objects.
+     * List of workRequestError resources
      * @return the value
      **/
     public java.util.List<WorkRequestError> getItems() {

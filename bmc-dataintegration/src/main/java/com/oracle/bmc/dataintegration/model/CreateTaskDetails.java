@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -63,6 +63,7 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         "parameters",
         "opConfigValues",
         "configProviderDelegate",
+        "isConcurrentAllowed",
         "registryMetadata"
     })
     protected CreateTaskDetails(
@@ -78,6 +79,7 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             CreateConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             RegistryMetadata registryMetadata) {
         super();
         this.key = key;
@@ -92,6 +94,7 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         this.parameters = parameters;
         this.opConfigValues = opConfigValues;
         this.configProviderDelegate = configProviderDelegate;
+        this.isConcurrentAllowed = isConcurrentAllowed;
         this.registryMetadata = registryMetadata;
     }
 
@@ -242,6 +245,20 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         return configProviderDelegate;
     }
 
+    /**
+     * Whether the same task can be executed concurrently.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+    private final Boolean isConcurrentAllowed;
+
+    /**
+     * Whether the same task can be executed concurrently.
+     * @return the value
+     **/
+    public Boolean getIsConcurrentAllowed() {
+        return isConcurrentAllowed;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
     private final RegistryMetadata registryMetadata;
 
@@ -275,6 +292,7 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", opConfigValues=").append(String.valueOf(this.opConfigValues));
         sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
+        sb.append(", isConcurrentAllowed=").append(String.valueOf(this.isConcurrentAllowed));
         sb.append(", registryMetadata=").append(String.valueOf(this.registryMetadata));
         sb.append(")");
         return sb.toString();
@@ -303,6 +321,7 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
+                && java.util.Objects.equals(this.isConcurrentAllowed, other.isConcurrentAllowed)
                 && java.util.Objects.equals(this.registryMetadata, other.registryMetadata)
                 && super.equals(other);
     }
@@ -329,6 +348,11 @@ public class CreateTaskDetails extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.configProviderDelegate == null
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConcurrentAllowed == null
+                                ? 43
+                                : this.isConcurrentAllowed.hashCode());
         result =
                 (result * PRIME)
                         + (this.registryMetadata == null ? 43 : this.registryMetadata.hashCode());

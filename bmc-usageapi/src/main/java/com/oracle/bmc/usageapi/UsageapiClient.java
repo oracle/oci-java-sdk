@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi;
@@ -430,7 +430,8 @@ public class UsageapiClient implements Usageapi {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -589,6 +590,50 @@ public class UsageapiClient implements Usageapi {
     }
 
     @Override
+    public CreateEmailRecipientsGroupResponse createEmailRecipientsGroup(
+            CreateEmailRecipientsGroupRequest request) {
+        LOG.trace("Called createEmailRecipientsGroup");
+        final CreateEmailRecipientsGroupRequest interceptedRequest =
+                CreateEmailRecipientsGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "CreateEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/CreateEmailRecipientsGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEmailRecipientsGroupResponse>
+                transformer =
+                        CreateEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateEmailRecipientsGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateQueryResponse createQuery(CreateQueryRequest request) {
         LOG.trace("Called createQuery");
         final CreateQueryRequest interceptedRequest =
@@ -669,6 +714,51 @@ public class UsageapiClient implements Usageapi {
     }
 
     @Override
+    public CreateUsageCarbonEmissionsQueryResponse createUsageCarbonEmissionsQuery(
+            CreateUsageCarbonEmissionsQueryRequest request) {
+        LOG.trace("Called createUsageCarbonEmissionsQuery");
+        final CreateUsageCarbonEmissionsQueryRequest interceptedRequest =
+                CreateUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "CreateUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/CreateUsageCarbonEmissionsQuery");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        CreateUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateUsageCarbonEmissionsQueryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request) {
         LOG.trace("Called deleteCustomTable");
         final DeleteCustomTableRequest interceptedRequest =
@@ -689,6 +779,45 @@ public class UsageapiClient implements Usageapi {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomTableResponse>
                 transformer =
                         DeleteCustomTableConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteEmailRecipientsGroupResponse deleteEmailRecipientsGroup(
+            DeleteEmailRecipientsGroupRequest request) {
+        LOG.trace("Called deleteEmailRecipientsGroup");
+        final DeleteEmailRecipientsGroupRequest interceptedRequest =
+                DeleteEmailRecipientsGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "DeleteEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/DeleteEmailRecipientsGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteEmailRecipientsGroupResponse>
+                transformer =
+                        DeleteEmailRecipientsGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -779,6 +908,46 @@ public class UsageapiClient implements Usageapi {
     }
 
     @Override
+    public DeleteUsageCarbonEmissionsQueryResponse deleteUsageCarbonEmissionsQuery(
+            DeleteUsageCarbonEmissionsQueryRequest request) {
+        LOG.trace("Called deleteUsageCarbonEmissionsQuery");
+        final DeleteUsageCarbonEmissionsQueryRequest interceptedRequest =
+                DeleteUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "DeleteUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/DeleteUsageCarbonEmissionsQuery");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        DeleteUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetCustomTableResponse getCustomTable(GetCustomTableRequest request) {
         LOG.trace("Called getCustomTable");
         final GetCustomTableRequest interceptedRequest =
@@ -798,6 +967,44 @@ public class UsageapiClient implements Usageapi {
                         "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable");
         java.util.function.Function<javax.ws.rs.core.Response, GetCustomTableResponse> transformer =
                 GetCustomTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetEmailRecipientsGroupResponse getEmailRecipientsGroup(
+            GetEmailRecipientsGroupRequest request) {
+        LOG.trace("Called getEmailRecipientsGroup");
+        final GetEmailRecipientsGroupRequest interceptedRequest =
+                GetEmailRecipientsGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "GetEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/GetEmailRecipientsGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetEmailRecipientsGroupResponse>
+                transformer =
+                        GetEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -920,6 +1127,44 @@ public class UsageapiClient implements Usageapi {
     }
 
     @Override
+    public GetUsageCarbonEmissionsQueryResponse getUsageCarbonEmissionsQuery(
+            GetUsageCarbonEmissionsQueryRequest request) {
+        LOG.trace("Called getUsageCarbonEmissionsQuery");
+        final GetUsageCarbonEmissionsQueryRequest interceptedRequest =
+                GetUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "GetUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/GetUsageCarbonEmissionsQuery");
+        java.util.function.Function<javax.ws.rs.core.Response, GetUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        GetUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request) {
         LOG.trace("Called listCustomTables");
         final ListCustomTablesRequest interceptedRequest =
@@ -940,6 +1185,45 @@ public class UsageapiClient implements Usageapi {
         java.util.function.Function<javax.ws.rs.core.Response, ListCustomTablesResponse>
                 transformer =
                         ListCustomTablesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListEmailRecipientsGroupsResponse listEmailRecipientsGroups(
+            ListEmailRecipientsGroupsRequest request) {
+        LOG.trace("Called listEmailRecipientsGroups");
+        final ListEmailRecipientsGroupsRequest interceptedRequest =
+                ListEmailRecipientsGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEmailRecipientsGroupsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "ListEmailRecipientsGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/ListEmailRecipientsGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEmailRecipientsGroupsResponse>
+                transformer =
+                        ListEmailRecipientsGroupsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1064,6 +1348,121 @@ public class UsageapiClient implements Usageapi {
     }
 
     @Override
+    public ListUsageCarbonEmissionsQueriesResponse listUsageCarbonEmissionsQueries(
+            ListUsageCarbonEmissionsQueriesRequest request) {
+        LOG.trace("Called listUsageCarbonEmissionsQueries");
+        final ListUsageCarbonEmissionsQueriesRequest interceptedRequest =
+                ListUsageCarbonEmissionsQueriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUsageCarbonEmissionsQueriesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "ListUsageCarbonEmissionsQueries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/ListUsageCarbonEmissionsQueries");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListUsageCarbonEmissionsQueriesResponse>
+                transformer =
+                        ListUsageCarbonEmissionsQueriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RequestAverageCarbonEmissionResponse requestAverageCarbonEmission(
+            RequestAverageCarbonEmissionRequest request) {
+        LOG.trace("Called requestAverageCarbonEmission");
+        final RequestAverageCarbonEmissionRequest interceptedRequest =
+                RequestAverageCarbonEmissionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestAverageCarbonEmissionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestAverageCarbonEmission",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/AverageCarbonEmission/RequestAverageCarbonEmission");
+        java.util.function.Function<javax.ws.rs.core.Response, RequestAverageCarbonEmissionResponse>
+                transformer =
+                        RequestAverageCarbonEmissionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RequestCleanEnergyUsageResponse requestCleanEnergyUsage(
+            RequestCleanEnergyUsageRequest request) {
+        LOG.trace("Called requestCleanEnergyUsage");
+        final RequestCleanEnergyUsageRequest interceptedRequest =
+                RequestCleanEnergyUsageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestCleanEnergyUsageConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestCleanEnergyUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CleanEnergyUsage/RequestCleanEnergyUsage");
+        java.util.function.Function<javax.ws.rs.core.Response, RequestCleanEnergyUsageResponse>
+                transformer =
+                        RequestCleanEnergyUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RequestSummarizedConfigurationsResponse requestSummarizedConfigurations(
             RequestSummarizedConfigurationsRequest request) {
         LOG.trace("Called requestSummarizedConfigurations");
@@ -1145,6 +1544,88 @@ public class UsageapiClient implements Usageapi {
     }
 
     @Override
+    public RequestUsageCarbonEmissionConfigResponse requestUsageCarbonEmissionConfig(
+            RequestUsageCarbonEmissionConfigRequest request) {
+        LOG.trace("Called requestUsageCarbonEmissionConfig");
+        final RequestUsageCarbonEmissionConfigRequest interceptedRequest =
+                RequestUsageCarbonEmissionConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestUsageCarbonEmissionConfigConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestUsageCarbonEmissionConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestUsageCarbonEmissionConfig");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestUsageCarbonEmissionConfigResponse>
+                transformer =
+                        RequestUsageCarbonEmissionConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RequestUsageCarbonEmissionsResponse requestUsageCarbonEmissions(
+            RequestUsageCarbonEmissionsRequest request) {
+        LOG.trace("Called requestUsageCarbonEmissions");
+        final RequestUsageCarbonEmissionsRequest interceptedRequest =
+                RequestUsageCarbonEmissionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestUsageCarbonEmissionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "RequestUsageCarbonEmissions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionSummary/RequestUsageCarbonEmissions");
+        java.util.function.Function<javax.ws.rs.core.Response, RequestUsageCarbonEmissionsResponse>
+                transformer =
+                        RequestUsageCarbonEmissionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRequestUsageCarbonEmissionsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request) {
         LOG.trace("Called updateCustomTable");
         final UpdateCustomTableRequest interceptedRequest =
@@ -1179,6 +1660,49 @@ public class UsageapiClient implements Usageapi {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateCustomTableDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateEmailRecipientsGroupResponse updateEmailRecipientsGroup(
+            UpdateEmailRecipientsGroupRequest request) {
+        LOG.trace("Called updateEmailRecipientsGroup");
+        final UpdateEmailRecipientsGroupRequest interceptedRequest =
+                UpdateEmailRecipientsGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateEmailRecipientsGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "UpdateEmailRecipientsGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/EmailRecipientsGroup/UpdateEmailRecipientsGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateEmailRecipientsGroupResponse>
+                transformer =
+                        UpdateEmailRecipientsGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateEmailRecipientsGroupDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1257,6 +1781,50 @@ public class UsageapiClient implements Usageapi {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateScheduleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateUsageCarbonEmissionsQueryResponse updateUsageCarbonEmissionsQuery(
+            UpdateUsageCarbonEmissionsQueryRequest request) {
+        LOG.trace("Called updateUsageCarbonEmissionsQuery");
+        final UpdateUsageCarbonEmissionsQueryRequest interceptedRequest =
+                UpdateUsageCarbonEmissionsQueryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUsageCarbonEmissionsQueryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Usageapi",
+                        "UpdateUsageCarbonEmissionsQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageCarbonEmissionsQuery/UpdateUsageCarbonEmissionsQuery");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateUsageCarbonEmissionsQueryResponse>
+                transformer =
+                        UpdateUsageCarbonEmissionsQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateUsageCarbonEmissionsQueryDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -27,6 +27,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         "displayName",
         "lifecycleState",
         "numberOfNodes",
+        "numberOfNodesRequiringMaintenanceReboot",
         "clusterVersion",
         "isHighAvailability",
         "isSecure",
@@ -43,6 +44,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
             String displayName,
             BdsInstance.LifecycleState lifecycleState,
             Integer numberOfNodes,
+            Integer numberOfNodesRequiringMaintenanceReboot,
             BdsInstance.ClusterVersion clusterVersion,
             Boolean isHighAvailability,
             Boolean isSecure,
@@ -58,6 +60,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         this.displayName = displayName;
         this.lifecycleState = lifecycleState;
         this.numberOfNodes = numberOfNodes;
+        this.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
         this.clusterVersion = clusterVersion;
         this.isHighAvailability = isHighAvailability;
         this.isSecure = isSecure;
@@ -149,6 +152,23 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         public Builder numberOfNodes(Integer numberOfNodes) {
             this.numberOfNodes = numberOfNodes;
             this.__explicitlySet__.add("numberOfNodes");
+            return this;
+        }
+        /**
+         * Number of nodes that require a maintenance reboot
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodesRequiringMaintenanceReboot")
+        private Integer numberOfNodesRequiringMaintenanceReboot;
+
+        /**
+         * Number of nodes that require a maintenance reboot
+         * @param numberOfNodesRequiringMaintenanceReboot the value to set
+         * @return this builder
+         **/
+        public Builder numberOfNodesRequiringMaintenanceReboot(
+                Integer numberOfNodesRequiringMaintenanceReboot) {
+            this.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
+            this.__explicitlySet__.add("numberOfNodesRequiringMaintenanceReboot");
             return this;
         }
         /**
@@ -316,6 +336,7 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
                             this.displayName,
                             this.lifecycleState,
                             this.numberOfNodes,
+                            this.numberOfNodesRequiringMaintenanceReboot,
                             this.clusterVersion,
                             this.isHighAvailability,
                             this.isSecure,
@@ -347,6 +368,10 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("numberOfNodes")) {
                 this.numberOfNodes(model.getNumberOfNodes());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfNodesRequiringMaintenanceReboot")) {
+                this.numberOfNodesRequiringMaintenanceReboot(
+                        model.getNumberOfNodesRequiringMaintenanceReboot());
             }
             if (model.wasPropertyExplicitlySet("clusterVersion")) {
                 this.clusterVersion(model.getClusterVersion());
@@ -458,6 +483,20 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
      **/
     public Integer getNumberOfNodes() {
         return numberOfNodes;
+    }
+
+    /**
+     * Number of nodes that require a maintenance reboot
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodesRequiringMaintenanceReboot")
+    private final Integer numberOfNodesRequiringMaintenanceReboot;
+
+    /**
+     * Number of nodes that require a maintenance reboot
+     * @return the value
+     **/
+    public Integer getNumberOfNodesRequiringMaintenanceReboot() {
+        return numberOfNodesRequiringMaintenanceReboot;
     }
 
     /**
@@ -613,6 +652,8 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", numberOfNodes=").append(String.valueOf(this.numberOfNodes));
+        sb.append(", numberOfNodesRequiringMaintenanceReboot=")
+                .append(String.valueOf(this.numberOfNodesRequiringMaintenanceReboot));
         sb.append(", clusterVersion=").append(String.valueOf(this.clusterVersion));
         sb.append(", isHighAvailability=").append(String.valueOf(this.isHighAvailability));
         sb.append(", isSecure=").append(String.valueOf(this.isSecure));
@@ -641,6 +682,9 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.numberOfNodes, other.numberOfNodes)
+                && java.util.Objects.equals(
+                        this.numberOfNodesRequiringMaintenanceReboot,
+                        other.numberOfNodesRequiringMaintenanceReboot)
                 && java.util.Objects.equals(this.clusterVersion, other.clusterVersion)
                 && java.util.Objects.equals(this.isHighAvailability, other.isHighAvailability)
                 && java.util.Objects.equals(this.isSecure, other.isSecure)
@@ -668,6 +712,11 @@ public final class BdsInstanceSummary extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.numberOfNodes == null ? 43 : this.numberOfNodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfNodesRequiringMaintenanceReboot == null
+                                ? 43
+                                : this.numberOfNodesRequiringMaintenanceReboot.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterVersion == null ? 43 : this.clusterVersion.hashCode());

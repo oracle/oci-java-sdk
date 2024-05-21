@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall;
@@ -21,7 +21,7 @@ import com.oracle.bmc.networkfirewall.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     /**
      * Service instance for NetworkFirewall.
@@ -460,6 +460,723 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ApplyNetworkFirewallPolicyResponse>
+            applyNetworkFirewallPolicy(
+                    ApplyNetworkFirewallPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ApplyNetworkFirewallPolicyRequest,
+                                    ApplyNetworkFirewallPolicyResponse>
+                            handler) {
+        LOG.trace("Called async applyNetworkFirewallPolicy");
+        final ApplyNetworkFirewallPolicyRequest interceptedRequest =
+                ApplyNetworkFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ApplyNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ApplyNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/ApplyNetworkFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ApplyNetworkFirewallPolicyResponse>
+                transformer =
+                        ApplyNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ApplyNetworkFirewallPolicyRequest, ApplyNetworkFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ApplyNetworkFirewallPolicyRequest,
+                                ApplyNetworkFirewallPolicyResponse>,
+                        java.util.concurrent.Future<ApplyNetworkFirewallPolicyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getApplyNetworkFirewallPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ApplyNetworkFirewallPolicyRequest, ApplyNetworkFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadAddressListsResponse> bulkUploadAddressLists(
+            BulkUploadAddressListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadAddressListsRequest, BulkUploadAddressListsResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadAddressLists");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadAddressListsRequest.builder());
+        }
+        final BulkUploadAddressListsRequest interceptedRequest =
+                BulkUploadAddressListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadAddressListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadAddressLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/BulkUploadAddressLists");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUploadAddressListsResponse>
+                transformer =
+                        BulkUploadAddressListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadAddressListsRequest, BulkUploadAddressListsResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadAddressListsRequest, BulkUploadAddressListsResponse>,
+                        java.util.concurrent.Future<BulkUploadAddressListsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadAddressListsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadAddressListsRequest, BulkUploadAddressListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadAddressListsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadApplicationGroupsResponse>
+            bulkUploadApplicationGroups(
+                    BulkUploadApplicationGroupsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BulkUploadApplicationGroupsRequest,
+                                    BulkUploadApplicationGroupsResponse>
+                            handler) {
+        LOG.trace("Called async bulkUploadApplicationGroups");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadApplicationGroupsRequest.builder());
+        }
+        final BulkUploadApplicationGroupsRequest interceptedRequest =
+                BulkUploadApplicationGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadApplicationGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadApplicationGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/BulkUploadApplicationGroups");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUploadApplicationGroupsResponse>
+                transformer =
+                        BulkUploadApplicationGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadApplicationGroupsRequest, BulkUploadApplicationGroupsResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadApplicationGroupsRequest,
+                                BulkUploadApplicationGroupsResponse>,
+                        java.util.concurrent.Future<BulkUploadApplicationGroupsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadApplicationGroupsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadApplicationGroupsRequest, BulkUploadApplicationGroupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadApplicationGroupsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadApplicationsResponse> bulkUploadApplications(
+            BulkUploadApplicationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadApplicationsRequest, BulkUploadApplicationsResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadApplications");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadApplicationsRequest.builder());
+        }
+        final BulkUploadApplicationsRequest interceptedRequest =
+                BulkUploadApplicationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadApplicationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadApplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/BulkUploadApplications");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUploadApplicationsResponse>
+                transformer =
+                        BulkUploadApplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadApplicationsRequest, BulkUploadApplicationsResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadApplicationsRequest, BulkUploadApplicationsResponse>,
+                        java.util.concurrent.Future<BulkUploadApplicationsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadApplicationsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadApplicationsRequest, BulkUploadApplicationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadApplicationsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadDecryptionProfilesResponse>
+            bulkUploadDecryptionProfiles(
+                    BulkUploadDecryptionProfilesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BulkUploadDecryptionProfilesRequest,
+                                    BulkUploadDecryptionProfilesResponse>
+                            handler) {
+        LOG.trace("Called async bulkUploadDecryptionProfiles");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadDecryptionProfilesRequest.builder());
+        }
+        final BulkUploadDecryptionProfilesRequest interceptedRequest =
+                BulkUploadDecryptionProfilesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadDecryptionProfilesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadDecryptionProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/BulkUploadDecryptionProfiles");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUploadDecryptionProfilesResponse>
+                transformer =
+                        BulkUploadDecryptionProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadDecryptionProfilesRequest, BulkUploadDecryptionProfilesResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadDecryptionProfilesRequest,
+                                BulkUploadDecryptionProfilesResponse>,
+                        java.util.concurrent.Future<BulkUploadDecryptionProfilesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadDecryptionProfilesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadDecryptionProfilesRequest, BulkUploadDecryptionProfilesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadDecryptionProfilesDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadDecryptionRulesResponse> bulkUploadDecryptionRules(
+            BulkUploadDecryptionRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadDecryptionRulesRequest, BulkUploadDecryptionRulesResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadDecryptionRules");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadDecryptionRulesRequest.builder());
+        }
+        final BulkUploadDecryptionRulesRequest interceptedRequest =
+                BulkUploadDecryptionRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadDecryptionRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadDecryptionRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/BulkUploadDecryptionRules");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUploadDecryptionRulesResponse>
+                transformer =
+                        BulkUploadDecryptionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadDecryptionRulesRequest, BulkUploadDecryptionRulesResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadDecryptionRulesRequest,
+                                BulkUploadDecryptionRulesResponse>,
+                        java.util.concurrent.Future<BulkUploadDecryptionRulesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadDecryptionRulesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadDecryptionRulesRequest, BulkUploadDecryptionRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadDecryptionRulesDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadMappedSecretsResponse> bulkUploadMappedSecrets(
+            BulkUploadMappedSecretsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadMappedSecretsRequest, BulkUploadMappedSecretsResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadMappedSecrets");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadMappedSecretsRequest.builder());
+        }
+        final BulkUploadMappedSecretsRequest interceptedRequest =
+                BulkUploadMappedSecretsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadMappedSecretsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadMappedSecrets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/BulkUploadMappedSecrets");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUploadMappedSecretsResponse>
+                transformer =
+                        BulkUploadMappedSecretsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadMappedSecretsRequest, BulkUploadMappedSecretsResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadMappedSecretsRequest, BulkUploadMappedSecretsResponse>,
+                        java.util.concurrent.Future<BulkUploadMappedSecretsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadMappedSecretsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadMappedSecretsRequest, BulkUploadMappedSecretsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadMappedSecretsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadSecurityRulesResponse> bulkUploadSecurityRules(
+            BulkUploadSecurityRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadSecurityRulesRequest, BulkUploadSecurityRulesResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadSecurityRules");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadSecurityRulesRequest.builder());
+        }
+        final BulkUploadSecurityRulesRequest interceptedRequest =
+                BulkUploadSecurityRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadSecurityRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadSecurityRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/BulkUploadSecurityRules");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUploadSecurityRulesResponse>
+                transformer =
+                        BulkUploadSecurityRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadSecurityRulesRequest, BulkUploadSecurityRulesResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadSecurityRulesRequest, BulkUploadSecurityRulesResponse>,
+                        java.util.concurrent.Future<BulkUploadSecurityRulesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadSecurityRulesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadSecurityRulesRequest, BulkUploadSecurityRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadSecurityRulesDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadServiceListsResponse> bulkUploadServiceLists(
+            BulkUploadServiceListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadServiceListsRequest, BulkUploadServiceListsResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadServiceLists");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadServiceListsRequest.builder());
+        }
+        final BulkUploadServiceListsRequest interceptedRequest =
+                BulkUploadServiceListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadServiceListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadServiceLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/BulkUploadServiceLists");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUploadServiceListsResponse>
+                transformer =
+                        BulkUploadServiceListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadServiceListsRequest, BulkUploadServiceListsResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadServiceListsRequest, BulkUploadServiceListsResponse>,
+                        java.util.concurrent.Future<BulkUploadServiceListsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadServiceListsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadServiceListsRequest, BulkUploadServiceListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadServiceListsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadServicesResponse> bulkUploadServices(
+            BulkUploadServicesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadServicesRequest, BulkUploadServicesResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadServices");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadServicesRequest.builder());
+        }
+        final BulkUploadServicesRequest interceptedRequest =
+                BulkUploadServicesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/BulkUploadServices");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUploadServicesResponse>
+                transformer =
+                        BulkUploadServicesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkUploadServicesRequest, BulkUploadServicesResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadServicesRequest, BulkUploadServicesResponse>,
+                        java.util.concurrent.Future<BulkUploadServicesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadServicesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadServicesRequest, BulkUploadServicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadServicesDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUploadUrlListsResponse> bulkUploadUrlLists(
+            BulkUploadUrlListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUploadUrlListsRequest, BulkUploadUrlListsResponse>
+                    handler) {
+        LOG.trace("Called async bulkUploadUrlLists");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadUrlListsRequest.builder());
+        }
+        final BulkUploadUrlListsRequest interceptedRequest =
+                BulkUploadUrlListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadUrlListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadUrlLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/BulkUploadUrlLists");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUploadUrlListsResponse>
+                transformer =
+                        BulkUploadUrlListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkUploadUrlListsRequest, BulkUploadUrlListsResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadUrlListsRequest, BulkUploadUrlListsResponse>,
+                        java.util.concurrent.Future<BulkUploadUrlListsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadUrlListsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadUrlListsRequest, BulkUploadUrlListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadUrlListsDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -475,7 +1192,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/CancelWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequest/CancelWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -518,12 +1235,13 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 ChangeNetworkFirewallCompartmentConverter.interceptRequest(request);
         final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ChangeNetworkFirewallCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "NetworkFirewall",
                         "ChangeNetworkFirewallCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ChangeNetworkFirewallCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/ChangeNetworkFirewallCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallCompartmentResponse>
                 transformer =
@@ -583,7 +1301,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ChangeNetworkFirewallPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallPolicyCompartmentResponse>
                 transformer =
@@ -625,6 +1343,379 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CloneNetworkFirewallPolicyResponse>
+            cloneNetworkFirewallPolicy(
+                    CloneNetworkFirewallPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CloneNetworkFirewallPolicyRequest,
+                                    CloneNetworkFirewallPolicyResponse>
+                            handler) {
+        LOG.trace("Called async cloneNetworkFirewallPolicy");
+        final CloneNetworkFirewallPolicyRequest interceptedRequest =
+                CloneNetworkFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CloneNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CloneNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/CloneNetworkFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CloneNetworkFirewallPolicyResponse>
+                transformer =
+                        CloneNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CloneNetworkFirewallPolicyRequest, CloneNetworkFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CloneNetworkFirewallPolicyRequest,
+                                CloneNetworkFirewallPolicyResponse>,
+                        java.util.concurrent.Future<CloneNetworkFirewallPolicyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCloneNetworkFirewallPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CloneNetworkFirewallPolicyRequest, CloneNetworkFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAddressListResponse> createAddressList(
+            CreateAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAddressListRequest, CreateAddressListResponse>
+                    handler) {
+        LOG.trace("Called async createAddressList");
+        final CreateAddressListRequest interceptedRequest =
+                CreateAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/CreateAddressList");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
+                transformer =
+                        CreateAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateAddressListRequest, CreateAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateAddressListRequest, CreateAddressListResponse>,
+                        java.util.concurrent.Future<CreateAddressListResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAddressListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateAddressListRequest, CreateAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResponse> createApplication(
+            CreateApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateApplicationRequest, CreateApplicationResponse>
+                    handler) {
+        LOG.trace("Called async createApplication");
+        final CreateApplicationRequest interceptedRequest =
+                CreateApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/CreateApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+                transformer =
+                        CreateApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateApplicationRequest, CreateApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateApplicationRequest, CreateApplicationResponse>,
+                        java.util.concurrent.Future<CreateApplicationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateApplicationRequest, CreateApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationGroupResponse> createApplicationGroup(
+            CreateApplicationGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateApplicationGroupRequest, CreateApplicationGroupResponse>
+                    handler) {
+        LOG.trace("Called async createApplicationGroup");
+        final CreateApplicationGroupRequest interceptedRequest =
+                CreateApplicationGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApplicationGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/CreateApplicationGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationGroupResponse>
+                transformer =
+                        CreateApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateApplicationGroupRequest, CreateApplicationGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateApplicationGroupRequest, CreateApplicationGroupResponse>,
+                        java.util.concurrent.Future<CreateApplicationGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApplicationGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateApplicationGroupRequest, CreateApplicationGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDecryptionProfileResponse> createDecryptionProfile(
+            CreateDecryptionProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDecryptionProfileRequest, CreateDecryptionProfileResponse>
+                    handler) {
+        LOG.trace("Called async createDecryptionProfile");
+        final CreateDecryptionProfileRequest interceptedRequest =
+                CreateDecryptionProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/CreateDecryptionProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDecryptionProfileResponse>
+                transformer =
+                        CreateDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDecryptionProfileRequest, CreateDecryptionProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDecryptionProfileRequest, CreateDecryptionProfileResponse>,
+                        java.util.concurrent.Future<CreateDecryptionProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDecryptionProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDecryptionProfileRequest, CreateDecryptionProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDecryptionRuleResponse> createDecryptionRule(
+            CreateDecryptionRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDecryptionRuleRequest, CreateDecryptionRuleResponse>
+                    handler) {
+        LOG.trace("Called async createDecryptionRule");
+        final CreateDecryptionRuleRequest interceptedRequest =
+                CreateDecryptionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/CreateDecryptionRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDecryptionRuleResponse>
+                transformer =
+                        CreateDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDecryptionRuleRequest, CreateDecryptionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDecryptionRuleRequest, CreateDecryptionRuleResponse>,
+                        java.util.concurrent.Future<CreateDecryptionRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDecryptionRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDecryptionRuleRequest, CreateDecryptionRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMappedSecretResponse> createMappedSecret(
+            CreateMappedSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMappedSecretRequest, CreateMappedSecretResponse>
+                    handler) {
+        LOG.trace("Called async createMappedSecret");
+        final CreateMappedSecretRequest interceptedRequest =
+                CreateMappedSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMappedSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/CreateMappedSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMappedSecretResponse>
+                transformer =
+                        CreateMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateMappedSecretRequest, CreateMappedSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMappedSecretRequest, CreateMappedSecretResponse>,
+                        java.util.concurrent.Future<CreateMappedSecretResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMappedSecretDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMappedSecretRequest, CreateMappedSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateNetworkFirewallResponse> createNetworkFirewall(
             CreateNetworkFirewallRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -641,7 +1732,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "CreateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/CreateNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/CreateNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
                 transformer =
                         CreateNetworkFirewallConverter.fromResponse(
@@ -696,7 +1787,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "CreateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/CreateNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/CreateNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
                 transformer =
@@ -735,6 +1826,490 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSecurityRuleResponse> createSecurityRule(
+            CreateSecurityRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityRuleRequest, CreateSecurityRuleResponse>
+                    handler) {
+        LOG.trace("Called async createSecurityRule");
+        final CreateSecurityRuleRequest interceptedRequest =
+                CreateSecurityRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/CreateSecurityRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityRuleResponse>
+                transformer =
+                        CreateSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateSecurityRuleRequest, CreateSecurityRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecurityRuleRequest, CreateSecurityRuleResponse>,
+                        java.util.concurrent.Future<CreateSecurityRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecurityRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecurityRuleRequest, CreateSecurityRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceResponse> createService(
+            CreateServiceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateServiceRequest, CreateServiceResponse>
+                    handler) {
+        LOG.trace("Called async createService");
+        final CreateServiceRequest interceptedRequest =
+                CreateServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/CreateService");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateServiceResponse>
+                transformer =
+                        CreateServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateServiceRequest, CreateServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateServiceRequest, CreateServiceResponse>,
+                        java.util.concurrent.Future<CreateServiceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateServiceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateServiceRequest, CreateServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceListResponse> createServiceList(
+            CreateServiceListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateServiceListRequest, CreateServiceListResponse>
+                    handler) {
+        LOG.trace("Called async createServiceList");
+        final CreateServiceListRequest interceptedRequest =
+                CreateServiceListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/CreateServiceList");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateServiceListResponse>
+                transformer =
+                        CreateServiceListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateServiceListRequest, CreateServiceListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateServiceListRequest, CreateServiceListResponse>,
+                        java.util.concurrent.Future<CreateServiceListResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateServiceListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateServiceListRequest, CreateServiceListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUrlListResponse> createUrlList(
+            CreateUrlListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateUrlListRequest, CreateUrlListResponse>
+                    handler) {
+        LOG.trace("Called async createUrlList");
+        final CreateUrlListRequest interceptedRequest =
+                CreateUrlListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUrlListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/CreateUrlList");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateUrlListResponse>
+                transformer =
+                        CreateUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateUrlListRequest, CreateUrlListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateUrlListRequest, CreateUrlListResponse>,
+                        java.util.concurrent.Future<CreateUrlListResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateUrlListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateUrlListRequest, CreateUrlListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAddressListResponse> deleteAddressList(
+            DeleteAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAddressListRequest, DeleteAddressListResponse>
+                    handler) {
+        LOG.trace("Called async deleteAddressList");
+        final DeleteAddressListRequest interceptedRequest =
+                DeleteAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/DeleteAddressList");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
+                transformer =
+                        DeleteAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteAddressListRequest, DeleteAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAddressListRequest, DeleteAddressListResponse>,
+                        java.util.concurrent.Future<DeleteAddressListResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAddressListRequest, DeleteAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResponse> deleteApplication(
+            DeleteApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApplicationRequest, DeleteApplicationResponse>
+                    handler) {
+        LOG.trace("Called async deleteApplication");
+        final DeleteApplicationRequest interceptedRequest =
+                DeleteApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/DeleteApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+                transformer =
+                        DeleteApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteApplicationRequest, DeleteApplicationResponse>,
+                        java.util.concurrent.Future<DeleteApplicationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteApplicationRequest, DeleteApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationGroupResponse> deleteApplicationGroup(
+            DeleteApplicationGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteApplicationGroupRequest, DeleteApplicationGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteApplicationGroup");
+        final DeleteApplicationGroupRequest interceptedRequest =
+                DeleteApplicationGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApplicationGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/DeleteApplicationGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationGroupResponse>
+                transformer =
+                        DeleteApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteApplicationGroupRequest, DeleteApplicationGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteApplicationGroupRequest, DeleteApplicationGroupResponse>,
+                        java.util.concurrent.Future<DeleteApplicationGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteApplicationGroupRequest, DeleteApplicationGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDecryptionProfileResponse> deleteDecryptionProfile(
+            DeleteDecryptionProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDecryptionProfileRequest, DeleteDecryptionProfileResponse>
+                    handler) {
+        LOG.trace("Called async deleteDecryptionProfile");
+        final DeleteDecryptionProfileRequest interceptedRequest =
+                DeleteDecryptionProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/DeleteDecryptionProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDecryptionProfileResponse>
+                transformer =
+                        DeleteDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDecryptionProfileRequest, DeleteDecryptionProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDecryptionProfileRequest, DeleteDecryptionProfileResponse>,
+                        java.util.concurrent.Future<DeleteDecryptionProfileResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDecryptionProfileRequest, DeleteDecryptionProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDecryptionRuleResponse> deleteDecryptionRule(
+            DeleteDecryptionRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDecryptionRuleRequest, DeleteDecryptionRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteDecryptionRule");
+        final DeleteDecryptionRuleRequest interceptedRequest =
+                DeleteDecryptionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/DeleteDecryptionRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDecryptionRuleResponse>
+                transformer =
+                        DeleteDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDecryptionRuleRequest, DeleteDecryptionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDecryptionRuleRequest, DeleteDecryptionRuleResponse>,
+                        java.util.concurrent.Future<DeleteDecryptionRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDecryptionRuleRequest, DeleteDecryptionRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMappedSecretResponse> deleteMappedSecret(
+            DeleteMappedSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMappedSecretRequest, DeleteMappedSecretResponse>
+                    handler) {
+        LOG.trace("Called async deleteMappedSecret");
+        final DeleteMappedSecretRequest interceptedRequest =
+                DeleteMappedSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMappedSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/DeleteMappedSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMappedSecretResponse>
+                transformer =
+                        DeleteMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteMappedSecretRequest, DeleteMappedSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMappedSecretRequest, DeleteMappedSecretResponse>,
+                        java.util.concurrent.Future<DeleteMappedSecretResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMappedSecretRequest, DeleteMappedSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNetworkFirewallResponse> deleteNetworkFirewall(
             DeleteNetworkFirewallRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -750,7 +2325,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "DeleteNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/DeleteNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/DeleteNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
                 transformer =
                         DeleteNetworkFirewallConverter.fromResponse(
@@ -799,7 +2374,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "DeleteNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
                 transformer =
@@ -833,6 +2408,462 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSecurityRuleResponse> deleteSecurityRule(
+            DeleteSecurityRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityRuleRequest, DeleteSecurityRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteSecurityRule");
+        final DeleteSecurityRuleRequest interceptedRequest =
+                DeleteSecurityRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/DeleteSecurityRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityRuleResponse>
+                transformer =
+                        DeleteSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteSecurityRuleRequest, DeleteSecurityRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSecurityRuleRequest, DeleteSecurityRuleResponse>,
+                        java.util.concurrent.Future<DeleteSecurityRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSecurityRuleRequest, DeleteSecurityRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceResponse> deleteService(
+            DeleteServiceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteServiceRequest, DeleteServiceResponse>
+                    handler) {
+        LOG.trace("Called async deleteService");
+        final DeleteServiceRequest interceptedRequest =
+                DeleteServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/DeleteService");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceResponse>
+                transformer =
+                        DeleteServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteServiceRequest, DeleteServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteServiceRequest, DeleteServiceResponse>,
+                        java.util.concurrent.Future<DeleteServiceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteServiceRequest, DeleteServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceListResponse> deleteServiceList(
+            DeleteServiceListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteServiceListRequest, DeleteServiceListResponse>
+                    handler) {
+        LOG.trace("Called async deleteServiceList");
+        final DeleteServiceListRequest interceptedRequest =
+                DeleteServiceListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/DeleteServiceList");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceListResponse>
+                transformer =
+                        DeleteServiceListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteServiceListRequest, DeleteServiceListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteServiceListRequest, DeleteServiceListResponse>,
+                        java.util.concurrent.Future<DeleteServiceListResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteServiceListRequest, DeleteServiceListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUrlListResponse> deleteUrlList(
+            DeleteUrlListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteUrlListRequest, DeleteUrlListResponse>
+                    handler) {
+        LOG.trace("Called async deleteUrlList");
+        final DeleteUrlListRequest interceptedRequest =
+                DeleteUrlListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUrlListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/DeleteUrlList");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteUrlListResponse>
+                transformer =
+                        DeleteUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteUrlListRequest, DeleteUrlListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteUrlListRequest, DeleteUrlListResponse>,
+                        java.util.concurrent.Future<DeleteUrlListResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteUrlListRequest, DeleteUrlListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAddressListResponse> getAddressList(
+            GetAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAddressListRequest, GetAddressListResponse>
+                    handler) {
+        LOG.trace("Called async getAddressList");
+        final GetAddressListRequest interceptedRequest =
+                GetAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/GetAddressList");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAddressListResponse>
+                transformer =
+                        GetAddressListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAddressListRequest, GetAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAddressListRequest, GetAddressListResponse>,
+                        java.util.concurrent.Future<GetAddressListResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAddressListRequest, GetAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationResponse> getApplication(
+            GetApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetApplicationRequest, GetApplicationResponse>
+                    handler) {
+        LOG.trace("Called async getApplication");
+        final GetApplicationRequest interceptedRequest =
+                GetApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/GetApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse>
+                transformer =
+                        GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetApplicationRequest, GetApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApplicationRequest, GetApplicationResponse>,
+                        java.util.concurrent.Future<GetApplicationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApplicationRequest, GetApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationGroupResponse> getApplicationGroup(
+            GetApplicationGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetApplicationGroupRequest, GetApplicationGroupResponse>
+                    handler) {
+        LOG.trace("Called async getApplicationGroup");
+        final GetApplicationGroupRequest interceptedRequest =
+                GetApplicationGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApplicationGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/GetApplicationGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApplicationGroupResponse>
+                transformer =
+                        GetApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetApplicationGroupRequest, GetApplicationGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApplicationGroupRequest, GetApplicationGroupResponse>,
+                        java.util.concurrent.Future<GetApplicationGroupResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApplicationGroupRequest, GetApplicationGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDecryptionProfileResponse> getDecryptionProfile(
+            GetDecryptionProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDecryptionProfileRequest, GetDecryptionProfileResponse>
+                    handler) {
+        LOG.trace("Called async getDecryptionProfile");
+        final GetDecryptionProfileRequest interceptedRequest =
+                GetDecryptionProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/GetDecryptionProfile");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDecryptionProfileResponse>
+                transformer =
+                        GetDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDecryptionProfileRequest, GetDecryptionProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDecryptionProfileRequest, GetDecryptionProfileResponse>,
+                        java.util.concurrent.Future<GetDecryptionProfileResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDecryptionProfileRequest, GetDecryptionProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDecryptionRuleResponse> getDecryptionRule(
+            GetDecryptionRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDecryptionRuleRequest, GetDecryptionRuleResponse>
+                    handler) {
+        LOG.trace("Called async getDecryptionRule");
+        final GetDecryptionRuleRequest interceptedRequest =
+                GetDecryptionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/GetDecryptionRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDecryptionRuleResponse>
+                transformer =
+                        GetDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetDecryptionRuleRequest, GetDecryptionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDecryptionRuleRequest, GetDecryptionRuleResponse>,
+                        java.util.concurrent.Future<GetDecryptionRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDecryptionRuleRequest, GetDecryptionRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMappedSecretResponse> getMappedSecret(
+            GetMappedSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMappedSecretRequest, GetMappedSecretResponse>
+                    handler) {
+        LOG.trace("Called async getMappedSecret");
+        final GetMappedSecretRequest interceptedRequest =
+                GetMappedSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMappedSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/GetMappedSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMappedSecretResponse>
+                transformer =
+                        GetMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMappedSecretRequest, GetMappedSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMappedSecretRequest, GetMappedSecretResponse>,
+                        java.util.concurrent.Future<GetMappedSecretResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMappedSecretRequest, GetMappedSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetNetworkFirewallResponse> getNetworkFirewall(
             GetNetworkFirewallRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -848,7 +2879,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "GetNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/GetNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/GetNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
                 transformer =
                         GetNetworkFirewallConverter.fromResponse(
@@ -894,7 +2925,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "GetNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/GetNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/GetNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
                 transformer =
@@ -927,6 +2958,183 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSecurityRuleResponse> getSecurityRule(
+            GetSecurityRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityRuleRequest, GetSecurityRuleResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityRule");
+        final GetSecurityRuleRequest interceptedRequest =
+                GetSecurityRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/GetSecurityRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityRuleResponse>
+                transformer =
+                        GetSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSecurityRuleRequest, GetSecurityRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityRuleRequest, GetSecurityRuleResponse>,
+                        java.util.concurrent.Future<GetSecurityRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityRuleRequest, GetSecurityRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceResponse> getService(
+            GetServiceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetServiceRequest, GetServiceResponse>
+                    handler) {
+        LOG.trace("Called async getService");
+        final GetServiceRequest interceptedRequest = GetServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/GetService");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetServiceResponse>
+                transformer =
+                        GetServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetServiceRequest, GetServiceResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetServiceRequest, GetServiceResponse>,
+                        java.util.concurrent.Future<GetServiceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetServiceRequest, GetServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceListResponse> getServiceList(
+            GetServiceListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetServiceListRequest, GetServiceListResponse>
+                    handler) {
+        LOG.trace("Called async getServiceList");
+        final GetServiceListRequest interceptedRequest =
+                GetServiceListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/GetServiceList");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetServiceListResponse>
+                transformer =
+                        GetServiceListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetServiceListRequest, GetServiceListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetServiceListRequest, GetServiceListResponse>,
+                        java.util.concurrent.Future<GetServiceListResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetServiceListRequest, GetServiceListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUrlListResponse> getUrlList(
+            GetUrlListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetUrlListRequest, GetUrlListResponse>
+                    handler) {
+        LOG.trace("Called async getUrlList");
+        final GetUrlListRequest interceptedRequest = GetUrlListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUrlListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/GetUrlList");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetUrlListResponse>
+                transformer =
+                        GetUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetUrlListRequest, GetUrlListResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetUrlListRequest, GetUrlListResponse>,
+                        java.util.concurrent.Future<GetUrlListResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetUrlListRequest, GetUrlListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -942,7 +3150,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/GetWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequest/GetWorkRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -959,6 +3167,285 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddressListsResponse> listAddressLists(
+            ListAddressListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAddressListsRequest, ListAddressListsResponse>
+                    handler) {
+        LOG.trace("Called async listAddressLists");
+        final ListAddressListsRequest interceptedRequest =
+                ListAddressListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddressListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListAddressLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/ListAddressLists");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
+                transformer =
+                        ListAddressListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAddressListsRequest, ListAddressListsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAddressListsRequest, ListAddressListsResponse>,
+                        java.util.concurrent.Future<ListAddressListsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAddressListsRequest, ListAddressListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationGroupsResponse> listApplicationGroups(
+            ListApplicationGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListApplicationGroupsRequest, ListApplicationGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listApplicationGroups");
+        final ListApplicationGroupsRequest interceptedRequest =
+                ListApplicationGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApplicationGroupsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListApplicationGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/ListApplicationGroups");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationGroupsResponse>
+                transformer =
+                        ListApplicationGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListApplicationGroupsRequest, ListApplicationGroupsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListApplicationGroupsRequest, ListApplicationGroupsResponse>,
+                        java.util.concurrent.Future<ListApplicationGroupsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListApplicationGroupsRequest, ListApplicationGroupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationsResponse> listApplications(
+            ListApplicationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListApplicationsRequest, ListApplicationsResponse>
+                    handler) {
+        LOG.trace("Called async listApplications");
+        final ListApplicationsRequest interceptedRequest =
+                ListApplicationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApplicationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListApplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/ListApplications");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+                transformer =
+                        ListApplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListApplicationsRequest, ListApplicationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListApplicationsRequest, ListApplicationsResponse>,
+                        java.util.concurrent.Future<ListApplicationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListApplicationsRequest, ListApplicationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDecryptionProfilesResponse> listDecryptionProfiles(
+            ListDecryptionProfilesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDecryptionProfilesRequest, ListDecryptionProfilesResponse>
+                    handler) {
+        LOG.trace("Called async listDecryptionProfiles");
+        final ListDecryptionProfilesRequest interceptedRequest =
+                ListDecryptionProfilesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDecryptionProfilesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListDecryptionProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/ListDecryptionProfiles");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDecryptionProfilesResponse>
+                transformer =
+                        ListDecryptionProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDecryptionProfilesRequest, ListDecryptionProfilesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDecryptionProfilesRequest, ListDecryptionProfilesResponse>,
+                        java.util.concurrent.Future<ListDecryptionProfilesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDecryptionProfilesRequest, ListDecryptionProfilesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDecryptionRulesResponse> listDecryptionRules(
+            ListDecryptionRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListDecryptionRulesRequest, ListDecryptionRulesResponse>
+                    handler) {
+        LOG.trace("Called async listDecryptionRules");
+        final ListDecryptionRulesRequest interceptedRequest =
+                ListDecryptionRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDecryptionRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListDecryptionRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/ListDecryptionRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDecryptionRulesResponse>
+                transformer =
+                        ListDecryptionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDecryptionRulesRequest, ListDecryptionRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDecryptionRulesRequest, ListDecryptionRulesResponse>,
+                        java.util.concurrent.Future<ListDecryptionRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDecryptionRulesRequest, ListDecryptionRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMappedSecretsResponse> listMappedSecrets(
+            ListMappedSecretsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMappedSecretsRequest, ListMappedSecretsResponse>
+                    handler) {
+        LOG.trace("Called async listMappedSecrets");
+        final ListMappedSecretsRequest interceptedRequest =
+                ListMappedSecretsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMappedSecretsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListMappedSecrets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/ListMappedSecrets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMappedSecretsResponse>
+                transformer =
+                        ListMappedSecretsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMappedSecretsRequest, ListMappedSecretsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMappedSecretsRequest, ListMappedSecretsResponse>,
+                        java.util.concurrent.Future<ListMappedSecretsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMappedSecretsRequest, ListMappedSecretsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -989,7 +3476,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListNetworkFirewallPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ListNetworkFirewallPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/ListNetworkFirewallPolicies");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
                 transformer =
@@ -1038,7 +3525,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListNetworkFirewalls",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ListNetworkFirewalls");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/ListNetworkFirewalls");
         final java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
                 transformer =
                         ListNetworkFirewallsConverter.fromResponse(
@@ -1070,6 +3557,186 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSecurityRulesResponse> listSecurityRules(
+            ListSecurityRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityRulesRequest, ListSecurityRulesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityRules");
+        final ListSecurityRulesRequest interceptedRequest =
+                ListSecurityRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListSecurityRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/ListSecurityRules");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityRulesResponse>
+                transformer =
+                        ListSecurityRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSecurityRulesRequest, ListSecurityRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityRulesRequest, ListSecurityRulesResponse>,
+                        java.util.concurrent.Future<ListSecurityRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityRulesRequest, ListSecurityRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceListsResponse> listServiceLists(
+            ListServiceListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListServiceListsRequest, ListServiceListsResponse>
+                    handler) {
+        LOG.trace("Called async listServiceLists");
+        final ListServiceListsRequest interceptedRequest =
+                ListServiceListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListServiceLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/ListServiceLists");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListServiceListsResponse>
+                transformer =
+                        ListServiceListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListServiceListsRequest, ListServiceListsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListServiceListsRequest, ListServiceListsResponse>,
+                        java.util.concurrent.Future<ListServiceListsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListServiceListsRequest, ListServiceListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServicesResponse> listServices(
+            ListServicesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
+                    handler) {
+        LOG.trace("Called async listServices");
+        final ListServicesRequest interceptedRequest =
+                ListServicesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServicesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/ListServices");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse>
+                transformer =
+                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListServicesRequest, ListServicesResponse>,
+                        java.util.concurrent.Future<ListServicesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListServicesRequest, ListServicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUrlListsResponse> listUrlLists(
+            ListUrlListsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListUrlListsRequest, ListUrlListsResponse>
+                    handler) {
+        LOG.trace("Called async listUrlLists");
+        final ListUrlListsRequest interceptedRequest =
+                ListUrlListsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUrlListsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListUrlLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/ListUrlLists");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListUrlListsResponse>
+                transformer =
+                        ListUrlListsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListUrlListsRequest, ListUrlListsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUrlListsRequest, ListUrlListsResponse>,
+                        java.util.concurrent.Future<ListUrlListsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUrlListsRequest, ListUrlListsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1085,7 +3752,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestError/ListWorkRequestErrors");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequestError/ListWorkRequestErrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1132,7 +3799,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequestLogEntry/ListWorkRequestLogs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1179,7 +3846,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/ListWorkRequests");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequest/ListWorkRequests");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1210,6 +3877,368 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<MigrateNetworkFirewallPolicyResponse>
+            migrateNetworkFirewallPolicy(
+                    MigrateNetworkFirewallPolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    MigrateNetworkFirewallPolicyRequest,
+                                    MigrateNetworkFirewallPolicyResponse>
+                            handler) {
+        LOG.trace("Called async migrateNetworkFirewallPolicy");
+        final MigrateNetworkFirewallPolicyRequest interceptedRequest =
+                MigrateNetworkFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "MigrateNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/MigrateNetworkFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, MigrateNetworkFirewallPolicyResponse>
+                transformer =
+                        MigrateNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        MigrateNetworkFirewallPolicyRequest, MigrateNetworkFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                MigrateNetworkFirewallPolicyRequest,
+                                MigrateNetworkFirewallPolicyResponse>,
+                        java.util.concurrent.Future<MigrateNetworkFirewallPolicyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    MigrateNetworkFirewallPolicyRequest, MigrateNetworkFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddressListResponse> updateAddressList(
+            UpdateAddressListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAddressListRequest, UpdateAddressListResponse>
+                    handler) {
+        LOG.trace("Called async updateAddressList");
+        final UpdateAddressListRequest interceptedRequest =
+                UpdateAddressListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAddressListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/UpdateAddressList");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
+                transformer =
+                        UpdateAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateAddressListRequest, UpdateAddressListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAddressListRequest, UpdateAddressListResponse>,
+                        java.util.concurrent.Future<UpdateAddressListResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAddressListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAddressListRequest, UpdateAddressListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResponse> updateApplication(
+            UpdateApplicationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateApplicationRequest, UpdateApplicationResponse>
+                    handler) {
+        LOG.trace("Called async updateApplication");
+        final UpdateApplicationRequest interceptedRequest =
+                UpdateApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/UpdateApplication");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+                transformer =
+                        UpdateApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateApplicationRequest, UpdateApplicationResponse>,
+                        java.util.concurrent.Future<UpdateApplicationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplicationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateApplicationRequest, UpdateApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationGroupResponse> updateApplicationGroup(
+            UpdateApplicationGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateApplicationGroupRequest, UpdateApplicationGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateApplicationGroup");
+        final UpdateApplicationGroupRequest interceptedRequest =
+                UpdateApplicationGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateApplicationGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/UpdateApplicationGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationGroupResponse>
+                transformer =
+                        UpdateApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateApplicationGroupRequest, UpdateApplicationGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateApplicationGroupRequest, UpdateApplicationGroupResponse>,
+                        java.util.concurrent.Future<UpdateApplicationGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApplicationGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateApplicationGroupRequest, UpdateApplicationGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDecryptionProfileResponse> updateDecryptionProfile(
+            UpdateDecryptionProfileRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDecryptionProfileRequest, UpdateDecryptionProfileResponse>
+                    handler) {
+        LOG.trace("Called async updateDecryptionProfile");
+        final UpdateDecryptionProfileRequest interceptedRequest =
+                UpdateDecryptionProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/UpdateDecryptionProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDecryptionProfileResponse>
+                transformer =
+                        UpdateDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDecryptionProfileRequest, UpdateDecryptionProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDecryptionProfileRequest, UpdateDecryptionProfileResponse>,
+                        java.util.concurrent.Future<UpdateDecryptionProfileResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDecryptionProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDecryptionProfileRequest, UpdateDecryptionProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDecryptionRuleResponse> updateDecryptionRule(
+            UpdateDecryptionRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDecryptionRuleRequest, UpdateDecryptionRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateDecryptionRule");
+        final UpdateDecryptionRuleRequest interceptedRequest =
+                UpdateDecryptionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/UpdateDecryptionRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDecryptionRuleResponse>
+                transformer =
+                        UpdateDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDecryptionRuleRequest, UpdateDecryptionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDecryptionRuleRequest, UpdateDecryptionRuleResponse>,
+                        java.util.concurrent.Future<UpdateDecryptionRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDecryptionRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDecryptionRuleRequest, UpdateDecryptionRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMappedSecretResponse> updateMappedSecret(
+            UpdateMappedSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMappedSecretRequest, UpdateMappedSecretResponse>
+                    handler) {
+        LOG.trace("Called async updateMappedSecret");
+        final UpdateMappedSecretRequest interceptedRequest =
+                UpdateMappedSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMappedSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/UpdateMappedSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMappedSecretResponse>
+                transformer =
+                        UpdateMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateMappedSecretRequest, UpdateMappedSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMappedSecretRequest, UpdateMappedSecretResponse>,
+                        java.util.concurrent.Future<UpdateMappedSecretResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMappedSecretDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMappedSecretRequest, UpdateMappedSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateNetworkFirewallResponse> updateNetworkFirewall(
             UpdateNetworkFirewallRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1225,7 +4254,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "UpdateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/UpdateNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/UpdateNetworkFirewall");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
                 transformer =
                         UpdateNetworkFirewallConverter.fromResponse(
@@ -1279,7 +4308,7 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                         "NetworkFirewall",
                         "UpdateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
                 transformer =
@@ -1305,6 +4334,206 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateNetworkFirewallPolicyRequest, UpdateNetworkFirewallPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityRuleResponse> updateSecurityRule(
+            UpdateSecurityRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityRuleRequest, UpdateSecurityRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateSecurityRule");
+        final UpdateSecurityRuleRequest interceptedRequest =
+                UpdateSecurityRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/UpdateSecurityRule");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityRuleResponse>
+                transformer =
+                        UpdateSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateSecurityRuleRequest, UpdateSecurityRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityRuleRequest, UpdateSecurityRuleResponse>,
+                        java.util.concurrent.Future<UpdateSecurityRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityRuleRequest, UpdateSecurityRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceResponse> updateService(
+            UpdateServiceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateServiceRequest, UpdateServiceResponse>
+                    handler) {
+        LOG.trace("Called async updateService");
+        final UpdateServiceRequest interceptedRequest =
+                UpdateServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateServiceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/UpdateService");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceResponse>
+                transformer =
+                        UpdateServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateServiceRequest, UpdateServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateServiceRequest, UpdateServiceResponse>,
+                        java.util.concurrent.Future<UpdateServiceResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateServiceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateServiceRequest, UpdateServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceListResponse> updateServiceList(
+            UpdateServiceListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateServiceListRequest, UpdateServiceListResponse>
+                    handler) {
+        LOG.trace("Called async updateServiceList");
+        final UpdateServiceListRequest interceptedRequest =
+                UpdateServiceListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateServiceListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/UpdateServiceList");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceListResponse>
+                transformer =
+                        UpdateServiceListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateServiceListRequest, UpdateServiceListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateServiceListRequest, UpdateServiceListResponse>,
+                        java.util.concurrent.Future<UpdateServiceListResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateServiceListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateServiceListRequest, UpdateServiceListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUrlListResponse> updateUrlList(
+            UpdateUrlListRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateUrlListRequest, UpdateUrlListResponse>
+                    handler) {
+        LOG.trace("Called async updateUrlList");
+        final UpdateUrlListRequest interceptedRequest =
+                UpdateUrlListConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUrlListConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/UpdateUrlList");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateUrlListResponse>
+                transformer =
+                        UpdateUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateUrlListRequest, UpdateUrlListResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateUrlListRequest, UpdateUrlListResponse>,
+                        java.util.concurrent.Future<UpdateUrlListResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateUrlListDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateUrlListRequest, UpdateUrlListResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

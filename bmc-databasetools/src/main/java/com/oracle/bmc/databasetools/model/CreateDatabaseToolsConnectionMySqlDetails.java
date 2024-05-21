@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
@@ -62,6 +62,24 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("runtimeSupport")
+        private RuntimeSupport runtimeSupport;
+
+        public Builder runtimeSupport(RuntimeSupport runtimeSupport) {
+            this.runtimeSupport = runtimeSupport;
+            this.__explicitlySet__.add("runtimeSupport");
             return this;
         }
 
@@ -178,6 +196,8 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
                             this.compartmentId,
                             this.definedTags,
                             this.freeformTags,
+                            this.locks,
+                            this.runtimeSupport,
                             this.relatedResource,
                             this.connectionString,
                             this.userName,
@@ -204,6 +224,12 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("runtimeSupport")) {
+                this.runtimeSupport(model.getRuntimeSupport());
             }
             if (model.wasPropertyExplicitlySet("relatedResource")) {
                 this.relatedResource(model.getRelatedResource());
@@ -247,6 +273,8 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.List<ResourceLock> locks,
+            RuntimeSupport runtimeSupport,
             CreateDatabaseToolsRelatedResourceMySqlDetails relatedResource,
             String connectionString,
             String userName,
@@ -254,7 +282,7 @@ public final class CreateDatabaseToolsConnectionMySqlDetails
             java.util.Map<String, String> advancedProperties,
             java.util.List<DatabaseToolsKeyStoreMySqlDetails> keyStores,
             String privateEndpointId) {
-        super(displayName, compartmentId, definedTags, freeformTags);
+        super(displayName, compartmentId, definedTags, freeformTags, locks, runtimeSupport);
         this.relatedResource = relatedResource;
         this.connectionString = connectionString;
         this.userName = userName;

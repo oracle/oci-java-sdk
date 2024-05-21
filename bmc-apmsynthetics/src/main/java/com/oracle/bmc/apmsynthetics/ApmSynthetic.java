@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics;
@@ -100,6 +100,20 @@ public interface ApmSynthetic extends AutoCloseable {
     CreateMonitorResponse createMonitor(CreateMonitorRequest request);
 
     /**
+     * Registers a new On-premise vantage point.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateOnPremiseVantagePointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOnPremiseVantagePoint API.
+     */
+    CreateOnPremiseVantagePointResponse createOnPremiseVantagePoint(
+            CreateOnPremiseVantagePointRequest request);
+
+    /**
      * Creates a new script.
      *
      * @param request The request object containing the details to send
@@ -111,6 +125,19 @@ public interface ApmSynthetic extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScript API.
      */
     CreateScriptResponse createScript(CreateScriptRequest request);
+
+    /**
+     * Registers a new worker.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/CreateWorkerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWorker API.
+     */
+    CreateWorkerResponse createWorker(CreateWorkerRequest request);
 
     /**
      * Deregisters the specified dedicated vantage point.
@@ -138,6 +165,19 @@ public interface ApmSynthetic extends AutoCloseable {
     DeleteMonitorResponse deleteMonitor(DeleteMonitorRequest request);
 
     /**
+     * Deregisters the specified On-premise vantage point.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteOnPremiseVantagePointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOnPremiseVantagePoint API.
+     */
+    DeleteOnPremiseVantagePointResponse deleteOnPremiseVantagePoint(
+            DeleteOnPremiseVantagePointRequest request);
+
+    /**
      * Deletes the specified script.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -148,6 +188,18 @@ public interface ApmSynthetic extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScript API.
      */
     DeleteScriptResponse deleteScript(DeleteScriptRequest request);
+
+    /**
+     * Deregisters the specified worker.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteWorkerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorker API.
+     */
+    DeleteWorkerResponse deleteWorker(DeleteWorkerRequest request);
 
     /**
      * Gets the details of the dedicated vantage point identified by the OCID.
@@ -188,6 +240,19 @@ public interface ApmSynthetic extends AutoCloseable {
     GetMonitorResultResponse getMonitorResult(GetMonitorResultRequest request);
 
     /**
+     * Gets the details of the On-premise vantage point identified by the OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetOnPremiseVantagePointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOnPremiseVantagePoint API.
+     */
+    GetOnPremiseVantagePointResponse getOnPremiseVantagePoint(
+            GetOnPremiseVantagePointRequest request);
+
+    /**
      * Gets the configuration of the script identified by the OCID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -198,6 +263,18 @@ public interface ApmSynthetic extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScript API.
      */
     GetScriptResponse getScript(GetScriptRequest request);
+
+    /**
+     * Gets the details of the worker identified by the OCID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetWorkerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorker API.
+     */
+    GetWorkerResponse getWorker(GetWorkerRequest request);
 
     /**
      * Returns a list of dedicated vantage points.
@@ -227,6 +304,20 @@ public interface ApmSynthetic extends AutoCloseable {
     ListMonitorsResponse listMonitors(ListMonitorsRequest request);
 
     /**
+     * Returns a list of On-premise vantage points.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListOnPremiseVantagePointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOnPremiseVantagePoints API.
+     */
+    ListOnPremiseVantagePointsResponse listOnPremiseVantagePoints(
+            ListOnPremiseVantagePointsRequest request);
+
+    /**
      * Returns a list of public vantage points.
      *
      * @param request The request object containing the details to send
@@ -251,6 +342,19 @@ public interface ApmSynthetic extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListScriptsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScripts API.
      */
     ListScriptsResponse listScripts(ListScriptsRequest request);
+
+    /**
+     * Returns a list of workers.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/ListWorkersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkers API.
+     */
+    ListWorkersResponse listWorkers(ListWorkersRequest request);
 
     /**
      * Updates the dedicated vantage point.
@@ -278,6 +382,19 @@ public interface ApmSynthetic extends AutoCloseable {
     UpdateMonitorResponse updateMonitor(UpdateMonitorRequest request);
 
     /**
+     * Updates the On-premise vantage point.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateOnPremiseVantagePointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOnPremiseVantagePoint API.
+     */
+    UpdateOnPremiseVantagePointResponse updateOnPremiseVantagePoint(
+            UpdateOnPremiseVantagePointRequest request);
+
+    /**
      * Updates the script.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -288,6 +405,18 @@ public interface ApmSynthetic extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScript API.
      */
     UpdateScriptResponse updateScript(UpdateScriptRequest request);
+
+    /**
+     * Updates the worker.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/UpdateWorkerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWorker API.
+     */
+    UpdateWorkerResponse updateWorker(UpdateWorkerRequest request);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

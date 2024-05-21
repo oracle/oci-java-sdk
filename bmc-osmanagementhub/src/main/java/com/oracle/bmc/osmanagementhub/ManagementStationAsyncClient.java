@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -459,6 +459,65 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeManagementStationCompartmentResponse>
+            changeManagementStationCompartment(
+                    ChangeManagementStationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeManagementStationCompartmentRequest,
+                                    ChangeManagementStationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeManagementStationCompartment");
+        final ChangeManagementStationCompartmentRequest interceptedRequest =
+                ChangeManagementStationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeManagementStationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementStation",
+                        "ChangeManagementStationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ChangeManagementStationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeManagementStationCompartmentResponse>
+                transformer =
+                        ChangeManagementStationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeManagementStationCompartmentRequest,
+                        ChangeManagementStationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeManagementStationCompartmentRequest,
+                                ChangeManagementStationCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeManagementStationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeManagementStationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeManagementStationCompartmentRequest,
+                    ChangeManagementStationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateManagementStationResponse> createManagementStation(
             CreateManagementStationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -475,7 +534,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "CreateManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/CreateManagementStation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateManagementStationResponse>
                 transformer =
@@ -528,7 +587,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "DeleteManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/DeleteManagementStation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteManagementStationResponse>
                 transformer =
@@ -576,7 +635,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "GetManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/GetManagementStation");
         final java.util.function.Function<javax.ws.rs.core.Response, GetManagementStationResponse>
                 transformer =
                         GetManagementStationConverter.fromResponse(
@@ -623,7 +682,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "ListManagementStations",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/ListManagementStations");
         final java.util.function.Function<javax.ws.rs.core.Response, ListManagementStationsResponse>
                 transformer =
                         ListManagementStationsConverter.fromResponse(
@@ -666,7 +725,10 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                 ListMirrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ManagementStation", "ListMirrors", ib.getRequestUri().toString(), "");
+                        "ManagementStation",
+                        "ListMirrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/MirrorsCollection/ListMirrors");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMirrorsResponse>
                 transformer =
                         ListMirrorsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -696,6 +758,59 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshManagementStationConfigResponse>
+            refreshManagementStationConfig(
+                    RefreshManagementStationConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshManagementStationConfigRequest,
+                                    RefreshManagementStationConfigResponse>
+                            handler) {
+        LOG.trace("Called async refreshManagementStationConfig");
+        final RefreshManagementStationConfigRequest interceptedRequest =
+                RefreshManagementStationConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshManagementStationConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagementStation",
+                        "RefreshManagementStationConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/RefreshManagementStationConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshManagementStationConfigResponse>
+                transformer =
+                        RefreshManagementStationConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshManagementStationConfigRequest,
+                        RefreshManagementStationConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshManagementStationConfigRequest,
+                                RefreshManagementStationConfigResponse>,
+                        java.util.concurrent.Future<RefreshManagementStationConfigResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshManagementStationConfigRequest, RefreshManagementStationConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SynchronizeMirrorsResponse> synchronizeMirrors(
             SynchronizeMirrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -712,7 +827,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "SynchronizeMirrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/SynchronizeMirrors");
         final java.util.function.Function<javax.ws.rs.core.Response, SynchronizeMirrorsResponse>
                 transformer =
                         SynchronizeMirrorsConverter.fromResponse(
@@ -764,7 +879,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "SynchronizeSingleMirrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/SynchronizeSingleMirrors");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SynchronizeSingleMirrorsResponse>
                 transformer =
@@ -812,7 +927,7 @@ public class ManagementStationAsyncClient implements ManagementStationAsync {
                         "ManagementStation",
                         "UpdateManagementStation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagementStation/UpdateManagementStation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateManagementStationResponse>
                 transformer =

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Description of a custom software source to be created.
+ * Provides the information used to create a custom software source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -99,19 +99,67 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
             return this;
         }
         /**
-         * Indicates whether service should automatically update the custom software source for the user.
+         * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticallyUpdated")
         private Boolean isAutomaticallyUpdated;
 
         /**
-         * Indicates whether service should automatically update the custom software source for the user.
+         * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
          * @param isAutomaticallyUpdated the value to set
          * @return this builder
          **/
         public Builder isAutomaticallyUpdated(Boolean isAutomaticallyUpdated) {
             this.isAutomaticallyUpdated = isAutomaticallyUpdated;
             this.__explicitlySet__.add("isAutomaticallyUpdated");
+            return this;
+        }
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+        private Boolean isAutoResolveDependencies;
+
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         * @param isAutoResolveDependencies the value to set
+         * @return this builder
+         **/
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            this.isAutoResolveDependencies = isAutoResolveDependencies;
+            this.__explicitlySet__.add("isAutoResolveDependencies");
+            return this;
+        }
+        /**
+         * Indicates whether the service should create the software source from a list of packages provided by the user.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+        private Boolean isCreatedFromPackageList;
+
+        /**
+         * Indicates whether the service should create the software source from a list of packages provided by the user.
+         * @param isCreatedFromPackageList the value to set
+         * @return this builder
+         **/
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            this.isCreatedFromPackageList = isCreatedFromPackageList;
+            this.__explicitlySet__.add("isCreatedFromPackageList");
+            return this;
+        }
+        /**
+         * A property used for compatibility only. It doesn't provide a complete list of packages. See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest) addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("packages")
+        private java.util.List<String> packages;
+
+        /**
+         * A property used for compatibility only. It doesn't provide a complete list of packages. See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest) addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+         * @param packages the value to set
+         * @return this builder
+         **/
+        public Builder packages(java.util.List<String> packages) {
+            this.packages = packages;
+            this.__explicitlySet__.add("packages");
             return this;
         }
 
@@ -128,7 +176,10 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                             this.definedTags,
                             this.vendorSoftwareSources,
                             this.customSoftwareSourceFilter,
-                            this.isAutomaticallyUpdated);
+                            this.isAutomaticallyUpdated,
+                            this.isAutoResolveDependencies,
+                            this.isCreatedFromPackageList,
+                            this.packages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -161,6 +212,15 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
             if (model.wasPropertyExplicitlySet("isAutomaticallyUpdated")) {
                 this.isAutomaticallyUpdated(model.getIsAutomaticallyUpdated());
             }
+            if (model.wasPropertyExplicitlySet("isAutoResolveDependencies")) {
+                this.isAutoResolveDependencies(model.getIsAutoResolveDependencies());
+            }
+            if (model.wasPropertyExplicitlySet("isCreatedFromPackageList")) {
+                this.isCreatedFromPackageList(model.getIsCreatedFromPackageList());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
+            }
             return this;
         }
     }
@@ -185,11 +245,17 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Id> vendorSoftwareSources,
             CustomSoftwareSourceFilter customSoftwareSourceFilter,
-            Boolean isAutomaticallyUpdated) {
+            Boolean isAutomaticallyUpdated,
+            Boolean isAutoResolveDependencies,
+            Boolean isCreatedFromPackageList,
+            java.util.List<String> packages) {
         super(compartmentId, displayName, description, freeformTags, definedTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
         this.isAutomaticallyUpdated = isAutomaticallyUpdated;
+        this.isAutoResolveDependencies = isAutoResolveDependencies;
+        this.isCreatedFromPackageList = isCreatedFromPackageList;
+        this.packages = packages;
     }
 
     /**
@@ -214,17 +280,59 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
     }
 
     /**
-     * Indicates whether service should automatically update the custom software source for the user.
+     * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticallyUpdated")
     private final Boolean isAutomaticallyUpdated;
 
     /**
-     * Indicates whether service should automatically update the custom software source for the user.
+     * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * @return the value
      **/
     public Boolean getIsAutomaticallyUpdated() {
         return isAutomaticallyUpdated;
+    }
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+    private final Boolean isAutoResolveDependencies;
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * @return the value
+     **/
+    public Boolean getIsAutoResolveDependencies() {
+        return isAutoResolveDependencies;
+    }
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+    private final Boolean isCreatedFromPackageList;
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     * @return the value
+     **/
+    public Boolean getIsCreatedFromPackageList() {
+        return isCreatedFromPackageList;
+    }
+
+    /**
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest) addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("packages")
+    private final java.util.List<String> packages;
+
+    /**
+     * A property used for compatibility only. It doesn't provide a complete list of packages. See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest) addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the software source when isCreatedFromPackageList is set to true.
+     * @return the value
+     **/
+    public java.util.List<String> getPackages() {
+        return packages;
     }
 
     @Override
@@ -245,6 +353,11 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
         sb.append(", customSoftwareSourceFilter=")
                 .append(String.valueOf(this.customSoftwareSourceFilter));
         sb.append(", isAutomaticallyUpdated=").append(String.valueOf(this.isAutomaticallyUpdated));
+        sb.append(", isAutoResolveDependencies=")
+                .append(String.valueOf(this.isAutoResolveDependencies));
+        sb.append(", isCreatedFromPackageList=")
+                .append(String.valueOf(this.isCreatedFromPackageList));
+        sb.append(", packages=").append(String.valueOf(this.packages));
         sb.append(")");
         return sb.toString();
     }
@@ -264,6 +377,11 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                         this.customSoftwareSourceFilter, other.customSoftwareSourceFilter)
                 && java.util.Objects.equals(
                         this.isAutomaticallyUpdated, other.isAutomaticallyUpdated)
+                && java.util.Objects.equals(
+                        this.isAutoResolveDependencies, other.isAutoResolveDependencies)
+                && java.util.Objects.equals(
+                        this.isCreatedFromPackageList, other.isCreatedFromPackageList)
+                && java.util.Objects.equals(this.packages, other.packages)
                 && super.equals(other);
     }
 
@@ -286,6 +404,17 @@ public final class CreateCustomSoftwareSourceDetails extends CreateSoftwareSourc
                         + (this.isAutomaticallyUpdated == null
                                 ? 43
                                 : this.isAutomaticallyUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoResolveDependencies == null
+                                ? 43
+                                : this.isAutoResolveDependencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCreatedFromPackageList == null
+                                ? 43
+                                : this.isCreatedFromPackageList.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -97,7 +97,7 @@ public interface FileStorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a mount target and its associated export set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * Moves a mount target and its associated export set or share set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      *
      * @param request The request object containing the details to send
@@ -113,6 +113,27 @@ public interface FileStorageAsync extends AutoCloseable {
                             ChangeMountTargetCompartmentRequest,
                             ChangeMountTargetCompartmentResponse>
                     handler);
+
+    /**
+     * Moves an outbound connector into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOutboundConnectorCompartmentResponse>
+            changeOutboundConnectorCompartment(
+                    ChangeOutboundConnectorCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOutboundConnectorCompartmentRequest,
+                                    ChangeOutboundConnectorCompartmentResponse>
+                            handler);
 
     /**
      * Moves a replication and its replication target into a different compartment within the same tenancy.
@@ -266,6 +287,42 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new outbound connector in the specified compartment.
+     * You can associate an outbound connector with a mount target only when
+     * they exist in the same availability domain.
+     * <p>
+     * For information about access control and compartments, see
+     * [Overview of the IAM
+     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * <p>
+     * For information about availability domains, see [Regions and
+     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * To get a list of availability domains, use the
+     * `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
+     * <p>
+     * All Oracle Cloud Infrastructure Services resources, including
+     * outbound connectors, get an Oracle-assigned, unique ID called an
+     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * When you create a resource, you can find its OCID in the response.
+     * You can also retrieve a resource's OCID by using a List API operation on that resource
+     * type, or by viewing the resource in the Console.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOutboundConnectorResponse> createOutboundConnector(
+            CreateOutboundConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOutboundConnectorRequest, CreateOutboundConnectorResponse>
+                    handler);
+
+    /**
      * Creates a new replication in the specified compartment.
      * Replications are the primary resource that governs the policy of cross-region replication between source
      * and target file systems. Replications are associated with a secondary resource called a {@link ReplicationTarget}
@@ -394,6 +451,23 @@ public interface FileStorageAsync extends AutoCloseable {
             DeleteMountTargetRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteMountTargetRequest, DeleteMountTargetResponse>
+                    handler);
+
+    /**
+     * Deletes the specified outbound connector.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOutboundConnectorResponse> deleteOutboundConnector(
+            DeleteOutboundConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOutboundConnectorRequest, DeleteOutboundConnectorResponse>
                     handler);
 
     /**
@@ -542,6 +616,22 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified outbound connector's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOutboundConnectorResponse> getOutboundConnector(
+            GetOutboundConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOutboundConnectorRequest, GetOutboundConnectorResponse>
+                    handler);
+
+    /**
      * Gets the specified replication's information.
      *
      * @param request The request object containing the details to send
@@ -672,6 +762,23 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the outbound connector resources in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOutboundConnectorsResponse> listOutboundConnectors(
+            ListOutboundConnectorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOutboundConnectorsRequest, ListOutboundConnectorsResponse>
+                    handler);
+
+    /**
      * Lists the replication target resources in the specified compartment.
      *
      *
@@ -709,6 +816,9 @@ public interface FileStorageAsync extends AutoCloseable {
      * or by file system snapshot policy and file system.
      * <p>
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * <p>
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
      *
      *
      * @param request The request object containing the details to send
@@ -852,6 +962,22 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the specified outbound connector's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOutboundConnectorResponse> updateOutboundConnector(
+            UpdateOutboundConnectorRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOutboundConnectorRequest, UpdateOutboundConnectorResponse>
+                    handler);
+
+    /**
      * Updates the information for the specified replication and its associated replication target.
      *
      *
@@ -881,5 +1007,23 @@ public interface FileStorageAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateSnapshotResponse> updateSnapshot(
             UpdateSnapshotRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateSnapshotRequest, UpdateSnapshotResponse>
+                    handler);
+
+    /**
+     * Validates keytab contents for the secret details passed on the request or validte keytab contents associated with
+     * the mount target passed in the request. The keytabs are deserialized, the contents are validated for compatibility
+     * and the principal, key version number and encryption type of each entry is provided as part of the response.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateKeyTabsResponse> validateKeyTabs(
+            ValidateKeyTabsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ValidateKeyTabsRequest, ValidateKeyTabsResponse>
                     handler);
 }

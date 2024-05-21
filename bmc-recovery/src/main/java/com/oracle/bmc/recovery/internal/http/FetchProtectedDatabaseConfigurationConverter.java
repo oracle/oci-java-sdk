@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.internal.http;
@@ -136,6 +136,28 @@ public class FetchProtectedDatabaseConfigurationConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcFilenameHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-filename");
+                                if (opcFilenameHeader.isPresent()) {
+                                    builder.opcFilename(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-filename",
+                                                    opcFilenameHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcChecksumHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-checksum");
+                                if (opcChecksumHeader.isPresent()) {
+                                    builder.opcChecksum(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-checksum",
+                                                    opcChecksumHeader.get().get(0),
                                                     String.class));
                                 }
 

@@ -1,12 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
 
 /**
  * The set of aggregated data returned for a metric.
- * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+ * For information about metrics, see
+ * [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
  * <p>
  * Limits information for returned data follows.
  * <p>
@@ -20,7 +21,8 @@ package com.oracle.bmc.monitoring.model;
  *A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
  * Metric streams cannot be aggregated across metric groups.
  * A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
- * For more information about metric-related concepts, see [Monitoring Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
+ * For more information about metric-related concepts, see
+ * [Monitoring Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -117,7 +119,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-         * resources from which the aggregated data was returned.
+         * resources that the aggregated data was returned from.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -125,7 +127,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-         * resources from which the aggregated data was returned.
+         * resources that the aggregated data was returned from.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -161,7 +163,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
          * Qualifiers provided in the definition of the returned metric.
          * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
          * <p>
-         * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
@@ -171,7 +173,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
          * Qualifiers provided in the definition of the returned metric.
          * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
          * <p>
-         * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
@@ -205,7 +207,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
         }
         /**
          * The time between calculated aggregation windows. Use with the query interval to vary the
-         * frequency at which aggregated data points are returned. For example, use a query interval of
+         * frequency for returning aggregated data points. For example, use a query interval of
          * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
          * frequency. The resolution must be equal or less than the interval in the query. The default
          * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
@@ -218,7 +220,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
 
         /**
          * The time between calculated aggregation windows. Use with the query interval to vary the
-         * frequency at which aggregated data points are returned. For example, use a query interval of
+         * frequency for returning aggregated data points. For example, use a query interval of
          * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
          * frequency. The resolution must be equal or less than the interval in the query. The default
          * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
@@ -362,7 +364,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-     * resources from which the aggregated data was returned.
+     * resources that the aggregated data was returned from.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -370,7 +372,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-     * resources from which the aggregated data was returned.
+     * resources that the aggregated data was returned from.
      *
      * @return the value
      **/
@@ -402,7 +404,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
      * Qualifiers provided in the definition of the returned metric.
      * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
@@ -412,7 +414,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
      * Qualifiers provided in the definition of the returned metric.
      * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * <p>
-     * Example: {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
      **/
@@ -442,7 +444,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the
-     * frequency at which aggregated data points are returned. For example, use a query interval of
+     * frequency for returning aggregated data points. For example, use a query interval of
      * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
      * frequency. The resolution must be equal or less than the interval in the query. The default
      * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
@@ -455,7 +457,7 @@ public final class MetricData extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * The time between calculated aggregation windows. Use with the query interval to vary the
-     * frequency at which aggregated data points are returned. For example, use a query interval of
+     * frequency for returning aggregated data points. For example, use a query interval of
      * 5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
      * frequency. The resolution must be equal or less than the interval in the query. The default
      * resolution is 1m (one minute). Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.

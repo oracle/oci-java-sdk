@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -162,6 +162,24 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
             this.__explicitlySet__.add("percentageOfCoresEnabled");
             return this;
         }
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("configMap")
+        private java.util.Map<String, String> configMap;
+
+        /**
+         * Instance Platform Configuration Configuration Map for flexible setting input.
+         *
+         * @param configMap the value to set
+         * @return this builder
+         **/
+        public Builder configMap(java.util.Map<String, String> configMap) {
+            this.configMap = configMap;
+            this.__explicitlySet__.add("configMap");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -176,7 +194,8 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
                             this.numaNodesPerSocket,
                             this.isSymmetricMultiThreadingEnabled,
                             this.isInputOutputMemoryManagementUnitEnabled,
-                            this.percentageOfCoresEnabled);
+                            this.percentageOfCoresEnabled,
+                            this.configMap);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -210,6 +229,9 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
             if (model.wasPropertyExplicitlySet("percentageOfCoresEnabled")) {
                 this.percentageOfCoresEnabled(model.getPercentageOfCoresEnabled());
             }
+            if (model.wasPropertyExplicitlySet("configMap")) {
+                this.configMap(model.getConfigMap());
+            }
             return this;
         }
     }
@@ -234,7 +256,8 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
             NumaNodesPerSocket numaNodesPerSocket,
             Boolean isSymmetricMultiThreadingEnabled,
             Boolean isInputOutputMemoryManagementUnitEnabled,
-            Integer percentageOfCoresEnabled) {
+            Integer percentageOfCoresEnabled,
+            java.util.Map<String, String> configMap) {
         super(
                 isSecureBootEnabled,
                 isTrustedPlatformModuleEnabled,
@@ -244,6 +267,7 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
         this.isSymmetricMultiThreadingEnabled = isSymmetricMultiThreadingEnabled;
         this.isInputOutputMemoryManagementUnitEnabled = isInputOutputMemoryManagementUnitEnabled;
         this.percentageOfCoresEnabled = percentageOfCoresEnabled;
+        this.configMap = configMap;
     }
 
     /**
@@ -370,6 +394,22 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
         return percentageOfCoresEnabled;
     }
 
+    /**
+     * Instance Platform Configuration Configuration Map for flexible setting input.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("configMap")
+    private final java.util.Map<String, String> configMap;
+
+    /**
+     * Instance Platform Configuration Configuration Map for flexible setting input.
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getConfigMap() {
+        return configMap;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -391,6 +431,7 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
                 .append(String.valueOf(this.isInputOutputMemoryManagementUnitEnabled));
         sb.append(", percentageOfCoresEnabled=")
                 .append(String.valueOf(this.percentageOfCoresEnabled));
+        sb.append(", configMap=").append(String.valueOf(this.configMap));
         sb.append(")");
         return sb.toString();
     }
@@ -415,6 +456,7 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
                         other.isInputOutputMemoryManagementUnitEnabled)
                 && java.util.Objects.equals(
                         this.percentageOfCoresEnabled, other.percentageOfCoresEnabled)
+                && java.util.Objects.equals(this.configMap, other.configMap)
                 && super.equals(other);
     }
 
@@ -442,6 +484,7 @@ public final class IntelIcelakeBmLaunchInstancePlatformConfig extends LaunchInst
                         + (this.percentageOfCoresEnabled == null
                                 ? 43
                                 : this.percentageOfCoresEnabled.hashCode());
+        result = (result * PRIME) + (this.configMap == null ? 43 : this.configMap.hashCode());
         return result;
     }
 }

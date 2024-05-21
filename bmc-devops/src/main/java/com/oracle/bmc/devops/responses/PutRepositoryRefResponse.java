@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.responses;
@@ -61,6 +61,19 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
+     */
+    private String sunset;
+
+    /**
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
+     * @return the value
+     */
+    public String getSunset() {
+        return sunset;
+    }
+
+    /**
      * The returned RepositoryRef instance.
      */
     private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
@@ -80,6 +93,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         "etag",
         "opcWorkRequestId",
         "opcRequestId",
+        "sunset",
         "repositoryRef"
     })
     private PutRepositoryRefResponse(
@@ -89,12 +103,14 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
+            String sunset,
             com.oracle.bmc.devops.model.RepositoryRef repositoryRef) {
         super(__httpStatusCode__, headers);
         this.location = location;
         this.etag = etag;
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.sunset = sunset;
         this.repositoryRef = repositoryRef;
     }
 
@@ -174,6 +190,21 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
+         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
+         */
+        private String sunset;
+
+        /**
+         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
+         * @param sunset the value to set
+         * @return this builder
+         */
+        public Builder sunset(String sunset) {
+            this.sunset = sunset;
+            return this;
+        }
+
+        /**
          * The returned RepositoryRef instance.
          */
         private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
@@ -199,6 +230,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
             etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            sunset(o.getSunset());
             repositoryRef(o.getRepositoryRef());
 
             return this;
@@ -216,6 +248,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
                     etag,
                     opcWorkRequestId,
                     opcRequestId,
+                    sunset,
                     repositoryRef);
         }
     }
@@ -237,6 +270,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",sunset=").append(String.valueOf(sunset));
         sb.append(",repositoryRef=").append(String.valueOf(repositoryRef));
         sb.append(")");
         return sb.toString();
@@ -257,6 +291,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.sunset, other.sunset)
                 && java.util.Objects.equals(this.repositoryRef, other.repositoryRef);
     }
 
@@ -270,6 +305,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.sunset == null ? 43 : this.sunset.hashCode());
         result =
                 (result * PRIME)
                         + (this.repositoryRef == null ? 43 : this.repositoryRef.hashCode());

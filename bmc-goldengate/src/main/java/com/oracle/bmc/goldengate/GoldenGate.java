@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate;
@@ -71,6 +71,19 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CancelDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDeploymentBackup API.
      */
     CancelDeploymentBackupResponse cancelDeploymentBackup(CancelDeploymentBackupRequest request);
+
+    /**
+     * Cancels a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CancelDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDeploymentUpgrade API.
+     */
+    CancelDeploymentUpgradeResponse cancelDeploymentUpgrade(CancelDeploymentUpgradeRequest request);
 
     /**
      * Cancel snooze of a DeploymentUpgrade. When provided, If-Match is checked against ETag values of the resource.
@@ -170,6 +183,31 @@ public interface GoldenGate extends AutoCloseable {
             CollectDeploymentDiagnosticRequest request);
 
     /**
+     * Creates a copy of a Deployment Backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CopyDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyDeploymentBackup API.
+     */
+    CopyDeploymentBackupResponse copyDeploymentBackup(CopyDeploymentBackupRequest request);
+
+    /**
+     * Creates a new certificate to truststore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCertificate API.
+     */
+    CreateCertificateResponse createCertificate(CreateCertificateRequest request);
+
+    /**
      * Creates a new Connection.
      *
      * @param request The request object containing the details to send
@@ -234,6 +272,19 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDeploymentBackup API.
      */
     CreateDeploymentBackupResponse createDeploymentBackup(CreateDeploymentBackupRequest request);
+
+    /**
+     * Deletes the certificate from truststore.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeleteCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCertificate API.
+     */
+    DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
 
     /**
      * Deletes a Connection.
@@ -327,6 +378,19 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ExportDeploymentWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportDeploymentWallet API.
      */
     ExportDeploymentWalletResponse exportDeploymentWallet(ExportDeploymentWalletRequest request);
+
+    /**
+     * Retrieves a Certificate.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetCertificateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCertificate API.
+     */
+    GetCertificateResponse getCertificate(GetCertificateRequest request);
 
     /**
      * Retrieves a Connection.
@@ -432,6 +496,18 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ImportDeploymentWalletExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportDeploymentWallet API.
      */
     ImportDeploymentWalletResponse importDeploymentWallet(ImportDeploymentWalletRequest request);
+
+    /**
+     * Returns a list of certificates from truststore.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCertificates API.
+     */
+    ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
     /**
      * Lists the Connection Assignments in the compartment.
@@ -632,6 +708,20 @@ public interface GoldenGate extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Reschedules a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RescheduleDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RescheduleDeploymentUpgrade API.
+     */
+    RescheduleDeploymentUpgradeResponse rescheduleDeploymentUpgrade(
+            RescheduleDeploymentUpgradeRequest request);
+
+    /**
      * Restores a Deployment from a Deployment Backup created from the same Deployment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -695,6 +785,21 @@ public interface GoldenGate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/StopDeploymentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDeployment API.
      */
     StopDeploymentResponse stopDeployment(StopDeploymentRequest request);
+
+    /**
+     * Tests the connectivity between given GoldenGate deployment and one of the associated database / service.
+     * When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/TestConnectionAssignmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TestConnectionAssignment API.
+     */
+    TestConnectionAssignmentResponse testConnectionAssignment(
+            TestConnectionAssignmentRequest request);
 
     /**
      * Updates the Connection.

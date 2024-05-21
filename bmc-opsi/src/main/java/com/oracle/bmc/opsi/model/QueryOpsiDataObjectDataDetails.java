@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -22,11 +22,20 @@ package com.oracle.bmc.opsi.model;
 public final class QueryOpsiDataObjectDataDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"dataObjectIdentifier", "query", "resourceFilters"})
+    @java.beans.ConstructorProperties({
+        "dataObjectIdentifier",
+        "dataObjects",
+        "query",
+        "resourceFilters"
+    })
     public QueryOpsiDataObjectDataDetails(
-            String dataObjectIdentifier, DataObjectQuery query, ResourceFilters resourceFilters) {
+            String dataObjectIdentifier,
+            java.util.List<OpsiDataObjectDetailsInQuery> dataObjects,
+            DataObjectQuery query,
+            ResourceFilters resourceFilters) {
         super();
         this.dataObjectIdentifier = dataObjectIdentifier;
+        this.dataObjects = dataObjects;
         this.query = query;
         this.resourceFilters = resourceFilters;
     }
@@ -47,6 +56,22 @@ public final class QueryOpsiDataObjectDataDetails
         public Builder dataObjectIdentifier(String dataObjectIdentifier) {
             this.dataObjectIdentifier = dataObjectIdentifier;
             this.__explicitlySet__.add("dataObjectIdentifier");
+            return this;
+        }
+        /**
+         * Details of OPSI data objects used in the query.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataObjects")
+        private java.util.List<OpsiDataObjectDetailsInQuery> dataObjects;
+
+        /**
+         * Details of OPSI data objects used in the query.
+         * @param dataObjects the value to set
+         * @return this builder
+         **/
+        public Builder dataObjects(java.util.List<OpsiDataObjectDetailsInQuery> dataObjects) {
+            this.dataObjects = dataObjects;
+            this.__explicitlySet__.add("dataObjects");
             return this;
         }
 
@@ -74,7 +99,10 @@ public final class QueryOpsiDataObjectDataDetails
         public QueryOpsiDataObjectDataDetails build() {
             QueryOpsiDataObjectDataDetails model =
                     new QueryOpsiDataObjectDataDetails(
-                            this.dataObjectIdentifier, this.query, this.resourceFilters);
+                            this.dataObjectIdentifier,
+                            this.dataObjects,
+                            this.query,
+                            this.resourceFilters);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +113,9 @@ public final class QueryOpsiDataObjectDataDetails
         public Builder copy(QueryOpsiDataObjectDataDetails model) {
             if (model.wasPropertyExplicitlySet("dataObjectIdentifier")) {
                 this.dataObjectIdentifier(model.getDataObjectIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("dataObjects")) {
+                this.dataObjects(model.getDataObjects());
             }
             if (model.wasPropertyExplicitlySet("query")) {
                 this.query(model.getQuery());
@@ -121,6 +152,20 @@ public final class QueryOpsiDataObjectDataDetails
         return dataObjectIdentifier;
     }
 
+    /**
+     * Details of OPSI data objects used in the query.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataObjects")
+    private final java.util.List<OpsiDataObjectDetailsInQuery> dataObjects;
+
+    /**
+     * Details of OPSI data objects used in the query.
+     * @return the value
+     **/
+    public java.util.List<OpsiDataObjectDetailsInQuery> getDataObjects() {
+        return dataObjects;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final DataObjectQuery query;
 
@@ -150,6 +195,7 @@ public final class QueryOpsiDataObjectDataDetails
         sb.append("QueryOpsiDataObjectDataDetails(");
         sb.append("super=").append(super.toString());
         sb.append("dataObjectIdentifier=").append(String.valueOf(this.dataObjectIdentifier));
+        sb.append(", dataObjects=").append(String.valueOf(this.dataObjects));
         sb.append(", query=").append(String.valueOf(this.query));
         sb.append(", resourceFilters=").append(String.valueOf(this.resourceFilters));
         sb.append(")");
@@ -167,6 +213,7 @@ public final class QueryOpsiDataObjectDataDetails
 
         QueryOpsiDataObjectDataDetails other = (QueryOpsiDataObjectDataDetails) o;
         return java.util.Objects.equals(this.dataObjectIdentifier, other.dataObjectIdentifier)
+                && java.util.Objects.equals(this.dataObjects, other.dataObjects)
                 && java.util.Objects.equals(this.query, other.query)
                 && java.util.Objects.equals(this.resourceFilters, other.resourceFilters)
                 && super.equals(other);
@@ -181,6 +228,7 @@ public final class QueryOpsiDataObjectDataDetails
                         + (this.dataObjectIdentifier == null
                                 ? 43
                                 : this.dataObjectIdentifier.hashCode());
+        result = (result * PRIME) + (this.dataObjects == null ? 43 : this.dataObjects.hashCode());
         result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
         result =
                 (result * PRIME)

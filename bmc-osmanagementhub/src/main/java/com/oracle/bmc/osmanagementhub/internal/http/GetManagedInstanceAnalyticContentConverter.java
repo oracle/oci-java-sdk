@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.internal.http;
@@ -96,14 +96,6 @@ public class GetManagedInstanceAnalyticContentConverter {
                                     request.getDisplayNameContains()));
         }
 
-        if (request.getInstanceLocation() != null) {
-            target =
-                    target.queryParam(
-                            "instanceLocation",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getInstanceLocation().getValue()));
-        }
-
         if (request.getSecurityUpdatesAvailableEqualsTo() != null) {
             target =
                     target.queryParam(
@@ -134,6 +126,57 @@ public class GetManagedInstanceAnalyticContentConverter {
                             "bugUpdatesAvailableGreaterThan",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getBugUpdatesAvailableGreaterThan()));
+        }
+
+        if (request.getLocation() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "location",
+                            request.getLocation(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getLocationNotEqualTo() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "locationNotEqualTo",
+                            request.getLocationNotEqualTo(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getOsFamily() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "osFamily",
+                            request.getOsFamily(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getIsManagedByAutonomousLinux() != null) {
+            target =
+                    target.queryParam(
+                            "isManagedByAutonomousLinux",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsManagedByAutonomousLinux()));
+        }
+
+        if (request.getReportFormat() != null) {
+            target =
+                    target.queryParam(
+                            "reportFormat",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getReportFormat().getValue()));
+        }
+
+        if (request.getReportType() != null) {
+            target =
+                    target.queryParam(
+                            "reportType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getReportType().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

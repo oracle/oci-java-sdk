@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The size and amount of resources available to the Container Instance.
+ * The size and amount of resources available to the container instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -33,14 +33,14 @@ public final class CreateContainerInstanceShapeConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The total number of OCPUs available to the instance.
+         * The total number of OCPUs available to the container instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
         /**
-         * The total number of OCPUs available to the instance.
+         * The total number of OCPUs available to the container instance.
          *
          * @param ocpus the value to set
          * @return this builder
@@ -51,14 +51,14 @@ public final class CreateContainerInstanceShapeConfigDetails
             return this;
         }
         /**
-         * The total amount of memory available to the instance, in gigabytes.
+         * The total amount of memory available to the container instance (GB).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
         /**
-         * The total amount of memory available to the instance, in gigabytes.
+         * The total amount of memory available to the container instance (GB).
          *
          * @param memoryInGBs the value to set
          * @return this builder
@@ -105,14 +105,14 @@ public final class CreateContainerInstanceShapeConfigDetails
     }
 
     /**
-     * The total number of OCPUs available to the instance.
+     * The total number of OCPUs available to the container instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
     /**
-     * The total number of OCPUs available to the instance.
+     * The total number of OCPUs available to the container instance.
      *
      * @return the value
      **/
@@ -121,14 +121,14 @@ public final class CreateContainerInstanceShapeConfigDetails
     }
 
     /**
-     * The total amount of memory available to the instance, in gigabytes.
+     * The total amount of memory available to the container instance (GB).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
     /**
-     * The total amount of memory available to the instance, in gigabytes.
+     * The total amount of memory available to the container instance (GB).
      *
      * @return the value
      **/

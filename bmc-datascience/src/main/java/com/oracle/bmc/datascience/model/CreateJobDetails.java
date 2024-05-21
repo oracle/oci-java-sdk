@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -27,7 +27,9 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
         "description",
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
+        "jobEnvironmentConfigurationDetails",
         "jobLogConfigurationDetails",
+        "jobStorageMountConfigurationDetailsList",
         "freeformTags",
         "definedTags"
     })
@@ -38,7 +40,10 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
             String description,
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails,
             JobLogConfigurationDetails jobLogConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationDetailsList,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -48,7 +53,9 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
         this.description = description;
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -139,6 +146,16 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+        public Builder jobEnvironmentConfigurationDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails) {
+            this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
         private JobLogConfigurationDetails jobLogConfigurationDetails;
 
@@ -146,6 +163,25 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                 JobLogConfigurationDetails jobLogConfigurationDetails) {
             this.jobLogConfigurationDetails = jobLogConfigurationDetails;
             this.__explicitlySet__.add("jobLogConfigurationDetails");
+            return this;
+        }
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         * @param jobStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder jobStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationDetailsList) {
+            this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
             return this;
         }
         /**
@@ -202,7 +238,9 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                             this.description,
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobEnvironmentConfigurationDetails,
                             this.jobLogConfigurationDetails,
+                            this.jobStorageMountConfigurationDetailsList,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -232,8 +270,16 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationDetails")) {
+                this.jobEnvironmentConfigurationDetails(
+                        model.getJobEnvironmentConfigurationDetails());
+            }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationDetails")) {
                 this.jobLogConfigurationDetails(model.getJobLogConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
+                this.jobStorageMountConfigurationDetailsList(
+                        model.getJobStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -326,11 +372,34 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
         return jobInfrastructureConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationDetails() {
+        return jobEnvironmentConfigurationDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
     private final JobLogConfigurationDetails jobLogConfigurationDetails;
 
     public JobLogConfigurationDetails getJobLogConfigurationDetails() {
         return jobLogConfigurationDetails;
+    }
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationDetailsList() {
+        return jobStorageMountConfigurationDetailsList;
     }
 
     /**
@@ -391,8 +460,12 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                 .append(String.valueOf(this.jobConfigurationDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobEnvironmentConfigurationDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationDetails));
         sb.append(", jobLogConfigurationDetails=")
                 .append(String.valueOf(this.jobLogConfigurationDetails));
+        sb.append(", jobStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -419,7 +492,13 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
                 && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationDetails,
+                        other.jobEnvironmentConfigurationDetails)
+                && java.util.Objects.equals(
                         this.jobLogConfigurationDetails, other.jobLogConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationDetailsList,
+                        other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -447,9 +526,19 @@ public final class CreateJobDetails extends com.oracle.bmc.http.internal.Explici
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.jobEnvironmentConfigurationDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.jobLogConfigurationDetails == null
                                 ? 43
                                 : this.jobLogConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

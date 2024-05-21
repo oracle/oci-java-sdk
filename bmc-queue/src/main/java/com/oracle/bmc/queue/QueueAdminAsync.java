@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue;
@@ -8,7 +8,7 @@ import com.oracle.bmc.queue.requests.*;
 import com.oracle.bmc.queue.responses.*;
 
 /**
- * A description of the Queue API
+ * Use the Queue API to produce and consume messages, create queues, and manage related items. For more information, see [Queue](https://docs.cloud.oracle.com/iaas/Content/queue/overview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface QueueAdminAsync extends AutoCloseable {
@@ -59,7 +59,7 @@ public interface QueueAdminAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a Queue resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a queue from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -75,7 +75,7 @@ public interface QueueAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Queue.
+     * Creates a new queue.
      *
      *
      * @param request The request object containing the details to send
@@ -90,7 +90,7 @@ public interface QueueAdminAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateQueueRequest, CreateQueueResponse> handler);
 
     /**
-     * Deletes a Queue resource by identifier
+     * Deletes a queue resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -104,7 +104,7 @@ public interface QueueAdminAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteQueueRequest, DeleteQueueResponse> handler);
 
     /**
-     * Gets a Queue by identifier
+     * Gets a queue by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -133,7 +133,7 @@ public interface QueueAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Queues.
+     * Returns a list of queues.
      *
      *
      * @param request The request object containing the details to send
@@ -198,8 +198,9 @@ public interface QueueAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes all messages present in the queue at the time of invocation. Only one concurrent purge operation is supported for any given queue.
+     * Deletes all messages present in the queue, or deletes all the messages in the specific channel at the time of invocation. Only one concurrent purge operation is supported for any given queue.
      * However multiple concurrent purge operations are supported for different queues.
+     * Purge request without specification of target channels will clean up all messages in the queue and in the child channels.
      *
      *
      * @param request The request object containing the details to send
@@ -214,7 +215,7 @@ public interface QueueAdminAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PurgeQueueRequest, PurgeQueueResponse> handler);
 
     /**
-     * Updates the Queue
+     * Updates the specified queue.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

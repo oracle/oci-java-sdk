@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
@@ -28,6 +28,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         "compartmentId",
         "resourceId",
         "resourceName",
+        "subResourceList",
         "resourceType",
         "lifecycleState",
         "lifecycleDetails",
@@ -38,6 +39,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         "extendDuration",
         "severity",
         "isAutoApproved",
+        "timeRequestedForFutureAccess",
         "freeformTags",
         "definedTags"
     })
@@ -48,6 +50,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             String compartmentId,
             String resourceId,
             String resourceName,
+            java.util.List<String> subResourceList,
             ResourceTypes resourceType,
             AccessRequestLifecycleStates lifecycleState,
             String lifecycleDetails,
@@ -58,6 +61,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             Integer extendDuration,
             AccessRequestSeverities severity,
             Boolean isAutoApproved,
+            java.util.Date timeRequestedForFutureAccess,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -67,6 +71,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         this.compartmentId = compartmentId;
         this.resourceId = resourceId;
         this.resourceName = resourceName;
+        this.subResourceList = subResourceList;
         this.resourceType = resourceType;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -77,6 +82,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         this.extendDuration = extendDuration;
         this.severity = severity;
         this.isAutoApproved = isAutoApproved;
+        this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -181,6 +187,22 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
+            return this;
+        }
+        /**
+         * The subresources requested for approval.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subResourceList")
+        private java.util.List<String> subResourceList;
+
+        /**
+         * The subresources requested for approval.
+         * @param subResourceList the value to set
+         * @return this builder
+         **/
+        public Builder subResourceList(java.util.List<String> subResourceList) {
+            this.subResourceList = subResourceList;
+            this.__explicitlySet__.add("subResourceList");
             return this;
         }
         /**
@@ -350,6 +372,24 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeRequestedForFutureAccess")
+        private java.util.Date timeRequestedForFutureAccess;
+
+        /**
+         * Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         *
+         * @param timeRequestedForFutureAccess the value to set
+         * @return this builder
+         **/
+        public Builder timeRequestedForFutureAccess(java.util.Date timeRequestedForFutureAccess) {
+            this.timeRequestedForFutureAccess = timeRequestedForFutureAccess;
+            this.__explicitlySet__.add("timeRequestedForFutureAccess");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          *
          **/
@@ -399,6 +439,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                             this.compartmentId,
                             this.resourceId,
                             this.resourceName,
+                            this.subResourceList,
                             this.resourceType,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -409,6 +450,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                             this.extendDuration,
                             this.severity,
                             this.isAutoApproved,
+                            this.timeRequestedForFutureAccess,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -436,6 +478,9 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("resourceName")) {
                 this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("subResourceList")) {
+                this.subResourceList(model.getSubResourceList());
             }
             if (model.wasPropertyExplicitlySet("resourceType")) {
                 this.resourceType(model.getResourceType());
@@ -466,6 +511,9 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("isAutoApproved")) {
                 this.isAutoApproved(model.getIsAutoApproved());
+            }
+            if (model.wasPropertyExplicitlySet("timeRequestedForFutureAccess")) {
+                this.timeRequestedForFutureAccess(model.getTimeRequestedForFutureAccess());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -574,6 +622,20 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
      **/
     public String getResourceName() {
         return resourceName;
+    }
+
+    /**
+     * The subresources requested for approval.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subResourceList")
+    private final java.util.List<String> subResourceList;
+
+    /**
+     * The subresources requested for approval.
+     * @return the value
+     **/
+    public java.util.List<String> getSubResourceList() {
+        return subResourceList;
     }
 
     /**
@@ -723,6 +785,22 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeRequestedForFutureAccess")
+    private final java.util.Date timeRequestedForFutureAccess;
+
+    /**
+     * Time in future when the user for the access request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeRequestedForFutureAccess() {
+        return timeRequestedForFutureAccess;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      *
      **/
@@ -774,6 +852,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", subResourceList=").append(String.valueOf(this.subResourceList));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -784,6 +863,8 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", extendDuration=").append(String.valueOf(this.extendDuration));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", isAutoApproved=").append(String.valueOf(this.isAutoApproved));
+        sb.append(", timeRequestedForFutureAccess=")
+                .append(String.valueOf(this.timeRequestedForFutureAccess));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -806,6 +887,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.subResourceList, other.subResourceList)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -816,6 +898,8 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.extendDuration, other.extendDuration)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.isAutoApproved, other.isAutoApproved)
+                && java.util.Objects.equals(
+                        this.timeRequestedForFutureAccess, other.timeRequestedForFutureAccess)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -837,6 +921,9 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subResourceList == null ? 43 : this.subResourceList.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result =
                 (result * PRIME)
@@ -865,6 +952,11 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.isAutoApproved == null ? 43 : this.isAutoApproved.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeRequestedForFutureAccess == null
+                                ? 43
+                                : this.timeRequestedForFutureAccess.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * condition type provided by cloud guard
+ * The metadata definition of the requested condition type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,23 +22,27 @@ package com.oracle.bmc.cloudguard.model;
 public final class ConditionMetadataType
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "serviceTypes"})
-    public ConditionMetadataType(String name, java.util.List<ServiceTypeSummary> serviceTypes) {
+    @java.beans.ConstructorProperties({"name", "serviceTypes", "locks"})
+    public ConditionMetadataType(
+            String name,
+            java.util.List<ServiceTypeSummary> serviceTypes,
+            java.util.List<ResourceLock> locks) {
         super();
         this.name = name;
         this.serviceTypes = serviceTypes;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name used to identify
+         * Name used to identify the condition metadata type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name used to identify
+         * Name used to identify the condition metadata type
          * @param name the value to set
          * @return this builder
          **/
@@ -48,13 +52,13 @@ public final class ConditionMetadataType
             return this;
         }
         /**
-         * collection of Service type
+         * Collection of ServiceTypeSummary resources
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceTypes")
         private java.util.List<ServiceTypeSummary> serviceTypes;
 
         /**
-         * collection of Service type
+         * Collection of ServiceTypeSummary resources
          * @param serviceTypes the value to set
          * @return this builder
          **/
@@ -63,12 +67,29 @@ public final class ConditionMetadataType
             this.__explicitlySet__.add("serviceTypes");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConditionMetadataType build() {
-            ConditionMetadataType model = new ConditionMetadataType(this.name, this.serviceTypes);
+            ConditionMetadataType model =
+                    new ConditionMetadataType(this.name, this.serviceTypes, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +103,9 @@ public final class ConditionMetadataType
             }
             if (model.wasPropertyExplicitlySet("serviceTypes")) {
                 this.serviceTypes(model.getServiceTypes());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -99,13 +123,13 @@ public final class ConditionMetadataType
     }
 
     /**
-     * Name used to identify
+     * Name used to identify the condition metadata type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name used to identify
+     * Name used to identify the condition metadata type
      * @return the value
      **/
     public String getName() {
@@ -113,17 +137,31 @@ public final class ConditionMetadataType
     }
 
     /**
-     * collection of Service type
+     * Collection of ServiceTypeSummary resources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceTypes")
     private final java.util.List<ServiceTypeSummary> serviceTypes;
 
     /**
-     * collection of Service type
+     * Collection of ServiceTypeSummary resources
      * @return the value
      **/
     public java.util.List<ServiceTypeSummary> getServiceTypes() {
         return serviceTypes;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -142,6 +180,7 @@ public final class ConditionMetadataType
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", serviceTypes=").append(String.valueOf(this.serviceTypes));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -158,6 +197,7 @@ public final class ConditionMetadataType
         ConditionMetadataType other = (ConditionMetadataType) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.serviceTypes, other.serviceTypes)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -167,6 +207,7 @@ public final class ConditionMetadataType
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.serviceTypes == null ? 43 : this.serviceTypes.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

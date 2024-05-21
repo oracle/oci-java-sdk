@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to store Security Questions of User.
+ * This extension defines the attributes used to store the security questions of a user.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,7 +31,7 @@ public final class ExtensionSecurityQuestionsUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+         * The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
          * <p>
          **SCIM++ Properties:**
          *  - idcsCompositeKey: [value]
@@ -46,7 +46,7 @@ public final class ExtensionSecurityQuestionsUser
         private java.util.List<UserExtSecQuestions> secQuestions;
 
         /**
-         * Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+         * The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
          * <p>
          **SCIM++ Properties:**
          *  - idcsCompositeKey: [value]
@@ -98,7 +98,7 @@ public final class ExtensionSecurityQuestionsUser
     }
 
     /**
-     * Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+     * The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
      * <p>
      **SCIM++ Properties:**
      *  - idcsCompositeKey: [value]
@@ -113,7 +113,7 @@ public final class ExtensionSecurityQuestionsUser
     private final java.util.List<UserExtSecQuestions> secQuestions;
 
     /**
-     * Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+     * The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
      * <p>
      **SCIM++ Properties:**
      *  - idcsCompositeKey: [value]

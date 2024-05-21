@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -38,13 +38,13 @@ public final class ResourceRiskScoreAggregation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Tactics used for evaluating the risk scrore
+         * List of tactics used for evaluating the risk score
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tactics")
         private java.util.List<String> tactics;
 
         /**
-         * Tactics used for evaluating the risk scrore
+         * List of tactics used for evaluating the risk score
          * @param tactics the value to set
          * @return this builder
          **/
@@ -70,13 +70,13 @@ public final class ResourceRiskScoreAggregation
             return this;
         }
         /**
-         * Risk Score
+         * The risk score
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
-         * Risk Score
+         * The risk score
          * @param riskScore the value to set
          * @return this builder
          **/
@@ -86,13 +86,13 @@ public final class ResourceRiskScoreAggregation
             return this;
         }
         /**
-         * The Risk Level
+         * The risk level
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level
          * @param riskLevel the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class ResourceRiskScoreAggregation
     }
 
     /**
-     * Tactics used for evaluating the risk scrore
+     * List of tactics used for evaluating the risk score
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
     private final java.util.List<String> tactics;
 
     /**
-     * Tactics used for evaluating the risk scrore
+     * List of tactics used for evaluating the risk score
      * @return the value
      **/
     public java.util.List<String> getTactics() {
@@ -173,13 +173,13 @@ public final class ResourceRiskScoreAggregation
     }
 
     /**
-     * Risk Score
+     * The risk score
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
-     * Risk Score
+     * The risk score
      * @return the value
      **/
     public Double getRiskScore() {
@@ -187,13 +187,13 @@ public final class ResourceRiskScoreAggregation
     }
 
     /**
-     * The Risk Level
+     * The risk level
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level
      * @return the value
      **/
     public RiskLevel getRiskLevel() {

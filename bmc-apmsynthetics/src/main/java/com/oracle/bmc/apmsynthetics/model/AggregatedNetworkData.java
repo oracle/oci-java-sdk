@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * aggregated network data.
+ * Details of the aggregated network data.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +46,13 @@ public final class AggregatedNetworkData
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * state of the result
+         * Status of the aggregated network data result.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultState")
         private ResultState resultState;
 
         /**
-         * state of the result
+         * Status of the aggregated network data result.
          * @param resultState the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class AggregatedNetworkData
             return this;
         }
         /**
-         * List of VantagePointNode items.
+         * List of vantage point nodes.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNodes")
         private java.util.List<VantagePointNode> vantagePointNodes;
 
         /**
-         * List of VantagePointNode items.
+         * List of vantage point nodes.
          * @param vantagePointNodes the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class AggregatedNetworkData
             return this;
         }
         /**
-         * 2d array of nodes where each internal array corresponds to 1 level
+         * An array of node arrays where each internal array corresponds to nodes at one level.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodesByLevel")
         private java.util.List<java.util.List<Node>> nodesByLevel;
 
         /**
-         * 2d array of nodes where each internal array corresponds to 1 level
+         * An array of node arrays where each internal array corresponds to nodes at one level.
          * @param nodesByLevel the value to set
          * @return this builder
          **/
@@ -94,13 +94,13 @@ public final class AggregatedNetworkData
             return this;
         }
         /**
-         * map of Link objects
+         * Map of link objects.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("links")
         private java.util.Map<String, Link> links;
 
         /**
-         * map of Link objects
+         * Map of link objects.
          * @param links the value to set
          * @return this builder
          **/
@@ -110,13 +110,13 @@ public final class AggregatedNetworkData
             return this;
         }
         /**
-         * string contaiing error details
+         * String containing error details.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
         private String errorDetails;
 
         /**
-         * string contaiing error details
+         * String containing error details.
          * @param errorDetails the value to set
          * @return this builder
          **/
@@ -176,7 +176,7 @@ public final class AggregatedNetworkData
     }
 
     /**
-     * state of the result
+     * Status of the aggregated network data result.
      **/
     public enum ResultState {
         Success("SUCCESS"),
@@ -225,13 +225,13 @@ public final class AggregatedNetworkData
         }
     };
     /**
-     * state of the result
+     * Status of the aggregated network data result.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultState")
     private final ResultState resultState;
 
     /**
-     * state of the result
+     * Status of the aggregated network data result.
      * @return the value
      **/
     public ResultState getResultState() {
@@ -239,13 +239,13 @@ public final class AggregatedNetworkData
     }
 
     /**
-     * List of VantagePointNode items.
+     * List of vantage point nodes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNodes")
     private final java.util.List<VantagePointNode> vantagePointNodes;
 
     /**
-     * List of VantagePointNode items.
+     * List of vantage point nodes.
      * @return the value
      **/
     public java.util.List<VantagePointNode> getVantagePointNodes() {
@@ -253,13 +253,13 @@ public final class AggregatedNetworkData
     }
 
     /**
-     * 2d array of nodes where each internal array corresponds to 1 level
+     * An array of node arrays where each internal array corresponds to nodes at one level.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodesByLevel")
     private final java.util.List<java.util.List<Node>> nodesByLevel;
 
     /**
-     * 2d array of nodes where each internal array corresponds to 1 level
+     * An array of node arrays where each internal array corresponds to nodes at one level.
      * @return the value
      **/
     public java.util.List<java.util.List<Node>> getNodesByLevel() {
@@ -267,13 +267,13 @@ public final class AggregatedNetworkData
     }
 
     /**
-     * map of Link objects
+     * Map of link objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("links")
     private final java.util.Map<String, Link> links;
 
     /**
-     * map of Link objects
+     * Map of link objects.
      * @return the value
      **/
     public java.util.Map<String, Link> getLinks() {
@@ -281,13 +281,13 @@ public final class AggregatedNetworkData
     }
 
     /**
-     * string contaiing error details
+     * String containing error details.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
     private final String errorDetails;
 
     /**
-     * string contaiing error details
+     * String containing error details.
      * @return the value
      **/
     public String getErrorDetails() {

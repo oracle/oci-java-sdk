@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Geographical Location of a problem
+ * The geographical location of a problem in terms of latitude and longitude.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class GeographicalLocation extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Latitude
+         * Latitude of problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
 
         /**
-         * Latitude
+         * Latitude of problem
          * @param latitude the value to set
          * @return this builder
          **/
@@ -47,13 +47,13 @@ public final class GeographicalLocation extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Longitude
+         * Longitude of problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("longitude")
         private Double longitude;
 
         /**
-         * Longitude
+         * Longitude of problem
          * @param longitude the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class GeographicalLocation extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Latitude
+     * Latitude of problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Double latitude;
 
     /**
-     * Latitude
+     * Latitude of problem
      * @return the value
      **/
     public Double getLatitude() {
@@ -112,13 +112,13 @@ public final class GeographicalLocation extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Longitude
+     * Longitude of problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
     private final Double longitude;
 
     /**
-     * Longitude
+     * Longitude of problem
      * @return the value
      **/
     public Double getLongitude() {

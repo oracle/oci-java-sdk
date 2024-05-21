@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -32,6 +32,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         "trainingDataset",
         "testingDataset",
         "validationDataset",
+        "componentModels",
+        "aliasName",
         "projectId",
         "freeformTags",
         "definedTags"
@@ -47,6 +49,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             Dataset trainingDataset,
             Dataset testingDataset,
             Dataset validationDataset,
+            java.util.List<ComponentModel> componentModels,
+            String aliasName,
             String projectId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -61,6 +65,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         this.trainingDataset = trainingDataset;
         this.testingDataset = testingDataset;
         this.validationDataset = validationDataset;
+        this.componentModels = componentModels;
+        this.aliasName = aliasName;
         this.projectId = projectId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -208,6 +214,38 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("componentModels")
+        private java.util.List<ComponentModel> componentModels;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+         * @param componentModels the value to set
+         * @return this builder
+         **/
+        public Builder componentModels(java.util.List<ComponentModel> componentModels) {
+            this.componentModels = componentModels;
+            this.__explicitlySet__.add("componentModels");
+            return this;
+        }
+        /**
+         * the alias name of the model.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
+        private String aliasName;
+
+        /**
+         * the alias name of the model.
+         * @param aliasName the value to set
+         * @return this builder
+         **/
+        public Builder aliasName(String aliasName) {
+            this.aliasName = aliasName;
+            this.__explicitlySet__.add("aliasName");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
@@ -281,6 +319,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                             this.trainingDataset,
                             this.testingDataset,
                             this.validationDataset,
+                            this.componentModels,
+                            this.aliasName,
                             this.projectId,
                             this.freeformTags,
                             this.definedTags);
@@ -321,6 +361,12 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("validationDataset")) {
                 this.validationDataset(model.getValidationDataset());
+            }
+            if (model.wasPropertyExplicitlySet("componentModels")) {
+                this.componentModels(model.getComponentModels());
+            }
+            if (model.wasPropertyExplicitlySet("aliasName")) {
+                this.aliasName(model.getAliasName());
             }
             if (model.wasPropertyExplicitlySet("projectId")) {
                 this.projectId(model.getProjectId());
@@ -466,6 +512,34 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("componentModels")
+    private final java.util.List<ComponentModel> componentModels;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
+     * @return the value
+     **/
+    public java.util.List<ComponentModel> getComponentModels() {
+        return componentModels;
+    }
+
+    /**
+     * the alias name of the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
+    private final String aliasName;
+
+    /**
+     * the alias name of the model.
+     * @return the value
+     **/
+    public String getAliasName() {
+        return aliasName;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
@@ -539,6 +613,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         sb.append(", trainingDataset=").append(String.valueOf(this.trainingDataset));
         sb.append(", testingDataset=").append(String.valueOf(this.testingDataset));
         sb.append(", validationDataset=").append(String.valueOf(this.validationDataset));
+        sb.append(", componentModels=").append(String.valueOf(this.componentModels));
+        sb.append(", aliasName=").append(String.valueOf(this.aliasName));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -567,6 +643,8 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.trainingDataset, other.trainingDataset)
                 && java.util.Objects.equals(this.testingDataset, other.testingDataset)
                 && java.util.Objects.equals(this.validationDataset, other.validationDataset)
+                && java.util.Objects.equals(this.componentModels, other.componentModels)
+                && java.util.Objects.equals(this.aliasName, other.aliasName)
                 && java.util.Objects.equals(this.projectId, other.projectId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -599,6 +677,10 @@ public final class CreateModelDetails extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.validationDataset == null ? 43 : this.validationDataset.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.componentModels == null ? 43 : this.componentModels.hashCode());
+        result = (result * PRIME) + (this.aliasName == null ? 43 : this.aliasName.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The details of the user-friendly names to be used for actions.
+ * Provides the name and description of the job.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class WorkRequestDetails extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name for the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -47,13 +47,13 @@ public final class WorkRequestDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * User specified information about the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * User-specified information about the job. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User specified information about the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * User-specified information about the job. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class WorkRequestDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * A user-friendly name for the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -112,13 +112,13 @@ public final class WorkRequestDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * User specified information about the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * User-specified information about the job. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User specified information about the resulting job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * User-specified information about the job. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {

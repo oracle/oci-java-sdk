@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -741,6 +741,69 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDataSciencePrivateEndpointCompartmentResponse>
+            changeDataSciencePrivateEndpointCompartment(
+                    ChangeDataSciencePrivateEndpointCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDataSciencePrivateEndpointCompartmentRequest,
+                                    ChangeDataSciencePrivateEndpointCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeDataSciencePrivateEndpointCompartment");
+        final ChangeDataSciencePrivateEndpointCompartmentRequest interceptedRequest =
+                ChangeDataSciencePrivateEndpointCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDataSciencePrivateEndpointCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ChangeDataSciencePrivateEndpointCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/ChangeDataSciencePrivateEndpointCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeDataSciencePrivateEndpointCompartmentResponse>
+                transformer =
+                        ChangeDataSciencePrivateEndpointCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDataSciencePrivateEndpointCompartmentRequest,
+                        ChangeDataSciencePrivateEndpointCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDataSciencePrivateEndpointCompartmentRequest,
+                                ChangeDataSciencePrivateEndpointCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeDataSciencePrivateEndpointCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeDataSciencePrivateEndpointCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDataSciencePrivateEndpointCompartmentRequest,
+                    ChangeDataSciencePrivateEndpointCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
             ChangeJobCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1227,6 +1290,65 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataSciencePrivateEndpointResponse>
+            createDataSciencePrivateEndpoint(
+                    CreateDataSciencePrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateDataSciencePrivateEndpointRequest,
+                                    CreateDataSciencePrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async createDataSciencePrivateEndpoint");
+        final CreateDataSciencePrivateEndpointRequest interceptedRequest =
+                CreateDataSciencePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDataSciencePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "CreateDataSciencePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateDataSciencePrivateEndpointResponse>
+                transformer =
+                        CreateDataSciencePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateDataSciencePrivateEndpointRequest,
+                        CreateDataSciencePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDataSciencePrivateEndpointRequest,
+                                CreateDataSciencePrivateEndpointResponse>,
+                        java.util.concurrent.Future<CreateDataSciencePrivateEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDataSciencePrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDataSciencePrivateEndpointRequest,
+                    CreateDataSciencePrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2102,6 +2224,59 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDataSciencePrivateEndpointResponse>
+            deleteDataSciencePrivateEndpoint(
+                    DeleteDataSciencePrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteDataSciencePrivateEndpointRequest,
+                                    DeleteDataSciencePrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async deleteDataSciencePrivateEndpoint");
+        final DeleteDataSciencePrivateEndpointRequest interceptedRequest =
+                DeleteDataSciencePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDataSciencePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "DeleteDataSciencePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/DeleteDataSciencePrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteDataSciencePrivateEndpointResponse>
+                transformer =
+                        DeleteDataSciencePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteDataSciencePrivateEndpointRequest,
+                        DeleteDataSciencePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDataSciencePrivateEndpointRequest,
+                                DeleteDataSciencePrivateEndpointResponse>,
+                        java.util.concurrent.Future<DeleteDataSciencePrivateEndpointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDataSciencePrivateEndpointRequest,
+                    DeleteDataSciencePrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteJobResponse> deleteJob(
             DeleteJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
@@ -2548,6 +2723,57 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ExportModelArtifactRequest, ExportModelArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSciencePrivateEndpointResponse>
+            getDataSciencePrivateEndpoint(
+                    GetDataSciencePrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDataSciencePrivateEndpointRequest,
+                                    GetDataSciencePrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async getDataSciencePrivateEndpoint");
+        final GetDataSciencePrivateEndpointRequest interceptedRequest =
+                GetDataSciencePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataSciencePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "GetDataSciencePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/GetDataSciencePrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDataSciencePrivateEndpointResponse>
+                transformer =
+                        GetDataSciencePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDataSciencePrivateEndpointRequest, GetDataSciencePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataSciencePrivateEndpointRequest,
+                                GetDataSciencePrivateEndpointResponse>,
+                        java.util.concurrent.Future<GetDataSciencePrivateEndpointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataSciencePrivateEndpointRequest, GetDataSciencePrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3380,6 +3606,59 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDataSciencePrivateEndpointsResponse>
+            listDataSciencePrivateEndpoints(
+                    ListDataSciencePrivateEndpointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDataSciencePrivateEndpointsRequest,
+                                    ListDataSciencePrivateEndpointsResponse>
+                            handler) {
+        LOG.trace("Called async listDataSciencePrivateEndpoints");
+        final ListDataSciencePrivateEndpointsRequest interceptedRequest =
+                ListDataSciencePrivateEndpointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDataSciencePrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "ListDataSciencePrivateEndpoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/ListDataSciencePrivateEndpoints");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDataSciencePrivateEndpointsResponse>
+                transformer =
+                        ListDataSciencePrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDataSciencePrivateEndpointsRequest,
+                        ListDataSciencePrivateEndpointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDataSciencePrivateEndpointsRequest,
+                                ListDataSciencePrivateEndpointsResponse>,
+                        java.util.concurrent.Future<ListDataSciencePrivateEndpointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDataSciencePrivateEndpointsRequest,
+                    ListDataSciencePrivateEndpointsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFastLaunchJobConfigsResponse> listFastLaunchJobConfigs(
             ListFastLaunchJobConfigsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4100,6 +4379,64 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSciencePrivateEndpointResponse>
+            updateDataSciencePrivateEndpoint(
+                    UpdateDataSciencePrivateEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDataSciencePrivateEndpointRequest,
+                                    UpdateDataSciencePrivateEndpointResponse>
+                            handler) {
+        LOG.trace("Called async updateDataSciencePrivateEndpoint");
+        final UpdateDataSciencePrivateEndpointRequest interceptedRequest =
+                UpdateDataSciencePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDataSciencePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "UpdateDataSciencePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/DataSciencePrivateEndpoint/UpdateDataSciencePrivateEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDataSciencePrivateEndpointResponse>
+                transformer =
+                        UpdateDataSciencePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDataSciencePrivateEndpointRequest,
+                        UpdateDataSciencePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDataSciencePrivateEndpointRequest,
+                                UpdateDataSciencePrivateEndpointResponse>,
+                        java.util.concurrent.Future<UpdateDataSciencePrivateEndpointResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDataSciencePrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDataSciencePrivateEndpointRequest,
+                    UpdateDataSciencePrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

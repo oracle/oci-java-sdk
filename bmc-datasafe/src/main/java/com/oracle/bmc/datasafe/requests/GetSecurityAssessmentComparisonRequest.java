@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -24,12 +24,12 @@ public class GetSecurityAssessmentComparisonRequest
         return securityAssessmentId;
     }
     /**
-     * The OCID of the baseline security assessment.
+     * The OCID of the security assessment baseline.
      */
     private String comparisonSecurityAssessmentId;
 
     /**
-     * The OCID of the baseline security assessment.
+     * The OCID of the security assessment baseline.
      */
     public String getComparisonSecurityAssessmentId() {
         return comparisonSecurityAssessmentId;
@@ -69,12 +69,12 @@ public class GetSecurityAssessmentComparisonRequest
         }
 
         /**
-         * The OCID of the baseline security assessment.
+         * The OCID of the security assessment baseline.
          */
         private String comparisonSecurityAssessmentId = null;
 
         /**
-         * The OCID of the baseline security assessment.
+         * The OCID of the security assessment baseline.
          * @param comparisonSecurityAssessmentId the value to set
          * @return this builder instance
          */

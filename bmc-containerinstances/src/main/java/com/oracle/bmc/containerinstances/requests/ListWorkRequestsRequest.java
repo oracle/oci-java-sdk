@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.containerinstances.model.*;
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -34,37 +34,133 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return workRequestId;
     }
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * The maximum number of items to return.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
+    }
+    /**
+     * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     */
+    private String availabilityDomain;
+
+    /**
+     * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+    /**
+     * A filter to return resources with a lifecycleState that matches the given OperationStatus.
+     */
+    private com.oracle.bmc.containerinstances.model.OperationStatus status;
+
+    /**
+     * A filter to return resources with a lifecycleState that matches the given OperationStatus.
+     */
+    public com.oracle.bmc.containerinstances.model.OperationStatus getStatus() {
+        return status;
+    }
+    /**
+     * The field to sort by. You can provide one sort order. Default order for timeAccepted is descending.
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. You can provide one sort order. Default order for timeAccepted is descending.
+     **/
+    public enum SortBy {
+        TimeAccepted("timeAccepted"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The field to sort by. You can provide one sort order. Default order for timeAccepted is descending.
+     */
+    public SortBy getSortBy() {
+        return sortBy;
+    }
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
+    private com.oracle.bmc.containerinstances.model.SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
+    public com.oracle.bmc.containerinstances.model.SortOrder getSortOrder() {
+        return sortOrder;
+    }
+    /**
+     * The OCID of the resource affected by the work request.
+     */
+    private String resourceId;
+
+    /**
+     * The OCID of the resource affected by the work request.
+     */
+    public String getResourceId() {
+        return resourceId;
     }
 
     public static class Builder
@@ -75,12 +171,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -105,12 +201,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -120,12 +216,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -135,17 +231,98 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The maximum number of items to return.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
         public Builder limit(Integer limit) {
             this.limit = limit;
+            return this;
+        }
+
+        /**
+         * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         */
+        private String availabilityDomain = null;
+
+        /**
+         * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder instance
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * A filter to return resources with a lifecycleState that matches the given OperationStatus.
+         */
+        private com.oracle.bmc.containerinstances.model.OperationStatus status = null;
+
+        /**
+         * A filter to return resources with a lifecycleState that matches the given OperationStatus.
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(com.oracle.bmc.containerinstances.model.OperationStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * The field to sort by. You can provide one sort order. Default order for timeAccepted is descending.
+         */
+        private SortBy sortBy = null;
+
+        /**
+         * The field to sort by. You can provide one sort order. Default order for timeAccepted is descending.
+         * @param sortBy the value to set
+         * @return this builder instance
+         */
+        public Builder sortBy(SortBy sortBy) {
+            this.sortBy = sortBy;
+            return this;
+        }
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
+        private com.oracle.bmc.containerinstances.model.SortOrder sortOrder = null;
+
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * @param sortOrder the value to set
+         * @return this builder instance
+         */
+        public Builder sortOrder(com.oracle.bmc.containerinstances.model.SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            return this;
+        }
+
+        /**
+         * The OCID of the resource affected by the work request.
+         */
+        private String resourceId = null;
+
+        /**
+         * The OCID of the resource affected by the work request.
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
             return this;
         }
 
@@ -182,6 +359,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            availabilityDomain(o.getAvailabilityDomain());
+            status(o.getStatus());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            resourceId(o.getResourceId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -219,8 +401,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.availabilityDomain = availabilityDomain;
+            request.status = status;
+            request.sortBy = sortBy;
+            request.sortOrder = sortOrder;
+            request.resourceId = resourceId;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, workRequestId, opcRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, workRequestId, opcRequestId, page, limit, availabilityDomain, status, sortBy, sortOrder, resourceId);
         }
     }
 
@@ -234,7 +421,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .workRequestId(workRequestId)
                 .opcRequestId(opcRequestId)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .availabilityDomain(availabilityDomain)
+                .status(status)
+                .sortBy(sortBy)
+                .sortOrder(sortOrder)
+                .resourceId(resourceId);
     }
 
     /**
@@ -255,6 +447,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(",status=").append(String.valueOf(this.status));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -274,7 +471,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.resourceId, other.resourceId);
     }
 
     @Override
@@ -290,6 +492,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         return result;
     }
 }

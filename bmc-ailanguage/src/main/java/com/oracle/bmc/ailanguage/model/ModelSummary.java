@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -47,7 +47,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             String version,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, Object> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -204,8 +204,9 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Identifying the model by model id is difficult. This param provides ease of use for end customer.
-         * <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this training has to be done>>
+         * For pre trained models this will identify model type version used for model creation
+         * For custom this will identify model type version used for model creation and custom model on which training has to be done
+         * <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>>
          * ex: ai-lang::NER_V1::CUSTOM-V0
          *
          **/
@@ -213,8 +214,9 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         private String version;
 
         /**
-         * Identifying the model by model id is difficult. This param provides ease of use for end customer.
-         * <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this training has to be done>>
+         * For pre trained models this will identify model type version used for model creation
+         * For custom this will identify model type version used for model creation and custom model on which training has to be done
+         * <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>>
          * ex: ai-lang::NER_V1::CUSTOM-V0
          *
          * @param version the value to set
@@ -272,7 +274,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-        private java.util.Map<String, Object> systemTags;
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -281,7 +283,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
          * @param systemTags the value to set
          * @return this builder
          **/
-        public Builder systemTags(java.util.Map<String, Object> systemTags) {
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
@@ -488,8 +490,9 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Identifying the model by model id is difficult. This param provides ease of use for end customer.
-     * <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this training has to be done>>
+     * For pre trained models this will identify model type version used for model creation
+     * For custom this will identify model type version used for model creation and custom model on which training has to be done
+     * <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>>
      * ex: ai-lang::NER_V1::CUSTOM-V0
      *
      **/
@@ -497,8 +500,9 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String version;
 
     /**
-     * Identifying the model by model id is difficult. This param provides ease of use for end customer.
-     * <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this training has to be done>>
+     * For pre trained models this will identify model type version used for model creation
+     * For custom this will identify model type version used for model creation and custom model on which training has to be done
+     * <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>>
      * ex: ai-lang::NER_V1::CUSTOM-V0
      *
      * @return the value
@@ -549,7 +553,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-    private final java.util.Map<String, Object> systemTags;
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
@@ -557,7 +561,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
      *
      * @return the value
      **/
-    public java.util.Map<String, Object> getSystemTags() {
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 

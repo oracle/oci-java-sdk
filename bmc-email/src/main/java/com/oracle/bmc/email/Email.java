@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -8,9 +8,8 @@ import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
 
 /**
- * API for the Email Delivery service. Use this API to send high-volume, application-generated
- * emails. For more information, see [Overview of the Email Delivery Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
- *
+ * Use the Email Delivery API to do the necessary set up to send high-volume and application-generated emails through the OCI Email Delivery service.
+ * For more information, see [Overview of the Email Delivery Service](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm).
  *
  **Note:** Write actions (POST, UPDATE, DELETE) may take several minutes to propagate and be reflected by the API.
  * If a subsequent read request fails to reflect your changes, wait a few minutes and try again.
@@ -66,12 +65,12 @@ public interface Email extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a email domain into a different compartment.
+     * Moves an email domain into a different compartment.
      * When provided, If-Match is checked against ETag value of the resource.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
-     **Note:** All Dkim objects associated with this email domain will also be moved into the provided compartment.
+     **Note:** All DKIM objects associated with this email domain will also be moved into the provided compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -97,10 +96,10 @@ public interface Email extends AutoCloseable {
     ChangeSenderCompartmentResponse changeSenderCompartment(ChangeSenderCompartmentRequest request);
 
     /**
-     * Creates a new DKIM for a email domain.
-     * This DKIM will sign all approved senders in the tenancy that are in this email domain.
+     * Creates a new DKIM for an email domain.
+     * This DKIM signs all approved senders in the tenancy that are in this email domain.
      * Best security practices indicate to periodically rotate the DKIM that is doing the signing.
-     * When a second DKIM is applied, all senders will seamlessly pick up the new key
+     * When a second DKIM is applied, all senders seamlessly pick up the new key
      * without interruption in signing.
      *
      * @param request The request object containing the details to send
@@ -124,6 +123,18 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailDomain API.
      */
     CreateEmailDomainResponse createEmailDomain(CreateEmailDomainRequest request);
+
+    /**
+     * Creates a new email return path. Avoid entering confidential information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/CreateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailReturnPath API.
+     */
+    CreateEmailReturnPathResponse createEmailReturnPath(CreateEmailReturnPathRequest request);
 
     /**
      * Creates a sender for a tenancy in a given compartment.
@@ -159,7 +170,7 @@ public interface Email extends AutoCloseable {
      * will stop signing the domain's outgoing mail.
      * DKIM keys are left in DELETING state for about a day to allow DKIM signatures on
      * in-transit mail to be validated.
-     * Consider instead of deletion creating a new DKIM for this domain so the signing can be rotated to it.
+     * Consider creating a new DKIM for this domain so the signing can be rotated to it instead of deletion.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -172,7 +183,7 @@ public interface Email extends AutoCloseable {
     DeleteDkimResponse deleteDkim(DeleteDkimRequest request);
 
     /**
-     * Deletes a email domain.
+     * Deletes an email domain.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -182,6 +193,18 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailDomain API.
      */
     DeleteEmailDomainResponse deleteEmailDomain(DeleteEmailDomainRequest request);
+
+    /**
+     * Deletes an email return path.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/DeleteEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailReturnPath API.
+     */
+    DeleteEmailReturnPathResponse deleteEmailReturnPath(DeleteEmailReturnPathRequest request);
 
     /**
      * Deletes an approved sender for a tenancy in a given compartment for a
@@ -224,6 +247,19 @@ public interface Email extends AutoCloseable {
     GetDkimResponse getDkim(GetDkimRequest request);
 
     /**
+     * Returns  email configuration associated with the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailConfiguration API.
+     */
+    GetEmailConfigurationResponse getEmailConfiguration(GetEmailConfigurationRequest request);
+
+    /**
      * Retrieves the specified email domain.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -234,6 +270,18 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailDomain API.
      */
     GetEmailDomainResponse getEmailDomain(GetEmailDomainRequest request);
+
+    /**
+     * Retrieves the specified email return path.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/GetEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailReturnPath API.
+     */
+    GetEmailReturnPathResponse getEmailReturnPath(GetEmailReturnPathRequest request);
 
     /**
      * Gets an approved sender for a given `senderId`.
@@ -274,7 +322,7 @@ public interface Email extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Lists DKIMs for a email domain.
+     * Lists DKIMs for an email domain.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -296,6 +344,18 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailDomainsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailDomains API.
      */
     ListEmailDomainsResponse listEmailDomains(ListEmailDomainsRequest request);
+
+    /**
+     * Lists email return paths in the specified compartment or emaildomain.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailReturnPathsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailReturnPaths API.
+     */
+    ListEmailReturnPathsResponse listEmailReturnPaths(ListEmailReturnPathsRequest request);
 
     /**
      * Gets a collection of approved sender email addresses and sender IDs.
@@ -377,7 +437,7 @@ public interface Email extends AutoCloseable {
     UpdateDkimResponse updateDkim(UpdateDkimRequest request);
 
     /**
-     * Modifies a email domain.
+     * Modifies an email domain.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -387,6 +447,18 @@ public interface Email extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailDomain API.
      */
     UpdateEmailDomainResponse updateEmailDomain(UpdateEmailDomainRequest request);
+
+    /**
+     * Modifies an email return path.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailReturnPath API.
+     */
+    UpdateEmailReturnPathResponse updateEmailReturnPath(UpdateEmailReturnPathRequest request);
 
     /**
      * Replaces the set of tags for a sender with the tags provided. If either freeform

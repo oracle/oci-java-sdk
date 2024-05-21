@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -47,7 +47,11 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         "timeReleased",
         "releaseType",
         "isSecurityFix",
-        "isRollbackAllowed"
+        "isRollbackAllowed",
+        "timeOggVersionSupportedUntil",
+        "isCancelAllowed",
+        "isRescheduleAllowed",
+        "timeScheduleMax"
     })
     public DeploymentUpgrade(
             String id,
@@ -74,7 +78,11 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             java.util.Date timeReleased,
             ReleaseType releaseType,
             Boolean isSecurityFix,
-            Boolean isRollbackAllowed) {
+            Boolean isRollbackAllowed,
+            java.util.Date timeOggVersionSupportedUntil,
+            Boolean isCancelAllowed,
+            Boolean isRescheduleAllowed,
+            java.util.Date timeScheduleMax) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -101,6 +109,10 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         this.releaseType = releaseType;
         this.isSecurityFix = isSecurityFix;
         this.isRollbackAllowed = isRollbackAllowed;
+        this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+        this.isCancelAllowed = isCancelAllowed;
+        this.isRescheduleAllowed = isRescheduleAllowed;
+        this.timeScheduleMax = timeScheduleMax;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -594,6 +606,84 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("isRollbackAllowed");
             return this;
         }
+        /**
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOggVersionSupportedUntil")
+        private java.util.Date timeOggVersionSupportedUntil;
+
+        /**
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeOggVersionSupportedUntil the value to set
+         * @return this builder
+         **/
+        public Builder timeOggVersionSupportedUntil(java.util.Date timeOggVersionSupportedUntil) {
+            this.timeOggVersionSupportedUntil = timeOggVersionSupportedUntil;
+            this.__explicitlySet__.add("timeOggVersionSupportedUntil");
+            return this;
+        }
+        /**
+         * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+         * otherwise only reschedule allowed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isCancelAllowed")
+        private Boolean isCancelAllowed;
+
+        /**
+         * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+         * otherwise only reschedule allowed.
+         *
+         * @param isCancelAllowed the value to set
+         * @return this builder
+         **/
+        public Builder isCancelAllowed(Boolean isCancelAllowed) {
+            this.isCancelAllowed = isCancelAllowed;
+            this.__explicitlySet__.add("isCancelAllowed");
+            return this;
+        }
+        /**
+         * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRescheduleAllowed")
+        private Boolean isRescheduleAllowed;
+
+        /**
+         * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+         *
+         * @param isRescheduleAllowed the value to set
+         * @return this builder
+         **/
+        public Builder isRescheduleAllowed(Boolean isRescheduleAllowed) {
+            this.isRescheduleAllowed = isRescheduleAllowed;
+            this.__explicitlySet__.add("isRescheduleAllowed");
+            return this;
+        }
+        /**
+         * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleMax")
+        private java.util.Date timeScheduleMax;
+
+        /**
+         * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeScheduleMax the value to set
+         * @return this builder
+         **/
+        public Builder timeScheduleMax(java.util.Date timeScheduleMax) {
+            this.timeScheduleMax = timeScheduleMax;
+            this.__explicitlySet__.add("timeScheduleMax");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -625,7 +715,11 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
                             this.timeReleased,
                             this.releaseType,
                             this.isSecurityFix,
-                            this.isRollbackAllowed);
+                            this.isRollbackAllowed,
+                            this.timeOggVersionSupportedUntil,
+                            this.isCancelAllowed,
+                            this.isRescheduleAllowed,
+                            this.timeScheduleMax);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -708,6 +802,18 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isRollbackAllowed")) {
                 this.isRollbackAllowed(model.getIsRollbackAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("timeOggVersionSupportedUntil")) {
+                this.timeOggVersionSupportedUntil(model.getTimeOggVersionSupportedUntil());
+            }
+            if (model.wasPropertyExplicitlySet("isCancelAllowed")) {
+                this.isCancelAllowed(model.getIsCancelAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("isRescheduleAllowed")) {
+                this.isRescheduleAllowed(model.getIsRescheduleAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("timeScheduleMax")) {
+                this.timeScheduleMax(model.getTimeScheduleMax());
             }
             return this;
         }
@@ -1162,6 +1268,76 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         return isRollbackAllowed;
     }
 
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOggVersionSupportedUntil")
+    private final java.util.Date timeOggVersionSupportedUntil;
+
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeOggVersionSupportedUntil() {
+        return timeOggVersionSupportedUntil;
+    }
+
+    /**
+     * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+     * otherwise only reschedule allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCancelAllowed")
+    private final Boolean isCancelAllowed;
+
+    /**
+     * Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+     * otherwise only reschedule allowed.
+     *
+     * @return the value
+     **/
+    public Boolean getIsCancelAllowed() {
+        return isCancelAllowed;
+    }
+
+    /**
+     * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRescheduleAllowed")
+    private final Boolean isRescheduleAllowed;
+
+    /**
+     * Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+     *
+     * @return the value
+     **/
+    public Boolean getIsRescheduleAllowed() {
+        return isRescheduleAllowed;
+    }
+
+    /**
+     * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleMax")
+    private final java.util.Date timeScheduleMax;
+
+    /**
+     * Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeScheduleMax() {
+        return timeScheduleMax;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1201,6 +1377,11 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         sb.append(", releaseType=").append(String.valueOf(this.releaseType));
         sb.append(", isSecurityFix=").append(String.valueOf(this.isSecurityFix));
         sb.append(", isRollbackAllowed=").append(String.valueOf(this.isRollbackAllowed));
+        sb.append(", timeOggVersionSupportedUntil=")
+                .append(String.valueOf(this.timeOggVersionSupportedUntil));
+        sb.append(", isCancelAllowed=").append(String.valueOf(this.isCancelAllowed));
+        sb.append(", isRescheduleAllowed=").append(String.valueOf(this.isRescheduleAllowed));
+        sb.append(", timeScheduleMax=").append(String.valueOf(this.timeScheduleMax));
         sb.append(")");
         return sb.toString();
     }
@@ -1240,6 +1421,11 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.releaseType, other.releaseType)
                 && java.util.Objects.equals(this.isSecurityFix, other.isSecurityFix)
                 && java.util.Objects.equals(this.isRollbackAllowed, other.isRollbackAllowed)
+                && java.util.Objects.equals(
+                        this.timeOggVersionSupportedUntil, other.timeOggVersionSupportedUntil)
+                && java.util.Objects.equals(this.isCancelAllowed, other.isCancelAllowed)
+                && java.util.Objects.equals(this.isRescheduleAllowed, other.isRescheduleAllowed)
+                && java.util.Objects.equals(this.timeScheduleMax, other.timeScheduleMax)
                 && super.equals(other);
     }
 
@@ -1294,6 +1480,22 @@ public final class DeploymentUpgrade extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.isRollbackAllowed == null ? 43 : this.isRollbackAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOggVersionSupportedUntil == null
+                                ? 43
+                                : this.timeOggVersionSupportedUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCancelAllowed == null ? 43 : this.isCancelAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRescheduleAllowed == null
+                                ? 43
+                                : this.isRescheduleAllowed.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduleMax == null ? 43 : this.timeScheduleMax.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -14,12 +14,12 @@ public class CreateProfileRequest
                 com.oracle.bmc.osmanagementhub.model.CreateProfileDetails> {
 
     /**
-     * Details for the new registration profile.
+     * Provides the information used to create the registration profile.
      */
     private com.oracle.bmc.osmanagementhub.model.CreateProfileDetails createProfileDetails;
 
     /**
-     * Details for the new registration profile.
+     * Provides the information used to create the registration profile.
      */
     public com.oracle.bmc.osmanagementhub.model.CreateProfileDetails getCreateProfileDetails() {
         return createProfileDetails;
@@ -76,13 +76,13 @@ public class CreateProfileRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new registration profile.
+         * Provides the information used to create the registration profile.
          */
         private com.oracle.bmc.osmanagementhub.model.CreateProfileDetails createProfileDetails =
                 null;
 
         /**
-         * Details for the new registration profile.
+         * Provides the information used to create the registration profile.
          * @param createProfileDetails the value to set
          * @return this builder instance
          */

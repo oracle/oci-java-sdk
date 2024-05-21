@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for a proxy configuration
+ * Proxy information used for the management station configuration.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,13 +34,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * To enable or disable the proxy (default true)
+         * Indicates if the proxy should be enabled or disabled. Default is enabled.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * To enable or disable the proxy (default true)
+         * Indicates if the proxy should be enabled or disabled. Default is enabled.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -50,13 +50,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * List of hosts
+         * List of hosts.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
         /**
-         * List of hosts
+         * List of hosts.
          * @param hosts the value to set
          * @return this builder
          **/
@@ -66,13 +66,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Port that the proxy will use
+         * Listening port used for the proxy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
-         * Port that the proxy will use
+         * Listening port used for the proxy.
          * @param port the value to set
          * @return this builder
          **/
@@ -82,13 +82,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * URL that the proxy will forward to
+         * The URL the proxy will forward to.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("forward")
         private String forward;
 
         /**
-         * URL that the proxy will forward to
+         * The URL the proxy will forward to.
          * @param forward the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * To enable or disable the proxy (default true)
+     * Indicates if the proxy should be enabled or disabled. Default is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * To enable or disable the proxy (default true)
+     * Indicates if the proxy should be enabled or disabled. Default is enabled.
      * @return the value
      **/
     public Boolean getIsEnabled() {
@@ -154,13 +154,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * List of hosts
+     * List of hosts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
     /**
-     * List of hosts
+     * List of hosts.
      * @return the value
      **/
     public java.util.List<String> getHosts() {
@@ -168,13 +168,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Port that the proxy will use
+     * Listening port used for the proxy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
-     * Port that the proxy will use
+     * Listening port used for the proxy.
      * @return the value
      **/
     public String getPort() {
@@ -182,13 +182,13 @@ public final class ProxyConfiguration extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * URL that the proxy will forward to
+     * The URL the proxy will forward to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("forward")
     private final String forward;
 
     /**
-     * URL that the proxy will forward to
+     * The URL the proxy will forward to.
      * @return the value
      **/
     public String getForward() {

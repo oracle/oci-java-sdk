@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Identifying information for the specified software source.
+ * Provides identifying information for the specified software source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,29 +22,37 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class SoftwareSourceDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "displayName", "description", "softwareSourceType"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "displayName",
+        "description",
+        "softwareSourceType",
+        "isMandatoryForAutonomousLinux"
+    })
     public SoftwareSourceDetails(
             String id,
             String displayName,
             String description,
-            SoftwareSourceType softwareSourceType) {
+            SoftwareSourceType softwareSourceType,
+            Boolean isMandatoryForAutonomousLinux) {
         super();
         this.id = id;
         this.displayName = displayName;
         this.description = description;
         this.softwareSourceType = softwareSourceType;
+        this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * @param id the value to set
          * @return this builder
          **/
@@ -101,6 +109,22 @@ public final class SoftwareSourceDetails
             this.__explicitlySet__.add("softwareSourceType");
             return this;
         }
+        /**
+         * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
+        private Boolean isMandatoryForAutonomousLinux;
+
+        /**
+         * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+         * @param isMandatoryForAutonomousLinux the value to set
+         * @return this builder
+         **/
+        public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
+            this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
+            this.__explicitlySet__.add("isMandatoryForAutonomousLinux");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -108,7 +132,11 @@ public final class SoftwareSourceDetails
         public SoftwareSourceDetails build() {
             SoftwareSourceDetails model =
                     new SoftwareSourceDetails(
-                            this.id, this.displayName, this.description, this.softwareSourceType);
+                            this.id,
+                            this.displayName,
+                            this.description,
+                            this.softwareSourceType,
+                            this.isMandatoryForAutonomousLinux);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -129,6 +157,9 @@ public final class SoftwareSourceDetails
             if (model.wasPropertyExplicitlySet("softwareSourceType")) {
                 this.softwareSourceType(model.getSoftwareSourceType());
             }
+            if (model.wasPropertyExplicitlySet("isMandatoryForAutonomousLinux")) {
+                this.isMandatoryForAutonomousLinux(model.getIsMandatoryForAutonomousLinux());
+            }
             return this;
         }
     }
@@ -145,13 +176,13 @@ public final class SoftwareSourceDetails
     }
 
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * @return the value
      **/
     public String getId() {
@@ -200,6 +231,20 @@ public final class SoftwareSourceDetails
         return softwareSourceType;
     }
 
+    /**
+     * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
+    private final Boolean isMandatoryForAutonomousLinux;
+
+    /**
+     * Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
+     * @return the value
+     **/
+    public Boolean getIsMandatoryForAutonomousLinux() {
+        return isMandatoryForAutonomousLinux;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -218,6 +263,8 @@ public final class SoftwareSourceDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", softwareSourceType=").append(String.valueOf(this.softwareSourceType));
+        sb.append(", isMandatoryForAutonomousLinux=")
+                .append(String.valueOf(this.isMandatoryForAutonomousLinux));
         sb.append(")");
         return sb.toString();
     }
@@ -236,6 +283,8 @@ public final class SoftwareSourceDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.softwareSourceType, other.softwareSourceType)
+                && java.util.Objects.equals(
+                        this.isMandatoryForAutonomousLinux, other.isMandatoryForAutonomousLinux)
                 && super.equals(other);
     }
 
@@ -251,6 +300,11 @@ public final class SoftwareSourceDetails
                         + (this.softwareSourceType == null
                                 ? 43
                                 : this.softwareSourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMandatoryForAutonomousLinux == null
+                                ? 43
+                                : this.isMandatoryForAutonomousLinux.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

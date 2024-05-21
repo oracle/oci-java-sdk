@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision.model;
@@ -26,9 +26,11 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
         "labels",
         "ontologyClasses",
         "imageText",
+        "detectedFaces",
         "imageClassificationModelVersion",
         "objectDetectionModelVersion",
         "textDetectionModelVersion",
+        "faceDetectionModelVersion",
         "errors"
     })
     public AnalyzeImageResult(
@@ -36,18 +38,22 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
             java.util.List<Label> labels,
             java.util.List<OntologyClass> ontologyClasses,
             ImageText imageText,
+            java.util.List<Face> detectedFaces,
             String imageClassificationModelVersion,
             String objectDetectionModelVersion,
             String textDetectionModelVersion,
+            String faceDetectionModelVersion,
             java.util.List<ProcessingError> errors) {
         super();
         this.imageObjects = imageObjects;
         this.labels = labels;
         this.ontologyClasses = ontologyClasses;
         this.imageText = imageText;
+        this.detectedFaces = detectedFaces;
         this.imageClassificationModelVersion = imageClassificationModelVersion;
         this.objectDetectionModelVersion = objectDetectionModelVersion;
         this.textDetectionModelVersion = textDetectionModelVersion;
+        this.faceDetectionModelVersion = faceDetectionModelVersion;
         this.errors = errors;
     }
 
@@ -111,6 +117,22 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The detected faces.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("detectedFaces")
+        private java.util.List<Face> detectedFaces;
+
+        /**
+         * The detected faces.
+         * @param detectedFaces the value to set
+         * @return this builder
+         **/
+        public Builder detectedFaces(java.util.List<Face> detectedFaces) {
+            this.detectedFaces = detectedFaces;
+            this.__explicitlySet__.add("detectedFaces");
+            return this;
+        }
+        /**
          * The image classification model version.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageClassificationModelVersion")
@@ -159,6 +181,22 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The face detection model version.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("faceDetectionModelVersion")
+        private String faceDetectionModelVersion;
+
+        /**
+         * The face detection model version.
+         * @param faceDetectionModelVersion the value to set
+         * @return this builder
+         **/
+        public Builder faceDetectionModelVersion(String faceDetectionModelVersion) {
+            this.faceDetectionModelVersion = faceDetectionModelVersion;
+            this.__explicitlySet__.add("faceDetectionModelVersion");
+            return this;
+        }
+        /**
          * The errors encountered during image analysis.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
@@ -185,9 +223,11 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
                             this.labels,
                             this.ontologyClasses,
                             this.imageText,
+                            this.detectedFaces,
                             this.imageClassificationModelVersion,
                             this.objectDetectionModelVersion,
                             this.textDetectionModelVersion,
+                            this.faceDetectionModelVersion,
                             this.errors);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -209,6 +249,9 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("imageText")) {
                 this.imageText(model.getImageText());
             }
+            if (model.wasPropertyExplicitlySet("detectedFaces")) {
+                this.detectedFaces(model.getDetectedFaces());
+            }
             if (model.wasPropertyExplicitlySet("imageClassificationModelVersion")) {
                 this.imageClassificationModelVersion(model.getImageClassificationModelVersion());
             }
@@ -217,6 +260,9 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("textDetectionModelVersion")) {
                 this.textDetectionModelVersion(model.getTextDetectionModelVersion());
+            }
+            if (model.wasPropertyExplicitlySet("faceDetectionModelVersion")) {
+                this.faceDetectionModelVersion(model.getFaceDetectionModelVersion());
             }
             if (model.wasPropertyExplicitlySet("errors")) {
                 this.errors(model.getErrors());
@@ -286,6 +332,20 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The detected faces.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("detectedFaces")
+    private final java.util.List<Face> detectedFaces;
+
+    /**
+     * The detected faces.
+     * @return the value
+     **/
+    public java.util.List<Face> getDetectedFaces() {
+        return detectedFaces;
+    }
+
+    /**
      * The image classification model version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageClassificationModelVersion")
@@ -328,6 +388,20 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The face detection model version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faceDetectionModelVersion")
+    private final String faceDetectionModelVersion;
+
+    /**
+     * The face detection model version.
+     * @return the value
+     **/
+    public String getFaceDetectionModelVersion() {
+        return faceDetectionModelVersion;
+    }
+
+    /**
      * The errors encountered during image analysis.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
@@ -359,12 +433,15 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
         sb.append(", labels=").append(String.valueOf(this.labels));
         sb.append(", ontologyClasses=").append(String.valueOf(this.ontologyClasses));
         sb.append(", imageText=").append(String.valueOf(this.imageText));
+        sb.append(", detectedFaces=").append(String.valueOf(this.detectedFaces));
         sb.append(", imageClassificationModelVersion=")
                 .append(String.valueOf(this.imageClassificationModelVersion));
         sb.append(", objectDetectionModelVersion=")
                 .append(String.valueOf(this.objectDetectionModelVersion));
         sb.append(", textDetectionModelVersion=")
                 .append(String.valueOf(this.textDetectionModelVersion));
+        sb.append(", faceDetectionModelVersion=")
+                .append(String.valueOf(this.faceDetectionModelVersion));
         sb.append(", errors=").append(String.valueOf(this.errors));
         sb.append(")");
         return sb.toString();
@@ -384,12 +461,15 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.labels, other.labels)
                 && java.util.Objects.equals(this.ontologyClasses, other.ontologyClasses)
                 && java.util.Objects.equals(this.imageText, other.imageText)
+                && java.util.Objects.equals(this.detectedFaces, other.detectedFaces)
                 && java.util.Objects.equals(
                         this.imageClassificationModelVersion, other.imageClassificationModelVersion)
                 && java.util.Objects.equals(
                         this.objectDetectionModelVersion, other.objectDetectionModelVersion)
                 && java.util.Objects.equals(
                         this.textDetectionModelVersion, other.textDetectionModelVersion)
+                && java.util.Objects.equals(
+                        this.faceDetectionModelVersion, other.faceDetectionModelVersion)
                 && java.util.Objects.equals(this.errors, other.errors)
                 && super.equals(other);
     }
@@ -406,6 +486,9 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.imageText == null ? 43 : this.imageText.hashCode());
         result =
                 (result * PRIME)
+                        + (this.detectedFaces == null ? 43 : this.detectedFaces.hashCode());
+        result =
+                (result * PRIME)
                         + (this.imageClassificationModelVersion == null
                                 ? 43
                                 : this.imageClassificationModelVersion.hashCode());
@@ -419,6 +502,11 @@ public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.Expli
                         + (this.textDetectionModelVersion == null
                                 ? 43
                                 : this.textDetectionModelVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.faceDetectionModelVersion == null
+                                ? 43
+                                : this.faceDetectionModelVersion.hashCode());
         result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

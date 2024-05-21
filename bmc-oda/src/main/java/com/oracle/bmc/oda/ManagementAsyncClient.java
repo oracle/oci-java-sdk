@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.oda;
@@ -456,6 +456,114 @@ public class ManagementAsyncClient implements ManagementAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkCreateSkillEntitiesResponse> bulkCreateSkillEntities(
+            BulkCreateSkillEntitiesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateSkillEntitiesRequest, BulkCreateSkillEntitiesResponse>
+                    handler) {
+        LOG.trace("Called async bulkCreateSkillEntities");
+        final BulkCreateSkillEntitiesRequest interceptedRequest =
+                BulkCreateSkillEntitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkCreateSkillEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "BulkCreateSkillEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/BulkCreateSkillEntities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkCreateSkillEntitiesResponse>
+                transformer =
+                        BulkCreateSkillEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkCreateSkillEntitiesRequest, BulkCreateSkillEntitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkCreateSkillEntitiesRequest, BulkCreateSkillEntitiesResponse>,
+                        java.util.concurrent.Future<BulkCreateSkillEntitiesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkCreateSkillEntitiesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkCreateSkillEntitiesRequest, BulkCreateSkillEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CascadingDeleteSkillCustomEntitiesResponse>
+            cascadingDeleteSkillCustomEntities(
+                    CascadingDeleteSkillCustomEntitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSkillCustomEntitiesRequest,
+                                    CascadingDeleteSkillCustomEntitiesResponse>
+                            handler) {
+        LOG.trace("Called async cascadingDeleteSkillCustomEntities");
+        final CascadingDeleteSkillCustomEntitiesRequest interceptedRequest =
+                CascadingDeleteSkillCustomEntitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteSkillCustomEntitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "CascadingDeleteSkillCustomEntities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/CascadingDeleteSkillCustomEntities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CascadingDeleteSkillCustomEntitiesResponse>
+                transformer =
+                        CascadingDeleteSkillCustomEntitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CascadingDeleteSkillCustomEntitiesRequest,
+                        CascadingDeleteSkillCustomEntitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CascadingDeleteSkillCustomEntitiesRequest,
+                                CascadingDeleteSkillCustomEntitiesResponse>,
+                        java.util.concurrent.Future<CascadingDeleteSkillCustomEntitiesResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CascadingDeleteSkillCustomEntitiesRequest,
+                    CascadingDeleteSkillCustomEntitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -2817,6 +2925,55 @@ public class ManagementAsyncClient implements ManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StopChannelRequest, StopChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<TrainSkillResponse> trainSkill(
+            TrainSkillRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<TrainSkillRequest, TrainSkillResponse>
+                    handler) {
+        LOG.trace("Called async trainSkill");
+        final TrainSkillRequest interceptedRequest = TrainSkillConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TrainSkillConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Management",
+                        "TrainSkill",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/Skill/TrainSkill");
+        final java.util.function.Function<javax.ws.rs.core.Response, TrainSkillResponse>
+                transformer =
+                        TrainSkillConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<TrainSkillRequest, TrainSkillResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TrainSkillRequest, TrainSkillResponse>,
+                        java.util.concurrent.Future<TrainSkillResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTrainSkillDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TrainSkillRequest, TrainSkillResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
 
 /**
  * Parameters for creating a pluggable database in a specified container database (CDB).
+ * Additional option {@code pdbCreationTypeDetails} can be used for creating Pluggable Database using different operations, e.g. LocalClone, Remote Clone, Relocate.
  * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
@@ -30,6 +31,9 @@ public final class CreatePluggableDatabaseDetails
         "pdbAdminPassword",
         "tdeWalletPassword",
         "shouldPdbAdminAccountBeLocked",
+        "containerDatabaseAdminPassword",
+        "shouldCreatePdbBackup",
+        "pdbCreationTypeDetails",
         "freeformTags",
         "definedTags"
     })
@@ -39,6 +43,9 @@ public final class CreatePluggableDatabaseDetails
             String pdbAdminPassword,
             String tdeWalletPassword,
             Boolean shouldPdbAdminAccountBeLocked,
+            String containerDatabaseAdminPassword,
+            Boolean shouldCreatePdbBackup,
+            CreatePluggableDatabaseCreationTypeDetails pdbCreationTypeDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -47,6 +54,9 @@ public final class CreatePluggableDatabaseDetails
         this.pdbAdminPassword = pdbAdminPassword;
         this.tdeWalletPassword = tdeWalletPassword;
         this.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
+        this.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
+        this.shouldCreatePdbBackup = shouldCreatePdbBackup;
+        this.pdbCreationTypeDetails = pdbCreationTypeDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -138,6 +148,48 @@ public final class CreatePluggableDatabaseDetails
             return this;
         }
         /**
+         * The DB system administrator password of the Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
+        private String containerDatabaseAdminPassword;
+
+        /**
+         * The DB system administrator password of the Container Database.
+         * @param containerDatabaseAdminPassword the value to set
+         * @return this builder
+         **/
+        public Builder containerDatabaseAdminPassword(String containerDatabaseAdminPassword) {
+            this.containerDatabaseAdminPassword = containerDatabaseAdminPassword;
+            this.__explicitlySet__.add("containerDatabaseAdminPassword");
+            return this;
+        }
+        /**
+         * Indicates whether to take Pluggable Database Backup after the operation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldCreatePdbBackup")
+        private Boolean shouldCreatePdbBackup;
+
+        /**
+         * Indicates whether to take Pluggable Database Backup after the operation.
+         * @param shouldCreatePdbBackup the value to set
+         * @return this builder
+         **/
+        public Builder shouldCreatePdbBackup(Boolean shouldCreatePdbBackup) {
+            this.shouldCreatePdbBackup = shouldCreatePdbBackup;
+            this.__explicitlySet__.add("shouldCreatePdbBackup");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pdbCreationTypeDetails")
+        private CreatePluggableDatabaseCreationTypeDetails pdbCreationTypeDetails;
+
+        public Builder pdbCreationTypeDetails(
+                CreatePluggableDatabaseCreationTypeDetails pdbCreationTypeDetails) {
+            this.pdbCreationTypeDetails = pdbCreationTypeDetails;
+            this.__explicitlySet__.add("pdbCreationTypeDetails");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -194,6 +246,9 @@ public final class CreatePluggableDatabaseDetails
                             this.pdbAdminPassword,
                             this.tdeWalletPassword,
                             this.shouldPdbAdminAccountBeLocked,
+                            this.containerDatabaseAdminPassword,
+                            this.shouldCreatePdbBackup,
+                            this.pdbCreationTypeDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -218,6 +273,15 @@ public final class CreatePluggableDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("shouldPdbAdminAccountBeLocked")) {
                 this.shouldPdbAdminAccountBeLocked(model.getShouldPdbAdminAccountBeLocked());
+            }
+            if (model.wasPropertyExplicitlySet("containerDatabaseAdminPassword")) {
+                this.containerDatabaseAdminPassword(model.getContainerDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("shouldCreatePdbBackup")) {
+                this.shouldCreatePdbBackup(model.getShouldCreatePdbBackup());
+            }
+            if (model.wasPropertyExplicitlySet("pdbCreationTypeDetails")) {
+                this.pdbCreationTypeDetails(model.getPdbCreationTypeDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -315,6 +379,41 @@ public final class CreatePluggableDatabaseDetails
     }
 
     /**
+     * The DB system administrator password of the Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseAdminPassword")
+    private final String containerDatabaseAdminPassword;
+
+    /**
+     * The DB system administrator password of the Container Database.
+     * @return the value
+     **/
+    public String getContainerDatabaseAdminPassword() {
+        return containerDatabaseAdminPassword;
+    }
+
+    /**
+     * Indicates whether to take Pluggable Database Backup after the operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldCreatePdbBackup")
+    private final Boolean shouldCreatePdbBackup;
+
+    /**
+     * Indicates whether to take Pluggable Database Backup after the operation.
+     * @return the value
+     **/
+    public Boolean getShouldCreatePdbBackup() {
+        return shouldCreatePdbBackup;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pdbCreationTypeDetails")
+    private final CreatePluggableDatabaseCreationTypeDetails pdbCreationTypeDetails;
+
+    public CreatePluggableDatabaseCreationTypeDetails getPdbCreationTypeDetails() {
+        return pdbCreationTypeDetails;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -374,6 +473,9 @@ public final class CreatePluggableDatabaseDetails
         sb.append(", tdeWalletPassword=").append(String.valueOf(this.tdeWalletPassword));
         sb.append(", shouldPdbAdminAccountBeLocked=")
                 .append(String.valueOf(this.shouldPdbAdminAccountBeLocked));
+        sb.append(", containerDatabaseAdminPassword=").append("<redacted>");
+        sb.append(", shouldCreatePdbBackup=").append(String.valueOf(this.shouldCreatePdbBackup));
+        sb.append(", pdbCreationTypeDetails=").append(String.valueOf(this.pdbCreationTypeDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -396,6 +498,11 @@ public final class CreatePluggableDatabaseDetails
                 && java.util.Objects.equals(this.tdeWalletPassword, other.tdeWalletPassword)
                 && java.util.Objects.equals(
                         this.shouldPdbAdminAccountBeLocked, other.shouldPdbAdminAccountBeLocked)
+                && java.util.Objects.equals(
+                        this.containerDatabaseAdminPassword, other.containerDatabaseAdminPassword)
+                && java.util.Objects.equals(this.shouldCreatePdbBackup, other.shouldCreatePdbBackup)
+                && java.util.Objects.equals(
+                        this.pdbCreationTypeDetails, other.pdbCreationTypeDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -422,6 +529,21 @@ public final class CreatePluggableDatabaseDetails
                         + (this.shouldPdbAdminAccountBeLocked == null
                                 ? 43
                                 : this.shouldPdbAdminAccountBeLocked.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerDatabaseAdminPassword == null
+                                ? 43
+                                : this.containerDatabaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldCreatePdbBackup == null
+                                ? 43
+                                : this.shouldCreatePdbBackup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pdbCreationTypeDetails == null
+                                ? 43
+                                : this.pdbCreationTypeDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

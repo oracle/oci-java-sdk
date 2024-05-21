@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -30,13 +30,13 @@ public final class KeyShape extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt.
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt.
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
          * @param algorithm the value to set
          * @return this builder
          **/
@@ -124,7 +124,7 @@ public final class KeyShape extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
      **/
     public enum Algorithm {
         Aes("AES"),
@@ -173,13 +173,13 @@ public final class KeyShape extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     };
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
     /**
-     * The algorithm used by a key's key versions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for {@code External} keys.
      * @return the value
      **/
     public Algorithm getAlgorithm() {

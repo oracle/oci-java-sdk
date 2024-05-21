@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -61,7 +61,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
         "volumeId",
         "isPvEncryptionInTransitEnabled",
         "isMultipath",
-        "iscsiLoginState"
+        "iscsiLoginState",
+        "isVolumeCreatedDuringLaunch"
     })
     protected VolumeAttachment(
             String availabilityDomain,
@@ -77,7 +78,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled,
             Boolean isMultipath,
-            IscsiLoginState iscsiLoginState) {
+            IscsiLoginState iscsiLoginState,
+            Boolean isVolumeCreatedDuringLaunch) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -93,6 +95,7 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.isMultipath = isMultipath;
         this.iscsiLoginState = iscsiLoginState;
+        this.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
     }
 
     /**
@@ -426,6 +429,24 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
         return iscsiLoginState;
     }
 
+    /**
+     * Flag indicating if this volume was created for the customer as part of a simplified launch.
+     * Used to determine whether the volume requires deletion on instance termination.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isVolumeCreatedDuringLaunch")
+    private final Boolean isVolumeCreatedDuringLaunch;
+
+    /**
+     * Flag indicating if this volume was created for the customer as part of a simplified launch.
+     * Used to determine whether the volume requires deletion on instance termination.
+     *
+     * @return the value
+     **/
+    public Boolean getIsVolumeCreatedDuringLaunch() {
+        return isVolumeCreatedDuringLaunch;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -455,6 +476,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", isMultipath=").append(String.valueOf(this.isMultipath));
         sb.append(", iscsiLoginState=").append(String.valueOf(this.iscsiLoginState));
+        sb.append(", isVolumeCreatedDuringLaunch=")
+                .append(String.valueOf(this.isVolumeCreatedDuringLaunch));
         sb.append(")");
         return sb.toString();
     }
@@ -484,6 +507,8 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.isMultipath, other.isMultipath)
                 && java.util.Objects.equals(this.iscsiLoginState, other.iscsiLoginState)
+                && java.util.Objects.equals(
+                        this.isVolumeCreatedDuringLaunch, other.isVolumeCreatedDuringLaunch)
                 && super.equals(other);
     }
 
@@ -519,6 +544,11 @@ public class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.iscsiLoginState == null ? 43 : this.iscsiLoginState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVolumeCreatedDuringLaunch == null
+                                ? 43
+                                : this.isVolumeCreatedDuringLaunch.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

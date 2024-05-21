@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -39,6 +39,11 @@ public class ClientRuntime {
     private final String clientInfo;
 
     private static final String ENV_VAR_USER_AGENT = "OCI_SDK_APPEND_USER_AGENT";
+
+    private static final String os = System.getProperty("os.name");
+    public static final boolean IS_OS_MAC = os.startsWith("Mac");
+    public static final boolean IS_OS_LINUX = os.startsWith("Linux") || os.startsWith("LINUX");
+    public static final boolean IS_OS_WINDOWS = os.startsWith("Windows");
 
     private ClientRuntime() {
         String os = System.getProperty("os.name");

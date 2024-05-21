@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The listener's configuration.
- * For more information about backend set configuration, see
- * [Managing Load Balancer Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm).
+ * For more information about listener configuration, see
+ * [Managing Load Balancer Listeners](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -27,20 +27,23 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
         "defaultBackendSetName",
         "ipVersion",
         "port",
-        "protocol"
+        "protocol",
+        "isPpv2Enabled"
     })
     public ListenerDetails(
             String name,
             String defaultBackendSetName,
             IpVersion ipVersion,
             Integer port,
-            ListenerProtocols protocol) {
+            ListenerProtocols protocol,
+            Boolean isPpv2Enabled) {
         super();
         this.name = name;
         this.defaultBackendSetName = defaultBackendSetName;
         this.ipVersion = ipVersion;
         this.port = port;
         this.protocol = protocol;
+        this.isPpv2Enabled = isPpv2Enabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -129,10 +132,9 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * The protocol on which the listener accepts connection requests.
-         * For public network load balancers, ANY protocol refers to TCP/UDP.
+         * For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port.
          * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
-         * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
-         * operation.
+         * "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.
          * <p>
          * Example: {@code TCP}
          *
@@ -142,10 +144,9 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * The protocol on which the listener accepts connection requests.
-         * For public network load balancers, ANY protocol refers to TCP/UDP.
+         * For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port.
          * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
-         * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
-         * operation.
+         * "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.
          * <p>
          * Example: {@code TCP}
          *
@@ -155,6 +156,22 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
         public Builder protocol(ListenerProtocols protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
+            return this;
+        }
+        /**
+         * Property to enable/disable PPv2 feature for this listener.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPpv2Enabled")
+        private Boolean isPpv2Enabled;
+
+        /**
+         * Property to enable/disable PPv2 feature for this listener.
+         * @param isPpv2Enabled the value to set
+         * @return this builder
+         **/
+        public Builder isPpv2Enabled(Boolean isPpv2Enabled) {
+            this.isPpv2Enabled = isPpv2Enabled;
+            this.__explicitlySet__.add("isPpv2Enabled");
             return this;
         }
 
@@ -168,7 +185,8 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
                             this.defaultBackendSetName,
                             this.ipVersion,
                             this.port,
-                            this.protocol);
+                            this.protocol,
+                            this.isPpv2Enabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -191,6 +209,9 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("protocol")) {
                 this.protocol(model.getProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("isPpv2Enabled")) {
+                this.isPpv2Enabled(model.getIsPpv2Enabled());
             }
             return this;
         }
@@ -283,10 +304,9 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * The protocol on which the listener accepts connection requests.
-     * For public network load balancers, ANY protocol refers to TCP/UDP.
+     * For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port.
      * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
-     * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
-     * operation.
+     * "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.
      * <p>
      * Example: {@code TCP}
      *
@@ -296,10 +316,9 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * The protocol on which the listener accepts connection requests.
-     * For public network load balancers, ANY protocol refers to TCP/UDP.
+     * For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port.
      * For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true).
-     * To get a list of valid protocols, use the {@link #listNetworkLoadBalancersProtocols(ListNetworkLoadBalancersProtocolsRequest) listNetworkLoadBalancersProtocols}
-     * operation.
+     * "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.
      * <p>
      * Example: {@code TCP}
      *
@@ -307,6 +326,20 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
      **/
     public ListenerProtocols getProtocol() {
         return protocol;
+    }
+
+    /**
+     * Property to enable/disable PPv2 feature for this listener.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPpv2Enabled")
+    private final Boolean isPpv2Enabled;
+
+    /**
+     * Property to enable/disable PPv2 feature for this listener.
+     * @return the value
+     **/
+    public Boolean getIsPpv2Enabled() {
+        return isPpv2Enabled;
     }
 
     @Override
@@ -328,6 +361,7 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
+        sb.append(", isPpv2Enabled=").append(String.valueOf(this.isPpv2Enabled));
         sb.append(")");
         return sb.toString();
     }
@@ -347,6 +381,7 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.ipVersion, other.ipVersion)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.protocol, other.protocol)
+                && java.util.Objects.equals(this.isPpv2Enabled, other.isPpv2Enabled)
                 && super.equals(other);
     }
 
@@ -363,6 +398,9 @@ public final class ListenerDetails extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.protocol == null ? 43 : this.protocol.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPpv2Enabled == null ? 43 : this.isPpv2Enabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

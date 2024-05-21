@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.requests;
@@ -43,6 +43,17 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     public com.oracle.bmc.bds.model.PatchHistorySummary.LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+    /**
+     * The version of the patch
+     */
+    private String patchVersion;
+
+    /**
+     * The version of the patch
+     */
+    public String getPatchVersion() {
+        return patchVersion;
     }
     /**
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
@@ -95,17 +106,6 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
         return sortBy;
     }
     /**
-     * The version of the patch
-     */
-    private String patchVersion;
-
-    /**
-     * The version of the patch
-     */
-    public String getPatchVersion() {
-        return patchVersion;
-    }
-    /**
      * The sort order to use, either 'asc' or 'desc'.
      */
     private com.oracle.bmc.bds.model.SortOrders sortOrder;
@@ -137,6 +137,17 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
      */
     public Integer getLimit() {
         return limit;
+    }
+    /**
+     * The type of a BDS patch history entity.
+     */
+    private com.oracle.bmc.bds.model.PatchHistorySummary.PatchType patchType;
+
+    /**
+     * The type of a BDS patch history entity.
+     */
+    public com.oracle.bmc.bds.model.PatchHistorySummary.PatchType getPatchType() {
+        return patchType;
     }
 
     public static class Builder
@@ -193,6 +204,21 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * The version of the patch
+         */
+        private String patchVersion = null;
+
+        /**
+         * The version of the patch
+         * @param patchVersion the value to set
+         * @return this builder instance
+         */
+        public Builder patchVersion(String patchVersion) {
+            this.patchVersion = patchVersion;
+            return this;
+        }
+
+        /**
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          */
@@ -206,21 +232,6 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
-            return this;
-        }
-
-        /**
-         * The version of the patch
-         */
-        private String patchVersion = null;
-
-        /**
-         * The version of the patch
-         * @param patchVersion the value to set
-         * @return this builder instance
-         */
-        public Builder patchVersion(String patchVersion) {
-            this.patchVersion = patchVersion;
             return this;
         }
 
@@ -270,6 +281,21 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * The type of a BDS patch history entity.
+         */
+        private com.oracle.bmc.bds.model.PatchHistorySummary.PatchType patchType = null;
+
+        /**
+         * The type of a BDS patch history entity.
+         * @param patchType the value to set
+         * @return this builder instance
+         */
+        public Builder patchType(com.oracle.bmc.bds.model.PatchHistorySummary.PatchType patchType) {
+            this.patchType = patchType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -300,11 +326,12 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             bdsInstanceId(o.getBdsInstanceId());
             opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
-            sortBy(o.getSortBy());
             patchVersion(o.getPatchVersion());
+            sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             page(o.getPage());
             limit(o.getLimit());
+            patchType(o.getPatchType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -340,13 +367,14 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
             request.bdsInstanceId = bdsInstanceId;
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
-            request.sortBy = sortBy;
             request.patchVersion = patchVersion;
+            request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.page = page;
             request.limit = limit;
+            request.patchType = patchType;
             return request;
-            // new ListPatchHistoriesRequest(bdsInstanceId, opcRequestId, lifecycleState, sortBy, patchVersion, sortOrder, page, limit);
+            // new ListPatchHistoriesRequest(bdsInstanceId, opcRequestId, lifecycleState, patchVersion, sortBy, sortOrder, page, limit, patchType);
         }
     }
 
@@ -359,11 +387,12 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
                 .bdsInstanceId(bdsInstanceId)
                 .opcRequestId(opcRequestId)
                 .lifecycleState(lifecycleState)
-                .sortBy(sortBy)
                 .patchVersion(patchVersion)
+                .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .patchType(patchType);
     }
 
     /**
@@ -382,11 +411,12 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",bdsInstanceId=").append(String.valueOf(this.bdsInstanceId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",patchVersion=").append(String.valueOf(this.patchVersion));
+        sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",patchType=").append(String.valueOf(this.patchType));
         sb.append(")");
         return sb.toString();
     }
@@ -405,11 +435,12 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.bdsInstanceId, other.bdsInstanceId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.patchVersion, other.patchVersion)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.patchType, other.patchType);
     }
 
     @Override
@@ -423,11 +454,12 @@ public class ListPatchHistoriesRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
-        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.patchVersion == null ? 43 : this.patchVersion.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result = (result * PRIME) + (this.patchType == null ? 43 : this.patchType.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -26,6 +26,7 @@ public final class CloudExadataInfrastructureSummary
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "clusterPlacementGroupId",
         "lifecycleState",
         "displayName",
         "shape",
@@ -51,15 +52,18 @@ public final class CloudExadataInfrastructureSummary
         "nextMaintenanceRunId",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "customerContacts",
         "storageServerVersion",
         "dbServerVersion",
         "monthlyStorageServerVersion",
-        "monthlyDbServerVersion"
+        "monthlyDbServerVersion",
+        "definedFileSystemConfigurations"
     })
     public CloudExadataInfrastructureSummary(
             String id,
             String compartmentId,
+            String clusterPlacementGroupId,
             LifecycleState lifecycleState,
             String displayName,
             String shape,
@@ -85,14 +89,17 @@ public final class CloudExadataInfrastructureSummary
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<CustomerContact> customerContacts,
             String storageServerVersion,
             String dbServerVersion,
             String monthlyStorageServerVersion,
-            String monthlyDbServerVersion) {
+            String monthlyDbServerVersion,
+            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.lifecycleState = lifecycleState;
         this.displayName = displayName;
         this.shape = shape;
@@ -118,11 +125,13 @@ public final class CloudExadataInfrastructureSummary
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.customerContacts = customerContacts;
         this.storageServerVersion = storageServerVersion;
         this.dbServerVersion = dbServerVersion;
         this.monthlyStorageServerVersion = monthlyStorageServerVersion;
         this.monthlyDbServerVersion = monthlyDbServerVersion;
+        this.definedFileSystemConfigurations = definedFileSystemConfigurations;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -157,6 +166,22 @@ public final class CloudExadataInfrastructureSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
@@ -570,6 +595,26 @@ public final class CloudExadataInfrastructureSummary
             return this;
         }
         /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
          * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
          * Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
@@ -671,6 +716,23 @@ public final class CloudExadataInfrastructureSummary
             this.__explicitlySet__.add("monthlyDbServerVersion");
             return this;
         }
+        /**
+         * Details of the file system configuration of the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("definedFileSystemConfigurations")
+        private java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations;
+
+        /**
+         * Details of the file system configuration of the Exadata infrastructure.
+         * @param definedFileSystemConfigurations the value to set
+         * @return this builder
+         **/
+        public Builder definedFileSystemConfigurations(
+                java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+            this.__explicitlySet__.add("definedFileSystemConfigurations");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -680,6 +742,7 @@ public final class CloudExadataInfrastructureSummary
                     new CloudExadataInfrastructureSummary(
                             this.id,
                             this.compartmentId,
+                            this.clusterPlacementGroupId,
                             this.lifecycleState,
                             this.displayName,
                             this.shape,
@@ -705,11 +768,13 @@ public final class CloudExadataInfrastructureSummary
                             this.nextMaintenanceRunId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.customerContacts,
                             this.storageServerVersion,
                             this.dbServerVersion,
                             this.monthlyStorageServerVersion,
-                            this.monthlyDbServerVersion);
+                            this.monthlyDbServerVersion,
+                            this.definedFileSystemConfigurations);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -723,6 +788,9 @@ public final class CloudExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -799,6 +867,9 @@ public final class CloudExadataInfrastructureSummary
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
             }
@@ -813,6 +884,9 @@ public final class CloudExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("monthlyDbServerVersion")) {
                 this.monthlyDbServerVersion(model.getMonthlyDbServerVersion());
+            }
+            if (model.wasPropertyExplicitlySet("definedFileSystemConfigurations")) {
+                this.definedFileSystemConfigurations(model.getDefinedFileSystemConfigurations());
             }
             return this;
         }
@@ -855,6 +929,20 @@ public final class CloudExadataInfrastructureSummary
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /**
@@ -1270,6 +1358,24 @@ public final class CloudExadataInfrastructureSummary
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The list of customer email addresses that receive information from Oracle about the specified OCI Database service resource.
      * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
      * Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
@@ -1361,6 +1467,20 @@ public final class CloudExadataInfrastructureSummary
         return monthlyDbServerVersion;
     }
 
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedFileSystemConfigurations")
+    private final java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations;
+
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     * @return the value
+     **/
+    public java.util.List<DefinedFileSystemConfiguration> getDefinedFileSystemConfigurations() {
+        return definedFileSystemConfigurations;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1377,6 +1497,8 @@ public final class CloudExadataInfrastructureSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", shape=").append(String.valueOf(this.shape));
@@ -1403,12 +1525,15 @@ public final class CloudExadataInfrastructureSummary
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", storageServerVersion=").append(String.valueOf(this.storageServerVersion));
         sb.append(", dbServerVersion=").append(String.valueOf(this.dbServerVersion));
         sb.append(", monthlyStorageServerVersion=")
                 .append(String.valueOf(this.monthlyStorageServerVersion));
         sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
+        sb.append(", definedFileSystemConfigurations=")
+                .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(")");
         return sb.toString();
     }
@@ -1425,6 +1550,8 @@ public final class CloudExadataInfrastructureSummary
         CloudExadataInfrastructureSummary other = (CloudExadataInfrastructureSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -1453,6 +1580,7 @@ public final class CloudExadataInfrastructureSummary
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(this.storageServerVersion, other.storageServerVersion)
                 && java.util.Objects.equals(this.dbServerVersion, other.dbServerVersion)
@@ -1460,6 +1588,8 @@ public final class CloudExadataInfrastructureSummary
                         this.monthlyStorageServerVersion, other.monthlyStorageServerVersion)
                 && java.util.Objects.equals(
                         this.monthlyDbServerVersion, other.monthlyDbServerVersion)
+                && java.util.Objects.equals(
+                        this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && super.equals(other);
     }
 
@@ -1471,6 +1601,11 @@ public final class CloudExadataInfrastructureSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -1550,6 +1685,7 @@ public final class CloudExadataInfrastructureSummary
                                 : this.nextMaintenanceRunId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
@@ -1571,6 +1707,11 @@ public final class CloudExadataInfrastructureSummary
                         + (this.monthlyDbServerVersion == null
                                 ? 43
                                 : this.monthlyDbServerVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedFileSystemConfigurations == null
+                                ? 43
+                                : this.definedFileSystemConfigurations.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

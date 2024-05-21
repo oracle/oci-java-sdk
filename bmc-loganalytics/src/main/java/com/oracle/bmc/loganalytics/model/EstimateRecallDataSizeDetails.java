@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -23,12 +23,22 @@ package com.oracle.bmc.loganalytics.model;
 public final class EstimateRecallDataSizeDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"timeDataStarted", "timeDataEnded"})
+    @java.beans.ConstructorProperties({
+        "timeDataStarted",
+        "timeDataEnded",
+        "logSets",
+        "isRecallNewDataOnly"
+    })
     public EstimateRecallDataSizeDetails(
-            java.util.Date timeDataStarted, java.util.Date timeDataEnded) {
+            java.util.Date timeDataStarted,
+            java.util.Date timeDataEnded,
+            String logSets,
+            Boolean isRecallNewDataOnly) {
         super();
         this.timeDataStarted = timeDataStarted;
         this.timeDataEnded = timeDataEnded;
+        this.logSets = logSets;
+        this.isRecallNewDataOnly = isRecallNewDataOnly;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -65,13 +75,49 @@ public final class EstimateRecallDataSizeDetails
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
+        /**
+         * This is the list of logsets to be accounted for in the recalled data
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+        private String logSets;
+
+        /**
+         * This is the list of logsets to be accounted for in the recalled data
+         * @param logSets the value to set
+         * @return this builder
+         **/
+        public Builder logSets(String logSets) {
+            this.logSets = logSets;
+            this.__explicitlySet__.add("logSets");
+            return this;
+        }
+        /**
+         * This indicates if only new data has to be recalled in the timeframe
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
+        private Boolean isRecallNewDataOnly;
+
+        /**
+         * This indicates if only new data has to be recalled in the timeframe
+         * @param isRecallNewDataOnly the value to set
+         * @return this builder
+         **/
+        public Builder isRecallNewDataOnly(Boolean isRecallNewDataOnly) {
+            this.isRecallNewDataOnly = isRecallNewDataOnly;
+            this.__explicitlySet__.add("isRecallNewDataOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public EstimateRecallDataSizeDetails build() {
             EstimateRecallDataSizeDetails model =
-                    new EstimateRecallDataSizeDetails(this.timeDataStarted, this.timeDataEnded);
+                    new EstimateRecallDataSizeDetails(
+                            this.timeDataStarted,
+                            this.timeDataEnded,
+                            this.logSets,
+                            this.isRecallNewDataOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -85,6 +131,12 @@ public final class EstimateRecallDataSizeDetails
             }
             if (model.wasPropertyExplicitlySet("timeDataEnded")) {
                 this.timeDataEnded(model.getTimeDataEnded());
+            }
+            if (model.wasPropertyExplicitlySet("logSets")) {
+                this.logSets(model.getLogSets());
+            }
+            if (model.wasPropertyExplicitlySet("isRecallNewDataOnly")) {
+                this.isRecallNewDataOnly(model.getIsRecallNewDataOnly());
             }
             return this;
         }
@@ -129,6 +181,34 @@ public final class EstimateRecallDataSizeDetails
         return timeDataEnded;
     }
 
+    /**
+     * This is the list of logsets to be accounted for in the recalled data
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+    private final String logSets;
+
+    /**
+     * This is the list of logsets to be accounted for in the recalled data
+     * @return the value
+     **/
+    public String getLogSets() {
+        return logSets;
+    }
+
+    /**
+     * This indicates if only new data has to be recalled in the timeframe
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
+    private final Boolean isRecallNewDataOnly;
+
+    /**
+     * This indicates if only new data has to be recalled in the timeframe
+     * @return the value
+     **/
+    public Boolean getIsRecallNewDataOnly() {
+        return isRecallNewDataOnly;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -145,6 +225,8 @@ public final class EstimateRecallDataSizeDetails
         sb.append("super=").append(super.toString());
         sb.append("timeDataStarted=").append(String.valueOf(this.timeDataStarted));
         sb.append(", timeDataEnded=").append(String.valueOf(this.timeDataEnded));
+        sb.append(", logSets=").append(String.valueOf(this.logSets));
+        sb.append(", isRecallNewDataOnly=").append(String.valueOf(this.isRecallNewDataOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -161,6 +243,8 @@ public final class EstimateRecallDataSizeDetails
         EstimateRecallDataSizeDetails other = (EstimateRecallDataSizeDetails) o;
         return java.util.Objects.equals(this.timeDataStarted, other.timeDataStarted)
                 && java.util.Objects.equals(this.timeDataEnded, other.timeDataEnded)
+                && java.util.Objects.equals(this.logSets, other.logSets)
+                && java.util.Objects.equals(this.isRecallNewDataOnly, other.isRecallNewDataOnly)
                 && super.equals(other);
     }
 
@@ -174,6 +258,12 @@ public final class EstimateRecallDataSizeDetails
         result =
                 (result * PRIME)
                         + (this.timeDataEnded == null ? 43 : this.timeDataEnded.hashCode());
+        result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRecallNewDataOnly == null
+                                ? 43
+                                : this.isRecallNewDataOnly.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

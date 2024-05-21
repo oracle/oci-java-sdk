@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.optimizer.requests;
@@ -142,6 +142,17 @@ public class FilterResourceActionsRequest
      */
     public Boolean getIncludeOrganization() {
         return includeOrganization;
+    }
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    private Boolean includeResourceMetadata;
+
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    public Boolean getIncludeResourceMetadata() {
+        return includeResourceMetadata;
     }
     /**
      * The maximum number of items to return in a paginated "List" call.
@@ -384,6 +395,21 @@ public class FilterResourceActionsRequest
         }
 
         /**
+         * Supplement additional resource information in extended metadata response.
+         */
+        private Boolean includeResourceMetadata = null;
+
+        /**
+         * Supplement additional resource information in extended metadata response.
+         * @param includeResourceMetadata the value to set
+         * @return this builder instance
+         */
+        public Builder includeResourceMetadata(Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
+            return this;
+        }
+
+        /**
          * The maximum number of items to return in a paginated "List" call.
          */
         private Integer limit = null;
@@ -469,6 +495,7 @@ public class FilterResourceActionsRequest
             recommendationName(o.getRecommendationName());
             childTenancyIds(o.getChildTenancyIds());
             includeOrganization(o.getIncludeOrganization());
+            includeResourceMetadata(o.getIncludeResourceMetadata());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -522,11 +549,12 @@ public class FilterResourceActionsRequest
             request.recommendationName = recommendationName;
             request.childTenancyIds = childTenancyIds;
             request.includeOrganization = includeOrganization;
+            request.includeResourceMetadata = includeResourceMetadata;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new FilterResourceActionsRequest(compartmentId, compartmentIdInSubtree, queryDetails, recommendationId, recommendationName, childTenancyIds, includeOrganization, limit, page, opcRequestId);
+            // new FilterResourceActionsRequest(compartmentId, compartmentIdInSubtree, queryDetails, recommendationId, recommendationName, childTenancyIds, includeOrganization, includeResourceMetadata, limit, page, opcRequestId);
         }
     }
 
@@ -543,6 +571,7 @@ public class FilterResourceActionsRequest
                 .recommendationName(recommendationName)
                 .childTenancyIds(childTenancyIds)
                 .includeOrganization(includeOrganization)
+                .includeResourceMetadata(includeResourceMetadata)
                 .limit(limit)
                 .page(page)
                 .opcRequestId(opcRequestId);
@@ -568,6 +597,7 @@ public class FilterResourceActionsRequest
         sb.append(",recommendationName=").append(String.valueOf(this.recommendationName));
         sb.append(",childTenancyIds=").append(String.valueOf(this.childTenancyIds));
         sb.append(",includeOrganization=").append(String.valueOf(this.includeOrganization));
+        sb.append(",includeResourceMetadata=").append(String.valueOf(this.includeResourceMetadata));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -594,6 +624,8 @@ public class FilterResourceActionsRequest
                 && java.util.Objects.equals(this.recommendationName, other.recommendationName)
                 && java.util.Objects.equals(this.childTenancyIds, other.childTenancyIds)
                 && java.util.Objects.equals(this.includeOrganization, other.includeOrganization)
+                && java.util.Objects.equals(
+                        this.includeResourceMetadata, other.includeResourceMetadata)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -628,6 +660,11 @@ public class FilterResourceActionsRequest
                         + (this.includeOrganization == null
                                 ? 43
                                 : this.includeOrganization.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.includeResourceMetadata == null
+                                ? 43
+                                : this.includeResourceMetadata.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

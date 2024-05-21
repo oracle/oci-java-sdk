@@ -1,18 +1,19 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Create a Virtual Network Interface Card (VNIC) which gives
- * Containers on this Container Instance access to a Virtual Client Network (VCN).
+ * Information to create a virtual network interface card (VNIC) which gives
+ * the containers on this container instance access to a virtual client network (VCN).
  * <p>
- * This VNIC will be created in the same compartment as the specified subnet on
+ * You use this object when creating the primary VNIC during container instance launch or when creating a secondary VNIC.
+ * This VNIC is created in the same compartment as the specified subnet on
  * behalf of the customer.
  * <p>
- * The VNIC created by this call will contain both the tags specified
- * in this object as well as any tags specified in the parent ContainerInstance object.
+ * The VNIC created by this call contains both the tags specified
+ * in this object as well as any tags specified in the parent container instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -86,14 +87,14 @@ public final class CreateContainerVnicDetails
             return this;
         }
         /**
-         * The hostname for the VNIC's primary private IP.
+         * The hostname for the VNIC's primary private IP. Used for DNS.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
-         * The hostname for the VNIC's primary private IP.
+         * The hostname for the VNIC's primary private IP. Used for DNS.
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -217,7 +218,7 @@ public final class CreateContainerVnicDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -225,7 +226,7 @@ public final class CreateContainerVnicDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -321,14 +322,14 @@ public final class CreateContainerVnicDetails
     }
 
     /**
-     * The hostname for the VNIC's primary private IP.
+     * The hostname for the VNIC's primary private IP. Used for DNS.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
-     * The hostname for the VNIC's primary private IP.
+     * The hostname for the VNIC's primary private IP. Used for DNS.
      *
      * @return the value
      **/
@@ -438,7 +439,7 @@ public final class CreateContainerVnicDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -446,7 +447,7 @@ public final class CreateContainerVnicDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      **/

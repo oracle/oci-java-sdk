@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -28,20 +28,23 @@ public final class DeploymentVersionSummary
         "deploymentType",
         "timeReleased",
         "releaseType",
-        "isSecurityFix"
+        "isSecurityFix",
+        "timeSupportedUntil"
     })
     public DeploymentVersionSummary(
             String oggVersion,
             DeploymentType deploymentType,
             java.util.Date timeReleased,
             ReleaseType releaseType,
-            Boolean isSecurityFix) {
+            Boolean isSecurityFix,
+            java.util.Date timeSupportedUntil) {
         super();
         this.oggVersion = oggVersion;
         this.deploymentType = deploymentType;
         this.timeReleased = timeReleased;
         this.releaseType = releaseType;
         this.isSecurityFix = isSecurityFix;
+        this.timeSupportedUntil = timeSupportedUntil;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -142,6 +145,26 @@ public final class DeploymentVersionSummary
             this.__explicitlySet__.add("isSecurityFix");
             return this;
         }
+        /**
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeSupportedUntil")
+        private java.util.Date timeSupportedUntil;
+
+        /**
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+         *
+         * @param timeSupportedUntil the value to set
+         * @return this builder
+         **/
+        public Builder timeSupportedUntil(java.util.Date timeSupportedUntil) {
+            this.timeSupportedUntil = timeSupportedUntil;
+            this.__explicitlySet__.add("timeSupportedUntil");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -153,7 +176,8 @@ public final class DeploymentVersionSummary
                             this.deploymentType,
                             this.timeReleased,
                             this.releaseType,
-                            this.isSecurityFix);
+                            this.isSecurityFix,
+                            this.timeSupportedUntil);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -176,6 +200,9 @@ public final class DeploymentVersionSummary
             }
             if (model.wasPropertyExplicitlySet("isSecurityFix")) {
                 this.isSecurityFix(model.getIsSecurityFix());
+            }
+            if (model.wasPropertyExplicitlySet("timeSupportedUntil")) {
+                this.timeSupportedUntil(model.getTimeSupportedUntil());
             }
             return this;
         }
@@ -278,6 +305,24 @@ public final class DeploymentVersionSummary
         return isSecurityFix;
     }
 
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeSupportedUntil")
+    private final java.util.Date timeSupportedUntil;
+
+    /**
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeSupportedUntil() {
+        return timeSupportedUntil;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -297,6 +342,7 @@ public final class DeploymentVersionSummary
         sb.append(", timeReleased=").append(String.valueOf(this.timeReleased));
         sb.append(", releaseType=").append(String.valueOf(this.releaseType));
         sb.append(", isSecurityFix=").append(String.valueOf(this.isSecurityFix));
+        sb.append(", timeSupportedUntil=").append(String.valueOf(this.timeSupportedUntil));
         sb.append(")");
         return sb.toString();
     }
@@ -316,6 +362,7 @@ public final class DeploymentVersionSummary
                 && java.util.Objects.equals(this.timeReleased, other.timeReleased)
                 && java.util.Objects.equals(this.releaseType, other.releaseType)
                 && java.util.Objects.equals(this.isSecurityFix, other.isSecurityFix)
+                && java.util.Objects.equals(this.timeSupportedUntil, other.timeSupportedUntil)
                 && super.equals(other);
     }
 
@@ -332,6 +379,11 @@ public final class DeploymentVersionSummary
         result =
                 (result * PRIME)
                         + (this.isSecurityFix == null ? 43 : this.isSecurityFix.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeSupportedUntil == null
+                                ? 43
+                                : this.timeSupportedUntil.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

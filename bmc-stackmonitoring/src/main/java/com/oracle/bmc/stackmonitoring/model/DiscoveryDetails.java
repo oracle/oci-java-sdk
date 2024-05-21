@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -23,6 +23,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         "agentId",
         "resourceType",
         "resourceName",
+        "license",
         "properties",
         "credentials",
         "tags"
@@ -31,6 +32,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
             String agentId,
             ResourceType resourceType,
             String resourceName,
+            LicenseType license,
             PropertyDetails properties,
             CredentialCollection credentials,
             PropertyDetails tags) {
@@ -38,6 +40,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         this.agentId = agentId;
         this.resourceType = resourceType;
         this.resourceName = resourceName;
+        this.license = license;
         this.properties = properties;
         this.credentials = credentials;
         this.tags = tags;
@@ -93,6 +96,22 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("resourceName");
             return this;
         }
+        /**
+         * License edition of the monitored resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         * @param license the value to set
+         * @return this builder
+         **/
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private PropertyDetails properties;
@@ -130,6 +149,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
                             this.agentId,
                             this.resourceType,
                             this.resourceName,
+                            this.license,
                             this.properties,
                             this.credentials,
                             this.tags);
@@ -149,6 +169,9 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("resourceName")) {
                 this.resourceName(model.getResourceName());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
@@ -202,6 +225,11 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         OciOraclePdb("OCI_ORACLE_PDB"),
         Host("HOST"),
         OraclePsft("ORACLE_PSFT"),
+        OracleMft("ORACLE_MFT"),
+        ApacheHttpServer("APACHE_HTTP_SERVER"),
+        OracleGoldengate("ORACLE_GOLDENGATE"),
+        CustomResource("CUSTOM_RESOURCE"),
+        OracleHttpServer("ORACLE_HTTP_SERVER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -272,6 +300,20 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         return resourceName;
     }
 
+    /**
+     * License edition of the monitored resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     * @return the value
+     **/
+    public LicenseType getLicense() {
+        return license;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final PropertyDetails properties;
 
@@ -310,6 +352,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         sb.append("agentId=").append(String.valueOf(this.agentId));
         sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", tags=").append(String.valueOf(this.tags));
@@ -330,6 +373,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         return java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.tags, other.tags)
@@ -343,6 +387,7 @@ public final class DiscoveryDetails extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
         result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());

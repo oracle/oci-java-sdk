@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The health check policy configuration.
- * For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/Content/Balance/Tasks/editinghealthcheck.htm).
+ * For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/HealthCheckPolicies/health-check-policy-management.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -31,7 +31,8 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         "responseBodyRegex",
         "returnCode",
         "requestData",
-        "responseData"
+        "responseData",
+        "dns"
     })
     public HealthChecker(
             HealthCheckProtocols protocol,
@@ -43,7 +44,8 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
             String responseBodyRegex,
             Integer returnCode,
             byte[] requestData,
-            byte[] responseData) {
+            byte[] responseData,
+            DnsHealthCheckerDetails dns) {
         super();
         this.protocol = protocol;
         this.port = port;
@@ -55,6 +57,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         this.returnCode = returnCode;
         this.requestData = requestData;
         this.responseData = responseData;
+        this.dns = dns;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -276,6 +279,15 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dns")
+        private DnsHealthCheckerDetails dns;
+
+        public Builder dns(DnsHealthCheckerDetails dns) {
+            this.dns = dns;
+            this.__explicitlySet__.add("dns");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -291,7 +303,8 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
                             this.responseBodyRegex,
                             this.returnCode,
                             this.requestData,
-                            this.responseData);
+                            this.responseData,
+                            this.dns);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -329,6 +342,9 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("responseData")) {
                 this.responseData(model.getResponseData());
+            }
+            if (model.wasPropertyExplicitlySet("dns")) {
+                this.dns(model.getDns());
             }
             return this;
         }
@@ -541,6 +557,13 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         return responseData;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dns")
+    private final DnsHealthCheckerDetails dns;
+
+    public DnsHealthCheckerDetails getDns() {
+        return dns;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -579,6 +602,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
                                         + (this.responseData != null
                                                 ? " (byte[" + this.responseData.length + "])"
                                                 : ""))));
+        sb.append(", dns=").append(String.valueOf(this.dns));
         sb.append(")");
         return sb.toString();
     }
@@ -603,6 +627,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.returnCode, other.returnCode)
                 && java.util.Arrays.equals(this.requestData, other.requestData)
                 && java.util.Arrays.equals(this.responseData, other.responseData)
+                && java.util.Objects.equals(this.dns, other.dns)
                 && super.equals(other);
     }
 
@@ -626,6 +651,7 @@ public final class HealthChecker extends com.oracle.bmc.http.internal.Explicitly
         result = (result * PRIME) + (this.returnCode == null ? 43 : this.returnCode.hashCode());
         result = (result * PRIME) + java.util.Arrays.hashCode(this.requestData);
         result = (result * PRIME) + java.util.Arrays.hashCode(this.responseData);
+        result = (result * PRIME) + (this.dns == null ? 43 : this.dns.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

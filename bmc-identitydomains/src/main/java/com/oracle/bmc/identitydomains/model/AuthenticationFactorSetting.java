@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -59,8 +59,8 @@ public final class AuthenticationFactorSetting
         "endpointRestrictions",
         "compliancePolicy",
         "totpSettings",
-        "urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings",
-        "urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings"
+        "urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings",
+        "urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings"
     })
     public AuthenticationFactorSetting(
             String id,
@@ -100,9 +100,9 @@ public final class AuthenticationFactorSetting
             java.util.List<AuthenticationFactorSettingsCompliancePolicy> compliancePolicy,
             AuthenticationFactorSettingsTotpSettings totpSettings,
             ExtensionThirdPartyAuthenticationFactorSettings
-                    urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings,
+                    urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
             ExtensionFidoAuthenticationFactorSettings
-                    urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
+                    urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings) {
         super();
         this.id = id;
         this.ocid = ocid;
@@ -140,10 +140,10 @@ public final class AuthenticationFactorSetting
         this.endpointRestrictions = endpointRestrictions;
         this.compliancePolicy = compliancePolicy;
         this.totpSettings = totpSettings;
-        this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings =
-                urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
-        this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings =
-                urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+        this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings =
+                urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings;
+        this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings =
+                urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1170,31 +1170,31 @@ public final class AuthenticationFactorSetting
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "urn:ietf:params:scim:schemas:oracle:idcs:extension:thirdParty:AuthenticationFactorSettings")
         private ExtensionThirdPartyAuthenticationFactorSettings
-                urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+                urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings;
 
         public Builder
-                urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(
+                urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings(
                         ExtensionThirdPartyAuthenticationFactorSettings
-                                urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings) {
-            this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings =
-                    urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+                                urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings) {
+            this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings =
+                    urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings;
             this.__explicitlySet__.add(
-                    "urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings");
+                    "urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "urn:ietf:params:scim:schemas:oracle:idcs:extension:fido:AuthenticationFactorSettings")
         private ExtensionFidoAuthenticationFactorSettings
-                urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+                urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings;
 
-        public Builder urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(
+        public Builder urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings(
                 ExtensionFidoAuthenticationFactorSettings
-                        urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings) {
-            this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings =
-                    urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+                        urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings) {
+            this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings =
+                    urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings;
             this.__explicitlySet__.add(
-                    "urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings");
+                    "urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings");
             return this;
         }
 
@@ -1240,8 +1240,8 @@ public final class AuthenticationFactorSetting
                             this.endpointRestrictions,
                             this.compliancePolicy,
                             this.totpSettings,
-                            this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings,
-                            this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings);
+                            this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
+                            this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1359,17 +1359,17 @@ public final class AuthenticationFactorSetting
                 this.totpSettings(model.getTotpSettings());
             }
             if (model.wasPropertyExplicitlySet(
-                    "urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings")) {
+                    "urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings")) {
                 this
-                        .urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings(
+                        .urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings(
                                 model
-                                        .getUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings());
+                                        .getUrnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings());
             }
             if (model.wasPropertyExplicitlySet(
-                    "urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings")) {
-                this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings(
+                    "urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings")) {
+                this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings(
                         model
-                                .getUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings());
+                                .getUrnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings());
             }
             return this;
         }
@@ -2209,6 +2209,7 @@ public final class AuthenticationFactorSetting
         PhoneCall("PHONE_CALL"),
         Thirdparty("THIRDPARTY"),
         FidoAuthenticator("FIDO_AUTHENTICATOR"),
+        YubicoOtp("YUBICO_OTP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -2380,21 +2381,21 @@ public final class AuthenticationFactorSetting
     @com.fasterxml.jackson.annotation.JsonProperty(
             "urn:ietf:params:scim:schemas:oracle:idcs:extension:thirdParty:AuthenticationFactorSettings")
     private final ExtensionThirdPartyAuthenticationFactorSettings
-            urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+            urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings;
 
     public ExtensionThirdPartyAuthenticationFactorSettings
-            getUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings() {
-        return urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings;
+            getUrnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings() {
+        return urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty(
             "urn:ietf:params:scim:schemas:oracle:idcs:extension:fido:AuthenticationFactorSettings")
     private final ExtensionFidoAuthenticationFactorSettings
-            urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+            urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings;
 
     public ExtensionFidoAuthenticationFactorSettings
-            getUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings() {
-        return urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings;
+            getUrnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings() {
+        return urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings;
     }
 
     @Override
@@ -2455,14 +2456,14 @@ public final class AuthenticationFactorSetting
         sb.append(", compliancePolicy=").append(String.valueOf(this.compliancePolicy));
         sb.append(", totpSettings=").append(String.valueOf(this.totpSettings));
         sb.append(
-                        ", urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings=")
+                        ", urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings=")
                 .append(
                         String.valueOf(
-                                this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings));
-        sb.append(", urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings=")
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings));
+        sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings=")
                 .append(
                         String.valueOf(
-                                this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings));
+                                this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings));
         sb.append(")");
         return sb.toString();
     }
@@ -2521,11 +2522,11 @@ public final class AuthenticationFactorSetting
                 && java.util.Objects.equals(this.compliancePolicy, other.compliancePolicy)
                 && java.util.Objects.equals(this.totpSettings, other.totpSettings)
                 && java.util.Objects.equals(
-                        this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings,
-                        other.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings)
+                        this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings,
+                        other.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings)
                 && java.util.Objects.equals(
-                        this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings,
-                        other.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings)
+                        this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings,
+                        other.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings)
                 && super.equals(other);
     }
 
@@ -2645,19 +2646,19 @@ public final class AuthenticationFactorSetting
         result = (result * PRIME) + (this.totpSettings == null ? 43 : this.totpSettings.hashCode());
         result =
                 (result * PRIME)
-                        + (this.urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings
+                        + (this.urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings
                                         == null
                                 ? 43
                                 : this
-                                        .urnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettings
+                                        .urnIetfParamsScimSchemasOracleIdcsExtensionThirdPartyAuthenticationFactorSettings
                                         .hashCode());
         result =
                 (result * PRIME)
-                        + (this.urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings
+                        + (this.urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings
                                         == null
                                 ? 43
                                 : this
-                                        .urnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettings
+                                        .urnIetfParamsScimSchemasOracleIdcsExtensionFidoAuthenticationFactorSettings
                                         .hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

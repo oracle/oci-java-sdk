@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
@@ -8,12 +8,12 @@ package com.oracle.bmc.sch.model;
  * An object representing an asynchronous work flow.
  * <p>
  * Many of the API requests you use to create and configure
- * service connectors do not take effect immediately. In these
+ * connectors do not take effect immediately. In these
  * cases, the request spawns an asynchronous work flow to fulfill
  * the request. WorkRequest objects provide visibility for
  * in-progress work flows. For more information about work
  * requests, see
- * [Viewing the State of a Work Request](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/workrequests.htm).
+ * [Viewing the State of a Work Request](https://docs.cloud.oracle.com/iaas/Content/connector-hub/workrequests.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

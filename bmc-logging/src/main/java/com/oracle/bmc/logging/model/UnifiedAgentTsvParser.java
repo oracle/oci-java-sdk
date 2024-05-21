@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
@@ -90,13 +90,13 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * tsv delimiter.
+         * TSV delimiter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
         private String delimiter;
 
         /**
-         * tsv delimiter.
+         * TSV delimiter.
          * @param delimiter the value to set
          * @return this builder
          **/
@@ -106,13 +106,13 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * tsv keys.
+         * TSV keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<String> keys;
 
         /**
-         * tsv keys.
+         * TSV keys.
          * @param keys the value to set
          * @return this builder
          **/
@@ -211,13 +211,13 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
     }
 
     /**
-     * tsv delimiter.
+     * TSV delimiter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("delimiter")
     private final String delimiter;
 
     /**
-     * tsv delimiter.
+     * TSV delimiter.
      * @return the value
      **/
     public String getDelimiter() {
@@ -225,13 +225,13 @@ public final class UnifiedAgentTsvParser extends UnifiedAgentParser {
     }
 
     /**
-     * tsv keys.
+     * TSV keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<String> keys;
 
     /**
-     * tsv keys.
+     * TSV keys.
      * @return the value
      **/
     public java.util.List<String> getKeys() {

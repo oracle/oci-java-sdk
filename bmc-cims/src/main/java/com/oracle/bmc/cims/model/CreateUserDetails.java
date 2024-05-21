@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about creation of user.
+ * Details for creating a new user.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,30 +25,30 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
         "compartmentId",
         "firstName",
         "lastName",
-        "country",
         "csi",
         "phone",
         "timezone",
-        "organizationName"
+        "organizationName",
+        "problemType"
     })
     public CreateUserDetails(
             String compartmentId,
             String firstName,
             String lastName,
-            String country,
             String csi,
             String phone,
             String timezone,
-            String organizationName) {
+            String organizationName,
+            ProblemType problemType) {
         super();
         this.compartmentId = compartmentId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.country = country;
         this.csi = csi;
         this.phone = phone;
         this.timezone = timezone;
         this.organizationName = organizationName;
+        this.problemType = problemType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -102,29 +102,13 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Country of the user.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("country")
-        private String country;
-
-        /**
-         * Country of the user.
-         * @param country the value to set
-         * @return this builder
-         **/
-        public Builder country(String country) {
-            this.country = country;
-            this.__explicitlySet__.add("country");
-            return this;
-        }
-        /**
-         * CSI to be associated to the user.
+         * CSI associated with the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * CSI to be associated to the user.
+         * CSI associated with the user.
          * @param csi the value to set
          * @return this builder
          **/
@@ -181,6 +165,22 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("organizationName");
             return this;
         }
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase request.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("problemType")
+        private ProblemType problemType;
+
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase request.
+         * @param problemType the value to set
+         * @return this builder
+         **/
+        public Builder problemType(ProblemType problemType) {
+            this.problemType = problemType;
+            this.__explicitlySet__.add("problemType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -191,11 +191,11 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
                             this.compartmentId,
                             this.firstName,
                             this.lastName,
-                            this.country,
                             this.csi,
                             this.phone,
                             this.timezone,
-                            this.organizationName);
+                            this.organizationName,
+                            this.problemType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -213,9 +213,6 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("lastName")) {
                 this.lastName(model.getLastName());
             }
-            if (model.wasPropertyExplicitlySet("country")) {
-                this.country(model.getCountry());
-            }
             if (model.wasPropertyExplicitlySet("csi")) {
                 this.csi(model.getCsi());
             }
@@ -227,6 +224,9 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("organizationName")) {
                 this.organizationName(model.getOrganizationName());
+            }
+            if (model.wasPropertyExplicitlySet("problemType")) {
+                this.problemType(model.getProblemType());
             }
             return this;
         }
@@ -286,27 +286,13 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Country of the user.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("country")
-    private final String country;
-
-    /**
-     * Country of the user.
-     * @return the value
-     **/
-    public String getCountry() {
-        return country;
-    }
-
-    /**
-     * CSI to be associated to the user.
+     * CSI associated with the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * CSI to be associated to the user.
+     * CSI associated with the user.
      * @return the value
      **/
     public String getCsi() {
@@ -355,6 +341,20 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
         return organizationName;
     }
 
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("problemType")
+    private final ProblemType problemType;
+
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     * @return the value
+     **/
+    public ProblemType getProblemType() {
+        return problemType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -372,11 +372,11 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", firstName=").append(String.valueOf(this.firstName));
         sb.append(", lastName=").append(String.valueOf(this.lastName));
-        sb.append(", country=").append(String.valueOf(this.country));
         sb.append(", csi=").append(String.valueOf(this.csi));
         sb.append(", phone=").append(String.valueOf(this.phone));
         sb.append(", timezone=").append(String.valueOf(this.timezone));
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
+        sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(")");
         return sb.toString();
     }
@@ -394,11 +394,11 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.firstName, other.firstName)
                 && java.util.Objects.equals(this.lastName, other.lastName)
-                && java.util.Objects.equals(this.country, other.country)
                 && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.phone, other.phone)
                 && java.util.Objects.equals(this.timezone, other.timezone)
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
+                && java.util.Objects.equals(this.problemType, other.problemType)
                 && super.equals(other);
     }
 
@@ -411,13 +411,13 @@ public final class CreateUserDetails extends com.oracle.bmc.http.internal.Explic
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.firstName == null ? 43 : this.firstName.hashCode());
         result = (result * PRIME) + (this.lastName == null ? 43 : this.lastName.hashCode());
-        result = (result * PRIME) + (this.country == null ? 43 : this.country.hashCode());
         result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.phone == null ? 43 : this.phone.hashCode());
         result = (result * PRIME) + (this.timezone == null ? 43 : this.timezone.hashCode());
         result =
                 (result * PRIME)
                         + (this.organizationName == null ? 43 : this.organizationName.hashCode());
+        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

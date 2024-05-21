@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,23 +14,23 @@ public class UpdateSecurityRecipeRequest
                 com.oracle.bmc.cloudguard.model.UpdateSecurityRecipeDetails> {
 
     /**
-     * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+     * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
      */
     private String securityRecipeId;
 
     /**
-     * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+     * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
      */
     public String getSecurityRecipeId() {
         return securityRecipeId;
     }
     /**
-     * The information to be updated in the security zone recipe.
+     * The information to be updated in the security zone recipe
      */
     private com.oracle.bmc.cloudguard.model.UpdateSecurityRecipeDetails updateSecurityRecipeDetails;
 
     /**
-     * The information to be updated in the security zone recipe.
+     * The information to be updated in the security zone recipe
      */
     public com.oracle.bmc.cloudguard.model.UpdateSecurityRecipeDetails
             getUpdateSecurityRecipeDetails() {
@@ -88,12 +88,12 @@ public class UpdateSecurityRecipeRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          */
         private String securityRecipeId = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          * @param securityRecipeId the value to set
          * @return this builder instance
          */
@@ -103,13 +103,13 @@ public class UpdateSecurityRecipeRequest
         }
 
         /**
-         * The information to be updated in the security zone recipe.
+         * The information to be updated in the security zone recipe
          */
         private com.oracle.bmc.cloudguard.model.UpdateSecurityRecipeDetails
                 updateSecurityRecipeDetails = null;
 
         /**
-         * The information to be updated in the security zone recipe.
+         * The information to be updated in the security zone recipe
          * @param updateSecurityRecipeDetails the value to set
          * @return this builder instance
          */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -204,13 +204,13 @@ public final class AutonomousDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The current state of Autonomous Data Guard.
+         * The current state of the Autonomous Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseLifeCycleState")
         private PeerAutonomousDatabaseLifeCycleState peerAutonomousDatabaseLifeCycleState;
 
         /**
-         * The current state of Autonomous Data Guard.
+         * The current state of the Autonomous Database.
          * @param peerAutonomousDatabaseLifeCycleState the value to set
          * @return this builder
          **/
@@ -738,17 +738,30 @@ public final class AutonomousDatabaseDataguardAssociation
     }
 
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Database.
      **/
     public enum PeerAutonomousDatabaseLifeCycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
-        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Stopping("STOPPING"),
+        Stopped("STOPPED"),
+        Starting("STARTING"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
-        Failed("FAILED"),
         Unavailable("UNAVAILABLE"),
+        RestoreInProgress("RESTORE_IN_PROGRESS"),
+        RestoreFailed("RESTORE_FAILED"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        ScaleInProgress("SCALE_IN_PROGRESS"),
+        AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
         Updating("UPDATING"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        Restarting("RESTARTING"),
+        Recreating("RECREATING"),
+        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Upgrading("UPGRADING"),
+        Inaccessible("INACCESSIBLE"),
+        Standby("STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -793,13 +806,13 @@ public final class AutonomousDatabaseDataguardAssociation
         }
     };
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAutonomousDatabaseLifeCycleState")
     private final PeerAutonomousDatabaseLifeCycleState peerAutonomousDatabaseLifeCycleState;
 
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Database.
      * @return the value
      **/
     public PeerAutonomousDatabaseLifeCycleState getPeerAutonomousDatabaseLifeCycleState() {

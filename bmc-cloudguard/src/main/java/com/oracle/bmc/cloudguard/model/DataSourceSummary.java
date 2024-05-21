@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of Data Source
+ * Summary information for a specific data source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -72,13 +72,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Ocid for Data Source
+         * OCID for the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Ocid for Data Source
+         * OCID for the data source
          * @param id the value to set
          * @return this builder
          **/
@@ -88,13 +88,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * DisplayName of Data Source
+         * Display name of the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DisplayName of Data Source
+         * Display name of the data source
          * @param displayName the value to set
          * @return this builder
          **/
@@ -104,13 +104,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         * Type of data source feed provider(LoggingQuery)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
         private DataSourceFeedProvider dataSourceFeedProvider;
 
         /**
-         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         * Type of data source feed provider(LoggingQuery)
          * @param dataSourceFeedProvider the value to set
          * @return this builder
          **/
@@ -120,13 +120,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * CompartmentId of Data Source.
+         * Compartment OCID of the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * CompartmentId of Data Source.
+         * Compartment OCID of the data source
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -177,13 +177,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Status of data Source
+         * Status of data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DataSourceStatus status;
 
         /**
-         * Status of data Source
+         * Status of data source
          * @param status the value to set
          * @return this builder
          **/
@@ -202,13 +202,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -391,13 +391,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Ocid for Data Source
+     * OCID for the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Ocid for Data Source
+     * OCID for the data source
      * @return the value
      **/
     public String getId() {
@@ -405,13 +405,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * DisplayName of Data Source
+     * Display name of the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DisplayName of Data Source
+     * Display name of the data source
      * @return the value
      **/
     public String getDisplayName() {
@@ -419,13 +419,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider(LoggingQuery)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
     private final DataSourceFeedProvider dataSourceFeedProvider;
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider(LoggingQuery)
      * @return the value
      **/
     public DataSourceFeedProvider getDataSourceFeedProvider() {
@@ -433,13 +433,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * CompartmentId of Data Source.
+     * Compartment OCID of the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * CompartmentId of Data Source.
+     * Compartment OCID of the data source
      * @return the value
      **/
     public String getCompartmentId() {
@@ -482,13 +482,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Status of data Source
+     * Status of data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DataSourceStatus status;
 
     /**
-     * Status of data Source
+     * Status of data source
      * @return the value
      **/
     public DataSourceStatus getStatus() {
@@ -503,13 +503,13 @@ public final class DataSourceSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

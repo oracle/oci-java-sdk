@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,6 +27,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     @Deprecated
     @java.beans.ConstructorProperties({
         "assignPublicIp",
+        "assignPrivateDnsRecord",
         "definedTags",
         "displayName",
         "freeformTags",
@@ -34,10 +35,12 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         "nsgIds",
         "privateIp",
         "skipSourceDestCheck",
-        "subnetId"
+        "subnetId",
+        "vlanId"
     })
     public CreateVnicDetails(
             Boolean assignPublicIp,
+            Boolean assignPrivateDnsRecord,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
@@ -45,9 +48,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             java.util.List<String> nsgIds,
             String privateIp,
             Boolean skipSourceDestCheck,
-            String subnetId) {
+            String subnetId,
+            String vlanId) {
         super();
         this.assignPublicIp = assignPublicIp;
+        this.assignPrivateDnsRecord = assignPrivateDnsRecord;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -56,6 +61,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         this.privateIp = privateIp;
         this.skipSourceDestCheck = skipSourceDestCheck;
         this.subnetId = subnetId;
+        this.vlanId = vlanId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -81,6 +87,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          * <p>
          * Example: {@code false}
+         * <p>
+         * If you specify a {@code vlanId}, then {@code assignPublicIp} must be set to false. See
+         * {@link Vlan}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignPublicIp")
@@ -107,6 +116,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          * <p>
          * Example: {@code false}
+         * <p>
+         * If you specify a {@code vlanId}, then {@code assignPublicIp} must be set to false. See
+         * {@link Vlan}.
          *
          * @param assignPublicIp the value to set
          * @return this builder
@@ -114,6 +126,32 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         public Builder assignPublicIp(Boolean assignPublicIp) {
             this.assignPublicIp = assignPublicIp;
             this.__explicitlySet__.add("assignPublicIp");
+            return this;
+        }
+        /**
+         * Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+         * registration for the VNIC. If set to true, the DNS record will be registered. The default
+         * value is true.
+         * <p>
+         * If you specify a {@code hostnameLabel}, then {@code assignPrivateDnsRecord} must be set to true.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assignPrivateDnsRecord")
+        private Boolean assignPrivateDnsRecord;
+
+        /**
+         * Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+         * registration for the VNIC. If set to true, the DNS record will be registered. The default
+         * value is true.
+         * <p>
+         * If you specify a {@code hostnameLabel}, then {@code assignPrivateDnsRecord} must be set to true.
+         *
+         * @param assignPrivateDnsRecord the value to set
+         * @return this builder
+         **/
+        public Builder assignPrivateDnsRecord(Boolean assignPrivateDnsRecord) {
+            this.assignPrivateDnsRecord = assignPrivateDnsRecord;
+            this.__explicitlySet__.add("assignPrivateDnsRecord");
             return this;
         }
         /**
@@ -180,7 +218,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
          * portion of the primary private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -197,7 +235,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * If you provide both, the values must match.
          * <p>
-         * Example: {@code bminstance-1}
+         * Example: {@code bminstance1}
+         * <p>
+         * If you specify a {@code vlanId}, the {@code hostnameLabel} cannot be specified. VNICs on a VLAN
+         * can not be assigned a hostname. See {@link Vlan}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -206,7 +247,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
          * portion of the primary private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -223,7 +264,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * If you provide both, the values must match.
          * <p>
-         * Example: {@code bminstance-1}
+         * Example: {@code bminstance1}
+         * <p>
+         * If you specify a {@code vlanId}, the {@code hostnameLabel} cannot be specified. VNICs on a VLAN
+         * can not be assigned a hostname. See {@link Vlan}.
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -237,6 +281,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
          * information about NSGs, see
          * {@link NetworkSecurityGroup}.
+         * <p>
+         * If a {@code vlanId} is specified, the {@code nsgIds} cannot be specified. The {@code vlanId}
+         * indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+         * all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+         * See {@link Vlan}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -246,6 +295,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
          * information about NSGs, see
          * {@link NetworkSecurityGroup}.
+         * <p>
+         * If a {@code vlanId} is specified, the {@code nsgIds} cannot be specified. The {@code vlanId}
+         * indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+         * all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+         * See {@link Vlan}.
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -266,6 +320,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          * <p>
          *
+         * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
+         * See {@link Vlan}.
+         * <p>
          * Example: {@code 10.0.3.3}
          *
          **/
@@ -283,6 +340,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
          * <p>
          *
+         * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
+         * See {@link Vlan}.
+         * <p>
          * Example: {@code 10.0.3.3}
          *
          * @param privateIp the value to set
@@ -300,6 +360,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
          *
+         * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
+         * source/destination check is always disabled for VNICs in a VLAN. See
+         * {@link Vlan}.
+         * <p>
          * Example: {@code true}
          *
          **/
@@ -313,6 +377,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
          * <p>
          *
+         * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
+         * source/destination check is always disabled for VNICs in a VLAN. See
+         * {@link Vlan}.
+         * <p>
          * Example: {@code true}
          *
          * @param skipSourceDestCheck the value to set
@@ -328,6 +396,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * use this {@code subnetId} instead of the deprecated {@code subnetId} in
          * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * At least one of them is required; if you provide both, the values must match.
+         * <p>
+         * If you are an Oracle Cloud VMware Solution customer and creating a secondary
+         * VNIC in a VLAN instead of a subnet, provide a {@code vlanId} instead of a {@code subnetId}.
+         * If you provide both a {@code vlanId} and {@code subnetId}, the request fails.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -338,6 +410,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
          * use this {@code subnetId} instead of the deprecated {@code subnetId} in
          * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
          * At least one of them is required; if you provide both, the values must match.
+         * <p>
+         * If you are an Oracle Cloud VMware Solution customer and creating a secondary
+         * VNIC in a VLAN instead of a subnet, provide a {@code vlanId} instead of a {@code subnetId}.
+         * If you provide both a {@code vlanId} and {@code subnetId}, the request fails.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -345,6 +421,34 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * Provide this attribute only if you are an Oracle Cloud VMware Solution
+         * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+         * See {@link Vlan}.
+         * <p>
+         * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
+         * {@code vlanId} and {@code subnetId}, the request fails.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+        private String vlanId;
+
+        /**
+         * Provide this attribute only if you are an Oracle Cloud VMware Solution
+         * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+         * See {@link Vlan}.
+         * <p>
+         * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
+         * {@code vlanId} and {@code subnetId}, the request fails.
+         *
+         * @param vlanId the value to set
+         * @return this builder
+         **/
+        public Builder vlanId(String vlanId) {
+            this.vlanId = vlanId;
+            this.__explicitlySet__.add("vlanId");
             return this;
         }
 
@@ -355,6 +459,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             CreateVnicDetails model =
                     new CreateVnicDetails(
                             this.assignPublicIp,
+                            this.assignPrivateDnsRecord,
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
@@ -362,7 +467,8 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
                             this.nsgIds,
                             this.privateIp,
                             this.skipSourceDestCheck,
-                            this.subnetId);
+                            this.subnetId,
+                            this.vlanId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -373,6 +479,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         public Builder copy(CreateVnicDetails model) {
             if (model.wasPropertyExplicitlySet("assignPublicIp")) {
                 this.assignPublicIp(model.getAssignPublicIp());
+            }
+            if (model.wasPropertyExplicitlySet("assignPrivateDnsRecord")) {
+                this.assignPrivateDnsRecord(model.getAssignPrivateDnsRecord());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -397,6 +506,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("vlanId")) {
+                this.vlanId(model.getVlanId());
             }
             return this;
         }
@@ -434,6 +546,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * Example: {@code false}
+     * <p>
+     * If you specify a {@code vlanId}, then {@code assignPublicIp} must be set to false. See
+     * {@link Vlan}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignPublicIp")
@@ -460,11 +575,38 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * Example: {@code false}
+     * <p>
+     * If you specify a {@code vlanId}, then {@code assignPublicIp} must be set to false. See
+     * {@link Vlan}.
      *
      * @return the value
      **/
     public Boolean getAssignPublicIp() {
         return assignPublicIp;
+    }
+
+    /**
+     * Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+     * registration for the VNIC. If set to true, the DNS record will be registered. The default
+     * value is true.
+     * <p>
+     * If you specify a {@code hostnameLabel}, then {@code assignPrivateDnsRecord} must be set to true.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignPrivateDnsRecord")
+    private final Boolean assignPrivateDnsRecord;
+
+    /**
+     * Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+     * registration for the VNIC. If set to true, the DNS record will be registered. The default
+     * value is true.
+     * <p>
+     * If you specify a {@code hostnameLabel}, then {@code assignPrivateDnsRecord} must be set to true.
+     *
+     * @return the value
+     **/
+    public Boolean getAssignPrivateDnsRecord() {
+        return assignPrivateDnsRecord;
     }
 
     /**
@@ -524,7 +666,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -541,7 +683,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * If you provide both, the values must match.
      * <p>
-     * Example: {@code bminstance-1}
+     * Example: {@code bminstance1}
+     * <p>
+     * If you specify a {@code vlanId}, the {@code hostnameLabel} cannot be specified. VNICs on a VLAN
+     * can not be assigned a hostname. See {@link Vlan}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -550,7 +695,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -567,7 +712,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * If you provide both, the values must match.
      * <p>
-     * Example: {@code bminstance-1}
+     * Example: {@code bminstance1}
+     * <p>
+     * If you specify a {@code vlanId}, the {@code hostnameLabel} cannot be specified. VNICs on a VLAN
+     * can not be assigned a hostname. See {@link Vlan}.
      *
      * @return the value
      **/
@@ -579,6 +727,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
      * information about NSGs, see
      * {@link NetworkSecurityGroup}.
+     * <p>
+     * If a {@code vlanId} is specified, the {@code nsgIds} cannot be specified. The {@code vlanId}
+     * indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+     * all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+     * See {@link Vlan}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
@@ -588,6 +741,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
      * information about NSGs, see
      * {@link NetworkSecurityGroup}.
+     * <p>
+     * If a {@code vlanId} is specified, the {@code nsgIds} cannot be specified. The {@code vlanId}
+     * indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+     * all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+     * See {@link Vlan}.
      *
      * @return the value
      **/
@@ -606,6 +764,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      *
+     * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
+     * See {@link Vlan}.
+     * <p>
      * Example: {@code 10.0.3.3}
      *
      **/
@@ -623,6 +784,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      *
+     * If you specify a {@code vlanId}, the {@code privateIp} cannot be specified.
+     * See {@link Vlan}.
+     * <p>
      * Example: {@code 10.0.3.3}
      *
      * @return the value
@@ -638,6 +802,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
+     * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
+     * source/destination check is always disabled for VNICs in a VLAN. See
+     * {@link Vlan}.
+     * <p>
      * Example: {@code true}
      *
      **/
@@ -651,6 +819,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      *
+     * If you specify a {@code vlanId}, the {@code skipSourceDestCheck} cannot be specified because the
+     * source/destination check is always disabled for VNICs in a VLAN. See
+     * {@link Vlan}.
+     * <p>
      * Example: {@code true}
      *
      * @return the value
@@ -664,6 +836,10 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * use this {@code subnetId} instead of the deprecated {@code subnetId} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
+     * <p>
+     * If you are an Oracle Cloud VMware Solution customer and creating a secondary
+     * VNIC in a VLAN instead of a subnet, provide a {@code vlanId} instead of a {@code subnetId}.
+     * If you provide both a {@code vlanId} and {@code subnetId}, the request fails.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -674,11 +850,41 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      * use this {@code subnetId} instead of the deprecated {@code subnetId} in
      * {@link #launchInstanceDetails(LaunchInstanceDetailsRequest) launchInstanceDetails}.
      * At least one of them is required; if you provide both, the values must match.
+     * <p>
+     * If you are an Oracle Cloud VMware Solution customer and creating a secondary
+     * VNIC in a VLAN instead of a subnet, provide a {@code vlanId} instead of a {@code subnetId}.
+     * If you provide both a {@code vlanId} and {@code subnetId}, the request fails.
      *
      * @return the value
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * Provide this attribute only if you are an Oracle Cloud VMware Solution
+     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
+     * <p>
+     * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
+     * {@code vlanId} and {@code subnetId}, the request fails.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+    private final String vlanId;
+
+    /**
+     * Provide this attribute only if you are an Oracle Cloud VMware Solution
+     * customer and creating a secondary VNIC in a VLAN. The value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
+     * See {@link Vlan}.
+     * <p>
+     * Provide a {@code vlanId} instead of a {@code subnetId}. If you provide both a
+     * {@code vlanId} and {@code subnetId}, the request fails.
+     *
+     * @return the value
+     **/
+    public String getVlanId() {
+        return vlanId;
     }
 
     @Override
@@ -696,6 +902,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         sb.append("CreateVnicDetails(");
         sb.append("super=").append(super.toString());
         sb.append("assignPublicIp=").append(String.valueOf(this.assignPublicIp));
+        sb.append(", assignPrivateDnsRecord=").append(String.valueOf(this.assignPrivateDnsRecord));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -704,6 +911,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append(")");
         return sb.toString();
     }
@@ -719,6 +927,8 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
 
         CreateVnicDetails other = (CreateVnicDetails) o;
         return java.util.Objects.equals(this.assignPublicIp, other.assignPublicIp)
+                && java.util.Objects.equals(
+                        this.assignPrivateDnsRecord, other.assignPrivateDnsRecord)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -727,6 +937,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.vlanId, other.vlanId)
                 && super.equals(other);
     }
 
@@ -737,6 +948,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.assignPublicIp == null ? 43 : this.assignPublicIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignPrivateDnsRecord == null
+                                ? 43
+                                : this.assignPrivateDnsRecord.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
@@ -751,6 +967,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
                                 ? 43
                                 : this.skipSourceDestCheck.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

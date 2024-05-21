@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Problem History Definition.
+ * Problem history definition.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,7 +32,8 @@ public final class ProblemHistorySummary
         "eventStatus",
         "timeCreated",
         "delta",
-        "comment"
+        "comment",
+        "locks"
     })
     public ProblemHistorySummary(
             String id,
@@ -44,7 +45,8 @@ public final class ProblemHistorySummary
             EventStatus eventStatus,
             java.util.Date timeCreated,
             String delta,
-            String comment) {
+            String comment,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.problemId = problemId;
@@ -56,6 +58,7 @@ public final class ProblemHistorySummary
         this.timeCreated = timeCreated;
         this.delta = delta;
         this.comment = comment;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -77,13 +80,13 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * problemId for which history is associated to.
+         * Problem ID with which history is associated
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * problemId for which history is associated to.
+         * Problem ID with which history is associated
          * @param problemId the value to set
          * @return this builder
          **/
@@ -93,13 +96,13 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * Actor type who performed the operation
+         * Type of actor who performed the operation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorType")
         private ActorType actorType;
 
         /**
-         * Actor type who performed the operation
+         * Type of actor who performed the operation
          * @param actorType the value to set
          * @return this builder
          **/
@@ -109,13 +112,13 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * Resource Name who performed activity
+         * Resource name who performed the activity
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("actorName")
         private String actorName;
 
         /**
-         * Resource Name who performed activity
+         * Resource name who performed the activity
          * @param actorName the value to set
          * @return this builder
          **/
@@ -141,13 +144,13 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * Problem Lifecycle Detail Status
+         * Additional details on the substate of the lifecycle state
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private ProblemLifecycleDetail lifecycleDetail;
 
         /**
-         * Problem Lifecycle Detail Status
+         * Additional details on the substate of the lifecycle state
          * @param lifecycleDetail the value to set
          * @return this builder
          **/
@@ -173,13 +176,13 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * Type of the Entity
+         * Date and time the problem was created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Type of the Entity
+         * Date and time the problem was created
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -189,13 +192,13 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * Impacted Resource Names in a comma-separated string.
+         * Impacted resource names in a comma-separated string
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("delta")
         private String delta;
 
         /**
-         * Impacted Resource Names in a comma-separated string.
+         * Impacted resource names in a comma-separated string
          * @param delta the value to set
          * @return this builder
          **/
@@ -205,19 +208,35 @@ public final class ProblemHistorySummary
             return this;
         }
         /**
-         * User Defined Comments
+         * User-defined comments
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
-         * User Defined Comments
+         * User-defined comments
          * @param comment the value to set
          * @return this builder
          **/
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -236,7 +255,8 @@ public final class ProblemHistorySummary
                             this.eventStatus,
                             this.timeCreated,
                             this.delta,
-                            this.comment);
+                            this.comment,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -275,6 +295,9 @@ public final class ProblemHistorySummary
             if (model.wasPropertyExplicitlySet("comment")) {
                 this.comment(model.getComment());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -305,13 +328,13 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * problemId for which history is associated to.
+     * Problem ID with which history is associated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * problemId for which history is associated to.
+     * Problem ID with which history is associated
      * @return the value
      **/
     public String getProblemId() {
@@ -319,13 +342,13 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * Actor type who performed the operation
+     * Type of actor who performed the operation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorType")
     private final ActorType actorType;
 
     /**
-     * Actor type who performed the operation
+     * Type of actor who performed the operation
      * @return the value
      **/
     public ActorType getActorType() {
@@ -333,13 +356,13 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * Resource Name who performed activity
+     * Resource name who performed the activity
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actorName")
     private final String actorName;
 
     /**
-     * Resource Name who performed activity
+     * Resource name who performed the activity
      * @return the value
      **/
     public String getActorName() {
@@ -361,13 +384,13 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * Problem Lifecycle Detail Status
+     * Additional details on the substate of the lifecycle state
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final ProblemLifecycleDetail lifecycleDetail;
 
     /**
-     * Problem Lifecycle Detail Status
+     * Additional details on the substate of the lifecycle state
      * @return the value
      **/
     public ProblemLifecycleDetail getLifecycleDetail() {
@@ -389,13 +412,13 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * Type of the Entity
+     * Date and time the problem was created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Type of the Entity
+     * Date and time the problem was created
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -403,13 +426,13 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * Impacted Resource Names in a comma-separated string.
+     * Impacted resource names in a comma-separated string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("delta")
     private final String delta;
 
     /**
-     * Impacted Resource Names in a comma-separated string.
+     * Impacted resource names in a comma-separated string
      * @return the value
      **/
     public String getDelta() {
@@ -417,17 +440,31 @@ public final class ProblemHistorySummary
     }
 
     /**
-     * User Defined Comments
+     * User-defined comments
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
-     * User Defined Comments
+     * User-defined comments
      * @return the value
      **/
     public String getComment() {
         return comment;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -454,6 +491,7 @@ public final class ProblemHistorySummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", delta=").append(String.valueOf(this.delta));
         sb.append(", comment=").append(String.valueOf(this.comment));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -478,6 +516,7 @@ public final class ProblemHistorySummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.delta, other.delta)
                 && java.util.Objects.equals(this.comment, other.comment)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -497,6 +536,7 @@ public final class ProblemHistorySummary
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.delta == null ? 43 : this.delta.hashCode());
         result = (result * PRIME) + (this.comment == null ? 43 : this.comment.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

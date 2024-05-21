@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,35 +14,35 @@ public class UpdateResponderRecipeResponderRuleRequest
                 com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails> {
 
     /**
-     * OCID of ResponderRecipe
+     * OCID of the responder recipe.
      */
     private String responderRecipeId;
 
     /**
-     * OCID of ResponderRecipe
+     * OCID of the responder recipe.
      */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
     /**
-     * The id of ResponderRule
+     * Unique identifier of the responder rule.
      */
     private String responderRuleId;
 
     /**
-     * The id of ResponderRule
+     * Unique identifier of the responder rule.
      */
     public String getResponderRuleId() {
         return responderRuleId;
     }
     /**
-     * The details to be updated for ResponderRule.
+     * The details to be updated for responder rule
      */
     private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
             updateResponderRecipeResponderRuleDetails;
 
     /**
-     * The details to be updated for ResponderRule.
+     * The details to be updated for responder rule
      */
     public com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
             getUpdateResponderRecipeResponderRuleDetails() {
@@ -100,12 +100,12 @@ public class UpdateResponderRecipeResponderRuleRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          */
         private String responderRecipeId = null;
 
         /**
-         * OCID of ResponderRecipe
+         * OCID of the responder recipe.
          * @param responderRecipeId the value to set
          * @return this builder instance
          */
@@ -115,12 +115,12 @@ public class UpdateResponderRecipeResponderRuleRequest
         }
 
         /**
-         * The id of ResponderRule
+         * Unique identifier of the responder rule.
          */
         private String responderRuleId = null;
 
         /**
-         * The id of ResponderRule
+         * Unique identifier of the responder rule.
          * @param responderRuleId the value to set
          * @return this builder instance
          */
@@ -130,13 +130,13 @@ public class UpdateResponderRecipeResponderRuleRequest
         }
 
         /**
-         * The details to be updated for ResponderRule.
+         * The details to be updated for responder rule
          */
         private com.oracle.bmc.cloudguard.model.UpdateResponderRecipeResponderRuleDetails
                 updateResponderRecipeResponderRuleDetails = null;
 
         /**
-         * The details to be updated for ResponderRule.
+         * The details to be updated for responder rule
          * @param updateResponderRecipeResponderRuleDetails the value to set
          * @return this builder instance
          */

@@ -1,15 +1,18 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.http.internal.IdleConnectionMonitor;
+import com.oracle.bmc.internal.ClientThreadFactory;
 import com.oracle.bmc.util.JavaRuntimeUtils;
 import com.oracle.bmc.util.internal.Validate;
 import javax.annotation.Nonnull;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -24,6 +27,8 @@ import org.glassfish.jersey.client.spi.ConnectorProvider;
 import org.slf4j.Logger;
 import javax.net.ssl.SSLContext;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class ApacheConnectorPropertiesClientConfigDecorator implements ClientConfigDecorator {
@@ -56,29 +61,31 @@ public class ApacheConnectorPropertiesClientConfigDecorator implements ClientCon
                         provider.getClass().getCanonicalName()));
 
         // Defining the connection manager takes precedence over the other default options for Connection Manager
+        HttpClientConnectionManager connectionManager = null;
         if (config.getConnectionManager() != null) {
-            clientConfig.property(
-                    ApacheClientProperties.CONNECTION_MANAGER, config.getConnectionManager());
+            connectionManager = config.getConnectionManager();
+            clientConfig.property(ApacheClientProperties.CONNECTION_MANAGER, connectionManager);
         }
         // if connection pooling is switched on, either go for the default connection pooling config or the user
         // defined connection pooling config
         else if (config.isConnectionPooling()) {
             final Registry<ConnectionSocketFactory> registry = getRegistry();
             final Map.Entry<Integer, TimeUnit> ttl = config.getConnectionPoolConfig().getTtl();
-            final PoolingHttpClientConnectionManager poolConnectionManager;
             if (registry != null) {
-                poolConnectionManager =
+                connectionManager =
                         (ttl != null)
                                 ? new PoolingHttpClientConnectionManager(
                                         registry, null, null, null, ttl.getKey(), ttl.getValue())
                                 : new PoolingHttpClientConnectionManager(registry);
             } else {
-                poolConnectionManager =
+                connectionManager =
                         (ttl != null)
                                 ? new PoolingHttpClientConnectionManager(
                                         ttl.getKey(), ttl.getValue())
                                 : new PoolingHttpClientConnectionManager();
             }
+            PoolingHttpClientConnectionManager poolConnectionManager =
+                    (PoolingHttpClientConnectionManager) connectionManager;
             poolConnectionManager.setMaxTotal(
                     config.getConnectionPoolConfig().getTotalOpenConnections());
             poolConnectionManager.setDefaultMaxPerRoute(
@@ -91,10 +98,19 @@ public class ApacheConnectorPropertiesClientConfigDecorator implements ClientCon
         // to be used by one execution thread only, as only one thread a time can lease the connection at a time.
         // This connection manager implementation should be used inside an EJB container
         else if (!config.isConnectionPooling()) {
-            BasicHttpClientConnectionManager basicHttpClientConnectionManager =
-                    new BasicHttpClientConnectionManager();
-            clientConfig.property(
-                    ApacheClientProperties.CONNECTION_MANAGER, basicHttpClientConnectionManager);
+            connectionManager = new BasicHttpClientConnectionManager();
+            clientConfig.property(ApacheClientProperties.CONNECTION_MANAGER, connectionManager);
+        }
+
+        if (connectionManager != null && config.isIdleConnectionMonitorThreadEnabled()) {
+            try {
+                IdleConnectionMonitor.registerConnectionManager(
+                        connectionManager,
+                        config.getIdleConnectionMonitorThreadWaitTimeInSeconds(),
+                        config.getIdleConnectionMonitorThreadIdleTimeoutInSeconds());
+            } catch (Exception ex) {
+                LOG.info("Error creating/executing idle connection monitor thread", ex);
+            }
         }
 
         if (config.getKeepAliveStrategy() != null) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -7,6 +7,9 @@ package com.oracle.bmc.http.internal;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
+import com.oracle.bmc.http.ApacheConfigurator;
+import com.oracle.bmc.http.ApacheConnectorProperties;
+import com.oracle.bmc.internal.ClientThreadFactory;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.Consumer;
@@ -25,6 +28,8 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.net.URI;
 import java.time.Duration;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -36,6 +41,7 @@ public class RestClientTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
+        IdleConnectionMonitor.shutdown();
     }
 
     @Test
@@ -313,5 +319,156 @@ public class RestClientTest {
                 fail("The circuit-breaker should be disabled");
             }
         }
+    }
+
+    @Test
+    public void validateEnabledIdleConnectionMonitorThread() throws InterruptedException {
+        final ApacheConnectorProperties apacheConnectorProperties =
+                ApacheConnectorProperties.builder()
+                        .idleConnectionMonitorThreadEnabled(
+                                true) // To enable the idle connection monitor thread
+                        .idleConnectionMonitorThreadIdleTimeoutInSeconds(
+                                20) // to set the connection idle timeout
+                        .idleConnectionMonitorThreadWaitTimeInSeconds(
+                                5) // to set the idle connection monitor thread wait time
+                        .build();
+        final ApacheConfigurator configurator =
+                new ApacheConfigurator.NonBuffering(apacheConnectorProperties);
+
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .clientConfigurator(configurator)
+                        .build()
+                        .create(null, null, ClientConfiguration.builder().build());
+
+        IdleConnectionMonitor instance = IdleConnectionMonitor.instance;
+        assertNotNull(instance);
+        assertFalse(instance.isIdleConnectionMonitorThreadClosed());
+
+        client.close();
+
+        System.gc();
+        Thread.sleep(1000);
+
+        assertTrue(instance.isIdleConnectionMonitorThreadClosed());
+    }
+
+    @Test
+    public void validateDisabledIdleConnectionMonitorThread() {
+
+        final ApacheConnectorProperties apacheConnectorProperties =
+                ApacheConnectorProperties.builder()
+                        .idleConnectionMonitorThreadEnabled(
+                                false) // To enable the idle connection monitor thread
+                        .build();
+        final ApacheConfigurator configurator =
+                new ApacheConfigurator.NonBuffering(apacheConnectorProperties);
+
+        RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .clientConfigurator(configurator)
+                        .build()
+                        .create(null, null, ClientConfiguration.builder().build());
+
+        assertNull(IdleConnectionMonitor.instance);
+        client.close();
+    }
+
+    @Test
+    public void validateExecutorServiceWithoutShutdown() throws InterruptedException {
+
+        ExecutorService executorService =
+                Executors.newFixedThreadPool(
+                        1,
+                        ClientThreadFactory.builder()
+                                .nameFormat(
+                                        "idle-connection-monitor-thread-"
+                                                + System.currentTimeMillis()
+                                                + "-%d")
+                                .isDaemon(true)
+                                .build());
+
+        MockIdleConnectionMonitor idleConnectionMonitor = new MockIdleConnectionMonitor();
+
+        //Execute thread
+        executorService.execute(idleConnectionMonitor);
+        assertFalse(idleConnectionMonitor.shutdown);
+        assertFalse(executorService.isTerminated());
+
+        //Close IdleConnectionMonitor thread
+        idleConnectionMonitor.shutdown();
+        Thread.sleep(2000);
+        assertTrue(idleConnectionMonitor.shutdown); //IdleConnectionMonitor thread closed
+        assertFalse(
+                executorService
+                        .isTerminated()); //ExecutorService is still open and holding resources
+    }
+
+    @Test
+    public void validateExecutorServiceOnShutdown() throws InterruptedException {
+
+        ExecutorService executorService =
+                Executors.newFixedThreadPool(
+                        1,
+                        ClientThreadFactory.builder()
+                                .nameFormat(
+                                        "idle-connection-monitor-thread-"
+                                                + System.currentTimeMillis()
+                                                + "-%d")
+                                .isDaemon(true)
+                                .build());
+
+        MockIdleConnectionMonitor idleConnectionMonitor = new MockIdleConnectionMonitor();
+        executorService.execute(idleConnectionMonitor);
+        assertFalse(idleConnectionMonitor.shutdown);
+        assertFalse(executorService.isTerminated());
+
+        //Shutdown ExecutorService
+        executorService.shutdown();
+        Thread.sleep(2000);
+        assertFalse(idleConnectionMonitor.shutdown); // IdleConnectionMonitor thread running
+        assertFalse(
+                executorService.isTerminated()); // ExecutorService waiting for thread to complete
+
+        //Close IdleConnectionMonitor thread
+        idleConnectionMonitor.shutdown();
+        Thread.sleep(2000);
+        assertTrue(idleConnectionMonitor.shutdown); // IdleConnectionMonitor thread closed
+        assertTrue(executorService.isTerminated()); // ExecutorService gracefully closed
+    }
+
+    class MockIdleConnectionMonitor implements Runnable {
+
+        private volatile boolean shutdown;
+
+        @Override
+        public void run() {
+            while (!shutdown) {
+                synchronized (this) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        // InterruptedException
+                    }
+                }
+            }
+        }
+
+        public void shutdown() {
+            shutdown = true;
+            synchronized (this) {
+                notifyAll();
+            }
+        }
+    }
+
+    @Test
+    public void validateClientCloseIdempotency() {
+        try (RestClient client =
+                RestClientFactoryBuilder.builder()
+                        .build()
+                        .create(null, null, ClientConfiguration.builder().build())) {
+            client.close();
+        } // Client should not throw an IllegalStateException error if close() is called multiple times
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -67,13 +67,34 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
+        /**
+         * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+         * Routes from the VCN ingress route table are always imported.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+        private VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType;
+
+        /**
+         * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+         * Routes from the VCN ingress route table are always imported.
+         *
+         * @param vcnRouteType the value to set
+         * @return this builder
+         **/
+        public Builder vcnRouteType(VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType) {
+            this.vcnRouteType = vcnRouteType;
+            this.__explicitlySet__.add("vcnRouteType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnDrgAttachmentNetworkCreateDetails build() {
             VcnDrgAttachmentNetworkCreateDetails model =
-                    new VcnDrgAttachmentNetworkCreateDetails(this.id, this.routeTableId);
+                    new VcnDrgAttachmentNetworkCreateDetails(
+                            this.id, this.routeTableId, this.vcnRouteType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +108,9 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnRouteType")) {
+                this.vcnRouteType(model.getVcnRouteType());
             }
             return this;
         }
@@ -104,9 +128,13 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
     }
 
     @Deprecated
-    public VcnDrgAttachmentNetworkCreateDetails(String id, String routeTableId) {
+    public VcnDrgAttachmentNetworkCreateDetails(
+            String id,
+            String routeTableId,
+            VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType) {
         super(id);
         this.routeTableId = routeTableId;
+        this.vcnRouteType = vcnRouteType;
     }
 
     /**
@@ -139,6 +167,24 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
         return routeTableId;
     }
 
+    /**
+     * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+     * Routes from the VCN ingress route table are always imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+    private final VcnDrgAttachmentNetworkDetails.VcnRouteType vcnRouteType;
+
+    /**
+     * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+     * Routes from the VCN ingress route table are always imported.
+     *
+     * @return the value
+     **/
+    public VcnDrgAttachmentNetworkDetails.VcnRouteType getVcnRouteType() {
+        return vcnRouteType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -154,6 +200,7 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
         sb.append("VcnDrgAttachmentNetworkCreateDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", vcnRouteType=").append(String.valueOf(this.vcnRouteType));
         sb.append(")");
         return sb.toString();
     }
@@ -169,6 +216,7 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
 
         VcnDrgAttachmentNetworkCreateDetails other = (VcnDrgAttachmentNetworkCreateDetails) o;
         return java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.vcnRouteType, other.vcnRouteType)
                 && super.equals(other);
     }
 
@@ -177,6 +225,7 @@ public final class VcnDrgAttachmentNetworkCreateDetails extends DrgAttachmentNet
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.vcnRouteType == null ? 43 : this.vcnRouteType.hashCode());
         return result;
     }
 }

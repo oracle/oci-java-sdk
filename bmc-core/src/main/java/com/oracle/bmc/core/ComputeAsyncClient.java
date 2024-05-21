@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -835,6 +835,68 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeComputeCapacityTopologyCompartmentResponse>
+            changeComputeCapacityTopologyCompartment(
+                    ChangeComputeCapacityTopologyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeComputeCapacityTopologyCompartmentRequest,
+                                    ChangeComputeCapacityTopologyCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeComputeCapacityTopologyCompartment");
+        final ChangeComputeCapacityTopologyCompartmentRequest interceptedRequest =
+                ChangeComputeCapacityTopologyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeComputeCapacityTopologyCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ChangeComputeCapacityTopologyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ChangeComputeCapacityTopologyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeComputeCapacityTopologyCompartmentResponse>
+                transformer =
+                        ChangeComputeCapacityTopologyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeComputeCapacityTopologyCompartmentRequest,
+                        ChangeComputeCapacityTopologyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeComputeCapacityTopologyCompartmentRequest,
+                                ChangeComputeCapacityTopologyCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeComputeCapacityTopologyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeComputeCapacityTopologyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeComputeCapacityTopologyCompartmentRequest,
+                    ChangeComputeCapacityTopologyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeComputeClusterCompartmentResponse>
             changeComputeClusterCompartment(
                     ChangeComputeClusterCompartmentRequest request,
@@ -1297,6 +1359,63 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateComputeCapacityTopologyResponse>
+            createComputeCapacityTopology(
+                    CreateComputeCapacityTopologyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateComputeCapacityTopologyRequest,
+                                    CreateComputeCapacityTopologyResponse>
+                            handler) {
+        LOG.trace("Called async createComputeCapacityTopology");
+        final CreateComputeCapacityTopologyRequest interceptedRequest =
+                CreateComputeCapacityTopologyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateComputeCapacityTopologyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "CreateComputeCapacityTopology",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateComputeCapacityTopologyResponse>
+                transformer =
+                        CreateComputeCapacityTopologyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateComputeCapacityTopologyRequest, CreateComputeCapacityTopologyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateComputeCapacityTopologyRequest,
+                                CreateComputeCapacityTopologyResponse>,
+                        java.util.concurrent.Future<CreateComputeCapacityTopologyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateComputeCapacityTopologyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateComputeCapacityTopologyRequest, CreateComputeCapacityTopologyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateComputeClusterResponse> createComputeCluster(
             CreateComputeClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1662,6 +1781,57 @@ public class ComputeAsyncClient implements ComputeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteComputeCapacityReservationRequest,
                     DeleteComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteComputeCapacityTopologyResponse>
+            deleteComputeCapacityTopology(
+                    DeleteComputeCapacityTopologyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteComputeCapacityTopologyRequest,
+                                    DeleteComputeCapacityTopologyResponse>
+                            handler) {
+        LOG.trace("Called async deleteComputeCapacityTopology");
+        final DeleteComputeCapacityTopologyRequest interceptedRequest =
+                DeleteComputeCapacityTopologyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteComputeCapacityTopologyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "DeleteComputeCapacityTopology",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/DeleteComputeCapacityTopology");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteComputeCapacityTopologyResponse>
+                transformer =
+                        DeleteComputeCapacityTopologyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteComputeCapacityTopologyRequest, DeleteComputeCapacityTopologyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteComputeCapacityTopologyRequest,
+                                DeleteComputeCapacityTopologyResponse>,
+                        java.util.concurrent.Future<DeleteComputeCapacityTopologyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteComputeCapacityTopologyRequest, DeleteComputeCapacityTopologyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2382,6 +2552,57 @@ public class ComputeAsyncClient implements ComputeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetComputeCapacityReservationRequest, GetComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetComputeCapacityTopologyResponse>
+            getComputeCapacityTopology(
+                    GetComputeCapacityTopologyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetComputeCapacityTopologyRequest,
+                                    GetComputeCapacityTopologyResponse>
+                            handler) {
+        LOG.trace("Called async getComputeCapacityTopology");
+        final GetComputeCapacityTopologyRequest interceptedRequest =
+                GetComputeCapacityTopologyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComputeCapacityTopologyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetComputeCapacityTopology",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/GetComputeCapacityTopology");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetComputeCapacityTopologyResponse>
+                transformer =
+                        GetComputeCapacityTopologyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetComputeCapacityTopologyRequest, GetComputeCapacityTopologyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetComputeCapacityTopologyRequest,
+                                GetComputeCapacityTopologyResponse>,
+                        java.util.concurrent.Future<GetComputeCapacityTopologyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetComputeCapacityTopologyRequest, GetComputeCapacityTopologyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3645,6 +3866,225 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListComputeCapacityTopologiesResponse>
+            listComputeCapacityTopologies(
+                    ListComputeCapacityTopologiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologiesRequest,
+                                    ListComputeCapacityTopologiesResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityTopologies");
+        final ListComputeCapacityTopologiesRequest interceptedRequest =
+                ListComputeCapacityTopologiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityTopologiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/ListComputeCapacityTopologies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListComputeCapacityTopologiesResponse>
+                transformer =
+                        ListComputeCapacityTopologiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityTopologiesRequest, ListComputeCapacityTopologiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityTopologiesRequest,
+                                ListComputeCapacityTopologiesResponse>,
+                        java.util.concurrent.Future<ListComputeCapacityTopologiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityTopologiesRequest, ListComputeCapacityTopologiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+            listComputeCapacityTopologyComputeBareMetalHosts(
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeBareMetalHostsRequest,
+                                    ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityTopologyComputeBareMetalHosts");
+        final ListComputeCapacityTopologyComputeBareMetalHostsRequest interceptedRequest =
+                ListComputeCapacityTopologyComputeBareMetalHostsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityTopologyComputeBareMetalHostsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeBareMetalHosts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeBareMetalHost/ListComputeCapacityTopologyComputeBareMetalHosts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+                transformer =
+                        ListComputeCapacityTopologyComputeBareMetalHostsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityTopologyComputeBareMetalHostsRequest,
+                        ListComputeCapacityTopologyComputeBareMetalHostsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityTopologyComputeBareMetalHostsRequest,
+                                ListComputeCapacityTopologyComputeBareMetalHostsResponse>,
+                        java.util.concurrent.Future<
+                                ListComputeCapacityTopologyComputeBareMetalHostsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityTopologyComputeBareMetalHostsRequest,
+                    ListComputeCapacityTopologyComputeBareMetalHostsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeCapacityTopologyComputeHpcIslandsResponse>
+            listComputeCapacityTopologyComputeHpcIslands(
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeHpcIslandsRequest,
+                                    ListComputeCapacityTopologyComputeHpcIslandsResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityTopologyComputeHpcIslands");
+        final ListComputeCapacityTopologyComputeHpcIslandsRequest interceptedRequest =
+                ListComputeCapacityTopologyComputeHpcIslandsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityTopologyComputeHpcIslandsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeHpcIslands",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeHpcIsland/ListComputeCapacityTopologyComputeHpcIslands");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse>
+                transformer =
+                        ListComputeCapacityTopologyComputeHpcIslandsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityTopologyComputeHpcIslandsRequest,
+                        ListComputeCapacityTopologyComputeHpcIslandsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityTopologyComputeHpcIslandsRequest,
+                                ListComputeCapacityTopologyComputeHpcIslandsResponse>,
+                        java.util.concurrent.Future<
+                                ListComputeCapacityTopologyComputeHpcIslandsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityTopologyComputeHpcIslandsRequest,
+                    ListComputeCapacityTopologyComputeHpcIslandsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+            listComputeCapacityTopologyComputeNetworkBlocks(
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListComputeCapacityTopologyComputeNetworkBlocksRequest,
+                                    ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+                            handler) {
+        LOG.trace("Called async listComputeCapacityTopologyComputeNetworkBlocks");
+        final ListComputeCapacityTopologyComputeNetworkBlocksRequest interceptedRequest =
+                ListComputeCapacityTopologyComputeNetworkBlocksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListComputeCapacityTopologyComputeNetworkBlocksConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListComputeCapacityTopologyComputeNetworkBlocks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeNetworkBlock/ListComputeCapacityTopologyComputeNetworkBlocks");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+                transformer =
+                        ListComputeCapacityTopologyComputeNetworkBlocksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListComputeCapacityTopologyComputeNetworkBlocksRequest,
+                        ListComputeCapacityTopologyComputeNetworkBlocksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListComputeCapacityTopologyComputeNetworkBlocksRequest,
+                                ListComputeCapacityTopologyComputeNetworkBlocksResponse>,
+                        java.util.concurrent.Future<
+                                ListComputeCapacityTopologyComputeNetworkBlocksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListComputeCapacityTopologyComputeNetworkBlocksRequest,
+                    ListComputeCapacityTopologyComputeNetworkBlocksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComputeClustersResponse> listComputeClusters(
             ListComputeClustersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4620,6 +5060,62 @@ public class ComputeAsyncClient implements ComputeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateComputeCapacityReservationRequest,
                     UpdateComputeCapacityReservationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateComputeCapacityTopologyResponse>
+            updateComputeCapacityTopology(
+                    UpdateComputeCapacityTopologyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateComputeCapacityTopologyRequest,
+                                    UpdateComputeCapacityTopologyResponse>
+                            handler) {
+        LOG.trace("Called async updateComputeCapacityTopology");
+        final UpdateComputeCapacityTopologyRequest interceptedRequest =
+                UpdateComputeCapacityTopologyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateComputeCapacityTopologyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateComputeCapacityTopology",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityTopology/UpdateComputeCapacityTopology");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateComputeCapacityTopologyResponse>
+                transformer =
+                        UpdateComputeCapacityTopologyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateComputeCapacityTopologyRequest, UpdateComputeCapacityTopologyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateComputeCapacityTopologyRequest,
+                                UpdateComputeCapacityTopologyResponse>,
+                        java.util.concurrent.Future<UpdateComputeCapacityTopologyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateComputeCapacityTopologyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateComputeCapacityTopologyRequest, UpdateComputeCapacityTopologyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

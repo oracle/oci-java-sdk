@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -33,6 +33,8 @@ public final class RecoveryServiceSubnetSummary
         "compartmentId",
         "vcnId",
         "subnetId",
+        "subnets",
+        "nsgIds",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -47,6 +49,8 @@ public final class RecoveryServiceSubnetSummary
             String compartmentId,
             String vcnId,
             String subnetId,
+            java.util.List<String> subnets,
+            java.util.List<String> nsgIds,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -60,6 +64,8 @@ public final class RecoveryServiceSubnetSummary
         this.compartmentId = compartmentId;
         this.vcnId = vcnId;
         this.subnetId = subnetId;
+        this.subnets = subnets;
+        this.nsgIds = nsgIds;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -136,19 +142,61 @@ public final class RecoveryServiceSubnetSummary
             return this;
         }
         /**
-         * The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+         * Deprecated. One of the subnets associated with the Recovery Service subnet.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+         * Deprecated. One of the subnets associated with the Recovery Service subnet.
+         *
          * @param subnetId the value to set
          * @return this builder
          **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subnets")
+        private java.util.List<String> subnets;
+
+        /**
+         * A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+         * @param subnets the value to set
+         * @return this builder
+         **/
+        public Builder subnets(java.util.List<String> subnets) {
+            this.subnets = subnets;
+            this.__explicitlySet__.add("subnets");
+            return this;
+        }
+        /**
+         * A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+         * You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+         * Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+         * See {@link NetworkSecurityGroup} for more information.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        /**
+         * A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+         * You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+         * Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+         * See {@link NetworkSecurityGroup} for more information.
+         *
+         * @param nsgIds the value to set
+         * @return this builder
+         **/
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
@@ -189,13 +237,6 @@ public final class RecoveryServiceSubnetSummary
         }
         /**
          * The current state of the recovery service subnet.
-         * Allowed values are:
-         *   - CREATING
-         *   - UPDATING
-         *   - ACTIVE
-         *   - DELETING
-         *   - DELETED
-         *   - FAILED
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -203,13 +244,6 @@ public final class RecoveryServiceSubnetSummary
 
         /**
          * The current state of the recovery service subnet.
-         * Allowed values are:
-         *   - CREATING
-         *   - UPDATING
-         *   - ACTIVE
-         *   - DELETING
-         *   - DELETED
-         *   - FAILED
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -308,6 +342,8 @@ public final class RecoveryServiceSubnetSummary
                             this.compartmentId,
                             this.vcnId,
                             this.subnetId,
+                            this.subnets,
+                            this.nsgIds,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -337,6 +373,12 @@ public final class RecoveryServiceSubnetSummary
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("subnets")) {
+                this.subnets(model.getSubnets());
+            }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -431,17 +473,55 @@ public final class RecoveryServiceSubnetSummary
     }
 
     /**
-     * The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+     * Deprecated. One of the subnets associated with the Recovery Service subnet.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The OCID of the subnet associated with the recovery service subnet. You can create a single backup network per virtual cloud network (VCN).
+     * Deprecated. One of the subnets associated with the Recovery Service subnet.
+     *
      * @return the value
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnets")
+    private final java.util.List<String> subnets;
+
+    /**
+     * A list of OCIDs of all the subnets associated with the Recovery Service subnet.
+     * @return the value
+     **/
+    public java.util.List<String> getSubnets() {
+        return subnets;
+    }
+
+    /**
+     * A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+     * You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+     * Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+     * See {@link NetworkSecurityGroup} for more information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    private final java.util.List<String> nsgIds;
+
+    /**
+     * A list of network security group (NSG) OCIDs that are associated with the Recovery Service subnet.
+     * You can specify a maximum of 5 unique OCIDs, which implies that you can associate a maximum of 5 NSGs to each Recovery Service subnet.
+     * Specify an empty array if you want to remove all the associated NSGs from a Recovery Service subnet.
+     * See {@link NetworkSecurityGroup} for more information.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getNsgIds() {
+        return nsgIds;
     }
 
     /**
@@ -478,13 +558,6 @@ public final class RecoveryServiceSubnetSummary
 
     /**
      * The current state of the recovery service subnet.
-     * Allowed values are:
-     *   - CREATING
-     *   - UPDATING
-     *   - ACTIVE
-     *   - DELETING
-     *   - DELETED
-     *   - FAILED
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -492,13 +565,6 @@ public final class RecoveryServiceSubnetSummary
 
     /**
      * The current state of the recovery service subnet.
-     * Allowed values are:
-     *   - CREATING
-     *   - UPDATING
-     *   - ACTIVE
-     *   - DELETING
-     *   - DELETED
-     *   - FAILED
      *
      * @return the value
      **/
@@ -593,6 +659,8 @@ public final class RecoveryServiceSubnetSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", subnets=").append(String.valueOf(this.subnets));
+        sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -619,6 +687,8 @@ public final class RecoveryServiceSubnetSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.subnets, other.subnets)
+                && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -640,6 +710,8 @@ public final class RecoveryServiceSubnetSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.subnets == null ? 43 : this.subnets.hashCode());
+        result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

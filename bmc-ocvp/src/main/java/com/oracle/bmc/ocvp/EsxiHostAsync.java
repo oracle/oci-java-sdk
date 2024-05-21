@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -12,7 +12,7 @@ import com.oracle.bmc.ocvp.responses.*;
  * For more information, see [Oracle Cloud VMware Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  *
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface EsxiHostAsync extends AutoCloseable {
 
     /**
@@ -125,6 +125,22 @@ public interface EsxiHostAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetEsxiHostRequest, GetEsxiHostResponse> handler);
 
     /**
+     * In-place upgrade a ESXi host.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<InplaceUpgradeResponse> inplaceUpgrade(
+            InplaceUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InplaceUpgradeRequest, InplaceUpgradeResponse>
+                    handler);
+
+    /**
      * Lists the ESXi hosts in the specified SDDC. The list can be filtered
      * by Compute instance OCID or ESXi display name.
      * <p>
@@ -147,6 +163,21 @@ public interface EsxiHostAsync extends AutoCloseable {
             ListEsxiHostsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListEsxiHostsRequest, ListEsxiHostsResponse>
                     handler);
+
+    /**
+     * Replace a faulty ESXi host whose underlying bare metal is broken
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReplaceHostResponse> replaceHost(
+            ReplaceHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ReplaceHostRequest, ReplaceHostResponse> handler);
 
     /**
      * Swap billing between two Active ESXi hosts.

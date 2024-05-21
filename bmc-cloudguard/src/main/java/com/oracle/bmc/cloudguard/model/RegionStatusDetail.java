@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Status of Region query replication.
+ * Status of replication of a data source query in a region
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Data Source replication region.
+         * Data source replication region
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * Data Source replication region.
+         * Data source replication region
          * @param region the value to set
          * @return this builder
          **/
@@ -47,13 +47,13 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Data Source replication region status.
+         * Data source replication region status
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private QueryReplicationStatus status;
 
         /**
-         * Data Source replication region status.
+         * Data source replication region status
          * @param status the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Data Source replication region.
+     * Data source replication region
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * Data Source replication region.
+     * Data source replication region
      * @return the value
      **/
     public String getRegion() {
@@ -112,13 +112,13 @@ public final class RegionStatusDetail extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Data Source replication region status.
+     * Data source replication region status
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final QueryReplicationStatus status;
 
     /**
-     * Data Source replication region status.
+     * Data source replication region status
      * @return the value
      **/
     public QueryReplicationStatus getStatus() {

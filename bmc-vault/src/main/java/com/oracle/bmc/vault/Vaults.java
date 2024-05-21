@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault;
@@ -73,6 +73,21 @@ public interface Vaults extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretDeletion API.
      */
     CancelSecretDeletionResponse cancelSecretDeletion(CancelSecretDeletionRequest request);
+
+    /**
+     * Cancels the ongoing secret rotation. The cancellation is contingent on how
+     * far the rotation process has progressed. Upon cancelling a rotation, all
+     * future rotations are also disabled.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/CancelSecretRotationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelSecretRotation API.
+     */
+    CancelSecretRotationResponse cancelSecretRotation(CancelSecretRotationRequest request);
 
     /**
      * Cancels the scheduled deletion of a secret version.
@@ -168,6 +183,19 @@ public interface Vaults extends AutoCloseable {
     ListSecretsResponse listSecrets(ListSecretsRequest request);
 
     /**
+     * API to force rotation of an existing secret in Vault and the specified target system; expects secret to have a valid Target System Details object
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vault/RotateSecretExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RotateSecret API.
+     */
+    RotateSecretResponse rotateSecret(RotateSecretRequest request);
+
+    /**
      * Schedules the deletion of the specified secret. This sets the lifecycle state of the secret
      * to `PENDING_DELETION` and then deletes it after the specified retention period ends.
      *
@@ -218,8 +246,20 @@ public interface Vaults extends AutoCloseable {
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.
+     * @deprecated use {@link #newWaiters(WorkRequest)} instead.  Otherwise, a default one will be provided
+     *   that does not support operations that rely on the {@code WorkRequestClient} for polling.  An
+     *   {@code IllegalStateException} will be thrown for such operations.
      */
+    @Deprecated
     VaultsWaiters getWaiters();
+
+    /**
+     * Creates a new {@code VaultsWaiters} for resources for this service.
+     *
+     * @param workRequestClient The work request service client used to query for work request status
+     * @return The service waiters.
+     */
+    VaultsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

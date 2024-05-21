@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -635,6 +635,57 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
     }
 
     @Override
+    public java.util.concurrent.Future<GetAssignmentValidationStatusResponse>
+            getAssignmentValidationStatus(
+                    GetAssignmentValidationStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAssignmentValidationStatusRequest,
+                                    GetAssignmentValidationStatusResponse>
+                            handler) {
+        LOG.trace("Called async getAssignmentValidationStatus");
+        final GetAssignmentValidationStatusRequest interceptedRequest =
+                GetAssignmentValidationStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssignmentValidationStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperatorControlAssignment",
+                        "GetAssignmentValidationStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetAssignmentValidationStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAssignmentValidationStatusResponse>
+                transformer =
+                        GetAssignmentValidationStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAssignmentValidationStatusRequest, GetAssignmentValidationStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAssignmentValidationStatusRequest,
+                                GetAssignmentValidationStatusResponse>,
+                        java.util.concurrent.Future<GetAssignmentValidationStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAssignmentValidationStatusRequest, GetAssignmentValidationStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOperatorControlAssignmentResponse>
             getOperatorControlAssignment(
                     GetOperatorControlAssignmentRequest request,
@@ -783,6 +834,63 @@ public class OperatorControlAssignmentAsyncClient implements OperatorControlAssi
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOperatorControlAssignmentRequest,
                     UpdateOperatorControlAssignmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateOperatorAssignmentResponse>
+            validateOperatorAssignment(
+                    ValidateOperatorAssignmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ValidateOperatorAssignmentRequest,
+                                    ValidateOperatorAssignmentResponse>
+                            handler) {
+        LOG.trace("Called async validateOperatorAssignment");
+        final ValidateOperatorAssignmentRequest interceptedRequest =
+                ValidateOperatorAssignmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateOperatorAssignmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OperatorControlAssignment",
+                        "ValidateOperatorAssignment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ValidateOperatorAssignment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ValidateOperatorAssignmentResponse>
+                transformer =
+                        ValidateOperatorAssignmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ValidateOperatorAssignmentRequest, ValidateOperatorAssignmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateOperatorAssignmentRequest,
+                                ValidateOperatorAssignmentResponse>,
+                        java.util.concurrent.Future<ValidateOperatorAssignmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getValidateOperatorAssignmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateOperatorAssignmentRequest, ValidateOperatorAssignmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

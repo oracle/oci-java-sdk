@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -134,14 +134,14 @@ public final class CreateDrgRouteDistributionDetails
             return this;
         }
         /**
-         * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+         * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
         private DistributionType distributionType;
 
         /**
-         * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+         * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
          *
          * @param distributionType the value to set
          * @return this builder
@@ -280,7 +280,7 @@ public final class CreateDrgRouteDistributionDetails
     }
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      *
      **/
     public enum DistributionType {
@@ -315,14 +315,14 @@ public final class CreateDrgRouteDistributionDetails
         }
     };
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("distributionType")
     private final DistributionType distributionType;
 
     /**
-     * Whether this distribution defines how routes get imported into route tables or exported through DRG Attachments
+     * Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
      *
      * @return the value
      **/

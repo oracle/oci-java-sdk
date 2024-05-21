@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of rules
+ * Summary information for a rule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,13 +30,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * id of the rule
+         * Unique identifier of the rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * id of the rule
+         * Unique identifier of the rule
          * @param id the value to set
          * @return this builder
          **/
@@ -46,13 +46,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * description of the rule
+         * Description of the rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * description of the rule
+         * Description of the rule
          * @param description the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * List of parameters applicable for rule
+         * List of parameters applicable for the rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<OperatorSummary> parameters;
 
         /**
-         * List of parameters applicable for rule
+         * List of parameters applicable for the rule
          * @param parameters the value to set
          * @return this builder
          **/
@@ -116,13 +116,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * id of the rule
+     * Unique identifier of the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * id of the rule
+     * Unique identifier of the rule
      * @return the value
      **/
     public String getId() {
@@ -130,13 +130,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * description of the rule
+     * Description of the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * description of the rule
+     * Description of the rule
      * @return the value
      **/
     public String getDescription() {
@@ -144,13 +144,13 @@ public final class RuleSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * List of parameters applicable for rule
+     * List of parameters applicable for the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<OperatorSummary> parameters;
 
     /**
-     * List of parameters applicable for rule
+     * List of parameters applicable for the rule
      * @return the value
      **/
     public java.util.List<OperatorSummary> getParameters() {

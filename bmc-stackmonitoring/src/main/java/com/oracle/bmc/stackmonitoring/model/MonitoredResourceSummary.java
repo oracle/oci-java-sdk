@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -27,6 +27,7 @@ public final class MonitoredResourceSummary
         "name",
         "displayName",
         "type",
+        "compartmentId",
         "hostName",
         "externalId",
         "managementAgentId",
@@ -34,6 +35,9 @@ public final class MonitoredResourceSummary
         "timeUpdated",
         "lifecycleState",
         "properties",
+        "license",
+        "sourceType",
+        "resourceCategory",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -43,6 +47,7 @@ public final class MonitoredResourceSummary
             String name,
             String displayName,
             String type,
+            String compartmentId,
             String hostName,
             String externalId,
             String managementAgentId,
@@ -50,6 +55,9 @@ public final class MonitoredResourceSummary
             java.util.Date timeUpdated,
             ResourceLifecycleState lifecycleState,
             java.util.List<MonitoredResourceProperty> properties,
+            LicenseType license,
+            SourceType sourceType,
+            ResourceCategory resourceCategory,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -58,6 +66,7 @@ public final class MonitoredResourceSummary
         this.name = name;
         this.displayName = displayName;
         this.type = type;
+        this.compartmentId = compartmentId;
         this.hostName = hostName;
         this.externalId = externalId;
         this.managementAgentId = managementAgentId;
@@ -65,6 +74,9 @@ public final class MonitoredResourceSummary
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.properties = properties;
+        this.license = license;
+        this.sourceType = sourceType;
+        this.resourceCategory = resourceCategory;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -140,6 +152,22 @@ public final class MonitoredResourceSummary
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
@@ -267,6 +295,58 @@ public final class MonitoredResourceSummary
             return this;
         }
         /**
+         * License edition of the monitored resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource.
+         * @param license the value to set
+         * @return this builder
+         **/
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        /**
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+         *
+         * @param sourceType the value to set
+         * @return this builder
+         **/
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+        private ResourceCategory resourceCategory;
+
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         * @param resourceCategory the value to set
+         * @return this builder
+         **/
+        public Builder resourceCategory(ResourceCategory resourceCategory) {
+            this.resourceCategory = resourceCategory;
+            this.__explicitlySet__.add("resourceCategory");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -338,6 +418,7 @@ public final class MonitoredResourceSummary
                             this.name,
                             this.displayName,
                             this.type,
+                            this.compartmentId,
                             this.hostName,
                             this.externalId,
                             this.managementAgentId,
@@ -345,6 +426,9 @@ public final class MonitoredResourceSummary
                             this.timeUpdated,
                             this.lifecycleState,
                             this.properties,
+                            this.license,
+                            this.sourceType,
+                            this.resourceCategory,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -368,6 +452,9 @@ public final class MonitoredResourceSummary
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
             }
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("hostName")) {
                 this.hostName(model.getHostName());
             }
@@ -388,6 +475,15 @@ public final class MonitoredResourceSummary
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
+            }
+            if (model.wasPropertyExplicitlySet("sourceType")) {
+                this.sourceType(model.getSourceType());
+            }
+            if (model.wasPropertyExplicitlySet("resourceCategory")) {
+                this.resourceCategory(model.getResourceCategory());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -473,6 +569,20 @@ public final class MonitoredResourceSummary
      **/
     public String getType() {
         return type;
+    }
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
@@ -586,6 +696,52 @@ public final class MonitoredResourceSummary
     }
 
     /**
+     * License edition of the monitored resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource.
+     * @return the value
+     **/
+    public LicenseType getLicense() {
+        return license;
+    }
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    private final SourceType sourceType;
+
+    /**
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+     *
+     * @return the value
+     **/
+    public SourceType getSourceType() {
+        return sourceType;
+    }
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
+    private final ResourceCategory resourceCategory;
+
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     * @return the value
+     **/
+    public ResourceCategory getResourceCategory() {
+        return resourceCategory;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -657,6 +813,7 @@ public final class MonitoredResourceSummary
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", hostName=").append(String.valueOf(this.hostName));
         sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
@@ -664,6 +821,9 @@ public final class MonitoredResourceSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", license=").append(String.valueOf(this.license));
+        sb.append(", sourceType=").append(String.valueOf(this.sourceType));
+        sb.append(", resourceCategory=").append(String.valueOf(this.resourceCategory));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -685,6 +845,7 @@ public final class MonitoredResourceSummary
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.hostName, other.hostName)
                 && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
@@ -692,6 +853,9 @@ public final class MonitoredResourceSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.license, other.license)
+                && java.util.Objects.equals(this.sourceType, other.sourceType)
+                && java.util.Objects.equals(this.resourceCategory, other.resourceCategory)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -706,6 +870,9 @@ public final class MonitoredResourceSummary
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
         result = (result * PRIME) + (this.externalId == null ? 43 : this.externalId.hashCode());
         result =
@@ -717,6 +884,11 @@ public final class MonitoredResourceSummary
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
+        result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceCategory == null ? 43 : this.resourceCategory.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

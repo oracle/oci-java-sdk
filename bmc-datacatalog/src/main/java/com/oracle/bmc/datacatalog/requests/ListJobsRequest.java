@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.requests;
@@ -139,8 +139,20 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         return dataAssetKey;
     }
     /**
+     * Unique glossary key.
+     */
+    private String glossaryKey;
+
+    /**
+     * Unique glossary key.
+     */
+    public String getGlossaryKey() {
+        return glossaryKey;
+    }
+    /**
      * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
      * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
      *
      */
     private String scheduleCronExpression;
@@ -148,6 +160,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     /**
      * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
      * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
      *
      */
     public String getScheduleCronExpression() {
@@ -604,8 +617,24 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
+         * Unique glossary key.
+         */
+        private String glossaryKey = null;
+
+        /**
+         * Unique glossary key.
+         * @param glossaryKey the value to set
+         * @return this builder instance
+         */
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            return this;
+        }
+
+        /**
          * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
          * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
          *
          */
         private String scheduleCronExpression = null;
@@ -613,6 +642,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
          * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
          *
          * @param scheduleCronExpression the value to set
          * @return this builder instance
@@ -861,6 +891,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             jobType(o.getJobType());
             jobDefinitionKey(o.getJobDefinitionKey());
             dataAssetKey(o.getDataAssetKey());
+            glossaryKey(o.getGlossaryKey());
             scheduleCronExpression(o.getScheduleCronExpression());
             timeScheduleBegin(o.getTimeScheduleBegin());
             timeScheduleEnd(o.getTimeScheduleEnd());
@@ -917,6 +948,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.jobType = jobType;
             request.jobDefinitionKey = jobDefinitionKey;
             request.dataAssetKey = dataAssetKey;
+            request.glossaryKey = glossaryKey;
             request.scheduleCronExpression = scheduleCronExpression;
             request.timeScheduleBegin = timeScheduleBegin;
             request.timeScheduleEnd = timeScheduleEnd;
@@ -931,7 +963,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJobsRequest(catalogId, displayName, displayNameContains, lifecycleState, timeCreated, timeUpdated, createdById, updatedById, jobType, jobDefinitionKey, dataAssetKey, scheduleCronExpression, timeScheduleBegin, timeScheduleEnd, scheduleType, connectionKey, fields, executionCount, timeOfLatestExecution, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListJobsRequest(catalogId, displayName, displayNameContains, lifecycleState, timeCreated, timeUpdated, createdById, updatedById, jobType, jobDefinitionKey, dataAssetKey, glossaryKey, scheduleCronExpression, timeScheduleBegin, timeScheduleEnd, scheduleType, connectionKey, fields, executionCount, timeOfLatestExecution, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
@@ -952,6 +984,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 .jobType(jobType)
                 .jobDefinitionKey(jobDefinitionKey)
                 .dataAssetKey(dataAssetKey)
+                .glossaryKey(glossaryKey)
                 .scheduleCronExpression(scheduleCronExpression)
                 .timeScheduleBegin(timeScheduleBegin)
                 .timeScheduleEnd(timeScheduleEnd)
@@ -991,6 +1024,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         sb.append(",jobType=").append(String.valueOf(this.jobType));
         sb.append(",jobDefinitionKey=").append(String.valueOf(this.jobDefinitionKey));
         sb.append(",dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(",glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(",scheduleCronExpression=").append(String.valueOf(this.scheduleCronExpression));
         sb.append(",timeScheduleBegin=").append(String.valueOf(this.timeScheduleBegin));
         sb.append(",timeScheduleEnd=").append(String.valueOf(this.timeScheduleEnd));
@@ -1030,6 +1064,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 && java.util.Objects.equals(this.jobType, other.jobType)
                 && java.util.Objects.equals(this.jobDefinitionKey, other.jobDefinitionKey)
                 && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(
                         this.scheduleCronExpression, other.scheduleCronExpression)
                 && java.util.Objects.equals(this.timeScheduleBegin, other.timeScheduleBegin)
@@ -1069,6 +1104,7 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
                 (result * PRIME)
                         + (this.jobDefinitionKey == null ? 43 : this.jobDefinitionKey.hashCode());
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduleCronExpression == null

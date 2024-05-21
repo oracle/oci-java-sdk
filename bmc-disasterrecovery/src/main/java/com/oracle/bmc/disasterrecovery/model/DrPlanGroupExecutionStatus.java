@@ -1,22 +1,22 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Possible execution statuses for a DR Plan Group.
- * - QUEUED - DR Plan Group execution has been queued.
- * - DISABLED - DR Plan Group execution has been disabled.
- * - IN_PROGRESS - DR Plan Group execution is in progress.
- * - SUCCEEDED - DR Plan Group execution has succeeded.
- * - SUCCEEDED_WITH_WARNING - DR Plan Group execution has succeeded, but with warnings.
- * - FAILED - DR Plan Group execution has failed.
- * - FAILED_IGNORED - DR Plan Group execution has failed, but was ignored.
- * - TIMED_OUT - DR Plan Group execution has timed out.
- * - TIMED_OUT_IGNORED - DR Plan Group execution has timed out, but was ignored.
- * - PAUSED - DR Plan Group execution is paused.
- * - CANCELED - DR Plan Group execution has been canceled.
+ * The execution statuses for a DR plan group.
+ * - QUEUED - DR plan group execution has been queued.
+ * - DISABLED - DR plan group execution has been disabled.
+ * - IN_PROGRESS - DR plan group execution is in progress.
+ * - SUCCEEDED - DR plan group execution has succeeded.
+ * - SUCCEEDED_WITH_WARNING - DR plan group execution has succeeded, but with warnings.
+ * - FAILED - DR plan group execution has failed.
+ * - FAILED_IGNORED - DR plan group execution has failed, but was ignored.
+ * - TIMED_OUT - DR plan group execution has timed out.
+ * - TIMED_OUT_IGNORED - DR plan group execution has timed out, but was ignored.
+ * - PAUSED - DR plan group execution is paused.
+ * - CANCELED - DR plan group execution has been canceled.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")

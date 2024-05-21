@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The resource configuration for a Container. The resource configuration determines
- * the guaranteed resources allocated to the container and the maximum allowed resources for a container.
+ * The resource configuration for a container. The resource configuration determines
+ * the amount of resources allocated to the container and the maximum allowed resources for a container.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -34,9 +34,11 @@ public final class ContainerResourceConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The maximum amount of CPU utilization which may be consumed by the Container's
-         * process. If no value is provided, then the process may consume
-         * all CPU resources on the Instance.
+         * The maximum amount of CPUs that can be consumed by the container's process.
+         * <p>
+         * If you do not set a value, then the process
+         * may use all available CPU resources on the container instance.
+         * <p>
          * CPU usage is defined in terms of logical CPUs. This means that the
          * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
          *
@@ -45,9 +47,11 @@ public final class ContainerResourceConfig
         private Float vcpusLimit;
 
         /**
-         * The maximum amount of CPU utilization which may be consumed by the Container's
-         * process. If no value is provided, then the process may consume
-         * all CPU resources on the Instance.
+         * The maximum amount of CPUs that can be consumed by the container's process.
+         * <p>
+         * If you do not set a value, then the process
+         * may use all available CPU resources on the container instance.
+         * <p>
          * CPU usage is defined in terms of logical CPUs. This means that the
          * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
          *
@@ -60,18 +64,18 @@ public final class ContainerResourceConfig
             return this;
         }
         /**
-         * The maximum amount of memory which may be consumed by the Container's
-         * process. If no value is provided, then the process
-         * may use all available memory on the Instance.
+         * The maximum amount of memory that can be consumed by the container's
+         * process. If you do not set a value, then the process
+         * may use all available memory on the instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryLimitInGBs")
         private Float memoryLimitInGBs;
 
         /**
-         * The maximum amount of memory which may be consumed by the Container's
-         * process. If no value is provided, then the process
-         * may use all available memory on the Instance.
+         * The maximum amount of memory that can be consumed by the container's
+         * process. If you do not set a value, then the process
+         * may use all available memory on the instance.
          *
          * @param memoryLimitInGBs the value to set
          * @return this builder
@@ -118,9 +122,11 @@ public final class ContainerResourceConfig
     }
 
     /**
-     * The maximum amount of CPU utilization which may be consumed by the Container's
-     * process. If no value is provided, then the process may consume
-     * all CPU resources on the Instance.
+     * The maximum amount of CPUs that can be consumed by the container's process.
+     * <p>
+     * If you do not set a value, then the process
+     * may use all available CPU resources on the container instance.
+     * <p>
      * CPU usage is defined in terms of logical CPUs. This means that the
      * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
      *
@@ -129,9 +135,11 @@ public final class ContainerResourceConfig
     private final Float vcpusLimit;
 
     /**
-     * The maximum amount of CPU utilization which may be consumed by the Container's
-     * process. If no value is provided, then the process may consume
-     * all CPU resources on the Instance.
+     * The maximum amount of CPUs that can be consumed by the container's process.
+     * <p>
+     * If you do not set a value, then the process
+     * may use all available CPU resources on the container instance.
+     * <p>
      * CPU usage is defined in terms of logical CPUs. This means that the
      * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
      *
@@ -142,18 +150,18 @@ public final class ContainerResourceConfig
     }
 
     /**
-     * The maximum amount of memory which may be consumed by the Container's
-     * process. If no value is provided, then the process
-     * may use all available memory on the Instance.
+     * The maximum amount of memory that can be consumed by the container's
+     * process. If you do not set a value, then the process
+     * may use all available memory on the instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryLimitInGBs")
     private final Float memoryLimitInGBs;
 
     /**
-     * The maximum amount of memory which may be consumed by the Container's
-     * process. If no value is provided, then the process
-     * may use all available memory on the Instance.
+     * The maximum amount of memory that can be consumed by the container's
+     * process. If you do not set a value, then the process
+     * may use all available memory on the instance.
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -32,12 +32,15 @@ public final class UpdateInstanceDetails
         "extendedMetadata",
         "shape",
         "shapeConfig",
+        "sourceDetails",
         "updateOperationConstraint",
         "instanceOptions",
         "faultDomain",
         "launchOptions",
         "availabilityConfig",
-        "timeMaintenanceRebootDue"
+        "timeMaintenanceRebootDue",
+        "dedicatedVmHostId",
+        "platformConfig"
     })
     public UpdateInstanceDetails(
             String capacityReservationId,
@@ -49,12 +52,15 @@ public final class UpdateInstanceDetails
             java.util.Map<String, Object> extendedMetadata,
             String shape,
             UpdateInstanceShapeConfigDetails shapeConfig,
+            UpdateInstanceSourceDetails sourceDetails,
             UpdateOperationConstraint updateOperationConstraint,
             InstanceOptions instanceOptions,
             String faultDomain,
             UpdateLaunchOptions launchOptions,
             UpdateInstanceAvailabilityConfigDetails availabilityConfig,
-            java.util.Date timeMaintenanceRebootDue) {
+            java.util.Date timeMaintenanceRebootDue,
+            String dedicatedVmHostId,
+            UpdateInstancePlatformConfig platformConfig) {
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
@@ -65,12 +71,15 @@ public final class UpdateInstanceDetails
         this.extendedMetadata = extendedMetadata;
         this.shape = shape;
         this.shapeConfig = shapeConfig;
+        this.sourceDetails = sourceDetails;
         this.updateOperationConstraint = updateOperationConstraint;
         this.instanceOptions = instanceOptions;
         this.faultDomain = faultDomain;
         this.launchOptions = launchOptions;
         this.availabilityConfig = availabilityConfig;
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+        this.dedicatedVmHostId = dedicatedVmHostId;
+        this.platformConfig = platformConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -318,6 +327,15 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("shapeConfig");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private UpdateInstanceSourceDetails sourceDetails;
+
+        public Builder sourceDetails(UpdateInstanceSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
         /**
          * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running instance.
          * The default is ALLOW_DOWNTIME.
@@ -463,6 +481,39 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("timeMaintenanceRebootDue");
             return this;
         }
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on.
+         * Supported only if this VM instance was already placed on a dedicated virtual machine host
+         * - that is, you can't move an instance from on-demand capacity to dedicated capacity,
+         * nor can you move an instance from dedicated capacity to on-demand capacity.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+        private String dedicatedVmHostId;
+
+        /**
+         * The OCID of the dedicated virtual machine host to place the instance on.
+         * Supported only if this VM instance was already placed on a dedicated virtual machine host
+         * - that is, you can't move an instance from on-demand capacity to dedicated capacity,
+         * nor can you move an instance from dedicated capacity to on-demand capacity.
+         *
+         * @param dedicatedVmHostId the value to set
+         * @return this builder
+         **/
+        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
+            this.__explicitlySet__.add("dedicatedVmHostId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+        private UpdateInstancePlatformConfig platformConfig;
+
+        public Builder platformConfig(UpdateInstancePlatformConfig platformConfig) {
+            this.platformConfig = platformConfig;
+            this.__explicitlySet__.add("platformConfig");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -479,12 +530,15 @@ public final class UpdateInstanceDetails
                             this.extendedMetadata,
                             this.shape,
                             this.shapeConfig,
+                            this.sourceDetails,
                             this.updateOperationConstraint,
                             this.instanceOptions,
                             this.faultDomain,
                             this.launchOptions,
                             this.availabilityConfig,
-                            this.timeMaintenanceRebootDue);
+                            this.timeMaintenanceRebootDue,
+                            this.dedicatedVmHostId,
+                            this.platformConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -520,6 +574,9 @@ public final class UpdateInstanceDetails
             if (model.wasPropertyExplicitlySet("shapeConfig")) {
                 this.shapeConfig(model.getShapeConfig());
             }
+            if (model.wasPropertyExplicitlySet("sourceDetails")) {
+                this.sourceDetails(model.getSourceDetails());
+            }
             if (model.wasPropertyExplicitlySet("updateOperationConstraint")) {
                 this.updateOperationConstraint(model.getUpdateOperationConstraint());
             }
@@ -537,6 +594,12 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("timeMaintenanceRebootDue")) {
                 this.timeMaintenanceRebootDue(model.getTimeMaintenanceRebootDue());
+            }
+            if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
+                this.dedicatedVmHostId(model.getDedicatedVmHostId());
+            }
+            if (model.wasPropertyExplicitlySet("platformConfig")) {
+                this.platformConfig(model.getPlatformConfig());
             }
             return this;
         }
@@ -777,6 +840,13 @@ public final class UpdateInstanceDetails
         return shapeConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    private final UpdateInstanceSourceDetails sourceDetails;
+
+    public UpdateInstanceSourceDetails getSourceDetails() {
+        return sourceDetails;
+    }
+
     /**
      * The parameter acts as a fail-safe to prevent unwanted downtime when updating a running instance.
      * The default is ALLOW_DOWNTIME.
@@ -949,6 +1019,35 @@ public final class UpdateInstanceDetails
         return timeMaintenanceRebootDue;
     }
 
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on.
+     * Supported only if this VM instance was already placed on a dedicated virtual machine host
+     * - that is, you can't move an instance from on-demand capacity to dedicated capacity,
+     * nor can you move an instance from dedicated capacity to on-demand capacity.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+    private final String dedicatedVmHostId;
+
+    /**
+     * The OCID of the dedicated virtual machine host to place the instance on.
+     * Supported only if this VM instance was already placed on a dedicated virtual machine host
+     * - that is, you can't move an instance from on-demand capacity to dedicated capacity,
+     * nor can you move an instance from dedicated capacity to on-demand capacity.
+     *
+     * @return the value
+     **/
+    public String getDedicatedVmHostId() {
+        return dedicatedVmHostId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("platformConfig")
+    private final UpdateInstancePlatformConfig platformConfig;
+
+    public UpdateInstancePlatformConfig getPlatformConfig() {
+        return platformConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -972,6 +1071,7 @@ public final class UpdateInstanceDetails
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", updateOperationConstraint=")
                 .append(String.valueOf(this.updateOperationConstraint));
         sb.append(", instanceOptions=").append(String.valueOf(this.instanceOptions));
@@ -980,6 +1080,8 @@ public final class UpdateInstanceDetails
         sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
         sb.append(", timeMaintenanceRebootDue=")
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
+        sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
+        sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -1003,6 +1105,7 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(
                         this.updateOperationConstraint, other.updateOperationConstraint)
                 && java.util.Objects.equals(this.instanceOptions, other.instanceOptions)
@@ -1011,6 +1114,8 @@ public final class UpdateInstanceDetails
                 && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
                 && java.util.Objects.equals(
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
+                && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
+                && java.util.Objects.equals(this.platformConfig, other.platformConfig)
                 && super.equals(other);
     }
 
@@ -1035,6 +1140,9 @@ public final class UpdateInstanceDetails
         result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
         result =
                 (result * PRIME)
+                        + (this.sourceDetails == null ? 43 : this.sourceDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.updateOperationConstraint == null
                                 ? 43
                                 : this.updateOperationConstraint.hashCode());
@@ -1055,6 +1163,12 @@ public final class UpdateInstanceDetails
                         + (this.timeMaintenanceRebootDue == null
                                 ? 43
                                 : this.timeMaintenanceRebootDue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

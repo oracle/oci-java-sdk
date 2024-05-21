@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -13,23 +13,23 @@ public class ListLifecycleStageInstalledPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     private String lifecycleStageId;
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -95,12 +95,12 @@ public class ListLifecycleStageInstalledPackagesRequest
         return page;
     }
     /**
-     * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+     * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
      */
     private com.oracle.bmc.osmanagementhub.model.LifecycleStage.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+     * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
      */
     public com.oracle.bmc.osmanagementhub.model.LifecycleStage.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -189,12 +189,12 @@ public class ListLifecycleStageInstalledPackagesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * @param lifecycleStageId the value to set
          * @return this builder instance
          */
@@ -204,12 +204,12 @@ public class ListLifecycleStageInstalledPackagesRequest
         }
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list.
+         * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -304,13 +304,13 @@ public class ListLifecycleStageInstalledPackagesRequest
         }
 
         /**
-         * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+         * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
          */
         private com.oracle.bmc.osmanagementhub.model.LifecycleStage.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only lifecycle stage whose lifecycle state matches the given lifecycle state.
+         * A filter to return only lifecycle stages whose lifecycle state matches the given lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
