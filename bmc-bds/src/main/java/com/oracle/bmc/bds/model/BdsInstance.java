@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -37,6 +37,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         "timeCreated",
         "timeUpdated",
         "numberOfNodes",
+        "numberOfNodesRequiringMaintenanceReboot",
         "bootstrapScriptUrl",
         "freeformTags",
         "definedTags",
@@ -61,6 +62,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             Integer numberOfNodes,
+            Integer numberOfNodesRequiringMaintenanceReboot,
             String bootstrapScriptUrl,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -84,6 +86,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.numberOfNodes = numberOfNodes;
+        this.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
         this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -345,6 +348,23 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * Number of nodes that require a maintenance reboot
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodesRequiringMaintenanceReboot")
+        private Integer numberOfNodesRequiringMaintenanceReboot;
+
+        /**
+         * Number of nodes that require a maintenance reboot
+         * @param numberOfNodesRequiringMaintenanceReboot the value to set
+         * @return this builder
+         **/
+        public Builder numberOfNodesRequiringMaintenanceReboot(
+                Integer numberOfNodesRequiringMaintenanceReboot) {
+            this.numberOfNodesRequiringMaintenanceReboot = numberOfNodesRequiringMaintenanceReboot;
+            this.__explicitlySet__.add("numberOfNodesRequiringMaintenanceReboot");
+            return this;
+        }
+        /**
          * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
@@ -457,6 +477,7 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.timeCreated,
                             this.timeUpdated,
                             this.numberOfNodes,
+                            this.numberOfNodesRequiringMaintenanceReboot,
                             this.bootstrapScriptUrl,
                             this.freeformTags,
                             this.definedTags,
@@ -520,6 +541,10 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("numberOfNodes")) {
                 this.numberOfNodes(model.getNumberOfNodes());
+            }
+            if (model.wasPropertyExplicitlySet("numberOfNodesRequiringMaintenanceReboot")) {
+                this.numberOfNodesRequiringMaintenanceReboot(
+                        model.getNumberOfNodesRequiringMaintenanceReboot());
             }
             if (model.wasPropertyExplicitlySet("bootstrapScriptUrl")) {
                 this.bootstrapScriptUrl(model.getBootstrapScriptUrl());
@@ -876,6 +901,20 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * Number of nodes that require a maintenance reboot
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("numberOfNodesRequiringMaintenanceReboot")
+    private final Integer numberOfNodesRequiringMaintenanceReboot;
+
+    /**
+     * Number of nodes that require a maintenance reboot
+     * @return the value
+     **/
+    public Integer getNumberOfNodesRequiringMaintenanceReboot() {
+        return numberOfNodesRequiringMaintenanceReboot;
+    }
+
+    /**
      * pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapScriptUrl")
@@ -1037,6 +1076,8 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", numberOfNodes=").append(String.valueOf(this.numberOfNodes));
+        sb.append(", numberOfNodesRequiringMaintenanceReboot=")
+                .append(String.valueOf(this.numberOfNodesRequiringMaintenanceReboot));
         sb.append(", bootstrapScriptUrl=").append(String.valueOf(this.bootstrapScriptUrl));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -1073,6 +1114,9 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.numberOfNodes, other.numberOfNodes)
+                && java.util.Objects.equals(
+                        this.numberOfNodesRequiringMaintenanceReboot,
+                        other.numberOfNodesRequiringMaintenanceReboot)
                 && java.util.Objects.equals(this.bootstrapScriptUrl, other.bootstrapScriptUrl)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -1126,6 +1170,11 @@ public final class BdsInstance extends com.oracle.bmc.http.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.numberOfNodes == null ? 43 : this.numberOfNodes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.numberOfNodesRequiringMaintenanceReboot == null
+                                ? 43
+                                : this.numberOfNodesRequiringMaintenanceReboot.hashCode());
         result =
                 (result * PRIME)
                         + (this.bootstrapScriptUrl == null

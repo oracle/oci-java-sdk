@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring;
@@ -31,6 +31,234 @@ public class StackMonitoringPaginators {
 
     public StackMonitoringPaginators(StackMonitoring client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listBaselineableMetrics operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBaselineableMetricsResponse> listBaselineableMetricsResponseIterator(
+            final ListBaselineableMetricsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBaselineableMetricsRequest.Builder, ListBaselineableMetricsRequest,
+                ListBaselineableMetricsResponse>(
+                new java.util.function.Supplier<ListBaselineableMetricsRequest.Builder>() {
+                    @Override
+                    public ListBaselineableMetricsRequest.Builder get() {
+                        return ListBaselineableMetricsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBaselineableMetricsResponse, String>() {
+                    @Override
+                    public String apply(ListBaselineableMetricsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaselineableMetricsRequest.Builder>,
+                        ListBaselineableMetricsRequest>() {
+                    @Override
+                    public ListBaselineableMetricsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaselineableMetricsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaselineableMetricsRequest, ListBaselineableMetricsResponse>() {
+                    @Override
+                    public ListBaselineableMetricsResponse apply(
+                            ListBaselineableMetricsRequest request) {
+                        return client.listBaselineableMetrics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary} objects
+     * contained in responses from the listBaselineableMetrics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary>
+            listBaselineableMetricsRecordIterator(final ListBaselineableMetricsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBaselineableMetricsRequest.Builder, ListBaselineableMetricsRequest,
+                ListBaselineableMetricsResponse,
+                com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary>(
+                new java.util.function.Supplier<ListBaselineableMetricsRequest.Builder>() {
+                    @Override
+                    public ListBaselineableMetricsRequest.Builder get() {
+                        return ListBaselineableMetricsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBaselineableMetricsResponse, String>() {
+                    @Override
+                    public String apply(ListBaselineableMetricsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBaselineableMetricsRequest.Builder>,
+                        ListBaselineableMetricsRequest>() {
+                    @Override
+                    public ListBaselineableMetricsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBaselineableMetricsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaselineableMetricsRequest, ListBaselineableMetricsResponse>() {
+                    @Override
+                    public ListBaselineableMetricsResponse apply(
+                            ListBaselineableMetricsRequest request) {
+                        return client.listBaselineableMetrics(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBaselineableMetricsResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model.BaselineableMetricSummary>
+                            apply(ListBaselineableMetricsResponse response) {
+                        return response.getBaselineableMetricSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listConfigs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListConfigsResponse> listConfigsResponseIterator(
+            final ListConfigsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConfigsRequest.Builder, ListConfigsRequest, ListConfigsResponse>(
+                new java.util.function.Supplier<ListConfigsRequest.Builder>() {
+                    @Override
+                    public ListConfigsRequest.Builder get() {
+                        return ListConfigsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConfigsResponse, String>() {
+                    @Override
+                    public String apply(ListConfigsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConfigsRequest.Builder>,
+                        ListConfigsRequest>() {
+                    @Override
+                    public ListConfigsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConfigsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListConfigsRequest, ListConfigsResponse>() {
+                    @Override
+                    public ListConfigsResponse apply(ListConfigsRequest request) {
+                        return client.listConfigs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects
+     * contained in responses from the listConfigs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.ConfigSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.ConfigSummary> listConfigsRecordIterator(
+            final ListConfigsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConfigsRequest.Builder, ListConfigsRequest, ListConfigsResponse,
+                com.oracle.bmc.stackmonitoring.model.ConfigSummary>(
+                new java.util.function.Supplier<ListConfigsRequest.Builder>() {
+                    @Override
+                    public ListConfigsRequest.Builder get() {
+                        return ListConfigsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListConfigsResponse, String>() {
+                    @Override
+                    public String apply(ListConfigsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConfigsRequest.Builder>,
+                        ListConfigsRequest>() {
+                    @Override
+                    public ListConfigsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConfigsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListConfigsRequest, ListConfigsResponse>() {
+                    @Override
+                    public ListConfigsResponse apply(ListConfigsRequest request) {
+                        return client.listConfigs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListConfigsResponse,
+                        java.util.List<com.oracle.bmc.stackmonitoring.model.ConfigSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.stackmonitoring.model.ConfigSummary> apply(
+                            ListConfigsResponse response) {
+                        return response.getConfigCollection().getItems();
+                    }
+                });
     }
 
     /**
@@ -260,6 +488,592 @@ public class StackMonitoringPaginators {
                     public java.util.List<com.oracle.bmc.stackmonitoring.model.DiscoveryJobSummary>
                             apply(ListDiscoveryJobsResponse response) {
                         return response.getDiscoveryJobCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMetricExtensions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMetricExtensionsResponse> listMetricExtensionsResponseIterator(
+            final ListMetricExtensionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMetricExtensionsRequest.Builder, ListMetricExtensionsRequest,
+                ListMetricExtensionsResponse>(
+                new java.util.function.Supplier<ListMetricExtensionsRequest.Builder>() {
+                    @Override
+                    public ListMetricExtensionsRequest.Builder get() {
+                        return ListMetricExtensionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMetricExtensionsResponse, String>() {
+                    @Override
+                    public String apply(ListMetricExtensionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMetricExtensionsRequest.Builder>,
+                        ListMetricExtensionsRequest>() {
+                    @Override
+                    public ListMetricExtensionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMetricExtensionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMetricExtensionsRequest, ListMetricExtensionsResponse>() {
+                    @Override
+                    public ListMetricExtensionsResponse apply(ListMetricExtensionsRequest request) {
+                        return client.listMetricExtensions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary} objects
+     * contained in responses from the listMetricExtensions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary>
+            listMetricExtensionsRecordIterator(final ListMetricExtensionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMetricExtensionsRequest.Builder, ListMetricExtensionsRequest,
+                ListMetricExtensionsResponse,
+                com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary>(
+                new java.util.function.Supplier<ListMetricExtensionsRequest.Builder>() {
+                    @Override
+                    public ListMetricExtensionsRequest.Builder get() {
+                        return ListMetricExtensionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMetricExtensionsResponse, String>() {
+                    @Override
+                    public String apply(ListMetricExtensionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMetricExtensionsRequest.Builder>,
+                        ListMetricExtensionsRequest>() {
+                    @Override
+                    public ListMetricExtensionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMetricExtensionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMetricExtensionsRequest, ListMetricExtensionsResponse>() {
+                    @Override
+                    public ListMetricExtensionsResponse apply(ListMetricExtensionsRequest request) {
+                        return client.listMetricExtensions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMetricExtensionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model.MetricExtensionSummary>
+                            apply(ListMetricExtensionsResponse response) {
+                        return response.getMetricExtensionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMonitoredResourceTasks operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMonitoredResourceTasksResponse> listMonitoredResourceTasksResponseIterator(
+            final ListMonitoredResourceTasksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMonitoredResourceTasksRequest.Builder, ListMonitoredResourceTasksRequest,
+                ListMonitoredResourceTasksResponse>(
+                new java.util.function.Supplier<ListMonitoredResourceTasksRequest.Builder>() {
+                    @Override
+                    public ListMonitoredResourceTasksRequest.Builder get() {
+                        return ListMonitoredResourceTasksRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoredResourceTasksResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoredResourceTasksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoredResourceTasksRequest.Builder>,
+                        ListMonitoredResourceTasksRequest>() {
+                    @Override
+                    public ListMonitoredResourceTasksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoredResourceTasksRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourceTasksRequest, ListMonitoredResourceTasksResponse>() {
+                    @Override
+                    public ListMonitoredResourceTasksResponse apply(
+                            ListMonitoredResourceTasksRequest request) {
+                        return client.listMonitoredResourceTasks(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary} objects
+     * contained in responses from the listMonitoredResourceTasks operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary>
+            listMonitoredResourceTasksRecordIterator(
+                    final ListMonitoredResourceTasksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMonitoredResourceTasksRequest.Builder, ListMonitoredResourceTasksRequest,
+                ListMonitoredResourceTasksResponse,
+                com.oracle.bmc.stackmonitoring.model.MonitoredResourceTaskSummary>(
+                new java.util.function.Supplier<ListMonitoredResourceTasksRequest.Builder>() {
+                    @Override
+                    public ListMonitoredResourceTasksRequest.Builder get() {
+                        return ListMonitoredResourceTasksRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoredResourceTasksResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoredResourceTasksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoredResourceTasksRequest.Builder>,
+                        ListMonitoredResourceTasksRequest>() {
+                    @Override
+                    public ListMonitoredResourceTasksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoredResourceTasksRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourceTasksRequest, ListMonitoredResourceTasksResponse>() {
+                    @Override
+                    public ListMonitoredResourceTasksResponse apply(
+                            ListMonitoredResourceTasksRequest request) {
+                        return client.listMonitoredResourceTasks(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourceTasksResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model
+                                        .MonitoredResourceTaskSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model
+                                            .MonitoredResourceTaskSummary>
+                            apply(ListMonitoredResourceTasksResponse response) {
+                        return response.getMonitoredResourceTasksCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMonitoredResourceTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMonitoredResourceTypesResponse> listMonitoredResourceTypesResponseIterator(
+            final ListMonitoredResourceTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMonitoredResourceTypesRequest.Builder, ListMonitoredResourceTypesRequest,
+                ListMonitoredResourceTypesResponse>(
+                new java.util.function.Supplier<ListMonitoredResourceTypesRequest.Builder>() {
+                    @Override
+                    public ListMonitoredResourceTypesRequest.Builder get() {
+                        return ListMonitoredResourceTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoredResourceTypesResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoredResourceTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoredResourceTypesRequest.Builder>,
+                        ListMonitoredResourceTypesRequest>() {
+                    @Override
+                    public ListMonitoredResourceTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoredResourceTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourceTypesRequest, ListMonitoredResourceTypesResponse>() {
+                    @Override
+                    public ListMonitoredResourceTypesResponse apply(
+                            ListMonitoredResourceTypesRequest request) {
+                        return client.listMonitoredResourceTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary} objects
+     * contained in responses from the listMonitoredResourceTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary>
+            listMonitoredResourceTypesRecordIterator(
+                    final ListMonitoredResourceTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMonitoredResourceTypesRequest.Builder, ListMonitoredResourceTypesRequest,
+                ListMonitoredResourceTypesResponse,
+                com.oracle.bmc.stackmonitoring.model.MonitoredResourceTypeSummary>(
+                new java.util.function.Supplier<ListMonitoredResourceTypesRequest.Builder>() {
+                    @Override
+                    public ListMonitoredResourceTypesRequest.Builder get() {
+                        return ListMonitoredResourceTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoredResourceTypesResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoredResourceTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoredResourceTypesRequest.Builder>,
+                        ListMonitoredResourceTypesRequest>() {
+                    @Override
+                    public ListMonitoredResourceTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoredResourceTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourceTypesRequest, ListMonitoredResourceTypesResponse>() {
+                    @Override
+                    public ListMonitoredResourceTypesResponse apply(
+                            ListMonitoredResourceTypesRequest request) {
+                        return client.listMonitoredResourceTypes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourceTypesResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model
+                                        .MonitoredResourceTypeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model
+                                            .MonitoredResourceTypeSummary>
+                            apply(ListMonitoredResourceTypesResponse response) {
+                        return response.getMonitoredResourceTypesCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listMonitoredResources operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMonitoredResourcesResponse> listMonitoredResourcesResponseIterator(
+            final ListMonitoredResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMonitoredResourcesRequest.Builder, ListMonitoredResourcesRequest,
+                ListMonitoredResourcesResponse>(
+                new java.util.function.Supplier<ListMonitoredResourcesRequest.Builder>() {
+                    @Override
+                    public ListMonitoredResourcesRequest.Builder get() {
+                        return ListMonitoredResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoredResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoredResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoredResourcesRequest.Builder>,
+                        ListMonitoredResourcesRequest>() {
+                    @Override
+                    public ListMonitoredResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoredResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>() {
+                    @Override
+                    public ListMonitoredResourcesResponse apply(
+                            ListMonitoredResourcesRequest request) {
+                        return client.listMonitoredResources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary} objects
+     * contained in responses from the listMonitoredResources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>
+            listMonitoredResourcesRecordIterator(final ListMonitoredResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMonitoredResourcesRequest.Builder, ListMonitoredResourcesRequest,
+                ListMonitoredResourcesResponse,
+                com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>(
+                new java.util.function.Supplier<ListMonitoredResourcesRequest.Builder>() {
+                    @Override
+                    public ListMonitoredResourcesRequest.Builder get() {
+                        return ListMonitoredResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoredResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoredResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoredResourcesRequest.Builder>,
+                        ListMonitoredResourcesRequest>() {
+                    @Override
+                    public ListMonitoredResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoredResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>() {
+                    @Override
+                    public ListMonitoredResourcesResponse apply(
+                            ListMonitoredResourcesRequest request) {
+                        return client.listMonitoredResources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoredResourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>
+                            apply(ListMonitoredResourcesResponse response) {
+                        return response.getMonitoredResourceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listProcessSets operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProcessSetsResponse> listProcessSetsResponseIterator(
+            final ListProcessSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProcessSetsRequest.Builder, ListProcessSetsRequest, ListProcessSetsResponse>(
+                new java.util.function.Supplier<ListProcessSetsRequest.Builder>() {
+                    @Override
+                    public ListProcessSetsRequest.Builder get() {
+                        return ListProcessSetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsResponse, String>() {
+                    @Override
+                    public String apply(ListProcessSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProcessSetsRequest.Builder>,
+                        ListProcessSetsRequest>() {
+                    @Override
+                    public ListProcessSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProcessSetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsRequest, ListProcessSetsResponse>() {
+                    @Override
+                    public ListProcessSetsResponse apply(ListProcessSetsRequest request) {
+                        return client.listProcessSets(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects
+     * contained in responses from the listProcessSets operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.ProcessSetSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>
+            listProcessSetsRecordIterator(final ListProcessSetsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProcessSetsRequest.Builder, ListProcessSetsRequest, ListProcessSetsResponse,
+                com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>(
+                new java.util.function.Supplier<ListProcessSetsRequest.Builder>() {
+                    @Override
+                    public ListProcessSetsRequest.Builder get() {
+                        return ListProcessSetsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsResponse, String>() {
+                    @Override
+                    public String apply(ListProcessSetsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProcessSetsRequest.Builder>,
+                        ListProcessSetsRequest>() {
+                    @Override
+                    public ListProcessSetsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProcessSetsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListProcessSetsRequest, ListProcessSetsResponse>() {
+                    @Override
+                    public ListProcessSetsResponse apply(ListProcessSetsRequest request) {
+                        return client.listProcessSets(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProcessSetsResponse,
+                        java.util.List<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.stackmonitoring.model.ProcessSetSummary>
+                            apply(ListProcessSetsResponse response) {
+                        return response.getProcessSetCollection().getItems();
                     }
                 });
     }

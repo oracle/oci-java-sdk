@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -171,7 +171,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of the VNIC's subnet
+         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the VNIC's subnet
          * (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
          * <p>
          * Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}
@@ -181,7 +181,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         private String ipAddress;
 
         /**
-         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of the VNIC's subnet
+         * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the VNIC's subnet
          * (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
          * <p>
          * Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}
@@ -433,7 +433,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of the VNIC's subnet
+     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the VNIC's subnet
      * (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
      * <p>
      * Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}
@@ -443,7 +443,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     private final String ipAddress;
 
     /**
-     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 CIDR block of the VNIC's subnet
+     * The IPv6 address of the {@code IPv6} object. The address is within the IPv6 prefix of the VNIC's subnet
      * (see the {@code ipv6CidrBlock} attribute for the {@link Subnet} object.
      * <p>
      * Example: {@code 2001:0db8:0123:1111:abcd:ef01:2345:6789}

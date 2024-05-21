@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Problem endpoints summary.
+ * Summary information for endpoints associated with a problem (Problem object).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -92,13 +92,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * Unique id for sighting associated with the endpoint.
+         * Unique identifier for sighting associated with the endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
         private String sightingId;
 
         /**
-         * Unique id for sighting associated with the endpoint.
+         * Unique identifier for sighting associated with the endpoint
          * @param sightingId the value to set
          * @return this builder
          **/
@@ -108,13 +108,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * Unique id for cloudguard problem
+         * Unique identifier for problem associated with the endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Unique id for cloudguard problem
+         * Unique identifier for problem associated with the endpoint
          * @param problemId the value to set
          * @return this builder
          **/
@@ -124,13 +124,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * Identifier for the sighting type
+         * Unique identifier for the sighting type associated with the endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Unique identifier for the sighting type associated with the endpoint
          * @param sightingType the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * Display Name of the sighting type
+         * Display name of the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
         /**
-         * Display Name of the sighting type
+         * Display name of the sighting type
          * @param sightingTypeDisplayName the value to set
          * @return this builder
          **/
@@ -156,13 +156,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * IP Address of the Endpoint
+         * IP address of the endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * IP Address of the Endpoint
+         * IP address of the endpoint
          * @param ipAddress the value to set
          * @return this builder
          **/
@@ -172,13 +172,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * IP Address type of the Endpoint
+         * Type of IP address for the endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
         private String ipAddressType;
 
         /**
-         * IP Address type of the Endpoint
+         * Type of IP address for the endpoint
          * @param ipAddressType the value to set
          * @return this builder
          **/
@@ -188,13 +188,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * IP Address classification type of the endpoint
+         * IP address classification type for the endpoint
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipClassificationType")
         private String ipClassificationType;
 
         /**
-         * IP Address classification type of the endpoint
+         * IP address classification type for the endpoint
          * @param ipClassificationType the value to set
          * @return this builder
          **/
@@ -268,13 +268,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * Regions where activities were performed from this IP
+         * Regions where activities were performed from this IP address
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Regions where activities were performed from this IP
+         * Regions where activities were performed from this IP address
          * @param regions the value to set
          * @return this builder
          **/
@@ -284,13 +284,13 @@ public final class ProblemEndpointSummary
             return this;
         }
         /**
-         * Services where activities were performed from this IP
+         * List of services where activities were performed from this IP address
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<String> services;
 
         /**
-         * Services where activities were performed from this IP
+         * List of services where activities were performed from this IP address
          * @param services the value to set
          * @return this builder
          **/
@@ -420,13 +420,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * Unique id for sighting associated with the endpoint.
+     * Unique identifier for sighting associated with the endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingId")
     private final String sightingId;
 
     /**
-     * Unique id for sighting associated with the endpoint.
+     * Unique identifier for sighting associated with the endpoint
      * @return the value
      **/
     public String getSightingId() {
@@ -434,13 +434,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * Unique id for cloudguard problem
+     * Unique identifier for problem associated with the endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Unique id for cloudguard problem
+     * Unique identifier for problem associated with the endpoint
      * @return the value
      **/
     public String getProblemId() {
@@ -448,13 +448,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * Identifier for the sighting type
+     * Unique identifier for the sighting type associated with the endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Unique identifier for the sighting type associated with the endpoint
      * @return the value
      **/
     public String getSightingType() {
@@ -462,13 +462,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * Display Name of the sighting type
+     * Display name of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
     /**
-     * Display Name of the sighting type
+     * Display name of the sighting type
      * @return the value
      **/
     public String getSightingTypeDisplayName() {
@@ -476,13 +476,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * IP Address of the Endpoint
+     * IP address of the endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * IP Address of the Endpoint
+     * IP address of the endpoint
      * @return the value
      **/
     public String getIpAddress() {
@@ -490,13 +490,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * IP Address type of the Endpoint
+     * Type of IP address for the endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     private final String ipAddressType;
 
     /**
-     * IP Address type of the Endpoint
+     * Type of IP address for the endpoint
      * @return the value
      **/
     public String getIpAddressType() {
@@ -504,13 +504,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * IP Address classification type of the endpoint
+     * IP address classification type for the endpoint
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipClassificationType")
     private final String ipClassificationType;
 
     /**
-     * IP Address classification type of the endpoint
+     * IP address classification type for the endpoint
      * @return the value
      **/
     public String getIpClassificationType() {
@@ -574,13 +574,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * Regions where activities were performed from this IP
+     * Regions where activities were performed from this IP address
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Regions where activities were performed from this IP
+     * Regions where activities were performed from this IP address
      * @return the value
      **/
     public java.util.List<String> getRegions() {
@@ -588,13 +588,13 @@ public final class ProblemEndpointSummary
     }
 
     /**
-     * Services where activities were performed from this IP
+     * List of services where activities were performed from this IP address
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
     /**
-     * Services where activities were performed from this IP
+     * List of services where activities were performed from this IP address
      * @return the value
      **/
     public java.util.List<String> getServices() {

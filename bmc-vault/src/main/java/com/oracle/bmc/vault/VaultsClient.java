@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault;
@@ -36,6 +36,7 @@ public class VaultsClient implements Vaults {
     private final VaultsPaginators paginators;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
+    private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
     private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
             apacheConnectionClosingStrategy;
@@ -352,6 +353,7 @@ public class VaultsClient implements Vaults {
 
             executorService = threadPoolExecutor;
         }
+        this.executorService = executorService;
         this.waiters = new VaultsWaiters(executorService, this);
 
         this.paginators = new VaultsPaginators(this);
@@ -430,7 +432,8 @@ public class VaultsClient implements Vaults {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -567,6 +570,44 @@ public class VaultsClient implements Vaults {
         java.util.function.Function<javax.ws.rs.core.Response, CancelSecretDeletionResponse>
                 transformer =
                         CancelSecretDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CancelSecretRotationResponse cancelSecretRotation(CancelSecretRotationRequest request) {
+        LOG.trace("Called cancelSecretRotation");
+        final CancelSecretRotationRequest interceptedRequest =
+                CancelSecretRotationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelSecretRotationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretRotation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretRotation");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelSecretRotationResponse>
+                transformer =
+                        CancelSecretRotationConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -850,6 +891,43 @@ public class VaultsClient implements Vaults {
     }
 
     @Override
+    public RotateSecretResponse rotateSecret(RotateSecretRequest request) {
+        LOG.trace("Called rotateSecret");
+        final RotateSecretRequest interceptedRequest =
+                RotateSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateSecretConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "RotateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/RotateSecret");
+        java.util.function.Function<javax.ws.rs.core.Response, RotateSecretResponse> transformer =
+                RotateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ScheduleSecretDeletionResponse scheduleSecretDeletion(
             ScheduleSecretDeletionRequest request) {
         LOG.trace("Called scheduleSecretDeletion");
@@ -977,6 +1055,11 @@ public class VaultsClient implements Vaults {
     @Override
     public VaultsWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public VaultsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        return new VaultsWaiters(executorService, this, workRequestClient);
     }
 
     @Override

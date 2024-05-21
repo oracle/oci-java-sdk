@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech.model;
@@ -163,7 +163,7 @@ public final class CreateTranscriptionJobDetails
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Example: {@code {"bar-key": "value"}}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -171,7 +171,7 @@ public final class CreateTranscriptionJobDetails
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Example: {@code {"bar-key": "value"}}.
          *
          * @param freeformTags the value to set
          * @return this builder
@@ -183,7 +183,7 @@ public final class CreateTranscriptionJobDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"}, "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -191,7 +191,7 @@ public final class CreateTranscriptionJobDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"}, "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -391,7 +391,7 @@ public final class CreateTranscriptionJobDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Example: {@code {"bar-key": "value"}}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -399,7 +399,7 @@ public final class CreateTranscriptionJobDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Example: {@code {"bar-key": "value"}}.
      *
      * @return the value
      **/
@@ -409,7 +409,7 @@ public final class CreateTranscriptionJobDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"}, "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -417,7 +417,7 @@ public final class CreateTranscriptionJobDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace-1": {"bar-key-1": "value-1", "bar-key-2": "value-2"}, "foo-namespace-2": {"bar-key-1": "value-1", "bar-key-2": "value-2"}}}.
      *
      * @return the value
      **/

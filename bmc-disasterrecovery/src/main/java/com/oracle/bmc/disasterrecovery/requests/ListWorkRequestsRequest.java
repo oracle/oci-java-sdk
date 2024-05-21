@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.requests;
@@ -14,7 +14,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The ID (OCID) of the compartment in which to list resources.
      * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      */
     private String compartmentId;
@@ -22,7 +22,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The ID (OCID) of the compartment in which to list resources.
      * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      */
     public String getCompartmentId() {
@@ -31,7 +31,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The ID (OCID) of the asynchronous work request.
      * <p>
-     * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.workrequest.oc1..uniqueID}
      *
      */
     private String workRequestId;
@@ -39,7 +39,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The ID (OCID) of the asynchronous work request.
      * <p>
-     * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.workrequest.oc1..uniqueID}
      *
      */
     public String getWorkRequestId() {
@@ -60,14 +60,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * The ID (OCID) of the resource affected by the work request.
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     private String resourceId;
 
     /**
      * The ID (OCID) of the resource affected by the work request.
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * <p>
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     public String getResourceId() {
@@ -210,7 +212,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The ID (OCID) of the compartment in which to list resources.
          * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          */
         private String compartmentId = null;
@@ -218,7 +220,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The ID (OCID) of the compartment in which to list resources.
          * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -231,7 +233,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The ID (OCID) of the asynchronous work request.
          * <p>
-         * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.workrequest.oc1..uniqueID}
          *
          */
         private String workRequestId = null;
@@ -239,7 +241,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The ID (OCID) of the asynchronous work request.
          * <p>
-         * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.workrequest.oc1..uniqueID}
          *
          * @param workRequestId the value to set
          * @return this builder instance
@@ -268,14 +270,16 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * The ID (OCID) of the resource affected by the work request.
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          */
         private String resourceId = null;
 
         /**
          * The ID (OCID) of the resource affected by the work request.
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * <p>
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param resourceId the value to set
          * @return this builder instance

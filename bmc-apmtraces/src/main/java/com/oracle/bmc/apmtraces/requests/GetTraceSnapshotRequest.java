@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.requests;
@@ -12,13 +12,13 @@ import com.oracle.bmc.apmtraces.model.*;
 public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      *
      */
     private String apmDomainId;
 
     /**
-     * The APM Domain ID the request is intended for.
+     * The APM Domain ID for the intended request.
      *
      */
     public String getApmDomainId() {
@@ -53,26 +53,26 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
         return opcRequestId;
     }
     /**
-     * If enabled, then only span level details will be sent.
+     * If enabled, only span level details are sent.
      *
      */
     private Boolean isSummarized;
 
     /**
-     * If enabled, then only span level details will be sent.
+     * If enabled, only span level details are sent.
      *
      */
     public Boolean getIsSummarized() {
         return isSummarized;
     }
     /**
-     * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      *
      */
     private String threadId;
 
     /**
-     * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+     * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      *
      */
     public String getThreadId() {
@@ -100,13 +100,13 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          */
         private String apmDomainId = null;
 
         /**
-         * The APM Domain ID the request is intended for.
+         * The APM Domain ID for the intended request.
          *
          * @param apmDomainId the value to set
          * @return this builder instance
@@ -153,13 +153,13 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * If enabled, then only span level details will be sent.
+         * If enabled, only span level details are sent.
          *
          */
         private Boolean isSummarized = null;
 
         /**
-         * If enabled, then only span level details will be sent.
+         * If enabled, only span level details are sent.
          *
          * @param isSummarized the value to set
          * @return this builder instance
@@ -170,13 +170,13 @@ public class GetTraceSnapshotRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+         * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
          *
          */
         private String threadId = null;
 
         /**
-         * Thread id for which snapshots needs to be retrieved. This is an identifier of a thread, and is a positive long number generated when when a thread is created.
+         * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
          *
          * @param threadId the value to set
          * @return this builder instance

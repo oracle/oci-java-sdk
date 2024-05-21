@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances;
@@ -60,7 +60,7 @@ public interface ContainerInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a ContainerInstance resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a container instance resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -73,7 +73,7 @@ public interface ContainerInstance extends AutoCloseable {
             ChangeContainerInstanceCompartmentRequest request);
 
     /**
-     * Creates a new ContainerInstance.
+     * Creates a container instance and deploys the containers on it.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -86,7 +86,7 @@ public interface ContainerInstance extends AutoCloseable {
     CreateContainerInstanceResponse createContainerInstance(CreateContainerInstanceRequest request);
 
     /**
-     * Deletes a ContainerInstance resource by identifier
+     * Deletes a container instance and its containers.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -110,7 +110,7 @@ public interface ContainerInstance extends AutoCloseable {
     GetContainerResponse getContainer(GetContainerRequest request);
 
     /**
-     * Gets a ContainerInstance by identifier
+     * Gets information about the specified container instance.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -134,7 +134,7 @@ public interface ContainerInstance extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Get a list of shapes for creating Container Instances and their details.
+     * Lists the shapes that can be used to create container instances.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -147,7 +147,7 @@ public interface ContainerInstance extends AutoCloseable {
             ListContainerInstanceShapesRequest request);
 
     /**
-     * Returns a list of ContainerInstances.
+     * Returns a list of container instances.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -160,7 +160,7 @@ public interface ContainerInstance extends AutoCloseable {
     ListContainerInstancesResponse listContainerInstances(ListContainerInstancesRequest request);
 
     /**
-     * Return a list of Containers.
+     * Returns a list of containers in a compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -173,7 +173,7 @@ public interface ContainerInstance extends AutoCloseable {
     ListContainersResponse listContainers(ListContainersRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a paginated list of errors for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -186,7 +186,7 @@ public interface ContainerInstance extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list of logs for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -225,7 +225,7 @@ public interface ContainerInstance extends AutoCloseable {
             RestartContainerInstanceRequest request);
 
     /**
-     * Retrieve recent log from a single container by the container ID up to 256KB.
+     * Returns the most recent 256 KB of logs from the specified container.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -262,7 +262,7 @@ public interface ContainerInstance extends AutoCloseable {
     StopContainerInstanceResponse stopContainerInstance(StopContainerInstanceRequest request);
 
     /**
-     * Update a Container.
+     * Updates a container.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -274,7 +274,7 @@ public interface ContainerInstance extends AutoCloseable {
     UpdateContainerResponse updateContainer(UpdateContainerRequest request);
 
     /**
-     * Updates the ContainerInstance
+     * Updates a container instance.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

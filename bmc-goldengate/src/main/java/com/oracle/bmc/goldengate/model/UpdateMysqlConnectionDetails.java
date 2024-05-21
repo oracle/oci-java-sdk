@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -89,6 +89,24 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
             return this;
         }
         /**
@@ -220,7 +238,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
-         * Database Certificate - The base64 encoded content of mysql.pem file
+         * Database Certificate - The base64 encoded content of a .pem or .crt file.
          * containing the server public key (for 1 and 2-way SSL).
          *
          **/
@@ -228,7 +246,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         private String sslCa;
 
         /**
-         * Database Certificate - The base64 encoded content of mysql.pem file
+         * Database Certificate - The base64 encoded content of a .pem or .crt file.
          * containing the server public key (for 1 and 2-way SSL).
          *
          * @param sslCa the value to set
@@ -240,18 +258,16 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
-         * Certificates revoked by certificate authorities (CA).
-         * Server certificate must not be on this list (for 1 and 2-way SSL).
-         * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
         private String sslCrl;
 
         /**
-         * Certificates revoked by certificate authorities (CA).
-         * Server certificate must not be on this list (for 1 and 2-way SSL).
-         * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+         * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
          *
          * @param sslCrl the value to set
          * @return this builder
@@ -262,7 +278,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
-         * Client Certificate - The base64 encoded content of client-cert.pem file
+         * Client Certificate - The base64 encoded content of a .pem or .crt file.
          * containing the client public key (for 2-way SSL).
          *
          **/
@@ -270,7 +286,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         private String sslCert;
 
         /**
-         * Client Certificate - The base64 encoded content of client-cert.pem file
+         * Client Certificate - The base64 encoded content of a .pem or .crt file.
          * containing the client public key (for 2-way SSL).
          *
          * @param sslCert the value to set
@@ -282,14 +298,14 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
-         * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+         * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
         private String sslKey;
 
         /**
-         * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+         * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
          *
          * @param sslKey the value to set
          * @return this builder
@@ -300,6 +316,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -311,6 +330,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         private String privateIp;
 
         /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -377,6 +399,8 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.username,
                             this.password,
                             this.host,
@@ -419,6 +443,12 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
@@ -486,6 +516,8 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             String username,
             String password,
             String host,
@@ -500,7 +532,16 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             String privateIp,
             java.util.List<NameValuePair> additionalAttributes,
             String dbSystemId) {
-        super(displayName, description, freeformTags, definedTags, vaultId, keyId, nsgIds);
+        super(
+                displayName,
+                description,
+                freeformTags,
+                definedTags,
+                vaultId,
+                keyId,
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.username = username;
         this.password = password;
         this.host = host;
@@ -632,7 +673,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
-     * Database Certificate - The base64 encoded content of mysql.pem file
+     * Database Certificate - The base64 encoded content of a .pem or .crt file.
      * containing the server public key (for 1 and 2-way SSL).
      *
      **/
@@ -640,7 +681,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     private final String sslCa;
 
     /**
-     * Database Certificate - The base64 encoded content of mysql.pem file
+     * Database Certificate - The base64 encoded content of a .pem or .crt file.
      * containing the server public key (for 1 and 2-way SSL).
      *
      * @return the value
@@ -650,18 +691,16 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
-     * Certificates revoked by certificate authorities (CA).
-     * Server certificate must not be on this list (for 1 and 2-way SSL).
-     * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslCrl")
     private final String sslCrl;
 
     /**
-     * Certificates revoked by certificate authorities (CA).
-     * Server certificate must not be on this list (for 1 and 2-way SSL).
-     * Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+     * Note: This is an optional property and only applicable if TLS/MTLS option is selected.
      *
      * @return the value
      **/
@@ -670,7 +709,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
-     * Client Certificate - The base64 encoded content of client-cert.pem file
+     * Client Certificate - The base64 encoded content of a .pem or .crt file.
      * containing the client public key (for 2-way SSL).
      *
      **/
@@ -678,7 +717,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     private final String sslCert;
 
     /**
-     * Client Certificate - The base64 encoded content of client-cert.pem file
+     * Client Certificate - The base64 encoded content of a .pem or .crt file.
      * containing the client public key (for 2-way SSL).
      *
      * @return the value
@@ -688,14 +727,14 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
-     * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
     private final String sslKey;
 
     /**
-     * Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+     * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
      *
      * @return the value
      **/
@@ -704,6 +743,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.
@@ -715,6 +757,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     private final String privateIp;
 
     /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.

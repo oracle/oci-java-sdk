@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -85,14 +85,14 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
         private java.util.List<String> byoipv6CidrBlocks;
 
         /**
-         * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
          *
          * @param byoipv6CidrBlocks the value to set
          * @return this builder
@@ -103,14 +103,14 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+         * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
         private java.util.List<String> ipv6PrivateCidrBlocks;
 
         /**
-         * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+         * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
          *
          * @param ipv6PrivateCidrBlocks the value to set
          * @return this builder
@@ -354,16 +354,16 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-         * The CIDRs are provided by Oracle and the sizes are always /56.
+         * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
+         * The prefixes are provided by Oracle and the sizes are always /56.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
         private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-         * The CIDRs are provided by Oracle and the sizes are always /56.
+         * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
+         * The prefixes are provided by Oracle and the sizes are always /56.
          *
          * @param ipv6CidrBlocks the value to set
          * @return this builder
@@ -540,14 +540,14 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
     private final java.util.List<String> byoipv6CidrBlocks;
 
     /**
-     * The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      *
      * @return the value
      **/
@@ -556,14 +556,14 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
     private final java.util.List<String> ipv6PrivateCidrBlocks;
 
     /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
      *
      * @return the value
      **/
@@ -782,16 +782,16 @@ public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-     * The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
+     * The prefixes are provided by Oracle and the sizes are always /56.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
     private final java.util.List<String> ipv6CidrBlocks;
 
     /**
-     * For an IPv6-enabled VCN, this is the list of IPv6 CIDR blocks for the VCN's IP address space.
-     * The CIDRs are provided by Oracle and the sizes are always /56.
+     * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
+     * The prefixes are provided by Oracle and the sizes are always /56.
      *
      * @return the value
      **/

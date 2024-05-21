@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -179,6 +179,17 @@ public class ListCloudExadataInfrastructuresRequest
     public String getDisplayName() {
         return displayName;
     }
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    private String clusterPlacementGroupId;
+
+    /**
+     * A filter to return only resources that match the given cluster placement group ID exactly.
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -315,6 +326,21 @@ public class ListCloudExadataInfrastructuresRequest
         }
 
         /**
+         * A filter to return only resources that match the given cluster placement group ID exactly.
+         */
+        private String clusterPlacementGroupId = null;
+
+        /**
+         * A filter to return only resources that match the given cluster placement group ID exactly.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -350,6 +376,7 @@ public class ListCloudExadataInfrastructuresRequest
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            clusterPlacementGroupId(o.getClusterPlacementGroupId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -391,8 +418,9 @@ public class ListCloudExadataInfrastructuresRequest
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.clusterPlacementGroupId = clusterPlacementGroupId;
             return request;
-            // new ListCloudExadataInfrastructuresRequest(compartmentId, limit, page, opcRequestId, sortBy, sortOrder, lifecycleState, displayName);
+            // new ListCloudExadataInfrastructuresRequest(compartmentId, limit, page, opcRequestId, sortBy, sortOrder, lifecycleState, displayName, clusterPlacementGroupId);
         }
     }
 
@@ -409,7 +437,8 @@ public class ListCloudExadataInfrastructuresRequest
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
-                .displayName(displayName);
+                .displayName(displayName)
+                .clusterPlacementGroupId(clusterPlacementGroupId);
     }
 
     /**
@@ -433,6 +462,7 @@ public class ListCloudExadataInfrastructuresRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",clusterPlacementGroupId=").append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -455,7 +485,9 @@ public class ListCloudExadataInfrastructuresRequest
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.displayName, other.displayName);
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId);
     }
 
     @Override
@@ -474,6 +506,11 @@ public class ListCloudExadataInfrastructuresRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         return result;
     }
 }

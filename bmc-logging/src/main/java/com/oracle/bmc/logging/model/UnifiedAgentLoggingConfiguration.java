@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
@@ -44,6 +44,22 @@ public final class UnifiedAgentLoggingConfiguration
             this.__explicitlySet__.add("sources");
             return this;
         }
+        /**
+         * Logging filter object.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("filter")
+        private java.util.List<UnifiedAgentLoggingFilter> filter;
+
+        /**
+         * Logging filter object.
+         * @param filter the value to set
+         * @return this builder
+         **/
+        public Builder filter(java.util.List<UnifiedAgentLoggingFilter> filter) {
+            this.filter = filter;
+            this.__explicitlySet__.add("filter");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private UnifiedAgentLoggingDestination destination;
@@ -59,7 +75,8 @@ public final class UnifiedAgentLoggingConfiguration
 
         public UnifiedAgentLoggingConfiguration build() {
             UnifiedAgentLoggingConfiguration model =
-                    new UnifiedAgentLoggingConfiguration(this.sources, this.destination);
+                    new UnifiedAgentLoggingConfiguration(
+                            this.sources, this.filter, this.destination);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -70,6 +87,9 @@ public final class UnifiedAgentLoggingConfiguration
         public Builder copy(UnifiedAgentLoggingConfiguration model) {
             if (model.wasPropertyExplicitlySet("sources")) {
                 this.sources(model.getSources());
+            }
+            if (model.wasPropertyExplicitlySet("filter")) {
+                this.filter(model.getFilter());
             }
             if (model.wasPropertyExplicitlySet("destination")) {
                 this.destination(model.getDestination());
@@ -92,9 +112,11 @@ public final class UnifiedAgentLoggingConfiguration
     @Deprecated
     public UnifiedAgentLoggingConfiguration(
             java.util.List<UnifiedAgentLoggingSource> sources,
+            java.util.List<UnifiedAgentLoggingFilter> filter,
             UnifiedAgentLoggingDestination destination) {
         super();
         this.sources = sources;
+        this.filter = filter;
         this.destination = destination;
     }
 
@@ -110,6 +132,20 @@ public final class UnifiedAgentLoggingConfiguration
      **/
     public java.util.List<UnifiedAgentLoggingSource> getSources() {
         return sources;
+    }
+
+    /**
+     * Logging filter object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("filter")
+    private final java.util.List<UnifiedAgentLoggingFilter> filter;
+
+    /**
+     * Logging filter object.
+     * @return the value
+     **/
+    public java.util.List<UnifiedAgentLoggingFilter> getFilter() {
+        return filter;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
@@ -134,6 +170,7 @@ public final class UnifiedAgentLoggingConfiguration
         sb.append("UnifiedAgentLoggingConfiguration(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sources=").append(String.valueOf(this.sources));
+        sb.append(", filter=").append(String.valueOf(this.filter));
         sb.append(", destination=").append(String.valueOf(this.destination));
         sb.append(")");
         return sb.toString();
@@ -150,6 +187,7 @@ public final class UnifiedAgentLoggingConfiguration
 
         UnifiedAgentLoggingConfiguration other = (UnifiedAgentLoggingConfiguration) o;
         return java.util.Objects.equals(this.sources, other.sources)
+                && java.util.Objects.equals(this.filter, other.filter)
                 && java.util.Objects.equals(this.destination, other.destination)
                 && super.equals(other);
     }
@@ -159,6 +197,7 @@ public final class UnifiedAgentLoggingConfiguration
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
+        result = (result * PRIME) + (this.filter == null ? 43 : this.filter.hashCode());
         result = (result * PRIME) + (this.destination == null ? 43 : this.destination.hashCode());
         return result;
     }

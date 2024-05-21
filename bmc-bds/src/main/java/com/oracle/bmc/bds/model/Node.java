@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -38,7 +38,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "ocpus",
         "memoryInGBs",
         "nvmes",
-        "localDisksTotalSizeInGBs"
+        "localDisksTotalSizeInGBs",
+        "timeMaintenanceRebootDue",
+        "osVersion",
+        "isRebootRequired",
+        "timeReplaced",
+        "nodeBackupId"
     })
     public Node(
             String instanceId,
@@ -59,7 +64,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             Integer ocpus,
             Integer memoryInGBs,
             Integer nvmes,
-            Double localDisksTotalSizeInGBs) {
+            Double localDisksTotalSizeInGBs,
+            java.util.Date timeMaintenanceRebootDue,
+            String osVersion,
+            Boolean isRebootRequired,
+            java.util.Date timeReplaced,
+            String nodeBackupId) {
         super();
         this.instanceId = instanceId;
         this.displayName = displayName;
@@ -80,6 +90,11 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.memoryInGBs = memoryInGBs;
         this.nvmes = nvmes;
         this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
+        this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+        this.osVersion = osVersion;
+        this.isRebootRequired = isRebootRequired;
+        this.timeReplaced = timeReplaced;
+        this.nodeBackupId = nodeBackupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -389,6 +404,86 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("localDisksTotalSizeInGBs");
             return this;
         }
+        /**
+         * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+        private java.util.Date timeMaintenanceRebootDue;
+
+        /**
+         * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+         * @param timeMaintenanceRebootDue the value to set
+         * @return this builder
+         **/
+        public Builder timeMaintenanceRebootDue(java.util.Date timeMaintenanceRebootDue) {
+            this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            this.__explicitlySet__.add("timeMaintenanceRebootDue");
+            return this;
+        }
+        /**
+         * BDS-assigned Operating System version for the node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
+        private String osVersion;
+
+        /**
+         * BDS-assigned Operating System version for the node.
+         * @param osVersion the value to set
+         * @return this builder
+         **/
+        public Builder osVersion(String osVersion) {
+            this.osVersion = osVersion;
+            this.__explicitlySet__.add("osVersion");
+            return this;
+        }
+        /**
+         * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
+        private Boolean isRebootRequired;
+
+        /**
+         * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+         * @param isRebootRequired the value to set
+         * @return this builder
+         **/
+        public Builder isRebootRequired(Boolean isRebootRequired) {
+            this.isRebootRequired = isRebootRequired;
+            this.__explicitlySet__.add("isRebootRequired");
+            return this;
+        }
+        /**
+         * The date and time the instance was replaced by a new vm with a node backup.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
+        private java.util.Date timeReplaced;
+
+        /**
+         * The date and time the instance was replaced by a new vm with a node backup.
+         * @param timeReplaced the value to set
+         * @return this builder
+         **/
+        public Builder timeReplaced(java.util.Date timeReplaced) {
+            this.timeReplaced = timeReplaced;
+            this.__explicitlySet__.add("timeReplaced");
+            return this;
+        }
+        /**
+         * The node back id that was used for replacing the node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
+        private String nodeBackupId;
+
+        /**
+         * The node back id that was used for replacing the node.
+         * @param nodeBackupId the value to set
+         * @return this builder
+         **/
+        public Builder nodeBackupId(String nodeBackupId) {
+            this.nodeBackupId = nodeBackupId;
+            this.__explicitlySet__.add("nodeBackupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -414,7 +509,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.ocpus,
                             this.memoryInGBs,
                             this.nvmes,
-                            this.localDisksTotalSizeInGBs);
+                            this.localDisksTotalSizeInGBs,
+                            this.timeMaintenanceRebootDue,
+                            this.osVersion,
+                            this.isRebootRequired,
+                            this.timeReplaced,
+                            this.nodeBackupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -479,6 +579,21 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("localDisksTotalSizeInGBs")) {
                 this.localDisksTotalSizeInGBs(model.getLocalDisksTotalSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenanceRebootDue")) {
+                this.timeMaintenanceRebootDue(model.getTimeMaintenanceRebootDue());
+            }
+            if (model.wasPropertyExplicitlySet("osVersion")) {
+                this.osVersion(model.getOsVersion());
+            }
+            if (model.wasPropertyExplicitlySet("isRebootRequired")) {
+                this.isRebootRequired(model.getIsRebootRequired());
+            }
+            if (model.wasPropertyExplicitlySet("timeReplaced")) {
+                this.timeReplaced(model.getTimeReplaced());
+            }
+            if (model.wasPropertyExplicitlySet("nodeBackupId")) {
+                this.nodeBackupId(model.getNodeBackupId());
             }
             return this;
         }
@@ -871,6 +986,76 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return localDisksTotalSizeInGBs;
     }
 
+    /**
+     * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+    private final java.util.Date timeMaintenanceRebootDue;
+
+    /**
+     * The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+     * @return the value
+     **/
+    public java.util.Date getTimeMaintenanceRebootDue() {
+        return timeMaintenanceRebootDue;
+    }
+
+    /**
+     * BDS-assigned Operating System version for the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
+    private final String osVersion;
+
+    /**
+     * BDS-assigned Operating System version for the node.
+     * @return the value
+     **/
+    public String getOsVersion() {
+        return osVersion;
+    }
+
+    /**
+     * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
+    private final Boolean isRebootRequired;
+
+    /**
+     * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     * @return the value
+     **/
+    public Boolean getIsRebootRequired() {
+        return isRebootRequired;
+    }
+
+    /**
+     * The date and time the instance was replaced by a new vm with a node backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
+    private final java.util.Date timeReplaced;
+
+    /**
+     * The date and time the instance was replaced by a new vm with a node backup.
+     * @return the value
+     **/
+    public java.util.Date getTimeReplaced() {
+        return timeReplaced;
+    }
+
+    /**
+     * The node back id that was used for replacing the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupId")
+    private final String nodeBackupId;
+
+    /**
+     * The node back id that was used for replacing the node.
+     * @return the value
+     **/
+    public String getNodeBackupId() {
+        return nodeBackupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -905,6 +1090,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", nvmes=").append(String.valueOf(this.nvmes));
         sb.append(", localDisksTotalSizeInGBs=")
                 .append(String.valueOf(this.localDisksTotalSizeInGBs));
+        sb.append(", timeMaintenanceRebootDue=")
+                .append(String.valueOf(this.timeMaintenanceRebootDue));
+        sb.append(", osVersion=").append(String.valueOf(this.osVersion));
+        sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
+        sb.append(", timeReplaced=").append(String.valueOf(this.timeReplaced));
+        sb.append(", nodeBackupId=").append(String.valueOf(this.nodeBackupId));
         sb.append(")");
         return sb.toString();
     }
@@ -939,6 +1130,12 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.nvmes, other.nvmes)
                 && java.util.Objects.equals(
                         this.localDisksTotalSizeInGBs, other.localDisksTotalSizeInGBs)
+                && java.util.Objects.equals(
+                        this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
+                && java.util.Objects.equals(this.osVersion, other.osVersion)
+                && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
+                && java.util.Objects.equals(this.timeReplaced, other.timeReplaced)
+                && java.util.Objects.equals(this.nodeBackupId, other.nodeBackupId)
                 && super.equals(other);
     }
 
@@ -981,6 +1178,17 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                         + (this.localDisksTotalSizeInGBs == null
                                 ? 43
                                 : this.localDisksTotalSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceRebootDue == null
+                                ? 43
+                                : this.timeMaintenanceRebootDue.hashCode());
+        result = (result * PRIME) + (this.osVersion == null ? 43 : this.osVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
+        result = (result * PRIME) + (this.timeReplaced == null ? 43 : this.timeReplaced.hashCode());
+        result = (result * PRIME) + (this.nodeBackupId == null ? 43 : this.nodeBackupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

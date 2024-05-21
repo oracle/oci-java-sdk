@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -25,18 +25,24 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
         "crossConnectId",
         "interfaceState",
         "lightLevelIndBm",
-        "lightLevelIndicator"
+        "lightLevelIndicator",
+        "encryptionStatus",
+        "lightLevelsInDBm"
     })
     public CrossConnectStatus(
             String crossConnectId,
             InterfaceState interfaceState,
             Float lightLevelIndBm,
-            LightLevelIndicator lightLevelIndicator) {
+            LightLevelIndicator lightLevelIndicator,
+            EncryptionStatus encryptionStatus,
+            java.util.List<Float> lightLevelsInDBm) {
         super();
         this.crossConnectId = crossConnectId;
         this.interfaceState = interfaceState;
         this.lightLevelIndBm = lightLevelIndBm;
         this.lightLevelIndicator = lightLevelIndicator;
+        this.encryptionStatus = encryptionStatus;
+        this.lightLevelsInDBm = lightLevelsInDBm;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -125,6 +131,60 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("lightLevelIndicator");
             return this;
         }
+        /**
+         * Encryption status of this cross connect.
+         * <p>
+         * Possible values:
+         * * **UP:** Traffic is encrypted over this cross-connect
+         * * **DOWN:** Traffic is not encrypted over this cross-connect
+         * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+         * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+         * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
+        private EncryptionStatus encryptionStatus;
+
+        /**
+         * Encryption status of this cross connect.
+         * <p>
+         * Possible values:
+         * * **UP:** Traffic is encrypted over this cross-connect
+         * * **DOWN:** Traffic is not encrypted over this cross-connect
+         * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+         * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+         * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+         *
+         * @param encryptionStatus the value to set
+         * @return this builder
+         **/
+        public Builder encryptionStatus(EncryptionStatus encryptionStatus) {
+            this.encryptionStatus = encryptionStatus;
+            this.__explicitlySet__.add("encryptionStatus");
+            return this;
+        }
+        /**
+         * The light levels of the cross-connect (in dBm).
+         * <p>
+         * Example: {@code [14.0, -14.0, 2.1, -10.1]}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
+        private java.util.List<Float> lightLevelsInDBm;
+
+        /**
+         * The light levels of the cross-connect (in dBm).
+         * <p>
+         * Example: {@code [14.0, -14.0, 2.1, -10.1]}
+         *
+         * @param lightLevelsInDBm the value to set
+         * @return this builder
+         **/
+        public Builder lightLevelsInDBm(java.util.List<Float> lightLevelsInDBm) {
+            this.lightLevelsInDBm = lightLevelsInDBm;
+            this.__explicitlySet__.add("lightLevelsInDBm");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -135,7 +195,9 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
                             this.crossConnectId,
                             this.interfaceState,
                             this.lightLevelIndBm,
-                            this.lightLevelIndicator);
+                            this.lightLevelIndicator,
+                            this.encryptionStatus,
+                            this.lightLevelsInDBm);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +217,12 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("lightLevelIndicator")) {
                 this.lightLevelIndicator(model.getLightLevelIndicator());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionStatus")) {
+                this.encryptionStatus(model.getEncryptionStatus());
+            }
+            if (model.wasPropertyExplicitlySet("lightLevelsInDBm")) {
+                this.lightLevelsInDBm(model.getLightLevelsInDBm());
             }
             return this;
         }
@@ -327,6 +395,102 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
         return lightLevelIndicator;
     }
 
+    /**
+     * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+     *
+     **/
+    public enum EncryptionStatus {
+        Up("UP"),
+        Down("DOWN"),
+        CipherMismatch("CIPHER_MISMATCH"),
+        CknMismatch("CKN_MISMATCH"),
+        CakMismatch("CAK_MISMATCH"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, EncryptionStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EncryptionStatus v : EncryptionStatus.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        EncryptionStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EncryptionStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid EncryptionStatus: " + key);
+        }
+    };
+    /**
+     * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionStatus")
+    private final EncryptionStatus encryptionStatus;
+
+    /**
+     * Encryption status of this cross connect.
+     * <p>
+     * Possible values:
+     * * **UP:** Traffic is encrypted over this cross-connect
+     * * **DOWN:** Traffic is not encrypted over this cross-connect
+     * * **CIPHER_MISMATCH:** The MACsec encryption cipher doesn't match the cipher on the CPE
+     * * **CKN_MISMATCH:** The MACsec Connectivity association Key Name (CKN) doesn't match the CKN on the CPE
+     * * **CAK_MISMATCH:** The MACsec Connectivity Association Key (CAK) doesn't match the CAK on the CPE
+     *
+     * @return the value
+     **/
+    public EncryptionStatus getEncryptionStatus() {
+        return encryptionStatus;
+    }
+
+    /**
+     * The light levels of the cross-connect (in dBm).
+     * <p>
+     * Example: {@code [14.0, -14.0, 2.1, -10.1]}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lightLevelsInDBm")
+    private final java.util.List<Float> lightLevelsInDBm;
+
+    /**
+     * The light levels of the cross-connect (in dBm).
+     * <p>
+     * Example: {@code [14.0, -14.0, 2.1, -10.1]}
+     *
+     * @return the value
+     **/
+    public java.util.List<Float> getLightLevelsInDBm() {
+        return lightLevelsInDBm;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -345,6 +509,8 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
         sb.append(", interfaceState=").append(String.valueOf(this.interfaceState));
         sb.append(", lightLevelIndBm=").append(String.valueOf(this.lightLevelIndBm));
         sb.append(", lightLevelIndicator=").append(String.valueOf(this.lightLevelIndicator));
+        sb.append(", encryptionStatus=").append(String.valueOf(this.encryptionStatus));
+        sb.append(", lightLevelsInDBm=").append(String.valueOf(this.lightLevelsInDBm));
         sb.append(")");
         return sb.toString();
     }
@@ -363,6 +529,8 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.interfaceState, other.interfaceState)
                 && java.util.Objects.equals(this.lightLevelIndBm, other.lightLevelIndBm)
                 && java.util.Objects.equals(this.lightLevelIndicator, other.lightLevelIndicator)
+                && java.util.Objects.equals(this.encryptionStatus, other.encryptionStatus)
+                && java.util.Objects.equals(this.lightLevelsInDBm, other.lightLevelsInDBm)
                 && super.equals(other);
     }
 
@@ -384,6 +552,12 @@ public final class CrossConnectStatus extends com.oracle.bmc.http.internal.Expli
                         + (this.lightLevelIndicator == null
                                 ? 43
                                 : this.lightLevelIndicator.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionStatus == null ? 43 : this.encryptionStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lightLevelsInDBm == null ? 43 : this.lightLevelsInDBm.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

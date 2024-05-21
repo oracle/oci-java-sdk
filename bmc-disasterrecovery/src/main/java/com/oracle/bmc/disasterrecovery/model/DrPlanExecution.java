@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details of a DR Plan Execution.
+ * The details of a DR plan execution.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -91,18 +91,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -113,18 +113,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of the compartment containing this DR Plan Execution.
+         * The OCID of the compartment containing this DR plan execution.
          * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment containing this DR Plan Execution.
+         * The OCID of the compartment containing this DR plan execution.
          * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -135,7 +135,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The display name of this DR Plan Execution.
+         * The display name of the DR plan execution.
          * <p>
          * Example: {@code Execution - EBS Switchover PHX to IAD}
          *
@@ -144,7 +144,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private String displayName;
 
         /**
-         * The display name of this DR Plan Execution.
+         * The display name of the DR plan execution.
          * <p>
          * Example: {@code Execution - EBS Switchover PHX to IAD}
          *
@@ -157,18 +157,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          * <p>
-         * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("planId")
         private String planId;
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          * <p>
-         * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param planId the value to set
          * @return this builder
@@ -179,14 +179,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The type of the DR Plan executed.
+         * The type of the DR plan executed.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("planExecutionType")
         private DrPlanExecutionType planExecutionType;
 
         /**
-         * The type of the DR Plan executed.
+         * The type of the DR plan executed.
          *
          * @param planExecutionType the value to set
          * @return this builder
@@ -206,18 +206,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of the DR Protection Group to which this DR Plan Execution belongs.
+         * The OCID of the DR protection group to which this DR plan execution belongs.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
         private String drProtectionGroupId;
 
         /**
-         * The OCID of the DR Protection Group to which this DR Plan Execution belongs.
+         * The OCID of the DR protection group to which this DR plan execution belongs.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder
@@ -228,20 +228,20 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of peer (remote) DR Protection Group associated with this plan's
-         * DR Protection Group.
+         * The OCID of peer DR protection group associated with this plan's
+         * DR protection group.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDrProtectionGroupId")
         private String peerDrProtectionGroupId;
 
         /**
-         * The OCID of peer (remote) DR Protection Group associated with this plan's
-         * DR Protection Group.
+         * The OCID of peer DR protection group associated with this plan's
+         * DR protection group.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param peerDrProtectionGroupId the value to set
          * @return this builder
@@ -252,7 +252,8 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The region of the peer (remote) DR Protection Group.
+         * The region of the peer DR protection group associated with this plan's
+         * DR protection group.
          * <p>
          * Example: {@code us-ashburn-1}
          *
@@ -261,7 +262,8 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private String peerRegion;
 
         /**
-         * The region of the peer (remote) DR Protection Group.
+         * The region of the peer DR protection group associated with this plan's
+         * DR protection group.
          * <p>
          * Example: {@code us-ashburn-1}
          *
@@ -283,7 +285,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.
+         * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -292,7 +294,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private java.util.Date timeCreated;
 
         /**
-         * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.
+         * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -305,7 +307,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.
+         * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -314,7 +316,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private java.util.Date timeStarted;
 
         /**
-         * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.
+         * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -327,7 +329,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.
+         * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -336,7 +338,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private java.util.Date timeUpdated;
 
         /**
-         * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.
+         * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -349,7 +351,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled.
+         * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
          * An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
@@ -359,7 +361,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private java.util.Date timeEnded;
 
         /**
-         * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled.
+         * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
          * An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
@@ -373,7 +375,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The total duration in seconds taken to complete the DR Plan Execution.
+         * The total duration in seconds taken to complete the DR plan execution.
          * <p>
          * Example: {@code 750}
          *
@@ -382,7 +384,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         private Integer executionDurationInSec;
 
         /**
-         * The total duration in seconds taken to complete the DR Plan Execution.
+         * The total duration in seconds taken to complete the DR plan execution.
          * <p>
          * Example: {@code 750}
          *
@@ -395,14 +397,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * A list of groups executed in this DR Plan Execution.
+         * A list of groups executed in this DR plan execution.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupExecutions")
         private java.util.List<DrPlanGroupExecution> groupExecutions;
 
         /**
-         * A list of groups executed in this DR Plan Execution.
+         * A list of groups executed in this DR plan execution.
          *
          * @param groupExecutions the value to set
          * @return this builder
@@ -413,14 +415,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The current state of the DR Plan Execution.
+         * The current state of the DR plan execution.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DrPlanExecutionLifecycleState lifecycleState;
 
         /**
-         * The current state of the DR Plan Execution.
+         * The current state of the DR plan execution.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -431,18 +433,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * A message describing the DR Plan Execution's current state in more detail.
-         * <p>
-         * Example: {@code The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress}
+         * A message describing the DR plan execution's current state in more detail.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
         private String lifeCycleDetails;
 
         /**
-         * A message describing the DR Plan Execution's current state in more detail.
-         * <p>
-         * Example: {@code The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress}
+         * A message describing the DR plan execution's current state in more detail.
          *
          * @param lifeCycleDetails the value to set
          * @return this builder
@@ -454,6 +452,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -462,6 +461,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -474,6 +474,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -482,6 +483,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -495,6 +497,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * <p>
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          **/
@@ -503,6 +506,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * <p>
          * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
@@ -628,18 +632,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -648,18 +652,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of the compartment containing this DR Plan Execution.
+     * The OCID of the compartment containing this DR plan execution.
      * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment containing this DR Plan Execution.
+     * The OCID of the compartment containing this DR plan execution.
      * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -668,7 +672,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The display name of this DR Plan Execution.
+     * The display name of the DR plan execution.
      * <p>
      * Example: {@code Execution - EBS Switchover PHX to IAD}
      *
@@ -677,7 +681,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final String displayName;
 
     /**
-     * The display name of this DR Plan Execution.
+     * The display name of the DR plan execution.
      * <p>
      * Example: {@code Execution - EBS Switchover PHX to IAD}
      *
@@ -688,18 +692,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      * <p>
-     * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planId")
     private final String planId;
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      * <p>
-     * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -708,14 +712,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The type of the DR Plan executed.
+     * The type of the DR plan executed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planExecutionType")
     private final DrPlanExecutionType planExecutionType;
 
     /**
-     * The type of the DR Plan executed.
+     * The type of the DR plan executed.
      *
      * @return the value
      **/
@@ -731,18 +735,18 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.
+     * The OCID of the DR protection group to which this DR plan execution belongs.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
     private final String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group to which this DR Plan Execution belongs.
+     * The OCID of the DR protection group to which this DR plan execution belongs.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -751,20 +755,20 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan's
-     * DR Protection Group.
+     * The OCID of peer DR protection group associated with this plan's
+     * DR protection group.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDrProtectionGroupId")
     private final String peerDrProtectionGroupId;
 
     /**
-     * The OCID of peer (remote) DR Protection Group associated with this plan's
-     * DR Protection Group.
+     * The OCID of peer DR protection group associated with this plan's
+     * DR protection group.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -773,7 +777,8 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The region of the peer (remote) DR Protection Group.
+     * The region of the peer DR protection group associated with this plan's
+     * DR protection group.
      * <p>
      * Example: {@code us-ashburn-1}
      *
@@ -782,7 +787,8 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final String peerRegion;
 
     /**
-     * The region of the peer (remote) DR Protection Group.
+     * The region of the peer DR protection group associated with this plan's
+     * DR protection group.
      * <p>
      * Example: {@code us-ashburn-1}
      *
@@ -800,7 +806,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.
+     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -809,7 +815,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.
+     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -820,7 +826,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.
+     * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -829,7 +835,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.
+     * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -840,7 +846,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.
+     * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -849,7 +855,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Date timeUpdated;
 
     /**
-     * The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.
+     * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -860,7 +866,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled.
+     * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
      * An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
@@ -870,7 +876,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final java.util.Date timeEnded;
 
     /**
-     * The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled.
+     * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
      * An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
@@ -882,7 +888,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The total duration in seconds taken to complete the DR Plan Execution.
+     * The total duration in seconds taken to complete the DR plan execution.
      * <p>
      * Example: {@code 750}
      *
@@ -891,7 +897,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     private final Integer executionDurationInSec;
 
     /**
-     * The total duration in seconds taken to complete the DR Plan Execution.
+     * The total duration in seconds taken to complete the DR plan execution.
      * <p>
      * Example: {@code 750}
      *
@@ -902,14 +908,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * A list of groups executed in this DR Plan Execution.
+     * A list of groups executed in this DR plan execution.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupExecutions")
     private final java.util.List<DrPlanGroupExecution> groupExecutions;
 
     /**
-     * A list of groups executed in this DR Plan Execution.
+     * A list of groups executed in this DR plan execution.
      *
      * @return the value
      **/
@@ -918,14 +924,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The current state of the DR Plan Execution.
+     * The current state of the DR plan execution.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DrPlanExecutionLifecycleState lifecycleState;
 
     /**
-     * The current state of the DR Plan Execution.
+     * The current state of the DR plan execution.
      *
      * @return the value
      **/
@@ -934,18 +940,14 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * A message describing the DR Plan Execution's current state in more detail.
-     * <p>
-     * Example: {@code The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress}
+     * A message describing the DR plan execution's current state in more detail.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
     private final String lifeCycleDetails;
 
     /**
-     * A message describing the DR Plan Execution's current state in more detail.
-     * <p>
-     * Example: {@code The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress}
+     * A message describing the DR plan execution's current state in more detail.
      *
      * @return the value
      **/
@@ -955,6 +957,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -963,6 +966,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -973,6 +977,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -981,6 +986,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
@@ -991,6 +997,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * <p>
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      **/
@@ -999,6 +1006,7 @@ public final class DrPlanExecution extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * <p>
      * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value

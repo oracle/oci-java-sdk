@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class SubscriptionClient implements Subscription {
     /**
      * Service instance for Subscription.
@@ -431,7 +431,8 @@ public class SubscriptionClient implements Subscription {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -566,7 +567,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "CreateSubscriptionMapping",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/CreateSubscriptionMapping");
         java.util.function.Function<javax.ws.rs.core.Response, CreateSubscriptionMappingResponse>
                 transformer =
                         CreateSubscriptionMappingConverter.fromResponse(
@@ -609,7 +610,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "DeleteSubscriptionMapping",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/DeleteSubscriptionMapping");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSubscriptionMappingResponse>
                 transformer =
                         DeleteSubscriptionMappingConverter.fromResponse(
@@ -648,7 +649,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "GetAssignedSubscription",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscription/GetAssignedSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, GetAssignedSubscriptionResponse>
                 transformer =
                         GetAssignedSubscriptionConverter.fromResponse(
@@ -685,7 +686,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "GetSubscription",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/GetSubscription");
         java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
@@ -723,10 +724,49 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "GetSubscriptionMapping",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/GetSubscriptionMapping");
         java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
                 transformer =
                         GetSubscriptionMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAssignedSubscriptionLineItemsResponse listAssignedSubscriptionLineItems(
+            ListAssignedSubscriptionLineItemsRequest request) {
+        LOG.trace("Called listAssignedSubscriptionLineItems");
+        final ListAssignedSubscriptionLineItemsRequest interceptedRequest =
+                ListAssignedSubscriptionLineItemsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssignedSubscriptionLineItemsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListAssignedSubscriptionLineItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscriptionLineItemSummary/ListAssignedSubscriptionLineItems");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAssignedSubscriptionLineItemsResponse>
+                transformer =
+                        ListAssignedSubscriptionLineItemsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -761,7 +801,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "ListAssignedSubscriptions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscription/ListAssignedSubscriptions");
         java.util.function.Function<javax.ws.rs.core.Response, ListAssignedSubscriptionsResponse>
                 transformer =
                         ListAssignedSubscriptionsConverter.fromResponse(
@@ -798,10 +838,48 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "ListAvailableRegions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/ListAvailableRegions");
         java.util.function.Function<javax.ws.rs.core.Response, ListAvailableRegionsResponse>
                 transformer =
                         ListAvailableRegionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSubscriptionLineItemsResponse listSubscriptionLineItems(
+            ListSubscriptionLineItemsRequest request) {
+        LOG.trace("Called listSubscriptionLineItems");
+        final ListSubscriptionLineItemsRequest interceptedRequest =
+                ListSubscriptionLineItemsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSubscriptionLineItemsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListSubscriptionLineItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionLineItemSummary/ListSubscriptionLineItems");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionLineItemsResponse>
+                transformer =
+                        ListSubscriptionLineItemsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -836,7 +914,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "ListSubscriptionMappings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/ListSubscriptionMappings");
         java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionMappingsResponse>
                 transformer =
                         ListSubscriptionMappingsConverter.fromResponse(
@@ -873,7 +951,7 @@ public class SubscriptionClient implements Subscription {
                         "Subscription",
                         "ListSubscriptions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/ListSubscriptions");
         java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(

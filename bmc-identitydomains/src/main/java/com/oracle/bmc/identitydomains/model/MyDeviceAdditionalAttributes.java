@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -42,6 +42,8 @@ public final class MyDeviceAdditionalAttributes
          *  - returned: always
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -57,6 +59,8 @@ public final class MyDeviceAdditionalAttributes
          *  - returned: always
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param key the value to set
          * @return this builder
          **/
@@ -76,6 +80,8 @@ public final class MyDeviceAdditionalAttributes
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -91,6 +97,8 @@ public final class MyDeviceAdditionalAttributes
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param value the value to set
          * @return this builder
          **/
@@ -146,6 +154,8 @@ public final class MyDeviceAdditionalAttributes
      *  - returned: always
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
@@ -161,6 +171,8 @@ public final class MyDeviceAdditionalAttributes
      *  - returned: always
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getKey() {
@@ -178,6 +190,8 @@ public final class MyDeviceAdditionalAttributes
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -193,6 +207,8 @@ public final class MyDeviceAdditionalAttributes
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getValue() {

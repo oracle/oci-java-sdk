@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.requests;
@@ -68,6 +68,17 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
 
     /**
@@ -163,6 +174,21 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -195,6 +221,7 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                     o.getUpdateDatabaseToolsPrivateEndpointDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -245,8 +272,9 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                     updateDatabaseToolsPrivateEndpointDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateDatabaseToolsPrivateEndpointRequest(databaseToolsPrivateEndpointId, updateDatabaseToolsPrivateEndpointDetails, ifMatch, opcRequestId);
+            // new UpdateDatabaseToolsPrivateEndpointRequest(databaseToolsPrivateEndpointId, updateDatabaseToolsPrivateEndpointDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -260,7 +288,8 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                 .updateDatabaseToolsPrivateEndpointDetails(
                         updateDatabaseToolsPrivateEndpointDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -282,6 +311,7 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                 .append(String.valueOf(this.updateDatabaseToolsPrivateEndpointDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -304,7 +334,8 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                         this.updateDatabaseToolsPrivateEndpointDetails,
                         other.updateDatabaseToolsPrivateEndpointDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -323,6 +354,9 @@ public class UpdateDatabaseToolsPrivateEndpointRequest
                                 : this.updateDatabaseToolsPrivateEndpointDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

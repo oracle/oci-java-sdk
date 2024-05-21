@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox.model;
@@ -26,6 +26,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
         "resourceId",
         "lockboxPartner",
         "compartmentId",
+        "partnerId",
         "partnerCompartmentId",
         "approvalTemplateId",
         "maxAccessDuration",
@@ -38,6 +39,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
             String resourceId,
             LockboxPartner lockboxPartner,
             String compartmentId,
+            String partnerId,
             String partnerCompartmentId,
             String approvalTemplateId,
             String maxAccessDuration,
@@ -49,6 +51,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
         this.resourceId = resourceId;
         this.lockboxPartner = lockboxPartner;
         this.compartmentId = compartmentId;
+        this.partnerId = partnerId;
         this.partnerCompartmentId = partnerCompartmentId;
         this.approvalTemplateId = approvalTemplateId;
         this.maxAccessDuration = maxAccessDuration;
@@ -121,6 +124,22 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
+        private String partnerId;
+
+        /**
+         * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+         * @param partnerId the value to set
+         * @return this builder
+         **/
+        public Builder partnerId(String partnerId) {
+            this.partnerId = partnerId;
+            this.__explicitlySet__.add("partnerId");
             return this;
         }
         /**
@@ -233,6 +252,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
                             this.resourceId,
                             this.lockboxPartner,
                             this.compartmentId,
+                            this.partnerId,
                             this.partnerCompartmentId,
                             this.approvalTemplateId,
                             this.maxAccessDuration,
@@ -258,6 +278,9 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("partnerId")) {
+                this.partnerId(model.getPartnerId());
             }
             if (model.wasPropertyExplicitlySet("partnerCompartmentId")) {
                 this.partnerCompartmentId(model.getPartnerCompartmentId());
@@ -346,6 +369,20 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
+    private final String partnerId;
+
+    /**
+     * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+     * @return the value
+     **/
+    public String getPartnerId() {
+        return partnerId;
     }
 
     /**
@@ -451,6 +488,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", lockboxPartner=").append(String.valueOf(this.lockboxPartner));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", partnerId=").append(String.valueOf(this.partnerId));
         sb.append(", partnerCompartmentId=").append(String.valueOf(this.partnerCompartmentId));
         sb.append(", approvalTemplateId=").append(String.valueOf(this.approvalTemplateId));
         sb.append(", maxAccessDuration=").append(String.valueOf(this.maxAccessDuration));
@@ -476,6 +514,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.lockboxPartner, other.lockboxPartner)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.partnerId, other.partnerId)
                 && java.util.Objects.equals(this.partnerCompartmentId, other.partnerCompartmentId)
                 && java.util.Objects.equals(this.approvalTemplateId, other.approvalTemplateId)
                 && java.util.Objects.equals(this.maxAccessDuration, other.maxAccessDuration)
@@ -498,6 +537,7 @@ public final class CreateLockboxDetails extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.partnerId == null ? 43 : this.partnerId.hashCode());
         result =
                 (result * PRIME)
                         + (this.partnerCompartmentId == null

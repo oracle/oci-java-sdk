@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -21,7 +21,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class SubscriptionAsyncClient implements SubscriptionAsync {
     /**
      * Service instance for Subscription.
@@ -475,7 +475,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "CreateSubscriptionMapping",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/CreateSubscriptionMapping");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/CreateSubscriptionMapping");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateSubscriptionMappingResponse>
                 transformer =
@@ -529,7 +529,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "DeleteSubscriptionMapping",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/DeleteSubscriptionMapping");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/DeleteSubscriptionMapping");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteSubscriptionMappingResponse>
                 transformer =
@@ -578,7 +578,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "GetAssignedSubscription",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/GetAssignedSubscription");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscription/GetAssignedSubscription");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetAssignedSubscriptionResponse>
                 transformer =
@@ -626,7 +626,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "GetSubscription",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/GetSubscription");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/GetSubscription");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionResponse>
                 transformer =
                         GetSubscriptionConverter.fromResponse(
@@ -672,7 +672,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "GetSubscriptionMapping",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/GetSubscriptionMapping");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/GetSubscriptionMapping");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSubscriptionMappingResponse>
                 transformer =
                         GetSubscriptionMappingConverter.fromResponse(
@@ -704,6 +704,59 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAssignedSubscriptionLineItemsResponse>
+            listAssignedSubscriptionLineItems(
+                    ListAssignedSubscriptionLineItemsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAssignedSubscriptionLineItemsRequest,
+                                    ListAssignedSubscriptionLineItemsResponse>
+                            handler) {
+        LOG.trace("Called async listAssignedSubscriptionLineItems");
+        final ListAssignedSubscriptionLineItemsRequest interceptedRequest =
+                ListAssignedSubscriptionLineItemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssignedSubscriptionLineItemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListAssignedSubscriptionLineItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscriptionLineItemSummary/ListAssignedSubscriptionLineItems");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAssignedSubscriptionLineItemsResponse>
+                transformer =
+                        ListAssignedSubscriptionLineItemsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAssignedSubscriptionLineItemsRequest,
+                        ListAssignedSubscriptionLineItemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssignedSubscriptionLineItemsRequest,
+                                ListAssignedSubscriptionLineItemsResponse>,
+                        java.util.concurrent.Future<ListAssignedSubscriptionLineItemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssignedSubscriptionLineItemsRequest,
+                    ListAssignedSubscriptionLineItemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssignedSubscriptionsResponse> listAssignedSubscriptions(
             ListAssignedSubscriptionsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -719,7 +772,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "ListAssignedSubscriptions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/AssignedSubscription/ListAssignedSubscriptions");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/AssignedSubscription/ListAssignedSubscriptions");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListAssignedSubscriptionsResponse>
                 transformer =
@@ -768,7 +821,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "ListAvailableRegions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListAvailableRegions");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/ListAvailableRegions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListAvailableRegionsResponse>
                 transformer =
                         ListAvailableRegionsConverter.fromResponse(
@@ -800,6 +853,55 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSubscriptionLineItemsResponse> listSubscriptionLineItems(
+            ListSubscriptionLineItemsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>
+                    handler) {
+        LOG.trace("Called async listSubscriptionLineItems");
+        final ListSubscriptionLineItemsRequest interceptedRequest =
+                ListSubscriptionLineItemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSubscriptionLineItemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Subscription",
+                        "ListSubscriptionLineItems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionLineItemSummary/ListSubscriptionLineItems");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSubscriptionLineItemsResponse>
+                transformer =
+                        ListSubscriptionLineItemsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSubscriptionLineItemsRequest,
+                                ListSubscriptionLineItemsResponse>,
+                        java.util.concurrent.Future<ListSubscriptionLineItemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSubscriptionLineItemsRequest, ListSubscriptionLineItemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSubscriptionMappingsResponse> listSubscriptionMappings(
             ListSubscriptionMappingsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -815,7 +917,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "ListSubscriptionMappings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SubscriptionMapping/ListSubscriptionMappings");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/SubscriptionMapping/ListSubscriptionMappings");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSubscriptionMappingsResponse>
                 transformer =
@@ -863,7 +965,7 @@ public class SubscriptionAsyncClient implements SubscriptionAsync {
                         "Subscription",
                         "ListSubscriptions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Subscription/ListSubscriptions");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Subscription/ListSubscriptions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListSubscriptionsResponse>
                 transformer =
                         ListSubscriptionsConverter.fromResponse(

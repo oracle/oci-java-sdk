@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
 
 /**
- * grok pattern object.
+ * Grok pattern object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -43,13 +43,13 @@ public final class GrokPattern extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The grok pattern.
+         * The Grok pattern.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
-         * The grok pattern.
+         * The Grok pattern.
          * @param pattern the value to set
          * @return this builder
          **/
@@ -59,13 +59,13 @@ public final class GrokPattern extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The name key to tag this grok pattern.
+         * The name key to tag this Grok pattern.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name key to tag this grok pattern.
+         * The name key to tag this Grok pattern.
          * @param name the value to set
          * @return this builder
          **/
@@ -173,13 +173,13 @@ public final class GrokPattern extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The grok pattern.
+     * The Grok pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
-     * The grok pattern.
+     * The Grok pattern.
      * @return the value
      **/
     public String getPattern() {
@@ -187,13 +187,13 @@ public final class GrokPattern extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The name key to tag this grok pattern.
+     * The name key to tag this Grok pattern.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name key to tag this grok pattern.
+     * The name key to tag this Grok pattern.
      * @return the value
      **/
     public String getName() {

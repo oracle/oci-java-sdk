@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The details of the message that you want to sign.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,20 +24,23 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
         "keyId",
         "keyVersionId",
         "messageType",
-        "signingAlgorithm"
+        "signingAlgorithm",
+        "loggingContext"
     })
     public SignDataDetails(
             String message,
             String keyId,
             String keyVersionId,
             MessageType messageType,
-            SigningAlgorithm signingAlgorithm) {
+            SigningAlgorithm signingAlgorithm,
+            java.util.Map<String, String> loggingContext) {
         super();
         this.message = message;
         this.keyId = keyId;
         this.keyVersionId = keyVersionId;
         this.messageType = messageType;
         this.signingAlgorithm = signingAlgorithm;
+        this.loggingContext = loggingContext;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -138,6 +141,26 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("signingAlgorithm");
             return this;
         }
+        /**
+         * Information that can be used to provide context for audit logging. It is a map that contains any additional
+         * data that you provide to include with audit logs, if audit logging is enabled.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
+        private java.util.Map<String, String> loggingContext;
+
+        /**
+         * Information that can be used to provide context for audit logging. It is a map that contains any additional
+         * data that you provide to include with audit logs, if audit logging is enabled.
+         *
+         * @param loggingContext the value to set
+         * @return this builder
+         **/
+        public Builder loggingContext(java.util.Map<String, String> loggingContext) {
+            this.loggingContext = loggingContext;
+            this.__explicitlySet__.add("loggingContext");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -149,7 +172,8 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
                             this.keyId,
                             this.keyVersionId,
                             this.messageType,
-                            this.signingAlgorithm);
+                            this.signingAlgorithm,
+                            this.loggingContext);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -172,6 +196,9 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("signingAlgorithm")) {
                 this.signingAlgorithm(model.getSigningAlgorithm());
+            }
+            if (model.wasPropertyExplicitlySet("loggingContext")) {
+                this.loggingContext(model.getLoggingContext());
             }
             return this;
         }
@@ -361,6 +388,24 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
         return signingAlgorithm;
     }
 
+    /**
+     * Information that can be used to provide context for audit logging. It is a map that contains any additional
+     * data that you provide to include with audit logs, if audit logging is enabled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
+    private final java.util.Map<String, String> loggingContext;
+
+    /**
+     * Information that can be used to provide context for audit logging. It is a map that contains any additional
+     * data that you provide to include with audit logs, if audit logging is enabled.
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, String> getLoggingContext() {
+        return loggingContext;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -380,6 +425,7 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", keyVersionId=").append(String.valueOf(this.keyVersionId));
         sb.append(", messageType=").append(String.valueOf(this.messageType));
         sb.append(", signingAlgorithm=").append(String.valueOf(this.signingAlgorithm));
+        sb.append(", loggingContext=").append(String.valueOf(this.loggingContext));
         sb.append(")");
         return sb.toString();
     }
@@ -399,6 +445,7 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.keyVersionId, other.keyVersionId)
                 && java.util.Objects.equals(this.messageType, other.messageType)
                 && java.util.Objects.equals(this.signingAlgorithm, other.signingAlgorithm)
+                && java.util.Objects.equals(this.loggingContext, other.loggingContext)
                 && super.equals(other);
     }
 
@@ -413,6 +460,9 @@ public final class SignDataDetails extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.signingAlgorithm == null ? 43 : this.signingAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loggingContext == null ? 43 : this.loggingContext.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

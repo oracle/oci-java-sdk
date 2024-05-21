@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.requests;
@@ -8,17 +8,17 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSubscriptionMappingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSubscriptionMappingsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class ListSubscriptionMappingsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the subscription to which the tenancy is associated.
+     * OCID of the subscription.
      */
     private String subscriptionId;
 
     /**
-     * The ID of the subscription to which the tenancy is associated.
+     * OCID of the subscription.
      */
     public String getSubscriptionId() {
         return subscriptionId;
@@ -35,12 +35,12 @@ public class ListSubscriptionMappingsRequest
         return subscriptionMappingId;
     }
     /**
-     * OCID of the compartment. Always a tenancy OCID.
+     * The ID of the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * OCID of the compartment. Always a tenancy OCID.
+     * The ID of the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -170,12 +170,12 @@ public class ListSubscriptionMappingsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the subscription to which the tenancy is associated.
+         * OCID of the subscription.
          */
         private String subscriptionId = null;
 
         /**
-         * The ID of the subscription to which the tenancy is associated.
+         * OCID of the subscription.
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -200,12 +200,12 @@ public class ListSubscriptionMappingsRequest
         }
 
         /**
-         * OCID of the compartment. Always a tenancy OCID.
+         * The ID of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * OCID of the compartment. Always a tenancy OCID.
+         * The ID of the compartment in which to list resources.
          * @param compartmentId the value to set
          * @return this builder instance
          */

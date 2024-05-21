@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -14,6 +14,7 @@ public enum StorageOperationType {
     PurgeStorageData("PURGE_STORAGE_DATA"),
     RecallArchivedStorageData("RECALL_ARCHIVED_STORAGE_DATA"),
     ReleaseRecalledStorageData("RELEASE_RECALLED_STORAGE_DATA"),
+    PurgeArchivalData("PURGE_ARCHIVAL_DATA"),
     ArchiveStorageData("ARCHIVE_STORAGE_DATA"),
     CleanupArchivalStorageData("CLEANUP_ARCHIVAL_STORAGE_DATA"),
     EncryptActiveData("ENCRYPT_ACTIVE_DATA"),

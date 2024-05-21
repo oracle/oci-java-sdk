@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -36,7 +36,8 @@ public final class UpdateDeploymentDetails
         "cpuCoreCount",
         "isAutoScalingEnabled",
         "oggData",
-        "maintenanceWindow"
+        "maintenanceWindow",
+        "maintenanceConfiguration"
     })
     public UpdateDeploymentDetails(
             String displayName,
@@ -51,7 +52,8 @@ public final class UpdateDeploymentDetails
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
             UpdateOggDeploymentDetails oggData,
-            UpdateMaintenanceWindowDetails maintenanceWindow) {
+            UpdateMaintenanceWindowDetails maintenanceWindow,
+            UpdateMaintenanceConfigurationDetails maintenanceConfiguration) {
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
@@ -66,6 +68,7 @@ public final class UpdateDeploymentDetails
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceConfiguration = maintenanceConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -190,14 +193,14 @@ public final class UpdateDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -298,6 +301,16 @@ public final class UpdateDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceConfiguration")
+        private UpdateMaintenanceConfigurationDetails maintenanceConfiguration;
+
+        public Builder maintenanceConfiguration(
+                UpdateMaintenanceConfigurationDetails maintenanceConfiguration) {
+            this.maintenanceConfiguration = maintenanceConfiguration;
+            this.__explicitlySet__.add("maintenanceConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -316,7 +329,8 @@ public final class UpdateDeploymentDetails
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
                             this.oggData,
-                            this.maintenanceWindow);
+                            this.maintenanceWindow,
+                            this.maintenanceConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -363,6 +377,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceConfiguration")) {
+                this.maintenanceConfiguration(model.getMaintenanceConfiguration());
             }
             return this;
         }
@@ -486,14 +503,14 @@ public final class UpdateDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
      *
      * @return the value
      **/
@@ -579,6 +596,13 @@ public final class UpdateDeploymentDetails
         return maintenanceWindow;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceConfiguration")
+    private final UpdateMaintenanceConfigurationDetails maintenanceConfiguration;
+
+    public UpdateMaintenanceConfigurationDetails getMaintenanceConfiguration() {
+        return maintenanceConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -606,6 +630,8 @@ public final class UpdateDeploymentDetails
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceConfiguration=")
+                .append(String.valueOf(this.maintenanceConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -633,6 +659,8 @@ public final class UpdateDeploymentDetails
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceConfiguration, other.maintenanceConfiguration)
                 && super.equals(other);
     }
 
@@ -659,6 +687,11 @@ public final class UpdateDeploymentDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceConfiguration == null
+                                ? 43
+                                : this.maintenanceConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

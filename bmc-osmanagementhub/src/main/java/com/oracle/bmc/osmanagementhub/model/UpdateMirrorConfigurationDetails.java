@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating a mirror configuration
+ * Provides the information used to update the mirror configuration for a management station.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -35,13 +35,13 @@ public final class UpdateMirrorConfigurationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Directory for the mirroring
+         * Path to the data volume on the management station where software source mirrors are stored.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("directory")
         private String directory;
 
         /**
-         * Directory for the mirroring
+         * Path to the data volume on the management station where software source mirrors are stored.
          * @param directory the value to set
          * @return this builder
          **/
@@ -51,13 +51,13 @@ public final class UpdateMirrorConfigurationDetails
             return this;
         }
         /**
-         * Default port for the mirror
+         * Default mirror listening port for http.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
-         * Default port for the mirror
+         * Default mirror listening port for http.
          * @param port the value to set
          * @return this builder
          **/
@@ -67,13 +67,13 @@ public final class UpdateMirrorConfigurationDetails
             return this;
         }
         /**
-         * Default sslport for the mirror
+         * Default mirror listening port for https.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslport")
         private String sslport;
 
         /**
-         * Default sslport for the mirror
+         * Default mirror listening port for https.
          * @param sslport the value to set
          * @return this builder
          **/
@@ -83,13 +83,13 @@ public final class UpdateMirrorConfigurationDetails
             return this;
         }
         /**
-         * Local path for the sslcert
+         * Path to the SSL cerfificate.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslcert")
         private String sslcert;
 
         /**
-         * Local path for the sslcert
+         * Path to the SSL cerfificate.
          * @param sslcert the value to set
          * @return this builder
          **/
@@ -142,13 +142,13 @@ public final class UpdateMirrorConfigurationDetails
     }
 
     /**
-     * Directory for the mirroring
+     * Path to the data volume on the management station where software source mirrors are stored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("directory")
     private final String directory;
 
     /**
-     * Directory for the mirroring
+     * Path to the data volume on the management station where software source mirrors are stored.
      * @return the value
      **/
     public String getDirectory() {
@@ -156,13 +156,13 @@ public final class UpdateMirrorConfigurationDetails
     }
 
     /**
-     * Default port for the mirror
+     * Default mirror listening port for http.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
-     * Default port for the mirror
+     * Default mirror listening port for http.
      * @return the value
      **/
     public String getPort() {
@@ -170,13 +170,13 @@ public final class UpdateMirrorConfigurationDetails
     }
 
     /**
-     * Default sslport for the mirror
+     * Default mirror listening port for https.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslport")
     private final String sslport;
 
     /**
-     * Default sslport for the mirror
+     * Default mirror listening port for https.
      * @return the value
      **/
     public String getSslport() {
@@ -184,13 +184,13 @@ public final class UpdateMirrorConfigurationDetails
     }
 
     /**
-     * Local path for the sslcert
+     * Path to the SSL cerfificate.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslcert")
     private final String sslcert;
 
     /**
-     * Local path for the sslcert
+     * Path to the SSL cerfificate.
      * @return the value
      **/
     public String getSslcert() {

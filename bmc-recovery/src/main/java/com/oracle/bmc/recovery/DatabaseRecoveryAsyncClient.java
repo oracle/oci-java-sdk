@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery;
@@ -461,6 +461,59 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelProtectedDatabaseDeletionResponse>
+            cancelProtectedDatabaseDeletion(
+                    CancelProtectedDatabaseDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelProtectedDatabaseDeletionRequest,
+                                    CancelProtectedDatabaseDeletionResponse>
+                            handler) {
+        LOG.trace("Called async cancelProtectedDatabaseDeletion");
+        final CancelProtectedDatabaseDeletionRequest interceptedRequest =
+                CancelProtectedDatabaseDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelProtectedDatabaseDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "CancelProtectedDatabaseDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/CancelProtectedDatabaseDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelProtectedDatabaseDeletionResponse>
+                transformer =
+                        CancelProtectedDatabaseDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelProtectedDatabaseDeletionRequest,
+                        CancelProtectedDatabaseDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelProtectedDatabaseDeletionRequest,
+                                CancelProtectedDatabaseDeletionResponse>,
+                        java.util.concurrent.Future<CancelProtectedDatabaseDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelProtectedDatabaseDeletionRequest,
+                    CancelProtectedDatabaseDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override
@@ -1468,6 +1521,64 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleProtectedDatabaseDeletionResponse>
+            scheduleProtectedDatabaseDeletion(
+                    ScheduleProtectedDatabaseDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleProtectedDatabaseDeletionRequest,
+                                    ScheduleProtectedDatabaseDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleProtectedDatabaseDeletion");
+        final ScheduleProtectedDatabaseDeletionRequest interceptedRequest =
+                ScheduleProtectedDatabaseDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleProtectedDatabaseDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "ScheduleProtectedDatabaseDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ScheduleProtectedDatabaseDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleProtectedDatabaseDeletionResponse>
+                transformer =
+                        ScheduleProtectedDatabaseDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleProtectedDatabaseDeletionRequest,
+                        ScheduleProtectedDatabaseDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleProtectedDatabaseDeletionRequest,
+                                ScheduleProtectedDatabaseDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleProtectedDatabaseDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleProtectedDatabaseDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleProtectedDatabaseDeletionRequest,
+                    ScheduleProtectedDatabaseDeletionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new Logging Query of type DataSourceSummary.
+ * Summary information for a logging query for a data source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,13 +28,13 @@ public final class LoggingQueryDataSourceSummaryDetails extends DataSourceSummar
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DataSource customer specified regions
+         * Data source customer-specified regions
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * DataSource customer specified regions
+         * Data source customer-specified regions
          * @param regions the value to set
          * @return this builder
          **/
@@ -44,13 +44,13 @@ public final class LoggingQueryDataSourceSummaryDetails extends DataSourceSummar
             return this;
         }
         /**
-         * DataSource mapping with detectorRecipe and detectorRule
+         * Data source mapping with detector recipe and detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceDetectorMappingInfo")
         private java.util.List<DataSourceMappingInfo> dataSourceDetectorMappingInfo;
 
         /**
-         * DataSource mapping with detectorRecipe and detectorRule
+         * Data source mapping with detector recipe and detector rule
          * @param dataSourceDetectorMappingInfo the value to set
          * @return this builder
          **/
@@ -61,13 +61,13 @@ public final class LoggingQueryDataSourceSummaryDetails extends DataSourceSummar
             return this;
         }
         /**
-         * DataSource query metadata replication region and status.
+         * Data source query metadata replication region and status.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionStatusDetail")
         private java.util.List<RegionStatusDetail> regionStatusDetail;
 
         /**
-         * DataSource query metadata replication region and status.
+         * Data source query metadata replication region and status.
          * @param regionStatusDetail the value to set
          * @return this builder
          **/
@@ -130,13 +130,13 @@ public final class LoggingQueryDataSourceSummaryDetails extends DataSourceSummar
     }
 
     /**
-     * DataSource customer specified regions
+     * Data source customer-specified regions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * DataSource customer specified regions
+     * Data source customer-specified regions
      * @return the value
      **/
     public java.util.List<String> getRegions() {
@@ -144,13 +144,13 @@ public final class LoggingQueryDataSourceSummaryDetails extends DataSourceSummar
     }
 
     /**
-     * DataSource mapping with detectorRecipe and detectorRule
+     * Data source mapping with detector recipe and detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceDetectorMappingInfo")
     private final java.util.List<DataSourceMappingInfo> dataSourceDetectorMappingInfo;
 
     /**
-     * DataSource mapping with detectorRecipe and detectorRule
+     * Data source mapping with detector recipe and detector rule
      * @return the value
      **/
     public java.util.List<DataSourceMappingInfo> getDataSourceDetectorMappingInfo() {
@@ -158,13 +158,13 @@ public final class LoggingQueryDataSourceSummaryDetails extends DataSourceSummar
     }
 
     /**
-     * DataSource query metadata replication region and status.
+     * Data source query metadata replication region and status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionStatusDetail")
     private final java.util.List<RegionStatusDetail> regionStatusDetail;
 
     /**
-     * DataSource query metadata replication region and status.
+     * Data source query metadata replication region and status.
      * @return the value
      **/
     public java.util.List<RegionStatusDetail> getRegionStatusDetail() {

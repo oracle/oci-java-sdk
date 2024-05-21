@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Detector Rules.
+ * Summary information for a detector rule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -88,13 +88,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * DetectorTemplate Identifier, can be renamed
+         * Display name for the detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DetectorTemplate Identifier, can be renamed
+         * Display name for the detector rule
          * @param displayName the value to set
          * @return this builder
          **/
@@ -104,13 +104,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Description for detector rule
+         * Description for the detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description for detector rule
+         * Description for the detector rule
          * @param description the value to set
          * @return this builder
          **/
@@ -120,13 +120,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Recommendation for detector rule
+         * Recommendation for the detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
         /**
-         * Recommendation for detector rule
+         * Recommendation for the detector rule
          * @param recommendation the value to set
          * @return this builder
          **/
@@ -136,13 +136,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * possible type of detectors
+         * Possible types of detectors
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
         /**
-         * possible type of detectors
+         * Possible types of detectors
          * @param detector the value to set
          * @return this builder
          **/
@@ -152,13 +152,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
         private String serviceType;
 
         /**
-         * service type of the configuration to which the rule is applied
+         * Service type of the configuration to which the rule is applied
          * @param serviceType the value to set
          * @return this builder
          **/
@@ -168,13 +168,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * resource type of the configuration to which the rule is applied
+         * Resource type of the configuration to which the rule is applied
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * resource type of the configuration to which the rule is applied
+         * Resource type of the configuration to which the rule is applied
          * @param resourceType the value to set
          * @return this builder
          **/
@@ -184,13 +184,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
         private java.util.List<ManagedListTypes> managedListTypes;
 
         /**
-         * List of cloudguard managed list types related to this rule
+         * List of managed list types related to this rule
          * @param managedListTypes the value to set
          * @return this builder
          **/
@@ -200,13 +200,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of CandidateResponderRule related to this rule
+         * List of responder rules that can be used to remediate a problem triggered by this detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
         private java.util.List<CandidateResponderRule> candidateResponderRules;
 
         /**
-         * List of CandidateResponderRule related to this rule
+         * List of responder rules that can be used to remediate a problem triggered by this detector rule
          * @param candidateResponderRules the value to set
          * @return this builder
          **/
@@ -226,13 +226,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The date and time the detector rule was created. Format defined by RFC3339.
+         * The date and time the detector rule was first created. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the detector rule was created. Format defined by RFC3339.
+         * The date and time the detector rule was first created. Format defined by RFC3339.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -242,13 +242,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The date and time the detector rule was updated. Format defined by RFC3339.
+         * The date and time the detector rule was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the detector rule was updated. Format defined by RFC3339.
+         * The date and time the detector rule was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -258,13 +258,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The current state of the detector rule
+         * The current lifecycle state of the detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the detector rule
+         * The current lifecycle state of the detector rule
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -390,13 +390,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * DetectorTemplate Identifier, can be renamed
+     * Display name for the detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DetectorTemplate Identifier, can be renamed
+     * Display name for the detector rule
      * @return the value
      **/
     public String getDisplayName() {
@@ -404,13 +404,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Description for detector rule
+     * Description for the detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description for detector rule
+     * Description for the detector rule
      * @return the value
      **/
     public String getDescription() {
@@ -418,13 +418,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Recommendation for detector rule
+     * Recommendation for the detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
     /**
-     * Recommendation for detector rule
+     * Recommendation for the detector rule
      * @return the value
      **/
     public String getRecommendation() {
@@ -432,13 +432,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * possible type of detectors
+     * Possible types of detectors
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
     /**
-     * possible type of detectors
+     * Possible types of detectors
      * @return the value
      **/
     public DetectorEnum getDetector() {
@@ -446,13 +446,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * service type of the configuration to which the rule is applied
+     * Service type of the configuration to which the rule is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
     private final String serviceType;
 
     /**
-     * service type of the configuration to which the rule is applied
+     * Service type of the configuration to which the rule is applied
      * @return the value
      **/
     public String getServiceType() {
@@ -460,13 +460,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * resource type of the configuration to which the rule is applied
+     * Resource type of the configuration to which the rule is applied
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * resource type of the configuration to which the rule is applied
+     * Resource type of the configuration to which the rule is applied
      * @return the value
      **/
     public String getResourceType() {
@@ -488,6 +488,8 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
         City("CITY"),
         Tags("TAGS"),
         Generic("GENERIC"),
+        FusionAppsRole("FUSION_APPS_ROLE"),
+        FusionAppsPermission("FUSION_APPS_PERMISSION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -531,13 +533,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * List of cloudguard managed list types related to this rule
+     * List of managed list types related to this rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
     private final java.util.List<ManagedListTypes> managedListTypes;
 
     /**
-     * List of cloudguard managed list types related to this rule
+     * List of managed list types related to this rule
      * @return the value
      **/
     public java.util.List<ManagedListTypes> getManagedListTypes() {
@@ -545,13 +547,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of CandidateResponderRule related to this rule
+     * List of responder rules that can be used to remediate a problem triggered by this detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
     private final java.util.List<CandidateResponderRule> candidateResponderRules;
 
     /**
-     * List of CandidateResponderRule related to this rule
+     * List of responder rules that can be used to remediate a problem triggered by this detector rule
      * @return the value
      **/
     public java.util.List<CandidateResponderRule> getCandidateResponderRules() {
@@ -566,13 +568,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The date and time the detector rule was created. Format defined by RFC3339.
+     * The date and time the detector rule was first created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the detector rule was created. Format defined by RFC3339.
+     * The date and time the detector rule was first created. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -580,13 +582,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The date and time the detector rule was updated. Format defined by RFC3339.
+     * The date and time the detector rule was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the detector rule was updated. Format defined by RFC3339.
+     * The date and time the detector rule was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -594,13 +596,13 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The current state of the detector rule
+     * The current lifecycle state of the detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the detector rule
+     * The current lifecycle state of the detector rule
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

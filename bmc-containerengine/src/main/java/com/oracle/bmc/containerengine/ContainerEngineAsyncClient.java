@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -519,6 +519,58 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteCredentialRotationResponse>
+            completeCredentialRotation(
+                    CompleteCredentialRotationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CompleteCredentialRotationRequest,
+                                    CompleteCredentialRotationResponse>
+                            handler) {
+        LOG.trace("Called async completeCredentialRotation");
+        final CompleteCredentialRotationRequest interceptedRequest =
+                CompleteCredentialRotationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CompleteCredentialRotationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "CompleteCredentialRotation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CompleteCredentialRotation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CompleteCredentialRotationResponse>
+                transformer =
+                        CompleteCredentialRotationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CompleteCredentialRotationRequest, CompleteCredentialRotationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CompleteCredentialRotationRequest,
+                                CompleteCredentialRotationResponse>,
+                        java.util.concurrent.Future<CompleteCredentialRotationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CompleteCredentialRotationRequest, CompleteCredentialRotationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResponse> createCluster(
             CreateClusterRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateClusterRequest, CreateClusterResponse>
@@ -711,6 +763,59 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkloadMappingResponse> createWorkloadMapping(
+            CreateWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>
+                    handler) {
+        LOG.trace("Called async createWorkloadMapping");
+        final CreateWorkloadMappingRequest interceptedRequest =
+                CreateWorkloadMappingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWorkloadMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "CreateWorkloadMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/CreateWorkloadMapping");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateWorkloadMappingResponse>
+                transformer =
+                        CreateWorkloadMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>,
+                        java.util.concurrent.Future<CreateWorkloadMappingResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWorkloadMappingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -936,6 +1041,53 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteWorkRequestRequest, DeleteWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkloadMappingResponse> deleteWorkloadMapping(
+            DeleteWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>
+                    handler) {
+        LOG.trace("Called async deleteWorkloadMapping");
+        final DeleteWorkloadMappingRequest interceptedRequest =
+                DeleteWorkloadMappingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWorkloadMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "DeleteWorkloadMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/DeleteWorkloadMapping");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkloadMappingResponse>
+                transformer =
+                        DeleteWorkloadMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>,
+                        java.util.concurrent.Future<DeleteWorkloadMappingResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1176,6 +1328,57 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCredentialRotationStatusResponse>
+            getCredentialRotationStatus(
+                    GetCredentialRotationStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCredentialRotationStatusRequest,
+                                    GetCredentialRotationStatusResponse>
+                            handler) {
+        LOG.trace("Called async getCredentialRotationStatus");
+        final GetCredentialRotationStatusRequest interceptedRequest =
+                GetCredentialRotationStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCredentialRotationStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "GetCredentialRotationStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/CredentialRotationStatus/GetCredentialRotationStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCredentialRotationStatusResponse>
+                transformer =
+                        GetCredentialRotationStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCredentialRotationStatusRequest, GetCredentialRotationStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCredentialRotationStatusRequest,
+                                GetCredentialRotationStatusResponse>,
+                        java.util.concurrent.Future<GetCredentialRotationStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCredentialRotationStatusRequest, GetCredentialRotationStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetNodePoolResponse> getNodePool(
             GetNodePoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetNodePoolRequest, GetNodePoolResponse>
@@ -1389,6 +1592,52 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkloadMappingResponse> getWorkloadMapping(
+            GetWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkloadMappingRequest, GetWorkloadMappingResponse>
+                    handler) {
+        LOG.trace("Called async getWorkloadMapping");
+        final GetWorkloadMappingRequest interceptedRequest =
+                GetWorkloadMappingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkloadMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "GetWorkloadMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/GetWorkloadMapping");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkloadMappingResponse>
+                transformer =
+                        GetWorkloadMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkloadMappingRequest, GetWorkloadMappingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkloadMappingRequest, GetWorkloadMappingResponse>,
+                        java.util.concurrent.Future<GetWorkloadMappingResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkloadMappingRequest, GetWorkloadMappingResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1906,6 +2155,107 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkloadMappingsResponse> listWorkloadMappings(
+            ListWorkloadMappingsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkloadMappings");
+        final ListWorkloadMappingsRequest interceptedRequest =
+                ListWorkloadMappingsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkloadMappingsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "ListWorkloadMappings",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMappingSummary/ListWorkloadMappings");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkloadMappingsResponse>
+                transformer =
+                        ListWorkloadMappingsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>,
+                        java.util.concurrent.Future<ListWorkloadMappingsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCredentialRotationResponse> startCredentialRotation(
+            StartCredentialRotationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartCredentialRotationRequest, StartCredentialRotationResponse>
+                    handler) {
+        LOG.trace("Called async startCredentialRotation");
+        final StartCredentialRotationRequest interceptedRequest =
+                StartCredentialRotationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartCredentialRotationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "StartCredentialRotation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/StartCredentialRotation");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, StartCredentialRotationResponse>
+                transformer =
+                        StartCredentialRotationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        StartCredentialRotationRequest, StartCredentialRotationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartCredentialRotationRequest, StartCredentialRotationResponse>,
+                        java.util.concurrent.Future<StartCredentialRotationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStartCredentialRotationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartCredentialRotationRequest, StartCredentialRotationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAddonResponse> updateAddon(
             UpdateAddonRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateAddonRequest, UpdateAddonResponse>
@@ -2149,6 +2499,58 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkloadMappingResponse> updateWorkloadMapping(
+            UpdateWorkloadMappingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>
+                    handler) {
+        LOG.trace("Called async updateWorkloadMapping");
+        final UpdateWorkloadMappingRequest interceptedRequest =
+                UpdateWorkloadMappingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWorkloadMappingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ContainerEngine",
+                        "UpdateWorkloadMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/UpdateWorkloadMapping");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateWorkloadMappingResponse>
+                transformer =
+                        UpdateWorkloadMappingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>,
+                        java.util.concurrent.Future<UpdateWorkloadMappingResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWorkloadMappingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

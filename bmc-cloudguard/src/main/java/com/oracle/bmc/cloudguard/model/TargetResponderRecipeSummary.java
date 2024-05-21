@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of ResponderRecipe
+ * Summary information for a target responder recipe.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,7 +32,8 @@ public final class TargetResponderRecipeSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "locks"
     })
     public TargetResponderRecipeSummary(
             String id,
@@ -44,7 +45,8 @@ public final class TargetResponderRecipeSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -56,18 +58,19 @@ public final class TargetResponderRecipeSummary
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -77,13 +80,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * Compartment Identifier
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -93,13 +96,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * Unique identifier for Responder Recipe of which this is an extension
+         * Unique identifier for responder recipe of which this is an extension
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
         private String responderRecipeId;
 
         /**
-         * Unique identifier for Responder Recipe of which this is an extension
+         * Unique identifier for responder recipe of which this is an extension
          * @param responderRecipeId the value to set
          * @return this builder
          **/
@@ -109,13 +112,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * ResponderRecipe Identifier Name
+         * Display name of the responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ResponderRecipe Identifier Name
+         * Display name of the responder recipe
          * @param displayName the value to set
          * @return this builder
          **/
@@ -125,13 +128,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * ResponderRecipe Description
+         * Description of the responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ResponderRecipe Description
+         * Description of the responder recipe
          * @param description the value to set
          * @return this builder
          **/
@@ -141,13 +144,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * Owner of ResponderRecipe
+         * Owner of the responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
-         * Owner of ResponderRecipe
+         * Owner of the responder recipe
          * @param owner the value to set
          * @return this builder
          **/
@@ -173,13 +176,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * The date and time the target responder recipe was updated. Format defined by RFC3339.
+         * The date and time the target responder recipe was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the target responder recipe was updated. Format defined by RFC3339.
+         * The date and time the target responder recipe was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -189,13 +192,13 @@ public final class TargetResponderRecipeSummary
             return this;
         }
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -220,6 +223,22 @@ public final class TargetResponderRecipeSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -236,7 +255,8 @@ public final class TargetResponderRecipeSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -275,6 +295,9 @@ public final class TargetResponderRecipeSummary
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -291,13 +314,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -305,13 +328,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -319,13 +342,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * Unique identifier for Responder Recipe of which this is an extension
+     * Unique identifier for responder recipe of which this is an extension
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
     private final String responderRecipeId;
 
     /**
-     * Unique identifier for Responder Recipe of which this is an extension
+     * Unique identifier for responder recipe of which this is an extension
      * @return the value
      **/
     public String getResponderRecipeId() {
@@ -333,13 +356,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * ResponderRecipe Identifier Name
+     * Display name of the responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ResponderRecipe Identifier Name
+     * Display name of the responder recipe
      * @return the value
      **/
     public String getDisplayName() {
@@ -347,13 +370,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * ResponderRecipe Description
+     * Description of the responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ResponderRecipe Description
+     * Description of the responder recipe
      * @return the value
      **/
     public String getDescription() {
@@ -361,13 +384,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of the responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of the responder recipe
      * @return the value
      **/
     public OwnerType getOwner() {
@@ -389,13 +412,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * The date and time the target responder recipe was updated. Format defined by RFC3339.
+     * The date and time the target responder recipe was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the target responder recipe was updated. Format defined by RFC3339.
+     * The date and time the target responder recipe was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -403,13 +426,13 @@ public final class TargetResponderRecipeSummary
     }
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -428,6 +451,20 @@ public final class TargetResponderRecipeSummary
      **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -454,6 +491,7 @@ public final class TargetResponderRecipeSummary
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -478,6 +516,7 @@ public final class TargetResponderRecipeSummary
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -503,6 +542,7 @@ public final class TargetResponderRecipeSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,11 +1,30 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRule.
+ * A ResponderRecipeRule resource contains a specific instance of a
+ * single responder rule.
+ * <p>
+ * A ResponderRecipeRule resource:
+ * * Is effectively a copy of a ResponderRule resource in which users can
+ * make certain changes if it\u2019s Oracle-managed, and other changes if it\u2019s user-managed.
+ * * Can also be created by cloning an existing ResponderRecipe resource, either
+ * user-managed or Oracle-managed; cloning the ResponderRecipe resource also clones
+ * its associated ResponderRule resources as ResponderRecipeRule resources.
+ * * Is visible on the Cloud Guard Responder Recipes, Responder Details page.
+ * * Is effectively located in a specific OCI compartment, through the ResponderRecipe
+ * resource to which it belongs.
+ * * Can be modified by users, programmatically or through the UI.
+ * * Changes that can be made here apply globally, to all resources in OCI compartments
+ * mapped to a target that attaches the associated responder recipe (in a
+ * TargetResponderRecipe resource), but are overridden by changes made in the
+ * corresponding TargetResponderRecipe resource (which is effectively a copy of the
+ * ResponderRecipe resource).
+ * type: object
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,7 +53,8 @@ public final class ResponderRecipeResponderRule
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "locks"
     })
     public ResponderRecipeResponderRule(
             String responderRuleId,
@@ -48,7 +68,8 @@ public final class ResponderRecipeResponderRule
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            java.util.List<ResourceLock> locks) {
         super();
         this.responderRuleId = responderRuleId;
         this.displayName = displayName;
@@ -62,18 +83,19 @@ public final class ResponderRecipeResponderRule
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Identifier for ResponderRule.
+         * Unique identifier for the responder rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
         private String responderRuleId;
 
         /**
-         * Identifier for ResponderRule.
+         * Unique identifier for the responder rule
          * @param responderRuleId the value to set
          * @return this builder
          **/
@@ -83,13 +105,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * ResponderRule display name.
+         * Responder rule display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ResponderRule display name.
+         * Responder rule display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -99,13 +121,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * ResponderRule description.
+         * Responder rule description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ResponderRule description.
+         * Responder rule description
          * @param description the value to set
          * @return this builder
          **/
@@ -115,13 +137,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * Type of Responder
+         * Type of responder
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ResponderType type;
 
         /**
-         * Type of Responder
+         * Type of responder
          * @param type the value to set
          * @return this builder
          **/
@@ -131,13 +153,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * List of Policy
+         * List of policies
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("policies")
         private java.util.List<String> policies;
 
         /**
-         * List of Policy
+         * List of policies
          * @param policies the value to set
          * @return this builder
          **/
@@ -147,13 +169,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedModes")
         private java.util.List<SupportedModes> supportedModes;
 
         /**
-         * Supported Execution Modes
+         * Supported execution modes for the responder rule
          * @param supportedModes the value to set
          * @return this builder
          **/
@@ -172,13 +194,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * Compartment Identifier
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -204,13 +226,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * The date and time the responder recipe rule was updated. Format defined by RFC3339.
+         * The date and time the responder recipe rule was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the responder recipe rule was updated. Format defined by RFC3339.
+         * The date and time the responder recipe rule was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -220,13 +242,13 @@ public final class ResponderRecipeResponderRule
             return this;
         }
         /**
-         * The current state of the ResponderRule.
+         * The current lifecycle state of the responder rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the ResponderRule.
+         * The current lifecycle state of the responder rule
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -251,6 +273,22 @@ public final class ResponderRecipeResponderRule
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -269,7 +307,8 @@ public final class ResponderRecipeResponderRule
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -314,6 +353,9 @@ public final class ResponderRecipeResponderRule
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -330,13 +372,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * Identifier for ResponderRule.
+     * Unique identifier for the responder rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
     private final String responderRuleId;
 
     /**
-     * Identifier for ResponderRule.
+     * Unique identifier for the responder rule
      * @return the value
      **/
     public String getResponderRuleId() {
@@ -344,13 +386,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * ResponderRule display name.
+     * Responder rule display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ResponderRule display name.
+     * Responder rule display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -358,13 +400,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * ResponderRule description.
+     * Responder rule description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ResponderRule description.
+     * Responder rule description
      * @return the value
      **/
     public String getDescription() {
@@ -372,13 +414,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * Type of Responder
+     * Type of responder
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ResponderType type;
 
     /**
-     * Type of Responder
+     * Type of responder
      * @return the value
      **/
     public ResponderType getType() {
@@ -386,13 +428,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * List of Policy
+     * List of policies
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policies")
     private final java.util.List<String> policies;
 
     /**
-     * List of Policy
+     * List of policies
      * @return the value
      **/
     public java.util.List<String> getPolicies() {
@@ -447,13 +489,13 @@ public final class ResponderRecipeResponderRule
         }
     };
     /**
-     * Supported Execution Modes
+     * Supported execution modes for the responder rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedModes")
     private final java.util.List<SupportedModes> supportedModes;
 
     /**
-     * Supported Execution Modes
+     * Supported execution modes for the responder rule
      * @return the value
      **/
     public java.util.List<SupportedModes> getSupportedModes() {
@@ -468,13 +510,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -496,13 +538,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * The date and time the responder recipe rule was updated. Format defined by RFC3339.
+     * The date and time the responder recipe rule was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the responder recipe rule was updated. Format defined by RFC3339.
+     * The date and time the responder recipe rule was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -510,13 +552,13 @@ public final class ResponderRecipeResponderRule
     }
 
     /**
-     * The current state of the ResponderRule.
+     * The current lifecycle state of the responder rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the ResponderRule.
+     * The current lifecycle state of the responder rule
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -535,6 +577,20 @@ public final class ResponderRecipeResponderRule
      **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -563,6 +619,7 @@ public final class ResponderRecipeResponderRule
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -589,6 +646,7 @@ public final class ResponderRecipeResponderRule
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -618,6 +676,7 @@ public final class ResponderRecipeResponderRule
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

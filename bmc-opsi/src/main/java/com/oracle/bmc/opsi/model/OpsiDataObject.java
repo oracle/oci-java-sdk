@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -42,18 +42,30 @@ public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "identifier",
         "displayName",
         "description",
-        "columnsMetadata"
+        "name",
+        "groupNames",
+        "supportedQueryTimePeriod",
+        "columnsMetadata",
+        "supportedQueryParams"
     })
     protected OpsiDataObject(
             String identifier,
             String displayName,
             String description,
-            java.util.List<DataObjectColumnMetadata> columnsMetadata) {
+            String name,
+            java.util.List<String> groupNames,
+            String supportedQueryTimePeriod,
+            java.util.List<DataObjectColumnMetadata> columnsMetadata,
+            java.util.List<OpsiDataObjectSupportedQueryParam> supportedQueryParams) {
         super();
         this.identifier = identifier;
         this.displayName = displayName;
         this.description = description;
+        this.name = name;
+        this.groupNames = groupNames;
+        this.supportedQueryTimePeriod = supportedQueryTimePeriod;
         this.columnsMetadata = columnsMetadata;
+        this.supportedQueryParams = supportedQueryParams;
     }
 
     /**
@@ -99,6 +111,54 @@ public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+     * @return the value
+     **/
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Names of all the groups to which the data object belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("groupNames")
+    private final java.util.List<String> groupNames;
+
+    /**
+     * Names of all the groups to which the data object belongs to.
+     * @return the value
+     **/
+    public java.util.List<String> getGroupNames() {
+        return groupNames;
+    }
+
+    /**
+     * Time period supported by the data object for quering data.
+     * Time period is in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D.
+     * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedQueryTimePeriod")
+    private final String supportedQueryTimePeriod;
+
+    /**
+     * Time period supported by the data object for quering data.
+     * Time period is in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D.
+     * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+     *
+     * @return the value
+     **/
+    public String getSupportedQueryTimePeriod() {
+        return supportedQueryTimePeriod;
+    }
+
+    /**
      * Metadata of columns in a data object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnsMetadata")
@@ -110,6 +170,20 @@ public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public java.util.List<DataObjectColumnMetadata> getColumnsMetadata() {
         return columnsMetadata;
+    }
+
+    /**
+     * Supported query parameters by this OPSI data object that can be configured while a data object query involving this data object is executed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedQueryParams")
+    private final java.util.List<OpsiDataObjectSupportedQueryParam> supportedQueryParams;
+
+    /**
+     * Supported query parameters by this OPSI data object that can be configured while a data object query involving this data object is executed.
+     * @return the value
+     **/
+    public java.util.List<OpsiDataObjectSupportedQueryParam> getSupportedQueryParams() {
+        return supportedQueryParams;
     }
 
     @Override
@@ -129,7 +203,12 @@ public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append("identifier=").append(String.valueOf(this.identifier));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", groupNames=").append(String.valueOf(this.groupNames));
+        sb.append(", supportedQueryTimePeriod=")
+                .append(String.valueOf(this.supportedQueryTimePeriod));
         sb.append(", columnsMetadata=").append(String.valueOf(this.columnsMetadata));
+        sb.append(", supportedQueryParams=").append(String.valueOf(this.supportedQueryParams));
         sb.append(")");
         return sb.toString();
     }
@@ -147,7 +226,12 @@ public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.groupNames, other.groupNames)
+                && java.util.Objects.equals(
+                        this.supportedQueryTimePeriod, other.supportedQueryTimePeriod)
                 && java.util.Objects.equals(this.columnsMetadata, other.columnsMetadata)
+                && java.util.Objects.equals(this.supportedQueryParams, other.supportedQueryParams)
                 && super.equals(other);
     }
 
@@ -158,9 +242,21 @@ public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.groupNames == null ? 43 : this.groupNames.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedQueryTimePeriod == null
+                                ? 43
+                                : this.supportedQueryTimePeriod.hashCode());
         result =
                 (result * PRIME)
                         + (this.columnsMetadata == null ? 43 : this.columnsMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedQueryParams == null
+                                ? 43
+                                : this.supportedQueryParams.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

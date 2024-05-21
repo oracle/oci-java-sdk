@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -55,13 +55,13 @@ public final class RequestAuthenticationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Request http oauth scheme.
+         * Request HTTP OAuth scheme.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("oauthScheme")
         private OAuthSchemes oauthScheme;
 
         /**
-         * Request http oauth scheme.
+         * Request HTTP OAuth scheme.
          * @param oauthScheme the value to set
          * @return this builder
          **/
@@ -71,13 +71,13 @@ public final class RequestAuthenticationDetails
             return this;
         }
         /**
-         * Username for authentication.
+         * User name for authentication.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("authUserName")
         private String authUserName;
 
         /**
-         * Username for authentication.
+         * User name for authentication.
          * @param authUserName the value to set
          * @return this builder
          **/
@@ -119,13 +119,13 @@ public final class RequestAuthenticationDetails
             return this;
         }
         /**
-         * URL to get authetication token.
+         * URL to get authentication token.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("authUrl")
         private String authUrl;
 
         /**
-         * URL to get authetication token.
+         * URL to get authentication token.
          * @param authUrl the value to set
          * @return this builder
          **/
@@ -247,13 +247,13 @@ public final class RequestAuthenticationDetails
     }
 
     /**
-     * Request http oauth scheme.
+     * Request HTTP OAuth scheme.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oauthScheme")
     private final OAuthSchemes oauthScheme;
 
     /**
-     * Request http oauth scheme.
+     * Request HTTP OAuth scheme.
      * @return the value
      **/
     public OAuthSchemes getOauthScheme() {
@@ -261,13 +261,13 @@ public final class RequestAuthenticationDetails
     }
 
     /**
-     * Username for authentication.
+     * User name for authentication.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authUserName")
     private final String authUserName;
 
     /**
-     * Username for authentication.
+     * User name for authentication.
      * @return the value
      **/
     public String getAuthUserName() {
@@ -303,13 +303,13 @@ public final class RequestAuthenticationDetails
     }
 
     /**
-     * URL to get authetication token.
+     * URL to get authentication token.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("authUrl")
     private final String authUrl;
 
     /**
-     * URL to get authetication token.
+     * URL to get authentication token.
      * @return the value
      **/
     public String getAuthUrl() {

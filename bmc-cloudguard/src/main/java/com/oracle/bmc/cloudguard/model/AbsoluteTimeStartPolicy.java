@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Policy that defines the exact start time.
+ * Start policy that defines the exact start time
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,13 +28,13 @@ public final class AbsoluteTimeStartPolicy extends ContinuousQueryStartPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Time when the query can start, if not specified it can start immediately.
+         * Time when the query can start. If not specified it can start immediately
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryStartTime")
         private java.util.Date queryStartTime;
 
         /**
-         * Time when the query can start, if not specified it can start immediately.
+         * Time when the query can start. If not specified it can start immediately
          * @param queryStartTime the value to set
          * @return this builder
          **/
@@ -82,13 +82,13 @@ public final class AbsoluteTimeStartPolicy extends ContinuousQueryStartPolicy {
     }
 
     /**
-     * Time when the query can start, if not specified it can start immediately.
+     * Time when the query can start. If not specified it can start immediately
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryStartTime")
     private final java.util.Date queryStartTime;
 
     /**
-     * Time when the query can start, if not specified it can start immediately.
+     * Time when the query can start. If not specified it can start immediately
      * @return the value
      **/
     public java.util.Date getQueryStartTime() {

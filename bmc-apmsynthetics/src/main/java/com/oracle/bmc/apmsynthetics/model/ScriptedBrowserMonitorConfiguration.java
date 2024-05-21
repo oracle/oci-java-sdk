@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -60,6 +60,22 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
             this.__explicitlySet__.add("isCertificateValidationEnabled");
             return this;
         }
+        /**
+         * If disabled, auto snapshots are not collected.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
+        private Boolean isDefaultSnapshotEnabled;
+
+        /**
+         * If disabled, auto snapshots are not collected.
+         * @param isDefaultSnapshotEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
+            this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
+            this.__explicitlySet__.add("isDefaultSnapshotEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
         private NetworkConfiguration networkConfiguration;
@@ -79,6 +95,7 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
                             this.isFailureRetried,
                             this.dnsConfiguration,
                             this.isCertificateValidationEnabled,
+                            this.isDefaultSnapshotEnabled,
                             this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -96,6 +113,9 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
             }
             if (model.wasPropertyExplicitlySet("isCertificateValidationEnabled")) {
                 this.isCertificateValidationEnabled(model.getIsCertificateValidationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultSnapshotEnabled")) {
+                this.isDefaultSnapshotEnabled(model.getIsDefaultSnapshotEnabled());
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
@@ -120,9 +140,11 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
             Boolean isFailureRetried,
             DnsConfiguration dnsConfiguration,
             Boolean isCertificateValidationEnabled,
+            Boolean isDefaultSnapshotEnabled,
             NetworkConfiguration networkConfiguration) {
         super(isFailureRetried, dnsConfiguration);
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
+        this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
         this.networkConfiguration = networkConfiguration;
     }
 
@@ -138,6 +160,20 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
      **/
     public Boolean getIsCertificateValidationEnabled() {
         return isCertificateValidationEnabled;
+    }
+
+    /**
+     * If disabled, auto snapshots are not collected.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
+    private final Boolean isDefaultSnapshotEnabled;
+
+    /**
+     * If disabled, auto snapshots are not collected.
+     * @return the value
+     **/
+    public Boolean getIsDefaultSnapshotEnabled() {
+        return isDefaultSnapshotEnabled;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
@@ -163,6 +199,8 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isCertificateValidationEnabled=")
                 .append(String.valueOf(this.isCertificateValidationEnabled));
+        sb.append(", isDefaultSnapshotEnabled=")
+                .append(String.valueOf(this.isDefaultSnapshotEnabled));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
@@ -180,6 +218,8 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
         ScriptedBrowserMonitorConfiguration other = (ScriptedBrowserMonitorConfiguration) o;
         return java.util.Objects.equals(
                         this.isCertificateValidationEnabled, other.isCertificateValidationEnabled)
+                && java.util.Objects.equals(
+                        this.isDefaultSnapshotEnabled, other.isDefaultSnapshotEnabled)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
@@ -193,6 +233,11 @@ public final class ScriptedBrowserMonitorConfiguration extends MonitorConfigurat
                         + (this.isCertificateValidationEnabled == null
                                 ? 43
                                 : this.isCertificateValidationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultSnapshotEnabled == null
+                                ? 43
+                                : this.isDefaultSnapshotEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkConfiguration == null

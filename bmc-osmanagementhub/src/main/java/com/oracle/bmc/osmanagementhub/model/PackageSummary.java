@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software package summary.
+ * Provides summary information for a software package.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -133,13 +133,13 @@ public class PackageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * list of software sources that provide the software package.
+     * List of software sources that provide the software package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceDetails> softwareSources;
 
     /**
-     * list of software sources that provide the software package.
+     * List of software sources that provide the software package.
      * @return the value
      **/
     public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
@@ -206,7 +206,7 @@ public class PackageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * classifier for child instances of this object.
+     * Status of the software package.
      **/
     public enum PackageClassification {
         Installed("INSTALLED"),

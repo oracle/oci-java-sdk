@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A complex attribute that indicates an password recovery is locked (blocking new sessions)
+ * A complex attribute that indicates a password recovery is locked (blocking any new sessions).
  * <p>
  **Added In:** 19.1.4
  * <p>
@@ -43,7 +43,7 @@ public final class UserExtRecoveryLocked
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates that the rev is locked
+         * Indicates that the recovery is locked.
          * <p>
          **Added In:** 19.1.4
          * <p>
@@ -52,6 +52,7 @@ public final class UserExtRecoveryLocked
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: boolean
@@ -61,7 +62,7 @@ public final class UserExtRecoveryLocked
         private Boolean on;
 
         /**
-         * Indicates that the rev is locked
+         * Indicates that the recovery is locked.
          * <p>
          **Added In:** 19.1.4
          * <p>
@@ -70,6 +71,7 @@ public final class UserExtRecoveryLocked
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: boolean
@@ -83,7 +85,7 @@ public final class UserExtRecoveryLocked
             return this;
         }
         /**
-         * The date and time that the current resource was locked
+         * The date and time that the current resource was locked.
          * <p>
          **Added In:** 19.1.4
          * <p>
@@ -91,6 +93,7 @@ public final class UserExtRecoveryLocked
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: dateTime
@@ -100,7 +103,7 @@ public final class UserExtRecoveryLocked
         private String lockDate;
 
         /**
-         * The date and time that the current resource was locked
+         * The date and time that the current resource was locked.
          * <p>
          **Added In:** 19.1.4
          * <p>
@@ -108,6 +111,7 @@ public final class UserExtRecoveryLocked
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: dateTime
@@ -156,7 +160,7 @@ public final class UserExtRecoveryLocked
     }
 
     /**
-     * Indicates that the rev is locked
+     * Indicates that the recovery is locked.
      * <p>
      **Added In:** 19.1.4
      * <p>
@@ -165,6 +169,7 @@ public final class UserExtRecoveryLocked
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: boolean
@@ -174,7 +179,7 @@ public final class UserExtRecoveryLocked
     private final Boolean on;
 
     /**
-     * Indicates that the rev is locked
+     * Indicates that the recovery is locked.
      * <p>
      **Added In:** 19.1.4
      * <p>
@@ -183,6 +188,7 @@ public final class UserExtRecoveryLocked
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: boolean
@@ -194,7 +200,7 @@ public final class UserExtRecoveryLocked
     }
 
     /**
-     * The date and time that the current resource was locked
+     * The date and time that the current resource was locked.
      * <p>
      **Added In:** 19.1.4
      * <p>
@@ -202,6 +208,7 @@ public final class UserExtRecoveryLocked
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: dateTime
@@ -211,7 +218,7 @@ public final class UserExtRecoveryLocked
     private final String lockDate;
 
     /**
-     * The date and time that the current resource was locked
+     * The date and time that the current resource was locked.
      * <p>
      **Added In:** 19.1.4
      * <p>
@@ -219,6 +226,7 @@ public final class UserExtRecoveryLocked
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: dateTime

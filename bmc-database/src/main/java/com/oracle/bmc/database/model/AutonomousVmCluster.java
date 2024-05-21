@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -44,6 +44,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         "maintenanceWindow",
         "lastMaintenanceRunId",
         "nextMaintenanceRunId",
+        "cpuPercentage",
+        "autonomousDataStoragePercentage",
+        "provisionedCpus",
+        "totalAutonomousDataStorageInTBs",
+        "reservedCpus",
+        "provisionableAutonomousContainerDatabases",
+        "provisionedAutonomousContainerDatabases",
+        "nonProvisionableAutonomousContainerDatabases",
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
         "dataStorageSizeInTBs",
@@ -61,7 +69,10 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         "scanListenerPortNonTls",
         "isMtlsEnabled",
         "timeDatabaseSslCertificateExpires",
-        "timeOrdsCertificateExpires"
+        "timeOrdsCertificateExpires",
+        "exadataStorageInTBsLowestScaledValue",
+        "cpusLowestScaledValue",
+        "maxAcdsLowestScaledValue"
     })
     public AutonomousVmCluster(
             String id,
@@ -85,6 +96,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             MaintenanceWindow maintenanceWindow,
             String lastMaintenanceRunId,
             String nextMaintenanceRunId,
+            Float cpuPercentage,
+            Float autonomousDataStoragePercentage,
+            Float provisionedCpus,
+            Float totalAutonomousDataStorageInTBs,
+            Float reservedCpus,
+            Integer provisionableAutonomousContainerDatabases,
+            Integer provisionedAutonomousContainerDatabases,
+            Integer nonProvisionableAutonomousContainerDatabases,
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
             Double dataStorageSizeInTBs,
@@ -102,7 +121,10 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             Integer scanListenerPortNonTls,
             Boolean isMtlsEnabled,
             java.util.Date timeDatabaseSslCertificateExpires,
-            java.util.Date timeOrdsCertificateExpires) {
+            java.util.Date timeOrdsCertificateExpires,
+            Double exadataStorageInTBsLowestScaledValue,
+            Integer cpusLowestScaledValue,
+            Integer maxAcdsLowestScaledValue) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -125,6 +147,15 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         this.maintenanceWindow = maintenanceWindow;
         this.lastMaintenanceRunId = lastMaintenanceRunId;
         this.nextMaintenanceRunId = nextMaintenanceRunId;
+        this.cpuPercentage = cpuPercentage;
+        this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+        this.provisionedCpus = provisionedCpus;
+        this.totalAutonomousDataStorageInTBs = totalAutonomousDataStorageInTBs;
+        this.reservedCpus = reservedCpus;
+        this.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
+        this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+        this.nonProvisionableAutonomousContainerDatabases =
+                nonProvisionableAutonomousContainerDatabases;
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.dataStorageSizeInTBs = dataStorageSizeInTBs;
@@ -143,6 +174,9 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         this.isMtlsEnabled = isMtlsEnabled;
         this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
         this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
+        this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+        this.cpusLowestScaledValue = cpusLowestScaledValue;
+        this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -326,14 +360,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -392,13 +426,15 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
          **/
@@ -478,6 +514,142 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             this.nextMaintenanceRunId = nextMaintenanceRunId;
             this.__explicitlySet__.add("nextMaintenanceRunId");
+            return this;
+        }
+        /**
+         * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuPercentage")
+        private Float cpuPercentage;
+
+        /**
+         * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+         * @param cpuPercentage the value to set
+         * @return this builder
+         **/
+        public Builder cpuPercentage(Float cpuPercentage) {
+            this.cpuPercentage = cpuPercentage;
+            this.__explicitlySet__.add("cpuPercentage");
+            return this;
+        }
+        /**
+         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
+        private Float autonomousDataStoragePercentage;
+
+        /**
+         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+         * @param autonomousDataStoragePercentage the value to set
+         * @return this builder
+         **/
+        public Builder autonomousDataStoragePercentage(Float autonomousDataStoragePercentage) {
+            this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+            this.__explicitlySet__.add("autonomousDataStoragePercentage");
+            return this;
+        }
+        /**
+         * The number of CPUs provisioned in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+        private Float provisionedCpus;
+
+        /**
+         * The number of CPUs provisioned in an Autonomous VM Cluster.
+         * @param provisionedCpus the value to set
+         * @return this builder
+         **/
+        public Builder provisionedCpus(Float provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
+            this.__explicitlySet__.add("provisionedCpus");
+            return this;
+        }
+        /**
+         * The total data disk group size for Autonomous Databases, in TBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
+        private Float totalAutonomousDataStorageInTBs;
+
+        /**
+         * The total data disk group size for Autonomous Databases, in TBs.
+         * @param totalAutonomousDataStorageInTBs the value to set
+         * @return this builder
+         **/
+        public Builder totalAutonomousDataStorageInTBs(Float totalAutonomousDataStorageInTBs) {
+            this.totalAutonomousDataStorageInTBs = totalAutonomousDataStorageInTBs;
+            this.__explicitlySet__.add("totalAutonomousDataStorageInTBs");
+            return this;
+        }
+        /**
+         * The number of CPUs reserved in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+        private Float reservedCpus;
+
+        /**
+         * The number of CPUs reserved in an Autonomous VM Cluster.
+         * @param reservedCpus the value to set
+         * @return this builder
+         **/
+        public Builder reservedCpus(Float reservedCpus) {
+            this.reservedCpus = reservedCpus;
+            this.__explicitlySet__.add("reservedCpus");
+            return this;
+        }
+        /**
+         * **Deprecated.** Use field totalContainerDatabases.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
+        private Integer provisionableAutonomousContainerDatabases;
+
+        /**
+         * **Deprecated.** Use field totalContainerDatabases.
+         *
+         * @param provisionableAutonomousContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder provisionableAutonomousContainerDatabases(
+                Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases =
+                    provisionableAutonomousContainerDatabases;
+            this.__explicitlySet__.add("provisionableAutonomousContainerDatabases");
+            return this;
+        }
+        /**
+         * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedAutonomousContainerDatabases")
+        private Integer provisionedAutonomousContainerDatabases;
+
+        /**
+         * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         * @param provisionedAutonomousContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder provisionedAutonomousContainerDatabases(
+                Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            this.__explicitlySet__.add("provisionedAutonomousContainerDatabases");
+            return this;
+        }
+        /**
+         * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "nonProvisionableAutonomousContainerDatabases")
+        private Integer nonProvisionableAutonomousContainerDatabases;
+
+        /**
+         * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         * @param nonProvisionableAutonomousContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder nonProvisionableAutonomousContainerDatabases(
+                Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases =
+                    nonProvisionableAutonomousContainerDatabases;
+            this.__explicitlySet__.add("nonProvisionableAutonomousContainerDatabases");
             return this;
         }
         /**
@@ -660,18 +832,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Integer reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -795,6 +963,55 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("timeOrdsCertificateExpires");
             return this;
         }
+        /**
+         * The lowest value to which exadataStorage(in TBs) can be scaled down.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+        private Double exadataStorageInTBsLowestScaledValue;
+
+        /**
+         * The lowest value to which exadataStorage(in TBs) can be scaled down.
+         * @param exadataStorageInTBsLowestScaledValue the value to set
+         * @return this builder
+         **/
+        public Builder exadataStorageInTBsLowestScaledValue(
+                Double exadataStorageInTBsLowestScaledValue) {
+            this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+            this.__explicitlySet__.add("exadataStorageInTBsLowestScaledValue");
+            return this;
+        }
+        /**
+         * The lowest value to which cpus can be scaled down.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cpusLowestScaledValue")
+        private Integer cpusLowestScaledValue;
+
+        /**
+         * The lowest value to which cpus can be scaled down.
+         * @param cpusLowestScaledValue the value to set
+         * @return this builder
+         **/
+        public Builder cpusLowestScaledValue(Integer cpusLowestScaledValue) {
+            this.cpusLowestScaledValue = cpusLowestScaledValue;
+            this.__explicitlySet__.add("cpusLowestScaledValue");
+            return this;
+        }
+        /**
+         * The lowest value to which maximum number of ACDs can be scaled down.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+        private Integer maxAcdsLowestScaledValue;
+
+        /**
+         * The lowest value to which maximum number of ACDs can be scaled down.
+         * @param maxAcdsLowestScaledValue the value to set
+         * @return this builder
+         **/
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            this.__explicitlySet__.add("maxAcdsLowestScaledValue");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -823,6 +1040,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                             this.maintenanceWindow,
                             this.lastMaintenanceRunId,
                             this.nextMaintenanceRunId,
+                            this.cpuPercentage,
+                            this.autonomousDataStoragePercentage,
+                            this.provisionedCpus,
+                            this.totalAutonomousDataStorageInTBs,
+                            this.reservedCpus,
+                            this.provisionableAutonomousContainerDatabases,
+                            this.provisionedAutonomousContainerDatabases,
+                            this.nonProvisionableAutonomousContainerDatabases,
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
                             this.dataStorageSizeInTBs,
@@ -840,7 +1065,10 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                             this.scanListenerPortNonTls,
                             this.isMtlsEnabled,
                             this.timeDatabaseSslCertificateExpires,
-                            this.timeOrdsCertificateExpires);
+                            this.timeOrdsCertificateExpires,
+                            this.exadataStorageInTBsLowestScaledValue,
+                            this.cpusLowestScaledValue,
+                            this.maxAcdsLowestScaledValue);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -912,6 +1140,33 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("nextMaintenanceRunId")) {
                 this.nextMaintenanceRunId(model.getNextMaintenanceRunId());
             }
+            if (model.wasPropertyExplicitlySet("cpuPercentage")) {
+                this.cpuPercentage(model.getCpuPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStoragePercentage")) {
+                this.autonomousDataStoragePercentage(model.getAutonomousDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedCpus")) {
+                this.provisionedCpus(model.getProvisionedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalAutonomousDataStorageInTBs")) {
+                this.totalAutonomousDataStorageInTBs(model.getTotalAutonomousDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("reservedCpus")) {
+                this.reservedCpus(model.getReservedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("provisionableAutonomousContainerDatabases")) {
+                this.provisionableAutonomousContainerDatabases(
+                        model.getProvisionableAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedAutonomousContainerDatabases")) {
+                this.provisionedAutonomousContainerDatabases(
+                        model.getProvisionedAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("nonProvisionableAutonomousContainerDatabases")) {
+                this.nonProvisionableAutonomousContainerDatabases(
+                        model.getNonProvisionableAutonomousContainerDatabases());
+            }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
             }
@@ -967,6 +1222,16 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("timeOrdsCertificateExpires")) {
                 this.timeOrdsCertificateExpires(model.getTimeOrdsCertificateExpires());
+            }
+            if (model.wasPropertyExplicitlySet("exadataStorageInTBsLowestScaledValue")) {
+                this.exadataStorageInTBsLowestScaledValue(
+                        model.getExadataStorageInTBsLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("cpusLowestScaledValue")) {
+                this.cpusLowestScaledValue(model.getCpusLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("maxAcdsLowestScaledValue")) {
+                this.maxAcdsLowestScaledValue(model.getMaxAcdsLowestScaledValue());
             }
             return this;
         }
@@ -1193,7 +1458,7 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      **/
     public enum ComputeModel {
@@ -1242,14 +1507,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      * @return the value
      **/
@@ -1300,13 +1565,15 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) to be enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     *
      * @return the value
      **/
     public Integer getMemoryPerOracleComputeUnitInGBs() {
@@ -1374,6 +1641,120 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
      **/
     public String getNextMaintenanceRunId() {
         return nextMaintenanceRunId;
+    }
+
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuPercentage")
+    private final Float cpuPercentage;
+
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getCpuPercentage() {
+        return cpuPercentage;
+    }
+
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
+    private final Float autonomousDataStoragePercentage;
+
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getAutonomousDataStoragePercentage() {
+        return autonomousDataStoragePercentage;
+    }
+
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+    private final Float provisionedCpus;
+
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getProvisionedCpus() {
+        return provisionedCpus;
+    }
+
+    /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
+    private final Float totalAutonomousDataStorageInTBs;
+
+    /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     * @return the value
+     **/
+    public Float getTotalAutonomousDataStorageInTBs() {
+        return totalAutonomousDataStorageInTBs;
+    }
+
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+    private final Float reservedCpus;
+
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getReservedCpus() {
+        return reservedCpus;
+    }
+
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
+    private final Integer provisionableAutonomousContainerDatabases;
+
+    /**
+     * **Deprecated.** Use field totalContainerDatabases.
+     *
+     * @return the value
+     **/
+    public Integer getProvisionableAutonomousContainerDatabases() {
+        return provisionableAutonomousContainerDatabases;
+    }
+
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedAutonomousContainerDatabases")
+    private final Integer provisionedAutonomousContainerDatabases;
+
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Integer getProvisionedAutonomousContainerDatabases() {
+        return provisionedAutonomousContainerDatabases;
+    }
+
+    /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nonProvisionableAutonomousContainerDatabases")
+    private final Integer nonProvisionableAutonomousContainerDatabases;
+
+    /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Integer getNonProvisionableAutonomousContainerDatabases() {
+        return nonProvisionableAutonomousContainerDatabases;
     }
 
     /**
@@ -1584,18 +1965,14 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Integer reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      *
      * @return the value
      **/
@@ -1701,6 +2078,48 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         return timeOrdsCertificateExpires;
     }
 
+    /**
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+    private final Double exadataStorageInTBsLowestScaledValue;
+
+    /**
+     * The lowest value to which exadataStorage(in TBs) can be scaled down.
+     * @return the value
+     **/
+    public Double getExadataStorageInTBsLowestScaledValue() {
+        return exadataStorageInTBsLowestScaledValue;
+    }
+
+    /**
+     * The lowest value to which cpus can be scaled down.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpusLowestScaledValue")
+    private final Integer cpusLowestScaledValue;
+
+    /**
+     * The lowest value to which cpus can be scaled down.
+     * @return the value
+     **/
+    public Integer getCpusLowestScaledValue() {
+        return cpusLowestScaledValue;
+    }
+
+    /**
+     * The lowest value to which maximum number of ACDs can be scaled down.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+    private final Integer maxAcdsLowestScaledValue;
+
+    /**
+     * The lowest value to which maximum number of ACDs can be scaled down.
+     * @return the value
+     **/
+    public Integer getMaxAcdsLowestScaledValue() {
+        return maxAcdsLowestScaledValue;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1740,6 +2159,19 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
         sb.append(", lastMaintenanceRunId=").append(String.valueOf(this.lastMaintenanceRunId));
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
+        sb.append(", cpuPercentage=").append(String.valueOf(this.cpuPercentage));
+        sb.append(", autonomousDataStoragePercentage=")
+                .append(String.valueOf(this.autonomousDataStoragePercentage));
+        sb.append(", provisionedCpus=").append(String.valueOf(this.provisionedCpus));
+        sb.append(", totalAutonomousDataStorageInTBs=")
+                .append(String.valueOf(this.totalAutonomousDataStorageInTBs));
+        sb.append(", reservedCpus=").append(String.valueOf(this.reservedCpus));
+        sb.append(", provisionableAutonomousContainerDatabases=")
+                .append(String.valueOf(this.provisionableAutonomousContainerDatabases));
+        sb.append(", provisionedAutonomousContainerDatabases=")
+                .append(String.valueOf(this.provisionedAutonomousContainerDatabases));
+        sb.append(", nonProvisionableAutonomousContainerDatabases=")
+                .append(String.valueOf(this.nonProvisionableAutonomousContainerDatabases));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
         sb.append(", dataStorageSizeInTBs=").append(String.valueOf(this.dataStorageSizeInTBs));
@@ -1763,6 +2195,11 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                 .append(String.valueOf(this.timeDatabaseSslCertificateExpires));
         sb.append(", timeOrdsCertificateExpires=")
                 .append(String.valueOf(this.timeOrdsCertificateExpires));
+        sb.append(", exadataStorageInTBsLowestScaledValue=")
+                .append(String.valueOf(this.exadataStorageInTBsLowestScaledValue));
+        sb.append(", cpusLowestScaledValue=").append(String.valueOf(this.cpusLowestScaledValue));
+        sb.append(", maxAcdsLowestScaledValue=")
+                .append(String.valueOf(this.maxAcdsLowestScaledValue));
         sb.append(")");
         return sb.toString();
     }
@@ -1802,6 +2239,22 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
                 && java.util.Objects.equals(this.lastMaintenanceRunId, other.lastMaintenanceRunId)
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
+                && java.util.Objects.equals(this.cpuPercentage, other.cpuPercentage)
+                && java.util.Objects.equals(
+                        this.autonomousDataStoragePercentage, other.autonomousDataStoragePercentage)
+                && java.util.Objects.equals(this.provisionedCpus, other.provisionedCpus)
+                && java.util.Objects.equals(
+                        this.totalAutonomousDataStorageInTBs, other.totalAutonomousDataStorageInTBs)
+                && java.util.Objects.equals(this.reservedCpus, other.reservedCpus)
+                && java.util.Objects.equals(
+                        this.provisionableAutonomousContainerDatabases,
+                        other.provisionableAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.provisionedAutonomousContainerDatabases,
+                        other.provisionedAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.nonProvisionableAutonomousContainerDatabases,
+                        other.nonProvisionableAutonomousContainerDatabases)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
@@ -1829,6 +2282,12 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                         other.timeDatabaseSslCertificateExpires)
                 && java.util.Objects.equals(
                         this.timeOrdsCertificateExpires, other.timeOrdsCertificateExpires)
+                && java.util.Objects.equals(
+                        this.exadataStorageInTBsLowestScaledValue,
+                        other.exadataStorageInTBsLowestScaledValue)
+                && java.util.Objects.equals(this.cpusLowestScaledValue, other.cpusLowestScaledValue)
+                && java.util.Objects.equals(
+                        this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
                 && super.equals(other);
     }
 
@@ -1905,6 +2364,38 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                                 : this.nextMaintenanceRunId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.cpuPercentage == null ? 43 : this.cpuPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStoragePercentage == null
+                                ? 43
+                                : this.autonomousDataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedCpus == null ? 43 : this.provisionedCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalAutonomousDataStorageInTBs == null
+                                ? 43
+                                : this.totalAutonomousDataStorageInTBs.hashCode());
+        result = (result * PRIME) + (this.reservedCpus == null ? 43 : this.reservedCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionableAutonomousContainerDatabases == null
+                                ? 43
+                                : this.provisionableAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedAutonomousContainerDatabases == null
+                                ? 43
+                                : this.provisionedAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonProvisionableAutonomousContainerDatabases == null
+                                ? 43
+                                : this.nonProvisionableAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
         result =
                 (result * PRIME)
@@ -1967,6 +2458,21 @@ public final class AutonomousVmCluster extends com.oracle.bmc.http.internal.Expl
                         + (this.timeOrdsCertificateExpires == null
                                 ? 43
                                 : this.timeOrdsCertificateExpires.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataStorageInTBsLowestScaledValue == null
+                                ? 43
+                                : this.exadataStorageInTBsLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpusLowestScaledValue == null
+                                ? 43
+                                : this.cpusLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAcdsLowestScaledValue == null
+                                ? 43
+                                : this.maxAcdsLowestScaledValue.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

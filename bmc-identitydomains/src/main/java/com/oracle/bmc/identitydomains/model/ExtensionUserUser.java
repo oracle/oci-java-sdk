@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * OCI IAM User
+ * Oracle Identity Cloud Service User
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -26,7 +26,9 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
         "isAuthenticationDelegated",
         "status",
         "provider",
+        "preferredUiLandingPage",
         "creationMechanism",
+        "groupMembershipLastModified",
         "doNotShowGettingStarted",
         "bypassNotification",
         "isAccountRecoveryEnrolled",
@@ -35,6 +37,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
         "isGroupMembershipNormalized",
         "isGroupMembershipSyncedToUsersGroups",
         "notificationEmailTemplateId",
+        "serviceUser",
         "supportAccounts",
         "idcsAppRolesLimitedToGroups",
         "userToken",
@@ -50,7 +53,9 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
             Boolean isAuthenticationDelegated,
             Status status,
             Provider provider,
+            PreferredUiLandingPage preferredUiLandingPage,
             CreationMechanism creationMechanism,
+            String groupMembershipLastModified,
             Boolean doNotShowGettingStarted,
             Boolean bypassNotification,
             Boolean isAccountRecoveryEnrolled,
@@ -59,6 +64,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
             Boolean isGroupMembershipNormalized,
             Boolean isGroupMembershipSyncedToUsersGroups,
             String notificationEmailTemplateId,
+            Boolean serviceUser,
             java.util.List<UserExtSupportAccounts> supportAccounts,
             java.util.List<UserExtIdcsAppRolesLimitedToGroups> idcsAppRolesLimitedToGroups,
             UserExtUserToken userToken,
@@ -73,7 +79,9 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
         this.isAuthenticationDelegated = isAuthenticationDelegated;
         this.status = status;
         this.provider = provider;
+        this.preferredUiLandingPage = preferredUiLandingPage;
         this.creationMechanism = creationMechanism;
+        this.groupMembershipLastModified = groupMembershipLastModified;
         this.doNotShowGettingStarted = doNotShowGettingStarted;
         this.bypassNotification = bypassNotification;
         this.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
@@ -82,6 +90,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
         this.isGroupMembershipNormalized = isGroupMembershipNormalized;
         this.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
         this.notificationEmailTemplateId = notificationEmailTemplateId;
+        this.serviceUser = serviceUser;
         this.supportAccounts = supportAccounts;
         this.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
         this.userToken = userToken;
@@ -105,6 +114,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: boolean
@@ -123,6 +133,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: boolean
@@ -248,6 +259,46 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * User's preferred landing page following login, logout and reset password.
+         * <p>
+         **Added In:** 2302092332
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("preferredUiLandingPage")
+        private PreferredUiLandingPage preferredUiLandingPage;
+
+        /**
+         * User's preferred landing page following login, logout and reset password.
+         * <p>
+         **Added In:** 2302092332
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         * @param preferredUiLandingPage the value to set
+         * @return this builder
+         **/
+        public Builder preferredUiLandingPage(PreferredUiLandingPage preferredUiLandingPage) {
+            this.preferredUiLandingPage = preferredUiLandingPage;
+            this.__explicitlySet__.add("preferredUiLandingPage");
+            return this;
+        }
+        /**
          * User creation mechanism
          * <p>
          **SCIM++ Properties:**
@@ -256,6 +307,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: string
@@ -273,6 +325,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: string
@@ -283,6 +336,44 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
         public Builder creationMechanism(CreationMechanism creationMechanism) {
             this.creationMechanism = creationMechanism;
             this.__explicitlySet__.add("creationMechanism");
+            return this;
+        }
+        /**
+         * Specifies date time when a User's group membership was last modified.
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipLastModified")
+        private String groupMembershipLastModified;
+
+        /**
+         * Specifies date time when a User's group membership was last modified.
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         * @param groupMembershipLastModified the value to set
+         * @return this builder
+         **/
+        public Builder groupMembershipLastModified(String groupMembershipLastModified) {
+            this.groupMembershipLastModified = groupMembershipLastModified;
+            this.__explicitlySet__.add("groupMembershipLastModified");
             return this;
         }
         /**
@@ -330,6 +421,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: never
          *  - type: boolean
@@ -347,6 +439,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: immutable
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: never
          *  - type: boolean
@@ -596,6 +689,50 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * Indicates if User is a Service User
+         * <p>
+         **Added In:** 2306131901
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Service User
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceUser")
+        private Boolean serviceUser;
+
+        /**
+         * Indicates if User is a Service User
+         * <p>
+         **Added In:** 2306131901
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Service User
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         * @param serviceUser the value to set
+         * @return this builder
+         **/
+        public Builder serviceUser(Boolean serviceUser) {
+            this.serviceUser = serviceUser;
+            this.__explicitlySet__.add("serviceUser");
+            return this;
+        }
+        /**
          * A list of Support Accounts corresponding to user.
          * <p>
          **Added In:** 2103141444
@@ -829,7 +966,9 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                             this.isAuthenticationDelegated,
                             this.status,
                             this.provider,
+                            this.preferredUiLandingPage,
                             this.creationMechanism,
+                            this.groupMembershipLastModified,
                             this.doNotShowGettingStarted,
                             this.bypassNotification,
                             this.isAccountRecoveryEnrolled,
@@ -838,6 +977,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                             this.isGroupMembershipNormalized,
                             this.isGroupMembershipSyncedToUsersGroups,
                             this.notificationEmailTemplateId,
+                            this.serviceUser,
                             this.supportAccounts,
                             this.idcsAppRolesLimitedToGroups,
                             this.userToken,
@@ -867,8 +1007,14 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("provider")) {
                 this.provider(model.getProvider());
             }
+            if (model.wasPropertyExplicitlySet("preferredUiLandingPage")) {
+                this.preferredUiLandingPage(model.getPreferredUiLandingPage());
+            }
             if (model.wasPropertyExplicitlySet("creationMechanism")) {
                 this.creationMechanism(model.getCreationMechanism());
+            }
+            if (model.wasPropertyExplicitlySet("groupMembershipLastModified")) {
+                this.groupMembershipLastModified(model.getGroupMembershipLastModified());
             }
             if (model.wasPropertyExplicitlySet("doNotShowGettingStarted")) {
                 this.doNotShowGettingStarted(model.getDoNotShowGettingStarted());
@@ -895,6 +1041,9 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("notificationEmailTemplateId")) {
                 this.notificationEmailTemplateId(model.getNotificationEmailTemplateId());
+            }
+            if (model.wasPropertyExplicitlySet("serviceUser")) {
+                this.serviceUser(model.getServiceUser());
             }
             if (model.wasPropertyExplicitlySet("supportAccounts")) {
                 this.supportAccounts(model.getSupportAccounts());
@@ -949,6 +1098,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: boolean
@@ -967,6 +1117,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: boolean
@@ -1201,6 +1352,105 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * User's preferred landing page following login, logout and reset password.
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum PreferredUiLandingPage {
+        MyApps("MyApps"),
+        MyProfile("MyProfile"),
+        OciConsole("OciConsole"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PreferredUiLandingPage.class);
+
+        private final String value;
+        private static java.util.Map<String, PreferredUiLandingPage> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PreferredUiLandingPage v : PreferredUiLandingPage.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PreferredUiLandingPage(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PreferredUiLandingPage create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PreferredUiLandingPage', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * User's preferred landing page following login, logout and reset password.
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("preferredUiLandingPage")
+    private final PreferredUiLandingPage preferredUiLandingPage;
+
+    /**
+     * User's preferred landing page following login, logout and reset password.
+     * <p>
+     **Added In:** 2302092332
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public PreferredUiLandingPage getPreferredUiLandingPage() {
+        return preferredUiLandingPage;
+    }
+
+    /**
      * User creation mechanism
      * <p>
      **SCIM++ Properties:**
@@ -1209,6 +1459,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: string
@@ -1274,6 +1525,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: string
@@ -1291,6 +1543,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: string
@@ -1299,6 +1552,42 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      **/
     public CreationMechanism getCreationMechanism() {
         return creationMechanism;
+    }
+
+    /**
+     * Specifies date time when a User's group membership was last modified.
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("groupMembershipLastModified")
+    private final String groupMembershipLastModified;
+
+    /**
+     * Specifies date time when a User's group membership was last modified.
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public String getGroupMembershipLastModified() {
+        return groupMembershipLastModified;
     }
 
     /**
@@ -1344,6 +1633,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: never
      *  - type: boolean
@@ -1361,6 +1651,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: immutable
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: never
      *  - type: boolean
@@ -1594,6 +1885,48 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Indicates if User is a Service User
+     * <p>
+     **Added In:** 2306131901
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Service User
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceUser")
+    private final Boolean serviceUser;
+
+    /**
+     * Indicates if User is a Service User
+     * <p>
+     **Added In:** 2306131901
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Service User
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public Boolean getServiceUser() {
+        return serviceUser;
+    }
+
+    /**
      * A list of Support Accounts corresponding to user.
      * <p>
      **Added In:** 2103141444
@@ -1814,7 +2147,10 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.isAuthenticationDelegated));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", provider=").append(String.valueOf(this.provider));
+        sb.append(", preferredUiLandingPage=").append(String.valueOf(this.preferredUiLandingPage));
         sb.append(", creationMechanism=").append(String.valueOf(this.creationMechanism));
+        sb.append(", groupMembershipLastModified=")
+                .append(String.valueOf(this.groupMembershipLastModified));
         sb.append(", doNotShowGettingStarted=")
                 .append(String.valueOf(this.doNotShowGettingStarted));
         sb.append(", bypassNotification=").append(String.valueOf(this.bypassNotification));
@@ -1830,6 +2166,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.isGroupMembershipSyncedToUsersGroups));
         sb.append(", notificationEmailTemplateId=")
                 .append(String.valueOf(this.notificationEmailTemplateId));
+        sb.append(", serviceUser=").append(String.valueOf(this.serviceUser));
         sb.append(", supportAccounts=").append(String.valueOf(this.supportAccounts));
         sb.append(", idcsAppRolesLimitedToGroups=")
                 .append(String.valueOf(this.idcsAppRolesLimitedToGroups));
@@ -1861,7 +2198,11 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                         this.isAuthenticationDelegated, other.isAuthenticationDelegated)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.provider, other.provider)
+                && java.util.Objects.equals(
+                        this.preferredUiLandingPage, other.preferredUiLandingPage)
                 && java.util.Objects.equals(this.creationMechanism, other.creationMechanism)
+                && java.util.Objects.equals(
+                        this.groupMembershipLastModified, other.groupMembershipLastModified)
                 && java.util.Objects.equals(
                         this.doNotShowGettingStarted, other.doNotShowGettingStarted)
                 && java.util.Objects.equals(this.bypassNotification, other.bypassNotification)
@@ -1879,6 +2220,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                         other.isGroupMembershipSyncedToUsersGroups)
                 && java.util.Objects.equals(
                         this.notificationEmailTemplateId, other.notificationEmailTemplateId)
+                && java.util.Objects.equals(this.serviceUser, other.serviceUser)
                 && java.util.Objects.equals(this.supportAccounts, other.supportAccounts)
                 && java.util.Objects.equals(
                         this.idcsAppRolesLimitedToGroups, other.idcsAppRolesLimitedToGroups)
@@ -1912,7 +2254,17 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.provider == null ? 43 : this.provider.hashCode());
         result =
                 (result * PRIME)
+                        + (this.preferredUiLandingPage == null
+                                ? 43
+                                : this.preferredUiLandingPage.hashCode());
+        result =
+                (result * PRIME)
                         + (this.creationMechanism == null ? 43 : this.creationMechanism.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupMembershipLastModified == null
+                                ? 43
+                                : this.groupMembershipLastModified.hashCode());
         result =
                 (result * PRIME)
                         + (this.doNotShowGettingStarted == null
@@ -1953,6 +2305,7 @@ public final class ExtensionUserUser extends com.oracle.bmc.http.internal.Explic
                         + (this.notificationEmailTemplateId == null
                                 ? 43
                                 : this.notificationEmailTemplateId.hashCode());
+        result = (result * PRIME) + (this.serviceUser == null ? 43 : this.serviceUser.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportAccounts == null ? 43 : this.supportAccounts.hashCode());

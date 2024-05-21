@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Vantage Point Node
+ * Details of the vantage point node.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,13 +37,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * id of Vantage Point node
+         * ID of the vantage point node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * id of Vantage Point node
+         * ID of the vantage point node.
          * @param id the value to set
          * @return this builder
          **/
@@ -53,13 +53,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * name of Vantage Point node
+         * Name of the vantage point node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * name of Vantage Point node
+         * Name of the vantage point node.
          * @param name the value to set
          * @return this builder
          **/
@@ -69,13 +69,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * display name of Vantage Point node
+         * Display name of the vantage point node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * display name of Vantage Point node
+         * Display name of the vantage point node.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -85,13 +85,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * geo info
+         * Geographical information of the vantage point node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
         private String geoInfo;
 
         /**
-         * geo info
+         * Geographical information of the vantage point node.
          * @param geoInfo the value to set
          * @return this builder
          **/
@@ -101,13 +101,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * links outgoing from this Vantage Point node
+         * Outgoing links from the vantage point node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
         private java.util.List<String> outgoingLinks;
 
         /**
-         * links outgoing from this Vantage Point node
+         * Outgoing links from the vantage point node.
          * @param outgoingLinks the value to set
          * @return this builder
          **/
@@ -163,13 +163,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * id of Vantage Point node
+     * ID of the vantage point node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * id of Vantage Point node
+     * ID of the vantage point node.
      * @return the value
      **/
     public String getId() {
@@ -177,13 +177,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * name of Vantage Point node
+     * Name of the vantage point node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * name of Vantage Point node
+     * Name of the vantage point node.
      * @return the value
      **/
     public String getName() {
@@ -191,13 +191,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * display name of Vantage Point node
+     * Display name of the vantage point node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * display name of Vantage Point node
+     * Display name of the vantage point node.
      * @return the value
      **/
     public String getDisplayName() {
@@ -205,13 +205,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * geo info
+     * Geographical information of the vantage point node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
     private final String geoInfo;
 
     /**
-     * geo info
+     * Geographical information of the vantage point node.
      * @return the value
      **/
     public String getGeoInfo() {
@@ -219,13 +219,13 @@ public final class VantagePointNode extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * links outgoing from this Vantage Point node
+     * Outgoing links from the vantage point node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
     private final java.util.List<String> outgoingLinks;
 
     /**
-     * links outgoing from this Vantage Point node
+     * Outgoing links from the vantage point node.
      * @return the value
      **/
     public java.util.List<String> getOutgoingLinks() {

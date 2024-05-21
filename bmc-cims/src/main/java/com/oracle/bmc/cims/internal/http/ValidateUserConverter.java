@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.internal.http;
@@ -29,8 +29,6 @@ public class ValidateUserConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.cims.requests.ValidateUserRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCsi(), "csi is required");
-        Validate.notNull(request.getOcid(), "ocid is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -45,23 +43,43 @@ public class ValidateUserConverter {
                     target.queryParam(
                             "problemType",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getProblemType()));
+                                    request.getProblemType().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
-        ib.header("csi", request.getCsi());
+        if (request.getCsi() != null) {
+            ib.header("csi", request.getCsi());
+        }
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
-        ib.header("ocid", request.getOcid());
+        if (request.getOcid() != null) {
+            ib.header("ocid", request.getOcid());
+        }
 
         if (request.getHomeregion() != null) {
             ib.header("homeregion", request.getHomeregion());
+        }
+
+        if (request.getBearertokentype() != null) {
+            ib.header("bearertokentype", request.getBearertokentype());
+        }
+
+        if (request.getBearertoken() != null) {
+            ib.header("bearertoken", request.getBearertoken());
+        }
+
+        if (request.getIdtoken() != null) {
+            ib.header("idtoken", request.getIdtoken());
+        }
+
+        if (request.getDomainid() != null) {
+            ib.header("domainid", request.getDomainid());
         }
 
         if (client.getClientConfigurator() != null) {

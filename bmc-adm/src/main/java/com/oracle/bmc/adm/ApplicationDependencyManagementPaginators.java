@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -31,6 +31,139 @@ public class ApplicationDependencyManagementPaginators {
 
     public ApplicationDependencyManagementPaginators(ApplicationDependencyManagement client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listApplicationDependencyRecommendations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListApplicationDependencyRecommendationsResponse>
+            listApplicationDependencyRecommendationsResponseIterator(
+                    final ListApplicationDependencyRecommendationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListApplicationDependencyRecommendationsRequest.Builder,
+                ListApplicationDependencyRecommendationsRequest,
+                ListApplicationDependencyRecommendationsResponse>(
+                new java.util.function.Supplier<
+                        ListApplicationDependencyRecommendationsRequest.Builder>() {
+                    @Override
+                    public ListApplicationDependencyRecommendationsRequest.Builder get() {
+                        return ListApplicationDependencyRecommendationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationDependencyRecommendationsResponse, String>() {
+                    @Override
+                    public String apply(ListApplicationDependencyRecommendationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApplicationDependencyRecommendationsRequest.Builder>,
+                        ListApplicationDependencyRecommendationsRequest>() {
+                    @Override
+                    public ListApplicationDependencyRecommendationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApplicationDependencyRecommendationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationDependencyRecommendationsRequest,
+                        ListApplicationDependencyRecommendationsResponse>() {
+                    @Override
+                    public ListApplicationDependencyRecommendationsResponse apply(
+                            ListApplicationDependencyRecommendationsRequest request) {
+                        return client.listApplicationDependencyRecommendations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.adm.model.ApplicationDependencyRecommendationSummary} objects
+     * contained in responses from the listApplicationDependencyRecommendations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.adm.model.ApplicationDependencyRecommendationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.adm.model.ApplicationDependencyRecommendationSummary>
+            listApplicationDependencyRecommendationsRecordIterator(
+                    final ListApplicationDependencyRecommendationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListApplicationDependencyRecommendationsRequest.Builder,
+                ListApplicationDependencyRecommendationsRequest,
+                ListApplicationDependencyRecommendationsResponse,
+                com.oracle.bmc.adm.model.ApplicationDependencyRecommendationSummary>(
+                new java.util.function.Supplier<
+                        ListApplicationDependencyRecommendationsRequest.Builder>() {
+                    @Override
+                    public ListApplicationDependencyRecommendationsRequest.Builder get() {
+                        return ListApplicationDependencyRecommendationsRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationDependencyRecommendationsResponse, String>() {
+                    @Override
+                    public String apply(ListApplicationDependencyRecommendationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListApplicationDependencyRecommendationsRequest.Builder>,
+                        ListApplicationDependencyRecommendationsRequest>() {
+                    @Override
+                    public ListApplicationDependencyRecommendationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListApplicationDependencyRecommendationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationDependencyRecommendationsRequest,
+                        ListApplicationDependencyRecommendationsResponse>() {
+                    @Override
+                    public ListApplicationDependencyRecommendationsResponse apply(
+                            ListApplicationDependencyRecommendationsRequest request) {
+                        return client.listApplicationDependencyRecommendations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListApplicationDependencyRecommendationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.adm.model
+                                        .ApplicationDependencyRecommendationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.adm.model
+                                            .ApplicationDependencyRecommendationSummary>
+                            apply(ListApplicationDependencyRecommendationsResponse response) {
+                        return response.getApplicationDependencyRecommendationCollection()
+                                .getItems();
+                    }
+                });
     }
 
     /**
@@ -275,6 +408,344 @@ public class ApplicationDependencyManagementPaginators {
                     public java.util.List<com.oracle.bmc.adm.model.KnowledgeBaseSummary> apply(
                             ListKnowledgeBasesResponse response) {
                         return response.getKnowledgeBaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRemediationRecipes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRemediationRecipesResponse> listRemediationRecipesResponseIterator(
+            final ListRemediationRecipesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRemediationRecipesRequest.Builder, ListRemediationRecipesRequest,
+                ListRemediationRecipesResponse>(
+                new java.util.function.Supplier<ListRemediationRecipesRequest.Builder>() {
+                    @Override
+                    public ListRemediationRecipesRequest.Builder get() {
+                        return ListRemediationRecipesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRemediationRecipesResponse, String>() {
+                    @Override
+                    public String apply(ListRemediationRecipesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRemediationRecipesRequest.Builder>,
+                        ListRemediationRecipesRequest>() {
+                    @Override
+                    public ListRemediationRecipesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRemediationRecipesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRemediationRecipesRequest, ListRemediationRecipesResponse>() {
+                    @Override
+                    public ListRemediationRecipesResponse apply(
+                            ListRemediationRecipesRequest request) {
+                        return client.listRemediationRecipes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.adm.model.RemediationRecipeSummary} objects
+     * contained in responses from the listRemediationRecipes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.adm.model.RemediationRecipeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.adm.model.RemediationRecipeSummary>
+            listRemediationRecipesRecordIterator(final ListRemediationRecipesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRemediationRecipesRequest.Builder, ListRemediationRecipesRequest,
+                ListRemediationRecipesResponse, com.oracle.bmc.adm.model.RemediationRecipeSummary>(
+                new java.util.function.Supplier<ListRemediationRecipesRequest.Builder>() {
+                    @Override
+                    public ListRemediationRecipesRequest.Builder get() {
+                        return ListRemediationRecipesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRemediationRecipesResponse, String>() {
+                    @Override
+                    public String apply(ListRemediationRecipesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRemediationRecipesRequest.Builder>,
+                        ListRemediationRecipesRequest>() {
+                    @Override
+                    public ListRemediationRecipesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRemediationRecipesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRemediationRecipesRequest, ListRemediationRecipesResponse>() {
+                    @Override
+                    public ListRemediationRecipesResponse apply(
+                            ListRemediationRecipesRequest request) {
+                        return client.listRemediationRecipes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRemediationRecipesResponse,
+                        java.util.List<com.oracle.bmc.adm.model.RemediationRecipeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.adm.model.RemediationRecipeSummary> apply(
+                            ListRemediationRecipesResponse response) {
+                        return response.getRemediationRecipeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRemediationRuns operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRemediationRunsResponse> listRemediationRunsResponseIterator(
+            final ListRemediationRunsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRemediationRunsRequest.Builder, ListRemediationRunsRequest,
+                ListRemediationRunsResponse>(
+                new java.util.function.Supplier<ListRemediationRunsRequest.Builder>() {
+                    @Override
+                    public ListRemediationRunsRequest.Builder get() {
+                        return ListRemediationRunsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRemediationRunsResponse, String>() {
+                    @Override
+                    public String apply(ListRemediationRunsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRemediationRunsRequest.Builder>,
+                        ListRemediationRunsRequest>() {
+                    @Override
+                    public ListRemediationRunsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRemediationRunsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRemediationRunsRequest, ListRemediationRunsResponse>() {
+                    @Override
+                    public ListRemediationRunsResponse apply(ListRemediationRunsRequest request) {
+                        return client.listRemediationRuns(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.adm.model.RemediationRunSummary} objects
+     * contained in responses from the listRemediationRuns operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.adm.model.RemediationRunSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.adm.model.RemediationRunSummary>
+            listRemediationRunsRecordIterator(final ListRemediationRunsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRemediationRunsRequest.Builder, ListRemediationRunsRequest,
+                ListRemediationRunsResponse, com.oracle.bmc.adm.model.RemediationRunSummary>(
+                new java.util.function.Supplier<ListRemediationRunsRequest.Builder>() {
+                    @Override
+                    public ListRemediationRunsRequest.Builder get() {
+                        return ListRemediationRunsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRemediationRunsResponse, String>() {
+                    @Override
+                    public String apply(ListRemediationRunsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRemediationRunsRequest.Builder>,
+                        ListRemediationRunsRequest>() {
+                    @Override
+                    public ListRemediationRunsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRemediationRunsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRemediationRunsRequest, ListRemediationRunsResponse>() {
+                    @Override
+                    public ListRemediationRunsResponse apply(ListRemediationRunsRequest request) {
+                        return client.listRemediationRuns(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRemediationRunsResponse,
+                        java.util.List<com.oracle.bmc.adm.model.RemediationRunSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.adm.model.RemediationRunSummary> apply(
+                            ListRemediationRunsResponse response) {
+                        return response.getRemediationRunCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listStages operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListStagesResponse> listStagesResponseIterator(
+            final ListStagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStagesRequest.Builder, ListStagesRequest, ListStagesResponse>(
+                new java.util.function.Supplier<ListStagesRequest.Builder>() {
+                    @Override
+                    public ListStagesRequest.Builder get() {
+                        return ListStagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStagesResponse, String>() {
+                    @Override
+                    public String apply(ListStagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStagesRequest.Builder>,
+                        ListStagesRequest>() {
+                    @Override
+                    public ListStagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStagesRequest, ListStagesResponse>() {
+                    @Override
+                    public ListStagesResponse apply(ListStagesRequest request) {
+                        return client.listStages(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.adm.model.RemediationRunStageSummary} objects
+     * contained in responses from the listStages operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.adm.model.RemediationRunStageSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.adm.model.RemediationRunStageSummary> listStagesRecordIterator(
+            final ListStagesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStagesRequest.Builder, ListStagesRequest, ListStagesResponse,
+                com.oracle.bmc.adm.model.RemediationRunStageSummary>(
+                new java.util.function.Supplier<ListStagesRequest.Builder>() {
+                    @Override
+                    public ListStagesRequest.Builder get() {
+                        return ListStagesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStagesResponse, String>() {
+                    @Override
+                    public String apply(ListStagesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStagesRequest.Builder>,
+                        ListStagesRequest>() {
+                    @Override
+                    public ListStagesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStagesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStagesRequest, ListStagesResponse>() {
+                    @Override
+                    public ListStagesResponse apply(ListStagesRequest request) {
+                        return client.listStages(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStagesResponse,
+                        java.util.List<com.oracle.bmc.adm.model.RemediationRunStageSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.adm.model.RemediationRunStageSummary>
+                            apply(ListStagesResponse response) {
+                        return response.getRemediationRunStageCollection().getItems();
                     }
                 });
     }

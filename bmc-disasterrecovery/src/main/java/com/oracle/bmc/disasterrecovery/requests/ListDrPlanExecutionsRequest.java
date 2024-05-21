@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.requests;
@@ -13,75 +13,75 @@ public class ListDrPlanExecutionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.
+     * The OCID of the DR protection group. Mandatory query param.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      */
     private String drProtectionGroupId;
 
     /**
-     * The OCID of the DR Protection Group. Mandatory query param.
+     * The OCID of the DR protection group. Mandatory query param.
      * <p>
-     * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
     }
     /**
-     * A filter to return only DR Plan Executions that match the given lifecycleState.
+     * A filter to return only DR plan executions that match the given lifecycle state.
      *
      */
     private com.oracle.bmc.disasterrecovery.model.DrPlanExecutionLifecycleState lifecycleState;
 
     /**
-     * A filter to return only DR Plan Executions that match the given lifecycleState.
+     * A filter to return only DR plan executions that match the given lifecycle state.
      *
      */
     public com.oracle.bmc.disasterrecovery.model.DrPlanExecutionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
     }
     /**
-     * The DR Plan Execution type.
+     * The DR plan execution type.
      */
     private com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType drPlanExecutionType;
 
     /**
-     * The DR Plan Execution type.
+     * The DR plan execution type.
      */
     public com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType getDrPlanExecutionType() {
         return drPlanExecutionType;
     }
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the given display name.
      * <p>
-     * Example: {@code MY UNIQUE DISPLAY NAME}
+     * Example: {@code MyResourceDisplayName}
      *
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the entire display name given.
+     * A filter to return only resources that match the given display name.
      * <p>
-     * Example: {@code MY UNIQUE DISPLAY NAME}
+     * Example: {@code MyResourceDisplayName}
      *
      */
     public String getDisplayName() {
@@ -152,7 +152,7 @@ public class ListDrPlanExecutionsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
      * Default order for displayName is ascending. If no value is specified timeCreated is default.
      * <p>
-     * Example: {@code displayName}
+     * Example: {@code MyResourceDisplayName}
      *
      */
     private SortBy sortBy;
@@ -161,7 +161,7 @@ public class ListDrPlanExecutionsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
      * Default order for displayName is ascending. If no value is specified timeCreated is default.
      * <p>
-     * Example: {@code displayName}
+     * Example: {@code MyResourceDisplayName}
      *
      **/
     public enum SortBy {
@@ -201,7 +201,7 @@ public class ListDrPlanExecutionsRequest
      * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
      * Default order for displayName is ascending. If no value is specified timeCreated is default.
      * <p>
-     * Example: {@code displayName}
+     * Example: {@code MyResourceDisplayName}
      *
      */
     public SortBy getSortBy() {
@@ -229,17 +229,17 @@ public class ListDrPlanExecutionsRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the DR Protection Group. Mandatory query param.
+         * The OCID of the DR protection group. Mandatory query param.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          */
         private String drProtectionGroupId = null;
 
         /**
-         * The OCID of the DR Protection Group. Mandatory query param.
+         * The OCID of the DR protection group. Mandatory query param.
          * <p>
-         * Example: {@code ocid1.drprotectiongroup.oc1.phx.exampleocid}
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance
@@ -250,14 +250,14 @@ public class ListDrPlanExecutionsRequest
         }
 
         /**
-         * A filter to return only DR Plan Executions that match the given lifecycleState.
+         * A filter to return only DR plan executions that match the given lifecycle state.
          *
          */
         private com.oracle.bmc.disasterrecovery.model.DrPlanExecutionLifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only DR Plan Executions that match the given lifecycleState.
+         * A filter to return only DR plan executions that match the given lifecycle state.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -270,17 +270,17 @@ public class ListDrPlanExecutionsRequest
         }
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance
@@ -291,13 +291,13 @@ public class ListDrPlanExecutionsRequest
         }
 
         /**
-         * The DR Plan Execution type.
+         * The DR plan execution type.
          */
         private com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType drPlanExecutionType =
                 null;
 
         /**
-         * The DR Plan Execution type.
+         * The DR plan execution type.
          * @param drPlanExecutionType the value to set
          * @return this builder instance
          */
@@ -308,17 +308,17 @@ public class ListDrPlanExecutionsRequest
         }
 
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the given display name.
          * <p>
-         * Example: {@code MY UNIQUE DISPLAY NAME}
+         * Example: {@code MyResourceDisplayName}
          *
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the entire display name given.
+         * A filter to return only resources that match the given display name.
          * <p>
-         * Example: {@code MY UNIQUE DISPLAY NAME}
+         * Example: {@code MyResourceDisplayName}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -405,7 +405,7 @@ public class ListDrPlanExecutionsRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
          * Default order for displayName is ascending. If no value is specified timeCreated is default.
          * <p>
-         * Example: {@code displayName}
+         * Example: {@code MyResourceDisplayName}
          *
          */
         private SortBy sortBy = null;
@@ -414,7 +414,7 @@ public class ListDrPlanExecutionsRequest
          * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
          * Default order for displayName is ascending. If no value is specified timeCreated is default.
          * <p>
-         * Example: {@code displayName}
+         * Example: {@code MyResourceDisplayName}
          *
          * @param sortBy the value to set
          * @return this builder instance

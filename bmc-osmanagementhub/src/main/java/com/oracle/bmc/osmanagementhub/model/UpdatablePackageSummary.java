@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A software package available for install on a managed instance.
+ * Provides summary information for a software package available for installation on a managed instance.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -81,13 +81,13 @@ public final class UpdatablePackageSummary extends PackageSummary {
             return this;
         }
         /**
-         * The version of this upgradable package already installed on the instance.
+         * The version of the package that is currently installed on the instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
         private String installedVersion;
 
         /**
-         * The version of this upgradable package already installed on the instance.
+         * The version of the package that is currently installed on the instance.
          * @param installedVersion the value to set
          * @return this builder
          **/
@@ -97,13 +97,13 @@ public final class UpdatablePackageSummary extends PackageSummary {
             return this;
         }
         /**
-         * The classification of this update.
+         * The type of update.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private ClassificationTypes updateType;
 
         /**
-         * The classification of this update.
+         * The type of update.
          * @param updateType the value to set
          * @return this builder
          **/
@@ -113,13 +113,13 @@ public final class UpdatablePackageSummary extends PackageSummary {
             return this;
         }
         /**
-         * List of errata containing this update.
+         * List of errata applicable to this update.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errata")
         private java.util.List<String> errata;
 
         /**
-         * List of errata containing this update.
+         * List of errata applicable to this update.
          * @param errata the value to set
          * @return this builder
          **/
@@ -234,13 +234,13 @@ public final class UpdatablePackageSummary extends PackageSummary {
     }
 
     /**
-     * The version of this upgradable package already installed on the instance.
+     * The version of the package that is currently installed on the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installedVersion")
     private final String installedVersion;
 
     /**
-     * The version of this upgradable package already installed on the instance.
+     * The version of the package that is currently installed on the instance.
      * @return the value
      **/
     public String getInstalledVersion() {
@@ -248,13 +248,13 @@ public final class UpdatablePackageSummary extends PackageSummary {
     }
 
     /**
-     * The classification of this update.
+     * The type of update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final ClassificationTypes updateType;
 
     /**
-     * The classification of this update.
+     * The type of update.
      * @return the value
      **/
     public ClassificationTypes getUpdateType() {
@@ -262,13 +262,13 @@ public final class UpdatablePackageSummary extends PackageSummary {
     }
 
     /**
-     * List of errata containing this update.
+     * List of errata applicable to this update.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errata")
     private final java.util.List<String> errata;
 
     /**
-     * List of errata containing this update.
+     * List of errata applicable to this update.
      * @return the value
      **/
     public java.util.List<String> getErrata() {

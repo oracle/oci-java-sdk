@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -28,6 +28,7 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
         "exadataResourceMetric",
         "exadataResourceType",
         "usageUnit",
+        "selectedForecastAlgorithm",
         "pattern",
         "daysToReachCapacity",
         "historicalData",
@@ -39,6 +40,7 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
             ExadataResourceMetric exadataResourceMetric,
             ExadataResourceType exadataResourceType,
             UsageUnit usageUnit,
+            String selectedForecastAlgorithm,
             Pattern pattern,
             Integer daysToReachCapacity,
             java.util.List<HistoricalDataItem> historicalData,
@@ -49,6 +51,7 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
         this.exadataResourceMetric = exadataResourceMetric;
         this.exadataResourceType = exadataResourceType;
         this.usageUnit = usageUnit;
+        this.selectedForecastAlgorithm = selectedForecastAlgorithm;
         this.pattern = pattern;
         this.daysToReachCapacity = daysToReachCapacity;
         this.historicalData = historicalData;
@@ -142,6 +145,22 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
             return this;
         }
         /**
+         * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
+        private String selectedForecastAlgorithm;
+
+        /**
+         * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+         * @param selectedForecastAlgorithm the value to set
+         * @return this builder
+         **/
+        public Builder selectedForecastAlgorithm(String selectedForecastAlgorithm) {
+            this.selectedForecastAlgorithm = selectedForecastAlgorithm;
+            this.__explicitlySet__.add("selectedForecastAlgorithm");
+            return this;
+        }
+        /**
          * Time series patterns used in the forecasting.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
@@ -217,6 +236,7 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
                             this.exadataResourceMetric,
                             this.exadataResourceType,
                             this.usageUnit,
+                            this.selectedForecastAlgorithm,
                             this.pattern,
                             this.daysToReachCapacity,
                             this.historicalData,
@@ -243,6 +263,9 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
             }
             if (model.wasPropertyExplicitlySet("usageUnit")) {
                 this.usageUnit(model.getUsageUnit());
+            }
+            if (model.wasPropertyExplicitlySet("selectedForecastAlgorithm")) {
+                this.selectedForecastAlgorithm(model.getSelectedForecastAlgorithm());
             }
             if (model.wasPropertyExplicitlySet("pattern")) {
                 this.pattern(model.getPattern());
@@ -501,6 +524,20 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
     }
 
     /**
+     * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("selectedForecastAlgorithm")
+    private final String selectedForecastAlgorithm;
+
+    /**
+     * Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+     * @return the value
+     **/
+    public String getSelectedForecastAlgorithm() {
+        return selectedForecastAlgorithm;
+    }
+
+    /**
      * Time series patterns used in the forecasting.
      **/
     public enum Pattern {
@@ -629,6 +666,8 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
         sb.append(", exadataResourceMetric=").append(String.valueOf(this.exadataResourceMetric));
         sb.append(", exadataResourceType=").append(String.valueOf(this.exadataResourceType));
         sb.append(", usageUnit=").append(String.valueOf(this.usageUnit));
+        sb.append(", selectedForecastAlgorithm=")
+                .append(String.valueOf(this.selectedForecastAlgorithm));
         sb.append(", pattern=").append(String.valueOf(this.pattern));
         sb.append(", daysToReachCapacity=").append(String.valueOf(this.daysToReachCapacity));
         sb.append(", historicalData=").append(String.valueOf(this.historicalData));
@@ -653,6 +692,8 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
                 && java.util.Objects.equals(this.exadataResourceMetric, other.exadataResourceMetric)
                 && java.util.Objects.equals(this.exadataResourceType, other.exadataResourceType)
                 && java.util.Objects.equals(this.usageUnit, other.usageUnit)
+                && java.util.Objects.equals(
+                        this.selectedForecastAlgorithm, other.selectedForecastAlgorithm)
                 && java.util.Objects.equals(this.pattern, other.pattern)
                 && java.util.Objects.equals(this.daysToReachCapacity, other.daysToReachCapacity)
                 && java.util.Objects.equals(this.historicalData, other.historicalData)
@@ -681,6 +722,11 @@ public final class SummarizeExadataInsightResourceForecastTrendAggregation
                                 ? 43
                                 : this.exadataResourceType.hashCode());
         result = (result * PRIME) + (this.usageUnit == null ? 43 : this.usageUnit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.selectedForecastAlgorithm == null
+                                ? 43
+                                : this.selectedForecastAlgorithm.hashCode());
         result = (result * PRIME) + (this.pattern == null ? 43 : this.pattern.hashCode());
         result =
                 (result * PRIME)

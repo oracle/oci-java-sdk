@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The details for a software package.
+ * An object that defines a software package.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,14 +33,15 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
         "dependencies",
         "files",
         "softwareSources",
-        "isLatest"
+        "isLatest",
+        "osFamilies"
     })
     public SoftwarePackage(
             String displayName,
             String name,
             String type,
             String version,
-            String architecture,
+            SoftwarePackageArchitecture architecture,
             String lastModifiedDate,
             String checksum,
             String checksumType,
@@ -49,7 +50,8 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
             java.util.List<SoftwarePackageDependency> dependencies,
             java.util.List<SoftwarePackageFile> files,
             java.util.List<SoftwareSourceDetails> softwareSources,
-            Boolean isLatest) {
+            Boolean isLatest,
+            java.util.List<OsFamily> osFamilies) {
         super();
         this.displayName = displayName;
         this.name = name;
@@ -65,6 +67,7 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
         this.files = files;
         this.softwareSources = softwareSources;
         this.isLatest = isLatest;
+        this.osFamilies = osFamilies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -86,13 +89,13 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique identifier for the package. NOTE - This is not an OCID.
+         * Unique identifier for the package. Note that this is not an OCID.
          * @param name the value to set
          * @return this builder
          **/
@@ -137,26 +140,26 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
          * The architecture for which this software was built
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-        private String architecture;
+        private SoftwarePackageArchitecture architecture;
 
         /**
          * The architecture for which this software was built
          * @param architecture the value to set
          * @return this builder
          **/
-        public Builder architecture(String architecture) {
+        public Builder architecture(SoftwarePackageArchitecture architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
         /**
-         * Date of the last update to the package.
+         * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
         private String lastModifiedDate;
 
         /**
-         * Date of the last update to the package.
+         * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param lastModifiedDate the value to set
          * @return this builder
          **/
@@ -262,13 +265,13 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * List of software sources that provide the software package.
+         * List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<SoftwareSourceDetails> softwareSources;
 
         /**
-         * List of software sources that provide the software package.
+         * List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
          * @param softwareSources the value to set
          * @return this builder
          **/
@@ -293,6 +296,22 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("isLatest");
             return this;
         }
+        /**
+         * The OS families the package belongs to.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
+        private java.util.List<OsFamily> osFamilies;
+
+        /**
+         * The OS families the package belongs to.
+         * @param osFamilies the value to set
+         * @return this builder
+         **/
+        public Builder osFamilies(java.util.List<OsFamily> osFamilies) {
+            this.osFamilies = osFamilies;
+            this.__explicitlySet__.add("osFamilies");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -313,7 +332,8 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
                             this.dependencies,
                             this.files,
                             this.softwareSources,
-                            this.isLatest);
+                            this.isLatest,
+                            this.osFamilies);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -364,6 +384,9 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("isLatest")) {
                 this.isLatest(model.getIsLatest());
             }
+            if (model.wasPropertyExplicitlySet("osFamilies")) {
+                this.osFamilies(model.getOsFamilies());
+            }
             return this;
         }
     }
@@ -394,13 +417,13 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique identifier for the package. NOTE - This is not an OCID.
+     * Unique identifier for the package. Note that this is not an OCID.
      * @return the value
      **/
     public String getName() {
@@ -439,24 +462,24 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
      * The architecture for which this software was built
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
-    private final String architecture;
+    private final SoftwarePackageArchitecture architecture;
 
     /**
      * The architecture for which this software was built
      * @return the value
      **/
-    public String getArchitecture() {
+    public SoftwarePackageArchitecture getArchitecture() {
         return architecture;
     }
 
     /**
-     * Date of the last update to the package.
+     * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastModifiedDate")
     private final String lastModifiedDate;
 
     /**
-     * Date of the last update to the package.
+     * The date and time the package was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
      **/
     public String getLastModifiedDate() {
@@ -548,13 +571,13 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * List of software sources that provide the software package.
+     * List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceDetails> softwareSources;
 
     /**
-     * List of software sources that provide the software package.
+     * List of software sources that provide the software package. This property is deprecated and it will be removed in a future API release.
      * @return the value
      **/
     public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
@@ -573,6 +596,20 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
      **/
     public Boolean getIsLatest() {
         return isLatest;
+    }
+
+    /**
+     * The OS families the package belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
+    private final java.util.List<OsFamily> osFamilies;
+
+    /**
+     * The OS families the package belongs to.
+     * @return the value
+     **/
+    public java.util.List<OsFamily> getOsFamilies() {
+        return osFamilies;
     }
 
     @Override
@@ -603,6 +640,7 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
         sb.append(", files=").append(String.valueOf(this.files));
         sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
         sb.append(", isLatest=").append(String.valueOf(this.isLatest));
+        sb.append(", osFamilies=").append(String.valueOf(this.osFamilies));
         sb.append(")");
         return sb.toString();
     }
@@ -631,6 +669,7 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.files, other.files)
                 && java.util.Objects.equals(this.softwareSources, other.softwareSources)
                 && java.util.Objects.equals(this.isLatest, other.isLatest)
+                && java.util.Objects.equals(this.osFamilies, other.osFamilies)
                 && super.equals(other);
     }
 
@@ -656,6 +695,7 @@ public final class SoftwarePackage extends com.oracle.bmc.http.internal.Explicit
                 (result * PRIME)
                         + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
         result = (result * PRIME) + (this.isLatest == null ? 43 : this.isLatest.hashCode());
+        result = (result * PRIME) + (this.osFamilies == null ? 43 : this.osFamilies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

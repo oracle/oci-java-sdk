@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -23,6 +23,10 @@ package com.oracle.bmc.opsi.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataObjectStandardQuery.class,
+        name = "STANDARD_QUERY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataObjectTemplatizedQuery.class,
         name = "TEMPLATIZED_QUERY"
     )
@@ -30,9 +34,41 @@ package com.oracle.bmc.opsi.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DataObjectQuery extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected DataObjectQuery() {
+    @java.beans.ConstructorProperties({"bindParams", "queryExecutionTimeoutInSeconds"})
+    protected DataObjectQuery(
+            java.util.List<DataObjectBindParameter> bindParams,
+            Double queryExecutionTimeoutInSeconds) {
         super();
+        this.bindParams = bindParams;
+        this.queryExecutionTimeoutInSeconds = queryExecutionTimeoutInSeconds;
+    }
+
+    /**
+     * List of bind parameters to be applied in the query.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bindParams")
+    private final java.util.List<DataObjectBindParameter> bindParams;
+
+    /**
+     * List of bind parameters to be applied in the query.
+     * @return the value
+     **/
+    public java.util.List<DataObjectBindParameter> getBindParams() {
+        return bindParams;
+    }
+
+    /**
+     * Timeout (in seconds) to be set for the data object query execution.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeoutInSeconds")
+    private final Double queryExecutionTimeoutInSeconds;
+
+    /**
+     * Timeout (in seconds) to be set for the data object query execution.
+     * @return the value
+     **/
+    public Double getQueryExecutionTimeoutInSeconds() {
+        return queryExecutionTimeoutInSeconds;
     }
 
     @Override
@@ -49,6 +85,9 @@ public class DataObjectQuery extends com.oracle.bmc.http.internal.ExplicitlySetB
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DataObjectQuery(");
         sb.append("super=").append(super.toString());
+        sb.append("bindParams=").append(String.valueOf(this.bindParams));
+        sb.append(", queryExecutionTimeoutInSeconds=")
+                .append(String.valueOf(this.queryExecutionTimeoutInSeconds));
         sb.append(")");
         return sb.toString();
     }
@@ -63,13 +102,22 @@ public class DataObjectQuery extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
 
         DataObjectQuery other = (DataObjectQuery) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.bindParams, other.bindParams)
+                && java.util.Objects.equals(
+                        this.queryExecutionTimeoutInSeconds, other.queryExecutionTimeoutInSeconds)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.bindParams == null ? 43 : this.bindParams.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryExecutionTimeoutInSeconds == null
+                                ? 43
+                                : this.queryExecutionTimeoutInSeconds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
@@ -79,6 +127,7 @@ public class DataObjectQuery extends com.oracle.bmc.http.internal.ExplicitlySetB
      **/
     public enum QueryType {
         TemplatizedQuery("TEMPLATIZED_QUERY"),
+        StandardQuery("STANDARD_QUERY"),
         ;
 
         private final String value;

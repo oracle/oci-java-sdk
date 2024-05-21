@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -441,6 +441,28 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to return items that contain the specified schema list.
+     */
+    private java.util.List<String> schemaList;
+
+    /**
+     * A filter to return items that contain the specified schema list.
+     */
+    public java.util.List<String> getSchemaList() {
+        return schemaList;
+    }
+    /**
+     * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     */
+    private Boolean areAllSchemasAccessible;
+
+    /**
+     * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+     */
+    public Boolean getAreAllSchemasAccessible() {
+        return areAllSchemasAccessible;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -858,6 +880,45 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
+         * A filter to return items that contain the specified schema list.
+         */
+        private java.util.List<String> schemaList = null;
+
+        /**
+         * A filter to return items that contain the specified schema list.
+         * @param schemaList the value to set
+         * @return this builder instance
+         */
+        public Builder schemaList(java.util.List<String> schemaList) {
+            this.schemaList = schemaList;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return items that contain the specified schema list.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder schemaList(String singularValue) {
+            return this.schemaList(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+         */
+        private Boolean areAllSchemasAccessible = null;
+
+        /**
+         * A filter to return only items that match the criteria that all schemas can be accessed by a user.
+         * @param areAllSchemasAccessible the value to set
+         * @return this builder instance
+         */
+        public Builder areAllSchemasAccessible(Boolean areAllSchemasAccessible) {
+            this.areAllSchemasAccessible = areAllSchemasAccessible;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -909,6 +970,8 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            schemaList(o.getSchemaList());
+            areAllSchemasAccessible(o.getAreAllSchemasAccessible());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -965,8 +1028,10 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.schemaList = schemaList;
+            request.areAllSchemasAccessible = areAllSchemasAccessible;
             return request;
-            // new ListUsersRequest(userAssessmentId, limit, compartmentIdInSubtree, accessLevel, userCategory, userRole, userProfile, userType, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page, sortOrder, sortBy, opcRequestId);
+            // new ListUsersRequest(userAssessmentId, limit, compartmentIdInSubtree, accessLevel, userCategory, userRole, userProfile, userType, userKey, accountStatus, authenticationType, userName, targetId, timeLastLoginGreaterThanOrEqualTo, timeLastLoginLessThan, timeUserCreatedGreaterThanOrEqualTo, timeUserCreatedLessThan, timePasswordLastChangedGreaterThanOrEqualTo, timePasswordLastChangedLessThan, page, sortOrder, sortBy, opcRequestId, schemaList, areAllSchemasAccessible);
         }
     }
 
@@ -999,7 +1064,9 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .schemaList(schemaList)
+                .areAllSchemasAccessible(areAllSchemasAccessible);
     }
 
     /**
@@ -1042,6 +1109,8 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",schemaList=").append(String.valueOf(this.schemaList));
+        sb.append(",areAllSchemasAccessible=").append(String.valueOf(this.areAllSchemasAccessible));
         sb.append(")");
         return sb.toString();
     }
@@ -1088,7 +1157,10 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.schemaList, other.schemaList)
+                && java.util.Objects.equals(
+                        this.areAllSchemasAccessible, other.areAllSchemasAccessible);
     }
 
     @Override
@@ -1154,6 +1226,12 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.schemaList == null ? 43 : this.schemaList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areAllSchemasAccessible == null
+                                ? 43
+                                : this.areAllSchemasAccessible.hashCode());
         return result;
     }
 }

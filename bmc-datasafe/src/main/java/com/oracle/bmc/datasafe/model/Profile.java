@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -177,13 +177,13 @@ public final class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The number of users having a given profile.
+         * The number of users that have a given profile.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("userCount")
         private Integer userCount;
 
         /**
-         * The number of users having a given profile.
+         * The number of users that have a given profile.
          * @param userCount the value to set
          * @return this builder
          **/
@@ -766,13 +766,13 @@ public final class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The number of users having a given profile.
+     * The number of users that have a given profile.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userCount")
     private final Integer userCount;
 
     /**
-     * The number of users having a given profile.
+     * The number of users that have a given profile.
      * @return the value
      **/
     public Integer getUserCount() {

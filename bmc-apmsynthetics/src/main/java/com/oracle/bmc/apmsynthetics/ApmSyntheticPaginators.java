@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics;
@@ -264,6 +264,126 @@ public class ApmSyntheticPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOnPremiseVantagePoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOnPremiseVantagePointsResponse> listOnPremiseVantagePointsResponseIterator(
+            final ListOnPremiseVantagePointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOnPremiseVantagePointsRequest.Builder, ListOnPremiseVantagePointsRequest,
+                ListOnPremiseVantagePointsResponse>(
+                new java.util.function.Supplier<ListOnPremiseVantagePointsRequest.Builder>() {
+                    @Override
+                    public ListOnPremiseVantagePointsRequest.Builder get() {
+                        return ListOnPremiseVantagePointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOnPremiseVantagePointsResponse, String>() {
+                    @Override
+                    public String apply(ListOnPremiseVantagePointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOnPremiseVantagePointsRequest.Builder>,
+                        ListOnPremiseVantagePointsRequest>() {
+                    @Override
+                    public ListOnPremiseVantagePointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOnPremiseVantagePointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOnPremiseVantagePointsRequest, ListOnPremiseVantagePointsResponse>() {
+                    @Override
+                    public ListOnPremiseVantagePointsResponse apply(
+                            ListOnPremiseVantagePointsRequest request) {
+                        return client.listOnPremiseVantagePoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePointSummary} objects
+     * contained in responses from the listOnPremiseVantagePoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePointSummary>
+            listOnPremiseVantagePointsRecordIterator(
+                    final ListOnPremiseVantagePointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOnPremiseVantagePointsRequest.Builder, ListOnPremiseVantagePointsRequest,
+                ListOnPremiseVantagePointsResponse,
+                com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePointSummary>(
+                new java.util.function.Supplier<ListOnPremiseVantagePointsRequest.Builder>() {
+                    @Override
+                    public ListOnPremiseVantagePointsRequest.Builder get() {
+                        return ListOnPremiseVantagePointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOnPremiseVantagePointsResponse, String>() {
+                    @Override
+                    public String apply(ListOnPremiseVantagePointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOnPremiseVantagePointsRequest.Builder>,
+                        ListOnPremiseVantagePointsRequest>() {
+                    @Override
+                    public ListOnPremiseVantagePointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOnPremiseVantagePointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOnPremiseVantagePointsRequest, ListOnPremiseVantagePointsResponse>() {
+                    @Override
+                    public ListOnPremiseVantagePointsResponse apply(
+                            ListOnPremiseVantagePointsRequest request) {
+                        return client.listOnPremiseVantagePoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOnPremiseVantagePointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.apmsynthetics.model
+                                        .OnPremiseVantagePointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.apmsynthetics.model.OnPremiseVantagePointSummary>
+                            apply(ListOnPremiseVantagePointsResponse response) {
+                        return response.getOnPremiseVantagePointCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPublicVantagePoints operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -487,6 +607,116 @@ public class ApmSyntheticPaginators {
                     public java.util.List<com.oracle.bmc.apmsynthetics.model.ScriptSummary> apply(
                             ListScriptsResponse response) {
                         return response.getScriptCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkers operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkersResponse> listWorkersResponseIterator(
+            final ListWorkersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkersRequest.Builder, ListWorkersRequest, ListWorkersResponse>(
+                new java.util.function.Supplier<ListWorkersRequest.Builder>() {
+                    @Override
+                    public ListWorkersRequest.Builder get() {
+                        return ListWorkersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkersResponse, String>() {
+                    @Override
+                    public String apply(ListWorkersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkersRequest.Builder>,
+                        ListWorkersRequest>() {
+                    @Override
+                    public ListWorkersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListWorkersRequest, ListWorkersResponse>() {
+                    @Override
+                    public ListWorkersResponse apply(ListWorkersRequest request) {
+                        return client.listWorkers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.apmsynthetics.model.WorkerSummary} objects
+     * contained in responses from the listWorkers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.apmsynthetics.model.WorkerSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.apmsynthetics.model.WorkerSummary> listWorkersRecordIterator(
+            final ListWorkersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkersRequest.Builder, ListWorkersRequest, ListWorkersResponse,
+                com.oracle.bmc.apmsynthetics.model.WorkerSummary>(
+                new java.util.function.Supplier<ListWorkersRequest.Builder>() {
+                    @Override
+                    public ListWorkersRequest.Builder get() {
+                        return ListWorkersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkersResponse, String>() {
+                    @Override
+                    public String apply(ListWorkersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkersRequest.Builder>,
+                        ListWorkersRequest>() {
+                    @Override
+                    public ListWorkersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListWorkersRequest, ListWorkersResponse>() {
+                    @Override
+                    public ListWorkersResponse apply(ListWorkersRequest request) {
+                        return client.listWorkers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkersResponse,
+                        java.util.List<com.oracle.bmc.apmsynthetics.model.WorkerSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.apmsynthetics.model.WorkerSummary> apply(
+                            ListWorkersResponse response) {
+                        return response.getWorkerCollection().getItems();
                     }
                 });
     }

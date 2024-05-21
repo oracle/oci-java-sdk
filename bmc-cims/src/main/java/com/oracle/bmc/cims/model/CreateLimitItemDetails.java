@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Reserved for future use.
+ * Details about the service limit increase request. Avoid entering confidential information.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -95,13 +95,13 @@ public final class CreateLimitItemDetails extends CreateItemDetails {
             return this;
         }
         /**
-         * Reserved for future use.
+         * The new service limit being requested.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
         private Integer requestedLimit;
 
         /**
-         * Reserved for future use.
+         * The new service limit being requested.
          * @param requestedLimit the value to set
          * @return this builder
          **/
@@ -234,13 +234,13 @@ public final class CreateLimitItemDetails extends CreateItemDetails {
     }
 
     /**
-     * Reserved for future use.
+     * The new service limit being requested.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
     private final Integer requestedLimit;
 
     /**
-     * Reserved for future use.
+     * The new service limit being requested.
      * @return the value
      **/
     public Integer getRequestedLimit() {

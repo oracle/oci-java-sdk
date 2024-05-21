@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -29,7 +29,10 @@ public final class CreateMountTargetDetails
         "hostnameLabel",
         "ipAddress",
         "subnetId",
+        "idmapType",
+        "ldapIdmap",
         "nsgIds",
+        "kerberos",
         "freeformTags",
         "definedTags"
     })
@@ -40,7 +43,10 @@ public final class CreateMountTargetDetails
             String hostnameLabel,
             String ipAddress,
             String subnetId,
+            MountTarget.IdmapType idmapType,
+            CreateLdapIdmapDetails ldapIdmap,
             java.util.List<String> nsgIds,
+            CreateKerberosDetails kerberos,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -50,7 +56,10 @@ public final class CreateMountTargetDetails
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.subnetId = subnetId;
+        this.idmapType = idmapType;
+        this.ldapIdmap = ldapIdmap;
         this.nsgIds = nsgIds;
+        this.kerberos = kerberos;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -236,6 +245,31 @@ public final class CreateMountTargetDetails
             return this;
         }
         /**
+         * The method used to map a Unix UID to secondary groups, if any.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("idmapType")
+        private MountTarget.IdmapType idmapType;
+
+        /**
+         * The method used to map a Unix UID to secondary groups, if any.
+         * @param idmapType the value to set
+         * @return this builder
+         **/
+        public Builder idmapType(MountTarget.IdmapType idmapType) {
+            this.idmapType = idmapType;
+            this.__explicitlySet__.add("idmapType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ldapIdmap")
+        private CreateLdapIdmapDetails ldapIdmap;
+
+        public Builder ldapIdmap(CreateLdapIdmapDetails ldapIdmap) {
+            this.ldapIdmap = ldapIdmap;
+            this.__explicitlySet__.add("ldapIdmap");
+            return this;
+        }
+        /**
          * A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this mount target.
          * A maximum of 5 is allowed.
          * Setting this to an empty array after the list is created removes the mount target from all NSGs.
@@ -257,6 +291,15 @@ public final class CreateMountTargetDetails
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("kerberos")
+        private CreateKerberosDetails kerberos;
+
+        public Builder kerberos(CreateKerberosDetails kerberos) {
+            this.kerberos = kerberos;
+            this.__explicitlySet__.add("kerberos");
             return this;
         }
         /**
@@ -319,7 +362,10 @@ public final class CreateMountTargetDetails
                             this.hostnameLabel,
                             this.ipAddress,
                             this.subnetId,
+                            this.idmapType,
+                            this.ldapIdmap,
                             this.nsgIds,
+                            this.kerberos,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -348,8 +394,17 @@ public final class CreateMountTargetDetails
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("idmapType")) {
+                this.idmapType(model.getIdmapType());
+            }
+            if (model.wasPropertyExplicitlySet("ldapIdmap")) {
+                this.ldapIdmap(model.getLdapIdmap());
+            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("kerberos")) {
+                this.kerberos(model.getKerberos());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -539,6 +594,27 @@ public final class CreateMountTargetDetails
     }
 
     /**
+     * The method used to map a Unix UID to secondary groups, if any.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("idmapType")
+    private final MountTarget.IdmapType idmapType;
+
+    /**
+     * The method used to map a Unix UID to secondary groups, if any.
+     * @return the value
+     **/
+    public MountTarget.IdmapType getIdmapType() {
+        return idmapType;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("ldapIdmap")
+    private final CreateLdapIdmapDetails ldapIdmap;
+
+    public CreateLdapIdmapDetails getLdapIdmap() {
+        return ldapIdmap;
+    }
+
+    /**
      * A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this mount target.
      * A maximum of 5 is allowed.
      * Setting this to an empty array after the list is created removes the mount target from all NSGs.
@@ -558,6 +634,13 @@ public final class CreateMountTargetDetails
      **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("kerberos")
+    private final CreateKerberosDetails kerberos;
+
+    public CreateKerberosDetails getKerberos() {
+        return kerberos;
     }
 
     /**
@@ -622,7 +705,10 @@ public final class CreateMountTargetDetails
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", idmapType=").append(String.valueOf(this.idmapType));
+        sb.append(", ldapIdmap=").append(String.valueOf(this.ldapIdmap));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", kerberos=").append(String.valueOf(this.kerberos));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -645,7 +731,10 @@ public final class CreateMountTargetDetails
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.idmapType, other.idmapType)
+                && java.util.Objects.equals(this.ldapIdmap, other.ldapIdmap)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.kerberos, other.kerberos)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -669,7 +758,10 @@ public final class CreateMountTargetDetails
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.idmapType == null ? 43 : this.idmapType.hashCode());
+        result = (result * PRIME) + (this.ldapIdmap == null ? 43 : this.ldapIdmap.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

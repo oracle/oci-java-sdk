@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -127,14 +127,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
      * The default order for displayName is ascending. The displayName sort order is case sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
      * The default order for displayName is ascending. The displayName sort order is case sensitive.
      *
      **/
@@ -172,7 +172,7 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
      * The default order for displayName is ascending. The displayName sort order is case sensitive.
      *
      */
@@ -447,14 +447,14 @@ public class ListMaskingPoliciesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
          * The default order for displayName is ascending. The displayName sort order is case sensitive.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeCreated is descending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeCreated is descending.
          * The default order for displayName is ascending. The displayName sort order is case sensitive.
          *
          * @param sortBy the value to set

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -25,13 +25,13 @@ public class ChangeDisasterRecoveryConfigurationRequest
         return autonomousDatabaseId;
     }
     /**
-     * Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
      */
     private com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
             changeDisasterRecoveryConfigurationDetails;
 
     /**
-     * Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+     * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
      */
     public com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
             getChangeDisasterRecoveryConfigurationDetails() {
@@ -102,13 +102,13 @@ public class ChangeDisasterRecoveryConfigurationRequest
         }
 
         /**
-         * Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+         * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
          */
         private com.oracle.bmc.database.model.ChangeDisasterRecoveryConfigurationDetails
                 changeDisasterRecoveryConfigurationDetails = null;
 
         /**
-         * Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+         * Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
          * @param changeDisasterRecoveryConfigurationDetails the value to set
          * @return this builder instance
          */

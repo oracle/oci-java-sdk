@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -23,6 +23,7 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
         "displayName",
         "description",
         "jobInfrastructureConfigurationDetails",
+        "jobStorageMountConfigurationDetailsList",
         "freeformTags",
         "definedTags"
     })
@@ -30,12 +31,15 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
             String displayName,
             String description,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationDetailsList,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -82,6 +86,25 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
                 JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails) {
             this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             this.__explicitlySet__.add("jobInfrastructureConfigurationDetails");
+            return this;
+        }
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         * @param jobStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder jobStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationDetailsList) {
+            this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
             return this;
         }
         /**
@@ -135,6 +158,7 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
                             this.displayName,
                             this.description,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobStorageMountConfigurationDetailsList,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -154,6 +178,10 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
             if (model.wasPropertyExplicitlySet("jobInfrastructureConfigurationDetails")) {
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
+                this.jobStorageMountConfigurationDetailsList(
+                        model.getJobStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -212,6 +240,22 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * Collection of JobStorageMountConfigurationDetails.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationDetailsList() {
+        return jobStorageMountConfigurationDetailsList;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
@@ -265,6 +309,8 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -286,6 +332,9 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationDetailsList,
+                        other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -302,6 +351,11 @@ public final class UpdateJobDetails extends com.oracle.bmc.http.internal.Explici
                         + (this.jobInfrastructureConfigurationDetails == null
                                 ? 43
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

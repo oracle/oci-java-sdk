@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -28,12 +28,20 @@ package com.oracle.bmc.databasemigration.model;
 public final class UpdateCurlTransferDetails extends UpdateHostDumpTransferDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("walletLocation")
+        private String walletLocation;
+
+        public Builder walletLocation(String walletLocation) {
+            this.walletLocation = walletLocation;
+            this.__explicitlySet__.add("walletLocation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCurlTransferDetails build() {
-            UpdateCurlTransferDetails model = new UpdateCurlTransferDetails();
+            UpdateCurlTransferDetails model = new UpdateCurlTransferDetails(this.walletLocation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -42,6 +50,9 @@ public final class UpdateCurlTransferDetails extends UpdateHostDumpTransferDetai
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCurlTransferDetails model) {
+            if (model.wasPropertyExplicitlySet("walletLocation")) {
+                this.walletLocation(model.getWalletLocation());
+            }
             return this;
         }
     }
@@ -58,8 +69,8 @@ public final class UpdateCurlTransferDetails extends UpdateHostDumpTransferDetai
     }
 
     @Deprecated
-    public UpdateCurlTransferDetails() {
-        super();
+    public UpdateCurlTransferDetails(String walletLocation) {
+        super(walletLocation);
     }
 
     @Override

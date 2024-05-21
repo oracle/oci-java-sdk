@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema to handle userpassword change by administrator.
+ * The schema used to handle a user password change by an administrator.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -503,7 +503,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * The password attribute. The maximum length for the password is set in the password policy.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -518,7 +518,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
         private String password;
 
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * The password attribute. The maximum length for the password is set in the password policy.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -537,7 +537,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * A Boolean value indicating whether or not to send email notification after password is changed.
+         * Indicates whether to send an email notification after a password is changed.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -553,7 +553,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
         private Boolean bypassNotification;
 
         /**
-         * A Boolean value indicating whether or not to send email notification after password is changed.
+         * Indicates whether to send an email notification after a password is changed.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -573,7 +573,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         * Specifies the EmailTemplate to be used when sending a notification to the user. If specified, it overrides the default EmailTemplate.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -589,7 +589,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
         private String notificationEmailTemplateId;
 
         /**
-         * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+         * Specifies the EmailTemplate to be used when sending a notification to the user. If specified, it overrides the default EmailTemplate.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -1114,7 +1114,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * The password attribute. The maximum length for the password is set in the password policy.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1129,7 +1129,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
     private final String password;
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * The password attribute. The maximum length for the password is set in the password policy.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1146,7 +1146,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * A Boolean value indicating whether or not to send email notification after password is changed.
+     * Indicates whether to send an email notification after a password is changed.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -1162,7 +1162,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
     private final Boolean bypassNotification;
 
     /**
-     * A Boolean value indicating whether or not to send email notification after password is changed.
+     * Indicates whether to send an email notification after a password is changed.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -1180,7 +1180,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+     * Specifies the EmailTemplate to be used when sending a notification to the user. If specified, it overrides the default EmailTemplate.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -1196,7 +1196,7 @@ public final class UserPasswordChanger extends com.oracle.bmc.http.internal.Expl
     private final String notificationEmailTemplateId;
 
     /**
-     * Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+     * Specifies the EmailTemplate to be used when sending a notification to the user. If specified, it overrides the default EmailTemplate.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false

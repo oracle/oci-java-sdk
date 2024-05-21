@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -63,6 +63,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
         private String thirdPartyVendorName;
@@ -80,6 +82,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param thirdPartyVendorName the value to set
          * @return this builder
          **/
@@ -101,6 +105,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyFactorType")
         private String thirdPartyFactorType;
@@ -118,6 +124,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param thirdPartyFactorType the value to set
          * @return this builder
          **/
@@ -139,6 +147,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
@@ -156,6 +166,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param value the value to set
          * @return this builder
          **/
@@ -177,6 +189,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: reference
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("$ref")
         private String ref;
@@ -194,6 +208,8 @@ public final class MyDeviceThirdPartyFactor
          *  - returned: default
          *  - type: reference
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param ref the value to set
          * @return this builder
          **/
@@ -261,6 +277,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyVendorName")
     private final String thirdPartyVendorName;
@@ -278,6 +296,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getThirdPartyVendorName() {
@@ -297,6 +317,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("thirdPartyFactorType")
     private final String thirdPartyFactorType;
@@ -314,6 +336,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getThirdPartyFactorType() {
@@ -333,6 +357,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
@@ -350,6 +376,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getValue() {
@@ -369,6 +397,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: reference
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("$ref")
     private final String ref;
@@ -386,6 +416,8 @@ public final class MyDeviceThirdPartyFactor
      *  - returned: default
      *  - type: reference
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getRef() {

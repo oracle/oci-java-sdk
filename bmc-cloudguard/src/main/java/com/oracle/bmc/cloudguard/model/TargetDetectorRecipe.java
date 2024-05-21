@@ -1,11 +1,24 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Target Detector recipe
+ * A TargetDetectorRecipe resource contains a specific instance of one of the
+ * supported detector types (for example, activity, configuration, or threat)
+ * in which some settings can be modified specifically for a single target.
+ * <p>
+ * A TargetDetectorRecipe resource:
+ * * Is effectively a copy of a DetectorRecipe resource in which users can make
+ * very limited changes if it\u2019s Oracle-managed, and more changes if it\u2019s user-managed.
+ * * Is visible on the Cloud Guard Targets, Target Details page.
+ * * Is located in a specific OCI compartment.
+ * * Can be modified by users, programmatically or through the UI.
+ * * Changes that can be made here override any settings in the corresponding
+ * DetectorRecipe, of which the TargetDetectorRecipe resource is effectively a copy,
+ * created when the detector recipe is attached to the target.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,6 +47,8 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "locks",
+        "detectorRecipeType",
         "sourceDataRetention"
     })
     public TargetDetectorRecipe(
@@ -49,6 +64,8 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            java.util.List<ResourceLock> locks,
+            DetectorRecipeEnum detectorRecipeType,
             Integer sourceDataRetention) {
         super();
         this.id = id;
@@ -63,19 +80,21 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.locks = locks;
+        this.detectorRecipeType = detectorRecipeType;
         this.sourceDataRetention = sourceDataRetention;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Ocid for detector recipe
+         * OCID for the detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Ocid for detector recipe
+         * OCID for the detector recipe
          * @param id the value to set
          * @return this builder
          **/
@@ -85,13 +104,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Display name of detector recipe.
+         * Display name of the detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of detector recipe.
+         * Display name of the detector recipe
          * @param displayName the value to set
          * @return this builder
          **/
@@ -117,13 +136,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * compartmentId of detector recipe
+         * Compartment OCID of the detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * compartmentId of detector recipe
+         * Compartment OCID of the detector recipe
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -133,13 +152,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Unique identifier for Detector Recipe of which this is an extension
+         * Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
         private String detectorRecipeId;
 
         /**
-         * Unique identifier for Detector Recipe of which this is an extension
+         * Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
          * @param detectorRecipeId the value to set
          * @return this builder
          **/
@@ -149,13 +168,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Owner of detector recipe
+         * Owner of the detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
-         * Owner of detector recipe
+         * Owner of the detector recipe
          * @param owner the value to set
          * @return this builder
          **/
@@ -181,13 +200,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * List of detector rules for the detector type for recipe - user input
+         * List of detector rules for the detector recipe - user input
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<TargetDetectorRecipeDetectorRule> detectorRules;
 
         /**
-         * List of detector rules for the detector type for recipe - user input
+         * List of detector rules for the detector recipe - user input
          * @param detectorRules the value to set
          * @return this builder
          **/
@@ -198,13 +217,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * List of effective detector rules for the detector type for recipe after applying defaults
+         * List of currently enabled detector rules for the detector type for recipe after applying defaults
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveDetectorRules")
         private java.util.List<TargetDetectorRecipeDetectorRule> effectiveDetectorRules;
 
         /**
-         * List of effective detector rules for the detector type for recipe after applying defaults
+         * List of currently enabled detector rules for the detector type for recipe after applying defaults
          * @param effectiveDetectorRules the value to set
          * @return this builder
          **/
@@ -231,13 +250,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The date and time the target detector recipe was updated. Format defined by RFC3339.
+         * The date and time the target detector recipe was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the target detector recipe was updated. Format defined by RFC3339.
+         * The date and time the target detector recipe was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -247,19 +266,51 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          * @param lifecycleState the value to set
          * @return this builder
          **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
+         * Recipe type ( STANDARD, ENTERPRISE )
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeType")
+        private DetectorRecipeEnum detectorRecipeType;
+
+        /**
+         * Recipe type ( STANDARD, ENTERPRISE )
+         * @param detectorRecipeType the value to set
+         * @return this builder
+         **/
+        public Builder detectorRecipeType(DetectorRecipeEnum detectorRecipeType) {
+            this.detectorRecipeType = detectorRecipeType;
+            this.__explicitlySet__.add("detectorRecipeType");
             return this;
         }
         /**
@@ -297,6 +348,8 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.locks,
+                            this.detectorRecipeType,
                             this.sourceDataRetention);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -342,6 +395,12 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRecipeType")) {
+                this.detectorRecipeType(model.getDetectorRecipeType());
+            }
             if (model.wasPropertyExplicitlySet("sourceDataRetention")) {
                 this.sourceDataRetention(model.getSourceDataRetention());
             }
@@ -361,13 +420,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Ocid for detector recipe
+     * OCID for the detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Ocid for detector recipe
+     * OCID for the detector recipe
      * @return the value
      **/
     public String getId() {
@@ -375,13 +434,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Display name of detector recipe.
+     * Display name of the detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of detector recipe.
+     * Display name of the detector recipe
      * @return the value
      **/
     public String getDisplayName() {
@@ -403,13 +462,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of the detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of the detector recipe
      * @return the value
      **/
     public String getCompartmentId() {
@@ -417,13 +476,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Unique identifier for Detector Recipe of which this is an extension
+     * Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeId")
     private final String detectorRecipeId;
 
     /**
-     * Unique identifier for Detector Recipe of which this is an extension
+     * Unique identifier for of original Oracle-managed detector recipe on which the TargetDetectorRecipe is based
      * @return the value
      **/
     public String getDetectorRecipeId() {
@@ -431,13 +490,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Owner of detector recipe
+     * Owner of the detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
-     * Owner of detector recipe
+     * Owner of the detector recipe
      * @return the value
      **/
     public OwnerType getOwner() {
@@ -459,13 +518,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * List of detector rules for the detector type for recipe - user input
+     * List of detector rules for the detector recipe - user input
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<TargetDetectorRecipeDetectorRule> detectorRules;
 
     /**
-     * List of detector rules for the detector type for recipe - user input
+     * List of detector rules for the detector recipe - user input
      * @return the value
      **/
     public java.util.List<TargetDetectorRecipeDetectorRule> getDetectorRules() {
@@ -473,13 +532,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * List of effective detector rules for the detector type for recipe after applying defaults
+     * List of currently enabled detector rules for the detector type for recipe after applying defaults
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveDetectorRules")
     private final java.util.List<TargetDetectorRecipeDetectorRule> effectiveDetectorRules;
 
     /**
-     * List of effective detector rules for the detector type for recipe after applying defaults
+     * List of currently enabled detector rules for the detector type for recipe after applying defaults
      * @return the value
      **/
     public java.util.List<TargetDetectorRecipeDetectorRule> getEffectiveDetectorRules() {
@@ -501,13 +560,13 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The date and time the target detector recipe was updated. Format defined by RFC3339.
+     * The date and time the target detector recipe was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the target detector recipe was updated. Format defined by RFC3339.
+     * The date and time the target detector recipe was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -515,17 +574,45 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /**
+     * Recipe type ( STANDARD, ENTERPRISE )
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeType")
+    private final DetectorRecipeEnum detectorRecipeType;
+
+    /**
+     * Recipe type ( STANDARD, ENTERPRISE )
+     * @return the value
+     **/
+    public DetectorRecipeEnum getDetectorRecipeType() {
+        return detectorRecipeType;
     }
 
     /**
@@ -568,6 +655,8 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", locks=").append(String.valueOf(this.locks));
+        sb.append(", detectorRecipeType=").append(String.valueOf(this.detectorRecipeType));
         sb.append(", sourceDataRetention=").append(String.valueOf(this.sourceDataRetention));
         sb.append(")");
         return sb.toString();
@@ -596,6 +685,8 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && java.util.Objects.equals(this.detectorRecipeType, other.detectorRecipeType)
                 && java.util.Objects.equals(this.sourceDataRetention, other.sourceDataRetention)
                 && super.equals(other);
     }
@@ -628,6 +719,12 @@ public final class TargetDetectorRecipe extends com.oracle.bmc.http.internal.Exp
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRecipeType == null
+                                ? 43
+                                : this.detectorRecipeType.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDataRetention == null

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRuleExecution. A Responder Rule Execution is the entity that captures the execution of a Responder Rule for a given Problem.
+ * Details of responder rule execution for a problem.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,13 +42,13 @@ public final class ResponderRuleExecutionDetails
             return this;
         }
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          * @param configurations the value to set
          * @return this builder
          **/
@@ -101,13 +101,13 @@ public final class ResponderRuleExecutionDetails
     }
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      * @return the value
      **/
     public java.util.List<ResponderConfiguration> getConfigurations() {

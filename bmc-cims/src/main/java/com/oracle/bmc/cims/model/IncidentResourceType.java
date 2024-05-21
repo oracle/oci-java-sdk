@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
@@ -26,32 +26,38 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
         "name",
         "label",
         "description",
-        "serviceCategoryList"
+        "serviceCategoryList",
+        "service",
+        "serviceCategories"
     })
     public IncidentResourceType(
             String resourceTypeKey,
             String name,
             String label,
             String description,
-            java.util.List<ServiceCategory> serviceCategoryList) {
+            java.util.List<ServiceCategory> serviceCategoryList,
+            java.util.Map<String, String> service,
+            java.util.List<ServiceCategories> serviceCategories) {
         super();
         this.resourceTypeKey = resourceTypeKey;
         this.name = name;
         this.label = label;
         this.description = description;
         this.serviceCategoryList = serviceCategoryList;
+        this.service = service;
+        this.serviceCategories = serviceCategories;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier of the resource.
+         * A unique identifier for the resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeKey")
         private String resourceTypeKey;
 
         /**
-         * Unique identifier of the resource.
+         * A unique identifier for the resource.
          * @param resourceTypeKey the value to set
          * @return this builder
          **/
@@ -124,6 +130,38 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("serviceCategoryList");
             return this;
         }
+        /**
+         * The map of services for MOS Taxonomy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("service")
+        private java.util.Map<String, String> service;
+
+        /**
+         * The map of services for MOS Taxonomy.
+         * @param service the value to set
+         * @return this builder
+         **/
+        public Builder service(java.util.Map<String, String> service) {
+            this.service = service;
+            this.__explicitlySet__.add("service");
+            return this;
+        }
+        /**
+         * The service categories list for MOS Taxonomy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
+        private java.util.List<ServiceCategories> serviceCategories;
+
+        /**
+         * The service categories list for MOS Taxonomy.
+         * @param serviceCategories the value to set
+         * @return this builder
+         **/
+        public Builder serviceCategories(java.util.List<ServiceCategories> serviceCategories) {
+            this.serviceCategories = serviceCategories;
+            this.__explicitlySet__.add("serviceCategories");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -135,7 +173,9 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
                             this.name,
                             this.label,
                             this.description,
-                            this.serviceCategoryList);
+                            this.serviceCategoryList,
+                            this.service,
+                            this.serviceCategories);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -159,6 +199,12 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("serviceCategoryList")) {
                 this.serviceCategoryList(model.getServiceCategoryList());
             }
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("serviceCategories")) {
+                this.serviceCategories(model.getServiceCategories());
+            }
             return this;
         }
     }
@@ -175,13 +221,13 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Unique identifier of the resource.
+     * A unique identifier for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeKey")
     private final String resourceTypeKey;
 
     /**
-     * Unique identifier of the resource.
+     * A unique identifier for the resource.
      * @return the value
      **/
     public String getResourceTypeKey() {
@@ -244,6 +290,34 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
         return serviceCategoryList;
     }
 
+    /**
+     * The map of services for MOS Taxonomy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("service")
+    private final java.util.Map<String, String> service;
+
+    /**
+     * The map of services for MOS Taxonomy.
+     * @return the value
+     **/
+    public java.util.Map<String, String> getService() {
+        return service;
+    }
+
+    /**
+     * The service categories list for MOS Taxonomy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
+    private final java.util.List<ServiceCategories> serviceCategories;
+
+    /**
+     * The service categories list for MOS Taxonomy.
+     * @return the value
+     **/
+    public java.util.List<ServiceCategories> getServiceCategories() {
+        return serviceCategories;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -263,6 +337,8 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
         sb.append(", label=").append(String.valueOf(this.label));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", serviceCategoryList=").append(String.valueOf(this.serviceCategoryList));
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append(", serviceCategories=").append(String.valueOf(this.serviceCategories));
         sb.append(")");
         return sb.toString();
     }
@@ -282,6 +358,8 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.serviceCategoryList, other.serviceCategoryList)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.serviceCategories, other.serviceCategories)
                 && super.equals(other);
     }
 
@@ -300,6 +378,10 @@ public final class IncidentResourceType extends com.oracle.bmc.http.internal.Exp
                         + (this.serviceCategoryList == null
                                 ? 43
                                 : this.serviceCategoryList.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceCategories == null ? 43 : this.serviceCategories.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

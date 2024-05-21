@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -34,6 +34,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         "freeformTags",
         "kmsKeyId",
         "vpusPerGB",
+        "clusterPlacementGroupId",
         "sizeInGBs",
         "sourceDetails",
         "autotunePolicies"
@@ -49,6 +50,7 @@ public final class InstanceConfigurationCreateVolumeDetails
             java.util.Map<String, String> freeformTags,
             String kmsKeyId,
             Long vpusPerGB,
+            String clusterPlacementGroupId,
             Long sizeInGBs,
             InstanceConfigurationVolumeSourceDetails sourceDetails,
             java.util.List<InstanceConfigurationAutotunePolicy> autotunePolicies) {
@@ -63,6 +65,7 @@ public final class InstanceConfigurationCreateVolumeDetails
         this.freeformTags = freeformTags;
         this.kmsKeyId = kmsKeyId;
         this.vpusPerGB = vpusPerGB;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.sizeInGBs = sizeInGBs;
         this.sourceDetails = sourceDetails;
         this.autotunePolicies = autotunePolicies;
@@ -306,6 +309,22 @@ public final class InstanceConfigurationCreateVolumeDetails
             return this;
         }
         /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume for volume placement.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
          * The size of the volume in GBs.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
@@ -364,6 +383,7 @@ public final class InstanceConfigurationCreateVolumeDetails
                             this.freeformTags,
                             this.kmsKeyId,
                             this.vpusPerGB,
+                            this.clusterPlacementGroupId,
                             this.sizeInGBs,
                             this.sourceDetails,
                             this.autotunePolicies);
@@ -404,6 +424,9 @@ public final class InstanceConfigurationCreateVolumeDetails
             }
             if (model.wasPropertyExplicitlySet("vpusPerGB")) {
                 this.vpusPerGB(model.getVpusPerGB());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("sizeInGBs")) {
                 this.sizeInGBs(model.getSizeInGBs());
@@ -643,6 +666,20 @@ public final class InstanceConfigurationCreateVolumeDetails
     }
 
     /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume for volume placement.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
      * The size of the volume in GBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
@@ -701,6 +738,8 @@ public final class InstanceConfigurationCreateVolumeDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vpusPerGB=").append(String.valueOf(this.vpusPerGB));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", sizeInGBs=").append(String.valueOf(this.sizeInGBs));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
@@ -729,6 +768,8 @@ public final class InstanceConfigurationCreateVolumeDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vpusPerGB, other.vpusPerGB)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.sizeInGBs, other.sizeInGBs)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
@@ -763,6 +804,11 @@ public final class InstanceConfigurationCreateVolumeDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.vpusPerGB == null ? 43 : this.vpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.sizeInGBs == null ? 43 : this.sizeInGBs.hashCode());
         result =
                 (result * PRIME)

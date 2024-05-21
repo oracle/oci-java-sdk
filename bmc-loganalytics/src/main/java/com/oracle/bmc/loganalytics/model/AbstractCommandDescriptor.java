@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -38,6 +38,14 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = TailCommandDescriptor.class,
         name = "TAIL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SequenceCommandDescriptor.class,
+        name = "SEQUENCE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OutlierCommandDescriptor.class,
+        name = "OUTLIER"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DemoModeCommandDescriptor.class,
@@ -84,6 +92,10 @@ package com.oracle.bmc.loganalytics.model;
         name = "BUCKET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RareCommandDescriptor.class,
+        name = "RARE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AddInsightsCommandDescriptor.class,
         name = "ADD_INSIGHTS"
     ),
@@ -118,6 +130,10 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = MultiSearchCommandDescriptor.class,
         name = "MULTI_SEARCH"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateTableCommandDescriptor.class,
+        name = "CREATETABLE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CompareCommandDescriptor.class,
@@ -158,6 +174,10 @@ package com.oracle.bmc.loganalytics.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ClusterSplitCommandDescriptor.class,
         name = "CLUSTER_SPLIT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FrequentCommandDescriptor.class,
+        name = "FREQUENT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ClusterDetailsCommandDescriptor.class,
@@ -452,6 +472,8 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
         Where("WHERE"),
         ClusterCompare("CLUSTER_COMPARE"),
         Delete("DELETE"),
+        Createtable("CREATETABLE"),
+        Sequence("SEQUENCE"),
         Delta("DELTA"),
         Distinct("DISTINCT"),
         SearchLookup("SEARCH_LOOKUP"),
@@ -471,6 +493,9 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
         Anomaly("ANOMALY"),
         Dedup("DEDUP"),
         TimeCluster("TIME_CLUSTER"),
+        Frequent("FREQUENT"),
+        Rare("RARE"),
+        Outlier("OUTLIER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

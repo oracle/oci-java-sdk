@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The information to be updated.
+ * The container information to be updated.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -36,16 +36,14 @@ public final class UpdateContainerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Display name for the Container. There are no guarantees of uniqueness
-         * for this name.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the Container. There are no guarantees of uniqueness
-         * for this name.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -77,7 +75,7 @@ public final class UpdateContainerDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -85,7 +83,7 @@ public final class UpdateContainerDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -137,16 +135,14 @@ public final class UpdateContainerDetails
     }
 
     /**
-     * Display name for the Container. There are no guarantees of uniqueness
-     * for this name.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the Container. There are no guarantees of uniqueness
-     * for this name.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      * @return the value
      **/
@@ -174,7 +170,7 @@ public final class UpdateContainerDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -182,7 +178,7 @@ public final class UpdateContainerDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -21,7 +21,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class OrganizationAsyncClient implements OrganizationAsync {
     /**
      * Service instance for Organization.
@@ -478,7 +478,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "ApproveOrganizationTenancyForTransfer",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/ApproveOrganizationTenancyForTransfer");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ApproveOrganizationTenancyForTransferResponse>
                 transformer =
@@ -579,7 +579,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "DeleteOrganizationTenancy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/DeleteOrganizationTenancy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOrganizationTenancyResponse>
                 transformer =
@@ -628,7 +628,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "GetOrganization",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/GetOrganization");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOrganizationResponse>
                 transformer =
                         GetOrganizationConverter.fromResponse(
@@ -674,7 +674,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "GetOrganizationTenancy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/GetOrganizationTenancy");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOrganizationTenancyResponse>
                 transformer =
                         GetOrganizationTenancyConverter.fromResponse(
@@ -721,7 +721,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "ListOrganizationTenancies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizationTenancies");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOrganizationTenanciesResponse>
                 transformer =
@@ -770,7 +770,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "ListOrganizations",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/ListOrganizations");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOrganizationsResponse>
                 transformer =
                         ListOrganizationsConverter.fromResponse(
@@ -818,7 +818,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "RestoreOrganizationTenancy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/RestoreOrganizationTenancy");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RestoreOrganizationTenancyResponse>
                 transformer =
@@ -871,7 +871,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "UnapproveOrganizationTenancyForTransfer",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UnapproveOrganizationTenancyForTransferResponse>
                 transformer =
@@ -924,7 +924,7 @@ public class OrganizationAsyncClient implements OrganizationAsync {
                         "Organization",
                         "UpdateOrganization",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Organization/UpdateOrganization");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateOrganizationResponse>
                 transformer =
                         UpdateOrganizationConverter.fromResponse(

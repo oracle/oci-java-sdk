@@ -1,11 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Description of Target.
+ * A target defines the scope of resources that Cloud Guard
+ * monitors and the rules to be enforced in that monitoring. A Target resource
+ * contains the settings for a specific target.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -82,13 +85,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation.
+         * Unique identifier that can't be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation.
+         * Unique identifier that can't be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -98,13 +101,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * Target display name, can be renamed.
+         * Target display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Target display name, can be renamed.
+         * Target display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -114,13 +117,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -130,13 +133,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The target description.
+         * The target description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The target description.
+         * The target description
          * @param description the value to set
          * @return this builder
          **/
@@ -146,13 +149,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * possible type of targets
+         * Type of target
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
-         * possible type of targets
+         * Type of target
          * @param targetResourceType the value to set
          * @return this builder
          **/
@@ -194,13 +197,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * List of detector recipes associated with target
+         * List of detector recipes attached to target
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
         private java.util.List<TargetDetectorRecipe> targetDetectorRecipes;
 
         /**
-         * List of detector recipes associated with target
+         * List of detector recipes attached to target
          * @param targetDetectorRecipes the value to set
          * @return this builder
          **/
@@ -211,13 +214,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * List of responder recipes associated with target
+         * List of responder recipes attached to target
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
         private java.util.List<TargetResponderRecipe> targetResponderRecipes;
 
         /**
-         * List of responder recipes associated with target
+         * List of responder recipes attached to target
          * @param targetResponderRecipes the value to set
          * @return this builder
          **/
@@ -269,13 +272,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the target was updated. Format defined by RFC3339.
+         * The date and time the target was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -285,13 +288,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The current state of the Target.
+         * The current lifecycle state of the target
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Target.
+         * The current lifecycle state of the target
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -301,13 +304,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          * @param lifecyleDetails the value to set
          * @return this builder
          **/
@@ -490,13 +493,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * Unique identifier that is immutable on creation.
+     * Unique identifier that can't be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation.
+     * Unique identifier that can't be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -504,13 +507,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * Target display name, can be renamed.
+     * Target display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Target display name, can be renamed.
+     * Target display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -518,13 +521,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -532,13 +535,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The target description.
+     * The target description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The target description.
+     * The target description
      * @return the value
      **/
     public String getDescription() {
@@ -546,13 +549,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * possible type of targets
+     * Type of target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
-     * possible type of targets
+     * Type of target
      * @return the value
      **/
     public TargetResourceType getTargetResourceType() {
@@ -588,13 +591,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * List of detector recipes associated with target
+     * List of detector recipes attached to target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
     private final java.util.List<TargetDetectorRecipe> targetDetectorRecipes;
 
     /**
-     * List of detector recipes associated with target
+     * List of detector recipes attached to target
      * @return the value
      **/
     public java.util.List<TargetDetectorRecipe> getTargetDetectorRecipes() {
@@ -602,13 +605,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * List of responder recipes associated with target
+     * List of responder recipes attached to target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
     private final java.util.List<TargetResponderRecipe> targetResponderRecipes;
 
     /**
-     * List of responder recipes associated with target
+     * List of responder recipes attached to target
      * @return the value
      **/
     public java.util.List<TargetResponderRecipe> getTargetResponderRecipes() {
@@ -651,13 +654,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -665,13 +668,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The current state of the Target.
+     * The current lifecycle state of the target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Target.
+     * The current lifecycle state of the target
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -679,13 +682,13 @@ public final class Target extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * @return the value
      **/
     public String getLifecyleDetails() {

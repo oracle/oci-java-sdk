@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate;
@@ -73,6 +73,23 @@ public interface GoldenGateAsync extends AutoCloseable {
             CancelDeploymentBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CancelDeploymentBackupRequest, CancelDeploymentBackupResponse>
+                    handler);
+
+    /**
+     * Cancels a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelDeploymentUpgradeResponse> cancelDeploymentUpgrade(
+            CancelDeploymentUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelDeploymentUpgradeRequest, CancelDeploymentUpgradeResponse>
                     handler);
 
     /**
@@ -197,6 +214,39 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a copy of a Deployment Backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CopyDeploymentBackupResponse> copyDeploymentBackup(
+            CopyDeploymentBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CopyDeploymentBackupRequest, CopyDeploymentBackupResponse>
+                    handler);
+
+    /**
+     * Creates a new certificate to truststore.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
+            CreateCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCertificateRequest, CreateCertificateResponse>
+                    handler);
+
+    /**
      * Creates a new Connection.
      *
      *
@@ -276,6 +326,23 @@ public interface GoldenGateAsync extends AutoCloseable {
             CreateDeploymentBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateDeploymentBackupRequest, CreateDeploymentBackupResponse>
+                    handler);
+
+    /**
+     * Deletes the certificate from truststore.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCertificateResponse> deleteCertificate(
+            DeleteCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCertificateRequest, DeleteCertificateResponse>
                     handler);
 
     /**
@@ -393,6 +460,22 @@ public interface GoldenGateAsync extends AutoCloseable {
             ExportDeploymentWalletRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ExportDeploymentWalletRequest, ExportDeploymentWalletResponse>
+                    handler);
+
+    /**
+     * Retrieves a Certificate.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCertificateResponse> getCertificate(
+            GetCertificateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
                     handler);
 
     /**
@@ -527,6 +610,21 @@ public interface GoldenGateAsync extends AutoCloseable {
             ImportDeploymentWalletRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ImportDeploymentWalletRequest, ImportDeploymentWalletResponse>
+                    handler);
+
+    /**
+     * Returns a list of certificates from truststore.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
+            ListCertificatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
                     handler);
 
     /**
@@ -782,6 +880,23 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Reschedules a DeploymentUpgrade, applicable only for DeploymentUpgrade in Waiting state. When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RescheduleDeploymentUpgradeResponse> rescheduleDeploymentUpgrade(
+            RescheduleDeploymentUpgradeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RescheduleDeploymentUpgradeRequest, RescheduleDeploymentUpgradeResponse>
+                    handler);
+
+    /**
      * Restores a Deployment from a Deployment Backup created from the same Deployment.
      *
      * @param request The request object containing the details to send
@@ -861,6 +976,24 @@ public interface GoldenGateAsync extends AutoCloseable {
     java.util.concurrent.Future<StopDeploymentResponse> stopDeployment(
             StopDeploymentRequest request,
             com.oracle.bmc.responses.AsyncHandler<StopDeploymentRequest, StopDeploymentResponse>
+                    handler);
+
+    /**
+     * Tests the connectivity between given GoldenGate deployment and one of the associated database / service.
+     * When provided, If-Match is checked against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TestConnectionAssignmentResponse> testConnectionAssignment(
+            TestConnectionAssignmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            TestConnectionAssignmentRequest, TestConnectionAssignmentResponse>
                     handler);
 
     /**

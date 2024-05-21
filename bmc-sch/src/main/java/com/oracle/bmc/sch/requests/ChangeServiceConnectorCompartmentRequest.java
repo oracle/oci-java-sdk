@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.requests;
@@ -14,27 +14,27 @@ public class ChangeServiceConnectorCompartmentRequest
                 com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      *
      */
     private String serviceConnectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      *
      */
     public String getServiceConnectorId() {
         return serviceConnectorId;
     }
     /**
-     * The configuration details for moving a service connector to a different compartment.
+     * The configuration details for moving a connector to a different compartment.
      *
      */
     private com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
             changeServiceConnectorCompartmentDetails;
 
     /**
-     * The configuration details for moving a service connector to a different compartment.
+     * The configuration details for moving a connector to a different compartment.
      *
      */
     public com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
@@ -97,13 +97,13 @@ public class ChangeServiceConnectorCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          *
          */
         private String serviceConnectorId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          *
          * @param serviceConnectorId the value to set
          * @return this builder instance
@@ -114,14 +114,14 @@ public class ChangeServiceConnectorCompartmentRequest
         }
 
         /**
-         * The configuration details for moving a service connector to a different compartment.
+         * The configuration details for moving a connector to a different compartment.
          *
          */
         private com.oracle.bmc.sch.model.ChangeServiceConnectorCompartmentDetails
                 changeServiceConnectorCompartmentDetails = null;
 
         /**
-         * The configuration details for moving a service connector to a different compartment.
+         * The configuration details for moving a connector to a different compartment.
          *
          * @param changeServiceConnectorCompartmentDetails the value to set
          * @return this builder instance

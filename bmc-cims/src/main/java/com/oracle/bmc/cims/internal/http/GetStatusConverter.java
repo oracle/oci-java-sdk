@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.internal.http;
@@ -29,18 +29,13 @@ public class GetStatusConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.cims.requests.GetStatusRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notBlank(request.getSource(), "source must not be blank");
-        Validate.notNull(request.getOcid(), "ocid is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20181231")
                         .path("v2")
                         .path("incidents")
-                        .path("status")
-                        .path(
-                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
-                                        request.getSource()));
+                        .path("status");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
@@ -50,7 +45,9 @@ public class GetStatusConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
-        ib.header("ocid", request.getOcid());
+        if (request.getOcid() != null) {
+            ib.header("ocid", request.getOcid());
+        }
 
         if (request.getHomeregion() != null) {
             ib.header("homeregion", request.getHomeregion());

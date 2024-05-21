@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The details of the key that you want to create.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,7 +25,10 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         "displayName",
         "freeformTags",
         "keyShape",
-        "protectionMode"
+        "isAutoRotationEnabled",
+        "autoKeyRotationDetails",
+        "protectionMode",
+        "externalKeyReference"
     })
     public CreateKeyDetails(
             String compartmentId,
@@ -33,14 +36,20 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
             String displayName,
             java.util.Map<String, String> freeformTags,
             KeyShape keyShape,
-            ProtectionMode protectionMode) {
+            Boolean isAutoRotationEnabled,
+            AutoKeyRotationDetails autoKeyRotationDetails,
+            ProtectionMode protectionMode,
+            ExternalKeyReference externalKeyReference) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.keyShape = keyShape;
+        this.isAutoRotationEnabled = isAutoRotationEnabled;
+        this.autoKeyRotationDetails = autoKeyRotationDetails;
         this.protectionMode = protectionMode;
+        this.externalKeyReference = externalKeyReference;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -136,11 +145,39 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+        private Boolean isAutoRotationEnabled;
+
+        /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         * @param isAutoRotationEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            this.isAutoRotationEnabled = isAutoRotationEnabled;
+            this.__explicitlySet__.add("isAutoRotationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+        private AutoKeyRotationDetails autoKeyRotationDetails;
+
+        public Builder autoKeyRotationDetails(AutoKeyRotationDetails autoKeyRotationDetails) {
+            this.autoKeyRotationDetails = autoKeyRotationDetails;
+            this.__explicitlySet__.add("autoKeyRotationDetails");
+            return this;
+        }
+        /**
          * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
          * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
          * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
          * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
          * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+         * A protection mode of {@code EXTERNAL} mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+         * Oracle only hold a reference to that key.
+         * All cryptographic operations that use a key with a protection mode of {@code EXTERNAL} are performed by external key manager.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
@@ -152,6 +189,9 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
          * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
          * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
          * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+         * A protection mode of {@code EXTERNAL} mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+         * Oracle only hold a reference to that key.
+         * All cryptographic operations that use a key with a protection mode of {@code EXTERNAL} are performed by external key manager.
          *
          * @param protectionMode the value to set
          * @return this builder
@@ -159,6 +199,15 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReference")
+        private ExternalKeyReference externalKeyReference;
+
+        public Builder externalKeyReference(ExternalKeyReference externalKeyReference) {
+            this.externalKeyReference = externalKeyReference;
+            this.__explicitlySet__.add("externalKeyReference");
             return this;
         }
 
@@ -173,7 +222,10 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
                             this.displayName,
                             this.freeformTags,
                             this.keyShape,
-                            this.protectionMode);
+                            this.isAutoRotationEnabled,
+                            this.autoKeyRotationDetails,
+                            this.protectionMode,
+                            this.externalKeyReference);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -197,8 +249,17 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
             if (model.wasPropertyExplicitlySet("keyShape")) {
                 this.keyShape(model.getKeyShape());
             }
+            if (model.wasPropertyExplicitlySet("isAutoRotationEnabled")) {
+                this.isAutoRotationEnabled(model.getIsAutoRotationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoKeyRotationDetails")) {
+                this.autoKeyRotationDetails(model.getAutoKeyRotationDetails());
+            }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReference")) {
+                this.externalKeyReference(model.getExternalKeyReference());
             }
             return this;
         }
@@ -295,16 +356,41 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+    private final Boolean isAutoRotationEnabled;
+
+    /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     * @return the value
+     **/
+    public Boolean getIsAutoRotationEnabled() {
+        return isAutoRotationEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+    private final AutoKeyRotationDetails autoKeyRotationDetails;
+
+    public AutoKeyRotationDetails getAutoKeyRotationDetails() {
+        return autoKeyRotationDetails;
+    }
+
+    /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
      * A protection mode of {@code HSM} means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
      * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
      * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
      * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     * A protection mode of {@code EXTERNAL} mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+     * Oracle only hold a reference to that key.
+     * All cryptographic operations that use a key with a protection mode of {@code EXTERNAL} are performed by external key manager.
      *
      **/
     public enum ProtectionMode {
         Hsm("HSM"),
         Software("SOFTWARE"),
+        External("EXTERNAL"),
         ;
 
         private final String value;
@@ -340,6 +426,9 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
      * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
      * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
      * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     * A protection mode of {@code EXTERNAL} mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+     * Oracle only hold a reference to that key.
+     * All cryptographic operations that use a key with a protection mode of {@code EXTERNAL} are performed by external key manager.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
@@ -351,11 +440,21 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
      * the HSM. A protection mode of {@code SOFTWARE} means that the key persists on the server, protected by the vault's RSA wrapping key which persists
      * on the HSM. All cryptographic operations that use a key with a protection mode of {@code SOFTWARE} are performed on the server. By default,
      * a key's protection mode is set to {@code HSM}. You can't change a key's protection mode after the key is created or imported.
+     * A protection mode of {@code EXTERNAL} mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+     * Oracle only hold a reference to that key.
+     * All cryptographic operations that use a key with a protection mode of {@code EXTERNAL} are performed by external key manager.
      *
      * @return the value
      **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReference")
+    private final ExternalKeyReference externalKeyReference;
+
+    public ExternalKeyReference getExternalKeyReference() {
+        return externalKeyReference;
     }
 
     @Override
@@ -377,7 +476,10 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", keyShape=").append(String.valueOf(this.keyShape));
+        sb.append(", isAutoRotationEnabled=").append(String.valueOf(this.isAutoRotationEnabled));
+        sb.append(", autoKeyRotationDetails=").append(String.valueOf(this.autoKeyRotationDetails));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
+        sb.append(", externalKeyReference=").append(String.valueOf(this.externalKeyReference));
         sb.append(")");
         return sb.toString();
     }
@@ -397,7 +499,11 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.keyShape, other.keyShape)
+                && java.util.Objects.equals(this.isAutoRotationEnabled, other.isAutoRotationEnabled)
+                && java.util.Objects.equals(
+                        this.autoKeyRotationDetails, other.autoKeyRotationDetails)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
+                && java.util.Objects.equals(this.externalKeyReference, other.externalKeyReference)
                 && super.equals(other);
     }
 
@@ -414,7 +520,22 @@ public final class CreateKeyDetails extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.keyShape == null ? 43 : this.keyShape.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isAutoRotationEnabled == null
+                                ? 43
+                                : this.isAutoRotationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoKeyRotationDetails == null
+                                ? 43
+                                : this.autoKeyRotationDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReference == null
+                                ? 43
+                                : this.externalKeyReference.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

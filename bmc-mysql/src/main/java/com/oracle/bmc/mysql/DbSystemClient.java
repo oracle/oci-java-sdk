@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -430,7 +430,8 @@ public class DbSystemClient implements DbSystem {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -547,48 +548,6 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
-    public AddAnalyticsClusterResponse addAnalyticsCluster(AddAnalyticsClusterRequest request) {
-        LOG.trace("Called addAnalyticsCluster");
-        final AddAnalyticsClusterRequest interceptedRequest =
-                AddAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "AddAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/AddAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, AddAnalyticsClusterResponse>
-                transformer =
-                        AddAnalyticsClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getAddAnalyticsClusterDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public AddHeatWaveClusterResponse addHeatWaveCluster(AddHeatWaveClusterRequest request) {
         LOG.trace("Called addHeatWaveCluster");
         final AddHeatWaveClusterRequest interceptedRequest =
@@ -662,45 +621,6 @@ public class DbSystemClient implements DbSystem {
                                                 ib,
                                                 retriedRequest.getCreateDbSystemDetails(),
                                                 retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public DeleteAnalyticsClusterResponse deleteAnalyticsCluster(
-            DeleteAnalyticsClusterRequest request) {
-        LOG.trace("Called deleteAnalyticsCluster");
-        final DeleteAnalyticsClusterRequest interceptedRequest =
-                DeleteAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "DeleteAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/DeleteAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteAnalyticsClusterResponse>
-                transformer =
-                        DeleteAnalyticsClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -782,48 +702,6 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
-    public GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(
-            GenerateAnalyticsClusterMemoryEstimateRequest request) {
-        LOG.trace("Called generateAnalyticsClusterMemoryEstimate");
-        final GenerateAnalyticsClusterMemoryEstimateRequest interceptedRequest =
-                GenerateAnalyticsClusterMemoryEstimateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateAnalyticsClusterMemoryEstimateConverter.fromRequest(
-                        client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "GenerateAnalyticsClusterMemoryEstimate",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GenerateAnalyticsClusterMemoryEstimate");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GenerateAnalyticsClusterMemoryEstimateResponse>
-                transformer =
-                        GenerateAnalyticsClusterMemoryEstimateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public GenerateHeatWaveClusterMemoryEstimateResponse generateHeatWaveClusterMemoryEstimate(
             GenerateHeatWaveClusterMemoryEstimateRequest request) {
         LOG.trace("Called generateHeatWaveClusterMemoryEstimate");
@@ -860,82 +738,6 @@ public class DbSystemClient implements DbSystem {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GetAnalyticsClusterResponse getAnalyticsCluster(GetAnalyticsClusterRequest request) {
-        LOG.trace("Called getAnalyticsCluster");
-        final GetAnalyticsClusterRequest interceptedRequest =
-                GetAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "GetAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/GetAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, GetAnalyticsClusterResponse>
-                transformer =
-                        GetAnalyticsClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GetAnalyticsClusterMemoryEstimateResponse getAnalyticsClusterMemoryEstimate(
-            GetAnalyticsClusterMemoryEstimateRequest request) {
-        LOG.trace("Called getAnalyticsClusterMemoryEstimate");
-        final GetAnalyticsClusterMemoryEstimateRequest interceptedRequest =
-                GetAnalyticsClusterMemoryEstimateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAnalyticsClusterMemoryEstimateConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "GetAnalyticsClusterMemoryEstimate",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsClusterMemoryEstimate/GetAnalyticsClusterMemoryEstimate");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetAnalyticsClusterMemoryEstimateResponse>
-                transformer =
-                        GetAnalyticsClusterMemoryEstimateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1088,46 +890,6 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
-    public RestartAnalyticsClusterResponse restartAnalyticsCluster(
-            RestartAnalyticsClusterRequest request) {
-        LOG.trace("Called restartAnalyticsCluster");
-        final RestartAnalyticsClusterRequest interceptedRequest =
-                RestartAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RestartAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "RestartAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/RestartAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, RestartAnalyticsClusterResponse>
-                transformer =
-                        RestartAnalyticsClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public RestartDbSystemResponse restartDbSystem(RestartDbSystemRequest request) {
         LOG.trace("Called restartDbSystem");
         final RestartDbSystemRequest interceptedRequest =
@@ -1192,46 +954,6 @@ public class DbSystemClient implements DbSystem {
         java.util.function.Function<javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
                 transformer =
                         RestartHeatWaveClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public StartAnalyticsClusterResponse startAnalyticsCluster(
-            StartAnalyticsClusterRequest request) {
-        LOG.trace("Called startAnalyticsCluster");
-        final StartAnalyticsClusterRequest interceptedRequest =
-                StartAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StartAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "StartAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StartAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, StartAnalyticsClusterResponse>
-                transformer =
-                        StartAnalyticsClusterConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1326,45 +1048,6 @@ public class DbSystemClient implements DbSystem {
     }
 
     @Override
-    public StopAnalyticsClusterResponse stopAnalyticsCluster(StopAnalyticsClusterRequest request) {
-        LOG.trace("Called stopAnalyticsCluster");
-        final StopAnalyticsClusterRequest interceptedRequest =
-                StopAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                StopAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "StopAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/StopAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, StopAnalyticsClusterResponse>
-                transformer =
-                        StopAnalyticsClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public StopDbSystemResponse stopDbSystem(StopDbSystemRequest request) {
         LOG.trace("Called stopDbSystem");
         final StopDbSystemRequest interceptedRequest =
@@ -1438,48 +1121,6 @@ public class DbSystemClient implements DbSystem {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public UpdateAnalyticsClusterResponse updateAnalyticsCluster(
-            UpdateAnalyticsClusterRequest request) {
-        LOG.trace("Called updateAnalyticsCluster");
-        final UpdateAnalyticsClusterRequest interceptedRequest =
-                UpdateAnalyticsClusterConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAnalyticsClusterConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "DbSystem",
-                        "UpdateAnalyticsCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/AnalyticsCluster/UpdateAnalyticsCluster");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateAnalyticsClusterResponse>
-                transformer =
-                        UpdateAnalyticsClusterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateAnalyticsClusterDetails(),
-                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

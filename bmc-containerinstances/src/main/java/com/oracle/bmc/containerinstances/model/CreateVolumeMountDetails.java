@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Define the mapping from volume to a mount path in container.
+ * Defines the mapping from volume to a mount path in a container.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -47,13 +47,13 @@ public final class CreateVolumeMountDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * mountPath describes the volume access path.
+         * The volume access path.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mountPath")
         private String mountPath;
 
         /**
-         * mountPath describes the volume access path.
+         * The volume access path.
          * @param mountPath the value to set
          * @return this builder
          **/
@@ -63,13 +63,13 @@ public final class CreateVolumeMountDetails
             return this;
         }
         /**
-         * The name of the volume.
+         * The name of the volume. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeName")
         private String volumeName;
 
         /**
-         * The name of the volume.
+         * The name of the volume. Avoid entering confidential information.
          * @param volumeName the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class CreateVolumeMountDetails
             return this;
         }
         /**
-         * specifies a sub-path inside the referenced volume instead of its root
+         * A subpath inside the referenced volume.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subPath")
         private String subPath;
 
         /**
-         * specifies a sub-path inside the referenced volume instead of its root
+         * A subpath inside the referenced volume.
          * @param subPath the value to set
          * @return this builder
          **/
@@ -95,13 +95,13 @@ public final class CreateVolumeMountDetails
             return this;
         }
         /**
-         * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
         private Boolean isReadOnly;
 
         /**
-         * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
          * @param isReadOnly the value to set
          * @return this builder
          **/
@@ -111,24 +111,24 @@ public final class CreateVolumeMountDetails
             return this;
         }
         /**
-         * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-         * Here is a example:
+         * If there is more than one partition in the volume, reference this number of partitions.
+         * Here is an example:
          * Number  Start   End     Size    File system  Name                  Flags
-         *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-         *  2      106MB   1180MB  1074MB  xfs
-         *  3      1180MB  50.0GB  48.8GB                                     lvm
+         * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+         * 2      106MB   1180MB  1074MB  xfs
+         * 3      1180MB  50.0GB  48.8GB                                     lvm
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private Integer partition;
 
         /**
-         * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-         * Here is a example:
+         * If there is more than one partition in the volume, reference this number of partitions.
+         * Here is an example:
          * Number  Start   End     Size    File system  Name                  Flags
-         *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-         *  2      106MB   1180MB  1074MB  xfs
-         *  3      1180MB  50.0GB  48.8GB                                     lvm
+         * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+         * 2      106MB   1180MB  1074MB  xfs
+         * 3      1180MB  50.0GB  48.8GB                                     lvm
          *
          * @param partition the value to set
          * @return this builder
@@ -189,13 +189,13 @@ public final class CreateVolumeMountDetails
     }
 
     /**
-     * mountPath describes the volume access path.
+     * The volume access path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mountPath")
     private final String mountPath;
 
     /**
-     * mountPath describes the volume access path.
+     * The volume access path.
      * @return the value
      **/
     public String getMountPath() {
@@ -203,13 +203,13 @@ public final class CreateVolumeMountDetails
     }
 
     /**
-     * The name of the volume.
+     * The name of the volume. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeName")
     private final String volumeName;
 
     /**
-     * The name of the volume.
+     * The name of the volume. Avoid entering confidential information.
      * @return the value
      **/
     public String getVolumeName() {
@@ -217,13 +217,13 @@ public final class CreateVolumeMountDetails
     }
 
     /**
-     * specifies a sub-path inside the referenced volume instead of its root
+     * A subpath inside the referenced volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subPath")
     private final String subPath;
 
     /**
-     * specifies a sub-path inside the referenced volume instead of its root
+     * A subpath inside the referenced volume.
      * @return the value
      **/
     public String getSubPath() {
@@ -231,13 +231,13 @@ public final class CreateVolumeMountDetails
     }
 
     /**
-     * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
     /**
-     * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
      * @return the value
      **/
     public Boolean getIsReadOnly() {
@@ -245,24 +245,24 @@ public final class CreateVolumeMountDetails
     }
 
     /**
-     * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-     * Here is a example:
+     * If there is more than one partition in the volume, reference this number of partitions.
+     * Here is an example:
      * Number  Start   End     Size    File system  Name                  Flags
-     *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-     *  2      106MB   1180MB  1074MB  xfs
-     *  3      1180MB  50.0GB  48.8GB                                     lvm
+     * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+     * 2      106MB   1180MB  1074MB  xfs
+     * 3      1180MB  50.0GB  48.8GB                                     lvm
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
     private final Integer partition;
 
     /**
-     * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-     * Here is a example:
+     * If there is more than one partition in the volume, reference this number of partitions.
+     * Here is an example:
      * Number  Start   End     Size    File system  Name                  Flags
-     *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-     *  2      106MB   1180MB  1074MB  xfs
-     *  3      1180MB  50.0GB  48.8GB                                     lvm
+     * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+     * 2      106MB   1180MB  1074MB  xfs
+     * 3      1180MB  50.0GB  48.8GB                                     lvm
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -30,6 +30,7 @@ public final class CreateTargetDatabaseDetails
         "credentials",
         "tlsConfig",
         "connectionOption",
+        "peerTargetDatabaseDetails",
         "freeformTags",
         "definedTags"
     })
@@ -41,6 +42,7 @@ public final class CreateTargetDatabaseDetails
             Credentials credentials,
             TlsConfig tlsConfig,
             ConnectionOption connectionOption,
+            java.util.List<CreatePeerTargetDatabaseDetails> peerTargetDatabaseDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -51,6 +53,7 @@ public final class CreateTargetDatabaseDetails
         this.credentials = credentials;
         this.tlsConfig = tlsConfig;
         this.connectionOption = connectionOption;
+        this.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -142,6 +145,23 @@ public final class CreateTargetDatabaseDetails
             return this;
         }
         /**
+         * The details of the database to be registered as a peer target database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseDetails")
+        private java.util.List<CreatePeerTargetDatabaseDetails> peerTargetDatabaseDetails;
+
+        /**
+         * The details of the database to be registered as a peer target database.
+         * @param peerTargetDatabaseDetails the value to set
+         * @return this builder
+         **/
+        public Builder peerTargetDatabaseDetails(
+                java.util.List<CreatePeerTargetDatabaseDetails> peerTargetDatabaseDetails) {
+            this.peerTargetDatabaseDetails = peerTargetDatabaseDetails;
+            this.__explicitlySet__.add("peerTargetDatabaseDetails");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -200,6 +220,7 @@ public final class CreateTargetDatabaseDetails
                             this.credentials,
                             this.tlsConfig,
                             this.connectionOption,
+                            this.peerTargetDatabaseDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -230,6 +251,9 @@ public final class CreateTargetDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("connectionOption")) {
                 this.connectionOption(model.getConnectionOption());
+            }
+            if (model.wasPropertyExplicitlySet("peerTargetDatabaseDetails")) {
+                this.peerTargetDatabaseDetails(model.getPeerTargetDatabaseDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -323,6 +347,20 @@ public final class CreateTargetDatabaseDetails
     }
 
     /**
+     * The details of the database to be registered as a peer target database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabaseDetails")
+    private final java.util.List<CreatePeerTargetDatabaseDetails> peerTargetDatabaseDetails;
+
+    /**
+     * The details of the database to be registered as a peer target database.
+     * @return the value
+     **/
+    public java.util.List<CreatePeerTargetDatabaseDetails> getPeerTargetDatabaseDetails() {
+        return peerTargetDatabaseDetails;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -383,6 +421,8 @@ public final class CreateTargetDatabaseDetails
         sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", tlsConfig=").append(String.valueOf(this.tlsConfig));
         sb.append(", connectionOption=").append(String.valueOf(this.connectionOption));
+        sb.append(", peerTargetDatabaseDetails=")
+                .append(String.valueOf(this.peerTargetDatabaseDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -406,6 +446,8 @@ public final class CreateTargetDatabaseDetails
                 && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.tlsConfig, other.tlsConfig)
                 && java.util.Objects.equals(this.connectionOption, other.connectionOption)
+                && java.util.Objects.equals(
+                        this.peerTargetDatabaseDetails, other.peerTargetDatabaseDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -428,6 +470,11 @@ public final class CreateTargetDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.connectionOption == null ? 43 : this.connectionOption.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerTargetDatabaseDetails == null
+                                ? 43
+                                : this.peerTargetDatabaseDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

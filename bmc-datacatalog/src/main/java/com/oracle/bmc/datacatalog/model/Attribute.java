@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -28,6 +28,7 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
         "description",
         "entityKey",
         "lifecycleState",
+        "lifecycleDetails",
         "timeCreated",
         "timeUpdated",
         "createdById",
@@ -64,6 +65,7 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             String description,
             String entityKey,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             String createdById,
@@ -99,6 +101,7 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
         this.description = description;
         this.entityKey = entityKey;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.createdById = createdById;
@@ -229,6 +232,26 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -723,6 +746,7 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
                             this.description,
                             this.entityKey,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
                             this.createdById,
@@ -776,6 +800,9 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -962,6 +989,24 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
      **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -1406,6 +1451,7 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", entityKey=").append(String.valueOf(this.entityKey));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", createdById=").append(String.valueOf(this.createdById));
@@ -1456,6 +1502,7 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.entityKey, other.entityKey)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.createdById, other.createdById)
@@ -1501,6 +1548,9 @@ public final class Attribute extends com.oracle.bmc.http.internal.ExplicitlySetB
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.createdById == null ? 43 : this.createdById.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
@@ -133,20 +133,38 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("activityType");
             return this;
         }
-        /**
-         * The person who updates the activity on the support ticket.
-         **/
+
         @com.fasterxml.jackson.annotation.JsonProperty("activityAuthor")
         private ActivityAuthor activityAuthor;
 
-        /**
-         * The person who updates the activity on the support ticket.
-         * @param activityAuthor the value to set
-         * @return this builder
-         **/
         public Builder activityAuthor(ActivityAuthor activityAuthor) {
             this.activityAuthor = activityAuthor;
             this.__explicitlySet__.add("activityAuthor");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("itemType")
+        private ItemType itemType;
+
+        public Builder itemType(ItemType itemType) {
+            this.itemType = itemType;
+            this.__explicitlySet__.add("itemType");
+            return this;
+        }
+        /**
+         * Who updates the activity on the support ticket.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("itemStatus")
+        private ItemStatus itemStatus;
+
+        /**
+         * Who updates the activity on the support ticket.
+         * @param itemStatus the value to set
+         * @return this builder
+         **/
+        public Builder itemStatus(ItemStatus itemStatus) {
+            this.itemStatus = itemStatus;
+            this.__explicitlySet__.add("itemStatus");
             return this;
         }
 
@@ -165,7 +183,9 @@ public final class ActivityItem extends Item {
                             this.timeCreated,
                             this.timeUpdated,
                             this.activityType,
-                            this.activityAuthor);
+                            this.activityAuthor,
+                            this.itemType,
+                            this.itemStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -204,6 +224,12 @@ public final class ActivityItem extends Item {
             if (model.wasPropertyExplicitlySet("activityAuthor")) {
                 this.activityAuthor(model.getActivityAuthor());
             }
+            if (model.wasPropertyExplicitlySet("itemType")) {
+                this.itemType(model.getItemType());
+            }
+            if (model.wasPropertyExplicitlySet("itemStatus")) {
+                this.itemStatus(model.getItemStatus());
+            }
             return this;
         }
     }
@@ -230,13 +256,17 @@ public final class ActivityItem extends Item {
             Integer timeCreated,
             Integer timeUpdated,
             ActivityType activityType,
-            ActivityAuthor activityAuthor) {
+            ActivityAuthor activityAuthor,
+            ItemType itemType,
+            ItemStatus itemStatus) {
         super(itemKey, name, category, subCategory, issueType);
         this.comments = comments;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.activityType = activityType;
         this.activityAuthor = activityAuthor;
+        this.itemType = itemType;
+        this.itemStatus = itemStatus;
     }
 
     /**
@@ -289,6 +319,7 @@ public final class ActivityItem extends Item {
         ProblemDescription("PROBLEM_DESCRIPTION"),
         Update("UPDATE"),
         Close("CLOSE"),
+        Reopen("REOPEN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -346,7 +377,6 @@ public final class ActivityItem extends Item {
     }
 
     /**
-     * The person who updates the activity on the support ticket.
      **/
     public enum ActivityAuthor {
         Customer("CUSTOMER"),
@@ -393,18 +423,131 @@ public final class ActivityItem extends Item {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The person who updates the activity on the support ticket.
-     **/
+
     @com.fasterxml.jackson.annotation.JsonProperty("activityAuthor")
     private final ActivityAuthor activityAuthor;
 
-    /**
-     * The person who updates the activity on the support ticket.
-     * @return the value
-     **/
     public ActivityAuthor getActivityAuthor() {
         return activityAuthor;
+    }
+
+    /**
+     **/
+    public enum ItemType {
+        Attachments("ATTACHMENTS"),
+        Comments("COMMENTS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ItemType.class);
+
+        private final String value;
+        private static java.util.Map<String, ItemType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ItemType v : ItemType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ItemType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ItemType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ItemType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+
+    @com.fasterxml.jackson.annotation.JsonProperty("itemType")
+    private final ItemType itemType;
+
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    /**
+     * Who updates the activity on the support ticket.
+     **/
+    public enum ItemStatus {
+        Processing("PROCESSING"),
+        Attached("ATTACHED"),
+        Removed("REMOVED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ItemStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, ItemStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ItemStatus v : ItemStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ItemStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ItemStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ItemStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Who updates the activity on the support ticket.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("itemStatus")
+    private final ItemStatus itemStatus;
+
+    /**
+     * Who updates the activity on the support ticket.
+     * @return the value
+     **/
+    public ItemStatus getItemStatus() {
+        return itemStatus;
     }
 
     @Override
@@ -426,6 +569,8 @@ public final class ActivityItem extends Item {
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", activityType=").append(String.valueOf(this.activityType));
         sb.append(", activityAuthor=").append(String.valueOf(this.activityAuthor));
+        sb.append(", itemType=").append(String.valueOf(this.itemType));
+        sb.append(", itemStatus=").append(String.valueOf(this.itemStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -445,6 +590,8 @@ public final class ActivityItem extends Item {
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.activityType, other.activityType)
                 && java.util.Objects.equals(this.activityAuthor, other.activityAuthor)
+                && java.util.Objects.equals(this.itemType, other.itemType)
+                && java.util.Objects.equals(this.itemStatus, other.itemStatus)
                 && super.equals(other);
     }
 
@@ -459,6 +606,8 @@ public final class ActivityItem extends Item {
         result =
                 (result * PRIME)
                         + (this.activityAuthor == null ? 43 : this.activityAuthor.hashCode());
+        result = (result * PRIME) + (this.itemType == null ? 43 : this.itemType.hashCode());
+        result = (result * PRIME) + (this.itemStatus == null ? 43 : this.itemStatus.hashCode());
         return result;
     }
 }

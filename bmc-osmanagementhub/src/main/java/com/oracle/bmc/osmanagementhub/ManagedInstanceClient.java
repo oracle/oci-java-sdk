@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -356,7 +356,8 @@ public class ManagedInstanceClient implements ManagedInstance {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -473,6 +474,51 @@ public class ManagedInstanceClient implements ManagedInstance {
     }
 
     @Override
+    public AttachProfileToManagedInstanceResponse attachProfileToManagedInstance(
+            AttachProfileToManagedInstanceRequest request) {
+        LOG.trace("Called attachProfileToManagedInstance");
+        final AttachProfileToManagedInstanceRequest interceptedRequest =
+                AttachProfileToManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachProfileToManagedInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "AttachProfileToManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachProfileToManagedInstance");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachProfileToManagedInstanceResponse>
+                transformer =
+                        AttachProfileToManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAttachProfileToManagedInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AttachSoftwareSourcesToManagedInstanceResponse attachSoftwareSourcesToManagedInstance(
             AttachSoftwareSourcesToManagedInstanceRequest request) {
         LOG.trace("Called attachSoftwareSourcesToManagedInstance");
@@ -492,7 +538,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "AttachSoftwareSourcesToManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachSoftwareSourcesToManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, AttachSoftwareSourcesToManagedInstanceResponse>
                 transformer =
@@ -519,6 +565,86 @@ public class ManagedInstanceClient implements ManagedInstance {
     }
 
     @Override
+    public DeleteManagedInstanceResponse deleteManagedInstance(
+            DeleteManagedInstanceRequest request) {
+        LOG.trace("Called deleteManagedInstance");
+        final DeleteManagedInstanceRequest interceptedRequest =
+                DeleteManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteManagedInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "DeleteManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DeleteManagedInstance");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteManagedInstanceResponse>
+                transformer =
+                        DeleteManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DetachProfileFromManagedInstanceResponse detachProfileFromManagedInstance(
+            DetachProfileFromManagedInstanceRequest request) {
+        LOG.trace("Called detachProfileFromManagedInstance");
+        final DetachProfileFromManagedInstanceRequest interceptedRequest =
+                DetachProfileFromManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachProfileFromManagedInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "DetachProfileFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachProfileFromManagedInstance");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DetachProfileFromManagedInstanceResponse>
+                transformer =
+                        DetachProfileFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DetachSoftwareSourcesFromManagedInstanceResponse
             detachSoftwareSourcesFromManagedInstance(
                     DetachSoftwareSourcesFromManagedInstanceRequest request) {
@@ -539,7 +665,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "DetachSoftwareSourcesFromManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachSoftwareSourcesFromManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DetachSoftwareSourcesFromManagedInstanceResponse>
                 transformer =
@@ -585,7 +711,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "DisableModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DisableModuleStreamOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DisableModuleStreamOnManagedInstanceResponse>
                 transformer =
@@ -631,7 +757,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "EnableModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/EnableModuleStreamOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceResponse>
                 transformer =
@@ -671,7 +797,10 @@ public class ManagedInstanceClient implements ManagedInstance {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ManagedInstance", "GetManagedInstance", ib.getRequestUri().toString(), "");
+                        "ManagedInstance",
+                        "GetManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstance");
         java.util.function.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
                 transformer =
                         GetManagedInstanceConverter.fromResponse(
@@ -686,6 +815,92 @@ public class ManagedInstanceClient implements ManagedInstance {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetWindowsUpdateResponse getWindowsUpdate(GetWindowsUpdateRequest request) {
+        LOG.trace("Called getWindowsUpdate");
+        final GetWindowsUpdateRequest interceptedRequest =
+                GetWindowsUpdateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWindowsUpdateConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "GetWindowsUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdate/GetWindowsUpdate");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
+                transformer =
+                        GetWindowsUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse
+            installAllWindowsUpdatesOnManagedInstancesInCompartment(
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest request) {
+        LOG.trace("Called installAllWindowsUpdatesOnManagedInstancesInCompartment");
+        final InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest interceptedRequest =
+                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "InstallAllWindowsUpdatesOnManagedInstancesInCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstancesInCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+                transformer =
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -712,7 +927,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "InstallModuleStreamProfileOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallModuleStreamProfileOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         InstallModuleStreamProfileOnManagedInstanceResponse>
@@ -758,7 +973,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "InstallPackagesOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallPackagesOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, InstallPackagesOnManagedInstanceResponse>
                 transformer =
@@ -785,6 +1000,52 @@ public class ManagedInstanceClient implements ManagedInstance {
     }
 
     @Override
+    public InstallWindowsUpdatesOnManagedInstanceResponse installWindowsUpdatesOnManagedInstance(
+            InstallWindowsUpdatesOnManagedInstanceRequest request) {
+        LOG.trace("Called installWindowsUpdatesOnManagedInstance");
+        final InstallWindowsUpdatesOnManagedInstanceRequest interceptedRequest =
+                InstallWindowsUpdatesOnManagedInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallWindowsUpdatesOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "InstallWindowsUpdatesOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallWindowsUpdatesOnManagedInstance");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, InstallWindowsUpdatesOnManagedInstanceResponse>
+                transformer =
+                        InstallWindowsUpdatesOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getInstallWindowsUpdatesOnManagedInstanceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListManagedInstanceAvailablePackagesResponse listManagedInstanceAvailablePackages(
             ListManagedInstanceAvailablePackagesRequest request) {
         LOG.trace("Called listManagedInstanceAvailablePackages");
@@ -803,7 +1064,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstanceAvailablePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailablePackages");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceAvailablePackagesResponse>
                 transformer =
@@ -844,12 +1105,54 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstanceAvailableSoftwareSources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableSoftwareSources");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListManagedInstanceAvailableSoftwareSourcesResponse>
                 transformer =
                         ListManagedInstanceAvailableSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListManagedInstanceAvailableWindowsUpdatesResponse
+            listManagedInstanceAvailableWindowsUpdates(
+                    ListManagedInstanceAvailableWindowsUpdatesRequest request) {
+        LOG.trace("Called listManagedInstanceAvailableWindowsUpdates");
+        final ListManagedInstanceAvailableWindowsUpdatesRequest interceptedRequest =
+                ListManagedInstanceAvailableWindowsUpdatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceAvailableWindowsUpdatesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceAvailableWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableWindowsUpdates");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceAvailableWindowsUpdatesResponse>
+                transformer =
+                        ListManagedInstanceAvailableWindowsUpdatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -884,7 +1187,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstanceErrata",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceErrata");
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstanceErrataResponse>
                 transformer =
                         ListManagedInstanceErrataConverter.fromResponse(
@@ -923,11 +1226,53 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstanceInstalledPackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledPackages");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceInstalledPackagesResponse>
                 transformer =
                         ListManagedInstanceInstalledPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListManagedInstanceInstalledWindowsUpdatesResponse
+            listManagedInstanceInstalledWindowsUpdates(
+                    ListManagedInstanceInstalledWindowsUpdatesRequest request) {
+        LOG.trace("Called listManagedInstanceInstalledWindowsUpdates");
+        final ListManagedInstanceInstalledWindowsUpdatesRequest interceptedRequest =
+                ListManagedInstanceInstalledWindowsUpdatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceInstalledWindowsUpdatesConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceInstalledWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledWindowsUpdates");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceInstalledWindowsUpdatesResponse>
+                transformer =
+                        ListManagedInstanceInstalledWindowsUpdatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -962,7 +1307,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstanceModules",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceModules");
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstanceModulesResponse>
                 transformer =
                         ListManagedInstanceModulesConverter.fromResponse(
@@ -1001,7 +1346,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstanceUpdatablePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceUpdatablePackages");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceUpdatablePackagesResponse>
                 transformer =
@@ -1039,10 +1384,47 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ListManagedInstances",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstances");
         java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstancesResponse>
                 transformer =
                         ListManagedInstancesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListWindowsUpdatesResponse listWindowsUpdates(ListWindowsUpdatesRequest request) {
+        LOG.trace("Called listWindowsUpdates");
+        final ListWindowsUpdatesRequest interceptedRequest =
+                ListWindowsUpdatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWindowsUpdatesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdateCollection/ListWindowsUpdates");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
+                transformer =
+                        ListWindowsUpdatesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1079,7 +1461,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "ManageModuleStreamsOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ManageModuleStreamsOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ManageModuleStreamsOnManagedInstanceResponse>
                 transformer =
@@ -1124,7 +1506,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "RefreshSoftwareOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RefreshSoftwareOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RefreshSoftwareOnManagedInstanceResponse>
                 transformer =
@@ -1167,7 +1549,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "RemoveModuleStreamProfileFromManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveModuleStreamProfileFromManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RemoveModuleStreamProfileFromManagedInstanceResponse>
@@ -1213,7 +1595,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "RemovePackagesFromManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemovePackagesFromManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RemovePackagesFromManagedInstanceResponse>
                 transformer =
@@ -1259,7 +1641,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "SwitchModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchModuleStreamOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceResponse>
                 transformer =
@@ -1306,7 +1688,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "UpdateAllPackagesOnManagedInstancesInCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdateAllPackagesOnManagedInstancesInCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateAllPackagesOnManagedInstancesInCompartmentResponse>
@@ -1351,7 +1733,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "UpdateManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdateManagedInstance");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
                 transformer =
                         UpdateManagedInstanceConverter.fromResponse(
@@ -1394,7 +1776,7 @@ public class ManagedInstanceClient implements ManagedInstance {
                         "ManagedInstance",
                         "UpdatePackagesOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdatePackagesOnManagedInstance");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdatePackagesOnManagedInstanceResponse>
                 transformer =

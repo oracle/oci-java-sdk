@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.nosql;
@@ -561,6 +561,56 @@ public class NosqlAsyncClient implements NosqlAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplicaResponse> createReplica(
+            CreateReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateReplicaRequest, CreateReplicaResponse>
+                    handler) {
+        LOG.trace("Called async createReplica");
+        final CreateReplicaRequest interceptedRequest =
+                CreateReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateReplicaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Nosql",
+                        "CreateReplica",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/CreateReplica");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateReplicaResponse>
+                transformer =
+                        CreateReplicaConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateReplicaRequest, CreateReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateReplicaRequest, CreateReplicaResponse>,
+                        java.util.concurrent.Future<CreateReplicaResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateReplicaDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateReplicaRequest, CreateReplicaResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTableResponse> createTable(
             CreateTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateTableRequest, CreateTableResponse>
@@ -642,6 +692,50 @@ public class NosqlAsyncClient implements NosqlAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteIndexRequest, DeleteIndexResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicaResponse> deleteReplica(
+            DeleteReplicaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteReplicaRequest, DeleteReplicaResponse>
+                    handler) {
+        LOG.trace("Called async deleteReplica");
+        final DeleteReplicaRequest interceptedRequest =
+                DeleteReplicaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteReplicaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Nosql",
+                        "DeleteReplica",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/nosql-database/20190828/Table/DeleteReplica");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteReplicaResponse>
+                transformer =
+                        DeleteReplicaConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteReplicaRequest, DeleteReplicaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteReplicaRequest, DeleteReplicaResponse>,
+                        java.util.concurrent.Future<DeleteReplicaResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteReplicaRequest, DeleteReplicaResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

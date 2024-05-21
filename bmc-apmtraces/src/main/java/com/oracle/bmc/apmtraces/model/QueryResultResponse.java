@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.model;
@@ -24,13 +24,22 @@ package com.oracle.bmc.apmtraces.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class QueryResultResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"queryResultMetadataSummary", "queryResultRows"})
+    @java.beans.ConstructorProperties({
+        "queryResultMetadataSummary",
+        "queryResultRows",
+        "queryResultMetadata",
+        "queryResultWarnings"
+    })
     public QueryResultResponse(
             QueryResultMetadataSummary queryResultMetadataSummary,
-            java.util.List<QueryResultRow> queryResultRows) {
+            java.util.List<QueryResultRow> queryResultRows,
+            java.util.Map<String, Object> queryResultMetadata,
+            java.util.List<QueryResultWarning> queryResultWarnings) {
         super();
         this.queryResultMetadataSummary = queryResultMetadataSummary;
         this.queryResultRows = queryResultRows;
+        this.queryResultMetadata = queryResultMetadata;
+        this.queryResultWarnings = queryResultWarnings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -67,13 +76,53 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("queryResultRows");
             return this;
         }
+        /**
+         * A map containing metadata or additional information.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("queryResultMetadata")
+        private java.util.Map<String, Object> queryResultMetadata;
+
+        /**
+         * A map containing metadata or additional information.
+         *
+         * @param queryResultMetadata the value to set
+         * @return this builder
+         **/
+        public Builder queryResultMetadata(java.util.Map<String, Object> queryResultMetadata) {
+            this.queryResultMetadata = queryResultMetadata;
+            this.__explicitlySet__.add("queryResultMetadata");
+            return this;
+        }
+        /**
+         * A structure that provides warnings, if any, along with the query results.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("queryResultWarnings")
+        private java.util.List<QueryResultWarning> queryResultWarnings;
+
+        /**
+         * A structure that provides warnings, if any, along with the query results.
+         *
+         * @param queryResultWarnings the value to set
+         * @return this builder
+         **/
+        public Builder queryResultWarnings(java.util.List<QueryResultWarning> queryResultWarnings) {
+            this.queryResultWarnings = queryResultWarnings;
+            this.__explicitlySet__.add("queryResultWarnings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public QueryResultResponse build() {
             QueryResultResponse model =
-                    new QueryResultResponse(this.queryResultMetadataSummary, this.queryResultRows);
+                    new QueryResultResponse(
+                            this.queryResultMetadataSummary,
+                            this.queryResultRows,
+                            this.queryResultMetadata,
+                            this.queryResultWarnings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +136,12 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("queryResultRows")) {
                 this.queryResultRows(model.getQueryResultRows());
+            }
+            if (model.wasPropertyExplicitlySet("queryResultMetadata")) {
+                this.queryResultMetadata(model.getQueryResultMetadata());
+            }
+            if (model.wasPropertyExplicitlySet("queryResultWarnings")) {
+                this.queryResultWarnings(model.getQueryResultWarnings());
             }
             return this;
         }
@@ -130,6 +185,38 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
         return queryResultRows;
     }
 
+    /**
+     * A map containing metadata or additional information.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("queryResultMetadata")
+    private final java.util.Map<String, Object> queryResultMetadata;
+
+    /**
+     * A map containing metadata or additional information.
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, Object> getQueryResultMetadata() {
+        return queryResultMetadata;
+    }
+
+    /**
+     * A structure that provides warnings, if any, along with the query results.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("queryResultWarnings")
+    private final java.util.List<QueryResultWarning> queryResultWarnings;
+
+    /**
+     * A structure that provides warnings, if any, along with the query results.
+     *
+     * @return the value
+     **/
+    public java.util.List<QueryResultWarning> getQueryResultWarnings() {
+        return queryResultWarnings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -147,6 +234,8 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
         sb.append("queryResultMetadataSummary=")
                 .append(String.valueOf(this.queryResultMetadataSummary));
         sb.append(", queryResultRows=").append(String.valueOf(this.queryResultRows));
+        sb.append(", queryResultMetadata=").append(String.valueOf(this.queryResultMetadata));
+        sb.append(", queryResultWarnings=").append(String.valueOf(this.queryResultWarnings));
         sb.append(")");
         return sb.toString();
     }
@@ -164,6 +253,8 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
         return java.util.Objects.equals(
                         this.queryResultMetadataSummary, other.queryResultMetadataSummary)
                 && java.util.Objects.equals(this.queryResultRows, other.queryResultRows)
+                && java.util.Objects.equals(this.queryResultMetadata, other.queryResultMetadata)
+                && java.util.Objects.equals(this.queryResultWarnings, other.queryResultWarnings)
                 && super.equals(other);
     }
 
@@ -179,6 +270,16 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.queryResultRows == null ? 43 : this.queryResultRows.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultMetadata == null
+                                ? 43
+                                : this.queryResultMetadata.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.queryResultWarnings == null
+                                ? 43
+                                : this.queryResultWarnings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

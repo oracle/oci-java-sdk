@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.internal.http;
@@ -39,6 +39,22 @@ public class ListWorkRequestErrorsConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getWorkRequestId()))
                         .path("errors");
+
+        if (request.getLimit() != null) {
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
+        }
+
+        if (request.getPage() != null) {
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
@@ -129,6 +145,28 @@ public class ListWorkRequestErrorsConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcPrevPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-prev-page");
+                                if (opcPrevPageHeader.isPresent()) {
+                                    builder.opcPrevPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-prev-page",
+                                                    opcPrevPageHeader.get().get(0),
                                                     String.class));
                                 }
 

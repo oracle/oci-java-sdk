@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -289,12 +289,12 @@ public class ListSecurityAssessmentsRequest
         return sortOrder;
     }
     /**
-     * A filter to return only security assessments that are set as baseline.
+     * A filter to return only the security assessments that are set as a baseline.
      */
     private Boolean isBaseline;
 
     /**
-     * A filter to return only security assessments that are set as baseline.
+     * A filter to return only the security assessments that are set as a baseline.
      */
     public Boolean getIsBaseline() {
         return isBaseline;
@@ -612,12 +612,12 @@ public class ListSecurityAssessmentsRequest
         }
 
         /**
-         * A filter to return only security assessments that are set as baseline.
+         * A filter to return only the security assessments that are set as a baseline.
          */
         private Boolean isBaseline = null;
 
         /**
-         * A filter to return only security assessments that are set as baseline.
+         * A filter to return only the security assessments that are set as a baseline.
          * @param isBaseline the value to set
          * @return this builder instance
          */

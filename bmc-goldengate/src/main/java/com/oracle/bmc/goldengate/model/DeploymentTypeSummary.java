@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -30,7 +30,9 @@ public final class DeploymentTypeSummary
         "connectionTypes",
         "sourceTechnologies",
         "targetTechnologies",
-        "oggVersion"
+        "oggVersion",
+        "supportedTechnologiesUrl",
+        "defaultUsername"
     })
     public DeploymentTypeSummary(
             Category category,
@@ -39,7 +41,9 @@ public final class DeploymentTypeSummary
             java.util.List<ConnectionType> connectionTypes,
             java.util.List<String> sourceTechnologies,
             java.util.List<String> targetTechnologies,
-            String oggVersion) {
+            String oggVersion,
+            String supportedTechnologiesUrl,
+            String defaultUsername) {
         super();
         this.category = category;
         this.displayName = displayName;
@@ -48,21 +52,23 @@ public final class DeploymentTypeSummary
         this.sourceTechnologies = sourceTechnologies;
         this.targetTechnologies = targetTechnologies;
         this.oggVersion = oggVersion;
+        this.supportedTechnologiesUrl = supportedTechnologiesUrl;
+        this.defaultUsername = defaultUsername;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The deployment category defines the broad separation of the deployment type into categories.  Currently
-         * the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into categories.  Currently
-         * the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
          *
          * @param category the value to set
          * @return this builder
@@ -192,6 +198,42 @@ public final class DeploymentTypeSummary
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
+        /**
+         * The URL to the webpage listing the supported technologies.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedTechnologiesUrl")
+        private String supportedTechnologiesUrl;
+
+        /**
+         * The URL to the webpage listing the supported technologies.
+         *
+         * @param supportedTechnologiesUrl the value to set
+         * @return this builder
+         **/
+        public Builder supportedTechnologiesUrl(String supportedTechnologiesUrl) {
+            this.supportedTechnologiesUrl = supportedTechnologiesUrl;
+            this.__explicitlySet__.add("supportedTechnologiesUrl");
+            return this;
+        }
+        /**
+         * The default admin username used by deployment.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultUsername")
+        private String defaultUsername;
+
+        /**
+         * The default admin username used by deployment.
+         *
+         * @param defaultUsername the value to set
+         * @return this builder
+         **/
+        public Builder defaultUsername(String defaultUsername) {
+            this.defaultUsername = defaultUsername;
+            this.__explicitlySet__.add("defaultUsername");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -205,7 +247,9 @@ public final class DeploymentTypeSummary
                             this.connectionTypes,
                             this.sourceTechnologies,
                             this.targetTechnologies,
-                            this.oggVersion);
+                            this.oggVersion,
+                            this.supportedTechnologiesUrl,
+                            this.defaultUsername);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -235,6 +279,12 @@ public final class DeploymentTypeSummary
             if (model.wasPropertyExplicitlySet("oggVersion")) {
                 this.oggVersion(model.getOggVersion());
             }
+            if (model.wasPropertyExplicitlySet("supportedTechnologiesUrl")) {
+                this.supportedTechnologiesUrl(model.getSupportedTechnologiesUrl());
+            }
+            if (model.wasPropertyExplicitlySet("defaultUsername")) {
+                this.defaultUsername(model.getDefaultUsername());
+            }
             return this;
         }
     }
@@ -251,13 +301,14 @@ public final class DeploymentTypeSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into categories.  Currently
-     * the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      *
      **/
     public enum Category {
         DataReplication("DATA_REPLICATION"),
         StreamAnalytics("STREAM_ANALYTICS"),
+        DataTransforms("DATA_TRANSFORMS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -301,16 +352,16 @@ public final class DeploymentTypeSummary
         }
     };
     /**
-     * The deployment category defines the broad separation of the deployment type into categories.  Currently
-     * the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into categories.  Currently
-     * the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      *
      * @return the value
      **/
@@ -426,6 +477,38 @@ public final class DeploymentTypeSummary
         return oggVersion;
     }
 
+    /**
+     * The URL to the webpage listing the supported technologies.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedTechnologiesUrl")
+    private final String supportedTechnologiesUrl;
+
+    /**
+     * The URL to the webpage listing the supported technologies.
+     *
+     * @return the value
+     **/
+    public String getSupportedTechnologiesUrl() {
+        return supportedTechnologiesUrl;
+    }
+
+    /**
+     * The default admin username used by deployment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultUsername")
+    private final String defaultUsername;
+
+    /**
+     * The default admin username used by deployment.
+     *
+     * @return the value
+     **/
+    public String getDefaultUsername() {
+        return defaultUsername;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -447,6 +530,9 @@ public final class DeploymentTypeSummary
         sb.append(", sourceTechnologies=").append(String.valueOf(this.sourceTechnologies));
         sb.append(", targetTechnologies=").append(String.valueOf(this.targetTechnologies));
         sb.append(", oggVersion=").append(String.valueOf(this.oggVersion));
+        sb.append(", supportedTechnologiesUrl=")
+                .append(String.valueOf(this.supportedTechnologiesUrl));
+        sb.append(", defaultUsername=").append(String.valueOf(this.defaultUsername));
         sb.append(")");
         return sb.toString();
     }
@@ -468,6 +554,9 @@ public final class DeploymentTypeSummary
                 && java.util.Objects.equals(this.sourceTechnologies, other.sourceTechnologies)
                 && java.util.Objects.equals(this.targetTechnologies, other.targetTechnologies)
                 && java.util.Objects.equals(this.oggVersion, other.oggVersion)
+                && java.util.Objects.equals(
+                        this.supportedTechnologiesUrl, other.supportedTechnologiesUrl)
+                && java.util.Objects.equals(this.defaultUsername, other.defaultUsername)
                 && super.equals(other);
     }
 
@@ -494,6 +583,14 @@ public final class DeploymentTypeSummary
                                 ? 43
                                 : this.targetTechnologies.hashCode());
         result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedTechnologiesUrl == null
+                                ? 43
+                                : this.supportedTechnologiesUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.defaultUsername == null ? 43 : this.defaultUsername.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

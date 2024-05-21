@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+ * The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -52,7 +52,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * ID of the member of this Group
+         * The ID of the member of this Group
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -68,7 +68,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String value;
 
         /**
-         * ID of the member of this Group
+         * The ID of the member of this Group
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -88,7 +88,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The DateTime the member was added to the Group.
+         * The date and time that the member was added to the group.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -104,7 +104,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String dateAdded;
 
         /**
-         * The DateTime the member was added to the Group.
+         * The date and time that the member was added to the group.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -124,7 +124,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * OCID of the member of this Group
+         * The OCID of the member of this group.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -142,7 +142,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String ocid;
 
         /**
-         * OCID of the member of this Group
+         * The OCID of the member of this group.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -164,7 +164,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Membership Ocid
+         * The membership OCID.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -182,7 +182,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String membershipOcid;
 
         /**
-         * Membership Ocid
+         * The membership OCID.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -204,7 +204,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The URI that corresponds to the member Resource of this Group
+         * The URI that corresponds to the member Resource of this group.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -220,7 +220,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String ref;
 
         /**
-         * The URI that corresponds to the member Resource of this Group
+         * The URI that corresponds to the member Resource of this group.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -240,7 +240,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Member display name
+         * The member's display name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -256,7 +256,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String display;
 
         /**
-         * Member display name
+         * The member's display name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -276,7 +276,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Indicates the type of resource--for example, User or Group
+         * Indicates the type of resource, for example, User or Group.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -293,7 +293,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private Type type;
 
         /**
-         * Indicates the type of resource--for example, User or Group
+         * Indicates the type of resource, for example, User or Group.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -314,7 +314,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Member name
+         * The member's name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -330,7 +330,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         private String name;
 
         /**
-         * Member name
+         * The member's name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -412,7 +412,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * ID of the member of this Group
+     * The ID of the member of this Group
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -428,7 +428,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String value;
 
     /**
-     * ID of the member of this Group
+     * The ID of the member of this Group
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -446,7 +446,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The DateTime the member was added to the Group.
+     * The date and time that the member was added to the group.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -462,7 +462,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String dateAdded;
 
     /**
-     * The DateTime the member was added to the Group.
+     * The date and time that the member was added to the group.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -480,7 +480,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * OCID of the member of this Group
+     * The OCID of the member of this group.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -498,7 +498,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String ocid;
 
     /**
-     * OCID of the member of this Group
+     * The OCID of the member of this group.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -518,7 +518,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -536,7 +536,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String membershipOcid;
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -556,7 +556,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The URI that corresponds to the member Resource of this Group
+     * The URI that corresponds to the member Resource of this group.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -572,7 +572,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String ref;
 
     /**
-     * The URI that corresponds to the member Resource of this Group
+     * The URI that corresponds to the member Resource of this group.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -590,7 +590,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Member display name
+     * The member's display name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -606,7 +606,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String display;
 
     /**
-     * Member display name
+     * The member's display name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -624,7 +624,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates the type of resource--for example, User or Group
+     * Indicates the type of resource, for example, User or Group.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -680,7 +680,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     };
     /**
-     * Indicates the type of resource--for example, User or Group
+     * Indicates the type of resource, for example, User or Group.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -697,7 +697,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final Type type;
 
     /**
-     * Indicates the type of resource--for example, User or Group
+     * Indicates the type of resource, for example, User or Group.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -716,7 +716,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Member name
+     * The member's name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -732,7 +732,7 @@ public final class GroupMembers extends com.oracle.bmc.http.internal.ExplicitlyS
     private final String name;
 
     /**
-     * Member name
+     * The member's name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false

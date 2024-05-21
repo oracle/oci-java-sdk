@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aidocument.model;
@@ -128,7 +128,15 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
         LineItem("LINE_ITEM"),
         LineItemField("LINE_ITEM_FIELD"),
         KeyValue("KEY_VALUE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FieldType.class);
 
         private final String value;
         private static java.util.Map<String, FieldType> map;
@@ -136,7 +144,9 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
         static {
             map = new java.util.HashMap<>();
             for (FieldType v : FieldType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -154,7 +164,10 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid FieldType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FieldType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

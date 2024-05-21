@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics;
@@ -606,6 +606,124 @@ public class LogAnalyticsPaginators {
                                             .LogAnalyticsConfigWorkRequestSummary>
                             apply(ListConfigWorkRequestsResponse response) {
                         return response.getLogAnalyticsConfigWorkRequestCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listEffectiveProperties operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListEffectivePropertiesResponse> listEffectivePropertiesResponseIterator(
+            final ListEffectivePropertiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEffectivePropertiesRequest.Builder, ListEffectivePropertiesRequest,
+                ListEffectivePropertiesResponse>(
+                new java.util.function.Supplier<ListEffectivePropertiesRequest.Builder>() {
+                    @Override
+                    public ListEffectivePropertiesRequest.Builder get() {
+                        return ListEffectivePropertiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEffectivePropertiesResponse, String>() {
+                    @Override
+                    public String apply(ListEffectivePropertiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEffectivePropertiesRequest.Builder>,
+                        ListEffectivePropertiesRequest>() {
+                    @Override
+                    public ListEffectivePropertiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEffectivePropertiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEffectivePropertiesRequest, ListEffectivePropertiesResponse>() {
+                    @Override
+                    public ListEffectivePropertiesResponse apply(
+                            ListEffectivePropertiesRequest request) {
+                        return client.listEffectiveProperties(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.EffectivePropertySummary} objects
+     * contained in responses from the listEffectiveProperties operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.EffectivePropertySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.EffectivePropertySummary>
+            listEffectivePropertiesRecordIterator(final ListEffectivePropertiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEffectivePropertiesRequest.Builder, ListEffectivePropertiesRequest,
+                ListEffectivePropertiesResponse,
+                com.oracle.bmc.loganalytics.model.EffectivePropertySummary>(
+                new java.util.function.Supplier<ListEffectivePropertiesRequest.Builder>() {
+                    @Override
+                    public ListEffectivePropertiesRequest.Builder get() {
+                        return ListEffectivePropertiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEffectivePropertiesResponse, String>() {
+                    @Override
+                    public String apply(ListEffectivePropertiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEffectivePropertiesRequest.Builder>,
+                        ListEffectivePropertiesRequest>() {
+                    @Override
+                    public ListEffectivePropertiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEffectivePropertiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEffectivePropertiesRequest, ListEffectivePropertiesResponse>() {
+                    @Override
+                    public ListEffectivePropertiesResponse apply(
+                            ListEffectivePropertiesRequest request) {
+                        return client.listEffectiveProperties(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEffectivePropertiesResponse,
+                        java.util.List<
+                                com.oracle.bmc.loganalytics.model.EffectivePropertySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.loganalytics.model.EffectivePropertySummary>
+                            apply(ListEffectivePropertiesResponse response) {
+                        return response.getEffectivePropertyCollection().getItems();
                     }
                 });
     }
@@ -2374,6 +2492,124 @@ public class LogAnalyticsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listOverlappingRecalls operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOverlappingRecallsResponse> listOverlappingRecallsResponseIterator(
+            final ListOverlappingRecallsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOverlappingRecallsRequest.Builder, ListOverlappingRecallsRequest,
+                ListOverlappingRecallsResponse>(
+                new java.util.function.Supplier<ListOverlappingRecallsRequest.Builder>() {
+                    @Override
+                    public ListOverlappingRecallsRequest.Builder get() {
+                        return ListOverlappingRecallsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOverlappingRecallsResponse, String>() {
+                    @Override
+                    public String apply(ListOverlappingRecallsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOverlappingRecallsRequest.Builder>,
+                        ListOverlappingRecallsRequest>() {
+                    @Override
+                    public ListOverlappingRecallsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOverlappingRecallsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOverlappingRecallsRequest, ListOverlappingRecallsResponse>() {
+                    @Override
+                    public ListOverlappingRecallsResponse apply(
+                            ListOverlappingRecallsRequest request) {
+                        return client.listOverlappingRecalls(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.OverlappingRecallSummary} objects
+     * contained in responses from the listOverlappingRecalls operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.OverlappingRecallSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.OverlappingRecallSummary>
+            listOverlappingRecallsRecordIterator(final ListOverlappingRecallsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOverlappingRecallsRequest.Builder, ListOverlappingRecallsRequest,
+                ListOverlappingRecallsResponse,
+                com.oracle.bmc.loganalytics.model.OverlappingRecallSummary>(
+                new java.util.function.Supplier<ListOverlappingRecallsRequest.Builder>() {
+                    @Override
+                    public ListOverlappingRecallsRequest.Builder get() {
+                        return ListOverlappingRecallsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOverlappingRecallsResponse, String>() {
+                    @Override
+                    public String apply(ListOverlappingRecallsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOverlappingRecallsRequest.Builder>,
+                        ListOverlappingRecallsRequest>() {
+                    @Override
+                    public ListOverlappingRecallsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOverlappingRecallsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOverlappingRecallsRequest, ListOverlappingRecallsResponse>() {
+                    @Override
+                    public ListOverlappingRecallsResponse apply(
+                            ListOverlappingRecallsRequest request) {
+                        return client.listOverlappingRecalls(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOverlappingRecallsResponse,
+                        java.util.List<
+                                com.oracle.bmc.loganalytics.model.OverlappingRecallSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.loganalytics.model.OverlappingRecallSummary>
+                            apply(ListOverlappingRecallsResponse response) {
+                        return response.getOverlappingRecallCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listParserFunctions operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2715,6 +2951,123 @@ public class LogAnalyticsPaginators {
                                     com.oracle.bmc.loganalytics.model.LogAnalyticsParserSummary>
                             apply(ListParsersResponse response) {
                         return response.getLogAnalyticsParserCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPropertiesMetadata operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPropertiesMetadataResponse> listPropertiesMetadataResponseIterator(
+            final ListPropertiesMetadataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPropertiesMetadataRequest.Builder, ListPropertiesMetadataRequest,
+                ListPropertiesMetadataResponse>(
+                new java.util.function.Supplier<ListPropertiesMetadataRequest.Builder>() {
+                    @Override
+                    public ListPropertiesMetadataRequest.Builder get() {
+                        return ListPropertiesMetadataRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPropertiesMetadataResponse, String>() {
+                    @Override
+                    public String apply(ListPropertiesMetadataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPropertiesMetadataRequest.Builder>,
+                        ListPropertiesMetadataRequest>() {
+                    @Override
+                    public ListPropertiesMetadataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPropertiesMetadataRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPropertiesMetadataRequest, ListPropertiesMetadataResponse>() {
+                    @Override
+                    public ListPropertiesMetadataResponse apply(
+                            ListPropertiesMetadataRequest request) {
+                        return client.listPropertiesMetadata(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loganalytics.model.PropertyMetadataSummary} objects
+     * contained in responses from the listPropertiesMetadata operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loganalytics.model.PropertyMetadataSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.loganalytics.model.PropertyMetadataSummary>
+            listPropertiesMetadataRecordIterator(final ListPropertiesMetadataRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPropertiesMetadataRequest.Builder, ListPropertiesMetadataRequest,
+                ListPropertiesMetadataResponse,
+                com.oracle.bmc.loganalytics.model.PropertyMetadataSummary>(
+                new java.util.function.Supplier<ListPropertiesMetadataRequest.Builder>() {
+                    @Override
+                    public ListPropertiesMetadataRequest.Builder get() {
+                        return ListPropertiesMetadataRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPropertiesMetadataResponse, String>() {
+                    @Override
+                    public String apply(ListPropertiesMetadataResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPropertiesMetadataRequest.Builder>,
+                        ListPropertiesMetadataRequest>() {
+                    @Override
+                    public ListPropertiesMetadataRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPropertiesMetadataRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPropertiesMetadataRequest, ListPropertiesMetadataResponse>() {
+                    @Override
+                    public ListPropertiesMetadataResponse apply(
+                            ListPropertiesMetadataRequest request) {
+                        return client.listPropertiesMetadata(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPropertiesMetadataResponse,
+                        java.util.List<
+                                com.oracle.bmc.loganalytics.model.PropertyMetadataSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.loganalytics.model.PropertyMetadataSummary>
+                            apply(ListPropertiesMetadataResponse response) {
+                        return response.getPropertyMetadataSummaryCollection().getItems();
                     }
                 });
     }

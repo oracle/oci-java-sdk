@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -45,6 +45,10 @@ package com.oracle.bmc.core.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig.class,
         name = "INTEL_ICELAKE_BM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = InstanceConfigurationGenericBmLaunchInstancePlatformConfig.class,
+        name = "GENERIC_BM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig.class,
@@ -230,6 +234,7 @@ public class InstanceConfigurationLaunchInstancePlatformConfig
         AmdMilanBmGpu("AMD_MILAN_BM_GPU"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
+        GenericBm("GENERIC_BM"),
         IntelIcelakeBm("INTEL_ICELAKE_BM"),
         IntelSkylakeBm("INTEL_SKYLAKE_BM"),
         AmdVm("AMD_VM"),

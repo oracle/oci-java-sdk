@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -43,6 +43,17 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * The OCID of the Named Credential.
+     */
+    private String opcNamedCredentialId;
+
+    /**
+     * The OCID of the Named Credential.
+     */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
     }
 
     public static class Builder
@@ -98,6 +109,21 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * The OCID of the Named Credential.
+         */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -128,6 +154,7 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
             managedDatabaseId(o.getManagedDatabaseId());
             tablespaceName(o.getTablespaceName());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -163,8 +190,9 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.managedDatabaseId = managedDatabaseId;
             request.tablespaceName = tablespaceName;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetTablespaceRequest(managedDatabaseId, tablespaceName, opcRequestId);
+            // new GetTablespaceRequest(managedDatabaseId, tablespaceName, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -176,7 +204,8 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .tablespaceName(tablespaceName)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -195,6 +224,7 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
         sb.append(",tablespaceName=").append(String.valueOf(this.tablespaceName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -212,7 +242,8 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return super.equals(o)
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(this.tablespaceName, other.tablespaceName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -226,6 +257,11 @@ public class GetTablespaceRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.tablespaceName == null ? 43 : this.tablespaceName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

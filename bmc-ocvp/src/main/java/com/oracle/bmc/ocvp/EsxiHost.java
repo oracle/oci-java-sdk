@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -13,7 +13,7 @@ import com.oracle.bmc.ocvp.responses.*;
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public interface EsxiHost extends AutoCloseable {
 
     /**
@@ -118,6 +118,19 @@ public interface EsxiHost extends AutoCloseable {
     GetEsxiHostResponse getEsxiHost(GetEsxiHostRequest request);
 
     /**
+     * In-place upgrade a ESXi host.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/InplaceUpgradeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InplaceUpgrade API.
+     */
+    InplaceUpgradeResponse inplaceUpgrade(InplaceUpgradeRequest request);
+
+    /**
      * Lists the ESXi hosts in the specified SDDC. The list can be filtered
      * by Compute instance OCID or ESXi display name.
      * <p>
@@ -137,6 +150,19 @@ public interface EsxiHost extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListEsxiHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEsxiHosts API.
      */
     ListEsxiHostsResponse listEsxiHosts(ListEsxiHostsRequest request);
+
+    /**
+     * Replace a faulty ESXi host whose underlying bare metal is broken
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ReplaceHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReplaceHost API.
+     */
+    ReplaceHostResponse replaceHost(ReplaceHostRequest request);
 
     /**
      * Swap billing between two Active ESXi hosts.

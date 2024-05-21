@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -69,6 +69,17 @@ public class DeleteLogAnalyticsEmBridgeRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * If true, delete entities created by this bridge
+     */
+    private Boolean isDeleteEntities;
+
+    /**
+     * If true, delete entities created by this bridge
+     */
+    public Boolean getIsDeleteEntities() {
+        return isDeleteEntities;
     }
 
     public static class Builder
@@ -153,6 +164,21 @@ public class DeleteLogAnalyticsEmBridgeRequest
         }
 
         /**
+         * If true, delete entities created by this bridge
+         */
+        private Boolean isDeleteEntities = null;
+
+        /**
+         * If true, delete entities created by this bridge
+         * @param isDeleteEntities the value to set
+         * @return this builder instance
+         */
+        public Builder isDeleteEntities(Boolean isDeleteEntities) {
+            this.isDeleteEntities = isDeleteEntities;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -184,6 +210,7 @@ public class DeleteLogAnalyticsEmBridgeRequest
             logAnalyticsEmBridgeId(o.getLogAnalyticsEmBridgeId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isDeleteEntities(o.getIsDeleteEntities());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -220,8 +247,9 @@ public class DeleteLogAnalyticsEmBridgeRequest
             request.logAnalyticsEmBridgeId = logAnalyticsEmBridgeId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isDeleteEntities = isDeleteEntities;
             return request;
-            // new DeleteLogAnalyticsEmBridgeRequest(namespaceName, logAnalyticsEmBridgeId, ifMatch, opcRequestId);
+            // new DeleteLogAnalyticsEmBridgeRequest(namespaceName, logAnalyticsEmBridgeId, ifMatch, opcRequestId, isDeleteEntities);
         }
     }
 
@@ -234,7 +262,8 @@ public class DeleteLogAnalyticsEmBridgeRequest
                 .namespaceName(namespaceName)
                 .logAnalyticsEmBridgeId(logAnalyticsEmBridgeId)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isDeleteEntities(isDeleteEntities);
     }
 
     /**
@@ -254,6 +283,7 @@ public class DeleteLogAnalyticsEmBridgeRequest
         sb.append(",logAnalyticsEmBridgeId=").append(String.valueOf(this.logAnalyticsEmBridgeId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isDeleteEntities=").append(String.valueOf(this.isDeleteEntities));
         sb.append(")");
         return sb.toString();
     }
@@ -273,7 +303,8 @@ public class DeleteLogAnalyticsEmBridgeRequest
                 && java.util.Objects.equals(
                         this.logAnalyticsEmBridgeId, other.logAnalyticsEmBridgeId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isDeleteEntities, other.isDeleteEntities);
     }
 
     @Override
@@ -290,6 +321,9 @@ public class DeleteLogAnalyticsEmBridgeRequest
                                 : this.logAnalyticsEmBridgeId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDeleteEntities == null ? 43 : this.isDeleteEntities.hashCode());
         return result;
     }
 }

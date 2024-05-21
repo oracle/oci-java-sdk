@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the category associated with the support ticket.
+ * Details about the service category associated with the support ticket.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,13 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the category.
+         * Unique identifier for the service category.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
         private String categoryKey;
 
         /**
-         * Unique identifier for the category.
+         * Unique identifier for the service category.
          * @param categoryKey the value to set
          * @return this builder
          **/
@@ -45,13 +45,13 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The name of the category. For example, {@code Compute} or {@code Identity}.
+         * The name of the service category. For example, {@code Compute} or {@code Identity}.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the category. For example, {@code Compute} or {@code Identity}.
+         * The name of the service category. For example, {@code Compute} or {@code Identity}.
          * @param name the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Unique identifier for the category.
+     * Unique identifier for the service category.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryKey")
     private final String categoryKey;
 
     /**
-     * Unique identifier for the category.
+     * Unique identifier for the service category.
      * @return the value
      **/
     public String getCategoryKey() {
@@ -110,13 +110,13 @@ public final class Category extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The name of the category. For example, {@code Compute} or {@code Identity}.
+     * The name of the service category. For example, {@code Compute} or {@code Identity}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the category. For example, {@code Compute} or {@code Identity}.
+     * The name of the service category. For example, {@code Compute} or {@code Identity}.
      * @return the value
      **/
     public String getName() {

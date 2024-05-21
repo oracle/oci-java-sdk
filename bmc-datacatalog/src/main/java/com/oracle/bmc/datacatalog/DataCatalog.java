@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -62,6 +62,31 @@ public interface DataCatalog extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Catalog resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddCatalogLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCatalogLock API.
+     */
+    AddCatalogLockResponse addCatalogLock(AddCatalogLockRequest request);
+
+    /**
+     * Adds a lock to a CatalogPrivateEndpoint resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddCatalogPrivateEndpointLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddCatalogPrivateEndpointLock API.
+     */
+    AddCatalogPrivateEndpointLockResponse addCatalogPrivateEndpointLock(
+            AddCatalogPrivateEndpointLockRequest request);
+
+    /**
      * Add data selector pattern to the data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -74,6 +99,18 @@ public interface DataCatalog extends AutoCloseable {
     AddDataSelectorPatternsResponse addDataSelectorPatterns(AddDataSelectorPatternsRequest request);
 
     /**
+     * Adds a lock to a Metastore resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AddMetastoreLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMetastoreLock API.
+     */
+    AddMetastoreLockResponse addMetastoreLock(AddMetastoreLockRequest request);
+
+    /**
      * Associate the custom property for the given type
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -84,6 +121,33 @@ public interface DataCatalog extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AssociateCustomPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AssociateCustomProperty API.
      */
     AssociateCustomPropertyResponse associateCustomProperty(AssociateCustomPropertyRequest request);
+
+    /**
+     * Export technical objects from a Data Asset in Excel format. Returns details about the job which actually performs the export.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AsynchronousExportDataAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AsynchronousExportDataAsset API.
+     */
+    AsynchronousExportDataAssetResponse asynchronousExportDataAsset(
+            AsynchronousExportDataAssetRequest request);
+
+    /**
+     * Exports the contents of a glossary in Excel format. Returns details about the job which actually performs the export.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/AsynchronousExportGlossaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AsynchronousExportGlossary API.
+     */
+    AsynchronousExportGlossaryResponse asynchronousExportGlossary(
+            AsynchronousExportGlossaryRequest request);
 
     /**
      * Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
@@ -685,6 +749,18 @@ public interface DataCatalog extends AutoCloseable {
     ExportGlossaryResponse exportGlossary(ExportGlossaryRequest request);
 
     /**
+     * Returns lineage for a given entity object.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/FetchEntityLineageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchEntityLineage API.
+     */
+    FetchEntityLineageResponse fetchEntityLineage(FetchEntityLineageRequest request);
+
+    /**
      * Gets a specific entity attribute by key.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1020,6 +1096,18 @@ public interface DataCatalog extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportGlossaryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportGlossary API.
      */
     ImportGlossaryResponse importGlossary(ImportGlossaryRequest request);
+
+    /**
+     * Imports lineage metadata. Returns details about the job that performs the import.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportLineageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportLineage API.
+     */
+    ImportLineageResponse importLineage(ImportLineageRequest request);
 
     /**
      * List the physical entities aggregated by this logical entity.
@@ -1456,6 +1544,31 @@ public interface DataCatalog extends AutoCloseable {
     RecommendationsResponse recommendations(RecommendationsRequest request);
 
     /**
+     * Removes a lock from a Catalog resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveCatalogLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCatalogLock API.
+     */
+    RemoveCatalogLockResponse removeCatalogLock(RemoveCatalogLockRequest request);
+
+    /**
+     * Removes a lock from a CatalogPrivateEndpoint resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveCatalogPrivateEndpointLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveCatalogPrivateEndpointLock API.
+     */
+    RemoveCatalogPrivateEndpointLockResponse removeCatalogPrivateEndpointLock(
+            RemoveCatalogPrivateEndpointLockRequest request);
+
+    /**
      * Remove data selector pattern from the data asset.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1467,6 +1580,18 @@ public interface DataCatalog extends AutoCloseable {
      */
     RemoveDataSelectorPatternsResponse removeDataSelectorPatterns(
             RemoveDataSelectorPatternsRequest request);
+
+    /**
+     * Removes a lock from a Metastore resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/RemoveMetastoreLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMetastoreLock API.
+     */
+    RemoveMetastoreLockResponse removeMetastoreLock(RemoveMetastoreLockRequest request);
 
     /**
      * Returns a list of search results within a data catalog.

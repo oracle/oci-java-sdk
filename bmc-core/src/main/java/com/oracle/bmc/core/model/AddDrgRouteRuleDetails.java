@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -61,7 +61,7 @@ public final class AddDrgRouteRuleDetails
          * traffic. Only CIDR_BLOCK values are allowed.
          * <p>
          * Potential values:
-         *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+         *   * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
          *   or {@code 2001:0db8:0123:45::/56}.
          *
          **/
@@ -73,7 +73,7 @@ public final class AddDrgRouteRuleDetails
          * traffic. Only CIDR_BLOCK values are allowed.
          * <p>
          * Potential values:
-         *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+         *   * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
          *   or {@code 2001:0db8:0123:45::/56}.
          *
          * @param destination the value to set
@@ -206,7 +206,7 @@ public final class AddDrgRouteRuleDetails
      * traffic. Only CIDR_BLOCK values are allowed.
      * <p>
      * Potential values:
-     *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+     *   * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
      *   or {@code 2001:0db8:0123:45::/56}.
      *
      **/
@@ -218,7 +218,7 @@ public final class AddDrgRouteRuleDetails
      * traffic. Only CIDR_BLOCK values are allowed.
      * <p>
      * Potential values:
-     *   * IP address range in CIDR notation. This can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+     *   * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: {@code 192.168.1.0/24}
      *   or {@code 2001:0db8:0123:45::/56}.
      *
      * @return the value

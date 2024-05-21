@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Details about a shape for a container Instance.
+ * Details about a shape for a container instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -65,14 +65,14 @@ public final class ContainerInstanceShapeSummary
             return this;
         }
         /**
-         * A short description of the Instance's processor (CPU).
+         * A short description of the container instance's processor (CPU).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
         /**
-         * A short description of the Instance's processor (CPU).
+         * A short description of the container instance's processor (CPU).
          *
          * @param processorDescription the value to set
          * @return this builder
@@ -177,14 +177,14 @@ public final class ContainerInstanceShapeSummary
     }
 
     /**
-     * A short description of the Instance's processor (CPU).
+     * A short description of the container instance's processor (CPU).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
     /**
-     * A short description of the Instance's processor (CPU).
+     * A short description of the container instance's processor (CPU).
      *
      * @return the value
      **/

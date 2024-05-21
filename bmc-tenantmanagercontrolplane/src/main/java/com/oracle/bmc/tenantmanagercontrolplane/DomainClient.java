@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class DomainClient implements Domain {
     /**
      * Service instance for Domain.
@@ -431,7 +431,8 @@ public class DomainClient implements Domain {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -601,7 +602,7 @@ public class DomainClient implements Domain {
                         "Domain",
                         "DeleteDomain",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/DeleteDomain");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainResponse> transformer =
                 DeleteDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -636,7 +637,7 @@ public class DomainClient implements Domain {
                         "Domain",
                         "GetDomain",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/GetDomain");
         java.util.function.Function<javax.ws.rs.core.Response, GetDomainResponse> transformer =
                 GetDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -671,7 +672,7 @@ public class DomainClient implements Domain {
                         "Domain",
                         "ListDomains",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/ListDomains");
         java.util.function.Function<javax.ws.rs.core.Response, ListDomainsResponse> transformer =
                 ListDomainsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -706,7 +707,7 @@ public class DomainClient implements Domain {
                         "Domain",
                         "UpdateDomain",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/Domain/UpdateDomain");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainResponse> transformer =
                 UpdateDomainConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

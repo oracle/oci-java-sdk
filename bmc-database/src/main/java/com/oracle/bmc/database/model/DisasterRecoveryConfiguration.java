@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -25,22 +25,25 @@ public final class DisasterRecoveryConfiguration
     @java.beans.ConstructorProperties({
         "disasterRecoveryType",
         "timeSnapshotStandbyEnabledTill",
-        "isSnapshotStandby"
+        "isSnapshotStandby",
+        "isReplicateAutomaticBackups"
     })
     public DisasterRecoveryConfiguration(
             DisasterRecoveryType disasterRecoveryType,
             java.util.Date timeSnapshotStandbyEnabledTill,
-            Boolean isSnapshotStandby) {
+            Boolean isSnapshotStandby,
+            Boolean isReplicateAutomaticBackups) {
         super();
         this.disasterRecoveryType = disasterRecoveryType;
         this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
         this.isSnapshotStandby = isSnapshotStandby;
+        this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
          * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
          * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
@@ -49,7 +52,7 @@ public final class DisasterRecoveryConfiguration
         private DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+         * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
          * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
          * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
@@ -96,6 +99,22 @@ public final class DisasterRecoveryConfiguration
             this.__explicitlySet__.add("isSnapshotStandby");
             return this;
         }
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+        private Boolean isReplicateAutomaticBackups;
+
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         * @param isReplicateAutomaticBackups the value to set
+         * @return this builder
+         **/
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            this.__explicitlySet__.add("isReplicateAutomaticBackups");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -105,7 +124,8 @@ public final class DisasterRecoveryConfiguration
                     new DisasterRecoveryConfiguration(
                             this.disasterRecoveryType,
                             this.timeSnapshotStandbyEnabledTill,
-                            this.isSnapshotStandby);
+                            this.isSnapshotStandby,
+                            this.isReplicateAutomaticBackups);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -123,6 +143,9 @@ public final class DisasterRecoveryConfiguration
             if (model.wasPropertyExplicitlySet("isSnapshotStandby")) {
                 this.isSnapshotStandby(model.getIsSnapshotStandby());
             }
+            if (model.wasPropertyExplicitlySet("isReplicateAutomaticBackups")) {
+                this.isReplicateAutomaticBackups(model.getIsReplicateAutomaticBackups());
+            }
             return this;
         }
     }
@@ -139,7 +162,7 @@ public final class DisasterRecoveryConfiguration
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
@@ -190,7 +213,7 @@ public final class DisasterRecoveryConfiguration
         }
     };
     /**
-     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
@@ -199,7 +222,7 @@ public final class DisasterRecoveryConfiguration
     private final DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+     * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
@@ -239,6 +262,20 @@ public final class DisasterRecoveryConfiguration
         return isSnapshotStandby;
     }
 
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+    private final Boolean isReplicateAutomaticBackups;
+
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * @return the value
+     **/
+    public Boolean getIsReplicateAutomaticBackups() {
+        return isReplicateAutomaticBackups;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -257,6 +294,8 @@ public final class DisasterRecoveryConfiguration
         sb.append(", timeSnapshotStandbyEnabledTill=")
                 .append(String.valueOf(this.timeSnapshotStandbyEnabledTill));
         sb.append(", isSnapshotStandby=").append(String.valueOf(this.isSnapshotStandby));
+        sb.append(", isReplicateAutomaticBackups=")
+                .append(String.valueOf(this.isReplicateAutomaticBackups));
         sb.append(")");
         return sb.toString();
     }
@@ -275,6 +314,8 @@ public final class DisasterRecoveryConfiguration
                 && java.util.Objects.equals(
                         this.timeSnapshotStandbyEnabledTill, other.timeSnapshotStandbyEnabledTill)
                 && java.util.Objects.equals(this.isSnapshotStandby, other.isSnapshotStandby)
+                && java.util.Objects.equals(
+                        this.isReplicateAutomaticBackups, other.isReplicateAutomaticBackups)
                 && super.equals(other);
     }
 
@@ -295,6 +336,11 @@ public final class DisasterRecoveryConfiguration
         result =
                 (result * PRIME)
                         + (this.isSnapshotStandby == null ? 43 : this.isSnapshotStandby.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReplicateAutomaticBackups == null
+                                ? 43
+                                : this.isReplicateAutomaticBackups.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

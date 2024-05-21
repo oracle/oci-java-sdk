@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
 
 /**
- * The properties that define a email domain.
- * A Email Domain contains configuration used to assert responsibility for emails sent from that domain.
+ * The properties that define an email domain.
+ * An email domain contains configuration used to assert responsibility for emails sent from that domain.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,6 +28,8 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
         "lifecycleState",
         "activeDkimId",
         "isSpf",
+        "domainVerificationStatus",
+        "domainVerificationId",
         "description",
         "timeCreated",
         "freeformTags",
@@ -41,6 +43,8 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
             LifecycleState lifecycleState,
             String activeDkimId,
             Boolean isSpf,
+            DomainVerificationStatusType domainVerificationStatus,
+            String domainVerificationId,
             String description,
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
@@ -53,6 +57,8 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
         this.lifecycleState = lifecycleState;
         this.activeDkimId = activeDkimId;
         this.isSpf = isSpf;
+        this.domainVerificationStatus = domainVerificationStatus;
+        this.domainVerificationId = domainVerificationId;
         this.description = description;
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
@@ -65,7 +71,7 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The name of the email domain in the Internet Domain Name System (DNS).
          * <p>
-         * Example: {@code example.net}
+         * Example: {@code mydomain.example.com}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -74,7 +80,7 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The name of the email domain in the Internet Domain Name System (DNS).
          * <p>
-         * Example: {@code example.net}
+         * Example: {@code mydomain.example.com}
          *
          * @param name the value to set
          * @return this builder
@@ -177,13 +183,46 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The description of a email domain.
+         * The current domain verification status.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationStatus")
+        private DomainVerificationStatusType domainVerificationStatus;
+
+        /**
+         * The current domain verification status.
+         * @param domainVerificationStatus the value to set
+         * @return this builder
+         **/
+        public Builder domainVerificationStatus(
+                DomainVerificationStatusType domainVerificationStatus) {
+            this.domainVerificationStatus = domainVerificationStatus;
+            this.__explicitlySet__.add("domainVerificationStatus");
+            return this;
+        }
+        /**
+         * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationId")
+        private String domainVerificationId;
+
+        /**
+         * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+         * @param domainVerificationId the value to set
+         * @return this builder
+         **/
+        public Builder domainVerificationId(String domainVerificationId) {
+            this.domainVerificationId = domainVerificationId;
+            this.__explicitlySet__.add("domainVerificationId");
+            return this;
+        }
+        /**
+         * The description of an email domain.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of a email domain.
+         * The description of an email domain.
          * @param description the value to set
          * @return this builder
          **/
@@ -298,6 +337,8 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.lifecycleState,
                             this.activeDkimId,
                             this.isSpf,
+                            this.domainVerificationStatus,
+                            this.domainVerificationId,
                             this.description,
                             this.timeCreated,
                             this.freeformTags,
@@ -328,6 +369,12 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("isSpf")) {
                 this.isSpf(model.getIsSpf());
+            }
+            if (model.wasPropertyExplicitlySet("domainVerificationStatus")) {
+                this.domainVerificationStatus(model.getDomainVerificationStatus());
+            }
+            if (model.wasPropertyExplicitlySet("domainVerificationId")) {
+                this.domainVerificationId(model.getDomainVerificationId());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -362,7 +409,7 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      * <p>
-     * Example: {@code example.net}
+     * Example: {@code mydomain.example.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -371,7 +418,7 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      * <p>
-     * Example: {@code example.net}
+     * Example: {@code mydomain.example.com}
      *
      * @return the value
      **/
@@ -514,13 +561,41 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The description of a email domain.
+     * The current domain verification status.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationStatus")
+    private final DomainVerificationStatusType domainVerificationStatus;
+
+    /**
+     * The current domain verification status.
+     * @return the value
+     **/
+    public DomainVerificationStatusType getDomainVerificationStatus() {
+        return domainVerificationStatus;
+    }
+
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationId")
+    private final String domainVerificationId;
+
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * @return the value
+     **/
+    public String getDomainVerificationId() {
+        return domainVerificationId;
+    }
+
+    /**
+     * The description of an email domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of a email domain.
+     * The description of an email domain.
      * @return the value
      **/
     public String getDescription() {
@@ -631,6 +706,9 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", activeDkimId=").append(String.valueOf(this.activeDkimId));
         sb.append(", isSpf=").append(String.valueOf(this.isSpf));
+        sb.append(", domainVerificationStatus=")
+                .append(String.valueOf(this.domainVerificationStatus));
+        sb.append(", domainVerificationId=").append(String.valueOf(this.domainVerificationId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -656,6 +734,9 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.activeDkimId, other.activeDkimId)
                 && java.util.Objects.equals(this.isSpf, other.isSpf)
+                && java.util.Objects.equals(
+                        this.domainVerificationStatus, other.domainVerificationStatus)
+                && java.util.Objects.equals(this.domainVerificationId, other.domainVerificationId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -678,6 +759,16 @@ public final class EmailDomain extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.activeDkimId == null ? 43 : this.activeDkimId.hashCode());
         result = (result * PRIME) + (this.isSpf == null ? 43 : this.isSpf.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainVerificationStatus == null
+                                ? 43
+                                : this.domainVerificationStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainVerificationId == null
+                                ? 43
+                                : this.domainVerificationId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

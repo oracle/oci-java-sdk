@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -64,6 +64,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         PipelineRunCreate("PIPELINE_RUN_CREATE"),
         PipelineRunCancel("PIPELINE_RUN_CANCEL"),
         PipelineRunDelete("PIPELINE_RUN_DELETE"),
+        PrivateEndpointCreate("PRIVATE_ENDPOINT_CREATE"),
+        PrivateEndpointDelete("PRIVATE_ENDPOINT_DELETE"),
+        PrivateEndpointMove("PRIVATE_ENDPOINT_MOVE"),
+        PrivateEndpointUpdate("PRIVATE_ENDPOINT_UPDATE"),
         ;
 
         private final String value;
@@ -154,10 +158,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page,
      * or items to return in a paginated "List" call.
-     * 1 is the minimum, 1000 is the maximum.
+     * 1 is the minimum, 100 is the maximum.
      * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: {@code 500}
+     * Example: {@code 50}
      *
      */
     private Integer limit;
@@ -165,10 +169,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * For list pagination. The maximum number of results per page,
      * or items to return in a paginated "List" call.
-     * 1 is the minimum, 1000 is the maximum.
+     * 1 is the minimum, 100 is the maximum.
      * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: {@code 500}
+     * Example: {@code 50}
      *
      */
     public Integer getLimit() {
@@ -380,10 +384,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page,
          * or items to return in a paginated "List" call.
-         * 1 is the minimum, 1000 is the maximum.
+         * 1 is the minimum, 100 is the maximum.
          * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          * <p>
-         * Example: {@code 500}
+         * Example: {@code 50}
          *
          */
         private Integer limit = null;
@@ -391,10 +395,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * For list pagination. The maximum number of results per page,
          * or items to return in a paginated "List" call.
-         * 1 is the minimum, 1000 is the maximum.
+         * 1 is the minimum, 100 is the maximum.
          * See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          * <p>
-         * Example: {@code 500}
+         * Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance

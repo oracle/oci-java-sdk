@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * An interface to a virtual network available to Containers on a Container Instance.
+ * An interface to a virtual network available to containers on a container instance.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -29,18 +29,18 @@ public final class ContainerVnic extends com.oracle.bmc.http.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The ID of the Virtual Network Interface Card (VNIC) over which
-         * Containers accessing this network can communicate with the
-         * larger Virtual Client Network.
+         * The identifier of the virtual network interface card (VNIC) over which
+         * the containers accessing this network can communicate with the
+         * larger virtual cloud network.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The ID of the Virtual Network Interface Card (VNIC) over which
-         * Containers accessing this network can communicate with the
-         * larger Virtual Client Network.
+         * The identifier of the virtual network interface card (VNIC) over which
+         * the containers accessing this network can communicate with the
+         * larger virtual cloud network.
          *
          * @param vnicId the value to set
          * @return this builder
@@ -83,18 +83,18 @@ public final class ContainerVnic extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The ID of the Virtual Network Interface Card (VNIC) over which
-     * Containers accessing this network can communicate with the
-     * larger Virtual Client Network.
+     * The identifier of the virtual network interface card (VNIC) over which
+     * the containers accessing this network can communicate with the
+     * larger virtual cloud network.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The ID of the Virtual Network Interface Card (VNIC) over which
-     * Containers accessing this network can communicate with the
-     * larger Virtual Client Network.
+     * The identifier of the virtual network interface card (VNIC) over which
+     * the containers accessing this network can communicate with the
+     * larger virtual cloud network.
      *
      * @return the value
      **/

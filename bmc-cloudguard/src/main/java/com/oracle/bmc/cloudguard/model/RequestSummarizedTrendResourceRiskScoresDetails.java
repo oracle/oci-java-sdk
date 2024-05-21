@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * ResourceRiskScores filter.
+ * Details for requesting summarized trend risk scores.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +33,13 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The filter type.
+         * The filter type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("filter")
         private ResourceRiskScoreDimension filter;
 
         /**
-         * The filter type.
+         * The filter type
          * @param filter the value to set
          * @return this builder
          **/
@@ -49,13 +49,13 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
             return this;
         }
         /**
-         * Id to be passed in to filter the risk scores.
+         * ID to be passed in to filter the risk scores
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
         /**
-         * Id to be passed in to filter the risk scores.
+         * ID to be passed in to filter the risk scores
          * @param filterId the value to set
          * @return this builder
          **/
@@ -101,13 +101,13 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
     }
 
     /**
-     * The filter type.
+     * The filter type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
     private final ResourceRiskScoreDimension filter;
 
     /**
-     * The filter type.
+     * The filter type
      * @return the value
      **/
     public ResourceRiskScoreDimension getFilter() {
@@ -115,13 +115,13 @@ public final class RequestSummarizedTrendResourceRiskScoresDetails
     }
 
     /**
-     * Id to be passed in to filter the risk scores.
+     * ID to be passed in to filter the risk scores
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
     /**
-     * Id to be passed in to filter the risk scores.
+     * ID to be passed in to filter the risk scores
      * @return the value
      **/
     public String getFilterId() {

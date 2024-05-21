@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.internal.http;
@@ -45,6 +45,30 @@ public class GetTraceConverter {
                         "apmDomainId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getApmDomainId()));
+
+        if (request.getTimeTraceStartedGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeTraceStartedGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeTraceStartedGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeTraceStartedLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeTraceStartedLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeTraceStartedLessThan()));
+        }
+
+        if (request.getTraceNamespace() != null) {
+            target =
+                    target.queryParam(
+                            "traceNamespace",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTraceNamespace().getValue()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

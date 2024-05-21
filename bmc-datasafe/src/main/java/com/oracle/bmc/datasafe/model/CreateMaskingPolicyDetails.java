@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -232,8 +232,7 @@ public final class CreateMaskingPolicyDetails
         /**
          * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
          * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-         * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
-         * recompile manually using UTL_RECOMP package.
+         * attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recompile")
@@ -242,8 +241,7 @@ public final class CreateMaskingPolicyDetails
         /**
          * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
          * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-         * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
-         * recompile manually using UTL_RECOMP package.
+         * attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
          *
          * @param recompile the value to set
          * @return this builder
@@ -564,8 +562,7 @@ public final class CreateMaskingPolicyDetails
     /**
      * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
      * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
-     * recompile manually using UTL_RECOMP package.
+     * attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recompile")
@@ -574,8 +571,7 @@ public final class CreateMaskingPolicyDetails
     /**
      * Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
      * 'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-     * attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
-     * recompile manually using UTL_RECOMP package.
+     * attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      *
      * @return the value
      **/

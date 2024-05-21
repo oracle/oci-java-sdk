@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The details of the Key that you wish to import.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -20,6 +20,8 @@ package com.oracle.bmc.keymanagement.model;
 public final class ImportKeyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "isAutoRotationEnabled",
+        "autoKeyRotationDetails",
         "compartmentId",
         "definedTags",
         "displayName",
@@ -29,6 +31,8 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
         "protectionMode"
     })
     public ImportKeyDetails(
+            Boolean isAutoRotationEnabled,
+            AutoKeyRotationDetails autoKeyRotationDetails,
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
@@ -37,6 +41,8 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
             WrappedImportKey wrappedImportKey,
             ProtectionMode protectionMode) {
         super();
+        this.isAutoRotationEnabled = isAutoRotationEnabled;
+        this.autoKeyRotationDetails = autoKeyRotationDetails;
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -48,6 +54,31 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+        private Boolean isAutoRotationEnabled;
+
+        /**
+         * A parameter specifying whether the auto key rotation is enabled or not.
+         * @param isAutoRotationEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isAutoRotationEnabled(Boolean isAutoRotationEnabled) {
+            this.isAutoRotationEnabled = isAutoRotationEnabled;
+            this.__explicitlySet__.add("isAutoRotationEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+        private AutoKeyRotationDetails autoKeyRotationDetails;
+
+        public Builder autoKeyRotationDetails(AutoKeyRotationDetails autoKeyRotationDetails) {
+            this.autoKeyRotationDetails = autoKeyRotationDetails;
+            this.__explicitlySet__.add("autoKeyRotationDetails");
+            return this;
+        }
         /**
          * The OCID of the compartment that contains this key.
          **/
@@ -178,6 +209,8 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
         public ImportKeyDetails build() {
             ImportKeyDetails model =
                     new ImportKeyDetails(
+                            this.isAutoRotationEnabled,
+                            this.autoKeyRotationDetails,
                             this.compartmentId,
                             this.definedTags,
                             this.displayName,
@@ -193,6 +226,12 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImportKeyDetails model) {
+            if (model.wasPropertyExplicitlySet("isAutoRotationEnabled")) {
+                this.isAutoRotationEnabled(model.getIsAutoRotationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoKeyRotationDetails")) {
+                this.autoKeyRotationDetails(model.getAutoKeyRotationDetails());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -227,6 +266,27 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotationEnabled")
+    private final Boolean isAutoRotationEnabled;
+
+    /**
+     * A parameter specifying whether the auto key rotation is enabled or not.
+     * @return the value
+     **/
+    public Boolean getIsAutoRotationEnabled() {
+        return isAutoRotationEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autoKeyRotationDetails")
+    private final AutoKeyRotationDetails autoKeyRotationDetails;
+
+    public AutoKeyRotationDetails getAutoKeyRotationDetails() {
+        return autoKeyRotationDetails;
     }
 
     /**
@@ -391,7 +451,9 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ImportKeyDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("isAutoRotationEnabled=").append(String.valueOf(this.isAutoRotationEnabled));
+        sb.append(", autoKeyRotationDetails=").append(String.valueOf(this.autoKeyRotationDetails));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -412,7 +474,10 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
         }
 
         ImportKeyDetails other = (ImportKeyDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.isAutoRotationEnabled, other.isAutoRotationEnabled)
+                && java.util.Objects.equals(
+                        this.autoKeyRotationDetails, other.autoKeyRotationDetails)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -426,6 +491,16 @@ public final class ImportKeyDetails extends com.oracle.bmc.http.internal.Explici
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotationEnabled == null
+                                ? 43
+                                : this.isAutoRotationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoKeyRotationDetails == null
+                                ? 43
+                                : this.autoKeyRotationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.retrier;
 
+import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
@@ -13,6 +14,7 @@ import java.util.function.Supplier;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
@@ -32,6 +34,24 @@ public class BmcGenericRetrierTest {
         // Second invocation returns success
         final Supplier<String> request = mock(Supplier.class);
         doThrow(new BmcException(httpStatusCode, serviceCode, "bar", "baz"))
+                .doReturn("success")
+                .when(request)
+                .get();
+        return request;
+    }
+
+    private Supplier<String> setupMockCallNotAllowedRequest() {
+        // First invocation throws exception
+        // Second invocation returns success
+        final Supplier<String> request = mock(Supplier.class);
+        doThrow(
+                        new BmcException(
+                                false,
+                                "CircuitBreaker Open",
+                                CallNotAllowedException.createCallNotAllowedException(
+                                        "CircuitBreaker 'default' is OPEN and does not permit further calls",
+                                        false),
+                                null))
                 .doReturn("success")
                 .when(request)
                 .get();
@@ -121,5 +141,37 @@ public class BmcGenericRetrierTest {
         }
 
         verify(request, times(1)).get();
+    }
+
+    @Test
+    public void noRetryForCircuitBreakerException() {
+        final Supplier<String> request = setupMockCallNotAllowedRequest();
+        final BmcGenericRetrier retrier =
+                new BmcGenericRetrier(
+                        RetryConfiguration
+                                .SDK_FAIL_FAST_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION);
+        try {
+            retrier.execute(request, Supplier::get);
+        } catch (BmcException e) {
+            assertTrue(e.getCause() instanceof CallNotAllowedException);
+        }
+
+        verify(request, times(1)).get();
+    }
+
+    @Test
+    public void retryForCircuitBreakerException() {
+        final Supplier<String> request = setupMockCallNotAllowedRequest();
+        final BmcGenericRetrier retrier =
+                new BmcGenericRetrier(
+                        RetryConfiguration
+                                .SDK_RETRY_ON_OPEN_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION);
+        try {
+            retrier.execute(request, Supplier::get);
+        } catch (BmcException e) {
+            assertTrue(e.getCause() instanceof CallNotAllowedException);
+        }
+
+        verify(request, times(2)).get();
     }
 }

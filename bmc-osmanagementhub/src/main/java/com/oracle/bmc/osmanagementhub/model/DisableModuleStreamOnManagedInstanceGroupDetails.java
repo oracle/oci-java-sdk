@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The work request details for the module stream operation on the managed instance group.
+ * Provides the details for disabling a module stream on a managed instance group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,25 +22,34 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class DisableModuleStreamOnManagedInstanceGroupDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"moduleName", "streamName", "workRequestDetails"})
+    @java.beans.ConstructorProperties({
+        "moduleName",
+        "streamName",
+        "softwareSourceId",
+        "workRequestDetails"
+    })
     public DisableModuleStreamOnManagedInstanceGroupDetails(
-            String moduleName, String streamName, WorkRequestDetails workRequestDetails) {
+            String moduleName,
+            String streamName,
+            String softwareSourceId,
+            WorkRequestDetails workRequestDetails) {
         super();
         this.moduleName = moduleName;
         this.streamName = streamName;
+        this.softwareSourceId = softwareSourceId;
         this.workRequestDetails = workRequestDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of a module.
+         * The name of the module.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
         /**
-         * The name of a module.
+         * The name of the module.
          * @param moduleName the value to set
          * @return this builder
          **/
@@ -65,6 +74,22 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
             this.__explicitlySet__.add("streamName");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
+        private String softwareSourceId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
+         * @param softwareSourceId the value to set
+         * @return this builder
+         **/
+        public Builder softwareSourceId(String softwareSourceId) {
+            this.softwareSourceId = softwareSourceId;
+            this.__explicitlySet__.add("softwareSourceId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestDetails")
         private WorkRequestDetails workRequestDetails;
@@ -81,7 +106,10 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
         public DisableModuleStreamOnManagedInstanceGroupDetails build() {
             DisableModuleStreamOnManagedInstanceGroupDetails model =
                     new DisableModuleStreamOnManagedInstanceGroupDetails(
-                            this.moduleName, this.streamName, this.workRequestDetails);
+                            this.moduleName,
+                            this.streamName,
+                            this.softwareSourceId,
+                            this.workRequestDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -95,6 +123,9 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
             }
             if (model.wasPropertyExplicitlySet("streamName")) {
                 this.streamName(model.getStreamName());
+            }
+            if (model.wasPropertyExplicitlySet("softwareSourceId")) {
+                this.softwareSourceId(model.getSoftwareSourceId());
             }
             if (model.wasPropertyExplicitlySet("workRequestDetails")) {
                 this.workRequestDetails(model.getWorkRequestDetails());
@@ -115,13 +146,13 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
     }
 
     /**
-     * The name of a module.
+     * The name of the module.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
     /**
-     * The name of a module.
+     * The name of the module.
      * @return the value
      **/
     public String getModuleName() {
@@ -140,6 +171,20 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
      **/
     public String getStreamName() {
         return streamName;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
+    private final String softwareSourceId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
+     * @return the value
+     **/
+    public String getSoftwareSourceId() {
+        return softwareSourceId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestDetails")
@@ -165,6 +210,7 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
         sb.append("super=").append(super.toString());
         sb.append("moduleName=").append(String.valueOf(this.moduleName));
         sb.append(", streamName=").append(String.valueOf(this.streamName));
+        sb.append(", softwareSourceId=").append(String.valueOf(this.softwareSourceId));
         sb.append(", workRequestDetails=").append(String.valueOf(this.workRequestDetails));
         sb.append(")");
         return sb.toString();
@@ -183,6 +229,7 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
                 (DisableModuleStreamOnManagedInstanceGroupDetails) o;
         return java.util.Objects.equals(this.moduleName, other.moduleName)
                 && java.util.Objects.equals(this.streamName, other.streamName)
+                && java.util.Objects.equals(this.softwareSourceId, other.softwareSourceId)
                 && java.util.Objects.equals(this.workRequestDetails, other.workRequestDetails)
                 && super.equals(other);
     }
@@ -193,6 +240,9 @@ public final class DisableModuleStreamOnManagedInstanceGroupDetails
         int result = 1;
         result = (result * PRIME) + (this.moduleName == null ? 43 : this.moduleName.hashCode());
         result = (result * PRIME) + (this.streamName == null ? 43 : this.streamName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareSourceId == null ? 43 : this.softwareSourceId.hashCode());
         result =
                 (result * PRIME)
                         + (this.workRequestDetails == null

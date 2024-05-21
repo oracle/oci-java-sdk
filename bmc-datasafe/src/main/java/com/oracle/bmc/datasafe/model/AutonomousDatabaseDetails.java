@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of the Oracle Autonomous Database to be registered as a target database in Data Safe.
+ * The details of the Autonomous Database to be registered as a target database in Data Safe.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -36,13 +36,13 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
             return this;
         }
         /**
-         * The OCID of the autonomous database registered as a target database in Data Safe.
+         * The OCID of the Autonomous Database registered as a target database in Data Safe.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
         /**
-         * The OCID of the autonomous database registered as a target database in Data Safe.
+         * The OCID of the Autonomous Database registered as a target database in Data Safe.
          * @param autonomousDatabaseId the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class AutonomousDatabaseDetails extends DatabaseDetails {
     }
 
     /**
-     * The OCID of the autonomous database registered as a target database in Data Safe.
+     * The OCID of the Autonomous Database registered as a target database in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
     private final String autonomousDatabaseId;
 
     /**
-     * The OCID of the autonomous database registered as a target database in Data Safe.
+     * The OCID of the Autonomous Database registered as a target database in Data Safe.
      * @return the value
      **/
     public String getAutonomousDatabaseId() {

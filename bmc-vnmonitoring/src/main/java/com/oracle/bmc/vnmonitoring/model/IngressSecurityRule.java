@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -28,7 +28,8 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
         "source",
         "sourceType",
         "tcpOptions",
-        "udpOptions"
+        "udpOptions",
+        "description"
     })
     public IngressSecurityRule(
             IcmpOptions icmpOptions,
@@ -37,7 +38,8 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
             String source,
             SourceType sourceType,
             TcpOptions tcpOptions,
-            UdpOptions udpOptions) {
+            UdpOptions udpOptions,
+            String description) {
         super();
         this.icmpOptions = icmpOptions;
         this.isStateless = isStateless;
@@ -46,6 +48,7 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
         this.sourceType = sourceType;
         this.tcpOptions = tcpOptions;
         this.udpOptions = udpOptions;
+        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -197,6 +200,24 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("udpOptions");
             return this;
         }
+        /**
+         * An optional description of your choice for the rule.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * An optional description of your choice for the rule.
+         *
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -210,7 +231,8 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
                             this.source,
                             this.sourceType,
                             this.tcpOptions,
-                            this.udpOptions);
+                            this.udpOptions,
+                            this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -239,6 +261,9 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("udpOptions")) {
                 this.udpOptions(model.getUdpOptions());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             return this;
         }
@@ -443,6 +468,22 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
         return udpOptions;
     }
 
+    /**
+     * An optional description of your choice for the rule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * An optional description of your choice for the rule.
+     *
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -464,6 +505,7 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", tcpOptions=").append(String.valueOf(this.tcpOptions));
         sb.append(", udpOptions=").append(String.valueOf(this.udpOptions));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -485,6 +527,7 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.tcpOptions, other.tcpOptions)
                 && java.util.Objects.equals(this.udpOptions, other.udpOptions)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -499,6 +542,7 @@ public final class IngressSecurityRule extends com.oracle.bmc.http.internal.Expl
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + (this.tcpOptions == null ? 43 : this.tcpOptions.hashCode());
         result = (result * PRIME) + (this.udpOptions == null ? 43 : this.udpOptions.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth;
@@ -81,6 +81,46 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(
                     AbstractFederationClientAuthenticationDetailsProviderBuilder.class);
+
+    /**
+     * A facade that makes Slf4j, which the OCI Java SDK uses, look like Java Unified Logging
+     * (JUL, hence JulFacade), which is what Jersey knows how to use.
+     */
+    private static class JulFacade extends java.util.logging.Logger {
+        JulFacade() {
+            super("Jersey", null);
+        }
+
+        @Override
+        public void log(java.util.logging.Level level, String msg) {
+            LOG.info(msg);
+        }
+    }
+
+    private static final String OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME =
+            "oci.javasdk.extra.imds.logs.enabled";
+
+    static {
+        String v = System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME, "false");
+        if (Boolean.parseBoolean(v)) {
+            LOG.info(
+                    "{} was set to {}, adding logging to AbstractFederationClientAuthenticationDetailsProviderBuilder.CLIENT",
+                    OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME,
+                    v);
+            javax.ws.rs.core.Feature feature =
+                    new org.glassfish.jersey.logging.LoggingFeature(
+                            new JulFacade(),
+                            java.util.logging.Level.INFO,
+                            org.glassfish.jersey.logging.LoggingFeature.Verbosity.PAYLOAD_TEXT,
+                            8192);
+            CLIENT.register(feature);
+        } else {
+            LOG.debug(
+                    "{} was set to {}, adding logging to AbstractFederationClientAuthenticationDetailsProviderBuilder.CLIENT",
+                    OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME,
+                    System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME));
+        }
+    }
 
     /**
      * Base url of metadata service.

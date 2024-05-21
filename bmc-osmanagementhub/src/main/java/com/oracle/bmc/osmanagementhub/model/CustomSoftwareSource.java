@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A custom software source contains a custom collection of packages.
+ * The object that defines a custom software source. A software source contains a collection of packages. For more information, see [Managing Software Sources](https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -78,6 +78,15 @@ public final class CustomSoftwareSource extends SoftwareSource {
         public Builder availability(Availability availability) {
             this.availability = availability;
             this.__explicitlySet__.add("availability");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityAtOci")
+        private Availability availabilityAtOci;
+
+        public Builder availabilityAtOci(Availability availabilityAtOci) {
+            this.availabilityAtOci = availabilityAtOci;
+            this.__explicitlySet__.add("availabilityAtOci");
             return this;
         }
 
@@ -171,6 +180,15 @@ public final class CustomSoftwareSource extends SoftwareSource {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
+        private Double size;
+
+        public Builder size(Double size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -199,13 +217,13 @@ public final class CustomSoftwareSource extends SoftwareSource {
             return this;
         }
         /**
-         * List of vendor software sources.
+         * List of vendor software sources that are used for the basis of the custom software source.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources.
+         * List of vendor software sources that are used for the basis of the custom software source.
          * @param vendorSoftwareSources the value to set
          * @return this builder
          **/
@@ -225,19 +243,67 @@ public final class CustomSoftwareSource extends SoftwareSource {
             return this;
         }
         /**
-         * Indicates whether service should automatically update the custom software source for the user.
+         * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticallyUpdated")
         private Boolean isAutomaticallyUpdated;
 
         /**
-         * Indicates whether service should automatically update the custom software source for the user.
+         * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
          * @param isAutomaticallyUpdated the value to set
          * @return this builder
          **/
         public Builder isAutomaticallyUpdated(Boolean isAutomaticallyUpdated) {
             this.isAutomaticallyUpdated = isAutomaticallyUpdated;
             this.__explicitlySet__.add("isAutomaticallyUpdated");
+            return this;
+        }
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+        private Boolean isAutoResolveDependencies;
+
+        /**
+         * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+         * @param isAutoResolveDependencies the value to set
+         * @return this builder
+         **/
+        public Builder isAutoResolveDependencies(Boolean isAutoResolveDependencies) {
+            this.isAutoResolveDependencies = isAutoResolveDependencies;
+            this.__explicitlySet__.add("isAutoResolveDependencies");
+            return this;
+        }
+        /**
+         * Indicates whether the service should create the software source from a list of packages provided by the user.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+        private Boolean isCreatedFromPackageList;
+
+        /**
+         * Indicates whether the service should create the software source from a list of packages provided by the user.
+         * @param isCreatedFromPackageList the value to set
+         * @return this builder
+         **/
+        public Builder isCreatedFromPackageList(Boolean isCreatedFromPackageList) {
+            this.isCreatedFromPackageList = isCreatedFromPackageList;
+            this.__explicitlySet__.add("isCreatedFromPackageList");
+            return this;
+        }
+        /**
+         * The packages in the software source.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("packages")
+        private java.util.List<String> packages;
+
+        /**
+         * The packages in the software source.
+         * @param packages the value to set
+         * @return this builder
+         **/
+        public Builder packages(java.util.List<String> packages) {
+            this.packages = packages;
+            this.__explicitlySet__.add("packages");
             return this;
         }
 
@@ -253,6 +319,7 @@ public final class CustomSoftwareSource extends SoftwareSource {
                             this.timeCreated,
                             this.description,
                             this.availability,
+                            this.availabilityAtOci,
                             this.repoId,
                             this.osFamily,
                             this.archType,
@@ -263,12 +330,16 @@ public final class CustomSoftwareSource extends SoftwareSource {
                             this.gpgKeyUrl,
                             this.gpgKeyId,
                             this.gpgKeyFingerprint,
+                            this.size,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
                             this.vendorSoftwareSources,
                             this.customSoftwareSourceFilter,
-                            this.isAutomaticallyUpdated);
+                            this.isAutomaticallyUpdated,
+                            this.isAutoResolveDependencies,
+                            this.isCreatedFromPackageList,
+                            this.packages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -294,6 +365,9 @@ public final class CustomSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("availability")) {
                 this.availability(model.getAvailability());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityAtOci")) {
+                this.availabilityAtOci(model.getAvailabilityAtOci());
             }
             if (model.wasPropertyExplicitlySet("repoId")) {
                 this.repoId(model.getRepoId());
@@ -325,6 +399,9 @@ public final class CustomSoftwareSource extends SoftwareSource {
             if (model.wasPropertyExplicitlySet("gpgKeyFingerprint")) {
                 this.gpgKeyFingerprint(model.getGpgKeyFingerprint());
             }
+            if (model.wasPropertyExplicitlySet("size")) {
+                this.size(model.getSize());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -342,6 +419,15 @@ public final class CustomSoftwareSource extends SoftwareSource {
             }
             if (model.wasPropertyExplicitlySet("isAutomaticallyUpdated")) {
                 this.isAutomaticallyUpdated(model.getIsAutomaticallyUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoResolveDependencies")) {
+                this.isAutoResolveDependencies(model.getIsAutoResolveDependencies());
+            }
+            if (model.wasPropertyExplicitlySet("isCreatedFromPackageList")) {
+                this.isCreatedFromPackageList(model.getIsCreatedFromPackageList());
+            }
+            if (model.wasPropertyExplicitlySet("packages")) {
+                this.packages(model.getPackages());
             }
             return this;
         }
@@ -366,6 +452,7 @@ public final class CustomSoftwareSource extends SoftwareSource {
             java.util.Date timeCreated,
             String description,
             Availability availability,
+            Availability availabilityAtOci,
             String repoId,
             OsFamily osFamily,
             ArchType archType,
@@ -376,12 +463,16 @@ public final class CustomSoftwareSource extends SoftwareSource {
             String gpgKeyUrl,
             String gpgKeyId,
             String gpgKeyFingerprint,
+            Double size,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<Id> vendorSoftwareSources,
             CustomSoftwareSourceFilter customSoftwareSourceFilter,
-            Boolean isAutomaticallyUpdated) {
+            Boolean isAutomaticallyUpdated,
+            Boolean isAutoResolveDependencies,
+            Boolean isCreatedFromPackageList,
+            java.util.List<String> packages) {
         super(
                 id,
                 compartmentId,
@@ -389,6 +480,7 @@ public final class CustomSoftwareSource extends SoftwareSource {
                 timeCreated,
                 description,
                 availability,
+                availabilityAtOci,
                 repoId,
                 osFamily,
                 archType,
@@ -399,22 +491,26 @@ public final class CustomSoftwareSource extends SoftwareSource {
                 gpgKeyUrl,
                 gpgKeyId,
                 gpgKeyFingerprint,
+                size,
                 freeformTags,
                 definedTags,
                 systemTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
         this.isAutomaticallyUpdated = isAutomaticallyUpdated;
+        this.isAutoResolveDependencies = isAutoResolveDependencies;
+        this.isCreatedFromPackageList = isCreatedFromPackageList;
+        this.packages = packages;
     }
 
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the custom software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources.
+     * List of vendor software sources that are used for the basis of the custom software source.
      * @return the value
      **/
     public java.util.List<Id> getVendorSoftwareSources() {
@@ -429,17 +525,59 @@ public final class CustomSoftwareSource extends SoftwareSource {
     }
 
     /**
-     * Indicates whether service should automatically update the custom software source for the user.
+     * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomaticallyUpdated")
     private final Boolean isAutomaticallyUpdated;
 
     /**
-     * Indicates whether service should automatically update the custom software source for the user.
+     * Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
      * @return the value
      **/
     public Boolean getIsAutomaticallyUpdated() {
         return isAutomaticallyUpdated;
+    }
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoResolveDependencies")
+    private final Boolean isAutoResolveDependencies;
+
+    /**
+     * Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
+     * @return the value
+     **/
+    public Boolean getIsAutoResolveDependencies() {
+        return isAutoResolveDependencies;
+    }
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCreatedFromPackageList")
+    private final Boolean isCreatedFromPackageList;
+
+    /**
+     * Indicates whether the service should create the software source from a list of packages provided by the user.
+     * @return the value
+     **/
+    public Boolean getIsCreatedFromPackageList() {
+        return isCreatedFromPackageList;
+    }
+
+    /**
+     * The packages in the software source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("packages")
+    private final java.util.List<String> packages;
+
+    /**
+     * The packages in the software source.
+     * @return the value
+     **/
+    public java.util.List<String> getPackages() {
+        return packages;
     }
 
     @Override
@@ -460,6 +598,11 @@ public final class CustomSoftwareSource extends SoftwareSource {
         sb.append(", customSoftwareSourceFilter=")
                 .append(String.valueOf(this.customSoftwareSourceFilter));
         sb.append(", isAutomaticallyUpdated=").append(String.valueOf(this.isAutomaticallyUpdated));
+        sb.append(", isAutoResolveDependencies=")
+                .append(String.valueOf(this.isAutoResolveDependencies));
+        sb.append(", isCreatedFromPackageList=")
+                .append(String.valueOf(this.isCreatedFromPackageList));
+        sb.append(", packages=").append(String.valueOf(this.packages));
         sb.append(")");
         return sb.toString();
     }
@@ -479,6 +622,11 @@ public final class CustomSoftwareSource extends SoftwareSource {
                         this.customSoftwareSourceFilter, other.customSoftwareSourceFilter)
                 && java.util.Objects.equals(
                         this.isAutomaticallyUpdated, other.isAutomaticallyUpdated)
+                && java.util.Objects.equals(
+                        this.isAutoResolveDependencies, other.isAutoResolveDependencies)
+                && java.util.Objects.equals(
+                        this.isCreatedFromPackageList, other.isCreatedFromPackageList)
+                && java.util.Objects.equals(this.packages, other.packages)
                 && super.equals(other);
     }
 
@@ -501,6 +649,17 @@ public final class CustomSoftwareSource extends SoftwareSource {
                         + (this.isAutomaticallyUpdated == null
                                 ? 43
                                 : this.isAutomaticallyUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoResolveDependencies == null
+                                ? 43
+                                : this.isAutoResolveDependencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCreatedFromPackageList == null
+                                ? 43
+                                : this.isCreatedFromPackageList.hashCode());
+        result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
         return result;
     }
 }

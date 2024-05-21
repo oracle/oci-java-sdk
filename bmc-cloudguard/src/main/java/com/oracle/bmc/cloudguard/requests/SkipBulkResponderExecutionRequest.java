@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,13 +14,13 @@ public class SkipBulkResponderExecutionRequest
                 com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails> {
 
     /**
-     * A list of responder execution ids to skip the execution
+     * A list of responder execution IDs to skip the execution
      */
     private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             skipBulkResponderExecutionDetails;
 
     /**
-     * A list of responder execution ids to skip the execution
+     * A list of responder execution IDs to skip the execution
      */
     public com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
             getSkipBulkResponderExecutionDetails() {
@@ -57,13 +57,13 @@ public class SkipBulkResponderExecutionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * A list of responder execution ids to skip the execution
+         * A list of responder execution IDs to skip the execution
          */
         private com.oracle.bmc.cloudguard.model.SkipBulkResponderExecutionDetails
                 skipBulkResponderExecutionDetails = null;
 
         /**
-         * A list of responder execution ids to skip the execution
+         * A list of responder execution IDs to skip the execution
          * @param skipBulkResponderExecutionDetails the value to set
          * @return this builder instance
          */

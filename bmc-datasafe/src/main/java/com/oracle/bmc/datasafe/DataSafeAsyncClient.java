@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe;
@@ -1177,6 +1177,68 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeDatabaseSecurityConfigCompartmentResponse>
+            changeDatabaseSecurityConfigCompartment(
+                    ChangeDatabaseSecurityConfigCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDatabaseSecurityConfigCompartmentRequest,
+                                    ChangeDatabaseSecurityConfigCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeDatabaseSecurityConfigCompartment");
+        final ChangeDatabaseSecurityConfigCompartmentRequest interceptedRequest =
+                ChangeDatabaseSecurityConfigCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseSecurityConfigCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeDatabaseSecurityConfigCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/ChangeDatabaseSecurityConfigCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseSecurityConfigCompartmentResponse>
+                transformer =
+                        ChangeDatabaseSecurityConfigCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeDatabaseSecurityConfigCompartmentRequest,
+                        ChangeDatabaseSecurityConfigCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeDatabaseSecurityConfigCompartmentRequest,
+                                ChangeDatabaseSecurityConfigCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeDatabaseSecurityConfigCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeDatabaseSecurityConfigCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeDatabaseSecurityConfigCompartmentRequest,
+                    ChangeDatabaseSecurityConfigCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeDiscoveryJobCompartmentResponse>
             changeDiscoveryJobCompartment(
                     ChangeDiscoveryJobCompartmentRequest request,
@@ -1340,6 +1402,69 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeMaskingPolicyCompartmentRequest, ChangeMaskingPolicyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMaskingPolicyHealthReportCompartmentResponse>
+            changeMaskingPolicyHealthReportCompartment(
+                    ChangeMaskingPolicyHealthReportCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMaskingPolicyHealthReportCompartmentRequest,
+                                    ChangeMaskingPolicyHealthReportCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMaskingPolicyHealthReportCompartment");
+        final ChangeMaskingPolicyHealthReportCompartmentRequest interceptedRequest =
+                ChangeMaskingPolicyHealthReportCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMaskingPolicyHealthReportCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeMaskingPolicyHealthReportCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ChangeMaskingPolicyHealthReportCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeMaskingPolicyHealthReportCompartmentResponse>
+                transformer =
+                        ChangeMaskingPolicyHealthReportCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMaskingPolicyHealthReportCompartmentRequest,
+                        ChangeMaskingPolicyHealthReportCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMaskingPolicyHealthReportCompartmentRequest,
+                                ChangeMaskingPolicyHealthReportCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeMaskingPolicyHealthReportCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMaskingPolicyHealthReportCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMaskingPolicyHealthReportCompartmentRequest,
+                    ChangeMaskingPolicyHealthReportCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1700,6 +1825,128 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSecurityPolicyCompartmentResponse>
+            changeSecurityPolicyCompartment(
+                    ChangeSecurityPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityPolicyCompartmentRequest,
+                                    ChangeSecurityPolicyCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSecurityPolicyCompartment");
+        final ChangeSecurityPolicyCompartmentRequest interceptedRequest =
+                ChangeSecurityPolicyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSecurityPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/ChangeSecurityPolicyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityPolicyCompartmentResponse>
+                transformer =
+                        ChangeSecurityPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecurityPolicyCompartmentRequest,
+                        ChangeSecurityPolicyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecurityPolicyCompartmentRequest,
+                                ChangeSecurityPolicyCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSecurityPolicyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecurityPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecurityPolicyCompartmentRequest,
+                    ChangeSecurityPolicyCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSecurityPolicyDeploymentCompartmentResponse>
+            changeSecurityPolicyDeploymentCompartment(
+                    ChangeSecurityPolicyDeploymentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityPolicyDeploymentCompartmentRequest,
+                                    ChangeSecurityPolicyDeploymentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSecurityPolicyDeploymentCompartment");
+        final ChangeSecurityPolicyDeploymentCompartmentRequest interceptedRequest =
+                ChangeSecurityPolicyDeploymentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityPolicyDeploymentCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSecurityPolicyDeploymentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/ChangeSecurityPolicyDeploymentCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeSecurityPolicyDeploymentCompartmentResponse>
+                transformer =
+                        ChangeSecurityPolicyDeploymentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecurityPolicyDeploymentCompartmentRequest,
+                        ChangeSecurityPolicyDeploymentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecurityPolicyDeploymentCompartmentRequest,
+                                ChangeSecurityPolicyDeploymentCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeSecurityPolicyDeploymentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeSecurityPolicyDeploymentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecurityPolicyDeploymentCompartmentRequest,
+                    ChangeSecurityPolicyDeploymentCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSensitiveDataModelCompartmentResponse>
             changeSensitiveDataModelCompartment(
                     ChangeSensitiveDataModelCompartmentRequest request,
@@ -1805,6 +2052,123 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeSensitiveTypeCompartmentRequest, ChangeSensitiveTypeCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSqlCollectionCompartmentResponse>
+            changeSqlCollectionCompartment(
+                    ChangeSqlCollectionCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSqlCollectionCompartmentRequest,
+                                    ChangeSqlCollectionCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSqlCollectionCompartment");
+        final ChangeSqlCollectionCompartmentRequest interceptedRequest =
+                ChangeSqlCollectionCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSqlCollectionCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSqlCollectionCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/ChangeSqlCollectionCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSqlCollectionCompartmentResponse>
+                transformer =
+                        ChangeSqlCollectionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSqlCollectionCompartmentRequest,
+                        ChangeSqlCollectionCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSqlCollectionCompartmentRequest,
+                                ChangeSqlCollectionCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSqlCollectionCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSqlCollectionCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSqlCollectionCompartmentRequest, ChangeSqlCollectionCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSqlFirewallPolicyCompartmentResponse>
+            changeSqlFirewallPolicyCompartment(
+                    ChangeSqlFirewallPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSqlFirewallPolicyCompartmentRequest,
+                                    ChangeSqlFirewallPolicyCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSqlFirewallPolicyCompartment");
+        final ChangeSqlFirewallPolicyCompartmentRequest interceptedRequest =
+                ChangeSqlFirewallPolicyCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSqlFirewallPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSqlFirewallPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/ChangeSqlFirewallPolicyCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSqlFirewallPolicyCompartmentResponse>
+                transformer =
+                        ChangeSqlFirewallPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSqlFirewallPolicyCompartmentRequest,
+                        ChangeSqlFirewallPolicyCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSqlFirewallPolicyCompartmentRequest,
+                                ChangeSqlFirewallPolicyCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSqlFirewallPolicyCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSqlFirewallPolicyCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSqlFirewallPolicyCompartmentRequest,
+                    ChangeSqlFirewallPolicyCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2486,6 +2850,60 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePeerTargetDatabaseResponse> createPeerTargetDatabase(
+            CreatePeerTargetDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePeerTargetDatabaseRequest, CreatePeerTargetDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async createPeerTargetDatabase");
+        final CreatePeerTargetDatabaseRequest interceptedRequest =
+                CreatePeerTargetDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "CreatePeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/CreatePeerTargetDatabase");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreatePeerTargetDatabaseResponse>
+                transformer =
+                        CreatePeerTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreatePeerTargetDatabaseRequest, CreatePeerTargetDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePeerTargetDatabaseRequest, CreatePeerTargetDatabaseResponse>,
+                        java.util.concurrent.Future<CreatePeerTargetDatabaseResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePeerTargetDatabaseDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePeerTargetDatabaseRequest, CreatePeerTargetDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReportDefinitionResponse> createReportDefinition(
             CreateReportDefinitionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2796,6 +3214,59 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateSensitiveTypeRequest, CreateSensitiveTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSqlCollectionResponse> createSqlCollection(
+            CreateSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSqlCollectionRequest, CreateSqlCollectionResponse>
+                    handler) {
+        LOG.trace("Called async createSqlCollection");
+        final CreateSqlCollectionRequest interceptedRequest =
+                CreateSqlCollectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSqlCollectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "CreateSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/CreateSqlCollection");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSqlCollectionResponse>
+                transformer =
+                        CreateSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSqlCollectionRequest, CreateSqlCollectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSqlCollectionRequest, CreateSqlCollectionResponse>,
+                        java.util.concurrent.Future<CreateSqlCollectionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSqlCollectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSqlCollectionRequest, CreateSqlCollectionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3410,6 +3881,59 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMaskingPolicyHealthReportResponse>
+            deleteMaskingPolicyHealthReport(
+                    DeleteMaskingPolicyHealthReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMaskingPolicyHealthReportRequest,
+                                    DeleteMaskingPolicyHealthReportResponse>
+                            handler) {
+        LOG.trace("Called async deleteMaskingPolicyHealthReport");
+        final DeleteMaskingPolicyHealthReportRequest interceptedRequest =
+                DeleteMaskingPolicyHealthReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMaskingPolicyHealthReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteMaskingPolicyHealthReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/DeleteMaskingPolicyHealthReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteMaskingPolicyHealthReportResponse>
+                transformer =
+                        DeleteMaskingPolicyHealthReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMaskingPolicyHealthReportRequest,
+                        DeleteMaskingPolicyHealthReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMaskingPolicyHealthReportRequest,
+                                DeleteMaskingPolicyHealthReportResponse>,
+                        java.util.concurrent.Future<DeleteMaskingPolicyHealthReportResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMaskingPolicyHealthReportRequest,
+                    DeleteMaskingPolicyHealthReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOnPremConnectorResponse> deleteOnPremConnector(
             DeleteOnPremConnectorRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3444,6 +3968,54 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteOnPremConnectorRequest, DeleteOnPremConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePeerTargetDatabaseResponse> deletePeerTargetDatabase(
+            DeletePeerTargetDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePeerTargetDatabaseRequest, DeletePeerTargetDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async deletePeerTargetDatabase");
+        final DeletePeerTargetDatabaseRequest interceptedRequest =
+                DeletePeerTargetDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeletePeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/DeletePeerTargetDatabase");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeletePeerTargetDatabaseResponse>
+                transformer =
+                        DeletePeerTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeletePeerTargetDatabaseRequest, DeletePeerTargetDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePeerTargetDatabaseRequest, DeletePeerTargetDatabaseResponse>,
+                        java.util.concurrent.Future<DeletePeerTargetDatabaseResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePeerTargetDatabaseRequest, DeletePeerTargetDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3734,6 +4306,101 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteSensitiveTypeRequest, DeleteSensitiveTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSqlCollectionResponse> deleteSqlCollection(
+            DeleteSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlCollectionRequest, DeleteSqlCollectionResponse>
+                    handler) {
+        LOG.trace("Called async deleteSqlCollection");
+        final DeleteSqlCollectionRequest interceptedRequest =
+                DeleteSqlCollectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSqlCollectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/DeleteSqlCollection");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSqlCollectionResponse>
+                transformer =
+                        DeleteSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSqlCollectionRequest, DeleteSqlCollectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSqlCollectionRequest, DeleteSqlCollectionResponse>,
+                        java.util.concurrent.Future<DeleteSqlCollectionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSqlCollectionRequest, DeleteSqlCollectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSqlFirewallPolicyResponse> deleteSqlFirewallPolicy(
+            DeleteSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlFirewallPolicyRequest, DeleteSqlFirewallPolicyResponse>
+                    handler) {
+        LOG.trace("Called async deleteSqlFirewallPolicy");
+        final DeleteSqlFirewallPolicyRequest interceptedRequest =
+                DeleteSqlFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/DeleteSqlFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteSqlFirewallPolicyResponse>
+                transformer =
+                        DeleteSqlFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSqlFirewallPolicyRequest, DeleteSqlFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSqlFirewallPolicyRequest, DeleteSqlFirewallPolicyResponse>,
+                        java.util.concurrent.Future<DeleteSqlFirewallPolicyResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSqlFirewallPolicyRequest, DeleteSqlFirewallPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4485,6 +5152,59 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateHealthReportResponse> generateHealthReport(
+            GenerateHealthReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateHealthReportRequest, GenerateHealthReportResponse>
+                    handler) {
+        LOG.trace("Called async generateHealthReport");
+        final GenerateHealthReportRequest interceptedRequest =
+                GenerateHealthReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateHealthReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GenerateHealthReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GenerateHealthReport");
+        final java.util.function.Function<javax.ws.rs.core.Response, GenerateHealthReportResponse>
+                transformer =
+                        GenerateHealthReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateHealthReportRequest, GenerateHealthReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateHealthReportRequest, GenerateHealthReportResponse>,
+                        java.util.concurrent.Future<GenerateHealthReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateHealthReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateHealthReportRequest, GenerateHealthReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GenerateMaskingPolicyForDownloadResponse>
             generateMaskingPolicyForDownload(
                     GenerateMaskingPolicyForDownloadRequest request,
@@ -4818,6 +5538,56 @@ public class DataSafeAsyncClient implements DataSafeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GenerateSensitiveDataModelForDownloadRequest,
                     GenerateSensitiveDataModelForDownloadResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateSqlFirewallPolicyResponse> generateSqlFirewallPolicy(
+            GenerateSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateSqlFirewallPolicyRequest, GenerateSqlFirewallPolicyResponse>
+                    handler) {
+        LOG.trace("Called async generateSqlFirewallPolicy");
+        final GenerateSqlFirewallPolicyRequest interceptedRequest =
+                GenerateSqlFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GenerateSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/GenerateSqlFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateSqlFirewallPolicyResponse>
+                transformer =
+                        GenerateSqlFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateSqlFirewallPolicyRequest, GenerateSqlFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateSqlFirewallPolicyRequest,
+                                GenerateSqlFirewallPolicyResponse>,
+                        java.util.concurrent.Future<GenerateSqlFirewallPolicyResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateSqlFirewallPolicyRequest, GenerateSqlFirewallPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5363,6 +6133,157 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDatabaseSecurityConfigResponse> getDatabaseSecurityConfig(
+            GetDatabaseSecurityConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetDatabaseSecurityConfigRequest, GetDatabaseSecurityConfigResponse>
+                    handler) {
+        LOG.trace("Called async getDatabaseSecurityConfig");
+        final GetDatabaseSecurityConfigRequest interceptedRequest =
+                GetDatabaseSecurityConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseSecurityConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetDatabaseSecurityConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/GetDatabaseSecurityConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseSecurityConfigResponse>
+                transformer =
+                        GetDatabaseSecurityConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDatabaseSecurityConfigRequest, GetDatabaseSecurityConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDatabaseSecurityConfigRequest,
+                                GetDatabaseSecurityConfigResponse>,
+                        java.util.concurrent.Future<GetDatabaseSecurityConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDatabaseSecurityConfigRequest, GetDatabaseSecurityConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseTableAccessEntryResponse>
+            getDatabaseTableAccessEntry(
+                    GetDatabaseTableAccessEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseTableAccessEntryRequest,
+                                    GetDatabaseTableAccessEntryResponse>
+                            handler) {
+        LOG.trace("Called async getDatabaseTableAccessEntry");
+        final GetDatabaseTableAccessEntryRequest interceptedRequest =
+                GetDatabaseTableAccessEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseTableAccessEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetDatabaseTableAccessEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseTableAccessEntry/GetDatabaseTableAccessEntry");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseTableAccessEntryResponse>
+                transformer =
+                        GetDatabaseTableAccessEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDatabaseTableAccessEntryRequest, GetDatabaseTableAccessEntryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDatabaseTableAccessEntryRequest,
+                                GetDatabaseTableAccessEntryResponse>,
+                        java.util.concurrent.Future<GetDatabaseTableAccessEntryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDatabaseTableAccessEntryRequest, GetDatabaseTableAccessEntryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDatabaseViewAccessEntryResponse>
+            getDatabaseViewAccessEntry(
+                    GetDatabaseViewAccessEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDatabaseViewAccessEntryRequest,
+                                    GetDatabaseViewAccessEntryResponse>
+                            handler) {
+        LOG.trace("Called async getDatabaseViewAccessEntry");
+        final GetDatabaseViewAccessEntryRequest interceptedRequest =
+                GetDatabaseViewAccessEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseViewAccessEntryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetDatabaseViewAccessEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseViewAccessEntry/GetDatabaseViewAccessEntry");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDatabaseViewAccessEntryResponse>
+                transformer =
+                        GetDatabaseViewAccessEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDatabaseViewAccessEntryRequest, GetDatabaseViewAccessEntryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDatabaseViewAccessEntryRequest,
+                                GetDatabaseViewAccessEntryResponse>,
+                        java.util.concurrent.Future<GetDatabaseViewAccessEntryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDatabaseViewAccessEntryRequest, GetDatabaseViewAccessEntryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDifferenceColumnResponse> getDifferenceColumn(
             GetDifferenceColumnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5643,6 +6564,57 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetMaskingPolicyHealthReportResponse>
+            getMaskingPolicyHealthReport(
+                    GetMaskingPolicyHealthReportRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMaskingPolicyHealthReportRequest,
+                                    GetMaskingPolicyHealthReportResponse>
+                            handler) {
+        LOG.trace("Called async getMaskingPolicyHealthReport");
+        final GetMaskingPolicyHealthReportRequest interceptedRequest =
+                GetMaskingPolicyHealthReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMaskingPolicyHealthReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetMaskingPolicyHealthReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GetMaskingPolicyHealthReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMaskingPolicyHealthReportResponse>
+                transformer =
+                        GetMaskingPolicyHealthReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMaskingPolicyHealthReportRequest, GetMaskingPolicyHealthReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMaskingPolicyHealthReportRequest,
+                                GetMaskingPolicyHealthReportResponse>,
+                        java.util.concurrent.Future<GetMaskingPolicyHealthReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMaskingPolicyHealthReportRequest, GetMaskingPolicyHealthReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMaskingReportResponse> getMaskingReport(
             GetMaskingReportRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5722,6 +6694,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetOnPremConnectorRequest, GetOnPremConnectorResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPeerTargetDatabaseResponse> getPeerTargetDatabase(
+            GetPeerTargetDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPeerTargetDatabaseRequest, GetPeerTargetDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async getPeerTargetDatabase");
+        final GetPeerTargetDatabaseRequest interceptedRequest =
+                GetPeerTargetDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetPeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/GetPeerTargetDatabase");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPeerTargetDatabaseResponse>
+                transformer =
+                        GetPeerTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPeerTargetDatabaseRequest, GetPeerTargetDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPeerTargetDatabaseRequest, GetPeerTargetDatabaseResponse>,
+                        java.util.concurrent.Future<GetPeerTargetDatabaseResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPeerTargetDatabaseRequest, GetPeerTargetDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6064,6 +7083,202 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSecurityPolicyResponse> getSecurityPolicy(
+            GetSecurityPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityPolicy");
+        final GetSecurityPolicyRequest interceptedRequest =
+                GetSecurityPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/GetSecurityPolicy");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityPolicyResponse>
+                transformer =
+                        GetSecurityPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSecurityPolicyRequest, GetSecurityPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityPolicyRequest, GetSecurityPolicyResponse>,
+                        java.util.concurrent.Future<GetSecurityPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityPolicyRequest, GetSecurityPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityPolicyDeploymentResponse>
+            getSecurityPolicyDeployment(
+                    GetSecurityPolicyDeploymentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityPolicyDeploymentRequest,
+                                    GetSecurityPolicyDeploymentResponse>
+                            handler) {
+        LOG.trace("Called async getSecurityPolicyDeployment");
+        final GetSecurityPolicyDeploymentRequest interceptedRequest =
+                GetSecurityPolicyDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/GetSecurityPolicyDeployment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSecurityPolicyDeploymentResponse>
+                transformer =
+                        GetSecurityPolicyDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityPolicyDeploymentRequest, GetSecurityPolicyDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityPolicyDeploymentRequest,
+                                GetSecurityPolicyDeploymentResponse>,
+                        java.util.concurrent.Future<GetSecurityPolicyDeploymentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityPolicyDeploymentRequest, GetSecurityPolicyDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityPolicyEntryStateResponse>
+            getSecurityPolicyEntryState(
+                    GetSecurityPolicyEntryStateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetSecurityPolicyEntryStateRequest,
+                                    GetSecurityPolicyEntryStateResponse>
+                            handler) {
+        LOG.trace("Called async getSecurityPolicyEntryState");
+        final GetSecurityPolicyEntryStateRequest interceptedRequest =
+                GetSecurityPolicyEntryStateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyEntryStateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyEntryState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyEntryState/GetSecurityPolicyEntryState");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSecurityPolicyEntryStateResponse>
+                transformer =
+                        GetSecurityPolicyEntryStateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityPolicyEntryStateRequest, GetSecurityPolicyEntryStateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityPolicyEntryStateRequest,
+                                GetSecurityPolicyEntryStateResponse>,
+                        java.util.concurrent.Future<GetSecurityPolicyEntryStateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityPolicyEntryStateRequest, GetSecurityPolicyEntryStateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecurityPolicyReportResponse> getSecurityPolicyReport(
+            GetSecurityPolicyReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecurityPolicyReportRequest, GetSecurityPolicyReportResponse>
+                    handler) {
+        LOG.trace("Called async getSecurityPolicyReport");
+        final GetSecurityPolicyReportRequest interceptedRequest =
+                GetSecurityPolicyReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyReport/GetSecurityPolicyReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSecurityPolicyReportResponse>
+                transformer =
+                        GetSecurityPolicyReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSecurityPolicyReportRequest, GetSecurityPolicyReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecurityPolicyReportRequest, GetSecurityPolicyReportResponse>,
+                        java.util.concurrent.Future<GetSecurityPolicyReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecurityPolicyReportRequest, GetSecurityPolicyReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSensitiveColumnResponse> getSensitiveColumn(
             GetSensitiveColumnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6190,6 +7405,99 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetSensitiveTypeRequest, GetSensitiveTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlCollectionResponse> getSqlCollection(
+            GetSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlCollectionRequest, GetSqlCollectionResponse>
+                    handler) {
+        LOG.trace("Called async getSqlCollection");
+        final GetSqlCollectionRequest interceptedRequest =
+                GetSqlCollectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlCollectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/GetSqlCollection");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSqlCollectionResponse>
+                transformer =
+                        GetSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSqlCollectionRequest, GetSqlCollectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSqlCollectionRequest, GetSqlCollectionResponse>,
+                        java.util.concurrent.Future<GetSqlCollectionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSqlCollectionRequest, GetSqlCollectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSqlFirewallPolicyResponse> getSqlFirewallPolicy(
+            GetSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlFirewallPolicyRequest, GetSqlFirewallPolicyResponse>
+                    handler) {
+        LOG.trace("Called async getSqlFirewallPolicy");
+        final GetSqlFirewallPolicyRequest interceptedRequest =
+                GetSqlFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/GetSqlFirewallPolicy");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSqlFirewallPolicyResponse>
+                transformer =
+                        GetSqlFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSqlFirewallPolicyRequest, GetSqlFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSqlFirewallPolicyRequest, GetSqlFirewallPolicyResponse>,
+                        java.util.concurrent.Future<GetSqlFirewallPolicyResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSqlFirewallPolicyRequest, GetSqlFirewallPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7249,6 +8557,160 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatabaseSecurityConfigsResponse>
+            listDatabaseSecurityConfigs(
+                    ListDatabaseSecurityConfigsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseSecurityConfigsRequest,
+                                    ListDatabaseSecurityConfigsResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseSecurityConfigs");
+        final ListDatabaseSecurityConfigsRequest interceptedRequest =
+                ListDatabaseSecurityConfigsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseSecurityConfigsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListDatabaseSecurityConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfigCollection/ListDatabaseSecurityConfigs");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseSecurityConfigsResponse>
+                transformer =
+                        ListDatabaseSecurityConfigsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseSecurityConfigsRequest, ListDatabaseSecurityConfigsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseSecurityConfigsRequest,
+                                ListDatabaseSecurityConfigsResponse>,
+                        java.util.concurrent.Future<ListDatabaseSecurityConfigsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseSecurityConfigsRequest, ListDatabaseSecurityConfigsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabaseTableAccessEntriesResponse>
+            listDatabaseTableAccessEntries(
+                    ListDatabaseTableAccessEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseTableAccessEntriesRequest,
+                                    ListDatabaseTableAccessEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseTableAccessEntries");
+        final ListDatabaseTableAccessEntriesRequest interceptedRequest =
+                ListDatabaseTableAccessEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseTableAccessEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListDatabaseTableAccessEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseTableAccessEntryCollection/ListDatabaseTableAccessEntries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseTableAccessEntriesResponse>
+                transformer =
+                        ListDatabaseTableAccessEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseTableAccessEntriesRequest,
+                        ListDatabaseTableAccessEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseTableAccessEntriesRequest,
+                                ListDatabaseTableAccessEntriesResponse>,
+                        java.util.concurrent.Future<ListDatabaseTableAccessEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseTableAccessEntriesRequest, ListDatabaseTableAccessEntriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatabaseViewAccessEntriesResponse>
+            listDatabaseViewAccessEntries(
+                    ListDatabaseViewAccessEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDatabaseViewAccessEntriesRequest,
+                                    ListDatabaseViewAccessEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listDatabaseViewAccessEntries");
+        final ListDatabaseViewAccessEntriesRequest interceptedRequest =
+                ListDatabaseViewAccessEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseViewAccessEntriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListDatabaseViewAccessEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseViewAccessEntryCollection/ListDatabaseViewAccessEntries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseViewAccessEntriesResponse>
+                transformer =
+                        ListDatabaseViewAccessEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDatabaseViewAccessEntriesRequest, ListDatabaseViewAccessEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDatabaseViewAccessEntriesRequest,
+                                ListDatabaseViewAccessEntriesResponse>,
+                        java.util.concurrent.Future<ListDatabaseViewAccessEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDatabaseViewAccessEntriesRequest, ListDatabaseViewAccessEntriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDifferenceColumnsResponse> listDifferenceColumns(
             ListDifferenceColumnsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7437,6 +8899,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListFindingAnalyticsResponse> listFindingAnalytics(
+            ListFindingAnalyticsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFindingAnalyticsRequest, ListFindingAnalyticsResponse>
+                    handler) {
+        LOG.trace("Called async listFindingAnalytics");
+        final ListFindingAnalyticsRequest interceptedRequest =
+                ListFindingAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFindingAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListFindingAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindingAnalytics");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListFindingAnalyticsResponse>
+                transformer =
+                        ListFindingAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFindingAnalyticsRequest, ListFindingAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFindingAnalyticsRequest, ListFindingAnalyticsResponse>,
+                        java.util.concurrent.Future<ListFindingAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFindingAnalyticsRequest, ListFindingAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFindingsResponse> listFindings(
             ListFindingsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListFindingsRequest, ListFindingsResponse>
@@ -7468,6 +8977,57 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFindingsRequest, ListFindingsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsChangeAuditLogsResponse>
+            listFindingsChangeAuditLogs(
+                    ListFindingsChangeAuditLogsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListFindingsChangeAuditLogsRequest,
+                                    ListFindingsChangeAuditLogsResponse>
+                            handler) {
+        LOG.trace("Called async listFindingsChangeAuditLogs");
+        final ListFindingsChangeAuditLogsRequest interceptedRequest =
+                ListFindingsChangeAuditLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFindingsChangeAuditLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListFindingsChangeAuditLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindingsChangeAuditLogs");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListFindingsChangeAuditLogsResponse>
+                transformer =
+                        ListFindingsChangeAuditLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListFindingsChangeAuditLogsRequest, ListFindingsChangeAuditLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListFindingsChangeAuditLogsRequest,
+                                ListFindingsChangeAuditLogsResponse>,
+                        java.util.concurrent.Future<ListFindingsChangeAuditLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListFindingsChangeAuditLogsRequest, ListFindingsChangeAuditLogsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7805,6 +9365,111 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListMaskingPolicyHealthReportLogsResponse>
+            listMaskingPolicyHealthReportLogs(
+                    ListMaskingPolicyHealthReportLogsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyHealthReportLogsRequest,
+                                    ListMaskingPolicyHealthReportLogsResponse>
+                            handler) {
+        LOG.trace("Called async listMaskingPolicyHealthReportLogs");
+        final ListMaskingPolicyHealthReportLogsRequest interceptedRequest =
+                ListMaskingPolicyHealthReportLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaskingPolicyHealthReportLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReportLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReportLogs");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMaskingPolicyHealthReportLogsResponse>
+                transformer =
+                        ListMaskingPolicyHealthReportLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMaskingPolicyHealthReportLogsRequest,
+                        ListMaskingPolicyHealthReportLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMaskingPolicyHealthReportLogsRequest,
+                                ListMaskingPolicyHealthReportLogsResponse>,
+                        java.util.concurrent.Future<ListMaskingPolicyHealthReportLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMaskingPolicyHealthReportLogsRequest,
+                    ListMaskingPolicyHealthReportLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMaskingPolicyHealthReportsResponse>
+            listMaskingPolicyHealthReports(
+                    ListMaskingPolicyHealthReportsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyHealthReportsRequest,
+                                    ListMaskingPolicyHealthReportsResponse>
+                            handler) {
+        LOG.trace("Called async listMaskingPolicyHealthReports");
+        final ListMaskingPolicyHealthReportsRequest interceptedRequest =
+                ListMaskingPolicyHealthReportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaskingPolicyHealthReportsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReports");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMaskingPolicyHealthReportsResponse>
+                transformer =
+                        ListMaskingPolicyHealthReportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMaskingPolicyHealthReportsRequest,
+                        ListMaskingPolicyHealthReportsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMaskingPolicyHealthReportsRequest,
+                                ListMaskingPolicyHealthReportsResponse>,
+                        java.util.concurrent.Future<ListMaskingPolicyHealthReportsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMaskingPolicyHealthReportsRequest, ListMaskingPolicyHealthReportsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMaskingReportsResponse> listMaskingReports(
             ListMaskingReportsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7931,6 +9596,55 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListOnPremConnectorsRequest, ListOnPremConnectorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPeerTargetDatabasesResponse> listPeerTargetDatabases(
+            ListPeerTargetDatabasesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPeerTargetDatabasesRequest, ListPeerTargetDatabasesResponse>
+                    handler) {
+        LOG.trace("Called async listPeerTargetDatabases");
+        final ListPeerTargetDatabasesRequest interceptedRequest =
+                ListPeerTargetDatabasesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPeerTargetDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListPeerTargetDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/ListPeerTargetDatabases");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListPeerTargetDatabasesResponse>
+                transformer =
+                        ListPeerTargetDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPeerTargetDatabasesRequest, ListPeerTargetDatabasesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPeerTargetDatabasesRequest, ListPeerTargetDatabasesResponse>,
+                        java.util.concurrent.Future<ListPeerTargetDatabasesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPeerTargetDatabasesRequest, ListPeerTargetDatabasesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8129,6 +9843,52 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListRoleGrantPathsResponse> listRoleGrantPaths(
+            ListRoleGrantPathsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListRoleGrantPathsRequest, ListRoleGrantPathsResponse>
+                    handler) {
+        LOG.trace("Called async listRoleGrantPaths");
+        final ListRoleGrantPathsRequest interceptedRequest =
+                ListRoleGrantPathsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRoleGrantPathsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListRoleGrantPaths",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RoleGrantPathCollection/ListRoleGrantPaths");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListRoleGrantPathsResponse>
+                transformer =
+                        ListRoleGrantPathsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListRoleGrantPathsRequest, ListRoleGrantPathsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListRoleGrantPathsRequest, ListRoleGrantPathsResponse>,
+                        java.util.concurrent.Future<ListRoleGrantPathsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListRoleGrantPathsRequest, ListRoleGrantPathsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRolesResponse> listRoles(
             ListRolesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse>
@@ -8303,6 +10063,302 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListSecurityAssessmentsRequest, ListSecurityAssessmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityFeatureAnalyticsResponse>
+            listSecurityFeatureAnalytics(
+                    ListSecurityFeatureAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityFeatureAnalyticsRequest,
+                                    ListSecurityFeatureAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityFeatureAnalytics");
+        final ListSecurityFeatureAnalyticsRequest interceptedRequest =
+                ListSecurityFeatureAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityFeatureAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityFeatureAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListSecurityFeatureAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityFeatureAnalyticsResponse>
+                transformer =
+                        ListSecurityFeatureAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityFeatureAnalyticsRequest, ListSecurityFeatureAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityFeatureAnalyticsRequest,
+                                ListSecurityFeatureAnalyticsResponse>,
+                        java.util.concurrent.Future<ListSecurityFeatureAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityFeatureAnalyticsRequest, ListSecurityFeatureAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityFeaturesResponse> listSecurityFeatures(
+            ListSecurityFeaturesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityFeaturesRequest, ListSecurityFeaturesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityFeatures");
+        final ListSecurityFeaturesRequest interceptedRequest =
+                ListSecurityFeaturesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityFeaturesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListSecurityFeatures");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityFeaturesResponse>
+                transformer =
+                        ListSecurityFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityFeaturesRequest, ListSecurityFeaturesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityFeaturesRequest, ListSecurityFeaturesResponse>,
+                        java.util.concurrent.Future<ListSecurityFeaturesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityFeaturesRequest, ListSecurityFeaturesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResponse> listSecurityPolicies(
+            ListSecurityPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityPolicies");
+        final ListSecurityPoliciesRequest interceptedRequest =
+                ListSecurityPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyCollection/ListSecurityPolicies");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityPoliciesResponse>
+                transformer =
+                        ListSecurityPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>,
+                        java.util.concurrent.Future<ListSecurityPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityPoliciesRequest, ListSecurityPoliciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPolicyDeploymentsResponse>
+            listSecurityPolicyDeployments(
+                    ListSecurityPolicyDeploymentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityPolicyDeploymentsRequest,
+                                    ListSecurityPolicyDeploymentsResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityPolicyDeployments");
+        final ListSecurityPolicyDeploymentsRequest interceptedRequest =
+                ListSecurityPolicyDeploymentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPolicyDeploymentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyDeployments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeploymentCollection/ListSecurityPolicyDeployments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityPolicyDeploymentsResponse>
+                transformer =
+                        ListSecurityPolicyDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityPolicyDeploymentsRequest, ListSecurityPolicyDeploymentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityPolicyDeploymentsRequest,
+                                ListSecurityPolicyDeploymentsResponse>,
+                        java.util.concurrent.Future<ListSecurityPolicyDeploymentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityPolicyDeploymentsRequest, ListSecurityPolicyDeploymentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPolicyEntryStatesResponse>
+            listSecurityPolicyEntryStates(
+                    ListSecurityPolicyEntryStatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSecurityPolicyEntryStatesRequest,
+                                    ListSecurityPolicyEntryStatesResponse>
+                            handler) {
+        LOG.trace("Called async listSecurityPolicyEntryStates");
+        final ListSecurityPolicyEntryStatesRequest interceptedRequest =
+                ListSecurityPolicyEntryStatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPolicyEntryStatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyEntryStates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyEntryStateCollection/ListSecurityPolicyEntryStates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityPolicyEntryStatesResponse>
+                transformer =
+                        ListSecurityPolicyEntryStatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityPolicyEntryStatesRequest, ListSecurityPolicyEntryStatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityPolicyEntryStatesRequest,
+                                ListSecurityPolicyEntryStatesResponse>,
+                        java.util.concurrent.Future<ListSecurityPolicyEntryStatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityPolicyEntryStatesRequest, ListSecurityPolicyEntryStatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPolicyReportsResponse> listSecurityPolicyReports(
+            ListSecurityPolicyReportsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityPolicyReportsRequest, ListSecurityPolicyReportsResponse>
+                    handler) {
+        LOG.trace("Called async listSecurityPolicyReports");
+        final ListSecurityPolicyReportsRequest interceptedRequest =
+                ListSecurityPolicyReportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPolicyReportsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyReportCollection/ListSecurityPolicyReports");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityPolicyReportsResponse>
+                transformer =
+                        ListSecurityPolicyReportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSecurityPolicyReportsRequest, ListSecurityPolicyReportsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecurityPolicyReportsRequest,
+                                ListSecurityPolicyReportsResponse>,
+                        java.util.concurrent.Future<ListSecurityPolicyReportsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecurityPolicyReportsRequest, ListSecurityPolicyReportsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8551,6 +10607,461 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSqlCollectionAnalyticsResponse>
+            listSqlCollectionAnalytics(
+                    ListSqlCollectionAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlCollectionAnalyticsRequest,
+                                    ListSqlCollectionAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlCollectionAnalytics");
+        final ListSqlCollectionAnalyticsRequest interceptedRequest =
+                ListSqlCollectionAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlCollectionAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlCollectionAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionAnalyticsCollection/ListSqlCollectionAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlCollectionAnalyticsResponse>
+                transformer =
+                        ListSqlCollectionAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlCollectionAnalyticsRequest, ListSqlCollectionAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlCollectionAnalyticsRequest,
+                                ListSqlCollectionAnalyticsResponse>,
+                        java.util.concurrent.Future<ListSqlCollectionAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlCollectionAnalyticsRequest, ListSqlCollectionAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlCollectionLogInsightsResponse>
+            listSqlCollectionLogInsights(
+                    ListSqlCollectionLogInsightsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlCollectionLogInsightsRequest,
+                                    ListSqlCollectionLogInsightsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlCollectionLogInsights");
+        final ListSqlCollectionLogInsightsRequest interceptedRequest =
+                ListSqlCollectionLogInsightsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlCollectionLogInsightsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlCollectionLogInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionLogInsightsCollection/ListSqlCollectionLogInsights");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlCollectionLogInsightsResponse>
+                transformer =
+                        ListSqlCollectionLogInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlCollectionLogInsightsRequest, ListSqlCollectionLogInsightsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlCollectionLogInsightsRequest,
+                                ListSqlCollectionLogInsightsResponse>,
+                        java.util.concurrent.Future<ListSqlCollectionLogInsightsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlCollectionLogInsightsRequest, ListSqlCollectionLogInsightsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlCollectionsResponse> listSqlCollections(
+            ListSqlCollectionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlCollectionsRequest, ListSqlCollectionsResponse>
+                    handler) {
+        LOG.trace("Called async listSqlCollections");
+        final ListSqlCollectionsRequest interceptedRequest =
+                ListSqlCollectionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlCollectionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlCollections",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionCollection/ListSqlCollections");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSqlCollectionsResponse>
+                transformer =
+                        ListSqlCollectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSqlCollectionsRequest, ListSqlCollectionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlCollectionsRequest, ListSqlCollectionsResponse>,
+                        java.util.concurrent.Future<ListSqlCollectionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlCollectionsRequest, ListSqlCollectionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallAllowedSqlAnalyticsResponse>
+            listSqlFirewallAllowedSqlAnalytics(
+                    ListSqlFirewallAllowedSqlAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallAllowedSqlAnalyticsRequest,
+                                    ListSqlFirewallAllowedSqlAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlFirewallAllowedSqlAnalytics");
+        final ListSqlFirewallAllowedSqlAnalyticsRequest interceptedRequest =
+                ListSqlFirewallAllowedSqlAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallAllowedSqlAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallAllowedSqlAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSqlAnalyticsCollection/ListSqlFirewallAllowedSqlAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallAllowedSqlAnalyticsResponse>
+                transformer =
+                        ListSqlFirewallAllowedSqlAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlFirewallAllowedSqlAnalyticsRequest,
+                        ListSqlFirewallAllowedSqlAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlFirewallAllowedSqlAnalyticsRequest,
+                                ListSqlFirewallAllowedSqlAnalyticsResponse>,
+                        java.util.concurrent.Future<ListSqlFirewallAllowedSqlAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlFirewallAllowedSqlAnalyticsRequest,
+                    ListSqlFirewallAllowedSqlAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallAllowedSqlsResponse>
+            listSqlFirewallAllowedSqls(
+                    ListSqlFirewallAllowedSqlsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallAllowedSqlsRequest,
+                                    ListSqlFirewallAllowedSqlsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlFirewallAllowedSqls");
+        final ListSqlFirewallAllowedSqlsRequest interceptedRequest =
+                ListSqlFirewallAllowedSqlsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallAllowedSqlsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallAllowedSqls",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSqlCollection/ListSqlFirewallAllowedSqls");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallAllowedSqlsResponse>
+                transformer =
+                        ListSqlFirewallAllowedSqlsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlFirewallAllowedSqlsRequest, ListSqlFirewallAllowedSqlsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlFirewallAllowedSqlsRequest,
+                                ListSqlFirewallAllowedSqlsResponse>,
+                        java.util.concurrent.Future<ListSqlFirewallAllowedSqlsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlFirewallAllowedSqlsRequest, ListSqlFirewallAllowedSqlsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallPoliciesResponse> listSqlFirewallPolicies(
+            ListSqlFirewallPoliciesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlFirewallPoliciesRequest, ListSqlFirewallPoliciesResponse>
+                    handler) {
+        LOG.trace("Called async listSqlFirewallPolicies");
+        final ListSqlFirewallPoliciesRequest interceptedRequest =
+                ListSqlFirewallPoliciesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallPoliciesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicyCollection/ListSqlFirewallPolicies");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallPoliciesResponse>
+                transformer =
+                        ListSqlFirewallPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlFirewallPoliciesRequest, ListSqlFirewallPoliciesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlFirewallPoliciesRequest, ListSqlFirewallPoliciesResponse>,
+                        java.util.concurrent.Future<ListSqlFirewallPoliciesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlFirewallPoliciesRequest, ListSqlFirewallPoliciesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallPolicyAnalyticsResponse>
+            listSqlFirewallPolicyAnalytics(
+                    ListSqlFirewallPolicyAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallPolicyAnalyticsRequest,
+                                    ListSqlFirewallPolicyAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlFirewallPolicyAnalytics");
+        final ListSqlFirewallPolicyAnalyticsRequest interceptedRequest =
+                ListSqlFirewallPolicyAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallPolicyAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallPolicyAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicyAnalyticsCollection/ListSqlFirewallPolicyAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallPolicyAnalyticsResponse>
+                transformer =
+                        ListSqlFirewallPolicyAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlFirewallPolicyAnalyticsRequest,
+                        ListSqlFirewallPolicyAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlFirewallPolicyAnalyticsRequest,
+                                ListSqlFirewallPolicyAnalyticsResponse>,
+                        java.util.concurrent.Future<ListSqlFirewallPolicyAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlFirewallPolicyAnalyticsRequest, ListSqlFirewallPolicyAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallViolationAnalyticsResponse>
+            listSqlFirewallViolationAnalytics(
+                    ListSqlFirewallViolationAnalyticsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSqlFirewallViolationAnalyticsRequest,
+                                    ListSqlFirewallViolationAnalyticsResponse>
+                            handler) {
+        LOG.trace("Called async listSqlFirewallViolationAnalytics");
+        final ListSqlFirewallViolationAnalyticsRequest interceptedRequest =
+                ListSqlFirewallViolationAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallViolationAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallViolationAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallViolationSummary/ListSqlFirewallViolationAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallViolationAnalyticsResponse>
+                transformer =
+                        ListSqlFirewallViolationAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlFirewallViolationAnalyticsRequest,
+                        ListSqlFirewallViolationAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlFirewallViolationAnalyticsRequest,
+                                ListSqlFirewallViolationAnalyticsResponse>,
+                        java.util.concurrent.Future<ListSqlFirewallViolationAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlFirewallViolationAnalyticsRequest,
+                    ListSqlFirewallViolationAnalyticsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSqlFirewallViolationsResponse> listSqlFirewallViolations(
+            ListSqlFirewallViolationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSqlFirewallViolationsRequest, ListSqlFirewallViolationsResponse>
+                    handler) {
+        LOG.trace("Called async listSqlFirewallViolations");
+        final ListSqlFirewallViolationsRequest interceptedRequest =
+                ListSqlFirewallViolationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallViolationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallViolations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallViolationSummary/ListSqlFirewallViolations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallViolationsResponse>
+                transformer =
+                        ListSqlFirewallViolationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSqlFirewallViolationsRequest, ListSqlFirewallViolationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSqlFirewallViolationsRequest,
+                                ListSqlFirewallViolationsResponse>,
+                        java.util.concurrent.Future<ListSqlFirewallViolationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSqlFirewallViolationsRequest, ListSqlFirewallViolationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTablesResponse> listTables(
             ListTablesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListTablesRequest, ListTablesResponse>
@@ -8681,6 +11192,54 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListTargetDatabasesRequest, ListTargetDatabasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserAccessAnalyticsResponse> listUserAccessAnalytics(
+            ListUserAccessAnalyticsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListUserAccessAnalyticsRequest, ListUserAccessAnalyticsResponse>
+                    handler) {
+        LOG.trace("Called async listUserAccessAnalytics");
+        final ListUserAccessAnalyticsRequest interceptedRequest =
+                ListUserAccessAnalyticsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserAccessAnalyticsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListUserAccessAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUserAccessAnalytics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListUserAccessAnalyticsResponse>
+                transformer =
+                        ListUserAccessAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListUserAccessAnalyticsRequest, ListUserAccessAnalyticsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListUserAccessAnalyticsRequest, ListUserAccessAnalyticsResponse>,
+                        java.util.concurrent.Future<ListUserAccessAnalyticsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListUserAccessAnalyticsRequest, ListUserAccessAnalyticsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9445,6 +12004,109 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PurgeSqlCollectionLogsResponse> purgeSqlCollectionLogs(
+            PurgeSqlCollectionLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PurgeSqlCollectionLogsRequest, PurgeSqlCollectionLogsResponse>
+                    handler) {
+        LOG.trace("Called async purgeSqlCollectionLogs");
+        final PurgeSqlCollectionLogsRequest interceptedRequest =
+                PurgeSqlCollectionLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PurgeSqlCollectionLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "PurgeSqlCollectionLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/PurgeSqlCollectionLogs");
+        final java.util.function.Function<javax.ws.rs.core.Response, PurgeSqlCollectionLogsResponse>
+                transformer =
+                        PurgeSqlCollectionLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PurgeSqlCollectionLogsRequest, PurgeSqlCollectionLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PurgeSqlCollectionLogsRequest, PurgeSqlCollectionLogsResponse>,
+                        java.util.concurrent.Future<PurgeSqlCollectionLogsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PurgeSqlCollectionLogsRequest, PurgeSqlCollectionLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshDatabaseSecurityConfigurationResponse>
+            refreshDatabaseSecurityConfiguration(
+                    RefreshDatabaseSecurityConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshDatabaseSecurityConfigurationRequest,
+                                    RefreshDatabaseSecurityConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async refreshDatabaseSecurityConfiguration");
+        final RefreshDatabaseSecurityConfigurationRequest interceptedRequest =
+                RefreshDatabaseSecurityConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshDatabaseSecurityConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshDatabaseSecurityConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/RefreshDatabaseSecurityConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshDatabaseSecurityConfigurationResponse>
+                transformer =
+                        RefreshDatabaseSecurityConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshDatabaseSecurityConfigurationRequest,
+                        RefreshDatabaseSecurityConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshDatabaseSecurityConfigurationRequest,
+                                RefreshDatabaseSecurityConfigurationResponse>,
+                        java.util.concurrent.Future<RefreshDatabaseSecurityConfigurationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshDatabaseSecurityConfigurationRequest,
+                    RefreshDatabaseSecurityConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshSecurityAssessmentResponse> refreshSecurityAssessment(
             RefreshSecurityAssessmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9487,6 +12149,108 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RefreshSecurityAssessmentRequest, RefreshSecurityAssessmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshSqlCollectionLogInsightsResponse>
+            refreshSqlCollectionLogInsights(
+                    RefreshSqlCollectionLogInsightsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RefreshSqlCollectionLogInsightsRequest,
+                                    RefreshSqlCollectionLogInsightsResponse>
+                            handler) {
+        LOG.trace("Called async refreshSqlCollectionLogInsights");
+        final RefreshSqlCollectionLogInsightsRequest interceptedRequest =
+                RefreshSqlCollectionLogInsightsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshSqlCollectionLogInsightsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshSqlCollectionLogInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/RefreshSqlCollectionLogInsights");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshSqlCollectionLogInsightsResponse>
+                transformer =
+                        RefreshSqlCollectionLogInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshSqlCollectionLogInsightsRequest,
+                        RefreshSqlCollectionLogInsightsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshSqlCollectionLogInsightsRequest,
+                                RefreshSqlCollectionLogInsightsResponse>,
+                        java.util.concurrent.Future<RefreshSqlCollectionLogInsightsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshSqlCollectionLogInsightsRequest,
+                    RefreshSqlCollectionLogInsightsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshTargetDatabaseResponse> refreshTargetDatabase(
+            RefreshTargetDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshTargetDatabaseRequest, RefreshTargetDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async refreshTargetDatabase");
+        final RefreshTargetDatabaseRequest interceptedRequest =
+                RefreshTargetDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/RefreshTargetDatabase");
+        final java.util.function.Function<javax.ws.rs.core.Response, RefreshTargetDatabaseResponse>
+                transformer =
+                        RefreshTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshTargetDatabaseRequest, RefreshTargetDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshTargetDatabaseRequest, RefreshTargetDatabaseResponse>,
+                        java.util.concurrent.Future<RefreshTargetDatabaseResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshTargetDatabaseRequest, RefreshTargetDatabaseResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9957,6 +12721,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartSqlCollectionResponse> startSqlCollection(
+            StartSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartSqlCollectionRequest, StartSqlCollectionResponse>
+                    handler) {
+        LOG.trace("Called async startSqlCollection");
+        final StartSqlCollectionRequest interceptedRequest =
+                StartSqlCollectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartSqlCollectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "StartSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/sqlCollection/StartSqlCollection");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartSqlCollectionResponse>
+                transformer =
+                        StartSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartSqlCollectionRequest, StartSqlCollectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartSqlCollectionRequest, StartSqlCollectionResponse>,
+                        java.util.concurrent.Future<StartSqlCollectionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartSqlCollectionRequest, StartSqlCollectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StopAuditTrailResponse> stopAuditTrail(
             StopAuditTrailRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9989,6 +12800,53 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StopAuditTrailRequest, StopAuditTrailResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSqlCollectionResponse> stopSqlCollection(
+            StopSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopSqlCollectionRequest, StopSqlCollectionResponse>
+                    handler) {
+        LOG.trace("Called async stopSqlCollection");
+        final StopSqlCollectionRequest interceptedRequest =
+                StopSqlCollectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopSqlCollectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "StopSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/StopSqlCollection");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopSqlCollectionResponse>
+                transformer =
+                        StopSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopSqlCollectionRequest, StopSqlCollectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopSqlCollectionRequest, StopSqlCollectionResponse>,
+                        java.util.concurrent.Future<StopSqlCollectionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopSqlCollectionRequest, StopSqlCollectionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -10469,6 +13327,112 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDatabaseSecurityConfigResponse>
+            updateDatabaseSecurityConfig(
+                    UpdateDatabaseSecurityConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateDatabaseSecurityConfigRequest,
+                                    UpdateDatabaseSecurityConfigResponse>
+                            handler) {
+        LOG.trace("Called async updateDatabaseSecurityConfig");
+        final UpdateDatabaseSecurityConfigRequest interceptedRequest =
+                UpdateDatabaseSecurityConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseSecurityConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateDatabaseSecurityConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/UpdateDatabaseSecurityConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateDatabaseSecurityConfigResponse>
+                transformer =
+                        UpdateDatabaseSecurityConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateDatabaseSecurityConfigRequest, UpdateDatabaseSecurityConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDatabaseSecurityConfigRequest,
+                                UpdateDatabaseSecurityConfigResponse>,
+                        java.util.concurrent.Future<UpdateDatabaseSecurityConfigResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDatabaseSecurityConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDatabaseSecurityConfigRequest, UpdateDatabaseSecurityConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFindingResponse> updateFinding(
+            UpdateFindingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateFindingRequest, UpdateFindingResponse>
+                    handler) {
+        LOG.trace("Called async updateFinding");
+        final UpdateFindingRequest interceptedRequest =
+                UpdateFindingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFindingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateFinding",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Finding/UpdateFinding");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFindingResponse>
+                transformer =
+                        UpdateFindingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateFindingRequest, UpdateFindingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateFindingRequest, UpdateFindingResponse>,
+                        java.util.concurrent.Future<UpdateFindingResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFindingDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateFindingRequest, UpdateFindingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLibraryMaskingFormatResponse>
             updateLibraryMaskingFormat(
                     UpdateLibraryMaskingFormatRequest request,
@@ -10738,6 +13702,110 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdatePeerTargetDatabaseResponse> updatePeerTargetDatabase(
+            UpdatePeerTargetDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePeerTargetDatabaseRequest, UpdatePeerTargetDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async updatePeerTargetDatabase");
+        final UpdatePeerTargetDatabaseRequest interceptedRequest =
+                UpdatePeerTargetDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdatePeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/UpdatePeerTargetDatabase");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdatePeerTargetDatabaseResponse>
+                transformer =
+                        UpdatePeerTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdatePeerTargetDatabaseRequest, UpdatePeerTargetDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePeerTargetDatabaseRequest, UpdatePeerTargetDatabaseResponse>,
+                        java.util.concurrent.Future<UpdatePeerTargetDatabaseResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePeerTargetDatabaseDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePeerTargetDatabaseRequest, UpdatePeerTargetDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateReportResponse> updateReport(
+            UpdateReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateReportRequest, UpdateReportResponse>
+                    handler) {
+        LOG.trace("Called async updateReport");
+        final UpdateReportRequest interceptedRequest =
+                UpdateReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/UpdateReport");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateReportResponse>
+                transformer =
+                        UpdateReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateReportRequest, UpdateReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateReportRequest, UpdateReportResponse>,
+                        java.util.concurrent.Future<UpdateReportResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateReportRequest, UpdateReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateReportDefinitionResponse> updateReportDefinition(
             UpdateReportDefinitionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -10902,6 +13970,115 @@ public class DataSafeAsyncClient implements DataSafeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSecurityPolicyResponse> updateSecurityPolicy(
+            UpdateSecurityPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>
+                    handler) {
+        LOG.trace("Called async updateSecurityPolicy");
+        final UpdateSecurityPolicyRequest interceptedRequest =
+                UpdateSecurityPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSecurityPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/UpdateSecurityPolicy");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityPolicyResponse>
+                transformer =
+                        UpdateSecurityPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>,
+                        java.util.concurrent.Future<UpdateSecurityPolicyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityPolicyRequest, UpdateSecurityPolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityPolicyDeploymentResponse>
+            updateSecurityPolicyDeployment(
+                    UpdateSecurityPolicyDeploymentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateSecurityPolicyDeploymentRequest,
+                                    UpdateSecurityPolicyDeploymentResponse>
+                            handler) {
+        LOG.trace("Called async updateSecurityPolicyDeployment");
+        final UpdateSecurityPolicyDeploymentRequest interceptedRequest =
+                UpdateSecurityPolicyDeploymentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityPolicyDeploymentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSecurityPolicyDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/UpdateSecurityPolicyDeployment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateSecurityPolicyDeploymentResponse>
+                transformer =
+                        UpdateSecurityPolicyDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSecurityPolicyDeploymentRequest,
+                        UpdateSecurityPolicyDeploymentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecurityPolicyDeploymentRequest,
+                                UpdateSecurityPolicyDeploymentResponse>,
+                        java.util.concurrent.Future<UpdateSecurityPolicyDeploymentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecurityPolicyDeploymentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecurityPolicyDeploymentRequest, UpdateSecurityPolicyDeploymentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSensitiveColumnResponse> updateSensitiveColumn(
             UpdateSensitiveColumnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -11046,6 +14223,111 @@ public class DataSafeAsyncClient implements DataSafeAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateSensitiveTypeRequest, UpdateSensitiveTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSqlCollectionResponse> updateSqlCollection(
+            UpdateSqlCollectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSqlCollectionRequest, UpdateSqlCollectionResponse>
+                    handler) {
+        LOG.trace("Called async updateSqlCollection");
+        final UpdateSqlCollectionRequest interceptedRequest =
+                UpdateSqlCollectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSqlCollectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/UpdateSqlCollection");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSqlCollectionResponse>
+                transformer =
+                        UpdateSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSqlCollectionRequest, UpdateSqlCollectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSqlCollectionRequest, UpdateSqlCollectionResponse>,
+                        java.util.concurrent.Future<UpdateSqlCollectionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSqlCollectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSqlCollectionRequest, UpdateSqlCollectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSqlFirewallPolicyResponse> updateSqlFirewallPolicy(
+            UpdateSqlFirewallPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSqlFirewallPolicyRequest, UpdateSqlFirewallPolicyResponse>
+                    handler) {
+        LOG.trace("Called async updateSqlFirewallPolicy");
+        final UpdateSqlFirewallPolicyRequest interceptedRequest =
+                UpdateSqlFirewallPolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/UpdateSqlFirewallPolicy");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateSqlFirewallPolicyResponse>
+                transformer =
+                        UpdateSqlFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateSqlFirewallPolicyRequest, UpdateSqlFirewallPolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSqlFirewallPolicyRequest, UpdateSqlFirewallPolicyResponse>,
+                        java.util.concurrent.Future<UpdateSqlFirewallPolicyResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSqlFirewallPolicyDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSqlFirewallPolicyRequest, UpdateSqlFirewallPolicyResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

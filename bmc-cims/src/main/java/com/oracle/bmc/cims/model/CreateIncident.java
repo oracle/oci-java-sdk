@@ -1,13 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
  * Details gathered during the creation of the support ticket.
- * <p>
- **Caution:** Avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -74,13 +72,17 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The Customer Support Identifier number for the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is required for technical support tickets and optional for limits and billing tickets.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * The Customer Support Identifier number for the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is required for technical support tickets and optional for limits and billing tickets.
+         *
          * @param csi the value to set
          * @return this builder
          **/
@@ -90,13 +92,13 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The kind of support ticket, such as a technical issue request.
+         * The kind of support ticket, such as a technical support request or a limit increase request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket, such as a technical issue request.
+         * The kind of support ticket, such as a technical support request or a limit increase request.
          * @param problemType the value to set
          * @return this builder
          **/
@@ -213,13 +215,17 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The Customer Support Identifier number for the support account.
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is required for technical support tickets and optional for limits and billing tickets.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * The Customer Support Identifier number for the support account.
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is required for technical support tickets and optional for limits and billing tickets.
+     *
      * @return the value
      **/
     public String getCsi() {
@@ -227,13 +233,13 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The kind of support ticket, such as a technical issue request.
+     * The kind of support ticket, such as a technical support request or a limit increase request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket, such as a technical issue request.
+     * The kind of support ticket, such as a technical support request or a limit increase request.
      * @return the value
      **/
     public ProblemType getProblemType() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -44,7 +44,9 @@ public final class CreateVmClusterDetails
         "dbServers",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "systemVersion",
+        "fileSystemConfigurationDetails"
     })
     public CreateVmClusterDetails(
             String compartmentId,
@@ -66,7 +68,9 @@ public final class CreateVmClusterDetails
             java.util.List<String> dbServers,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String systemVersion,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -88,6 +92,8 @@ public final class CreateVmClusterDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.systemVersion = systemVersion;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -424,6 +430,39 @@ public final class CreateVmClusterDetails
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * Operating system version of the image.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+        private String systemVersion;
+
+        /**
+         * Operating system version of the image.
+         * @param systemVersion the value to set
+         * @return this builder
+         **/
+        public Builder systemVersion(String systemVersion) {
+            this.systemVersion = systemVersion;
+            this.__explicitlySet__.add("systemVersion");
+            return this;
+        }
+        /**
+         * Details of the file system configuration of the VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         **/
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -450,7 +489,9 @@ public final class CreateVmClusterDetails
                             this.dbServers,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.systemVersion,
+                            this.fileSystemConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -518,6 +559,12 @@ public final class CreateVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("systemVersion")) {
+                this.systemVersion(model.getSystemVersion());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
             }
             return this;
         }
@@ -861,6 +908,34 @@ public final class CreateVmClusterDetails
         return dataCollectionOptions;
     }
 
+    /**
+     * Operating system version of the image.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemVersion")
+    private final String systemVersion;
+
+    /**
+     * Operating system version of the image.
+     * @return the value
+     **/
+    public String getSystemVersion() {
+        return systemVersion;
+    }
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     * @return the value
+     **/
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -897,6 +972,9 @@ public final class CreateVmClusterDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -934,6 +1012,9 @@ public final class CreateVmClusterDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.systemVersion, other.systemVersion)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -999,6 +1080,14 @@ public final class CreateVmClusterDetails
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.systemVersion == null ? 43 : this.systemVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

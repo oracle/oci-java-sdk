@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.internal.http;
@@ -88,6 +88,10 @@ public class ListDatabaseParametersConverter {
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
+        if (request.getOpcNamedCredentialId() != null) {
+            ib.header("opc-named-credential-id", request.getOpcNamedCredentialId());
         }
 
         if (client.getClientConfigurator() != null) {

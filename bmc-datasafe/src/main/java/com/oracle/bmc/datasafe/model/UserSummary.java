@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -34,7 +34,9 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         "userProfile",
         "timePasswordChanged",
         "userTypes",
-        "adminRoles"
+        "adminRoles",
+        "areAllSchemasAccessible",
+        "schemaList"
     })
     public UserSummary(
             String key,
@@ -48,7 +50,9 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             String userProfile,
             java.util.Date timePasswordChanged,
             java.util.List<UserTypes> userTypes,
-            java.util.List<AdminRoles> adminRoles) {
+            java.util.List<AdminRoles> adminRoles,
+            Boolean areAllSchemasAccessible,
+            java.util.List<String> schemaList) {
         super();
         this.key = key;
         this.userName = userName;
@@ -62,6 +66,8 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         this.timePasswordChanged = timePasswordChanged;
         this.userTypes = userTypes;
         this.adminRoles = adminRoles;
+        this.areAllSchemasAccessible = areAllSchemasAccessible;
+        this.schemaList = schemaList;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -115,13 +121,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The user account status.
+         * The status of the user account.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
         private AccountStatus accountStatus;
 
         /**
-         * The user account status.
+         * The status of the user account.
          * @param accountStatus the value to set
          * @return this builder
          **/
@@ -147,13 +153,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
         private java.util.Date timeLastLogin;
 
         /**
-         * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * @param timeLastLogin the value to set
          * @return this builder
          **/
@@ -163,13 +169,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
         private java.util.Date timeUserCreated;
 
         /**
-         * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * @param timeUserCreated the value to set
          * @return this builder
          **/
@@ -211,13 +217,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
         private java.util.Date timePasswordChanged;
 
         /**
-         * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * @param timePasswordChanged the value to set
          * @return this builder
          **/
@@ -272,6 +278,38 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("adminRoles");
             return this;
         }
+        /**
+         * Indicates whether the user has access to all the schemas.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("areAllSchemasAccessible")
+        private Boolean areAllSchemasAccessible;
+
+        /**
+         * Indicates whether the user has access to all the schemas.
+         * @param areAllSchemasAccessible the value to set
+         * @return this builder
+         **/
+        public Builder areAllSchemasAccessible(Boolean areAllSchemasAccessible) {
+            this.areAllSchemasAccessible = areAllSchemasAccessible;
+            this.__explicitlySet__.add("areAllSchemasAccessible");
+            return this;
+        }
+        /**
+         * The list of database schemas current user can access.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("schemaList")
+        private java.util.List<String> schemaList;
+
+        /**
+         * The list of database schemas current user can access.
+         * @param schemaList the value to set
+         * @return this builder
+         **/
+        public Builder schemaList(java.util.List<String> schemaList) {
+            this.schemaList = schemaList;
+            this.__explicitlySet__.add("schemaList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -290,7 +328,9 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.userProfile,
                             this.timePasswordChanged,
                             this.userTypes,
-                            this.adminRoles);
+                            this.adminRoles,
+                            this.areAllSchemasAccessible,
+                            this.schemaList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -334,6 +374,12 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("adminRoles")) {
                 this.adminRoles(model.getAdminRoles());
+            }
+            if (model.wasPropertyExplicitlySet("areAllSchemasAccessible")) {
+                this.areAllSchemasAccessible(model.getAreAllSchemasAccessible());
+            }
+            if (model.wasPropertyExplicitlySet("schemaList")) {
+                this.schemaList(model.getSchemaList());
             }
             return this;
         }
@@ -443,7 +489,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The user account status.
+     * The status of the user account.
      **/
     public enum AccountStatus {
         Open("OPEN"),
@@ -494,13 +540,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     };
     /**
-     * The user account status.
+     * The status of the user account.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountStatus")
     private final AccountStatus accountStatus;
 
     /**
-     * The user account status.
+     * The status of the user account.
      * @return the value
      **/
     public AccountStatus getAccountStatus() {
@@ -522,13 +568,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
     private final java.util.Date timeLastLogin;
 
     /**
-     * The date and time when the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user last logged in, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimeLastLogin() {
@@ -536,13 +582,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUserCreated")
     private final java.util.Date timeUserCreated;
 
     /**
-     * The date and time when the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user was created in the database, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimeUserCreated() {
@@ -626,13 +672,13 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
     private final java.util.Date timePasswordChanged;
 
     /**
-     * The date and time when the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user password was last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimePasswordChanged() {
@@ -780,6 +826,34 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         return adminRoles;
     }
 
+    /**
+     * Indicates whether the user has access to all the schemas.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areAllSchemasAccessible")
+    private final Boolean areAllSchemasAccessible;
+
+    /**
+     * Indicates whether the user has access to all the schemas.
+     * @return the value
+     **/
+    public Boolean getAreAllSchemasAccessible() {
+        return areAllSchemasAccessible;
+    }
+
+    /**
+     * The list of database schemas current user can access.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("schemaList")
+    private final java.util.List<String> schemaList;
+
+    /**
+     * The list of database schemas current user can access.
+     * @return the value
+     **/
+    public java.util.List<String> getSchemaList() {
+        return schemaList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -806,6 +880,9 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", timePasswordChanged=").append(String.valueOf(this.timePasswordChanged));
         sb.append(", userTypes=").append(String.valueOf(this.userTypes));
         sb.append(", adminRoles=").append(String.valueOf(this.adminRoles));
+        sb.append(", areAllSchemasAccessible=")
+                .append(String.valueOf(this.areAllSchemasAccessible));
+        sb.append(", schemaList=").append(String.valueOf(this.schemaList));
         sb.append(")");
         return sb.toString();
     }
@@ -832,6 +909,9 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.timePasswordChanged, other.timePasswordChanged)
                 && java.util.Objects.equals(this.userTypes, other.userTypes)
                 && java.util.Objects.equals(this.adminRoles, other.adminRoles)
+                && java.util.Objects.equals(
+                        this.areAllSchemasAccessible, other.areAllSchemasAccessible)
+                && java.util.Objects.equals(this.schemaList, other.schemaList)
                 && super.equals(other);
     }
 
@@ -865,6 +945,12 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                                 : this.timePasswordChanged.hashCode());
         result = (result * PRIME) + (this.userTypes == null ? 43 : this.userTypes.hashCode());
         result = (result * PRIME) + (this.adminRoles == null ? 43 : this.adminRoles.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areAllSchemasAccessible == null
+                                ? 43
+                                : this.areAllSchemasAccessible.hashCode());
+        result = (result * PRIME) + (this.schemaList == null ? 43 : this.schemaList.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

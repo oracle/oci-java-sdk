@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * The configuration details of the flow defined by the service connector.
- * For more information about flows defined by service connectors, see
- * [Service Connector Hub Overview](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm).
+ * The configuration details of the flow defined by the connector.
+ * For more information about flows defined by connectors, see
+ * [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -73,14 +73,14 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          *
          * @param id the value to set
          * @return this builder
@@ -129,14 +129,14 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the connector.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the connector.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -147,7 +147,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The date and time when the service connector was created.
+         * The date and time when the connector was created.
          * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2020-01-25T21:10:29.600Z}
          *
@@ -156,7 +156,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the service connector was created.
+         * The date and time when the connector was created.
          * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2020-01-25T21:10:29.600Z}
          *
@@ -169,7 +169,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The date and time when the service connector was updated.
+         * The date and time when the connector was updated.
          * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2020-01-25T21:10:29.600Z}
          *
@@ -178,7 +178,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time when the service connector was updated.
+         * The date and time when the connector was updated.
          * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * Example: {@code 2020-01-25T21:10:29.600Z}
          *
@@ -191,14 +191,14 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The current state of the service connector.
+         * The current state of the connector.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the service connector.
+         * The current state of the connector.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -416,14 +416,14 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      *
      * @return the value
      **/
@@ -466,14 +466,14 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the connector.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the service connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the connector.
      *
      * @return the value
      **/
@@ -482,7 +482,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The date and time when the service connector was created.
+     * The date and time when the connector was created.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2020-01-25T21:10:29.600Z}
      *
@@ -491,7 +491,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the service connector was created.
+     * The date and time when the connector was created.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2020-01-25T21:10:29.600Z}
      *
@@ -502,7 +502,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The date and time when the service connector was updated.
+     * The date and time when the connector was updated.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2020-01-25T21:10:29.600Z}
      *
@@ -511,7 +511,7 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time when the service connector was updated.
+     * The date and time when the connector was updated.
      * Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * Example: {@code 2020-01-25T21:10:29.600Z}
      *
@@ -522,14 +522,14 @@ public final class ServiceConnector extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The current state of the service connector.
+     * The current state of the connector.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the service connector.
+     * The current state of the connector.
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -150,6 +150,15 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
         public Builder iscsiLoginState(IscsiLoginState iscsiLoginState) {
             this.iscsiLoginState = iscsiLoginState;
             this.__explicitlySet__.add("iscsiLoginState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isVolumeCreatedDuringLaunch")
+        private Boolean isVolumeCreatedDuringLaunch;
+
+        public Builder isVolumeCreatedDuringLaunch(Boolean isVolumeCreatedDuringLaunch) {
+            this.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
+            this.__explicitlySet__.add("isVolumeCreatedDuringLaunch");
             return this;
         }
         /**
@@ -341,6 +350,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                             this.isPvEncryptionInTransitEnabled,
                             this.isMultipath,
                             this.iscsiLoginState,
+                            this.isVolumeCreatedDuringLaunch,
                             this.chapSecret,
                             this.chapUsername,
                             this.ipv4,
@@ -399,6 +409,9 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             if (model.wasPropertyExplicitlySet("iscsiLoginState")) {
                 this.iscsiLoginState(model.getIscsiLoginState());
             }
+            if (model.wasPropertyExplicitlySet("isVolumeCreatedDuringLaunch")) {
+                this.isVolumeCreatedDuringLaunch(model.getIsVolumeCreatedDuringLaunch());
+            }
             if (model.wasPropertyExplicitlySet("chapSecret")) {
                 this.chapSecret(model.getChapSecret());
             }
@@ -454,6 +467,7 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
             Boolean isPvEncryptionInTransitEnabled,
             Boolean isMultipath,
             IscsiLoginState iscsiLoginState,
+            Boolean isVolumeCreatedDuringLaunch,
             String chapSecret,
             String chapUsername,
             String ipv4,
@@ -476,7 +490,8 @@ public final class IScsiVolumeAttachment extends VolumeAttachment {
                 volumeId,
                 isPvEncryptionInTransitEnabled,
                 isMultipath,
-                iscsiLoginState);
+                iscsiLoginState,
+                isVolumeCreatedDuringLaunch);
         this.chapSecret = chapSecret;
         this.chapUsername = chapUsername;
         this.ipv4 = ipv4;

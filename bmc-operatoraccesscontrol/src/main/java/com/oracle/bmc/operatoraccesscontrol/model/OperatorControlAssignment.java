@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol.model;
@@ -47,9 +47,12 @@ public final class OperatorControlAssignment
         "remoteSyslogServerAddress",
         "remoteSyslogServerPort",
         "remoteSyslogServerCACert",
+        "isHypervisorLogForwarded",
+        "opControlName",
         "isAutoApproveDuringMaintenance",
         "errorCode",
         "errorMessage",
+        "isDefaultAssignment",
         "freeformTags",
         "definedTags"
     })
@@ -76,9 +79,12 @@ public final class OperatorControlAssignment
             String remoteSyslogServerAddress,
             Integer remoteSyslogServerPort,
             String remoteSyslogServerCACert,
+            Boolean isHypervisorLogForwarded,
+            String opControlName,
             Boolean isAutoApproveDuringMaintenance,
             Integer errorCode,
             String errorMessage,
+            Boolean isDefaultAssignment,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -104,9 +110,12 @@ public final class OperatorControlAssignment
         this.remoteSyslogServerAddress = remoteSyslogServerAddress;
         this.remoteSyslogServerPort = remoteSyslogServerPort;
         this.remoteSyslogServerCACert = remoteSyslogServerCACert;
+        this.isHypervisorLogForwarded = isHypervisorLogForwarded;
+        this.opControlName = opControlName;
         this.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;
+        this.isDefaultAssignment = isDefaultAssignment;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -478,6 +487,38 @@ public final class OperatorControlAssignment
             return this;
         }
         /**
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
+        private Boolean isHypervisorLogForwarded;
+
+        /**
+         * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+         * @param isHypervisorLogForwarded the value to set
+         * @return this builder
+         **/
+        public Builder isHypervisorLogForwarded(Boolean isHypervisorLogForwarded) {
+            this.isHypervisorLogForwarded = isHypervisorLogForwarded;
+            this.__explicitlySet__.add("isHypervisorLogForwarded");
+            return this;
+        }
+        /**
+         * Name of the operator control name associated.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("opControlName")
+        private String opControlName;
+
+        /**
+         * Name of the operator control name associated.
+         * @param opControlName the value to set
+         * @return this builder
+         **/
+        public Builder opControlName(String opControlName) {
+            this.opControlName = opControlName;
+            this.__explicitlySet__.add("opControlName");
+            return this;
+        }
+        /**
          * The boolean if true would autoApprove during maintenance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
@@ -523,6 +564,24 @@ public final class OperatorControlAssignment
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
+            return this;
+        }
+        /**
+         * Whether the assignment is a default assignment.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultAssignment")
+        private Boolean isDefaultAssignment;
+
+        /**
+         * Whether the assignment is a default assignment.
+         *
+         * @param isDefaultAssignment the value to set
+         * @return this builder
+         **/
+        public Builder isDefaultAssignment(Boolean isDefaultAssignment) {
+            this.isDefaultAssignment = isDefaultAssignment;
+            this.__explicitlySet__.add("isDefaultAssignment");
             return this;
         }
         /**
@@ -591,9 +650,12 @@ public final class OperatorControlAssignment
                             this.remoteSyslogServerAddress,
                             this.remoteSyslogServerPort,
                             this.remoteSyslogServerCACert,
+                            this.isHypervisorLogForwarded,
+                            this.opControlName,
                             this.isAutoApproveDuringMaintenance,
                             this.errorCode,
                             this.errorMessage,
+                            this.isDefaultAssignment,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -670,6 +732,12 @@ public final class OperatorControlAssignment
             if (model.wasPropertyExplicitlySet("remoteSyslogServerCACert")) {
                 this.remoteSyslogServerCACert(model.getRemoteSyslogServerCACert());
             }
+            if (model.wasPropertyExplicitlySet("isHypervisorLogForwarded")) {
+                this.isHypervisorLogForwarded(model.getIsHypervisorLogForwarded());
+            }
+            if (model.wasPropertyExplicitlySet("opControlName")) {
+                this.opControlName(model.getOpControlName());
+            }
             if (model.wasPropertyExplicitlySet("isAutoApproveDuringMaintenance")) {
                 this.isAutoApproveDuringMaintenance(model.getIsAutoApproveDuringMaintenance());
             }
@@ -678,6 +746,9 @@ public final class OperatorControlAssignment
             }
             if (model.wasPropertyExplicitlySet("errorMessage")) {
                 this.errorMessage(model.getErrorMessage());
+            }
+            if (model.wasPropertyExplicitlySet("isDefaultAssignment")) {
+                this.isDefaultAssignment(model.getIsDefaultAssignment());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1021,6 +1092,34 @@ public final class OperatorControlAssignment
     }
 
     /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHypervisorLogForwarded")
+    private final Boolean isHypervisorLogForwarded;
+
+    /**
+     * If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
+     * @return the value
+     **/
+    public Boolean getIsHypervisorLogForwarded() {
+        return isHypervisorLogForwarded;
+    }
+
+    /**
+     * Name of the operator control name associated.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("opControlName")
+    private final String opControlName;
+
+    /**
+     * Name of the operator control name associated.
+     * @return the value
+     **/
+    public String getOpControlName() {
+        return opControlName;
+    }
+
+    /**
      * The boolean if true would autoApprove during maintenance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoApproveDuringMaintenance")
@@ -1060,6 +1159,22 @@ public final class OperatorControlAssignment
      **/
     public String getErrorMessage() {
         return errorMessage;
+    }
+
+    /**
+     * Whether the assignment is a default assignment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultAssignment")
+    private final Boolean isDefaultAssignment;
+
+    /**
+     * Whether the assignment is a default assignment.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDefaultAssignment() {
+        return isDefaultAssignment;
     }
 
     /**
@@ -1132,10 +1247,14 @@ public final class OperatorControlAssignment
         sb.append(", remoteSyslogServerPort=").append(String.valueOf(this.remoteSyslogServerPort));
         sb.append(", remoteSyslogServerCACert=")
                 .append(String.valueOf(this.remoteSyslogServerCACert));
+        sb.append(", isHypervisorLogForwarded=")
+                .append(String.valueOf(this.isHypervisorLogForwarded));
+        sb.append(", opControlName=").append(String.valueOf(this.opControlName));
         sb.append(", isAutoApproveDuringMaintenance=")
                 .append(String.valueOf(this.isAutoApproveDuringMaintenance));
         sb.append(", errorCode=").append(String.valueOf(this.errorCode));
         sb.append(", errorMessage=").append(String.valueOf(this.errorMessage));
+        sb.append(", isDefaultAssignment=").append(String.valueOf(this.isDefaultAssignment));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1178,9 +1297,13 @@ public final class OperatorControlAssignment
                 && java.util.Objects.equals(
                         this.remoteSyslogServerCACert, other.remoteSyslogServerCACert)
                 && java.util.Objects.equals(
+                        this.isHypervisorLogForwarded, other.isHypervisorLogForwarded)
+                && java.util.Objects.equals(this.opControlName, other.opControlName)
+                && java.util.Objects.equals(
                         this.isAutoApproveDuringMaintenance, other.isAutoApproveDuringMaintenance)
                 && java.util.Objects.equals(this.errorCode, other.errorCode)
                 && java.util.Objects.equals(this.errorMessage, other.errorMessage)
+                && java.util.Objects.equals(this.isDefaultAssignment, other.isDefaultAssignment)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1256,11 +1379,24 @@ public final class OperatorControlAssignment
                                 : this.remoteSyslogServerCACert.hashCode());
         result =
                 (result * PRIME)
+                        + (this.isHypervisorLogForwarded == null
+                                ? 43
+                                : this.isHypervisorLogForwarded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opControlName == null ? 43 : this.opControlName.hashCode());
+        result =
+                (result * PRIME)
                         + (this.isAutoApproveDuringMaintenance == null
                                 ? 43
                                 : this.isAutoApproveDuringMaintenance.hashCode());
         result = (result * PRIME) + (this.errorCode == null ? 43 : this.errorCode.hashCode());
         result = (result * PRIME) + (this.errorMessage == null ? 43 : this.errorMessage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultAssignment == null
+                                ? 43
+                                : this.isDefaultAssignment.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

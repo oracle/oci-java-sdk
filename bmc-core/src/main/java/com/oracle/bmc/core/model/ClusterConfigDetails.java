@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -37,14 +37,14 @@ public final class ClusterConfigDetails extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
         private String hpcIslandId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
          *
          * @param hpcIslandId the value to set
          * @return this builder
@@ -55,13 +55,13 @@ public final class ClusterConfigDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The list of OCID of the network blocks.
+         * The list of OCIDs of the network blocks.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkBlockIds")
         private java.util.List<String> networkBlockIds;
 
         /**
-         * The list of OCID of the network blocks.
+         * The list of OCIDs of the network blocks.
          * @param networkBlockIds the value to set
          * @return this builder
          **/
@@ -107,14 +107,14 @@ public final class ClusterConfigDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hpcIslandId")
     private final String hpcIslandId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HpcIsland.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
      *
      * @return the value
      **/
@@ -123,13 +123,13 @@ public final class ClusterConfigDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The list of OCID of the network blocks.
+     * The list of OCIDs of the network blocks.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkBlockIds")
     private final java.util.List<String> networkBlockIds;
 
     /**
-     * The list of OCID of the network blocks.
+     * The list of OCIDs of the network blocks.
      * @return the value
      **/
     public java.util.List<String> getNetworkBlockIds() {

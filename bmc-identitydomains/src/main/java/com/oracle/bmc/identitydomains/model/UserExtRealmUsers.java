@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of kerberos realm users for an OCI IAM User
+ * A list of kerberos realm users for an Oracle Identity Cloud Service User
  * <p>
  **SCIM++ Properties:**
  *  - idcsCompositeKey: [value]
@@ -42,7 +42,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * id of the KerberosRealmUser associated with the OCI IAM User.
+         * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -58,7 +58,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
         private String value;
 
         /**
-         * id of the KerberosRealmUser associated with the OCI IAM User.
+         * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -78,7 +78,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+         * The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
@@ -93,7 +93,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
         private String ref;
 
         /**
-         * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+         * The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
@@ -112,7 +112,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+         * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - idcsPii: true
@@ -128,7 +128,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
         private String principalName;
 
         /**
-         * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+         * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - idcsPii: true
@@ -148,7 +148,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+         * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: true
@@ -163,7 +163,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
         private String realmName;
 
         /**
-         * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+         * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: true
@@ -224,7 +224,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * id of the KerberosRealmUser associated with the OCI IAM User.
+     * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -240,7 +240,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     private final String value;
 
     /**
-     * id of the KerberosRealmUser associated with the OCI IAM User.
+     * id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -258,7 +258,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+     * The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
@@ -273,7 +273,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     private final String ref;
 
     /**
-     * The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+     * The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
@@ -290,7 +290,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+     * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - idcsPii: true
@@ -306,7 +306,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     private final String principalName;
 
     /**
-     * Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+     * Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - idcsPii: true
@@ -324,7 +324,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+     * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: true
@@ -339,7 +339,7 @@ public final class UserExtRealmUsers extends com.oracle.bmc.http.internal.Explic
     private final String realmName;
 
     /**
-     * Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+     * Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: true

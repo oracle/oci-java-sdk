@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -7049,6 +7049,53 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceIpInventoryResponse> getResourceIpInventory(
+            GetResourceIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>
+                    handler) {
+        LOG.trace("Called async getResourceIpInventory");
+        final GetResourceIpInventoryRequest interceptedRequest =
+                GetResourceIpInventoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourceIpInventoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetResourceIpInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/GetResourceIpInventory");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResourceIpInventoryResponse>
+                transformer =
+                        GetResourceIpInventoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>,
+                        java.util.concurrent.Future<GetResourceIpInventoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRouteTableResponse> getRouteTable(
             GetRouteTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
@@ -7257,6 +7304,101 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetSubnetRequest, GetSubnetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetCidrUtilizationResponse> getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>
+                    handler) {
+        LOG.trace("Called async getSubnetCidrUtilization");
+        final GetSubnetCidrUtilizationRequest interceptedRequest =
+                GetSubnetCidrUtilizationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSubnetCidrUtilizationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetCidrUtilization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCidrUtilizationCollection/GetSubnetCidrUtilization");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSubnetCidrUtilizationResponse>
+                transformer =
+                        GetSubnetCidrUtilizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>,
+                        java.util.concurrent.Future<GetSubnetCidrUtilizationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSubnetIpInventoryResponse> getSubnetIpInventory(
+            GetSubnetIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>
+                    handler) {
+        LOG.trace("Called async getSubnetIpInventory");
+        final GetSubnetIpInventoryRequest interceptedRequest =
+                GetSubnetIpInventoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSubnetIpInventoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetIpInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventorySubnetResourceCollection/GetSubnetIpInventory");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSubnetIpInventoryResponse>
+                transformer =
+                        GetSubnetIpInventoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>,
+                        java.util.concurrent.Future<GetSubnetIpInventoryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7540,6 +7682,56 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVcnOverlapResponse> getVcnOverlap(
+            GetVcnOverlapRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetVcnOverlapRequest, GetVcnOverlapResponse>
+                    handler) {
+        LOG.trace("Called async getVcnOverlap");
+        final GetVcnOverlapRequest interceptedRequest =
+                GetVcnOverlapConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVcnOverlapConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetVcnOverlap",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryVcnOverlapCollection/GetVcnOverlap");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVcnOverlapResponse>
+                transformer =
+                        GetVcnOverlapConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetVcnOverlapRequest, GetVcnOverlapResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVcnOverlapRequest, GetVcnOverlapResponse>,
+                        java.util.concurrent.Future<GetVcnOverlapResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGetVcnOverlapDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVcnOverlapRequest, GetVcnOverlapResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8980,6 +9172,57 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListIpInventoryResponse> listIpInventory(
+            ListIpInventoryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListIpInventoryRequest, ListIpInventoryResponse>
+                    handler) {
+        LOG.trace("Called async listIpInventory");
+        final ListIpInventoryRequest interceptedRequest =
+                ListIpInventoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIpInventoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListIpInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListIpInventory");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListIpInventoryResponse>
+                transformer =
+                        ListIpInventoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListIpInventoryRequest, ListIpInventoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListIpInventoryRequest, ListIpInventoryResponse>,
+                        java.util.concurrent.Future<ListIpInventoryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getListIpInventoryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListIpInventoryRequest, ListIpInventoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIpv6sResponse> listIpv6s(
             ListIpv6sRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse>
@@ -9711,6 +9954,60 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListVcnsRequest, ListVcnsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualCircuitAssociatedTunnelsResponse>
+            listVirtualCircuitAssociatedTunnels(
+                    ListVirtualCircuitAssociatedTunnelsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitAssociatedTunnelsRequest,
+                                    ListVirtualCircuitAssociatedTunnelsResponse>
+                            handler) {
+        LOG.trace("Called async listVirtualCircuitAssociatedTunnels");
+        final ListVirtualCircuitAssociatedTunnelsRequest interceptedRequest =
+                ListVirtualCircuitAssociatedTunnelsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVirtualCircuitAssociatedTunnelsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListVirtualCircuitAssociatedTunnels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitAssociatedTunnelDetails/ListVirtualCircuitAssociatedTunnels");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListVirtualCircuitAssociatedTunnelsResponse>
+                transformer =
+                        ListVirtualCircuitAssociatedTunnelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListVirtualCircuitAssociatedTunnelsRequest,
+                        ListVirtualCircuitAssociatedTunnelsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListVirtualCircuitAssociatedTunnelsRequest,
+                                ListVirtualCircuitAssociatedTunnelsResponse>,
+                        java.util.concurrent.Future<ListVirtualCircuitAssociatedTunnelsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListVirtualCircuitAssociatedTunnelsRequest,
+                    ListVirtualCircuitAssociatedTunnelsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

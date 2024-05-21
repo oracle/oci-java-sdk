@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -144,13 +144,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of report to be .xls or .pdf
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies the format of report to be excel or pdf
+         * Specifies the format of report to be .xls or .pdf
          * @param mimeType the value to set
          * @return this builder
          **/
@@ -421,7 +421,7 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf
      **/
     public enum MimeType {
         Pdf("PDF"),
@@ -469,13 +469,13 @@ public final class Report extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     };
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf
      * @return the value
      **/
     public MimeType getMimeType() {

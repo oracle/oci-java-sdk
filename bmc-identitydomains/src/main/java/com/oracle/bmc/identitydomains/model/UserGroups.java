@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -91,7 +91,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Ocid of the User's group.
+         * The OCID of the User's group.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -109,7 +109,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
         private String ocid;
 
         /**
-         * Ocid of the User's group.
+         * The OCID of the User's group.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -309,7 +309,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Membership Ocid
+         * The membership OCID.
          * <p>
          **Added In:** 2103141444
          * <p>
@@ -326,7 +326,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
         private String membershipOcid;
 
         /**
-         * Membership Ocid
+         * The membership OCID.
          * <p>
          **Added In:** 2103141444
          * <p>
@@ -483,7 +483,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Ocid of the User's group.
+     * The OCID of the User's group.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -501,7 +501,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String ocid;
 
     /**
-     * Ocid of the User's group.
+     * The OCID of the User's group.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -744,7 +744,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      * <p>
      **Added In:** 2103141444
      * <p>
@@ -761,7 +761,7 @@ public final class UserGroups extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String membershipOcid;
 
     /**
-     * Membership Ocid
+     * The membership OCID.
      * <p>
      **Added In:** 2103141444
      * <p>

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -29,6 +29,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         "maintenanceWindowDetails",
         "standbyMaintenanceBufferInDays",
         "versionPreference",
+        "isDstFileUpdateEnabled",
         "freeformTags",
         "definedTags",
         "backupConfig"
@@ -39,6 +40,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
             MaintenanceWindow maintenanceWindowDetails,
             Integer standbyMaintenanceBufferInDays,
             VersionPreference versionPreference,
+            Boolean isDstFileUpdateEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             AutonomousContainerDatabaseBackupConfig backupConfig) {
@@ -48,6 +50,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
         this.versionPreference = versionPreference;
+        this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.backupConfig = backupConfig;
@@ -135,6 +138,22 @@ public final class UpdateAutonomousContainerDatabaseDetails
             return this;
         }
         /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+        private Boolean isDstFileUpdateEnabled;
+
+        /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         * @param isDstFileUpdateEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            this.__explicitlySet__.add("isDstFileUpdateEnabled");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -200,6 +219,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
                             this.maintenanceWindowDetails,
                             this.standbyMaintenanceBufferInDays,
                             this.versionPreference,
+                            this.isDstFileUpdateEnabled,
                             this.freeformTags,
                             this.definedTags,
                             this.backupConfig);
@@ -225,6 +245,9 @@ public final class UpdateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("versionPreference")) {
                 this.versionPreference(model.getVersionPreference());
+            }
+            if (model.wasPropertyExplicitlySet("isDstFileUpdateEnabled")) {
+                this.isDstFileUpdateEnabled(model.getIsDstFileUpdateEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -391,6 +414,20 @@ public final class UpdateAutonomousContainerDatabaseDetails
     }
 
     /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+    private final Boolean isDstFileUpdateEnabled;
+
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * @return the value
+     **/
+    public Boolean getIsDstFileUpdateEnabled() {
+        return isDstFileUpdateEnabled;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -458,6 +495,7 @@ public final class UpdateAutonomousContainerDatabaseDetails
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
         sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
+        sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
@@ -483,6 +521,8 @@ public final class UpdateAutonomousContainerDatabaseDetails
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
                 && java.util.Objects.equals(this.versionPreference, other.versionPreference)
+                && java.util.Objects.equals(
+                        this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
@@ -508,6 +548,11 @@ public final class UpdateAutonomousContainerDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDstFileUpdateEnabled == null
+                                ? 43
+                                : this.isDstFileUpdateEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());

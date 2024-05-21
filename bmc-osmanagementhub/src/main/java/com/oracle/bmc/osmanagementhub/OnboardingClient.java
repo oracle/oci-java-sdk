@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -430,7 +430,8 @@ public class OnboardingClient implements Onboarding {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -547,6 +548,49 @@ public class OnboardingClient implements Onboarding {
     }
 
     @Override
+    public ChangeProfileCompartmentResponse changeProfileCompartment(
+            ChangeProfileCompartmentRequest request) {
+        LOG.trace("Called changeProfileCompartment");
+        final ChangeProfileCompartmentRequest interceptedRequest =
+                ChangeProfileCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProfileCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "ChangeProfileCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ChangeProfileCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeProfileCompartmentResponse>
+                transformer =
+                        ChangeProfileCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeProfileCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateProfileResponse createProfile(CreateProfileRequest request) {
         LOG.trace("Called createProfile");
         final CreateProfileRequest interceptedRequest =
@@ -561,7 +605,10 @@ public class OnboardingClient implements Onboarding {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "CreateProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "CreateProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/CreateProfile");
         java.util.function.Function<javax.ws.rs.core.Response, CreateProfileResponse> transformer =
                 CreateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -597,7 +644,10 @@ public class OnboardingClient implements Onboarding {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "DeleteProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "DeleteProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DeleteProfile");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteProfileResponse> transformer =
                 DeleteProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -629,7 +679,10 @@ public class OnboardingClient implements Onboarding {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "GetProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "GetProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/GetProfile");
         java.util.function.Function<javax.ws.rs.core.Response, GetProfileResponse> transformer =
                 GetProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -661,7 +714,10 @@ public class OnboardingClient implements Onboarding {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "ListProfiles", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "ListProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ListProfiles");
         java.util.function.Function<javax.ws.rs.core.Response, ListProfilesResponse> transformer =
                 ListProfilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -693,7 +749,10 @@ public class OnboardingClient implements Onboarding {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "UpdateProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "UpdateProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/UpdateProfile");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateProfileResponse> transformer =
                 UpdateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

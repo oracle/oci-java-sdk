@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A summary of an entitlement.
+ * Provides summary information for an entitlement.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,13 +32,13 @@ public final class EntitlementSummary extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the tenancy containing the entitlement.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the entitlement.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class EntitlementSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The Customer Support Identifier (CSI). CSI is a unique key given to a customer to unlock software sources. It uniquely identifies the entitlement.
+         * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * The Customer Support Identifier (CSI). CSI is a unique key given to a customer to unlock software sources. It uniquely identifies the entitlement.
+         * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
          * @param csi the value to set
          * @return this builder
          **/
@@ -119,13 +119,13 @@ public final class EntitlementSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The OCID of the tenancy containing the entitlement.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the entitlement.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the entitlement.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -133,13 +133,13 @@ public final class EntitlementSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The Customer Support Identifier (CSI). CSI is a unique key given to a customer to unlock software sources. It uniquely identifies the entitlement.
+     * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * The Customer Support Identifier (CSI). CSI is a unique key given to a customer to unlock software sources. It uniquely identifies the entitlement.
+     * The Customer Support Identifier (CSI) which unlocks the software sources. The CSI is is a unique key given to a customer and it uniquely identifies the entitlement.
      * @return the value
      **/
     public String getCsi() {

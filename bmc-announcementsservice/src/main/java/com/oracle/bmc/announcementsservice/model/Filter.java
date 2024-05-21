@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Criteria that the Announcements service uses to match announcements in order to provide only desired, matching announcements.
+ * Criteria that the Announcements service uses to match announcements so it can provide only desired announcements to subscribers.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,13 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of filter.
+         * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The type of filter.
+         * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
          * @param type the value to set
          * @return this builder
          **/
@@ -96,7 +96,7 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The type of filter.
+     * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      **/
     public enum Type {
         CompartmentId("COMPARTMENT_ID"),
@@ -146,13 +146,13 @@ public final class Filter extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     };
     /**
-     * The type of filter.
+     * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The type of filter.
+     * The type of filter. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
      * @return the value
      **/
     public Type getType() {

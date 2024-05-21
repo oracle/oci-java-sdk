@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -190,13 +190,13 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+         * The lookup type. Valid values are Lookup, Dictionary or Module.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+         * The lookup type. Valid values are Lookup, Dictionary or Module.
          * @param type the value to set
          * @return this builder
          **/
@@ -524,11 +524,12 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+     * The lookup type. Valid values are Lookup, Dictionary or Module.
      **/
     public enum Type {
         Lookup("Lookup"),
         Dictionary("Dictionary"),
+        Module("Module"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -570,13 +571,13 @@ public final class LogAnalyticsLookup extends com.oracle.bmc.http.internal.Expli
         }
     };
     /**
-     * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+     * The lookup type. Valid values are Lookup, Dictionary or Module.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The lookup type.  Valid values are LOOKUP or DICTIONARY.
+     * The lookup type. Valid values are Lookup, Dictionary or Module.
      * @return the value
      **/
     public Type getType() {

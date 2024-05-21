@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * A ContainerInstance for hosting Containers.
+ * A container instance to host containers.
  * <p>
- * If this ContainerInstance is DELETED, the record will remain visible for a short period
+ * If you delete a container instance, the record remains visible for a short period
  * of time before being permanently removed.
  *
  * <br/>
@@ -103,13 +103,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * An OCID that cannot be changed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * An OCID that cannot be changed.
          * @param id the value to set
          * @return this builder
          **/
@@ -119,13 +119,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Display name for the ContainerInstance. Can be renamed.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the ContainerInstance. Can be renamed.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -135,13 +135,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Compartment Identifier
+         * The OCID of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * The OCID of the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -172,7 +172,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -180,7 +180,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
          *
          * @param definedTags the value to set
          * @return this builder
@@ -193,7 +193,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -201,7 +201,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
@@ -212,13 +212,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Availability Domain where the ContainerInstance is running.
+         * The availability domain to place the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain where the ContainerInstance is running.
+         * The availability domain to place the container instance.
          * @param availabilityDomain the value to set
          * @return this builder
          **/
@@ -228,13 +228,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Fault Domain where the ContainerInstance is running.
+         * The fault domain to place the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * Fault Domain where the ContainerInstance is running.
+         * The fault domain to place the container instance.
          * @param faultDomain the value to set
          * @return this builder
          **/
@@ -244,13 +244,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The current state of the ContainerInstance.
+         * The current state of the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the ContainerInstance.
+         * The current state of the container instance.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -260,16 +260,16 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide
-         * actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used to provide
+         * actionable information.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide
-         * actionable information for a resource in Failed state.
+         * A message that describes the current state of the container in more detail. Can be used to provide
+         * actionable information.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
@@ -280,16 +280,16 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * A Volume represents a directory with data that is accessible across multiple containers in a
-         * ContainerInstance.
+         * A volume is a directory with data that is accessible across multiple containers in a
+         * container instance.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumes")
         private java.util.List<ContainerVolume> volumes;
 
         /**
-         * A Volume represents a directory with data that is accessible across multiple containers in a
-         * ContainerInstance.
+         * A volume is a directory with data that is accessible across multiple containers in a
+         * container instance.
          *
          * @param volumes the value to set
          * @return this builder
@@ -300,13 +300,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The number of volumes that attached to this Instance
+         * The number of volumes that are attached to the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeCount")
         private Integer volumeCount;
 
         /**
-         * The number of volumes that attached to this Instance
+         * The number of volumes that are attached to the container instance.
          * @param volumeCount the value to set
          * @return this builder
          **/
@@ -316,13 +316,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The Containers on this Instance
+         * The containers on the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("containers")
         private java.util.List<ContainerInstanceContainer> containers;
 
         /**
-         * The Containers on this Instance
+         * The containers on the container instance.
          * @param containers the value to set
          * @return this builder
          **/
@@ -332,13 +332,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The number of containers on this Instance
+         * The number of containers on the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
         private Integer containerCount;
 
         /**
-         * The number of containers on this Instance
+         * The number of containers on the container instance.
          * @param containerCount the value to set
          * @return this builder
          **/
@@ -348,13 +348,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+         * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+         * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -364,13 +364,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+         * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+         * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -380,13 +380,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+         * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+         * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
          * @param shape the value to set
          * @return this builder
          **/
@@ -405,13 +405,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The virtual networks available to containers running on this Container Instance.
+         * The virtual networks available to the containers in the container instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnics")
         private java.util.List<ContainerVnic> vnics;
 
         /**
-         * The virtual networks available to containers running on this Container Instance.
+         * The virtual networks available to the containers in the container instance.
          * @param vnics the value to set
          * @return this builder
          **/
@@ -430,13 +430,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+         * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
         private Long gracefulShutdownTimeoutInSeconds;
 
         /**
-         * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+         * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
          * @param gracefulShutdownTimeoutInSeconds the value to set
          * @return this builder
          **/
@@ -446,13 +446,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The image pull secrets for accessing private registry to pull images for containers
+         * The image pulls secrets so you can access private registry to pull container images.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("imagePullSecrets")
         private java.util.List<ImagePullSecret> imagePullSecrets;
 
         /**
-         * The image pull secrets for accessing private registry to pull images for containers
+         * The image pulls secrets so you can access private registry to pull container images.
          * @param imagePullSecrets the value to set
          * @return this builder
          **/
@@ -600,13 +600,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * An OCID that cannot be changed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * An OCID that cannot be changed.
      * @return the value
      **/
     public String getId() {
@@ -614,13 +614,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Display name for the ContainerInstance. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the ContainerInstance. Can be renamed.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -628,13 +628,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * The OCID of the compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -661,7 +661,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -669,7 +669,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
      **/
@@ -679,7 +679,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
@@ -687,7 +687,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
      **/
@@ -696,13 +696,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Availability Domain where the ContainerInstance is running.
+     * The availability domain to place the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain where the ContainerInstance is running.
+     * The availability domain to place the container instance.
      * @return the value
      **/
     public String getAvailabilityDomain() {
@@ -710,13 +710,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Fault Domain where the ContainerInstance is running.
+     * The fault domain to place the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * Fault Domain where the ContainerInstance is running.
+     * The fault domain to place the container instance.
      * @return the value
      **/
     public String getFaultDomain() {
@@ -724,7 +724,7 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The current state of the ContainerInstance.
+     * The current state of the container instance.
      **/
     public enum LifecycleState {
         Creating("CREATING"),
@@ -777,13 +777,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * The current state of the ContainerInstance.
+     * The current state of the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the ContainerInstance.
+     * The current state of the container instance.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -791,16 +791,16 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide
+     * actionable information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message that describes the current state of the container in more detail. Can be used to provide
+     * actionable information.
      *
      * @return the value
      **/
@@ -809,16 +809,16 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a
-     * ContainerInstance.
+     * A volume is a directory with data that is accessible across multiple containers in a
+     * container instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumes")
     private final java.util.List<ContainerVolume> volumes;
 
     /**
-     * A Volume represents a directory with data that is accessible across multiple containers in a
-     * ContainerInstance.
+     * A volume is a directory with data that is accessible across multiple containers in a
+     * container instance.
      *
      * @return the value
      **/
@@ -827,13 +827,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeCount")
     private final Integer volumeCount;
 
     /**
-     * The number of volumes that attached to this Instance
+     * The number of volumes that are attached to the container instance.
      * @return the value
      **/
     public Integer getVolumeCount() {
@@ -841,13 +841,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The Containers on this Instance
+     * The containers on the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containers")
     private final java.util.List<ContainerInstanceContainer> containers;
 
     /**
-     * The Containers on this Instance
+     * The containers on the container instance.
      * @return the value
      **/
     public java.util.List<ContainerInstanceContainer> getContainers() {
@@ -855,13 +855,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The number of containers on this Instance
+     * The number of containers on the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
     private final Integer containerCount;
 
     /**
-     * The number of containers on this Instance
+     * The number of containers on the container instance.
      * @return the value
      **/
     public Integer getContainerCount() {
@@ -869,13 +869,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -883,13 +883,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -897,13 +897,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+     * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * @return the value
      **/
     public String getShape() {
@@ -918,13 +918,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The virtual networks available to containers running on this Container Instance.
+     * The virtual networks available to the containers in the container instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnics")
     private final java.util.List<ContainerVnic> vnics;
 
     /**
-     * The virtual networks available to containers running on this Container Instance.
+     * The virtual networks available to the containers in the container instance.
      * @return the value
      **/
     public java.util.List<ContainerVnic> getVnics() {
@@ -939,13 +939,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
     private final Long gracefulShutdownTimeoutInSeconds;
 
     /**
-     * Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * @return the value
      **/
     public Long getGracefulShutdownTimeoutInSeconds() {
@@ -953,13 +953,13 @@ public final class ContainerInstance extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imagePullSecrets")
     private final java.util.List<ImagePullSecret> imagePullSecrets;
 
     /**
-     * The image pull secrets for accessing private registry to pull images for containers
+     * The image pulls secrets so you can access private registry to pull container images.
      * @return the value
      **/
     public java.util.List<ImagePullSecret> getImagePullSecrets() {

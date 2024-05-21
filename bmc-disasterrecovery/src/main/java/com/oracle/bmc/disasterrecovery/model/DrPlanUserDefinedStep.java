@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for a user-defined step in a DR Plan.
+ * The details for a user-defined step in a DR plan.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -95,24 +95,22 @@ public class DrPlanUserDefinedStep extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The type of the step.
+     * The type of the user-defined step.
      * <p>
-     * RUN_OBJECTSTORE_SCRIPT_PRECHECK - A step which performs a precheck on a script stored
-     *     in Oracle Object Storage Service
+     **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
+     *     in OCI object storage.
      * <p>
-     * RUN_LOCAL_SCRIPT_PRECHECK - A step which performs a precheck on a script which resides
-     *     locally on a compute instance
+     **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
+     *     locally on a compute instance.
      * <p>
-     * INVOKE_FUNCTION_PRECHECK - A step which performs a precheck on an Oracle Function.
+     **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
      *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
      * <p>
-     * RUN_OBJECTSTORE_SCRIPT - A step which runs a script stored in
-     *     Oracle Object Storage Service
+     **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
      * <p>
-     * RUN_LOCAL_SCRIPT - A step which runs a script that resides locally
-     *     on a compute instance
+     **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
      * <p>
-     * INVOKE_FUNCTION - A step which invokes an Oracle Function.
+     **INVOKE_FUNCTION** - A step which invokes an OCI function.
      *     See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
      *
      **/

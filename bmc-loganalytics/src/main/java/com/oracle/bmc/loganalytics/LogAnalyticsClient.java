@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics;
@@ -436,7 +436,8 @@ public class LogAnalyticsClient implements LogAnalytics {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -3713,6 +3714,115 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public GetRecallCountResponse getRecallCount(GetRecallCountRequest request) {
+        LOG.trace("Called getRecallCount");
+        final GetRecallCountRequest interceptedRequest =
+                GetRecallCountConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRecallCountConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "GetRecallCount",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetRecallCount");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecallCountResponse> transformer =
+                GetRecallCountConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRecalledDataSizeResponse getRecalledDataSize(GetRecalledDataSizeRequest request) {
+        LOG.trace("Called getRecalledDataSize");
+        final GetRecalledDataSizeRequest interceptedRequest =
+                GetRecalledDataSizeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRecalledDataSizeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "GetRecalledDataSize",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/GetRecalledDataSize");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRecalledDataSizeResponse>
+                transformer =
+                        GetRecalledDataSizeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRulesSummaryResponse getRulesSummary(GetRulesSummaryRequest request) {
+        LOG.trace("Called getRulesSummary");
+        final GetRulesSummaryRequest interceptedRequest =
+                GetRulesSummaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRulesSummaryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "GetRulesSummary",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Rule/GetRulesSummary");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRulesSummaryResponse>
+                transformer =
+                        GetRulesSummaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetScheduledTaskResponse getScheduledTask(GetScheduledTaskRequest request) {
         LOG.trace("Called getScheduledTask");
         final GetScheduledTaskRequest interceptedRequest =
@@ -4281,6 +4391,44 @@ public class LogAnalyticsClient implements LogAnalytics {
         java.util.function.Function<javax.ws.rs.core.Response, ListConfigWorkRequestsResponse>
                 transformer =
                         ListConfigWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListEffectivePropertiesResponse listEffectiveProperties(
+            ListEffectivePropertiesRequest request) {
+        LOG.trace("Called listEffectiveProperties");
+        final ListEffectivePropertiesRequest interceptedRequest =
+                ListEffectivePropertiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEffectivePropertiesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListEffectiveProperties",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsProperty/ListEffectiveProperties");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEffectivePropertiesResponse>
+                transformer =
+                        ListEffectivePropertiesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4965,6 +5113,44 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public ListOverlappingRecallsResponse listOverlappingRecalls(
+            ListOverlappingRecallsRequest request) {
+        LOG.trace("Called listOverlappingRecalls");
+        final ListOverlappingRecallsRequest interceptedRequest =
+                ListOverlappingRecallsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOverlappingRecallsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListOverlappingRecalls",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/Storage/ListOverlappingRecalls");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOverlappingRecallsResponse>
+                transformer =
+                        ListOverlappingRecallsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListParserFunctionsResponse listParserFunctions(ListParserFunctionsRequest request) {
         LOG.trace("Called listParserFunctions");
         final ListParserFunctionsRequest interceptedRequest =
@@ -5059,6 +5245,44 @@ public class LogAnalyticsClient implements LogAnalytics {
                         "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsParser/ListParsers");
         java.util.function.Function<javax.ws.rs.core.Response, ListParsersResponse> transformer =
                 ListParsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPropertiesMetadataResponse listPropertiesMetadata(
+            ListPropertiesMetadataRequest request) {
+        LOG.trace("Called listPropertiesMetadata");
+        final ListPropertiesMetadataRequest interceptedRequest =
+                ListPropertiesMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPropertiesMetadataConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ListPropertiesMetadata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsProperty/ListPropertiesMetadata");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPropertiesMetadataResponse>
+                transformer =
+                        ListPropertiesMetadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -7339,6 +7563,85 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public UploadDiscoveryDataResponse uploadDiscoveryData(UploadDiscoveryDataRequest request) {
+        LOG.trace("Called uploadDiscoveryData");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UploadDiscoveryDataRequest.builder());
+            }
+            final UploadDiscoveryDataRequest interceptedRequest =
+                    UploadDiscoveryDataConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UploadDiscoveryDataConverter.fromRequest(client, interceptedRequest);
+
+            ib.property(
+                    com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
+                    com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "LogAnalytics",
+                            "UploadDiscoveryData",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UploadDiscoveryData");
+            java.util.function.Function<javax.ws.rs.core.Response, UploadDiscoveryDataResponse>
+                    transformer =
+                            UploadDiscoveryDataConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUploadDiscoveryDataDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUploadDiscoveryDataDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUploadDiscoveryDataDetails());
+        }
+    }
+
+    @Override
     public UploadLogEventsFileResponse uploadLogEventsFile(UploadLogEventsFileRequest request) {
         LOG.trace("Called uploadLogEventsFile");
         try {
@@ -7743,6 +8046,47 @@ public class LogAnalyticsClient implements LogAnalytics {
     }
 
     @Override
+    public ValidateEndpointResponse validateEndpoint(ValidateEndpointRequest request) {
+        LOG.trace("Called validateEndpoint");
+        final ValidateEndpointRequest interceptedRequest =
+                ValidateEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateEndpointConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ValidateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateEndpoint");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateEndpointResponse>
+                transformer =
+                        ValidateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getValidateEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ValidateFileResponse validateFile(ValidateFileRequest request) {
         LOG.trace("Called validateFile");
         final ValidateFileRequest interceptedRequest =
@@ -7773,6 +8117,48 @@ public class LogAnalyticsClient implements LogAnalytics {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ValidateLabelConditionResponse validateLabelCondition(
+            ValidateLabelConditionRequest request) {
+        LOG.trace("Called validateLabelCondition");
+        final ValidateLabelConditionRequest interceptedRequest =
+                ValidateLabelConditionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateLabelConditionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LogAnalytics",
+                        "ValidateLabelCondition",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsSource/ValidateLabelCondition");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateLabelConditionResponse>
+                transformer =
+                        ValidateLabelConditionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getValidateLabelConditionDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

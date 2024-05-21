@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -36,13 +36,13 @@ public final class SecurityScoreAggregation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The key-value pairs of dimensions and their names.
+         * The key-value pairs of dimensions and their names
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
         /**
-         * The key-value pairs of dimensions and their names.
+         * The key-value pairs of dimensions and their names
          * @param dimensionsMap the value to set
          * @return this builder
          **/
@@ -52,13 +52,13 @@ public final class SecurityScoreAggregation
             return this;
         }
         /**
-         * The security rating with given dimension/s
+         * The security rating with given parameters
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityRating")
         private SecurityRating securityRating;
 
         /**
-         * The security rating with given dimension/s
+         * The security rating with given parameters
          * @param securityRating the value to set
          * @return this builder
          **/
@@ -68,13 +68,13 @@ public final class SecurityScoreAggregation
             return this;
         }
         /**
-         * The security score with given dimension/s
+         * The security score with given parameters
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityScore")
         private Integer securityScore;
 
         /**
-         * The security score with given dimension/s
+         * The security score with given parameters
          * @param securityScore the value to set
          * @return this builder
          **/
@@ -124,13 +124,13 @@ public final class SecurityScoreAggregation
     }
 
     /**
-     * The key-value pairs of dimensions and their names.
+     * The key-value pairs of dimensions and their names
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
     /**
-     * The key-value pairs of dimensions and their names.
+     * The key-value pairs of dimensions and their names
      * @return the value
      **/
     public java.util.Map<String, String> getDimensionsMap() {
@@ -138,13 +138,13 @@ public final class SecurityScoreAggregation
     }
 
     /**
-     * The security rating with given dimension/s
+     * The security rating with given parameters
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityRating")
     private final SecurityRating securityRating;
 
     /**
-     * The security rating with given dimension/s
+     * The security rating with given parameters
      * @return the value
      **/
     public SecurityRating getSecurityRating() {
@@ -152,13 +152,13 @@ public final class SecurityScoreAggregation
     }
 
     /**
-     * The security score with given dimension/s
+     * The security score with given parameters
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityScore")
     private final Integer securityScore;
 
     /**
-     * The security score with given dimension/s
+     * The security score with given parameters
      * @return the value
      **/
     public Integer getSecurityScore() {

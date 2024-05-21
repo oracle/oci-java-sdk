@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -28,7 +28,8 @@ public final class CreatePublicIpDetails
         "displayName",
         "freeformTags",
         "lifetime",
-        "privateIpId"
+        "privateIpId",
+        "publicIpPoolId"
     })
     public CreatePublicIpDetails(
             String compartmentId,
@@ -36,7 +37,8 @@ public final class CreatePublicIpDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             Lifetime lifetime,
-            String privateIpId) {
+            String privateIpId,
+            String publicIpPoolId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -44,6 +46,7 @@ public final class CreatePublicIpDetails
         this.freeformTags = freeformTags;
         this.lifetime = lifetime;
         this.privateIpId = privateIpId;
+        this.publicIpPoolId = publicIpPoolId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -183,6 +186,22 @@ public final class CreatePublicIpDetails
             this.__explicitlySet__.add("privateIpId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
+        private String publicIpPoolId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+         * @param publicIpPoolId the value to set
+         * @return this builder
+         **/
+        public Builder publicIpPoolId(String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
+            this.__explicitlySet__.add("publicIpPoolId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -195,7 +214,8 @@ public final class CreatePublicIpDetails
                             this.displayName,
                             this.freeformTags,
                             this.lifetime,
-                            this.privateIpId);
+                            this.privateIpId,
+                            this.publicIpPoolId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +241,9 @@ public final class CreatePublicIpDetails
             }
             if (model.wasPropertyExplicitlySet("privateIpId")) {
                 this.privateIpId(model.getPrivateIpId());
+            }
+            if (model.wasPropertyExplicitlySet("publicIpPoolId")) {
+                this.publicIpPoolId(model.getPublicIpPoolId());
             }
             return this;
         }
@@ -397,6 +420,20 @@ public final class CreatePublicIpDetails
         return privateIpId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
+    private final String publicIpPoolId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
+     * @return the value
+     **/
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -417,6 +454,7 @@ public final class CreatePublicIpDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", privateIpId=").append(String.valueOf(this.privateIpId));
+        sb.append(", publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
         sb.append(")");
         return sb.toString();
     }
@@ -437,6 +475,7 @@ public final class CreatePublicIpDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.privateIpId, other.privateIpId)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId)
                 && super.equals(other);
     }
 
@@ -452,6 +491,9 @@ public final class CreatePublicIpDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.privateIpId == null ? 43 : this.privateIpId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

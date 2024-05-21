@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
 
 /**
- * grok parser.
+ * Grok parser.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -90,13 +90,13 @@ public final class UnifiedAgentGrokParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * grok name key.
+         * Grok name key.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("grokNameKey")
         private String grokNameKey;
 
         /**
-         * grok name key.
+         * Grok name key.
          * @param grokNameKey the value to set
          * @return this builder
          **/
@@ -106,13 +106,13 @@ public final class UnifiedAgentGrokParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * grok failure key.
+         * Grok failure key.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("grokFailureKey")
         private String grokFailureKey;
 
         /**
-         * grok failure key.
+         * Grok failure key.
          * @param grokFailureKey the value to set
          * @return this builder
          **/
@@ -122,13 +122,13 @@ public final class UnifiedAgentGrokParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * grok pattern object.
+         * Grok pattern object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("patterns")
         private java.util.List<GrokPattern> patterns;
 
         /**
-         * grok pattern object.
+         * Grok pattern object.
          * @param patterns the value to set
          * @return this builder
          **/
@@ -233,13 +233,13 @@ public final class UnifiedAgentGrokParser extends UnifiedAgentParser {
     }
 
     /**
-     * grok name key.
+     * Grok name key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grokNameKey")
     private final String grokNameKey;
 
     /**
-     * grok name key.
+     * Grok name key.
      * @return the value
      **/
     public String getGrokNameKey() {
@@ -247,13 +247,13 @@ public final class UnifiedAgentGrokParser extends UnifiedAgentParser {
     }
 
     /**
-     * grok failure key.
+     * Grok failure key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("grokFailureKey")
     private final String grokFailureKey;
 
     /**
-     * grok failure key.
+     * Grok failure key.
      * @return the value
      **/
     public String getGrokFailureKey() {
@@ -261,13 +261,13 @@ public final class UnifiedAgentGrokParser extends UnifiedAgentParser {
     }
 
     /**
-     * grok pattern object.
+     * Grok pattern object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patterns")
     private final java.util.List<GrokPattern> patterns;
 
     /**
-     * grok pattern object.
+     * Grok pattern object.
      * @return the value
      **/
     public java.util.List<GrokPattern> getPatterns() {

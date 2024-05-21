@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -78,6 +78,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Complete cluster credential rotation. Retire old credentials from kubernetes components.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CompleteCredentialRotationResponse> completeCredentialRotation(
+            CompleteCredentialRotationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CompleteCredentialRotationRequest, CompleteCredentialRotationResponse>
+                    handler);
+
+    /**
      * Create a new cluster.
      *
      * @param request The request object containing the details to send
@@ -136,6 +152,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
             CreateVirtualNodePoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateVirtualNodePoolRequest, CreateVirtualNodePoolResponse>
+                    handler);
+
+    /**
+     * Create the specified workloadMapping for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateWorkloadMappingResponse> createWorkloadMapping(
+            CreateWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateWorkloadMappingRequest, CreateWorkloadMappingResponse>
                     handler);
 
     /**
@@ -212,6 +244,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
             DeleteWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteWorkRequestRequest, DeleteWorkRequestResponse>
+                    handler);
+
+    /**
+     * Delete workloadMapping for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteWorkloadMappingResponse> deleteWorkloadMapping(
+            DeleteWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWorkloadMappingRequest, DeleteWorkloadMappingResponse>
                     handler);
 
     /**
@@ -292,6 +340,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get cluster credential rotation status.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCredentialRotationStatusResponse> getCredentialRotationStatus(
+            GetCredentialRotationStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCredentialRotationStatusRequest, GetCredentialRotationStatusResponse>
+                    handler);
+
+    /**
      * Get the details of a node pool.
      *
      * @param request The request object containing the details to send
@@ -365,6 +429,22 @@ public interface ContainerEngineAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Get the specified workloadMapping for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkloadMappingResponse> getWorkloadMapping(
+            GetWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkloadMappingRequest, GetWorkloadMappingResponse>
                     handler);
 
     /**
@@ -535,6 +615,38 @@ public interface ContainerEngineAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List workloadMappings for a provisioned cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkloadMappingsResponse> listWorkloadMappings(
+            ListWorkloadMappingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>
+                    handler);
+
+    /**
+     * Start cluster credential rotation by adding new credentials, old credentials will still work after this operation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartCredentialRotationResponse> startCredentialRotation(
+            StartCredentialRotationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StartCredentialRotationRequest, StartCredentialRotationResponse>
+                    handler);
+
+    /**
      * Update addon details for a cluster.
      *
      * @param request The request object containing the details to send
@@ -608,5 +720,21 @@ public interface ContainerEngineAsync extends AutoCloseable {
             UpdateVirtualNodePoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateVirtualNodePoolRequest, UpdateVirtualNodePoolResponse>
+                    handler);
+
+    /**
+     * Update workloadMapping details for a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateWorkloadMappingResponse> updateWorkloadMapping(
+            UpdateWorkloadMappingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWorkloadMappingRequest, UpdateWorkloadMappingResponse>
                     handler);
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.requests;
@@ -12,23 +12,23 @@ import com.oracle.bmc.containerinstances.model.*;
 public class GetContainerRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique identifier for the Container.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
      */
     private String containerId;
 
     /**
-     * The unique identifier for the Container.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
      */
     public String getContainerId() {
         return containerId;
     }
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -42,12 +42,12 @@ public class GetContainerRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The unique identifier for the Container.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
          */
         private String containerId = null;
 
         /**
-         * The unique identifier for the Container.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
          * @param containerId the value to set
          * @return this builder instance
          */
@@ -57,12 +57,12 @@ public class GetContainerRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */

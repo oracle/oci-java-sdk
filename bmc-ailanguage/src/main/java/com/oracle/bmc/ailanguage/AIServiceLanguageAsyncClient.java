@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage;
@@ -516,6 +516,59 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDetectHealthEntityResponse> batchDetectHealthEntity(
+            BatchDetectHealthEntityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BatchDetectHealthEntityRequest, BatchDetectHealthEntityResponse>
+                    handler) {
+        LOG.trace("Called async batchDetectHealthEntity");
+        final BatchDetectHealthEntityRequest interceptedRequest =
+                BatchDetectHealthEntityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BatchDetectHealthEntityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "BatchDetectHealthEntity",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectHealthEntityDetails/BatchDetectHealthEntity");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BatchDetectHealthEntityResponse>
+                transformer =
+                        BatchDetectHealthEntityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BatchDetectHealthEntityRequest, BatchDetectHealthEntityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BatchDetectHealthEntityRequest, BatchDetectHealthEntityResponse>,
+                        java.util.concurrent.Future<BatchDetectHealthEntityResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBatchDetectHealthEntityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BatchDetectHealthEntityRequest, BatchDetectHealthEntityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDetectLanguageEntitiesResponse>
             batchDetectLanguageEntities(
                     BatchDetectLanguageEntitiesRequest request,
@@ -854,6 +907,49 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJobResponse> cancelJob(
+            CancelJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse>
+                    handler) {
+        LOG.trace("Called async cancelJob");
+        final CancelJobRequest interceptedRequest = CancelJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "CancelJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/CancelJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelJobResponse>
+                transformer =
+                        CancelJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse>,
+                        java.util.concurrent.Future<CancelJobResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelJobRequest, CancelJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeEndpointCompartmentResponse> changeEndpointCompartment(
             ChangeEndpointCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -896,6 +992,59 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeEndpointCompartmentRequest, ChangeEndpointCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeJobCompartmentResponse> changeJobCompartment(
+            ChangeJobCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeJobCompartment");
+        final ChangeJobCompartmentRequest interceptedRequest =
+                ChangeJobCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "ChangeJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/ChangeJobCompartment");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
+                transformer =
+                        ChangeJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeJobCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeJobCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1067,6 +1216,54 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJobResponse> createJob(
+            CreateJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>
+                    handler) {
+        LOG.trace("Called async createJob");
+        final CreateJobRequest interceptedRequest = CreateJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "CreateJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/CreateJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse>
+                transformer =
+                        CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>,
+                        java.util.concurrent.Future<CreateJobResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateJobRequest, CreateJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResponse> createModel(
             CreateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
@@ -1199,6 +1396,48 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteEndpointRequest, DeleteEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobResponse> deleteJob(
+            DeleteJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
+                    handler) {
+        LOG.trace("Called async deleteJob");
+        final DeleteJobRequest interceptedRequest = DeleteJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "DeleteJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/DeleteJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse>
+                transformer =
+                        DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>,
+                        java.util.concurrent.Future<DeleteJobResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteJobRequest, DeleteJobResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1612,6 +1851,45 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetJobResponse> getJob(
+            GetJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler) {
+        LOG.trace("Called async getJob");
+        final GetJobRequest interceptedRequest = GetJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "GetJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/GetJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
+                GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse>,
+                        java.util.concurrent.Future<GetJobResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJobRequest, GetJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetModelResponse> getModel(
             GetModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse>
@@ -1640,6 +1918,50 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetModelRequest, GetModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelTypeResponse> getModelType(
+            GetModelTypeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetModelTypeRequest, GetModelTypeResponse>
+                    handler) {
+        LOG.trace("Called async getModelType");
+        final GetModelTypeRequest interceptedRequest =
+                GetModelTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModelTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "GetModelType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/ModelTypeInfo/GetModelType");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetModelTypeResponse>
+                transformer =
+                        GetModelTypeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetModelTypeRequest, GetModelTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetModelTypeRequest, GetModelTypeResponse>,
+                        java.util.concurrent.Future<GetModelTypeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetModelTypeRequest, GetModelTypeResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1819,6 +2141,47 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListEvaluationResultsRequest, ListEvaluationResultsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobsResponse> listJobs(
+            ListJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>
+                    handler) {
+        LOG.trace("Called async listJobs");
+        final ListJobsRequest interceptedRequest = ListJobsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "ListJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/ListJobs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
+                ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>,
+                        java.util.concurrent.Future<ListJobsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJobsRequest, ListJobsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2096,6 +2459,53 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateEndpointRequest, UpdateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJobResponse> updateJob(
+            UpdateJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>
+                    handler) {
+        LOG.trace("Called async updateJob");
+        final UpdateJobRequest interceptedRequest = UpdateJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceLanguage",
+                        "UpdateJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Job/UpdateJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse>
+                transformer =
+                        UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>,
+                        java.util.concurrent.Future<UpdateJobResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateJobRequest, UpdateJobResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

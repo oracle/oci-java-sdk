@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -153,6 +153,15 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isVolumeCreatedDuringLaunch")
+        private Boolean isVolumeCreatedDuringLaunch;
+
+        public Builder isVolumeCreatedDuringLaunch(Boolean isVolumeCreatedDuringLaunch) {
+            this.isVolumeCreatedDuringLaunch = isVolumeCreatedDuringLaunch;
+            this.__explicitlySet__.add("isVolumeCreatedDuringLaunch");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -172,7 +181,8 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                             this.volumeId,
                             this.isPvEncryptionInTransitEnabled,
                             this.isMultipath,
-                            this.iscsiLoginState);
+                            this.iscsiLoginState,
+                            this.isVolumeCreatedDuringLaunch);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -223,6 +233,9 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             if (model.wasPropertyExplicitlySet("iscsiLoginState")) {
                 this.iscsiLoginState(model.getIscsiLoginState());
             }
+            if (model.wasPropertyExplicitlySet("isVolumeCreatedDuringLaunch")) {
+                this.isVolumeCreatedDuringLaunch(model.getIsVolumeCreatedDuringLaunch());
+            }
             return this;
         }
     }
@@ -253,7 +266,8 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled,
             Boolean isMultipath,
-            IscsiLoginState iscsiLoginState) {
+            IscsiLoginState iscsiLoginState,
+            Boolean isVolumeCreatedDuringLaunch) {
         super(
                 availabilityDomain,
                 compartmentId,
@@ -268,7 +282,8 @@ public final class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                 volumeId,
                 isPvEncryptionInTransitEnabled,
                 isMultipath,
-                iscsiLoginState);
+                iscsiLoginState,
+                isVolumeCreatedDuringLaunch);
     }
 
     @Override

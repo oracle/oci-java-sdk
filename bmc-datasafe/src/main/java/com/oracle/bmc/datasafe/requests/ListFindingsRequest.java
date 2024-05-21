@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -34,6 +34,17 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return opcRequestId;
     }
     /**
+     * A filter to return only the findings that are marked as top findings.
+     */
+    private Boolean isTopFinding;
+
+    /**
+     * A filter to return only the findings that are marked as top findings.
+     */
+    public Boolean getIsTopFinding() {
+        return isTopFinding;
+    }
+    /**
      * A filter to return only findings of a particular risk level.
      */
     private Severity severity;
@@ -48,6 +59,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         Evaluate("EVALUATE"),
         Advisory("ADVISORY"),
         Pass("PASS"),
+        Deferred("DEFERRED"),
         ;
 
         private final String value;
@@ -85,12 +97,23 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return severity;
     }
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * A filter to return only the findings that match the specified lifecycle states.
+     */
+    private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState;
+
+    /**
+     * A filter to return only the findings that match the specified lifecycle states.
+     */
+    public com.oracle.bmc.datasafe.model.FindingLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+    /**
+     * An optional filter to return only findings that match the specified reference.
      */
     private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references;
 
     /**
-     * An optional filter to return only findings containing the specified reference.
+     * An optional filter to return only findings that match the specified reference.
      */
     public com.oracle.bmc.datasafe.model.SecurityAssessmentReferences getReferences() {
         return references;
@@ -192,12 +215,16 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return accessLevel;
     }
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding's name).
+     * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+     *
      */
     private String findingKey;
 
     /**
-     * Each finding has a key. This key is same for the finding across targets
+     * Each finding in security assessment has an associated key (think of key as a finding's name).
+     * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+     *
      */
     public String getFindingKey() {
         return findingKey;
@@ -241,6 +268,21 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * A filter to return only the findings that are marked as top findings.
+         */
+        private Boolean isTopFinding = null;
+
+        /**
+         * A filter to return only the findings that are marked as top findings.
+         * @param isTopFinding the value to set
+         * @return this builder instance
+         */
+        public Builder isTopFinding(Boolean isTopFinding) {
+            this.isTopFinding = isTopFinding;
+            return this;
+        }
+
+        /**
          * A filter to return only findings of a particular risk level.
          */
         private Severity severity = null;
@@ -256,12 +298,28 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * An optional filter to return only findings containing the specified reference.
+         * A filter to return only the findings that match the specified lifecycle states.
+         */
+        private com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState = null;
+
+        /**
+         * A filter to return only the findings that match the specified lifecycle states.
+         * @param lifecycleState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleState(
+                com.oracle.bmc.datasafe.model.FindingLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            return this;
+        }
+
+        /**
+         * An optional filter to return only findings that match the specified reference.
          */
         private com.oracle.bmc.datasafe.model.SecurityAssessmentReferences references = null;
 
         /**
-         * An optional filter to return only findings containing the specified reference.
+         * An optional filter to return only findings that match the specified reference.
          * @param references the value to set
          * @return this builder instance
          */
@@ -344,12 +402,16 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Each finding has a key. This key is same for the finding across targets
+         * Each finding in security assessment has an associated key (think of key as a finding's name).
+         * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+         *
          */
         private String findingKey = null;
 
         /**
-         * Each finding has a key. This key is same for the finding across targets
+         * Each finding in security assessment has an associated key (think of key as a finding's name).
+         * For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
+         *
          * @param findingKey the value to set
          * @return this builder instance
          */
@@ -388,7 +450,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(ListFindingsRequest o) {
             securityAssessmentId(o.getSecurityAssessmentId());
             opcRequestId(o.getOpcRequestId());
+            isTopFinding(o.getIsTopFinding());
             severity(o.getSeverity());
+            lifecycleState(o.getLifecycleState());
             references(o.getReferences());
             limit(o.getLimit());
             page(o.getPage());
@@ -429,7 +493,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             ListFindingsRequest request = new ListFindingsRequest();
             request.securityAssessmentId = securityAssessmentId;
             request.opcRequestId = opcRequestId;
+            request.isTopFinding = isTopFinding;
             request.severity = severity;
+            request.lifecycleState = lifecycleState;
             request.references = references;
             request.limit = limit;
             request.page = page;
@@ -437,7 +503,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.accessLevel = accessLevel;
             request.findingKey = findingKey;
             return request;
-            // new ListFindingsRequest(securityAssessmentId, opcRequestId, severity, references, limit, page, compartmentIdInSubtree, accessLevel, findingKey);
+            // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity, lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel, findingKey);
         }
     }
 
@@ -449,7 +515,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return new Builder()
                 .securityAssessmentId(securityAssessmentId)
                 .opcRequestId(opcRequestId)
+                .isTopFinding(isTopFinding)
                 .severity(severity)
+                .lifecycleState(lifecycleState)
                 .references(references)
                 .limit(limit)
                 .page(page)
@@ -473,7 +541,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append("super=").append(super.toString());
         sb.append(",securityAssessmentId=").append(String.valueOf(this.securityAssessmentId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isTopFinding=").append(String.valueOf(this.isTopFinding));
         sb.append(",severity=").append(String.valueOf(this.severity));
+        sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",references=").append(String.valueOf(this.references));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -497,7 +567,9 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         return super.equals(o)
                 && java.util.Objects.equals(this.securityAssessmentId, other.securityAssessmentId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isTopFinding, other.isTopFinding)
                 && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.references, other.references)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -517,7 +589,11 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                                 ? 43
                                 : this.securityAssessmentId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isTopFinding == null ? 43 : this.isTopFinding.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

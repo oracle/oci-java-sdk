@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Description of DataMaskRule.
+ * A data mask rule specifies the conditions in which the value for a sensitive data field in the UI is to be hidden or displayed when viewed by specified groups of users. The DataMaskRule resource contains the parameters for a data mask rule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,6 +32,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
         "dataMaskRuleStatus",
         "lifecycleState",
         "lifecyleDetails",
+        "locks",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -49,6 +50,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             DataMaskRuleStatus dataMaskRuleStatus,
             LifecycleState lifecycleState,
             String lifecyleDetails,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -65,6 +67,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
         this.dataMaskRuleStatus = dataMaskRuleStatus;
         this.lifecycleState = lifecycleState;
         this.lifecyleDetails = lifecyleDetails;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -73,13 +76,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -89,13 +92,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Data Mask Rule Identifier, can be renamed.
+         * Data mask rule display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Mask Rule Identifier, can be renamed.
+         * Data mask rule display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -105,13 +108,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created.
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created.
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -121,13 +124,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The data mask rule description.
+         * The data mask rule description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The data mask rule description.
+         * The data mask rule description
          * @param description the value to set
          * @return this builder
          **/
@@ -137,13 +140,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * IAM Group id associated with the data mask rule
+         * IAM Group ID associated with the data mask rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
         private String iamGroupId;
 
         /**
-         * IAM Group id associated with the data mask rule
+         * IAM Group ID associated with the data mask rule
          * @param iamGroupId the value to set
          * @return this builder
          **/
@@ -162,13 +165,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Data Mask Categories
+         * List of data mask rule categories
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
         private java.util.List<DataMaskCategory> dataMaskCategories;
 
         /**
-         * Data Mask Categories
+         * List of data mask rule categories
          * @param dataMaskCategories the value to set
          * @return this builder
          **/
@@ -210,13 +213,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The status of the dataMaskRule.
+         * The current status of the data mask rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
         private DataMaskRuleStatus dataMaskRuleStatus;
 
         /**
-         * The status of the dataMaskRule.
+         * The current status of the data mask rule
          * @param dataMaskRuleStatus the value to set
          * @return this builder
          **/
@@ -226,13 +229,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The current state of the DataMaskRule.
+         * The current lifecycle state of the data mask rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the DataMaskRule.
+         * The current lifecycle state of the data mask rule
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -242,19 +245,35 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * Additional details on the substate of the lifecycle state [DEPRECATE]
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * Additional details on the substate of the lifecycle state [DEPRECATE]
          * @param lifecyleDetails the value to set
          * @return this builder
          **/
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = lifecyleDetails;
             this.__explicitlySet__.add("lifecyleDetails");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -347,6 +366,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.dataMaskRuleStatus,
                             this.lifecycleState,
                             this.lifecyleDetails,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -394,6 +414,9 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("lifecyleDetails")) {
                 this.lifecyleDetails(model.getLifecyleDetails());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -419,13 +442,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -433,13 +456,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Data Mask Rule Identifier, can be renamed.
+     * Data mask rule display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Mask Rule Identifier, can be renamed.
+     * Data mask rule display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -447,13 +470,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Compartment Identifier where the resource is created.
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created.
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -461,13 +484,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The data mask rule description.
+     * The data mask rule description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The data mask rule description.
+     * The data mask rule description
      * @return the value
      **/
     public String getDescription() {
@@ -475,13 +498,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * IAM Group id associated with the data mask rule
+     * IAM Group ID associated with the data mask rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
     private final String iamGroupId;
 
     /**
-     * IAM Group id associated with the data mask rule
+     * IAM Group ID associated with the data mask rule
      * @return the value
      **/
     public String getIamGroupId() {
@@ -496,13 +519,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Data Mask Categories
+     * List of data mask rule categories
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
     private final java.util.List<DataMaskCategory> dataMaskCategories;
 
     /**
-     * Data Mask Categories
+     * List of data mask rule categories
      * @return the value
      **/
     public java.util.List<DataMaskCategory> getDataMaskCategories() {
@@ -538,13 +561,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The status of the dataMaskRule.
+     * The current status of the data mask rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
     private final DataMaskRuleStatus dataMaskRuleStatus;
 
     /**
-     * The status of the dataMaskRule.
+     * The current status of the data mask rule
      * @return the value
      **/
     public DataMaskRuleStatus getDataMaskRuleStatus() {
@@ -552,13 +575,13 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -566,17 +589,31 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Additional details on the substate of the lifecycle state [DEPRECATE]
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Additional details on the substate of the lifecycle state [DEPRECATE]
      * @return the value
      **/
     public String getLifecyleDetails() {
         return lifecyleDetails;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -669,6 +706,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", dataMaskRuleStatus=").append(String.valueOf(this.dataMaskRuleStatus));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecyleDetails=").append(String.valueOf(this.lifecyleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -698,6 +736,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.dataMaskRuleStatus, other.dataMaskRuleStatus)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecyleDetails, other.lifecyleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -736,6 +775,7 @@ public final class DataMaskRule extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.lifecyleDetails == null ? 43 : this.lifecyleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -30,6 +30,8 @@ public final class LogAnalyticsAssociationParameter
         "sourceDisplayName",
         "sourceType",
         "status",
+        "statusDescription",
+        "associationProperties",
         "missingProperties",
         "requiredProperties"
     })
@@ -41,6 +43,8 @@ public final class LogAnalyticsAssociationParameter
             String sourceDisplayName,
             String sourceType,
             Status status,
+            String statusDescription,
+            java.util.List<AssociationProperty> associationProperties,
             java.util.List<String> missingProperties,
             java.util.List<String> requiredProperties) {
         super();
@@ -51,6 +55,8 @@ public final class LogAnalyticsAssociationParameter
         this.sourceDisplayName = sourceDisplayName;
         this.sourceType = sourceType;
         this.status = status;
+        this.statusDescription = statusDescription;
+        this.associationProperties = associationProperties;
         this.missingProperties = missingProperties;
         this.requiredProperties = requiredProperties;
     }
@@ -170,6 +176,39 @@ public final class LogAnalyticsAssociationParameter
             return this;
         }
         /**
+         * The status description.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
+        private String statusDescription;
+
+        /**
+         * The status description.
+         * @param statusDescription the value to set
+         * @return this builder
+         **/
+        public Builder statusDescription(String statusDescription) {
+            this.statusDescription = statusDescription;
+            this.__explicitlySet__.add("statusDescription");
+            return this;
+        }
+        /**
+         * A list of association properties.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
+        private java.util.List<AssociationProperty> associationProperties;
+
+        /**
+         * A list of association properties.
+         * @param associationProperties the value to set
+         * @return this builder
+         **/
+        public Builder associationProperties(
+                java.util.List<AssociationProperty> associationProperties) {
+            this.associationProperties = associationProperties;
+            this.__explicitlySet__.add("associationProperties");
+            return this;
+        }
+        /**
          * A list of missing properties.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
@@ -215,6 +254,8 @@ public final class LogAnalyticsAssociationParameter
                             this.sourceDisplayName,
                             this.sourceType,
                             this.status,
+                            this.statusDescription,
+                            this.associationProperties,
                             this.missingProperties,
                             this.requiredProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -245,6 +286,12 @@ public final class LogAnalyticsAssociationParameter
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("statusDescription")) {
+                this.statusDescription(model.getStatusDescription());
+            }
+            if (model.wasPropertyExplicitlySet("associationProperties")) {
+                this.associationProperties(model.getAssociationProperties());
             }
             if (model.wasPropertyExplicitlySet("missingProperties")) {
                 this.missingProperties(model.getMissingProperties());
@@ -413,6 +460,34 @@ public final class LogAnalyticsAssociationParameter
     }
 
     /**
+     * The status description.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
+    private final String statusDescription;
+
+    /**
+     * The status description.
+     * @return the value
+     **/
+    public String getStatusDescription() {
+        return statusDescription;
+    }
+
+    /**
+     * A list of association properties.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
+    private final java.util.List<AssociationProperty> associationProperties;
+
+    /**
+     * A list of association properties.
+     * @return the value
+     **/
+    public java.util.List<AssociationProperty> getAssociationProperties() {
+        return associationProperties;
+    }
+
+    /**
      * A list of missing properties.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
@@ -461,6 +536,8 @@ public final class LogAnalyticsAssociationParameter
         sb.append(", sourceDisplayName=").append(String.valueOf(this.sourceDisplayName));
         sb.append(", sourceType=").append(String.valueOf(this.sourceType));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", statusDescription=").append(String.valueOf(this.statusDescription));
+        sb.append(", associationProperties=").append(String.valueOf(this.associationProperties));
         sb.append(", missingProperties=").append(String.valueOf(this.missingProperties));
         sb.append(", requiredProperties=").append(String.valueOf(this.requiredProperties));
         sb.append(")");
@@ -484,6 +561,8 @@ public final class LogAnalyticsAssociationParameter
                 && java.util.Objects.equals(this.sourceDisplayName, other.sourceDisplayName)
                 && java.util.Objects.equals(this.sourceType, other.sourceType)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.statusDescription, other.statusDescription)
+                && java.util.Objects.equals(this.associationProperties, other.associationProperties)
                 && java.util.Objects.equals(this.missingProperties, other.missingProperties)
                 && java.util.Objects.equals(this.requiredProperties, other.requiredProperties)
                 && super.equals(other);
@@ -502,6 +581,14 @@ public final class LogAnalyticsAssociationParameter
                         + (this.sourceDisplayName == null ? 43 : this.sourceDisplayName.hashCode());
         result = (result * PRIME) + (this.sourceType == null ? 43 : this.sourceType.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.statusDescription == null ? 43 : this.statusDescription.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationProperties == null
+                                ? 43
+                                : this.associationProperties.hashCode());
         result =
                 (result * PRIME)
                         + (this.missingProperties == null ? 43 : this.missingProperties.hashCode());

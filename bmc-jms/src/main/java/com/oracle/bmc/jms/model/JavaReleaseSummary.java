@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -32,7 +32,9 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
         "licenseDetails",
         "releaseDate",
         "releaseNotesUrl",
-        "artifactContentTypes"
+        "artifactContentTypes",
+        "mosPatches",
+        "daysUnderSecurityBaseline"
     })
     public JavaReleaseSummary(
             String releaseVersion,
@@ -45,7 +47,9 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
             JavaLicense licenseDetails,
             java.util.Date releaseDate,
             String releaseNotesUrl,
-            java.util.List<ArtifactContentType> artifactContentTypes) {
+            java.util.List<ArtifactContentType> artifactContentTypes,
+            java.util.List<PatchDetail> mosPatches,
+            Integer daysUnderSecurityBaseline) {
         super();
         this.releaseVersion = releaseVersion;
         this.familyVersion = familyVersion;
@@ -58,6 +62,8 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
         this.releaseDate = releaseDate;
         this.releaseNotesUrl = releaseNotesUrl;
         this.artifactContentTypes = artifactContentTypes;
+        this.mosPatches = mosPatches;
+        this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -225,6 +231,42 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("artifactContentTypes");
             return this;
         }
+        /**
+         * List of My Oracle Support(MoS) patches available for this release.
+         * This information is only available for {@code BPR} release type.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("mosPatches")
+        private java.util.List<PatchDetail> mosPatches;
+
+        /**
+         * List of My Oracle Support(MoS) patches available for this release.
+         * This information is only available for {@code BPR} release type.
+         *
+         * @param mosPatches the value to set
+         * @return this builder
+         **/
+        public Builder mosPatches(java.util.List<PatchDetail> mosPatches) {
+            this.mosPatches = mosPatches;
+            this.__explicitlySet__.add("mosPatches");
+            return this;
+        }
+        /**
+         * The number of days since this release has been under the security baseline.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("daysUnderSecurityBaseline")
+        private Integer daysUnderSecurityBaseline;
+
+        /**
+         * The number of days since this release has been under the security baseline.
+         * @param daysUnderSecurityBaseline the value to set
+         * @return this builder
+         **/
+        public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
+            this.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
+            this.__explicitlySet__.add("daysUnderSecurityBaseline");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -242,7 +284,9 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
                             this.licenseDetails,
                             this.releaseDate,
                             this.releaseNotesUrl,
-                            this.artifactContentTypes);
+                            this.artifactContentTypes,
+                            this.mosPatches,
+                            this.daysUnderSecurityBaseline);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -283,6 +327,12 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("artifactContentTypes")) {
                 this.artifactContentTypes(model.getArtifactContentTypes());
+            }
+            if (model.wasPropertyExplicitlySet("mosPatches")) {
+                this.mosPatches(model.getMosPatches());
+            }
+            if (model.wasPropertyExplicitlySet("daysUnderSecurityBaseline")) {
+                this.daysUnderSecurityBaseline(model.getDaysUnderSecurityBaseline());
             }
             return this;
         }
@@ -439,6 +489,38 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
         return artifactContentTypes;
     }
 
+    /**
+     * List of My Oracle Support(MoS) patches available for this release.
+     * This information is only available for {@code BPR} release type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("mosPatches")
+    private final java.util.List<PatchDetail> mosPatches;
+
+    /**
+     * List of My Oracle Support(MoS) patches available for this release.
+     * This information is only available for {@code BPR} release type.
+     *
+     * @return the value
+     **/
+    public java.util.List<PatchDetail> getMosPatches() {
+        return mosPatches;
+    }
+
+    /**
+     * The number of days since this release has been under the security baseline.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("daysUnderSecurityBaseline")
+    private final Integer daysUnderSecurityBaseline;
+
+    /**
+     * The number of days since this release has been under the security baseline.
+     * @return the value
+     **/
+    public Integer getDaysUnderSecurityBaseline() {
+        return daysUnderSecurityBaseline;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -464,6 +546,9 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", releaseDate=").append(String.valueOf(this.releaseDate));
         sb.append(", releaseNotesUrl=").append(String.valueOf(this.releaseNotesUrl));
         sb.append(", artifactContentTypes=").append(String.valueOf(this.artifactContentTypes));
+        sb.append(", mosPatches=").append(String.valueOf(this.mosPatches));
+        sb.append(", daysUnderSecurityBaseline=")
+                .append(String.valueOf(this.daysUnderSecurityBaseline));
         sb.append(")");
         return sb.toString();
     }
@@ -489,6 +574,9 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.releaseDate, other.releaseDate)
                 && java.util.Objects.equals(this.releaseNotesUrl, other.releaseNotesUrl)
                 && java.util.Objects.equals(this.artifactContentTypes, other.artifactContentTypes)
+                && java.util.Objects.equals(this.mosPatches, other.mosPatches)
+                && java.util.Objects.equals(
+                        this.daysUnderSecurityBaseline, other.daysUnderSecurityBaseline)
                 && super.equals(other);
     }
 
@@ -527,6 +615,12 @@ public final class JavaReleaseSummary extends com.oracle.bmc.http.internal.Expli
                         + (this.artifactContentTypes == null
                                 ? 43
                                 : this.artifactContentTypes.hashCode());
+        result = (result * PRIME) + (this.mosPatches == null ? 43 : this.mosPatches.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.daysUnderSecurityBaseline == null
+                                ? 43
+                                : this.daysUnderSecurityBaseline.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

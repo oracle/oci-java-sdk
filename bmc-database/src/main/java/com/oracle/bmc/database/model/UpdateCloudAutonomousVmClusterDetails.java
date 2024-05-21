@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -26,6 +26,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
         "description",
         "displayName",
         "maintenanceWindowDetails",
+        "autonomousDataStorageSizeInTBs",
+        "cpuCoreCountPerNode",
+        "totalContainerDatabases",
         "licenseModel",
         "nsgIds",
         "freeformTags",
@@ -35,6 +38,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
             String description,
             String displayName,
             MaintenanceWindow maintenanceWindowDetails,
+            Double autonomousDataStorageSizeInTBs,
+            Integer cpuCoreCountPerNode,
+            Integer totalContainerDatabases,
             LicenseModel licenseModel,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
@@ -43,6 +49,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
         this.description = description;
         this.displayName = displayName;
         this.maintenanceWindowDetails = maintenanceWindowDetails;
+        this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+        this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+        this.totalContainerDatabases = totalContainerDatabases;
         this.licenseModel = licenseModel;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
@@ -95,24 +104,72 @@ public final class UpdateCloudAutonomousVmClusterDetails
             return this;
         }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-         * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-         * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-         * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+         * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+        private Double autonomousDataStorageSizeInTBs;
+
+        /**
+         * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
+         * @param autonomousDataStorageSizeInTBs the value to set
+         * @return this builder
+         **/
+        public Builder autonomousDataStorageSizeInTBs(Double autonomousDataStorageSizeInTBs) {
+            this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
+            this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
+            return this;
+        }
+        /**
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+        private Integer cpuCoreCountPerNode;
+
+        /**
+         * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+         * @param cpuCoreCountPerNode the value to set
+         * @return this builder
+         **/
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            this.__explicitlySet__.add("cpuCoreCountPerNode");
+            return this;
+        }
+        /**
+         * The new value of maximum number of ACDs for the Autonomous VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+        private Integer totalContainerDatabases;
+
+        /**
+         * The new value of maximum number of ACDs for the Autonomous VM cluster.
+         * @param totalContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            this.totalContainerDatabases = totalContainerDatabases;
+            this.__explicitlySet__.add("totalContainerDatabases");
+            return this;
+        }
+        /**
+         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+         * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+         * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+         * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * <p>
-         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-         * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-         * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-         * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+         * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+         * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+         * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * <p>
-         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -199,6 +256,9 @@ public final class UpdateCloudAutonomousVmClusterDetails
                             this.description,
                             this.displayName,
                             this.maintenanceWindowDetails,
+                            this.autonomousDataStorageSizeInTBs,
+                            this.cpuCoreCountPerNode,
+                            this.totalContainerDatabases,
                             this.licenseModel,
                             this.nsgIds,
                             this.freeformTags,
@@ -219,6 +279,15 @@ public final class UpdateCloudAutonomousVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindowDetails")) {
                 this.maintenanceWindowDetails(model.getMaintenanceWindowDetails());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStorageSizeInTBs")) {
+                this.autonomousDataStorageSizeInTBs(model.getAutonomousDataStorageSizeInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("cpuCoreCountPerNode")) {
+                this.cpuCoreCountPerNode(model.getCpuCoreCountPerNode());
+            }
+            if (model.wasPropertyExplicitlySet("totalContainerDatabases")) {
+                this.totalContainerDatabases(model.getTotalContainerDatabases());
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
@@ -285,12 +354,54 @@ public final class UpdateCloudAutonomousVmClusterDetails
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
+    private final Double autonomousDataStorageSizeInTBs;
+
+    /**
+     * The new value of autonomous data storage (in TBs) for the Autonomous VM cluster.
+     * @return the value
+     **/
+    public Double getAutonomousDataStorageSizeInTBs() {
+        return autonomousDataStorageSizeInTBs;
+    }
+
+    /**
+     * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
+    private final Integer cpuCoreCountPerNode;
+
+    /**
+     * The new value of cpus per Autonomous VM cluster per node for the Autonomous VM cluster.
+     * @return the value
+     **/
+    public Integer getCpuCoreCountPerNode() {
+        return cpuCoreCountPerNode;
+    }
+
+    /**
+     * The new value of maximum number of ACDs for the Autonomous VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
+    private final Integer totalContainerDatabases;
+
+    /**
+     * The new value of maximum number of ACDs for the Autonomous VM cluster.
+     * @return the value
+     **/
+    public Integer getTotalContainerDatabases() {
+        return totalContainerDatabases;
+    }
+
+    /**
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      **/
     public enum LicenseModel {
@@ -326,24 +437,24 @@ public final class UpdateCloudAutonomousVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      * @return the value
      **/
@@ -429,6 +540,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", maintenanceWindowDetails=")
                 .append(String.valueOf(this.maintenanceWindowDetails));
+        sb.append(", autonomousDataStorageSizeInTBs=")
+                .append(String.valueOf(this.autonomousDataStorageSizeInTBs));
+        sb.append(", cpuCoreCountPerNode=").append(String.valueOf(this.cpuCoreCountPerNode));
+        sb.append(", totalContainerDatabases=")
+                .append(String.valueOf(this.totalContainerDatabases));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -451,6 +567,11 @@ public final class UpdateCloudAutonomousVmClusterDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.maintenanceWindowDetails, other.maintenanceWindowDetails)
+                && java.util.Objects.equals(
+                        this.autonomousDataStorageSizeInTBs, other.autonomousDataStorageSizeInTBs)
+                && java.util.Objects.equals(this.cpuCoreCountPerNode, other.cpuCoreCountPerNode)
+                && java.util.Objects.equals(
+                        this.totalContainerDatabases, other.totalContainerDatabases)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -469,6 +590,21 @@ public final class UpdateCloudAutonomousVmClusterDetails
                         + (this.maintenanceWindowDetails == null
                                 ? 43
                                 : this.maintenanceWindowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStorageSizeInTBs == null
+                                ? 43
+                                : this.autonomousDataStorageSizeInTBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuCoreCountPerNode == null
+                                ? 43
+                                : this.cpuCoreCountPerNode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalContainerDatabases == null
+                                ? 43
+                                : this.totalContainerDatabases.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

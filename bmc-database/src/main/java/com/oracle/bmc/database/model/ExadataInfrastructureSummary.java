@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -71,6 +71,7 @@ public final class ExadataInfrastructureSummary
         "isCpsOfflineReportEnabled",
         "networkBondingModeDetails",
         "availabilityDomain",
+        "definedFileSystemConfigurations",
         "freeformTags",
         "definedTags"
     })
@@ -121,6 +122,7 @@ public final class ExadataInfrastructureSummary
             Boolean isCpsOfflineReportEnabled,
             NetworkBondingModeDetails networkBondingModeDetails,
             String availabilityDomain,
+            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -170,6 +172,7 @@ public final class ExadataInfrastructureSummary
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
         this.networkBondingModeDetails = networkBondingModeDetails;
         this.availabilityDomain = availabilityDomain;
+        this.definedFileSystemConfigurations = definedFileSystemConfigurations;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -917,6 +920,23 @@ public final class ExadataInfrastructureSummary
             return this;
         }
         /**
+         * Details of the file system configuration of the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("definedFileSystemConfigurations")
+        private java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations;
+
+        /**
+         * Details of the file system configuration of the Exadata infrastructure.
+         * @param definedFileSystemConfigurations the value to set
+         * @return this builder
+         **/
+        public Builder definedFileSystemConfigurations(
+                java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+            this.__explicitlySet__.add("definedFileSystemConfigurations");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -1014,6 +1034,7 @@ public final class ExadataInfrastructureSummary
                             this.isCpsOfflineReportEnabled,
                             this.networkBondingModeDetails,
                             this.availabilityDomain,
+                            this.definedFileSystemConfigurations,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -1161,6 +1182,9 @@ public final class ExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("definedFileSystemConfigurations")) {
+                this.definedFileSystemConfigurations(model.getDefinedFileSystemConfigurations());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1564,6 +1588,7 @@ public final class ExadataInfrastructureSummary
         X8("X8"),
         X8M("X8M"),
         X9M("X9M"),
+        X10M("X10M"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1989,6 +2014,20 @@ public final class ExadataInfrastructureSummary
     }
 
     /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedFileSystemConfigurations")
+    private final java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations;
+
+    /**
+     * Details of the file system configuration of the Exadata infrastructure.
+     * @return the value
+     **/
+    public java.util.List<DefinedFileSystemConfiguration> getDefinedFileSystemConfigurations() {
+        return definedFileSystemConfigurations;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -2102,6 +2141,8 @@ public final class ExadataInfrastructureSummary
         sb.append(", networkBondingModeDetails=")
                 .append(String.valueOf(this.networkBondingModeDetails));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", definedFileSystemConfigurations=")
+                .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -2174,6 +2215,8 @@ public final class ExadataInfrastructureSummary
                 && java.util.Objects.equals(
                         this.networkBondingModeDetails, other.networkBondingModeDetails)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(
+                        this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -2329,6 +2372,11 @@ public final class ExadataInfrastructureSummary
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.definedFileSystemConfigurations == null
+                                ? 43
+                                : this.definedFileSystemConfigurations.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

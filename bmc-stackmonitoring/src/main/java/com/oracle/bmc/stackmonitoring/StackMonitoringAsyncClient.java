@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring;
@@ -297,6 +297,11 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "StackMonitoringAsyncClient", "exportMetricExtension"));
+        }
     }
 
     /**
@@ -517,6 +522,119 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeConfigCompartmentResponse> changeConfigCompartment(
+            ChangeConfigCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeConfigCompartmentRequest, ChangeConfigCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeConfigCompartment");
+        final ChangeConfigCompartmentRequest interceptedRequest =
+                ChangeConfigCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeConfigCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ChangeConfigCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/ChangeConfigCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeConfigCompartmentResponse>
+                transformer =
+                        ChangeConfigCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeConfigCompartmentRequest, ChangeConfigCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeConfigCompartmentRequest, ChangeConfigCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeConfigCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeConfigCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeConfigCompartmentRequest, ChangeConfigCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMetricExtensionCompartmentResponse>
+            changeMetricExtensionCompartment(
+                    ChangeMetricExtensionCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMetricExtensionCompartmentRequest,
+                                    ChangeMetricExtensionCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMetricExtensionCompartment");
+        final ChangeMetricExtensionCompartmentRequest interceptedRequest =
+                ChangeMetricExtensionCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMetricExtensionCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ChangeMetricExtensionCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/ChangeMetricExtensionCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMetricExtensionCompartmentResponse>
+                transformer =
+                        ChangeMetricExtensionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMetricExtensionCompartmentRequest,
+                        ChangeMetricExtensionCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMetricExtensionCompartmentRequest,
+                                ChangeMetricExtensionCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMetricExtensionCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMetricExtensionCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMetricExtensionCompartmentRequest,
+                    ChangeMetricExtensionCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeMonitoredResourceCompartmentResponse>
             changeMonitoredResourceCompartment(
                     ChangeMonitoredResourceCompartmentRequest request,
@@ -576,6 +694,228 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeMonitoredResourceTaskCompartmentResponse>
+            changeMonitoredResourceTaskCompartment(
+                    ChangeMonitoredResourceTaskCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMonitoredResourceTaskCompartmentRequest,
+                                    ChangeMonitoredResourceTaskCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMonitoredResourceTaskCompartment");
+        final ChangeMonitoredResourceTaskCompartmentRequest interceptedRequest =
+                ChangeMonitoredResourceTaskCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMonitoredResourceTaskCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ChangeMonitoredResourceTaskCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/ChangeMonitoredResourceTaskCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMonitoredResourceTaskCompartmentResponse>
+                transformer =
+                        ChangeMonitoredResourceTaskCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMonitoredResourceTaskCompartmentRequest,
+                        ChangeMonitoredResourceTaskCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMonitoredResourceTaskCompartmentRequest,
+                                ChangeMonitoredResourceTaskCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMonitoredResourceTaskCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMonitoredResourceTaskCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMonitoredResourceTaskCompartmentRequest,
+                    ChangeMonitoredResourceTaskCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeProcessSetCompartmentResponse>
+            changeProcessSetCompartment(
+                    ChangeProcessSetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProcessSetCompartmentRequest,
+                                    ChangeProcessSetCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeProcessSetCompartment");
+        final ChangeProcessSetCompartmentRequest interceptedRequest =
+                ChangeProcessSetCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProcessSetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ChangeProcessSetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/ChangeProcessSetCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeProcessSetCompartmentResponse>
+                transformer =
+                        ChangeProcessSetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeProcessSetCompartmentRequest, ChangeProcessSetCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeProcessSetCompartmentRequest,
+                                ChangeProcessSetCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeProcessSetCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeProcessSetCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeProcessSetCompartmentRequest, ChangeProcessSetCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBaselineableMetricResponse> createBaselineableMetric(
+            CreateBaselineableMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateBaselineableMetricRequest, CreateBaselineableMetricResponse>
+                    handler) {
+        LOG.trace("Called async createBaselineableMetric");
+        final CreateBaselineableMetricRequest interceptedRequest =
+                CreateBaselineableMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBaselineableMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateBaselineableMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/CreateBaselineableMetric");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateBaselineableMetricResponse>
+                transformer =
+                        CreateBaselineableMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateBaselineableMetricRequest, CreateBaselineableMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateBaselineableMetricRequest, CreateBaselineableMetricResponse>,
+                        java.util.concurrent.Future<CreateBaselineableMetricResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateBaselineableMetricDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateBaselineableMetricRequest, CreateBaselineableMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConfigResponse> createConfig(
+            CreateConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
+                    handler) {
+        LOG.trace("Called async createConfig");
+        final CreateConfigRequest interceptedRequest =
+                CreateConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/CreateConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateConfigResponse>
+                transformer =
+                        CreateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateConfigRequest, CreateConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateConfigRequest, CreateConfigResponse>,
+                        java.util.concurrent.Future<CreateConfigResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateConfigRequest, CreateConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDiscoveryJobResponse> createDiscoveryJob(
             CreateDiscoveryJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -615,6 +955,59 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateDiscoveryJobRequest, CreateDiscoveryJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMetricExtensionResponse> createMetricExtension(
+            CreateMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMetricExtensionRequest, CreateMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async createMetricExtension");
+        final CreateMetricExtensionRequest interceptedRequest =
+                CreateMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/CreateMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMetricExtensionResponse>
+                transformer =
+                        CreateMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMetricExtensionRequest, CreateMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMetricExtensionRequest, CreateMetricExtensionResponse>,
+                        java.util.concurrent.Future<CreateMetricExtensionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMetricExtensionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMetricExtensionRequest, CreateMetricExtensionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -682,6 +1075,264 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMonitoredResourceTaskResponse>
+            createMonitoredResourceTask(
+                    CreateMonitoredResourceTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMonitoredResourceTaskRequest,
+                                    CreateMonitoredResourceTaskResponse>
+                            handler) {
+        LOG.trace("Called async createMonitoredResourceTask");
+        final CreateMonitoredResourceTaskRequest interceptedRequest =
+                CreateMonitoredResourceTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMonitoredResourceTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateMonitoredResourceTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/CreateMonitoredResourceTask");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateMonitoredResourceTaskResponse>
+                transformer =
+                        CreateMonitoredResourceTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMonitoredResourceTaskRequest, CreateMonitoredResourceTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMonitoredResourceTaskRequest,
+                                CreateMonitoredResourceTaskResponse>,
+                        java.util.concurrent.Future<CreateMonitoredResourceTaskResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMonitoredResourceTaskDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMonitoredResourceTaskRequest, CreateMonitoredResourceTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMonitoredResourceTypeResponse>
+            createMonitoredResourceType(
+                    CreateMonitoredResourceTypeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMonitoredResourceTypeRequest,
+                                    CreateMonitoredResourceTypeResponse>
+                            handler) {
+        LOG.trace("Called async createMonitoredResourceType");
+        final CreateMonitoredResourceTypeRequest interceptedRequest =
+                CreateMonitoredResourceTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMonitoredResourceTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateMonitoredResourceType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/CreateMonitoredResourceType");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateMonitoredResourceTypeResponse>
+                transformer =
+                        CreateMonitoredResourceTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMonitoredResourceTypeRequest, CreateMonitoredResourceTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMonitoredResourceTypeRequest,
+                                CreateMonitoredResourceTypeResponse>,
+                        java.util.concurrent.Future<CreateMonitoredResourceTypeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMonitoredResourceTypeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMonitoredResourceTypeRequest, CreateMonitoredResourceTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProcessSetResponse> createProcessSet(
+            CreateProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateProcessSetRequest, CreateProcessSetResponse>
+                    handler) {
+        LOG.trace("Called async createProcessSet");
+        final CreateProcessSetRequest interceptedRequest =
+                CreateProcessSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateProcessSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateProcessSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/CreateProcessSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateProcessSetResponse>
+                transformer =
+                        CreateProcessSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateProcessSetRequest, CreateProcessSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateProcessSetRequest, CreateProcessSetResponse>,
+                        java.util.concurrent.Future<CreateProcessSetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateProcessSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateProcessSetRequest, CreateProcessSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBaselineableMetricResponse> deleteBaselineableMetric(
+            DeleteBaselineableMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBaselineableMetricRequest, DeleteBaselineableMetricResponse>
+                    handler) {
+        LOG.trace("Called async deleteBaselineableMetric");
+        final DeleteBaselineableMetricRequest interceptedRequest =
+                DeleteBaselineableMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBaselineableMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DeleteBaselineableMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/DeleteBaselineableMetric");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteBaselineableMetricResponse>
+                transformer =
+                        DeleteBaselineableMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteBaselineableMetricRequest, DeleteBaselineableMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteBaselineableMetricRequest, DeleteBaselineableMetricResponse>,
+                        java.util.concurrent.Future<DeleteBaselineableMetricResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteBaselineableMetricRequest, DeleteBaselineableMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigResponse> deleteConfig(
+            DeleteConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
+                    handler) {
+        LOG.trace("Called async deleteConfig");
+        final DeleteConfigRequest interceptedRequest =
+                DeleteConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DeleteConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/DeleteConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteConfigResponse>
+                transformer =
+                        DeleteConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteConfigRequest, DeleteConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteConfigRequest, DeleteConfigResponse>,
+                        java.util.concurrent.Future<DeleteConfigResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteConfigRequest, DeleteConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDiscoveryJobResponse> deleteDiscoveryJob(
             DeleteDiscoveryJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -715,6 +1366,53 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteDiscoveryJobRequest, DeleteDiscoveryJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricExtensionResponse> deleteMetricExtension(
+            DeleteMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMetricExtensionRequest, DeleteMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async deleteMetricExtension");
+        final DeleteMetricExtensionRequest interceptedRequest =
+                DeleteMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DeleteMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/DeleteMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMetricExtensionResponse>
+                transformer =
+                        DeleteMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMetricExtensionRequest, DeleteMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMetricExtensionRequest, DeleteMetricExtensionResponse>,
+                        java.util.concurrent.Future<DeleteMetricExtensionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMetricExtensionRequest, DeleteMetricExtensionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -776,6 +1474,103 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMonitoredResourceTypeResponse>
+            deleteMonitoredResourceType(
+                    DeleteMonitoredResourceTypeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMonitoredResourceTypeRequest,
+                                    DeleteMonitoredResourceTypeResponse>
+                            handler) {
+        LOG.trace("Called async deleteMonitoredResourceType");
+        final DeleteMonitoredResourceTypeRequest interceptedRequest =
+                DeleteMonitoredResourceTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMonitoredResourceTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DeleteMonitoredResourceType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/DeleteMonitoredResourceType");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteMonitoredResourceTypeResponse>
+                transformer =
+                        DeleteMonitoredResourceTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMonitoredResourceTypeRequest, DeleteMonitoredResourceTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMonitoredResourceTypeRequest,
+                                DeleteMonitoredResourceTypeResponse>,
+                        java.util.concurrent.Future<DeleteMonitoredResourceTypeResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMonitoredResourceTypeRequest, DeleteMonitoredResourceTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProcessSetResponse> deleteProcessSet(
+            DeleteProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteProcessSetRequest, DeleteProcessSetResponse>
+                    handler) {
+        LOG.trace("Called async deleteProcessSet");
+        final DeleteProcessSetRequest interceptedRequest =
+                DeleteProcessSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteProcessSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DeleteProcessSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/DeleteProcessSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteProcessSetResponse>
+                transformer =
+                        DeleteProcessSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteProcessSetRequest, DeleteProcessSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteProcessSetRequest, DeleteProcessSetResponse>,
+                        java.util.concurrent.Future<DeleteProcessSetResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteProcessSetRequest, DeleteProcessSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableExternalDatabaseResponse> disableExternalDatabase(
             DisableExternalDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -812,6 +1607,59 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DisableExternalDatabaseRequest, DisableExternalDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableMetricExtensionResponse> disableMetricExtension(
+            DisableMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisableMetricExtensionRequest, DisableMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async disableMetricExtension");
+        final DisableMetricExtensionRequest interceptedRequest =
+                DisableMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DisableMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/DisableMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, DisableMetricExtensionResponse>
+                transformer =
+                        DisableMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableMetricExtensionRequest, DisableMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableMetricExtensionRequest, DisableMetricExtensionResponse>,
+                        java.util.concurrent.Future<DisableMetricExtensionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDisableMetricExtensionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableMetricExtensionRequest, DisableMetricExtensionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -883,6 +1731,253 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<EnableMetricExtensionResponse> enableMetricExtension(
+            EnableMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            EnableMetricExtensionRequest, EnableMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async enableMetricExtension");
+        final EnableMetricExtensionRequest interceptedRequest =
+                EnableMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "EnableMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/EnableMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, EnableMetricExtensionResponse>
+                transformer =
+                        EnableMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableMetricExtensionRequest, EnableMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableMetricExtensionRequest, EnableMetricExtensionResponse>,
+                        java.util.concurrent.Future<EnableMetricExtensionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableMetricExtensionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableMetricExtensionRequest, EnableMetricExtensionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EvaluateBaselineableMetricResponse>
+            evaluateBaselineableMetric(
+                    EvaluateBaselineableMetricRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EvaluateBaselineableMetricRequest,
+                                    EvaluateBaselineableMetricResponse>
+                            handler) {
+        LOG.trace("Called async evaluateBaselineableMetric");
+        final EvaluateBaselineableMetricRequest interceptedRequest =
+                EvaluateBaselineableMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EvaluateBaselineableMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "EvaluateBaselineableMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/EvaluateBaselineableMetric");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EvaluateBaselineableMetricResponse>
+                transformer =
+                        EvaluateBaselineableMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EvaluateBaselineableMetricRequest, EvaluateBaselineableMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EvaluateBaselineableMetricRequest,
+                                EvaluateBaselineableMetricResponse>,
+                        java.util.concurrent.Future<EvaluateBaselineableMetricResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEvaluateBaselineableMetricDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EvaluateBaselineableMetricRequest, EvaluateBaselineableMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportMetricExtensionResponse> exportMetricExtension(
+            ExportMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportMetricExtensionRequest, ExportMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async exportMetricExtension");
+        final ExportMetricExtensionRequest interceptedRequest =
+                ExportMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ExportMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/ExportMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportMetricExtensionResponse>
+                transformer =
+                        ExportMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExportMetricExtensionRequest, ExportMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExportMetricExtensionRequest, ExportMetricExtensionResponse>,
+                        java.util.concurrent.Future<ExportMetricExtensionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExportMetricExtensionRequest, ExportMetricExtensionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBaselineableMetricResponse> getBaselineableMetric(
+            GetBaselineableMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBaselineableMetricRequest, GetBaselineableMetricResponse>
+                    handler) {
+        LOG.trace("Called async getBaselineableMetric");
+        final GetBaselineableMetricRequest interceptedRequest =
+                GetBaselineableMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBaselineableMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetBaselineableMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/GetBaselineableMetric");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetBaselineableMetricResponse>
+                transformer =
+                        GetBaselineableMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBaselineableMetricRequest, GetBaselineableMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBaselineableMetricRequest, GetBaselineableMetricResponse>,
+                        java.util.concurrent.Future<GetBaselineableMetricResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBaselineableMetricRequest, GetBaselineableMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConfigResponse> getConfig(
+            GetConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse>
+                    handler) {
+        LOG.trace("Called async getConfig");
+        final GetConfigRequest interceptedRequest = GetConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/GetConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetConfigResponse>
+                transformer =
+                        GetConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetConfigRequest, GetConfigResponse>,
+                        java.util.concurrent.Future<GetConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetConfigRequest, GetConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDiscoveryJobResponse> getDiscoveryJob(
             GetDiscoveryJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -916,6 +2011,52 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetDiscoveryJobRequest, GetDiscoveryJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricExtensionResponse> getMetricExtension(
+            GetMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMetricExtensionRequest, GetMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async getMetricExtension");
+        final GetMetricExtensionRequest interceptedRequest =
+                GetMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/GetMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMetricExtensionResponse>
+                transformer =
+                        GetMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMetricExtensionRequest, GetMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMetricExtensionRequest, GetMetricExtensionResponse>,
+                        java.util.concurrent.Future<GetMetricExtensionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMetricExtensionRequest, GetMetricExtensionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -976,6 +2117,146 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetMonitoredResourceTaskResponse> getMonitoredResourceTask(
+            GetMonitoredResourceTaskRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMonitoredResourceTaskRequest, GetMonitoredResourceTaskResponse>
+                    handler) {
+        LOG.trace("Called async getMonitoredResourceTask");
+        final GetMonitoredResourceTaskRequest interceptedRequest =
+                GetMonitoredResourceTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMonitoredResourceTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetMonitoredResourceTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/GetMonitoredResourceTask");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMonitoredResourceTaskResponse>
+                transformer =
+                        GetMonitoredResourceTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMonitoredResourceTaskRequest, GetMonitoredResourceTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMonitoredResourceTaskRequest, GetMonitoredResourceTaskResponse>,
+                        java.util.concurrent.Future<GetMonitoredResourceTaskResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMonitoredResourceTaskRequest, GetMonitoredResourceTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMonitoredResourceTypeResponse> getMonitoredResourceType(
+            GetMonitoredResourceTypeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMonitoredResourceTypeRequest, GetMonitoredResourceTypeResponse>
+                    handler) {
+        LOG.trace("Called async getMonitoredResourceType");
+        final GetMonitoredResourceTypeRequest interceptedRequest =
+                GetMonitoredResourceTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMonitoredResourceTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetMonitoredResourceType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/GetMonitoredResourceType");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMonitoredResourceTypeResponse>
+                transformer =
+                        GetMonitoredResourceTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMonitoredResourceTypeRequest, GetMonitoredResourceTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMonitoredResourceTypeRequest, GetMonitoredResourceTypeResponse>,
+                        java.util.concurrent.Future<GetMonitoredResourceTypeResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMonitoredResourceTypeRequest, GetMonitoredResourceTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProcessSetResponse> getProcessSet(
+            GetProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetProcessSetRequest, GetProcessSetResponse>
+                    handler) {
+        LOG.trace("Called async getProcessSet");
+        final GetProcessSetRequest interceptedRequest =
+                GetProcessSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProcessSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetProcessSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/GetProcessSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProcessSetResponse>
+                transformer =
+                        GetProcessSetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetProcessSetRequest, GetProcessSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetProcessSetRequest, GetProcessSetResponse>,
+                        java.util.concurrent.Future<GetProcessSetResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetProcessSetRequest, GetProcessSetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1008,6 +2289,98 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBaselineableMetricsResponse> listBaselineableMetrics(
+            ListBaselineableMetricsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBaselineableMetricsRequest, ListBaselineableMetricsResponse>
+                    handler) {
+        LOG.trace("Called async listBaselineableMetrics");
+        final ListBaselineableMetricsRequest interceptedRequest =
+                ListBaselineableMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBaselineableMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListBaselineableMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/ListBaselineableMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListBaselineableMetricsResponse>
+                transformer =
+                        ListBaselineableMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBaselineableMetricsRequest, ListBaselineableMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListBaselineableMetricsRequest, ListBaselineableMetricsResponse>,
+                        java.util.concurrent.Future<ListBaselineableMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListBaselineableMetricsRequest, ListBaselineableMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigsResponse> listConfigs(
+            ListConfigsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse>
+                    handler) {
+        LOG.trace("Called async listConfigs");
+        final ListConfigsRequest interceptedRequest =
+                ListConfigsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListConfigsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ConfigCollection/ListConfigs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListConfigsResponse>
+                transformer =
+                        ListConfigsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListConfigsRequest, ListConfigsResponse>,
+                        java.util.concurrent.Future<ListConfigsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListConfigsRequest, ListConfigsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1101,6 +2474,248 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListDiscoveryJobsRequest, ListDiscoveryJobsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricExtensionsResponse> listMetricExtensions(
+            ListMetricExtensionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMetricExtensionsRequest, ListMetricExtensionsResponse>
+                    handler) {
+        LOG.trace("Called async listMetricExtensions");
+        final ListMetricExtensionsRequest interceptedRequest =
+                ListMetricExtensionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMetricExtensionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListMetricExtensions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/ListMetricExtensions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMetricExtensionsResponse>
+                transformer =
+                        ListMetricExtensionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMetricExtensionsRequest, ListMetricExtensionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMetricExtensionsRequest, ListMetricExtensionsResponse>,
+                        java.util.concurrent.Future<ListMetricExtensionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMetricExtensionsRequest, ListMetricExtensionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourceTasksResponse>
+            listMonitoredResourceTasks(
+                    ListMonitoredResourceTasksRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMonitoredResourceTasksRequest,
+                                    ListMonitoredResourceTasksResponse>
+                            handler) {
+        LOG.trace("Called async listMonitoredResourceTasks");
+        final ListMonitoredResourceTasksRequest interceptedRequest =
+                ListMonitoredResourceTasksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMonitoredResourceTasksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListMonitoredResourceTasks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/ListMonitoredResourceTasks");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMonitoredResourceTasksResponse>
+                transformer =
+                        ListMonitoredResourceTasksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMonitoredResourceTasksRequest, ListMonitoredResourceTasksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMonitoredResourceTasksRequest,
+                                ListMonitoredResourceTasksResponse>,
+                        java.util.concurrent.Future<ListMonitoredResourceTasksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMonitoredResourceTasksRequest, ListMonitoredResourceTasksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourceTypesResponse>
+            listMonitoredResourceTypes(
+                    ListMonitoredResourceTypesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMonitoredResourceTypesRequest,
+                                    ListMonitoredResourceTypesResponse>
+                            handler) {
+        LOG.trace("Called async listMonitoredResourceTypes");
+        final ListMonitoredResourceTypesRequest interceptedRequest =
+                ListMonitoredResourceTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMonitoredResourceTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListMonitoredResourceTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/ListMonitoredResourceTypes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMonitoredResourceTypesResponse>
+                transformer =
+                        ListMonitoredResourceTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMonitoredResourceTypesRequest, ListMonitoredResourceTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMonitoredResourceTypesRequest,
+                                ListMonitoredResourceTypesResponse>,
+                        java.util.concurrent.Future<ListMonitoredResourceTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMonitoredResourceTypesRequest, ListMonitoredResourceTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoredResourcesResponse> listMonitoredResources(
+            ListMonitoredResourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>
+                    handler) {
+        LOG.trace("Called async listMonitoredResources");
+        final ListMonitoredResourcesRequest interceptedRequest =
+                ListMonitoredResourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMonitoredResourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListMonitoredResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ListMonitoredResources");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMonitoredResourcesResponse>
+                transformer =
+                        ListMonitoredResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>,
+                        java.util.concurrent.Future<ListMonitoredResourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMonitoredResourcesRequest, ListMonitoredResourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProcessSetsResponse> listProcessSets(
+            ListProcessSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListProcessSetsRequest, ListProcessSetsResponse>
+                    handler) {
+        LOG.trace("Called async listProcessSets");
+        final ListProcessSetsRequest interceptedRequest =
+                ListProcessSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProcessSetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListProcessSets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSetCollection/ListProcessSets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListProcessSetsResponse>
+                transformer =
+                        ListProcessSetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListProcessSetsRequest, ListProcessSetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProcessSetsRequest, ListProcessSetsResponse>,
+                        java.util.concurrent.Future<ListProcessSetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProcessSetsRequest, ListProcessSetsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1241,6 +2856,159 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ManageLicenseResponse> manageLicense(
+            ManageLicenseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ManageLicenseRequest, ManageLicenseResponse>
+                    handler) {
+        LOG.trace("Called async manageLicense");
+        final ManageLicenseRequest interceptedRequest =
+                ManageLicenseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ManageLicenseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ManageLicense",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/ManageLicense");
+        final java.util.function.Function<javax.ws.rs.core.Response, ManageLicenseResponse>
+                transformer =
+                        ManageLicenseConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ManageLicenseRequest, ManageLicenseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ManageLicenseRequest, ManageLicenseResponse>,
+                        java.util.concurrent.Future<ManageLicenseResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getManageLicenseDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ManageLicenseRequest, ManageLicenseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishMetricExtensionResponse> publishMetricExtension(
+            PublishMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PublishMetricExtensionRequest, PublishMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async publishMetricExtension");
+        final PublishMetricExtensionRequest interceptedRequest =
+                PublishMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PublishMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "PublishMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/PublishMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, PublishMetricExtensionResponse>
+                transformer =
+                        PublishMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PublishMetricExtensionRequest, PublishMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PublishMetricExtensionRequest, PublishMetricExtensionResponse>,
+                        java.util.concurrent.Future<PublishMetricExtensionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PublishMetricExtensionRequest, PublishMetricExtensionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestMonitoredResourcesSummarizedCountResponse>
+            requestMonitoredResourcesSummarizedCount(
+                    RequestMonitoredResourcesSummarizedCountRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestMonitoredResourcesSummarizedCountRequest,
+                                    RequestMonitoredResourcesSummarizedCountResponse>
+                            handler) {
+        LOG.trace("Called async requestMonitoredResourcesSummarizedCount");
+        final RequestMonitoredResourcesSummarizedCountRequest interceptedRequest =
+                RequestMonitoredResourcesSummarizedCountConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestMonitoredResourcesSummarizedCountConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "RequestMonitoredResourcesSummarizedCount",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResource/RequestMonitoredResourcesSummarizedCount");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestMonitoredResourcesSummarizedCountResponse>
+                transformer =
+                        RequestMonitoredResourcesSummarizedCountConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestMonitoredResourcesSummarizedCountRequest,
+                        RequestMonitoredResourcesSummarizedCountResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestMonitoredResourcesSummarizedCountRequest,
+                                RequestMonitoredResourcesSummarizedCountResponse>,
+                        java.util.concurrent.Future<
+                                RequestMonitoredResourcesSummarizedCountResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestMonitoredResourcesSummarizedCountRequest,
+                    RequestMonitoredResourcesSummarizedCountResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1481,6 +3249,59 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<TestMetricExtensionResponse> testMetricExtension(
+            TestMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            TestMetricExtensionRequest, TestMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async testMetricExtension");
+        final TestMetricExtensionRequest interceptedRequest =
+                TestMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "TestMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/TestMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, TestMetricExtensionResponse>
+                transformer =
+                        TestMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        TestMetricExtensionRequest, TestMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                TestMetricExtensionRequest, TestMetricExtensionResponse>,
+                        java.util.concurrent.Future<TestMetricExtensionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTestMetricExtensionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TestMetricExtensionRequest, TestMetricExtensionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAndPropagateTagsResponse> updateAndPropagateTags(
             UpdateAndPropagateTagsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1534,6 +3355,160 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateBaselineableMetricResponse> updateBaselineableMetric(
+            UpdateBaselineableMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBaselineableMetricRequest, UpdateBaselineableMetricResponse>
+                    handler) {
+        LOG.trace("Called async updateBaselineableMetric");
+        final UpdateBaselineableMetricRequest interceptedRequest =
+                UpdateBaselineableMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBaselineableMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateBaselineableMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/BaselineableMetric/UpdateBaselineableMetric");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateBaselineableMetricResponse>
+                transformer =
+                        UpdateBaselineableMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateBaselineableMetricRequest, UpdateBaselineableMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateBaselineableMetricRequest, UpdateBaselineableMetricResponse>,
+                        java.util.concurrent.Future<UpdateBaselineableMetricResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateBaselineableMetricDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateBaselineableMetricRequest, UpdateBaselineableMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
+            UpdateConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
+                    handler) {
+        LOG.trace("Called async updateConfig");
+        final UpdateConfigRequest interceptedRequest =
+                UpdateConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/Config/UpdateConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateConfigResponse>
+                transformer =
+                        UpdateConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateConfigRequest, UpdateConfigResponse>,
+                        java.util.concurrent.Future<UpdateConfigResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateConfigRequest, UpdateConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricExtensionResponse> updateMetricExtension(
+            UpdateMetricExtensionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMetricExtensionRequest, UpdateMetricExtensionResponse>
+                    handler) {
+        LOG.trace("Called async updateMetricExtension");
+        final UpdateMetricExtensionRequest interceptedRequest =
+                UpdateMetricExtensionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMetricExtensionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateMetricExtension",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MetricExtension/UpdateMetricExtension");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMetricExtensionResponse>
+                transformer =
+                        UpdateMetricExtensionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMetricExtensionRequest, UpdateMetricExtensionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMetricExtensionRequest, UpdateMetricExtensionResponse>,
+                        java.util.concurrent.Future<UpdateMetricExtensionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMetricExtensionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMetricExtensionRequest, UpdateMetricExtensionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMonitoredResourceResponse> updateMonitoredResource(
             UpdateMonitoredResourceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1574,6 +3549,169 @@ public class StackMonitoringAsyncClient implements StackMonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateMonitoredResourceRequest, UpdateMonitoredResourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitoredResourceTaskResponse>
+            updateMonitoredResourceTask(
+                    UpdateMonitoredResourceTaskRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMonitoredResourceTaskRequest,
+                                    UpdateMonitoredResourceTaskResponse>
+                            handler) {
+        LOG.trace("Called async updateMonitoredResourceTask");
+        final UpdateMonitoredResourceTaskRequest interceptedRequest =
+                UpdateMonitoredResourceTaskConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMonitoredResourceTaskConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateMonitoredResourceTask",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceTask/UpdateMonitoredResourceTask");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMonitoredResourceTaskResponse>
+                transformer =
+                        UpdateMonitoredResourceTaskConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMonitoredResourceTaskRequest, UpdateMonitoredResourceTaskResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMonitoredResourceTaskRequest,
+                                UpdateMonitoredResourceTaskResponse>,
+                        java.util.concurrent.Future<UpdateMonitoredResourceTaskResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMonitoredResourceTaskDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMonitoredResourceTaskRequest, UpdateMonitoredResourceTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitoredResourceTypeResponse>
+            updateMonitoredResourceType(
+                    UpdateMonitoredResourceTypeRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMonitoredResourceTypeRequest,
+                                    UpdateMonitoredResourceTypeResponse>
+                            handler) {
+        LOG.trace("Called async updateMonitoredResourceType");
+        final UpdateMonitoredResourceTypeRequest interceptedRequest =
+                UpdateMonitoredResourceTypeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMonitoredResourceTypeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateMonitoredResourceType",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MonitoredResourceType/UpdateMonitoredResourceType");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMonitoredResourceTypeResponse>
+                transformer =
+                        UpdateMonitoredResourceTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMonitoredResourceTypeRequest, UpdateMonitoredResourceTypeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMonitoredResourceTypeRequest,
+                                UpdateMonitoredResourceTypeResponse>,
+                        java.util.concurrent.Future<UpdateMonitoredResourceTypeResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMonitoredResourceTypeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMonitoredResourceTypeRequest, UpdateMonitoredResourceTypeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProcessSetResponse> updateProcessSet(
+            UpdateProcessSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateProcessSetRequest, UpdateProcessSetResponse>
+                    handler) {
+        LOG.trace("Called async updateProcessSet");
+        final UpdateProcessSetRequest interceptedRequest =
+                UpdateProcessSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateProcessSetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateProcessSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/ProcessSet/UpdateProcessSet");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProcessSetResponse>
+                transformer =
+                        UpdateProcessSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateProcessSetRequest, UpdateProcessSetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateProcessSetRequest, UpdateProcessSetResponse>,
+                        java.util.concurrent.Future<UpdateProcessSetResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateProcessSetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateProcessSetRequest, UpdateProcessSetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -48,6 +48,7 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "timeUpdated",
         "description",
         "parentCategoryId",
+        "isCommon",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -63,6 +64,7 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             java.util.Date timeUpdated,
             String description,
             String parentCategoryId,
+            Boolean isCommon,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -77,6 +79,7 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.timeUpdated = timeUpdated;
         this.description = description;
         this.parentCategoryId = parentCategoryId;
+        this.isCommon = isCommon;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -223,6 +226,24 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCommon")
+    private final Boolean isCommon;
+
+    /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to
+     * library sensitive types which are frequently used to perform sensitive data discovery.
+     *
+     * @return the value
+     **/
+    public Boolean getIsCommon() {
+        return isCommon;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -304,6 +325,7 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", parentCategoryId=").append(String.valueOf(this.parentCategoryId));
+        sb.append(", isCommon=").append(String.valueOf(this.isCommon));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -331,6 +353,7 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.parentCategoryId, other.parentCategoryId)
+                && java.util.Objects.equals(this.isCommon, other.isCommon)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -357,6 +380,7 @@ public class SensitiveType extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result =
                 (result * PRIME)
                         + (this.parentCategoryId == null ? 43 : this.parentCategoryId.hashCode());
+        result = (result * PRIME) + (this.isCommon == null ? 43 : this.isCommon.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

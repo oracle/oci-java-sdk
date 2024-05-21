@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema to handle userpassword change by self.
+ * The schema used for a user changing their own password.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -498,7 +498,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * Password attribute. The maximum length for a password is controlled by a password policy.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -515,7 +515,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
         private String password;
 
         /**
-         * Password attribute. Max length for password is controlled via Password Policy.
+         * Password attribute. The maximum length for a password is controlled by a password policy.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -536,7 +536,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Old password attribute
+         * The old password attribute.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -553,7 +553,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
         private String oldPassword;
 
         /**
-         * Old password attribute
+         * The old password attribute.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -1059,7 +1059,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * Password attribute. The maximum length for a password is controlled by a password policy.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1076,7 +1076,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
     private final String password;
 
     /**
-     * Password attribute. Max length for password is controlled via Password Policy.
+     * Password attribute. The maximum length for a password is controlled by a password policy.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1095,7 +1095,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Old password attribute
+     * The old password attribute.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1112,7 +1112,7 @@ public final class MePasswordChanger extends com.oracle.bmc.http.internal.Explic
     private final String oldPassword;
 
     /**
-     * Old password attribute
+     * The old password attribute.
      * <p>
      **SCIM++ Properties:**
      *  - type: string

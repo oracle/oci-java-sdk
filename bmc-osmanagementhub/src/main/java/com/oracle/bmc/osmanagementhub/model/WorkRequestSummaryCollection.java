@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -31,13 +31,13 @@ public final class WorkRequestSummaryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of work request summary objects.
+         * List of work requests.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<WorkRequestSummary> items;
 
         /**
-         * List of work request summary objects.
+         * List of work requests.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class WorkRequestSummaryCollection
     }
 
     /**
-     * List of work request summary objects.
+     * List of work requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<WorkRequestSummary> items;
 
     /**
-     * List of work request summary objects.
+     * List of work requests.
      * @return the value
      **/
     public java.util.List<WorkRequestSummary> getItems() {

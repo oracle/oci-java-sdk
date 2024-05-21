@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -14,11 +14,13 @@ public enum OdmsJobPhases {
     OdmsValidateSrc("ODMS_VALIDATE_SRC"),
     OdmsValidatePremigrationAdvisor("ODMS_VALIDATE_PREMIGRATION_ADVISOR"),
     OdmsValidateGgHub("ODMS_VALIDATE_GG_HUB"),
+    OdmsValidateGgService("ODMS_VALIDATE_GG_SERVICE"),
     OdmsValidateDatapumpSettings("ODMS_VALIDATE_DATAPUMP_SETTINGS"),
     OdmsValidateDatapumpSettingsSrc("ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC"),
     OdmsValidateDatapumpSettingsTgt("ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"),
     OdmsValidateDatapumpSrc("ODMS_VALIDATE_DATAPUMP_SRC"),
     OdmsValidateDatapumpEstimateSrc("ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"),
+    OdmsInitializeGgs("ODMS_INITIALIZE_GGS"),
     OdmsValidate("ODMS_VALIDATE"),
     OdmsPrepare("ODMS_PREPARE"),
     OdmsInitialLoadExport("ODMS_INITIAL_LOAD_EXPORT"),

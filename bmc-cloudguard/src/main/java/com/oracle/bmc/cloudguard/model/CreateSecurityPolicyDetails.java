@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new SecurityPolicy.
+ * Parameters to be used to create a new security policy.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -55,13 +55,13 @@ public final class CreateSecurityPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * SecurityPolicy friendly name
+         * Short version of security policy name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("friendlyName")
         private String friendlyName;
 
         /**
-         * SecurityPolicy friendly name
+         * Short version of security policy name
          * @param friendlyName the value to set
          * @return this builder
          **/
@@ -71,13 +71,13 @@ public final class CreateSecurityPolicyDetails
             return this;
         }
         /**
-         * SecurityPolicy Identifier
+         * Security policy display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * SecurityPolicy Identifier
+         * Security policy display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -103,13 +103,13 @@ public final class CreateSecurityPolicyDetails
             return this;
         }
         /**
-         * The category of security policy.
+         * The category of the security policy
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
-         * The category of security policy.
+         * The category of the security policy
          * @param category the value to set
          * @return this builder
          **/
@@ -119,13 +119,13 @@ public final class CreateSecurityPolicyDetails
             return this;
         }
         /**
-         * The list of services for policy.
+         * The list of services for the security policy
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<String> services;
 
         /**
-         * The list of services for policy.
+         * The list of services for the security policy
          * @param services the value to set
          * @return this builder
          **/
@@ -135,13 +135,13 @@ public final class CreateSecurityPolicyDetails
             return this;
         }
         /**
-         * Compartment Identifier
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -258,13 +258,13 @@ public final class CreateSecurityPolicyDetails
     }
 
     /**
-     * SecurityPolicy friendly name
+     * Short version of security policy name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("friendlyName")
     private final String friendlyName;
 
     /**
-     * SecurityPolicy friendly name
+     * Short version of security policy name
      * @return the value
      **/
     public String getFriendlyName() {
@@ -272,13 +272,13 @@ public final class CreateSecurityPolicyDetails
     }
 
     /**
-     * SecurityPolicy Identifier
+     * Security policy display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * SecurityPolicy Identifier
+     * Security policy display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -300,13 +300,13 @@ public final class CreateSecurityPolicyDetails
     }
 
     /**
-     * The category of security policy.
+     * The category of the security policy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
-     * The category of security policy.
+     * The category of the security policy
      * @return the value
      **/
     public String getCategory() {
@@ -314,13 +314,13 @@ public final class CreateSecurityPolicyDetails
     }
 
     /**
-     * The list of services for policy.
+     * The list of services for the security policy
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
     /**
-     * The list of services for policy.
+     * The list of services for the security policy
      * @return the value
      **/
     public java.util.List<String> getServices() {
@@ -328,13 +328,13 @@ public final class CreateSecurityPolicyDetails
     }
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {

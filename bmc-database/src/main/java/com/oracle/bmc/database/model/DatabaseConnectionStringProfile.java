@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -31,7 +31,8 @@ public final class DatabaseConnectionStringProfile
         "tlsAuthentication",
         "hostFormat",
         "sessionMode",
-        "syntaxFormat"
+        "syntaxFormat",
+        "isRegional"
     })
     public DatabaseConnectionStringProfile(
             String displayName,
@@ -41,7 +42,8 @@ public final class DatabaseConnectionStringProfile
             TlsAuthentication tlsAuthentication,
             HostFormat hostFormat,
             SessionMode sessionMode,
-            SyntaxFormat syntaxFormat) {
+            SyntaxFormat syntaxFormat,
+            Boolean isRegional) {
         super();
         this.displayName = displayName;
         this.value = value;
@@ -51,6 +53,7 @@ public final class DatabaseConnectionStringProfile
         this.hostFormat = hostFormat;
         this.sessionMode = sessionMode;
         this.syntaxFormat = syntaxFormat;
+        this.isRegional = isRegional;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -169,7 +172,7 @@ public final class DatabaseConnectionStringProfile
         }
         /**
          * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
-         * Autonomous Databases on shared Exadata infrastructure always use the long format.
+         * Autonomous Database Serverless instances always use the long format.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
@@ -177,7 +180,7 @@ public final class DatabaseConnectionStringProfile
 
         /**
          * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
-         * Autonomous Databases on shared Exadata infrastructure always use the long format.
+         * Autonomous Database Serverless instances always use the long format.
          *
          * @param syntaxFormat the value to set
          * @return this builder
@@ -185,6 +188,22 @@ public final class DatabaseConnectionStringProfile
         public Builder syntaxFormat(SyntaxFormat syntaxFormat) {
             this.syntaxFormat = syntaxFormat;
             this.__explicitlySet__.add("syntaxFormat");
+            return this;
+        }
+        /**
+         * True for a regional connection string, applicable to cross-region DG only.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRegional")
+        private Boolean isRegional;
+
+        /**
+         * True for a regional connection string, applicable to cross-region DG only.
+         * @param isRegional the value to set
+         * @return this builder
+         **/
+        public Builder isRegional(Boolean isRegional) {
+            this.isRegional = isRegional;
+            this.__explicitlySet__.add("isRegional");
             return this;
         }
 
@@ -201,7 +220,8 @@ public final class DatabaseConnectionStringProfile
                             this.tlsAuthentication,
                             this.hostFormat,
                             this.sessionMode,
-                            this.syntaxFormat);
+                            this.syntaxFormat,
+                            this.isRegional);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -233,6 +253,9 @@ public final class DatabaseConnectionStringProfile
             }
             if (model.wasPropertyExplicitlySet("syntaxFormat")) {
                 this.syntaxFormat(model.getSyntaxFormat());
+            }
+            if (model.wasPropertyExplicitlySet("isRegional")) {
+                this.isRegional(model.getIsRegional());
             }
             return this;
         }
@@ -592,7 +615,7 @@ public final class DatabaseConnectionStringProfile
 
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
-     * Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * Autonomous Database Serverless instances always use the long format.
      *
      **/
     public enum SyntaxFormat {
@@ -643,7 +666,7 @@ public final class DatabaseConnectionStringProfile
     };
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
-     * Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * Autonomous Database Serverless instances always use the long format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
@@ -651,12 +674,26 @@ public final class DatabaseConnectionStringProfile
 
     /**
      * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
-     * Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * Autonomous Database Serverless instances always use the long format.
      *
      * @return the value
      **/
     public SyntaxFormat getSyntaxFormat() {
         return syntaxFormat;
+    }
+
+    /**
+     * True for a regional connection string, applicable to cross-region DG only.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRegional")
+    private final Boolean isRegional;
+
+    /**
+     * True for a regional connection string, applicable to cross-region DG only.
+     * @return the value
+     **/
+    public Boolean getIsRegional() {
+        return isRegional;
     }
 
     @Override
@@ -681,6 +718,7 @@ public final class DatabaseConnectionStringProfile
         sb.append(", hostFormat=").append(String.valueOf(this.hostFormat));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", syntaxFormat=").append(String.valueOf(this.syntaxFormat));
+        sb.append(", isRegional=").append(String.valueOf(this.isRegional));
         sb.append(")");
         return sb.toString();
     }
@@ -703,6 +741,7 @@ public final class DatabaseConnectionStringProfile
                 && java.util.Objects.equals(this.hostFormat, other.hostFormat)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.syntaxFormat, other.syntaxFormat)
+                && java.util.Objects.equals(this.isRegional, other.isRegional)
                 && super.equals(other);
     }
 
@@ -722,6 +761,7 @@ public final class DatabaseConnectionStringProfile
         result = (result * PRIME) + (this.hostFormat == null ? 43 : this.hostFormat.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.syntaxFormat == null ? 43 : this.syntaxFormat.hashCode());
+        result = (result * PRIME) + (this.isRegional == null ? 43 : this.isRegional.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

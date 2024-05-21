@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+ * This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -58,13 +58,14 @@ public final class ExtensionUserStateUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The last successful login date
+         * The last successful login date.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: true
          *  - idcsAllowUpdatesInReadOnlyMode: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: dateTime
@@ -74,13 +75,14 @@ public final class ExtensionUserStateUser
         private String lastSuccessfulLoginDate;
 
         /**
-         * The last successful login date
+         * The last successful login date.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: true
          *  - idcsAllowUpdatesInReadOnlyMode: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: dateTime
@@ -94,13 +96,14 @@ public final class ExtensionUserStateUser
             return this;
         }
         /**
-         * The previous successful login date
+         * The previous successful login date.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: dateTime
@@ -110,13 +113,14 @@ public final class ExtensionUserStateUser
         private String previousSuccessfulLoginDate;
 
         /**
-         * The previous successful login date
+         * The previous successful login date.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: dateTime
@@ -130,13 +134,14 @@ public final class ExtensionUserStateUser
             return this;
         }
         /**
-         * The last failed login date
+         * The last failed login date.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
          *  - idcsAllowUpdatesInReadOnlyMode: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: dateTime
@@ -146,13 +151,14 @@ public final class ExtensionUserStateUser
         private String lastFailedLoginDate;
 
         /**
-         * The last failed login date
+         * The last failed login date.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
          *  - idcsAllowUpdatesInReadOnlyMode: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: dateTime
@@ -173,6 +179,8 @@ public final class ExtensionUserStateUser
          *  - idcsAllowUpdatesInReadOnlyMode: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: integer
@@ -189,6 +197,8 @@ public final class ExtensionUserStateUser
          *  - idcsAllowUpdatesInReadOnlyMode: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: integer
@@ -210,6 +220,7 @@ public final class ExtensionUserStateUser
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: integer
@@ -227,6 +238,7 @@ public final class ExtensionUserStateUser
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: request
          *  - type: integer
@@ -278,7 +290,7 @@ public final class ExtensionUserStateUser
             return this;
         }
         /**
-         * Maximum number of concurrent sessions for a User
+         * The maximum number of concurrent sessions for a user.
          * <p>
          **Added In:** 20.1.3
          * <p>
@@ -297,7 +309,7 @@ public final class ExtensionUserStateUser
         private Integer maxConcurrentSessions;
 
         /**
-         * Maximum number of concurrent sessions for a User
+         * The maximum number of concurrent sessions for a user.
          * <p>
          **Added In:** 20.1.3
          * <p>
@@ -404,13 +416,14 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * The last successful login date
+     * The last successful login date.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: true
      *  - idcsAllowUpdatesInReadOnlyMode: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: dateTime
@@ -420,13 +433,14 @@ public final class ExtensionUserStateUser
     private final String lastSuccessfulLoginDate;
 
     /**
-     * The last successful login date
+     * The last successful login date.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: true
      *  - idcsAllowUpdatesInReadOnlyMode: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: dateTime
@@ -438,13 +452,14 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * The previous successful login date
+     * The previous successful login date.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: dateTime
@@ -454,13 +469,14 @@ public final class ExtensionUserStateUser
     private final String previousSuccessfulLoginDate;
 
     /**
-     * The previous successful login date
+     * The previous successful login date.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: dateTime
@@ -472,13 +488,14 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * The last failed login date
+     * The last failed login date.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
      *  - idcsAllowUpdatesInReadOnlyMode: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: dateTime
@@ -488,13 +505,14 @@ public final class ExtensionUserStateUser
     private final String lastFailedLoginDate;
 
     /**
-     * The last failed login date
+     * The last failed login date.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
      *  - idcsAllowUpdatesInReadOnlyMode: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: dateTime
@@ -513,6 +531,8 @@ public final class ExtensionUserStateUser
      *  - idcsAllowUpdatesInReadOnlyMode: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: integer
@@ -529,6 +549,8 @@ public final class ExtensionUserStateUser
      *  - idcsAllowUpdatesInReadOnlyMode: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: integer
@@ -548,6 +570,7 @@ public final class ExtensionUserStateUser
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: integer
@@ -565,6 +588,7 @@ public final class ExtensionUserStateUser
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: request
      *  - type: integer
@@ -612,7 +636,7 @@ public final class ExtensionUserStateUser
     }
 
     /**
-     * Maximum number of concurrent sessions for a User
+     * The maximum number of concurrent sessions for a user.
      * <p>
      **Added In:** 20.1.3
      * <p>
@@ -631,7 +655,7 @@ public final class ExtensionUserStateUser
     private final Integer maxConcurrentSessions;
 
     /**
-     * Maximum number of concurrent sessions for a User
+     * The maximum number of concurrent sessions for a user.
      * <p>
      **Added In:** 20.1.3
      * <p>

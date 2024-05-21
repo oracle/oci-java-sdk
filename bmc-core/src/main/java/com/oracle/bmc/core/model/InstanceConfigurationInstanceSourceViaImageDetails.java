@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -123,6 +123,18 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceSourceImageFilterDetails")
+        private InstanceConfigurationInstanceSourceImageFilterDetails
+                instanceSourceImageFilterDetails;
+
+        public Builder instanceSourceImageFilterDetails(
+                InstanceConfigurationInstanceSourceImageFilterDetails
+                        instanceSourceImageFilterDetails) {
+            this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            this.__explicitlySet__.add("instanceSourceImageFilterDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -132,7 +144,8 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                             this.bootVolumeSizeInGBs,
                             this.imageId,
                             this.kmsKeyId,
-                            this.bootVolumeVpusPerGB);
+                            this.bootVolumeVpusPerGB,
+                            this.instanceSourceImageFilterDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -153,6 +166,9 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
             if (model.wasPropertyExplicitlySet("bootVolumeVpusPerGB")) {
                 this.bootVolumeVpusPerGB(model.getBootVolumeVpusPerGB());
             }
+            if (model.wasPropertyExplicitlySet("instanceSourceImageFilterDetails")) {
+                this.instanceSourceImageFilterDetails(model.getInstanceSourceImageFilterDetails());
+            }
             return this;
         }
     }
@@ -170,12 +186,18 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
 
     @Deprecated
     public InstanceConfigurationInstanceSourceViaImageDetails(
-            Long bootVolumeSizeInGBs, String imageId, String kmsKeyId, Long bootVolumeVpusPerGB) {
+            Long bootVolumeSizeInGBs,
+            String imageId,
+            String kmsKeyId,
+            Long bootVolumeVpusPerGB,
+            InstanceConfigurationInstanceSourceImageFilterDetails
+                    instanceSourceImageFilterDetails) {
         super();
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
         this.kmsKeyId = kmsKeyId;
         this.bootVolumeVpusPerGB = bootVolumeVpusPerGB;
+        this.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
     }
 
     /**
@@ -264,6 +286,15 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         return bootVolumeVpusPerGB;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceSourceImageFilterDetails")
+    private final InstanceConfigurationInstanceSourceImageFilterDetails
+            instanceSourceImageFilterDetails;
+
+    public InstanceConfigurationInstanceSourceImageFilterDetails
+            getInstanceSourceImageFilterDetails() {
+        return instanceSourceImageFilterDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -282,6 +313,8 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
         sb.append(", imageId=").append(String.valueOf(this.imageId));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", bootVolumeVpusPerGB=").append(String.valueOf(this.bootVolumeVpusPerGB));
+        sb.append(", instanceSourceImageFilterDetails=")
+                .append(String.valueOf(this.instanceSourceImageFilterDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -301,6 +334,9 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                 && java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.bootVolumeVpusPerGB, other.bootVolumeVpusPerGB)
+                && java.util.Objects.equals(
+                        this.instanceSourceImageFilterDetails,
+                        other.instanceSourceImageFilterDetails)
                 && super.equals(other);
     }
 
@@ -320,6 +356,11 @@ public final class InstanceConfigurationInstanceSourceViaImageDetails
                         + (this.bootVolumeVpusPerGB == null
                                 ? 43
                                 : this.bootVolumeVpusPerGB.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceSourceImageFilterDetails == null
+                                ? 43
+                                : this.instanceSourceImageFilterDetails.hashCode());
         return result;
     }
 }

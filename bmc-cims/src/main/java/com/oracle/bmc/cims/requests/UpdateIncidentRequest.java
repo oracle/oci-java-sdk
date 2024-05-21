@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.requests;
@@ -24,17 +24,6 @@ public class UpdateIncidentRequest
         return incidentKey;
     }
     /**
-     * The Customer Support Identifier associated with the support account.
-     */
-    private String csi;
-
-    /**
-     * The Customer Support Identifier associated with the support account.
-     */
-    public String getCsi() {
-        return csi;
-    }
-    /**
      * Details about the support ticket being updated.
      */
     private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails;
@@ -46,15 +35,15 @@ public class UpdateIncidentRequest
         return updateIncidentDetails;
     }
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * The Customer Support Identifier (CSI) associated with the support account.
      */
-    private String ocid;
+    private String csi;
 
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * The Customer Support Identifier (CSI) associated with the support account.
      */
-    public String getOcid() {
-        return ocid;
+    public String getCsi() {
+        return csi;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -68,6 +57,17 @@ public class UpdateIncidentRequest
         return opcRequestId;
     }
     /**
+     * The OCID of the tenancy.
+     */
+    private String compartmentId;
+
+    /**
+     * The OCID of the tenancy.
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+    /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
@@ -79,6 +79,17 @@ public class UpdateIncidentRequest
         return ifMatch;
     }
     /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     */
+    private String ocid;
+
+    /**
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     */
+    public String getOcid() {
+        return ocid;
+    }
+    /**
      * The region of the tenancy.
      */
     private String homeregion;
@@ -88,6 +99,50 @@ public class UpdateIncidentRequest
      */
     public String getHomeregion() {
         return homeregion;
+    }
+    /**
+     * Token type that determine which cloud provider the request come from.
+     */
+    private String bearertokentype;
+
+    /**
+     * Token type that determine which cloud provider the request come from.
+     */
+    public String getBearertokentype() {
+        return bearertokentype;
+    }
+    /**
+     * Token that provided by multi cloud provider, which help to validate the email.
+     */
+    private String bearertoken;
+
+    /**
+     * Token that provided by multi cloud provider, which help to validate the email.
+     */
+    public String getBearertoken() {
+        return bearertoken;
+    }
+    /**
+     * IdToken that provided by multi cloud provider, which help to validate the email.
+     */
+    private String idtoken;
+
+    /**
+     * IdToken that provided by multi cloud provider, which help to validate the email.
+     */
+    public String getIdtoken() {
+        return idtoken;
+    }
+    /**
+     * The OCID of identity domain.
+     */
+    private String domainid;
+
+    /**
+     * The OCID of identity domain.
+     */
+    public String getDomainid() {
+        return domainid;
     }
 
     /**
@@ -123,21 +178,6 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * The Customer Support Identifier associated with the support account.
-         */
-        private String csi = null;
-
-        /**
-         * The Customer Support Identifier associated with the support account.
-         * @param csi the value to set
-         * @return this builder instance
-         */
-        public Builder csi(String csi) {
-            this.csi = csi;
-            return this;
-        }
-
-        /**
          * Details about the support ticket being updated.
          */
         private com.oracle.bmc.cims.model.UpdateIncident updateIncidentDetails = null;
@@ -154,17 +194,17 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * The Customer Support Identifier (CSI) associated with the support account.
          */
-        private String ocid = null;
+        private String csi = null;
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
-         * @param ocid the value to set
+         * The Customer Support Identifier (CSI) associated with the support account.
+         * @param csi the value to set
          * @return this builder instance
          */
-        public Builder ocid(String ocid) {
-            this.ocid = ocid;
+        public Builder csi(String csi) {
+            this.csi = csi;
             return this;
         }
 
@@ -184,6 +224,21 @@ public class UpdateIncidentRequest
         }
 
         /**
+         * The OCID of the tenancy.
+         */
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the tenancy.
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
@@ -199,6 +254,21 @@ public class UpdateIncidentRequest
         }
 
         /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         */
+        private String ocid = null;
+
+        /**
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * @param ocid the value to set
+         * @return this builder instance
+         */
+        public Builder ocid(String ocid) {
+            this.ocid = ocid;
+            return this;
+        }
+
+        /**
          * The region of the tenancy.
          */
         private String homeregion = null;
@@ -210,6 +280,66 @@ public class UpdateIncidentRequest
          */
         public Builder homeregion(String homeregion) {
             this.homeregion = homeregion;
+            return this;
+        }
+
+        /**
+         * Token type that determine which cloud provider the request come from.
+         */
+        private String bearertokentype = null;
+
+        /**
+         * Token type that determine which cloud provider the request come from.
+         * @param bearertokentype the value to set
+         * @return this builder instance
+         */
+        public Builder bearertokentype(String bearertokentype) {
+            this.bearertokentype = bearertokentype;
+            return this;
+        }
+
+        /**
+         * Token that provided by multi cloud provider, which help to validate the email.
+         */
+        private String bearertoken = null;
+
+        /**
+         * Token that provided by multi cloud provider, which help to validate the email.
+         * @param bearertoken the value to set
+         * @return this builder instance
+         */
+        public Builder bearertoken(String bearertoken) {
+            this.bearertoken = bearertoken;
+            return this;
+        }
+
+        /**
+         * IdToken that provided by multi cloud provider, which help to validate the email.
+         */
+        private String idtoken = null;
+
+        /**
+         * IdToken that provided by multi cloud provider, which help to validate the email.
+         * @param idtoken the value to set
+         * @return this builder instance
+         */
+        public Builder idtoken(String idtoken) {
+            this.idtoken = idtoken;
+            return this;
+        }
+
+        /**
+         * The OCID of identity domain.
+         */
+        private String domainid = null;
+
+        /**
+         * The OCID of identity domain.
+         * @param domainid the value to set
+         * @return this builder instance
+         */
+        public Builder domainid(String domainid) {
+            this.domainid = domainid;
             return this;
         }
 
@@ -242,12 +372,17 @@ public class UpdateIncidentRequest
          */
         public Builder copy(UpdateIncidentRequest o) {
             incidentKey(o.getIncidentKey());
-            csi(o.getCsi());
             updateIncidentDetails(o.getUpdateIncidentDetails());
-            ocid(o.getOcid());
+            csi(o.getCsi());
             opcRequestId(o.getOpcRequestId());
+            compartmentId(o.getCompartmentId());
             ifMatch(o.getIfMatch());
+            ocid(o.getOcid());
             homeregion(o.getHomeregion());
+            bearertokentype(o.getBearertokentype());
+            bearertoken(o.getBearertoken());
+            idtoken(o.getIdtoken());
+            domainid(o.getDomainid());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -292,14 +427,19 @@ public class UpdateIncidentRequest
         public UpdateIncidentRequest buildWithoutInvocationCallback() {
             UpdateIncidentRequest request = new UpdateIncidentRequest();
             request.incidentKey = incidentKey;
-            request.csi = csi;
             request.updateIncidentDetails = updateIncidentDetails;
-            request.ocid = ocid;
+            request.csi = csi;
             request.opcRequestId = opcRequestId;
+            request.compartmentId = compartmentId;
             request.ifMatch = ifMatch;
+            request.ocid = ocid;
             request.homeregion = homeregion;
+            request.bearertokentype = bearertokentype;
+            request.bearertoken = bearertoken;
+            request.idtoken = idtoken;
+            request.domainid = domainid;
             return request;
-            // new UpdateIncidentRequest(incidentKey, csi, updateIncidentDetails, ocid, opcRequestId, ifMatch, homeregion);
+            // new UpdateIncidentRequest(incidentKey, updateIncidentDetails, csi, opcRequestId, compartmentId, ifMatch, ocid, homeregion, bearertokentype, bearertoken, idtoken, domainid);
         }
     }
 
@@ -310,12 +450,17 @@ public class UpdateIncidentRequest
     public Builder toBuilder() {
         return new Builder()
                 .incidentKey(incidentKey)
-                .csi(csi)
                 .updateIncidentDetails(updateIncidentDetails)
-                .ocid(ocid)
+                .csi(csi)
                 .opcRequestId(opcRequestId)
+                .compartmentId(compartmentId)
                 .ifMatch(ifMatch)
-                .homeregion(homeregion);
+                .ocid(ocid)
+                .homeregion(homeregion)
+                .bearertokentype(bearertokentype)
+                .bearertoken(bearertoken)
+                .idtoken(idtoken)
+                .domainid(domainid);
     }
 
     /**
@@ -332,12 +477,17 @@ public class UpdateIncidentRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",incidentKey=").append(String.valueOf(this.incidentKey));
-        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",updateIncidentDetails=").append(String.valueOf(this.updateIncidentDetails));
-        sb.append(",ocid=").append(String.valueOf(this.ocid));
+        sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
+        sb.append(",bearertokentype=").append(String.valueOf(this.bearertokentype));
+        sb.append(",bearertoken=").append(String.valueOf(this.bearertoken));
+        sb.append(",idtoken=").append(String.valueOf(this.idtoken));
+        sb.append(",domainid=").append(String.valueOf(this.domainid));
         sb.append(")");
         return sb.toString();
     }
@@ -354,12 +504,17 @@ public class UpdateIncidentRequest
         UpdateIncidentRequest other = (UpdateIncidentRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.incidentKey, other.incidentKey)
-                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.updateIncidentDetails, other.updateIncidentDetails)
-                && java.util.Objects.equals(this.ocid, other.ocid)
+                && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.homeregion, other.homeregion);
+                && java.util.Objects.equals(this.ocid, other.ocid)
+                && java.util.Objects.equals(this.homeregion, other.homeregion)
+                && java.util.Objects.equals(this.bearertokentype, other.bearertokentype)
+                && java.util.Objects.equals(this.bearertoken, other.bearertoken)
+                && java.util.Objects.equals(this.idtoken, other.idtoken)
+                && java.util.Objects.equals(this.domainid, other.domainid);
     }
 
     @Override
@@ -367,16 +522,25 @@ public class UpdateIncidentRequest
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.incidentKey == null ? 43 : this.incidentKey.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result =
                 (result * PRIME)
                         + (this.updateIncidentDetails == null
                                 ? 43
                                 : this.updateIncidentDetails.hashCode());
-        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bearertokentype == null ? 43 : this.bearertokentype.hashCode());
+        result = (result * PRIME) + (this.bearertoken == null ? 43 : this.bearertoken.hashCode());
+        result = (result * PRIME) + (this.idtoken == null ? 43 : this.idtoken.hashCode());
+        result = (result * PRIME) + (this.domainid == null ? 43 : this.domainid.hashCode());
         return result;
     }
 }

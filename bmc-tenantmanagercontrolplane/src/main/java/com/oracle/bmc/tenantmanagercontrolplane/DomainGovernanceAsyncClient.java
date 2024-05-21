@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -21,7 +21,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
     /**
      * Service instance for DomainGovernance.
@@ -476,7 +476,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "DomainGovernance",
                         "CreateDomainGovernance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/CreateDomainGovernance");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/CreateDomainGovernance");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateDomainGovernanceResponse>
                 transformer =
                         CreateDomainGovernanceConverter.fromResponse(
@@ -528,7 +528,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "DomainGovernance",
                         "DeleteDomainGovernance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/DeleteDomainGovernance");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/DeleteDomainGovernance");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteDomainGovernanceResponse>
                 transformer =
                         DeleteDomainGovernanceConverter.fromResponse(
@@ -575,7 +575,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "DomainGovernance",
                         "GetDomainGovernance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/GetDomainGovernance");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/GetDomainGovernance");
         final java.util.function.Function<javax.ws.rs.core.Response, GetDomainGovernanceResponse>
                 transformer =
                         GetDomainGovernanceConverter.fromResponse(
@@ -622,7 +622,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "DomainGovernance",
                         "ListDomainGovernances",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/ListDomainGovernances");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/ListDomainGovernances");
         final java.util.function.Function<javax.ws.rs.core.Response, ListDomainGovernancesResponse>
                 transformer =
                         ListDomainGovernancesConverter.fromResponse(
@@ -669,7 +669,7 @@ public class DomainGovernanceAsyncClient implements DomainGovernanceAsync {
                         "DomainGovernance",
                         "UpdateDomainGovernance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/DomainGovernance/UpdateDomainGovernance");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/DomainGovernance/UpdateDomainGovernance");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateDomainGovernanceResponse>
                 transformer =
                         UpdateDomainGovernanceConverter.fromResponse(

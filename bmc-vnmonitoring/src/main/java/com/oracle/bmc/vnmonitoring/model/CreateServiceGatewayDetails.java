@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,6 +27,7 @@ public final class CreateServiceGatewayDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "routeTableId",
         "services",
         "vcnId"
     })
@@ -35,6 +36,7 @@ public final class CreateServiceGatewayDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            String routeTableId,
             java.util.List<ServiceIdRequestDetails> services,
             String vcnId) {
         super();
@@ -42,6 +44,7 @@ public final class CreateServiceGatewayDetails
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.routeTableId = routeTableId;
         this.services = services;
         this.vcnId = vcnId;
     }
@@ -128,6 +131,38 @@ public final class CreateServiceGatewayDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+         * <p>
+         * If you don't specify a route table here, the service gateway is created without an associated route
+         * table. The Networking service does NOT automatically associate the attached VCN's default route table
+         * with the service gateway.
+         * <p>
+         * For information about why you would associate a route table with a service gateway, see
+         * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+         * <p>
+         * If you don't specify a route table here, the service gateway is created without an associated route
+         * table. The Networking service does NOT automatically associate the attached VCN's default route table
+         * with the service gateway.
+         * <p>
+         * For information about why you would associate a route table with a service gateway, see
+         * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+        /**
          * List of the OCIDs of the {@link Service} objects to
          * enable for the service gateway. This list can be empty if you don't want to enable any
          * {@code Service} objects when you create the gateway. You can enable a {@code Service}
@@ -190,6 +225,7 @@ public final class CreateServiceGatewayDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.routeTableId,
                             this.services,
                             this.vcnId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -211,6 +247,9 @@ public final class CreateServiceGatewayDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             if (model.wasPropertyExplicitlySet("services")) {
                 this.services(model.getServices());
@@ -304,6 +343,36 @@ public final class CreateServiceGatewayDetails
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * <p>
+     * If you don't specify a route table here, the service gateway is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route table
+     * with the service gateway.
+     * <p>
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * <p>
+     * If you don't specify a route table here, the service gateway is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route table
+     * with the service gateway.
+     * <p>
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
+    /**
      * List of the OCIDs of the {@link Service} objects to
      * enable for the service gateway. This list can be empty if you don't want to enable any
      * {@code Service} objects when you create the gateway. You can enable a {@code Service}
@@ -369,6 +438,7 @@ public final class CreateServiceGatewayDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(", services=").append(String.valueOf(this.services));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
         sb.append(")");
@@ -389,6 +459,7 @@ public final class CreateServiceGatewayDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && java.util.Objects.equals(this.services, other.services)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
                 && super.equals(other);
@@ -404,6 +475,7 @@ public final class CreateServiceGatewayDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + (this.services == null ? 43 : this.services.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
         result = (result * PRIME) + super.hashCode();

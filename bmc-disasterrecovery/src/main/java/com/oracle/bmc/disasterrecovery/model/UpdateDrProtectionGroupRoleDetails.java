@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The role details for a DR Protection Group.
+ * The details for updating the role of a DR protection group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,14 +31,14 @@ public final class UpdateDrProtectionGroupRoleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The role of the DR Protection Group.
+         * The new role of the DR protection group.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private DrProtectionGroupRole role;
 
         /**
-         * The role of the DR Protection Group.
+         * The new role of the DR protection group.
          *
          * @param role the value to set
          * @return this builder
@@ -82,14 +82,14 @@ public final class UpdateDrProtectionGroupRoleDetails
     }
 
     /**
-     * The role of the DR Protection Group.
+     * The new role of the DR protection group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final DrProtectionGroupRole role;
 
     /**
-     * The role of the DR Protection Group.
+     * The new role of the DR protection group.
      *
      * @return the value
      **/

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -34,6 +34,7 @@ public final class LaunchInstanceDetails
         "displayName",
         "extendedMetadata",
         "faultDomain",
+        "clusterPlacementGroupId",
         "freeformTags",
         "computeClusterId",
         "hostnameLabel",
@@ -49,8 +50,10 @@ public final class LaunchInstanceDetails
         "shapeConfig",
         "sourceDetails",
         "subnetId",
+        "launchVolumeAttachments",
         "isPvEncryptionInTransitEnabled",
-        "platformConfig"
+        "platformConfig",
+        "instanceConfigurationId"
     })
     public LaunchInstanceDetails(
             String availabilityDomain,
@@ -62,6 +65,7 @@ public final class LaunchInstanceDetails
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
+            String clusterPlacementGroupId,
             java.util.Map<String, String> freeformTags,
             String computeClusterId,
             String hostnameLabel,
@@ -77,8 +81,10 @@ public final class LaunchInstanceDetails
             LaunchInstanceShapeConfigDetails shapeConfig,
             InstanceSourceDetails sourceDetails,
             String subnetId,
+            java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments,
             Boolean isPvEncryptionInTransitEnabled,
-            LaunchInstancePlatformConfig platformConfig) {
+            LaunchInstancePlatformConfig platformConfig,
+            String instanceConfigurationId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -89,6 +95,7 @@ public final class LaunchInstanceDetails
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.freeformTags = freeformTags;
         this.computeClusterId = computeClusterId;
         this.hostnameLabel = hostnameLabel;
@@ -104,8 +111,10 @@ public final class LaunchInstanceDetails
         this.shapeConfig = shapeConfig;
         this.sourceDetails = sourceDetails;
         this.subnetId = subnetId;
+        this.launchVolumeAttachments = launchVolumeAttachments;
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.platformConfig = platformConfig;
+        this.instanceConfigurationId = instanceConfigurationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -319,6 +328,22 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
+         * The OCID of the cluster placement group of the instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
          * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -343,14 +368,16 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
         private String computeClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+         * [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
          *
          * @param computeClusterId the value to set
          * @return this builder
@@ -422,9 +449,9 @@ public final class LaunchInstanceDetails
          * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
          * <p>
-         * If your instance boot volume type is paravirtualized,
+         * If your instance boot volume attachment type is paravirtualized,
          * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-         * If your instance boot volume type is paravirtualized
+         * If your instance boot volume attachment type is paravirtualized
          * and you use custom iPXE to network boot into your instance,
          * the primary boot volume is attached as a data volume through virtio-scsi drive.
          * <p>
@@ -458,9 +485,9 @@ public final class LaunchInstanceDetails
          * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
          * <p>
-         * If your instance boot volume type is paravirtualized,
+         * If your instance boot volume attachment type is paravirtualized,
          * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-         * If your instance boot volume type is paravirtualized
+         * If your instance boot volume attachment type is paravirtualized
          * and you use custom iPXE to network boot into your instance,
          * the primary boot volume is attached as a data volume through virtio-scsi drive.
          * <p>
@@ -702,6 +729,23 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
+         * Volume attachments to create as part of the launch instance operation.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
+        private java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
+
+        /**
+         * Volume attachments to create as part of the launch instance operation.
+         * @param launchVolumeAttachments the value to set
+         * @return this builder
+         **/
+        public Builder launchVolumeAttachments(
+                java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments) {
+            this.launchVolumeAttachments = launchVolumeAttachments;
+            this.__explicitlySet__.add("launchVolumeAttachments");
+            return this;
+        }
+        /**
          * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
@@ -726,6 +770,22 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("platformConfig");
             return this;
         }
+        /**
+         * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+        private String instanceConfigurationId;
+
+        /**
+         * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+         * @param instanceConfigurationId the value to set
+         * @return this builder
+         **/
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
+            this.__explicitlySet__.add("instanceConfigurationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -742,6 +802,7 @@ public final class LaunchInstanceDetails
                             this.displayName,
                             this.extendedMetadata,
                             this.faultDomain,
+                            this.clusterPlacementGroupId,
                             this.freeformTags,
                             this.computeClusterId,
                             this.hostnameLabel,
@@ -757,8 +818,10 @@ public final class LaunchInstanceDetails
                             this.shapeConfig,
                             this.sourceDetails,
                             this.subnetId,
+                            this.launchVolumeAttachments,
                             this.isPvEncryptionInTransitEnabled,
-                            this.platformConfig);
+                            this.platformConfig,
+                            this.instanceConfigurationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -793,6 +856,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("faultDomain")) {
                 this.faultDomain(model.getFaultDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -839,11 +905,17 @@ public final class LaunchInstanceDetails
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("launchVolumeAttachments")) {
+                this.launchVolumeAttachments(model.getLaunchVolumeAttachments());
+            }
             if (model.wasPropertyExplicitlySet("isPvEncryptionInTransitEnabled")) {
                 this.isPvEncryptionInTransitEnabled(model.getIsPvEncryptionInTransitEnabled());
             }
             if (model.wasPropertyExplicitlySet("platformConfig")) {
                 this.platformConfig(model.getPlatformConfig());
+            }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
             }
             return this;
         }
@@ -1050,6 +1122,20 @@ public final class LaunchInstanceDetails
     }
 
     /**
+     * The OCID of the cluster placement group of the instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -1072,14 +1158,16 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeClusterId")
     private final String computeClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
      *
      * @return the value
      **/
@@ -1145,9 +1233,9 @@ public final class LaunchInstanceDetails
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.
      * <p>
-     * If your instance boot volume type is paravirtualized,
+     * If your instance boot volume attachment type is paravirtualized,
      * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-     * If your instance boot volume type is paravirtualized
+     * If your instance boot volume attachment type is paravirtualized
      * and you use custom iPXE to network boot into your instance,
      * the primary boot volume is attached as a data volume through virtio-scsi drive.
      * <p>
@@ -1181,9 +1269,9 @@ public final class LaunchInstanceDetails
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.
      * <p>
-     * If your instance boot volume type is paravirtualized,
+     * If your instance boot volume attachment type is paravirtualized,
      * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-     * If your instance boot volume type is paravirtualized
+     * If your instance boot volume attachment type is paravirtualized
      * and you use custom iPXE to network boot into your instance,
      * the primary boot volume is attached as a data volume through virtio-scsi drive.
      * <p>
@@ -1401,6 +1489,20 @@ public final class LaunchInstanceDetails
     }
 
     /**
+     * Volume attachments to create as part of the launch instance operation.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("launchVolumeAttachments")
+    private final java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments;
+
+    /**
+     * Volume attachments to create as part of the launch instance operation.
+     * @return the value
+     **/
+    public java.util.List<LaunchAttachVolumeDetails> getLaunchVolumeAttachments() {
+        return launchVolumeAttachments;
+    }
+
+    /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
@@ -1419,6 +1521,20 @@ public final class LaunchInstanceDetails
 
     public LaunchInstancePlatformConfig getPlatformConfig() {
         return platformConfig;
+    }
+
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+    private final String instanceConfigurationId;
+
+    /**
+     * The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+     * @return the value
+     **/
+    public String getInstanceConfigurationId() {
+        return instanceConfigurationId;
     }
 
     @Override
@@ -1444,6 +1560,8 @@ public final class LaunchInstanceDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", computeClusterId=").append(String.valueOf(this.computeClusterId));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
@@ -1460,9 +1578,13 @@ public final class LaunchInstanceDetails
         sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", launchVolumeAttachments=")
+                .append(String.valueOf(this.launchVolumeAttachments));
         sb.append(", isPvEncryptionInTransitEnabled=")
                 .append(String.valueOf(this.isPvEncryptionInTransitEnabled));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append(", instanceConfigurationId=")
+                .append(String.valueOf(this.instanceConfigurationId));
         sb.append(")");
         return sb.toString();
     }
@@ -1486,6 +1608,8 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.computeClusterId, other.computeClusterId)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
@@ -1503,8 +1627,12 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(
+                        this.launchVolumeAttachments, other.launchVolumeAttachments)
+                && java.util.Objects.equals(
                         this.isPvEncryptionInTransitEnabled, other.isPvEncryptionInTransitEnabled)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(
+                        this.instanceConfigurationId, other.instanceConfigurationId)
                 && super.equals(other);
     }
 
@@ -1537,6 +1665,11 @@ public final class LaunchInstanceDetails
                 (result * PRIME)
                         + (this.extendedMetadata == null ? 43 : this.extendedMetadata.hashCode());
         result = (result * PRIME) + (this.faultDomain == null ? 43 : this.faultDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result =
                 (result * PRIME)
@@ -1572,12 +1705,22 @@ public final class LaunchInstanceDetails
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.launchVolumeAttachments == null
+                                ? 43
+                                : this.launchVolumeAttachments.hashCode());
+        result =
+                (result * PRIME)
                         + (this.isPvEncryptionInTransitEnabled == null
                                 ? 43
                                 : this.isPvEncryptionInTransitEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceConfigurationId == null
+                                ? 43
+                                : this.instanceConfigurationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

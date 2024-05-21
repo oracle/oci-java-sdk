@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of auth tokens corresponding to user.
+ * A list of Auth tokens corresponding to user.
  * <p>
  **Added In:** 2012271618
  * <p>
@@ -44,7 +44,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's auth token.
+         * The user's Auth token identifier.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -62,7 +62,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
         private String value;
 
         /**
-         * The identifier of the User's auth token.
+         * The user's Auth token identifier.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -84,7 +84,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -102,7 +102,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
         private String ocid;
 
         /**
-         * Ocid of the User's auth token.
+         * The user's Auth token OCID.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -124,7 +124,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The URI of the corresponding AuthToken resource to which the user belongs
+         * The URI of the corresponding AuthToken resource to which the user belongs.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -141,7 +141,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
         private String ref;
 
         /**
-         * The URI of the corresponding AuthToken resource to which the user belongs
+         * The URI of the corresponding AuthToken resource to which the user belongs.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -200,7 +200,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The identifier of the User's auth token.
+     * The user's Auth token identifier.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -218,7 +218,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     private final String value;
 
     /**
-     * The identifier of the User's auth token.
+     * The user's Auth token identifier.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -238,7 +238,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -256,7 +256,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     private final String ocid;
 
     /**
-     * Ocid of the User's auth token.
+     * The user's Auth token OCID.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -276,7 +276,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The URI of the corresponding AuthToken resource to which the user belongs
+     * The URI of the corresponding AuthToken resource to which the user belongs.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -293,7 +293,7 @@ public final class UserExtAuthTokens extends com.oracle.bmc.http.internal.Explic
     private final String ref;
 
     /**
-     * The URI of the corresponding AuthToken resource to which the user belongs
+     * The URI of the corresponding AuthToken resource to which the user belongs.
      * <p>
      **Added In:** 2012271618
      * <p>

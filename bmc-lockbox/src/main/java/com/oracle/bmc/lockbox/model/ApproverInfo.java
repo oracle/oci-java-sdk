@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox.model;
@@ -19,11 +19,12 @@ package com.oracle.bmc.lockbox.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"approverType", "approverId"})
-    public ApproverInfo(ApproverType approverType, String approverId) {
+    @java.beans.ConstructorProperties({"approverType", "approverId", "domainId"})
+    public ApproverInfo(ApproverType approverType, String approverId, String domainId) {
         super();
         this.approverType = approverType;
         this.approverId = approverId;
+        this.domainId = domainId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,29 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("approverId");
             return this;
         }
+        /**
+         * The identity domain ocid of the approver.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+        private String domainId;
+
+        /**
+         * The identity domain ocid of the approver.
+         * @param domainId the value to set
+         * @return this builder
+         **/
+        public Builder domainId(String domainId) {
+            this.domainId = domainId;
+            this.__explicitlySet__.add("domainId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ApproverInfo build() {
-            ApproverInfo model = new ApproverInfo(this.approverType, this.approverId);
+            ApproverInfo model =
+                    new ApproverInfo(this.approverType, this.approverId, this.domainId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,9 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("approverId")) {
                 this.approverId(model.getApproverId());
+            }
+            if (model.wasPropertyExplicitlySet("domainId")) {
+                this.domainId(model.getDomainId());
             }
             return this;
         }
@@ -123,6 +144,20 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         return approverId;
     }
 
+    /**
+     * The identity domain ocid of the approver.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+    private final String domainId;
+
+    /**
+     * The identity domain ocid of the approver.
+     * @return the value
+     **/
+    public String getDomainId() {
+        return domainId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +174,7 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append("super=").append(super.toString());
         sb.append("approverType=").append(String.valueOf(this.approverType));
         sb.append(", approverId=").append(String.valueOf(this.approverId));
+        sb.append(", domainId=").append(String.valueOf(this.domainId));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +191,7 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         ApproverInfo other = (ApproverInfo) o;
         return java.util.Objects.equals(this.approverType, other.approverType)
                 && java.util.Objects.equals(this.approverId, other.approverId)
+                && java.util.Objects.equals(this.domainId, other.domainId)
                 && super.equals(other);
     }
 
@@ -164,6 +201,7 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         int result = 1;
         result = (result * PRIME) + (this.approverType == null ? 43 : this.approverType.hashCode());
         result = (result * PRIME) + (this.approverId == null ? 43 : this.approverId.hashCode());
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

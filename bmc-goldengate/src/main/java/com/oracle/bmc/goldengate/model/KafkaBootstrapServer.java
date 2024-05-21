@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -69,6 +69,9 @@ public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -80,6 +83,9 @@ public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.Exp
         private String privateIp;
 
         /**
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
          * The private IP address of the connection's endpoint in the customer's VCN, typically a
          * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
          * In case the privateIp is provided, the subnetId must also be provided.
@@ -166,6 +172,9 @@ public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.
@@ -177,6 +186,9 @@ public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.Exp
     private final String privateIp;
 
     /**
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
      * The private IP address of the connection's endpoint in the customer's VCN, typically a
      * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
      * In case the privateIp is provided, the subnetId must also be provided.

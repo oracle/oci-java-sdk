@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Properties for a Database (DBCS) member of a DR Protection Group.
+ * The properties for a Base Database or Exadata Database member of a DR protection group.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -37,18 +37,20 @@ public final class DrProtectionGroupMemberDatabase extends DrProtectionGroupMemb
             return this;
         }
         /**
-         * The ID of the vault secret where the database password is stored.
+         * The OCID of the vault secret where the database SYSDBA password is stored.
+         * This password is used for performing database DR operations.
          * <p>
-         * Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
         private String passwordVaultSecretId;
 
         /**
-         * The ID of the vault secret where the database password is stored.
+         * The OCID of the vault secret where the database SYSDBA password is stored.
+         * This password is used for performing database DR operations.
          * <p>
-         * Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          *
          * @param passwordVaultSecretId the value to set
          * @return this builder
@@ -101,18 +103,20 @@ public final class DrProtectionGroupMemberDatabase extends DrProtectionGroupMemb
     }
 
     /**
-     * The ID of the vault secret where the database password is stored.
+     * The OCID of the vault secret where the database SYSDBA password is stored.
+     * This password is used for performing database DR operations.
      * <p>
-     * Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
     private final String passwordVaultSecretId;
 
     /**
-     * The ID of the vault secret where the database password is stored.
+     * The OCID of the vault secret where the database SYSDBA password is stored.
+     * This password is used for performing database DR operations.
      * <p>
-     * Example: {@code ocid1.vaultsecret.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      *
      * @return the value
      **/

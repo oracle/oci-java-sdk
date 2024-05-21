@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -12,29 +12,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     private String managementStationId;
 
     /**
-     * The OCID of the management station.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
      */
     public String getManagementStationId() {
         return managementStationId;
     }
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * <p>
-     * Example: {@code My new resource}
-     *
+     * A filter to return resources that match the given user-friendly name.
      */
     private String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * <p>
-     * Example: {@code My new resource}
-     *
+     * A filter to return resources that match the given user-friendly name.
      */
     public String getDisplayName() {
         return displayName;
@@ -180,12 +174,12 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
          */
         private String managementStationId = null;
 
         /**
-         * The OCID of the management station.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
          * @param managementStationId the value to set
          * @return this builder instance
          */
@@ -195,18 +189,12 @@ public class ListMirrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * <p>
-         * Example: {@code My new resource}
-         *
+         * A filter to return resources that match the given user-friendly name.
          */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * <p>
-         * Example: {@code My new resource}
-         *
+         * A filter to return resources that match the given user-friendly name.
          * @param displayName the value to set
          * @return this builder instance
          */

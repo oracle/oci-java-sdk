@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.graalvm;
@@ -11,7 +11,6 @@ import com.oracle.bmc.SdkClients;
 import com.oracle.bmc.graalvm.utils.ReflectionUtils;
 import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.svm.core.annotate.Alias;
-import com.oracle.svm.core.annotate.AutomaticFeature;
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
 import org.glassfish.hk2.utilities.DescriptorImpl;
@@ -32,7 +31,6 @@ import java.util.List;
 import java.util.ServiceLoader;
 import java.util.Set;
 
-@AutomaticFeature
 final class SdkAutomaticFeature implements Feature {
     @Override
     public void beforeAnalysis(BeforeAnalysisAccess access) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -15,7 +15,7 @@ package com.oracle.bmc.ocvp.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SupportedHostShapeSummary.Builder.class
 )
@@ -29,11 +29,11 @@ public final class SupportedHostShapeSummary
         "shapeFamily",
         "defaultOcpuCount",
         "supportedOcpuCount",
-        "supportedSddcTypes",
+        "isSingleHostSddcSupported",
         "supportedVmwareSoftwareVersions",
         "description",
         "isSupportShieldedInstances",
-        "isSupportMonthlySku"
+        "isSupportMonthlyCommitment"
     })
     public SupportedHostShapeSummary(
             String name,
@@ -41,22 +41,22 @@ public final class SupportedHostShapeSummary
             String shapeFamily,
             Float defaultOcpuCount,
             java.util.List<Float> supportedOcpuCount,
-            java.util.List<SddcTypes> supportedSddcTypes,
+            Boolean isSingleHostSddcSupported,
             java.util.List<String> supportedVmwareSoftwareVersions,
             String description,
             Boolean isSupportShieldedInstances,
-            Boolean isSupportMonthlySku) {
+            Boolean isSupportMonthlyCommitment) {
         super();
         this.name = name;
         this.supportedOperations = supportedOperations;
         this.shapeFamily = shapeFamily;
         this.defaultOcpuCount = defaultOcpuCount;
         this.supportedOcpuCount = supportedOcpuCount;
-        this.supportedSddcTypes = supportedSddcTypes;
+        this.isSingleHostSddcSupported = isSingleHostSddcSupported;
         this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
         this.description = description;
         this.isSupportShieldedInstances = isSupportShieldedInstances;
-        this.isSupportMonthlySku = isSupportMonthlySku;
+        this.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -152,21 +152,21 @@ public final class SupportedHostShapeSummary
             return this;
         }
         /**
-         * The supported SDDC types for the shape.
+         * Indicates whether the shape supports single host SDDCs.
          *
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("supportedSddcTypes")
-        private java.util.List<SddcTypes> supportedSddcTypes;
+        @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddcSupported")
+        private Boolean isSingleHostSddcSupported;
 
         /**
-         * The supported SDDC types for the shape.
+         * Indicates whether the shape supports single host SDDCs.
          *
-         * @param supportedSddcTypes the value to set
+         * @param isSingleHostSddcSupported the value to set
          * @return this builder
          **/
-        public Builder supportedSddcTypes(java.util.List<SddcTypes> supportedSddcTypes) {
-            this.supportedSddcTypes = supportedSddcTypes;
-            this.__explicitlySet__.add("supportedSddcTypes");
+        public Builder isSingleHostSddcSupported(Boolean isSingleHostSddcSupported) {
+            this.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            this.__explicitlySet__.add("isSingleHostSddcSupported");
             return this;
         }
         /**
@@ -223,19 +223,19 @@ public final class SupportedHostShapeSummary
             return this;
         }
         /**
-         * Whether the shape supports "MONTH" SKU.
+         * Whether the shape supports "MONTH" Commitment.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlySku")
-        private Boolean isSupportMonthlySku;
+        @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlyCommitment")
+        private Boolean isSupportMonthlyCommitment;
 
         /**
-         * Whether the shape supports "MONTH" SKU.
-         * @param isSupportMonthlySku the value to set
+         * Whether the shape supports "MONTH" Commitment.
+         * @param isSupportMonthlyCommitment the value to set
          * @return this builder
          **/
-        public Builder isSupportMonthlySku(Boolean isSupportMonthlySku) {
-            this.isSupportMonthlySku = isSupportMonthlySku;
-            this.__explicitlySet__.add("isSupportMonthlySku");
+        public Builder isSupportMonthlyCommitment(Boolean isSupportMonthlyCommitment) {
+            this.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
+            this.__explicitlySet__.add("isSupportMonthlyCommitment");
             return this;
         }
 
@@ -250,11 +250,11 @@ public final class SupportedHostShapeSummary
                             this.shapeFamily,
                             this.defaultOcpuCount,
                             this.supportedOcpuCount,
-                            this.supportedSddcTypes,
+                            this.isSingleHostSddcSupported,
                             this.supportedVmwareSoftwareVersions,
                             this.description,
                             this.isSupportShieldedInstances,
-                            this.isSupportMonthlySku);
+                            this.isSupportMonthlyCommitment);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -278,8 +278,8 @@ public final class SupportedHostShapeSummary
             if (model.wasPropertyExplicitlySet("supportedOcpuCount")) {
                 this.supportedOcpuCount(model.getSupportedOcpuCount());
             }
-            if (model.wasPropertyExplicitlySet("supportedSddcTypes")) {
-                this.supportedSddcTypes(model.getSupportedSddcTypes());
+            if (model.wasPropertyExplicitlySet("isSingleHostSddcSupported")) {
+                this.isSingleHostSddcSupported(model.getIsSingleHostSddcSupported());
             }
             if (model.wasPropertyExplicitlySet("supportedVmwareSoftwareVersions")) {
                 this.supportedVmwareSoftwareVersions(model.getSupportedVmwareSoftwareVersions());
@@ -290,8 +290,8 @@ public final class SupportedHostShapeSummary
             if (model.wasPropertyExplicitlySet("isSupportShieldedInstances")) {
                 this.isSupportShieldedInstances(model.getIsSupportShieldedInstances());
             }
-            if (model.wasPropertyExplicitlySet("isSupportMonthlySku")) {
-                this.isSupportMonthlySku(model.getIsSupportMonthlySku());
+            if (model.wasPropertyExplicitlySet("isSupportMonthlyCommitment")) {
+                this.isSupportMonthlyCommitment(model.getIsSupportMonthlyCommitment());
             }
             return this;
         }
@@ -389,19 +389,19 @@ public final class SupportedHostShapeSummary
     }
 
     /**
-     * The supported SDDC types for the shape.
+     * Indicates whether the shape supports single host SDDCs.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("supportedSddcTypes")
-    private final java.util.List<SddcTypes> supportedSddcTypes;
+    @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddcSupported")
+    private final Boolean isSingleHostSddcSupported;
 
     /**
-     * The supported SDDC types for the shape.
+     * Indicates whether the shape supports single host SDDCs.
      *
      * @return the value
      **/
-    public java.util.List<SddcTypes> getSupportedSddcTypes() {
-        return supportedSddcTypes;
+    public Boolean getIsSingleHostSddcSupported() {
+        return isSingleHostSddcSupported;
     }
 
     /**
@@ -451,17 +451,17 @@ public final class SupportedHostShapeSummary
     }
 
     /**
-     * Whether the shape supports "MONTH" SKU.
+     * Whether the shape supports "MONTH" Commitment.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlySku")
-    private final Boolean isSupportMonthlySku;
+    @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlyCommitment")
+    private final Boolean isSupportMonthlyCommitment;
 
     /**
-     * Whether the shape supports "MONTH" SKU.
+     * Whether the shape supports "MONTH" Commitment.
      * @return the value
      **/
-    public Boolean getIsSupportMonthlySku() {
-        return isSupportMonthlySku;
+    public Boolean getIsSupportMonthlyCommitment() {
+        return isSupportMonthlyCommitment;
     }
 
     @Override
@@ -483,13 +483,15 @@ public final class SupportedHostShapeSummary
         sb.append(", shapeFamily=").append(String.valueOf(this.shapeFamily));
         sb.append(", defaultOcpuCount=").append(String.valueOf(this.defaultOcpuCount));
         sb.append(", supportedOcpuCount=").append(String.valueOf(this.supportedOcpuCount));
-        sb.append(", supportedSddcTypes=").append(String.valueOf(this.supportedSddcTypes));
+        sb.append(", isSingleHostSddcSupported=")
+                .append(String.valueOf(this.isSingleHostSddcSupported));
         sb.append(", supportedVmwareSoftwareVersions=")
                 .append(String.valueOf(this.supportedVmwareSoftwareVersions));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", isSupportShieldedInstances=")
                 .append(String.valueOf(this.isSupportShieldedInstances));
-        sb.append(", isSupportMonthlySku=").append(String.valueOf(this.isSupportMonthlySku));
+        sb.append(", isSupportMonthlyCommitment=")
+                .append(String.valueOf(this.isSupportMonthlyCommitment));
         sb.append(")");
         return sb.toString();
     }
@@ -509,13 +511,15 @@ public final class SupportedHostShapeSummary
                 && java.util.Objects.equals(this.shapeFamily, other.shapeFamily)
                 && java.util.Objects.equals(this.defaultOcpuCount, other.defaultOcpuCount)
                 && java.util.Objects.equals(this.supportedOcpuCount, other.supportedOcpuCount)
-                && java.util.Objects.equals(this.supportedSddcTypes, other.supportedSddcTypes)
+                && java.util.Objects.equals(
+                        this.isSingleHostSddcSupported, other.isSingleHostSddcSupported)
                 && java.util.Objects.equals(
                         this.supportedVmwareSoftwareVersions, other.supportedVmwareSoftwareVersions)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
                         this.isSupportShieldedInstances, other.isSupportShieldedInstances)
-                && java.util.Objects.equals(this.isSupportMonthlySku, other.isSupportMonthlySku)
+                && java.util.Objects.equals(
+                        this.isSupportMonthlyCommitment, other.isSupportMonthlyCommitment)
                 && super.equals(other);
     }
 
@@ -540,9 +544,9 @@ public final class SupportedHostShapeSummary
                                 : this.supportedOcpuCount.hashCode());
         result =
                 (result * PRIME)
-                        + (this.supportedSddcTypes == null
+                        + (this.isSingleHostSddcSupported == null
                                 ? 43
-                                : this.supportedSddcTypes.hashCode());
+                                : this.isSingleHostSddcSupported.hashCode());
         result =
                 (result * PRIME)
                         + (this.supportedVmwareSoftwareVersions == null
@@ -556,9 +560,9 @@ public final class SupportedHostShapeSummary
                                 : this.isSupportShieldedInstances.hashCode());
         result =
                 (result * PRIME)
-                        + (this.isSupportMonthlySku == null
+                        + (this.isSupportMonthlyCommitment == null
                                 ? 43
-                                : this.isSupportMonthlySku.hashCode());
+                                : this.isSupportMonthlyCommitment.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -594,6 +594,123 @@ public class FileStoragePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.filestorage.model.MountTargetSummary>
                             apply(ListMountTargetsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOutboundConnectors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOutboundConnectorsResponse> listOutboundConnectorsResponseIterator(
+            final ListOutboundConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOutboundConnectorsRequest.Builder, ListOutboundConnectorsRequest,
+                ListOutboundConnectorsResponse>(
+                new java.util.function.Supplier<ListOutboundConnectorsRequest.Builder>() {
+                    @Override
+                    public ListOutboundConnectorsRequest.Builder get() {
+                        return ListOutboundConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOutboundConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListOutboundConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOutboundConnectorsRequest.Builder>,
+                        ListOutboundConnectorsRequest>() {
+                    @Override
+                    public ListOutboundConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOutboundConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOutboundConnectorsRequest, ListOutboundConnectorsResponse>() {
+                    @Override
+                    public ListOutboundConnectorsResponse apply(
+                            ListOutboundConnectorsRequest request) {
+                        return client.listOutboundConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.OutboundConnectorSummary} objects
+     * contained in responses from the listOutboundConnectors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.OutboundConnectorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.filestorage.model.OutboundConnectorSummary>
+            listOutboundConnectorsRecordIterator(final ListOutboundConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOutboundConnectorsRequest.Builder, ListOutboundConnectorsRequest,
+                ListOutboundConnectorsResponse,
+                com.oracle.bmc.filestorage.model.OutboundConnectorSummary>(
+                new java.util.function.Supplier<ListOutboundConnectorsRequest.Builder>() {
+                    @Override
+                    public ListOutboundConnectorsRequest.Builder get() {
+                        return ListOutboundConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOutboundConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListOutboundConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOutboundConnectorsRequest.Builder>,
+                        ListOutboundConnectorsRequest>() {
+                    @Override
+                    public ListOutboundConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOutboundConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOutboundConnectorsRequest, ListOutboundConnectorsResponse>() {
+                    @Override
+                    public ListOutboundConnectorsResponse apply(
+                            ListOutboundConnectorsRequest request) {
+                        return client.listOutboundConnectors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOutboundConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.filestorage.model.OutboundConnectorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.filestorage.model.OutboundConnectorSummary>
+                            apply(ListOutboundConnectorsResponse response) {
                         return response.getItems();
                     }
                 });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -36,6 +36,17 @@ public class UpdateStreamCdnConfigRequest
     public com.oracle.bmc.mediaservices.model.UpdateStreamCdnConfigDetails
             getUpdateStreamCdnConfigDetails() {
         return updateStreamCdnConfigDetails;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -122,6 +133,21 @@ public class UpdateStreamCdnConfigRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * For optimistic concurrency control. In the PUT or DELETE call
          * for a resource, set the {@code if-match} parameter to the value of the
          * etag from a previous GET or POST response for that resource.
@@ -191,6 +217,7 @@ public class UpdateStreamCdnConfigRequest
         public Builder copy(UpdateStreamCdnConfigRequest o) {
             streamCdnConfigId(o.getStreamCdnConfigId());
             updateStreamCdnConfigDetails(o.getUpdateStreamCdnConfigDetails());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -238,10 +265,11 @@ public class UpdateStreamCdnConfigRequest
             UpdateStreamCdnConfigRequest request = new UpdateStreamCdnConfigRequest();
             request.streamCdnConfigId = streamCdnConfigId;
             request.updateStreamCdnConfigDetails = updateStreamCdnConfigDetails;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateStreamCdnConfigRequest(streamCdnConfigId, updateStreamCdnConfigDetails, ifMatch, opcRequestId);
+            // new UpdateStreamCdnConfigRequest(streamCdnConfigId, updateStreamCdnConfigDetails, isLockOverride, ifMatch, opcRequestId);
         }
     }
 
@@ -253,6 +281,7 @@ public class UpdateStreamCdnConfigRequest
         return new Builder()
                 .streamCdnConfigId(streamCdnConfigId)
                 .updateStreamCdnConfigDetails(updateStreamCdnConfigDetails)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -273,6 +302,7 @@ public class UpdateStreamCdnConfigRequest
         sb.append(",streamCdnConfigId=").append(String.valueOf(this.streamCdnConfigId));
         sb.append(",updateStreamCdnConfigDetails=")
                 .append(String.valueOf(this.updateStreamCdnConfigDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -293,6 +323,7 @@ public class UpdateStreamCdnConfigRequest
                 && java.util.Objects.equals(this.streamCdnConfigId, other.streamCdnConfigId)
                 && java.util.Objects.equals(
                         this.updateStreamCdnConfigDetails, other.updateStreamCdnConfigDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -309,6 +340,9 @@ public class UpdateStreamCdnConfigRequest
                         + (this.updateStreamCdnConfigDetails == null
                                 ? 43
                                 : this.updateStreamCdnConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The properties that define a network load balancer. For more information, see
- * [Managing a network load balancer](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm).
+ * [Managing a network load balancer](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/NetworkLoadBalancers/network-load-balancer-management.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, then
  * contact an administrator. If you are an administrator who writes policies to give users access, then see
@@ -36,11 +36,15 @@ public final class CreateNetworkLoadBalancerDetails
         "compartmentId",
         "displayName",
         "isPreserveSourceDestination",
+        "isSymmetricHashEnabled",
         "reservedIps",
         "isPrivate",
         "subnetId",
         "networkSecurityGroupIds",
         "nlbIpVersion",
+        "subnetIpv6Cidr",
+        "assignedPrivateIpv4",
+        "assignedIpv6",
         "listeners",
         "backendSets",
         "freeformTags",
@@ -50,11 +54,15 @@ public final class CreateNetworkLoadBalancerDetails
             String compartmentId,
             String displayName,
             Boolean isPreserveSourceDestination,
+            Boolean isSymmetricHashEnabled,
             java.util.List<ReservedIP> reservedIps,
             Boolean isPrivate,
             String subnetId,
             java.util.List<String> networkSecurityGroupIds,
             NlbIpVersion nlbIpVersion,
+            String subnetIpv6Cidr,
+            String assignedPrivateIpv4,
+            String assignedIpv6,
             java.util.Map<String, ListenerDetails> listeners,
             java.util.Map<String, BackendSetDetails> backendSets,
             java.util.Map<String, String> freeformTags,
@@ -63,11 +71,15 @@ public final class CreateNetworkLoadBalancerDetails
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.isPreserveSourceDestination = isPreserveSourceDestination;
+        this.isSymmetricHashEnabled = isSymmetricHashEnabled;
         this.reservedIps = reservedIps;
         this.isPrivate = isPrivate;
         this.subnetId = subnetId;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.nlbIpVersion = nlbIpVersion;
+        this.subnetIpv6Cidr = subnetIpv6Cidr;
+        this.assignedPrivateIpv4 = assignedPrivateIpv4;
+        this.assignedIpv6 = assignedIpv6;
         this.listeners = listeners;
         this.backendSets = backendSets;
         this.freeformTags = freeformTags;
@@ -129,6 +141,26 @@ public final class CreateNetworkLoadBalancerDetails
             return this;
         }
         /**
+         * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+         * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+        private Boolean isSymmetricHashEnabled;
+
+        /**
+         * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+         * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         *
+         * @param isSymmetricHashEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
+            this.isSymmetricHashEnabled = isSymmetricHashEnabled;
+            this.__explicitlySet__.add("isSymmetricHashEnabled");
+            return this;
+        }
+        /**
          * An array of reserved Ips.
          *
          **/
@@ -156,7 +188,7 @@ public final class CreateNetworkLoadBalancerDetails
          * A public network load balancer is accessible from the internet, depending on the
          * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and
          * private network load balancers,
-         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
          * This value is true by default.
          * <p>
          * Example: {@code true}
@@ -175,7 +207,7 @@ public final class CreateNetworkLoadBalancerDetails
          * A public network load balancer is accessible from the internet, depending on the
          * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and
          * private network load balancers,
-         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
          * This value is true by default.
          * <p>
          * Example: {@code true}
@@ -263,6 +295,66 @@ public final class CreateNetworkLoadBalancerDetails
             return this;
         }
         /**
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
+        private String subnetIpv6Cidr;
+
+        /**
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         * @param subnetIpv6Cidr the value to set
+         * @return this builder
+         **/
+        public Builder subnetIpv6Cidr(String subnetIpv6Cidr) {
+            this.subnetIpv6Cidr = subnetIpv6Cidr;
+            this.__explicitlySet__.add("subnetIpv6Cidr");
+            return this;
+        }
+        /**
+         * Private IP address to be assigned to the network load balancer being created.
+         * This IP address has to be in the CIDR range of the subnet where network load balancer is being created
+         * Example: "10.0.0.1"
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedPrivateIpv4")
+        private String assignedPrivateIpv4;
+
+        /**
+         * Private IP address to be assigned to the network load balancer being created.
+         * This IP address has to be in the CIDR range of the subnet where network load balancer is being created
+         * Example: "10.0.0.1"
+         *
+         * @param assignedPrivateIpv4 the value to set
+         * @return this builder
+         **/
+        public Builder assignedPrivateIpv4(String assignedPrivateIpv4) {
+            this.assignedPrivateIpv4 = assignedPrivateIpv4;
+            this.__explicitlySet__.add("assignedPrivateIpv4");
+            return this;
+        }
+        /**
+         * IPv6 address to be assigned to the network load balancer being created.
+         * This IP address has to be part of one of the prefixes supported by the subnet.
+         * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
+        private String assignedIpv6;
+
+        /**
+         * IPv6 address to be assigned to the network load balancer being created.
+         * This IP address has to be part of one of the prefixes supported by the subnet.
+         * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         *
+         * @param assignedIpv6 the value to set
+         * @return this builder
+         **/
+        public Builder assignedIpv6(String assignedIpv6) {
+            this.assignedIpv6 = assignedIpv6;
+            this.__explicitlySet__.add("assignedIpv6");
+            return this;
+        }
+        /**
          * Listeners associated with the network load balancer.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
@@ -345,11 +437,15 @@ public final class CreateNetworkLoadBalancerDetails
                             this.compartmentId,
                             this.displayName,
                             this.isPreserveSourceDestination,
+                            this.isSymmetricHashEnabled,
                             this.reservedIps,
                             this.isPrivate,
                             this.subnetId,
                             this.networkSecurityGroupIds,
                             this.nlbIpVersion,
+                            this.subnetIpv6Cidr,
+                            this.assignedPrivateIpv4,
+                            this.assignedIpv6,
                             this.listeners,
                             this.backendSets,
                             this.freeformTags,
@@ -371,6 +467,9 @@ public final class CreateNetworkLoadBalancerDetails
             if (model.wasPropertyExplicitlySet("isPreserveSourceDestination")) {
                 this.isPreserveSourceDestination(model.getIsPreserveSourceDestination());
             }
+            if (model.wasPropertyExplicitlySet("isSymmetricHashEnabled")) {
+                this.isSymmetricHashEnabled(model.getIsSymmetricHashEnabled());
+            }
             if (model.wasPropertyExplicitlySet("reservedIps")) {
                 this.reservedIps(model.getReservedIps());
             }
@@ -385,6 +484,15 @@ public final class CreateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("nlbIpVersion")) {
                 this.nlbIpVersion(model.getNlbIpVersion());
+            }
+            if (model.wasPropertyExplicitlySet("subnetIpv6Cidr")) {
+                this.subnetIpv6Cidr(model.getSubnetIpv6Cidr());
+            }
+            if (model.wasPropertyExplicitlySet("assignedPrivateIpv4")) {
+                this.assignedPrivateIpv4(model.getAssignedPrivateIpv4());
+            }
+            if (model.wasPropertyExplicitlySet("assignedIpv6")) {
+                this.assignedIpv6(model.getAssignedIpv6());
             }
             if (model.wasPropertyExplicitlySet("listeners")) {
                 this.listeners(model.getListeners());
@@ -460,6 +568,24 @@ public final class CreateNetworkLoadBalancerDetails
     }
 
     /**
+     * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+     * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
+    private final Boolean isSymmetricHashEnabled;
+
+    /**
+     * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+     * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     *
+     * @return the value
+     **/
+    public Boolean getIsSymmetricHashEnabled() {
+        return isSymmetricHashEnabled;
+    }
+
+    /**
      * An array of reserved Ips.
      *
      **/
@@ -485,7 +611,7 @@ public final class CreateNetworkLoadBalancerDetails
      * A public network load balancer is accessible from the internet, depending on the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and
      * private network load balancers,
-     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
      * This value is true by default.
      * <p>
      * Example: {@code true}
@@ -504,7 +630,7 @@ public final class CreateNetworkLoadBalancerDetails
      * A public network load balancer is accessible from the internet, depending on the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloud network. For more information about public and
      * private network load balancers,
-     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
      * This value is true by default.
      * <p>
      * Example: {@code true}
@@ -581,6 +707,60 @@ public final class CreateNetworkLoadBalancerDetails
      **/
     public NlbIpVersion getNlbIpVersion() {
         return nlbIpVersion;
+    }
+
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
+    private final String subnetIpv6Cidr;
+
+    /**
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     * @return the value
+     **/
+    public String getSubnetIpv6Cidr() {
+        return subnetIpv6Cidr;
+    }
+
+    /**
+     * Private IP address to be assigned to the network load balancer being created.
+     * This IP address has to be in the CIDR range of the subnet where network load balancer is being created
+     * Example: "10.0.0.1"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedPrivateIpv4")
+    private final String assignedPrivateIpv4;
+
+    /**
+     * Private IP address to be assigned to the network load balancer being created.
+     * This IP address has to be in the CIDR range of the subnet where network load balancer is being created
+     * Example: "10.0.0.1"
+     *
+     * @return the value
+     **/
+    public String getAssignedPrivateIpv4() {
+        return assignedPrivateIpv4;
+    }
+
+    /**
+     * IPv6 address to be assigned to the network load balancer being created.
+     * This IP address has to be part of one of the prefixes supported by the subnet.
+     * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
+    private final String assignedIpv6;
+
+    /**
+     * IPv6 address to be assigned to the network load balancer being created.
+     * This IP address has to be part of one of the prefixes supported by the subnet.
+     * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     *
+     * @return the value
+     **/
+    public String getAssignedIpv6() {
+        return assignedIpv6;
     }
 
     /**
@@ -665,12 +845,16 @@ public final class CreateNetworkLoadBalancerDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isPreserveSourceDestination=")
                 .append(String.valueOf(this.isPreserveSourceDestination));
+        sb.append(", isSymmetricHashEnabled=").append(String.valueOf(this.isSymmetricHashEnabled));
         sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
         sb.append(", nlbIpVersion=").append(String.valueOf(this.nlbIpVersion));
+        sb.append(", subnetIpv6Cidr=").append(String.valueOf(this.subnetIpv6Cidr));
+        sb.append(", assignedPrivateIpv4=").append(String.valueOf(this.assignedPrivateIpv4));
+        sb.append(", assignedIpv6=").append(String.valueOf(this.assignedIpv6));
         sb.append(", listeners=").append(String.valueOf(this.listeners));
         sb.append(", backendSets=").append(String.valueOf(this.backendSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -693,12 +877,17 @@ public final class CreateNetworkLoadBalancerDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
                         this.isPreserveSourceDestination, other.isPreserveSourceDestination)
+                && java.util.Objects.equals(
+                        this.isSymmetricHashEnabled, other.isSymmetricHashEnabled)
                 && java.util.Objects.equals(this.reservedIps, other.reservedIps)
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
                 && java.util.Objects.equals(this.nlbIpVersion, other.nlbIpVersion)
+                && java.util.Objects.equals(this.subnetIpv6Cidr, other.subnetIpv6Cidr)
+                && java.util.Objects.equals(this.assignedPrivateIpv4, other.assignedPrivateIpv4)
+                && java.util.Objects.equals(this.assignedIpv6, other.assignedIpv6)
                 && java.util.Objects.equals(this.listeners, other.listeners)
                 && java.util.Objects.equals(this.backendSets, other.backendSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -719,6 +908,11 @@ public final class CreateNetworkLoadBalancerDetails
                         + (this.isPreserveSourceDestination == null
                                 ? 43
                                 : this.isPreserveSourceDestination.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSymmetricHashEnabled == null
+                                ? 43
+                                : this.isSymmetricHashEnabled.hashCode());
         result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
         result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
@@ -728,6 +922,15 @@ public final class CreateNetworkLoadBalancerDetails
                                 ? 43
                                 : this.networkSecurityGroupIds.hashCode());
         result = (result * PRIME) + (this.nlbIpVersion == null ? 43 : this.nlbIpVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subnetIpv6Cidr == null ? 43 : this.subnetIpv6Cidr.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignedPrivateIpv4 == null
+                                ? 43
+                                : this.assignedPrivateIpv4.hashCode());
+        result = (result * PRIME) + (this.assignedIpv6 == null ? 43 : this.assignedIpv6.hashCode());
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
         result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

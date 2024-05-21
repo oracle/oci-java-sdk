@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -44,7 +44,8 @@ public final class IPSecConnectionTunnel
         "dpdMode",
         "dpdTimeoutInSec",
         "phaseOneDetails",
-        "phaseTwoDetails"
+        "phaseTwoDetails",
+        "associatedVirtualCircuits"
     })
     public IPSecConnectionTunnel(
             String compartmentId,
@@ -65,7 +66,8 @@ public final class IPSecConnectionTunnel
             DpdMode dpdMode,
             Integer dpdTimeoutInSec,
             TunnelPhaseOneDetails phaseOneDetails,
-            TunnelPhaseTwoDetails phaseTwoDetails) {
+            TunnelPhaseTwoDetails phaseTwoDetails,
+            java.util.List<String> associatedVirtualCircuits) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -86,6 +88,7 @@ public final class IPSecConnectionTunnel
         this.dpdTimeoutInSec = dpdTimeoutInSec;
         this.phaseOneDetails = phaseOneDetails;
         this.phaseTwoDetails = phaseTwoDetails;
+        this.associatedVirtualCircuits = associatedVirtualCircuits;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -430,6 +433,24 @@ public final class IPSecConnectionTunnel
             this.__explicitlySet__.add("phaseTwoDetails");
             return this;
         }
+        /**
+         * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
+        private java.util.List<String> associatedVirtualCircuits;
+
+        /**
+         * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+         *
+         * @param associatedVirtualCircuits the value to set
+         * @return this builder
+         **/
+        public Builder associatedVirtualCircuits(java.util.List<String> associatedVirtualCircuits) {
+            this.associatedVirtualCircuits = associatedVirtualCircuits;
+            this.__explicitlySet__.add("associatedVirtualCircuits");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -455,7 +476,8 @@ public final class IPSecConnectionTunnel
                             this.dpdMode,
                             this.dpdTimeoutInSec,
                             this.phaseOneDetails,
-                            this.phaseTwoDetails);
+                            this.phaseTwoDetails,
+                            this.associatedVirtualCircuits);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -520,6 +542,9 @@ public final class IPSecConnectionTunnel
             }
             if (model.wasPropertyExplicitlySet("phaseTwoDetails")) {
                 this.phaseTwoDetails(model.getPhaseTwoDetails());
+            }
+            if (model.wasPropertyExplicitlySet("associatedVirtualCircuits")) {
+                this.associatedVirtualCircuits(model.getAssociatedVirtualCircuits());
             }
             return this;
         }
@@ -1196,6 +1221,22 @@ public final class IPSecConnectionTunnel
         return phaseTwoDetails;
     }
 
+    /**
+     * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
+    private final java.util.List<String> associatedVirtualCircuits;
+
+    /**
+     * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getAssociatedVirtualCircuits() {
+        return associatedVirtualCircuits;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1229,6 +1270,8 @@ public final class IPSecConnectionTunnel
         sb.append(", dpdTimeoutInSec=").append(String.valueOf(this.dpdTimeoutInSec));
         sb.append(", phaseOneDetails=").append(String.valueOf(this.phaseOneDetails));
         sb.append(", phaseTwoDetails=").append(String.valueOf(this.phaseTwoDetails));
+        sb.append(", associatedVirtualCircuits=")
+                .append(String.valueOf(this.associatedVirtualCircuits));
         sb.append(")");
         return sb.toString();
     }
@@ -1263,6 +1306,8 @@ public final class IPSecConnectionTunnel
                 && java.util.Objects.equals(this.dpdTimeoutInSec, other.dpdTimeoutInSec)
                 && java.util.Objects.equals(this.phaseOneDetails, other.phaseOneDetails)
                 && java.util.Objects.equals(this.phaseTwoDetails, other.phaseTwoDetails)
+                && java.util.Objects.equals(
+                        this.associatedVirtualCircuits, other.associatedVirtualCircuits)
                 && super.equals(other);
     }
 
@@ -1313,6 +1358,11 @@ public final class IPSecConnectionTunnel
         result =
                 (result * PRIME)
                         + (this.phaseTwoDetails == null ? 43 : this.phaseTwoDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedVirtualCircuits == null
+                                ? 43
+                                : this.associatedVirtualCircuits.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

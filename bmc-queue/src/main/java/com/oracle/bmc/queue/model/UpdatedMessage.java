@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -29,13 +29,13 @@ public final class UpdatedMessage extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The id of the message that's been updated.
+         * The ID of the message that's been updated.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
-         * The id of the message that's been updated.
+         * The ID of the message that's been updated.
          * @param id the value to set
          * @return this builder
          **/
@@ -45,13 +45,19 @@ public final class UpdatedMessage extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+         * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
         private java.util.Date visibleAfter;
 
         /**
-         * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+         * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
          * @param visibleAfter the value to set
          * @return this builder
          **/
@@ -96,13 +102,13 @@ public final class UpdatedMessage extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The id of the message that's been updated.
+     * The ID of the message that's been updated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
-     * The id of the message that's been updated.
+     * The ID of the message that's been updated.
      * @return the value
      **/
     public Long getId() {
@@ -110,13 +116,19 @@ public final class UpdatedMessage extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+     * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
     private final java.util.Date visibleAfter;
 
     /**
-     * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+     * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
      * @return the value
      **/
     public java.util.Date getVisibleAfter() {

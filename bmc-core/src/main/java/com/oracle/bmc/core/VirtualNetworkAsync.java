@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -101,7 +101,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add an IPv6 CIDR to a subnet.
+     * Add an IPv6 prefix to a subnet.
      *
      *
      * @param request The request object containing the details to send
@@ -118,8 +118,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
-     * Once added the IPv6 CIDR block cannot be removed or modified.
+     * Add an IPv6 prefix to a VCN. The VCN size is always /56 and assigned by Oracle.
+     * Once added the IPv6 prefix cannot be removed or modified.
      *
      *
      * @param request The request object containing the details to send
@@ -2845,6 +2845,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the `IpInventory` resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourceIpInventoryResponse> getResourceIpInventory(
+            GetResourceIpInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceIpInventoryRequest, GetResourceIpInventoryResponse>
+                    handler);
+
+    /**
      * Gets the specified route table's information.
      *
      * @param request The request object containing the details to send
@@ -2918,6 +2935,40 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSubnetResponse> getSubnet(
             GetSubnetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler);
+
+    /**
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubnetCidrUtilizationResponse> getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetCidrUtilizationRequest, GetSubnetCidrUtilizationResponse>
+                    handler);
+
+    /**
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSubnetIpInventoryResponse> getSubnetIpInventory(
+            GetSubnetIpInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSubnetIpInventoryRequest, GetSubnetIpInventoryResponse>
+                    handler);
 
     /**
      * Gets a topology for a given subnet.
@@ -3037,6 +3088,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetVcnDnsResolverAssociationRequest,
                             GetVcnDnsResolverAssociationResponse>
+                    handler);
+
+    /**
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVcnOverlapResponse> getVcnOverlap(
+            GetVcnOverlapRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVcnOverlapRequest, GetVcnOverlapResponse>
                     handler);
 
     /**
@@ -3592,6 +3659,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the IP Inventory information in the selected compartments.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIpInventoryResponse> listIpInventory(
+            ListIpInventoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListIpInventoryRequest, ListIpInventoryResponse>
+                    handler);
+
+    /**
      * Lists the {@link Ipv6} objects based
      * on one of these filters:
      * <p>
@@ -3911,6 +3994,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler);
 
     /**
+     * Gets the specified virtual circuit's associatedTunnelsInfo.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVirtualCircuitAssociatedTunnelsResponse>
+            listVirtualCircuitAssociatedTunnels(
+                    ListVirtualCircuitAssociatedTunnelsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitAssociatedTunnelsRequest,
+                                    ListVirtualCircuitAssociatedTunnelsResponse>
+                            handler);
+
+    /**
      * The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      *
      *
@@ -4096,7 +4197,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Remove an IPv6 CIDR from a subnet. At least one IPv6 CIDR should remain.
+     * Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.
      *
      *
      * @param request The request object containing the details to send
@@ -4113,7 +4214,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removing an existing IPv6 CIDR from a VCN.
+     * Removing an existing IPv6 prefix from a VCN.
      *
      *
      * @param request The request object containing the details to send

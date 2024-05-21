@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -30,7 +30,8 @@ public final class CreateVolumeGroupDetails
         "displayName",
         "freeformTags",
         "sourceDetails",
-        "volumeGroupReplicas"
+        "volumeGroupReplicas",
+        "clusterPlacementGroupId"
     })
     public CreateVolumeGroupDetails(
             String availabilityDomain,
@@ -40,7 +41,8 @@ public final class CreateVolumeGroupDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             VolumeGroupSourceDetails sourceDetails,
-            java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas) {
+            java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas,
+            String clusterPlacementGroupId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -50,6 +52,7 @@ public final class CreateVolumeGroupDetails
         this.freeformTags = freeformTags;
         this.sourceDetails = sourceDetails;
         this.volumeGroupReplicas = volumeGroupReplicas;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -205,6 +208,22 @@ public final class CreateVolumeGroupDetails
             this.__explicitlySet__.add("volumeGroupReplicas");
             return this;
         }
+        /**
+         * The clusterPlacementGroup Id of the volume group for volume group placement.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The clusterPlacementGroup Id of the volume group for volume group placement.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -219,7 +238,8 @@ public final class CreateVolumeGroupDetails
                             this.displayName,
                             this.freeformTags,
                             this.sourceDetails,
-                            this.volumeGroupReplicas);
+                            this.volumeGroupReplicas,
+                            this.clusterPlacementGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -251,6 +271,9 @@ public final class CreateVolumeGroupDetails
             }
             if (model.wasPropertyExplicitlySet("volumeGroupReplicas")) {
                 this.volumeGroupReplicas(model.getVolumeGroupReplicas());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             return this;
         }
@@ -400,6 +423,20 @@ public final class CreateVolumeGroupDetails
         return volumeGroupReplicas;
     }
 
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The clusterPlacementGroup Id of the volume group for volume group placement.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -422,6 +459,8 @@ public final class CreateVolumeGroupDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", volumeGroupReplicas=").append(String.valueOf(this.volumeGroupReplicas));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -444,6 +483,8 @@ public final class CreateVolumeGroupDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.volumeGroupReplicas, other.volumeGroupReplicas)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && super.equals(other);
     }
 
@@ -473,6 +514,11 @@ public final class CreateVolumeGroupDetails
                         + (this.volumeGroupReplicas == null
                                 ? 43
                                 : this.volumeGroupReplicas.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

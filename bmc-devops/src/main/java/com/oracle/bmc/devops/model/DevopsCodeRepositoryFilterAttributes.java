@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -32,13 +32,13 @@ public final class DevopsCodeRepositoryFilterAttributes
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Branch for push event.
+         * Branch for push event; source branch for pull requests
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("headRef")
         private String headRef;
 
         /**
-         * Branch for push event.
+         * Branch for push event; source branch for pull requests
          * @param headRef the value to set
          * @return this builder
          **/
@@ -93,13 +93,13 @@ public final class DevopsCodeRepositoryFilterAttributes
     }
 
     /**
-     * Branch for push event.
+     * Branch for push event; source branch for pull requests
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
     private final String headRef;
 
     /**
-     * Branch for push event.
+     * Branch for push event; source branch for pull requests
      * @return the value
      **/
     public String getHeadRef() {

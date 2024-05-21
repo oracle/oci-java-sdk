@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -31,12 +31,40 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLE_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromAmazonS3.class,
+        name = "AMAZON_S3_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromMySqlHeatWave.class,
+        name = "MYSQL_HEATWAVE_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromMySQL.class,
+        name = "MYSQL_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromOraclePeopleSoftDetails.class,
+        name = "ORACLE_PEOPLESOFT_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromOracleEbsDetails.class,
+        name = "ORACLE_EBS_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromRestDetails.class,
+        name = "REST_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetFromAdwcDetails.class,
         name = "ORACLE_ADWC_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DataAssetFromAmazonS3.class,
-        name = "AMAZON_S3_DATA_ASSET"
+        value = DataAssetFromHdfsDetails.class,
+        name = "HDFS_DATA_ASSET"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataAssetFromOracleSiebelDetails.class,
+        name = "ORACLE_SIEBEL_DATA_ASSET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetFromObjectStorageDetails.class,
@@ -53,14 +81,6 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataAssetFromAtpDetails.class,
         name = "ORACLE_ATP_DATA_ASSET"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DataAssetFromMySQL.class,
-        name = "MYSQL_DATA_ASSET"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DataAssetFromRestDetails.class,
-        name = "REST_DATA_ASSET"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -369,6 +389,11 @@ public class DataAsset extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         FusionAppDataAsset("FUSION_APP_DATA_ASSET"),
         AmazonS3DataAsset("AMAZON_S3_DATA_ASSET"),
         LakeDataAsset("LAKE_DATA_ASSET"),
+        OraclePeoplesoftDataAsset("ORACLE_PEOPLESOFT_DATA_ASSET"),
+        OracleSiebelDataAsset("ORACLE_SIEBEL_DATA_ASSET"),
+        OracleEbsDataAsset("ORACLE_EBS_DATA_ASSET"),
+        HdfsDataAsset("HDFS_DATA_ASSET"),
+        MysqlHeatwaveDataAsset("MYSQL_HEATWAVE_DATA_ASSET"),
         RestDataAsset("REST_DATA_ASSET"),
 
         /**

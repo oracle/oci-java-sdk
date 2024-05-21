@@ -1,14 +1,16 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.signing.internal;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
@@ -52,6 +54,7 @@ public class RequestSignerImpl implements RequestSigner {
             org.slf4j.LoggerFactory.getLogger(RequestSignerImpl.class);
 
     private static final SignatureSigner SIGNER = new SignatureSigner();
+    private static KeySupplier<PrivateKey> privateKeySupplier = null;
 
     private final KeySupplier<RSAPrivateKey> keySupplier;
     private final SigningConfiguration signingConfiguration;
@@ -73,6 +76,21 @@ public class RequestSignerImpl implements RequestSigner {
             @Nonnull final SigningStrategy signingStrategy,
             @Nonnull final Supplier<String> keyIdSupplier) {
         this(keySupplier, toSigningConfiguration(signingStrategy), keyIdSupplier);
+    }
+
+    public RequestSignerImpl(
+            @Nonnull final SigningStrategy signingStrategy,
+            @Nonnull final KeySupplier<PrivateKey> keySupplier,
+            @Nonnull final Supplier<String> keyIdSupplier) {
+        // No-op keySupplier if using privateKeySupplier
+        this(
+                keyId ->
+                        new PEMFileRSAPrivateKeySupplier(
+                                        new ByteArrayInputStream("".getBytes()), "".toCharArray())
+                                .supplyKey(""),
+                toSigningConfiguration(signingStrategy),
+                keyIdSupplier);
+        privateKeySupplier = keySupplier;
     }
 
     /**
@@ -156,7 +174,6 @@ public class RequestSignerImpl implements RequestSigner {
 
         try {
             Version version = validateVersion(versionName, algorithm);
-            final RSAPrivateKey key = getPrivateKey(keyId, keySupplier);
             final String lowerHttpMethod = httpMethod.toLowerCase();
             final String path = extractPath(uri);
 
@@ -214,7 +231,13 @@ public class RequestSignerImpl implements RequestSigner {
                     calculateStringToSign(
                             lowerHttpMethod, path, allHeaders, requiredHeaders, headers);
 
-            final String signature = sign(key, algorithm, stringToSign);
+            final String signature;
+
+            if (privateKeySupplier == null) {
+                signature = sign(getRsaPrivateKey(keyId, keySupplier), algorithm, stringToSign);
+            } else {
+                signature = sign(getPrivateKey(), algorithm, stringToSign);
+            }
 
             // 6) calculate the auth header and add to all the missing headers that should be added
             final String authorizationHeader =
@@ -266,7 +289,17 @@ public class RequestSignerImpl implements RequestSigner {
         return srVersion;
     }
 
-    private static RSAPrivateKey getPrivateKey(
+    private static PrivateKey getPrivateKey() {
+        Optional<PrivateKey> keyOptional = privateKeySupplier.supplyKey("");
+
+        if (!keyOptional.isPresent()) {
+            LOG.debug("Could not find private key associated with keyId '{}'", "");
+            throw new RequestSignerException("Could not find private key");
+        }
+        return keyOptional.get();
+    }
+
+    private static RSAPrivateKey getRsaPrivateKey(
             String keyId, KeySupplier<RSAPrivateKey> keySupplier) {
         Optional<RSAPrivateKey> keyOptional = keySupplier.supplyKey(keyId);
 
@@ -453,6 +486,13 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     private static String sign(RSAPrivateKey key, Algorithm algorithm, String stringToSign) {
+        byte[] signature =
+                SIGNER.sign(
+                        key, stringToSign.getBytes(StandardCharsets.UTF_8), algorithm.getJvmName());
+        return base64Encode(signature);
+    }
+
+    private static String sign(PrivateKey key, Algorithm algorithm, String stringToSign) {
         byte[] signature =
                 SIGNER.sign(
                         key, stringToSign.getBytes(StandardCharsets.UTF_8), algorithm.getJvmName());

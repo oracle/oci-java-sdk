@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -11,7 +11,9 @@ import com.oracle.bmc.http.ApacheUtils;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.io.internal.DuplicatableLengthLimitedInputStream;
 import com.oracle.bmc.io.internal.KeepOpenInputStream;
+import com.oracle.bmc.io.internal.LengthLimitedInputStream;
 import com.oracle.bmc.io.internal.ResettableFileInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
@@ -19,6 +21,9 @@ import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.Consumer;
 import io.github.resilience4j.circuitbreaker.CallNotPermittedException;
+import org.apache.http.conn.HttpClientConnectionManager;
+import org.glassfish.jersey.apache.connector.ApacheClientProperties;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
@@ -41,8 +46,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -72,6 +79,8 @@ public class RestClient implements AutoCloseable {
     private WrappedWebTarget baseTarget;
 
     private String requestUri;
+    private final AtomicBoolean closedClient;
+
     /**
      * Create a new client that uses a provided client to make all its requests.
      * It's up to the caller to properly configure the client.
@@ -132,6 +141,7 @@ public class RestClient implements AutoCloseable {
         this.circuitBreaker = circuitBreaker;
         this.isApacheNonBufferingClient = isApacheNonBufferingClient;
         this.clientConfigurator = clientConfigurator;
+        this.closedClient = new AtomicBoolean(false);
     }
 
     /**
@@ -152,6 +162,20 @@ public class RestClient implements AutoCloseable {
 
     @Override
     public void close() {
+        try {
+            if (closedClient.compareAndSet(false, true) && client.getConfiguration() != null) {
+                HttpClientConnectionManager httpClientConnectionManager =
+                        (HttpClientConnectionManager)
+                                client.getConfiguration()
+                                        .getProperty(ApacheClientProperties.CONNECTION_MANAGER);
+                if (httpClientConnectionManager != null) {
+                    IdleConnectionMonitor.removeConnectionManager(httpClientConnectionManager);
+                }
+            }
+        } catch (ClassCastException e) {
+            LOG.info("Cannot call close on IdleConnectionMonitorThread");
+        }
+
         client.close();
     }
 
@@ -940,7 +964,8 @@ public class RestClient implements AutoCloseable {
                 long contentLength = Long.parseLong(contentLengthHeader.get(0).toString());
                 requestBody =
                         this.entityFactory.forPut(
-                                request, attemptToSerialize(request, body), contentLength);
+                                request,
+                                attemptToSerialize(request, body, Optional.of(contentLength)));
             } else {
                 requestBody = this.entityFactory.forPut(request, attemptToSerialize(request, body));
             }
@@ -1821,10 +1846,29 @@ public class RestClient implements AutoCloseable {
      * @return body as string, or unchanged if String or InputStream
      */
     private <T extends BmcRequest> Object attemptToSerialize(T request, @Nullable Object body) {
+        return attemptToSerialize(request, body, Optional.empty());
+    }
+
+    /**
+     * Convert the body to a JSON string, unless it is already a string, or if it is an InputStream
+     * @param request The original client request object given to the service
+     *      *                client.
+     * @param body body
+     * @param optionalContentLengthLimit an optional content length limit for the stream
+     * @return body as string, or unchanged if String or InputStream
+     */
+    private <T extends BmcRequest> Object attemptToSerialize(
+            T request, @Nullable Object body, Optional<Long> optionalContentLengthLimit) {
         try {
             if (body instanceof String) {
                 return body;
             } else if (body instanceof InputStream) {
+                if (optionalContentLengthLimit.isPresent()) {
+                    body =
+                            wrapInLengthLimitedInputStream(
+                                    (InputStream) body, optionalContentLengthLimit.get());
+                }
+
                 final Long contentLength = tryGetContentLength(request);
                 // check if the stream has correct implementation of available method
                 final boolean isStreamWithKnownAvailableBytes = checkStreamForAvailableBytes(body);
@@ -1857,6 +1901,22 @@ public class RestClient implements AutoCloseable {
             }
         } catch (IOException e) {
             throw new IllegalArgumentException("Unable to process JSON body", e);
+        }
+    }
+
+    /**
+     * Wrap the input stream into a {@link DuplicatableLengthLimitedInputStream} or {@link LengthLimitedInputStream},
+     * depending on whether the input stream is a {@link DuplicatableInputStream} or not./
+     * @param body input stream
+     * @param contentLength content length limit
+     * @return wrapped input stream
+     */
+    private static LengthLimitedInputStream wrapInLengthLimitedInputStream(
+            InputStream body, long contentLength) {
+        if (body instanceof DuplicatableInputStream) {
+            return new DuplicatableLengthLimitedInputStream(body, contentLength);
+        } else {
+            return new LengthLimitedInputStream(body, contentLength);
         }
     }
 

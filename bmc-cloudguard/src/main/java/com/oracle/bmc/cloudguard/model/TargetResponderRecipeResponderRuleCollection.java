@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the ResponderRule within Target.
+ * Collection of summary information for target responder recipe responder rules.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,13 +32,13 @@ public final class TargetResponderRecipeResponderRuleCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of TargetResponderRecipeResponderRuleSummary
+         * List of TargetResponderRecipeResponderRuleSummary resources
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TargetResponderRecipeResponderRuleSummary> items;
 
         /**
-         * List of TargetResponderRecipeResponderRuleSummary
+         * List of TargetResponderRecipeResponderRuleSummary resources
          * @param items the value to set
          * @return this builder
          **/
@@ -81,13 +81,13 @@ public final class TargetResponderRecipeResponderRuleCollection
     }
 
     /**
-     * List of TargetResponderRecipeResponderRuleSummary
+     * List of TargetResponderRecipeResponderRuleSummary resources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TargetResponderRecipeResponderRuleSummary> items;
 
     /**
-     * List of TargetResponderRecipeResponderRuleSummary
+     * List of TargetResponderRecipeResponderRuleSummary resources
      * @return the value
      **/
     public java.util.List<TargetResponderRecipeResponderRuleSummary> getItems() {

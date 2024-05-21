@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.internal.http;
@@ -42,6 +42,14 @@ public class UpdateStreamCdnConfigConverter {
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getStreamCdnConfigId()));
+
+        if (request.getIsLockOverride() != null) {
+            target =
+                    target.queryParam(
+                            "isLockOverride",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsLockOverride()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

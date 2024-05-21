@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -30,6 +30,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         "serviceLevelAgreementType",
         "autonomousExadataInfrastructureId",
         "dbVersion",
+        "databaseSoftwareImageId",
         "peerAutonomousExadataInfrastructureId",
         "peerAutonomousContainerDatabaseDisplayName",
         "protectionMode",
@@ -47,13 +48,18 @@ public final class CreateAutonomousContainerDatabaseDetails
         "maintenanceWindowDetails",
         "standbyMaintenanceBufferInDays",
         "versionPreference",
+        "isDstFileUpdateEnabled",
         "freeformTags",
         "definedTags",
         "backupConfig",
         "kmsKeyId",
         "kmsKeyVersionId",
         "vaultId",
-        "keyStoreId"
+        "keyStoreId",
+        "dbSplitThreshold",
+        "vmFailoverReservation",
+        "distributionAffinity",
+        "netServicesArchitecture"
     })
     public CreateAutonomousContainerDatabaseDetails(
             String displayName,
@@ -62,6 +68,7 @@ public final class CreateAutonomousContainerDatabaseDetails
             ServiceLevelAgreementType serviceLevelAgreementType,
             String autonomousExadataInfrastructureId,
             String dbVersion,
+            String databaseSoftwareImageId,
             String peerAutonomousExadataInfrastructureId,
             String peerAutonomousContainerDatabaseDisplayName,
             ProtectionMode protectionMode,
@@ -79,13 +86,18 @@ public final class CreateAutonomousContainerDatabaseDetails
             MaintenanceWindow maintenanceWindowDetails,
             Integer standbyMaintenanceBufferInDays,
             VersionPreference versionPreference,
+            Boolean isDstFileUpdateEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             AutonomousContainerDatabaseBackupConfig backupConfig,
             String kmsKeyId,
             String kmsKeyVersionId,
             String vaultId,
-            String keyStoreId) {
+            String keyStoreId,
+            Integer dbSplitThreshold,
+            Integer vmFailoverReservation,
+            DistributionAffinity distributionAffinity,
+            NetServicesArchitecture netServicesArchitecture) {
         super();
         this.displayName = displayName;
         this.dbUniqueName = dbUniqueName;
@@ -93,6 +105,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         this.serviceLevelAgreementType = serviceLevelAgreementType;
         this.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
         this.dbVersion = dbVersion;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.peerAutonomousExadataInfrastructureId = peerAutonomousExadataInfrastructureId;
         this.peerAutonomousContainerDatabaseDisplayName =
                 peerAutonomousContainerDatabaseDisplayName;
@@ -113,6 +126,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         this.maintenanceWindowDetails = maintenanceWindowDetails;
         this.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
         this.versionPreference = versionPreference;
+        this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.backupConfig = backupConfig;
@@ -120,6 +134,10 @@ public final class CreateAutonomousContainerDatabaseDetails
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.vaultId = vaultId;
         this.keyStoreId = keyStoreId;
+        this.dbSplitThreshold = dbSplitThreshold;
+        this.vmFailoverReservation = vmFailoverReservation;
+        this.distributionAffinity = distributionAffinity;
+        this.netServicesArchitecture = netServicesArchitecture;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -223,6 +241,22 @@ public final class CreateAutonomousContainerDatabaseDetails
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+        /**
+         * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        /**
+         * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         **/
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
             return this;
         }
         /**
@@ -520,6 +554,22 @@ public final class CreateAutonomousContainerDatabaseDetails
             return this;
         }
         /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+        private Boolean isDstFileUpdateEnabled;
+
+        /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         * @param isDstFileUpdateEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            this.__explicitlySet__.add("isDstFileUpdateEnabled");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -590,14 +640,14 @@ public final class CreateAutonomousContainerDatabaseDetails
             return this;
         }
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
         private String kmsKeyVersionId;
 
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
          *
          * @param kmsKeyVersionId the value to set
          * @return this builder
@@ -608,13 +658,13 @@ public final class CreateAutonomousContainerDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
          * @param vaultId the value to set
          * @return this builder
          **/
@@ -624,19 +674,83 @@ public final class CreateAutonomousContainerDatabaseDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * @param keyStoreId the value to set
          * @return this builder
          **/
         public Builder keyStoreId(String keyStoreId) {
             this.keyStoreId = keyStoreId;
             this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
+        /**
+         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
+        private Integer dbSplitThreshold;
+
+        /**
+         * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         * @param dbSplitThreshold the value to set
+         * @return this builder
+         **/
+        public Builder dbSplitThreshold(Integer dbSplitThreshold) {
+            this.dbSplitThreshold = dbSplitThreshold;
+            this.__explicitlySet__.add("dbSplitThreshold");
+            return this;
+        }
+        /**
+         * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
+        private Integer vmFailoverReservation;
+
+        /**
+         * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+         * @param vmFailoverReservation the value to set
+         * @return this builder
+         **/
+        public Builder vmFailoverReservation(Integer vmFailoverReservation) {
+            this.vmFailoverReservation = vmFailoverReservation;
+            this.__explicitlySet__.add("vmFailoverReservation");
+            return this;
+        }
+        /**
+         * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
+        private DistributionAffinity distributionAffinity;
+
+        /**
+         * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+         * @param distributionAffinity the value to set
+         * @return this builder
+         **/
+        public Builder distributionAffinity(DistributionAffinity distributionAffinity) {
+            this.distributionAffinity = distributionAffinity;
+            this.__explicitlySet__.add("distributionAffinity");
+            return this;
+        }
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+        private NetServicesArchitecture netServicesArchitecture;
+
+        /**
+         * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         * @param netServicesArchitecture the value to set
+         * @return this builder
+         **/
+        public Builder netServicesArchitecture(NetServicesArchitecture netServicesArchitecture) {
+            this.netServicesArchitecture = netServicesArchitecture;
+            this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
 
@@ -652,6 +766,7 @@ public final class CreateAutonomousContainerDatabaseDetails
                             this.serviceLevelAgreementType,
                             this.autonomousExadataInfrastructureId,
                             this.dbVersion,
+                            this.databaseSoftwareImageId,
                             this.peerAutonomousExadataInfrastructureId,
                             this.peerAutonomousContainerDatabaseDisplayName,
                             this.protectionMode,
@@ -669,13 +784,18 @@ public final class CreateAutonomousContainerDatabaseDetails
                             this.maintenanceWindowDetails,
                             this.standbyMaintenanceBufferInDays,
                             this.versionPreference,
+                            this.isDstFileUpdateEnabled,
                             this.freeformTags,
                             this.definedTags,
                             this.backupConfig,
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.vaultId,
-                            this.keyStoreId);
+                            this.keyStoreId,
+                            this.dbSplitThreshold,
+                            this.vmFailoverReservation,
+                            this.distributionAffinity,
+                            this.netServicesArchitecture);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -702,6 +822,9 @@ public final class CreateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("dbVersion")) {
                 this.dbVersion(model.getDbVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
             if (model.wasPropertyExplicitlySet("peerAutonomousExadataInfrastructureId")) {
                 this.peerAutonomousExadataInfrastructureId(
@@ -759,6 +882,9 @@ public final class CreateAutonomousContainerDatabaseDetails
             if (model.wasPropertyExplicitlySet("versionPreference")) {
                 this.versionPreference(model.getVersionPreference());
             }
+            if (model.wasPropertyExplicitlySet("isDstFileUpdateEnabled")) {
+                this.isDstFileUpdateEnabled(model.getIsDstFileUpdateEnabled());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -779,6 +905,18 @@ public final class CreateAutonomousContainerDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("keyStoreId")) {
                 this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("dbSplitThreshold")) {
+                this.dbSplitThreshold(model.getDbSplitThreshold());
+            }
+            if (model.wasPropertyExplicitlySet("vmFailoverReservation")) {
+                this.vmFailoverReservation(model.getVmFailoverReservation());
+            }
+            if (model.wasPropertyExplicitlySet("distributionAffinity")) {
+                this.distributionAffinity(model.getDistributionAffinity());
+            }
+            if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
+                this.netServicesArchitecture(model.getNetServicesArchitecture());
             }
             return this;
         }
@@ -916,6 +1054,20 @@ public final class CreateAutonomousContainerDatabaseDetails
      **/
     public String getDbVersion() {
         return dbVersion;
+    }
+
+    /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    private final String databaseSoftwareImageId;
+
+    /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
     }
 
     /**
@@ -1278,6 +1430,20 @@ public final class CreateAutonomousContainerDatabaseDetails
     }
 
     /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+    private final Boolean isDstFileUpdateEnabled;
+
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * @return the value
+     **/
+    public Boolean getIsDstFileUpdateEnabled() {
+        return isDstFileUpdateEnabled;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -1339,14 +1505,14 @@ public final class CreateAutonomousContainerDatabaseDetails
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      *
      * @return the value
      **/
@@ -1355,13 +1521,13 @@ public final class CreateAutonomousContainerDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      * @return the value
      **/
     public String getVaultId() {
@@ -1369,17 +1535,143 @@ public final class CreateAutonomousContainerDatabaseDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * @return the value
      **/
     public String getKeyStoreId() {
         return keyStoreId;
+    }
+
+    /**
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSplitThreshold")
+    private final Integer dbSplitThreshold;
+
+    /**
+     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * @return the value
+     **/
+    public Integer getDbSplitThreshold() {
+        return dbSplitThreshold;
+    }
+
+    /**
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmFailoverReservation")
+    private final Integer vmFailoverReservation;
+
+    /**
+     * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
+     * @return the value
+     **/
+    public Integer getVmFailoverReservation() {
+        return vmFailoverReservation;
+    }
+
+    /**
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     **/
+    public enum DistributionAffinity {
+        MinimumDistribution("MINIMUM_DISTRIBUTION"),
+        MaximumDistribution("MAXIMUM_DISTRIBUTION"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DistributionAffinity> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DistributionAffinity v : DistributionAffinity.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DistributionAffinity(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DistributionAffinity create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DistributionAffinity: " + key);
+        }
+    };
+    /**
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("distributionAffinity")
+    private final DistributionAffinity distributionAffinity;
+
+    /**
+     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * @return the value
+     **/
+    public DistributionAffinity getDistributionAffinity() {
+        return distributionAffinity;
+    }
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     **/
+    public enum NetServicesArchitecture {
+        Dedicated("DEDICATED"),
+        Shared("SHARED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, NetServicesArchitecture> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (NetServicesArchitecture v : NetServicesArchitecture.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        NetServicesArchitecture(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static NetServicesArchitecture create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid NetServicesArchitecture: " + key);
+        }
+    };
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
+    private final NetServicesArchitecture netServicesArchitecture;
+
+    /**
+     * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * @return the value
+     **/
+    public NetServicesArchitecture getNetServicesArchitecture() {
+        return netServicesArchitecture;
     }
 
     @Override
@@ -1404,6 +1696,8 @@ public final class CreateAutonomousContainerDatabaseDetails
         sb.append(", autonomousExadataInfrastructureId=")
                 .append(String.valueOf(this.autonomousExadataInfrastructureId));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", peerAutonomousExadataInfrastructureId=")
                 .append(String.valueOf(this.peerAutonomousExadataInfrastructureId));
         sb.append(", peerAutonomousContainerDatabaseDisplayName=")
@@ -1432,6 +1726,7 @@ public final class CreateAutonomousContainerDatabaseDetails
         sb.append(", standbyMaintenanceBufferInDays=")
                 .append(String.valueOf(this.standbyMaintenanceBufferInDays));
         sb.append(", versionPreference=").append(String.valueOf(this.versionPreference));
+        sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
@@ -1439,6 +1734,11 @@ public final class CreateAutonomousContainerDatabaseDetails
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", dbSplitThreshold=").append(String.valueOf(this.dbSplitThreshold));
+        sb.append(", vmFailoverReservation=").append(String.valueOf(this.vmFailoverReservation));
+        sb.append(", distributionAffinity=").append(String.valueOf(this.distributionAffinity));
+        sb.append(", netServicesArchitecture=")
+                .append(String.valueOf(this.netServicesArchitecture));
         sb.append(")");
         return sb.toString();
     }
@@ -1463,6 +1763,8 @@ public final class CreateAutonomousContainerDatabaseDetails
                         this.autonomousExadataInfrastructureId,
                         other.autonomousExadataInfrastructureId)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(
                         this.peerAutonomousExadataInfrastructureId,
                         other.peerAutonomousExadataInfrastructureId)
@@ -1496,6 +1798,8 @@ public final class CreateAutonomousContainerDatabaseDetails
                 && java.util.Objects.equals(
                         this.standbyMaintenanceBufferInDays, other.standbyMaintenanceBufferInDays)
                 && java.util.Objects.equals(this.versionPreference, other.versionPreference)
+                && java.util.Objects.equals(
+                        this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
@@ -1503,6 +1807,11 @@ public final class CreateAutonomousContainerDatabaseDetails
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(this.dbSplitThreshold, other.dbSplitThreshold)
+                && java.util.Objects.equals(this.vmFailoverReservation, other.vmFailoverReservation)
+                && java.util.Objects.equals(this.distributionAffinity, other.distributionAffinity)
+                && java.util.Objects.equals(
+                        this.netServicesArchitecture, other.netServicesArchitecture)
                 && super.equals(other);
     }
 
@@ -1524,6 +1833,11 @@ public final class CreateAutonomousContainerDatabaseDetails
                                 ? 43
                                 : this.autonomousExadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerAutonomousExadataInfrastructureId == null
@@ -1597,6 +1911,11 @@ public final class CreateAutonomousContainerDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.versionPreference == null ? 43 : this.versionPreference.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDstFileUpdateEnabled == null
+                                ? 43
+                                : this.isDstFileUpdateEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
@@ -1606,6 +1925,24 @@ public final class CreateAutonomousContainerDatabaseDetails
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSplitThreshold == null ? 43 : this.dbSplitThreshold.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.vmFailoverReservation == null
+                                ? 43
+                                : this.vmFailoverReservation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.distributionAffinity == null
+                                ? 43
+                                : this.distributionAffinity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.netServicesArchitecture == null
+                                ? 43
+                                : this.netServicesArchitecture.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

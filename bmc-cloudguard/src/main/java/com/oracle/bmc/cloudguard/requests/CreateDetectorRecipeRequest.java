@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,12 +14,12 @@ public class CreateDetectorRecipeRequest
                 com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails> {
 
     /**
-     * Details for the new DetectorRecipe.
+     * Details for the new DetectorRecipe
      */
     private com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails createDetectorRecipeDetails;
 
     /**
-     * Details for the new DetectorRecipe.
+     * Details for the new DetectorRecipe
      */
     public com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails
             getCreateDetectorRecipeDetails() {
@@ -77,13 +77,13 @@ public class CreateDetectorRecipeRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new DetectorRecipe.
+         * Details for the new DetectorRecipe
          */
         private com.oracle.bmc.cloudguard.model.CreateDetectorRecipeDetails
                 createDetectorRecipeDetails = null;
 
         /**
-         * Details for the new DetectorRecipe.
+         * Details for the new DetectorRecipe
          * @param createDetectorRecipeDetails the value to set
          * @return this builder instance
          */

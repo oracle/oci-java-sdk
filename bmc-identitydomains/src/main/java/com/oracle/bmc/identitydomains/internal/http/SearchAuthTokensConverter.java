@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.internal.http;
@@ -31,7 +31,12 @@ public class SearchAuthTokensConverter {
         Validate.notNull(request, "request instance is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/admin/v1").path("AuthTokens").path(".search");
+                client.getBaseTarget()
+                        .path("")
+                        .path("admin")
+                        .path("v1")
+                        .path("AuthTokens")
+                        .path(".search");
 
         if (request.getPage() != null) {
             target =

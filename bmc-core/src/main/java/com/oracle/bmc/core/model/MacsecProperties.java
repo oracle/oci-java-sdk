@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -19,13 +19,22 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MacsecProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"state", "primaryKey", "encryptionCipher"})
+    @java.beans.ConstructorProperties({
+        "state",
+        "primaryKey",
+        "encryptionCipher",
+        "isUnprotectedTrafficAllowed"
+    })
     public MacsecProperties(
-            MacsecState state, MacsecKey primaryKey, MacsecEncryptionCipher encryptionCipher) {
+            MacsecState state,
+            MacsecKey primaryKey,
+            MacsecEncryptionCipher encryptionCipher,
+            Boolean isUnprotectedTrafficAllowed) {
         super();
         this.state = state;
         this.primaryKey = primaryKey;
         this.encryptionCipher = encryptionCipher;
+        this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -71,13 +80,33 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("encryptionCipher");
             return this;
         }
+        /**
+         * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnprotectedTrafficAllowed")
+        private Boolean isUnprotectedTrafficAllowed;
+
+        /**
+         * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+         * @param isUnprotectedTrafficAllowed the value to set
+         * @return this builder
+         **/
+        public Builder isUnprotectedTrafficAllowed(Boolean isUnprotectedTrafficAllowed) {
+            this.isUnprotectedTrafficAllowed = isUnprotectedTrafficAllowed;
+            this.__explicitlySet__.add("isUnprotectedTrafficAllowed");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public MacsecProperties build() {
             MacsecProperties model =
-                    new MacsecProperties(this.state, this.primaryKey, this.encryptionCipher);
+                    new MacsecProperties(
+                            this.state,
+                            this.primaryKey,
+                            this.encryptionCipher,
+                            this.isUnprotectedTrafficAllowed);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -94,6 +123,9 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("encryptionCipher")) {
                 this.encryptionCipher(model.getEncryptionCipher());
+            }
+            if (model.wasPropertyExplicitlySet("isUnprotectedTrafficAllowed")) {
+                this.isUnprotectedTrafficAllowed(model.getIsUnprotectedTrafficAllowed());
             }
             return this;
         }
@@ -145,6 +177,20 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         return encryptionCipher;
     }
 
+    /**
+     * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnprotectedTrafficAllowed")
+    private final Boolean isUnprotectedTrafficAllowed;
+
+    /**
+     * Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+     * @return the value
+     **/
+    public Boolean getIsUnprotectedTrafficAllowed() {
+        return isUnprotectedTrafficAllowed;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -162,6 +208,8 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         sb.append("state=").append(String.valueOf(this.state));
         sb.append(", primaryKey=").append(String.valueOf(this.primaryKey));
         sb.append(", encryptionCipher=").append(String.valueOf(this.encryptionCipher));
+        sb.append(", isUnprotectedTrafficAllowed=")
+                .append(String.valueOf(this.isUnprotectedTrafficAllowed));
         sb.append(")");
         return sb.toString();
     }
@@ -179,6 +227,8 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         return java.util.Objects.equals(this.state, other.state)
                 && java.util.Objects.equals(this.primaryKey, other.primaryKey)
                 && java.util.Objects.equals(this.encryptionCipher, other.encryptionCipher)
+                && java.util.Objects.equals(
+                        this.isUnprotectedTrafficAllowed, other.isUnprotectedTrafficAllowed)
                 && super.equals(other);
     }
 
@@ -191,6 +241,11 @@ public final class MacsecProperties extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.encryptionCipher == null ? 43 : this.encryptionCipher.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnprotectedTrafficAllowed == null
+                                ? 43
+                                : this.isUnprotectedTrafficAllowed.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

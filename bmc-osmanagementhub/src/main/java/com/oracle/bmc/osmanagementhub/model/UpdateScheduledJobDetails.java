@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating a scheduled job.
+ * Provides the information used to update a scheduled job.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,7 +30,8 @@ public final class UpdateScheduledJobDetails
         "recurringRule",
         "operations",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "retryIntervals"
     })
     public UpdateScheduledJobDetails(
             String displayName,
@@ -40,7 +41,8 @@ public final class UpdateScheduledJobDetails
             String recurringRule,
             java.util.List<ScheduledJobOperation> operations,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<Integer> retryIntervals) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -50,18 +52,19 @@ public final class UpdateScheduledJobDetails
         this.operations = operations;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.retryIntervals = retryIntervals;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Scheduled job name.
+         * User-friendly name for the scheduled job. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Scheduled job name.
+         * User-friendly name for the scheduled job. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -71,13 +74,13 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * Details describing the scheduled job.
+         * User-specified description for the scheduled job. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the scheduled job.
+         * User-specified description for the scheduled job. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
@@ -87,13 +90,13 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * The type of scheduling this scheduled job follows.
+         * The type of scheduling frequency for the job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
         private ScheduleTypes scheduleType;
 
         /**
-         * The type of scheduling this scheduled job follows.
+         * The type of scheduling frequency for the job.
          * @param scheduleType the value to set
          * @return this builder
          **/
@@ -103,13 +106,13 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * The desired time for the next execution of this scheduled job.
+         * The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
         private java.util.Date timeNextExecution;
 
         /**
-         * The desired time for the next execution of this scheduled job.
+         * The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeNextExecution the value to set
          * @return this builder
          **/
@@ -119,13 +122,13 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * The recurring rule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
         private String recurringRule;
 
         /**
-         * The recurring rule for a recurring scheduled job.
+         * The frequency schedule for a recurring scheduled job.
          * @param recurringRule the value to set
          * @return this builder
          **/
@@ -135,13 +138,33 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+         * The list of operations this scheduled job needs to perform.
+         * A scheduled job supports only one operation type, unless it is one of the following:
+         * * UPDATE_PACKAGES
+         * * UPDATE_ALL
+         * * UPDATE_SECURITY
+         * * UPDATE_BUGFIX
+         * * UPDATE_ENHANCEMENT
+         * * UPDATE_OTHER
+         * * UPDATE_KSPLICE_USERSPACE
+         * * UPDATE_KSPLICE_KERNEL
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operations")
         private java.util.List<ScheduledJobOperation> operations;
 
         /**
-         * The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+         * The list of operations this scheduled job needs to perform.
+         * A scheduled job supports only one operation type, unless it is one of the following:
+         * * UPDATE_PACKAGES
+         * * UPDATE_ALL
+         * * UPDATE_SECURITY
+         * * UPDATE_BUGFIX
+         * * UPDATE_ENHANCEMENT
+         * * UPDATE_OTHER
+         * * UPDATE_KSPLICE_USERSPACE
+         * * UPDATE_KSPLICE_KERNEL
+         *
          * @param operations the value to set
          * @return this builder
          **/
@@ -195,6 +218,30 @@ public final class UpdateScheduledJobDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+         * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+         * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+         * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
+        private java.util.List<Integer> retryIntervals;
+
+        /**
+         * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+         * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+         * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+         * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+         *
+         * @param retryIntervals the value to set
+         * @return this builder
+         **/
+        public Builder retryIntervals(java.util.List<Integer> retryIntervals) {
+            this.retryIntervals = retryIntervals;
+            this.__explicitlySet__.add("retryIntervals");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -209,7 +256,8 @@ public final class UpdateScheduledJobDetails
                             this.recurringRule,
                             this.operations,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.retryIntervals);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -242,6 +290,9 @@ public final class UpdateScheduledJobDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("retryIntervals")) {
+                this.retryIntervals(model.getRetryIntervals());
+            }
             return this;
         }
     }
@@ -258,13 +309,13 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * Scheduled job name.
+     * User-friendly name for the scheduled job. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Scheduled job name.
+     * User-friendly name for the scheduled job. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -272,13 +323,13 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * Details describing the scheduled job.
+     * User-specified description for the scheduled job. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the scheduled job.
+     * User-specified description for the scheduled job. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {
@@ -286,13 +337,13 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * The type of scheduling this scheduled job follows.
+     * The type of scheduling frequency for the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleTypes scheduleType;
 
     /**
-     * The type of scheduling this scheduled job follows.
+     * The type of scheduling frequency for the job.
      * @return the value
      **/
     public ScheduleTypes getScheduleType() {
@@ -300,13 +351,13 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * The desired time for the next execution of this scheduled job.
+     * The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
     private final java.util.Date timeNextExecution;
 
     /**
-     * The desired time for the next execution of this scheduled job.
+     * The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
      **/
     public java.util.Date getTimeNextExecution() {
@@ -314,13 +365,13 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * The recurring rule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recurringRule")
     private final String recurringRule;
 
     /**
-     * The recurring rule for a recurring scheduled job.
+     * The frequency schedule for a recurring scheduled job.
      * @return the value
      **/
     public String getRecurringRule() {
@@ -328,13 +379,33 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+     * The list of operations this scheduled job needs to perform.
+     * A scheduled job supports only one operation type, unless it is one of the following:
+     * * UPDATE_PACKAGES
+     * * UPDATE_ALL
+     * * UPDATE_SECURITY
+     * * UPDATE_BUGFIX
+     * * UPDATE_ENHANCEMENT
+     * * UPDATE_OTHER
+     * * UPDATE_KSPLICE_USERSPACE
+     * * UPDATE_KSPLICE_KERNEL
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operations")
     private final java.util.List<ScheduledJobOperation> operations;
 
     /**
-     * The list of operations this scheduled job needs to perform (can only support one operation if the operationType is not UPDATE_PACKAGES/UPDATE_ALL/UPDATE_SECURITY/UPDATE_BUGFIX/UPDATE_ENHANCEMENT/UPDATE_OTHER/UPDATE_KSPLICE_USERSPACE/UPDATE_KSPLICE_KERNEL).
+     * The list of operations this scheduled job needs to perform.
+     * A scheduled job supports only one operation type, unless it is one of the following:
+     * * UPDATE_PACKAGES
+     * * UPDATE_ALL
+     * * UPDATE_SECURITY
+     * * UPDATE_BUGFIX
+     * * UPDATE_ENHANCEMENT
+     * * UPDATE_OTHER
+     * * UPDATE_KSPLICE_USERSPACE
+     * * UPDATE_KSPLICE_KERNEL
+     *
      * @return the value
      **/
     public java.util.List<ScheduledJobOperation> getOperations() {
@@ -381,6 +452,28 @@ public final class UpdateScheduledJobDetails
         return definedTags;
     }
 
+    /**
+     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+     * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+     * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+     * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
+    private final java.util.List<Integer> retryIntervals;
+
+    /**
+     * The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically
+     * retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the
+     * initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service
+     * waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
+     *
+     * @return the value
+     **/
+    public java.util.List<Integer> getRetryIntervals() {
+        return retryIntervals;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -403,6 +496,7 @@ public final class UpdateScheduledJobDetails
         sb.append(", operations=").append(String.valueOf(this.operations));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
         sb.append(")");
         return sb.toString();
     }
@@ -425,6 +519,7 @@ public final class UpdateScheduledJobDetails
                 && java.util.Objects.equals(this.operations, other.operations)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
                 && super.equals(other);
     }
 
@@ -444,6 +539,9 @@ public final class UpdateScheduledJobDetails
         result = (result * PRIME) + (this.operations == null ? 43 : this.operations.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retryIntervals == null ? 43 : this.retryIntervals.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds;
@@ -492,6 +492,467 @@ public class BdsPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>
                             apply(ListBdsMetastoreConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listNodeBackupConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNodeBackupConfigurationsResponse>
+            listNodeBackupConfigurationsResponseIterator(
+                    final ListNodeBackupConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNodeBackupConfigurationsRequest.Builder, ListNodeBackupConfigurationsRequest,
+                ListNodeBackupConfigurationsResponse>(
+                new java.util.function.Supplier<ListNodeBackupConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListNodeBackupConfigurationsRequest.Builder get() {
+                        return ListNodeBackupConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeBackupConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListNodeBackupConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeBackupConfigurationsRequest.Builder>,
+                        ListNodeBackupConfigurationsRequest>() {
+                    @Override
+                    public ListNodeBackupConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeBackupConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeBackupConfigurationsRequest,
+                        ListNodeBackupConfigurationsResponse>() {
+                    @Override
+                    public ListNodeBackupConfigurationsResponse apply(
+                            ListNodeBackupConfigurationsRequest request) {
+                        return client.listNodeBackupConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.NodeBackupConfigurationSummary} objects
+     * contained in responses from the listNodeBackupConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.NodeBackupConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.NodeBackupConfigurationSummary>
+            listNodeBackupConfigurationsRecordIterator(
+                    final ListNodeBackupConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNodeBackupConfigurationsRequest.Builder, ListNodeBackupConfigurationsRequest,
+                ListNodeBackupConfigurationsResponse,
+                com.oracle.bmc.bds.model.NodeBackupConfigurationSummary>(
+                new java.util.function.Supplier<ListNodeBackupConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListNodeBackupConfigurationsRequest.Builder get() {
+                        return ListNodeBackupConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeBackupConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListNodeBackupConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeBackupConfigurationsRequest.Builder>,
+                        ListNodeBackupConfigurationsRequest>() {
+                    @Override
+                    public ListNodeBackupConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeBackupConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeBackupConfigurationsRequest,
+                        ListNodeBackupConfigurationsResponse>() {
+                    @Override
+                    public ListNodeBackupConfigurationsResponse apply(
+                            ListNodeBackupConfigurationsRequest request) {
+                        return client.listNodeBackupConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeBackupConfigurationsResponse,
+                        java.util.List<com.oracle.bmc.bds.model.NodeBackupConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.NodeBackupConfigurationSummary>
+                            apply(ListNodeBackupConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listNodeBackups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNodeBackupsResponse> listNodeBackupsResponseIterator(
+            final ListNodeBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNodeBackupsRequest.Builder, ListNodeBackupsRequest, ListNodeBackupsResponse>(
+                new java.util.function.Supplier<ListNodeBackupsRequest.Builder>() {
+                    @Override
+                    public ListNodeBackupsRequest.Builder get() {
+                        return ListNodeBackupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListNodeBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeBackupsRequest.Builder>,
+                        ListNodeBackupsRequest>() {
+                    @Override
+                    public ListNodeBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeBackupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNodeBackupsRequest, ListNodeBackupsResponse>() {
+                    @Override
+                    public ListNodeBackupsResponse apply(ListNodeBackupsRequest request) {
+                        return client.listNodeBackups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.NodeBackupSummary} objects
+     * contained in responses from the listNodeBackups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.NodeBackupSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.NodeBackupSummary> listNodeBackupsRecordIterator(
+            final ListNodeBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNodeBackupsRequest.Builder, ListNodeBackupsRequest, ListNodeBackupsResponse,
+                com.oracle.bmc.bds.model.NodeBackupSummary>(
+                new java.util.function.Supplier<ListNodeBackupsRequest.Builder>() {
+                    @Override
+                    public ListNodeBackupsRequest.Builder get() {
+                        return ListNodeBackupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListNodeBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeBackupsRequest.Builder>,
+                        ListNodeBackupsRequest>() {
+                    @Override
+                    public ListNodeBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeBackupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListNodeBackupsRequest, ListNodeBackupsResponse>() {
+                    @Override
+                    public ListNodeBackupsResponse apply(ListNodeBackupsRequest request) {
+                        return client.listNodeBackups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeBackupsResponse,
+                        java.util.List<com.oracle.bmc.bds.model.NodeBackupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.NodeBackupSummary> apply(
+                            ListNodeBackupsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listNodeReplaceConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNodeReplaceConfigurationsResponse>
+            listNodeReplaceConfigurationsResponseIterator(
+                    final ListNodeReplaceConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNodeReplaceConfigurationsRequest.Builder, ListNodeReplaceConfigurationsRequest,
+                ListNodeReplaceConfigurationsResponse>(
+                new java.util.function.Supplier<ListNodeReplaceConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListNodeReplaceConfigurationsRequest.Builder get() {
+                        return ListNodeReplaceConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeReplaceConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListNodeReplaceConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeReplaceConfigurationsRequest.Builder>,
+                        ListNodeReplaceConfigurationsRequest>() {
+                    @Override
+                    public ListNodeReplaceConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeReplaceConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeReplaceConfigurationsRequest,
+                        ListNodeReplaceConfigurationsResponse>() {
+                    @Override
+                    public ListNodeReplaceConfigurationsResponse apply(
+                            ListNodeReplaceConfigurationsRequest request) {
+                        return client.listNodeReplaceConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary} objects
+     * contained in responses from the listNodeReplaceConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary>
+            listNodeReplaceConfigurationsRecordIterator(
+                    final ListNodeReplaceConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNodeReplaceConfigurationsRequest.Builder, ListNodeReplaceConfigurationsRequest,
+                ListNodeReplaceConfigurationsResponse,
+                com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary>(
+                new java.util.function.Supplier<ListNodeReplaceConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListNodeReplaceConfigurationsRequest.Builder get() {
+                        return ListNodeReplaceConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListNodeReplaceConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListNodeReplaceConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNodeReplaceConfigurationsRequest.Builder>,
+                        ListNodeReplaceConfigurationsRequest>() {
+                    @Override
+                    public ListNodeReplaceConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNodeReplaceConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeReplaceConfigurationsRequest,
+                        ListNodeReplaceConfigurationsResponse>() {
+                    @Override
+                    public ListNodeReplaceConfigurationsResponse apply(
+                            ListNodeReplaceConfigurationsRequest request) {
+                        return client.listNodeReplaceConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListNodeReplaceConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary>
+                            apply(ListNodeReplaceConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOsPatches operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOsPatchesResponse> listOsPatchesResponseIterator(
+            final ListOsPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOsPatchesRequest.Builder, ListOsPatchesRequest, ListOsPatchesResponse>(
+                new java.util.function.Supplier<ListOsPatchesRequest.Builder>() {
+                    @Override
+                    public ListOsPatchesRequest.Builder get() {
+                        return ListOsPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListOsPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOsPatchesRequest.Builder>,
+                        ListOsPatchesRequest>() {
+                    @Override
+                    public ListOsPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOsPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesRequest, ListOsPatchesResponse>() {
+                    @Override
+                    public ListOsPatchesResponse apply(ListOsPatchesRequest request) {
+                        return client.listOsPatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.OsPatchSummary} objects
+     * contained in responses from the listOsPatches operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.OsPatchSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.OsPatchSummary> listOsPatchesRecordIterator(
+            final ListOsPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOsPatchesRequest.Builder, ListOsPatchesRequest, ListOsPatchesResponse,
+                com.oracle.bmc.bds.model.OsPatchSummary>(
+                new java.util.function.Supplier<ListOsPatchesRequest.Builder>() {
+                    @Override
+                    public ListOsPatchesRequest.Builder get() {
+                        return ListOsPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListOsPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOsPatchesRequest.Builder>,
+                        ListOsPatchesRequest>() {
+                    @Override
+                    public ListOsPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOsPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListOsPatchesRequest, ListOsPatchesResponse>() {
+                    @Override
+                    public ListOsPatchesResponse apply(ListOsPatchesRequest request) {
+                        return client.listOsPatches(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOsPatchesResponse,
+                        java.util.List<com.oracle.bmc.bds.model.OsPatchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.bds.model.OsPatchSummary> apply(
+                            ListOsPatchesResponse response) {
                         return response.getItems();
                     }
                 });

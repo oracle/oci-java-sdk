@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -38,12 +38,25 @@ package com.oracle.bmc.opsi.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class OpsiDataObjectSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"identifier", "displayName", "description"})
-    protected OpsiDataObjectSummary(String identifier, String displayName, String description) {
+    @java.beans.ConstructorProperties({
+        "identifier",
+        "displayName",
+        "description",
+        "name",
+        "groupNames"
+    })
+    protected OpsiDataObjectSummary(
+            String identifier,
+            String displayName,
+            String description,
+            String name,
+            java.util.List<String> groupNames) {
         super();
         this.identifier = identifier;
         this.displayName = displayName;
         this.description = description;
+        this.name = name;
+        this.groupNames = groupNames;
     }
 
     /**
@@ -88,6 +101,34 @@ public class OpsiDataObjectSummary extends com.oracle.bmc.http.internal.Explicit
         return description;
     }
 
+    /**
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+     * @return the value
+     **/
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Names of all the groups to which the data object belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("groupNames")
+    private final java.util.List<String> groupNames;
+
+    /**
+     * Names of all the groups to which the data object belongs to.
+     * @return the value
+     **/
+    public java.util.List<String> getGroupNames() {
+        return groupNames;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +146,8 @@ public class OpsiDataObjectSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append("identifier=").append(String.valueOf(this.identifier));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", name=").append(String.valueOf(this.name));
+        sb.append(", groupNames=").append(String.valueOf(this.groupNames));
         sb.append(")");
         return sb.toString();
     }
@@ -122,6 +165,8 @@ public class OpsiDataObjectSummary extends com.oracle.bmc.http.internal.Explicit
         return java.util.Objects.equals(this.identifier, other.identifier)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.groupNames, other.groupNames)
                 && super.equals(other);
     }
 
@@ -132,6 +177,8 @@ public class OpsiDataObjectSummary extends com.oracle.bmc.http.internal.Explicit
         result = (result * PRIME) + (this.identifier == null ? 43 : this.identifier.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.groupNames == null ? 43 : this.groupNames.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

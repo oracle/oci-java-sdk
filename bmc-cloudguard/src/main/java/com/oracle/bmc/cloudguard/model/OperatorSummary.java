@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of Operator
+ * Summary information on available operators.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,13 +49,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * name of the operand
+         * Name of the operand
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * name of the operand
+         * Name of the operand
          * @param name the value to set
          * @return this builder
          **/
@@ -65,13 +65,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * display name of the operand
+         * Display name of the operand
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * display name of the operand
+         * Display name of the operand
          * @param displayName the value to set
          * @return this builder
          **/
@@ -81,13 +81,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * data type of operand
+         * Data type of the operand
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("datatype")
         private String datatype;
 
         /**
-         * data type of operand
+         * Data type of the operand
          * @param datatype the value to set
          * @return this builder
          **/
@@ -97,13 +97,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * operand list type
+         * Operand list type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedListtype")
         private String managedListtype;
 
         /**
-         * operand list type
+         * Operand list type
          * @param managedListtype the value to set
          * @return this builder
          **/
@@ -113,13 +113,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Filter type can be config filter or condition filter
+         * Type of filter
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private ConditionFilterType filterType;
 
         /**
-         * Filter type can be config filter or condition filter
+         * Type of filter
          * @param filterType the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * configuration value type list for multilist data type
+         * Configuration value type list for multi-list data type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("multiListTypes")
         private java.util.List<String> multiListTypes;
 
         /**
-         * configuration value type list for multilist data type
+         * Configuration value type list for multi-list data type
          * @param multiListTypes the value to set
          * @return this builder
          **/
@@ -219,13 +219,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * name of the operand
+     * Name of the operand
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * name of the operand
+     * Name of the operand
      * @return the value
      **/
     public String getName() {
@@ -233,13 +233,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * display name of the operand
+     * Display name of the operand
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * display name of the operand
+     * Display name of the operand
      * @return the value
      **/
     public String getDisplayName() {
@@ -247,13 +247,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * data type of operand
+     * Data type of the operand
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("datatype")
     private final String datatype;
 
     /**
-     * data type of operand
+     * Data type of the operand
      * @return the value
      **/
     public String getDatatype() {
@@ -261,13 +261,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * operand list type
+     * Operand list type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedListtype")
     private final String managedListtype;
 
     /**
-     * operand list type
+     * Operand list type
      * @return the value
      **/
     public String getManagedListtype() {
@@ -275,13 +275,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Filter type can be config filter or condition filter
+     * Type of filter
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final ConditionFilterType filterType;
 
     /**
-     * Filter type can be config filter or condition filter
+     * Type of filter
      * @return the value
      **/
     public ConditionFilterType getFilterType() {
@@ -303,13 +303,13 @@ public final class OperatorSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * configuration value type list for multilist data type
+     * Configuration value type list for multi-list data type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("multiListTypes")
     private final java.util.List<String> multiListTypes;
 
     /**
-     * configuration value type list for multilist data type
+     * Configuration value type list for multi-list data type
      * @return the value
      **/
     public java.util.List<String> getMultiListTypes() {

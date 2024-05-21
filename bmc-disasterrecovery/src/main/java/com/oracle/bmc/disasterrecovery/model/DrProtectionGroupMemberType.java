@@ -1,23 +1,33 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Enumeration of different type of members in a DR Protection Group.
- * - COMPUTE_INSTANCE - An Oracle Cloud compute instance.
- * - VOLUME_GROUP - An Oracle Cloud volume group.
- * - DATABASE - An Oracle Database Cloud Service database.
- * - AUTONOMOUS_DATABASE - An Oracle Autonomous Database.
+ * Enumeration of different types of Oracle Cloud Infrastructure (OCI) resources that are members in a DR protection group.
+ * - COMPUTE_INSTANCE - Deprecated. A compute instance.
+ * - COMPUTE_INSTANCE_MOVABLE - A compute instance that moves across regions or ADs during DR.
+ * - COMPUTE_INSTANCE_NON_MOVABLE - A compute instance that does not move across regions or ADs during DR.
+ * - VOLUME_GROUP - A volume group.
+ * - DATABASE - An Oracle Database instance from Base Database service, or Exadata Database service.
+ * - AUTONOMOUS_DATABASE - An Oracle Autonomous Database Serverless.
+ * - LOAD_BALANCER - A load balancer.
+ * - NETWORK_LOAD_BALANCER - A network load balancer.
+ * - FILE_SYSTEM - A file system.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public enum DrProtectionGroupMemberType {
     ComputeInstance("COMPUTE_INSTANCE"),
+    ComputeInstanceMovable("COMPUTE_INSTANCE_MOVABLE"),
+    ComputeInstanceNonMovable("COMPUTE_INSTANCE_NON_MOVABLE"),
     VolumeGroup("VOLUME_GROUP"),
     Database("DATABASE"),
     AutonomousDatabase("AUTONOMOUS_DATABASE"),
+    LoadBalancer("LOAD_BALANCER"),
+    NetworkLoadBalancer("NETWORK_LOAD_BALANCER"),
+    FileSystem("FILE_SYSTEM"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

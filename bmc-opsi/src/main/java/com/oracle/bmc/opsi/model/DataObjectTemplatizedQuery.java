@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -27,6 +27,23 @@ package com.oracle.bmc.opsi.model;
 public final class DataObjectTemplatizedQuery extends DataObjectQuery {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("bindParams")
+        private java.util.List<DataObjectBindParameter> bindParams;
+
+        public Builder bindParams(java.util.List<DataObjectBindParameter> bindParams) {
+            this.bindParams = bindParams;
+            this.__explicitlySet__.add("bindParams");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeoutInSeconds")
+        private Double queryExecutionTimeoutInSeconds;
+
+        public Builder queryExecutionTimeoutInSeconds(Double queryExecutionTimeoutInSeconds) {
+            this.queryExecutionTimeoutInSeconds = queryExecutionTimeoutInSeconds;
+            this.__explicitlySet__.add("queryExecutionTimeoutInSeconds");
+            return this;
+        }
         /**
          * List of items to be added into the SELECT clause of the query; items will be added with comma separation.
          **/
@@ -41,6 +58,30 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
         public Builder selectList(java.util.List<String> selectList) {
             this.selectList = selectList;
             this.__explicitlySet__.add("selectList");
+            return this;
+        }
+        /**
+         * Unique data object name that will be added into the FROM clause of the query, just like a view name in FROM clause.
+         * - Use actual name of the data objects (e.g: tables, views) in case of Warehouse (e.g: Awr hub) data objects query. SCHEMA.VIEW name syntax can also be used here.
+         * e.g: SYS.DBA_HIST_SNAPSHOT or DBA_HIST_SNAPSHOT
+         * - Use name of the data object (e.g: SQL_STATS_DO) in case of OPSI data objects. Identifier of the OPSI data object cannot be used here.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fromClause")
+        private String fromClause;
+
+        /**
+         * Unique data object name that will be added into the FROM clause of the query, just like a view name in FROM clause.
+         * - Use actual name of the data objects (e.g: tables, views) in case of Warehouse (e.g: Awr hub) data objects query. SCHEMA.VIEW name syntax can also be used here.
+         * e.g: SYS.DBA_HIST_SNAPSHOT or DBA_HIST_SNAPSHOT
+         * - Use name of the data object (e.g: SQL_STATS_DO) in case of OPSI data objects. Identifier of the OPSI data object cannot be used here.
+         *
+         * @param fromClause the value to set
+         * @return this builder
+         **/
+        public Builder fromClause(String fromClause) {
+            this.fromClause = fromClause;
+            this.__explicitlySet__.add("fromClause");
             return this;
         }
         /**
@@ -131,7 +172,10 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
         public DataObjectTemplatizedQuery build() {
             DataObjectTemplatizedQuery model =
                     new DataObjectTemplatizedQuery(
+                            this.bindParams,
+                            this.queryExecutionTimeoutInSeconds,
                             this.selectList,
+                            this.fromClause,
                             this.whereConditionsList,
                             this.groupByList,
                             this.havingConditionsList,
@@ -145,8 +189,17 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DataObjectTemplatizedQuery model) {
+            if (model.wasPropertyExplicitlySet("bindParams")) {
+                this.bindParams(model.getBindParams());
+            }
+            if (model.wasPropertyExplicitlySet("queryExecutionTimeoutInSeconds")) {
+                this.queryExecutionTimeoutInSeconds(model.getQueryExecutionTimeoutInSeconds());
+            }
             if (model.wasPropertyExplicitlySet("selectList")) {
                 this.selectList(model.getSelectList());
+            }
+            if (model.wasPropertyExplicitlySet("fromClause")) {
+                this.fromClause(model.getFromClause());
             }
             if (model.wasPropertyExplicitlySet("whereConditionsList")) {
                 this.whereConditionsList(model.getWhereConditionsList());
@@ -180,14 +233,18 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
 
     @Deprecated
     public DataObjectTemplatizedQuery(
+            java.util.List<DataObjectBindParameter> bindParams,
+            Double queryExecutionTimeoutInSeconds,
             java.util.List<String> selectList,
+            String fromClause,
             java.util.List<String> whereConditionsList,
             java.util.List<String> groupByList,
             java.util.List<String> havingConditionsList,
             java.util.List<String> orderByList,
             DataObjectQueryTimeFilters timeFilters) {
-        super();
+        super(bindParams, queryExecutionTimeoutInSeconds);
         this.selectList = selectList;
+        this.fromClause = fromClause;
         this.whereConditionsList = whereConditionsList;
         this.groupByList = groupByList;
         this.havingConditionsList = havingConditionsList;
@@ -207,6 +264,28 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
      **/
     public java.util.List<String> getSelectList() {
         return selectList;
+    }
+
+    /**
+     * Unique data object name that will be added into the FROM clause of the query, just like a view name in FROM clause.
+     * - Use actual name of the data objects (e.g: tables, views) in case of Warehouse (e.g: Awr hub) data objects query. SCHEMA.VIEW name syntax can also be used here.
+     * e.g: SYS.DBA_HIST_SNAPSHOT or DBA_HIST_SNAPSHOT
+     * - Use name of the data object (e.g: SQL_STATS_DO) in case of OPSI data objects. Identifier of the OPSI data object cannot be used here.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fromClause")
+    private final String fromClause;
+
+    /**
+     * Unique data object name that will be added into the FROM clause of the query, just like a view name in FROM clause.
+     * - Use actual name of the data objects (e.g: tables, views) in case of Warehouse (e.g: Awr hub) data objects query. SCHEMA.VIEW name syntax can also be used here.
+     * e.g: SYS.DBA_HIST_SNAPSHOT or DBA_HIST_SNAPSHOT
+     * - Use name of the data object (e.g: SQL_STATS_DO) in case of OPSI data objects. Identifier of the OPSI data object cannot be used here.
+     *
+     * @return the value
+     **/
+    public String getFromClause() {
+        return fromClause;
     }
 
     /**
@@ -295,6 +374,7 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
         sb.append("DataObjectTemplatizedQuery(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", selectList=").append(String.valueOf(this.selectList));
+        sb.append(", fromClause=").append(String.valueOf(this.fromClause));
         sb.append(", whereConditionsList=").append(String.valueOf(this.whereConditionsList));
         sb.append(", groupByList=").append(String.valueOf(this.groupByList));
         sb.append(", havingConditionsList=").append(String.valueOf(this.havingConditionsList));
@@ -315,6 +395,7 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
 
         DataObjectTemplatizedQuery other = (DataObjectTemplatizedQuery) o;
         return java.util.Objects.equals(this.selectList, other.selectList)
+                && java.util.Objects.equals(this.fromClause, other.fromClause)
                 && java.util.Objects.equals(this.whereConditionsList, other.whereConditionsList)
                 && java.util.Objects.equals(this.groupByList, other.groupByList)
                 && java.util.Objects.equals(this.havingConditionsList, other.havingConditionsList)
@@ -328,6 +409,7 @@ public final class DataObjectTemplatizedQuery extends DataObjectQuery {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.selectList == null ? 43 : this.selectList.hashCode());
+        result = (result * PRIME) + (this.fromClause == null ? 43 : this.fromClause.hashCode());
         result =
                 (result * PRIME)
                         + (this.whereConditionsList == null

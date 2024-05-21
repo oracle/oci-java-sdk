@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -430,7 +430,8 @@ public class SoftwareSourceClient implements SoftwareSource {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -547,6 +548,50 @@ public class SoftwareSourceClient implements SoftwareSource {
     }
 
     @Override
+    public AddPackagesToSoftwareSourceResponse addPackagesToSoftwareSource(
+            AddPackagesToSoftwareSourceRequest request) {
+        LOG.trace("Called addPackagesToSoftwareSource");
+        final AddPackagesToSoftwareSourceRequest interceptedRequest =
+                AddPackagesToSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddPackagesToSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "AddPackagesToSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/AddPackagesToSoftwareSource");
+        java.util.function.Function<javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
+                transformer =
+                        AddPackagesToSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAddPackagesToSoftwareSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeAvailabilityOfSoftwareSourcesResponse changeAvailabilityOfSoftwareSources(
             ChangeAvailabilityOfSoftwareSourcesRequest request) {
         LOG.trace("Called changeAvailabilityOfSoftwareSources");
@@ -566,7 +611,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "ChangeAvailabilityOfSoftwareSources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeAvailabilityOfSoftwareSources");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAvailabilityOfSoftwareSourcesResponse>
                 transformer =
@@ -593,6 +638,51 @@ public class SoftwareSourceClient implements SoftwareSource {
     }
 
     @Override
+    public ChangeSoftwareSourceCompartmentResponse changeSoftwareSourceCompartment(
+            ChangeSoftwareSourceCompartmentRequest request) {
+        LOG.trace("Called changeSoftwareSourceCompartment");
+        final ChangeSoftwareSourceCompartmentRequest interceptedRequest =
+                ChangeSoftwareSourceCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSoftwareSourceCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ChangeSoftwareSourceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeSoftwareSourceCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
+                transformer =
+                        ChangeSoftwareSourceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSoftwareSourceCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateEntitlementResponse createEntitlement(CreateEntitlementRequest request) {
         LOG.trace("Called createEntitlement");
         final CreateEntitlementRequest interceptedRequest =
@@ -607,7 +697,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "CreateEntitlement", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "CreateEntitlement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateEntitlement");
         java.util.function.Function<javax.ws.rs.core.Response, CreateEntitlementResponse>
                 transformer =
                         CreateEntitlementConverter.fromResponse(
@@ -649,7 +742,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "CreateSoftwareSource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateSoftwareSource");
         java.util.function.Function<javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
                 transformer =
                         CreateSoftwareSourceConverter.fromResponse(
@@ -690,7 +783,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "DeleteSoftwareSource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/DeleteSoftwareSource");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
                 transformer =
                         DeleteSoftwareSourceConverter.fromResponse(
@@ -724,7 +817,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetErratum", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetErratum",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/GetErratum");
         java.util.function.Function<javax.ws.rs.core.Response, GetErratumResponse> transformer =
                 GetErratumConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -756,7 +852,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetModuleStream", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetModuleStream",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStream/GetModuleStream");
         java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
                 transformer =
                         GetModuleStreamConverter.fromResponse(
@@ -794,7 +893,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "GetModuleStreamProfile",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStreamProfile/GetModuleStreamProfile");
         java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
                 transformer =
                         GetModuleStreamProfileConverter.fromResponse(
@@ -828,7 +927,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetPackageGroup", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetPackageGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/PackageGroup/GetPackageGroup");
         java.util.function.Function<javax.ws.rs.core.Response, GetPackageGroupResponse>
                 transformer =
                         GetPackageGroupConverter.fromResponse(
@@ -862,10 +964,51 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetSoftwarePackage", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetSoftwarePackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackage");
         java.util.function.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
                 transformer =
                         GetSoftwarePackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSoftwarePackageByNameResponse getSoftwarePackageByName(
+            GetSoftwarePackageByNameRequest request) {
+        LOG.trace("Called getSoftwarePackageByName");
+        final GetSoftwarePackageByNameRequest interceptedRequest =
+                GetSoftwarePackageByNameConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSoftwarePackageByNameConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "GetSoftwarePackageByName",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackageByName");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSoftwarePackageByNameResponse>
+                transformer =
+                        GetSoftwarePackageByNameConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -896,10 +1039,51 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetSoftwareSource", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSource");
         java.util.function.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
                 transformer =
                         GetSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAllSoftwarePackagesResponse listAllSoftwarePackages(
+            ListAllSoftwarePackagesRequest request) {
+        LOG.trace("Called listAllSoftwarePackages");
+        final ListAllSoftwarePackagesRequest interceptedRequest =
+                ListAllSoftwarePackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAllSoftwarePackagesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ListAllSoftwarePackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAllSoftwarePackages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAllSoftwarePackagesResponse>
+                transformer =
+                        ListAllSoftwarePackagesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -930,7 +1114,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListEntitlements", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListEntitlements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListEntitlements");
         java.util.function.Function<javax.ws.rs.core.Response, ListEntitlementsResponse>
                 transformer =
                         ListEntitlementsConverter.fromResponse(
@@ -963,7 +1150,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListErrata", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListErrata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/ListErrata");
         java.util.function.Function<javax.ws.rs.core.Response, ListErrataResponse> transformer =
                 ListErrataConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -999,7 +1189,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "ListModuleStreamProfiles",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreamProfiles");
         java.util.function.Function<javax.ws.rs.core.Response, ListModuleStreamProfilesResponse>
                 transformer =
                         ListModuleStreamProfilesConverter.fromResponse(
@@ -1033,7 +1223,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListModuleStreams", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListModuleStreams",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreams");
         java.util.function.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
                 transformer =
                         ListModuleStreamsConverter.fromResponse(
@@ -1067,10 +1260,52 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListPackageGroups", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListPackageGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListPackageGroups");
         java.util.function.Function<javax.ws.rs.core.Response, ListPackageGroupsResponse>
                 transformer =
                         ListPackageGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSoftwarePackageSoftwareSourcesResponse listSoftwarePackageSoftwareSources(
+            ListSoftwarePackageSoftwareSourcesRequest request) {
+        LOG.trace("Called listSoftwarePackageSoftwareSources");
+        final ListSoftwarePackageSoftwareSourcesRequest interceptedRequest =
+                ListSoftwarePackageSoftwareSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSoftwarePackageSoftwareSourcesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ListSoftwarePackageSoftwareSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackageSoftwareSources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSoftwarePackageSoftwareSourcesResponse>
+                transformer =
+                        ListSoftwarePackageSoftwareSourcesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1104,7 +1339,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "ListSoftwarePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackages");
         java.util.function.Function<javax.ws.rs.core.Response, ListSoftwarePackagesResponse>
                 transformer =
                         ListSoftwarePackagesConverter.fromResponse(
@@ -1142,7 +1377,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "ListSoftwareSourceVendors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSourceVendors");
         java.util.function.Function<javax.ws.rs.core.Response, ListSoftwareSourceVendorsResponse>
                 transformer =
                         ListSoftwareSourceVendorsConverter.fromResponse(
@@ -1176,7 +1411,10 @@ public class SoftwareSourceClient implements SoftwareSource {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListSoftwareSources", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListSoftwareSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSources");
         java.util.function.Function<javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
                 transformer =
                         ListSoftwareSourcesConverter.fromResponse(
@@ -1214,7 +1452,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "SearchSoftwareSourceModuleStreams",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModuleStreams");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SearchSoftwareSourceModuleStreamsResponse>
                 transformer =
@@ -1258,7 +1496,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "SearchSoftwareSourceModules",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModules");
         java.util.function.Function<javax.ws.rs.core.Response, SearchSoftwareSourceModulesResponse>
                 transformer =
                         SearchSoftwareSourceModulesConverter.fromResponse(
@@ -1301,7 +1539,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "SearchSoftwareSourcePackageGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourcePackageGroups");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SearchSoftwareSourcePackageGroupsResponse>
                 transformer =
@@ -1344,7 +1582,7 @@ public class SoftwareSourceClient implements SoftwareSource {
                         "SoftwareSource",
                         "UpdateSoftwareSource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSource");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
                 transformer =
                         UpdateSoftwareSourceConverter.fromResponse(

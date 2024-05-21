@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring;
@@ -561,6 +561,59 @@ public class MonitoringAsyncClient implements MonitoringAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAlarmSuppressionResponse> createAlarmSuppression(
+            CreateAlarmSuppressionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlarmSuppressionRequest, CreateAlarmSuppressionResponse>
+                    handler) {
+        LOG.trace("Called async createAlarmSuppression");
+        final CreateAlarmSuppressionRequest interceptedRequest =
+                CreateAlarmSuppressionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAlarmSuppressionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "CreateAlarmSuppression",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/CreateAlarmSuppression");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAlarmSuppressionResponse>
+                transformer =
+                        CreateAlarmSuppressionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateAlarmSuppressionRequest, CreateAlarmSuppressionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateAlarmSuppressionRequest, CreateAlarmSuppressionResponse>,
+                        java.util.concurrent.Future<CreateAlarmSuppressionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAlarmSuppressionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateAlarmSuppressionRequest, CreateAlarmSuppressionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAlarmResponse> deleteAlarm(
             DeleteAlarmRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteAlarmRequest, DeleteAlarmResponse>
@@ -592,6 +645,53 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteAlarmRequest, DeleteAlarmResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlarmSuppressionResponse> deleteAlarmSuppression(
+            DeleteAlarmSuppressionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlarmSuppressionRequest, DeleteAlarmSuppressionResponse>
+                    handler) {
+        LOG.trace("Called async deleteAlarmSuppression");
+        final DeleteAlarmSuppressionRequest interceptedRequest =
+                DeleteAlarmSuppressionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAlarmSuppressionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "DeleteAlarmSuppression",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/DeleteAlarmSuppression");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAlarmSuppressionResponse>
+                transformer =
+                        DeleteAlarmSuppressionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteAlarmSuppressionRequest, DeleteAlarmSuppressionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAlarmSuppressionRequest, DeleteAlarmSuppressionResponse>,
+                        java.util.concurrent.Future<DeleteAlarmSuppressionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAlarmSuppressionRequest, DeleteAlarmSuppressionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -679,6 +779,100 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetAlarmHistoryRequest, GetAlarmHistoryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAlarmSuppressionResponse> getAlarmSuppression(
+            GetAlarmSuppressionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAlarmSuppressionRequest, GetAlarmSuppressionResponse>
+                    handler) {
+        LOG.trace("Called async getAlarmSuppression");
+        final GetAlarmSuppressionRequest interceptedRequest =
+                GetAlarmSuppressionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAlarmSuppressionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "GetAlarmSuppression",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/GetAlarmSuppression");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAlarmSuppressionResponse>
+                transformer =
+                        GetAlarmSuppressionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAlarmSuppressionRequest, GetAlarmSuppressionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAlarmSuppressionRequest, GetAlarmSuppressionResponse>,
+                        java.util.concurrent.Future<GetAlarmSuppressionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAlarmSuppressionRequest, GetAlarmSuppressionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlarmSuppressionsResponse> listAlarmSuppressions(
+            ListAlarmSuppressionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>
+                    handler) {
+        LOG.trace("Called async listAlarmSuppressions");
+        final ListAlarmSuppressionsRequest interceptedRequest =
+                ListAlarmSuppressionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAlarmSuppressionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "ListAlarmSuppressions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppressionCollection/ListAlarmSuppressions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAlarmSuppressionsResponse>
+                transformer =
+                        ListAlarmSuppressionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>,
+                        java.util.concurrent.Future<ListAlarmSuppressionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAlarmSuppressionsRequest, ListAlarmSuppressionsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -967,6 +1161,64 @@ public class MonitoringAsyncClient implements MonitoringAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RetrieveDimensionStatesRequest, RetrieveDimensionStatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeAlarmSuppressionHistoryResponse>
+            summarizeAlarmSuppressionHistory(
+                    SummarizeAlarmSuppressionHistoryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeAlarmSuppressionHistoryRequest,
+                                    SummarizeAlarmSuppressionHistoryResponse>
+                            handler) {
+        LOG.trace("Called async summarizeAlarmSuppressionHistory");
+        final SummarizeAlarmSuppressionHistoryRequest interceptedRequest =
+                SummarizeAlarmSuppressionHistoryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAlarmSuppressionHistoryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "SummarizeAlarmSuppressionHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/SummarizeAlarmSuppressionHistory");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAlarmSuppressionHistoryResponse>
+                transformer =
+                        SummarizeAlarmSuppressionHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeAlarmSuppressionHistoryRequest,
+                        SummarizeAlarmSuppressionHistoryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeAlarmSuppressionHistoryRequest,
+                                SummarizeAlarmSuppressionHistoryResponse>,
+                        java.util.concurrent.Future<SummarizeAlarmSuppressionHistoryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSummarizeAlarmSuppressionHistoryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeAlarmSuppressionHistoryRequest,
+                    SummarizeAlarmSuppressionHistoryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

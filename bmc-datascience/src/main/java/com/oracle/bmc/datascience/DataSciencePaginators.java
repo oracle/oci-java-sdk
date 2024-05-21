@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -31,6 +31,130 @@ public class DataSciencePaginators {
 
     public DataSciencePaginators(DataScience client) {
         this.client = client;
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDataSciencePrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDataSciencePrivateEndpointsResponse>
+            listDataSciencePrivateEndpointsResponseIterator(
+                    final ListDataSciencePrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataSciencePrivateEndpointsRequest.Builder,
+                ListDataSciencePrivateEndpointsRequest, ListDataSciencePrivateEndpointsResponse>(
+                new java.util.function.Supplier<ListDataSciencePrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListDataSciencePrivateEndpointsRequest.Builder get() {
+                        return ListDataSciencePrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDataSciencePrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListDataSciencePrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataSciencePrivateEndpointsRequest.Builder>,
+                        ListDataSciencePrivateEndpointsRequest>() {
+                    @Override
+                    public ListDataSciencePrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataSciencePrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataSciencePrivateEndpointsRequest,
+                        ListDataSciencePrivateEndpointsResponse>() {
+                    @Override
+                    public ListDataSciencePrivateEndpointsResponse apply(
+                            ListDataSciencePrivateEndpointsRequest request) {
+                        return client.listDataSciencePrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary} objects
+     * contained in responses from the listDataSciencePrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary>
+            listDataSciencePrivateEndpointsRecordIterator(
+                    final ListDataSciencePrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataSciencePrivateEndpointsRequest.Builder,
+                ListDataSciencePrivateEndpointsRequest, ListDataSciencePrivateEndpointsResponse,
+                com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary>(
+                new java.util.function.Supplier<ListDataSciencePrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListDataSciencePrivateEndpointsRequest.Builder get() {
+                        return ListDataSciencePrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDataSciencePrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListDataSciencePrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataSciencePrivateEndpointsRequest.Builder>,
+                        ListDataSciencePrivateEndpointsRequest>() {
+                    @Override
+                    public ListDataSciencePrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataSciencePrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataSciencePrivateEndpointsRequest,
+                        ListDataSciencePrivateEndpointsResponse>() {
+                    @Override
+                    public ListDataSciencePrivateEndpointsResponse apply(
+                            ListDataSciencePrivateEndpointsRequest request) {
+                        return client.listDataSciencePrivateEndpoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataSciencePrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.datascience.model
+                                        .DataSciencePrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datascience.model
+                                            .DataSciencePrivateEndpointSummary>
+                            apply(ListDataSciencePrivateEndpointsResponse response) {
+                        return response.getItems();
+                    }
+                });
     }
 
     /**
@@ -1497,6 +1621,234 @@ public class DataSciencePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.datascience.model.ProjectSummary> apply(
                             ListProjectsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
+            final ListWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse>(
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest.Builder get() {
+                        return ListWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestErrorsRequest.Builder>,
+                        ListWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListWorkRequestErrorsResponse apply(
+                            ListWorkRequestErrorsRequest request) {
+                        return client.listWorkRequestErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestError} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.WorkRequestError>
+            listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.datascience.model.WorkRequestError>(
+                new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest.Builder get() {
+                        return ListWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestErrorsRequest.Builder>,
+                        ListWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListWorkRequestErrorsResponse apply(
+                            ListWorkRequestErrorsRequest request) {
+                        return client.listWorkRequestErrors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkRequestErrorsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.WorkRequestError>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.WorkRequestError> apply(
+                            ListWorkRequestErrorsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
+            final ListWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse>(
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestLogsRequest.Builder get() {
+                        return ListWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestLogsRequest.Builder>,
+                        ListWorkRequestLogsRequest>() {
+                    @Override
+                    public ListWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
+                    @Override
+                    public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
+                        return client.listWorkRequestLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datascience.model.WorkRequestLogEntry>
+            listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.datascience.model.WorkRequestLogEntry>(
+                new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestLogsRequest.Builder get() {
+                        return ListWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestLogsRequest.Builder>,
+                        ListWorkRequestLogsRequest>() {
+                    @Override
+                    public ListWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>() {
+                    @Override
+                    public ListWorkRequestLogsResponse apply(ListWorkRequestLogsRequest request) {
+                        return client.listWorkRequestLogs(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkRequestLogsResponse,
+                        java.util.List<com.oracle.bmc.datascience.model.WorkRequestLogEntry>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.datascience.model.WorkRequestLogEntry>
+                            apply(ListWorkRequestLogsResponse response) {
                         return response.getItems();
                     }
                 });

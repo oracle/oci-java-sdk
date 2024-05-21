@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -87,14 +87,14 @@ public final class CreateByoipRangeDetails
             return this;
         }
         /**
-         * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+         * The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+         * The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
@@ -262,14 +262,14 @@ public final class CreateByoipRangeDetails
     }
 
     /**
-     * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+     * The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+     * The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
      *
      * @return the value
      **/

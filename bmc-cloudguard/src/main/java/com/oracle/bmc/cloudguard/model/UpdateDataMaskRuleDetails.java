@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information to be updated.
+ * The information to be updated for a data mask rule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -55,7 +55,7 @@ public final class UpdateDataMaskRuleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Data mask rule Name.
+         * Data mask rule display name
          * <p>
          * Avoid entering confidential information.
          *
@@ -64,7 +64,7 @@ public final class UpdateDataMaskRuleDetails
         private String displayName;
 
         /**
-         * Data mask rule Name.
+         * Data mask rule display name
          * <p>
          * Avoid entering confidential information.
          *
@@ -77,13 +77,13 @@ public final class UpdateDataMaskRuleDetails
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -93,13 +93,13 @@ public final class UpdateDataMaskRuleDetails
             return this;
         }
         /**
-         * IAM Group id associated with the data mask rule
+         * IAM group ID associated with the data mask rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
         private String iamGroupId;
 
         /**
-         * IAM Group id associated with the data mask rule
+         * IAM group ID associated with the data mask rule
          * @param iamGroupId the value to set
          * @return this builder
          **/
@@ -118,13 +118,13 @@ public final class UpdateDataMaskRuleDetails
             return this;
         }
         /**
-         * Data Mask Categories
+         * Data mask rule categories
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
         private java.util.List<DataMaskCategory> dataMaskCategories;
 
         /**
-         * Data Mask Categories
+         * Data mask rule categories
          * @param dataMaskCategories the value to set
          * @return this builder
          **/
@@ -134,13 +134,13 @@ public final class UpdateDataMaskRuleDetails
             return this;
         }
         /**
-         * The status of the dataMaskRule.
+         * The status of the data mask rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
         private DataMaskRuleStatus dataMaskRuleStatus;
 
         /**
-         * The status of the dataMaskRule.
+         * The status of the data mask rule
          * @param dataMaskRuleStatus the value to set
          * @return this builder
          **/
@@ -257,7 +257,7 @@ public final class UpdateDataMaskRuleDetails
     }
 
     /**
-     * Data mask rule Name.
+     * Data mask rule display name
      * <p>
      * Avoid entering confidential information.
      *
@@ -266,7 +266,7 @@ public final class UpdateDataMaskRuleDetails
     private final String displayName;
 
     /**
-     * Data mask rule Name.
+     * Data mask rule display name
      * <p>
      * Avoid entering confidential information.
      *
@@ -277,13 +277,13 @@ public final class UpdateDataMaskRuleDetails
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -291,13 +291,13 @@ public final class UpdateDataMaskRuleDetails
     }
 
     /**
-     * IAM Group id associated with the data mask rule
+     * IAM group ID associated with the data mask rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iamGroupId")
     private final String iamGroupId;
 
     /**
-     * IAM Group id associated with the data mask rule
+     * IAM group ID associated with the data mask rule
      * @return the value
      **/
     public String getIamGroupId() {
@@ -312,13 +312,13 @@ public final class UpdateDataMaskRuleDetails
     }
 
     /**
-     * Data Mask Categories
+     * Data mask rule categories
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskCategories")
     private final java.util.List<DataMaskCategory> dataMaskCategories;
 
     /**
-     * Data Mask Categories
+     * Data mask rule categories
      * @return the value
      **/
     public java.util.List<DataMaskCategory> getDataMaskCategories() {
@@ -326,13 +326,13 @@ public final class UpdateDataMaskRuleDetails
     }
 
     /**
-     * The status of the dataMaskRule.
+     * The status of the data mask rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataMaskRuleStatus")
     private final DataMaskRuleStatus dataMaskRuleStatus;
 
     /**
-     * The status of the dataMaskRule.
+     * The status of the data mask rule
      * @return the value
      **/
     public DataMaskRuleStatus getDataMaskRuleStatus() {

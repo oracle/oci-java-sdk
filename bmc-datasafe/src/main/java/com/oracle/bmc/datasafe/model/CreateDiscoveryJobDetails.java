@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -237,8 +237,8 @@ public final class CreateDiscoveryJobDetails
             return this;
         }
         /**
-         * Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery
-         * attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration
+         * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+         * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
          * from the sensitive data model is used.
          *
          **/
@@ -246,8 +246,8 @@ public final class CreateDiscoveryJobDetails
         private Boolean isIncludeAllSchemas;
 
         /**
-         * Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery
-         * attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration
+         * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+         * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
          * from the sensitive data model is used.
          *
          * @param isIncludeAllSchemas the value to set
@@ -557,8 +557,8 @@ public final class CreateDiscoveryJobDetails
     }
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery
-     * attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+     * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
      * from the sensitive data model is used.
      *
      **/
@@ -566,8 +566,8 @@ public final class CreateDiscoveryJobDetails
     private final Boolean isIncludeAllSchemas;
 
     /**
-     * Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery
-     * attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration
+     * Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+     * in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
      * from the sensitive data model is used.
      *
      * @return the value

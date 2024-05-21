@@ -1,19 +1,21 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
 
 /**
  * A summary of properties for the specified alarm and its current evaluation status.
- * For information about alarms, see [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
+ * For information about alarms, see
+ * [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  * For information about endpoints and signing API requests, see
- * [About the API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
+ * [About the API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm).
+ * For information about available SDKs and tools, see
  * [SDKS and Other Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm).
  *
  * <br/>
@@ -35,6 +37,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         "id",
         "displayName",
         "severity",
+        "ruleName",
         "timestampTriggered",
         "status",
         "suppression"
@@ -43,6 +46,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
             String id,
             String displayName,
             Severity severity,
+            String ruleName,
             java.util.Date timestampTriggered,
             Status status,
             Suppression suppression) {
@@ -50,6 +54,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         this.id = id;
         this.displayName = displayName;
         this.severity = severity;
+        this.ruleName = ruleName;
         this.timestampTriggered = timestampTriggered;
         this.status = status;
         this.suppression = suppression;
@@ -98,7 +103,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The configured severity of the alarm.
+         * The perceived type of response required when the alarm is in the "FIRING" state.
          * <p>
          * Example: {@code CRITICAL}
          *
@@ -107,7 +112,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         private Severity severity;
 
         /**
-         * The configured severity of the alarm.
+         * The perceived type of response required when the alarm is in the "FIRING" state.
          * <p>
          * Example: {@code CRITICAL}
          *
@@ -120,10 +125,32 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+        private String ruleName;
+
+        /**
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         * @param ruleName the value to set
+         * @return this builder
+         **/
+        public Builder ruleName(String ruleName) {
+            this.ruleName = ruleName;
+            this.__explicitlySet__.add("ruleName");
+            return this;
+        }
+        /**
          * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
          * Note: A three-minute lag for this value accounts for any late-arriving metrics.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
@@ -133,7 +160,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
          * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
          * Note: A three-minute lag for this value accounts for any late-arriving metrics.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timestampTriggered the value to set
          * @return this builder
@@ -147,8 +174,6 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
          * The status of this alarm.
          * Status is collective, across all metric streams in the alarm.
          * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-         * <p>
          * Example: {@code FIRING}
          *
          **/
@@ -159,8 +184,6 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
          * The status of this alarm.
          * Status is collective, across all metric streams in the alarm.
          * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-         * <p>
          * Example: {@code FIRING}
          *
          * @param status the value to set
@@ -199,6 +222,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
                             this.id,
                             this.displayName,
                             this.severity,
+                            this.ruleName,
                             this.timestampTriggered,
                             this.status,
                             this.suppression);
@@ -218,6 +242,9 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("severity")) {
                 this.severity(model.getSeverity());
+            }
+            if (model.wasPropertyExplicitlySet("ruleName")) {
+                this.ruleName(model.getRuleName());
             }
             if (model.wasPropertyExplicitlySet("timestampTriggered")) {
                 this.timestampTriggered(model.getTimestampTriggered());
@@ -280,7 +307,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The configured severity of the alarm.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      * <p>
      * Example: {@code CRITICAL}
      *
@@ -333,7 +360,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         }
     };
     /**
-     * The configured severity of the alarm.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      * <p>
      * Example: {@code CRITICAL}
      *
@@ -342,7 +369,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
     private final Severity severity;
 
     /**
-     * The configured severity of the alarm.
+     * The perceived type of response required when the alarm is in the "FIRING" state.
      * <p>
      * Example: {@code CRITICAL}
      *
@@ -353,10 +380,30 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
+    private final String ruleName;
+
+    /**
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
+     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     * @return the value
+     **/
+    public String getRuleName() {
+        return ruleName;
+    }
+
+    /**
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
      * Note: A three-minute lag for this value accounts for any late-arriving metrics.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
@@ -366,7 +413,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
      * Note: A three-minute lag for this value accounts for any late-arriving metrics.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      **/
@@ -378,8 +425,6 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The status of this alarm.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-     * <p>
      * Example: {@code FIRING}
      *
      **/
@@ -432,8 +477,6 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The status of this alarm.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-     * <p>
      * Example: {@code FIRING}
      *
      **/
@@ -444,8 +487,6 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The status of this alarm.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-     * <p>
      * Example: {@code FIRING}
      *
      * @return the value
@@ -487,6 +528,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", severity=").append(String.valueOf(this.severity));
+        sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", suppression=").append(String.valueOf(this.suppression));
@@ -507,6 +549,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.severity, other.severity)
+                && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.suppression, other.suppression)
@@ -520,6 +563,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.severity == null ? 43 : this.severity.hashCode());
+        result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());
         result =
                 (result * PRIME)
                         + (this.timestampTriggered == null

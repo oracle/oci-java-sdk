@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -13,12 +13,12 @@ public class ListModuleStreamProfilesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     private String softwareSourceId;
 
     /**
-     * The software source OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     public String getSoftwareSourceId() {
         return softwareSourceId;
@@ -39,16 +39,12 @@ public class ListModuleStreamProfilesRequest
         return moduleName;
     }
     /**
-     * The name of the stream of the containing module.  This parameter
-     * is required if a profileName is specified.
-     *
+     * The name of the module stream. This parameter is required if a profile name is specified.
      */
     private String streamName;
 
     /**
-     * The name of the stream of the containing module.  This parameter
-     * is required if a profileName is specified.
-     *
+     * The name of the module stream. This parameter is required if a profile name is specified.
      */
     public String getStreamName() {
         return streamName;
@@ -182,12 +178,12 @@ public class ListModuleStreamProfilesRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         private String softwareSourceId = null;
 
         /**
-         * The software source OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * @param softwareSourceId the value to set
          * @return this builder instance
          */
@@ -216,16 +212,12 @@ public class ListModuleStreamProfilesRequest
         }
 
         /**
-         * The name of the stream of the containing module.  This parameter
-         * is required if a profileName is specified.
-         *
+         * The name of the module stream. This parameter is required if a profile name is specified.
          */
         private String streamName = null;
 
         /**
-         * The name of the stream of the containing module.  This parameter
-         * is required if a profileName is specified.
-         *
+         * The name of the module stream. This parameter is required if a profile name is specified.
          * @param streamName the value to set
          * @return this builder instance
          */

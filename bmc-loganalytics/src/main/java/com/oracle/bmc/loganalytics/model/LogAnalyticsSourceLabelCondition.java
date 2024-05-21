@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -23,6 +23,8 @@ public final class LogAnalyticsSourceLabelCondition
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "conditionString",
+        "conditionBlock",
         "message",
         "isVisible",
         "blockConditionField",
@@ -43,6 +45,8 @@ public final class LogAnalyticsSourceLabelCondition
         "isInlineLabelExistingInDatabase"
     })
     public LogAnalyticsSourceLabelCondition(
+            String conditionString,
+            ConditionBlock conditionBlock,
             String message,
             Boolean isVisible,
             String blockConditionField,
@@ -62,6 +66,8 @@ public final class LogAnalyticsSourceLabelCondition
             String labelName,
             Boolean isInlineLabelExistingInDatabase) {
         super();
+        this.conditionString = conditionString;
+        this.conditionBlock = conditionBlock;
         this.message = message;
         this.isVisible = isVisible;
         this.blockConditionField = blockConditionField;
@@ -84,6 +90,33 @@ public final class LogAnalyticsSourceLabelCondition
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * String representation of the label condition. This supports specifying multiple condition blocks at various nested levels.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
+        private String conditionString;
+
+        /**
+         * String representation of the label condition. This supports specifying multiple condition blocks at various nested levels.
+         *
+         * @param conditionString the value to set
+         * @return this builder
+         **/
+        public Builder conditionString(String conditionString) {
+            this.conditionString = conditionString;
+            this.__explicitlySet__.add("conditionString");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionBlock")
+        private ConditionBlock conditionBlock;
+
+        public Builder conditionBlock(ConditionBlock conditionBlock) {
+            this.conditionBlock = conditionBlock;
+            this.__explicitlySet__.add("conditionBlock");
+            return this;
+        }
         /**
          * The message.
          **/
@@ -389,6 +422,8 @@ public final class LogAnalyticsSourceLabelCondition
         public LogAnalyticsSourceLabelCondition build() {
             LogAnalyticsSourceLabelCondition model =
                     new LogAnalyticsSourceLabelCondition(
+                            this.conditionString,
+                            this.conditionBlock,
                             this.message,
                             this.isVisible,
                             this.blockConditionField,
@@ -415,6 +450,12 @@ public final class LogAnalyticsSourceLabelCondition
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LogAnalyticsSourceLabelCondition model) {
+            if (model.wasPropertyExplicitlySet("conditionString")) {
+                this.conditionString(model.getConditionString());
+            }
+            if (model.wasPropertyExplicitlySet("conditionBlock")) {
+                this.conditionBlock(model.getConditionBlock());
+            }
             if (model.wasPropertyExplicitlySet("message")) {
                 this.message(model.getMessage());
             }
@@ -482,6 +523,29 @@ public final class LogAnalyticsSourceLabelCondition
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * String representation of the label condition. This supports specifying multiple condition blocks at various nested levels.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
+    private final String conditionString;
+
+    /**
+     * String representation of the label condition. This supports specifying multiple condition blocks at various nested levels.
+     *
+     * @return the value
+     **/
+    public String getConditionString() {
+        return conditionString;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionBlock")
+    private final ConditionBlock conditionBlock;
+
+    public ConditionBlock getConditionBlock() {
+        return conditionBlock;
     }
 
     /**
@@ -760,7 +824,9 @@ public final class LogAnalyticsSourceLabelCondition
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("LogAnalyticsSourceLabelCondition(");
         sb.append("super=").append(super.toString());
-        sb.append("message=").append(String.valueOf(this.message));
+        sb.append("conditionString=").append(String.valueOf(this.conditionString));
+        sb.append(", conditionBlock=").append(String.valueOf(this.conditionBlock));
+        sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", isVisible=").append(String.valueOf(this.isVisible));
         sb.append(", blockConditionField=").append(String.valueOf(this.blockConditionField));
         sb.append(", blockConditionOperator=").append(String.valueOf(this.blockConditionOperator));
@@ -793,7 +859,9 @@ public final class LogAnalyticsSourceLabelCondition
         }
 
         LogAnalyticsSourceLabelCondition other = (LogAnalyticsSourceLabelCondition) o;
-        return java.util.Objects.equals(this.message, other.message)
+        return java.util.Objects.equals(this.conditionString, other.conditionString)
+                && java.util.Objects.equals(this.conditionBlock, other.conditionBlock)
+                && java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.isVisible, other.isVisible)
                 && java.util.Objects.equals(this.blockConditionField, other.blockConditionField)
                 && java.util.Objects.equals(
@@ -821,6 +889,12 @@ public final class LogAnalyticsSourceLabelCondition
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.conditionString == null ? 43 : this.conditionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionBlock == null ? 43 : this.conditionBlock.hashCode());
         result = (result * PRIME) + (this.message == null ? 43 : this.message.hashCode());
         result = (result * PRIME) + (this.isVisible == null ? 43 : this.isVisible.hashCode());
         result =

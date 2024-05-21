@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -53,6 +53,12 @@ public class ApacheConnectorPropertiesExample {
                         .hostnameVerifier(
                                 NoopHostnameVerifier.INSTANCE) // To set the hostname verifier
                         .sslContext(sslContext) // To set the SSLContext
+                        .idleConnectionMonitorThreadEnabled(
+                                true) // To enable the idle connection monitor thread
+                        .idleConnectionMonitorThreadIdleTimeoutInSeconds(
+                                20) // to set the connection idle timeout
+                        .idleConnectionMonitorThreadWaitTimeInSeconds(
+                                5) // to set the idle connection monitor thread wait time
                         .build();
         final ApacheConfigurator configurator =
                 new ApacheConfigurator.NonBuffering(apacheConnectorProperties);
@@ -82,12 +88,16 @@ public class ApacheConnectorPropertiesExample {
                 };
 
         // Initialize the client with the Apache Configurator with custom properties
-        ObjectStorageClient objectStorageClient =
+        try (ObjectStorageClient objectStorageClient =
                 ObjectStorageClient.builder()
                         .clientConfigurator(configurator)
                         .additionalClientConfigurator(additionalClientConfigurator)
-                        .build(provider);
+                        .build(provider)) {
 
+            // Use objectStorageClient
+
+            // Client will be closed along with IdleConnectionMonitorThread when the try-with-resources block is exited
+        }
         /*
          * When using ApacheConnectionClosingStrategy.GracefulClosingStrategy, streams returned from response are read
          * till the end of the stream when closing the stream. This can introduce additional time when closing the stream

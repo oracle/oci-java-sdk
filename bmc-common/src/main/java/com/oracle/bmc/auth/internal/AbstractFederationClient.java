@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -12,6 +12,7 @@ import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.ResponseConversionFunctionFactory;
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.http.internal.RestClient;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.internal.RestClientFactoryBuilder;
@@ -21,11 +22,14 @@ import com.oracle.bmc.http.signing.DefaultRequestSigner;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.util.internal.Validate;
 
 import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 import java.net.URI;
+import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Optional;
@@ -48,6 +52,7 @@ public abstract class AbstractFederationClient
 
     protected final SessionKeySupplier sessionKeySupplier;
     protected final String resourcePrincipalTokenEndpoint;
+    protected final String resourcePrincipalTokenUrl;
     protected final String federationEndpoint;
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
     ClientConfiguration clientConfiguration = null;
@@ -56,6 +61,7 @@ public abstract class AbstractFederationClient
     /**
      * Constructor of AbstractFederationClient.
      *
+     * @param resourcePrincipalTokenUrl             the url that can provide the resource principal token.
      * @param resourcePrincipalTokenEndpoint        the endpoint that can provide the resource principal token.
      * @param federationEndpoint                    the endpoint that can provide the resource principal session token.
      * @param sessionKeySupplier                    the session key supplier.
@@ -63,16 +69,19 @@ public abstract class AbstractFederationClient
      * @param clientConfigurator                    the reset client configurator.
      */
     public AbstractFederationClient(
+            String resourcePrincipalTokenUrl,
             String resourcePrincipalTokenEndpoint,
             String federationEndpoint,
             SessionKeySupplier sessionKeySupplier,
             BasicAuthenticationDetailsProvider basicAuthenticationDetailsProvider,
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration) {
-        this.resourcePrincipalTokenEndpoint =
-                Validate.notNull(
-                        resourcePrincipalTokenEndpoint,
-                        "resourcePrincipalTokenEndpoint must not be null");
+        if (null == resourcePrincipalTokenUrl && null == resourcePrincipalTokenEndpoint) {
+            throw new NullPointerException(
+                    "resourcePrincipalTokenUrl and resourcePrincipalTokenEndpoint cannot both be null");
+        }
+        this.resourcePrincipalTokenUrl = resourcePrincipalTokenUrl;
+        this.resourcePrincipalTokenEndpoint = resourcePrincipalTokenEndpoint;
         this.federationEndpoint =
                 Validate.notNull(federationEndpoint, "federationEndpoint must not be null");
         this.sessionKeySupplier =
@@ -101,6 +110,31 @@ public abstract class AbstractFederationClient
                         requestSigner, Collections.emptyMap(), clientConfiguration);
 
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
+    }
+    /**
+     * Constructor of AbstractFederationClient.
+     *
+     * @param resourcePrincipalTokenEndpoint        the endpoint that can provide the resource principal token.
+     * @param federationEndpoint                    the endpoint that can provide the resource principal session token.
+     * @param sessionKeySupplier                    the session key supplier.
+     * @param basicAuthenticationDetailsProvider    the instance principals authentication details provider.
+     * @param clientConfigurator                    the reset client configurator.
+     */
+    public AbstractFederationClient(
+            String resourcePrincipalTokenEndpoint,
+            String federationEndpoint,
+            SessionKeySupplier sessionKeySupplier,
+            BasicAuthenticationDetailsProvider basicAuthenticationDetailsProvider,
+            ClientConfigurator clientConfigurator,
+            CircuitBreakerConfiguration circuitBreakerConfiguration) {
+        this(
+                null,
+                resourcePrincipalTokenEndpoint,
+                federationEndpoint,
+                sessionKeySupplier,
+                basicAuthenticationDetailsProvider,
+                clientConfigurator,
+                circuitBreakerConfiguration);
     }
 
     /**
@@ -181,7 +215,7 @@ public abstract class AbstractFederationClient
         return makeCallInner(wrappedIb, null);
     }
 
-    private String refreshAndGetSecurityTokenInner(
+    protected String refreshAndGetSecurityTokenInner(
             final boolean doFinalTokenValidityCheck, Optional<Duration> time, boolean refreshKeys) {
         // Since this client will be used in a multi-threaded environment (from within a service API),
         // this needs to be synchronized to make sure multiple calls are not updating the security token at the same time.
@@ -249,5 +283,45 @@ public abstract class AbstractFederationClient
      */
     public String getStringClaim(String key) {
         return null;
+    }
+
+    protected SecurityTokenAdapter getSecurityTokenFromServerInner(
+            RSAPublicKey publicKey, WebTarget target, String securityContext) {
+        Invocation.Builder ib = target.request();
+        if (StringUtils.isNotBlank(securityContext)) {
+            ib.header("security-context", securityContext);
+        }
+        URI requestUri = target.getUri();
+
+        Response response = makeCall(ib, requestUri);
+        ResponseHelper.throwIfNotSuccessful(response);
+
+        GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
+                ResponseHelper.readEntity(response, GetResourcePrincipalTokenResponse.class);
+
+        String servicePrincipalSessionToken =
+                getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
+        String resourcePrincipalToken =
+                getResourcePrincipalTokenResponse.getResourcePrincipalToken();
+
+        // Get resource principal session token with Identity
+        restClient.setEndpoint(federationEndpoint);
+        GetResourcePrincipalSessionTokenRequest getResourcePrincipalSessionTokenRequest =
+                new GetResourcePrincipalSessionTokenRequest(
+                        resourcePrincipalToken,
+                        servicePrincipalSessionToken,
+                        AuthUtils.base64EncodeNoChunking(publicKey));
+
+        target = restClient.getBaseTarget().path("v1").path("resourcePrincipalSessionToken");
+        ib = target.request();
+        requestUri = target.getUri();
+
+        // Make a call and get back the security token
+        response = makeCall(ib, requestUri, getResourcePrincipalSessionTokenRequest);
+        ResponseHelper.throwIfNotSuccessful(response);
+
+        X509FederationClient.SecurityToken securityToken =
+                SECURITY_TOKEN_FN.apply(response).getItem();
+        return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);
     }
 }

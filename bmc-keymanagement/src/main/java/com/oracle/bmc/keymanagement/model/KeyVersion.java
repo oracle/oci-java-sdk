@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The details of the KeyVersion associated with the Key.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,7 +31,9 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
         "vaultId",
         "restoredFromKeyVersionId",
         "replicaDetails",
-        "isPrimary"
+        "isPrimary",
+        "externalKeyReferenceDetails",
+        "isAutoRotated"
     })
     public KeyVersion(
             String compartmentId,
@@ -45,7 +47,9 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
             String vaultId,
             String restoredFromKeyVersionId,
             KeyVersionReplicaDetails replicaDetails,
-            Boolean isPrimary) {
+            Boolean isPrimary,
+            ExternalKeyReferenceDetails externalKeyReferenceDetails,
+            Boolean isAutoRotated) {
         super();
         this.compartmentId = compartmentId;
         this.id = id;
@@ -59,6 +63,8 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
         this.restoredFromKeyVersionId = restoredFromKeyVersionId;
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
+        this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+        this.isAutoRotated = isAutoRotated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -256,13 +262,46 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("replicaDetails");
             return this;
         }
-
+        /**
+         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+         * @param isPrimary the value to set
+         * @return this builder
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+        private ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+        public Builder externalKeyReferenceDetails(
+                ExternalKeyReferenceDetails externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            this.__explicitlySet__.add("externalKeyReferenceDetails");
+            return this;
+        }
+        /**
+         * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+        private Boolean isAutoRotated;
+
+        /**
+         * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+         * @param isAutoRotated the value to set
+         * @return this builder
+         **/
+        public Builder isAutoRotated(Boolean isAutoRotated) {
+            this.isAutoRotated = isAutoRotated;
+            this.__explicitlySet__.add("isAutoRotated");
             return this;
         }
 
@@ -283,7 +322,9 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.vaultId,
                             this.restoredFromKeyVersionId,
                             this.replicaDetails,
-                            this.isPrimary);
+                            this.isPrimary,
+                            this.externalKeyReferenceDetails,
+                            this.isAutoRotated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -327,6 +368,12 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyReferenceDetails")) {
+                this.externalKeyReferenceDetails(model.getExternalKeyReferenceDetails());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoRotated")) {
+                this.isAutoRotated(model.getIsAutoRotated());
             }
             return this;
         }
@@ -623,11 +670,39 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
         return replicaDetails;
     }
 
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+     * @return the value
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyReferenceDetails")
+    private final ExternalKeyReferenceDetails externalKeyReferenceDetails;
+
+    public ExternalKeyReferenceDetails getExternalKeyReferenceDetails() {
+        return externalKeyReferenceDetails;
+    }
+
+    /**
+     * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoRotated")
+    private final Boolean isAutoRotated;
+
+    /**
+     * A Boolean Value indicating whether this keyversion is generated from auto rotation of key
+     * @return the value
+     **/
+    public Boolean getIsAutoRotated() {
+        return isAutoRotated;
     }
 
     @Override
@@ -657,6 +732,9 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
                 .append(String.valueOf(this.restoredFromKeyVersionId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", externalKeyReferenceDetails=")
+                .append(String.valueOf(this.externalKeyReferenceDetails));
+        sb.append(", isAutoRotated=").append(String.valueOf(this.isAutoRotated));
         sb.append(")");
         return sb.toString();
     }
@@ -684,6 +762,9 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
                         this.restoredFromKeyVersionId, other.restoredFromKeyVersionId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(
+                        this.externalKeyReferenceDetails, other.externalKeyReferenceDetails)
+                && java.util.Objects.equals(this.isAutoRotated, other.isAutoRotated)
                 && super.equals(other);
     }
 
@@ -715,6 +796,14 @@ public final class KeyVersion extends com.oracle.bmc.http.internal.ExplicitlySet
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyReferenceDetails == null
+                                ? 43
+                                : this.externalKeyReferenceDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoRotated == null ? 43 : this.isAutoRotated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

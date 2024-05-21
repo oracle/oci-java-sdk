@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a DR Plan step.
+ * The details for updating a DR plan step.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,18 +49,18 @@ public final class UpdateDrPlanStepDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique id of this step.
+         * The unique id of the step.
          * <p>
-         * Example: {@code sgid1.step..examplestepsgid}
+         * Example: {@code sgid1.step..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique id of this step.
+         * The unique id of the step.
          * <p>
-         * Example: {@code sgid1.step..examplestepsgid}
+         * Example: {@code sgid1.step..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -71,7 +71,7 @@ public final class UpdateDrPlanStepDetails
             return this;
         }
         /**
-         * The display name of this step in a group.
+         * The display name of the step in a group.
          * <p>
          * Example: {@code My_STEP_3A - EBS Start - STAGE A}
          *
@@ -80,7 +80,7 @@ public final class UpdateDrPlanStepDetails
         private String displayName;
 
         /**
-         * The display name of this step in a group.
+         * The display name of the step in a group.
          * <p>
          * Example: {@code My_STEP_3A - EBS Start - STAGE A}
          *
@@ -94,6 +94,7 @@ public final class UpdateDrPlanStepDetails
         }
         /**
          * The error mode for this step.
+         * The default error mode for the step is {@code STOP_ON_ERROR}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
@@ -101,6 +102,7 @@ public final class UpdateDrPlanStepDetails
 
         /**
          * The error mode for this step.
+         * The default error mode for the step is {@code STOP_ON_ERROR}.
          *
          * @param errorMode the value to set
          * @return this builder
@@ -112,6 +114,7 @@ public final class UpdateDrPlanStepDetails
         }
         /**
          * The timeout in seconds for executing this step.
+         * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
          * <p>
          * Example: {@code 600}
          *
@@ -121,6 +124,7 @@ public final class UpdateDrPlanStepDetails
 
         /**
          * The timeout in seconds for executing this step.
+         * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
          * <p>
          * Example: {@code 600}
          *
@@ -134,6 +138,7 @@ public final class UpdateDrPlanStepDetails
         }
         /**
          * A flag indicating whether this step should be enabled for execution.
+         * The default value for the isEnabled flag is {@code true}.
          * <p>
          * Example: {@code true}
          *
@@ -143,6 +148,7 @@ public final class UpdateDrPlanStepDetails
 
         /**
          * A flag indicating whether this step should be enabled for execution.
+         * The default value for the isEnabled flag is {@code true}.
          * <p>
          * Example: {@code true}
          *
@@ -218,18 +224,18 @@ public final class UpdateDrPlanStepDetails
     }
 
     /**
-     * The unique id of this step.
+     * The unique id of the step.
      * <p>
-     * Example: {@code sgid1.step..examplestepsgid}
+     * Example: {@code sgid1.step..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique id of this step.
+     * The unique id of the step.
      * <p>
-     * Example: {@code sgid1.step..examplestepsgid}
+     * Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
      **/
@@ -238,7 +244,7 @@ public final class UpdateDrPlanStepDetails
     }
 
     /**
-     * The display name of this step in a group.
+     * The display name of the step in a group.
      * <p>
      * Example: {@code My_STEP_3A - EBS Start - STAGE A}
      *
@@ -247,7 +253,7 @@ public final class UpdateDrPlanStepDetails
     private final String displayName;
 
     /**
-     * The display name of this step in a group.
+     * The display name of the step in a group.
      * <p>
      * Example: {@code My_STEP_3A - EBS Start - STAGE A}
      *
@@ -259,6 +265,7 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * The error mode for this step.
+     * The default error mode for the step is {@code STOP_ON_ERROR}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
@@ -266,6 +273,7 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * The error mode for this step.
+     * The default error mode for the step is {@code STOP_ON_ERROR}.
      *
      * @return the value
      **/
@@ -275,6 +283,7 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * The timeout in seconds for executing this step.
+     * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
      * <p>
      * Example: {@code 600}
      *
@@ -284,6 +293,7 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * The timeout in seconds for executing this step.
+     * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
      * <p>
      * Example: {@code 600}
      *
@@ -295,6 +305,7 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * A flag indicating whether this step should be enabled for execution.
+     * The default value for the isEnabled flag is {@code true}.
      * <p>
      * Example: {@code true}
      *
@@ -304,6 +315,7 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * A flag indicating whether this step should be enabled for execution.
+     * The default value for the isEnabled flag is {@code true}.
      * <p>
      * Example: {@code true}
      *

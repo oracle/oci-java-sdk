@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for suppressing an alarm.
- * For information about alarms, see [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
+ * The configuration details for an alarm-wide suppression.
+ * For dimension-specific suppressions, see {@link AlarmSuppression}.
+ * For information about alarms, see
+ * [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -67,7 +69,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
@@ -76,7 +78,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeSuppressFrom the value to set
          * @return this builder
@@ -89,7 +91,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T02:02:29.600Z}
+         * Example: {@code 2023-02-01T02:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
@@ -98,7 +100,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
         /**
          * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T02:02:29.600Z}
+         * Example: {@code 2023-02-01T02:02:29.600Z}
          *
          * @param timeSuppressUntil the value to set
          * @return this builder
@@ -181,7 +183,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFrom")
@@ -190,7 +192,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      **/
@@ -201,7 +203,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T02:02:29.600Z}
+     * Example: {@code 2023-02-01T02:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressUntil")
@@ -210,7 +212,7 @@ public final class Suppression extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T02:02:29.600Z}
+     * Example: {@code 2023-02-01T02:02:29.600Z}
      *
      * @return the value
      **/

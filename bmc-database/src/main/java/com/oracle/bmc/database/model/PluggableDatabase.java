@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -38,7 +38,9 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         "compartmentId",
         "freeformTags",
         "definedTags",
-        "pluggableDatabaseManagementConfig"
+        "pluggableDatabaseManagementConfig",
+        "refreshableCloneConfig",
+        "pdbNodeLevelDetails"
     })
     public PluggableDatabase(
             String id,
@@ -53,7 +55,9 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig) {
+            PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig,
+            PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig,
+            java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails) {
         super();
         this.id = id;
         this.containerDatabaseId = containerDatabaseId;
@@ -68,6 +72,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
+        this.refreshableCloneConfig = refreshableCloneConfig;
+        this.pdbNodeLevelDetails = pdbNodeLevelDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -178,6 +184,7 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * **Deprecated.** Use {@link #pluggableDatabaseNodeLevelDetails(PluggableDatabaseNodeLevelDetailsRequest) pluggableDatabaseNodeLevelDetails} for OpenMode details.
          * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
          *
          **/
@@ -185,6 +192,7 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         private OpenMode openMode;
 
         /**
+         * **Deprecated.** Use {@link #pluggableDatabaseNodeLevelDetails(PluggableDatabaseNodeLevelDetailsRequest) pluggableDatabaseNodeLevelDetails} for OpenMode details.
          * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
          *
          * @param openMode the value to set
@@ -287,6 +295,37 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshableCloneConfig")
+        private PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig;
+
+        public Builder refreshableCloneConfig(
+                PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig) {
+            this.refreshableCloneConfig = refreshableCloneConfig;
+            this.__explicitlySet__.add("refreshableCloneConfig");
+            return this;
+        }
+        /**
+         * Pluggable Database Node Level Details.
+         * Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("pdbNodeLevelDetails")
+        private java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails;
+
+        /**
+         * Pluggable Database Node Level Details.
+         * Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+         *
+         * @param pdbNodeLevelDetails the value to set
+         * @return this builder
+         **/
+        public Builder pdbNodeLevelDetails(
+                java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails) {
+            this.pdbNodeLevelDetails = pdbNodeLevelDetails;
+            this.__explicitlySet__.add("pdbNodeLevelDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -305,7 +344,9 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
-                            this.pluggableDatabaseManagementConfig);
+                            this.pluggableDatabaseManagementConfig,
+                            this.refreshableCloneConfig,
+                            this.pdbNodeLevelDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -353,6 +394,12 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("pluggableDatabaseManagementConfig")) {
                 this.pluggableDatabaseManagementConfig(
                         model.getPluggableDatabaseManagementConfig());
+            }
+            if (model.wasPropertyExplicitlySet("refreshableCloneConfig")) {
+                this.refreshableCloneConfig(model.getRefreshableCloneConfig());
+            }
+            if (model.wasPropertyExplicitlySet("pdbNodeLevelDetails")) {
+                this.pdbNodeLevelDetails(model.getPdbNodeLevelDetails());
             }
             return this;
         }
@@ -421,6 +468,13 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         Terminated("TERMINATED"),
         Updating("UPDATING"),
         Failed("FAILED"),
+        Relocating("RELOCATING"),
+        Relocated("RELOCATED"),
+        Refreshing("REFRESHING"),
+        RestoreInProgress("RESTORE_IN_PROGRESS"),
+        RestoreFailed("RESTORE_FAILED"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        Disabled("DISABLED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -513,6 +567,7 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * **Deprecated.** Use {@link #pluggableDatabaseNodeLevelDetails(PluggableDatabaseNodeLevelDetailsRequest) pluggableDatabaseNodeLevelDetails} for OpenMode details.
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      *
      **/
@@ -564,6 +619,7 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
+     * **Deprecated.** Use {@link #pluggableDatabaseNodeLevelDetails(PluggableDatabaseNodeLevelDetailsRequest) pluggableDatabaseNodeLevelDetails} for OpenMode details.
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      *
      **/
@@ -571,6 +627,7 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
     private final OpenMode openMode;
 
     /**
+     * **Deprecated.** Use {@link #pluggableDatabaseNodeLevelDetails(PluggableDatabaseNodeLevelDetailsRequest) pluggableDatabaseNodeLevelDetails} for OpenMode details.
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      *
      * @return the value
@@ -658,6 +715,31 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         return pluggableDatabaseManagementConfig;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshableCloneConfig")
+    private final PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig;
+
+    public PluggableDatabaseRefreshableCloneConfig getRefreshableCloneConfig() {
+        return refreshableCloneConfig;
+    }
+
+    /**
+     * Pluggable Database Node Level Details.
+     * Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pdbNodeLevelDetails")
+    private final java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails;
+
+    /**
+     * Pluggable Database Node Level Details.
+     * Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+     *
+     * @return the value
+     **/
+    public java.util.List<PluggableDatabaseNodeLevelDetails> getPdbNodeLevelDetails() {
+        return pdbNodeLevelDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -686,6 +768,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", pluggableDatabaseManagementConfig=")
                 .append(String.valueOf(this.pluggableDatabaseManagementConfig));
+        sb.append(", refreshableCloneConfig=").append(String.valueOf(this.refreshableCloneConfig));
+        sb.append(", pdbNodeLevelDetails=").append(String.valueOf(this.pdbNodeLevelDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -715,6 +799,9 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(
                         this.pluggableDatabaseManagementConfig,
                         other.pluggableDatabaseManagementConfig)
+                && java.util.Objects.equals(
+                        this.refreshableCloneConfig, other.refreshableCloneConfig)
+                && java.util.Objects.equals(this.pdbNodeLevelDetails, other.pdbNodeLevelDetails)
                 && super.equals(other);
     }
 
@@ -751,6 +838,16 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                         + (this.pluggableDatabaseManagementConfig == null
                                 ? 43
                                 : this.pluggableDatabaseManagementConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshableCloneConfig == null
+                                ? 43
+                                : this.refreshableCloneConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.pdbNodeLevelDetails == null
+                                ? 43
+                                : this.pdbNodeLevelDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -68,7 +68,19 @@ public final class CloudAutonomousVmClusterSummary
         "autonomousDataStorageSizeInTBs",
         "dbNodeStorageSizeInGBs",
         "memoryPerOracleComputeUnitInGBs",
-        "dbServers"
+        "dbServers",
+        "cpuPercentage",
+        "autonomousDataStoragePercentage",
+        "provisionedCpus",
+        "totalCpus",
+        "totalAutonomousDataStorageInTBs",
+        "reservedCpus",
+        "provisionableAutonomousContainerDatabases",
+        "provisionedAutonomousContainerDatabases",
+        "nonProvisionableAutonomousContainerDatabases",
+        "exadataStorageInTBsLowestScaledValue",
+        "ocpusLowestScaledValue",
+        "maxAcdsLowestScaledValue"
     })
     public CloudAutonomousVmClusterSummary(
             String id,
@@ -115,7 +127,19 @@ public final class CloudAutonomousVmClusterSummary
             Double autonomousDataStorageSizeInTBs,
             Integer dbNodeStorageSizeInGBs,
             Integer memoryPerOracleComputeUnitInGBs,
-            java.util.List<String> dbServers) {
+            java.util.List<String> dbServers,
+            Float cpuPercentage,
+            Float autonomousDataStoragePercentage,
+            Float provisionedCpus,
+            Float totalCpus,
+            Float totalAutonomousDataStorageInTBs,
+            Float reservedCpus,
+            Integer provisionableAutonomousContainerDatabases,
+            Integer provisionedAutonomousContainerDatabases,
+            Integer nonProvisionableAutonomousContainerDatabases,
+            Double exadataStorageInTBsLowestScaledValue,
+            Integer ocpusLowestScaledValue,
+            Integer maxAcdsLowestScaledValue) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -162,6 +186,19 @@ public final class CloudAutonomousVmClusterSummary
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
         this.dbServers = dbServers;
+        this.cpuPercentage = cpuPercentage;
+        this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+        this.provisionedCpus = provisionedCpus;
+        this.totalCpus = totalCpus;
+        this.totalAutonomousDataStorageInTBs = totalAutonomousDataStorageInTBs;
+        this.reservedCpus = reservedCpus;
+        this.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
+        this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+        this.nonProvisionableAutonomousContainerDatabases =
+                nonProvisionableAutonomousContainerDatabases;
+        this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+        this.ocpusLowestScaledValue = ocpusLowestScaledValue;
+        this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -545,14 +582,14 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
         /**
-         * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
          *
          * @param computeModel the value to set
          * @return this builder
@@ -611,24 +648,24 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-         * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-         * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-         * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+         * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+         * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+         * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * <p>
-         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-         * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-         * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-         * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+         * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+         * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+         * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+         * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * <p>
-         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+         * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          *
          * @param licenseModel the value to set
          * @return this builder
@@ -806,18 +843,14 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          *
          * @param reclaimableCpus the value to set
          * @return this builder
@@ -909,13 +942,15 @@ public final class CloudAutonomousVmClusterSummary
             return this;
         }
         /**
-         * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The amount of memory (in GBs) enabled per OCPU or ECPU.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
-         * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+         * The amount of memory (in GBs) enabled per OCPU or ECPU.
+         *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
          **/
@@ -938,6 +973,205 @@ public final class CloudAutonomousVmClusterSummary
         public Builder dbServers(java.util.List<String> dbServers) {
             this.dbServers = dbServers;
             this.__explicitlySet__.add("dbServers");
+            return this;
+        }
+        /**
+         * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuPercentage")
+        private Float cpuPercentage;
+
+        /**
+         * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+         * @param cpuPercentage the value to set
+         * @return this builder
+         **/
+        public Builder cpuPercentage(Float cpuPercentage) {
+            this.cpuPercentage = cpuPercentage;
+            this.__explicitlySet__.add("cpuPercentage");
+            return this;
+        }
+        /**
+         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
+        private Float autonomousDataStoragePercentage;
+
+        /**
+         * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+         * @param autonomousDataStoragePercentage the value to set
+         * @return this builder
+         **/
+        public Builder autonomousDataStoragePercentage(Float autonomousDataStoragePercentage) {
+            this.autonomousDataStoragePercentage = autonomousDataStoragePercentage;
+            this.__explicitlySet__.add("autonomousDataStoragePercentage");
+            return this;
+        }
+        /**
+         * The number of CPUs provisioned in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+        private Float provisionedCpus;
+
+        /**
+         * The number of CPUs provisioned in an Autonomous VM Cluster.
+         * @param provisionedCpus the value to set
+         * @return this builder
+         **/
+        public Builder provisionedCpus(Float provisionedCpus) {
+            this.provisionedCpus = provisionedCpus;
+            this.__explicitlySet__.add("provisionedCpus");
+            return this;
+        }
+        /**
+         * The total number of CPUs in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
+        private Float totalCpus;
+
+        /**
+         * The total number of CPUs in an Autonomous VM Cluster.
+         * @param totalCpus the value to set
+         * @return this builder
+         **/
+        public Builder totalCpus(Float totalCpus) {
+            this.totalCpus = totalCpus;
+            this.__explicitlySet__.add("totalCpus");
+            return this;
+        }
+        /**
+         * The total data disk group size for Autonomous Databases, in TBs.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
+        private Float totalAutonomousDataStorageInTBs;
+
+        /**
+         * The total data disk group size for Autonomous Databases, in TBs.
+         * @param totalAutonomousDataStorageInTBs the value to set
+         * @return this builder
+         **/
+        public Builder totalAutonomousDataStorageInTBs(Float totalAutonomousDataStorageInTBs) {
+            this.totalAutonomousDataStorageInTBs = totalAutonomousDataStorageInTBs;
+            this.__explicitlySet__.add("totalAutonomousDataStorageInTBs");
+            return this;
+        }
+        /**
+         * The number of CPUs reserved in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+        private Float reservedCpus;
+
+        /**
+         * The number of CPUs reserved in an Autonomous VM Cluster.
+         * @param reservedCpus the value to set
+         * @return this builder
+         **/
+        public Builder reservedCpus(Float reservedCpus) {
+            this.reservedCpus = reservedCpus;
+            this.__explicitlySet__.add("reservedCpus");
+            return this;
+        }
+        /**
+         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
+        private Integer provisionableAutonomousContainerDatabases;
+
+        /**
+         * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         * @param provisionableAutonomousContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder provisionableAutonomousContainerDatabases(
+                Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases =
+                    provisionableAutonomousContainerDatabases;
+            this.__explicitlySet__.add("provisionableAutonomousContainerDatabases");
+            return this;
+        }
+        /**
+         * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("provisionedAutonomousContainerDatabases")
+        private Integer provisionedAutonomousContainerDatabases;
+
+        /**
+         * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+         * @param provisionedAutonomousContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder provisionedAutonomousContainerDatabases(
+                Integer provisionedAutonomousContainerDatabases) {
+            this.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            this.__explicitlySet__.add("provisionedAutonomousContainerDatabases");
+            return this;
+        }
+        /**
+         * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "nonProvisionableAutonomousContainerDatabases")
+        private Integer nonProvisionableAutonomousContainerDatabases;
+
+        /**
+         * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+         * @param nonProvisionableAutonomousContainerDatabases the value to set
+         * @return this builder
+         **/
+        public Builder nonProvisionableAutonomousContainerDatabases(
+                Integer nonProvisionableAutonomousContainerDatabases) {
+            this.nonProvisionableAutonomousContainerDatabases =
+                    nonProvisionableAutonomousContainerDatabases;
+            this.__explicitlySet__.add("nonProvisionableAutonomousContainerDatabases");
+            return this;
+        }
+        /**
+         * The lowest value to which exadataStorage (in TBs) can be scaled down.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+        private Double exadataStorageInTBsLowestScaledValue;
+
+        /**
+         * The lowest value to which exadataStorage (in TBs) can be scaled down.
+         * @param exadataStorageInTBsLowestScaledValue the value to set
+         * @return this builder
+         **/
+        public Builder exadataStorageInTBsLowestScaledValue(
+                Double exadataStorageInTBsLowestScaledValue) {
+            this.exadataStorageInTBsLowestScaledValue = exadataStorageInTBsLowestScaledValue;
+            this.__explicitlySet__.add("exadataStorageInTBsLowestScaledValue");
+            return this;
+        }
+        /**
+         * The lowest value to which ocpus can be scaled down.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ocpusLowestScaledValue")
+        private Integer ocpusLowestScaledValue;
+
+        /**
+         * The lowest value to which ocpus can be scaled down.
+         * @param ocpusLowestScaledValue the value to set
+         * @return this builder
+         **/
+        public Builder ocpusLowestScaledValue(Integer ocpusLowestScaledValue) {
+            this.ocpusLowestScaledValue = ocpusLowestScaledValue;
+            this.__explicitlySet__.add("ocpusLowestScaledValue");
+            return this;
+        }
+        /**
+         * The lowest value to which maximum number of ACDs can be scaled down.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+        private Integer maxAcdsLowestScaledValue;
+
+        /**
+         * The lowest value to which maximum number of ACDs can be scaled down.
+         * @param maxAcdsLowestScaledValue the value to set
+         * @return this builder
+         **/
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            this.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            this.__explicitlySet__.add("maxAcdsLowestScaledValue");
             return this;
         }
 
@@ -991,7 +1225,19 @@ public final class CloudAutonomousVmClusterSummary
                             this.autonomousDataStorageSizeInTBs,
                             this.dbNodeStorageSizeInGBs,
                             this.memoryPerOracleComputeUnitInGBs,
-                            this.dbServers);
+                            this.dbServers,
+                            this.cpuPercentage,
+                            this.autonomousDataStoragePercentage,
+                            this.provisionedCpus,
+                            this.totalCpus,
+                            this.totalAutonomousDataStorageInTBs,
+                            this.reservedCpus,
+                            this.provisionableAutonomousContainerDatabases,
+                            this.provisionedAutonomousContainerDatabases,
+                            this.nonProvisionableAutonomousContainerDatabases,
+                            this.exadataStorageInTBsLowestScaledValue,
+                            this.ocpusLowestScaledValue,
+                            this.maxAcdsLowestScaledValue);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1136,6 +1382,46 @@ public final class CloudAutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("dbServers")) {
                 this.dbServers(model.getDbServers());
+            }
+            if (model.wasPropertyExplicitlySet("cpuPercentage")) {
+                this.cpuPercentage(model.getCpuPercentage());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDataStoragePercentage")) {
+                this.autonomousDataStoragePercentage(model.getAutonomousDataStoragePercentage());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedCpus")) {
+                this.provisionedCpus(model.getProvisionedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalCpus")) {
+                this.totalCpus(model.getTotalCpus());
+            }
+            if (model.wasPropertyExplicitlySet("totalAutonomousDataStorageInTBs")) {
+                this.totalAutonomousDataStorageInTBs(model.getTotalAutonomousDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("reservedCpus")) {
+                this.reservedCpus(model.getReservedCpus());
+            }
+            if (model.wasPropertyExplicitlySet("provisionableAutonomousContainerDatabases")) {
+                this.provisionableAutonomousContainerDatabases(
+                        model.getProvisionableAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("provisionedAutonomousContainerDatabases")) {
+                this.provisionedAutonomousContainerDatabases(
+                        model.getProvisionedAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("nonProvisionableAutonomousContainerDatabases")) {
+                this.nonProvisionableAutonomousContainerDatabases(
+                        model.getNonProvisionableAutonomousContainerDatabases());
+            }
+            if (model.wasPropertyExplicitlySet("exadataStorageInTBsLowestScaledValue")) {
+                this.exadataStorageInTBsLowestScaledValue(
+                        model.getExadataStorageInTBsLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("ocpusLowestScaledValue")) {
+                this.ocpusLowestScaledValue(model.getOcpusLowestScaledValue());
+            }
+            if (model.wasPropertyExplicitlySet("maxAcdsLowestScaledValue")) {
+                this.maxAcdsLowestScaledValue(model.getMaxAcdsLowestScaledValue());
             }
             return this;
         }
@@ -1540,7 +1826,7 @@ public final class CloudAutonomousVmClusterSummary
     }
 
     /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      **/
     public enum ComputeModel {
@@ -1589,14 +1875,14 @@ public final class CloudAutonomousVmClusterSummary
         }
     };
     /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Cloud Autonomous VM Cluster. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      *
      * @return the value
      **/
@@ -1647,12 +1933,12 @@ public final class CloudAutonomousVmClusterSummary
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      **/
     public enum LicenseModel {
@@ -1701,24 +1987,24 @@ public final class CloudAutonomousVmClusterSummary
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      * @return the value
      **/
@@ -1872,18 +2158,14 @@ public final class CloudAutonomousVmClusterSummary
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      *
      * @return the value
      **/
@@ -1962,13 +2244,15 @@ public final class CloudAutonomousVmClusterSummary
     }
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) enabled per OCPU or ECPU.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
-     * The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * The amount of memory (in GBs) enabled per OCPU or ECPU.
+     *
      * @return the value
      **/
     public Integer getMemoryPerOracleComputeUnitInGBs() {
@@ -1987,6 +2271,174 @@ public final class CloudAutonomousVmClusterSummary
      **/
     public java.util.List<String> getDbServers() {
         return dbServers;
+    }
+
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpuPercentage")
+    private final Float cpuPercentage;
+
+    /**
+     * The percentage of total number of CPUs used in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getCpuPercentage() {
+        return cpuPercentage;
+    }
+
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStoragePercentage")
+    private final Float autonomousDataStoragePercentage;
+
+    /**
+     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getAutonomousDataStoragePercentage() {
+        return autonomousDataStoragePercentage;
+    }
+
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
+    private final Float provisionedCpus;
+
+    /**
+     * The number of CPUs provisioned in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getProvisionedCpus() {
+        return provisionedCpus;
+    }
+
+    /**
+     * The total number of CPUs in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
+    private final Float totalCpus;
+
+    /**
+     * The total number of CPUs in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getTotalCpus() {
+        return totalCpus;
+    }
+
+    /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalAutonomousDataStorageInTBs")
+    private final Float totalAutonomousDataStorageInTBs;
+
+    /**
+     * The total data disk group size for Autonomous Databases, in TBs.
+     * @return the value
+     **/
+    public Float getTotalAutonomousDataStorageInTBs() {
+        return totalAutonomousDataStorageInTBs;
+    }
+
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
+    private final Float reservedCpus;
+
+    /**
+     * The number of CPUs reserved in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Float getReservedCpus() {
+        return reservedCpus;
+    }
+
+    /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
+    private final Integer provisionableAutonomousContainerDatabases;
+
+    /**
+     * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Integer getProvisionableAutonomousContainerDatabases() {
+        return provisionableAutonomousContainerDatabases;
+    }
+
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("provisionedAutonomousContainerDatabases")
+    private final Integer provisionedAutonomousContainerDatabases;
+
+    /**
+     * The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Integer getProvisionedAutonomousContainerDatabases() {
+        return provisionedAutonomousContainerDatabases;
+    }
+
+    /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nonProvisionableAutonomousContainerDatabases")
+    private final Integer nonProvisionableAutonomousContainerDatabases;
+
+    /**
+     * The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+     * @return the value
+     **/
+    public Integer getNonProvisionableAutonomousContainerDatabases() {
+        return nonProvisionableAutonomousContainerDatabases;
+    }
+
+    /**
+     * The lowest value to which exadataStorage (in TBs) can be scaled down.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBsLowestScaledValue")
+    private final Double exadataStorageInTBsLowestScaledValue;
+
+    /**
+     * The lowest value to which exadataStorage (in TBs) can be scaled down.
+     * @return the value
+     **/
+    public Double getExadataStorageInTBsLowestScaledValue() {
+        return exadataStorageInTBsLowestScaledValue;
+    }
+
+    /**
+     * The lowest value to which ocpus can be scaled down.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ocpusLowestScaledValue")
+    private final Integer ocpusLowestScaledValue;
+
+    /**
+     * The lowest value to which ocpus can be scaled down.
+     * @return the value
+     **/
+    public Integer getOcpusLowestScaledValue() {
+        return ocpusLowestScaledValue;
+    }
+
+    /**
+     * The lowest value to which maximum number of ACDs can be scaled down.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maxAcdsLowestScaledValue")
+    private final Integer maxAcdsLowestScaledValue;
+
+    /**
+     * The lowest value to which maximum number of ACDs can be scaled down.
+     * @return the value
+     **/
+    public Integer getMaxAcdsLowestScaledValue() {
+        return maxAcdsLowestScaledValue;
     }
 
     @Override
@@ -2057,6 +2509,25 @@ public final class CloudAutonomousVmClusterSummary
         sb.append(", memoryPerOracleComputeUnitInGBs=")
                 .append(String.valueOf(this.memoryPerOracleComputeUnitInGBs));
         sb.append(", dbServers=").append(String.valueOf(this.dbServers));
+        sb.append(", cpuPercentage=").append(String.valueOf(this.cpuPercentage));
+        sb.append(", autonomousDataStoragePercentage=")
+                .append(String.valueOf(this.autonomousDataStoragePercentage));
+        sb.append(", provisionedCpus=").append(String.valueOf(this.provisionedCpus));
+        sb.append(", totalCpus=").append(String.valueOf(this.totalCpus));
+        sb.append(", totalAutonomousDataStorageInTBs=")
+                .append(String.valueOf(this.totalAutonomousDataStorageInTBs));
+        sb.append(", reservedCpus=").append(String.valueOf(this.reservedCpus));
+        sb.append(", provisionableAutonomousContainerDatabases=")
+                .append(String.valueOf(this.provisionableAutonomousContainerDatabases));
+        sb.append(", provisionedAutonomousContainerDatabases=")
+                .append(String.valueOf(this.provisionedAutonomousContainerDatabases));
+        sb.append(", nonProvisionableAutonomousContainerDatabases=")
+                .append(String.valueOf(this.nonProvisionableAutonomousContainerDatabases));
+        sb.append(", exadataStorageInTBsLowestScaledValue=")
+                .append(String.valueOf(this.exadataStorageInTBsLowestScaledValue));
+        sb.append(", ocpusLowestScaledValue=").append(String.valueOf(this.ocpusLowestScaledValue));
+        sb.append(", maxAcdsLowestScaledValue=")
+                .append(String.valueOf(this.maxAcdsLowestScaledValue));
         sb.append(")");
         return sb.toString();
     }
@@ -2130,6 +2601,30 @@ public final class CloudAutonomousVmClusterSummary
                 && java.util.Objects.equals(
                         this.memoryPerOracleComputeUnitInGBs, other.memoryPerOracleComputeUnitInGBs)
                 && java.util.Objects.equals(this.dbServers, other.dbServers)
+                && java.util.Objects.equals(this.cpuPercentage, other.cpuPercentage)
+                && java.util.Objects.equals(
+                        this.autonomousDataStoragePercentage, other.autonomousDataStoragePercentage)
+                && java.util.Objects.equals(this.provisionedCpus, other.provisionedCpus)
+                && java.util.Objects.equals(this.totalCpus, other.totalCpus)
+                && java.util.Objects.equals(
+                        this.totalAutonomousDataStorageInTBs, other.totalAutonomousDataStorageInTBs)
+                && java.util.Objects.equals(this.reservedCpus, other.reservedCpus)
+                && java.util.Objects.equals(
+                        this.provisionableAutonomousContainerDatabases,
+                        other.provisionableAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.provisionedAutonomousContainerDatabases,
+                        other.provisionedAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.nonProvisionableAutonomousContainerDatabases,
+                        other.nonProvisionableAutonomousContainerDatabases)
+                && java.util.Objects.equals(
+                        this.exadataStorageInTBsLowestScaledValue,
+                        other.exadataStorageInTBsLowestScaledValue)
+                && java.util.Objects.equals(
+                        this.ocpusLowestScaledValue, other.ocpusLowestScaledValue)
+                && java.util.Objects.equals(
+                        this.maxAcdsLowestScaledValue, other.maxAcdsLowestScaledValue)
                 && super.equals(other);
     }
 
@@ -2274,6 +2769,54 @@ public final class CloudAutonomousVmClusterSummary
                                 ? 43
                                 : this.memoryPerOracleComputeUnitInGBs.hashCode());
         result = (result * PRIME) + (this.dbServers == null ? 43 : this.dbServers.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cpuPercentage == null ? 43 : this.cpuPercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousDataStoragePercentage == null
+                                ? 43
+                                : this.autonomousDataStoragePercentage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedCpus == null ? 43 : this.provisionedCpus.hashCode());
+        result = (result * PRIME) + (this.totalCpus == null ? 43 : this.totalCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalAutonomousDataStorageInTBs == null
+                                ? 43
+                                : this.totalAutonomousDataStorageInTBs.hashCode());
+        result = (result * PRIME) + (this.reservedCpus == null ? 43 : this.reservedCpus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionableAutonomousContainerDatabases == null
+                                ? 43
+                                : this.provisionableAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.provisionedAutonomousContainerDatabases == null
+                                ? 43
+                                : this.provisionedAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonProvisionableAutonomousContainerDatabases == null
+                                ? 43
+                                : this.nonProvisionableAutonomousContainerDatabases.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataStorageInTBsLowestScaledValue == null
+                                ? 43
+                                : this.exadataStorageInTBsLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ocpusLowestScaledValue == null
+                                ? 43
+                                : this.ocpusLowestScaledValue.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxAcdsLowestScaledValue == null
+                                ? 43
+                                : this.maxAcdsLowestScaledValue.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

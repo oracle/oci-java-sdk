@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.requests;
@@ -14,30 +14,30 @@ public class ResumeDrPlanExecutionRequest
                 com.oracle.bmc.disasterrecovery.model.ResumeDrPlanExecutionDetails> {
 
     /**
-     * Details for resuming a DR Plan Execution.
+     * Details for resuming the DR plan execution.
      */
     private com.oracle.bmc.disasterrecovery.model.ResumeDrPlanExecutionDetails
             resumeDrPlanExecutionDetails;
 
     /**
-     * Details for resuming a DR Plan Execution.
+     * Details for resuming the DR plan execution.
      */
     public com.oracle.bmc.disasterrecovery.model.ResumeDrPlanExecutionDetails
             getResumeDrPlanExecutionDetails() {
         return resumeDrPlanExecutionDetails;
     }
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     private String drPlanExecutionId;
 
     /**
-     * The OCID of the DR Plan Execution.
+     * The OCID of the DR plan execution.
      * <p>
-     * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      */
     public String getDrPlanExecutionId() {
@@ -118,13 +118,13 @@ public class ResumeDrPlanExecutionRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for resuming a DR Plan Execution.
+         * Details for resuming the DR plan execution.
          */
         private com.oracle.bmc.disasterrecovery.model.ResumeDrPlanExecutionDetails
                 resumeDrPlanExecutionDetails = null;
 
         /**
-         * Details for resuming a DR Plan Execution.
+         * Details for resuming the DR plan execution.
          * @param resumeDrPlanExecutionDetails the value to set
          * @return this builder instance
          */
@@ -136,17 +136,17 @@ public class ResumeDrPlanExecutionRequest
         }
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          */
         private String drPlanExecutionId = null;
 
         /**
-         * The OCID of the DR Plan Execution.
+         * The OCID of the DR plan execution.
          * <p>
-         * Example: {@code ocid1.drplanexecution.oc1.iad.exampleocid}
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param drPlanExecutionId the value to set
          * @return this builder instance

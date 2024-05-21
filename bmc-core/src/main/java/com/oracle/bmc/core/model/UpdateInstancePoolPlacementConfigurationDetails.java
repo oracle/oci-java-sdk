@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -26,17 +26,20 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
         "availabilityDomain",
         "faultDomains",
         "primarySubnetId",
+        "primaryVnicSubnets",
         "secondaryVnicSubnets"
     })
     public UpdateInstancePoolPlacementConfigurationDetails(
             String availabilityDomain,
             java.util.List<String> faultDomains,
             String primarySubnetId,
+            InstancePoolPlacementPrimarySubnet primaryVnicSubnets,
             java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.faultDomains = faultDomains;
         this.primarySubnetId = primarySubnetId;
+        this.primaryVnicSubnets = primaryVnicSubnets;
         this.secondaryVnicSubnets = secondaryVnicSubnets;
     }
 
@@ -109,16 +112,16 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-         * instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances. This field is deprecated.
+         * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
         private String primarySubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-         * instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances. This field is deprecated.
+         * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          * @param primarySubnetId the value to set
          * @return this builder
@@ -128,14 +131,23 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
             this.__explicitlySet__.add("primarySubnetId");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryVnicSubnets")
+        private InstancePoolPlacementPrimarySubnet primaryVnicSubnets;
+
+        public Builder primaryVnicSubnets(InstancePoolPlacementPrimarySubnet primaryVnicSubnets) {
+            this.primaryVnicSubnets = primaryVnicSubnets;
+            this.__explicitlySet__.add("primaryVnicSubnets");
+            return this;
+        }
         /**
-         * The set of subnet OCIDs for secondary VNICs for instances in the pool.
+         * The set of secondary VNIC data for instances in the pool.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnicSubnets")
         private java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
 
         /**
-         * The set of subnet OCIDs for secondary VNICs for instances in the pool.
+         * The set of secondary VNIC data for instances in the pool.
          * @param secondaryVnicSubnets the value to set
          * @return this builder
          **/
@@ -155,6 +167,7 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
                             this.availabilityDomain,
                             this.faultDomains,
                             this.primarySubnetId,
+                            this.primaryVnicSubnets,
                             this.secondaryVnicSubnets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -172,6 +185,9 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("primarySubnetId")) {
                 this.primarySubnetId(model.getPrimarySubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("primaryVnicSubnets")) {
+                this.primaryVnicSubnets(model.getPrimaryVnicSubnets());
             }
             if (model.wasPropertyExplicitlySet("secondaryVnicSubnets")) {
                 this.secondaryVnicSubnets(model.getSecondaryVnicSubnets());
@@ -254,16 +270,16 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-     * instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances. This field is deprecated.
+     * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     private final String primarySubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-     * instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet in which to place instances. This field is deprecated.
+     * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      * @return the value
      **/
@@ -271,14 +287,21 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
         return primarySubnetId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryVnicSubnets")
+    private final InstancePoolPlacementPrimarySubnet primaryVnicSubnets;
+
+    public InstancePoolPlacementPrimarySubnet getPrimaryVnicSubnets() {
+        return primaryVnicSubnets;
+    }
+
     /**
-     * The set of subnet OCIDs for secondary VNICs for instances in the pool.
+     * The set of secondary VNIC data for instances in the pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnicSubnets")
     private final java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
 
     /**
-     * The set of subnet OCIDs for secondary VNICs for instances in the pool.
+     * The set of secondary VNIC data for instances in the pool.
      * @return the value
      **/
     public java.util.List<InstancePoolPlacementSecondaryVnicSubnet> getSecondaryVnicSubnets() {
@@ -302,6 +325,7 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(", primarySubnetId=").append(String.valueOf(this.primarySubnetId));
+        sb.append(", primaryVnicSubnets=").append(String.valueOf(this.primaryVnicSubnets));
         sb.append(", secondaryVnicSubnets=").append(String.valueOf(this.secondaryVnicSubnets));
         sb.append(")");
         return sb.toString();
@@ -321,6 +345,7 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && java.util.Objects.equals(this.primarySubnetId, other.primarySubnetId)
+                && java.util.Objects.equals(this.primaryVnicSubnets, other.primaryVnicSubnets)
                 && java.util.Objects.equals(this.secondaryVnicSubnets, other.secondaryVnicSubnets)
                 && super.equals(other);
     }
@@ -338,6 +363,11 @@ public final class UpdateInstancePoolPlacementConfigurationDetails
         result =
                 (result * PRIME)
                         + (this.primarySubnetId == null ? 43 : this.primarySubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryVnicSubnets == null
+                                ? 43
+                                : this.primaryVnicSubnets.hashCode());
         result =
                 (result * PRIME)
                         + (this.secondaryVnicSubnets == null

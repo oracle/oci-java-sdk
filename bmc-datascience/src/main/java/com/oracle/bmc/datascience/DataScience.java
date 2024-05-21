@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience;
@@ -133,6 +133,20 @@ public interface DataScience extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
+     * Moves a private endpoint into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeDataSciencePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDataSciencePrivateEndpointCompartment API.
+     */
+    ChangeDataSciencePrivateEndpointCompartmentResponse changeDataSciencePrivateEndpointCompartment(
+            ChangeDataSciencePrivateEndpointCompartmentRequest request);
+
+    /**
      * Changes a job's compartment
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -245,6 +259,20 @@ public interface DataScience extends AutoCloseable {
      */
     ChangeProjectCompartmentResponse changeProjectCompartment(
             ChangeProjectCompartmentRequest request);
+
+    /**
+     * Creates a Data Science private endpoint to be used by a Data Science resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateDataSciencePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataSciencePrivateEndpoint API.
+     */
+    CreateDataSciencePrivateEndpointResponse createDataSciencePrivateEndpoint(
+            CreateDataSciencePrivateEndpointRequest request);
 
     /**
      * Creates a job.
@@ -524,6 +552,20 @@ public interface DataScience extends AutoCloseable {
             DeactivateNotebookSessionRequest request);
 
     /**
+     * Deletes a private endpoint using `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteDataSciencePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataSciencePrivateEndpoint API.
+     */
+    DeleteDataSciencePrivateEndpointResponse deleteDataSciencePrivateEndpoint(
+            DeleteDataSciencePrivateEndpointRequest request);
+
+    /**
      * Deletes a job.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -642,6 +684,20 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ExportModelArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportModelArtifact API.
      */
     ExportModelArtifactResponse exportModelArtifact(ExportModelArtifactRequest request);
+
+    /**
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetDataSciencePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataSciencePrivateEndpoint API.
+     */
+    GetDataSciencePrivateEndpointResponse getDataSciencePrivateEndpoint(
+            GetDataSciencePrivateEndpointRequest request);
 
     /**
      * Gets a job.
@@ -860,6 +916,20 @@ public interface DataScience extends AutoCloseable {
     ImportModelArtifactResponse importModelArtifact(ImportModelArtifactRequest request);
 
     /**
+     * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn't include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListDataSciencePrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataSciencePrivateEndpoints API.
+     */
+    ListDataSciencePrivateEndpointsResponse listDataSciencePrivateEndpoints(
+            ListDataSciencePrivateEndpointsRequest request);
+
+    /**
      * List fast launch capable job configs in the specified compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1054,6 +1124,22 @@ public interface DataScience extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Updates a private endpoint using a `privateEndpointId`.  If changes to a private endpoint match
+     * a previously defined private endpoint, then a 409 status code is returned.  This indicates
+     * that a conflict has been detected.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateDataSciencePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataSciencePrivateEndpoint API.
+     */
+    UpdateDataSciencePrivateEndpointResponse updateDataSciencePrivateEndpoint(
+            UpdateDataSciencePrivateEndpointRequest request);
 
     /**
      * Updates a job.

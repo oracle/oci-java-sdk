@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.requests;
@@ -114,6 +114,32 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
      */
     public String getReplicaId() {
         return replicaId;
+    }
+    /**
+     * The requested Configuration instance.
+     */
+    private String configurationId;
+
+    /**
+     * The requested Configuration instance.
+     */
+    public String getConfigurationId() {
+        return configurationId;
+    }
+    /**
+     * Filter instances if they are using the latest revision of the
+     * Configuration they are associated with.
+     *
+     */
+    private Boolean isUpToDate;
+
+    /**
+     * Filter instances if they are using the latest revision of the
+     * Configuration they are associated with.
+     *
+     */
+    public Boolean getIsUpToDate() {
+        return isUpToDate;
     }
     /**
      * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
@@ -358,6 +384,40 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * The requested Configuration instance.
+         */
+        private String configurationId = null;
+
+        /**
+         * The requested Configuration instance.
+         * @param configurationId the value to set
+         * @return this builder instance
+         */
+        public Builder configurationId(String configurationId) {
+            this.configurationId = configurationId;
+            return this;
+        }
+
+        /**
+         * Filter instances if they are using the latest revision of the
+         * Configuration they are associated with.
+         *
+         */
+        private Boolean isUpToDate = null;
+
+        /**
+         * Filter instances if they are using the latest revision of the
+         * Configuration they are associated with.
+         *
+         * @param isUpToDate the value to set
+         * @return this builder instance
+         */
+        public Builder isUpToDate(Boolean isUpToDate) {
+            this.isUpToDate = isUpToDate;
+            return this;
+        }
+
+        /**
          * The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
          *
          */
@@ -425,6 +485,8 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             dbSystemId(o.getDbSystemId());
             lifecycleState(o.getLifecycleState());
             replicaId(o.getReplicaId());
+            configurationId(o.getConfigurationId());
+            isUpToDate(o.getIsUpToDate());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             invocationCallback(o.getInvocationCallback());
@@ -467,10 +529,12 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.dbSystemId = dbSystemId;
             request.lifecycleState = lifecycleState;
             request.replicaId = replicaId;
+            request.configurationId = configurationId;
+            request.isUpToDate = isUpToDate;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListReplicasRequest(compartmentId, opcRequestId, limit, page, displayName, dbSystemId, lifecycleState, replicaId, sortBy, sortOrder);
+            // new ListReplicasRequest(compartmentId, opcRequestId, limit, page, displayName, dbSystemId, lifecycleState, replicaId, configurationId, isUpToDate, sortBy, sortOrder);
         }
     }
 
@@ -488,6 +552,8 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .dbSystemId(dbSystemId)
                 .lifecycleState(lifecycleState)
                 .replicaId(replicaId)
+                .configurationId(configurationId)
+                .isUpToDate(isUpToDate)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder);
     }
@@ -513,6 +579,8 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",replicaId=").append(String.valueOf(this.replicaId));
+        sb.append(",configurationId=").append(String.valueOf(this.configurationId));
+        sb.append(",isUpToDate=").append(String.valueOf(this.isUpToDate));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(")");
@@ -538,6 +606,8 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.replicaId, other.replicaId)
+                && java.util.Objects.equals(this.configurationId, other.configurationId)
+                && java.util.Objects.equals(this.isUpToDate, other.isUpToDate)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder);
     }
@@ -558,6 +628,10 @@ public class ListReplicasRequest extends com.oracle.bmc.requests.BmcRequest<java
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.replicaId == null ? 43 : this.replicaId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationId == null ? 43 : this.configurationId.hashCode());
+        result = (result * PRIME) + (this.isUpToDate == null ? 43 : this.isUpToDate.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         return result;

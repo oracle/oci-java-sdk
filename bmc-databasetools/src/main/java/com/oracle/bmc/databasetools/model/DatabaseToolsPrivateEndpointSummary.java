@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools.model;
@@ -27,6 +27,7 @@ public final class DatabaseToolsPrivateEndpointSummary
         "definedTags",
         "freeformTags",
         "systemTags",
+        "locks",
         "displayName",
         "description",
         "id",
@@ -49,6 +50,7 @@ public final class DatabaseToolsPrivateEndpointSummary
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<ResourceLock> locks,
             String displayName,
             String description,
             String id,
@@ -71,6 +73,7 @@ public final class DatabaseToolsPrivateEndpointSummary
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
         this.systemTags = systemTags;
+        this.locks = locks;
         this.displayName = displayName;
         this.description = description;
         this.id = id;
@@ -166,6 +169,22 @@ public final class DatabaseToolsPrivateEndpointSummary
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -437,6 +456,7 @@ public final class DatabaseToolsPrivateEndpointSummary
                             this.definedTags,
                             this.freeformTags,
                             this.systemTags,
+                            this.locks,
                             this.displayName,
                             this.description,
                             this.id,
@@ -472,6 +492,9 @@ public final class DatabaseToolsPrivateEndpointSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -602,6 +625,20 @@ public final class DatabaseToolsPrivateEndpointSummary
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -847,6 +884,7 @@ public final class DatabaseToolsPrivateEndpointSummary
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -882,6 +920,7 @@ public final class DatabaseToolsPrivateEndpointSummary
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.id, other.id)
@@ -912,6 +951,7 @@ public final class DatabaseToolsPrivateEndpointSummary
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());

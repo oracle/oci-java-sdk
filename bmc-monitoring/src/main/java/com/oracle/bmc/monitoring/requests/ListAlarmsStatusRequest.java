@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.requests;
@@ -70,14 +70,16 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     public String getPage() {
@@ -85,7 +87,8 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Default: 1000
      * <p>
@@ -96,7 +99,8 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Default: 1000
      * <p>
@@ -233,6 +237,122 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
     public SortOrder getSortOrder() {
         return sortOrder;
     }
+    /**
+     * A filter to return only the resource with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The resource must be monitored by the metric that you are searching for.
+     * <p>
+     * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     *
+     */
+    private String resourceId;
+
+    /**
+     * A filter to return only the resource with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The resource must be monitored by the metric that you are searching for.
+     * <p>
+     * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     *
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+    /**
+     * A filter to return only resources that match the given service name exactly.
+     * Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.
+     * <p>
+     * Example: {@code logging-analytics}
+     *
+     */
+    private String serviceName;
+
+    /**
+     * A filter to return only resources that match the given service name exactly.
+     * Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.
+     * <p>
+     * Example: {@code logging-analytics}
+     *
+     */
+    public String getServiceName() {
+        return serviceName;
+    }
+    /**
+     * A filter to return only resources that match the given entity [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+     * The resource (entity) must be monitored by the metric that you are searching for.
+     * <p>
+     * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     *
+     */
+    private String entityId;
+
+    /**
+     * A filter to return only resources that match the given entity [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+     * The resource (entity) must be monitored by the metric that you are searching for.
+     * <p>
+     * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+     *
+     */
+    public String getEntityId() {
+        return entityId;
+    }
+    /**
+     * A filter to return only metric streams that match the specified status.
+     * For example, the value "FIRING" returns only firing metric streams.
+     * <p>
+     * Example: {@code FIRING}
+     *
+     */
+    private Status status;
+
+    /**
+     * A filter to return only metric streams that match the specified status.
+     * For example, the value "FIRING" returns only firing metric streams.
+     * <p>
+     * Example: {@code FIRING}
+     *
+     **/
+    public enum Status {
+        Firing("FIRING"),
+        Ok("OK"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Status> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Status v : Status.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Status(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Status create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Status: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only metric streams that match the specified status.
+     * For example, the value "FIRING" returns only firing metric streams.
+     * <p>
+     * Example: {@code FIRING}
+     *
+     */
+    public Status getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -312,14 +432,16 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -331,7 +453,8 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Default: 1000
          * <p>
@@ -342,7 +465,8 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * <p>
          * Default: 1000
          * <p>
@@ -418,6 +542,98 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * A filter to return only the resource with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The resource must be monitored by the metric that you are searching for.
+         * <p>
+         * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         *
+         */
+        private String resourceId = null;
+
+        /**
+         * A filter to return only the resource with the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The resource must be monitored by the metric that you are searching for.
+         * <p>
+         * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given service name exactly.
+         * Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.
+         * <p>
+         * Example: {@code logging-analytics}
+         *
+         */
+        private String serviceName = null;
+
+        /**
+         * A filter to return only resources that match the given service name exactly.
+         * Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.
+         * <p>
+         * Example: {@code logging-analytics}
+         *
+         * @param serviceName the value to set
+         * @return this builder instance
+         */
+        public Builder serviceName(String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources that match the given entity [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+         * The resource (entity) must be monitored by the metric that you are searching for.
+         * <p>
+         * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         *
+         */
+        private String entityId = null;
+
+        /**
+         * A filter to return only resources that match the given entity [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) exactly.
+         * The resource (entity) must be monitored by the metric that you are searching for.
+         * <p>
+         * Example: {@code ocid1.instance.oc1.phx.exampleuniqueID}
+         *
+         * @param entityId the value to set
+         * @return this builder instance
+         */
+        public Builder entityId(String entityId) {
+            this.entityId = entityId;
+            return this;
+        }
+
+        /**
+         * A filter to return only metric streams that match the specified status.
+         * For example, the value "FIRING" returns only firing metric streams.
+         * <p>
+         * Example: {@code FIRING}
+         *
+         */
+        private Status status = null;
+
+        /**
+         * A filter to return only metric streams that match the specified status.
+         * For example, the value "FIRING" returns only firing metric streams.
+         * <p>
+         * Example: {@code FIRING}
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(Status status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -453,6 +669,10 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
             displayName(o.getDisplayName());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            resourceId(o.getResourceId());
+            serviceName(o.getServiceName());
+            entityId(o.getEntityId());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -493,8 +713,12 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
             request.displayName = displayName;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
+            request.resourceId = resourceId;
+            request.serviceName = serviceName;
+            request.entityId = entityId;
+            request.status = status;
             return request;
-            // new ListAlarmsStatusRequest(compartmentId, opcRequestId, compartmentIdInSubtree, page, limit, displayName, sortBy, sortOrder);
+            // new ListAlarmsStatusRequest(compartmentId, opcRequestId, compartmentIdInSubtree, page, limit, displayName, sortBy, sortOrder, resourceId, serviceName, entityId, status);
         }
     }
 
@@ -511,7 +735,11 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
                 .limit(limit)
                 .displayName(displayName)
                 .sortBy(sortBy)
-                .sortOrder(sortOrder);
+                .sortOrder(sortOrder)
+                .resourceId(resourceId)
+                .serviceName(serviceName)
+                .entityId(entityId)
+                .status(status);
     }
 
     /**
@@ -535,6 +763,10 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(",serviceName=").append(String.valueOf(this.serviceName));
+        sb.append(",entityId=").append(String.valueOf(this.entityId));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -558,7 +790,11 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.sortOrder, other.sortOrder);
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.serviceName, other.serviceName)
+                && java.util.Objects.equals(this.entityId, other.entityId)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -579,6 +815,10 @@ public class ListAlarmsStatusRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
+        result = (result * PRIME) + (this.entityId == null ? 43 : this.entityId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

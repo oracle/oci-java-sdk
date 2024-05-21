@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * The log group used for the Logging Analytics target.
+ * The destination log group for data transferred from the source.
  * For configuration instructions, see
- * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+ * [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -49,7 +49,7 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
             return this;
         }
         /**
-         * Identifier of the log source that you want to use for processing data received from the service connector source.
+         * Identifier of the log source that you want to use for processing data received from the connector source.
          * Applies to {@code StreamingSource} only.
          * Equivalent to {@code name} at {@link LogAnalyticsSource}.
          *
@@ -58,7 +58,7 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
         private String logSourceIdentifier;
 
         /**
-         * Identifier of the log source that you want to use for processing data received from the service connector source.
+         * Identifier of the log source that you want to use for processing data received from the connector source.
          * Applies to {@code StreamingSource} only.
          * Equivalent to {@code name} at {@link LogAnalyticsSource}.
          *
@@ -130,7 +130,7 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     }
 
     /**
-     * Identifier of the log source that you want to use for processing data received from the service connector source.
+     * Identifier of the log source that you want to use for processing data received from the connector source.
      * Applies to {@code StreamingSource} only.
      * Equivalent to {@code name} at {@link LogAnalyticsSource}.
      *
@@ -139,7 +139,7 @@ public final class LoggingAnalyticsTargetDetails extends TargetDetails {
     private final String logSourceIdentifier;
 
     /**
-     * Identifier of the log source that you want to use for processing data received from the service connector source.
+     * Identifier of the log source that you want to use for processing data received from the connector source.
      * Applies to {@code StreamingSource} only.
      * Equivalent to {@code name} at {@link LogAnalyticsSource}.
      *

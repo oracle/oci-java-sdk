@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault;
@@ -505,6 +505,53 @@ public class VaultsAsyncClient implements VaultsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelSecretRotationResponse> cancelSecretRotation(
+            CancelSecretRotationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelSecretRotationRequest, CancelSecretRotationResponse>
+                    handler) {
+        LOG.trace("Called async cancelSecretRotation");
+        final CancelSecretRotationRequest interceptedRequest =
+                CancelSecretRotationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelSecretRotationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretRotation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretRotation");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelSecretRotationResponse>
+                transformer =
+                        CancelSecretRotationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelSecretRotationRequest, CancelSecretRotationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelSecretRotationRequest, CancelSecretRotationResponse>,
+                        java.util.concurrent.Future<CancelSecretRotationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelSecretRotationRequest, CancelSecretRotationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelSecretVersionDeletionResponse>
             cancelSecretVersionDeletion(
                     CancelSecretVersionDeletionRequest request,
@@ -825,6 +872,51 @@ public class VaultsAsyncClient implements VaultsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListSecretsRequest, ListSecretsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateSecretResponse> rotateSecret(
+            RotateSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
+                    handler) {
+        LOG.trace("Called async rotateSecret");
+        final RotateSecretRequest interceptedRequest =
+                RotateSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "RotateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/RotateSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, RotateSecretResponse>
+                transformer =
+                        RotateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateSecretRequest, RotateSecretResponse>,
+                        java.util.concurrent.Future<RotateSecretResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateSecretRequest, RotateSecretResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of a Detector Rule
+ * Detailed information for a detector.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,7 +28,11 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
         "isConfigurationAllowed",
         "problemThreshold",
         "targetTypes",
-        "sightingTypes"
+        "sightingTypes",
+        "description",
+        "recommendation",
+        "dataSourceId",
+        "entitiesMappings"
     })
     public DetectorDetails(
             Boolean isEnabled,
@@ -39,7 +43,11 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             Boolean isConfigurationAllowed,
             Integer problemThreshold,
             java.util.List<String> targetTypes,
-            java.util.List<SightingType> sightingTypes) {
+            java.util.List<SightingType> sightingTypes,
+            String description,
+            String recommendation,
+            String dataSourceId,
+            java.util.List<EntitiesMapping> entitiesMappings) {
         super();
         this.isEnabled = isEnabled;
         this.riskLevel = riskLevel;
@@ -50,18 +58,22 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
         this.problemThreshold = problemThreshold;
         this.targetTypes = targetTypes;
         this.sightingTypes = sightingTypes;
+        this.description = description;
+        this.recommendation = recommendation;
+        this.dataSourceId = dataSourceId;
+        this.entitiesMappings = entitiesMappings;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Enables the control
+         * Enablement status for the rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Enables the control
+         * Enablement status for the rule
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -71,13 +83,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The Risk Level
+         * The risk level for the rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level for the rule
          * @param riskLevel the value to set
          * @return this builder
          **/
@@ -87,13 +99,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Configuration details
+         * List of detector rule configurations
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<DetectorConfiguration> configurations;
 
         /**
-         * Configuration details
+         * List of detector rule configurations
          * @param configurations the value to set
          * @return this builder
          **/
@@ -112,13 +124,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for a detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * user defined labels for a detector rule
+         * User-defined labels for a detector rule
          * @param labels the value to set
          * @return this builder
          **/
@@ -128,13 +140,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * configuration allowed or not
+         * Can the rule be configured?
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
         private Boolean isConfigurationAllowed;
 
         /**
-         * configuration allowed or not
+         * Can the rule be configured?
          * @param isConfigurationAllowed the value to set
          * @return this builder
          **/
@@ -144,13 +156,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Cutover point for an elevated resource Risk Score to create a Problem
+         * The point at which an elevated resource risk score creates a problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
         private Integer problemThreshold;
 
         /**
-         * Cutover point for an elevated resource Risk Score to create a Problem
+         * The point at which an elevated resource risk score creates a problem
          * @param problemThreshold the value to set
          * @return this builder
          **/
@@ -191,6 +203,70 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("sightingTypes");
             return this;
         }
+        /**
+         * Description for detector recipe detector rule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Description for detector recipe detector rule
+         * @param description the value to set
+         * @return this builder
+         **/
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * Recommendation for detector recipe detector rule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
+        private String recommendation;
+
+        /**
+         * Recommendation for detector recipe detector rule
+         * @param recommendation the value to set
+         * @return this builder
+         **/
+        public Builder recommendation(String recommendation) {
+            this.recommendation = recommendation;
+            this.__explicitlySet__.add("recommendation");
+            return this;
+        }
+        /**
+         * The ID of the attached data source
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
+        private String dataSourceId;
+
+        /**
+         * The ID of the attached data source
+         * @param dataSourceId the value to set
+         * @return this builder
+         **/
+        public Builder dataSourceId(String dataSourceId) {
+            this.dataSourceId = dataSourceId;
+            this.__explicitlySet__.add("dataSourceId");
+            return this;
+        }
+        /**
+         * Data source entities mapping for a detector rule
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
+        private java.util.List<EntitiesMapping> entitiesMappings;
+
+        /**
+         * Data source entities mapping for a detector rule
+         * @param entitiesMappings the value to set
+         * @return this builder
+         **/
+        public Builder entitiesMappings(java.util.List<EntitiesMapping> entitiesMappings) {
+            this.entitiesMappings = entitiesMappings;
+            this.__explicitlySet__.add("entitiesMappings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -206,7 +282,11 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
                             this.isConfigurationAllowed,
                             this.problemThreshold,
                             this.targetTypes,
-                            this.sightingTypes);
+                            this.sightingTypes,
+                            this.description,
+                            this.recommendation,
+                            this.dataSourceId,
+                            this.entitiesMappings);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -242,6 +322,18 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("sightingTypes")) {
                 this.sightingTypes(model.getSightingTypes());
             }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("recommendation")) {
+                this.recommendation(model.getRecommendation());
+            }
+            if (model.wasPropertyExplicitlySet("dataSourceId")) {
+                this.dataSourceId(model.getDataSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("entitiesMappings")) {
+                this.entitiesMappings(model.getEntitiesMappings());
+            }
             return this;
         }
     }
@@ -258,13 +350,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Enables the control
+     * Enablement status for the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Enables the control
+     * Enablement status for the rule
      * @return the value
      **/
     public Boolean getIsEnabled() {
@@ -272,13 +364,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The Risk Level
+     * The risk level for the rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level for the rule
      * @return the value
      **/
     public RiskLevel getRiskLevel() {
@@ -286,13 +378,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Configuration details
+     * List of detector rule configurations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<DetectorConfiguration> configurations;
 
     /**
-     * Configuration details
+     * List of detector rule configurations
      * @return the value
      **/
     public java.util.List<DetectorConfiguration> getConfigurations() {
@@ -307,13 +399,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * user defined labels for a detector rule
+     * User-defined labels for a detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * user defined labels for a detector rule
+     * User-defined labels for a detector rule
      * @return the value
      **/
     public java.util.List<String> getLabels() {
@@ -321,13 +413,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * configuration allowed or not
+     * Can the rule be configured?
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConfigurationAllowed")
     private final Boolean isConfigurationAllowed;
 
     /**
-     * configuration allowed or not
+     * Can the rule be configured?
      * @return the value
      **/
     public Boolean getIsConfigurationAllowed() {
@@ -335,13 +427,13 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Cutover point for an elevated resource Risk Score to create a Problem
+     * The point at which an elevated resource risk score creates a problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemThreshold")
     private final Integer problemThreshold;
 
     /**
-     * Cutover point for an elevated resource Risk Score to create a Problem
+     * The point at which an elevated resource risk score creates a problem
      * @return the value
      **/
     public Integer getProblemThreshold() {
@@ -376,6 +468,62 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
         return sightingTypes;
     }
 
+    /**
+     * Description for detector recipe detector rule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Description for detector recipe detector rule
+     * @return the value
+     **/
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * Recommendation for detector recipe detector rule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
+    private final String recommendation;
+
+    /**
+     * Recommendation for detector recipe detector rule
+     * @return the value
+     **/
+    public String getRecommendation() {
+        return recommendation;
+    }
+
+    /**
+     * The ID of the attached data source
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSourceId")
+    private final String dataSourceId;
+
+    /**
+     * The ID of the attached data source
+     * @return the value
+     **/
+    public String getDataSourceId() {
+        return dataSourceId;
+    }
+
+    /**
+     * Data source entities mapping for a detector rule
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("entitiesMappings")
+    private final java.util.List<EntitiesMapping> entitiesMappings;
+
+    /**
+     * Data source entities mapping for a detector rule
+     * @return the value
+     **/
+    public java.util.List<EntitiesMapping> getEntitiesMappings() {
+        return entitiesMappings;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -399,6 +547,10 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", problemThreshold=").append(String.valueOf(this.problemThreshold));
         sb.append(", targetTypes=").append(String.valueOf(this.targetTypes));
         sb.append(", sightingTypes=").append(String.valueOf(this.sightingTypes));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", recommendation=").append(String.valueOf(this.recommendation));
+        sb.append(", dataSourceId=").append(String.valueOf(this.dataSourceId));
+        sb.append(", entitiesMappings=").append(String.valueOf(this.entitiesMappings));
         sb.append(")");
         return sb.toString();
     }
@@ -423,6 +575,10 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.problemThreshold, other.problemThreshold)
                 && java.util.Objects.equals(this.targetTypes, other.targetTypes)
                 && java.util.Objects.equals(this.sightingTypes, other.sightingTypes)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.recommendation, other.recommendation)
+                && java.util.Objects.equals(this.dataSourceId, other.dataSourceId)
+                && java.util.Objects.equals(this.entitiesMappings, other.entitiesMappings)
                 && super.equals(other);
     }
 
@@ -449,6 +605,14 @@ public final class DetectorDetails extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.sightingTypes == null ? 43 : this.sightingTypes.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recommendation == null ? 43 : this.recommendation.hashCode());
+        result = (result * PRIME) + (this.dataSourceId == null ? 43 : this.dataSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.entitiesMappings == null ? 43 : this.entitiesMappings.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

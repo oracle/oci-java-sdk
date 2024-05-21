@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The details to be updated in ResponderRecipe
+ * Parameters to use to update a responder recipe.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,7 +46,7 @@ public final class UpdateResponderRecipeDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Responder recipe identifier.
+         * Responder recipe display name.
          * <p>
          * Avoid entering confidential information.
          *
@@ -55,7 +55,7 @@ public final class UpdateResponderRecipeDetails
         private String displayName;
 
         /**
-         * Responder recipe identifier.
+         * Responder recipe display name.
          * <p>
          * Avoid entering confidential information.
          *
@@ -68,7 +68,7 @@ public final class UpdateResponderRecipeDetails
             return this;
         }
         /**
-         * Responder recipe description.
+         * Responder recipe description
          * <p>
          * Avoid entering confidential information.
          *
@@ -77,7 +77,7 @@ public final class UpdateResponderRecipeDetails
         private String description;
 
         /**
-         * Responder recipe description.
+         * Responder recipe description
          * <p>
          * Avoid entering confidential information.
          *
@@ -90,13 +90,13 @@ public final class UpdateResponderRecipeDetails
             return this;
         }
         /**
-         * Responder Rules to Update
+         * List of responder rules to update
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateResponderRecipeResponderRule> responderRules;
 
         /**
-         * Responder Rules to Update
+         * List of responder rules to update
          * @param responderRules the value to set
          * @return this builder
          **/
@@ -202,7 +202,7 @@ public final class UpdateResponderRecipeDetails
     }
 
     /**
-     * Responder recipe identifier.
+     * Responder recipe display name.
      * <p>
      * Avoid entering confidential information.
      *
@@ -211,7 +211,7 @@ public final class UpdateResponderRecipeDetails
     private final String displayName;
 
     /**
-     * Responder recipe identifier.
+     * Responder recipe display name.
      * <p>
      * Avoid entering confidential information.
      *
@@ -222,7 +222,7 @@ public final class UpdateResponderRecipeDetails
     }
 
     /**
-     * Responder recipe description.
+     * Responder recipe description
      * <p>
      * Avoid entering confidential information.
      *
@@ -231,7 +231,7 @@ public final class UpdateResponderRecipeDetails
     private final String description;
 
     /**
-     * Responder recipe description.
+     * Responder recipe description
      * <p>
      * Avoid entering confidential information.
      *
@@ -242,13 +242,13 @@ public final class UpdateResponderRecipeDetails
     }
 
     /**
-     * Responder Rules to Update
+     * List of responder rules to update
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateResponderRecipeResponderRule> responderRules;
 
     /**
-     * Responder Rules to Update
+     * List of responder rules to update
      * @return the value
      **/
     public java.util.List<UpdateResponderRecipeResponderRule> getResponderRules() {

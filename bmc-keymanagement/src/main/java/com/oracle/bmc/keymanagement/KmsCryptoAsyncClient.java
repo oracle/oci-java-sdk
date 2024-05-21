@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -371,7 +371,10 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                 DecryptConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Decrypt", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Decrypt",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/DecryptedData/Decrypt");
         final java.util.function.Function<javax.ws.rs.core.Response, DecryptResponse> transformer =
                 DecryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<DecryptRequest, DecryptResponse> handlerToUse =
@@ -413,7 +416,10 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                 EncryptConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Encrypt", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Encrypt",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/EncryptedData/Encrypt");
         final java.util.function.Function<javax.ws.rs.core.Response, EncryptResponse> transformer =
                 EncryptConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<EncryptRequest, EncryptResponse> handlerToUse =
@@ -456,7 +462,10 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                 ExportKeyConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "ExportKey", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "ExportKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/ExportedKeyData/ExportKey");
         final java.util.function.Function<javax.ws.rs.core.Response, ExportKeyResponse>
                 transformer =
                         ExportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -505,7 +514,7 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                         "KmsCrypto",
                         "GenerateDataEncryptionKey",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateDataEncryptionKeyResponse>
                 transformer =
@@ -553,7 +562,10 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                 SignConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Sign", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Sign",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/SignedData/Sign");
         final java.util.function.Function<javax.ws.rs.core.Response, SignResponse> transformer =
                 SignConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<SignRequest, SignResponse> handlerToUse = handler;
@@ -594,7 +606,10 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
                 VerifyConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsCrypto", "Verify", ib.getRequestUri().toString(), "");
+                        "KmsCrypto",
+                        "Verify",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/VerifiedData/Verify");
         final java.util.function.Function<javax.ws.rs.core.Response, VerifyResponse> transformer =
                 VerifyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         com.oracle.bmc.responses.AsyncHandler<VerifyRequest, VerifyResponse> handlerToUse = handler;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -463,6 +463,112 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddCatalogLockResponse> addCatalogLock(
+            AddCatalogLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddCatalogLockRequest, AddCatalogLockResponse>
+                    handler) {
+        LOG.trace("Called async addCatalogLock");
+        final AddCatalogLockRequest interceptedRequest =
+                AddCatalogLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddCatalogLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AddCatalogLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AddCatalogLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddCatalogLockResponse>
+                transformer =
+                        AddCatalogLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddCatalogLockRequest, AddCatalogLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddCatalogLockRequest, AddCatalogLockResponse>,
+                        java.util.concurrent.Future<AddCatalogLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddCatalogLockRequest, AddCatalogLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddCatalogPrivateEndpointLockResponse>
+            addCatalogPrivateEndpointLock(
+                    AddCatalogPrivateEndpointLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddCatalogPrivateEndpointLockRequest,
+                                    AddCatalogPrivateEndpointLockResponse>
+                            handler) {
+        LOG.trace("Called async addCatalogPrivateEndpointLock");
+        final AddCatalogPrivateEndpointLockRequest interceptedRequest =
+                AddCatalogPrivateEndpointLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddCatalogPrivateEndpointLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AddCatalogPrivateEndpointLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/AddCatalogPrivateEndpointLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddCatalogPrivateEndpointLockResponse>
+                transformer =
+                        AddCatalogPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddCatalogPrivateEndpointLockRequest, AddCatalogPrivateEndpointLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddCatalogPrivateEndpointLockRequest,
+                                AddCatalogPrivateEndpointLockResponse>,
+                        java.util.concurrent.Future<AddCatalogPrivateEndpointLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddCatalogPrivateEndpointLockRequest, AddCatalogPrivateEndpointLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AddDataSelectorPatternsResponse> addDataSelectorPatterns(
             AddDataSelectorPatternsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -517,6 +623,57 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddMetastoreLockResponse> addMetastoreLock(
+            AddMetastoreLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMetastoreLockRequest, AddMetastoreLockResponse>
+                    handler) {
+        LOG.trace("Called async addMetastoreLock");
+        final AddMetastoreLockRequest interceptedRequest =
+                AddMetastoreLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMetastoreLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AddMetastoreLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/AddMetastoreLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddMetastoreLockResponse>
+                transformer =
+                        AddMetastoreLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddMetastoreLockRequest, AddMetastoreLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddMetastoreLockRequest, AddMetastoreLockResponse>,
+                        java.util.concurrent.Future<AddMetastoreLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddMetastoreLockRequest, AddMetastoreLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateCustomPropertyResponse> associateCustomProperty(
             AssociateCustomPropertyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -558,6 +715,120 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     AssociateCustomPropertyRequest, AssociateCustomPropertyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AsynchronousExportDataAssetResponse>
+            asynchronousExportDataAsset(
+                    AsynchronousExportDataAssetRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AsynchronousExportDataAssetRequest,
+                                    AsynchronousExportDataAssetResponse>
+                            handler) {
+        LOG.trace("Called async asynchronousExportDataAsset");
+        final AsynchronousExportDataAssetRequest interceptedRequest =
+                AsynchronousExportDataAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AsynchronousExportDataAssetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportDataAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AsynchronousExportDataAsset");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AsynchronousExportDataAssetResponse>
+                transformer =
+                        AsynchronousExportDataAssetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AsynchronousExportDataAssetRequest, AsynchronousExportDataAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AsynchronousExportDataAssetRequest,
+                                AsynchronousExportDataAssetResponse>,
+                        java.util.concurrent.Future<AsynchronousExportDataAssetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAsynchronousExportDataAssetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AsynchronousExportDataAssetRequest, AsynchronousExportDataAssetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AsynchronousExportGlossaryResponse>
+            asynchronousExportGlossary(
+                    AsynchronousExportGlossaryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AsynchronousExportGlossaryRequest,
+                                    AsynchronousExportGlossaryResponse>
+                            handler) {
+        LOG.trace("Called async asynchronousExportGlossary");
+        final AsynchronousExportGlossaryRequest interceptedRequest =
+                AsynchronousExportGlossaryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AsynchronousExportGlossaryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportGlossary",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/AsynchronousExportGlossary");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AsynchronousExportGlossaryResponse>
+                transformer =
+                        AsynchronousExportGlossaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AsynchronousExportGlossaryRequest, AsynchronousExportGlossaryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AsynchronousExportGlossaryRequest,
+                                AsynchronousExportGlossaryResponse>,
+                        java.util.concurrent.Future<AsynchronousExportGlossaryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAsynchronousExportGlossaryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AsynchronousExportGlossaryRequest, AsynchronousExportGlossaryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3001,6 +3272,57 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<FetchEntityLineageResponse> fetchEntityLineage(
+            FetchEntityLineageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            FetchEntityLineageRequest, FetchEntityLineageResponse>
+                    handler) {
+        LOG.trace("Called async fetchEntityLineage");
+        final FetchEntityLineageRequest interceptedRequest =
+                FetchEntityLineageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FetchEntityLineageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "FetchEntityLineage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/FetchEntityLineage");
+        final java.util.function.Function<javax.ws.rs.core.Response, FetchEntityLineageResponse>
+                transformer =
+                        FetchEntityLineageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<FetchEntityLineageRequest, FetchEntityLineageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                FetchEntityLineageRequest, FetchEntityLineageResponse>,
+                        java.util.concurrent.Future<FetchEntityLineageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getFetchEntityLineageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    FetchEntityLineageRequest, FetchEntityLineageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAttributeResponse> getAttribute(
             GetAttributeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetAttributeRequest, GetAttributeResponse>
@@ -4241,6 +4563,56 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ImportGlossaryRequest, ImportGlossaryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportLineageResponse> importLineage(
+            ImportLineageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ImportLineageRequest, ImportLineageResponse>
+                    handler) {
+        LOG.trace("Called async importLineage");
+        final ImportLineageRequest interceptedRequest =
+                ImportLineageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportLineageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "ImportLineage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportLineage");
+        final java.util.function.Function<javax.ws.rs.core.Response, ImportLineageResponse>
+                transformer =
+                        ImportLineageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ImportLineageRequest, ImportLineageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ImportLineageRequest, ImportLineageResponse>,
+                        java.util.concurrent.Future<ImportLineageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getImportLineageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ImportLineageRequest, ImportLineageResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5855,6 +6227,115 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveCatalogLockResponse> removeCatalogLock(
+            RemoveCatalogLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveCatalogLockRequest, RemoveCatalogLockResponse>
+                    handler) {
+        LOG.trace("Called async removeCatalogLock");
+        final RemoveCatalogLockRequest interceptedRequest =
+                RemoveCatalogLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveCatalogLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/RemoveCatalogLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveCatalogLockResponse>
+                transformer =
+                        RemoveCatalogLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RemoveCatalogLockRequest, RemoveCatalogLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveCatalogLockRequest, RemoveCatalogLockResponse>,
+                        java.util.concurrent.Future<RemoveCatalogLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveCatalogLockRequest, RemoveCatalogLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveCatalogPrivateEndpointLockResponse>
+            removeCatalogPrivateEndpointLock(
+                    RemoveCatalogPrivateEndpointLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveCatalogPrivateEndpointLockRequest,
+                                    RemoveCatalogPrivateEndpointLockResponse>
+                            handler) {
+        LOG.trace("Called async removeCatalogPrivateEndpointLock");
+        final RemoveCatalogPrivateEndpointLockRequest interceptedRequest =
+                RemoveCatalogPrivateEndpointLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveCatalogPrivateEndpointLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogPrivateEndpointLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/RemoveCatalogPrivateEndpointLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveCatalogPrivateEndpointLockResponse>
+                transformer =
+                        RemoveCatalogPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveCatalogPrivateEndpointLockRequest,
+                        RemoveCatalogPrivateEndpointLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveCatalogPrivateEndpointLockRequest,
+                                RemoveCatalogPrivateEndpointLockResponse>,
+                        java.util.concurrent.Future<RemoveCatalogPrivateEndpointLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveCatalogPrivateEndpointLockRequest,
+                    RemoveCatalogPrivateEndpointLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDataSelectorPatternsResponse>
             removeDataSelectorPatterns(
                     RemoveDataSelectorPatternsRequest request,
@@ -5899,6 +6380,58 @@ public class DataCatalogAsyncClient implements DataCatalogAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveDataSelectorPatternsRequest, RemoveDataSelectorPatternsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMetastoreLockResponse> removeMetastoreLock(
+            RemoveMetastoreLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMetastoreLockRequest, RemoveMetastoreLockResponse>
+                    handler) {
+        LOG.trace("Called async removeMetastoreLock");
+        final RemoveMetastoreLockRequest interceptedRequest =
+                RemoveMetastoreLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMetastoreLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "RemoveMetastoreLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/RemoveMetastoreLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveMetastoreLockResponse>
+                transformer =
+                        RemoveMetastoreLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveMetastoreLockRequest, RemoveMetastoreLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveMetastoreLockRequest, RemoveMetastoreLockResponse>,
+                        java.util.concurrent.Future<RemoveMetastoreLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveMetastoreLockRequest, RemoveMetastoreLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

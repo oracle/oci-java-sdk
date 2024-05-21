@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -31,6 +31,7 @@ public final class CreateMigrationDetails
         "sourceDatabaseConnectionId",
         "sourceContainerDatabaseConnectionId",
         "targetDatabaseConnectionId",
+        "dataTransferMediumDetailsV2",
         "dataTransferMediumDetails",
         "dumpTransferDetails",
         "datapumpSettings",
@@ -39,6 +40,7 @@ public final class CreateMigrationDetails
         "includeObjects",
         "csvText",
         "goldenGateDetails",
+        "goldenGateServiceDetails",
         "vaultDetails",
         "freeformTags",
         "definedTags"
@@ -51,6 +53,7 @@ public final class CreateMigrationDetails
             String sourceDatabaseConnectionId,
             String sourceContainerDatabaseConnectionId,
             String targetDatabaseConnectionId,
+            DataTransferMediumDetailsV2 dataTransferMediumDetailsV2,
             CreateDataTransferMediumDetails dataTransferMediumDetails,
             CreateDumpTransferDetails dumpTransferDetails,
             CreateDataPumpSettings datapumpSettings,
@@ -59,6 +62,7 @@ public final class CreateMigrationDetails
             java.util.List<DatabaseObject> includeObjects,
             String csvText,
             CreateGoldenGateDetails goldenGateDetails,
+            CreateGoldenGateServiceDetails goldenGateServiceDetails,
             CreateVaultDetails vaultDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -70,6 +74,7 @@ public final class CreateMigrationDetails
         this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
         this.targetDatabaseConnectionId = targetDatabaseConnectionId;
+        this.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
         this.dataTransferMediumDetails = dataTransferMediumDetails;
         this.dumpTransferDetails = dumpTransferDetails;
         this.datapumpSettings = datapumpSettings;
@@ -78,6 +83,7 @@ public final class CreateMigrationDetails
         this.includeObjects = includeObjects;
         this.csvText = csvText;
         this.goldenGateDetails = goldenGateDetails;
+        this.goldenGateServiceDetails = goldenGateServiceDetails;
         this.vaultDetails = vaultDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -215,6 +221,16 @@ public final class CreateMigrationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetailsV2")
+        private DataTransferMediumDetailsV2 dataTransferMediumDetailsV2;
+
+        public Builder dataTransferMediumDetailsV2(
+                DataTransferMediumDetailsV2 dataTransferMediumDetailsV2) {
+            this.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
+            this.__explicitlySet__.add("dataTransferMediumDetailsV2");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetails")
         private CreateDataTransferMediumDetails dataTransferMediumDetails;
 
@@ -315,6 +331,16 @@ public final class CreateMigrationDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+        private CreateGoldenGateServiceDetails goldenGateServiceDetails;
+
+        public Builder goldenGateServiceDetails(
+                CreateGoldenGateServiceDetails goldenGateServiceDetails) {
+            this.goldenGateServiceDetails = goldenGateServiceDetails;
+            this.__explicitlySet__.add("goldenGateServiceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
         private CreateVaultDetails vaultDetails;
 
@@ -378,6 +404,7 @@ public final class CreateMigrationDetails
                             this.sourceDatabaseConnectionId,
                             this.sourceContainerDatabaseConnectionId,
                             this.targetDatabaseConnectionId,
+                            this.dataTransferMediumDetailsV2,
                             this.dataTransferMediumDetails,
                             this.dumpTransferDetails,
                             this.datapumpSettings,
@@ -386,6 +413,7 @@ public final class CreateMigrationDetails
                             this.includeObjects,
                             this.csvText,
                             this.goldenGateDetails,
+                            this.goldenGateServiceDetails,
                             this.vaultDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -419,6 +447,9 @@ public final class CreateMigrationDetails
             if (model.wasPropertyExplicitlySet("targetDatabaseConnectionId")) {
                 this.targetDatabaseConnectionId(model.getTargetDatabaseConnectionId());
             }
+            if (model.wasPropertyExplicitlySet("dataTransferMediumDetailsV2")) {
+                this.dataTransferMediumDetailsV2(model.getDataTransferMediumDetailsV2());
+            }
             if (model.wasPropertyExplicitlySet("dataTransferMediumDetails")) {
                 this.dataTransferMediumDetails(model.getDataTransferMediumDetails());
             }
@@ -442,6 +473,9 @@ public final class CreateMigrationDetails
             }
             if (model.wasPropertyExplicitlySet("goldenGateDetails")) {
                 this.goldenGateDetails(model.getGoldenGateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("goldenGateServiceDetails")) {
+                this.goldenGateServiceDetails(model.getGoldenGateServiceDetails());
             }
             if (model.wasPropertyExplicitlySet("vaultDetails")) {
                 this.vaultDetails(model.getVaultDetails());
@@ -581,6 +615,13 @@ public final class CreateMigrationDetails
         return targetDatabaseConnectionId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetailsV2")
+    private final DataTransferMediumDetailsV2 dataTransferMediumDetailsV2;
+
+    public DataTransferMediumDetailsV2 getDataTransferMediumDetailsV2() {
+        return dataTransferMediumDetailsV2;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataTransferMediumDetails")
     private final CreateDataTransferMediumDetails dataTransferMediumDetails;
 
@@ -664,6 +705,13 @@ public final class CreateMigrationDetails
         return goldenGateDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("goldenGateServiceDetails")
+    private final CreateGoldenGateServiceDetails goldenGateServiceDetails;
+
+    public CreateGoldenGateServiceDetails getGoldenGateServiceDetails() {
+        return goldenGateServiceDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("vaultDetails")
     private final CreateVaultDetails vaultDetails;
 
@@ -731,6 +779,8 @@ public final class CreateMigrationDetails
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
         sb.append(", targetDatabaseConnectionId=")
                 .append(String.valueOf(this.targetDatabaseConnectionId));
+        sb.append(", dataTransferMediumDetailsV2=")
+                .append(String.valueOf(this.dataTransferMediumDetailsV2));
         sb.append(", dataTransferMediumDetails=")
                 .append(String.valueOf(this.dataTransferMediumDetails));
         sb.append(", dumpTransferDetails=").append(String.valueOf(this.dumpTransferDetails));
@@ -740,6 +790,8 @@ public final class CreateMigrationDetails
         sb.append(", includeObjects=").append(String.valueOf(this.includeObjects));
         sb.append(", csvText=").append(String.valueOf(this.csvText));
         sb.append(", goldenGateDetails=").append(String.valueOf(this.goldenGateDetails));
+        sb.append(", goldenGateServiceDetails=")
+                .append(String.valueOf(this.goldenGateServiceDetails));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -769,6 +821,8 @@ public final class CreateMigrationDetails
                 && java.util.Objects.equals(
                         this.targetDatabaseConnectionId, other.targetDatabaseConnectionId)
                 && java.util.Objects.equals(
+                        this.dataTransferMediumDetailsV2, other.dataTransferMediumDetailsV2)
+                && java.util.Objects.equals(
                         this.dataTransferMediumDetails, other.dataTransferMediumDetails)
                 && java.util.Objects.equals(this.dumpTransferDetails, other.dumpTransferDetails)
                 && java.util.Objects.equals(this.datapumpSettings, other.datapumpSettings)
@@ -777,6 +831,8 @@ public final class CreateMigrationDetails
                 && java.util.Objects.equals(this.includeObjects, other.includeObjects)
                 && java.util.Objects.equals(this.csvText, other.csvText)
                 && java.util.Objects.equals(this.goldenGateDetails, other.goldenGateDetails)
+                && java.util.Objects.equals(
+                        this.goldenGateServiceDetails, other.goldenGateServiceDetails)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -810,6 +866,11 @@ public final class CreateMigrationDetails
                                 : this.targetDatabaseConnectionId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.dataTransferMediumDetailsV2 == null
+                                ? 43
+                                : this.dataTransferMediumDetailsV2.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dataTransferMediumDetails == null
                                 ? 43
                                 : this.dataTransferMediumDetails.hashCode());
@@ -834,6 +895,11 @@ public final class CreateMigrationDetails
         result =
                 (result * PRIME)
                         + (this.goldenGateDetails == null ? 43 : this.goldenGateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.goldenGateServiceDetails == null
+                                ? 43
+                                : this.goldenGateServiceDetails.hashCode());
         result = (result * PRIME) + (this.vaultDetails == null ? 43 : this.vaultDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

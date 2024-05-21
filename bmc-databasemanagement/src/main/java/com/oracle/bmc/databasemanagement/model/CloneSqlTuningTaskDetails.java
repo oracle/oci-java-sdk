@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The request to clone and run a SQL tuning task. The new task uses the same inputs as the one being cloned.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -26,18 +28,21 @@ public final class CloneSqlTuningTaskDetails
         "taskName",
         "originalTaskId",
         "taskDescription",
-        "credentialDetails"
+        "credentialDetails",
+        "databaseCredential"
     })
     public CloneSqlTuningTaskDetails(
             String taskName,
             Long originalTaskId,
             String taskDescription,
-            SqlTuningTaskCredentialDetails credentialDetails) {
+            SqlTuningTaskCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.taskName = taskName;
         this.originalTaskId = originalTaskId;
         this.taskDescription = taskDescription;
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -106,6 +111,15 @@ public final class CloneSqlTuningTaskDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -115,7 +129,8 @@ public final class CloneSqlTuningTaskDetails
                             this.taskName,
                             this.originalTaskId,
                             this.taskDescription,
-                            this.credentialDetails);
+                            this.credentialDetails,
+                            this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -135,6 +150,9 @@ public final class CloneSqlTuningTaskDetails
             }
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -206,6 +224,13 @@ public final class CloneSqlTuningTaskDetails
         return credentialDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -224,6 +249,7 @@ public final class CloneSqlTuningTaskDetails
         sb.append(", originalTaskId=").append(String.valueOf(this.originalTaskId));
         sb.append(", taskDescription=").append(String.valueOf(this.taskDescription));
         sb.append(", credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -242,6 +268,7 @@ public final class CloneSqlTuningTaskDetails
                 && java.util.Objects.equals(this.originalTaskId, other.originalTaskId)
                 && java.util.Objects.equals(this.taskDescription, other.taskDescription)
                 && java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -259,6 +286,11 @@ public final class CloneSqlTuningTaskDetails
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

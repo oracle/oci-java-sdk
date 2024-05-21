@@ -53,4 +53,16 @@
     <method>java.util.Optional supplyKey(java.lang.String)</method>
     <differenceType>7012</differenceType>
   </difference>
+  <difference>
+    <justification>Changed class from final to methods being final</justification>
+    <className>com/oracle/bmc/io/internal/KeepOpenInputStream</className>
+    <method>void close()</method>
+    <differenceType>7014</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed class from final to methods being final</justification>
+    <className>com/oracle/bmc/io/internal/KeepOpenInputStream</className>
+    <method>void doClose()</method>
+    <differenceType>7014</differenceType>
+  </difference>
 </differences>

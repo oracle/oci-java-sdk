@@ -1,32 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A versioned custom software source OCID (softwareSourceId)
- * is required when promoting software source content to
- * lifecycle stage rank one. Software source content must be
- * promoted to lifecycle stage rank one before being
- * eligible for promotion to subsequent lifecycle stages,
- * else an error is returned. Software source content is
- * expected to be promoted in order starting with
- * lifecycle stage rank one, followed by rank two, then rank
- * three and so on.
- * <p>
- * When promoting software source content to lifecycle stage
- * rank two, three, four or five, softwareSourceId is optional.
- * If a softwareSourceId is provided for a lifecycle stage
- * between two and five, the system validates that the
- * softwareSourceId is already promoted to the previous lifecycle stage.
- * If the softwareSourceId from the previous lifecycle stage
- * does not match the provided softwareSourceId an error returns.
- * If a softwareSourceId is not provided for a lifecycle stage
- * between two and five, the system promotes the
- * softwareSourceId from the previous lifecycle stage. If the
- * previous lifecycle stage has no SourceSource content
- * an error returns.
+ * Provides detailed information about the lifecycle stage promotion.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

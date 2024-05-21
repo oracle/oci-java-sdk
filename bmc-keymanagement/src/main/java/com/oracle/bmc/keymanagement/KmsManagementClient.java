@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -451,7 +451,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "BackupKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "BackupKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/BackupKey");
         java.util.function.Function<javax.ws.rs.core.Response, BackupKeyResponse> transformer =
                 BackupKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -488,7 +491,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "CancelKeyDeletion", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "CancelKeyDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/CancelKeyDeletion");
         java.util.function.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
                 transformer =
                         CancelKeyDeletionConverter.fromResponse(
@@ -528,7 +534,7 @@ public class KmsManagementClient implements KmsManagement {
                         "KmsManagement",
                         "CancelKeyVersionDeletion",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/CancelKeyVersionDeletion");
         java.util.function.Function<javax.ws.rs.core.Response, CancelKeyVersionDeletionResponse>
                 transformer =
                         CancelKeyVersionDeletionConverter.fromResponse(
@@ -564,7 +570,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ChangeKeyCompartment", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "ChangeKeyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ChangeKeyCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
                 transformer =
                         ChangeKeyCompartmentConverter.fromResponse(
@@ -602,7 +611,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "CreateKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "CreateKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/CreateKey");
         java.util.function.Function<javax.ws.rs.core.Response, CreateKeyResponse> transformer =
                 CreateKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -639,7 +651,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "CreateKeyVersion", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "CreateKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/CreateKeyVersion");
         java.util.function.Function<javax.ws.rs.core.Response, CreateKeyVersionResponse>
                 transformer =
                         CreateKeyVersionConverter.fromResponse(
@@ -654,7 +669,10 @@ public class KmsManagementClient implements KmsManagement {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
-                                        client.post(ib, retriedRequest);
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateKeyMetadataDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -674,7 +692,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "DisableKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "DisableKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/DisableKey");
         java.util.function.Function<javax.ws.rs.core.Response, DisableKeyResponse> transformer =
                 DisableKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -707,7 +728,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "EnableKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "EnableKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/EnableKey");
         java.util.function.Function<javax.ws.rs.core.Response, EnableKeyResponse> transformer =
                 EnableKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -739,7 +763,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "GetKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/GetKey");
         java.util.function.Function<javax.ws.rs.core.Response, GetKeyResponse> transformer =
                 GetKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -771,7 +798,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetKeyVersion", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "GetKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/GetKeyVersion");
         java.util.function.Function<javax.ws.rs.core.Response, GetKeyVersionResponse> transformer =
                 GetKeyVersionConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -803,7 +833,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetReplicationStatus", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "GetReplicationStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/ReplicationStatusDetails/GetReplicationStatus");
         java.util.function.Function<javax.ws.rs.core.Response, GetReplicationStatusResponse>
                 transformer =
                         GetReplicationStatusConverter.fromResponse(
@@ -837,7 +870,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "GetWrappingKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "GetWrappingKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/WrappingKey/GetWrappingKey");
         java.util.function.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse> transformer =
                 GetWrappingKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -869,7 +905,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ImportKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "ImportKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ImportKey");
         java.util.function.Function<javax.ws.rs.core.Response, ImportKeyResponse> transformer =
                 ImportKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -906,7 +945,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ImportKeyVersion", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "ImportKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/ImportKeyVersion");
         java.util.function.Function<javax.ws.rs.core.Response, ImportKeyVersionResponse>
                 transformer =
                         ImportKeyVersionConverter.fromResponse(
@@ -944,7 +986,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ListKeyVersions", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "ListKeyVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersionSummary/ListKeyVersions");
         java.util.function.Function<javax.ws.rs.core.Response, ListKeyVersionsResponse>
                 transformer =
                         ListKeyVersionsConverter.fromResponse(
@@ -977,7 +1022,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ListKeys", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "ListKeys",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeySummary/ListKeys");
         java.util.function.Function<javax.ws.rs.core.Response, ListKeysResponse> transformer =
                 ListKeysConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1022,7 +1070,7 @@ public class KmsManagementClient implements KmsManagement {
                             "KmsManagement",
                             "RestoreKeyFromFile",
                             ib.getRequestUri().toString(),
-                            "");
+                            "https://docs.oracle.com/iaas/api/#/en/key/release/Key/RestoreKeyFromFile");
             java.util.function.Function<javax.ws.rs.core.Response, RestoreKeyFromFileResponse>
                     transformer =
                             RestoreKeyFromFileConverter.fromResponse(
@@ -1089,7 +1137,7 @@ public class KmsManagementClient implements KmsManagement {
                         "KmsManagement",
                         "RestoreKeyFromObjectStore",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/RestoreKeyFromObjectStore");
         java.util.function.Function<javax.ws.rs.core.Response, RestoreKeyFromObjectStoreResponse>
                 transformer =
                         RestoreKeyFromObjectStoreConverter.fromResponse(
@@ -1129,7 +1177,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "ScheduleKeyDeletion", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "ScheduleKeyDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ScheduleKeyDeletion");
         java.util.function.Function<javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
                 transformer =
                         ScheduleKeyDeletionConverter.fromResponse(
@@ -1172,7 +1223,7 @@ public class KmsManagementClient implements KmsManagement {
                         "KmsManagement",
                         "ScheduleKeyVersionDeletion",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/ScheduleKeyVersionDeletion");
         java.util.function.Function<javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
                 transformer =
                         ScheduleKeyVersionDeletionConverter.fromResponse(
@@ -1210,7 +1261,10 @@ public class KmsManagementClient implements KmsManagement {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "KmsManagement", "UpdateKey", ib.getRequestUri().toString(), "");
+                        "KmsManagement",
+                        "UpdateKey",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/Key/UpdateKey");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateKeyResponse> transformer =
                 UpdateKeyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

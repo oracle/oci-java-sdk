@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -8,7 +8,7 @@ package com.oracle.bmc.database.model;
  * Details to create an Oracle Autonomous Database.
  * <p>
  **Notes:**
- * - To specify OCPU core count, you must use either {@code ocpuCount} or {@code cpuCoreCount}. You cannot use both parameters at the same time.
+ * - To specify OCPU core count, you must use either {@code ocpuCount} or {@code cpuCoreCount}. You cannot use both parameters at the same time. For Autonomous Database Serverless instances, {@code ocpuCount} is not used.
  * - To specify a storage allocation, you must use  either {@code dataStorageSizeInGBs} or {@code dataStorageSizeInTBs}.
  * - See the individual parameter discriptions for more information on the OCPU and storage value parameters.
  * <p>
@@ -69,6 +69,7 @@ public class CreateAutonomousDatabaseBase
         "ncharacterSet",
         "dbName",
         "cpuCoreCount",
+        "backupRetentionPeriodInDays",
         "computeModel",
         "computeCount",
         "ocpuCount",
@@ -83,8 +84,10 @@ public class CreateAutonomousDatabaseBase
         "licenseModel",
         "isPreviewVersionWithServiceTermsAccepted",
         "isAutoScalingEnabled",
+        "isDevTier",
         "isDedicated",
         "autonomousContainerDatabaseId",
+        "inMemoryPercentage",
         "isAccessControlEnabled",
         "whitelistedIps",
         "arePrimaryWhitelistedIpsUsed",
@@ -100,10 +103,11 @@ public class CreateAutonomousDatabaseBase
         "dbVersion",
         "customerContacts",
         "isMtlsConnectionRequired",
+        "resourcePoolLeaderId",
+        "resourcePoolSummary",
         "autonomousMaintenanceScheduleType",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
-        "maxCpuCoreCount",
         "databaseEdition",
         "dbToolsDetails",
         "secretId",
@@ -115,6 +119,7 @@ public class CreateAutonomousDatabaseBase
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            Integer backupRetentionPeriodInDays,
             ComputeModel computeModel,
             Float computeCount,
             Float ocpuCount,
@@ -129,8 +134,10 @@ public class CreateAutonomousDatabaseBase
             LicenseModel licenseModel,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Integer inMemoryPercentage,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -146,10 +153,11 @@ public class CreateAutonomousDatabaseBase
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
+            String resourcePoolLeaderId,
+            ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
             String secretId,
@@ -160,6 +168,7 @@ public class CreateAutonomousDatabaseBase
         this.ncharacterSet = ncharacterSet;
         this.dbName = dbName;
         this.cpuCoreCount = cpuCoreCount;
+        this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.computeModel = computeModel;
         this.computeCount = computeCount;
         this.ocpuCount = ocpuCount;
@@ -174,8 +183,10 @@ public class CreateAutonomousDatabaseBase
         this.licenseModel = licenseModel;
         this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
+        this.isDevTier = isDevTier;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.inMemoryPercentage = inMemoryPercentage;
         this.isAccessControlEnabled = isAccessControlEnabled;
         this.whitelistedIps = whitelistedIps;
         this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
@@ -191,10 +202,11 @@ public class CreateAutonomousDatabaseBase
         this.dbVersion = dbVersion;
         this.customerContacts = customerContacts;
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
+        this.resourcePoolLeaderId = resourcePoolLeaderId;
+        this.resourcePoolSummary = resourcePoolSummary;
         this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
-        this.maxCpuCoreCount = maxCpuCoreCount;
         this.databaseEdition = databaseEdition;
         this.dbToolsDetails = dbToolsDetails;
         this.secretId = secretId;
@@ -216,7 +228,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://docs.cloud.oracle.com/autonomousDatabaseCharacterSets)
+     * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      * <p>
      * For an Autonomous Database on dedicated infrastructure, the allowed values are:
      * <p>
@@ -227,7 +239,7 @@ public class CreateAutonomousDatabaseBase
     private final String characterSet;
 
     /**
-     * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on shared infrastructure as as returned by [List Autonomous Database Character Sets](https://docs.cloud.oracle.com/autonomousDatabaseCharacterSets)
+     * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      * <p>
      * For an Autonomous Database on dedicated infrastructure, the allowed values are:
      * <p>
@@ -240,7 +252,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The character set for the Autonomous Database.  The default is AL32UTF8. Use {@link #listAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest) listAutonomousDatabaseCharacterSets} to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
+     * The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous Database Serverless instance.
      * For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are:
      * AL16UTF16 or UTF8.
      *
@@ -249,7 +261,7 @@ public class CreateAutonomousDatabaseBase
     private final String ncharacterSet;
 
     /**
-     * The character set for the Autonomous Database.  The default is AL32UTF8. Use {@link #listAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest) listAutonomousDatabaseCharacterSets} to list the allowed values for an Autonomous Database on shared Exadata infrastructure.
+     * The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous Database Serverless instance.
      * For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are:
      * AL16UTF16 or UTF8.
      *
@@ -260,13 +272,13 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of 30 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
      * @return the value
      **/
     public String getDbName() {
@@ -274,7 +286,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
      **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
@@ -283,7 +295,7 @@ public class CreateAutonomousDatabaseBase
     private final Integer cpuCoreCount;
 
     /**
-     * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
      **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
      *
@@ -294,7 +306,21 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+     * Retention period, in days, for long-term backups
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+    private final Integer backupRetentionPeriodInDays;
+
+    /**
+     * Retention period, in days, for long-term backups
+     * @return the value
+     **/
+    public Integer getBackupRetentionPeriodInDays() {
+        return backupRetentionPeriodInDays;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     public enum ComputeModel {
         Ecpu("ECPU"),
@@ -329,13 +355,13 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value.
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * @return the value
      **/
     public ComputeModel getComputeModel() {
@@ -343,13 +369,17 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+     * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Float computeCount;
 
     /**
-     * The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+     * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+     *
      * @return the value
      **/
     public Float getComputeCount() {
@@ -360,8 +390,9 @@ public class CreateAutonomousDatabaseBase
      * The number of OCPU cores to be made available to the database.
      * <p>
      * The following points apply:
-     * - For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
-     * - To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+     * - For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
+     * - To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+     * - For Autonomous Database Serverless instances, this parameter is not used.
      * <p>
      * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
@@ -375,8 +406,9 @@ public class CreateAutonomousDatabaseBase
      * The number of OCPU cores to be made available to the database.
      * <p>
      * The following points apply:
-     * - For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Databasese on shared Exadata infrastructure.)
-     * - To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to Autonomous Databases on both shared and dedicated Exadata infrastructure.
+     * - For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
+     * - To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
+     * - For Autonomous Database Serverless instances, this parameter is not used.
      * <p>
      * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
@@ -544,13 +576,13 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      * @return the value
      **/
     public String getVaultId() {
@@ -558,14 +590,18 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * **Important** The {@code adminPassword} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     * **Important** The {@code adminPassword} or {@code secretId} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     * <p>
+     * This cannot be used in conjunction with with OCI vault secrets (secretId).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
     /**
-     * **Important** The {@code adminPassword} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     * **Important** The {@code adminPassword} or {@code secretId} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+     * <p>
+     * This cannot be used in conjunction with with OCI vault secrets (secretId).
      *
      * @return the value
      **/
@@ -588,12 +624,12 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      **/
     public enum LicenseModel {
@@ -629,24 +665,24 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud.
-     * License Included allows you to subscribe to new Oracle Database software licenses and the Database service.
-     * Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the
-     * Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of {@code BRING_YOUR_OWN_LICENSE}.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud.
+     * License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service.
+     * Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the
+     * Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to {@code BRING_YOUR_OWN_LICENSE}. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * <p>
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
      * @return the value
      **/
@@ -655,14 +691,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for Autonomous Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
     private final Boolean isPreviewVersionWithServiceTermsAccepted;
 
     /**
-     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
+     * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for Autonomous Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      *
      * @return the value
      **/
@@ -671,19 +707,35 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is {@code FALSE}.
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is {@code TRUE}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is {@code FALSE}.
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is {@code TRUE}.
      *
      * @return the value
      **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
+    }
+
+    /**
+     * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+    private final Boolean isDevTier;
+
+    /**
+     * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+     *
+     * @return the value
+     **/
+    public Boolean getIsDevTier() {
+        return isDevTier;
     }
 
     /**
@@ -703,17 +755,31 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
 
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * @return the value
      **/
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
+    }
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+    private final Integer inMemoryPercentage;
+
+    /**
+     * The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+     * @return the value
+     **/
+    public Integer getInMemoryPercentage() {
+        return inMemoryPercentage;
     }
 
     /**
@@ -723,7 +789,7 @@ public class CreateAutonomousDatabaseBase
      *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the {@code UpdateAutonomousDatabase} API operation or edit option in console.
      * When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * <p>
-     * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+     * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessControlEnabled")
@@ -736,7 +802,7 @@ public class CreateAutonomousDatabaseBase
      *  if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the {@code UpdateAutonomousDatabase} API operation or edit option in console.
      * When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * <p>
-     * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
+     * This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform. For Autonomous Database Serverless instances, {@code whitelistedIps} is used.
      *
      * @return the value
      **/
@@ -745,13 +811,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called {@code standbywhitelistedips}.
      * <p>
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
-     * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+     * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
@@ -763,13 +830,14 @@ public class CreateAutonomousDatabaseBase
     private final java.util.List<String> whitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called {@code standbywhitelistedips}.
      * <p>
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
-     * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+     * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
@@ -803,13 +871,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called {@code standbywhitelistedips}.
      * <p>
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
-     * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+     * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
@@ -821,13 +890,14 @@ public class CreateAutonomousDatabaseBase
     private final java.util.List<String> standbyWhitelistedIps;
 
     /**
-     * The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
+     * The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer.
      * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * If {@code arePrimaryWhitelistedIpsUsed} is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called {@code standbywhitelistedips}.
      * <p>
-     * For shared Exadata infrastructure, this is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
-     * Use a semicolon (;) as a deliminator between the VCN-specific subnets or IPs.
+     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID).
+     * Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it\u2019s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","ocid1.vcn.oc1.sea.<unique_id>","ocid1.vcn.oc1.sea.<unique_id1>;1.1.1.1","ocid1.vcn.oc1.sea.<unique_id2>;1.1.0.0/16"]}
-     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR (Classless Inter-Domain Routing) notations.
+     * For Exadata Cloud@Customer, this is an array of IP addresses or CIDR notations.
      * Example: {@code ["1.1.1.1","1.1.1.0/24","1.1.2.25"]}
      * <p>
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
@@ -925,7 +995,10 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+     * The resource's private endpoint label.
+     * - Setting the endpoint label to a non-empty string creates a private endpoint database.
+     * - Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+     * - Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
      * <p>
      * This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
@@ -934,7 +1007,10 @@ public class CreateAutonomousDatabaseBase
     private final String privateEndpointLabel;
 
     /**
-     * The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+     * The resource's private endpoint label.
+     * - Setting the endpoint label to a non-empty string creates a private endpoint database.
+     * - Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
+     * - Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
      * <p>
      * This setting cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbWorkload, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      *
@@ -1029,13 +1105,13 @@ public class CreateAutonomousDatabaseBase
     /**
      * Specifies if the Autonomous Database requires mTLS connections.
      * <p>
-     * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * <p>
      * Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
      * - CreateAutonomousDatabase
      * - GetAutonomousDatabase
      * - UpdateAutonomousDatabase
-     * Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Databases on shared Exadata infrastructure.
+     * Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Database Serverless.
      * Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
      * How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
      *
@@ -1046,13 +1122,13 @@ public class CreateAutonomousDatabaseBase
     /**
      * Specifies if the Autonomous Database requires mTLS connections.
      * <p>
-     * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
+     * This may not be updated in parallel with any of the following: licenseModel, databaseEdition, cpuCoreCount, computeCount, dataStorageSizeInTBs, whitelistedIps, openMode, permissionLevel, db-workload, privateEndpointLabel, nsgIds, customerContacts, dbVersion, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      * <p>
      * Service Change: The default value of the isMTLSConnectionRequired attribute will change from true to false on July 1, 2023 in the following APIs:
      * - CreateAutonomousDatabase
      * - GetAutonomousDatabase
      * - UpdateAutonomousDatabase
-     * Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Databases on shared Exadata infrastructure.
+     * Details: Prior to the July 1, 2023 change, the isMTLSConnectionRequired attribute default value was true. This applies to Autonomous Database Serverless.
      * Does this impact me? If you use or maintain custom scripts or Terraform scripts referencing the CreateAutonomousDatabase, GetAutonomousDatabase, or UpdateAutonomousDatabase APIs, you want to check, and possibly modify, the scripts for the changed default value of the attribute. Should you choose not to leave your scripts unchanged, the API calls containing this attribute will continue to work, but the default value will switch from true to false.
      * How do I make this change? Using either OCI SDKs or command line tools, update your custom scripts to explicitly set the isMTLSConnectionRequired attribute to true.
      *
@@ -1063,8 +1139,29 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
-     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+    private final String resourcePoolLeaderId;
+
+    /**
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * @return the value
+     **/
+    public String getResourcePoolLeaderId() {
+        return resourcePoolLeaderId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+    private final ResourcePoolSummary resourcePoolSummary;
+
+    public ResourcePoolSummary getResourcePoolSummary() {
+        return resourcePoolSummary;
+    }
+
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+     * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      *
      **/
     public enum AutonomousMaintenanceScheduleType {
@@ -1100,16 +1197,16 @@ public class CreateAutonomousDatabaseBase
         }
     };
     /**
-     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
-     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+     * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
     private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
     /**
-     * The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database
-     * follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule
+     * follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      *
      * @return the value
      **/
@@ -1118,7 +1215,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The list of scheduled operations.
+     * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * <p>
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
@@ -1127,7 +1224,7 @@ public class CreateAutonomousDatabaseBase
     private final java.util.List<ScheduledOperationDetails> scheduledOperations;
 
     /**
-     * The list of scheduled operations.
+     * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime, scheduledStopTime.
      * <p>
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      *
@@ -1154,30 +1251,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-    private final Integer maxCpuCoreCount;
-
-    /**
-     * The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-     *
-     * @return the value
-     **/
-    public Integer getMaxCpuCoreCount() {
-        return maxCpuCoreCount;
-    }
-
-    /**
-     * The Oracle Database Edition that applies to the Autonomous databases.
+     * The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final AutonomousDatabaseSummary.DatabaseEdition databaseEdition;
 
     /**
-     * The Oracle Database Edition that applies to the Autonomous databases.
+     * The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options {@code STANDARD_EDITION} and {@code ENTERPRISE_EDITION}.
      *
      * @return the value
      **/
@@ -1207,12 +1288,18 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * <p>
+     * This cannot be used in conjunction with adminPassword.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
      * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * <p>
+     * This cannot be used in conjunction with adminPassword.
+     *
      * @return the value
      **/
     public String getSecretId() {
@@ -1252,6 +1339,8 @@ public class CreateAutonomousDatabaseBase
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
+        sb.append(", backupRetentionPeriodInDays=")
+                .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(", computeCount=").append(String.valueOf(this.computeCount));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
@@ -1267,9 +1356,11 @@ public class CreateAutonomousDatabaseBase
         sb.append(", isPreviewVersionWithServiceTermsAccepted=")
                 .append(String.valueOf(this.isPreviewVersionWithServiceTermsAccepted));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
+        sb.append(", isDevTier=").append(String.valueOf(this.isDevTier));
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", inMemoryPercentage=").append(String.valueOf(this.inMemoryPercentage));
         sb.append(", isAccessControlEnabled=").append(String.valueOf(this.isAccessControlEnabled));
         sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
         sb.append(", arePrimaryWhitelistedIpsUsed=")
@@ -1288,12 +1379,13 @@ public class CreateAutonomousDatabaseBase
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(", isMtlsConnectionRequired=")
                 .append(String.valueOf(this.isMtlsConnectionRequired));
+        sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
+        sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
         sb.append(", autonomousMaintenanceScheduleType=")
                 .append(String.valueOf(this.autonomousMaintenanceScheduleType));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
-        sb.append(", maxCpuCoreCount=").append(String.valueOf(this.maxCpuCoreCount));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
@@ -1317,6 +1409,8 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
+                && java.util.Objects.equals(
+                        this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && java.util.Objects.equals(this.computeCount, other.computeCount)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
@@ -1333,9 +1427,11 @@ public class CreateAutonomousDatabaseBase
                         this.isPreviewVersionWithServiceTermsAccepted,
                         other.isPreviewVersionWithServiceTermsAccepted)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
+                && java.util.Objects.equals(this.isDevTier, other.isDevTier)
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.inMemoryPercentage, other.inMemoryPercentage)
                 && java.util.Objects.equals(
                         this.isAccessControlEnabled, other.isAccessControlEnabled)
                 && java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
@@ -1355,13 +1451,14 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && java.util.Objects.equals(
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
+                && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
+                && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
                 && java.util.Objects.equals(
                         this.autonomousMaintenanceScheduleType,
                         other.autonomousMaintenanceScheduleType)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
-                && java.util.Objects.equals(this.maxCpuCoreCount, other.maxCpuCoreCount)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
                 && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
                 && java.util.Objects.equals(this.secretId, other.secretId)
@@ -1382,6 +1479,11 @@ public class CreateAutonomousDatabaseBase
                         + (this.ncharacterSet == null ? 43 : this.ncharacterSet.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupRetentionPeriodInDays == null
+                                ? 43
+                                : this.backupRetentionPeriodInDays.hashCode());
         result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + (this.computeCount == null ? 43 : this.computeCount.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
@@ -1414,12 +1516,18 @@ public class CreateAutonomousDatabaseBase
                         + (this.isAutoScalingEnabled == null
                                 ? 43
                                 : this.isAutoScalingEnabled.hashCode());
+        result = (result * PRIME) + (this.isDevTier == null ? 43 : this.isDevTier.hashCode());
         result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
         result =
                 (result * PRIME)
                         + (this.autonomousContainerDatabaseId == null
                                 ? 43
                                 : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inMemoryPercentage == null
+                                ? 43
+                                : this.inMemoryPercentage.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAccessControlEnabled == null
@@ -1471,6 +1579,16 @@ public class CreateAutonomousDatabaseBase
                                 : this.isMtlsConnectionRequired.hashCode());
         result =
                 (result * PRIME)
+                        + (this.resourcePoolLeaderId == null
+                                ? 43
+                                : this.resourcePoolLeaderId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourcePoolSummary == null
+                                ? 43
+                                : this.resourcePoolSummary.hashCode());
+        result =
+                (result * PRIME)
                         + (this.autonomousMaintenanceScheduleType == null
                                 ? 43
                                 : this.autonomousMaintenanceScheduleType.hashCode());
@@ -1484,9 +1602,6 @@ public class CreateAutonomousDatabaseBase
                         + (this.isAutoScalingForStorageEnabled == null
                                 ? 43
                                 : this.isAutoScalingForStorageEnabled.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.maxCpuCoreCount == null ? 43 : this.maxCpuCoreCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseEdition == null ? 43 : this.databaseEdition.hashCode());
@@ -1506,7 +1621,7 @@ public class CreateAutonomousDatabaseBase
     /**
      * The source of the database: Use {@code NONE} for creating a new Autonomous Database. Use {@code DATABASE} for creating a new Autonomous Database by cloning an existing Autonomous Database. Use {@code CROSS_REGION_DATAGUARD} to create a standby Data Guard database in another region.
      * <p>
-     * For Autonomous Databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), the following cloning options are available: Use {@code BACKUP_FROM_ID} for creating a new Autonomous Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
+     * For [Autonomous Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the following cloning options are available: Use {@code BACKUP_FROM_ID} for creating a new Autonomous Database from a specified backup. Use {@code BACKUP_FROM_TIMESTAMP} for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      *
      **/
     public enum Source {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.budget;
@@ -8,7 +8,7 @@ import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
 
 /**
- * Use the Budgets API to manage budgets and budget alerts.
+ * Use the Budgets API to manage budgets and budget alerts. For more information, see [Budgets Overview](https://docs.cloud.oracle.com/iaas/Content/Billing/Concepts/budgetsoverview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public interface BudgetAsync extends AutoCloseable {
@@ -172,8 +172,7 @@ public interface BudgetAsync extends AutoCloseable {
      * <p>
      * To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
      * <p>
-     * Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
-     * or upgrade to the latest version of the client SDK to handle new targetTypes.
+     * Clients should ignore new targetTypes, or upgrade to the latest version of the client SDK to handle new targetTypes.
      *
      *
      * @param request The request object containing the details to send

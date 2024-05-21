@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -15,13 +15,6 @@ public enum WorkRequestOperationType {
     StartDbsystem("START_DBSYSTEM"),
     StopDbsystem("STOP_DBSYSTEM"),
     RestartDbsystem("RESTART_DBSYSTEM"),
-    AddAnalyticsCluster("ADD_ANALYTICS_CLUSTER"),
-    UpdateAnalyticsCluster("UPDATE_ANALYTICS_CLUSTER"),
-    DeleteAnalyticsCluster("DELETE_ANALYTICS_CLUSTER"),
-    StartAnalyticsCluster("START_ANALYTICS_CLUSTER"),
-    StopAnalyticsCluster("STOP_ANALYTICS_CLUSTER"),
-    RestartAnalyticsCluster("RESTART_ANALYTICS_CLUSTER"),
-    GenerateAnalyticsClusterMemoryEstimate("GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE"),
     AddHeatwaveCluster("ADD_HEATWAVE_CLUSTER"),
     UpdateHeatwaveCluster("UPDATE_HEATWAVE_CLUSTER"),
     DeleteHeatwaveCluster("DELETE_HEATWAVE_CLUSTER"),
@@ -37,6 +30,8 @@ public enum WorkRequestOperationType {
     ResumeChannel("RESUME_CHANNEL"),
     ResetChannel("RESET_CHANNEL"),
     DeleteChannel("DELETE_CHANNEL"),
+    CreateBackup("CREATE_BACKUP"),
+    DeleteBackup("DELETE_BACKUP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

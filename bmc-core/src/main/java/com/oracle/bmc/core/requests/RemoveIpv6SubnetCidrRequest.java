@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.requests;
@@ -14,23 +14,23 @@ public class RemoveIpv6SubnetCidrRequest
                 com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     private String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+     * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
     /**
-     * Details object for removing an IPv6 SUBNET CIDR.
+     * Details object for removing an IPv6 SUBNET prefix.
      */
     private com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails removeSubnetIpv6CidrDetails;
 
     /**
-     * Details object for removing an IPv6 SUBNET CIDR.
+     * Details object for removing an IPv6 SUBNET prefix.
      */
     public com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails getRemoveSubnetIpv6CidrDetails() {
         return removeSubnetIpv6CidrDetails;
@@ -108,12 +108,12 @@ public class RemoveIpv6SubnetCidrRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          */
         private String subnetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
+         * Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
          * @param subnetId the value to set
          * @return this builder instance
          */
@@ -123,13 +123,13 @@ public class RemoveIpv6SubnetCidrRequest
         }
 
         /**
-         * Details object for removing an IPv6 SUBNET CIDR.
+         * Details object for removing an IPv6 SUBNET prefix.
          */
         private com.oracle.bmc.core.model.RemoveSubnetIpv6CidrDetails removeSubnetIpv6CidrDetails =
                 null;
 
         /**
-         * Details object for removing an IPv6 SUBNET CIDR.
+         * Details object for removing an IPv6 SUBNET prefix.
          * @param removeSubnetIpv6CidrDetails the value to set
          * @return this builder instance
          */

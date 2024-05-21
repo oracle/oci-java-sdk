@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -99,13 +99,17 @@ public class AttachVolumeDetails extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The OCID of the instance.
+     * The OCID of the instance. For AttachVolume operation, this is a required field for the request,
+     * see {@link #attachVolume(AttachVolumeRequest) attachVolume}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
-     * The OCID of the instance.
+     * The OCID of the instance. For AttachVolume operation, this is a required field for the request,
+     * see {@link #attachVolume(AttachVolumeRequest) attachVolume}.
+     *
      * @return the value
      **/
     public String getInstanceId() {
@@ -149,13 +153,15 @@ public class AttachVolumeDetails extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The OCID of the volume.
+     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
-     * The OCID of the volume.
+     * The OCID of the volume. If CreateVolumeDetails is specified, this field must be omitted from the request.
+     *
      * @return the value
      **/
     public String getVolumeId() {

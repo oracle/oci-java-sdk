@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -25,16 +25,17 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return namespaceName;
     }
     /**
-     * The lookup type.  Valid values are Lookup or Dictionary.
+     * The lookup type.  Valid values are Lookup, Dictionary or Module.
      */
     private Type type;
 
     /**
-     * The lookup type.  Valid values are Lookup or Dictionary.
+     * The lookup type.  Valid values are Lookup, Dictionary or Module.
      **/
     public enum Type {
         Lookup("Lookup"),
         Dictionary("Dictionary"),
+        Module("Module"),
         ;
 
         private final String value;
@@ -66,7 +67,7 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * The lookup type.  Valid values are Lookup or Dictionary.
+     * The lookup type.  Valid values are Lookup, Dictionary or Module.
      */
     public Type getType() {
         return type;
@@ -224,12 +225,12 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The lookup type.  Valid values are Lookup or Dictionary.
+         * The lookup type.  Valid values are Lookup, Dictionary or Module.
          */
         private Type type = null;
 
         /**
-         * The lookup type.  Valid values are Lookup or Dictionary.
+         * The lookup type.  Valid values are Lookup, Dictionary or Module.
          * @param type the value to set
          * @return this builder instance
          */

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Creation of Data Source.
+ * Parameters for creating a data source (DataSource resource).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,6 +24,7 @@ public final class CreateDataSourceDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "status",
         "compartmentId",
         "dataSourceFeedProvider",
         "dataSourceDetails",
@@ -32,6 +33,7 @@ public final class CreateDataSourceDetails
     })
     public CreateDataSourceDetails(
             String displayName,
+            DataSourceStatus status,
             String compartmentId,
             DataSourceFeedProvider dataSourceFeedProvider,
             DataSourceDetails dataSourceDetails,
@@ -39,6 +41,7 @@ public final class CreateDataSourceDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.status = status;
         this.compartmentId = compartmentId;
         this.dataSourceFeedProvider = dataSourceFeedProvider;
         this.dataSourceDetails = dataSourceDetails;
@@ -49,13 +52,13 @@ public final class CreateDataSourceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Data Source display name.
+         * Data source display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Data Source display name.
+         * Data source display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -65,13 +68,29 @@ public final class CreateDataSourceDetails
             return this;
         }
         /**
-         * CompartmentId of Data Source.
+         * Enablement status of data source.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("status")
+        private DataSourceStatus status;
+
+        /**
+         * Enablement status of data source.
+         * @param status the value to set
+         * @return this builder
+         **/
+        public Builder status(DataSourceStatus status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
+            return this;
+        }
+        /**
+         * Compartment OCID of the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * CompartmentId of Data Source.
+         * Compartment OCID of the data source
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -81,13 +100,13 @@ public final class CreateDataSourceDetails
             return this;
         }
         /**
-         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         * Type of data source feed provider (LoggingQuery)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
         private DataSourceFeedProvider dataSourceFeedProvider;
 
         /**
-         * Possible type of dataSourceFeed Provider(LoggingQuery)
+         * Type of data source feed provider (LoggingQuery)
          * @param dataSourceFeedProvider the value to set
          * @return this builder
          **/
@@ -158,6 +177,7 @@ public final class CreateDataSourceDetails
             CreateDataSourceDetails model =
                     new CreateDataSourceDetails(
                             this.displayName,
+                            this.status,
                             this.compartmentId,
                             this.dataSourceFeedProvider,
                             this.dataSourceDetails,
@@ -173,6 +193,9 @@ public final class CreateDataSourceDetails
         public Builder copy(CreateDataSourceDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("status")) {
+                this.status(model.getStatus());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -205,13 +228,13 @@ public final class CreateDataSourceDetails
     }
 
     /**
-     * Data Source display name.
+     * Data source display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Data Source display name.
+     * Data source display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -219,13 +242,27 @@ public final class CreateDataSourceDetails
     }
 
     /**
-     * CompartmentId of Data Source.
+     * Enablement status of data source.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    private final DataSourceStatus status;
+
+    /**
+     * Enablement status of data source.
+     * @return the value
+     **/
+    public DataSourceStatus getStatus() {
+        return status;
+    }
+
+    /**
+     * Compartment OCID of the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * CompartmentId of Data Source.
+     * Compartment OCID of the data source
      * @return the value
      **/
     public String getCompartmentId() {
@@ -233,13 +270,13 @@ public final class CreateDataSourceDetails
     }
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSourceFeedProvider")
     private final DataSourceFeedProvider dataSourceFeedProvider;
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      * @return the value
      **/
     public DataSourceFeedProvider getDataSourceFeedProvider() {
@@ -308,6 +345,7 @@ public final class CreateDataSourceDetails
         sb.append("CreateDataSourceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataSourceFeedProvider=").append(String.valueOf(this.dataSourceFeedProvider));
         sb.append(", dataSourceDetails=").append(String.valueOf(this.dataSourceDetails));
@@ -328,6 +366,7 @@ public final class CreateDataSourceDetails
 
         CreateDataSourceDetails other = (CreateDataSourceDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.dataSourceFeedProvider, other.dataSourceFeedProvider)
@@ -342,6 +381,7 @@ public final class CreateDataSourceDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

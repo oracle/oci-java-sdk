@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A cloud guard list containing one or more items of a list type
+ * A managed list is a reusable list of parameters that makes it easier to set the scope for detector and responder rules. A ManagedList resource contains the reusable list of parameters, plus metadata for the list.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -76,13 +76,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -92,13 +92,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * ManagedList display name.
+         * Managed list display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ManagedList display name.
+         * Managed list display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -108,13 +108,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * ManagedList description.
+         * Managed list description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ManagedList description.
+         * Managed list description
          * @param description the value to set
          * @return this builder
          **/
@@ -124,13 +124,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * OCID of the Source ManagedList
+         * OCID of the source managed list
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
         private String sourceManagedListId;
 
         /**
-         * OCID of the Source ManagedList
+         * OCID of the source managed list
          * @param sourceManagedListId the value to set
          * @return this builder
          **/
@@ -156,13 +156,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * type of the list
+         * Type of information contained in the managed list
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ManagedListType listType;
 
         /**
-         * type of the list
+         * Type of information contained in the managed list
          * @param listType the value to set
          * @return this builder
          **/
@@ -172,13 +172,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * List of ManagedListItem
+         * List of items in the managed list
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("listItems")
         private java.util.List<String> listItems;
 
         /**
-         * List of ManagedListItem
+         * List of items in the managed list
          * @param listItems the value to set
          * @return this builder
          **/
@@ -188,13 +188,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * provider of the feed
+         * Provider of the managed list feed
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("feedProvider")
         private FeedProviderType feedProvider;
 
         /**
-         * provider of the feed
+         * Provider of the managed list feed
          * @param feedProvider the value to set
          * @return this builder
          **/
@@ -204,13 +204,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * If this list is editable or not
+         * Is this list editable?
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
         private Boolean isEditable;
 
         /**
-         * If this list is editable or not
+         * Is this list editable?
          * @param isEditable the value to set
          * @return this builder
          **/
@@ -236,13 +236,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The date and time the managed list was updated. Format defined by RFC3339.
+         * The date and time the managed list was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the managed list was updated. Format defined by RFC3339.
+         * The date and time the managed list was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -252,13 +252,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -268,13 +268,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
          * @param lifecyleDetails the value to set
          * @return this builder
          **/
@@ -449,13 +449,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -463,13 +463,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * ManagedList display name.
+     * Managed list display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ManagedList display name.
+     * Managed list display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -477,13 +477,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * ManagedList description.
+     * Managed list description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ManagedList description.
+     * Managed list description
      * @return the value
      **/
     public String getDescription() {
@@ -491,13 +491,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -505,13 +505,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceManagedListId")
     private final String sourceManagedListId;
 
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      * @return the value
      **/
     public String getSourceManagedListId() {
@@ -519,13 +519,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * type of the list
+     * Type of information contained in the managed list
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ManagedListType listType;
 
     /**
-     * type of the list
+     * Type of information contained in the managed list
      * @return the value
      **/
     public ManagedListType getListType() {
@@ -533,13 +533,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * List of ManagedListItem
+     * List of items in the managed list
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listItems")
     private final java.util.List<String> listItems;
 
     /**
-     * List of ManagedListItem
+     * List of items in the managed list
      * @return the value
      **/
     public java.util.List<String> getListItems() {
@@ -547,13 +547,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("feedProvider")
     private final FeedProviderType feedProvider;
 
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      * @return the value
      **/
     public FeedProviderType getFeedProvider() {
@@ -561,13 +561,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * If this list is editable or not
+     * Is this list editable?
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     private final Boolean isEditable;
 
     /**
-     * If this list is editable or not
+     * Is this list editable?
      * @return the value
      **/
     public Boolean getIsEditable() {
@@ -589,13 +589,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -603,13 +603,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -617,13 +617,13 @@ public final class ManagedList extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * @return the value
      **/
     public String getLifecyleDetails() {

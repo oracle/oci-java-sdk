@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -144,6 +144,15 @@ public final class UpdateTaskFromPipelineTask extends UpdateTaskDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+        private Boolean isConcurrentAllowed;
+
+        public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
+            this.isConcurrentAllowed = isConcurrentAllowed;
+            this.__explicitlySet__.add("isConcurrentAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("registryMetadata")
         private RegistryMetadata registryMetadata;
 
@@ -181,6 +190,7 @@ public final class UpdateTaskFromPipelineTask extends UpdateTaskDetails {
                             this.parameters,
                             this.opConfigValues,
                             this.configProviderDelegate,
+                            this.isConcurrentAllowed,
                             this.registryMetadata,
                             this.pipeline);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -230,6 +240,9 @@ public final class UpdateTaskFromPipelineTask extends UpdateTaskDetails {
             if (model.wasPropertyExplicitlySet("configProviderDelegate")) {
                 this.configProviderDelegate(model.getConfigProviderDelegate());
             }
+            if (model.wasPropertyExplicitlySet("isConcurrentAllowed")) {
+                this.isConcurrentAllowed(model.getIsConcurrentAllowed());
+            }
             if (model.wasPropertyExplicitlySet("registryMetadata")) {
                 this.registryMetadata(model.getRegistryMetadata());
             }
@@ -266,6 +279,7 @@ public final class UpdateTaskFromPipelineTask extends UpdateTaskDetails {
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             RegistryMetadata registryMetadata,
             Pipeline pipeline) {
         super(
@@ -282,6 +296,7 @@ public final class UpdateTaskFromPipelineTask extends UpdateTaskDetails {
                 parameters,
                 opConfigValues,
                 configProviderDelegate,
+                isConcurrentAllowed,
                 registryMetadata);
         this.pipeline = pipeline;
     }

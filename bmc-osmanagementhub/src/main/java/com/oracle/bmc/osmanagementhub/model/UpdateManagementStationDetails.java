@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Information for updating an ManagementStation
+ * Provides the information used to update the management station.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -52,13 +52,13 @@ public final class UpdateManagementStationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * ManagementStation name
+         * User-friendly name for the management station. Does not have to be unique. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ManagementStation name
+         * User-friendly name for the management station. Does not have to be unique. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -68,13 +68,13 @@ public final class UpdateManagementStationDetails
             return this;
         }
         /**
-         * Details describing the ManagementStation config.
+         * User-specified description of the management station. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the ManagementStation config.
+         * User-specified description of the management station. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
@@ -84,13 +84,13 @@ public final class UpdateManagementStationDetails
             return this;
         }
         /**
-         * Name of the host
+         * Hostname of the management station.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * Name of the host
+         * Hostname of the management station.
          * @param hostname the value to set
          * @return this builder
          **/
@@ -221,13 +221,13 @@ public final class UpdateManagementStationDetails
     }
 
     /**
-     * ManagementStation name
+     * User-friendly name for the management station. Does not have to be unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ManagementStation name
+     * User-friendly name for the management station. Does not have to be unique. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -235,13 +235,13 @@ public final class UpdateManagementStationDetails
     }
 
     /**
-     * Details describing the ManagementStation config.
+     * User-specified description of the management station. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the ManagementStation config.
+     * User-specified description of the management station. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {
@@ -249,13 +249,13 @@ public final class UpdateManagementStationDetails
     }
 
     /**
-     * Name of the host
+     * Hostname of the management station.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * Name of the host
+     * Hostname of the management station.
      * @return the value
      **/
     public String getHostname() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent.requests;
@@ -291,6 +291,28 @@ public class ListManagementAgentsRequest
      */
     public String getAccessLevel() {
         return accessLevel;
+    }
+    /**
+     * The type of the dataSource.
+     */
+    private com.oracle.bmc.managementagent.model.DataSourceTypes dataSourceType;
+
+    /**
+     * The type of the dataSource.
+     */
+    public com.oracle.bmc.managementagent.model.DataSourceTypes getDataSourceType() {
+        return dataSourceType;
+    }
+    /**
+     * Unique name of the dataSource.
+     */
+    private java.util.List<String> dataSourceName;
+
+    /**
+     * Unique name of the dataSource.
+     */
+    public java.util.List<String> getDataSourceName() {
+        return dataSourceName;
     }
 
     public static class Builder
@@ -615,6 +637,46 @@ public class ListManagementAgentsRequest
         }
 
         /**
+         * The type of the dataSource.
+         */
+        private com.oracle.bmc.managementagent.model.DataSourceTypes dataSourceType = null;
+
+        /**
+         * The type of the dataSource.
+         * @param dataSourceType the value to set
+         * @return this builder instance
+         */
+        public Builder dataSourceType(
+                com.oracle.bmc.managementagent.model.DataSourceTypes dataSourceType) {
+            this.dataSourceType = dataSourceType;
+            return this;
+        }
+
+        /**
+         * Unique name of the dataSource.
+         */
+        private java.util.List<String> dataSourceName = null;
+
+        /**
+         * Unique name of the dataSource.
+         * @param dataSourceName the value to set
+         * @return this builder instance
+         */
+        public Builder dataSourceName(java.util.List<String> dataSourceName) {
+            this.dataSourceName = dataSourceName;
+            return this;
+        }
+
+        /**
+         * Singular setter. Unique name of the dataSource.
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder dataSourceName(String singularValue) {
+            return this.dataSourceName(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -660,6 +722,8 @@ public class ListManagementAgentsRequest
             opcRequestId(o.getOpcRequestId());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
+            dataSourceType(o.getDataSourceType());
+            dataSourceName(o.getDataSourceName());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -710,8 +774,10 @@ public class ListManagementAgentsRequest
             request.opcRequestId = opcRequestId;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
+            request.dataSourceType = dataSourceType;
+            request.dataSourceName = dataSourceName;
             return request;
-            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, gatewayId, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel);
+            // new ListManagementAgentsRequest(compartmentId, pluginName, version, displayName, lifecycleState, availabilityStatus, hostId, platformType, isCustomerDeployed, installType, gatewayId, limit, page, sortOrder, sortBy, opcRequestId, compartmentIdInSubtree, accessLevel, dataSourceType, dataSourceName);
         }
     }
 
@@ -738,7 +804,9 @@ public class ListManagementAgentsRequest
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
-                .accessLevel(accessLevel);
+                .accessLevel(accessLevel)
+                .dataSourceType(dataSourceType)
+                .dataSourceName(dataSourceName);
     }
 
     /**
@@ -772,6 +840,8 @@ public class ListManagementAgentsRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",dataSourceType=").append(String.valueOf(this.dataSourceType));
+        sb.append(",dataSourceName=").append(String.valueOf(this.dataSourceName));
         sb.append(")");
         return sb.toString();
     }
@@ -805,7 +875,9 @@ public class ListManagementAgentsRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
-                && java.util.Objects.equals(this.accessLevel, other.accessLevel);
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(this.dataSourceType, other.dataSourceType)
+                && java.util.Objects.equals(this.dataSourceName, other.dataSourceName);
     }
 
     @Override
@@ -846,6 +918,12 @@ public class ListManagementAgentsRequest
                                 ? 43
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSourceType == null ? 43 : this.dataSourceType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataSourceName == null ? 43 : this.dataSourceName.hashCode());
         return result;
     }
 }

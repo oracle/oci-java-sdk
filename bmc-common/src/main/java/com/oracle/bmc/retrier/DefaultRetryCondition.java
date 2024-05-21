@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.retrier;
@@ -37,7 +37,9 @@ public class DefaultRetryCondition implements RetryCondition {
         if (exception == null) {
             throw new java.lang.NullPointerException("exception is marked non-null but is null");
         }
-        return exception.isClientSide()
+
+        return (exception.isClientSide()
+                        && !(exception.getCause() instanceof CallNotAllowedException))
                 || exception.isTimeout()
                 || exception.getStatusCode() == 429
                 || exception.getStatusCode() == 500
@@ -48,8 +50,7 @@ public class DefaultRetryCondition implements RetryCondition {
                         && RETRYABLE_SERVICE_ERRORS
                                 .get(exception.getStatusCode())
                                 .contains(exception.getServiceCode()))
-                || isProcessingException(exception)
-                || exception.getCause() instanceof CallNotAllowedException;
+                || isProcessingException(exception);
     }
 
     public static boolean isProcessingException(final BmcException exception) {

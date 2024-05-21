@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The logical entity where the Vault service creates and durably stores keys.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -34,7 +34,8 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "restoredFromVaultId",
         "wrappingkeyId",
         "replicaDetails",
-        "isPrimary"
+        "isPrimary",
+        "externalKeyManagerMetadataSummary"
     })
     public Vault(
             String compartmentId,
@@ -51,7 +52,8 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             String restoredFromVaultId,
             String wrappingkeyId,
             VaultReplicaDetails replicaDetails,
-            Boolean isPrimary) {
+            Boolean isPrimary,
+            ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary) {
         super();
         this.compartmentId = compartmentId;
         this.cryptoEndpoint = cryptoEndpoint;
@@ -68,6 +70,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.wrappingkeyId = wrappingkeyId;
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
+        this.externalKeyManagerMetadataSummary = externalKeyManagerMetadataSummary;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -340,13 +343,30 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("replicaDetails");
             return this;
         }
-
+        /**
+         * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        /**
+         * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+         * @param isPrimary the value to set
+         * @return this builder
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
+        private ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
+
+        public Builder externalKeyManagerMetadataSummary(
+                ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary) {
+            this.externalKeyManagerMetadataSummary = externalKeyManagerMetadataSummary;
+            this.__explicitlySet__.add("externalKeyManagerMetadataSummary");
             return this;
         }
 
@@ -370,7 +390,8 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.restoredFromVaultId,
                             this.wrappingkeyId,
                             this.replicaDetails,
-                            this.isPrimary);
+                            this.isPrimary,
+                            this.externalKeyManagerMetadataSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -423,6 +444,10 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("externalKeyManagerMetadataSummary")) {
+                this.externalKeyManagerMetadataSummary(
+                        model.getExternalKeyManagerMetadataSummary());
             }
             return this;
         }
@@ -686,6 +711,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     public enum VaultType {
         VirtualPrivate("VIRTUAL_PRIVATE"),
         Default("DEFAULT"),
+        External("EXTERNAL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -787,11 +813,25 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return replicaDetails;
     }
 
+    /**
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
+    /**
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+     * @return the value
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
+    private final ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
+
+    public ExternalKeyManagerMetadataSummary getExternalKeyManagerMetadataSummary() {
+        return externalKeyManagerMetadataSummary;
     }
 
     @Override
@@ -823,6 +863,8 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", wrappingkeyId=").append(String.valueOf(this.wrappingkeyId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", externalKeyManagerMetadataSummary=")
+                .append(String.valueOf(this.externalKeyManagerMetadataSummary));
         sb.append(")");
         return sb.toString();
     }
@@ -852,6 +894,9 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.wrappingkeyId, other.wrappingkeyId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(
+                        this.externalKeyManagerMetadataSummary,
+                        other.externalKeyManagerMetadataSummary)
                 && super.equals(other);
     }
 
@@ -894,6 +939,11 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.externalKeyManagerMetadataSummary == null
+                                ? 43
+                                : this.externalKeyManagerMetadataSummary.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

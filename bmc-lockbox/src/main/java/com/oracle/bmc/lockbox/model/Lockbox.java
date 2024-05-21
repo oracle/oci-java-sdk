@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox.model;
@@ -23,6 +23,8 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "id",
         "displayName",
         "compartmentId",
+        "partnerId",
+        "parentLockboxId",
         "partnerCompartmentId",
         "resourceId",
         "lockboxPartner",
@@ -41,6 +43,8 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             String id,
             String displayName,
             String compartmentId,
+            String partnerId,
+            String parentLockboxId,
             String partnerCompartmentId,
             String resourceId,
             LockboxPartner lockboxPartner,
@@ -58,6 +62,8 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.id = id;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
+        this.partnerId = partnerId;
+        this.parentLockboxId = parentLockboxId;
         this.partnerCompartmentId = partnerCompartmentId;
         this.resourceId = resourceId;
         this.lockboxPartner = lockboxPartner;
@@ -121,6 +127,38 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
+        private String partnerId;
+
+        /**
+         * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+         * @param partnerId the value to set
+         * @return this builder
+         **/
+        public Builder partnerId(String partnerId) {
+            this.partnerId = partnerId;
+            this.__explicitlySet__.add("partnerId");
+            return this;
+        }
+        /**
+         * The unique identifier (OCID) of lockbox resource using to reference parent lockbox in hybrid oma setup
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentLockboxId")
+        private String parentLockboxId;
+
+        /**
+         * The unique identifier (OCID) of lockbox resource using to reference parent lockbox in hybrid oma setup
+         * @param parentLockboxId the value to set
+         * @return this builder
+         **/
+        public Builder parentLockboxId(String parentLockboxId) {
+            this.parentLockboxId = parentLockboxId;
+            this.__explicitlySet__.add("parentLockboxId");
             return this;
         }
         /**
@@ -348,6 +386,8 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.id,
                             this.displayName,
                             this.compartmentId,
+                            this.partnerId,
+                            this.parentLockboxId,
                             this.partnerCompartmentId,
                             this.resourceId,
                             this.lockboxPartner,
@@ -377,6 +417,12 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("partnerId")) {
+                this.partnerId(model.getPartnerId());
+            }
+            if (model.wasPropertyExplicitlySet("parentLockboxId")) {
+                this.parentLockboxId(model.getParentLockboxId());
             }
             if (model.wasPropertyExplicitlySet("partnerCompartmentId")) {
                 this.partnerCompartmentId(model.getPartnerCompartmentId());
@@ -472,6 +518,34 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("partnerId")
+    private final String partnerId;
+
+    /**
+     * The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+     * @return the value
+     **/
+    public String getPartnerId() {
+        return partnerId;
+    }
+
+    /**
+     * The unique identifier (OCID) of lockbox resource using to reference parent lockbox in hybrid oma setup
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentLockboxId")
+    private final String parentLockboxId;
+
+    /**
+     * The unique identifier (OCID) of lockbox resource using to reference parent lockbox in hybrid oma setup
+     * @return the value
+     **/
+    public String getParentLockboxId() {
+        return parentLockboxId;
     }
 
     /**
@@ -730,6 +804,8 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", partnerId=").append(String.valueOf(this.partnerId));
+        sb.append(", parentLockboxId=").append(String.valueOf(this.parentLockboxId));
         sb.append(", partnerCompartmentId=").append(String.valueOf(this.partnerCompartmentId));
         sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", lockboxPartner=").append(String.valueOf(this.lockboxPartner));
@@ -761,6 +837,8 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.partnerId, other.partnerId)
+                && java.util.Objects.equals(this.parentLockboxId, other.parentLockboxId)
                 && java.util.Objects.equals(this.partnerCompartmentId, other.partnerCompartmentId)
                 && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.lockboxPartner, other.lockboxPartner)
@@ -787,6 +865,10 @@ public final class Lockbox extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.partnerId == null ? 43 : this.partnerId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentLockboxId == null ? 43 : this.parentLockboxId.hashCode());
         result =
                 (result * PRIME)
                         + (this.partnerCompartmentId == null

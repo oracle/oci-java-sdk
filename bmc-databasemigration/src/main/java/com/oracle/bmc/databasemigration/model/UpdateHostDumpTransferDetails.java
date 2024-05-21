@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -36,9 +36,26 @@ package com.oracle.bmc.databasemigration.model;
 public class UpdateHostDumpTransferDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected UpdateHostDumpTransferDetails() {
+    @java.beans.ConstructorProperties({"walletLocation"})
+    protected UpdateHostDumpTransferDetails(String walletLocation) {
         super();
+        this.walletLocation = walletLocation;
+    }
+
+    /**
+     * Directory path to OCI SSL wallet location on Db server node.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("walletLocation")
+    private final String walletLocation;
+
+    /**
+     * Directory path to OCI SSL wallet location on Db server node.
+     *
+     * @return the value
+     **/
+    public String getWalletLocation() {
+        return walletLocation;
     }
 
     @Override
@@ -55,6 +72,7 @@ public class UpdateHostDumpTransferDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateHostDumpTransferDetails(");
         sb.append("super=").append(super.toString());
+        sb.append("walletLocation=").append(String.valueOf(this.walletLocation));
         sb.append(")");
         return sb.toString();
     }
@@ -69,13 +87,17 @@ public class UpdateHostDumpTransferDetails
         }
 
         UpdateHostDumpTransferDetails other = (UpdateHostDumpTransferDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.walletLocation, other.walletLocation)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.walletLocation == null ? 43 : this.walletLocation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

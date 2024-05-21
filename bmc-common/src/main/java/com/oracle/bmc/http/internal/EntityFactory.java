@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -13,6 +13,8 @@ import javax.ws.rs.core.Variant;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.io.internal.DuplicatableLengthLimitedInputStream;
 import com.oracle.bmc.io.internal.LengthLimitedInputStream;
 import com.oracle.bmc.util.internal.ReflectionUtils;
 
@@ -91,40 +93,6 @@ public class EntityFactory {
         // as that will remove them altogether or set them explicitly to null.
         if (body instanceof InputStream) {
             requestBody = Entity.entity(body, InputStreamVariantCreator.create(request));
-        } else {
-            requestBody = Entity.json(getBodyAsString(body));
-        }
-        return requestBody;
-    }
-
-    /**
-     * Create an entity for PUT requests.
-     * @param request The original Request object sent to the service client.
-     * @param body The actual body being sent.
-     * @param contentLength The content length of the body defined in the header
-     * @return The entity, or null if no body given.
-     */
-    Entity<?> forPut(Object request, Object body, long contentLength) {
-        // null bodies allowed
-        if (body == null) {
-            return null;
-        }
-
-        Entity<?> requestBody = null;
-        // only json payloads or raw input streams allowed.
-        // in the latter case, allow caller to be able to specify content-type
-        // by inspecting the request for common 'getContent*' methods.
-        // NOTE: this is necessary because using an Entity to put data will overwrite
-        // any content-* headers already set on the Invocation.Builder request, and there
-        // doesn't seem to be a way to set the entity content (payload) without attempting
-        // to overwrite/set the content-* headers.
-        // You also cannot set the variant to null (to try to preserve any existing headers)
-        // as that will remove them altogether or set them explicitly to null.
-        if (body instanceof InputStream) {
-            InputStream limitedInputStream =
-                    new LengthLimitedInputStream((InputStream) body, contentLength);
-            requestBody =
-                    Entity.entity(limitedInputStream, InputStreamVariantCreator.create(request));
         } else {
             requestBody = Entity.json(getBodyAsString(body));
         }

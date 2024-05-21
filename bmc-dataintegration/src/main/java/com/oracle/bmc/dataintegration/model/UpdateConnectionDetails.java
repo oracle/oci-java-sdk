@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -27,8 +27,8 @@ package com.oracle.bmc.dataintegration.model;
         name = "LAKE_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateConnectionFromJdbc.class,
-        name = "GENERIC_JDBC_CONNECTION"
+        value = UpdateConnectionFromOracleEbs.class,
+        name = "ORACLE_EBS_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateConnectionFromObjectStorage.class,
@@ -43,16 +43,44 @@ package com.oracle.bmc.dataintegration.model;
         name = "REST_NO_AUTH_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromHdfs.class,
+        name = "HDFS_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromOAuth2.class,
+        name = "OAUTH2_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromRestBasicAuth.class,
+        name = "REST_BASIC_AUTH_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromOracleSiebel.class,
+        name = "ORACLE_SIEBEL_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromMySqlHeatWave.class,
+        name = "MYSQL_HEATWAVE_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromBIP.class,
+        name = "BIP_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromMySQL.class,
+        name = "MYSQL_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateConnectionFromJdbc.class,
+        name = "GENERIC_JDBC_CONNECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateConnectionFromAmazonS3.class,
         name = "AMAZON_S3_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateConnectionFromAtp.class,
         name = "ORACLE_ATP_CONNECTION"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateConnectionFromRestBasicAuth.class,
-        name = "REST_BASIC_AUTH_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateConnectionFromOracle.class,
@@ -63,12 +91,8 @@ package com.oracle.bmc.dataintegration.model;
         name = "ORACLE_ADWC_CONNECTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateConnectionFromBIP.class,
-        name = "BIP_CONNECTION"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = UpdateConnectionFromMySQL.class,
-        name = "MYSQL_CONNECTION"
+        value = UpdateConnectionFromOraclePeopleSoft.class,
+        name = "ORACLE_PEOPLESOFT_CONNECTION"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -327,8 +351,14 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         AmazonS3Connection("AMAZON_S3_CONNECTION"),
         BipConnection("BIP_CONNECTION"),
         LakeConnection("LAKE_CONNECTION"),
+        OraclePeoplesoftConnection("ORACLE_PEOPLESOFT_CONNECTION"),
+        OracleEbsConnection("ORACLE_EBS_CONNECTION"),
+        OracleSiebelConnection("ORACLE_SIEBEL_CONNECTION"),
+        HdfsConnection("HDFS_CONNECTION"),
+        MysqlHeatwaveConnection("MYSQL_HEATWAVE_CONNECTION"),
         RestNoAuthConnection("REST_NO_AUTH_CONNECTION"),
         RestBasicAuthConnection("REST_BASIC_AUTH_CONNECTION"),
+        Oauth2Connection("OAUTH2_CONNECTION"),
         ;
 
         private final String value;

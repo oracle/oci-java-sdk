@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -30,10 +30,17 @@ public final class ReplicationStatusDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-
+        /**
+         * Replica Details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
         private java.util.List<ReplicaDetails> replicaDetails;
 
+        /**
+         * Replica Details.
+         * @param replicaDetails the value to set
+         * @return this builder
+         **/
         public Builder replicaDetails(java.util.List<ReplicaDetails> replicaDetails) {
             this.replicaDetails = replicaDetails;
             this.__explicitlySet__.add("replicaDetails");
@@ -71,9 +78,16 @@ public final class ReplicationStatusDetails
         return new Builder().copy(this);
     }
 
+    /**
+     * Replica Details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicaDetails")
     private final java.util.List<ReplicaDetails> replicaDetails;
 
+    /**
+     * Replica Details.
+     * @return the value
+     **/
     public java.util.List<ReplicaDetails> getReplicaDetails() {
         return replicaDetails;
     }

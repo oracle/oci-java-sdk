@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -16,7 +16,7 @@ package com.oracle.bmc.networkfirewall.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SecurityRuleMatchCriteria.Builder.class
 )
@@ -24,17 +24,25 @@ package com.oracle.bmc.networkfirewall.model;
 public final class SecurityRuleMatchCriteria
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sources", "destinations", "applications", "urls"})
+    @java.beans.ConstructorProperties({
+        "sourceAddress",
+        "destinationAddress",
+        "application",
+        "service",
+        "url"
+    })
     public SecurityRuleMatchCriteria(
-            java.util.List<String> sources,
-            java.util.List<String> destinations,
-            java.util.List<String> applications,
-            java.util.List<String> urls) {
+            java.util.List<String> sourceAddress,
+            java.util.List<String> destinationAddress,
+            java.util.List<String> application,
+            java.util.List<String> service,
+            java.util.List<String> url) {
         super();
-        this.sources = sources;
-        this.destinations = destinations;
-        this.applications = applications;
-        this.urls = urls;
+        this.sourceAddress = sourceAddress;
+        this.destinationAddress = destinationAddress;
+        this.application = application;
+        this.service = service;
+        this.url = url;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -42,65 +50,81 @@ public final class SecurityRuleMatchCriteria
         /**
          * An array of IP address list names to be evaluated against the traffic source address.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("sources")
-        private java.util.List<String> sources;
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
+        private java.util.List<String> sourceAddress;
 
         /**
          * An array of IP address list names to be evaluated against the traffic source address.
-         * @param sources the value to set
+         * @param sourceAddress the value to set
          * @return this builder
          **/
-        public Builder sources(java.util.List<String> sources) {
-            this.sources = sources;
-            this.__explicitlySet__.add("sources");
+        public Builder sourceAddress(java.util.List<String> sourceAddress) {
+            this.sourceAddress = sourceAddress;
+            this.__explicitlySet__.add("sourceAddress");
             return this;
         }
         /**
          * An array of IP address list names to be evaluated against the traffic destination address.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-        private java.util.List<String> destinations;
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
+        private java.util.List<String> destinationAddress;
 
         /**
          * An array of IP address list names to be evaluated against the traffic destination address.
-         * @param destinations the value to set
+         * @param destinationAddress the value to set
          * @return this builder
          **/
-        public Builder destinations(java.util.List<String> destinations) {
-            this.destinations = destinations;
-            this.__explicitlySet__.add("destinations");
+        public Builder destinationAddress(java.util.List<String> destinationAddress) {
+            this.destinationAddress = destinationAddress;
+            this.__explicitlySet__.add("destinationAddress");
             return this;
         }
         /**
          * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("applications")
-        private java.util.List<String> applications;
+        @com.fasterxml.jackson.annotation.JsonProperty("application")
+        private java.util.List<String> application;
 
         /**
          * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
-         * @param applications the value to set
+         * @param application the value to set
          * @return this builder
          **/
-        public Builder applications(java.util.List<String> applications) {
-            this.applications = applications;
-            this.__explicitlySet__.add("applications");
+        public Builder application(java.util.List<String> application) {
+            this.application = application;
+            this.__explicitlySet__.add("application");
+            return this;
+        }
+        /**
+         * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("service")
+        private java.util.List<String> service;
+
+        /**
+         * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         * @param service the value to set
+         * @return this builder
+         **/
+        public Builder service(java.util.List<String> service) {
+            this.service = service;
+            this.__explicitlySet__.add("service");
             return this;
         }
         /**
          * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("urls")
-        private java.util.List<String> urls;
+        @com.fasterxml.jackson.annotation.JsonProperty("url")
+        private java.util.List<String> url;
 
         /**
          * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
-         * @param urls the value to set
+         * @param url the value to set
          * @return this builder
          **/
-        public Builder urls(java.util.List<String> urls) {
-            this.urls = urls;
-            this.__explicitlySet__.add("urls");
+        public Builder url(java.util.List<String> url) {
+            this.url = url;
+            this.__explicitlySet__.add("url");
             return this;
         }
 
@@ -110,7 +134,11 @@ public final class SecurityRuleMatchCriteria
         public SecurityRuleMatchCriteria build() {
             SecurityRuleMatchCriteria model =
                     new SecurityRuleMatchCriteria(
-                            this.sources, this.destinations, this.applications, this.urls);
+                            this.sourceAddress,
+                            this.destinationAddress,
+                            this.application,
+                            this.service,
+                            this.url);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -119,17 +147,20 @@ public final class SecurityRuleMatchCriteria
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SecurityRuleMatchCriteria model) {
-            if (model.wasPropertyExplicitlySet("sources")) {
-                this.sources(model.getSources());
+            if (model.wasPropertyExplicitlySet("sourceAddress")) {
+                this.sourceAddress(model.getSourceAddress());
             }
-            if (model.wasPropertyExplicitlySet("destinations")) {
-                this.destinations(model.getDestinations());
+            if (model.wasPropertyExplicitlySet("destinationAddress")) {
+                this.destinationAddress(model.getDestinationAddress());
             }
-            if (model.wasPropertyExplicitlySet("applications")) {
-                this.applications(model.getApplications());
+            if (model.wasPropertyExplicitlySet("application")) {
+                this.application(model.getApplication());
             }
-            if (model.wasPropertyExplicitlySet("urls")) {
-                this.urls(model.getUrls());
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
+            }
+            if (model.wasPropertyExplicitlySet("url")) {
+                this.url(model.getUrl());
             }
             return this;
         }
@@ -149,57 +180,71 @@ public final class SecurityRuleMatchCriteria
     /**
      * An array of IP address list names to be evaluated against the traffic source address.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("sources")
-    private final java.util.List<String> sources;
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
+    private final java.util.List<String> sourceAddress;
 
     /**
      * An array of IP address list names to be evaluated against the traffic source address.
      * @return the value
      **/
-    public java.util.List<String> getSources() {
-        return sources;
+    public java.util.List<String> getSourceAddress() {
+        return sourceAddress;
     }
 
     /**
      * An array of IP address list names to be evaluated against the traffic destination address.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("destinations")
-    private final java.util.List<String> destinations;
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
+    private final java.util.List<String> destinationAddress;
 
     /**
      * An array of IP address list names to be evaluated against the traffic destination address.
      * @return the value
      **/
-    public java.util.List<String> getDestinations() {
-        return destinations;
+    public java.util.List<String> getDestinationAddress() {
+        return destinationAddress;
     }
 
     /**
      * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("applications")
-    private final java.util.List<String> applications;
+    @com.fasterxml.jackson.annotation.JsonProperty("application")
+    private final java.util.List<String> application;
 
     /**
      * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * @return the value
      **/
-    public java.util.List<String> getApplications() {
-        return applications;
+    public java.util.List<String> getApplication() {
+        return application;
+    }
+
+    /**
+     * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("service")
+    private final java.util.List<String> service;
+
+    /**
+     * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     * @return the value
+     **/
+    public java.util.List<String> getService() {
+        return service;
     }
 
     /**
      * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("urls")
-    private final java.util.List<String> urls;
+    @com.fasterxml.jackson.annotation.JsonProperty("url")
+    private final java.util.List<String> url;
 
     /**
      * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
      * @return the value
      **/
-    public java.util.List<String> getUrls() {
-        return urls;
+    public java.util.List<String> getUrl() {
+        return url;
     }
 
     @Override
@@ -216,10 +261,11 @@ public final class SecurityRuleMatchCriteria
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("SecurityRuleMatchCriteria(");
         sb.append("super=").append(super.toString());
-        sb.append("sources=").append(String.valueOf(this.sources));
-        sb.append(", destinations=").append(String.valueOf(this.destinations));
-        sb.append(", applications=").append(String.valueOf(this.applications));
-        sb.append(", urls=").append(String.valueOf(this.urls));
+        sb.append("sourceAddress=").append(String.valueOf(this.sourceAddress));
+        sb.append(", destinationAddress=").append(String.valueOf(this.destinationAddress));
+        sb.append(", application=").append(String.valueOf(this.application));
+        sb.append(", service=").append(String.valueOf(this.service));
+        sb.append(", url=").append(String.valueOf(this.url));
         sb.append(")");
         return sb.toString();
     }
@@ -234,10 +280,11 @@ public final class SecurityRuleMatchCriteria
         }
 
         SecurityRuleMatchCriteria other = (SecurityRuleMatchCriteria) o;
-        return java.util.Objects.equals(this.sources, other.sources)
-                && java.util.Objects.equals(this.destinations, other.destinations)
-                && java.util.Objects.equals(this.applications, other.applications)
-                && java.util.Objects.equals(this.urls, other.urls)
+        return java.util.Objects.equals(this.sourceAddress, other.sourceAddress)
+                && java.util.Objects.equals(this.destinationAddress, other.destinationAddress)
+                && java.util.Objects.equals(this.application, other.application)
+                && java.util.Objects.equals(this.service, other.service)
+                && java.util.Objects.equals(this.url, other.url)
                 && super.equals(other);
     }
 
@@ -245,10 +292,17 @@ public final class SecurityRuleMatchCriteria
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.sources == null ? 43 : this.sources.hashCode());
-        result = (result * PRIME) + (this.destinations == null ? 43 : this.destinations.hashCode());
-        result = (result * PRIME) + (this.applications == null ? 43 : this.applications.hashCode());
-        result = (result * PRIME) + (this.urls == null ? 43 : this.urls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceAddress == null ? 43 : this.sourceAddress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.destinationAddress == null
+                                ? 43
+                                : this.destinationAddress.hashCode());
+        result = (result * PRIME) + (this.application == null ? 43 : this.application.hashCode());
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.url == null ? 43 : this.url.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

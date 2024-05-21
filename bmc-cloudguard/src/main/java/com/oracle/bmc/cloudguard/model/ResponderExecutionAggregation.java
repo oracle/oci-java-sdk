@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -49,13 +49,13 @@ public final class ResponderExecutionAggregation
             return this;
         }
         /**
-         * The number of occurences with given dimension(s)
+         * The number of occurrences with given dimensions
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * The number of occurences with given dimension(s)
+         * The number of occurrences with given dimensions
          * @param count the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class ResponderExecutionAggregation
     }
 
     /**
-     * The number of occurences with given dimension(s)
+     * The number of occurrences with given dimensions
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * The number of occurences with given dimension(s)
+     * The number of occurrences with given dimensions
      * @return the value
      **/
     public Integer getCount() {
