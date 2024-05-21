@@ -43,6 +43,15 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     RemoveKafka("REMOVE_KAFKA"),
     ExecuteBootstrapScript("EXECUTE_BOOTSTRAP_SCRIPT"),
     OdhServiceCertificateUpdate("ODH_SERVICE_CERTIFICATE_UPDATE"),
+    CreateBackupConfig("CREATE_BACKUP_CONFIG"),
+    UpdateBackupConfig("UPDATE_BACKUP_CONFIG"),
+    DeleteBackupConfig("DELETE_BACKUP_CONFIG"),
+    CreateNodeReplaceConfig("CREATE_NODE_REPLACE_CONFIG"),
+    UpdateNodeReplaceConfig("UPDATE_NODE_REPLACE_CONFIG"),
+    DeleteNodeReplaceConfig("DELETE_NODE_REPLACE_CONFIG"),
+    BackupNodes("BACKUP_NODES"),
+    DeleteNodeBackup("DELETE_NODE_BACKUP"),
+    ReplaceNode("REPLACE_NODE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

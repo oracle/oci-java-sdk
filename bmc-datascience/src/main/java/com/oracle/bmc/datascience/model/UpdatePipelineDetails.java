@@ -27,6 +27,7 @@ public final class UpdatePipelineDetails
         "displayName",
         "description",
         "configurationDetails",
+        "infrastructureConfigurationDetails",
         "logConfigurationDetails",
         "stepDetails",
         "freeformTags",
@@ -36,6 +37,7 @@ public final class UpdatePipelineDetails
             String displayName,
             String description,
             PipelineConfigurationDetails configurationDetails,
+            PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
             java.util.List<PipelineStepUpdateDetails> stepDetails,
             java.util.Map<String, String> freeformTags,
@@ -44,6 +46,7 @@ public final class UpdatePipelineDetails
         this.displayName = displayName;
         this.description = description;
         this.configurationDetails = configurationDetails;
+        this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
         this.stepDetails = stepDetails;
         this.freeformTags = freeformTags;
@@ -92,6 +95,16 @@ public final class UpdatePipelineDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationDetails")
+        private PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails;
+
+        public Builder infrastructureConfigurationDetails(
+                PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails) {
+            this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+            this.__explicitlySet__.add("infrastructureConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("logConfigurationDetails")
         private PipelineLogConfigurationDetails logConfigurationDetails;
 
@@ -102,15 +115,15 @@ public final class UpdatePipelineDetails
             return this;
         }
         /**
-         * Array of update details for each step. Only step configurations are allowed to be
-         * updated.
+         * Array of update details for each step. Only step configurations and step infrastructure
+         * configurations are allowed to be updated.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
         private java.util.List<PipelineStepUpdateDetails> stepDetails;
 
         /**
-         * Array of update details for each step. Only step configurations are allowed to be
-         * updated.
+         * Array of update details for each step. Only step configurations and step infrastructure
+         * configurations are allowed to be updated.
          *
          * @param stepDetails the value to set
          * @return this builder
@@ -175,6 +188,7 @@ public final class UpdatePipelineDetails
                             this.displayName,
                             this.description,
                             this.configurationDetails,
+                            this.infrastructureConfigurationDetails,
                             this.logConfigurationDetails,
                             this.stepDetails,
                             this.freeformTags,
@@ -195,6 +209,10 @@ public final class UpdatePipelineDetails
             }
             if (model.wasPropertyExplicitlySet("configurationDetails")) {
                 this.configurationDetails(model.getConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("infrastructureConfigurationDetails")) {
+                this.infrastructureConfigurationDetails(
+                        model.getInfrastructureConfigurationDetails());
             }
             if (model.wasPropertyExplicitlySet("logConfigurationDetails")) {
                 this.logConfigurationDetails(model.getLogConfigurationDetails());
@@ -254,6 +272,13 @@ public final class UpdatePipelineDetails
         return configurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("infrastructureConfigurationDetails")
+    private final PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails;
+
+    public PipelineInfrastructureConfigurationDetails getInfrastructureConfigurationDetails() {
+        return infrastructureConfigurationDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("logConfigurationDetails")
     private final PipelineLogConfigurationDetails logConfigurationDetails;
 
@@ -262,13 +287,15 @@ public final class UpdatePipelineDetails
     }
 
     /**
-     * Array of update details for each step. Only step configurations are allowed to be updated.
+     * Array of update details for each step. Only step configurations and step infrastructure
+     * configurations are allowed to be updated.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("stepDetails")
     private final java.util.List<PipelineStepUpdateDetails> stepDetails;
 
     /**
-     * Array of update details for each step. Only step configurations are allowed to be updated.
+     * Array of update details for each step. Only step configurations and step infrastructure
+     * configurations are allowed to be updated.
      *
      * @return the value
      */
@@ -334,6 +361,8 @@ public final class UpdatePipelineDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", configurationDetails=").append(String.valueOf(this.configurationDetails));
+        sb.append(", infrastructureConfigurationDetails=")
+                .append(String.valueOf(this.infrastructureConfigurationDetails));
         sb.append(", logConfigurationDetails=")
                 .append(String.valueOf(this.logConfigurationDetails));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
@@ -357,6 +386,9 @@ public final class UpdatePipelineDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.configurationDetails, other.configurationDetails)
                 && java.util.Objects.equals(
+                        this.infrastructureConfigurationDetails,
+                        other.infrastructureConfigurationDetails)
+                && java.util.Objects.equals(
                         this.logConfigurationDetails, other.logConfigurationDetails)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -375,6 +407,11 @@ public final class UpdatePipelineDetails
                         + (this.configurationDetails == null
                                 ? 43
                                 : this.configurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.infrastructureConfigurationDetails == null
+                                ? 43
+                                : this.infrastructureConfigurationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.logConfigurationDetails == null

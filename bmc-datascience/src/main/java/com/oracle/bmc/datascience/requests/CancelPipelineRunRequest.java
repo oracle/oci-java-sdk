@@ -75,6 +75,13 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
     public String getIfMatch() {
         return ifMatch;
     }
+    /** A boolean value to specify whether to terminate pipeline run gracefully. */
+    private Boolean terminateGracefully;
+
+    /** A boolean value to specify whether to terminate pipeline run gracefully. */
+    public Boolean getTerminateGracefully() {
+        return terminateGracefully;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -164,6 +171,20 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
+        /** A boolean value to specify whether to terminate pipeline run gracefully. */
+        private Boolean terminateGracefully = null;
+
+        /**
+         * A boolean value to specify whether to terminate pipeline run gracefully.
+         *
+         * @param terminateGracefully the value to set
+         * @return this builder instance
+         */
+        public Builder terminateGracefully(Boolean terminateGracefully) {
+            this.terminateGracefully = terminateGracefully;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -198,6 +219,7 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            terminateGracefully(o.getTerminateGracefully());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -236,8 +258,10 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
+            request.terminateGracefully = terminateGracefully;
             return request;
-            // new CancelPipelineRunRequest(pipelineRunId, opcRequestId, opcRetryToken, ifMatch);
+            // new CancelPipelineRunRequest(pipelineRunId, opcRequestId, opcRetryToken, ifMatch,
+            // terminateGracefully);
         }
     }
 
@@ -251,7 +275,8 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
                 .pipelineRunId(pipelineRunId)
                 .opcRequestId(opcRequestId)
                 .opcRetryToken(opcRetryToken)
-                .ifMatch(ifMatch);
+                .ifMatch(ifMatch)
+                .terminateGracefully(terminateGracefully);
     }
 
     /**
@@ -272,6 +297,7 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
+        sb.append(",terminateGracefully=").append(String.valueOf(this.terminateGracefully));
         sb.append(")");
         return sb.toString();
     }
@@ -290,7 +316,8 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.pipelineRunId, other.pipelineRunId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.ifMatch, other.ifMatch);
+                && java.util.Objects.equals(this.ifMatch, other.ifMatch)
+                && java.util.Objects.equals(this.terminateGracefully, other.terminateGracefully);
     }
 
     @Override
@@ -305,6 +332,11 @@ public class CancelPipelineRunRequest extends com.oracle.bmc.requests.BmcRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.terminateGracefully == null
+                                ? 43
+                                : this.terminateGracefully.hashCode());
         return result;
     }
 }
