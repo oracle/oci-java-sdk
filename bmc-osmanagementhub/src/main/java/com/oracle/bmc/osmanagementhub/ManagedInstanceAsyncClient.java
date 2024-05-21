@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -459,6 +459,64 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AttachProfileToManagedInstanceResponse>
+            attachProfileToManagedInstance(
+                    AttachProfileToManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachProfileToManagedInstanceRequest,
+                                    AttachProfileToManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async attachProfileToManagedInstance");
+        final AttachProfileToManagedInstanceRequest interceptedRequest =
+                AttachProfileToManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachProfileToManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "AttachProfileToManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachProfileToManagedInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachProfileToManagedInstanceResponse>
+                transformer =
+                        AttachProfileToManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachProfileToManagedInstanceRequest,
+                        AttachProfileToManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachProfileToManagedInstanceRequest,
+                                AttachProfileToManagedInstanceResponse>,
+                        java.util.concurrent.Future<AttachProfileToManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachProfileToManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachProfileToManagedInstanceRequest, AttachProfileToManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachSoftwareSourcesToManagedInstanceResponse>
             attachSoftwareSourcesToManagedInstance(
                     AttachSoftwareSourcesToManagedInstanceRequest request,
@@ -478,7 +536,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "AttachSoftwareSourcesToManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AttachSoftwareSourcesToManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AttachSoftwareSourcesToManagedInstanceResponse>
                 transformer =
@@ -520,6 +578,107 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteManagedInstanceResponse> deleteManagedInstance(
+            DeleteManagedInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteManagedInstanceRequest, DeleteManagedInstanceResponse>
+                    handler) {
+        LOG.trace("Called async deleteManagedInstance");
+        final DeleteManagedInstanceRequest interceptedRequest =
+                DeleteManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "DeleteManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DeleteManagedInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteManagedInstanceResponse>
+                transformer =
+                        DeleteManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteManagedInstanceRequest, DeleteManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteManagedInstanceRequest, DeleteManagedInstanceResponse>,
+                        java.util.concurrent.Future<DeleteManagedInstanceResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteManagedInstanceRequest, DeleteManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachProfileFromManagedInstanceResponse>
+            detachProfileFromManagedInstance(
+                    DetachProfileFromManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachProfileFromManagedInstanceRequest,
+                                    DetachProfileFromManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async detachProfileFromManagedInstance");
+        final DetachProfileFromManagedInstanceRequest interceptedRequest =
+                DetachProfileFromManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachProfileFromManagedInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "DetachProfileFromManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachProfileFromManagedInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DetachProfileFromManagedInstanceResponse>
+                transformer =
+                        DetachProfileFromManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DetachProfileFromManagedInstanceRequest,
+                        DetachProfileFromManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachProfileFromManagedInstanceRequest,
+                                DetachProfileFromManagedInstanceResponse>,
+                        java.util.concurrent.Future<DetachProfileFromManagedInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachProfileFromManagedInstanceRequest,
+                    DetachProfileFromManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachSoftwareSourcesFromManagedInstanceResponse>
             detachSoftwareSourcesFromManagedInstance(
                     DetachSoftwareSourcesFromManagedInstanceRequest request,
@@ -539,7 +698,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "DetachSoftwareSourcesFromManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DetachSoftwareSourcesFromManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DetachSoftwareSourcesFromManagedInstanceResponse>
                 transformer =
@@ -601,7 +760,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "DisableModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/DisableModuleStreamOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DisableModuleStreamOnManagedInstanceResponse>
                 transformer =
@@ -661,7 +820,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "EnableModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/EnableModuleStreamOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, EnableModuleStreamOnManagedInstanceResponse>
                 transformer =
@@ -714,7 +873,10 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                 GetManagedInstanceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ManagedInstance", "GetManagedInstance", ib.getRequestUri().toString(), "");
+                        "ManagedInstance",
+                        "GetManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/GetManagedInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, GetManagedInstanceResponse>
                 transformer =
                         GetManagedInstanceConverter.fromResponse(
@@ -732,6 +894,117 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetManagedInstanceRequest, GetManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWindowsUpdateResponse> getWindowsUpdate(
+            GetWindowsUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWindowsUpdateRequest, GetWindowsUpdateResponse>
+                    handler) {
+        LOG.trace("Called async getWindowsUpdate");
+        final GetWindowsUpdateRequest interceptedRequest =
+                GetWindowsUpdateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWindowsUpdateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "GetWindowsUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdate/GetWindowsUpdate");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWindowsUpdateResponse>
+                transformer =
+                        GetWindowsUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWindowsUpdateRequest, GetWindowsUpdateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWindowsUpdateRequest, GetWindowsUpdateResponse>,
+                        java.util.concurrent.Future<GetWindowsUpdateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWindowsUpdateRequest, GetWindowsUpdateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+            installAllWindowsUpdatesOnManagedInstancesInCompartment(
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest,
+                                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async installAllWindowsUpdatesOnManagedInstancesInCompartment");
+        final InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest interceptedRequest =
+                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentConverter.interceptRequest(
+                        request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "InstallAllWindowsUpdatesOnManagedInstancesInCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstancesInCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+                transformer =
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentConverter
+                                .fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest,
+                        InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest,
+                                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getInstallAllWindowsUpdatesOnManagedInstancesInCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentRequest,
+                    InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -764,7 +1037,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "InstallModuleStreamProfileOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallModuleStreamProfileOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         InstallModuleStreamProfileOnManagedInstanceResponse>
@@ -826,7 +1099,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "InstallPackagesOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallPackagesOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, InstallPackagesOnManagedInstanceResponse>
                 transformer =
@@ -867,6 +1140,67 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<InstallWindowsUpdatesOnManagedInstanceResponse>
+            installWindowsUpdatesOnManagedInstance(
+                    InstallWindowsUpdatesOnManagedInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    InstallWindowsUpdatesOnManagedInstanceRequest,
+                                    InstallWindowsUpdatesOnManagedInstanceResponse>
+                            handler) {
+        LOG.trace("Called async installWindowsUpdatesOnManagedInstance");
+        final InstallWindowsUpdatesOnManagedInstanceRequest interceptedRequest =
+                InstallWindowsUpdatesOnManagedInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InstallWindowsUpdatesOnManagedInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "InstallWindowsUpdatesOnManagedInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/InstallWindowsUpdatesOnManagedInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, InstallWindowsUpdatesOnManagedInstanceResponse>
+                transformer =
+                        InstallWindowsUpdatesOnManagedInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        InstallWindowsUpdatesOnManagedInstanceRequest,
+                        InstallWindowsUpdatesOnManagedInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InstallWindowsUpdatesOnManagedInstanceRequest,
+                                InstallWindowsUpdatesOnManagedInstanceResponse>,
+                        java.util.concurrent.Future<InstallWindowsUpdatesOnManagedInstanceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getInstallWindowsUpdatesOnManagedInstanceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InstallWindowsUpdatesOnManagedInstanceRequest,
+                    InstallWindowsUpdatesOnManagedInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceAvailablePackagesResponse>
             listManagedInstanceAvailablePackages(
                     ListManagedInstanceAvailablePackagesRequest request,
@@ -885,7 +1219,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstanceAvailablePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailablePackages");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceAvailablePackagesResponse>
                 transformer =
@@ -939,7 +1273,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstanceAvailableSoftwareSources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableSoftwareSources");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         ListManagedInstanceAvailableSoftwareSourcesResponse>
@@ -977,6 +1311,62 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInstanceAvailableWindowsUpdatesResponse>
+            listManagedInstanceAvailableWindowsUpdates(
+                    ListManagedInstanceAvailableWindowsUpdatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceAvailableWindowsUpdatesRequest,
+                                    ListManagedInstanceAvailableWindowsUpdatesResponse>
+                            handler) {
+        LOG.trace("Called async listManagedInstanceAvailableWindowsUpdates");
+        final ListManagedInstanceAvailableWindowsUpdatesRequest interceptedRequest =
+                ListManagedInstanceAvailableWindowsUpdatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceAvailableWindowsUpdatesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceAvailableWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceAvailableWindowsUpdates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceAvailableWindowsUpdatesResponse>
+                transformer =
+                        ListManagedInstanceAvailableWindowsUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedInstanceAvailableWindowsUpdatesRequest,
+                        ListManagedInstanceAvailableWindowsUpdatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedInstanceAvailableWindowsUpdatesRequest,
+                                ListManagedInstanceAvailableWindowsUpdatesResponse>,
+                        java.util.concurrent.Future<
+                                ListManagedInstanceAvailableWindowsUpdatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedInstanceAvailableWindowsUpdatesRequest,
+                    ListManagedInstanceAvailableWindowsUpdatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceErrataResponse> listManagedInstanceErrata(
             ListManagedInstanceErrataRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -992,7 +1382,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstanceErrata",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceErrata");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceErrataResponse>
                 transformer =
@@ -1044,7 +1434,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstanceInstalledPackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledPackages");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceInstalledPackagesResponse>
                 transformer =
@@ -1080,6 +1470,62 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedInstanceInstalledWindowsUpdatesResponse>
+            listManagedInstanceInstalledWindowsUpdates(
+                    ListManagedInstanceInstalledWindowsUpdatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedInstanceInstalledWindowsUpdatesRequest,
+                                    ListManagedInstanceInstalledWindowsUpdatesResponse>
+                            handler) {
+        LOG.trace("Called async listManagedInstanceInstalledWindowsUpdates");
+        final ListManagedInstanceInstalledWindowsUpdatesRequest interceptedRequest =
+                ListManagedInstanceInstalledWindowsUpdatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedInstanceInstalledWindowsUpdatesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListManagedInstanceInstalledWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceInstalledWindowsUpdates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedInstanceInstalledWindowsUpdatesResponse>
+                transformer =
+                        ListManagedInstanceInstalledWindowsUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedInstanceInstalledWindowsUpdatesRequest,
+                        ListManagedInstanceInstalledWindowsUpdatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedInstanceInstalledWindowsUpdatesRequest,
+                                ListManagedInstanceInstalledWindowsUpdatesResponse>,
+                        java.util.concurrent.Future<
+                                ListManagedInstanceInstalledWindowsUpdatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedInstanceInstalledWindowsUpdatesRequest,
+                    ListManagedInstanceInstalledWindowsUpdatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedInstanceModulesResponse>
             listManagedInstanceModules(
                     ListManagedInstanceModulesRequest request,
@@ -1097,7 +1543,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstanceModules",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceModules");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceModulesResponse>
                 transformer =
@@ -1149,7 +1595,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstanceUpdatablePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstanceUpdatablePackages");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListManagedInstanceUpdatablePackagesResponse>
                 transformer =
@@ -1200,7 +1646,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ListManagedInstances",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ListManagedInstances");
         final java.util.function.Function<javax.ws.rs.core.Response, ListManagedInstancesResponse>
                 transformer =
                         ListManagedInstancesConverter.fromResponse(
@@ -1219,6 +1665,52 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListManagedInstancesRequest, ListManagedInstancesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWindowsUpdatesResponse> listWindowsUpdates(
+            ListWindowsUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>
+                    handler) {
+        LOG.trace("Called async listWindowsUpdates");
+        final ListWindowsUpdatesRequest interceptedRequest =
+                ListWindowsUpdatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWindowsUpdatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedInstance",
+                        "ListWindowsUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WindowsUpdateCollection/ListWindowsUpdates");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWindowsUpdatesResponse>
+                transformer =
+                        ListWindowsUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>,
+                        java.util.concurrent.Future<ListWindowsUpdatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWindowsUpdatesRequest, ListWindowsUpdatesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1251,7 +1743,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "ManageModuleStreamsOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/ManageModuleStreamsOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ManageModuleStreamsOnManagedInstanceResponse>
                 transformer =
@@ -1310,7 +1802,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "RefreshSoftwareOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RefreshSoftwareOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RefreshSoftwareOnManagedInstanceResponse>
                 transformer =
@@ -1365,7 +1857,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "RemoveModuleStreamProfileFromManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemoveModuleStreamProfileFromManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RemoveModuleStreamProfileFromManagedInstanceResponse>
@@ -1427,7 +1919,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "RemovePackagesFromManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RemovePackagesFromManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RemovePackagesFromManagedInstanceResponse>
                 transformer =
@@ -1487,7 +1979,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "SwitchModuleStreamOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/SwitchModuleStreamOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SwitchModuleStreamOnManagedInstanceResponse>
                 transformer =
@@ -1547,7 +2039,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "UpdateAllPackagesOnManagedInstancesInCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdateAllPackagesOnManagedInstancesInCompartment");
         final java.util.function.Function<
                         javax.ws.rs.core.Response,
                         UpdateAllPackagesOnManagedInstancesInCompartmentResponse>
@@ -1606,7 +2098,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "UpdateManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdateManagedInstance");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateManagedInstanceResponse>
                 transformer =
                         UpdateManagedInstanceConverter.fromResponse(
@@ -1661,7 +2153,7 @@ public class ManagedInstanceAsyncClient implements ManagedInstanceAsync {
                         "ManagedInstance",
                         "UpdatePackagesOnManagedInstance",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/UpdatePackagesOnManagedInstance");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdatePackagesOnManagedInstanceResponse>
                 transformer =

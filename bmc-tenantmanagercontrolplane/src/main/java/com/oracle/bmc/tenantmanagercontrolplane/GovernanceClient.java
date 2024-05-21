@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -10,7 +10,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class GovernanceClient implements Governance {
     /**
      * Service instance for Governance.
@@ -354,7 +354,8 @@ public class GovernanceClient implements Governance {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -488,7 +489,7 @@ public class GovernanceClient implements Governance {
                         "Governance",
                         "AddGovernance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/AddGovernance");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/AddGovernance");
         java.util.function.Function<javax.ws.rs.core.Response, AddGovernanceResponse> transformer =
                 AddGovernanceConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -525,7 +526,7 @@ public class GovernanceClient implements Governance {
                         "Governance",
                         "RemoveGovernance",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RemoveGovernance");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/OrganizationTenancy/RemoveGovernance");
         java.util.function.Function<javax.ws.rs.core.Response, RemoveGovernanceResponse>
                 transformer =
                         RemoveGovernanceConverter.fromResponse(

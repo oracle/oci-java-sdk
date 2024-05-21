@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
@@ -44,13 +44,13 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * mountPath describes the volume access path.
+         * Describes the volume access path.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mountPath")
         private String mountPath;
 
         /**
-         * mountPath describes the volume access path.
+         * Describes the volume access path.
          * @param mountPath the value to set
          * @return this builder
          **/
@@ -76,13 +76,13 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * specifies a sub-path inside the referenced volume instead of its root
+         * A sub-path inside the referenced volume.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subPath")
         private String subPath;
 
         /**
-         * specifies a sub-path inside the referenced volume instead of its root
+         * A sub-path inside the referenced volume.
          * @param subPath the value to set
          * @return this builder
          **/
@@ -92,13 +92,13 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * Whether the volume was mounted in read-only mode. By default, the volume is mounted with write access.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
         private Boolean isReadOnly;
 
         /**
-         * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+         * Whether the volume was mounted in read-only mode. By default, the volume is mounted with write access.
          * @param isReadOnly the value to set
          * @return this builder
          **/
@@ -108,24 +108,24 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-         * Here is a example:
+         * If there is more than one partition in the volume, reference this number of partitions.
+         * Here is an example:
          * Number  Start   End     Size    File system  Name                  Flags
-         *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-         *  2      106MB   1180MB  1074MB  xfs
-         *  3      1180MB  50.0GB  48.8GB                                     lvm
+         * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+         * 2      106MB   1180MB  1074MB  xfs
+         * 3      1180MB  50.0GB  48.8GB                                     lvm
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private Integer partition;
 
         /**
-         * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-         * Here is a example:
+         * If there is more than one partition in the volume, reference this number of partitions.
+         * Here is an example:
          * Number  Start   End     Size    File system  Name                  Flags
-         *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-         *  2      106MB   1180MB  1074MB  xfs
-         *  3      1180MB  50.0GB  48.8GB                                     lvm
+         * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+         * 2      106MB   1180MB  1074MB  xfs
+         * 3      1180MB  50.0GB  48.8GB                                     lvm
          *
          * @param partition the value to set
          * @return this builder
@@ -186,13 +186,13 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * mountPath describes the volume access path.
+     * Describes the volume access path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mountPath")
     private final String mountPath;
 
     /**
-     * mountPath describes the volume access path.
+     * Describes the volume access path.
      * @return the value
      **/
     public String getMountPath() {
@@ -214,13 +214,13 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * specifies a sub-path inside the referenced volume instead of its root
+     * A sub-path inside the referenced volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subPath")
     private final String subPath;
 
     /**
-     * specifies a sub-path inside the referenced volume instead of its root
+     * A sub-path inside the referenced volume.
      * @return the value
      **/
     public String getSubPath() {
@@ -228,13 +228,13 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * Whether the volume was mounted in read-only mode. By default, the volume is mounted with write access.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     private final Boolean isReadOnly;
 
     /**
-     * Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+     * Whether the volume was mounted in read-only mode. By default, the volume is mounted with write access.
      * @return the value
      **/
     public Boolean getIsReadOnly() {
@@ -242,24 +242,24 @@ public final class VolumeMount extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-     * Here is a example:
+     * If there is more than one partition in the volume, reference this number of partitions.
+     * Here is an example:
      * Number  Start   End     Size    File system  Name                  Flags
-     *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-     *  2      106MB   1180MB  1074MB  xfs
-     *  3      1180MB  50.0GB  48.8GB                                     lvm
+     * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+     * 2      106MB   1180MB  1074MB  xfs
+     * 3      1180MB  50.0GB  48.8GB                                     lvm
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
     private final Integer partition;
 
     /**
-     * If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-     * Here is a example:
+     * If there is more than one partition in the volume, reference this number of partitions.
+     * Here is an example:
      * Number  Start   End     Size    File system  Name                  Flags
-     *  1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-     *  2      106MB   1180MB  1074MB  xfs
-     *  3      1180MB  50.0GB  48.8GB                                     lvm
+     * 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+     * 2      106MB   1180MB  1074MB  xfs
+     * 3      1180MB  50.0GB  48.8GB                                     lvm
      *
      * @return the value
      **/

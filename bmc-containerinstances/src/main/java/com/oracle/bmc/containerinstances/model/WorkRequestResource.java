@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
@@ -51,8 +51,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The way in which this resource is affected by the work tracked in the work request.
-         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+         * A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+         * work is complete for that resource, at which point it updates to CREATED, UPDATED,
          * or DELETED, respectively.
          *
          **/
@@ -61,8 +61,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
         /**
          * The way in which this resource is affected by the work tracked in the work request.
-         * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-         * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+         * A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+         * work is complete for that resource, at which point it updates to CREATED, UPDATED,
          * or DELETED, respectively.
          *
          * @param actionType the value to set
@@ -74,13 +74,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The identifier of the resource the work request affects.
+         * The ID of the resource the work request affects.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * The identifier of the resource the work request affects.
+         * The ID of the resource the work request affects.
          * @param identifier the value to set
          * @return this builder
          **/
@@ -90,13 +90,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The URI path that the user can do a GET on to access the resource metadata
+         * The URI path that the user can do a GET on to access the resource metadata.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
         private String entityUri;
 
         /**
-         * The URI path that the user can do a GET on to access the resource metadata
+         * The URI path that the user can do a GET on to access the resource metadata.
          * @param entityUri the value to set
          * @return this builder
          **/
@@ -164,8 +164,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+     * A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+     * work is complete for that resource, at which point it updates to CREATED, UPDATED,
      * or DELETED, respectively.
      *
      **/
@@ -174,8 +174,8 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
 
     /**
      * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+     * A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+     * work is complete for that resource, at which point it updates to CREATED, UPDATED,
      * or DELETED, respectively.
      *
      * @return the value
@@ -185,13 +185,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The identifier of the resource the work request affects.
+     * The ID of the resource the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * The identifier of the resource the work request affects.
+     * The ID of the resource the work request affects.
      * @return the value
      **/
     public String getIdentifier() {
@@ -199,13 +199,13 @@ public final class WorkRequestResource extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that the user can do a GET on to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     private final String entityUri;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that the user can do a GET on to access the resource metadata.
      * @return the value
      **/
     public String getEntityUri() {

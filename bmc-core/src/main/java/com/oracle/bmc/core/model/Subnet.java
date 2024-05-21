@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -310,7 +310,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+         * For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space.
          * The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 2001:0db8:0123:1111::/64}
@@ -320,7 +320,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         private String ipv6CidrBlock;
 
         /**
-         * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+         * For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space.
          * The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 2001:0db8:0123:1111::/64}
@@ -334,14 +334,14 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+         * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
         private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+         * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
          *
          * @param ipv6CidrBlocks the value to set
          * @return this builder
@@ -926,7 +926,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+     * For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space.
      * The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 2001:0db8:0123:1111::/64}
@@ -936,7 +936,7 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     private final String ipv6CidrBlock;
 
     /**
-     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+     * For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space.
      * The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 2001:0db8:0123:1111::/64}
@@ -948,14 +948,14 @@ public final class Subnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+     * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
     private final java.util.List<String> ipv6CidrBlocks;
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+     * The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
      *
      * @return the value
      **/

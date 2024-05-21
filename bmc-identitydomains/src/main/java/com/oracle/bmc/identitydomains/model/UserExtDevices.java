@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -66,7 +66,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's device.
+         * The user's device identifier.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -84,7 +84,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String value;
 
         /**
-         * The identifier of the User's device.
+         * The user's device identifier.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -106,7 +106,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The URI of the corresponding Device resource which belongs to user
+         * The URI of the corresponding Device resource which belongs to user.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -123,7 +123,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String ref;
 
         /**
-         * The URI of the corresponding Device resource which belongs to user
+         * The URI of the corresponding Device resource which belongs to user.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -182,7 +182,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Device status.
+         * The device's status.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -199,7 +199,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String status;
 
         /**
-         * Device status.
+         * The device's status.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -220,7 +220,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Last Sync time for device.
+         * The last sync time for device.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -237,7 +237,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String lastSyncTime;
 
         /**
-         * Last Sync time for device.
+         * The last sync time for device.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -258,7 +258,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Device authentication factor type.
+         * The device authentication factor type.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -275,7 +275,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String factorType;
 
         /**
-         * Device authentication factor type.
+         * The device authentication factor type.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -296,7 +296,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Device authentication factor status.
+         * The device authentication factor status.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -313,7 +313,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String factorStatus;
 
         /**
-         * Device authentication factor status.
+         * The device authentication factor status.
          * <p>
          **Added In:** 18.4.2
          * <p>
@@ -334,7 +334,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Authentication method.
+         * The authentication method.
          * <p>
          **Added In:** 2009232244
          * <p>
@@ -351,7 +351,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String authenticationMethod;
 
         /**
-         * Authentication method.
+         * The authentication method.
          * <p>
          **Added In:** 2009232244
          * <p>
@@ -372,7 +372,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Third party factor vendor name.
+         * The third-party factor vendor name.
          * <p>
          **Added In:** 2009232244
          * <p>
@@ -389,7 +389,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
         private String thirdPartyVendorName;
 
         /**
-         * Third party factor vendor name.
+         * The third-party factor vendor name.
          * <p>
          **Added In:** 2009232244
          * <p>
@@ -476,7 +476,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The identifier of the User's device.
+     * The user's device identifier.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -494,7 +494,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String value;
 
     /**
-     * The identifier of the User's device.
+     * The user's device identifier.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -514,7 +514,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The URI of the corresponding Device resource which belongs to user
+     * The URI of the corresponding Device resource which belongs to user.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -531,7 +531,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String ref;
 
     /**
-     * The URI of the corresponding Device resource which belongs to user
+     * The URI of the corresponding Device resource which belongs to user.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -586,7 +586,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Device status.
+     * The device's status.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -603,7 +603,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String status;
 
     /**
-     * Device status.
+     * The device's status.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -622,7 +622,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Last Sync time for device.
+     * The last sync time for device.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -639,7 +639,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String lastSyncTime;
 
     /**
-     * Last Sync time for device.
+     * The last sync time for device.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -658,7 +658,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Device authentication factor type.
+     * The device authentication factor type.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -675,7 +675,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String factorType;
 
     /**
-     * Device authentication factor type.
+     * The device authentication factor type.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -694,7 +694,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Device authentication factor status.
+     * The device authentication factor status.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -711,7 +711,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String factorStatus;
 
     /**
-     * Device authentication factor status.
+     * The device authentication factor status.
      * <p>
      **Added In:** 18.4.2
      * <p>
@@ -730,7 +730,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Authentication method.
+     * The authentication method.
      * <p>
      **Added In:** 2009232244
      * <p>
@@ -747,7 +747,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String authenticationMethod;
 
     /**
-     * Authentication method.
+     * The authentication method.
      * <p>
      **Added In:** 2009232244
      * <p>
@@ -766,7 +766,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Third party factor vendor name.
+     * The third-party factor vendor name.
      * <p>
      **Added In:** 2009232244
      * <p>
@@ -783,7 +783,7 @@ public final class UserExtDevices extends com.oracle.bmc.http.internal.Explicitl
     private final String thirdPartyVendorName;
 
     /**
-     * Third party factor vendor name.
+     * The third-party factor vendor name.
      * <p>
      **Added In:** 2009232244
      * <p>

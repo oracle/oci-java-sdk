@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
@@ -106,13 +106,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * rfc5424 time format.
+         * RFC 5424 time format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
         private String rfc5424TimeFormat;
 
         /**
-         * rfc5424 time format.
+         * RFC 5424 time format.
          * @param rfc5424TimeFormat the value to set
          * @return this builder
          **/
@@ -122,13 +122,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * Message format of syslog.
+         * Syslog message format.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
         private MessageFormat messageFormat;
 
         /**
-         * Message format of syslog.
+         * Syslog message format.
          * @param messageFormat the value to set
          * @return this builder
          **/
@@ -138,13 +138,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * With priority or not.
+         * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
         private Boolean isWithPriority;
 
         /**
-         * With priority or not.
+         * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
          * @param isWithPriority the value to set
          * @return this builder
          **/
@@ -154,13 +154,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * Support colonless ident or not.
+         * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
         private Boolean isSupportColonlessIdent;
 
         /**
-         * Support colonless ident or not.
+         * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
          * @param isSupportColonlessIdent the value to set
          * @return this builder
          **/
@@ -313,13 +313,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     }
 
     /**
-     * rfc5424 time format.
+     * RFC 5424 time format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rfc5424TimeFormat")
     private final String rfc5424TimeFormat;
 
     /**
-     * rfc5424 time format.
+     * RFC 5424 time format.
      * @return the value
      **/
     public String getRfc5424TimeFormat() {
@@ -327,7 +327,7 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     }
 
     /**
-     * Message format of syslog.
+     * Syslog message format.
      **/
     public enum MessageFormat {
         Rfc3164("RFC3164"),
@@ -376,13 +376,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
         }
     };
     /**
-     * Message format of syslog.
+     * Syslog message format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     private final MessageFormat messageFormat;
 
     /**
-     * Message format of syslog.
+     * Syslog message format.
      * @return the value
      **/
     public MessageFormat getMessageFormat() {
@@ -390,13 +390,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     }
 
     /**
-     * With priority or not.
+     * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isWithPriority")
     private final Boolean isWithPriority;
 
     /**
-     * With priority or not.
+     * Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
      * @return the value
      **/
     public Boolean getIsWithPriority() {
@@ -404,13 +404,13 @@ public final class UnifiedAgentSyslogParser extends UnifiedAgentParser {
     }
 
     /**
-     * Support colonless ident or not.
+     * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportColonlessIdent")
     private final Boolean isSupportColonlessIdent;
 
     /**
-     * Support colonless ident or not.
+     * Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
      * @return the value
      **/
     public Boolean getIsSupportColonlessIdent() {

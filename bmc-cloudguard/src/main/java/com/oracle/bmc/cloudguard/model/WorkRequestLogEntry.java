@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
@@ -31,13 +31,13 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Human-readable log message.
+         * A human-readable log message
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * Human-readable log message.
+         * A human-readable log message
          * @param message the value to set
          * @return this builder
          **/
@@ -47,13 +47,13 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The time the log message was written.
+         * The time the log message was written
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written.
+         * The time the log message was written
          * @param timestamp the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Human-readable log message.
+     * A human-readable log message
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * Human-readable log message.
+     * A human-readable log message
      * @return the value
      **/
     public String getMessage() {
@@ -112,13 +112,13 @@ public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The time the log message was written.
+     * The time the log message was written
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written.
+     * The time the log message was written
      * @return the value
      **/
     public java.util.Date getTimestamp() {

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm.model;
 
 /**
- * Details to create a new Knowledge Base.
+ * Details to create a new knowledge base.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -43,13 +43,13 @@ public final class CreateKnowledgeBaseDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+         * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+         * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the knowledge base.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -59,13 +59,13 @@ public final class CreateKnowledgeBaseDetails
             return this;
         }
         /**
-         * The name of the Knowledge Base.
+         * The name of the knowledge base.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name of the Knowledge Base.
+         * The name of the knowledge base.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -162,13 +162,13 @@ public final class CreateKnowledgeBaseDetails
     }
 
     /**
-     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the Knowledge Base's compartment.
+     * The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -176,13 +176,13 @@ public final class CreateKnowledgeBaseDetails
     }
 
     /**
-     * The name of the Knowledge Base.
+     * The name of the knowledge base.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name of the Knowledge Base.
+     * The name of the knowledge base.
      * @return the value
      **/
     public String getDisplayName() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -12,23 +12,23 @@ import com.oracle.bmc.cloudguard.model.*;
 public class GetDetectorRuleRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Name of Detector.
+     * Detector name.
      */
     private String detectorId;
 
     /**
-     * The Name of Detector.
+     * Detector name.
      */
     public String getDetectorId() {
         return detectorId;
     }
     /**
-     * The key of Detector Rule.
+     * The unique identifier of a detector rule.
      */
     private String detectorRuleId;
 
     /**
-     * The key of Detector Rule.
+     * The unique identifier of a detector rule.
      */
     public String getDetectorRuleId() {
         return detectorRuleId;
@@ -53,12 +53,12 @@ public class GetDetectorRuleRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Name of Detector.
+         * Detector name.
          */
         private String detectorId = null;
 
         /**
-         * The Name of Detector.
+         * Detector name.
          * @param detectorId the value to set
          * @return this builder instance
          */
@@ -68,12 +68,12 @@ public class GetDetectorRuleRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The key of Detector Rule.
+         * The unique identifier of a detector rule.
          */
         private String detectorRuleId = null;
 
         /**
-         * The key of Detector Rule.
+         * The unique identifier of a detector rule.
          * @param detectorRuleId the value to set
          * @return this builder instance
          */

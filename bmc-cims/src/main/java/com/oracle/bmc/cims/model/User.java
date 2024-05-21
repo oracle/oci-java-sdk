@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the user object.
+ * Details about the user.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,7 +29,8 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "timezone",
         "organizationName",
         "compartmentId",
-        "contactEmail"
+        "contactEmail",
+        "problemType"
     })
     public User(
             String key,
@@ -41,7 +42,8 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String timezone,
             String organizationName,
             String compartmentId,
-            String contactEmail) {
+            String contactEmail,
+            ProblemType problemType) {
         super();
         this.key = key;
         this.firstName = firstName;
@@ -53,18 +55,19 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.organizationName = organizationName;
         this.compartmentId = compartmentId;
         this.contactEmail = contactEmail;
+        this.problemType = problemType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the user.
+         * A unique identifier for the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Unique identifier for the user.
+         * A unique identifier for the user.
          * @param key the value to set
          * @return this builder
          **/
@@ -74,13 +77,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * First name of the user.
+         * The user's first name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
-         * First name of the user.
+         * The user's first name.
          * @param firstName the value to set
          * @return this builder
          **/
@@ -90,13 +93,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Last name of the user.
+         * The user's last name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
-         * Last name of the user.
+         * The user's last name.
          * @param lastName the value to set
          * @return this builder
          **/
@@ -106,13 +109,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Country of the user.
+         * The country of the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
-         * Country of the user.
+         * The country of the user.
          * @param country the value to set
          * @return this builder
          **/
@@ -122,13 +125,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * CSI to be associated to the user.
+         * The CSI associated with the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
-         * CSI to be associated to the user.
+         * The CSI associated with the user.
          * @param csi the value to set
          * @return this builder
          **/
@@ -138,13 +141,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Contact number of the user.
+         * The user's contact phone number.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("phone")
         private String phone;
 
         /**
-         * Contact number of the user.
+         * The user's contact phone number.
          * @param phone the value to set
          * @return this builder
          **/
@@ -154,13 +157,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Timezone of the user.
+         * The timezone of the user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timezone")
         private String timezone;
 
         /**
-         * Timezone of the user.
+         * The timezone of the user.
          * @param timezone the value to set
          * @return this builder
          **/
@@ -170,13 +173,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * Organization of the user.
+         * The company that the user belongs to.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
         private String organizationName;
 
         /**
-         * Organization of the user.
+         * The company that the user belongs to.
          * @param organizationName the value to set
          * @return this builder
          **/
@@ -217,6 +220,22 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("contactEmail");
             return this;
         }
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase request.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("problemType")
+        private ProblemType problemType;
+
+        /**
+         * The kind of support ticket, such as a technical support request or a limit increase request.
+         * @param problemType the value to set
+         * @return this builder
+         **/
+        public Builder problemType(ProblemType problemType) {
+            this.problemType = problemType;
+            this.__explicitlySet__.add("problemType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -233,7 +252,8 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.timezone,
                             this.organizationName,
                             this.compartmentId,
-                            this.contactEmail);
+                            this.contactEmail,
+                            this.problemType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -272,6 +292,9 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             if (model.wasPropertyExplicitlySet("contactEmail")) {
                 this.contactEmail(model.getContactEmail());
             }
+            if (model.wasPropertyExplicitlySet("problemType")) {
+                this.problemType(model.getProblemType());
+            }
             return this;
         }
     }
@@ -288,13 +311,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Unique identifier for the user.
+     * A unique identifier for the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Unique identifier for the user.
+     * A unique identifier for the user.
      * @return the value
      **/
     public String getKey() {
@@ -302,13 +325,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * First name of the user.
+     * The user's first name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
-     * First name of the user.
+     * The user's first name.
      * @return the value
      **/
     public String getFirstName() {
@@ -316,13 +339,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Last name of the user.
+     * The user's last name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
-     * Last name of the user.
+     * The user's last name.
      * @return the value
      **/
     public String getLastName() {
@@ -330,13 +353,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Country of the user.
+     * The country of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
-     * Country of the user.
+     * The country of the user.
      * @return the value
      **/
     public String getCountry() {
@@ -344,13 +367,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * CSI to be associated to the user.
+     * The CSI associated with the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
-     * CSI to be associated to the user.
+     * The CSI associated with the user.
      * @return the value
      **/
     public String getCsi() {
@@ -358,13 +381,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Contact number of the user.
+     * The user's contact phone number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("phone")
     private final String phone;
 
     /**
-     * Contact number of the user.
+     * The user's contact phone number.
      * @return the value
      **/
     public String getPhone() {
@@ -372,13 +395,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Timezone of the user.
+     * The timezone of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final String timezone;
 
     /**
-     * Timezone of the user.
+     * The timezone of the user.
      * @return the value
      **/
     public String getTimezone() {
@@ -386,13 +409,13 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * Organization of the user.
+     * The company that the user belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
     private final String organizationName;
 
     /**
-     * Organization of the user.
+     * The company that the user belongs to.
      * @return the value
      **/
     public String getOrganizationName() {
@@ -427,6 +450,20 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return contactEmail;
     }
 
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("problemType")
+    private final ProblemType problemType;
+
+    /**
+     * The kind of support ticket, such as a technical support request or a limit increase request.
+     * @return the value
+     **/
+    public ProblemType getProblemType() {
+        return problemType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -451,6 +488,7 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", organizationName=").append(String.valueOf(this.organizationName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", contactEmail=").append(String.valueOf(this.contactEmail));
+        sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(")");
         return sb.toString();
     }
@@ -475,6 +513,7 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.organizationName, other.organizationName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.contactEmail, other.contactEmail)
+                && java.util.Objects.equals(this.problemType, other.problemType)
                 && super.equals(other);
     }
 
@@ -496,6 +535,7 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.contactEmail == null ? 43 : this.contactEmail.hashCode());
+        result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,13 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * The topic used for the Notifications target.
+ * The destination topic for data transferred from the source.
  * For configuration instructions, see
- * [To create a service connector](https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create).
+ * [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -49,7 +49,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
             return this;
         }
         /**
-         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
          * <p>
          * Example: {@code true}
          *
@@ -58,7 +58,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
         private Boolean enableFormattedMessaging;
 
         /**
-         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+         * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
          * <p>
          * Example: {@code true}
          *
@@ -130,7 +130,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
     }
 
     /**
-     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
      * <p>
      * Example: {@code true}
      *
@@ -139,7 +139,7 @@ public final class NotificationsTargetDetails extends TargetDetails {
     private final Boolean enableFormattedMessaging;
 
     /**
-     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the service connector source and the subscription protocol.
+     * Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.
      * <p>
      * Example: {@code true}
      *

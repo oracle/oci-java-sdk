@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a DR Plan.
+ * The details for updating a DR plan.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -37,7 +37,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR Plan being updated.
+         * The display name of the DR plan being updated.
          * <p>
          * Example: {@code EBS Switchover PHX to IAD}
          *
@@ -46,7 +46,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
         private String displayName;
 
         /**
-         * The display name of the DR Plan being updated.
+         * The display name of the DR plan being updated.
          * <p>
          * Example: {@code EBS Switchover PHX to IAD}
          *
@@ -59,14 +59,14 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * An ordered list of plan groups in a DR Plan.
+         * An ordered list of groups in a DR plan.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("planGroups")
         private java.util.List<UpdateDrPlanGroupDetails> planGroups;
 
         /**
-         * An ordered list of plan groups in a DR Plan.
+         * An ordered list of groups in a DR plan.
          *
          * @param planGroups the value to set
          * @return this builder
@@ -78,6 +78,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -86,6 +87,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -98,6 +100,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -106,6 +109,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -161,7 +165,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The display name of the DR Plan being updated.
+     * The display name of the DR plan being updated.
      * <p>
      * Example: {@code EBS Switchover PHX to IAD}
      *
@@ -170,7 +174,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
     private final String displayName;
 
     /**
-     * The display name of the DR Plan being updated.
+     * The display name of the DR plan being updated.
      * <p>
      * Example: {@code EBS Switchover PHX to IAD}
      *
@@ -181,14 +185,14 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * An ordered list of plan groups in a DR Plan.
+     * An ordered list of groups in a DR plan.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planGroups")
     private final java.util.List<UpdateDrPlanGroupDetails> planGroups;
 
     /**
-     * An ordered list of plan groups in a DR Plan.
+     * An ordered list of groups in a DR plan.
      *
      * @return the value
      **/
@@ -198,6 +202,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -206,6 +211,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -216,6 +222,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -224,6 +231,7 @@ public final class UpdateDrPlanDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

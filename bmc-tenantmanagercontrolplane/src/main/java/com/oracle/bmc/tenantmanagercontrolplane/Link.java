@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -11,7 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public interface Link extends AutoCloseable {
 
     /**

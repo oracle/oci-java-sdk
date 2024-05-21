@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -29,6 +29,8 @@ package com.oracle.bmc.vnmonitoring.model;
 public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "assignedEntityId",
+        "assignedEntityType",
         "availabilityDomain",
         "compartmentId",
         "definedTags",
@@ -40,9 +42,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "lifetime",
         "privateIpId",
         "scope",
-        "timeCreated"
+        "timeCreated",
+        "publicIpPoolId"
     })
     public PublicIp(
+            String assignedEntityId,
+            AssignedEntityType assignedEntityType,
             String availabilityDomain,
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -54,8 +59,11 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             Lifetime lifetime,
             String privateIpId,
             Scope scope,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            String publicIpPoolId) {
         super();
+        this.assignedEntityId = assignedEntityId;
+        this.assignedEntityType = assignedEntityType;
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -68,14 +76,55 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.privateIpId = privateIpId;
         this.scope = scope;
         this.timeCreated = timeCreated;
+        this.publicIpPoolId = publicIpPoolId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+         * being assigned to.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
+        private String assignedEntityId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+         * being assigned to.
+         *
+         * @param assignedEntityId the value to set
+         * @return this builder
+         **/
+        public Builder assignedEntityId(String assignedEntityId) {
+            this.assignedEntityId = assignedEntityId;
+            this.__explicitlySet__.add("assignedEntityId");
+            return this;
+        }
+        /**
+         * The type of entity the public IP is assigned to, or in the process of being
+         * assigned to.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
+        private AssignedEntityType assignedEntityType;
+
+        /**
+         * The type of entity the public IP is assigned to, or in the process of being
+         * assigned to.
+         *
+         * @param assignedEntityType the value to set
+         * @return this builder
+         **/
+        public Builder assignedEntityType(AssignedEntityType assignedEntityType) {
+            this.assignedEntityType = assignedEntityType;
+            this.__explicitlySet__.add("assignedEntityType");
+            return this;
+        }
+        /**
          * The public IP's availability domain. This property is set only for ephemeral public IPs
-         * (that is, when the {@code scope} of the public IP is set to AVAILABILITY_DOMAIN). The value
-         * is the availability domain of the assigned private IP.
+         * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+         * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
@@ -85,8 +134,8 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         /**
          * The public IP's availability domain. This property is set only for ephemeral public IPs
-         * (that is, when the {@code scope} of the public IP is set to AVAILABILITY_DOMAIN). The value
-         * is the availability domain of the assigned private IP.
+         * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+         * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
          * <p>
          * Example: {@code Uocm:PHX-AD-1}
          *
@@ -100,8 +149,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
-         * the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-         * this can be a different compartment than the assigned private IP's.
+         * the compartment of its assigned entity (which can be a private IP or a regional entity such
+         * as a NAT gateway). For a reserved public IP that is currently assigned,
+         * its compartment can be different from the assigned private IP's.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -109,8 +159,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
-         * the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-         * this can be a different compartment than the assigned private IP's.
+         * the compartment of its assigned entity (which can be a private IP or a regional entity such
+         * as a NAT gateway). For a reserved public IP that is currently assigned,
+         * its compartment can be different from the assigned private IP's.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -238,10 +289,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * Defines when the public IP is deleted and released back to Oracle's public IP pool.
          * <p>
-         * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned private IP. The
-         * ephemeral public IP is automatically deleted when its private IP is deleted, when
-         * the VNIC is terminated, or when the instance is terminated. An ephemeral
-         * public IP must always be assigned to a private IP.
+         * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+         * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+         * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+         * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+         * {@link NatGateway}, the ephemeral public IP is automatically
+         * deleted when the NAT gateway is terminated.
          * <p>
          * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
          * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -256,10 +309,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * Defines when the public IP is deleted and released back to Oracle's public IP pool.
          * <p>
-         * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned private IP. The
-         * ephemeral public IP is automatically deleted when its private IP is deleted, when
-         * the VNIC is terminated, or when the instance is terminated. An ephemeral
-         * public IP must always be assigned to a private IP.
+         * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+         * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+         * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+         * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+         * {@link NatGateway}, the ephemeral public IP is automatically
+         * deleted when the NAT gateway is terminated.
          * <p>
          * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
          * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -276,16 +331,26 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * Deprecated. Use {@code assignedEntityId} instead.
+         * <p>
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
          * process of being assigned to.
+         * <p>
+         **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+         * in the process of being assigned to one.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
         private String privateIpId;
 
         /**
+         * Deprecated. Use {@code assignedEntityId} instead.
+         * <p>
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
          * process of being assigned to.
+         * <p>
+         **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+         * in the process of being assigned to one.
          *
          * @param privateIpId the value to set
          * @return this builder
@@ -298,12 +363,14 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * Whether the public IP is regional or specific to a particular availability domain.
          * <p>
-         * {@code REGION}: The public IP exists within a region and can be assigned to a private IP
-         * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}.
+         * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+         * (such as a {@link NatGateway}), or can be assigned to a private
+         * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+         * assigned to a regional entity have {@code scope} = {@code REGION}.
          * <p>
-         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the private IP
+         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
          * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
-         * Ephemeral public IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+         * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
@@ -312,12 +379,14 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * Whether the public IP is regional or specific to a particular availability domain.
          * <p>
-         * {@code REGION}: The public IP exists within a region and can be assigned to a private IP
-         * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}.
+         * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+         * (such as a {@link NatGateway}), or can be assigned to a private
+         * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+         * assigned to a regional entity have {@code scope} = {@code REGION}.
          * <p>
-         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the private IP
+         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
          * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
-         * Ephemeral public IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+         * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
          *
          * @param scope the value to set
          * @return this builder
@@ -349,6 +418,22 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
+        private String publicIpPoolId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+         * @param publicIpPoolId the value to set
+         * @return this builder
+         **/
+        public Builder publicIpPoolId(String publicIpPoolId) {
+            this.publicIpPoolId = publicIpPoolId;
+            this.__explicitlySet__.add("publicIpPoolId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -356,6 +441,8 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public PublicIp build() {
             PublicIp model =
                     new PublicIp(
+                            this.assignedEntityId,
+                            this.assignedEntityType,
                             this.availabilityDomain,
                             this.compartmentId,
                             this.definedTags,
@@ -367,7 +454,8 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.lifetime,
                             this.privateIpId,
                             this.scope,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.publicIpPoolId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -376,6 +464,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PublicIp model) {
+            if (model.wasPropertyExplicitlySet("assignedEntityId")) {
+                this.assignedEntityId(model.getAssignedEntityId());
+            }
+            if (model.wasPropertyExplicitlySet("assignedEntityType")) {
+                this.assignedEntityType(model.getAssignedEntityType());
+            }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
             }
@@ -412,6 +506,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
+            if (model.wasPropertyExplicitlySet("publicIpPoolId")) {
+                this.publicIpPoolId(model.getPublicIpPoolId());
+            }
             return this;
         }
     }
@@ -428,9 +525,82 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+     * being assigned to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
+    private final String assignedEntityId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+     * being assigned to.
+     *
+     * @return the value
+     **/
+    public String getAssignedEntityId() {
+        return assignedEntityId;
+    }
+
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     **/
+    public enum AssignedEntityType {
+        PrivateIp("PRIVATE_IP"),
+        NatGateway("NAT_GATEWAY"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AssignedEntityType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AssignedEntityType v : AssignedEntityType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AssignedEntityType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AssignedEntityType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AssignedEntityType: " + key);
+        }
+    };
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
+    private final AssignedEntityType assignedEntityType;
+
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     * @return the value
+     **/
+    public AssignedEntityType getAssignedEntityType() {
+        return assignedEntityType;
+    }
+
+    /**
      * The public IP's availability domain. This property is set only for ephemeral public IPs
-     * (that is, when the {@code scope} of the public IP is set to AVAILABILITY_DOMAIN). The value
-     * is the availability domain of the assigned private IP.
+     * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+     * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
      * <p>
      * Example: {@code Uocm:PHX-AD-1}
      *
@@ -440,8 +610,8 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * The public IP's availability domain. This property is set only for ephemeral public IPs
-     * (that is, when the {@code scope} of the public IP is set to AVAILABILITY_DOMAIN). The value
-     * is the availability domain of the assigned private IP.
+     * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+     * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
      * <p>
      * Example: {@code Uocm:PHX-AD-1}
      *
@@ -453,8 +623,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
-     * the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-     * this can be a different compartment than the assigned private IP's.
+     * the compartment of its assigned entity (which can be a private IP or a regional entity such
+     * as a NAT gateway). For a reserved public IP that is currently assigned,
+     * its compartment can be different from the assigned private IP's.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -462,8 +633,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
-     * the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-     * this can be a different compartment than the assigned private IP's.
+     * the compartment of its assigned entity (which can be a private IP or a regional entity such
+     * as a NAT gateway). For a reserved public IP that is currently assigned,
+     * its compartment can be different from the assigned private IP's.
      *
      * @return the value
      **/
@@ -617,10 +789,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      * <p>
-     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned private IP. The
-     * ephemeral public IP is automatically deleted when its private IP is deleted, when
-     * the VNIC is terminated, or when the instance is terminated. An ephemeral
-     * public IP must always be assigned to a private IP.
+     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
      * <p>
      * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
      * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -664,10 +838,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      * <p>
-     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned private IP. The
-     * ephemeral public IP is automatically deleted when its private IP is deleted, when
-     * the VNIC is terminated, or when the instance is terminated. An ephemeral
-     * public IP must always be assigned to a private IP.
+     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
      * <p>
      * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
      * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -682,10 +858,12 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      * <p>
-     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned private IP. The
-     * ephemeral public IP is automatically deleted when its private IP is deleted, when
-     * the VNIC is terminated, or when the instance is terminated. An ephemeral
-     * public IP must always be assigned to a private IP.
+     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
      * <p>
      * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
      * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -700,16 +878,26 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Deprecated. Use {@code assignedEntityId} instead.
+     * <p>
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
      * process of being assigned to.
+     * <p>
+     **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+     * in the process of being assigned to one.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
     /**
+     * Deprecated. Use {@code assignedEntityId} instead.
+     * <p>
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
      * process of being assigned to.
+     * <p>
+     **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+     * in the process of being assigned to one.
      *
      * @return the value
      **/
@@ -720,12 +908,14 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * {@code REGION}: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}.
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have {@code scope} = {@code REGION}.
      * <p>
-     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the private IP
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
-     * Ephemeral public IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
      **/
     public enum Scope {
@@ -763,12 +953,14 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * {@code REGION}: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}.
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have {@code scope} = {@code REGION}.
      * <p>
-     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the private IP
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
-     * Ephemeral public IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
@@ -777,12 +969,14 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * {@code REGION}: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have {@code scope} = {@code REGION}.
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have {@code scope} = {@code REGION}.
      * <p>
-     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the private IP
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
-     * Ephemeral public IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
      * @return the value
      **/
@@ -810,6 +1004,20 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return timeCreated;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
+    private final String publicIpPoolId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+     * @return the value
+     **/
+    public String getPublicIpPoolId() {
+        return publicIpPoolId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -824,7 +1032,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PublicIp(");
         sb.append("super=").append(super.toString());
-        sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append("assignedEntityId=").append(String.valueOf(this.assignedEntityId));
+        sb.append(", assignedEntityType=").append(String.valueOf(this.assignedEntityType));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -836,6 +1046,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", privateIpId=").append(String.valueOf(this.privateIpId));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", publicIpPoolId=").append(String.valueOf(this.publicIpPoolId));
         sb.append(")");
         return sb.toString();
     }
@@ -850,7 +1061,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
 
         PublicIp other = (PublicIp) o;
-        return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+        return java.util.Objects.equals(this.assignedEntityId, other.assignedEntityId)
+                && java.util.Objects.equals(this.assignedEntityType, other.assignedEntityType)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -862,6 +1075,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.privateIpId, other.privateIpId)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.publicIpPoolId, other.publicIpPoolId)
                 && super.equals(other);
     }
 
@@ -869,6 +1083,14 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.assignedEntityId == null ? 43 : this.assignedEntityId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.assignedEntityType == null
+                                ? 43
+                                : this.assignedEntityType.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null
@@ -889,6 +1111,9 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result = (result * PRIME) + (this.privateIpId == null ? 43 : this.privateIpId.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicIpPoolId == null ? 43 : this.publicIpPoolId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

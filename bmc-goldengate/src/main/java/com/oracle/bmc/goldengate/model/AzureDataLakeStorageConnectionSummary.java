@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -146,15 +146,6 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
         private java.util.List<IngressIpDetails> ingressIps;
 
@@ -170,6 +161,24 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
+
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
             return this;
         }
         /**
@@ -306,9 +315,10 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                             this.timeUpdated,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.ingressIps,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.authenticationType,
                             this.accountName,
@@ -362,14 +372,17 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
-            if (model.wasPropertyExplicitlySet("subnetId")) {
-                this.subnetId(model.getSubnetId());
-            }
             if (model.wasPropertyExplicitlySet("ingressIps")) {
                 this.ingressIps(model.getIngressIps());
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -419,9 +432,10 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             java.util.Date timeUpdated,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             AzureDataLakeStorageConnection.TechnologyType technologyType,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
@@ -442,9 +456,10 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                 timeUpdated,
                 vaultId,
                 keyId,
-                subnetId,
                 ingressIps,
-                nsgIds);
+                nsgIds,
+                subnetId,
+                routingMethod);
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;

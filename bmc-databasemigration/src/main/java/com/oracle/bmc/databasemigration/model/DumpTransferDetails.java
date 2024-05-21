@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -22,11 +22,15 @@ package com.oracle.bmc.databasemigration.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DumpTransferDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"source", "target"})
-    public DumpTransferDetails(HostDumpTransferDetails source, HostDumpTransferDetails target) {
+    @java.beans.ConstructorProperties({"source", "target", "sharedStorageMountTargetId"})
+    public DumpTransferDetails(
+            HostDumpTransferDetails source,
+            HostDumpTransferDetails target,
+            String sharedStorageMountTargetId) {
         super();
         this.source = source;
         this.target = target;
+        this.sharedStorageMountTargetId = sharedStorageMountTargetId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -49,12 +53,32 @@ public final class DumpTransferDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("target");
             return this;
         }
+        /**
+         * OCID of the shared storage mount target
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sharedStorageMountTargetId")
+        private String sharedStorageMountTargetId;
+
+        /**
+         * OCID of the shared storage mount target
+         *
+         * @param sharedStorageMountTargetId the value to set
+         * @return this builder
+         **/
+        public Builder sharedStorageMountTargetId(String sharedStorageMountTargetId) {
+            this.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            this.__explicitlySet__.add("sharedStorageMountTargetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DumpTransferDetails build() {
-            DumpTransferDetails model = new DumpTransferDetails(this.source, this.target);
+            DumpTransferDetails model =
+                    new DumpTransferDetails(
+                            this.source, this.target, this.sharedStorageMountTargetId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -68,6 +92,9 @@ public final class DumpTransferDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("target")) {
                 this.target(model.getTarget());
+            }
+            if (model.wasPropertyExplicitlySet("sharedStorageMountTargetId")) {
+                this.sharedStorageMountTargetId(model.getSharedStorageMountTargetId());
             }
             return this;
         }
@@ -98,6 +125,22 @@ public final class DumpTransferDetails extends com.oracle.bmc.http.internal.Expl
         return target;
     }
 
+    /**
+     * OCID of the shared storage mount target
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sharedStorageMountTargetId")
+    private final String sharedStorageMountTargetId;
+
+    /**
+     * OCID of the shared storage mount target
+     *
+     * @return the value
+     **/
+    public String getSharedStorageMountTargetId() {
+        return sharedStorageMountTargetId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -114,6 +157,8 @@ public final class DumpTransferDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("source=").append(String.valueOf(this.source));
         sb.append(", target=").append(String.valueOf(this.target));
+        sb.append(", sharedStorageMountTargetId=")
+                .append(String.valueOf(this.sharedStorageMountTargetId));
         sb.append(")");
         return sb.toString();
     }
@@ -130,6 +175,8 @@ public final class DumpTransferDetails extends com.oracle.bmc.http.internal.Expl
         DumpTransferDetails other = (DumpTransferDetails) o;
         return java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.target, other.target)
+                && java.util.Objects.equals(
+                        this.sharedStorageMountTargetId, other.sharedStorageMountTargetId)
                 && super.equals(other);
     }
 
@@ -139,6 +186,11 @@ public final class DumpTransferDetails extends com.oracle.bmc.http.internal.Expl
         int result = 1;
         result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
         result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sharedStorageMountTargetId == null
+                                ? 43
+                                : this.sharedStorageMountTargetId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

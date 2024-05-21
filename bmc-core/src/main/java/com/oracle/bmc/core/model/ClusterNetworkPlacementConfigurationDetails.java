@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -24,16 +24,22 @@ public final class ClusterNetworkPlacementConfigurationDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
+        "placementConstraint",
         "primarySubnetId",
+        "primaryVnicSubnets",
         "secondaryVnicSubnets"
     })
     public ClusterNetworkPlacementConfigurationDetails(
             String availabilityDomain,
+            PlacementConstraint placementConstraint,
             String primarySubnetId,
+            InstancePoolPlacementPrimarySubnet primaryVnicSubnets,
             java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets) {
         super();
         this.availabilityDomain = availabilityDomain;
+        this.placementConstraint = placementConstraint;
         this.primarySubnetId = primarySubnetId;
+        this.primaryVnicSubnets = primaryVnicSubnets;
         this.secondaryVnicSubnets = secondaryVnicSubnets;
     }
 
@@ -62,16 +68,32 @@ public final class ClusterNetworkPlacementConfigurationDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-         * instances.
+         * The placement constraint when reserving hosts.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("placementConstraint")
+        private PlacementConstraint placementConstraint;
+
+        /**
+         * The placement constraint when reserving hosts.
+         * @param placementConstraint the value to set
+         * @return this builder
+         **/
+        public Builder placementConstraint(PlacementConstraint placementConstraint) {
+            this.placementConstraint = placementConstraint;
+            this.__explicitlySet__.add("placementConstraint");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+         * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
         private String primarySubnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-         * instances.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+         * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
          *
          * @param primarySubnetId the value to set
          * @return this builder
@@ -79,6 +101,15 @@ public final class ClusterNetworkPlacementConfigurationDetails
         public Builder primarySubnetId(String primarySubnetId) {
             this.primarySubnetId = primarySubnetId;
             this.__explicitlySet__.add("primarySubnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryVnicSubnets")
+        private InstancePoolPlacementPrimarySubnet primaryVnicSubnets;
+
+        public Builder primaryVnicSubnets(InstancePoolPlacementPrimarySubnet primaryVnicSubnets) {
+            this.primaryVnicSubnets = primaryVnicSubnets;
+            this.__explicitlySet__.add("primaryVnicSubnets");
             return this;
         }
         /**
@@ -106,7 +137,9 @@ public final class ClusterNetworkPlacementConfigurationDetails
             ClusterNetworkPlacementConfigurationDetails model =
                     new ClusterNetworkPlacementConfigurationDetails(
                             this.availabilityDomain,
+                            this.placementConstraint,
                             this.primarySubnetId,
+                            this.primaryVnicSubnets,
                             this.secondaryVnicSubnets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -119,8 +152,14 @@ public final class ClusterNetworkPlacementConfigurationDetails
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
             }
+            if (model.wasPropertyExplicitlySet("placementConstraint")) {
+                this.placementConstraint(model.getPlacementConstraint());
+            }
             if (model.wasPropertyExplicitlySet("primarySubnetId")) {
                 this.primarySubnetId(model.getPrimarySubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("primaryVnicSubnets")) {
+                this.primaryVnicSubnets(model.getPrimaryVnicSubnets());
             }
             if (model.wasPropertyExplicitlySet("secondaryVnicSubnets")) {
                 this.secondaryVnicSubnets(model.getSecondaryVnicSubnets());
@@ -161,21 +200,91 @@ public final class ClusterNetworkPlacementConfigurationDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-     * instances.
+     * The placement constraint when reserving hosts.
+     **/
+    public enum PlacementConstraint {
+        SingleTier("SINGLE_TIER"),
+        SingleBlock("SINGLE_BLOCK"),
+        PackedDistributionMultiBlock("PACKED_DISTRIBUTION_MULTI_BLOCK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlacementConstraint.class);
+
+        private final String value;
+        private static java.util.Map<String, PlacementConstraint> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PlacementConstraint v : PlacementConstraint.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PlacementConstraint(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PlacementConstraint create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PlacementConstraint', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The placement constraint when reserving hosts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("placementConstraint")
+    private final PlacementConstraint placementConstraint;
+
+    /**
+     * The placement constraint when reserving hosts.
+     * @return the value
+     **/
+    public PlacementConstraint getPlacementConstraint() {
+        return placementConstraint;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+     * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     private final String primarySubnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
-     * instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated.
+     * Use {@code primaryVnicSubnets} instead to set VNIC data for instances in the pool.
      *
      * @return the value
      **/
     public String getPrimarySubnetId() {
         return primarySubnetId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryVnicSubnets")
+    private final InstancePoolPlacementPrimarySubnet primaryVnicSubnets;
+
+    public InstancePoolPlacementPrimarySubnet getPrimaryVnicSubnets() {
+        return primaryVnicSubnets;
     }
 
     /**
@@ -207,7 +316,9 @@ public final class ClusterNetworkPlacementConfigurationDetails
         sb.append("ClusterNetworkPlacementConfigurationDetails(");
         sb.append("super=").append(super.toString());
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", placementConstraint=").append(String.valueOf(this.placementConstraint));
         sb.append(", primarySubnetId=").append(String.valueOf(this.primarySubnetId));
+        sb.append(", primaryVnicSubnets=").append(String.valueOf(this.primaryVnicSubnets));
         sb.append(", secondaryVnicSubnets=").append(String.valueOf(this.secondaryVnicSubnets));
         sb.append(")");
         return sb.toString();
@@ -225,7 +336,9 @@ public final class ClusterNetworkPlacementConfigurationDetails
         ClusterNetworkPlacementConfigurationDetails other =
                 (ClusterNetworkPlacementConfigurationDetails) o;
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.placementConstraint, other.placementConstraint)
                 && java.util.Objects.equals(this.primarySubnetId, other.primarySubnetId)
+                && java.util.Objects.equals(this.primaryVnicSubnets, other.primaryVnicSubnets)
                 && java.util.Objects.equals(this.secondaryVnicSubnets, other.secondaryVnicSubnets)
                 && super.equals(other);
     }
@@ -241,7 +354,17 @@ public final class ClusterNetworkPlacementConfigurationDetails
                                 : this.availabilityDomain.hashCode());
         result =
                 (result * PRIME)
+                        + (this.placementConstraint == null
+                                ? 43
+                                : this.placementConstraint.hashCode());
+        result =
+                (result * PRIME)
                         + (this.primarySubnetId == null ? 43 : this.primarySubnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryVnicSubnets == null
+                                ? 43
+                                : this.primaryVnicSubnets.hashCode());
         result =
                 (result * PRIME)
                         + (this.secondaryVnicSubnets == null

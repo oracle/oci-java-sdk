@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -36,6 +36,17 @@ public class UpdateMediaWorkflowConfigurationRequest
     public com.oracle.bmc.mediaservices.model.UpdateMediaWorkflowConfigurationDetails
             getUpdateMediaWorkflowConfigurationDetails() {
         return updateMediaWorkflowConfigurationDetails;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -122,6 +133,21 @@ public class UpdateMediaWorkflowConfigurationRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * For optimistic concurrency control. In the PUT or DELETE call
          * for a resource, set the {@code if-match} parameter to the value of the
          * etag from a previous GET or POST response for that resource.
@@ -191,6 +217,7 @@ public class UpdateMediaWorkflowConfigurationRequest
         public Builder copy(UpdateMediaWorkflowConfigurationRequest o) {
             mediaWorkflowConfigurationId(o.getMediaWorkflowConfigurationId());
             updateMediaWorkflowConfigurationDetails(o.getUpdateMediaWorkflowConfigurationDetails());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -241,10 +268,11 @@ public class UpdateMediaWorkflowConfigurationRequest
             request.mediaWorkflowConfigurationId = mediaWorkflowConfigurationId;
             request.updateMediaWorkflowConfigurationDetails =
                     updateMediaWorkflowConfigurationDetails;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMediaWorkflowConfigurationRequest(mediaWorkflowConfigurationId, updateMediaWorkflowConfigurationDetails, ifMatch, opcRequestId);
+            // new UpdateMediaWorkflowConfigurationRequest(mediaWorkflowConfigurationId, updateMediaWorkflowConfigurationDetails, isLockOverride, ifMatch, opcRequestId);
         }
     }
 
@@ -256,6 +284,7 @@ public class UpdateMediaWorkflowConfigurationRequest
         return new Builder()
                 .mediaWorkflowConfigurationId(mediaWorkflowConfigurationId)
                 .updateMediaWorkflowConfigurationDetails(updateMediaWorkflowConfigurationDetails)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -277,6 +306,7 @@ public class UpdateMediaWorkflowConfigurationRequest
                 .append(String.valueOf(this.mediaWorkflowConfigurationId));
         sb.append(",updateMediaWorkflowConfigurationDetails=")
                 .append(String.valueOf(this.updateMediaWorkflowConfigurationDetails));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -299,6 +329,7 @@ public class UpdateMediaWorkflowConfigurationRequest
                 && java.util.Objects.equals(
                         this.updateMediaWorkflowConfigurationDetails,
                         other.updateMediaWorkflowConfigurationDetails)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -317,6 +348,9 @@ public class UpdateMediaWorkflowConfigurationRequest
                         + (this.updateMediaWorkflowConfigurationDetails == null
                                 ? 43
                                 : this.updateMediaWorkflowConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

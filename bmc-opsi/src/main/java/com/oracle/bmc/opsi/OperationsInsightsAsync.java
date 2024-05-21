@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi;
@@ -96,6 +96,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an AwrHubSource resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAwrHubSourceCompartmentResponse>
+            changeAwrHubSourceCompartment(
+                    ChangeAwrHubSourceCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAwrHubSourceCompartmentRequest,
+                                    ChangeAwrHubSourceCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -167,6 +185,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a news report resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeNewsReportCompartmentResponse> changeNewsReportCompartment(
+            ChangeNewsReportCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeNewsReportCompartmentRequest, ChangeNewsReportCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a private endpoint from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -182,6 +216,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeOperationsInsightsPrivateEndpointCompartmentRequest,
                                     ChangeOperationsInsightsPrivateEndpointCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a Operations Insights Warehouse resource from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeOperationsInsightsWarehouseCompartmentResponse>
+            changeOperationsInsightsWarehouseCompartment(
+                    ChangeOperationsInsightsWarehouseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeOperationsInsightsWarehouseCompartmentRequest,
+                                    ChangeOperationsInsightsWarehouseCompartmentResponse>
                             handler);
 
     /**
@@ -235,6 +287,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateAwrHubResponse> createAwrHub(
             CreateAwrHubRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateAwrHubRequest, CreateAwrHubResponse>
+                    handler);
+
+    /**
+     * Register Awr Hub source
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAwrHubSourceResponse> createAwrHubSource(
+            CreateAwrHubSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAwrHubSourceRequest, CreateAwrHubSourceResponse>
                     handler);
 
     /**
@@ -305,6 +374,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             CreateHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateHostInsightRequest, CreateHostInsightResponse>
+                    handler);
+
+    /**
+     * Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNewsReportResponse> createNewsReport(
+            CreateNewsReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateNewsReportRequest, CreateNewsReportResponse>
                     handler);
 
     /**
@@ -401,6 +486,38 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes an Awr Hub object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAwrHubObjectResponse> deleteAwrHubObject(
+            DeleteAwrHubObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAwrHubObjectRequest, DeleteAwrHubObjectResponse>
+                    handler);
+
+    /**
+     * Deletes an Awr Hub source object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAwrHubSourceResponse> deleteAwrHubSource(
+            DeleteAwrHubSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAwrHubSourceRequest, DeleteAwrHubSourceResponse>
+                    handler);
+
+    /**
      * Deletes a database insight. The database insight will be deleted and cannot be enabled again.
      *
      * @param request The request object containing the details to send
@@ -464,6 +581,21 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             DeleteHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteHostInsightRequest, DeleteHostInsightResponse>
+                    handler);
+
+    /**
+     * Deletes a news report. The news report will be deleted and cannot be enabled again.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNewsReportResponse> deleteNewsReport(
+            DeleteNewsReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteNewsReportRequest, DeleteNewsReportResponse>
                     handler);
 
     /**
@@ -559,6 +691,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Disables a Awr Hub source database in Operations Insights. This will stop the Awr data flow for the given Awr Hub source.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableAwrHubSourceResponse> disableAwrHubSource(
+            DisableAwrHubSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DisableAwrHubSourceRequest, DisableAwrHubSourceResponse>
+                    handler);
+
+    /**
      * Disables a database in Operations Insights. Database metric collection and analysis will be stopped.
      *
      * @param request The request object containing the details to send
@@ -641,6 +789,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                                     EnableAutonomousDatabaseInsightAdvancedFeaturesRequest,
                                     EnableAutonomousDatabaseInsightAdvancedFeaturesResponse>
                             handler);
+
+    /**
+     * Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow for the given Awr Hub source if it was stopped earlier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableAwrHubSourceResponse> enableAwrHubSource(
+            EnableAwrHubSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableAwrHubSourceRequest, EnableAwrHubSourceResponse>
+                    handler);
 
     /**
      * Enables a database in Operations Insights. Database metric collection and analysis will be started.
@@ -739,6 +903,36 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetAwrHubRequest, GetAwrHubResponse> handler);
 
     /**
+     * Gets the Awr Hub object metadata and body.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAwrHubObjectResponse> getAwrHubObject(
+            GetAwrHubObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAwrHubObjectRequest, GetAwrHubObjectResponse>
+                    handler);
+
+    /**
+     * Gets the Awr Hub source object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAwrHubSourceResponse> getAwrHubSource(
+            GetAwrHubSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAwrHubSourceRequest, GetAwrHubSourceResponse>
+                    handler);
+
+    /**
      * Gets the AWR report for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not be greater than 7 days.
      * Either beginSnapshotIdentifierGreaterThanOrEqualTo & endSnapshotIdentifierLessThanOrEqualTo params Or timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are required.
      *
@@ -816,6 +1010,21 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetHostInsightResponse> getHostInsight(
             GetHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetHostInsightRequest, GetHostInsightResponse>
+                    handler);
+
+    /**
+     * Gets details of a news report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNewsReportResponse> getNewsReport(
+            GetNewsReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetNewsReportRequest, GetNewsReportResponse>
                     handler);
 
     /**
@@ -922,6 +1131,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Gets the Awr Hub object's user-defined metadata and entity tag (ETag).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<HeadAwrHubObjectResponse> headAwrHubObject(
+            HeadAwrHubObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<HeadAwrHubObjectRequest, HeadAwrHubObjectResponse>
                     handler);
 
     /**
@@ -1201,6 +1426,39 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of Awr Hub objects. Awr Hub id needs to specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAwrHubObjectsResponse> listAwrHubObjects(
+            ListAwrHubObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAwrHubObjectsRequest, ListAwrHubObjectsResponse>
+                    handler);
+
+    /**
+     * Gets a list of Awr Hub source objects.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAwrHubSourcesResponse> listAwrHubSources(
+            ListAwrHubSourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAwrHubSourcesRequest, ListAwrHubSourcesResponse>
+                    handler);
+
+    /**
      * Gets a list of AWR hubs. Either compartmentId or id must be specified. All these resources are expected to be in root compartment.
      *
      *
@@ -1439,6 +1697,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets a list of news reports based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNewsReportsResponse> listNewsReports(
+            ListNewsReportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListNewsReportsRequest, ListNewsReportsResponse>
+                    handler);
+
+    /**
      * Gets a list of Operation Insights private endpoints.
      *
      * @param request The request object containing the details to send
@@ -1580,6 +1854,23 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of Warehouse data objects (e.g: views, tables), based on the query parameters specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWarehouseDataObjectsResponse> listWarehouseDataObjects(
+            ListWarehouseDataObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWarehouseDataObjectsRequest, ListWarehouseDataObjectsResponse>
+                    handler);
+
+    /**
      * Return a (paginated) list of errors for a given work request.
      *
      *
@@ -1630,6 +1921,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new object or overwrites an existing object with the same name to the Awr Hub.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PutAwrHubObjectResponse> putAwrHubObject(
+            PutAwrHubObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutAwrHubObjectRequest, PutAwrHubObjectResponse>
+                    handler);
+
+    /**
      * Queries an OPSI data object with the inputs provided and sends the result set back. Either analysisTimeInterval
      * or timeIntervalStart and timeIntervalEnd parameters need to be passed as well.
      *
@@ -1645,6 +1952,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             QueryOpsiDataObjectDataRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             QueryOpsiDataObjectDataRequest, QueryOpsiDataObjectDataResponse>
+                    handler);
+
+    /**
+     * Queries Warehouse data objects (e.g: views, tables) with the inputs provided and sends the result set back.
+     * Any data to which an OperationsInsightsWarehouseUser with a permission to the corresponding Warehouse can be queried.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<QueryWarehouseDataObjectDataResponse> queryWarehouseDataObjectData(
+            QueryWarehouseDataObjectDataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            QueryWarehouseDataObjectDataRequest,
+                            QueryWarehouseDataObjectDataResponse>
                     handler);
 
     /**
@@ -2348,6 +2674,44 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns response with disk(s) statistics for a host.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeHostInsightDiskStatisticsResponse>
+            summarizeHostInsightDiskStatistics(
+                    SummarizeHostInsightDiskStatisticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightDiskStatisticsRequest,
+                                    SummarizeHostInsightDiskStatisticsResponse>
+                            handler);
+
+    /**
+     * Returns response with some recommendations if apply for a host.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeHostInsightHostRecommendationResponse>
+            summarizeHostInsightHostRecommendation(
+                    SummarizeHostInsightHostRecommendationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightHostRecommendationRequest,
+                                    SummarizeHostInsightHostRecommendationResponse>
+                            handler);
+
+    /**
      * Returns response with usage time series data with breakdown by network interface for the time period specified.
      *
      *
@@ -2701,6 +3065,22 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update Awr Hub Source object.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAwrHubSourceResponse> updateAwrHubSource(
+            UpdateAwrHubSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAwrHubSourceRequest, UpdateAwrHubSourceResponse>
+                    handler);
+
+    /**
      * Updates configuration of a database insight.
      *
      * @param request The request object containing the details to send
@@ -2764,6 +3144,21 @@ public interface OperationsInsightsAsync extends AutoCloseable {
             UpdateHostInsightRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateHostInsightRequest, UpdateHostInsightResponse>
+                    handler);
+
+    /**
+     * Updates the  configuration of a news report.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNewsReportResponse> updateNewsReport(
+            UpdateNewsReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateNewsReportRequest, UpdateNewsReportResponse>
                     handler);
 
     /**

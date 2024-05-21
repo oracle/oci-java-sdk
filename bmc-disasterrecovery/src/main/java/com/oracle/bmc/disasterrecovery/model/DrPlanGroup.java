@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Details of a plan group in a DR Plan.
+ * Details of a group in a DR plan.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -19,31 +19,36 @@ package com.oracle.bmc.disasterrecovery.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "type", "displayName", "steps"})
+    @java.beans.ConstructorProperties({"id", "type", "displayName", "isPauseEnabled", "steps"})
     public DrPlanGroup(
-            String id, DrPlanGroupType type, String displayName, java.util.List<DrPlanStep> steps) {
+            String id,
+            DrPlanGroupType type,
+            String displayName,
+            Boolean isPauseEnabled,
+            java.util.List<DrPlanStep> steps) {
         super();
         this.id = id;
         this.type = type;
         this.displayName = displayName;
+        this.isPauseEnabled = isPauseEnabled;
         this.steps = steps;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique id of this group. Must not be modified by user.
+         * The unique id of the group. Must not be modified by user.
          * <p>
-         * Example: {@code sgid1.group..examplegroupsgid}
+         * Example: {@code sgid1.group..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique id of this group. Must not be modified by user.
+         * The unique id of the group. Must not be modified by user.
          * <p>
-         * Example: {@code sgid1.group..examplegroupsgid}
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -54,14 +59,18 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The plan group type.
+         * The group type.
+         * <p>
+         * Example: {@code BUILT_IN}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
-         * The plan group type.
+         * The group type.
+         * <p>
+         * Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
@@ -72,7 +81,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The display name of this DR Plan Group.
+         * The display name of the group.
          * <p>
          * Example: {@code DATABASE_SWITCHOVER}
          *
@@ -81,7 +90,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
         private String displayName;
 
         /**
-         * The display name of this DR Plan Group.
+         * The display name of the group.
          * <p>
          * Example: {@code DATABASE_SWITCHOVER}
          *
@@ -94,14 +103,38 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The list of steps in this plan group.
+         * A flag indicating whether this group should be enabled for execution.
+         * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
+        private Boolean isPauseEnabled;
+
+        /**
+         * A flag indicating whether this group should be enabled for execution.
+         * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isPauseEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isPauseEnabled(Boolean isPauseEnabled) {
+            this.isPauseEnabled = isPauseEnabled;
+            this.__explicitlySet__.add("isPauseEnabled");
+            return this;
+        }
+        /**
+         * The list of steps in the group.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<DrPlanStep> steps;
 
         /**
-         * The list of steps in this plan group.
+         * The list of steps in the group.
          *
          * @param steps the value to set
          * @return this builder
@@ -116,7 +149,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DrPlanGroup build() {
-            DrPlanGroup model = new DrPlanGroup(this.id, this.type, this.displayName, this.steps);
+            DrPlanGroup model =
+                    new DrPlanGroup(
+                            this.id, this.type, this.displayName, this.isPauseEnabled, this.steps);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -133,6 +168,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isPauseEnabled")) {
+                this.isPauseEnabled(model.getIsPauseEnabled());
             }
             if (model.wasPropertyExplicitlySet("steps")) {
                 this.steps(model.getSteps());
@@ -153,18 +191,18 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The unique id of this group. Must not be modified by user.
+     * The unique id of the group. Must not be modified by user.
      * <p>
-     * Example: {@code sgid1.group..examplegroupsgid}
+     * Example: {@code sgid1.group..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique id of this group. Must not be modified by user.
+     * The unique id of the group. Must not be modified by user.
      * <p>
-     * Example: {@code sgid1.group..examplegroupsgid}
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      **/
@@ -173,14 +211,18 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The plan group type.
+     * The group type.
+     * <p>
+     * Example: {@code BUILT_IN}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
-     * The plan group type.
+     * The group type.
+     * <p>
+     * Example: {@code BUILT_IN}
      *
      * @return the value
      **/
@@ -189,7 +231,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The display name of this DR Plan Group.
+     * The display name of the group.
      * <p>
      * Example: {@code DATABASE_SWITCHOVER}
      *
@@ -198,7 +240,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
     private final String displayName;
 
     /**
-     * The display name of this DR Plan Group.
+     * The display name of the group.
      * <p>
      * Example: {@code DATABASE_SWITCHOVER}
      *
@@ -209,14 +251,36 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The list of steps in this plan group.
+     * A flag indicating whether this group should be enabled for execution.
+     * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+     * <p>
+     * Example: {@code true}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPauseEnabled")
+    private final Boolean isPauseEnabled;
+
+    /**
+     * A flag indicating whether this group should be enabled for execution.
+     * This flag is only applicable to the {@code USER_DEFINED_PAUSE} group. The flag should be null for the remaining group types.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
+    public Boolean getIsPauseEnabled() {
+        return isPauseEnabled;
+    }
+
+    /**
+     * The list of steps in the group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<DrPlanStep> steps;
 
     /**
-     * The list of steps in this plan group.
+     * The list of steps in the group.
      *
      * @return the value
      **/
@@ -241,6 +305,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isPauseEnabled=").append(String.valueOf(this.isPauseEnabled));
         sb.append(", steps=").append(String.valueOf(this.steps));
         sb.append(")");
         return sb.toString();
@@ -259,6 +324,7 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isPauseEnabled, other.isPauseEnabled)
                 && java.util.Objects.equals(this.steps, other.steps)
                 && super.equals(other);
     }
@@ -270,6 +336,9 @@ public final class DrPlanGroup extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPauseEnabled == null ? 43 : this.isPauseEnabled.hashCode());
         result = (result * PRIME) + (this.steps == null ? 43 : this.steps.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

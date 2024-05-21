@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.requests;
@@ -24,10 +24,15 @@ public class ChangeVaultCompartmentRequest
     public String getVaultId() {
         return vaultId;
     }
-
+    /**
+     * ChangeVaultCompartmentDetails
+     */
     private com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
             changeVaultCompartmentDetails;
 
+    /**
+     * ChangeVaultCompartmentDetails
+     */
     public com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
             getChangeVaultCompartmentDetails() {
         return changeVaultCompartmentDetails;
@@ -127,11 +132,14 @@ public class ChangeVaultCompartmentRequest
             return this;
         }
 
+        /**
+         * ChangeVaultCompartmentDetails
+         */
         private com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails
                 changeVaultCompartmentDetails = null;
 
         /**
-         *
+         * ChangeVaultCompartmentDetails
          * @param changeVaultCompartmentDetails the value to set
          * @return this builder instance
          */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -44,7 +44,12 @@ public final class StorageWorkRequestSummary
         "compartmentIdInSubtree",
         "operationType",
         "keyId",
-        "keyType"
+        "keyType",
+        "logSets",
+        "purpose",
+        "query",
+        "isRecallNewDataOnly",
+        "isUseRecommendedDataSet"
     })
     public StorageWorkRequestSummary(
             String id,
@@ -67,7 +72,12 @@ public final class StorageWorkRequestSummary
             Boolean compartmentIdInSubtree,
             StorageOperationType operationType,
             String keyId,
-            EncryptionKeyType keyType) {
+            EncryptionKeyType keyType,
+            String logSets,
+            String purpose,
+            String query,
+            Boolean isRecallNewDataOnly,
+            Boolean isUseRecommendedDataSet) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -90,6 +100,11 @@ public final class StorageWorkRequestSummary
         this.operationType = operationType;
         this.keyId = keyId;
         this.keyType = keyType;
+        this.logSets = logSets;
+        this.purpose = purpose;
+        this.query = query;
+        this.isRecallNewDataOnly = isRecallNewDataOnly;
+        this.isUseRecommendedDataSet = isUseRecommendedDataSet;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -442,6 +457,86 @@ public final class StorageWorkRequestSummary
             this.__explicitlySet__.add("keyType");
             return this;
         }
+        /**
+         * This is a list of logsets associated with this work request
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+        private String logSets;
+
+        /**
+         * This is a list of logsets associated with this work request
+         * @param logSets the value to set
+         * @return this builder
+         **/
+        public Builder logSets(String logSets) {
+            this.logSets = logSets;
+            this.__explicitlySet__.add("logSets");
+            return this;
+        }
+        /**
+         * This is the purpose of the operation associated with this work request
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+        private String purpose;
+
+        /**
+         * This is the purpose of the operation associated with this work request
+         * @param purpose the value to set
+         * @return this builder
+         **/
+        public Builder purpose(String purpose) {
+            this.purpose = purpose;
+            this.__explicitlySet__.add("purpose");
+            return this;
+        }
+        /**
+         * This is the query string applied on the operation associated with this work request
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("query")
+        private String query;
+
+        /**
+         * This is the query string applied on the operation associated with this work request
+         * @param query the value to set
+         * @return this builder
+         **/
+        public Builder query(String query) {
+            this.query = query;
+            this.__explicitlySet__.add("query");
+            return this;
+        }
+        /**
+         * This is the flag to indicate if only new data has to be recalled in this work request
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
+        private Boolean isRecallNewDataOnly;
+
+        /**
+         * This is the flag to indicate if only new data has to be recalled in this work request
+         * @param isRecallNewDataOnly the value to set
+         * @return this builder
+         **/
+        public Builder isRecallNewDataOnly(Boolean isRecallNewDataOnly) {
+            this.isRecallNewDataOnly = isRecallNewDataOnly;
+            this.__explicitlySet__.add("isRecallNewDataOnly");
+            return this;
+        }
+        /**
+         * This indicates if user checked system recommended time range
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
+        private Boolean isUseRecommendedDataSet;
+
+        /**
+         * This indicates if user checked system recommended time range
+         * @param isUseRecommendedDataSet the value to set
+         * @return this builder
+         **/
+        public Builder isUseRecommendedDataSet(Boolean isUseRecommendedDataSet) {
+            this.isUseRecommendedDataSet = isUseRecommendedDataSet;
+            this.__explicitlySet__.add("isUseRecommendedDataSet");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -469,7 +564,12 @@ public final class StorageWorkRequestSummary
                             this.compartmentIdInSubtree,
                             this.operationType,
                             this.keyId,
-                            this.keyType);
+                            this.keyType,
+                            this.logSets,
+                            this.purpose,
+                            this.query,
+                            this.isRecallNewDataOnly,
+                            this.isUseRecommendedDataSet);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -540,6 +640,21 @@ public final class StorageWorkRequestSummary
             }
             if (model.wasPropertyExplicitlySet("keyType")) {
                 this.keyType(model.getKeyType());
+            }
+            if (model.wasPropertyExplicitlySet("logSets")) {
+                this.logSets(model.getLogSets());
+            }
+            if (model.wasPropertyExplicitlySet("purpose")) {
+                this.purpose(model.getPurpose());
+            }
+            if (model.wasPropertyExplicitlySet("query")) {
+                this.query(model.getQuery());
+            }
+            if (model.wasPropertyExplicitlySet("isRecallNewDataOnly")) {
+                this.isRecallNewDataOnly(model.getIsRecallNewDataOnly());
+            }
+            if (model.wasPropertyExplicitlySet("isUseRecommendedDataSet")) {
+                this.isUseRecommendedDataSet(model.getIsUseRecommendedDataSet());
             }
             return this;
         }
@@ -862,6 +977,76 @@ public final class StorageWorkRequestSummary
         return keyType;
     }
 
+    /**
+     * This is a list of logsets associated with this work request
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("logSets")
+    private final String logSets;
+
+    /**
+     * This is a list of logsets associated with this work request
+     * @return the value
+     **/
+    public String getLogSets() {
+        return logSets;
+    }
+
+    /**
+     * This is the purpose of the operation associated with this work request
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("purpose")
+    private final String purpose;
+
+    /**
+     * This is the purpose of the operation associated with this work request
+     * @return the value
+     **/
+    public String getPurpose() {
+        return purpose;
+    }
+
+    /**
+     * This is the query string applied on the operation associated with this work request
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("query")
+    private final String query;
+
+    /**
+     * This is the query string applied on the operation associated with this work request
+     * @return the value
+     **/
+    public String getQuery() {
+        return query;
+    }
+
+    /**
+     * This is the flag to indicate if only new data has to be recalled in this work request
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRecallNewDataOnly")
+    private final Boolean isRecallNewDataOnly;
+
+    /**
+     * This is the flag to indicate if only new data has to be recalled in this work request
+     * @return the value
+     **/
+    public Boolean getIsRecallNewDataOnly() {
+        return isRecallNewDataOnly;
+    }
+
+    /**
+     * This indicates if user checked system recommended time range
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUseRecommendedDataSet")
+    private final Boolean isUseRecommendedDataSet;
+
+    /**
+     * This indicates if user checked system recommended time range
+     * @return the value
+     **/
+    public Boolean getIsUseRecommendedDataSet() {
+        return isUseRecommendedDataSet;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -897,6 +1082,12 @@ public final class StorageWorkRequestSummary
         sb.append(", operationType=").append(String.valueOf(this.operationType));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", keyType=").append(String.valueOf(this.keyType));
+        sb.append(", logSets=").append(String.valueOf(this.logSets));
+        sb.append(", purpose=").append(String.valueOf(this.purpose));
+        sb.append(", query=").append(String.valueOf(this.query));
+        sb.append(", isRecallNewDataOnly=").append(String.valueOf(this.isRecallNewDataOnly));
+        sb.append(", isUseRecommendedDataSet=")
+                .append(String.valueOf(this.isUseRecommendedDataSet));
         sb.append(")");
         return sb.toString();
     }
@@ -933,6 +1124,12 @@ public final class StorageWorkRequestSummary
                 && java.util.Objects.equals(this.operationType, other.operationType)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.keyType, other.keyType)
+                && java.util.Objects.equals(this.logSets, other.logSets)
+                && java.util.Objects.equals(this.purpose, other.purpose)
+                && java.util.Objects.equals(this.query, other.query)
+                && java.util.Objects.equals(this.isRecallNewDataOnly, other.isRecallNewDataOnly)
+                && java.util.Objects.equals(
+                        this.isUseRecommendedDataSet, other.isUseRecommendedDataSet)
                 && super.equals(other);
     }
 
@@ -985,6 +1182,19 @@ public final class StorageWorkRequestSummary
                         + (this.operationType == null ? 43 : this.operationType.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
         result = (result * PRIME) + (this.keyType == null ? 43 : this.keyType.hashCode());
+        result = (result * PRIME) + (this.logSets == null ? 43 : this.logSets.hashCode());
+        result = (result * PRIME) + (this.purpose == null ? 43 : this.purpose.hashCode());
+        result = (result * PRIME) + (this.query == null ? 43 : this.query.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRecallNewDataOnly == null
+                                ? 43
+                                : this.isRecallNewDataOnly.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUseRecommendedDataSet == null
+                                ? 43
+                                : this.isUseRecommendedDataSet.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

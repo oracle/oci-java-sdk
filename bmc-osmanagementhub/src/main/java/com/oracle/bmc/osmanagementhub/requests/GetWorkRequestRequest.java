@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -12,12 +12,12 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String workRequestId;
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     public String getWorkRequestId() {
         return workRequestId;
@@ -42,12 +42,12 @@ public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest<ja
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          */
         private String workRequestId = null;
 
         /**
-         * The OCID of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          * @param workRequestId the value to set
          * @return this builder instance
          */

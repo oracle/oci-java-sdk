@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -29,7 +29,7 @@ package com.oracle.bmc.core.model;
  * {@link CreateVnicDetails} when calling either
  * {@link #launchInstance(LaunchInstanceRequest) launchInstance} or
  * {@link #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname
- * for a primary private IP, you use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
+ * for a primary private IP, you use {@code {@link #updateVnic(UpdateVnicRequest) updateVnic}}.
  * <p>
  * {@code PrivateIp} objects that are created for use with the Oracle Cloud VMware Solution are
  * assigned to a VLAN and not a VNIC in a subnet. See the

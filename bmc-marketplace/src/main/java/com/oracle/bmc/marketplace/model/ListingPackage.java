@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace.model;
@@ -23,12 +23,20 @@ package com.oracle.bmc.marketplace.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ContainerListingPackage.class,
+        name = "CONTAINER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OrchestrationListingPackage.class,
         name = "ORCHESTRATION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ImageListingPackage.class,
         name = "IMAGE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = KubernetesListingPackage.class,
+        name = "KUBERNETES"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

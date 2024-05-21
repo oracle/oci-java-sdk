@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User's Db Credential
+ * User's Database Credential
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -524,7 +524,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The db password of the user
+         * The user's database password.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -536,7 +536,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private String dbPassword;
 
         /**
-         * The db password of the user
+         * The user's database password.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -586,7 +586,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The db password of the user with mixed salt
+         * The user's database password with mixed salt.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -598,7 +598,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private String mixedDbPassword;
 
         /**
-         * The db password of the user with mixed salt
+         * The user's database password with mixed salt.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -614,7 +614,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The salt of the password
+         * The salt of the password.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -626,7 +626,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private String salt;
 
         /**
-         * The salt of the password
+         * The salt of the password.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -642,7 +642,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The mixed salt of the password
+         * The mixed salt of the password.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -654,7 +654,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private String mixedSalt;
 
         /**
-         * The mixed salt of the password
+         * The mixed salt of the password.
          * <p>
          **SCIM++ Properties:**
          *  - type: string
@@ -670,7 +670,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * A DateTime that specifies the date and time when the current db password was set
+         * A DateTime that specifies the date and time when the current database password was set.
          * <p>
          **SCIM++ Properties:**
          *  - type: dateTime
@@ -681,7 +681,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private String lastSetDate;
 
         /**
-         * A DateTime that specifies the date and time when the current db password was set
+         * A DateTime that specifies the date and time when the current database password was set.
          * <p>
          **SCIM++ Properties:**
          *  - type: dateTime
@@ -696,7 +696,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Indicates that the db password has expired
+         * Indicates that the database password has expired.
          * <p>
          **SCIM++ Properties:**
          *  - type: boolean
@@ -707,7 +707,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private Boolean expired;
 
         /**
-         * Indicates that the db password has expired
+         * Indicates that the database password has expired.
          * <p>
          **SCIM++ Properties:**
          *  - type: boolean
@@ -762,7 +762,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * User credential expires on
+         * When the user credential expires.
          * <p>
          **Added In:** 2109090424
          * <p>
@@ -780,7 +780,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
         private String expiresOn;
 
         /**
-         * User credential expires on
+         * When the user credential expires.
          * <p>
          **Added In:** 2109090424
          * <p>
@@ -1346,7 +1346,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The db password of the user
+     * The user's database password.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1358,7 +1358,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final String dbPassword;
 
     /**
-     * The db password of the user
+     * The user's database password.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1404,7 +1404,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The db password of the user with mixed salt
+     * The user's database password with mixed salt.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1416,7 +1416,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final String mixedDbPassword;
 
     /**
-     * The db password of the user with mixed salt
+     * The user's database password with mixed salt.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1430,7 +1430,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The salt of the password
+     * The salt of the password.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1442,7 +1442,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final String salt;
 
     /**
-     * The salt of the password
+     * The salt of the password.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1456,7 +1456,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The mixed salt of the password
+     * The mixed salt of the password.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1468,7 +1468,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final String mixedSalt;
 
     /**
-     * The mixed salt of the password
+     * The mixed salt of the password.
      * <p>
      **SCIM++ Properties:**
      *  - type: string
@@ -1482,7 +1482,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A DateTime that specifies the date and time when the current db password was set
+     * A DateTime that specifies the date and time when the current database password was set.
      * <p>
      **SCIM++ Properties:**
      *  - type: dateTime
@@ -1493,7 +1493,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final String lastSetDate;
 
     /**
-     * A DateTime that specifies the date and time when the current db password was set
+     * A DateTime that specifies the date and time when the current database password was set.
      * <p>
      **SCIM++ Properties:**
      *  - type: dateTime
@@ -1506,7 +1506,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Indicates that the db password has expired
+     * Indicates that the database password has expired.
      * <p>
      **SCIM++ Properties:**
      *  - type: boolean
@@ -1517,7 +1517,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final Boolean expired;
 
     /**
-     * Indicates that the db password has expired
+     * Indicates that the database password has expired.
      * <p>
      **SCIM++ Properties:**
      *  - type: boolean
@@ -1627,7 +1627,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * User credential expires on
+     * When the user credential expires.
      * <p>
      **Added In:** 2109090424
      * <p>
@@ -1645,7 +1645,7 @@ public final class UserDbCredential extends com.oracle.bmc.http.internal.Explici
     private final String expiresOn;
 
     /**
-     * User credential expires on
+     * When the user credential expires.
      * <p>
      **Added In:** 2109090424
      * <p>

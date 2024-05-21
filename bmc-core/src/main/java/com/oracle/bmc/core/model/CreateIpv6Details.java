@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -165,14 +165,14 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+         * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
         private String ipv6SubnetCidr;
 
         /**
-         * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+         * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
          *
          * @param ipv6SubnetCidr the value to set
          * @return this builder
@@ -343,14 +343,14 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6SubnetCidr")
     private final String ipv6SubnetCidr;
 
     /**
-     * The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+     * The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
      *
      * @return the value
      **/

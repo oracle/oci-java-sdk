@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -32,7 +32,8 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         "stateMessage",
         "endpointName",
         "endpointId",
-        "registryId"
+        "registryId",
+        "workspaceProperties"
     })
     public WorkspaceSummary(
             String id,
@@ -47,7 +48,8 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             String stateMessage,
             String endpointName,
             String endpointId,
-            String registryId) {
+            String registryId,
+            java.util.Map<String, String> workspaceProperties) {
         super();
         this.id = id;
         this.description = description;
@@ -62,6 +64,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         this.endpointName = endpointName;
         this.endpointId = endpointId;
         this.registryId = registryId;
+        this.workspaceProperties = workspaceProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -287,6 +290,22 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("registryId");
             return this;
         }
+        /**
+         * key-value pairs of workspace properties
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+        private java.util.Map<String, String> workspaceProperties;
+
+        /**
+         * key-value pairs of workspace properties
+         * @param workspaceProperties the value to set
+         * @return this builder
+         **/
+        public Builder workspaceProperties(java.util.Map<String, String> workspaceProperties) {
+            this.workspaceProperties = workspaceProperties;
+            this.__explicitlySet__.add("workspaceProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -306,7 +325,8 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
                             this.stateMessage,
                             this.endpointName,
                             this.endpointId,
-                            this.registryId);
+                            this.registryId,
+                            this.workspaceProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -353,6 +373,9 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("registryId")) {
                 this.registryId(model.getRegistryId());
+            }
+            if (model.wasPropertyExplicitlySet("workspaceProperties")) {
+                this.workspaceProperties(model.getWorkspaceProperties());
             }
             return this;
         }
@@ -619,6 +642,20 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         return registryId;
     }
 
+    /**
+     * key-value pairs of workspace properties
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
+    private final java.util.Map<String, String> workspaceProperties;
+
+    /**
+     * key-value pairs of workspace properties
+     * @return the value
+     **/
+    public java.util.Map<String, String> getWorkspaceProperties() {
+        return workspaceProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -646,6 +683,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", endpointName=").append(String.valueOf(this.endpointName));
         sb.append(", endpointId=").append(String.valueOf(this.endpointId));
         sb.append(", registryId=").append(String.valueOf(this.registryId));
+        sb.append(", workspaceProperties=").append(String.valueOf(this.workspaceProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -673,6 +711,7 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.endpointName, other.endpointName)
                 && java.util.Objects.equals(this.endpointId, other.endpointId)
                 && java.util.Objects.equals(this.registryId, other.registryId)
+                && java.util.Objects.equals(this.workspaceProperties, other.workspaceProperties)
                 && super.equals(other);
     }
 
@@ -697,6 +736,11 @@ public final class WorkspaceSummary extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.endpointName == null ? 43 : this.endpointName.hashCode());
         result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result = (result * PRIME) + (this.registryId == null ? 43 : this.registryId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workspaceProperties == null
+                                ? 43
+                                : this.workspaceProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

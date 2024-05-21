@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -63,13 +63,34 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
+        /**
+         * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+         * Routes from the VCN ingress route table are always imported.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+        private VcnRouteType vcnRouteType;
+
+        /**
+         * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+         * Routes from the VCN ingress route table are always imported.
+         *
+         * @param vcnRouteType the value to set
+         * @return this builder
+         **/
+        public Builder vcnRouteType(VcnRouteType vcnRouteType) {
+            this.vcnRouteType = vcnRouteType;
+            this.__explicitlySet__.add("vcnRouteType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VcnDrgAttachmentNetworkDetails build() {
             VcnDrgAttachmentNetworkDetails model =
-                    new VcnDrgAttachmentNetworkDetails(this.id, this.routeTableId);
+                    new VcnDrgAttachmentNetworkDetails(
+                            this.id, this.routeTableId, this.vcnRouteType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -83,6 +104,9 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
+            }
+            if (model.wasPropertyExplicitlySet("vcnRouteType")) {
+                this.vcnRouteType(model.getVcnRouteType());
             }
             return this;
         }
@@ -100,9 +124,11 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
     }
 
     @Deprecated
-    public VcnDrgAttachmentNetworkDetails(String id, String routeTableId) {
+    public VcnDrgAttachmentNetworkDetails(
+            String id, String routeTableId, VcnRouteType vcnRouteType) {
         super(id);
         this.routeTableId = routeTableId;
+        this.vcnRouteType = vcnRouteType;
     }
 
     /**
@@ -131,6 +157,61 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
         return routeTableId;
     }
 
+    /**
+     * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+     * Routes from the VCN ingress route table are always imported.
+     *
+     **/
+    public enum VcnRouteType {
+        VcnCidrs("VCN_CIDRS"),
+        SubnetCidrs("SUBNET_CIDRS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, VcnRouteType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (VcnRouteType v : VcnRouteType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        VcnRouteType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static VcnRouteType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid VcnRouteType: " + key);
+        }
+    };
+    /**
+     * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+     * Routes from the VCN ingress route table are always imported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnRouteType")
+    private final VcnRouteType vcnRouteType;
+
+    /**
+     * Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+     * Routes from the VCN ingress route table are always imported.
+     *
+     * @return the value
+     **/
+    public VcnRouteType getVcnRouteType() {
+        return vcnRouteType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -146,6 +227,7 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
         sb.append("VcnDrgAttachmentNetworkDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
+        sb.append(", vcnRouteType=").append(String.valueOf(this.vcnRouteType));
         sb.append(")");
         return sb.toString();
     }
@@ -161,6 +243,7 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
 
         VcnDrgAttachmentNetworkDetails other = (VcnDrgAttachmentNetworkDetails) o;
         return java.util.Objects.equals(this.routeTableId, other.routeTableId)
+                && java.util.Objects.equals(this.vcnRouteType, other.vcnRouteType)
                 && super.equals(other);
     }
 
@@ -169,6 +252,7 @@ public final class VcnDrgAttachmentNetworkDetails extends DrgAttachmentNetworkDe
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
+        result = (result * PRIME) + (this.vcnRouteType == null ? 43 : this.vcnRouteType.hashCode());
         return result;
     }
 }

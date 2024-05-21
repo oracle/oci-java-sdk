@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -356,7 +356,8 @@ public class SqlTuningClient implements SqlTuning {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -515,6 +516,90 @@ public class SqlTuningClient implements SqlTuning {
     }
 
     @Override
+    public CreateSqlTuningSetResponse createSqlTuningSet(CreateSqlTuningSetRequest request) {
+        LOG.trace("Called createSqlTuningSet");
+        final CreateSqlTuningSetRequest interceptedRequest =
+                CreateSqlTuningSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "CreateSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/CreateSqlTuningSet");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSqlTuningSetResponse>
+                transformer =
+                        CreateSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSqlTuningSetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DropSqlTuningSetResponse dropSqlTuningSet(DropSqlTuningSetRequest request) {
+        LOG.trace("Called dropSqlTuningSet");
+        final DropSqlTuningSetRequest interceptedRequest =
+                DropSqlTuningSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "DropSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlTuningSet");
+        java.util.function.Function<javax.ws.rs.core.Response, DropSqlTuningSetResponse>
+                transformer =
+                        DropSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDropSqlTuningSetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DropSqlTuningTaskResponse dropSqlTuningTask(DropSqlTuningTaskRequest request) {
         LOG.trace("Called dropSqlTuningTask");
         final DropSqlTuningTaskRequest interceptedRequest =
@@ -550,6 +635,91 @@ public class SqlTuningClient implements SqlTuning {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getDropSqlTuningTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DropSqlsInSqlTuningSetResponse dropSqlsInSqlTuningSet(
+            DropSqlsInSqlTuningSetRequest request) {
+        LOG.trace("Called dropSqlsInSqlTuningSet");
+        final DropSqlsInSqlTuningSetRequest interceptedRequest =
+                DropSqlsInSqlTuningSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DropSqlsInSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "DropSqlsInSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/DropSqlsInSqlTuningSet");
+        java.util.function.Function<javax.ws.rs.core.Response, DropSqlsInSqlTuningSetResponse>
+                transformer =
+                        DropSqlsInSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getDropSqlsInSqlTuningSetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public FetchSqlTuningSetResponse fetchSqlTuningSet(FetchSqlTuningSetRequest request) {
+        LOG.trace("Called fetchSqlTuningSet");
+        final FetchSqlTuningSetRequest interceptedRequest =
+                FetchSqlTuningSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FetchSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "FetchSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/FetchSqlTuningSet");
+        java.util.function.Function<javax.ws.rs.core.Response, FetchSqlTuningSetResponse>
+                transformer =
+                        FetchSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getFetchSqlTuningSetDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -827,6 +997,90 @@ public class SqlTuningClient implements SqlTuning {
     }
 
     @Override
+    public LoadSqlTuningSetResponse loadSqlTuningSet(LoadSqlTuningSetRequest request) {
+        LOG.trace("Called loadSqlTuningSet");
+        final LoadSqlTuningSetRequest interceptedRequest =
+                LoadSqlTuningSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                LoadSqlTuningSetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "LoadSqlTuningSet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/LoadSqlTuningSet");
+        java.util.function.Function<javax.ws.rs.core.Response, LoadSqlTuningSetResponse>
+                transformer =
+                        LoadSqlTuningSetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getLoadSqlTuningSetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SaveSqlTuningSetAsResponse saveSqlTuningSetAs(SaveSqlTuningSetAsRequest request) {
+        LOG.trace("Called saveSqlTuningSetAs");
+        final SaveSqlTuningSetAsRequest interceptedRequest =
+                SaveSqlTuningSetAsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SaveSqlTuningSetAsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "SaveSqlTuningSetAs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/SaveSqlTuningSetAs");
+        java.util.function.Function<javax.ws.rs.core.Response, SaveSqlTuningSetAsResponse>
+                transformer =
+                        SaveSqlTuningSetAsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getSaveSqlTuningSetAsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StartSqlTuningTaskResponse startSqlTuningTask(StartSqlTuningTaskRequest request) {
         LOG.trace("Called startSqlTuningTask");
         final StartSqlTuningTaskRequest interceptedRequest =
@@ -862,6 +1116,48 @@ public class SqlTuningClient implements SqlTuning {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getStartSqlTuningTaskDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ValidateBasicFilterResponse validateBasicFilter(ValidateBasicFilterRequest request) {
+        LOG.trace("Called validateBasicFilter");
+        final ValidateBasicFilterRequest interceptedRequest =
+                ValidateBasicFilterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateBasicFilterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SqlTuning",
+                        "ValidateBasicFilter",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SqlTuningSet/ValidateBasicFilter");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateBasicFilterResponse>
+                transformer =
+                        ValidateBasicFilterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getValidateBasicFilterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

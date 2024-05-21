@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard;
@@ -62,7 +62,12 @@ public interface CloudGuardAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Add an existing compartment to a security zone. If you previously removed a subcompartment from a security zone, you can add it back to the same security zone. The security zone ensures that resources in the subcompartment comply with the security zone's policies.
+     * Adds a compartment to an existing security zone (SecurityZone resource), identified by
+     * securityZoneId. Specify parameters in an AddCompartmentDetails resource that you pass.
+     * If you previously removed a subcompartment from a security zone, you can add it back to the
+     * same security zone. The security zone ensures that resources in the subcompartment comply with
+     * the security zone's policies.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -77,7 +82,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancels the work request with the given ID.
+     * Cancels a work request identified by workRequestId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -93,7 +98,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the DataSource from current compartment to another.
+     * Moves a data source (DataSource resource), identified by parameters
+     * passed in a ChangeDataSourceCompartmentDetails resource, from the current
+     * compartment to another.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -109,7 +117,11 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the DetectorRecipe from current compartment to another.
+     * Moves the detector recipe (DetectorRecipe resource),
+     * identified by detectorRecipeId, from the current compartment to
+     * another compartment. When provided, If-Match is checked against
+     * etag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -127,7 +139,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the ManagedList from current compartment to another.
+     * Moves the managed list (ManagedList resource), identified by managedListId, from the current compartment to another compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -144,7 +156,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves the ResponderRecipe from current compartment to another.
+     * Moves the responder recipe (ResponderRecipe resource), identified by responderRecipeId
+     * in a ChangeResponderRecipeCompartmentDetails resource, from the current compartment to another compartment.
+     * When provided, if-match is checked against etag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -162,7 +177,26 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a security zone recipe to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+     * Moves the SavedQuery resource into a different compartment. When provided, If-Match is checked against etag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSavedQueryCompartmentResponse> changeSavedQueryCompartment(
+            ChangeSavedQueryCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSavedQueryCompartmentRequest, ChangeSavedQueryCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves the security recipe (SecurityRecipe resource), identified by securityRecipeId,
+     * from the current compartment to another compartment. When provided, `if-match` is checked
+     * against `etag` values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -180,7 +214,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a security zone to a different compartment. When provided, `If-Match` is checked against `ETag` values of the resource.
+     * Moves a security zone, identified by securityZoneId, to a different compartment.
+     * Pass parameters through a ChangeSecurityZoneCompartmentDetails resource.
+     * When provided, `if-match` is checked against `etag` values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -198,7 +235,23 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new Data Mask Rule Definition
+     * Creates a AdhocQuery resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAdhocQueryResponse> createAdhocQuery(
+            CreateAdhocQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateAdhocQueryRequest, CreateAdhocQueryResponse>
+                    handler);
+
+    /**
+     * Creates a new DataMaskRule resource definition.
      *
      *
      * @param request The request object containing the details to send
@@ -215,7 +268,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a DataSource
+     * Creates a data source (DataSource resource), using parameters passed
+     * through a CreateDataSourceDetails resource.
      *
      *
      * @param request The request object containing the details to send
@@ -231,7 +285,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a DetectorRecipe
+     * Creates a new DetectorRecipe resource.
      *
      *
      * @param request The request object containing the details to send
@@ -248,7 +302,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create the DetectorRule
+     * Creates a detector rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -266,7 +320,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new ManagedList.
+     * Creates a new ManagedList resource.
      *
      *
      * @param request The request object containing the details to send
@@ -283,7 +337,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a ResponderRecipe.
+     * Creates a responder recipe (ResponderRecipe resource), from values passed in a
+     * CreateResponderRecipeDetails resource.
      *
      *
      * @param request The request object containing the details to send
@@ -300,7 +355,24 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+     * Creates a SavedQuery resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSavedQueryResponse> createSavedQuery(
+            CreateSavedQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateSavedQueryRequest, CreateSavedQueryResponse>
+                    handler);
+
+    /**
+     * Creates a security zone recipe (SecurityRecipe resource), using parameters
+     * passed in a CreateSecurityRecipeDetails resource.
      *
      *
      * @param request The request object containing the details to send
@@ -317,7 +389,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+     * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+     * through a CreateSecurityZoneDetails resource.
      *
      *
      * @param request The request object containing the details to send
@@ -334,7 +407,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Target
+     * Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
      *
      *
      * @param request The request object containing the details to send
@@ -350,6 +423,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Attaches a DetectorRecipe to a target (Target resource) identified by targetId,
+     * using parameters passed in a TargetAttachTargetDetectorRecipeDetails resource.
      * Attach a DetectorRecipe with the Target
      *
      *
@@ -367,7 +442,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Attach a ResponderRecipe with the Target
+     * Attaches a responder recipe to a target.
      *
      *
      * @param request The request object containing the details to send
@@ -384,7 +459,39 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a DataMaskRule identified by dataMaskRuleId
+     * Creates and registers a WLP agent for an
+     * on-premise resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateWlpAgentResponse> createWlpAgent(
+            CreateWlpAgentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateWlpAgentRequest, CreateWlpAgentResponse>
+                    handler);
+
+    /**
+     * Deletes a AdhocQuery resource identified by adhocQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAdhocQueryResponse> deleteAdhocQuery(
+            DeleteAdhocQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>
+                    handler);
+
+    /**
+     * Deletes a DataMaskRule resource, identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -400,7 +507,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a DataSource identified by dataSourceId
+     * Deletes a data source (DataSource resource) identified by dataSourceId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -415,7 +522,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a DetectorRecipe identified by detectorRecipeId
+     * Deletes a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -431,7 +538,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes DetectorRecipeDetectorRule
+     * Deletes the DetectorRecipeDetectorRule resource identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -449,7 +556,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Delete the DetectorRecipeDetectorRuleDataSource resource by identifier
+     * Deletes the DetectorRecipeDetectorRuleDataSource resource by identifier.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -467,7 +574,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes a managed list identified by managedListId
+     * Deletes a managed list identified by managedListId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -483,7 +590,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the ResponderRecipe resource by identifier
+     * Deletes a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -499,7 +606,22 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a security zone recipe. The recipe can't be associated with an existing security zone.
+     * Deletes a SavedQuery resource identified by savedQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSavedQueryResponse> deleteSavedQuery(
+            DeleteSavedQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteSavedQueryRequest, DeleteSavedQueryResponse>
+                    handler);
+
+    /**
+     * Deletes a security zone recipe, identified by securityRecipeId. The recipe can't be associated with an existing security zone.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -515,7 +637,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes an existing security zone with a given identifier.
+     * Deletes a security zone, identified by securityZoneId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -531,7 +653,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Target identified by targetId
+     * Deletes a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -546,7 +668,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the TargetDetectorRecipe resource by identifier
+     * Deletes the target detector recipe (TargetDetectorRecipe resource) identified by
+     * targetDetectorRecipeId, from a target (Target resource) identified by targetId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -562,7 +686,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the TargetResponderRecipe resource by identifier
+     * Detaches a target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, from a target (Target resource)
+     * identified by targetId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -578,7 +705,57 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Executes the responder execution. When provided, If-Match is checked against ETag values of the resource.
+     * Deletes and unregisters the WLP agent for an on-premise resource.
+     * x-obmcs-splat:
+     * routing:
+     *   strategy: route-to-any-ad
+     * serviceList: [ 'cloudguard-cp-SPLAT_ENV' ]
+     * resources:
+     *   wlpAgent:
+     *     serviceResourceName: WlpAgent
+     *     targetCompartmentId: downstream.getOr404('cloudguard-cp-SPLAT_ENV', 'GetWlpAgent', request.resourceId).compartmentId
+     *     actionKind: delete
+     *     resourceOcid: request.resourceId
+     *     reconciliationCanStartAfterSecs: 30
+     *     permissions: [ \"WLP_AGENT_DELETE\" ]
+     * authorization:
+     *   mode: automated
+     *   check: resources['wlpAgent'].grantedPermissions.contains('WLP_AGENT_DELETE')
+     *   allowCrossTenancy: true
+     * tagStore:
+     *   mode: automated
+     * maximumAttemptCount: 3
+     * throttling:
+     *   perUserLimit:
+     *     rpsLimit: 15
+     *   perTenantLimit:
+     *     rpsLimit: 30
+     * quotas:
+     *   mode: automated
+     * search:
+     *   mode: backfilling
+     *   operationResourceName: wlpAgent
+     * lock:
+     *   mode: test
+     *   operationResourceName: wlpAgent
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteWlpAgentResponse> deleteWlpAgent(
+            DeleteWlpAgentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteWlpAgentRequest, DeleteWlpAgentResponse>
+                    handler);
+
+    /**
+     * Executes the responder execution. When provided, if-match is checked
+     * against etag values of the resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -594,7 +771,38 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns ConditionType with its details.
+     * Returns an adhoc query identified by adhocQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAdhocQueryResponse> getAdhocQuery(
+            GetAdhocQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAdhocQueryRequest, GetAdhocQueryResponse>
+                    handler);
+
+    /**
+     * Downloads the results for a given adhoc ID (from includes results from all monitoring regions).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAdhocQueryResultContentResponse> getAdhocQueryResultContent(
+            GetAdhocQueryResultContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAdhocQueryResultContentRequest, GetAdhocQueryResultContentResponse>
+                    handler);
+
+    /**
+     * Returns a ConditionMetatDataType resource with its details.
      *
      *
      * @param request The request object containing the details to send
@@ -611,7 +819,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * GET Cloud Guard Configuration Details for a Tenancy.
+     * Returns the configuration details for a Cloud Guard tenancy,
+     * identified by root compartment OCID.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -626,7 +836,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a DataMaskRule identified by DataMaskRuleId
+     * Returns a DataMaskRule resource, identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -641,7 +851,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a DataSource identified by dataSourceId
+     * Returns a data source (DataSource resource) identified by dataSourceId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -656,7 +866,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a Detector identified by detectorId.
+     * Returns a Detector resource, identified by detectorId.
      *
      *
      * @param request The request object containing the details to send
@@ -671,7 +881,7 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetDetectorRequest, GetDetectorResponse> handler);
 
     /**
-     * Returns a DetectorRecipe identified by detectorRecipeId
+     * Returns a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -687,7 +897,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get DetectorRule by identifier
+     * Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -705,7 +915,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a Detector Rule identified by detectorRuleId
+     * Returns a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
      *
      * @param request The request object containing the details to send
@@ -721,7 +931,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a managed list identified by managedListId
+     * Returns a managed list identified by managedListId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -736,7 +946,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a Problems response
+     * Returns the Problem resource identified by problemId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -750,7 +960,21 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProblemRequest, GetProblemResponse> handler);
 
     /**
-     * Returns resource profile details
+     * Returns a resource identified by resourceId
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourceResponse> getResource(
+            GetResourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetResourceRequest, GetResourceResponse> handler);
+
+    /**
+     * Returns details for a resource profile, identified by resourceProfileId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -766,7 +990,23 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a Responder Execution identified by responderExecutionId
+     * Returns the vulnerability details associated with the cveId where resource is an instance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourceVulnerabilityResponse> getResourceVulnerability(
+            GetResourceVulnerabilityRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceVulnerabilityRequest, GetResourceVulnerabilityResponse>
+                    handler);
+
+    /**
+     * Returns a responder execution identified by responderExecutionId.
      *
      *
      * @param request The request object containing the details to send
@@ -783,7 +1023,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get a ResponderRecipe by identifier
+     * Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -799,7 +1039,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get ResponderRule by identifier
+     * Returns a responder rule (ResponderRule resource) identified by responderRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -817,7 +1057,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get a ResponderRule by identifier
+     * Returns a responder rule (ResponderRule resource) identified by resonderRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -832,7 +1072,25 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+     * Returns a SavedQuery resource identified by savedQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSavedQueryResponse> getSavedQuery(
+            GetSavedQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSavedQueryRequest, GetSavedQueryResponse>
+                    handler);
+
+    /**
+     * Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+     * (securityPolicyId). When a policy is enabled in a security zone, then any action in
+     * the zone that attempts to violate that policy is blocked.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -848,7 +1106,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+     * Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -864,7 +1122,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+     * Returns a security zone (SecurityZone resource) identified by securityZoneId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -879,7 +1137,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns Sighting details
+     * Returns a single sighting (Sighting resource) identified by sightingId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -893,7 +1151,7 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetSightingRequest, GetSightingResponse> handler);
 
     /**
-     * Returns a Target identified by targetId
+     * Returns a target (Target resource) identified by targetId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -907,7 +1165,7 @@ public interface CloudGuardAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetTargetRequest, GetTargetResponse> handler);
 
     /**
-     * Get a TargetDetectorRecipe by identifier
+     * Returns a target detector recipe (TargetDetectorRecipe resource) identified by targetDetectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -923,7 +1181,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get DetectorRule by identifier
+     * Returns DetectorRule resource by identified by targetDetectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -941,7 +1199,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get a TargetResponderRecipe by identifier
+     * Returns a target responder recipe (TargetResponderRecipe) identified by
+     * targetResponderRecipeId for a target (Target resource) identified by targetId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -957,7 +1217,11 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get ResponderRule by identifier
+     * Returns a responder rule (ResponderRule resource) identified by
+     * responderRuleId, from a target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, attached to a target (Target resource)
+     * identified by targetId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -975,7 +1239,21 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets details of the work request with the given ID.
+     * Returns a WlpAgent resource for an on-premise resource identified by wlpAgentId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWlpAgentResponse> getWlpAgent(
+            GetWlpAgentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWlpAgentRequest, GetWlpAgentResponse> handler);
+
+    /**
+     * Returns details for a work request (WorkRequest resource) identified by workRequestId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -990,7 +1268,55 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of condition types.
+     * Returns a list of all adhoc queries (AdhocQuery resources) for a compartment
+     * identified by compartmentId. List is returned in a AdhocQueryCollection resource
+     * with page of AdhocQuerySummary resources.
+     * <p>
+     * The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAdhocQueriesResponse> listAdhocQueries(
+            ListAdhocQueriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAdhocQueriesRequest, ListAdhocQueriesResponse>
+                    handler);
+
+    /**
+     * Lists the results for a given adhoc ID (from includes results from all monitoring regions).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAdhocQueryResultsResponse> listAdhocQueryResults(
+            ListAdhocQueryResultsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAdhocQueryResultsRequest, ListAdhocQueryResultsResponse>
+                    handler);
+
+    /**
+     * Returns a list of ConditionMetadataType resources.
      *
      *
      * @param request The request object containing the details to send
@@ -1007,7 +1333,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+     * Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
      *
      *
      * @param request The request object containing the details to send
@@ -1024,7 +1350,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of events from CloudGuard DataSource
+     * Returns a list of data source events
+     * (DataSourceEventCollection  resource) from the data source
+     * (DataSource resource) identified by dataSourceId.
      *
      *
      * @param request The request object containing the details to send
@@ -1041,9 +1369,11 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Data Sources in a compartment
+     * Returns a list of all data sources (DataSource resources) for a compartment
+     * identified by compartmentId. List is returned in a DataSourceCollection resource
+     * with page of DataSourceSummary resources.
      * <p>
-     * The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+     * The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1052,7 +1382,7 @@ public interface CloudGuardAsync extends AutoCloseable {
      * Principal doesn't have access to even one of the child compartments. This is valid only when
      * `compartmentIdInSubtree` is set to `true`.
      * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+     * The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -1071,7 +1401,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of DetectorRule associated with DetectorRecipe.
+     * Returns a list of detector rules (DetectorRule resources) for a detector recipe (DetectorRecipe resource), identified by detectorRecipeId.
      *
      *
      * @param request The request object containing the details to send
@@ -1090,7 +1420,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all Detector Recipes in a compartment
+     * Returns a list of all detector recipes (DetectorRecipe resources) in a compartment, identified by compartmentId.
      * <p>
      * The ListDetectorRecipes operation returns only the detector recipes in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1121,7 +1451,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of detector rules for the detectorId passed.
+     * Returns a list of detector rules for the DetectorRecipe resource identified by detectorId.
      *
      *
      * @param request The request object containing the details to send
@@ -1138,7 +1468,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns detector catalog - list of detectors supported by Cloud Guard
+     * Returns a detector catalog (DetectorCollection resource) with a list of DetectorSummary resources.
      *
      *
      * @param request The request object containing the details to send
@@ -1154,7 +1484,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Impacted Resources for a CloudGuard Problem
+     * Returns a list of impacted resources for a problem identified by problemId.
      *
      *
      * @param request The request object containing the details to send
@@ -1171,7 +1501,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns all ManagedList types supported by Cloud Guard
+     * Returns all managed list types (listType parameter) that Cloud Guard supports.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1187,7 +1517,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of ListManagedLists.
+     * Returns a list of all ManagedList resources in a compartment, identified by compartmentId.
      * The ListManagedLists operation returns only the managed lists in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * <p>
@@ -1216,7 +1546,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the list of global policy statements needed by Cloud Guard when enabling
+     * Returns the list of global policy statements (policy attributes) needed to fully enable Cloud Guard.
      *
      *
      * @param request The request object containing the details to send
@@ -1232,7 +1562,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of endpoints associated with a cloud guard problem
+     * Returns a list of endpoints associated with a problem, identified by problemId.
      *
      *
      * @param request The request object containing the details to send
@@ -1249,7 +1579,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of entities for a CloudGuard Problem
+     * Returns a list of entities for a problem.
      *
      *
      * @param request The request object containing the details to send
@@ -1266,7 +1596,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Actions done on CloudGuard Problem
+     * Returns a list of actions taken on a problem.
      *
      *
      * @param request The request object containing the details to send
@@ -1283,7 +1613,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Problems identified by the Cloud Guard
+     * Returns a list of all Problems identified by Cloud Guard which are currently in the database and meet the filtering criteria.
      * <p>
      * The ListProblems operation returns only the problems in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
@@ -1313,7 +1643,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Recommendations.
+     * Returns a list of recommendations (RecommendationSummaryCollection resource with a page of
+     * RecommendationSummary resources) for a specified compartment OCID.
      *
      *
      * @param request The request object containing the details to send
@@ -1330,7 +1661,25 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of endpoints for Cloud Guard resource profile
+     * Returns the list of open ports associated with the resourceId where resource is an instance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourcePortsResponse> listResourcePorts(
+            ListResourcePortsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourcePortsRequest, ListResourcePortsResponse>
+                    handler);
+
+    /**
+     * Returns a list of endpoints (ResourceProfileEndpointCollection resource with a page of
+     * ResourceProfileEndpointSummary resources) for a resource profile identified by resourceProfileId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1347,7 +1696,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of impacted resources for Cloud Guard resource profile
+     * Returns a list of impacted resources (ResourceProfileImpactedResourceCollection resource
+     * with a page of ResourceProfileImpactedResourceSummary resources) for a resource profile
+     * identified by resourceProfileId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1365,8 +1717,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all resource profiles identified by the Cloud Guard
-     * The ListResourceProfiles operation returns only resource profiles that match the passed filters.
+     * Returns a list of all resource profile summaries (ResourceProfileCollection resource with a page of
+     * ResourceProfileSummary resources) for a compartment, identified by compartmentId and filtered as specified.
      * <p>
      * The ListResourceProfiles operation returns only the resource profiles in `compartmentId` passed.
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -1395,7 +1747,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of resource types.
+     * Returns a single ResourceTypeCollection resource, containing a list of resource types,
+     * identified by parameters specified.
      *
      *
      * @param request The request object containing the details to send
@@ -1412,7 +1765,54 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Responder activities done on CloudGuard Problem
+     * Returns the list of vulnerabilities associated with the resourceId where resource is an instance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourceVulnerabilitiesResponse> listResourceVulnerabilities(
+            ListResourceVulnerabilitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListResourceVulnerabilitiesRequest, ListResourceVulnerabilitiesResponse>
+                    handler);
+
+    /**
+     * Returns a list of all resources in a compartment
+     * <p>
+     * The ListResources operation returns only the resources in `compartmentId` passed.
+     * The list does not include any subcompartments of the compartmentId passed.
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+     * Principal doesn't have access to even one of the child compartments. This is valid only when
+     * `compartmentIdInSubtree` is set to `true`.
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies when you perform ListResources on the
+     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourcesResponse> listResources(
+            ListResourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListResourcesRequest, ListResourcesResponse>
+                    handler);
+
+    /**
+     * Returns a list of responder activities for a problem, identified by problemId, in a
+     * ResponderActivityCollection resource, with a page of ResponderActivitySummary resources.
      *
      *
      * @param request The request object containing the details to send
@@ -1429,7 +1829,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Responder Executions. A Responder Execution is an entity that tracks the collective execution of multiple Responder Rule Executions for a given Problem.
+     * Returns a list of responder executions. A responder execution is an entity that tracks
+     * the collective execution of multiple responder rule executions for a given problem.
      *
      *
      * @param request The request object containing the details to send
@@ -1446,7 +1847,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of ResponderRule associated with ResponderRecipe.
+     * Returns a list of responder rules (ResponderRule resources in a
+     * responderRecipeResponderRuleCollection resource, with page of ResponderRuleSummary resources),
+     * for a responder recipe (ResponderRecipe resource), identified by responderRecipeId.
      *
      *
      * @param request The request object containing the details to send
@@ -1465,7 +1868,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all ResponderRecipes in a compartment
+     * Returns a list (ResponderRecipeCollection resource, with a page of ResponderRecipeSummary resources)
+     * of all responder recipes (RespponderRecipe resources) in a compartment, identified by compartmentId.
      * The ListResponderRecipe operation returns only the targets in `compartmentId` passed.
      * The list does not include any subcompartments of the compartmentId passed.
      * <p>
@@ -1495,7 +1899,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of ResponderRule.
+     * Returns a list of responder rules for the ResponderRecipe resource
+     * identified by responderId. The list is contained in a ResponderRuleCollection
+     * resource with a page of ResponderRuleSummary resources.
      *
      *
      * @param request The request object containing the details to send
@@ -1512,7 +1918,24 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of security zone policies. Specify any compartment.
+     * Returns a list of saved queries run in a tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSavedQueriesResponse> listSavedQueries(
+            ListSavedQueriesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSavedQueriesRequest, ListSavedQueriesResponse>
+                    handler);
+
+    /**
+     * Returns a list of security zone policies (SecurityPolicySummary resources),
+     * identified by compartmentId.
      *
      *
      * @param request The request object containing the details to send
@@ -1529,7 +1952,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of all security zone recipes in a compartment.
+     * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+     * compartment, identified by compartmentId.
      *
      *
      * @param request The request object containing the details to send
@@ -1546,7 +1970,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of all security zones in a compartment.
+     * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+     * compartmentId. List is contained in a page of SecurityZoneSummary resources.
      *
      *
      * @param request The request object containing the details to send
@@ -1563,7 +1988,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns Sighting endpoints details
+     * Returns sighting endpoints details in a
+     * SightingEndpointsCollection resource
+     * with a page of SightingEndpointSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1579,7 +2007,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a list of Impacted Resources for a CloudGuard Sighting
+     * Returns a list of impacted resources for a sighting, identified by sightingId, in a
+     * SightingImpactedResourceCollection resource with a page of SightingImpactedResourceSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1597,8 +2027,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all Sightings identified by the Cloud Guard
-     * The ListSightings operation returns only sightings that match the passed filters.
+     * For the parameters passed, returns a list of sightings
+     * (SightingCollection resource) with a page of SightingSummary resources.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -1625,8 +2055,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of tactics associated with detector rules.
-     *
+     * Returns a list of TacticSummary resources for a compartment, identified by compartmentId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1659,7 +2088,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all detector recipes associated with the target identified by targetId
+     * Returns a list of all target detector recipes (TargetDetectorRecipe resources)
+     * associated with a target (Target resource), identified by targetId. The list is contained
+     * in a TargetDetectorRecipeCollection resource with page of TargetDetectorRecipeSummary resources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1675,7 +2107,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of ResponderRule associated with ResponderRecipe within a Target.
+     * Returns a list of responder rules (ResponderRule resources) associated with a
+     * responder recipe (ResponderRecipe resource) attached to a Target.
+     * List is returned in a TargetResponderRecipeResponderRuleCollection resource
+     * with page of TargetResponderRecipeResponderRuleSummary resources.
      *
      *
      * @param request The request object containing the details to send
@@ -1694,7 +2129,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of all responder recipes associated with the target identified by targetId
+     * Returns a list of summary information for all responder recipes
+     * (TargetResponderRecipeCollection resource, with a page of TargetResponderRecipeSummary resources)
+     * attached to a target identified by targetId, located in a compartment identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1710,9 +2148,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of all Targets in a compartment
-     * The ListTargets operation returns only the targets in `compartmentId` passed.
-     * The list does not include any subcompartments of the compartmentId passed.
+     * Returns a list of targets (TargetCollection resource with page of TargetSummary
+     * resources) for the target identified by compartmentId. By default, only the target
+     * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+     * returns the entire hierarchy of targets in subcompartments.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -1722,7 +2161,7 @@ public interface CloudGuardAsync extends AutoCloseable {
      * <p>
      * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
      * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
      *
      *
@@ -1754,7 +2193,25 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Returns a list of WLP agents in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWlpAgentsResponse> listWlpAgents(
+            ListWlpAgentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWlpAgentsRequest, ListWlpAgentsResponse>
+                    handler);
+
+    /**
+     * Returns a list of errors for a work request
+     * identified by workRequestId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1770,7 +2227,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Returns a paginated list (WorkRequestLogEntryCollection resource)
+     * of log entries for a request, identified by workRequestId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1786,7 +2245,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the work requests in a compartment.
+     * Returns a list of work requests (WorkRequestSummaryCollection resource),
+     * in a compartment identified by compartmentId.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1801,7 +2262,11 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes an existing compartment from a security zone. When you remove a subcompartment from a security zone, it no longer enforces security zone policies on the resources in the subcompartment. You can't remove the primary compartment that was used to create the security zone.
+     * Removes a compartment from a security zone (SecurityZone resource), identified by securityZoneId.
+     * Pass compartmentId of compartment to remove through a RemoveCompartmentDetails resource. When you remove a
+     * subcompartment from a security zone, it no longer enforces security zone policies on the resources in the
+     * subcompartment. You can't remove the primary compartment that was used to create the security zone.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1817,7 +2282,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Examines the number of problems related to the resource and the relative severity of those problems.
+     * Returns a page of RiskScoreAggregation resources for a compartment,
+     * identified by compartmentId.
      *
      *
      * @param request The request object containing the details to send
@@ -1834,8 +2300,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Measures the number of resources examined across all regions and compares it with the
-     * number of problems detected, for a given time period.
+     * Returns a page of SecurityScoreTrendAggregation resources. These measure the number
+     * of resources examined across all regions and compare it with the number of problems detected.
      *
      *
      * @param request The request object containing the details to send
@@ -1854,7 +2320,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Measures the number of resources examined across all regions and compares it with the number of problems detected.
+     * Returns a page of SecurityScoreAggregation resources. These measure the number
+     * of resources examined across all regions and compare it with the number of problems detected.
      *
      *
      * @param request The request object containing the details to send
@@ -1871,7 +2338,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the summary of Activity type problems identified by cloud guard, for a given set of dimensions.
+     * Returns the summary of problems generated by OCI Activity Detector rules, identified by parameters specified.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -1904,7 +2371,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns the number of problems identified by cloud guard, for a given set of dimensions.
+     * Returns the number of problems matching the key-value pairs in dimensionMap.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -1932,18 +2399,18 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the number of Responder Executions, for a given set of dimensions.
+     * Returns the number of responder executions, identified by parameters specified, in a page of
+     * ResponderExecutionAggregation resources.
      * <p>
-     * The parameter `accessLevel` specifies whether to return only those compartments for which the
-     * requestor has INSPECT permissions on at least one resource directly
-     * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-     * Principal doesn't have access to even one of the child compartments. This is valid only when
-     * `compartmentIdInSubtree` is set to `true`.
+     * Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions,
+     * directly or indirectly (permissions can be on a resource in a subcompartment). \u201CNot Authorized\u201D is returned
+     * if user doesn't have access to at least one of the child compartments. When accessLevel is set to RESTRICTED,
+     * permissions are checked and no partial results are displayed. This is valid only when compartmentIdInSubtree is set to true.
      * <p>
-     * The parameter `compartmentIdInSubtree` applies when you perform summarize API on the
-     * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+     * Setting accessLevel to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions, directly or
+     * indirectly (permissions can be on a resource in a subcompartment). \u201CNot Authorized\u201D is returned if user doesn't have
+     * access to at least one of the child compartments. When accessLevel is set to RESTRICTED, permissions are checked
+     * and no partial results are displayed. This is valid only when compartmentIdInSubtree is set to true.
      *
      *
      * @param request The request object containing the details to send
@@ -1998,7 +2465,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the resource profile risk score top trends for the given time range based on the search filters.
+     * Returns a list of resource profile risk score aggregation summaries
+     * (ResourceProfileRiskScoreAggregationSummaryCollection resource with a page of
+     * ResourceProfileRiskScoreAggregationSummary resources) for a specified compartment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2016,7 +2486,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns the number of problems identified by cloud guard, for a given time period.
+     * Returns a ProblemTrendAggregationCollection resource for a compartment, identified by compartmentId, for the specified time period. The ProblemTrendAggregationCollection resource contains a list of ProblemTrendAggregation resources.
      * <p>
      * The parameter `accessLevel` specifies whether to return only those compartments for which the
      * requestor has INSPECT permissions on at least one resource directly
@@ -2046,7 +2516,10 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Summarizes the resource risk score trend for the given time range based on the search filters.
+     * Returns a summary of risk score trends in a  ResourceRiskScoreAggregationCollection resource,
+     * with a page of ResourceRiskScoreAggregation resources, filtered by parameters that you specify
+     * in a RequestSummarizedTrendResourceRiskScoresDetailsresource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2113,9 +2586,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Skips the execution for a bulk of responder executions
-     * The operation is atomic in nature
-     *
+     * Skips the execution for a bulk of responder executions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2131,7 +2602,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Skips the execution of the responder execution. When provided, If-Match is checked against ETag values of the resource.
+     * Skips the execution of the responder execution. When provided, If-Match is checked against etag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2147,7 +2618,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * push the problem to responder
+     * Sends the problem identified by problemId to the responder engine, to be processed by rule
+     * that\u2019s identified by responderRuleId, in the TriggerResponderDetails resource that\u2019s passed.
      *
      *
      * @param request The request object containing the details to send
@@ -2163,8 +2635,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the statuses in bulk for a list of problems
-     * The operation is atomic in nature
+     * Changes the status for all problems listed in the problemIds array, passed through the UpdateBulkProblemStatusDetails resource, from the current status to the status set in UpdateBulkProblemStatusDetails.
      *
      *
      * @param request The request object containing the details to send
@@ -2181,7 +2652,8 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enable/Disable Cloud Guard. The reporting region cannot be updated once created.
+     * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+     * The reporting region cannot be updated once created.
      *
      *
      * @param request The request object containing the details to send
@@ -2198,7 +2670,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a DataMaskRule identified by dataMaskRuleId
+     * Updates a data mask rule (DataMaskRule resource) identified by dataMaskRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2214,7 +2686,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a data source identified by dataSourceId
+     * Updates a data source (DataSource resource) identified by dataSourceId,
+     * using values passed in an UpdateDataSourceDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2229,7 +2703,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a detector recipe identified by detectorRecipeId
+     * Updates a detector recipe (DetectorRecipe resource) identified by detectorRecipeId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2245,7 +2719,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the DetectorRule by identifier
+     * Updates a detector rule (DetectorRule resource) identified by detectorRuleId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2263,7 +2737,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates a managed list identified by managedListId
+     * Updates a ManagedList resource, identified by managedList.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2279,7 +2753,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * updates the problem details
+     * Changes the current status of the problem, identified by problemId, to the status specified in the UpdateProblemStatusDetails resource that you pass.
      *
      *
      * @param request The request object containing the details to send
@@ -2296,7 +2770,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the ResponderRecipe resource by identifier
+     * Updates a responder recipe (ResponderRecipe resource) identified by
+     * responderRecipeId, passed in an UpdateResponderRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2312,7 +2788,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the ResponderRule by identifier
+     * Updates a responder rule (ResponderRule resource) identified by responderRuleId,
+     * passed in a UpdateResponderRecipeResponderRuleDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2330,7 +2808,24 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates a security zone recipe. A security zone recipe is a collection of security zone policies.
+     * Updates a saved query identified by savedQueryId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSavedQueryResponse> updateSavedQuery(
+            UpdateSavedQueryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateSavedQueryRequest, UpdateSavedQueryResponse>
+                    handler);
+
+    /**
+     * Updates a security zone recipe (SecurityRecipe resource), identified by securityRecipeId,
+     * using parameters passed in an UpdateSecurityRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2346,7 +2841,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the security zone identified by its id
+     * Updates a security zone (SecurityZone resource) identified by securityZoneId.
+     * Pass parameters through an UpdateSecurityZoneDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2362,7 +2859,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates a Target identified by targetId
+     * Updates a target (Target resource) identified by targetId, using parameters
+     * passed in an UpdateTargetDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2377,7 +2876,9 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the TargetDetectorRecipe resource by identifier
+     * Updates a target detector recipe (TargtetDetectorRecipe resource) identified by
+     * targetDetectorRecipeId, using parameters passed in an UpdateTargetDetectorRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2393,7 +2894,7 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the DetectorRule by identifier
+     * Updates the DetectorRule resource identified by targetDetectorRecipeId
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2411,7 +2912,11 @@ public interface CloudGuardAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Update the TargetResponderRecipe resource by identifier
+     * Updates the target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, attached to a target identified
+     * by targetId. Pass parameters for the update through an
+     * UpdateTargetResponderRecipeDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2427,7 +2932,12 @@ public interface CloudGuardAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the ResponderRule by identifier
+     * Updates a responder rule (ResponderRule resource) identified by
+     * responderRuleId, for a target responder recipe (TargetResponderRecipe resource)
+     * identified by targetResponderRecipeId, for a target (Target resource)
+     * identified by targetId. Parameters for the update are passed through an
+     * UpdateTargetResponderRecipeResponderRuleDetails resource.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2443,4 +2953,19 @@ public interface CloudGuardAsync extends AutoCloseable {
                                     UpdateTargetResponderRecipeResponderRuleRequest,
                                     UpdateTargetResponderRecipeResponderRuleResponse>
                             handler);
+
+    /**
+     * Updates and renews the certificate for an on-premise WLP agent identified by wlpAgentId.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateWlpAgentResponse> updateWlpAgent(
+            UpdateWlpAgentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateWlpAgentRequest, UpdateWlpAgentResponse>
+                    handler);
 }

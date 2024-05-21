@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User linked to auth token
+ * The user linked to the Auth token.
  * <p>
  **SCIM++ Properties:**
  *  - caseExact: false
@@ -42,7 +42,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User's id
+         * The user's ID.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -58,7 +58,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
         private String value;
 
         /**
-         * User's id
+         * The user's ID.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -78,7 +78,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * User's ocid
+         * The user's OCID.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -94,7 +94,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
         private String ocid;
 
         /**
-         * User's ocid
+         * The user's OCID.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -150,7 +150,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * User display name
+         * The user's display name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -166,7 +166,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
         private String display;
 
         /**
-         * User display name
+         * The user's display name.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -186,7 +186,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * User name
+         * The username.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -202,7 +202,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
         private String name;
 
         /**
-         * User name
+         * The username.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -267,7 +267,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * User's id
+     * The user's ID.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -283,7 +283,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     private final String value;
 
     /**
-     * User's id
+     * The user's ID.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -301,7 +301,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * User's ocid
+     * The user's OCID.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -317,7 +317,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     private final String ocid;
 
     /**
-     * User's ocid
+     * The user's OCID.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -369,7 +369,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * User display name
+     * The user's display name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -385,7 +385,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     private final String display;
 
     /**
-     * User display name
+     * The user's display name.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -403,7 +403,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * User name
+     * The username.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -419,7 +419,7 @@ public final class MyAuthTokenUser extends com.oracle.bmc.http.internal.Explicit
     private final String name;
 
     /**
-     * User name
+     * The username.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false

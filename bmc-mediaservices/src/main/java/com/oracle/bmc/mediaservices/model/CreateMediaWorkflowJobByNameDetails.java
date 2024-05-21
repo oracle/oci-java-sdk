@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.model;
@@ -82,6 +82,15 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Name of the system MediaWorkflow that should be run.
          **/
@@ -111,6 +120,7 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
                             this.parameters,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.mediaWorkflowName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -138,6 +148,9 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("mediaWorkflowName")) {
                 this.mediaWorkflowName(model.getMediaWorkflowName());
             }
@@ -164,6 +177,7 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
             java.util.Map<String, Object> parameters,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             String mediaWorkflowName) {
         super(
                 mediaWorkflowConfigurationIds,
@@ -171,7 +185,8 @@ public final class CreateMediaWorkflowJobByNameDetails extends CreateMediaWorkfl
                 displayName,
                 parameters,
                 freeformTags,
-                definedTags);
+                definedTags,
+                locks);
         this.mediaWorkflowName = mediaWorkflowName;
     }
 

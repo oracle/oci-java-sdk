@@ -1,11 +1,14 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A security zone recipe is a collection of security zone policies. Oracle Cloud Infrastructure enforces these policies on security zones that use the recipe.
+ * A security zone recipe (SecurityRecipe resource) is a collection of security zone policies
+ * (SecurityPolicy resources). Oracle Cloud Infrastructure enforces
+ * these policies on security zones that use the recipe.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -67,13 +70,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can\u2019t be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can\u2019t be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -83,13 +86,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The recipe's name
+         * The recipe's display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The recipe's name
+         * The recipe's display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -115,13 +118,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The id of the compartment that contains the recipe
+         * The OCID of the compartment that contains the recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The id of the compartment that contains the recipe
+         * The OCID of the compartment that contains the recipe
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -147,13 +150,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The list of {@code SecurityPolicy} ids that are included in the recipe
+         * The list of security policy IDs that are included in the recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
         private java.util.List<String> securityPolicies;
 
         /**
-         * The list of {@code SecurityPolicy} ids that are included in the recipe
+         * The list of security policy IDs that are included in the recipe
          * @param securityPolicies the value to set
          * @return this builder
          **/
@@ -195,13 +198,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The current state of the recipe
+         * The current lifecycle state of the recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the recipe
+         * The current lifecycle state of the recipe
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -380,13 +383,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can\u2019t be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can\u2019t be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -394,13 +397,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The recipe's name
+     * The recipe's display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The recipe's name
+     * The recipe's display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -422,13 +425,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The id of the compartment that contains the recipe
+     * The OCID of the compartment that contains the recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The id of the compartment that contains the recipe
+     * The OCID of the compartment that contains the recipe
      * @return the value
      **/
     public String getCompartmentId() {
@@ -450,13 +453,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The list of {@code SecurityPolicy} ids that are included in the recipe
+     * The list of security policy IDs that are included in the recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityPolicies")
     private final java.util.List<String> securityPolicies;
 
     /**
-     * The list of {@code SecurityPolicy} ids that are included in the recipe
+     * The list of security policy IDs that are included in the recipe
      * @return the value
      **/
     public java.util.List<String> getSecurityPolicies() {
@@ -492,13 +495,13 @@ public final class SecurityRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

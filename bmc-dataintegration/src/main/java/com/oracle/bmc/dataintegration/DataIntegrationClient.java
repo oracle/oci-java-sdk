@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration;
@@ -431,7 +431,8 @@ public class DataIntegrationClient implements DataIntegration {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -1107,6 +1108,48 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public CreateExportRequestResponse createExportRequest(CreateExportRequestRequest request) {
+        LOG.trace("Called createExportRequest");
+        final CreateExportRequestRequest interceptedRequest =
+                CreateExportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateExportRequest",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateExportRequestResponse>
+                transformer =
+                        CreateExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateExportRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateExternalPublicationResponse createExternalPublication(
             CreateExternalPublicationRequest request) {
         LOG.trace("Called createExternalPublication");
@@ -1273,6 +1316,48 @@ public class DataIntegrationClient implements DataIntegration {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateFunctionLibraryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateImportRequestResponse createImportRequest(CreateImportRequestRequest request) {
+        LOG.trace("Called createImportRequest");
+        final CreateImportRequestRequest interceptedRequest =
+                CreateImportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateImportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateImportRequest",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateImportRequestResponse>
+                transformer =
+                        CreateImportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateImportRequestDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2165,6 +2250,44 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public DeleteExportRequestResponse deleteExportRequest(DeleteExportRequestRequest request) {
+        LOG.trace("Called deleteExportRequest");
+        final DeleteExportRequestRequest interceptedRequest =
+                DeleteExportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteExportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteExportRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteExportRequestResponse>
+                transformer =
+                        DeleteExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteExternalPublicationResponse deleteExternalPublication(
             DeleteExternalPublicationRequest request) {
         LOG.trace("Called deleteExternalPublication");
@@ -2302,6 +2425,44 @@ public class DataIntegrationClient implements DataIntegration {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFunctionLibraryResponse>
                 transformer =
                         DeleteFunctionLibraryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteImportRequestResponse deleteImportRequest(DeleteImportRequestRequest request) {
+        LOG.trace("Called deleteImportRequest");
+        final DeleteImportRequestRequest interceptedRequest =
+                DeleteImportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteImportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteImportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteImportRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteImportRequestResponse>
+                transformer =
+                        DeleteImportRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2842,6 +3003,43 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public GetCompositeStateResponse getCompositeState(GetCompositeStateRequest request) {
+        LOG.trace("Called getCompositeState");
+        final GetCompositeStateRequest interceptedRequest =
+                GetCompositeStateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCompositeStateConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetCompositeState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CompositeState/GetCompositeState");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCompositeStateResponse>
+                transformer =
+                        GetCompositeStateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetConnectionResponse getConnection(GetConnectionRequest request) {
         LOG.trace("Called getConnection");
         final GetConnectionRequest interceptedRequest =
@@ -3246,6 +3444,43 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public GetExportRequestResponse getExportRequest(GetExportRequestRequest request) {
+        LOG.trace("Called getExportRequest");
+        final GetExportRequestRequest interceptedRequest =
+                GetExportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetExportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExportRequest/GetExportRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetExportRequestResponse>
+                transformer =
+                        GetExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetExternalPublicationResponse getExternalPublication(
             GetExternalPublicationRequest request) {
         LOG.trace("Called getExternalPublication");
@@ -3377,6 +3612,43 @@ public class DataIntegrationClient implements DataIntegration {
         java.util.function.Function<javax.ws.rs.core.Response, GetFunctionLibraryResponse>
                 transformer =
                         GetFunctionLibraryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetImportRequestResponse getImportRequest(GetImportRequestRequest request) {
+        LOG.trace("Called getImportRequest");
+        final GetImportRequestRequest interceptedRequest =
+                GetImportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetImportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetImportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ImportRequest/GetImportRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetImportRequestResponse>
+                transformer =
+                        GetImportRequestConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4482,6 +4754,43 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public ListExportRequestsResponse listExportRequests(ListExportRequestsRequest request) {
+        LOG.trace("Called listExportRequests");
+        final ListExportRequestsRequest interceptedRequest =
+                ListExportRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExportRequestsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListExportRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExportRequestSummaryCollection/ListExportRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListExportRequestsResponse>
+                transformer =
+                        ListExportRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListExternalPublicationValidationsResponse listExternalPublicationValidations(
             ListExternalPublicationValidationsRequest request) {
         LOG.trace("Called listExternalPublicationValidations");
@@ -4615,6 +4924,43 @@ public class DataIntegrationClient implements DataIntegration {
         java.util.function.Function<javax.ws.rs.core.Response, ListFunctionLibrariesResponse>
                 transformer =
                         ListFunctionLibrariesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListImportRequestsResponse listImportRequests(ListImportRequestsRequest request) {
+        LOG.trace("Called listImportRequests");
+        final ListImportRequestsRequest interceptedRequest =
+                ListImportRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImportRequestsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListImportRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ImportRequestSummaryCollection/ListImportRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListImportRequestsResponse>
+                transformer =
+                        ListImportRequestsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5913,6 +6259,47 @@ public class DataIntegrationClient implements DataIntegration {
     }
 
     @Override
+    public UpdateExportRequestResponse updateExportRequest(UpdateExportRequestRequest request) {
+        LOG.trace("Called updateExportRequest");
+        final UpdateExportRequestRequest interceptedRequest =
+                UpdateExportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateExportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateExportRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateExportRequestResponse>
+                transformer =
+                        UpdateExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateExportRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateExternalPublicationResponse updateExternalPublication(
             UpdateExternalPublicationRequest request) {
         LOG.trace("Called updateExternalPublication");
@@ -6030,6 +6417,47 @@ public class DataIntegrationClient implements DataIntegration {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateFunctionLibraryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateImportRequestResponse updateImportRequest(UpdateImportRequestRequest request) {
+        LOG.trace("Called updateImportRequest");
+        final UpdateImportRequestRequest interceptedRequest =
+                UpdateImportRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateImportRequestConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateImportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateImportRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateImportRequestResponse>
+                transformer =
+                        UpdateImportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateImportRequestDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

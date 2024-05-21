@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -30,7 +30,9 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
         "access",
         "identitySquash",
         "anonymousUid",
-        "anonymousGid"
+        "anonymousGid",
+        "isAnonymousAccessAllowed",
+        "allowedAuth"
     })
     public ClientOptions(
             String source,
@@ -38,7 +40,9 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
             Access access,
             IdentitySquash identitySquash,
             Long anonymousUid,
-            Long anonymousGid) {
+            Long anonymousGid,
+            Boolean isAnonymousAccessAllowed,
+            java.util.List<AllowedAuth> allowedAuth) {
         super();
         this.source = source;
         this.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
@@ -46,6 +50,8 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
         this.identitySquash = identitySquash;
         this.anonymousUid = anonymousUid;
         this.anonymousGid = anonymousGid;
+        this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+        this.allowedAuth = allowedAuth;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -192,6 +198,42 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("anonymousGid");
             return this;
         }
+        /**
+         * Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping.
+         * If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
+        private Boolean isAnonymousAccessAllowed;
+
+        /**
+         * Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping.
+         * If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+         *
+         * @param isAnonymousAccessAllowed the value to set
+         * @return this builder
+         **/
+        public Builder isAnonymousAccessAllowed(Boolean isAnonymousAccessAllowed) {
+            this.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+            this.__explicitlySet__.add("isAnonymousAccessAllowed");
+            return this;
+        }
+        /**
+         * Array of allowed NFS authentication types.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("allowedAuth")
+        private java.util.List<AllowedAuth> allowedAuth;
+
+        /**
+         * Array of allowed NFS authentication types.
+         * @param allowedAuth the value to set
+         * @return this builder
+         **/
+        public Builder allowedAuth(java.util.List<AllowedAuth> allowedAuth) {
+            this.allowedAuth = allowedAuth;
+            this.__explicitlySet__.add("allowedAuth");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -204,7 +246,9 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
                             this.access,
                             this.identitySquash,
                             this.anonymousUid,
-                            this.anonymousGid);
+                            this.anonymousGid,
+                            this.isAnonymousAccessAllowed,
+                            this.allowedAuth);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -230,6 +274,12 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("anonymousGid")) {
                 this.anonymousGid(model.getAnonymousGid());
+            }
+            if (model.wasPropertyExplicitlySet("isAnonymousAccessAllowed")) {
+                this.isAnonymousAccessAllowed(model.getIsAnonymousAccessAllowed());
+            }
+            if (model.wasPropertyExplicitlySet("allowedAuth")) {
+                this.allowedAuth(model.getAllowedAuth());
             }
             return this;
         }
@@ -480,6 +530,87 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
         return anonymousGid;
     }
 
+    /**
+     * Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping.
+     * If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAnonymousAccessAllowed")
+    private final Boolean isAnonymousAccessAllowed;
+
+    /**
+     * Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping.
+     * If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+     *
+     * @return the value
+     **/
+    public Boolean getIsAnonymousAccessAllowed() {
+        return isAnonymousAccessAllowed;
+    }
+
+    /**
+     **/
+    public enum AllowedAuth {
+        Sys("SYS"),
+        Krb5("KRB5"),
+        Krb5I("KRB5I"),
+        Krb5P("KRB5P"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AllowedAuth.class);
+
+        private final String value;
+        private static java.util.Map<String, AllowedAuth> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AllowedAuth v : AllowedAuth.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AllowedAuth(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AllowedAuth create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AllowedAuth', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Array of allowed NFS authentication types.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedAuth")
+    private final java.util.List<AllowedAuth> allowedAuth;
+
+    /**
+     * Array of allowed NFS authentication types.
+     * @return the value
+     **/
+    public java.util.List<AllowedAuth> getAllowedAuth() {
+        return allowedAuth;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -501,6 +632,9 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", identitySquash=").append(String.valueOf(this.identitySquash));
         sb.append(", anonymousUid=").append(String.valueOf(this.anonymousUid));
         sb.append(", anonymousGid=").append(String.valueOf(this.anonymousGid));
+        sb.append(", isAnonymousAccessAllowed=")
+                .append(String.valueOf(this.isAnonymousAccessAllowed));
+        sb.append(", allowedAuth=").append(String.valueOf(this.allowedAuth));
         sb.append(")");
         return sb.toString();
     }
@@ -522,6 +656,9 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.identitySquash, other.identitySquash)
                 && java.util.Objects.equals(this.anonymousUid, other.anonymousUid)
                 && java.util.Objects.equals(this.anonymousGid, other.anonymousGid)
+                && java.util.Objects.equals(
+                        this.isAnonymousAccessAllowed, other.isAnonymousAccessAllowed)
+                && java.util.Objects.equals(this.allowedAuth, other.allowedAuth)
                 && super.equals(other);
     }
 
@@ -541,6 +678,12 @@ public final class ClientOptions extends com.oracle.bmc.http.internal.Explicitly
                         + (this.identitySquash == null ? 43 : this.identitySquash.hashCode());
         result = (result * PRIME) + (this.anonymousUid == null ? 43 : this.anonymousUid.hashCode());
         result = (result * PRIME) + (this.anonymousGid == null ? 43 : this.anonymousGid.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAnonymousAccessAllowed == null
+                                ? 43
+                                : this.isAnonymousAccessAllowed.hashCode());
+        result = (result * PRIME) + (this.allowedAuth == null ? 43 : this.allowedAuth.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
 
 /**
  * Information to filter the actual target resources in an operation.
- * e.g: While quering a DATABASE_INSIGHTS_DATA_OBJECT using /opsiDataObjects/{opsiDataObjectidentifier}/actions/queryData API,
+ * e.g: While querying a DATABASE_INSIGHTS_DATA_OBJECT using /opsiDataObjects/actions/queryData API,
  * if resourceFilters is set with valid value for definedTagEquals field, only data of the database insights
  * resources for which the specified freeform tags exist will be considered for the actual query scope.
  *

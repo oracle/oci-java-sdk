@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -920,6 +920,122 @@ public class ContainerEnginePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.containerengine.model.WorkRequestSummary>
                             apply(ListWorkRequestsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkloadMappings operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkloadMappingsResponse> listWorkloadMappingsResponseIterator(
+            final ListWorkloadMappingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkloadMappingsRequest.Builder, ListWorkloadMappingsRequest,
+                ListWorkloadMappingsResponse>(
+                new java.util.function.Supplier<ListWorkloadMappingsRequest.Builder>() {
+                    @Override
+                    public ListWorkloadMappingsRequest.Builder get() {
+                        return ListWorkloadMappingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkloadMappingsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkloadMappingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkloadMappingsRequest.Builder>,
+                        ListWorkloadMappingsRequest>() {
+                    @Override
+                    public ListWorkloadMappingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkloadMappingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>() {
+                    @Override
+                    public ListWorkloadMappingsResponse apply(ListWorkloadMappingsRequest request) {
+                        return client.listWorkloadMappings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.containerengine.model.WorkloadMappingSummary} objects
+     * contained in responses from the listWorkloadMappings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.containerengine.model.WorkloadMappingSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.containerengine.model.WorkloadMappingSummary>
+            listWorkloadMappingsRecordIterator(final ListWorkloadMappingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkloadMappingsRequest.Builder, ListWorkloadMappingsRequest,
+                ListWorkloadMappingsResponse,
+                com.oracle.bmc.containerengine.model.WorkloadMappingSummary>(
+                new java.util.function.Supplier<ListWorkloadMappingsRequest.Builder>() {
+                    @Override
+                    public ListWorkloadMappingsRequest.Builder get() {
+                        return ListWorkloadMappingsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListWorkloadMappingsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkloadMappingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkloadMappingsRequest.Builder>,
+                        ListWorkloadMappingsRequest>() {
+                    @Override
+                    public ListWorkloadMappingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkloadMappingsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkloadMappingsRequest, ListWorkloadMappingsResponse>() {
+                    @Override
+                    public ListWorkloadMappingsResponse apply(ListWorkloadMappingsRequest request) {
+                        return client.listWorkloadMappings(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListWorkloadMappingsResponse,
+                        java.util.List<
+                                com.oracle.bmc.containerengine.model.WorkloadMappingSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.containerengine.model.WorkloadMappingSummary>
+                            apply(ListWorkloadMappingsResponse response) {
                         return response.getItems();
                     }
                 });

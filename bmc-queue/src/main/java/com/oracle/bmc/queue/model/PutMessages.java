@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
 
 /**
- * A list of the messages published in a queue.
+ * A list of the messages published to a queue.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,13 +28,13 @@ public final class PutMessages extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The messages that have been published in a queue.
+         * The messages that have been published to a queue.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("messages")
         private java.util.List<PutMessage> messages;
 
         /**
-         * The messages that have been published in a queue.
+         * The messages that have been published to a queue.
          * @param messages the value to set
          * @return this builder
          **/
@@ -76,13 +76,13 @@ public final class PutMessages extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The messages that have been published in a queue.
+     * The messages that have been published to a queue.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("messages")
     private final java.util.List<PutMessage> messages;
 
     /**
-     * The messages that have been published in a queue.
+     * The messages that have been published to a queue.
      * @return the value
      **/
     public java.util.List<PutMessage> getMessages() {

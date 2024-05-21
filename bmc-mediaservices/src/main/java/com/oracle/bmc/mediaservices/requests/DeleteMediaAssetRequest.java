@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.requests;
@@ -21,6 +21,17 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     public String getMediaAssetId() {
         return mediaAssetId;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call
@@ -85,6 +96,21 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder mediaAssetId(String mediaAssetId) {
             this.mediaAssetId = mediaAssetId;
+            return this;
+        }
+
+        /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
             return this;
         }
 
@@ -172,6 +198,7 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder copy(DeleteMediaAssetRequest o) {
             mediaAssetId(o.getMediaAssetId());
+            isLockOverride(o.getIsLockOverride());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             deleteMode(o.getDeleteMode());
@@ -208,11 +235,12 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
         public DeleteMediaAssetRequest buildWithoutInvocationCallback() {
             DeleteMediaAssetRequest request = new DeleteMediaAssetRequest();
             request.mediaAssetId = mediaAssetId;
+            request.isLockOverride = isLockOverride;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.deleteMode = deleteMode;
             return request;
-            // new DeleteMediaAssetRequest(mediaAssetId, ifMatch, opcRequestId, deleteMode);
+            // new DeleteMediaAssetRequest(mediaAssetId, isLockOverride, ifMatch, opcRequestId, deleteMode);
         }
     }
 
@@ -223,6 +251,7 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
     public Builder toBuilder() {
         return new Builder()
                 .mediaAssetId(mediaAssetId)
+                .isLockOverride(isLockOverride)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
                 .deleteMode(deleteMode);
@@ -242,6 +271,7 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",mediaAssetId=").append(String.valueOf(this.mediaAssetId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",deleteMode=").append(String.valueOf(this.deleteMode));
@@ -261,6 +291,7 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
         DeleteMediaAssetRequest other = (DeleteMediaAssetRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.mediaAssetId, other.mediaAssetId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.deleteMode, other.deleteMode);
@@ -271,6 +302,9 @@ public class DeleteMediaAssetRequest extends com.oracle.bmc.requests.BmcRequest<
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.mediaAssetId == null ? 43 : this.mediaAssetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.deleteMode == null ? 43 : this.deleteMode.hashCode());

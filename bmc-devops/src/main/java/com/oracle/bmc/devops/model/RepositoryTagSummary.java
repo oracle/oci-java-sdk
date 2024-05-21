@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.devops.model;
@@ -72,6 +72,15 @@ public final class RepositoryTagSummary extends RepositoryRefSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /**
          * SHA-1 hash value of the object pointed to by the tag.
          **/
@@ -100,6 +109,7 @@ public final class RepositoryTagSummary extends RepositoryRefSummary {
                             this.repositoryId,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.objectId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -123,6 +133,9 @@ public final class RepositoryTagSummary extends RepositoryRefSummary {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("objectId")) {
                 this.objectId(model.getObjectId());
@@ -149,8 +162,9 @@ public final class RepositoryTagSummary extends RepositoryRefSummary {
             String repositoryId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String objectId) {
-        super(refName, fullRefName, repositoryId, freeformTags, definedTags);
+        super(refName, fullRefName, repositoryId, freeformTags, definedTags, systemTags);
         this.objectId = objectId;
     }
 

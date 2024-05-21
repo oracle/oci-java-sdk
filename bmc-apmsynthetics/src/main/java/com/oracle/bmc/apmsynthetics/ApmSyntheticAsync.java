@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics;
@@ -109,6 +109,23 @@ public interface ApmSyntheticAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Registers a new On-premise vantage point.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOnPremiseVantagePointResponse> createOnPremiseVantagePoint(
+            CreateOnPremiseVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOnPremiseVantagePointRequest, CreateOnPremiseVantagePointResponse>
+                    handler);
+
+    /**
      * Creates a new script.
      *
      *
@@ -122,6 +139,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateScriptResponse> createScript(
             CreateScriptRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateScriptRequest, CreateScriptResponse>
+                    handler);
+
+    /**
+     * Registers a new worker.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateWorkerResponse> createWorker(
+            CreateWorkerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateWorkerRequest, CreateWorkerResponse>
                     handler);
 
     /**
@@ -156,6 +189,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deregisters the specified On-premise vantage point.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOnPremiseVantagePointResponse> deleteOnPremiseVantagePoint(
+            DeleteOnPremiseVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOnPremiseVantagePointRequest, DeleteOnPremiseVantagePointResponse>
+                    handler);
+
+    /**
      * Deletes the specified script.
      *
      * @param request The request object containing the details to send
@@ -168,6 +217,21 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteScriptResponse> deleteScript(
             DeleteScriptRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteScriptRequest, DeleteScriptResponse>
+                    handler);
+
+    /**
+     * Deregisters the specified worker.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteWorkerResponse> deleteWorker(
+            DeleteWorkerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteWorkerRequest, DeleteWorkerResponse>
                     handler);
 
     /**
@@ -217,6 +281,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of the On-premise vantage point identified by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOnPremiseVantagePointResponse> getOnPremiseVantagePoint(
+            GetOnPremiseVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetOnPremiseVantagePointRequest, GetOnPremiseVantagePointResponse>
+                    handler);
+
+    /**
      * Gets the configuration of the script identified by the OCID.
      *
      * @param request The request object containing the details to send
@@ -229,6 +309,20 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<GetScriptResponse> getScript(
             GetScriptRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse> handler);
+
+    /**
+     * Gets the details of the worker identified by the OCID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkerResponse> getWorker(
+            GetWorkerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkerRequest, GetWorkerResponse> handler);
 
     /**
      * Returns a list of dedicated vantage points.
@@ -264,6 +358,23 @@ public interface ApmSyntheticAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of On-premise vantage points.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOnPremiseVantagePointsResponse> listOnPremiseVantagePoints(
+            ListOnPremiseVantagePointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOnPremiseVantagePointsRequest, ListOnPremiseVantagePointsResponse>
+                    handler);
+
+    /**
      * Returns a list of public vantage points.
      *
      *
@@ -294,6 +405,21 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<ListScriptsResponse> listScripts(
             ListScriptsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListScriptsRequest, ListScriptsResponse> handler);
+
+    /**
+     * Returns a list of workers.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkersResponse> listWorkers(
+            ListWorkersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkersRequest, ListWorkersResponse> handler);
 
     /**
      * Updates the dedicated vantage point.
@@ -327,6 +453,22 @@ public interface ApmSyntheticAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the On-premise vantage point.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOnPremiseVantagePointResponse> updateOnPremiseVantagePoint(
+            UpdateOnPremiseVantagePointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOnPremiseVantagePointRequest, UpdateOnPremiseVantagePointResponse>
+                    handler);
+
+    /**
      * Updates the script.
      *
      * @param request The request object containing the details to send
@@ -339,5 +481,20 @@ public interface ApmSyntheticAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateScriptResponse> updateScript(
             UpdateScriptRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateScriptRequest, UpdateScriptResponse>
+                    handler);
+
+    /**
+     * Updates the worker.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateWorkerResponse> updateWorker(
+            UpdateWorkerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateWorkerRequest, UpdateWorkerResponse>
                     handler);
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -48,7 +48,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         "availabilityDomain",
         "freeformTags",
         "definedTags",
-        "dataCollectionOptions"
+        "dataCollectionOptions",
+        "giSoftwareImageId",
+        "fileSystemConfigurationDetails"
     })
     public VmClusterSummary(
             String id,
@@ -78,7 +80,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            DataCollectionOptions dataCollectionOptions) {
+            DataCollectionOptions dataCollectionOptions,
+            String giSoftwareImageId,
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -108,6 +112,8 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
+        this.giSoftwareImageId = giSoftwareImageId;
+        this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -574,6 +580,39 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("dataCollectionOptions");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+        private String giSoftwareImageId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
+         * @param giSoftwareImageId the value to set
+         * @return this builder
+         **/
+        public Builder giSoftwareImageId(String giSoftwareImageId) {
+            this.giSoftwareImageId = giSoftwareImageId;
+            this.__explicitlySet__.add("giSoftwareImageId");
+            return this;
+        }
+        /**
+         * Details of the file system configuration of the VM cluster.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+        private java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+        /**
+         * Details of the file system configuration of the VM cluster.
+         * @param fileSystemConfigurationDetails the value to set
+         * @return this builder
+         **/
+        public Builder fileSystemConfigurationDetails(
+                java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+            this.__explicitlySet__.add("fileSystemConfigurationDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -608,7 +647,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                             this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags,
-                            this.dataCollectionOptions);
+                            this.dataCollectionOptions,
+                            this.giSoftwareImageId,
+                            this.fileSystemConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -700,6 +741,12 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
+            }
+            if (model.wasPropertyExplicitlySet("giSoftwareImageId")) {
+                this.giSoftwareImageId(model.getGiSoftwareImageId());
+            }
+            if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
+                this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
             }
             return this;
         }
@@ -1223,6 +1270,34 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         return dataCollectionOptions;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
+    private final String giSoftwareImageId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
+     * @return the value
+     **/
+    public String getGiSoftwareImageId() {
+        return giSoftwareImageId;
+    }
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemConfigurationDetails")
+    private final java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails;
+
+    /**
+     * Details of the file system configuration of the VM cluster.
+     * @return the value
+     **/
+    public java.util.List<FileSystemConfigurationDetail> getFileSystemConfigurationDetails() {
+        return fileSystemConfigurationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1268,6 +1343,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
+        sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
+        sb.append(", fileSystemConfigurationDetails=")
+                .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1314,6 +1392,9 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
+                && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
+                && java.util.Objects.equals(
+                        this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && super.equals(other);
     }
 
@@ -1401,6 +1482,14 @@ public final class VmClusterSummary extends com.oracle.bmc.http.internal.Explici
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.giSoftwareImageId == null ? 43 : this.giSoftwareImageId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemConfigurationDetails == null
+                                ? 43
+                                : this.fileSystemConfigurationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration;
@@ -1170,6 +1170,59 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExportRequestResponse> createExportRequest(
+            CreateExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExportRequestRequest, CreateExportRequestResponse>
+                    handler) {
+        LOG.trace("Called async createExportRequest");
+        final CreateExportRequestRequest interceptedRequest =
+                CreateExportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateExportRequest",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateExportRequestResponse>
+                transformer =
+                        CreateExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateExportRequestRequest, CreateExportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateExportRequestRequest, CreateExportRequestResponse>,
+                        java.util.concurrent.Future<CreateExportRequestResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExportRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateExportRequestRequest, CreateExportRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateExternalPublicationResponse> createExternalPublication(
             CreateExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1375,6 +1428,59 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateFunctionLibraryRequest, CreateFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImportRequestResponse> createImportRequest(
+            CreateImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateImportRequestRequest, CreateImportRequestResponse>
+                    handler) {
+        LOG.trace("Called async createImportRequest");
+        final CreateImportRequestRequest interceptedRequest =
+                CreateImportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateImportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "CreateImportRequest",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateImportRequestResponse>
+                transformer =
+                        CreateImportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateImportRequestRequest, CreateImportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateImportRequestRequest, CreateImportRequestResponse>,
+                        java.util.concurrent.Future<CreateImportRequestResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateImportRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateImportRequestRequest, CreateImportRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2501,6 +2607,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteExportRequestResponse> deleteExportRequest(
+            DeleteExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExportRequestRequest, DeleteExportRequestResponse>
+                    handler) {
+        LOG.trace("Called async deleteExportRequest");
+        final DeleteExportRequestRequest interceptedRequest =
+                DeleteExportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteExportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteExportRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteExportRequestResponse>
+                transformer =
+                        DeleteExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteExportRequestRequest, DeleteExportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteExportRequestRequest, DeleteExportRequestResponse>,
+                        java.util.concurrent.Future<DeleteExportRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteExportRequestRequest, DeleteExportRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteExternalPublicationResponse> deleteExternalPublication(
             DeleteExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2682,6 +2835,53 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteFunctionLibraryRequest, DeleteFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportRequestResponse> deleteImportRequest(
+            DeleteImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteImportRequestRequest, DeleteImportRequestResponse>
+                    handler) {
+        LOG.trace("Called async deleteImportRequest");
+        final DeleteImportRequestRequest interceptedRequest =
+                DeleteImportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteImportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "DeleteImportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/DeleteImportRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteImportRequestResponse>
+                transformer =
+                        DeleteImportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteImportRequestRequest, DeleteImportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteImportRequestRequest, DeleteImportRequestResponse>,
+                        java.util.concurrent.Future<DeleteImportRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteImportRequestRequest, DeleteImportRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3348,6 +3548,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetCompositeStateResponse> getCompositeState(
+            GetCompositeStateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCompositeStateRequest, GetCompositeStateResponse>
+                    handler) {
+        LOG.trace("Called async getCompositeState");
+        final GetCompositeStateRequest interceptedRequest =
+                GetCompositeStateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCompositeStateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetCompositeState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/CompositeState/GetCompositeState");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCompositeStateResponse>
+                transformer =
+                        GetCompositeStateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCompositeStateRequest, GetCompositeStateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCompositeStateRequest, GetCompositeStateResponse>,
+                        java.util.concurrent.Future<GetCompositeStateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCompositeStateRequest, GetCompositeStateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectionResponse> getConnection(
             GetConnectionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetConnectionRequest, GetConnectionResponse>
@@ -3858,6 +4104,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportRequestResponse> getExportRequest(
+            GetExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExportRequestRequest, GetExportRequestResponse>
+                    handler) {
+        LOG.trace("Called async getExportRequest");
+        final GetExportRequestRequest interceptedRequest =
+                GetExportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetExportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExportRequest/GetExportRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetExportRequestResponse>
+                transformer =
+                        GetExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetExportRequestRequest, GetExportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExportRequestRequest, GetExportRequestResponse>,
+                        java.util.concurrent.Future<GetExportRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExportRequestRequest, GetExportRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExternalPublicationResponse> getExternalPublication(
             GetExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -4033,6 +4325,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetFunctionLibraryRequest, GetFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportRequestResponse> getImportRequest(
+            GetImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetImportRequestRequest, GetImportRequestResponse>
+                    handler) {
+        LOG.trace("Called async getImportRequest");
+        final GetImportRequestRequest interceptedRequest =
+                GetImportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetImportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "GetImportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ImportRequest/GetImportRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetImportRequestResponse>
+                transformer =
+                        GetImportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetImportRequestRequest, GetImportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetImportRequestRequest, GetImportRequestResponse>,
+                        java.util.concurrent.Future<GetImportRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetImportRequestRequest, GetImportRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5415,6 +5753,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListExportRequestsResponse> listExportRequests(
+            ListExportRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExportRequestsRequest, ListExportRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listExportRequests");
+        final ListExportRequestsRequest interceptedRequest =
+                ListExportRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExportRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListExportRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ExportRequestSummaryCollection/ListExportRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListExportRequestsResponse>
+                transformer =
+                        ListExportRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListExportRequestsRequest, ListExportRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExportRequestsRequest, ListExportRequestsResponse>,
+                        java.util.concurrent.Future<ListExportRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExportRequestsRequest, ListExportRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExternalPublicationValidationsResponse>
             listExternalPublicationValidations(
                     ListExternalPublicationValidationsRequest request,
@@ -5594,6 +5978,52 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFunctionLibrariesRequest, ListFunctionLibrariesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportRequestsResponse> listImportRequests(
+            ListImportRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListImportRequestsRequest, ListImportRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listImportRequests");
+        final ListImportRequestsRequest interceptedRequest =
+                ListImportRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImportRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "ListImportRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/ImportRequestSummaryCollection/ListImportRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListImportRequestsResponse>
+                transformer =
+                        ListImportRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListImportRequestsRequest, ListImportRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListImportRequestsRequest, ListImportRequestsResponse>,
+                        java.util.concurrent.Future<ListImportRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListImportRequestsRequest, ListImportRequestsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7228,6 +7658,58 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateExportRequestResponse> updateExportRequest(
+            UpdateExportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExportRequestRequest, UpdateExportRequestResponse>
+                    handler) {
+        LOG.trace("Called async updateExportRequest");
+        final UpdateExportRequestRequest interceptedRequest =
+                UpdateExportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateExportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateExportRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateExportRequestResponse>
+                transformer =
+                        UpdateExportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateExportRequestRequest, UpdateExportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateExportRequestRequest, UpdateExportRequestResponse>,
+                        java.util.concurrent.Future<UpdateExportRequestResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExportRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateExportRequestRequest, UpdateExportRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateExternalPublicationResponse> updateExternalPublication(
             UpdateExternalPublicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7370,6 +7852,58 @@ public class DataIntegrationAsyncClient implements DataIntegrationAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateFunctionLibraryRequest, UpdateFunctionLibraryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImportRequestResponse> updateImportRequest(
+            UpdateImportRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateImportRequestRequest, UpdateImportRequestResponse>
+                    handler) {
+        LOG.trace("Called async updateImportRequest");
+        final UpdateImportRequestRequest interceptedRequest =
+                UpdateImportRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateImportRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataIntegration",
+                        "UpdateImportRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-integration/20200430/Workspace/UpdateImportRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateImportRequestResponse>
+                transformer =
+                        UpdateImportRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateImportRequestRequest, UpdateImportRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateImportRequestRequest, UpdateImportRequestResponse>,
+                        java.util.concurrent.Future<UpdateImportRequestResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateImportRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateImportRequestRequest, UpdateImportRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

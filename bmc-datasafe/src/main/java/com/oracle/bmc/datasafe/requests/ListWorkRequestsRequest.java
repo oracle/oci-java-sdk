@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -34,14 +34,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return operationType;
     }
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The field used for sorting. Only one sorting parameter can be specified.
      * The default order is descending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The field used for sorting. Only one sorting parameter can be specified.
      * The default order is descending.
      *
      **/
@@ -80,7 +80,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+     * The field used for sorting. Only one sorting parameter can be specified.
      * The default order is descending.
      *
      */
@@ -88,12 +88,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -129,7 +129,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -189,6 +189,80 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public Integer getLimit() {
         return limit;
     }
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
+    private AccessLevel accessLevel;
+
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
+        Restricted("RESTRICTED"),
+        Accessible("ACCESSIBLE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AccessLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccessLevel v : AccessLevel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AccessLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccessLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AccessLevel: " + key);
+        }
+    };
+
+    /**
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     */
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -228,14 +302,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The field used for sorting. Only one sorting parameter can be specified.
          * The default order is descending.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
+         * The field used for sorting. Only one sorting parameter can be specified.
          * The default order is descending.
          *
          * @param sortBy the value to set
@@ -247,12 +321,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * The sorting order for the work requests, either ascending (ASC) or descending (DESC).
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -337,6 +411,48 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         */
+        private AccessLevel accessLevel = null;
+
+        /**
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
+         * @param accessLevel the value to set
+         * @return this builder instance
+         */
+        public Builder accessLevel(AccessLevel accessLevel) {
+            this.accessLevel = accessLevel;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -373,6 +489,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
+            accessLevel(o.getAccessLevel());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -414,8 +532,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
+            request.accessLevel = accessLevel;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, operationType, sortBy, sortOrder, resourceId, targetDatabaseId, opcRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, operationType, sortBy, sortOrder, resourceId, targetDatabaseId, opcRequestId, page, limit, compartmentIdInSubtree, accessLevel);
         }
     }
 
@@ -433,7 +553,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .targetDatabaseId(targetDatabaseId)
                 .opcRequestId(opcRequestId)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
+                .accessLevel(accessLevel);
     }
 
     /**
@@ -458,6 +580,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
         sb.append(")");
         return sb.toString();
     }
@@ -481,7 +605,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.targetDatabaseId, other.targetDatabaseId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.accessLevel, other.accessLevel);
     }
 
     @Override
@@ -503,6 +630,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
+        result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
         return result;
     }
 }

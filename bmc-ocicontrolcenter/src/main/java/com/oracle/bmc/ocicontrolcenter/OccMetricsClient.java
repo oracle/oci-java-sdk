@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocicontrolcenter;
@@ -357,7 +357,8 @@ public class OccMetricsClient implements OccMetrics {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -487,7 +488,10 @@ public class OccMetricsClient implements OccMetrics {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OccMetrics", "ListMetricProperties", ib.getRequestUri().toString(), "");
+                        "OccMetrics",
+                        "ListMetricProperties",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/MetricPropertyCollection/ListMetricProperties");
         java.util.function.Function<javax.ws.rs.core.Response, ListMetricPropertiesResponse>
                 transformer =
                         ListMetricPropertiesConverter.fromResponse(
@@ -521,7 +525,10 @@ public class OccMetricsClient implements OccMetrics {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OccMetrics", "ListNamespaces", ib.getRequestUri().toString(), "");
+                        "OccMetrics",
+                        "ListNamespaces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/NamespaceCollection/ListNamespaces");
         java.util.function.Function<javax.ws.rs.core.Response, ListNamespacesResponse> transformer =
                 ListNamespacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -557,7 +564,7 @@ public class OccMetricsClient implements OccMetrics {
                         "OccMetrics",
                         "RequestSummarizedMetricData",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/SummarizedMetricDataCollection/RequestSummarizedMetricData");
         java.util.function.Function<javax.ws.rs.core.Response, RequestSummarizedMetricDataResponse>
                 transformer =
                         RequestSummarizedMetricDataConverter.fromResponse(

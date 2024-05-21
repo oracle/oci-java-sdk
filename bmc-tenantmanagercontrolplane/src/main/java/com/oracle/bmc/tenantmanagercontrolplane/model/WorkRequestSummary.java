@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = WorkRequestSummary.Builder.class
 )
@@ -73,13 +73,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Status of current work request.
+         * Status of the current work request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
-         * Status of current work request.
+         * Status of the current work request.
          * @param status the value to set
          * @return this builder
          **/
@@ -123,13 +123,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The resources affected by this work request.
+         * The resources affected by the work request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
-         * The resources affected by this work request.
+         * The resources affected by the work request.
          * @param resources the value to set
          * @return this builder
          **/
@@ -293,13 +293,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Status of current work request.
+     * Status of the current work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
-     * Status of current work request.
+     * Status of the current work request.
      * @return the value
      **/
     public OperationStatus getStatus() {
@@ -337,13 +337,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The resources affected by this work request.
+     * The resources affected by the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
-     * The resources affected by this work request.
+     * The resources affected by the work request.
      * @return the value
      **/
     public java.util.List<WorkRequestResource> getResources() {

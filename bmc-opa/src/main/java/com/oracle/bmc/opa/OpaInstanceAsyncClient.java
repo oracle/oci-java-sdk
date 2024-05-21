@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opa;
@@ -921,6 +921,98 @@ public class OpaInstanceAsyncClient implements OpaInstanceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOpaInstanceResponse> startOpaInstance(
+            StartOpaInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartOpaInstanceRequest, StartOpaInstanceResponse>
+                    handler) {
+        LOG.trace("Called async startOpaInstance");
+        final StartOpaInstanceRequest interceptedRequest =
+                StartOpaInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartOpaInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpaInstance",
+                        "StartOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StartOpaInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartOpaInstanceResponse>
+                transformer =
+                        StartOpaInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartOpaInstanceRequest, StartOpaInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartOpaInstanceRequest, StartOpaInstanceResponse>,
+                        java.util.concurrent.Future<StartOpaInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartOpaInstanceRequest, StartOpaInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopOpaInstanceResponse> stopOpaInstance(
+            StopOpaInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopOpaInstanceRequest, StopOpaInstanceResponse>
+                    handler) {
+        LOG.trace("Called async stopOpaInstance");
+        final StopOpaInstanceRequest interceptedRequest =
+                StopOpaInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopOpaInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpaInstance",
+                        "StopOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StopOpaInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopOpaInstanceResponse>
+                transformer =
+                        StopOpaInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopOpaInstanceRequest, StopOpaInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopOpaInstanceRequest, StopOpaInstanceResponse>,
+                        java.util.concurrent.Future<StopOpaInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopOpaInstanceRequest, StopOpaInstanceResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

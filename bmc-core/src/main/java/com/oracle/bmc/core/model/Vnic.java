@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -57,7 +57,8 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "publicIp",
         "skipSourceDestCheck",
         "subnetId",
-        "timeCreated"
+        "timeCreated",
+        "ipv6Addresses"
     })
     public Vnic(
             String availabilityDomain,
@@ -76,7 +77,8 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String publicIp,
             Boolean skipSourceDestCheck,
             String subnetId,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.List<String> ipv6Addresses) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -95,6 +97,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.skipSourceDestCheck = skipSourceDestCheck;
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
+        this.ipv6Addresses = ipv6Addresses;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -498,6 +501,28 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * List of IPv6 addresses assigned to the VNIC.
+         * <p>
+         * Example: {@code 2001:DB8::}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Addresses")
+        private java.util.List<String> ipv6Addresses;
+
+        /**
+         * List of IPv6 addresses assigned to the VNIC.
+         * <p>
+         * Example: {@code 2001:DB8::}
+         *
+         * @param ipv6Addresses the value to set
+         * @return this builder
+         **/
+        public Builder ipv6Addresses(java.util.List<String> ipv6Addresses) {
+            this.ipv6Addresses = ipv6Addresses;
+            this.__explicitlySet__.add("ipv6Addresses");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -521,7 +546,8 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.publicIp,
                             this.skipSourceDestCheck,
                             this.subnetId,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.ipv6Addresses);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -580,6 +606,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Addresses")) {
+                this.ipv6Addresses(model.getIpv6Addresses());
             }
             return this;
         }
@@ -1010,6 +1039,26 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return timeCreated;
     }
 
+    /**
+     * List of IPv6 addresses assigned to the VNIC.
+     * <p>
+     * Example: {@code 2001:DB8::}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Addresses")
+    private final java.util.List<String> ipv6Addresses;
+
+    /**
+     * List of IPv6 addresses assigned to the VNIC.
+     * <p>
+     * Example: {@code 2001:DB8::}
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getIpv6Addresses() {
+        return ipv6Addresses;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1041,6 +1090,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", skipSourceDestCheck=").append(String.valueOf(this.skipSourceDestCheck));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", ipv6Addresses=").append(String.valueOf(this.ipv6Addresses));
         sb.append(")");
         return sb.toString();
     }
@@ -1072,6 +1122,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.skipSourceDestCheck, other.skipSourceDestCheck)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.ipv6Addresses, other.ipv6Addresses)
                 && super.equals(other);
     }
 
@@ -1110,6 +1161,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                                 : this.skipSourceDestCheck.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ipv6Addresses == null ? 43 : this.ipv6Addresses.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

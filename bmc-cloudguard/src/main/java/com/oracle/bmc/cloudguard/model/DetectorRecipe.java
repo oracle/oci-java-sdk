@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of Detector recipe
+ * A detector recipe is a collection of rules that can be configured to trigger problems that appear on the Cloud Guard Problems page. A DetectorRecipe resource contains settings for a specific detector recipe, plus a list of the detector rules (DetectorRecipeDetectorRule resources) belonging to the DetectorRecipe resource.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,6 +25,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         "description",
         "compartmentId",
         "sourceDetectorRecipeId",
+        "detectorRecipeType",
         "owner",
         "detector",
         "detectorRules",
@@ -44,6 +45,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             String description,
             String compartmentId,
             String sourceDetectorRecipeId,
+            DetectorRecipeEnum detectorRecipeType,
             OwnerType owner,
             DetectorEnum detector,
             java.util.List<DetectorRecipeDetectorRule> detectorRules,
@@ -62,6 +64,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         this.description = description;
         this.compartmentId = compartmentId;
         this.sourceDetectorRecipeId = sourceDetectorRecipeId;
+        this.detectorRecipeType = detectorRecipeType;
         this.owner = owner;
         this.detector = detector;
         this.detectorRules = detectorRules;
@@ -79,13 +82,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Ocid for detector recipe
+         * OCID for detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Ocid for detector recipe
+         * OCID for detector recipe
          * @param id the value to set
          * @return this builder
          **/
@@ -95,13 +98,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * DisplayName of detector recipe.
+         * Display name of detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DisplayName of detector recipe.
+         * Display name of detector recipe
          * @param displayName the value to set
          * @return this builder
          **/
@@ -111,13 +114,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Detector recipe description.
+         * Detector recipe description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Detector recipe description.
+         * Detector recipe description
          * @param description the value to set
          * @return this builder
          **/
@@ -127,13 +130,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * compartmentId of detector recipe
+         * Compartment OCID of detector recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * compartmentId of detector recipe
+         * Compartment OCID of detector recipe
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -143,19 +146,35 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * Recipe Ocid of the Source Recipe to be cloned
+         * Recipe OCID of the source recipe to be cloned
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
         private String sourceDetectorRecipeId;
 
         /**
-         * Recipe Ocid of the Source Recipe to be cloned
+         * Recipe OCID of the source recipe to be cloned
          * @param sourceDetectorRecipeId the value to set
          * @return this builder
          **/
         public Builder sourceDetectorRecipeId(String sourceDetectorRecipeId) {
             this.sourceDetectorRecipeId = sourceDetectorRecipeId;
             this.__explicitlySet__.add("sourceDetectorRecipeId");
+            return this;
+        }
+        /**
+         * Recipe type ( STANDARD, ENTERPRISE )
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeType")
+        private DetectorRecipeEnum detectorRecipeType;
+
+        /**
+         * Recipe type ( STANDARD, ENTERPRISE )
+         * @param detectorRecipeType the value to set
+         * @return this builder
+         **/
+        public Builder detectorRecipeType(DetectorRecipeEnum detectorRecipeType) {
+            this.detectorRecipeType = detectorRecipeType;
+            this.__explicitlySet__.add("detectorRecipeType");
             return this;
         }
         /**
@@ -224,13 +243,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The date and time the detector recipe was created. Format defined by RFC3339.
+         * The date and time the detector recipe was created Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the detector recipe was created. Format defined by RFC3339.
+         * The date and time the detector recipe was created Format defined by RFC3339.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -240,13 +259,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The date and time the detector recipe was updated. Format defined by RFC3339.
+         * The date and time the detector recipe was last updated Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the detector recipe was updated. Format defined by RFC3339.
+         * The date and time the detector recipe was last updated Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -256,13 +275,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -359,13 +378,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The recipe attached to targets
+         * List of target IDs to which the recipe is attached
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
         private java.util.List<String> targetIds;
 
         /**
-         * The recipe attached to targets
+         * List of target IDs to which the recipe is attached
          * @param targetIds the value to set
          * @return this builder
          **/
@@ -386,6 +405,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
                             this.description,
                             this.compartmentId,
                             this.sourceDetectorRecipeId,
+                            this.detectorRecipeType,
                             this.owner,
                             this.detector,
                             this.detectorRules,
@@ -420,6 +440,9 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("sourceDetectorRecipeId")) {
                 this.sourceDetectorRecipeId(model.getSourceDetectorRecipeId());
+            }
+            if (model.wasPropertyExplicitlySet("detectorRecipeType")) {
+                this.detectorRecipeType(model.getDetectorRecipeType());
             }
             if (model.wasPropertyExplicitlySet("owner")) {
                 this.owner(model.getOwner());
@@ -473,13 +496,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Ocid for detector recipe
+     * OCID for detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Ocid for detector recipe
+     * OCID for detector recipe
      * @return the value
      **/
     public String getId() {
@@ -487,13 +510,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * DisplayName of detector recipe.
+     * Display name of detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DisplayName of detector recipe.
+     * Display name of detector recipe
      * @return the value
      **/
     public String getDisplayName() {
@@ -501,13 +524,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Detector recipe description.
+     * Detector recipe description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Detector recipe description.
+     * Detector recipe description
      * @return the value
      **/
     public String getDescription() {
@@ -515,13 +538,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of detector recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * compartmentId of detector recipe
+     * Compartment OCID of detector recipe
      * @return the value
      **/
     public String getCompartmentId() {
@@ -529,17 +552,31 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * Recipe Ocid of the Source Recipe to be cloned
+     * Recipe OCID of the source recipe to be cloned
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
     private final String sourceDetectorRecipeId;
 
     /**
-     * Recipe Ocid of the Source Recipe to be cloned
+     * Recipe OCID of the source recipe to be cloned
      * @return the value
      **/
     public String getSourceDetectorRecipeId() {
         return sourceDetectorRecipeId;
+    }
+
+    /**
+     * Recipe type ( STANDARD, ENTERPRISE )
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("detectorRecipeType")
+    private final DetectorRecipeEnum detectorRecipeType;
+
+    /**
+     * Recipe type ( STANDARD, ENTERPRISE )
+     * @return the value
+     **/
+    public DetectorRecipeEnum getDetectorRecipeType() {
+        return detectorRecipeType;
     }
 
     /**
@@ -599,13 +636,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -613,13 +650,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -627,13 +664,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -719,13 +756,13 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
     private final java.util.List<String> targetIds;
 
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      * @return the value
      **/
     public java.util.List<String> getTargetIds() {
@@ -751,6 +788,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", sourceDetectorRecipeId=").append(String.valueOf(this.sourceDetectorRecipeId));
+        sb.append(", detectorRecipeType=").append(String.valueOf(this.detectorRecipeType));
         sb.append(", owner=").append(String.valueOf(this.owner));
         sb.append(", detector=").append(String.valueOf(this.detector));
         sb.append(", detectorRules=").append(String.valueOf(this.detectorRules));
@@ -783,6 +821,7 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.sourceDetectorRecipeId, other.sourceDetectorRecipeId)
+                && java.util.Objects.equals(this.detectorRecipeType, other.detectorRecipeType)
                 && java.util.Objects.equals(this.owner, other.owner)
                 && java.util.Objects.equals(this.detector, other.detector)
                 && java.util.Objects.equals(this.detectorRules, other.detectorRules)
@@ -814,6 +853,11 @@ public final class DetectorRecipe extends com.oracle.bmc.http.internal.Explicitl
                         + (this.sourceDetectorRecipeId == null
                                 ? 43
                                 : this.sourceDetectorRecipeId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.detectorRecipeType == null
+                                ? 43
+                                : this.detectorRecipeType.hashCode());
         result = (result * PRIME) + (this.owner == null ? 43 : this.owner.hashCode());
         result = (result * PRIME) + (this.detector == null ? 43 : this.detector.hashCode());
         result =

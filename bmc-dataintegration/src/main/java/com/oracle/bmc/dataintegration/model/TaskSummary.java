@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -64,6 +64,7 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "parameters",
         "opConfigValues",
         "configProviderDelegate",
+        "isConcurrentAllowed",
         "metadata",
         "keyMap"
     })
@@ -81,6 +82,7 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             java.util.List<Parameter> parameters,
             ConfigValues opConfigValues,
             ConfigProvider configProviderDelegate,
+            Boolean isConcurrentAllowed,
             ObjectMetadata metadata,
             java.util.Map<String, String> keyMap) {
         super();
@@ -97,6 +99,7 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.parameters = parameters;
         this.opConfigValues = opConfigValues;
         this.configProviderDelegate = configProviderDelegate;
+        this.isConcurrentAllowed = isConcurrentAllowed;
         this.metadata = metadata;
         this.keyMap = keyMap;
     }
@@ -262,6 +265,20 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return configProviderDelegate;
     }
 
+    /**
+     * Whether the same task can be executed concurrently.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
+    private final Boolean isConcurrentAllowed;
+
+    /**
+     * Whether the same task can be executed concurrently.
+     * @return the value
+     **/
+    public Boolean getIsConcurrentAllowed() {
+        return isConcurrentAllowed;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final ObjectMetadata metadata;
 
@@ -310,6 +327,7 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", opConfigValues=").append(String.valueOf(this.opConfigValues));
         sb.append(", configProviderDelegate=").append(String.valueOf(this.configProviderDelegate));
+        sb.append(", isConcurrentAllowed=").append(String.valueOf(this.isConcurrentAllowed));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", keyMap=").append(String.valueOf(this.keyMap));
         sb.append(")");
@@ -340,6 +358,7 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.opConfigValues, other.opConfigValues)
                 && java.util.Objects.equals(
                         this.configProviderDelegate, other.configProviderDelegate)
+                && java.util.Objects.equals(this.isConcurrentAllowed, other.isConcurrentAllowed)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.keyMap, other.keyMap)
                 && super.equals(other);
@@ -370,6 +389,11 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                         + (this.configProviderDelegate == null
                                 ? 43
                                 : this.configProviderDelegate.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isConcurrentAllowed == null
+                                ? 43
+                                : this.isConcurrentAllowed.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + (this.keyMap == null ? 43 : this.keyMap.hashCode());
         result = (result * PRIME) + super.hashCode();

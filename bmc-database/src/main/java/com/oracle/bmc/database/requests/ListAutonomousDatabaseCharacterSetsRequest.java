@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -26,17 +26,30 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         return opcRequestId;
     }
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      *
      */
     private Boolean isShared;
 
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      *
      */
     public Boolean getIsShared() {
         return isShared;
+    }
+    /**
+     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     *
+     */
+    private Boolean isDedicated;
+
+    /**
+     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     *
+     */
+    public Boolean getIsDedicated() {
+        return isDedicated;
     }
     /**
      * Specifies whether this request pertains to database character sets or national character sets.
@@ -114,19 +127,36 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
          *
          */
         private Boolean isShared = null;
 
         /**
-         * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
          *
          * @param isShared the value to set
          * @return this builder instance
          */
         public Builder isShared(Boolean isShared) {
             this.isShared = isShared;
+            return this;
+        }
+
+        /**
+         * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         *
+         */
+        private Boolean isDedicated = null;
+
+        /**
+         * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         *
+         * @param isDedicated the value to set
+         * @return this builder instance
+         */
+        public Builder isDedicated(Boolean isDedicated) {
+            this.isDedicated = isDedicated;
             return this;
         }
 
@@ -177,6 +207,7 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         public Builder copy(ListAutonomousDatabaseCharacterSetsRequest o) {
             opcRequestId(o.getOpcRequestId());
             isShared(o.getIsShared());
+            isDedicated(o.getIsDedicated());
             characterSetType(o.getCharacterSetType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -213,9 +244,10 @@ public class ListAutonomousDatabaseCharacterSetsRequest
                     new ListAutonomousDatabaseCharacterSetsRequest();
             request.opcRequestId = opcRequestId;
             request.isShared = isShared;
+            request.isDedicated = isDedicated;
             request.characterSetType = characterSetType;
             return request;
-            // new ListAutonomousDatabaseCharacterSetsRequest(opcRequestId, isShared, characterSetType);
+            // new ListAutonomousDatabaseCharacterSetsRequest(opcRequestId, isShared, isDedicated, characterSetType);
         }
     }
 
@@ -227,6 +259,7 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         return new Builder()
                 .opcRequestId(opcRequestId)
                 .isShared(isShared)
+                .isDedicated(isDedicated)
                 .characterSetType(characterSetType);
     }
 
@@ -245,6 +278,7 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",isShared=").append(String.valueOf(this.isShared));
+        sb.append(",isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(",characterSetType=").append(String.valueOf(this.characterSetType));
         sb.append(")");
         return sb.toString();
@@ -264,6 +298,7 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.isShared, other.isShared)
+                && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(this.characterSetType, other.characterSetType);
     }
 
@@ -273,6 +308,7 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.isShared == null ? 43 : this.isShared.hashCode());
+        result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
         result =
                 (result * PRIME)
                         + (this.characterSetType == null ? 43 : this.characterSetType.hashCode());

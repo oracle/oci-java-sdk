@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics;
@@ -619,6 +619,63 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOnPremiseVantagePointResponse>
+            createOnPremiseVantagePoint(
+                    CreateOnPremiseVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOnPremiseVantagePointRequest,
+                                    CreateOnPremiseVantagePointResponse>
+                            handler) {
+        LOG.trace("Called async createOnPremiseVantagePoint");
+        final CreateOnPremiseVantagePointRequest interceptedRequest =
+                CreateOnPremiseVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOnPremiseVantagePointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "CreateOnPremiseVantagePoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/CreateOnPremiseVantagePoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateOnPremiseVantagePointResponse>
+                transformer =
+                        CreateOnPremiseVantagePointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOnPremiseVantagePointRequest, CreateOnPremiseVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOnPremiseVantagePointRequest,
+                                CreateOnPremiseVantagePointResponse>,
+                        java.util.concurrent.Future<CreateOnPremiseVantagePointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOnPremiseVantagePointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOnPremiseVantagePointRequest, CreateOnPremiseVantagePointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateScriptResponse> createScript(
             CreateScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateScriptRequest, CreateScriptResponse>
@@ -656,6 +713,56 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateScriptRequest, CreateScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkerResponse> createWorker(
+            CreateWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateWorkerRequest, CreateWorkerResponse>
+                    handler) {
+        LOG.trace("Called async createWorker");
+        final CreateWorkerRequest interceptedRequest =
+                CreateWorkerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWorkerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "CreateWorker",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/CreateWorker");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateWorkerResponse>
+                transformer =
+                        CreateWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateWorkerRequest, CreateWorkerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWorkerRequest, CreateWorkerResponse>,
+                        java.util.concurrent.Future<CreateWorkerResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWorkerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWorkerRequest, CreateWorkerResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -764,6 +871,57 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOnPremiseVantagePointResponse>
+            deleteOnPremiseVantagePoint(
+                    DeleteOnPremiseVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteOnPremiseVantagePointRequest,
+                                    DeleteOnPremiseVantagePointResponse>
+                            handler) {
+        LOG.trace("Called async deleteOnPremiseVantagePoint");
+        final DeleteOnPremiseVantagePointRequest interceptedRequest =
+                DeleteOnPremiseVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOnPremiseVantagePointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "DeleteOnPremiseVantagePoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/DeleteOnPremiseVantagePoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteOnPremiseVantagePointResponse>
+                transformer =
+                        DeleteOnPremiseVantagePointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOnPremiseVantagePointRequest, DeleteOnPremiseVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOnPremiseVantagePointRequest,
+                                DeleteOnPremiseVantagePointResponse>,
+                        java.util.concurrent.Future<DeleteOnPremiseVantagePointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOnPremiseVantagePointRequest, DeleteOnPremiseVantagePointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteScriptResponse> deleteScript(
             DeleteScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteScriptRequest, DeleteScriptResponse>
@@ -795,6 +953,50 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteScriptRequest, DeleteScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkerResponse> deleteWorker(
+            DeleteWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteWorkerRequest, DeleteWorkerResponse>
+                    handler) {
+        LOG.trace("Called async deleteWorker");
+        final DeleteWorkerRequest interceptedRequest =
+                DeleteWorkerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWorkerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "DeleteWorker",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/DeleteWorker");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkerResponse>
+                transformer =
+                        DeleteWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteWorkerRequest, DeleteWorkerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWorkerRequest, DeleteWorkerResponse>,
+                        java.util.concurrent.Future<DeleteWorkerResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWorkerRequest, DeleteWorkerResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -945,6 +1147,54 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOnPremiseVantagePointResponse> getOnPremiseVantagePoint(
+            GetOnPremiseVantagePointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetOnPremiseVantagePointRequest, GetOnPremiseVantagePointResponse>
+                    handler) {
+        LOG.trace("Called async getOnPremiseVantagePoint");
+        final GetOnPremiseVantagePointRequest interceptedRequest =
+                GetOnPremiseVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOnPremiseVantagePointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "GetOnPremiseVantagePoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/GetOnPremiseVantagePoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOnPremiseVantagePointResponse>
+                transformer =
+                        GetOnPremiseVantagePointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOnPremiseVantagePointRequest, GetOnPremiseVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOnPremiseVantagePointRequest, GetOnPremiseVantagePointResponse>,
+                        java.util.concurrent.Future<GetOnPremiseVantagePointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOnPremiseVantagePointRequest, GetOnPremiseVantagePointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetScriptResponse> getScript(
             GetScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetScriptRequest, GetScriptResponse>
@@ -974,6 +1224,48 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetScriptRequest, GetScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkerResponse> getWorker(
+            GetWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetWorkerRequest, GetWorkerResponse>
+                    handler) {
+        LOG.trace("Called async getWorker");
+        final GetWorkerRequest interceptedRequest = GetWorkerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "GetWorker",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/GetWorker");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkerResponse>
+                transformer =
+                        GetWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkerRequest, GetWorkerResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetWorkerRequest, GetWorkerResponse>,
+                        java.util.concurrent.Future<GetWorkerResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkerRequest, GetWorkerResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1082,6 +1374,57 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOnPremiseVantagePointsResponse>
+            listOnPremiseVantagePoints(
+                    ListOnPremiseVantagePointsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOnPremiseVantagePointsRequest,
+                                    ListOnPremiseVantagePointsResponse>
+                            handler) {
+        LOG.trace("Called async listOnPremiseVantagePoints");
+        final ListOnPremiseVantagePointsRequest interceptedRequest =
+                ListOnPremiseVantagePointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOnPremiseVantagePointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "ListOnPremiseVantagePoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePointCollection/ListOnPremiseVantagePoints");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOnPremiseVantagePointsResponse>
+                transformer =
+                        ListOnPremiseVantagePointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOnPremiseVantagePointsRequest, ListOnPremiseVantagePointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOnPremiseVantagePointsRequest,
+                                ListOnPremiseVantagePointsResponse>,
+                        java.util.concurrent.Future<ListOnPremiseVantagePointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOnPremiseVantagePointsRequest, ListOnPremiseVantagePointsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPublicVantagePointsResponse> listPublicVantagePoints(
             ListPublicVantagePointsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1161,6 +1504,50 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListScriptsRequest, ListScriptsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkersResponse> listWorkers(
+            ListWorkersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListWorkersRequest, ListWorkersResponse>
+                    handler) {
+        LOG.trace("Called async listWorkers");
+        final ListWorkersRequest interceptedRequest =
+                ListWorkersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "ListWorkers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/WorkerCollection/ListWorkers");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkersResponse>
+                transformer =
+                        ListWorkersConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWorkersRequest, ListWorkersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkersRequest, ListWorkersResponse>,
+                        java.util.concurrent.Future<ListWorkersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkersRequest, ListWorkersResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1279,6 +1666,62 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateOnPremiseVantagePointResponse>
+            updateOnPremiseVantagePoint(
+                    UpdateOnPremiseVantagePointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateOnPremiseVantagePointRequest,
+                                    UpdateOnPremiseVantagePointResponse>
+                            handler) {
+        LOG.trace("Called async updateOnPremiseVantagePoint");
+        final UpdateOnPremiseVantagePointRequest interceptedRequest =
+                UpdateOnPremiseVantagePointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOnPremiseVantagePointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "UpdateOnPremiseVantagePoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/OnPremiseVantagePoint/UpdateOnPremiseVantagePoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateOnPremiseVantagePointResponse>
+                transformer =
+                        UpdateOnPremiseVantagePointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateOnPremiseVantagePointRequest, UpdateOnPremiseVantagePointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOnPremiseVantagePointRequest,
+                                UpdateOnPremiseVantagePointResponse>,
+                        java.util.concurrent.Future<UpdateOnPremiseVantagePointResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOnPremiseVantagePointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOnPremiseVantagePointRequest, UpdateOnPremiseVantagePointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateScriptResponse> updateScript(
             UpdateScriptRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateScriptRequest, UpdateScriptResponse>
@@ -1315,6 +1758,55 @@ public class ApmSyntheticAsyncClient implements ApmSyntheticAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateScriptRequest, UpdateScriptResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkerResponse> updateWorker(
+            UpdateWorkerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateWorkerRequest, UpdateWorkerResponse>
+                    handler) {
+        LOG.trace("Called async updateWorker");
+        final UpdateWorkerRequest interceptedRequest =
+                UpdateWorkerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWorkerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApmSynthetic",
+                        "UpdateWorker",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Worker/UpdateWorker");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateWorkerResponse>
+                transformer =
+                        UpdateWorkerConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateWorkerRequest, UpdateWorkerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWorkerRequest, UpdateWorkerResponse>,
+                        java.util.concurrent.Future<UpdateWorkerResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWorkerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWorkerRequest, UpdateWorkerResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims;
@@ -8,7 +8,13 @@ import com.oracle.bmc.cims.requests.*;
 import com.oracle.bmc.cims.responses.*;
 
 /**
- * Use the Support Management API to manage support requests. For more information, see [Getting Help and Contacting Support](https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/contactingsupport.htm). **Note**: Before you can create service requests with this API, you need to have an Oracle Single Sign On (SSO) account, and you need to register your Customer Support Identifier (CSI) with My Oracle Support.
+ * Use the Support Management API to manage support requests.
+ * For more information, see [Getting Help and Contacting Support](https://docs.cloud.oracle.com/iaas/Content/GSG/Tasks/contactingsupport.htm).
+ *
+ **Note**: Before you can create service requests with this API,
+ * you need to have an Oracle Single Sign On (SSO) account,
+ * and you need to register your Customer Support Identifier (CSI) with My Oracle Support.
+ *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
@@ -60,7 +66,7 @@ public interface Incident extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Enables the customer to create an support ticket.
+     * Operation to create a support ticket.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -72,7 +78,19 @@ public interface Incident extends AutoCloseable {
     CreateIncidentResponse createIncident(CreateIncidentRequest request);
 
     /**
-     * Gets the details of the support ticket.
+     * Fetches csi number of the user.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetCsiNumberExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCsiNumber API.
+     */
+    GetCsiNumberResponse getCsiNumber(GetCsiNumberRequest request);
+
+    /**
+     * Gets details about the specified support ticket.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

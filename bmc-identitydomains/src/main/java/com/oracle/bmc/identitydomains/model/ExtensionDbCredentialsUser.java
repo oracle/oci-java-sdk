@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Db Credentials User extension
+ * The database credentials user extension.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -32,7 +32,7 @@ public final class ExtensionDbCredentialsUser
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Database User Name
+         * The database username.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -50,7 +50,7 @@ public final class ExtensionDbCredentialsUser
         private String dbUserName;
 
         /**
-         * The Database User Name
+         * The database username.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -146,7 +146,7 @@ public final class ExtensionDbCredentialsUser
     }
 
     /**
-     * The Database User Name
+     * The database username.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -164,7 +164,7 @@ public final class ExtensionDbCredentialsUser
     private final String dbUserName;
 
     /**
-     * The Database User Name
+     * The database username.
      * <p>
      **Added In:** 2102181953
      * <p>

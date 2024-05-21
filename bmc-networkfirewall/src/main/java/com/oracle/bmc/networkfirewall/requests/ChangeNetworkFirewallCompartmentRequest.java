@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.requests;
@@ -8,7 +8,7 @@ import com.oracle.bmc.networkfirewall.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ChangeNetworkFirewallCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeNetworkFirewallCompartmentRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class ChangeNetworkFirewallCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.networkfirewall.model.ChangeNetworkFirewallCompartmentDetails> {
@@ -68,6 +68,27 @@ public class ChangeNetworkFirewallCompartmentRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
+     */
+    public String getOpcRetryToken() {
+        return opcRetryToken;
     }
 
     /**
@@ -162,6 +183,31 @@ public class ChangeNetworkFirewallCompartmentRequest
         }
 
         /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         */
+        private String opcRetryToken = null;
+
+        /**
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
+         * @param opcRetryToken the value to set
+         * @return this builder instance
+         */
+        public Builder opcRetryToken(String opcRetryToken) {
+            this.opcRetryToken = opcRetryToken;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -193,6 +239,7 @@ public class ChangeNetworkFirewallCompartmentRequest
             changeNetworkFirewallCompartmentDetails(o.getChangeNetworkFirewallCompartmentDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -243,8 +290,9 @@ public class ChangeNetworkFirewallCompartmentRequest
                     changeNetworkFirewallCompartmentDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeNetworkFirewallCompartmentRequest(networkFirewallId, changeNetworkFirewallCompartmentDetails, ifMatch, opcRequestId);
+            // new ChangeNetworkFirewallCompartmentRequest(networkFirewallId, changeNetworkFirewallCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
@@ -257,7 +305,8 @@ public class ChangeNetworkFirewallCompartmentRequest
                 .networkFirewallId(networkFirewallId)
                 .changeNetworkFirewallCompartmentDetails(changeNetworkFirewallCompartmentDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcRetryToken(opcRetryToken);
     }
 
     /**
@@ -278,6 +327,7 @@ public class ChangeNetworkFirewallCompartmentRequest
                 .append(String.valueOf(this.changeNetworkFirewallCompartmentDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(")");
         return sb.toString();
     }
@@ -298,7 +348,8 @@ public class ChangeNetworkFirewallCompartmentRequest
                         this.changeNetworkFirewallCompartmentDetails,
                         other.changeNetworkFirewallCompartmentDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
     }
 
     @Override
@@ -315,6 +366,9 @@ public class ChangeNetworkFirewallCompartmentRequest
                                 : this.changeNetworkFirewallCompartmentDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         return result;
     }
 }

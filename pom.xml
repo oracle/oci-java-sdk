@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.66.0</version>
+  <version>2.72.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -618,6 +618,11 @@
         <version>${jackson.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-jsr310</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
         <groupId>io.github.resilience4j</groupId>
         <artifactId>resilience4j-core</artifactId>
         <version>${resilience4jVersion}</version>
@@ -725,7 +730,6 @@
     <module>bmc-osmanagement</module>
     <module>bmc-marketplace</module>
     <module>bmc-apigateway</module>
-    <module>bmc-applicationmigration</module>
     <module>bmc-datacatalog</module>
     <module>bmc-dataflow</module>
     <module>bmc-datascience</module>
@@ -819,6 +823,21 @@
     <module>bmc-accessgovernancecp</module>
     <module>bmc-ocicontrolcenter</module>
     <module>bmc-osmanagementhub</module>
+    <module>bmc-fleetsoftwareupdate</module>
+    <module>bmc-computecloudatcustomer</module>
+    <module>bmc-marketplacepublisher</module>
+    <module>bmc-redis</module>
+    <module>bmc-jmsjavadownloads</module>
+    <module>bmc-psql</module>
+    <module>bmc-generativeai</module>
+    <module>bmc-generativeaiinference</module>
+    <module>bmc-capacitymanagement</module>
+    <module>bmc-globallydistributeddatabase</module>
+    <module>bmc-desktops</module>
+    <module>bmc-emaildataplane</module>
+    <module>bmc-clusterplacementgroups</module>
+    <module>bmc-marketplaceprivateoffer</module>
+    <module>bmc-resourcescheduler</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

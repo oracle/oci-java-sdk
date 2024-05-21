@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -23,6 +23,7 @@ public final class CreateVolumeBackupDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "kmsKeyId",
         "definedTags",
         "displayName",
         "freeformTags",
@@ -30,12 +31,14 @@ public final class CreateVolumeBackupDetails
         "volumeId"
     })
     public CreateVolumeBackupDetails(
+            String kmsKeyId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
             Type type,
             String volumeId) {
         super();
+        this.kmsKeyId = kmsKeyId;
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -45,6 +48,30 @@ public final class CreateVolumeBackupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume backup.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume backup.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
          * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -153,6 +180,7 @@ public final class CreateVolumeBackupDetails
         public CreateVolumeBackupDetails build() {
             CreateVolumeBackupDetails model =
                     new CreateVolumeBackupDetails(
+                            this.kmsKeyId,
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
@@ -166,6 +194,9 @@ public final class CreateVolumeBackupDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateVolumeBackupDetails model) {
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
@@ -194,6 +225,28 @@ public final class CreateVolumeBackupDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume backup.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume backup.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
+    public String getKmsKeyId() {
+        return kmsKeyId;
     }
 
     /**
@@ -335,7 +388,8 @@ public final class CreateVolumeBackupDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateVolumeBackupDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("definedTags=").append(String.valueOf(this.definedTags));
+        sb.append("kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -354,7 +408,8 @@ public final class CreateVolumeBackupDetails
         }
 
         CreateVolumeBackupDetails other = (CreateVolumeBackupDetails) o;
-        return java.util.Objects.equals(this.definedTags, other.definedTags)
+        return java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.type, other.type)
@@ -366,6 +421,7 @@ public final class CreateVolumeBackupDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

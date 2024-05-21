@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.oda.model;
@@ -51,6 +51,15 @@ public final class ExtendSkillDetails extends CreateSkillDetails {
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dialogVersion")
+        private String dialogVersion;
+
+        public Builder dialogVersion(String dialogVersion) {
+            this.dialogVersion = dialogVersion;
+            this.__explicitlySet__.add("dialogVersion");
             return this;
         }
 
@@ -170,6 +179,7 @@ public final class ExtendSkillDetails extends CreateSkillDetails {
                             this.category,
                             this.description,
                             this.platformVersion,
+                            this.dialogVersion,
                             this.multilingualMode,
                             this.primaryLanguageTag,
                             this.freeformTags,
@@ -194,6 +204,9 @@ public final class ExtendSkillDetails extends CreateSkillDetails {
             }
             if (model.wasPropertyExplicitlySet("platformVersion")) {
                 this.platformVersion(model.getPlatformVersion());
+            }
+            if (model.wasPropertyExplicitlySet("dialogVersion")) {
+                this.dialogVersion(model.getDialogVersion());
             }
             if (model.wasPropertyExplicitlySet("multilingualMode")) {
                 this.multilingualMode(model.getMultilingualMode());
@@ -239,6 +252,7 @@ public final class ExtendSkillDetails extends CreateSkillDetails {
             String category,
             String description,
             String platformVersion,
+            String dialogVersion,
             BotMultilingualMode multilingualMode,
             String primaryLanguageTag,
             java.util.Map<String, String> freeformTags,
@@ -251,6 +265,7 @@ public final class ExtendSkillDetails extends CreateSkillDetails {
                 category,
                 description,
                 platformVersion,
+                dialogVersion,
                 multilingualMode,
                 primaryLanguageTag,
                 freeformTags,

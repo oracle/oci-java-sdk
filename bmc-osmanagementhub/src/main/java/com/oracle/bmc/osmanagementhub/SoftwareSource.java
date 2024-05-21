@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,8 +8,8 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
- * Use the table of contents and search tool to explore the  OS Management Hub API.
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+ * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -62,6 +62,21 @@ public interface SoftwareSource extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
+     * For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AddPackagesToSoftwareSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddPackagesToSoftwareSource API.
+     */
+    AddPackagesToSoftwareSourceResponse addPackagesToSoftwareSource(
+            AddPackagesToSoftwareSourceRequest request);
+
+    /**
      * Updates the availability for a list of specified software sources.
      *
      * @param request The request object containing the details to send
@@ -74,6 +89,21 @@ public interface SoftwareSource extends AutoCloseable {
      */
     ChangeAvailabilityOfSoftwareSourcesResponse changeAvailabilityOfSoftwareSources(
             ChangeAvailabilityOfSoftwareSourcesRequest request);
+
+    /**
+     * Moves the specified software sources to a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeSoftwareSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSoftwareSourceCompartment API.
+     */
+    ChangeSoftwareSourceCompartmentResponse changeSoftwareSourceCompartment(
+            ChangeSoftwareSourceCompartmentRequest request);
 
     /**
      * Registers the necessary entitlement credentials for OS vendor software sources.
@@ -114,7 +144,7 @@ public interface SoftwareSource extends AutoCloseable {
     DeleteSoftwareSourceResponse deleteSoftwareSource(DeleteSoftwareSourceRequest request);
 
     /**
-     * Gets information about the specified erratum by its advisory name.
+     * Returns information about the specified erratum based on its advisory name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -127,7 +157,7 @@ public interface SoftwareSource extends AutoCloseable {
     GetErratumResponse getErratum(GetErratumRequest request);
 
     /**
-     * Gets information about the specified module stream in a software source.
+     * Returns information about the specified module stream in a software source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -140,7 +170,7 @@ public interface SoftwareSource extends AutoCloseable {
     GetModuleStreamResponse getModuleStream(GetModuleStreamRequest request);
 
     /**
-     * Gets information about the specified module stream profile in a software source.
+     * Returns information about the specified module stream profile in a software source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -153,7 +183,7 @@ public interface SoftwareSource extends AutoCloseable {
     GetModuleStreamProfileResponse getModuleStreamProfile(GetModuleStreamProfileRequest request);
 
     /**
-     * Gets information about the specified package group from a software source.
+     * Returns information about the specified package group from a software source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -166,7 +196,7 @@ public interface SoftwareSource extends AutoCloseable {
     GetPackageGroupResponse getPackageGroup(GetPackageGroupRequest request);
 
     /**
-     * Gets information about the specified software package.
+     * Returns information about the specified software package.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -179,7 +209,20 @@ public interface SoftwareSource extends AutoCloseable {
     GetSoftwarePackageResponse getSoftwarePackage(GetSoftwarePackageRequest request);
 
     /**
-     * Gets information about the specified software source.
+     * Returns information about the specified software package based on its fully qualified name.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetSoftwarePackageByNameExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSoftwarePackageByName API.
+     */
+    GetSoftwarePackageByNameResponse getSoftwarePackageByName(
+            GetSoftwarePackageByNameRequest request);
+
+    /**
+     * Returns information about the specified software source.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -191,8 +234,22 @@ public interface SoftwareSource extends AutoCloseable {
     GetSoftwareSourceResponse getSoftwareSource(GetSoftwareSourceRequest request);
 
     /**
-     * Lists entitlements in the specified tenancy OCID. Filter the list against a variety of criteria including but
-     * not limited to its CSI, and vendor name.
+     * Lists software packages available through the OS Management Hub service.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListAllSoftwarePackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAllSoftwarePackages API.
+     */
+    ListAllSoftwarePackagesResponse listAllSoftwarePackages(ListAllSoftwarePackagesRequest request);
+
+    /**
+     * Lists entitlements in the specified tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but
+     * not limited to its Customer Support Identifier (CSI), and vendor name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -219,8 +276,8 @@ public interface SoftwareSource extends AutoCloseable {
     ListErrataResponse listErrata(ListErrataRequest request);
 
     /**
-     * Lists module stream profiles from the specified software source OCID. Filter the list against a variety of
-     * criteria including but not limited to its module name, stream name, and (profile) name.
+     * Lists module stream profiles from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+     * criteria including but not limited to its module name, stream name, and profile name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -234,8 +291,8 @@ public interface SoftwareSource extends AutoCloseable {
             ListModuleStreamProfilesRequest request);
 
     /**
-     * Lists module streams from the specified software source OCID. Filter the list against a variety of
-     * criteria including but not limited to its module name and (stream) name.
+     * Lists module streams from the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -248,7 +305,7 @@ public interface SoftwareSource extends AutoCloseable {
     ListModuleStreamsResponse listModuleStreams(ListModuleStreamsRequest request);
 
     /**
-     * Lists package groups that associate with the specified software source OCID. Filter the list against a
+     * Lists package groups that are associated with the specified software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
      * variety of criteria including but not limited to its name, and package group type.
      *
      * @param request The request object containing the details to send
@@ -260,6 +317,21 @@ public interface SoftwareSource extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListPackageGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPackageGroups API.
      */
     ListPackageGroupsResponse listPackageGroups(ListPackageGroupsRequest request);
+
+    /**
+     * Lists the software sources in the tenancy that contain the software package. Filter the list against a
+     * variety of criteria including but not limited to its name, type, architecture, and OS family.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListSoftwarePackageSoftwareSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSoftwarePackageSoftwareSources API.
+     */
+    ListSoftwarePackageSoftwareSourcesResponse listSoftwarePackageSoftwareSources(
+            ListSoftwarePackageSoftwareSourcesRequest request);
 
     /**
      * Lists software packages in the specified software source.  Filter the list against a variety of criteria
@@ -291,7 +363,7 @@ public interface SoftwareSource extends AutoCloseable {
             ListSoftwareSourceVendorsRequest request);
 
     /**
-     * Lists software sources that match the specified tenancy or software source OCID. Filter the list against a
+     * Lists software sources that match the specified tenancy or software source [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
      * variety of criteria including but not limited to its name, status, architecture, and OS family.
      *
      * @param request The request object containing the details to send
@@ -305,7 +377,7 @@ public interface SoftwareSource extends AutoCloseable {
     ListSoftwareSourcesResponse listSoftwareSources(ListSoftwareSourcesRequest request);
 
     /**
-     * Lists modules from a list of software sources. Filter the list against a variety of
+     * Returns a list of module streams from the specified software sources. Filter the list against a variety of
      * criteria including the module name.
      *
      * @param request The request object containing the details to send
@@ -321,7 +393,7 @@ public interface SoftwareSource extends AutoCloseable {
 
     /**
      * Lists modules from a list of software sources. Filter the list against a variety of
-     * criteria including the (module) name.
+     * criteria including the module name.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

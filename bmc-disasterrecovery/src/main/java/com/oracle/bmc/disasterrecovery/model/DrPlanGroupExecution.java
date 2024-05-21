@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Summary information about a group execution in a DR Plan Execution.
+ * The details of a group execution in a DR plan execution.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +59,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
         /**
          * The unique id of the group. Must not be modified by user.
          * <p>
-         * Example: {@code sgid1.group..examplegroupsgid}
+         * Example: {@code sgid1.group..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
@@ -68,7 +68,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
         /**
          * The unique id of the group. Must not be modified by user.
          * <p>
-         * Example: {@code sgid1.group..examplegroupsgid}
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
@@ -79,14 +79,18 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The plan group type.
+         * The group type.
+         * <p>
+         * Example: {@code BUILT_IN}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanGroupType type;
 
         /**
-         * The plan group type.
+         * The group type.
+         * <p>
+         * Example: {@code BUILT_IN}
          *
          * @param type the value to set
          * @return this builder
@@ -97,7 +101,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The display name of group that was executed.
+         * The display name of the group execution.
          * <p>
          * Example: {@code DATABASE_SWITCHOVER}
          *
@@ -106,7 +110,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
         private String displayName;
 
         /**
-         * The display name of group that was executed.
+         * The display name of the group execution.
          * <p>
          * Example: {@code DATABASE_SWITCHOVER}
          *
@@ -137,18 +141,18 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Additional details about the group execution status.
+         * Additional details on the group execution status.
          * <p>
-         * Example: {@code A total of three steps failed in the group}
+         * Example: {@code A total of [3] steps failed in the group}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
         /**
-         * Additional details about the group execution status.
+         * Additional details on the group execution status.
          * <p>
-         * Example: {@code A total of three steps failed in the group}
+         * Example: {@code A total of [3] steps failed in the group}
          *
          * @param statusDetails the value to set
          * @return this builder
@@ -159,7 +163,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The time at which group execution began. An RFC3339 formatted datetime string.
+         * The time when group execution began. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -168,7 +172,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
         private java.util.Date timeStarted;
 
         /**
-         * The time at which group execution began. An RFC3339 formatted datetime string.
+         * The time when group execution began. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -181,7 +185,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The time at which group execution ended. An RFC3339 formatted datetime string.
+         * The time when group execution ended. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -190,7 +194,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
         private java.util.Date timeEnded;
 
         /**
-         * The time at which group execution ended. An RFC3339 formatted datetime string.
+         * The time when group execution ended. An RFC3339 formatted datetime string.
          * <p>
          * Example: {@code 2019-03-29T09:36:42Z}
          *
@@ -225,14 +229,14 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * A list of details of each step executed in this group.
+         * A list of step executions in the group.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepExecutions")
         private java.util.List<DrPlanStepExecution> stepExecutions;
 
         /**
-         * A list of details of each step executed in this group.
+         * A list of step executions in the group.
          *
          * @param stepExecutions the value to set
          * @return this builder
@@ -311,7 +315,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     /**
      * The unique id of the group. Must not be modified by user.
      * <p>
-     * Example: {@code sgid1.group..examplegroupsgid}
+     * Example: {@code sgid1.group..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
@@ -320,7 +324,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     /**
      * The unique id of the group. Must not be modified by user.
      * <p>
-     * Example: {@code sgid1.group..examplegroupsgid}
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      **/
@@ -329,14 +333,18 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The plan group type.
+     * The group type.
+     * <p>
+     * Example: {@code BUILT_IN}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanGroupType type;
 
     /**
-     * The plan group type.
+     * The group type.
+     * <p>
+     * Example: {@code BUILT_IN}
      *
      * @return the value
      **/
@@ -345,7 +353,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The display name of group that was executed.
+     * The display name of the group execution.
      * <p>
      * Example: {@code DATABASE_SWITCHOVER}
      *
@@ -354,7 +362,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     private final String displayName;
 
     /**
-     * The display name of group that was executed.
+     * The display name of the group execution.
      * <p>
      * Example: {@code DATABASE_SWITCHOVER}
      *
@@ -381,18 +389,18 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Additional details about the group execution status.
+     * Additional details on the group execution status.
      * <p>
-     * Example: {@code A total of three steps failed in the group}
+     * Example: {@code A total of [3] steps failed in the group}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
     /**
-     * Additional details about the group execution status.
+     * Additional details on the group execution status.
      * <p>
-     * Example: {@code A total of three steps failed in the group}
+     * Example: {@code A total of [3] steps failed in the group}
      *
      * @return the value
      **/
@@ -401,7 +409,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The time at which group execution began. An RFC3339 formatted datetime string.
+     * The time when group execution began. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -410,7 +418,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     private final java.util.Date timeStarted;
 
     /**
-     * The time at which group execution began. An RFC3339 formatted datetime string.
+     * The time when group execution began. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -421,7 +429,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The time at which group execution ended. An RFC3339 formatted datetime string.
+     * The time when group execution ended. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -430,7 +438,7 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     private final java.util.Date timeEnded;
 
     /**
-     * The time at which group execution ended. An RFC3339 formatted datetime string.
+     * The time when group execution ended. An RFC3339 formatted datetime string.
      * <p>
      * Example: {@code 2019-03-29T09:36:42Z}
      *
@@ -461,14 +469,14 @@ public final class DrPlanGroupExecution extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * A list of details of each step executed in this group.
+     * A list of step executions in the group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepExecutions")
     private final java.util.List<DrPlanStepExecution> stepExecutions;
 
     /**
-     * A list of details of each step executed in this group.
+     * A list of step executions in the group.
      *
      * @return the value
      **/

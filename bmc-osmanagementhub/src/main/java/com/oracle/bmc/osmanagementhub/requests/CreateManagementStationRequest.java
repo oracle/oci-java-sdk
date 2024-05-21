@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -14,13 +14,13 @@ public class CreateManagementStationRequest
                 com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails> {
 
     /**
-     * Details for the new ManagementStation.
+     * Provides the information used to create a management station.
      */
     private com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails
             createManagementStationDetails;
 
     /**
-     * Details for the new ManagementStation.
+     * Provides the information used to create a management station.
      */
     public com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails
             getCreateManagementStationDetails() {
@@ -78,13 +78,13 @@ public class CreateManagementStationRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new ManagementStation.
+         * Provides the information used to create a management station.
          */
         private com.oracle.bmc.osmanagementhub.model.CreateManagementStationDetails
                 createManagementStationDetails = null;
 
         /**
-         * Details for the new ManagementStation.
+         * Provides the information used to create a management station.
          * @param createManagementStationDetails the value to set
          * @return this builder instance
          */

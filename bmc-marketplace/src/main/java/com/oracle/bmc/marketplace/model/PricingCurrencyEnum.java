@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace.model;
@@ -20,6 +20,51 @@ public enum PricingCurrencyEnum {
     Chf("CHF"),
     Mxn("MXN"),
     Clp("CLP"),
+    All("ALL"),
+    Ars("ARS"),
+    Aud("AUD"),
+    Bdt("BDT"),
+    Bam("BAM"),
+    Bgn("BGN"),
+    Cny("CNY"),
+    Cop("COP"),
+    Crc("CRC"),
+    Hrk("HRK"),
+    Czk("CZK"),
+    Dkk("DKK"),
+    Egp("EGP"),
+    Hkd("HKD"),
+    Huf("HUF"),
+    Isk("ISK"),
+    Idr("IDR"),
+    Ils("ILS"),
+    Jmd("JMD"),
+    Kzt("KZT"),
+    Kes("KES"),
+    Krw("KRW"),
+    Kwd("KWD"),
+    Lbp("LBP"),
+    Mop("MOP"),
+    Myr("MYR"),
+    Mvr("MVR"),
+    Aed("AED"),
+    Nzd("NZD"),
+    Nok("NOK"),
+    Pkr("PKR"),
+    Pen("PEN"),
+    Php("PHP"),
+    Pln("PLN"),
+    Qar("QAR"),
+    Ron("RON"),
+    Sar("SAR"),
+    Rsd("RSD"),
+    Sgd("SGD"),
+    Zar("ZAR"),
+    Sek("SEK"),
+    Twd("TWD"),
+    Thb("THB"),
+    Try("TRY"),
+    Vnd("VND"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -29,7 +29,9 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "description",
         "jobConfigurationDetails",
         "jobInfrastructureConfigurationDetails",
+        "jobEnvironmentConfigurationDetails",
         "jobLogConfigurationDetails",
+        "jobStorageMountConfigurationDetailsList",
         "lifecycleState",
         "lifecycleDetails",
         "freeformTags",
@@ -45,7 +47,10 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             String description,
             JobConfigurationDetails jobConfigurationDetails,
             JobInfrastructureConfigurationDetails jobInfrastructureConfigurationDetails,
+            JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails,
             JobLogConfigurationDetails jobLogConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    jobStorageMountConfigurationDetailsList,
             JobLifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
@@ -60,7 +65,9 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.description = description;
         this.jobConfigurationDetails = jobConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+        this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
         this.jobLogConfigurationDetails = jobLogConfigurationDetails;
+        this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
@@ -205,6 +212,16 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+        private JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+        public Builder jobEnvironmentConfigurationDetails(
+                JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails) {
+            this.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
+            this.__explicitlySet__.add("jobEnvironmentConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
         private JobLogConfigurationDetails jobLogConfigurationDetails;
 
@@ -212,6 +229,25 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 JobLogConfigurationDetails jobLogConfigurationDetails) {
             this.jobLogConfigurationDetails = jobLogConfigurationDetails;
             this.__explicitlySet__.add("jobLogConfigurationDetails");
+            return this;
+        }
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                jobStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of JobStorageMountConfigurationDetails.
+         * @param jobStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder jobStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        jobStorageMountConfigurationDetailsList) {
+            this.jobStorageMountConfigurationDetailsList = jobStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("jobStorageMountConfigurationDetailsList");
             return this;
         }
         /**
@@ -303,7 +339,9 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.description,
                             this.jobConfigurationDetails,
                             this.jobInfrastructureConfigurationDetails,
+                            this.jobEnvironmentConfigurationDetails,
                             this.jobLogConfigurationDetails,
+                            this.jobStorageMountConfigurationDetailsList,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.freeformTags,
@@ -344,8 +382,16 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 this.jobInfrastructureConfigurationDetails(
                         model.getJobInfrastructureConfigurationDetails());
             }
+            if (model.wasPropertyExplicitlySet("jobEnvironmentConfigurationDetails")) {
+                this.jobEnvironmentConfigurationDetails(
+                        model.getJobEnvironmentConfigurationDetails());
+            }
             if (model.wasPropertyExplicitlySet("jobLogConfigurationDetails")) {
                 this.jobLogConfigurationDetails(model.getJobLogConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("jobStorageMountConfigurationDetailsList")) {
+                this.jobStorageMountConfigurationDetailsList(
+                        model.getJobStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -490,11 +536,34 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return jobInfrastructureConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("jobEnvironmentConfigurationDetails")
+    private final JobEnvironmentConfigurationDetails jobEnvironmentConfigurationDetails;
+
+    public JobEnvironmentConfigurationDetails getJobEnvironmentConfigurationDetails() {
+        return jobEnvironmentConfigurationDetails;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("jobLogConfigurationDetails")
     private final JobLogConfigurationDetails jobLogConfigurationDetails;
 
     public JobLogConfigurationDetails getJobLogConfigurationDetails() {
         return jobLogConfigurationDetails;
+    }
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            jobStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of JobStorageMountConfigurationDetails.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getJobStorageMountConfigurationDetailsList() {
+        return jobStorageMountConfigurationDetailsList;
     }
 
     /**
@@ -586,8 +655,12 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 .append(String.valueOf(this.jobConfigurationDetails));
         sb.append(", jobInfrastructureConfigurationDetails=")
                 .append(String.valueOf(this.jobInfrastructureConfigurationDetails));
+        sb.append(", jobEnvironmentConfigurationDetails=")
+                .append(String.valueOf(this.jobEnvironmentConfigurationDetails));
         sb.append(", jobLogConfigurationDetails=")
                 .append(String.valueOf(this.jobLogConfigurationDetails));
+        sb.append(", jobStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.jobStorageMountConfigurationDetailsList));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -619,7 +692,13 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                         this.jobInfrastructureConfigurationDetails,
                         other.jobInfrastructureConfigurationDetails)
                 && java.util.Objects.equals(
+                        this.jobEnvironmentConfigurationDetails,
+                        other.jobEnvironmentConfigurationDetails)
+                && java.util.Objects.equals(
                         this.jobLogConfigurationDetails, other.jobLogConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.jobStorageMountConfigurationDetailsList,
+                        other.jobStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -652,9 +731,19 @@ public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                                 : this.jobInfrastructureConfigurationDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.jobEnvironmentConfigurationDetails == null
+                                ? 43
+                                : this.jobEnvironmentConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
                         + (this.jobLogConfigurationDetails == null
                                 ? 43
                                 : this.jobLogConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jobStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.jobStorageMountConfigurationDetailsList.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

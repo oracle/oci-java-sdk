@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opa;
@@ -430,7 +430,8 @@ public class OpaInstanceClient implements OpaInstance {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -921,6 +922,82 @@ public class OpaInstanceClient implements OpaInstance {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StartOpaInstanceResponse startOpaInstance(StartOpaInstanceRequest request) {
+        LOG.trace("Called startOpaInstance");
+        final StartOpaInstanceRequest interceptedRequest =
+                StartOpaInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartOpaInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpaInstance",
+                        "StartOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StartOpaInstance");
+        java.util.function.Function<javax.ws.rs.core.Response, StartOpaInstanceResponse>
+                transformer =
+                        StartOpaInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StopOpaInstanceResponse stopOpaInstance(StopOpaInstanceRequest request) {
+        LOG.trace("Called stopOpaInstance");
+        final StopOpaInstanceRequest interceptedRequest =
+                StopOpaInstanceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopOpaInstanceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpaInstance",
+                        "StopOpaInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opa/20210621/OpaInstance/StopOpaInstance");
+        java.util.function.Function<javax.ws.rs.core.Response, StopOpaInstanceResponse>
+                transformer =
+                        StopOpaInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

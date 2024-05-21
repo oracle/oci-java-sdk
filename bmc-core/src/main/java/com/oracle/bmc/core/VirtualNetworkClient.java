@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -438,7 +438,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -5768,6 +5769,44 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetResourceIpInventoryResponse getResourceIpInventory(
+            GetResourceIpInventoryRequest request) {
+        LOG.trace("Called getResourceIpInventory");
+        final GetResourceIpInventoryRequest interceptedRequest =
+                GetResourceIpInventoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourceIpInventoryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetResourceIpInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/GetResourceIpInventory");
+        java.util.function.Function<javax.ws.rs.core.Response, GetResourceIpInventoryResponse>
+                transformer =
+                        GetResourceIpInventoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetRouteTableResponse getRouteTable(GetRouteTableRequest request) {
         LOG.trace("Called getRouteTable");
         final GetRouteTableRequest interceptedRequest =
@@ -5929,6 +5968,81 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet");
         java.util.function.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
                 GetSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSubnetCidrUtilizationResponse getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request) {
+        LOG.trace("Called getSubnetCidrUtilization");
+        final GetSubnetCidrUtilizationRequest interceptedRequest =
+                GetSubnetCidrUtilizationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSubnetCidrUtilizationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetCidrUtilization",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCidrUtilizationCollection/GetSubnetCidrUtilization");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubnetCidrUtilizationResponse>
+                transformer =
+                        GetSubnetCidrUtilizationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSubnetIpInventoryResponse getSubnetIpInventory(GetSubnetIpInventoryRequest request) {
+        LOG.trace("Called getSubnetIpInventory");
+        final GetSubnetIpInventoryRequest interceptedRequest =
+                GetSubnetIpInventoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSubnetIpInventoryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetSubnetIpInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventorySubnetResourceCollection/GetSubnetIpInventory");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSubnetIpInventoryResponse>
+                transformer =
+                        GetSubnetIpInventoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6162,6 +6276,46 @@ public class VirtualNetworkClient implements VirtualNetwork {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetVcnOverlapResponse getVcnOverlap(GetVcnOverlapRequest request) {
+        LOG.trace("Called getVcnOverlap");
+        final GetVcnOverlapRequest interceptedRequest =
+                GetVcnOverlapConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVcnOverlapConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetVcnOverlap",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryVcnOverlapCollection/GetVcnOverlap");
+        java.util.function.Function<javax.ws.rs.core.Response, GetVcnOverlapResponse> transformer =
+                GetVcnOverlapConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getGetVcnOverlapDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -7289,6 +7443,47 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListIpInventoryResponse listIpInventory(ListIpInventoryRequest request) {
+        LOG.trace("Called listIpInventory");
+        final ListIpInventoryRequest interceptedRequest =
+                ListIpInventoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIpInventoryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListIpInventory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListIpInventory");
+        java.util.function.Function<javax.ws.rs.core.Response, ListIpInventoryResponse>
+                transformer =
+                        ListIpInventoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getListIpInventoryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListIpv6sResponse listIpv6s(ListIpv6sRequest request) {
         LOG.trace("Called listIpv6s");
         final ListIpv6sRequest interceptedRequest = ListIpv6sConverter.interceptRequest(request);
@@ -7859,6 +8054,46 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns");
         java.util.function.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
                 ListVcnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListVirtualCircuitAssociatedTunnelsResponse listVirtualCircuitAssociatedTunnels(
+            ListVirtualCircuitAssociatedTunnelsRequest request) {
+        LOG.trace("Called listVirtualCircuitAssociatedTunnels");
+        final ListVirtualCircuitAssociatedTunnelsRequest interceptedRequest =
+                ListVirtualCircuitAssociatedTunnelsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVirtualCircuitAssociatedTunnelsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListVirtualCircuitAssociatedTunnels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitAssociatedTunnelDetails/ListVirtualCircuitAssociatedTunnels");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListVirtualCircuitAssociatedTunnelsResponse>
+                transformer =
+                        ListVirtualCircuitAssociatedTunnelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

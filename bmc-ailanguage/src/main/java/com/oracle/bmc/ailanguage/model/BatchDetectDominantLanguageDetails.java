@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -22,16 +22,87 @@ package com.oracle.bmc.ailanguage.model;
 public final class BatchDetectDominantLanguageDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"compartmentId", "documents"})
+    @java.beans.ConstructorProperties({
+        "shouldIgnoreTransliteration",
+        "charsToConsider",
+        "endpointId",
+        "compartmentId",
+        "documents"
+    })
     public BatchDetectDominantLanguageDetails(
-            String compartmentId, java.util.List<DominantLanguageDocument> documents) {
+            Boolean shouldIgnoreTransliteration,
+            Integer charsToConsider,
+            String endpointId,
+            String compartmentId,
+            java.util.List<DominantLanguageDocument> documents) {
         super();
+        this.shouldIgnoreTransliteration = shouldIgnoreTransliteration;
+        this.charsToConsider = charsToConsider;
+        this.endpointId = endpointId;
         this.compartmentId = compartmentId;
         this.documents = documents;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies whether to consider or ignore transliteration. For example "hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow." would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreTransliteration")
+        private Boolean shouldIgnoreTransliteration;
+
+        /**
+         * Specifies whether to consider or ignore transliteration. For example "hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow." would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
+         * @param shouldIgnoreTransliteration the value to set
+         * @return this builder
+         **/
+        public Builder shouldIgnoreTransliteration(Boolean shouldIgnoreTransliteration) {
+            this.shouldIgnoreTransliteration = shouldIgnoreTransliteration;
+            this.__explicitlySet__.add("shouldIgnoreTransliteration");
+            return this;
+        }
+        /**
+         * default value is None.
+         * Specifies maximum number of characters to consider for determining the dominant language.
+         * If unspecified, then optimum number characters will be considered.
+         * If 0 is specified then all the characters are used to determine the language.
+         * If the value is greater than 0, then specified number of characters will be considered from the beginning of the text.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("charsToConsider")
+        private Integer charsToConsider;
+
+        /**
+         * default value is None.
+         * Specifies maximum number of characters to consider for determining the dominant language.
+         * If unspecified, then optimum number characters will be considered.
+         * If 0 is specified then all the characters are used to determine the language.
+         * If the value is greater than 0, then specified number of characters will be considered from the beginning of the text.
+         *
+         * @param charsToConsider the value to set
+         * @return this builder
+         **/
+        public Builder charsToConsider(Integer charsToConsider) {
+            this.charsToConsider = charsToConsider;
+            this.__explicitlySet__.add("charsToConsider");
+            return this;
+        }
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+         * @param endpointId the value to set
+         * @return this builder
+         **/
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that calls the API, inference will be served from pre trained model
          **/
@@ -70,7 +141,12 @@ public final class BatchDetectDominantLanguageDetails
 
         public BatchDetectDominantLanguageDetails build() {
             BatchDetectDominantLanguageDetails model =
-                    new BatchDetectDominantLanguageDetails(this.compartmentId, this.documents);
+                    new BatchDetectDominantLanguageDetails(
+                            this.shouldIgnoreTransliteration,
+                            this.charsToConsider,
+                            this.endpointId,
+                            this.compartmentId,
+                            this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +155,15 @@ public final class BatchDetectDominantLanguageDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectDominantLanguageDetails model) {
+            if (model.wasPropertyExplicitlySet("shouldIgnoreTransliteration")) {
+                this.shouldIgnoreTransliteration(model.getShouldIgnoreTransliteration());
+            }
+            if (model.wasPropertyExplicitlySet("charsToConsider")) {
+                this.charsToConsider(model.getCharsToConsider());
+            }
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -98,6 +183,58 @@ public final class BatchDetectDominantLanguageDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Specifies whether to consider or ignore transliteration. For example "hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow." would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldIgnoreTransliteration")
+    private final Boolean shouldIgnoreTransliteration;
+
+    /**
+     * Specifies whether to consider or ignore transliteration. For example "hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow." would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
+     * @return the value
+     **/
+    public Boolean getShouldIgnoreTransliteration() {
+        return shouldIgnoreTransliteration;
+    }
+
+    /**
+     * default value is None.
+     * Specifies maximum number of characters to consider for determining the dominant language.
+     * If unspecified, then optimum number characters will be considered.
+     * If 0 is specified then all the characters are used to determine the language.
+     * If the value is greater than 0, then specified number of characters will be considered from the beginning of the text.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("charsToConsider")
+    private final Integer charsToConsider;
+
+    /**
+     * default value is None.
+     * Specifies maximum number of characters to consider for determining the dominant language.
+     * If unspecified, then optimum number characters will be considered.
+     * If 0 is specified then all the characters are used to determine the language.
+     * If the value is greater than 0, then specified number of characters will be considered from the beginning of the text.
+     *
+     * @return the value
+     **/
+    public Integer getCharsToConsider() {
+        return charsToConsider;
+    }
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
+     * @return the value
+     **/
+    public String getEndpointId() {
+        return endpointId;
     }
 
     /**
@@ -142,7 +279,11 @@ public final class BatchDetectDominantLanguageDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectDominantLanguageDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("shouldIgnoreTransliteration=")
+                .append(String.valueOf(this.shouldIgnoreTransliteration));
+        sb.append(", charsToConsider=").append(String.valueOf(this.charsToConsider));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
         return sb.toString();
@@ -158,7 +299,11 @@ public final class BatchDetectDominantLanguageDetails
         }
 
         BatchDetectDominantLanguageDetails other = (BatchDetectDominantLanguageDetails) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(
+                        this.shouldIgnoreTransliteration, other.shouldIgnoreTransliteration)
+                && java.util.Objects.equals(this.charsToConsider, other.charsToConsider)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && super.equals(other);
     }
@@ -167,6 +312,15 @@ public final class BatchDetectDominantLanguageDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.shouldIgnoreTransliteration == null
+                                ? 43
+                                : this.shouldIgnoreTransliteration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.charsToConsider == null ? 43 : this.charsToConsider.hashCode());
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());

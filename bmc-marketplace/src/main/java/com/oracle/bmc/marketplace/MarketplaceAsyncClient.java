@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -715,6 +715,56 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ExportListingResponse> exportListing(
+            ExportListingRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ExportListingRequest, ExportListingResponse>
+                    handler) {
+        LOG.trace("Called async exportListing");
+        final ExportListingRequest interceptedRequest =
+                ExportListingConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportListingConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "ExportListing",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/Listing/ExportListing");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportListingResponse>
+                transformer =
+                        ExportListingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ExportListingRequest, ExportListingResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExportListingRequest, ExportListingResponse>,
+                        java.util.concurrent.Future<ExportListingResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportPackageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExportListingRequest, ExportListingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAcceptedAgreementResponse> getAcceptedAgreement(
             GetAcceptedAgreementRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -971,6 +1021,51 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetPublicationPackageRequest, GetPublicationPackageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/WorkRequest/GetWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestRequest, GetWorkRequestResponse>,
+                        java.util.concurrent.Future<GetWorkRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestRequest, GetWorkRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1467,6 +1562,146 @@ public class MarketplaceAsyncClient implements MarketplaceAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListTaxesRequest, ListTaxesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/WorkRequest/ListWorkRequestErrors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/WorkRequest/ListWorkRequestLogs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Marketplace",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/marketplace/20181001/WorkRequest/ListWorkRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

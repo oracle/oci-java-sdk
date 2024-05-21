@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.requests;
@@ -78,6 +78,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
      */
     public Integer getLimit() {
         return limit;
+    }
+    /**
+     * The Fleet-unique identifier of the managed instance.
+     */
+    private String managedInstanceId;
+
+    /**
+     * The Fleet-unique identifier of the managed instance.
+     */
+    public String getManagedInstanceId() {
+        return managedInstanceId;
     }
 
     public static class Builder
@@ -180,6 +191,21 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
+         * The Fleet-unique identifier of the managed instance.
+         */
+        private String managedInstanceId = null;
+
+        /**
+         * The Fleet-unique identifier of the managed instance.
+         * @param managedInstanceId the value to set
+         * @return this builder instance
+         */
+        public Builder managedInstanceId(String managedInstanceId) {
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -213,6 +239,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            managedInstanceId(o.getManagedInstanceId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -251,8 +278,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.managedInstanceId = managedInstanceId;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, id, fleetId, opcRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, id, fleetId, opcRequestId, page, limit, managedInstanceId);
         }
     }
 
@@ -267,7 +295,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .fleetId(fleetId)
                 .opcRequestId(opcRequestId)
                 .page(page)
-                .limit(limit);
+                .limit(limit)
+                .managedInstanceId(managedInstanceId);
     }
 
     /**
@@ -289,6 +318,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(")");
         return sb.toString();
     }
@@ -309,7 +339,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.limit, other.limit);
+                && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId);
     }
 
     @Override
@@ -324,6 +355,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
         return result;
     }
 }

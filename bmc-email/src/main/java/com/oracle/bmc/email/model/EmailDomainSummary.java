@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
 
 /**
- * The properties that define a email domain.
- * A Email Domain contains configuration used to assert responsibility for emails sent from that domain.
+ * The properties that define an email domain.
+ * An email domain contains configuration used to assert responsibility for emails sent from that domain.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -64,7 +64,7 @@ public final class EmailDomainSummary extends com.oracle.bmc.http.internal.Expli
         /**
          * The name of the email domain in the Internet Domain Name System (DNS).
          * <p>
-         * Example: {@code example.net}
+         * Example: {@code mydomain.example.com}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -73,7 +73,7 @@ public final class EmailDomainSummary extends com.oracle.bmc.http.internal.Expli
         /**
          * The name of the email domain in the Internet Domain Name System (DNS).
          * <p>
-         * Example: {@code example.net}
+         * Example: {@code mydomain.example.com}
          *
          * @param name the value to set
          * @return this builder
@@ -156,13 +156,13 @@ public final class EmailDomainSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The description of a email domain.
+         * The description of an email domain.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of a email domain.
+         * The description of an email domain.
          * @param description the value to set
          * @return this builder
          **/
@@ -337,7 +337,7 @@ public final class EmailDomainSummary extends com.oracle.bmc.http.internal.Expli
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      * <p>
-     * Example: {@code example.net}
+     * Example: {@code mydomain.example.com}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -346,7 +346,7 @@ public final class EmailDomainSummary extends com.oracle.bmc.http.internal.Expli
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).
      * <p>
-     * Example: {@code example.net}
+     * Example: {@code mydomain.example.com}
      *
      * @return the value
      **/
@@ -419,13 +419,13 @@ public final class EmailDomainSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The description of a email domain.
+     * The description of an email domain.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of a email domain.
+     * The description of an email domain.
      * @return the value
      **/
     public String getDescription() {

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * configuration item for multi list data type
+ * Details for a configuration value for a managed list.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -30,13 +30,13 @@ public final class ConfigValue extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * configuration list item type, either CUSTOM or MANAGED
+         * Configuration list item type (CUSTOM or MANAGED)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("listType")
         private ConfigurationListItemType listType;
 
         /**
-         * configuration list item type, either CUSTOM or MANAGED
+         * Configuration list item type (CUSTOM or MANAGED)
          * @param listType the value to set
          * @return this builder
          **/
@@ -46,13 +46,13 @@ public final class ConfigValue extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * type of the managed list
+         * Type of content in the managed list
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
         private String managedListType;
 
         /**
-         * type of the managed list
+         * Type of content in the managed list
          * @param managedListType the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class ConfigValue extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * configuration value
+         * Configuration value
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * configuration value
+         * Configuration value
          * @param value the value to set
          * @return this builder
          **/
@@ -116,13 +116,13 @@ public final class ConfigValue extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * configuration list item type, either CUSTOM or MANAGED
+     * Configuration list item type (CUSTOM or MANAGED)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listType")
     private final ConfigurationListItemType listType;
 
     /**
-     * configuration list item type, either CUSTOM or MANAGED
+     * Configuration list item type (CUSTOM or MANAGED)
      * @return the value
      **/
     public ConfigurationListItemType getListType() {
@@ -130,13 +130,13 @@ public final class ConfigValue extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * type of the managed list
+     * Type of content in the managed list
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedListType")
     private final String managedListType;
 
     /**
-     * type of the managed list
+     * Type of content in the managed list
      * @return the value
      **/
     public String getManagedListType() {
@@ -144,13 +144,13 @@ public final class ConfigValue extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * configuration value
+     * Configuration value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * configuration value
+     * Configuration value
      * @return the value
      **/
     public String getValue() {

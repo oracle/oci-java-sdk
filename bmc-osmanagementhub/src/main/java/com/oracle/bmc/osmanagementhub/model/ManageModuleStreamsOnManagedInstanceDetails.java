@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -75,13 +75,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
             return this;
         }
         /**
-         * The set of module streams to enable.
+         * The set of module streams to enable. If any streams of a module are already enabled, the service switches from the current stream to the new stream.
+         * Once complete, the streams will be in 'ENABLED' status.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enable")
         private java.util.List<ModuleStreamDetails> enable;
 
         /**
-         * The set of module streams to enable.
+         * The set of module streams to enable. If any streams of a module are already enabled, the service switches from the current stream to the new stream.
+         * Once complete, the streams will be in 'ENABLED' status.
+         *
          * @param enable the value to set
          * @return this builder
          **/
@@ -91,13 +95,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
             return this;
         }
         /**
-         * The set of module streams to disable.
+         * The set of module streams to disable. Any profiles that are installed for the module stream will be removed as part of the operation.
+         * Once complete, the streams will be in 'DISABLED' status.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("disable")
         private java.util.List<ModuleStreamDetails> disable;
 
         /**
-         * The set of module streams to disable.
+         * The set of module streams to disable. Any profiles that are installed for the module stream will be removed as part of the operation.
+         * Once complete, the streams will be in 'DISABLED' status.
+         *
          * @param disable the value to set
          * @return this builder
          **/
@@ -107,13 +115,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
             return this;
         }
         /**
-         * The set of module stream profiles to install.
+         * The set of module stream profiles to install. Any packages that are part of the profile are installed on the managed instance.
+         * Once complete, the profile will be in 'INSTALLED' status. The operation will return an error if you attempt to install a profile from a disabled stream, unless enabling the new module stream is included in this operation.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("install")
         private java.util.List<ModuleStreamProfileDetails> install;
 
         /**
-         * The set of module stream profiles to install.
+         * The set of module stream profiles to install. Any packages that are part of the profile are installed on the managed instance.
+         * Once complete, the profile will be in 'INSTALLED' status. The operation will return an error if you attempt to install a profile from a disabled stream, unless enabling the new module stream is included in this operation.
+         *
          * @param install the value to set
          * @return this builder
          **/
@@ -123,13 +135,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
             return this;
         }
         /**
-         * The set of module stream profiles to remove.
+         * The set of module stream profiles to remove. Once complete, the profile will be in 'AVAILABLE' status.
+         * The status of packages within the profile after the operation is complete is defined by the package manager on the managed instance group.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("remove")
         private java.util.List<ModuleStreamProfileDetails> remove;
 
         /**
-         * The set of module stream profiles to remove.
+         * The set of module stream profiles to remove. Once complete, the profile will be in 'AVAILABLE' status.
+         * The status of packages within the profile after the operation is complete is defined by the package manager on the managed instance group.
+         *
          * @param remove the value to set
          * @return this builder
          **/
@@ -226,13 +242,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
     }
 
     /**
-     * The set of module streams to enable.
+     * The set of module streams to enable. If any streams of a module are already enabled, the service switches from the current stream to the new stream.
+     * Once complete, the streams will be in 'ENABLED' status.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enable")
     private final java.util.List<ModuleStreamDetails> enable;
 
     /**
-     * The set of module streams to enable.
+     * The set of module streams to enable. If any streams of a module are already enabled, the service switches from the current stream to the new stream.
+     * Once complete, the streams will be in 'ENABLED' status.
+     *
      * @return the value
      **/
     public java.util.List<ModuleStreamDetails> getEnable() {
@@ -240,13 +260,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
     }
 
     /**
-     * The set of module streams to disable.
+     * The set of module streams to disable. Any profiles that are installed for the module stream will be removed as part of the operation.
+     * Once complete, the streams will be in 'DISABLED' status.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disable")
     private final java.util.List<ModuleStreamDetails> disable;
 
     /**
-     * The set of module streams to disable.
+     * The set of module streams to disable. Any profiles that are installed for the module stream will be removed as part of the operation.
+     * Once complete, the streams will be in 'DISABLED' status.
+     *
      * @return the value
      **/
     public java.util.List<ModuleStreamDetails> getDisable() {
@@ -254,13 +278,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
     }
 
     /**
-     * The set of module stream profiles to install.
+     * The set of module stream profiles to install. Any packages that are part of the profile are installed on the managed instance.
+     * Once complete, the profile will be in 'INSTALLED' status. The operation will return an error if you attempt to install a profile from a disabled stream, unless enabling the new module stream is included in this operation.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("install")
     private final java.util.List<ModuleStreamProfileDetails> install;
 
     /**
-     * The set of module stream profiles to install.
+     * The set of module stream profiles to install. Any packages that are part of the profile are installed on the managed instance.
+     * Once complete, the profile will be in 'INSTALLED' status. The operation will return an error if you attempt to install a profile from a disabled stream, unless enabling the new module stream is included in this operation.
+     *
      * @return the value
      **/
     public java.util.List<ModuleStreamProfileDetails> getInstall() {
@@ -268,13 +296,17 @@ public final class ManageModuleStreamsOnManagedInstanceDetails
     }
 
     /**
-     * The set of module stream profiles to remove.
+     * The set of module stream profiles to remove. Once complete, the profile will be in 'AVAILABLE' status.
+     * The status of packages within the profile after the operation is complete is defined by the package manager on the managed instance group.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remove")
     private final java.util.List<ModuleStreamProfileDetails> remove;
 
     /**
-     * The set of module stream profiles to remove.
+     * The set of module stream profiles to remove. Once complete, the profile will be in 'AVAILABLE' status.
+     * The status of packages within the profile after the operation is complete is defined by the package manager on the managed instance group.
+     *
      * @return the value
      **/
     public java.util.List<ModuleStreamProfileDetails> getRemove() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -25,7 +25,8 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         "displayName",
         "freeformTags",
         "ipAddress",
-        "cpeDeviceShapeId"
+        "cpeDeviceShapeId",
+        "isPrivate"
     })
     public CreateCpeDetails(
             String compartmentId,
@@ -33,7 +34,8 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             String displayName,
             java.util.Map<String, String> freeformTags,
             String ipAddress,
-            String cpeDeviceShapeId) {
+            String cpeDeviceShapeId,
+            Boolean isPrivate) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -41,6 +43,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         this.freeformTags = freeformTags;
         this.ipAddress = ipAddress;
         this.cpeDeviceShapeId = cpeDeviceShapeId;
+        this.isPrivate = isPrivate;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -192,6 +195,24 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("cpeDeviceShapeId");
             return this;
         }
+        /**
+         * Indicates whether this CPE is of type {@code private} or not.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+        private Boolean isPrivate;
+
+        /**
+         * Indicates whether this CPE is of type {@code private} or not.
+         *
+         * @param isPrivate the value to set
+         * @return this builder
+         **/
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -204,7 +225,8 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
                             this.displayName,
                             this.freeformTags,
                             this.ipAddress,
-                            this.cpeDeviceShapeId);
+                            this.cpeDeviceShapeId,
+                            this.isPrivate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -230,6 +252,9 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("cpeDeviceShapeId")) {
                 this.cpeDeviceShapeId(model.getCpeDeviceShapeId());
+            }
+            if (model.wasPropertyExplicitlySet("isPrivate")) {
+                this.isPrivate(model.getIsPrivate());
             }
             return this;
         }
@@ -380,6 +405,22 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         return cpeDeviceShapeId;
     }
 
+    /**
+     * Indicates whether this CPE is of type {@code private} or not.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
+    private final Boolean isPrivate;
+
+    /**
+     * Indicates whether this CPE is of type {@code private} or not.
+     *
+     * @return the value
+     **/
+    public Boolean getIsPrivate() {
+        return isPrivate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -400,6 +441,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", cpeDeviceShapeId=").append(String.valueOf(this.cpeDeviceShapeId));
+        sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(")");
         return sb.toString();
     }
@@ -420,6 +462,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.cpeDeviceShapeId, other.cpeDeviceShapeId)
+                && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && super.equals(other);
     }
 
@@ -437,6 +480,7 @@ public final class CreateCpeDetails extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.cpeDeviceShapeId == null ? 43 : this.cpeDeviceShapeId.hashCode());
+        result = (result * PRIME) + (this.isPrivate == null ? 43 : this.isPrivate.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

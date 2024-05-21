@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -29,7 +29,8 @@ public final class InstanceReservationConfig
         "instanceShape",
         "instanceShapeConfig",
         "reservedCount",
-        "usedCount"
+        "usedCount",
+        "clusterPlacementGroupId"
     })
     public InstanceReservationConfig(
             String faultDomain,
@@ -37,7 +38,8 @@ public final class InstanceReservationConfig
             String instanceShape,
             InstanceReservationShapeConfigDetails instanceShapeConfig,
             Long reservedCount,
-            Long usedCount) {
+            Long usedCount,
+            String clusterPlacementGroupId) {
         super();
         this.faultDomain = faultDomain;
         this.clusterConfig = clusterConfig;
@@ -45,6 +47,7 @@ public final class InstanceReservationConfig
         this.instanceShapeConfig = instanceShapeConfig;
         this.reservedCount = reservedCount;
         this.usedCount = usedCount;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -144,6 +147,22 @@ public final class InstanceReservationConfig
             this.__explicitlySet__.add("usedCount");
             return this;
         }
+        /**
+         * The OCID of the cluster placement group for this instance reservation capacity configuration.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group for this instance reservation capacity configuration.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -156,7 +175,8 @@ public final class InstanceReservationConfig
                             this.instanceShape,
                             this.instanceShapeConfig,
                             this.reservedCount,
-                            this.usedCount);
+                            this.usedCount,
+                            this.clusterPlacementGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -182,6 +202,9 @@ public final class InstanceReservationConfig
             }
             if (model.wasPropertyExplicitlySet("usedCount")) {
                 this.usedCount(model.getUsedCount());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             return this;
         }
@@ -280,6 +303,20 @@ public final class InstanceReservationConfig
         return usedCount;
     }
 
+    /**
+     * The OCID of the cluster placement group for this instance reservation capacity configuration.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group for this instance reservation capacity configuration.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -300,6 +337,8 @@ public final class InstanceReservationConfig
         sb.append(", instanceShapeConfig=").append(String.valueOf(this.instanceShapeConfig));
         sb.append(", reservedCount=").append(String.valueOf(this.reservedCount));
         sb.append(", usedCount=").append(String.valueOf(this.usedCount));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -320,6 +359,8 @@ public final class InstanceReservationConfig
                 && java.util.Objects.equals(this.instanceShapeConfig, other.instanceShapeConfig)
                 && java.util.Objects.equals(this.reservedCount, other.reservedCount)
                 && java.util.Objects.equals(this.usedCount, other.usedCount)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && super.equals(other);
     }
 
@@ -343,6 +384,11 @@ public final class InstanceReservationConfig
                 (result * PRIME)
                         + (this.reservedCount == null ? 43 : this.reservedCount.hashCode());
         result = (result * PRIME) + (this.usedCount == null ? 43 : this.usedCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

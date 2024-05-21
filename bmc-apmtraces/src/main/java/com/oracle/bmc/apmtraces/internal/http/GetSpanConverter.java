@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.internal.http;
@@ -49,6 +49,30 @@ public class GetSpanConverter {
                         "apmDomainId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getApmDomainId()));
+
+        if (request.getTimeSpanStartedGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeSpanStartedGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeSpanStartedGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeSpanStartedLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeSpanStartedLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeSpanStartedLessThan()));
+        }
+
+        if (request.getSpanNamespace() != null) {
+            target =
+                    target.queryParam(
+                            "spanNamespace",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSpanNamespace().getValue()));
+        }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -23,12 +23,19 @@ package com.oracle.bmc.email.model;
 public final class UpdateEmailDomainDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"description", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "domainVerificationId",
+        "description",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateEmailDomainDetails(
+            String domainVerificationId,
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.domainVerificationId = domainVerificationId;
         this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -36,6 +43,22 @@ public final class UpdateEmailDomainDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationId")
+        private String domainVerificationId;
+
+        /**
+         * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+         * @param domainVerificationId the value to set
+         * @return this builder
+         **/
+        public Builder domainVerificationId(String domainVerificationId) {
+            this.domainVerificationId = domainVerificationId;
+            this.__explicitlySet__.add("domainVerificationId");
+            return this;
+        }
         /**
          * A string that describes the details about the domain. It does not have to be unique,
          * and you can change it. Avoid entering confidential information.
@@ -112,7 +135,10 @@ public final class UpdateEmailDomainDetails
         public UpdateEmailDomainDetails build() {
             UpdateEmailDomainDetails model =
                     new UpdateEmailDomainDetails(
-                            this.description, this.freeformTags, this.definedTags);
+                            this.domainVerificationId,
+                            this.description,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -121,6 +147,9 @@ public final class UpdateEmailDomainDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateEmailDomainDetails model) {
+            if (model.wasPropertyExplicitlySet("domainVerificationId")) {
+                this.domainVerificationId(model.getDomainVerificationId());
+            }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
@@ -143,6 +172,20 @@ public final class UpdateEmailDomainDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainVerificationId")
+    private final String domainVerificationId;
+
+    /**
+     * Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
+     * @return the value
+     **/
+    public String getDomainVerificationId() {
+        return domainVerificationId;
     }
 
     /**
@@ -221,7 +264,8 @@ public final class UpdateEmailDomainDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateEmailDomainDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("description=").append(String.valueOf(this.description));
+        sb.append("domainVerificationId=").append(String.valueOf(this.domainVerificationId));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -238,7 +282,8 @@ public final class UpdateEmailDomainDetails
         }
 
         UpdateEmailDomainDetails other = (UpdateEmailDomainDetails) o;
-        return java.util.Objects.equals(this.description, other.description)
+        return java.util.Objects.equals(this.domainVerificationId, other.domainVerificationId)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -248,6 +293,11 @@ public final class UpdateEmailDomainDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.domainVerificationId == null
+                                ? 43
+                                : this.domainVerificationId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

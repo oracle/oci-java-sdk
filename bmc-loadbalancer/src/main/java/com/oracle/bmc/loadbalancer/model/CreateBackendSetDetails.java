@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loadbalancer.model;
@@ -35,6 +35,7 @@ public final class CreateBackendSetDetails
         "name",
         "policy",
         "backends",
+        "backendMaxConnections",
         "healthChecker",
         "sslConfiguration",
         "sessionPersistenceConfiguration",
@@ -44,6 +45,7 @@ public final class CreateBackendSetDetails
             String name,
             String policy,
             java.util.List<BackendDetails> backends,
+            Integer backendMaxConnections,
             HealthCheckerDetails healthChecker,
             SSLConfigurationDetails sslConfiguration,
             SessionPersistenceConfigurationDetails sessionPersistenceConfiguration,
@@ -53,6 +55,7 @@ public final class CreateBackendSetDetails
         this.name = name;
         this.policy = policy;
         this.backends = backends;
+        this.backendMaxConnections = backendMaxConnections;
         this.healthChecker = healthChecker;
         this.sslConfiguration = sslConfiguration;
         this.sessionPersistenceConfiguration = sessionPersistenceConfiguration;
@@ -122,6 +125,30 @@ public final class CreateBackendSetDetails
             this.__explicitlySet__.add("backends");
             return this;
         }
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to any backend
+         * in the backend set unless the backend has its own maxConnections setting.
+         * <p>
+         * Example: {@code 300}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backendMaxConnections")
+        private Integer backendMaxConnections;
+
+        /**
+         * The maximum number of simultaneous connections the load balancer can make to any backend
+         * in the backend set unless the backend has its own maxConnections setting.
+         * <p>
+         * Example: {@code 300}
+         *
+         * @param backendMaxConnections the value to set
+         * @return this builder
+         **/
+        public Builder backendMaxConnections(Integer backendMaxConnections) {
+            this.backendMaxConnections = backendMaxConnections;
+            this.__explicitlySet__.add("backendMaxConnections");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
         private HealthCheckerDetails healthChecker;
@@ -172,6 +199,7 @@ public final class CreateBackendSetDetails
                             this.name,
                             this.policy,
                             this.backends,
+                            this.backendMaxConnections,
                             this.healthChecker,
                             this.sslConfiguration,
                             this.sessionPersistenceConfiguration,
@@ -192,6 +220,9 @@ public final class CreateBackendSetDetails
             }
             if (model.wasPropertyExplicitlySet("backends")) {
                 this.backends(model.getBackends());
+            }
+            if (model.wasPropertyExplicitlySet("backendMaxConnections")) {
+                this.backendMaxConnections(model.getBackendMaxConnections());
             }
             if (model.wasPropertyExplicitlySet("healthChecker")) {
                 this.healthChecker(model.getHealthChecker());
@@ -276,6 +307,28 @@ public final class CreateBackendSetDetails
         return backends;
     }
 
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to any backend
+     * in the backend set unless the backend has its own maxConnections setting.
+     * <p>
+     * Example: {@code 300}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backendMaxConnections")
+    private final Integer backendMaxConnections;
+
+    /**
+     * The maximum number of simultaneous connections the load balancer can make to any backend
+     * in the backend set unless the backend has its own maxConnections setting.
+     * <p>
+     * Example: {@code 300}
+     *
+     * @return the value
+     **/
+    public Integer getBackendMaxConnections() {
+        return backendMaxConnections;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
     private final HealthCheckerDetails healthChecker;
 
@@ -323,6 +376,7 @@ public final class CreateBackendSetDetails
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", backends=").append(String.valueOf(this.backends));
+        sb.append(", backendMaxConnections=").append(String.valueOf(this.backendMaxConnections));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
         sb.append(", sslConfiguration=").append(String.valueOf(this.sslConfiguration));
         sb.append(", sessionPersistenceConfiguration=")
@@ -346,6 +400,7 @@ public final class CreateBackendSetDetails
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.backends, other.backends)
+                && java.util.Objects.equals(this.backendMaxConnections, other.backendMaxConnections)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker)
                 && java.util.Objects.equals(this.sslConfiguration, other.sslConfiguration)
                 && java.util.Objects.equals(
@@ -363,6 +418,11 @@ public final class CreateBackendSetDetails
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.policy == null ? 43 : this.policy.hashCode());
         result = (result * PRIME) + (this.backends == null ? 43 : this.backends.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendMaxConnections == null
+                                ? 43
+                                : this.backendMaxConnections.hashCode());
         result =
                 (result * PRIME)
                         + (this.healthChecker == null ? 43 : this.healthChecker.hashCode());

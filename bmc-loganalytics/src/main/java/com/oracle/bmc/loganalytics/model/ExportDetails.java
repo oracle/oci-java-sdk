@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -151,30 +151,28 @@ public final class ExportDetails extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+         * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+         * If the export results can be streamed, the maximum will be 1,000,000.
+         * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+         * and 10,000 for the queries that do not include the link command.
          * <p>
-         *
-         * Export will incrementally stream results depending on the queryString.
-         * <p>
-         * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
-         *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
-         *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
-         * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+         * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+         * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+         * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
         private Integer maxTotalCount;
 
         /**
-         * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+         * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+         * If the export results can be streamed, the maximum will be 1,000,000.
+         * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+         * and 10,000 for the queries that do not include the link command.
          * <p>
-         *
-         * Export will incrementally stream results depending on the queryString.
-         * <p>
-         * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
-         *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
-         *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
-         * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+         * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+         * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+         * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
          *
          * @param maxTotalCount the value to set
          * @return this builder
@@ -430,30 +428,28 @@ public final class ExportDetails extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+     * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+     * If the export results can be streamed, the maximum will be 1,000,000.
+     * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+     * and 10,000 for the queries that do not include the link command.
      * <p>
-     *
-     * Export will incrementally stream results depending on the queryString.
-     * <p>
-     * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
-     *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
-     *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
-     * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+     * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+     * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+     * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
     private final Integer maxTotalCount;
 
     /**
-     * Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+     * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+     * If the export results can be streamed, the maximum will be 1,000,000.
+     * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+     * and 10,000 for the queries that do not include the link command.
      * <p>
-     *
-     * Export will incrementally stream results depending on the queryString.
-     * <p>
-     * Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
-     *  no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
-     *  sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
-     * all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+     * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+     * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+     * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
      *
      * @return the value
      **/

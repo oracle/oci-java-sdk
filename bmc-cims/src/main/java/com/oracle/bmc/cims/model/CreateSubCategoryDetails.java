@@ -1,13 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Details for creating the subcategory of the support ticket.
- * <p>
- **Caution:** Avoid using any confidential information when you supply string values using the API.
+ * Details for creating the service subcategory of the support ticket.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -34,13 +32,13 @@ public final class CreateSubCategoryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the subcategory.
+         * Unique identifier for the service subcategory.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
         private String subCategoryKey;
 
         /**
-         * Unique identifier for the subcategory.
+         * Unique identifier for the service subcategory.
          * @param subCategoryKey the value to set
          * @return this builder
          **/
@@ -82,13 +80,13 @@ public final class CreateSubCategoryDetails
     }
 
     /**
-     * Unique identifier for the subcategory.
+     * Unique identifier for the service subcategory.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subCategoryKey")
     private final String subCategoryKey;
 
     /**
-     * Unique identifier for the subcategory.
+     * Unique identifier for the service subcategory.
      * @return the value
      **/
     public String getSubCategoryKey() {

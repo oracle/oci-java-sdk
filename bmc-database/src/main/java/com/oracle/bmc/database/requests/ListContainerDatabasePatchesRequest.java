@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
@@ -55,6 +55,56 @@ public class ListContainerDatabasePatchesRequest
      */
     public String getPage() {
         return page;
+    }
+    /**
+     * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+     *
+     */
+    private AutonomousPatchType autonomousPatchType;
+
+    /**
+     * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+     *
+     **/
+    public enum AutonomousPatchType {
+        Quarterly("QUARTERLY"),
+        Timezone("TIMEZONE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AutonomousPatchType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousPatchType v : AutonomousPatchType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AutonomousPatchType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousPatchType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AutonomousPatchType: " + key);
+        }
+    };
+
+    /**
+     * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+     *
+     */
+    public AutonomousPatchType getAutonomousPatchType() {
+        return autonomousPatchType;
     }
 
     public static class Builder
@@ -125,6 +175,23 @@ public class ListContainerDatabasePatchesRequest
         }
 
         /**
+         * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+         *
+         */
+        private AutonomousPatchType autonomousPatchType = null;
+
+        /**
+         * Autonomous patch type, either "QUARTERLY" or "TIMEZONE".
+         *
+         * @param autonomousPatchType the value to set
+         * @return this builder instance
+         */
+        public Builder autonomousPatchType(AutonomousPatchType autonomousPatchType) {
+            this.autonomousPatchType = autonomousPatchType;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -156,6 +223,7 @@ public class ListContainerDatabasePatchesRequest
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            autonomousPatchType(o.getAutonomousPatchType());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -192,8 +260,9 @@ public class ListContainerDatabasePatchesRequest
             request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
+            request.autonomousPatchType = autonomousPatchType;
             return request;
-            // new ListContainerDatabasePatchesRequest(autonomousContainerDatabaseId, compartmentId, limit, page);
+            // new ListContainerDatabasePatchesRequest(autonomousContainerDatabaseId, compartmentId, limit, page, autonomousPatchType);
         }
     }
 
@@ -206,7 +275,8 @@ public class ListContainerDatabasePatchesRequest
                 .autonomousContainerDatabaseId(autonomousContainerDatabaseId)
                 .compartmentId(compartmentId)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .autonomousPatchType(autonomousPatchType);
     }
 
     /**
@@ -227,6 +297,7 @@ public class ListContainerDatabasePatchesRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",autonomousPatchType=").append(String.valueOf(this.autonomousPatchType));
         sb.append(")");
         return sb.toString();
     }
@@ -246,7 +317,8 @@ public class ListContainerDatabasePatchesRequest
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.autonomousPatchType, other.autonomousPatchType);
     }
 
     @Override
@@ -263,6 +335,11 @@ public class ListContainerDatabasePatchesRequest
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousPatchType == null
+                                ? 43
+                                : this.autonomousPatchType.hashCode());
         return result;
     }
 }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The information to be updated.
+ * Provides the information used to update the managed instance group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,15 +22,26 @@ package com.oracle.bmc.osmanagementhub.model;
 public final class UpdateManagedInstanceGroupDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "description",
+        "notificationTopicId",
+        "autonomousSettings",
+        "freeformTags",
+        "definedTags"
+    })
     public UpdateManagedInstanceGroupDetails(
             String displayName,
             String description,
+            String notificationTopicId,
+            UpdatableAutonomousSettings autonomousSettings,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.notificationTopicId = notificationTopicId;
+        this.autonomousSettings = autonomousSettings;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -38,13 +49,13 @@ public final class UpdateManagedInstanceGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name for the managed instance group job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the managed instance group. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the managed instance group job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the managed instance group. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -54,19 +65,44 @@ public final class UpdateManagedInstanceGroupDetails
             return this;
         }
         /**
-         * User specified information about the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * User-specified description of the managed instance group. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User specified information about the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * User-specified description of the managed instance group. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+        private String notificationTopicId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         * @param notificationTopicId the value to set
+         * @return this builder
+         **/
+        public Builder notificationTopicId(String notificationTopicId) {
+            this.notificationTopicId = notificationTopicId;
+            this.__explicitlySet__.add("notificationTopicId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousSettings")
+        private UpdatableAutonomousSettings autonomousSettings;
+
+        public Builder autonomousSettings(UpdatableAutonomousSettings autonomousSettings) {
+            this.autonomousSettings = autonomousSettings;
+            this.__explicitlySet__.add("autonomousSettings");
             return this;
         }
         /**
@@ -123,6 +159,8 @@ public final class UpdateManagedInstanceGroupDetails
                     new UpdateManagedInstanceGroupDetails(
                             this.displayName,
                             this.description,
+                            this.notificationTopicId,
+                            this.autonomousSettings,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -138,6 +176,12 @@ public final class UpdateManagedInstanceGroupDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTopicId")) {
+                this.notificationTopicId(model.getNotificationTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousSettings")) {
+                this.autonomousSettings(model.getAutonomousSettings());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -161,13 +205,13 @@ public final class UpdateManagedInstanceGroupDetails
     }
 
     /**
-     * A user-friendly name for the managed instance group job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the managed instance group. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the managed instance group job. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the managed instance group. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -175,17 +219,38 @@ public final class UpdateManagedInstanceGroupDetails
     }
 
     /**
-     * User specified information about the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * User-specified description of the managed instance group. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User specified information about the managed instance group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * User-specified description of the managed instance group. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {
         return description;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+    private final String notificationTopicId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * @return the value
+     **/
+    public String getNotificationTopicId() {
+        return notificationTopicId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousSettings")
+    private final UpdatableAutonomousSettings autonomousSettings;
+
+    public UpdatableAutonomousSettings getAutonomousSettings() {
+        return autonomousSettings;
     }
 
     /**
@@ -244,6 +309,8 @@ public final class UpdateManagedInstanceGroupDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
+        sb.append(", autonomousSettings=").append(String.valueOf(this.autonomousSettings));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -262,6 +329,8 @@ public final class UpdateManagedInstanceGroupDetails
         UpdateManagedInstanceGroupDetails other = (UpdateManagedInstanceGroupDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
+                && java.util.Objects.equals(this.autonomousSettings, other.autonomousSettings)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -273,6 +342,16 @@ public final class UpdateManagedInstanceGroupDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicId == null
+                                ? 43
+                                : this.notificationTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousSettings == null
+                                ? 43
+                                : this.autonomousSettings.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

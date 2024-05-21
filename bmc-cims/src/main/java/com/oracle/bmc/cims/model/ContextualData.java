@@ -1,10 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
+ * Information collected from user context during ticket creation.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -32,13 +33,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique client identifier
+         * The unique identifier for the client.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
-         * The unique client identifier
+         * The unique identifier for the client.
          * @param clientId the value to set
          * @return this builder
          **/
@@ -48,13 +49,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The schema name
+         * The name assigned to the schema.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
-         * The schema name
+         * The name assigned to the schema.
          * @param schemaName the value to set
          * @return this builder
          **/
@@ -64,13 +65,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The schema version
+         * The version of the schema.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
         private String schemaVersion;
 
         /**
-         * The schema version
+         * The version of the schema.
          * @param schemaVersion the value to set
          * @return this builder
          **/
@@ -80,13 +81,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The context data payload
+         * The payload for the contextual data.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("payload")
         private String payload;
 
         /**
-         * The context data payload
+         * The payload for the contextual data.
          * @param payload the value to set
          * @return this builder
          **/
@@ -139,13 +140,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The unique client identifier
+     * The unique identifier for the client.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
-     * The unique client identifier
+     * The unique identifier for the client.
      * @return the value
      **/
     public String getClientId() {
@@ -153,13 +154,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The schema name
+     * The name assigned to the schema.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
-     * The schema name
+     * The name assigned to the schema.
      * @return the value
      **/
     public String getSchemaName() {
@@ -167,13 +168,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The schema version
+     * The version of the schema.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaVersion")
     private final String schemaVersion;
 
     /**
-     * The schema version
+     * The version of the schema.
      * @return the value
      **/
     public String getSchemaVersion() {
@@ -181,13 +182,13 @@ public final class ContextualData extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The context data payload
+     * The payload for the contextual data.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("payload")
     private final String payload;
 
     /**
-     * The context data payload
+     * The payload for the contextual data.
      * @return the value
      **/
     public String getPayload() {

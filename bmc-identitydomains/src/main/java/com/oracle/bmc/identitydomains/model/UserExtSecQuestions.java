@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+ * The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
  * <p>
  **SCIM++ Properties:**
  *  - idcsCompositeKey: [value]
@@ -42,7 +42,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Id of the question selected by user while setting up Security Question.
+         * The identifier of the question selected by the user when setting up a security question.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -58,7 +58,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
         private String value;
 
         /**
-         * Id of the question selected by user while setting up Security Question.
+         * The identifier of the question selected by the user when setting up a security question.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -78,7 +78,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The URI of the corresponding SecurityQuestion resource
+         * The URI of the corresponding Security Question resource.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
@@ -93,7 +93,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
         private String ref;
 
         /**
-         * The URI of the corresponding SecurityQuestion resource
+         * The URI of the corresponding Security Question resource.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: false
@@ -112,7 +112,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Answer provided by an user for a security question.
+         * The answer provided by a user for a security question.
          * <p>
          **SCIM++ Properties:**
          *  - idcsCsvAttributeName: Answer
@@ -130,7 +130,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
         private String answer;
 
         /**
-         * Answer provided by an user for a security question.
+         * The answer provided by a user for a security question.
          * <p>
          **SCIM++ Properties:**
          *  - idcsCsvAttributeName: Answer
@@ -152,7 +152,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Hint for an answer given by user while setting up Security Question.
+         * The hint for an answer that's given by user when setting up a security question.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -167,7 +167,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
         private String hintText;
 
         /**
-         * Hint for an answer given by user while setting up Security Question.
+         * The hint for an answer that's given by user when setting up a security question.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: false
@@ -228,7 +228,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Id of the question selected by user while setting up Security Question.
+     * The identifier of the question selected by the user when setting up a security question.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -244,7 +244,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     private final String value;
 
     /**
-     * Id of the question selected by user while setting up Security Question.
+     * The identifier of the question selected by the user when setting up a security question.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -262,7 +262,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The URI of the corresponding SecurityQuestion resource
+     * The URI of the corresponding Security Question resource.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
@@ -277,7 +277,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     private final String ref;
 
     /**
-     * The URI of the corresponding SecurityQuestion resource
+     * The URI of the corresponding Security Question resource.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: false
@@ -294,7 +294,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Answer provided by an user for a security question.
+     * The answer provided by a user for a security question.
      * <p>
      **SCIM++ Properties:**
      *  - idcsCsvAttributeName: Answer
@@ -312,7 +312,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     private final String answer;
 
     /**
-     * Answer provided by an user for a security question.
+     * The answer provided by a user for a security question.
      * <p>
      **SCIM++ Properties:**
      *  - idcsCsvAttributeName: Answer
@@ -332,7 +332,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Hint for an answer given by user while setting up Security Question.
+     * The hint for an answer that's given by user when setting up a security question.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false
@@ -347,7 +347,7 @@ public final class UserExtSecQuestions extends com.oracle.bmc.http.internal.Expl
     private final String hintText;
 
     /**
-     * Hint for an answer given by user while setting up Security Question.
+     * The hint for an answer that's given by user when setting up a security question.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: false

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -25,6 +25,7 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
         "displayName",
         "visibilityInSeconds",
         "timeoutInSeconds",
+        "channelConsumptionLimit",
         "deadLetterQueueDeliveryCount",
         "customEncryptionKeyId",
         "freeformTags",
@@ -34,6 +35,7 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
             String displayName,
             Integer visibilityInSeconds,
             Integer timeoutInSeconds,
+            Integer channelConsumptionLimit,
             Integer deadLetterQueueDeliveryCount,
             String customEncryptionKeyId,
             java.util.Map<String, String> freeformTags,
@@ -42,6 +44,7 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
         this.displayName = displayName;
         this.visibilityInSeconds = visibilityInSeconds;
         this.timeoutInSeconds = timeoutInSeconds;
+        this.channelConsumptionLimit = channelConsumptionLimit;
         this.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;
         this.customEncryptionKeyId = customEncryptionKeyId;
         this.freeformTags = freeformTags;
@@ -51,13 +54,13 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Queue Identifier
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Queue Identifier
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -67,13 +70,13 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The default visibility of the messages consumed from the queue.
+         * The default visibility timeout of the messages consumed from the queue, in seconds.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("visibilityInSeconds")
         private Integer visibilityInSeconds;
 
         /**
-         * The default visibility of the messages consumed from the queue.
+         * The default visibility timeout of the messages consumed from the queue, in seconds.
          * @param visibilityInSeconds the value to set
          * @return this builder
          **/
@@ -99,9 +102,25 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("channelConsumptionLimit")
+        private Integer channelConsumptionLimit;
+
+        /**
+         * The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+         * @param channelConsumptionLimit the value to set
+         * @return this builder
+         **/
+        public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
+            this.channelConsumptionLimit = channelConsumptionLimit;
+            this.__explicitlySet__.add("channelConsumptionLimit");
+            return this;
+        }
+        /**
          * The number of times a message can be delivered to a consumer before being moved to the dead letter queue.
          * A value of 0 indicates that the DLQ is not used.
-         * Changing that value to a lower threshold does not retro-actively move in-flight messages in the dead letter queue.
+         * Changing that value to a lower threshold does not retroactively move in-flight messages in the dead letter queue.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deadLetterQueueDeliveryCount")
@@ -110,7 +129,7 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
         /**
          * The number of times a message can be delivered to a consumer before being moved to the dead letter queue.
          * A value of 0 indicates that the DLQ is not used.
-         * Changing that value to a lower threshold does not retro-actively move in-flight messages in the dead letter queue.
+         * Changing that value to a lower threshold does not retroactively move in-flight messages in the dead letter queue.
          *
          * @param deadLetterQueueDeliveryCount the value to set
          * @return this builder
@@ -121,13 +140,13 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Id of the custom master encryption key which will be used to encrypt messages content. String of length 0 means the custom key should be removed from queue
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
         private String customEncryptionKeyId;
 
         /**
-         * Id of the custom master encryption key which will be used to encrypt messages content. String of length 0 means the custom key should be removed from queue
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
          * @param customEncryptionKeyId the value to set
          * @return this builder
          **/
@@ -187,6 +206,7 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
                             this.displayName,
                             this.visibilityInSeconds,
                             this.timeoutInSeconds,
+                            this.channelConsumptionLimit,
                             this.deadLetterQueueDeliveryCount,
                             this.customEncryptionKeyId,
                             this.freeformTags,
@@ -207,6 +227,9 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("timeoutInSeconds")) {
                 this.timeoutInSeconds(model.getTimeoutInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("channelConsumptionLimit")) {
+                this.channelConsumptionLimit(model.getChannelConsumptionLimit());
             }
             if (model.wasPropertyExplicitlySet("deadLetterQueueDeliveryCount")) {
                 this.deadLetterQueueDeliveryCount(model.getDeadLetterQueueDeliveryCount());
@@ -236,13 +259,13 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Queue Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Queue Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
      * @return the value
      **/
     public String getDisplayName() {
@@ -250,13 +273,13 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The default visibility of the messages consumed from the queue.
+     * The default visibility timeout of the messages consumed from the queue, in seconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("visibilityInSeconds")
     private final Integer visibilityInSeconds;
 
     /**
-     * The default visibility of the messages consumed from the queue.
+     * The default visibility timeout of the messages consumed from the queue, in seconds.
      * @return the value
      **/
     public Integer getVisibilityInSeconds() {
@@ -278,9 +301,23 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("channelConsumptionLimit")
+    private final Integer channelConsumptionLimit;
+
+    /**
+     * The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+     * @return the value
+     **/
+    public Integer getChannelConsumptionLimit() {
+        return channelConsumptionLimit;
+    }
+
+    /**
      * The number of times a message can be delivered to a consumer before being moved to the dead letter queue.
      * A value of 0 indicates that the DLQ is not used.
-     * Changing that value to a lower threshold does not retro-actively move in-flight messages in the dead letter queue.
+     * Changing that value to a lower threshold does not retroactively move in-flight messages in the dead letter queue.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deadLetterQueueDeliveryCount")
@@ -289,7 +326,7 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
     /**
      * The number of times a message can be delivered to a consumer before being moved to the dead letter queue.
      * A value of 0 indicates that the DLQ is not used.
-     * Changing that value to a lower threshold does not retro-actively move in-flight messages in the dead letter queue.
+     * Changing that value to a lower threshold does not retroactively move in-flight messages in the dead letter queue.
      *
      * @return the value
      **/
@@ -298,13 +335,13 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Id of the custom master encryption key which will be used to encrypt messages content. String of length 0 means the custom key should be removed from queue
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionKeyId")
     private final String customEncryptionKeyId;
 
     /**
-     * Id of the custom master encryption key which will be used to encrypt messages content. String of length 0 means the custom key should be removed from queue
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
      * @return the value
      **/
     public String getCustomEncryptionKeyId() {
@@ -364,6 +401,8 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", visibilityInSeconds=").append(String.valueOf(this.visibilityInSeconds));
         sb.append(", timeoutInSeconds=").append(String.valueOf(this.timeoutInSeconds));
+        sb.append(", channelConsumptionLimit=")
+                .append(String.valueOf(this.channelConsumptionLimit));
         sb.append(", deadLetterQueueDeliveryCount=")
                 .append(String.valueOf(this.deadLetterQueueDeliveryCount));
         sb.append(", customEncryptionKeyId=").append(String.valueOf(this.customEncryptionKeyId));
@@ -387,6 +426,8 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.visibilityInSeconds, other.visibilityInSeconds)
                 && java.util.Objects.equals(this.timeoutInSeconds, other.timeoutInSeconds)
                 && java.util.Objects.equals(
+                        this.channelConsumptionLimit, other.channelConsumptionLimit)
+                && java.util.Objects.equals(
                         this.deadLetterQueueDeliveryCount, other.deadLetterQueueDeliveryCount)
                 && java.util.Objects.equals(this.customEncryptionKeyId, other.customEncryptionKeyId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -407,6 +448,11 @@ public final class UpdateQueueDetails extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.timeoutInSeconds == null ? 43 : this.timeoutInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.channelConsumptionLimit == null
+                                ? 43
+                                : this.channelConsumptionLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.deadLetterQueueDeliveryCount == null

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -431,7 +431,8 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -548,6 +549,84 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
     }
 
     @Override
+    public ActivateRemediationRecipeResponse activateRemediationRecipe(
+            ActivateRemediationRecipeRequest request) {
+        LOG.trace("Called activateRemediationRecipe");
+        final ActivateRemediationRecipeRequest interceptedRequest =
+                ActivateRemediationRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateRemediationRecipeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ActivateRemediationRecipe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ActivateRemediationRecipe");
+        java.util.function.Function<javax.ws.rs.core.Response, ActivateRemediationRecipeResponse>
+                transformer =
+                        ActivateRemediationRecipeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CancelRemediationRunResponse cancelRemediationRun(CancelRemediationRunRequest request) {
+        LOG.trace("Called cancelRemediationRun");
+        final CancelRemediationRunRequest interceptedRequest =
+                CancelRemediationRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelRemediationRunConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "CancelRemediationRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/CancelRemediationRun");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelRemediationRunResponse>
+                transformer =
+                        CancelRemediationRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
         LOG.trace("Called cancelWorkRequest");
         final CancelWorkRequestRequest interceptedRequest =
@@ -624,6 +703,96 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
                                                 ib,
                                                 retriedRequest
                                                         .getChangeKnowledgeBaseCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeRemediationRecipeCompartmentResponse changeRemediationRecipeCompartment(
+            ChangeRemediationRecipeCompartmentRequest request) {
+        LOG.trace("Called changeRemediationRecipeCompartment");
+        final ChangeRemediationRecipeCompartmentRequest interceptedRequest =
+                ChangeRemediationRecipeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRemediationRecipeCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeRemediationRecipeCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ChangeRemediationRecipeCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeRemediationRecipeCompartmentResponse>
+                transformer =
+                        ChangeRemediationRecipeCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeRemediationRecipeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeRemediationRunCompartmentResponse changeRemediationRunCompartment(
+            ChangeRemediationRunCompartmentRequest request) {
+        LOG.trace("Called changeRemediationRunCompartment");
+        final ChangeRemediationRunCompartmentRequest interceptedRequest =
+                ChangeRemediationRunCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRemediationRunCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ChangeRemediationRunCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ChangeRemediationRunCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeRemediationRunCompartmentResponse>
+                transformer =
+                        ChangeRemediationRunCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeRemediationRunCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -719,6 +888,91 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
     }
 
     @Override
+    public CreateRemediationRecipeResponse createRemediationRecipe(
+            CreateRemediationRecipeRequest request) {
+        LOG.trace("Called createRemediationRecipe");
+        final CreateRemediationRecipeRequest interceptedRequest =
+                CreateRemediationRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRemediationRecipeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateRemediationRecipe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/CreateRemediationRecipe");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRemediationRecipeResponse>
+                transformer =
+                        CreateRemediationRecipeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRemediationRecipeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateRemediationRunResponse createRemediationRun(CreateRemediationRunRequest request) {
+        LOG.trace("Called createRemediationRun");
+        final CreateRemediationRunRequest interceptedRequest =
+                CreateRemediationRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRemediationRunConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "CreateRemediationRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/CreateRemediationRun");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateRemediationRunResponse>
+                transformer =
+                        CreateRemediationRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateRemediationRunDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateVulnerabilityAuditResponse createVulnerabilityAudit(
             CreateVulnerabilityAuditRequest request) {
         LOG.trace("Called createVulnerabilityAudit");
@@ -762,6 +1016,45 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
     }
 
     @Override
+    public DeactivateRemediationRecipeResponse deactivateRemediationRecipe(
+            DeactivateRemediationRecipeRequest request) {
+        LOG.trace("Called deactivateRemediationRecipe");
+        final DeactivateRemediationRecipeRequest interceptedRequest =
+                DeactivateRemediationRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeactivateRemediationRecipeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeactivateRemediationRecipe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/DeactivateRemediationRecipe");
+        java.util.function.Function<javax.ws.rs.core.Response, DeactivateRemediationRecipeResponse>
+                transformer =
+                        DeactivateRemediationRecipeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request) {
         LOG.trace("Called deleteKnowledgeBase");
         final DeleteKnowledgeBaseRequest interceptedRequest =
@@ -782,6 +1075,83 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
         java.util.function.Function<javax.ws.rs.core.Response, DeleteKnowledgeBaseResponse>
                 transformer =
                         DeleteKnowledgeBaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteRemediationRecipeResponse deleteRemediationRecipe(
+            DeleteRemediationRecipeRequest request) {
+        LOG.trace("Called deleteRemediationRecipe");
+        final DeleteRemediationRecipeRequest interceptedRequest =
+                DeleteRemediationRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRemediationRecipeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteRemediationRecipe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/DeleteRemediationRecipe");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRemediationRecipeResponse>
+                transformer =
+                        DeleteRemediationRecipeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteRemediationRunResponse deleteRemediationRun(DeleteRemediationRunRequest request) {
+        LOG.trace("Called deleteRemediationRun");
+        final DeleteRemediationRunRequest interceptedRequest =
+                DeleteRemediationRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRemediationRunConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "DeleteRemediationRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/DeleteRemediationRun");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteRemediationRunResponse>
+                transformer =
+                        DeleteRemediationRunConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -876,6 +1246,114 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
     }
 
     @Override
+    public GetRemediationRecipeResponse getRemediationRecipe(GetRemediationRecipeRequest request) {
+        LOG.trace("Called getRemediationRecipe");
+        final GetRemediationRecipeRequest interceptedRequest =
+                GetRemediationRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRemediationRecipeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetRemediationRecipe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/GetRemediationRecipe");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRemediationRecipeResponse>
+                transformer =
+                        GetRemediationRecipeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetRemediationRunResponse getRemediationRun(GetRemediationRunRequest request) {
+        LOG.trace("Called getRemediationRun");
+        final GetRemediationRunRequest interceptedRequest =
+                GetRemediationRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRemediationRunConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetRemediationRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/GetRemediationRun");
+        java.util.function.Function<javax.ws.rs.core.Response, GetRemediationRunResponse>
+                transformer =
+                        GetRemediationRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetStageResponse getStage(GetStageRequest request) {
+        LOG.trace("Called getStage");
+        final GetStageRequest interceptedRequest = GetStageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStageConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "GetStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/GetStage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetStageResponse> transformer =
+                GetStageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetVulnerabilityAuditResponse getVulnerabilityAudit(
             GetVulnerabilityAuditRequest request) {
         LOG.trace("Called getVulnerabilityAudit");
@@ -933,6 +1411,47 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
                         "https://docs.oracle.com/iaas/api/#/en/adm/20220421/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListApplicationDependencyRecommendationsResponse
+            listApplicationDependencyRecommendations(
+                    ListApplicationDependencyRecommendationsRequest request) {
+        LOG.trace("Called listApplicationDependencyRecommendations");
+        final ListApplicationDependencyRecommendationsRequest interceptedRequest =
+                ListApplicationDependencyRecommendationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApplicationDependencyRecommendationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListApplicationDependencyRecommendations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListApplicationDependencyRecommendations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListApplicationDependencyRecommendationsResponse>
+                transformer =
+                        ListApplicationDependencyRecommendationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1011,6 +1530,115 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
                 transformer =
                         ListKnowledgeBasesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRemediationRecipesResponse listRemediationRecipes(
+            ListRemediationRecipesRequest request) {
+        LOG.trace("Called listRemediationRecipes");
+        final ListRemediationRecipesRequest interceptedRequest =
+                ListRemediationRecipesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRemediationRecipesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListRemediationRecipes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ListRemediationRecipes");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRemediationRecipesResponse>
+                transformer =
+                        ListRemediationRecipesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListRemediationRunsResponse listRemediationRuns(ListRemediationRunsRequest request) {
+        LOG.trace("Called listRemediationRuns");
+        final ListRemediationRunsRequest interceptedRequest =
+                ListRemediationRunsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRemediationRunsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListRemediationRuns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListRemediationRuns");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRemediationRunsResponse>
+                transformer =
+                        ListRemediationRunsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListStagesResponse listStages(ListStagesRequest request) {
+        LOG.trace("Called listStages");
+        final ListStagesRequest interceptedRequest = ListStagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStagesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "ListStages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/ListStages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListStagesResponse> transformer =
+                ListStagesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1211,6 +1839,89 @@ public class ApplicationDependencyManagementClient implements ApplicationDepende
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateKnowledgeBaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateRemediationRecipeResponse updateRemediationRecipe(
+            UpdateRemediationRecipeRequest request) {
+        LOG.trace("Called updateRemediationRecipe");
+        final UpdateRemediationRecipeRequest interceptedRequest =
+                UpdateRemediationRecipeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRemediationRecipeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateRemediationRecipe",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/UpdateRemediationRecipe");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRemediationRecipeResponse>
+                transformer =
+                        UpdateRemediationRecipeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRemediationRecipeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateRemediationRunResponse updateRemediationRun(UpdateRemediationRunRequest request) {
+        LOG.trace("Called updateRemediationRun");
+        final UpdateRemediationRunRequest interceptedRequest =
+                UpdateRemediationRunConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRemediationRunConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApplicationDependencyManagement",
+                        "UpdateRemediationRun",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/UpdateRemediationRun");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateRemediationRunResponse>
+                transformer =
+                        UpdateRemediationRunConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateRemediationRunDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

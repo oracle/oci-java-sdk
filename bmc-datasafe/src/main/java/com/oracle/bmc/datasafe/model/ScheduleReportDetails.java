@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -106,13 +106,13 @@ public final class ScheduleReportDetails
             return this;
         }
         /**
-         * Specifies if the report will be in Excel or PDF format
+         * Specifies if the report will be in .xls or .pdf format
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies if the report will be in Excel or PDF format
+         * Specifies if the report will be in .xls or .pdf format
          * @param mimeType the value to set
          * @return this builder
          **/
@@ -257,7 +257,7 @@ public final class ScheduleReportDetails
     }
 
     /**
-     * Specifies if the report will be in Excel or PDF format
+     * Specifies if the report will be in .xls or .pdf format
      **/
     public enum MimeType {
         Pdf("PDF"),
@@ -292,13 +292,13 @@ public final class ScheduleReportDetails
         }
     };
     /**
-     * Specifies if the report will be in Excel or PDF format
+     * Specifies if the report will be in .xls or .pdf format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies if the report will be in Excel or PDF format
+     * Specifies if the report will be in .xls or .pdf format
      * @return the value
      **/
     public MimeType getMimeType() {

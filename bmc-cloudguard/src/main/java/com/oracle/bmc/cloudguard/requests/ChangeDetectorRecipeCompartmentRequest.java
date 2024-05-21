@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,24 +14,24 @@ public class ChangeDetectorRecipeCompartmentRequest
                 com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails> {
 
     /**
-     * DetectorRecipe OCID
+     * Detector recipe OCID
      */
     private String detectorRecipeId;
 
     /**
-     * DetectorRecipe OCID
+     * Detector recipe OCID
      */
     public String getDetectorRecipeId() {
         return detectorRecipeId;
     }
     /**
-     * The target compartment id.
+     * The target compartment OCID
      */
     private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
             changeDetectorRecipeCompartmentDetails;
 
     /**
-     * The target compartment id.
+     * The target compartment OCID
      */
     public com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
             getChangeDetectorRecipeCompartmentDetails() {
@@ -110,12 +110,12 @@ public class ChangeDetectorRecipeCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          */
         private String detectorRecipeId = null;
 
         /**
-         * DetectorRecipe OCID
+         * Detector recipe OCID
          * @param detectorRecipeId the value to set
          * @return this builder instance
          */
@@ -125,13 +125,13 @@ public class ChangeDetectorRecipeCompartmentRequest
         }
 
         /**
-         * The target compartment id.
+         * The target compartment OCID
          */
         private com.oracle.bmc.cloudguard.model.ChangeDetectorRecipeCompartmentDetails
                 changeDetectorRecipeCompartmentDetails = null;
 
         /**
-         * The target compartment id.
+         * The target compartment OCID
          * @param changeDetectorRecipeCompartmentDetails the value to set
          * @return this builder instance
          */

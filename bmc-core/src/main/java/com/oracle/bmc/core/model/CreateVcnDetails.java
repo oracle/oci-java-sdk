@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -125,10 +125,10 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+         * The list of one or more ULA or Private IPv6 prefixes for the VCN that meets the following criteria:
          * - The CIDR blocks must be valid.
-         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * - Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+         * - The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
          * <p>
          **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
          *
@@ -137,10 +137,10 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         private java.util.List<String> ipv6PrivateCidrBlocks;
 
         /**
-         * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+         * The list of one or more ULA or Private IPv6 prefixes for the VCN that meets the following criteria:
          * - The CIDR blocks must be valid.
-         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+         * - Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+         * - The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
          * <p>
          **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
          *
@@ -173,14 +173,14 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetails")
         private java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails;
 
         /**
-         * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+         * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
          *
          * @param byoipv6CidrDetails the value to set
          * @return this builder
@@ -466,10 +466,10 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+     * The list of one or more ULA or Private IPv6 prefixes for the VCN that meets the following criteria:
      * - The CIDR blocks must be valid.
-     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      * <p>
      **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
      *
@@ -478,10 +478,10 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
     private final java.util.List<String> ipv6PrivateCidrBlocks;
 
     /**
-     * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+     * The list of one or more ULA or Private IPv6 prefixes for the VCN that meets the following criteria:
      * - The CIDR blocks must be valid.
-     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+     * - Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+     * - The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
      * <p>
      **Important:** Do *not* specify a value for {@code ipv6CidrBlock}. Use this parameter instead.
      *
@@ -510,14 +510,14 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrDetails")
     private final java.util.List<Byoipv6CidrDetails> byoipv6CidrDetails;
 
     /**
-     * The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+     * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      *
      * @return the value
      **/

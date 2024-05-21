@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The information to be updated.
+ * Provides the information used to update the lifecycle environment.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +46,13 @@ public final class UpdateLifecycleEnvironmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class UpdateLifecycleEnvironmentDetails
             return this;
         }
         /**
-         * User specified information about the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * User specified information about the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
@@ -189,13 +189,13 @@ public final class UpdateLifecycleEnvironmentDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the lifecycle environment. Does not have to be unique. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -203,13 +203,13 @@ public final class UpdateLifecycleEnvironmentDetails
     }
 
     /**
-     * User specified information about the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * User specified information about the lifecycle environment. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * User-specified list of lifecycle stages used within the lifecycle environment. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {

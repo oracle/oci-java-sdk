@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -30,6 +30,7 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
         "notebookSessionConfigurationDetails",
         "notebookSessionConfigDetails",
         "notebookSessionRuntimeConfigDetails",
+        "notebookSessionStorageMountConfigurationDetailsList",
         "notebookSessionUrl",
         "lifecycleState",
         "lifecycleDetails",
@@ -46,6 +47,8 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
             NotebookSessionConfigurationDetails notebookSessionConfigurationDetails,
             NotebookSessionConfigDetails notebookSessionConfigDetails,
             NotebookSessionRuntimeConfigDetails notebookSessionRuntimeConfigDetails,
+            java.util.List<StorageMountConfigurationDetails>
+                    notebookSessionStorageMountConfigurationDetailsList,
             String notebookSessionUrl,
             NotebookSessionLifecycleState lifecycleState,
             String lifecycleDetails,
@@ -61,6 +64,8 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
         this.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
         this.notebookSessionConfigDetails = notebookSessionConfigDetails;
         this.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+        this.notebookSessionStorageMountConfigurationDetailsList =
+                notebookSessionStorageMountConfigurationDetailsList;
         this.notebookSessionUrl = notebookSessionUrl;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
@@ -205,6 +210,27 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * Collection of NotebookSessionStorageMountConfigurationDetails.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "notebookSessionStorageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                notebookSessionStorageMountConfigurationDetailsList;
+
+        /**
+         * Collection of NotebookSessionStorageMountConfigurationDetails.
+         * @param notebookSessionStorageMountConfigurationDetailsList the value to set
+         * @return this builder
+         **/
+        public Builder notebookSessionStorageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        notebookSessionStorageMountConfigurationDetailsList) {
+            this.notebookSessionStorageMountConfigurationDetailsList =
+                    notebookSessionStorageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("notebookSessionStorageMountConfigurationDetailsList");
+            return this;
+        }
+        /**
          * The URL to interact with the notebook session.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionUrl")
@@ -309,6 +335,7 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
                             this.notebookSessionConfigurationDetails,
                             this.notebookSessionConfigDetails,
                             this.notebookSessionRuntimeConfigDetails,
+                            this.notebookSessionStorageMountConfigurationDetailsList,
                             this.notebookSessionUrl,
                             this.lifecycleState,
                             this.lifecycleDetails,
@@ -350,6 +377,11 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("notebookSessionRuntimeConfigDetails")) {
                 this.notebookSessionRuntimeConfigDetails(
                         model.getNotebookSessionRuntimeConfigDetails());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "notebookSessionStorageMountConfigurationDetailsList")) {
+                this.notebookSessionStorageMountConfigurationDetailsList(
+                        model.getNotebookSessionStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("notebookSessionUrl")) {
                 this.notebookSessionUrl(model.getNotebookSessionUrl());
@@ -495,6 +527,23 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * Collection of NotebookSessionStorageMountConfigurationDetails.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "notebookSessionStorageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            notebookSessionStorageMountConfigurationDetailsList;
+
+    /**
+     * Collection of NotebookSessionStorageMountConfigurationDetails.
+     * @return the value
+     **/
+    public java.util.List<StorageMountConfigurationDetails>
+            getNotebookSessionStorageMountConfigurationDetailsList() {
+        return notebookSessionStorageMountConfigurationDetailsList;
+    }
+
+    /**
      * The URL to interact with the notebook session.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("notebookSessionUrl")
@@ -598,6 +647,8 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
                 .append(String.valueOf(this.notebookSessionConfigDetails));
         sb.append(", notebookSessionRuntimeConfigDetails=")
                 .append(String.valueOf(this.notebookSessionRuntimeConfigDetails));
+        sb.append(", notebookSessionStorageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.notebookSessionStorageMountConfigurationDetailsList));
         sb.append(", notebookSessionUrl=").append(String.valueOf(this.notebookSessionUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -631,6 +682,9 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(
                         this.notebookSessionRuntimeConfigDetails,
                         other.notebookSessionRuntimeConfigDetails)
+                && java.util.Objects.equals(
+                        this.notebookSessionStorageMountConfigurationDetailsList,
+                        other.notebookSessionStorageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.notebookSessionUrl, other.notebookSessionUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -666,6 +720,12 @@ public final class NotebookSession extends com.oracle.bmc.http.internal.Explicit
                         + (this.notebookSessionRuntimeConfigDetails == null
                                 ? 43
                                 : this.notebookSessionRuntimeConfigDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notebookSessionStorageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.notebookSessionStorageMountConfigurationDetailsList
+                                        .hashCode());
         result =
                 (result * PRIME)
                         + (this.notebookSessionUrl == null

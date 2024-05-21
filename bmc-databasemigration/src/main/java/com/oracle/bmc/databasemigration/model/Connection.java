@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemigration.model;
@@ -33,6 +33,7 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
         "certificateTdn",
         "sshDetails",
         "adminCredentials",
+        "replicationCredentials",
         "privateEndpoint",
         "vaultDetails",
         "lifecycleState",
@@ -57,6 +58,7 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
             String certificateTdn,
             SshDetails sshDetails,
             AdminCredentials adminCredentials,
+            AdminCredentials replicationCredentials,
             PrivateEndpointDetails privateEndpoint,
             VaultDetails vaultDetails,
             LifecycleStates lifecycleState,
@@ -80,6 +82,7 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
         this.certificateTdn = certificateTdn;
         this.sshDetails = sshDetails;
         this.adminCredentials = adminCredentials;
+        this.replicationCredentials = replicationCredentials;
         this.privateEndpoint = privateEndpoint;
         this.vaultDetails = vaultDetails;
         this.lifecycleState = lifecycleState;
@@ -285,6 +288,15 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationCredentials")
+        private AdminCredentials replicationCredentials;
+
+        public Builder replicationCredentials(AdminCredentials replicationCredentials) {
+            this.replicationCredentials = replicationCredentials;
+            this.__explicitlySet__.add("replicationCredentials");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
         private PrivateEndpointDetails privateEndpoint;
 
@@ -474,6 +486,7 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.certificateTdn,
                             this.sshDetails,
                             this.adminCredentials,
+                            this.replicationCredentials,
                             this.privateEndpoint,
                             this.vaultDetails,
                             this.lifecycleState,
@@ -527,6 +540,9 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("adminCredentials")) {
                 this.adminCredentials(model.getAdminCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("replicationCredentials")) {
+                this.replicationCredentials(model.getReplicationCredentials());
             }
             if (model.wasPropertyExplicitlySet("privateEndpoint")) {
                 this.privateEndpoint(model.getPrivateEndpoint());
@@ -738,6 +754,13 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
         return adminCredentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationCredentials")
+    private final AdminCredentials replicationCredentials;
+
+    public AdminCredentials getReplicationCredentials() {
+        return replicationCredentials;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
     private final PrivateEndpointDetails privateEndpoint;
 
@@ -914,6 +937,7 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", certificateTdn=").append(String.valueOf(this.certificateTdn));
         sb.append(", sshDetails=").append(String.valueOf(this.sshDetails));
         sb.append(", adminCredentials=").append(String.valueOf(this.adminCredentials));
+        sb.append(", replicationCredentials=").append(String.valueOf(this.replicationCredentials));
         sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
         sb.append(", vaultDetails=").append(String.valueOf(this.vaultDetails));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -950,6 +974,8 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.certificateTdn, other.certificateTdn)
                 && java.util.Objects.equals(this.sshDetails, other.sshDetails)
                 && java.util.Objects.equals(this.adminCredentials, other.adminCredentials)
+                && java.util.Objects.equals(
+                        this.replicationCredentials, other.replicationCredentials)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
                 && java.util.Objects.equals(this.vaultDetails, other.vaultDetails)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -995,6 +1021,11 @@ public final class Connection extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.adminCredentials == null ? 43 : this.adminCredentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationCredentials == null
+                                ? 43
+                                : this.replicationCredentials.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpoint == null ? 43 : this.privateEndpoint.hashCode());

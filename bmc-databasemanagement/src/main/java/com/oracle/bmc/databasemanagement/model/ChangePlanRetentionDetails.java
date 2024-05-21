@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details required to change the plan retention period.
+ * It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,12 +24,15 @@ package com.oracle.bmc.databasemanagement.model;
 public final class ChangePlanRetentionDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"retentionWeeks", "credentials"})
+    @java.beans.ConstructorProperties({"retentionWeeks", "credentials", "databaseCredential"})
     public ChangePlanRetentionDetails(
-            Integer retentionWeeks, ManagedDatabaseCredential credentials) {
+            Integer retentionWeeks,
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.retentionWeeks = retentionWeeks;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +65,22 @@ public final class ChangePlanRetentionDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ChangePlanRetentionDetails build() {
             ChangePlanRetentionDetails model =
-                    new ChangePlanRetentionDetails(this.retentionWeeks, this.credentials);
+                    new ChangePlanRetentionDetails(
+                            this.retentionWeeks, this.credentials, this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +94,9 @@ public final class ChangePlanRetentionDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -118,6 +136,13 @@ public final class ChangePlanRetentionDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -134,6 +159,7 @@ public final class ChangePlanRetentionDetails
         sb.append("super=").append(super.toString());
         sb.append("retentionWeeks=").append(String.valueOf(this.retentionWeeks));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -150,6 +176,7 @@ public final class ChangePlanRetentionDetails
         ChangePlanRetentionDetails other = (ChangePlanRetentionDetails) o;
         return java.util.Objects.equals(this.retentionWeeks, other.retentionWeeks)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -161,6 +188,11 @@ public final class ChangePlanRetentionDetails
                 (result * PRIME)
                         + (this.retentionWeeks == null ? 43 : this.retentionWeeks.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -28,7 +28,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A flag indicating whether a precheck was executed before the plan.
+         * A flag indicating whether prechecks should be executed before the plan execution.
          * <p>
          * Example: {@code false}
          *
@@ -37,7 +37,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
         private Boolean arePrechecksEnabled;
 
         /**
-         * A flag indicating whether a precheck was executed before the plan.
+         * A flag indicating whether prechecks should be executed before the plan execution.
          * <p>
          * Example: {@code false}
          *
@@ -50,7 +50,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
             return this;
         }
         /**
-         * A flag indicating whether warnigs was ignored during the switchover.
+         * A flag indicating whether warnings should be ignored during the plan execution.
          * <p>
          * Example: {@code true}
          *
@@ -59,7 +59,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
         private Boolean areWarningsIgnored;
 
         /**
-         * A flag indicating whether warnigs was ignored during the switchover.
+         * A flag indicating whether warnings should be ignored during the plan execution.
          * <p>
          * Example: {@code true}
          *
@@ -116,7 +116,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     }
 
     /**
-     * A flag indicating whether a precheck was executed before the plan.
+     * A flag indicating whether prechecks should be executed before the plan execution.
      * <p>
      * Example: {@code false}
      *
@@ -125,7 +125,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     private final Boolean arePrechecksEnabled;
 
     /**
-     * A flag indicating whether a precheck was executed before the plan.
+     * A flag indicating whether prechecks should be executed before the plan execution.
      * <p>
      * Example: {@code false}
      *
@@ -136,7 +136,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     }
 
     /**
-     * A flag indicating whether warnigs was ignored during the switchover.
+     * A flag indicating whether warnings should be ignored during the plan execution.
      * <p>
      * Example: {@code true}
      *
@@ -145,7 +145,7 @@ public final class SwitchoverExecutionOptions extends DrPlanExecutionOptions {
     private final Boolean areWarningsIgnored;
 
     /**
-     * A flag indicating whether warnigs was ignored during the switchover.
+     * A flag indicating whether warnings should be ignored during the plan execution.
      * <p>
      * Example: {@code true}
      *

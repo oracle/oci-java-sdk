@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -37,7 +37,9 @@ public final class ExtensionX509IdentityProvider
         "crlEnabled",
         "crlCheckOnOCSPFailureEnabled",
         "crlLocation",
-        "crlReloadDuration"
+        "crlReloadDuration",
+        "ekuValidationEnabled",
+        "ekuValues"
     })
     public ExtensionX509IdentityProvider(
             String certMatchAttribute,
@@ -54,7 +56,9 @@ public final class ExtensionX509IdentityProvider
             Boolean crlEnabled,
             Boolean crlCheckOnOCSPFailureEnabled,
             String crlLocation,
-            Integer crlReloadDuration) {
+            Integer crlReloadDuration,
+            Boolean ekuValidationEnabled,
+            java.util.List<EkuValues> ekuValues) {
         super();
         this.certMatchAttribute = certMatchAttribute;
         this.userMatchAttribute = userMatchAttribute;
@@ -71,6 +75,8 @@ public final class ExtensionX509IdentityProvider
         this.crlCheckOnOCSPFailureEnabled = crlCheckOnOCSPFailureEnabled;
         this.crlLocation = crlLocation;
         this.crlReloadDuration = crlReloadDuration;
+        this.ekuValidationEnabled = ekuValidationEnabled;
+        this.ekuValues = ekuValues;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -675,6 +681,86 @@ public final class ExtensionX509IdentityProvider
             this.__explicitlySet__.add("crlReloadDuration");
             return this;
         }
+        /**
+         * Set to true to enable EKU Validation
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ekuValidationEnabled")
+        private Boolean ekuValidationEnabled;
+
+        /**
+         * Set to true to enable EKU Validation
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         * @param ekuValidationEnabled the value to set
+         * @return this builder
+         **/
+        public Builder ekuValidationEnabled(Boolean ekuValidationEnabled) {
+            this.ekuValidationEnabled = ekuValidationEnabled;
+            this.__explicitlySet__.add("ekuValidationEnabled");
+            return this;
+        }
+        /**
+         * List of EKU which needs to be validated
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ekuValues")
+        private java.util.List<EkuValues> ekuValues;
+
+        /**
+         * List of EKU which needs to be validated
+         * <p>
+         **Added In:** 2304270343
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         * @param ekuValues the value to set
+         * @return this builder
+         **/
+        public Builder ekuValues(java.util.List<EkuValues> ekuValues) {
+            this.ekuValues = ekuValues;
+            this.__explicitlySet__.add("ekuValues");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -696,7 +782,9 @@ public final class ExtensionX509IdentityProvider
                             this.crlEnabled,
                             this.crlCheckOnOCSPFailureEnabled,
                             this.crlLocation,
-                            this.crlReloadDuration);
+                            this.crlReloadDuration,
+                            this.ekuValidationEnabled,
+                            this.ekuValues);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -749,6 +837,12 @@ public final class ExtensionX509IdentityProvider
             }
             if (model.wasPropertyExplicitlySet("crlReloadDuration")) {
                 this.crlReloadDuration(model.getCrlReloadDuration());
+            }
+            if (model.wasPropertyExplicitlySet("ekuValidationEnabled")) {
+                this.ekuValidationEnabled(model.getEkuValidationEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("ekuValues")) {
+                this.ekuValues(model.getEkuValues());
             }
             return this;
         }
@@ -1335,6 +1429,133 @@ public final class ExtensionX509IdentityProvider
         return crlReloadDuration;
     }
 
+    /**
+     * Set to true to enable EKU Validation
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ekuValidationEnabled")
+    private final Boolean ekuValidationEnabled;
+
+    /**
+     * Set to true to enable EKU Validation
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public Boolean getEkuValidationEnabled() {
+        return ekuValidationEnabled;
+    }
+
+    /**
+     **/
+    public enum EkuValues {
+        ServerAuth("SERVER_AUTH"),
+        ClientAuth("CLIENT_AUTH"),
+        CodeSigning("CODE_SIGNING"),
+        EmailProtection("EMAIL_PROTECTION"),
+        TimeStamping("TIME_STAMPING"),
+        OcspSigning("OCSP_SIGNING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EkuValues.class);
+
+        private final String value;
+        private static java.util.Map<String, EkuValues> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (EkuValues v : EkuValues.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        EkuValues(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static EkuValues create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EkuValues', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * List of EKU which needs to be validated
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ekuValues")
+    private final java.util.List<EkuValues> ekuValues;
+
+    /**
+     * List of EKU which needs to be validated
+     * <p>
+     **Added In:** 2304270343
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public java.util.List<EkuValues> getEkuValues() {
+        return ekuValues;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1369,6 +1590,8 @@ public final class ExtensionX509IdentityProvider
                 .append(String.valueOf(this.crlCheckOnOCSPFailureEnabled));
         sb.append(", crlLocation=").append(String.valueOf(this.crlLocation));
         sb.append(", crlReloadDuration=").append(String.valueOf(this.crlReloadDuration));
+        sb.append(", ekuValidationEnabled=").append(String.valueOf(this.ekuValidationEnabled));
+        sb.append(", ekuValues=").append(String.valueOf(this.ekuValues));
         sb.append(")");
         return sb.toString();
     }
@@ -1403,6 +1626,8 @@ public final class ExtensionX509IdentityProvider
                         this.crlCheckOnOCSPFailureEnabled, other.crlCheckOnOCSPFailureEnabled)
                 && java.util.Objects.equals(this.crlLocation, other.crlLocation)
                 && java.util.Objects.equals(this.crlReloadDuration, other.crlReloadDuration)
+                && java.util.Objects.equals(this.ekuValidationEnabled, other.ekuValidationEnabled)
+                && java.util.Objects.equals(this.ekuValues, other.ekuValues)
                 && super.equals(other);
     }
 
@@ -1467,6 +1692,12 @@ public final class ExtensionX509IdentityProvider
         result =
                 (result * PRIME)
                         + (this.crlReloadDuration == null ? 43 : this.crlReloadDuration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.ekuValidationEnabled == null
+                                ? 43
+                                : this.ekuValidationEnabled.hashCode());
+        result = (result * PRIME) + (this.ekuValues == null ? 43 : this.ekuValues.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

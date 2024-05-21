@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new Target.
+ * Parameters used to create a new target.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,7 +60,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DetectorTemplate identifier.
+         * Display name for the target.
          * <p>
          * Avoid entering confidential information.
          *
@@ -69,7 +69,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
         private String displayName;
 
         /**
-         * DetectorTemplate identifier.
+         * Display name for the target.
          * <p>
          * Avoid entering confidential information.
          *
@@ -82,13 +82,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -120,13 +120,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * possible type of targets(COMPARTMENT/FACLOUD)
+         * Type of resource that target support (COMPARTMENT/FACLOUD)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
-         * possible type of targets(COMPARTMENT/FACLOUD)
+         * Type of resource that target support (COMPARTMENT/FACLOUD)
          * @param targetResourceType the value to set
          * @return this builder
          **/
@@ -152,13 +152,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of detector recipes to associate with target
+         * List of detector recipes to attach to target
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
         private java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes;
 
         /**
-         * List of detector recipes to associate with target
+         * List of detector recipes to attach to target
          * @param targetDetectorRecipes the value to set
          * @return this builder
          **/
@@ -169,13 +169,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * List of responder recipes to associate with target
+         * List of responder recipes to attach to target
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
         private java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes;
 
         /**
-         * List of responder recipes to associate with target
+         * List of responder recipes to attach to target
          * @param targetResponderRecipes the value to set
          * @return this builder
          **/
@@ -186,13 +186,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The current state of the DetectorRule.
+         * The enablement state of the detector rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the DetectorRule.
+         * The enablement state of the detector rule
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -317,7 +317,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * DetectorTemplate identifier.
+     * Display name for the target.
      * <p>
      * Avoid entering confidential information.
      *
@@ -326,7 +326,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     private final String displayName;
 
     /**
-     * DetectorTemplate identifier.
+     * Display name for the target.
      * <p>
      * Avoid entering confidential information.
      *
@@ -337,13 +337,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -371,13 +371,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
+     * Type of resource that target support (COMPARTMENT/FACLOUD)
      * @return the value
      **/
     public TargetResourceType getTargetResourceType() {
@@ -399,13 +399,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of detector recipes to associate with target
+     * List of detector recipes to attach to target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
     private final java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes;
 
     /**
-     * List of detector recipes to associate with target
+     * List of detector recipes to attach to target
      * @return the value
      **/
     public java.util.List<CreateTargetDetectorRecipeDetails> getTargetDetectorRecipes() {
@@ -413,13 +413,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * List of responder recipes to associate with target
+     * List of responder recipes to attach to target
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
     private final java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes;
 
     /**
-     * List of responder recipes to associate with target
+     * List of responder recipes to attach to target
      * @return the value
      **/
     public java.util.List<CreateTargetResponderRecipeDetails> getTargetResponderRecipes() {
@@ -427,13 +427,13 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The current state of the DetectorRule.
+     * The enablement state of the detector rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the DetectorRule.
+     * The enablement state of the detector rule
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

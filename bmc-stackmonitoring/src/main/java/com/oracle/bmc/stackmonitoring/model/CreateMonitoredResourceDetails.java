@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -33,6 +33,7 @@ public final class CreateMonitoredResourceDetails
         "externalId",
         "managementAgentId",
         "resourceTimeZone",
+        "license",
         "properties",
         "databaseConnectionDetails",
         "credentials",
@@ -51,6 +52,7 @@ public final class CreateMonitoredResourceDetails
             String externalId,
             String managementAgentId,
             String resourceTimeZone,
+            LicenseType license,
             java.util.List<MonitoredResourceProperty> properties,
             ConnectionDetails databaseConnectionDetails,
             MonitoredResourceCredential credentials,
@@ -68,6 +70,7 @@ public final class CreateMonitoredResourceDetails
         this.externalId = externalId;
         this.managementAgentId = managementAgentId;
         this.resourceTimeZone = resourceTimeZone;
+        this.license = license;
         this.properties = properties;
         this.databaseConnectionDetails = databaseConnectionDetails;
         this.credentials = credentials;
@@ -229,6 +232,26 @@ public final class CreateMonitoredResourceDetails
             return this;
         }
         /**
+         * License edition of the monitored resource. If not provided
+         * the default license type for the compartment will be used.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("license")
+        private LicenseType license;
+
+        /**
+         * License edition of the monitored resource. If not provided
+         * the default license type for the compartment will be used.
+         *
+         * @param license the value to set
+         * @return this builder
+         **/
+        public Builder license(LicenseType license) {
+            this.license = license;
+            this.__explicitlySet__.add("license");
+            return this;
+        }
+        /**
          * List of monitored resource properties.
          *
          **/
@@ -387,6 +410,7 @@ public final class CreateMonitoredResourceDetails
                             this.externalId,
                             this.managementAgentId,
                             this.resourceTimeZone,
+                            this.license,
                             this.properties,
                             this.databaseConnectionDetails,
                             this.credentials,
@@ -426,6 +450,9 @@ public final class CreateMonitoredResourceDetails
             }
             if (model.wasPropertyExplicitlySet("resourceTimeZone")) {
                 this.resourceTimeZone(model.getResourceTimeZone());
+            }
+            if (model.wasPropertyExplicitlySet("license")) {
+                this.license(model.getLicense());
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
@@ -599,6 +626,24 @@ public final class CreateMonitoredResourceDetails
     }
 
     /**
+     * License edition of the monitored resource. If not provided
+     * the default license type for the compartment will be used.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("license")
+    private final LicenseType license;
+
+    /**
+     * License edition of the monitored resource. If not provided
+     * the default license type for the compartment will be used.
+     *
+     * @return the value
+     **/
+    public LicenseType getLicense() {
+        return license;
+    }
+
+    /**
      * List of monitored resource properties.
      *
      **/
@@ -745,6 +790,7 @@ public final class CreateMonitoredResourceDetails
         sb.append(", externalId=").append(String.valueOf(this.externalId));
         sb.append(", managementAgentId=").append(String.valueOf(this.managementAgentId));
         sb.append(", resourceTimeZone=").append(String.valueOf(this.resourceTimeZone));
+        sb.append(", license=").append(String.valueOf(this.license));
         sb.append(", properties=").append(String.valueOf(this.properties));
         sb.append(", databaseConnectionDetails=")
                 .append(String.valueOf(this.databaseConnectionDetails));
@@ -776,6 +822,7 @@ public final class CreateMonitoredResourceDetails
                 && java.util.Objects.equals(this.externalId, other.externalId)
                 && java.util.Objects.equals(this.managementAgentId, other.managementAgentId)
                 && java.util.Objects.equals(this.resourceTimeZone, other.resourceTimeZone)
+                && java.util.Objects.equals(this.license, other.license)
                 && java.util.Objects.equals(this.properties, other.properties)
                 && java.util.Objects.equals(
                         this.databaseConnectionDetails, other.databaseConnectionDetails)
@@ -806,6 +853,7 @@ public final class CreateMonitoredResourceDetails
         result =
                 (result * PRIME)
                         + (this.resourceTimeZone == null ? 43 : this.resourceTimeZone.hashCode());
+        result = (result * PRIME) + (this.license == null ? 43 : this.license.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
         result =
                 (result * PRIME)

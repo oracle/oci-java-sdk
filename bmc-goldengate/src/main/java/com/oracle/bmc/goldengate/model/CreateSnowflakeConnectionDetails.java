@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -92,6 +92,15 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -101,12 +110,12 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+        private RoutingMethod routingMethod;
 
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
+        public Builder routingMethod(RoutingMethod routingMethod) {
+            this.routingMethod = routingMethod;
+            this.__explicitlySet__.add("routingMethod");
             return this;
         }
         /**
@@ -252,8 +261,9 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
                             this.definedTags,
                             this.vaultId,
                             this.keyId,
-                            this.subnetId,
                             this.nsgIds,
+                            this.subnetId,
+                            this.routingMethod,
                             this.technologyType,
                             this.connectionUrl,
                             this.authenticationType,
@@ -290,11 +300,14 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             if (model.wasPropertyExplicitlySet("keyId")) {
                 this.keyId(model.getKeyId());
             }
+            if (model.wasPropertyExplicitlySet("nsgIds")) {
+                this.nsgIds(model.getNsgIds());
+            }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
+            if (model.wasPropertyExplicitlySet("routingMethod")) {
+                this.routingMethod(model.getRoutingMethod());
             }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
@@ -341,8 +354,9 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            String subnetId,
             java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod,
             SnowflakeConnection.TechnologyType technologyType,
             String connectionUrl,
             SnowflakeConnection.AuthenticationType authenticationType,
@@ -358,8 +372,9 @@ public final class CreateSnowflakeConnectionDetails extends CreateConnectionDeta
                 definedTags,
                 vaultId,
                 keyId,
+                nsgIds,
                 subnetId,
-                nsgIds);
+                routingMethod);
         this.technologyType = technologyType;
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;

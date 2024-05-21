@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -24,12 +24,12 @@ public class ListResourceProfileEndpointsRequest
         return resourceProfileId;
     }
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return
      */
     public Integer getLimit() {
         return limit;
@@ -46,12 +46,12 @@ public class ListResourceProfileEndpointsRequest
         return page;
     }
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use
      */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'.
+     * The sort order to use
      */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
@@ -140,12 +140,12 @@ public class ListResourceProfileEndpointsRequest
         }
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return.
+         * The maximum number of items to return
          * @param limit the value to set
          * @return this builder instance
          */
@@ -170,12 +170,12 @@ public class ListResourceProfileEndpointsRequest
         }
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'.
+         * The sort order to use
          * @param sortOrder the value to set
          * @return this builder instance
          */

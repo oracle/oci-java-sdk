@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.internal.http;
@@ -41,12 +41,28 @@ public class ListFindingsConverter {
                                         request.getSecurityAssessmentId()))
                         .path("findings");
 
+        if (request.getIsTopFinding() != null) {
+            target =
+                    target.queryParam(
+                            "isTopFinding",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsTopFinding()));
+        }
+
         if (request.getSeverity() != null) {
             target =
                     target.queryParam(
                             "severity",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSeverity().getValue()));
+        }
+
+        if (request.getLifecycleState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleState().getValue()));
         }
 
         if (request.getReferences() != null) {

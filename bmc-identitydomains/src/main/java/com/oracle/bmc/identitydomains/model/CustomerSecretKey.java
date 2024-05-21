@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * User's customer secret key
+ * The user's customer secret key.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -537,7 +537,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * User credential status
+         * The user's credential status.
          * <p>
          **Added In:** 2109090424
          * <p>
@@ -555,7 +555,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
         private Status status;
 
         /**
-         * User credential status
+         * The user's credential status.
          * <p>
          **Added In:** 2109090424
          * <p>
@@ -577,7 +577,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * User credential expires on
+         * When the user's credential expire.
          * <p>
          **Added In:** 2109090424
          * <p>
@@ -595,7 +595,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
         private String expiresOn;
 
         /**
-         * User credential expires on
+         * When the user's credential expire.
          * <p>
          **Added In:** 2109090424
          * <p>
@@ -617,7 +617,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Access key
+         * The access key.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -630,7 +630,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
         private String accessKey;
 
         /**
-         * Access key
+         * The access key.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -1195,7 +1195,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * User credential status
+     * The user's credential status.
      * <p>
      **Added In:** 2109090424
      * <p>
@@ -1254,7 +1254,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * User credential status
+     * The user's credential status.
      * <p>
      **Added In:** 2109090424
      * <p>
@@ -1272,7 +1272,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
     private final Status status;
 
     /**
-     * User credential status
+     * The user's credential status.
      * <p>
      **Added In:** 2109090424
      * <p>
@@ -1292,7 +1292,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * User credential expires on
+     * When the user's credential expire.
      * <p>
      **Added In:** 2109090424
      * <p>
@@ -1310,7 +1310,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
     private final String expiresOn;
 
     /**
-     * User credential expires on
+     * When the user's credential expire.
      * <p>
      **Added In:** 2109090424
      * <p>
@@ -1330,7 +1330,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Access key
+     * The access key.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -1343,7 +1343,7 @@ public final class CustomerSecretKey extends com.oracle.bmc.http.internal.Explic
     private final String accessKey;
 
     /**
-     * Access key
+     * The access key.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -430,7 +430,8 @@ public class FileStorageClient implements FileStorage {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -680,6 +681,50 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public ChangeOutboundConnectorCompartmentResponse changeOutboundConnectorCompartment(
+            ChangeOutboundConnectorCompartmentRequest request) {
+        LOG.trace("Called changeOutboundConnectorCompartment");
+        final ChangeOutboundConnectorCompartmentRequest interceptedRequest =
+                ChangeOutboundConnectorCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeOutboundConnectorCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ChangeOutboundConnectorCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/ChangeOutboundConnectorCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeOutboundConnectorCompartmentResponse>
+                transformer =
+                        ChangeOutboundConnectorCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeOutboundConnectorCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeReplicationCompartmentResponse changeReplicationCompartment(
             ChangeReplicationCompartmentRequest request) {
         LOG.trace("Called changeReplicationCompartment");
@@ -885,6 +930,49 @@ public class FileStorageClient implements FileStorage {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateMountTargetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateOutboundConnectorResponse createOutboundConnector(
+            CreateOutboundConnectorRequest request) {
+        LOG.trace("Called createOutboundConnector");
+        final CreateOutboundConnectorRequest interceptedRequest =
+                CreateOutboundConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOutboundConnectorConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "CreateOutboundConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/CreateOutboundConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOutboundConnectorResponse>
+                transformer =
+                        CreateOutboundConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOutboundConnectorDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1108,6 +1196,45 @@ public class FileStorageClient implements FileStorage {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteMountTargetResponse>
                 transformer =
                         DeleteMountTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteOutboundConnectorResponse deleteOutboundConnector(
+            DeleteOutboundConnectorRequest request) {
+        LOG.trace("Called deleteOutboundConnector");
+        final DeleteOutboundConnectorRequest interceptedRequest =
+                DeleteOutboundConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOutboundConnectorConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DeleteOutboundConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/DeleteOutboundConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOutboundConnectorResponse>
+                transformer =
+                        DeleteOutboundConnectorConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1454,6 +1581,43 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public GetOutboundConnectorResponse getOutboundConnector(GetOutboundConnectorRequest request) {
+        LOG.trace("Called getOutboundConnector");
+        final GetOutboundConnectorRequest interceptedRequest =
+                GetOutboundConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOutboundConnectorConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "GetOutboundConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/GetOutboundConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, GetOutboundConnectorResponse>
+                transformer =
+                        GetOutboundConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetReplicationResponse getReplication(GetReplicationRequest request) {
         LOG.trace("Called getReplication");
         final GetReplicationRequest interceptedRequest =
@@ -1727,6 +1891,44 @@ public class FileStorageClient implements FileStorage {
         java.util.function.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
                 transformer =
                         ListMountTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOutboundConnectorsResponse listOutboundConnectors(
+            ListOutboundConnectorsRequest request) {
+        LOG.trace("Called listOutboundConnectors");
+        final ListOutboundConnectorsRequest interceptedRequest =
+                ListOutboundConnectorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOutboundConnectorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ListOutboundConnectors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnectorSummary/ListOutboundConnectors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListOutboundConnectorsResponse>
+                transformer =
+                        ListOutboundConnectorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2140,6 +2342,48 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public UpdateOutboundConnectorResponse updateOutboundConnector(
+            UpdateOutboundConnectorRequest request) {
+        LOG.trace("Called updateOutboundConnector");
+        final UpdateOutboundConnectorRequest interceptedRequest =
+                UpdateOutboundConnectorConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOutboundConnectorConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UpdateOutboundConnector",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/UpdateOutboundConnector");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOutboundConnectorResponse>
+                transformer =
+                        UpdateOutboundConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOutboundConnectorDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateReplicationResponse updateReplication(UpdateReplicationRequest request) {
         LOG.trace("Called updateReplication");
         final UpdateReplicationRequest interceptedRequest =
@@ -2213,6 +2457,47 @@ public class FileStorageClient implements FileStorage {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateSnapshotDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ValidateKeyTabsResponse validateKeyTabs(ValidateKeyTabsRequest request) {
+        LOG.trace("Called validateKeyTabs");
+        final ValidateKeyTabsRequest interceptedRequest =
+                ValidateKeyTabsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateKeyTabsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ValidateKeyTabs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ValidateKeyTabs");
+        java.util.function.Function<javax.ws.rs.core.Response, ValidateKeyTabsResponse>
+                transformer =
+                        ValidateKeyTabsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getValidateKeyTabsDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

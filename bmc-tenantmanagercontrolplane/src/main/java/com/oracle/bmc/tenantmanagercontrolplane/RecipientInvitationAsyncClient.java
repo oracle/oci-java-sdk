@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -21,7 +21,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class RecipientInvitationAsyncClient implements RecipientInvitationAsync {
     /**
      * Service instance for RecipientInvitation.
@@ -476,7 +476,7 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                         "RecipientInvitation",
                         "AcceptRecipientInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/AcceptRecipientInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/AcceptRecipientInvitation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, AcceptRecipientInvitationResponse>
                 transformer =
@@ -525,7 +525,7 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                         "RecipientInvitation",
                         "GetRecipientInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/GetRecipientInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/GetRecipientInvitation");
         final java.util.function.Function<javax.ws.rs.core.Response, GetRecipientInvitationResponse>
                 transformer =
                         GetRecipientInvitationConverter.fromResponse(
@@ -573,7 +573,7 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                         "RecipientInvitation",
                         "IgnoreRecipientInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/IgnoreRecipientInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/IgnoreRecipientInvitation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, IgnoreRecipientInvitationResponse>
                 transformer =
@@ -622,7 +622,7 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                         "RecipientInvitation",
                         "ListRecipientInvitations",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/ListRecipientInvitations");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/ListRecipientInvitations");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListRecipientInvitationsResponse>
                 transformer =
@@ -670,7 +670,7 @@ public class RecipientInvitationAsyncClient implements RecipientInvitationAsync 
                         "RecipientInvitation",
                         "UpdateRecipientInvitation",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/RecipientInvitation/UpdateRecipientInvitation");
+                        "https://docs.oracle.com/iaas/api/#/en/organizations/20230401/RecipientInvitation/UpdateRecipientInvitation");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateRecipientInvitationResponse>
                 transformer =

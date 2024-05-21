@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -366,7 +366,7 @@ public final class ConnectionFromOracle extends Connection {
         sb.append("ConnectionFromOracle(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", username=").append(String.valueOf(this.username));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecret=").append(String.valueOf(this.passwordSecret));
         sb.append(")");
         return sb.toString();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -39,7 +39,8 @@ public final class LogAnalyticsAssociation
         "entityTypeDisplayName",
         "logGroupId",
         "logGroupName",
-        "logGroupCompartment"
+        "logGroupCompartment",
+        "associationProperties"
     })
     public LogAnalyticsAssociation(
             String failureMessage,
@@ -58,7 +59,8 @@ public final class LogAnalyticsAssociation
             String entityTypeDisplayName,
             String logGroupId,
             String logGroupName,
-            String logGroupCompartment) {
+            String logGroupCompartment,
+            java.util.List<AssociationProperty> associationProperties) {
         super();
         this.failureMessage = failureMessage;
         this.agentId = agentId;
@@ -77,6 +79,7 @@ public final class LogAnalyticsAssociation
         this.logGroupId = logGroupId;
         this.logGroupName = logGroupName;
         this.logGroupCompartment = logGroupCompartment;
+        this.associationProperties = associationProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -361,6 +364,23 @@ public final class LogAnalyticsAssociation
             this.__explicitlySet__.add("logGroupCompartment");
             return this;
         }
+        /**
+         * A list of association properties.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
+        private java.util.List<AssociationProperty> associationProperties;
+
+        /**
+         * A list of association properties.
+         * @param associationProperties the value to set
+         * @return this builder
+         **/
+        public Builder associationProperties(
+                java.util.List<AssociationProperty> associationProperties) {
+            this.associationProperties = associationProperties;
+            this.__explicitlySet__.add("associationProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -384,7 +404,8 @@ public final class LogAnalyticsAssociation
                             this.entityTypeDisplayName,
                             this.logGroupId,
                             this.logGroupName,
-                            this.logGroupCompartment);
+                            this.logGroupCompartment,
+                            this.associationProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -443,6 +464,9 @@ public final class LogAnalyticsAssociation
             }
             if (model.wasPropertyExplicitlySet("logGroupCompartment")) {
                 this.logGroupCompartment(model.getLogGroupCompartment());
+            }
+            if (model.wasPropertyExplicitlySet("associationProperties")) {
+                this.associationProperties(model.getAssociationProperties());
             }
             return this;
         }
@@ -757,6 +781,20 @@ public final class LogAnalyticsAssociation
         return logGroupCompartment;
     }
 
+    /**
+     * A list of association properties.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
+    private final java.util.List<AssociationProperty> associationProperties;
+
+    /**
+     * A list of association properties.
+     * @return the value
+     **/
+    public java.util.List<AssociationProperty> getAssociationProperties() {
+        return associationProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -788,6 +826,7 @@ public final class LogAnalyticsAssociation
         sb.append(", logGroupId=").append(String.valueOf(this.logGroupId));
         sb.append(", logGroupName=").append(String.valueOf(this.logGroupName));
         sb.append(", logGroupCompartment=").append(String.valueOf(this.logGroupCompartment));
+        sb.append(", associationProperties=").append(String.valueOf(this.associationProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -819,6 +858,7 @@ public final class LogAnalyticsAssociation
                 && java.util.Objects.equals(this.logGroupId, other.logGroupId)
                 && java.util.Objects.equals(this.logGroupName, other.logGroupName)
                 && java.util.Objects.equals(this.logGroupCompartment, other.logGroupCompartment)
+                && java.util.Objects.equals(this.associationProperties, other.associationProperties)
                 && super.equals(other);
     }
 
@@ -865,6 +905,11 @@ public final class LogAnalyticsAssociation
                         + (this.logGroupCompartment == null
                                 ? 43
                                 : this.logGroupCompartment.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associationProperties == null
+                                ? 43
+                                : this.associationProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

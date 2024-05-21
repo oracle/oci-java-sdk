@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -28,8 +28,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "subnetId",
         "isHighlyAvailable",
         "currentPlacement",
-        "isAnalyticsClusterAttached",
-        "analyticsCluster",
         "isHeatWaveClusterAttached",
         "heatWaveCluster",
         "availabilityDomain",
@@ -55,7 +53,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "freeformTags",
         "definedTags",
         "crashRecovery",
-        "pointInTimeRecoveryDetails"
+        "pointInTimeRecoveryDetails",
+        "databaseManagement",
+        "secureConnections"
     })
     public DbSystem(
             String id,
@@ -65,8 +65,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String subnetId,
             Boolean isHighlyAvailable,
             DbSystemPlacement currentPlacement,
-            Boolean isAnalyticsClusterAttached,
-            AnalyticsClusterSummary analyticsCluster,
             Boolean isHeatWaveClusterAttached,
             HeatWaveClusterSummary heatWaveCluster,
             String availabilityDomain,
@@ -92,7 +90,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CrashRecoveryStatus crashRecovery,
-            PointInTimeRecoveryDetails pointInTimeRecoveryDetails) {
+            PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -101,8 +101,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.subnetId = subnetId;
         this.isHighlyAvailable = isHighlyAvailable;
         this.currentPlacement = currentPlacement;
-        this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-        this.analyticsCluster = analyticsCluster;
         this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
         this.heatWaveCluster = heatWaveCluster;
         this.availabilityDomain = availabilityDomain;
@@ -129,6 +127,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.definedTags = definedTags;
         this.crashRecovery = crashRecovery;
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
+        this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -240,35 +240,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder currentPlacement(DbSystemPlacement currentPlacement) {
             this.currentPlacement = currentPlacement;
             this.__explicitlySet__.add("currentPlacement");
-            return this;
-        }
-        /**
-         * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
-         * If the DB System has an Analytics Cluster attached.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
-        private Boolean isAnalyticsClusterAttached;
-
-        /**
-         * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
-         * If the DB System has an Analytics Cluster attached.
-         *
-         * @param isAnalyticsClusterAttached the value to set
-         * @return this builder
-         **/
-        public Builder isAnalyticsClusterAttached(Boolean isAnalyticsClusterAttached) {
-            this.isAnalyticsClusterAttached = isAnalyticsClusterAttached;
-            this.__explicitlySet__.add("isAnalyticsClusterAttached");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
-        private AnalyticsClusterSummary analyticsCluster;
-
-        public Builder analyticsCluster(AnalyticsClusterSummary analyticsCluster) {
-            this.analyticsCluster = analyticsCluster;
-            this.__explicitlySet__.add("analyticsCluster");
             return this;
         }
         /**
@@ -721,6 +692,33 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("pointInTimeRecoveryDetails");
             return this;
         }
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+        private DatabaseManagementStatus databaseManagement;
+
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder
+         **/
+        public Builder databaseManagement(DatabaseManagementStatus databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            this.__explicitlySet__.add("databaseManagement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -735,8 +733,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.subnetId,
                             this.isHighlyAvailable,
                             this.currentPlacement,
-                            this.isAnalyticsClusterAttached,
-                            this.analyticsCluster,
                             this.isHeatWaveClusterAttached,
                             this.heatWaveCluster,
                             this.availabilityDomain,
@@ -762,7 +758,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.freeformTags,
                             this.definedTags,
                             this.crashRecovery,
-                            this.pointInTimeRecoveryDetails);
+                            this.pointInTimeRecoveryDetails,
+                            this.databaseManagement,
+                            this.secureConnections);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -791,12 +789,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("currentPlacement")) {
                 this.currentPlacement(model.getCurrentPlacement());
-            }
-            if (model.wasPropertyExplicitlySet("isAnalyticsClusterAttached")) {
-                this.isAnalyticsClusterAttached(model.getIsAnalyticsClusterAttached());
-            }
-            if (model.wasPropertyExplicitlySet("analyticsCluster")) {
-                this.analyticsCluster(model.getAnalyticsCluster());
             }
             if (model.wasPropertyExplicitlySet("isHeatWaveClusterAttached")) {
                 this.isHeatWaveClusterAttached(model.getIsHeatWaveClusterAttached());
@@ -875,6 +867,12 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("pointInTimeRecoveryDetails")) {
                 this.pointInTimeRecoveryDetails(model.getPointInTimeRecoveryDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagement")) {
+                this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
             }
             return this;
         }
@@ -984,31 +982,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     public DbSystemPlacement getCurrentPlacement() {
         return currentPlacement;
-    }
-
-    /**
-     * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
-     * If the DB System has an Analytics Cluster attached.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isAnalyticsClusterAttached")
-    private final Boolean isAnalyticsClusterAttached;
-
-    /**
-     * DEPRECATED -- please use {@code isHeatWaveClusterAttached} instead.
-     * If the DB System has an Analytics Cluster attached.
-     *
-     * @return the value
-     **/
-    public Boolean getIsAnalyticsClusterAttached() {
-        return isAnalyticsClusterAttached;
-    }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("analyticsCluster")
-    private final AnalyticsClusterSummary analyticsCluster;
-
-    public AnalyticsClusterSummary getAnalyticsCluster() {
-        return analyticsCluster;
     }
 
     /**
@@ -1460,6 +1433,29 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return pointInTimeRecoveryDetails;
     }
 
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+    private final DatabaseManagementStatus databaseManagement;
+
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     * @return the value
+     **/
+    public DatabaseManagementStatus getDatabaseManagement() {
+        return databaseManagement;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1481,9 +1477,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(", currentPlacement=").append(String.valueOf(this.currentPlacement));
-        sb.append(", isAnalyticsClusterAttached=")
-                .append(String.valueOf(this.isAnalyticsClusterAttached));
-        sb.append(", analyticsCluster=").append(String.valueOf(this.analyticsCluster));
         sb.append(", isHeatWaveClusterAttached=")
                 .append(String.valueOf(this.isHeatWaveClusterAttached));
         sb.append(", heatWaveCluster=").append(String.valueOf(this.heatWaveCluster));
@@ -1512,6 +1505,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", pointInTimeRecoveryDetails=")
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
+        sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
         sb.append(")");
         return sb.toString();
     }
@@ -1533,9 +1528,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && java.util.Objects.equals(this.currentPlacement, other.currentPlacement)
-                && java.util.Objects.equals(
-                        this.isAnalyticsClusterAttached, other.isAnalyticsClusterAttached)
-                && java.util.Objects.equals(this.analyticsCluster, other.analyticsCluster)
                 && java.util.Objects.equals(
                         this.isHeatWaveClusterAttached, other.isHeatWaveClusterAttached)
                 && java.util.Objects.equals(this.heatWaveCluster, other.heatWaveCluster)
@@ -1564,6 +1556,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.secureConnections, other.secureConnections)
                 && super.equals(other);
     }
 
@@ -1584,14 +1578,6 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.currentPlacement == null ? 43 : this.currentPlacement.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.isAnalyticsClusterAttached == null
-                                ? 43
-                                : this.isAnalyticsClusterAttached.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.analyticsCluster == null ? 43 : this.analyticsCluster.hashCode());
         result =
                 (result * PRIME)
                         + (this.isHeatWaveClusterAttached == null
@@ -1648,6 +1634,14 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.pointInTimeRecoveryDetails == null
                                 ? 43
                                 : this.pointInTimeRecoveryDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

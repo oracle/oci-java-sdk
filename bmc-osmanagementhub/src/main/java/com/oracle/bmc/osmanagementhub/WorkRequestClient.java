@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -430,7 +430,8 @@ public class WorkRequestClient implements WorkRequest {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -560,7 +561,10 @@ public class WorkRequestClient implements WorkRequest {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "WorkRequest", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "WorkRequest",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -593,7 +597,10 @@ public class WorkRequestClient implements WorkRequest {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "WorkRequest", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "WorkRequest",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -627,7 +634,10 @@ public class WorkRequestClient implements WorkRequest {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "WorkRequest", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "WorkRequest",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -661,7 +671,10 @@ public class WorkRequestClient implements WorkRequest {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "WorkRequest", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "WorkRequest",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(

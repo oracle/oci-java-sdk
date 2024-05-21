@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.requests;
@@ -50,7 +50,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      * returned list (inclusive). Specifying this parameter without the
      * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
      * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
-     * Z offset, as defined by RFC 3339.
+     * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      **Example:** 2016-12-19T16:39:57.600Z
      *
@@ -63,7 +63,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      * returned list (inclusive). Specifying this parameter without the
      * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
      * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
-     * Z offset, as defined by RFC 3339.
+     * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      **Example:** 2016-12-19T16:39:57.600Z
      *
@@ -77,7 +77,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      * list (exclusive). Specifying this parameter without the corresponding
      * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
      * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      **Example:** 2016-12-19T16:39:57.600Z
      *
@@ -90,7 +90,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
      * list (exclusive). Specifying this parameter without the corresponding
      * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
      * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-     * defined by RFC 3339.
+     * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      * <p>
      **Example:** 2016-12-19T16:39:57.600Z
      *
@@ -263,7 +263,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
          * returned list (inclusive). Specifying this parameter without the
          * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
          * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
-         * Z offset, as defined by RFC 3339.
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
@@ -276,7 +276,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
          * returned list (inclusive). Specifying this parameter without the
          * corresponding {@code timeCreatedLessThan} parameter will retrieve suppressions created from the
          * given {@code timeCreatedGreaterThanOrEqualTo} to the current time, in "YYYY-MM-ddThh:mmZ" format with a
-         * Z offset, as defined by RFC 3339.
+         * Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
@@ -295,7 +295,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
          * list (exclusive). Specifying this parameter without the corresponding
          * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
          * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-         * defined by RFC 3339.
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *
@@ -308,7 +308,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest<
          * list (exclusive). Specifying this parameter without the corresponding
          * {@code timeCreatedGreaterThanOrEqualTo} parameter will retrieve all suppressions created before the
          * specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
-         * defined by RFC 3339.
+         * defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
          * <p>
          **Example:** 2016-12-19T16:39:57.600Z
          *

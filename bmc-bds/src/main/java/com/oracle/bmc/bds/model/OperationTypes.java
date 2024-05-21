@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -13,6 +13,8 @@ public enum OperationTypes {
     UpdateBds("UPDATE_BDS"),
     DeleteBds("DELETE_BDS"),
     AddBlockStorage("ADD_BLOCK_STORAGE"),
+    AddMasterNodes("ADD_MASTER_NODES"),
+    AddUtilityNodes("ADD_UTILITY_NODES"),
     AddWorkerNodes("ADD_WORKER_NODES"),
     AddCloudSql("ADD_CLOUD_SQL"),
     RemoveCloudSql("REMOVE_CLOUD_SQL"),
@@ -36,10 +38,22 @@ public enum OperationTypes {
     TestMetastoreConfig("TEST_METASTORE_CONFIG"),
     PatchBds("PATCH_BDS"),
     PatchOdh("PATCH_ODH"),
+    PatchOs("PATCH_OS"),
     StopBds("STOP_BDS"),
     StartBds("START_BDS"),
     AddKafka("ADD_KAFKA"),
     RemoveKafka("REMOVE_KAFKA"),
+    ExecuteBootstrapScript("EXECUTE_BOOTSTRAP_SCRIPT"),
+    OdhServiceCertificateUpdate("ODH_SERVICE_CERTIFICATE_UPDATE"),
+    CreateBackupConfig("CREATE_BACKUP_CONFIG"),
+    UpdateBackupConfig("UPDATE_BACKUP_CONFIG"),
+    DeleteBackupConfig("DELETE_BACKUP_CONFIG"),
+    CreateNodeReplaceConfig("CREATE_NODE_REPLACE_CONFIG"),
+    UpdateNodeReplaceConfig("UPDATE_NODE_REPLACE_CONFIG"),
+    DeleteNodeReplaceConfig("DELETE_NODE_REPLACE_CONFIG"),
+    BackupNodes("BACKUP_NODES"),
+    DeleteNodeBackup("DELETE_NODE_BACKUP"),
+    ReplaceNode("REPLACE_NODE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

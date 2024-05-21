@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm;
@@ -59,6 +59,38 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Activates the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateRemediationRecipeResponse> activateRemediationRecipe(
+            ActivateRemediationRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ActivateRemediationRecipeRequest, ActivateRemediationRecipeResponse>
+                    handler);
+
+    /**
+     * Cancels the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelRemediationRunResponse> cancelRemediationRun(
+            CancelRemediationRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelRemediationRunRequest, CancelRemediationRunResponse>
+                    handler);
+
+    /**
      * Cancel work request with the given ID.
      *
      * @param request The request object containing the details to send
@@ -90,6 +122,42 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeKnowledgeBaseCompartmentRequest,
                                     ChangeKnowledgeBaseCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a Remediation Recipe from one compartment to another.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRemediationRecipeCompartmentResponse>
+            changeRemediationRecipeCompartment(
+                    ChangeRemediationRecipeCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRemediationRecipeCompartmentRequest,
+                                    ChangeRemediationRecipeCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a remediation run from one compartment to another.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRemediationRunCompartmentResponse>
+            changeRemediationRunCompartment(
+                    ChangeRemediationRunCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRemediationRunCompartmentRequest,
+                                    ChangeRemediationRunCompartmentResponse>
                             handler);
 
     /**
@@ -127,6 +195,38 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRemediationRecipeResponse> createRemediationRecipe(
+            CreateRemediationRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRemediationRecipeRequest, CreateRemediationRecipeResponse>
+                    handler);
+
+    /**
+     * Creates a new remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRemediationRunResponse> createRemediationRun(
+            CreateRemediationRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRemediationRunRequest, CreateRemediationRunResponse>
+                    handler);
+
+    /**
      * Creates a new Vulnerability Audit by providing a tree of Application Dependencies.
      *
      * @param request The request object containing the details to send
@@ -143,6 +243,22 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deactivates the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateRemediationRecipeResponse> deactivateRemediationRecipe(
+            DeactivateRemediationRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateRemediationRecipeRequest, DeactivateRemediationRecipeResponse>
+                    handler);
+
+    /**
      * Deletes the specified Knowledge Base.
      *
      * @param request The request object containing the details to send
@@ -156,6 +272,38 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
             DeleteKnowledgeBaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteKnowledgeBaseRequest, DeleteKnowledgeBaseResponse>
+                    handler);
+
+    /**
+     * Deletes the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRemediationRecipeResponse> deleteRemediationRecipe(
+            DeleteRemediationRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRemediationRecipeRequest, DeleteRemediationRecipeResponse>
+                    handler);
+
+    /**
+     * Deletes the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRemediationRunResponse> deleteRemediationRun(
+            DeleteRemediationRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRemediationRunRequest, DeleteRemediationRunResponse>
                     handler);
 
     /**
@@ -190,6 +338,52 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the details of the specified RemediationRecipe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRemediationRecipeResponse> getRemediationRecipe(
+            GetRemediationRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRemediationRecipeRequest, GetRemediationRecipeResponse>
+                    handler);
+
+    /**
+     * Returns the details of the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRemediationRunResponse> getRemediationRun(
+            GetRemediationRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRemediationRunRequest, GetRemediationRunResponse>
+                    handler);
+
+    /**
+     * Returns the details of the specified Remediation Run Stage.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStageResponse> getStage(
+            GetStageRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetStageRequest, GetStageResponse> handler);
+
+    /**
      * Returns the details of the specified Vulnerability Audit.
      *
      * @param request The request object containing the details to send
@@ -219,6 +413,24 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
+
+    /**
+     * Returns a list of application dependency with their associated recommendations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListApplicationDependencyRecommendationsResponse>
+            listApplicationDependencyRecommendations(
+                    ListApplicationDependencyRecommendationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListApplicationDependencyRecommendationsRequest,
+                                    ListApplicationDependencyRecommendationsResponse>
+                            handler);
 
     /**
      * Returns a list of Application Dependencies with their associated vulnerabilities.
@@ -257,8 +469,58 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of Remediation Recipes based on the specified query parameters.
+     * The query parameters `compartmentId` or `id` must be provided.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRemediationRecipesResponse> listRemediationRecipes(
+            ListRemediationRecipesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRemediationRecipesRequest, ListRemediationRecipesResponse>
+                    handler);
+
+    /**
+     * Returns a list of remediation runs contained by a compartment.
+     * The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRemediationRunsResponse> listRemediationRuns(
+            ListRemediationRunsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRemediationRunsRequest, ListRemediationRunsResponse>
+                    handler);
+
+    /**
+     * Returns a list of Remediation Run Stages based on the specified query parameters and Remediation Run identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStagesResponse> listStages(
+            ListStagesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListStagesRequest, ListStagesResponse> handler);
+
+    /**
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      *
      *
      * @param request The request object containing the details to send
@@ -338,6 +600,38 @@ public interface ApplicationDependencyManagementAsync extends AutoCloseable {
             UpdateKnowledgeBaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateKnowledgeBaseRequest, UpdateKnowledgeBaseResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified Remediation Recipe.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRemediationRecipeResponse> updateRemediationRecipe(
+            UpdateRemediationRecipeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRemediationRecipeRequest, UpdateRemediationRecipeResponse>
+                    handler);
+
+    /**
+     * Updates by identifier one or more attributes of the specified remediation run.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRemediationRunResponse> updateRemediationRun(
+            UpdateRemediationRunRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRemediationRunRequest, UpdateRemediationRunResponse>
                     handler);
 
     /**

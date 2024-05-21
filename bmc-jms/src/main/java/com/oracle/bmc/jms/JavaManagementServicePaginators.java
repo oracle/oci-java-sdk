@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms;
@@ -369,6 +369,116 @@ public class JavaManagementServicePaginators {
                     public java.util.List<com.oracle.bmc.jms.model.CryptoAnalysisResultSummary>
                             apply(ListCryptoAnalysisResultsResponse response) {
                         return response.getCryptoAnalysisResultCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDrsFiles operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDrsFilesResponse> listDrsFilesResponseIterator(
+            final ListDrsFilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDrsFilesRequest.Builder, ListDrsFilesRequest, ListDrsFilesResponse>(
+                new java.util.function.Supplier<ListDrsFilesRequest.Builder>() {
+                    @Override
+                    public ListDrsFilesRequest.Builder get() {
+                        return ListDrsFilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDrsFilesResponse, String>() {
+                    @Override
+                    public String apply(ListDrsFilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDrsFilesRequest.Builder>,
+                        ListDrsFilesRequest>() {
+                    @Override
+                    public ListDrsFilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDrsFilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDrsFilesRequest, ListDrsFilesResponse>() {
+                    @Override
+                    public ListDrsFilesResponse apply(ListDrsFilesRequest request) {
+                        return client.listDrsFiles(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.jms.model.DrsFileSummary} objects
+     * contained in responses from the listDrsFiles operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.jms.model.DrsFileSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.jms.model.DrsFileSummary> listDrsFilesRecordIterator(
+            final ListDrsFilesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDrsFilesRequest.Builder, ListDrsFilesRequest, ListDrsFilesResponse,
+                com.oracle.bmc.jms.model.DrsFileSummary>(
+                new java.util.function.Supplier<ListDrsFilesRequest.Builder>() {
+                    @Override
+                    public ListDrsFilesRequest.Builder get() {
+                        return ListDrsFilesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDrsFilesResponse, String>() {
+                    @Override
+                    public String apply(ListDrsFilesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDrsFilesRequest.Builder>,
+                        ListDrsFilesRequest>() {
+                    @Override
+                    public ListDrsFilesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDrsFilesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDrsFilesRequest, ListDrsFilesResponse>() {
+                    @Override
+                    public ListDrsFilesResponse apply(ListDrsFilesRequest request) {
+                        return client.listDrsFiles(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDrsFilesResponse,
+                        java.util.List<com.oracle.bmc.jms.model.DrsFileSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.jms.model.DrsFileSummary> apply(
+                            ListDrsFilesResponse response) {
+                        return response.getDrsFileCollection().getItems();
                     }
                 });
     }

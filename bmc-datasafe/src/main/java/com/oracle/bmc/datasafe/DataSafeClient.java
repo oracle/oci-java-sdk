@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe;
@@ -436,7 +436,8 @@ public class DataSafeClient implements DataSafe {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -1115,6 +1116,52 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ChangeDatabaseSecurityConfigCompartmentResponse changeDatabaseSecurityConfigCompartment(
+            ChangeDatabaseSecurityConfigCompartmentRequest request) {
+        LOG.trace("Called changeDatabaseSecurityConfigCompartment");
+        final ChangeDatabaseSecurityConfigCompartmentRequest interceptedRequest =
+                ChangeDatabaseSecurityConfigCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDatabaseSecurityConfigCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeDatabaseSecurityConfigCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/ChangeDatabaseSecurityConfigCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeDatabaseSecurityConfigCompartmentResponse>
+                transformer =
+                        ChangeDatabaseSecurityConfigCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDatabaseSecurityConfigCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDiscoveryJobCompartmentResponse changeDiscoveryJobCompartment(
             ChangeDiscoveryJobCompartmentRequest request) {
         LOG.trace("Called changeDiscoveryJobCompartment");
@@ -1244,6 +1291,54 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeMaskingPolicyCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeMaskingPolicyHealthReportCompartmentResponse
+            changeMaskingPolicyHealthReportCompartment(
+                    ChangeMaskingPolicyHealthReportCompartmentRequest request) {
+        LOG.trace("Called changeMaskingPolicyHealthReportCompartment");
+        final ChangeMaskingPolicyHealthReportCompartmentRequest interceptedRequest =
+                ChangeMaskingPolicyHealthReportCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMaskingPolicyHealthReportCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeMaskingPolicyHealthReportCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ChangeMaskingPolicyHealthReportCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeMaskingPolicyHealthReportCompartmentResponse>
+                transformer =
+                        ChangeMaskingPolicyHealthReportCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeMaskingPolicyHealthReportCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1520,6 +1615,99 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ChangeSecurityPolicyCompartmentResponse changeSecurityPolicyCompartment(
+            ChangeSecurityPolicyCompartmentRequest request) {
+        LOG.trace("Called changeSecurityPolicyCompartment");
+        final ChangeSecurityPolicyCompartmentRequest interceptedRequest =
+                ChangeSecurityPolicyCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSecurityPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/ChangeSecurityPolicyCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityPolicyCompartmentResponse>
+                transformer =
+                        ChangeSecurityPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSecurityPolicyCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSecurityPolicyDeploymentCompartmentResponse
+            changeSecurityPolicyDeploymentCompartment(
+                    ChangeSecurityPolicyDeploymentCompartmentRequest request) {
+        LOG.trace("Called changeSecurityPolicyDeploymentCompartment");
+        final ChangeSecurityPolicyDeploymentCompartmentRequest interceptedRequest =
+                ChangeSecurityPolicyDeploymentCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityPolicyDeploymentCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSecurityPolicyDeploymentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/ChangeSecurityPolicyDeploymentCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeSecurityPolicyDeploymentCompartmentResponse>
+                transformer =
+                        ChangeSecurityPolicyDeploymentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSecurityPolicyDeploymentCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeSensitiveDataModelCompartmentResponse changeSensitiveDataModelCompartment(
             ChangeSensitiveDataModelCompartmentRequest request) {
         LOG.trace("Called changeSensitiveDataModelCompartment");
@@ -1604,6 +1792,96 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeSensitiveTypeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSqlCollectionCompartmentResponse changeSqlCollectionCompartment(
+            ChangeSqlCollectionCompartmentRequest request) {
+        LOG.trace("Called changeSqlCollectionCompartment");
+        final ChangeSqlCollectionCompartmentRequest interceptedRequest =
+                ChangeSqlCollectionCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSqlCollectionCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSqlCollectionCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/ChangeSqlCollectionCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSqlCollectionCompartmentResponse>
+                transformer =
+                        ChangeSqlCollectionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSqlCollectionCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSqlFirewallPolicyCompartmentResponse changeSqlFirewallPolicyCompartment(
+            ChangeSqlFirewallPolicyCompartmentRequest request) {
+        LOG.trace("Called changeSqlFirewallPolicyCompartment");
+        final ChangeSqlFirewallPolicyCompartmentRequest interceptedRequest =
+                ChangeSqlFirewallPolicyCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSqlFirewallPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ChangeSqlFirewallPolicyCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/ChangeSqlFirewallPolicyCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSqlFirewallPolicyCompartmentResponse>
+                transformer =
+                        ChangeSqlFirewallPolicyCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSqlFirewallPolicyCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2135,6 +2413,49 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public CreatePeerTargetDatabaseResponse createPeerTargetDatabase(
+            CreatePeerTargetDatabaseRequest request) {
+        LOG.trace("Called createPeerTargetDatabase");
+        final CreatePeerTargetDatabaseRequest interceptedRequest =
+                CreatePeerTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "CreatePeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/CreatePeerTargetDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, CreatePeerTargetDatabaseResponse>
+                transformer =
+                        CreatePeerTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreatePeerTargetDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateReportDefinitionResponse createReportDefinition(
             CreateReportDefinitionRequest request) {
         LOG.trace("Called createReportDefinition");
@@ -2384,6 +2705,48 @@ public class DataSafeClient implements DataSafe {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateSensitiveTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateSqlCollectionResponse createSqlCollection(CreateSqlCollectionRequest request) {
+        LOG.trace("Called createSqlCollection");
+        final CreateSqlCollectionRequest interceptedRequest =
+                CreateSqlCollectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSqlCollectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "CreateSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/CreateSqlCollection");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSqlCollectionResponse>
+                transformer =
+                        CreateSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSqlCollectionDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2869,6 +3232,46 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public DeleteMaskingPolicyHealthReportResponse deleteMaskingPolicyHealthReport(
+            DeleteMaskingPolicyHealthReportRequest request) {
+        LOG.trace("Called deleteMaskingPolicyHealthReport");
+        final DeleteMaskingPolicyHealthReportRequest interceptedRequest =
+                DeleteMaskingPolicyHealthReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMaskingPolicyHealthReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteMaskingPolicyHealthReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/DeleteMaskingPolicyHealthReport");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteMaskingPolicyHealthReportResponse>
+                transformer =
+                        DeleteMaskingPolicyHealthReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteOnPremConnectorResponse deleteOnPremConnector(
             DeleteOnPremConnectorRequest request) {
         LOG.trace("Called deleteOnPremConnector");
@@ -2890,6 +3293,45 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteOnPremConnectorResponse>
                 transformer =
                         DeleteOnPremConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeletePeerTargetDatabaseResponse deletePeerTargetDatabase(
+            DeletePeerTargetDatabaseRequest request) {
+        LOG.trace("Called deletePeerTargetDatabase");
+        final DeletePeerTargetDatabaseRequest interceptedRequest =
+                DeletePeerTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeletePeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/DeletePeerTargetDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, DeletePeerTargetDatabaseResponse>
+                transformer =
+                        DeletePeerTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3124,6 +3566,83 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSensitiveTypeResponse>
                 transformer =
                         DeleteSensitiveTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSqlCollectionResponse deleteSqlCollection(DeleteSqlCollectionRequest request) {
+        LOG.trace("Called deleteSqlCollection");
+        final DeleteSqlCollectionRequest interceptedRequest =
+                DeleteSqlCollectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSqlCollectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/DeleteSqlCollection");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSqlCollectionResponse>
+                transformer =
+                        DeleteSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSqlFirewallPolicyResponse deleteSqlFirewallPolicy(
+            DeleteSqlFirewallPolicyRequest request) {
+        LOG.trace("Called deleteSqlFirewallPolicy");
+        final DeleteSqlFirewallPolicyRequest interceptedRequest =
+                DeleteSqlFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "DeleteSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/DeleteSqlFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSqlFirewallPolicyResponse>
+                transformer =
+                        DeleteSqlFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3723,6 +4242,48 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GenerateHealthReportResponse generateHealthReport(GenerateHealthReportRequest request) {
+        LOG.trace("Called generateHealthReport");
+        final GenerateHealthReportRequest interceptedRequest =
+                GenerateHealthReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateHealthReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GenerateHealthReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GenerateHealthReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateHealthReportResponse>
+                transformer =
+                        GenerateHealthReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getGenerateHealthReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GenerateMaskingPolicyForDownloadResponse generateMaskingPolicyForDownload(
             GenerateMaskingPolicyForDownloadRequest request) {
         LOG.trace("Called generateMaskingPolicyForDownload");
@@ -3981,6 +4542,46 @@ public class DataSafeClient implements DataSafe {
                                                 retriedRequest
                                                         .getGenerateSensitiveDataModelForDownloadDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GenerateSqlFirewallPolicyResponse generateSqlFirewallPolicy(
+            GenerateSqlFirewallPolicyRequest request) {
+        LOG.trace("Called generateSqlFirewallPolicy");
+        final GenerateSqlFirewallPolicyRequest interceptedRequest =
+                GenerateSqlFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GenerateSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/GenerateSqlFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateSqlFirewallPolicyResponse>
+                transformer =
+                        GenerateSqlFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -4400,6 +5001,120 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GetDatabaseSecurityConfigResponse getDatabaseSecurityConfig(
+            GetDatabaseSecurityConfigRequest request) {
+        LOG.trace("Called getDatabaseSecurityConfig");
+        final GetDatabaseSecurityConfigRequest interceptedRequest =
+                GetDatabaseSecurityConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseSecurityConfigConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetDatabaseSecurityConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/GetDatabaseSecurityConfig");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseSecurityConfigResponse>
+                transformer =
+                        GetDatabaseSecurityConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseTableAccessEntryResponse getDatabaseTableAccessEntry(
+            GetDatabaseTableAccessEntryRequest request) {
+        LOG.trace("Called getDatabaseTableAccessEntry");
+        final GetDatabaseTableAccessEntryRequest interceptedRequest =
+                GetDatabaseTableAccessEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseTableAccessEntryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetDatabaseTableAccessEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseTableAccessEntry/GetDatabaseTableAccessEntry");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseTableAccessEntryResponse>
+                transformer =
+                        GetDatabaseTableAccessEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDatabaseViewAccessEntryResponse getDatabaseViewAccessEntry(
+            GetDatabaseViewAccessEntryRequest request) {
+        LOG.trace("Called getDatabaseViewAccessEntry");
+        final GetDatabaseViewAccessEntryRequest interceptedRequest =
+                GetDatabaseViewAccessEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDatabaseViewAccessEntryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetDatabaseViewAccessEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseViewAccessEntry/GetDatabaseViewAccessEntry");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseViewAccessEntryResponse>
+                transformer =
+                        GetDatabaseViewAccessEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetDifferenceColumnResponse getDifferenceColumn(GetDifferenceColumnRequest request) {
         LOG.trace("Called getDifferenceColumn");
         final GetDifferenceColumnRequest interceptedRequest =
@@ -4624,6 +5339,44 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GetMaskingPolicyHealthReportResponse getMaskingPolicyHealthReport(
+            GetMaskingPolicyHealthReportRequest request) {
+        LOG.trace("Called getMaskingPolicyHealthReport");
+        final GetMaskingPolicyHealthReportRequest interceptedRequest =
+                GetMaskingPolicyHealthReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMaskingPolicyHealthReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetMaskingPolicyHealthReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/GetMaskingPolicyHealthReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMaskingPolicyHealthReportResponse>
+                transformer =
+                        GetMaskingPolicyHealthReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetMaskingReportResponse getMaskingReport(GetMaskingReportRequest request) {
         LOG.trace("Called getMaskingReport");
         final GetMaskingReportRequest interceptedRequest =
@@ -4681,6 +5434,44 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, GetOnPremConnectorResponse>
                 transformer =
                         GetOnPremConnectorConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetPeerTargetDatabaseResponse getPeerTargetDatabase(
+            GetPeerTargetDatabaseRequest request) {
+        LOG.trace("Called getPeerTargetDatabase");
+        final GetPeerTargetDatabaseRequest interceptedRequest =
+                GetPeerTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetPeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/GetPeerTargetDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPeerTargetDatabaseResponse>
+                transformer =
+                        GetPeerTargetDatabaseConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -4956,6 +5747,157 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public GetSecurityPolicyResponse getSecurityPolicy(GetSecurityPolicyRequest request) {
+        LOG.trace("Called getSecurityPolicy");
+        final GetSecurityPolicyRequest interceptedRequest =
+                GetSecurityPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/GetSecurityPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityPolicyResponse>
+                transformer =
+                        GetSecurityPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityPolicyDeploymentResponse getSecurityPolicyDeployment(
+            GetSecurityPolicyDeploymentRequest request) {
+        LOG.trace("Called getSecurityPolicyDeployment");
+        final GetSecurityPolicyDeploymentRequest interceptedRequest =
+                GetSecurityPolicyDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyDeploymentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/GetSecurityPolicyDeployment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityPolicyDeploymentResponse>
+                transformer =
+                        GetSecurityPolicyDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityPolicyEntryStateResponse getSecurityPolicyEntryState(
+            GetSecurityPolicyEntryStateRequest request) {
+        LOG.trace("Called getSecurityPolicyEntryState");
+        final GetSecurityPolicyEntryStateRequest interceptedRequest =
+                GetSecurityPolicyEntryStateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyEntryStateConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyEntryState",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyEntryState/GetSecurityPolicyEntryState");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityPolicyEntryStateResponse>
+                transformer =
+                        GetSecurityPolicyEntryStateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityPolicyReportResponse getSecurityPolicyReport(
+            GetSecurityPolicyReportRequest request) {
+        LOG.trace("Called getSecurityPolicyReport");
+        final GetSecurityPolicyReportRequest interceptedRequest =
+                GetSecurityPolicyReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityPolicyReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSecurityPolicyReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyReport/GetSecurityPolicyReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityPolicyReportResponse>
+                transformer =
+                        GetSecurityPolicyReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetSensitiveColumnResponse getSensitiveColumn(GetSensitiveColumnRequest request) {
         LOG.trace("Called getSensitiveColumn");
         final GetSensitiveColumnRequest interceptedRequest =
@@ -5051,6 +5993,80 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, GetSensitiveTypeResponse>
                 transformer =
                         GetSensitiveTypeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSqlCollectionResponse getSqlCollection(GetSqlCollectionRequest request) {
+        LOG.trace("Called getSqlCollection");
+        final GetSqlCollectionRequest interceptedRequest =
+                GetSqlCollectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlCollectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/GetSqlCollection");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSqlCollectionResponse>
+                transformer =
+                        GetSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSqlFirewallPolicyResponse getSqlFirewallPolicy(GetSqlFirewallPolicyRequest request) {
+        LOG.trace("Called getSqlFirewallPolicy");
+        final GetSqlFirewallPolicyRequest interceptedRequest =
+                GetSqlFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "GetSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/GetSqlFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSqlFirewallPolicyResponse>
+                transformer =
+                        GetSqlFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5888,6 +6904,122 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListDatabaseSecurityConfigsResponse listDatabaseSecurityConfigs(
+            ListDatabaseSecurityConfigsRequest request) {
+        LOG.trace("Called listDatabaseSecurityConfigs");
+        final ListDatabaseSecurityConfigsRequest interceptedRequest =
+                ListDatabaseSecurityConfigsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseSecurityConfigsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListDatabaseSecurityConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfigCollection/ListDatabaseSecurityConfigs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseSecurityConfigsResponse>
+                transformer =
+                        ListDatabaseSecurityConfigsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseTableAccessEntriesResponse listDatabaseTableAccessEntries(
+            ListDatabaseTableAccessEntriesRequest request) {
+        LOG.trace("Called listDatabaseTableAccessEntries");
+        final ListDatabaseTableAccessEntriesRequest interceptedRequest =
+                ListDatabaseTableAccessEntriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseTableAccessEntriesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListDatabaseTableAccessEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseTableAccessEntryCollection/ListDatabaseTableAccessEntries");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseTableAccessEntriesResponse>
+                transformer =
+                        ListDatabaseTableAccessEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDatabaseViewAccessEntriesResponse listDatabaseViewAccessEntries(
+            ListDatabaseViewAccessEntriesRequest request) {
+        LOG.trace("Called listDatabaseViewAccessEntries");
+        final ListDatabaseViewAccessEntriesRequest interceptedRequest =
+                ListDatabaseViewAccessEntriesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDatabaseViewAccessEntriesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListDatabaseViewAccessEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseViewAccessEntryCollection/ListDatabaseViewAccessEntries");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDatabaseViewAccessEntriesResponse>
+                transformer =
+                        ListDatabaseViewAccessEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListDifferenceColumnsResponse listDifferenceColumns(
             ListDifferenceColumnsRequest request) {
         LOG.trace("Called listDifferenceColumns");
@@ -6039,6 +7171,43 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListFindingAnalyticsResponse listFindingAnalytics(ListFindingAnalyticsRequest request) {
+        LOG.trace("Called listFindingAnalytics");
+        final ListFindingAnalyticsRequest interceptedRequest =
+                ListFindingAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFindingAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListFindingAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindingAnalytics");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFindingAnalyticsResponse>
+                transformer =
+                        ListFindingAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListFindingsResponse listFindings(ListFindingsRequest request) {
         LOG.trace("Called listFindings");
         final ListFindingsRequest interceptedRequest =
@@ -6058,6 +7227,44 @@ public class DataSafeClient implements DataSafe {
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindings");
         java.util.function.Function<javax.ws.rs.core.Response, ListFindingsResponse> transformer =
                 ListFindingsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListFindingsChangeAuditLogsResponse listFindingsChangeAuditLogs(
+            ListFindingsChangeAuditLogsRequest request) {
+        LOG.trace("Called listFindingsChangeAuditLogs");
+        final ListFindingsChangeAuditLogsRequest interceptedRequest =
+                ListFindingsChangeAuditLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFindingsChangeAuditLogsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListFindingsChangeAuditLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListFindingsChangeAuditLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFindingsChangeAuditLogsResponse>
+                transformer =
+                        ListFindingsChangeAuditLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -6331,6 +7538,84 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListMaskingPolicyHealthReportLogsResponse listMaskingPolicyHealthReportLogs(
+            ListMaskingPolicyHealthReportLogsRequest request) {
+        LOG.trace("Called listMaskingPolicyHealthReportLogs");
+        final ListMaskingPolicyHealthReportLogsRequest interceptedRequest =
+                ListMaskingPolicyHealthReportLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaskingPolicyHealthReportLogsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReportLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReportLogs");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMaskingPolicyHealthReportLogsResponse>
+                transformer =
+                        ListMaskingPolicyHealthReportLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMaskingPolicyHealthReportsResponse listMaskingPolicyHealthReports(
+            ListMaskingPolicyHealthReportsRequest request) {
+        LOG.trace("Called listMaskingPolicyHealthReports");
+        final ListMaskingPolicyHealthReportsRequest interceptedRequest =
+                ListMaskingPolicyHealthReportsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaskingPolicyHealthReportsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyHealthReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyHealthReport/ListMaskingPolicyHealthReports");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMaskingPolicyHealthReportsResponse>
+                transformer =
+                        ListMaskingPolicyHealthReportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListMaskingReportsResponse listMaskingReports(ListMaskingReportsRequest request) {
         LOG.trace("Called listMaskingReports");
         final ListMaskingReportsRequest interceptedRequest =
@@ -6425,6 +7710,45 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, ListOnPremConnectorsResponse>
                 transformer =
                         ListOnPremConnectorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPeerTargetDatabasesResponse listPeerTargetDatabases(
+            ListPeerTargetDatabasesRequest request) {
+        LOG.trace("Called listPeerTargetDatabases");
+        final ListPeerTargetDatabasesRequest interceptedRequest =
+                ListPeerTargetDatabasesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPeerTargetDatabasesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListPeerTargetDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/ListPeerTargetDatabases");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPeerTargetDatabasesResponse>
+                transformer =
+                        ListPeerTargetDatabasesConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6589,6 +7913,43 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListRoleGrantPathsResponse listRoleGrantPaths(ListRoleGrantPathsRequest request) {
+        LOG.trace("Called listRoleGrantPaths");
+        final ListRoleGrantPathsRequest interceptedRequest =
+                ListRoleGrantPathsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRoleGrantPathsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListRoleGrantPaths",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/RoleGrantPathCollection/ListRoleGrantPaths");
+        java.util.function.Function<javax.ws.rs.core.Response, ListRoleGrantPathsResponse>
+                transformer =
+                        ListRoleGrantPathsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListRolesResponse listRoles(ListRolesRequest request) {
         LOG.trace("Called listRoles");
         final ListRolesRequest interceptedRequest = ListRolesConverter.interceptRequest(request);
@@ -6718,6 +8079,234 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, ListSecurityAssessmentsResponse>
                 transformer =
                         ListSecurityAssessmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityFeatureAnalyticsResponse listSecurityFeatureAnalytics(
+            ListSecurityFeatureAnalyticsRequest request) {
+        LOG.trace("Called listSecurityFeatureAnalytics");
+        final ListSecurityFeatureAnalyticsRequest interceptedRequest =
+                ListSecurityFeatureAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityFeatureAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityFeatureAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListSecurityFeatureAnalytics");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityFeatureAnalyticsResponse>
+                transformer =
+                        ListSecurityFeatureAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityFeaturesResponse listSecurityFeatures(ListSecurityFeaturesRequest request) {
+        LOG.trace("Called listSecurityFeatures");
+        final ListSecurityFeaturesRequest interceptedRequest =
+                ListSecurityFeaturesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityFeaturesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityFeatures",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityAssessment/ListSecurityFeatures");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityFeaturesResponse>
+                transformer =
+                        ListSecurityFeaturesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityPoliciesResponse listSecurityPolicies(ListSecurityPoliciesRequest request) {
+        LOG.trace("Called listSecurityPolicies");
+        final ListSecurityPoliciesRequest interceptedRequest =
+                ListSecurityPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPoliciesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyCollection/ListSecurityPolicies");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityPoliciesResponse>
+                transformer =
+                        ListSecurityPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityPolicyDeploymentsResponse listSecurityPolicyDeployments(
+            ListSecurityPolicyDeploymentsRequest request) {
+        LOG.trace("Called listSecurityPolicyDeployments");
+        final ListSecurityPolicyDeploymentsRequest interceptedRequest =
+                ListSecurityPolicyDeploymentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPolicyDeploymentsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyDeployments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeploymentCollection/ListSecurityPolicyDeployments");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityPolicyDeploymentsResponse>
+                transformer =
+                        ListSecurityPolicyDeploymentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityPolicyEntryStatesResponse listSecurityPolicyEntryStates(
+            ListSecurityPolicyEntryStatesRequest request) {
+        LOG.trace("Called listSecurityPolicyEntryStates");
+        final ListSecurityPolicyEntryStatesRequest interceptedRequest =
+                ListSecurityPolicyEntryStatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPolicyEntryStatesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyEntryStates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyEntryStateCollection/ListSecurityPolicyEntryStates");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSecurityPolicyEntryStatesResponse>
+                transformer =
+                        ListSecurityPolicyEntryStatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityPolicyReportsResponse listSecurityPolicyReports(
+            ListSecurityPolicyReportsRequest request) {
+        LOG.trace("Called listSecurityPolicyReports");
+        final ListSecurityPolicyReportsRequest interceptedRequest =
+                ListSecurityPolicyReportsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityPolicyReportsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSecurityPolicyReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyReportCollection/ListSecurityPolicyReports");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityPolicyReportsResponse>
+                transformer =
+                        ListSecurityPolicyReportsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6921,6 +8510,351 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public ListSqlCollectionAnalyticsResponse listSqlCollectionAnalytics(
+            ListSqlCollectionAnalyticsRequest request) {
+        LOG.trace("Called listSqlCollectionAnalytics");
+        final ListSqlCollectionAnalyticsRequest interceptedRequest =
+                ListSqlCollectionAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlCollectionAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlCollectionAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionAnalyticsCollection/ListSqlCollectionAnalytics");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlCollectionAnalyticsResponse>
+                transformer =
+                        ListSqlCollectionAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlCollectionLogInsightsResponse listSqlCollectionLogInsights(
+            ListSqlCollectionLogInsightsRequest request) {
+        LOG.trace("Called listSqlCollectionLogInsights");
+        final ListSqlCollectionLogInsightsRequest interceptedRequest =
+                ListSqlCollectionLogInsightsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlCollectionLogInsightsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlCollectionLogInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionLogInsightsCollection/ListSqlCollectionLogInsights");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlCollectionLogInsightsResponse>
+                transformer =
+                        ListSqlCollectionLogInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlCollectionsResponse listSqlCollections(ListSqlCollectionsRequest request) {
+        LOG.trace("Called listSqlCollections");
+        final ListSqlCollectionsRequest interceptedRequest =
+                ListSqlCollectionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlCollectionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlCollections",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollectionCollection/ListSqlCollections");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlCollectionsResponse>
+                transformer =
+                        ListSqlCollectionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlFirewallAllowedSqlAnalyticsResponse listSqlFirewallAllowedSqlAnalytics(
+            ListSqlFirewallAllowedSqlAnalyticsRequest request) {
+        LOG.trace("Called listSqlFirewallAllowedSqlAnalytics");
+        final ListSqlFirewallAllowedSqlAnalyticsRequest interceptedRequest =
+                ListSqlFirewallAllowedSqlAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallAllowedSqlAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallAllowedSqlAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSqlAnalyticsCollection/ListSqlFirewallAllowedSqlAnalytics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallAllowedSqlAnalyticsResponse>
+                transformer =
+                        ListSqlFirewallAllowedSqlAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlFirewallAllowedSqlsResponse listSqlFirewallAllowedSqls(
+            ListSqlFirewallAllowedSqlsRequest request) {
+        LOG.trace("Called listSqlFirewallAllowedSqls");
+        final ListSqlFirewallAllowedSqlsRequest interceptedRequest =
+                ListSqlFirewallAllowedSqlsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallAllowedSqlsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallAllowedSqls",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSqlCollection/ListSqlFirewallAllowedSqls");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlFirewallAllowedSqlsResponse>
+                transformer =
+                        ListSqlFirewallAllowedSqlsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlFirewallPoliciesResponse listSqlFirewallPolicies(
+            ListSqlFirewallPoliciesRequest request) {
+        LOG.trace("Called listSqlFirewallPolicies");
+        final ListSqlFirewallPoliciesRequest interceptedRequest =
+                ListSqlFirewallPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallPoliciesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallPolicies",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicyCollection/ListSqlFirewallPolicies");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlFirewallPoliciesResponse>
+                transformer =
+                        ListSqlFirewallPoliciesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlFirewallPolicyAnalyticsResponse listSqlFirewallPolicyAnalytics(
+            ListSqlFirewallPolicyAnalyticsRequest request) {
+        LOG.trace("Called listSqlFirewallPolicyAnalytics");
+        final ListSqlFirewallPolicyAnalyticsRequest interceptedRequest =
+                ListSqlFirewallPolicyAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallPolicyAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallPolicyAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicyAnalyticsCollection/ListSqlFirewallPolicyAnalytics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallPolicyAnalyticsResponse>
+                transformer =
+                        ListSqlFirewallPolicyAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlFirewallViolationAnalyticsResponse listSqlFirewallViolationAnalytics(
+            ListSqlFirewallViolationAnalyticsRequest request) {
+        LOG.trace("Called listSqlFirewallViolationAnalytics");
+        final ListSqlFirewallViolationAnalyticsRequest interceptedRequest =
+                ListSqlFirewallViolationAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallViolationAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallViolationAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallViolationSummary/ListSqlFirewallViolationAnalytics");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSqlFirewallViolationAnalyticsResponse>
+                transformer =
+                        ListSqlFirewallViolationAnalyticsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSqlFirewallViolationsResponse listSqlFirewallViolations(
+            ListSqlFirewallViolationsRequest request) {
+        LOG.trace("Called listSqlFirewallViolations");
+        final ListSqlFirewallViolationsRequest interceptedRequest =
+                ListSqlFirewallViolationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSqlFirewallViolationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListSqlFirewallViolations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallViolationSummary/ListSqlFirewallViolations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSqlFirewallViolationsResponse>
+                transformer =
+                        ListSqlFirewallViolationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListTablesResponse listTables(ListTablesRequest request) {
         LOG.trace("Called listTables");
         final ListTablesRequest interceptedRequest = ListTablesConverter.interceptRequest(request);
@@ -7014,6 +8948,44 @@ public class DataSafeClient implements DataSafe {
         java.util.function.Function<javax.ws.rs.core.Response, ListTargetDatabasesResponse>
                 transformer =
                         ListTargetDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListUserAccessAnalyticsResponse listUserAccessAnalytics(
+            ListUserAccessAnalyticsRequest request) {
+        LOG.trace("Called listUserAccessAnalytics");
+        final ListUserAccessAnalyticsRequest interceptedRequest =
+                ListUserAccessAnalyticsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUserAccessAnalyticsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "ListUserAccessAnalytics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListUserAccessAnalytics");
+        java.util.function.Function<javax.ws.rs.core.Response, ListUserAccessAnalyticsResponse>
+                transformer =
+                        ListUserAccessAnalyticsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -7626,6 +9598,88 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public PurgeSqlCollectionLogsResponse purgeSqlCollectionLogs(
+            PurgeSqlCollectionLogsRequest request) {
+        LOG.trace("Called purgeSqlCollectionLogs");
+        final PurgeSqlCollectionLogsRequest interceptedRequest =
+                PurgeSqlCollectionLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PurgeSqlCollectionLogsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "PurgeSqlCollectionLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/PurgeSqlCollectionLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, PurgeSqlCollectionLogsResponse>
+                transformer =
+                        PurgeSqlCollectionLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RefreshDatabaseSecurityConfigurationResponse refreshDatabaseSecurityConfiguration(
+            RefreshDatabaseSecurityConfigurationRequest request) {
+        LOG.trace("Called refreshDatabaseSecurityConfiguration");
+        final RefreshDatabaseSecurityConfigurationRequest interceptedRequest =
+                RefreshDatabaseSecurityConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshDatabaseSecurityConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshDatabaseSecurityConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/RefreshDatabaseSecurityConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshDatabaseSecurityConfigurationResponse>
+                transformer =
+                        RefreshDatabaseSecurityConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RefreshSecurityAssessmentResponse refreshSecurityAssessment(
             RefreshSecurityAssessmentRequest request) {
         LOG.trace("Called refreshSecurityAssessment");
@@ -7663,6 +9717,87 @@ public class DataSafeClient implements DataSafe {
                                                 ib,
                                                 retriedRequest.getRunSecurityAssessmentDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RefreshSqlCollectionLogInsightsResponse refreshSqlCollectionLogInsights(
+            RefreshSqlCollectionLogInsightsRequest request) {
+        LOG.trace("Called refreshSqlCollectionLogInsights");
+        final RefreshSqlCollectionLogInsightsRequest interceptedRequest =
+                RefreshSqlCollectionLogInsightsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshSqlCollectionLogInsightsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshSqlCollectionLogInsights",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/RefreshSqlCollectionLogInsights");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshSqlCollectionLogInsightsResponse>
+                transformer =
+                        RefreshSqlCollectionLogInsightsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RefreshTargetDatabaseResponse refreshTargetDatabase(
+            RefreshTargetDatabaseRequest request) {
+        LOG.trace("Called refreshTargetDatabase");
+        final RefreshTargetDatabaseRequest interceptedRequest =
+                RefreshTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "RefreshTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/TargetDatabase/RefreshTargetDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshTargetDatabaseResponse>
+                transformer =
+                        RefreshTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -8037,6 +10172,45 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public StartSqlCollectionResponse startSqlCollection(StartSqlCollectionRequest request) {
+        LOG.trace("Called startSqlCollection");
+        final StartSqlCollectionRequest interceptedRequest =
+                StartSqlCollectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartSqlCollectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "StartSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/sqlCollection/StartSqlCollection");
+        java.util.function.Function<javax.ws.rs.core.Response, StartSqlCollectionResponse>
+                transformer =
+                        StartSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public StopAuditTrailResponse stopAuditTrail(StopAuditTrailRequest request) {
         LOG.trace("Called stopAuditTrail");
         final StopAuditTrailRequest interceptedRequest =
@@ -8056,6 +10230,45 @@ public class DataSafeClient implements DataSafe {
                         "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AuditTrail/StopAuditTrail");
         java.util.function.Function<javax.ws.rs.core.Response, StopAuditTrailResponse> transformer =
                 StopAuditTrailConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StopSqlCollectionResponse stopSqlCollection(StopSqlCollectionRequest request) {
+        LOG.trace("Called stopSqlCollection");
+        final StopSqlCollectionRequest interceptedRequest =
+                StopSqlCollectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopSqlCollectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "StopSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/StopSqlCollection");
+        java.util.function.Function<javax.ws.rs.core.Response, StopSqlCollectionResponse>
+                transformer =
+                        StopSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -8442,6 +10655,89 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public UpdateDatabaseSecurityConfigResponse updateDatabaseSecurityConfig(
+            UpdateDatabaseSecurityConfigRequest request) {
+        LOG.trace("Called updateDatabaseSecurityConfig");
+        final UpdateDatabaseSecurityConfigRequest interceptedRequest =
+                UpdateDatabaseSecurityConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseSecurityConfigConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateDatabaseSecurityConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/DatabaseSecurityConfig/UpdateDatabaseSecurityConfig");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDatabaseSecurityConfigResponse>
+                transformer =
+                        UpdateDatabaseSecurityConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateDatabaseSecurityConfigDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateFindingResponse updateFinding(UpdateFindingRequest request) {
+        LOG.trace("Called updateFinding");
+        final UpdateFindingRequest interceptedRequest =
+                UpdateFindingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFindingConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateFinding",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Finding/UpdateFinding");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFindingResponse> transformer =
+                UpdateFindingConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateFindingDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateLibraryMaskingFormatResponse updateLibraryMaskingFormat(
             UpdateLibraryMaskingFormatRequest request) {
         LOG.trace("Called updateLibraryMaskingFormat");
@@ -8653,6 +10949,89 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public UpdatePeerTargetDatabaseResponse updatePeerTargetDatabase(
+            UpdatePeerTargetDatabaseRequest request) {
+        LOG.trace("Called updatePeerTargetDatabase");
+        final UpdatePeerTargetDatabaseRequest interceptedRequest =
+                UpdatePeerTargetDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePeerTargetDatabaseConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdatePeerTargetDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/PeerTargetDatabase/UpdatePeerTargetDatabase");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdatePeerTargetDatabaseResponse>
+                transformer =
+                        UpdatePeerTargetDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdatePeerTargetDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateReportResponse updateReport(UpdateReportRequest request) {
+        LOG.trace("Called updateReport");
+        final UpdateReportRequest interceptedRequest =
+                UpdateReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateReportConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/Report/UpdateReport");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateReportResponse> transformer =
+                UpdateReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateReportDefinitionResponse updateReportDefinition(
             UpdateReportDefinitionRequest request) {
         LOG.trace("Called updateReportDefinition");
@@ -8782,6 +11161,91 @@ public class DataSafeClient implements DataSafe {
     }
 
     @Override
+    public UpdateSecurityPolicyResponse updateSecurityPolicy(UpdateSecurityPolicyRequest request) {
+        LOG.trace("Called updateSecurityPolicy");
+        final UpdateSecurityPolicyRequest interceptedRequest =
+                UpdateSecurityPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSecurityPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicy/UpdateSecurityPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityPolicyResponse>
+                transformer =
+                        UpdateSecurityPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSecurityPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateSecurityPolicyDeploymentResponse updateSecurityPolicyDeployment(
+            UpdateSecurityPolicyDeploymentRequest request) {
+        LOG.trace("Called updateSecurityPolicyDeployment");
+        final UpdateSecurityPolicyDeploymentRequest interceptedRequest =
+                UpdateSecurityPolicyDeploymentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityPolicyDeploymentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSecurityPolicyDeployment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SecurityPolicyDeployment/UpdateSecurityPolicyDeployment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateSecurityPolicyDeploymentResponse>
+                transformer =
+                        UpdateSecurityPolicyDeploymentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateSecurityPolicyDeploymentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateSensitiveColumnResponse updateSensitiveColumn(
             UpdateSensitiveColumnRequest request) {
         LOG.trace("Called updateSensitiveColumn");
@@ -8900,6 +11364,89 @@ public class DataSafeClient implements DataSafe {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateSensitiveTypeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateSqlCollectionResponse updateSqlCollection(UpdateSqlCollectionRequest request) {
+        LOG.trace("Called updateSqlCollection");
+        final UpdateSqlCollectionRequest interceptedRequest =
+                UpdateSqlCollectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSqlCollectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSqlCollection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlCollection/UpdateSqlCollection");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSqlCollectionResponse>
+                transformer =
+                        UpdateSqlCollectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSqlCollectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateSqlFirewallPolicyResponse updateSqlFirewallPolicy(
+            UpdateSqlFirewallPolicyRequest request) {
+        LOG.trace("Called updateSqlFirewallPolicy");
+        final UpdateSqlFirewallPolicyRequest interceptedRequest =
+                UpdateSqlFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSqlFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataSafe",
+                        "UpdateSqlFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallPolicy/UpdateSqlFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSqlFirewallPolicyResponse>
+                transformer =
+                        UpdateSqlFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSqlFirewallPolicyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

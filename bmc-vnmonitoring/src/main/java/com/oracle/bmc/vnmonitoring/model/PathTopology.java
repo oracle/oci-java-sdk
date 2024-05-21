@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -43,6 +43,15 @@ public final class PathTopology extends Topology {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+        private java.util.List<String> limitedEntities;
+
+        public Builder limitedEntities(java.util.List<String> limitedEntities) {
+            this.limitedEntities = limitedEntities;
+            this.__explicitlySet__.add("limitedEntities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -57,7 +66,11 @@ public final class PathTopology extends Topology {
 
         public PathTopology build() {
             PathTopology model =
-                    new PathTopology(this.entities, this.relationships, this.timeCreated);
+                    new PathTopology(
+                            this.entities,
+                            this.relationships,
+                            this.limitedEntities,
+                            this.timeCreated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -71,6 +84,9 @@ public final class PathTopology extends Topology {
             }
             if (model.wasPropertyExplicitlySet("relationships")) {
                 this.relationships(model.getRelationships());
+            }
+            if (model.wasPropertyExplicitlySet("limitedEntities")) {
+                this.limitedEntities(model.getLimitedEntities());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -94,8 +110,9 @@ public final class PathTopology extends Topology {
     public PathTopology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated) {
-        super(entities, relationships, timeCreated);
+        super(entities, relationships, limitedEntities, timeCreated);
     }
 
     @Override

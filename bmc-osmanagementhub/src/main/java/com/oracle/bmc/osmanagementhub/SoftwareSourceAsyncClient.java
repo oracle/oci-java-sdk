@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -459,6 +459,63 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddPackagesToSoftwareSourceResponse>
+            addPackagesToSoftwareSource(
+                    AddPackagesToSoftwareSourceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddPackagesToSoftwareSourceRequest,
+                                    AddPackagesToSoftwareSourceResponse>
+                            handler) {
+        LOG.trace("Called async addPackagesToSoftwareSource");
+        final AddPackagesToSoftwareSourceRequest interceptedRequest =
+                AddPackagesToSoftwareSourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddPackagesToSoftwareSourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "AddPackagesToSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/AddPackagesToSoftwareSource");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
+                transformer =
+                        AddPackagesToSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddPackagesToSoftwareSourceRequest, AddPackagesToSoftwareSourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddPackagesToSoftwareSourceRequest,
+                                AddPackagesToSoftwareSourceResponse>,
+                        java.util.concurrent.Future<AddPackagesToSoftwareSourceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddPackagesToSoftwareSourceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddPackagesToSoftwareSourceRequest, AddPackagesToSoftwareSourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAvailabilityOfSoftwareSourcesResponse>
             changeAvailabilityOfSoftwareSources(
                     ChangeAvailabilityOfSoftwareSourcesRequest request,
@@ -478,7 +535,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "ChangeAvailabilityOfSoftwareSources",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeAvailabilityOfSoftwareSources");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeAvailabilityOfSoftwareSourcesResponse>
                 transformer =
@@ -519,6 +576,65 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSoftwareSourceCompartmentResponse>
+            changeSoftwareSourceCompartment(
+                    ChangeSoftwareSourceCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSoftwareSourceCompartmentRequest,
+                                    ChangeSoftwareSourceCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSoftwareSourceCompartment");
+        final ChangeSoftwareSourceCompartmentRequest interceptedRequest =
+                ChangeSoftwareSourceCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSoftwareSourceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ChangeSoftwareSourceCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeSoftwareSourceCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
+                transformer =
+                        ChangeSoftwareSourceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSoftwareSourceCompartmentRequest,
+                        ChangeSoftwareSourceCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSoftwareSourceCompartmentRequest,
+                                ChangeSoftwareSourceCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSoftwareSourceCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSoftwareSourceCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSoftwareSourceCompartmentRequest,
+                    ChangeSoftwareSourceCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEntitlementResponse> createEntitlement(
             CreateEntitlementRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -532,7 +648,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "CreateEntitlement", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "CreateEntitlement",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateEntitlement");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateEntitlementResponse>
                 transformer =
                         CreateEntitlementConverter.fromResponse(
@@ -584,7 +703,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "CreateSoftwareSource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateSoftwareSource");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
                 transformer =
                         CreateSoftwareSourceConverter.fromResponse(
@@ -636,7 +755,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "DeleteSoftwareSource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/DeleteSoftwareSource");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
                 transformer =
                         DeleteSoftwareSourceConverter.fromResponse(
@@ -678,7 +797,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 GetErratumConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetErratum", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetErratum",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/GetErratum");
         final java.util.function.Function<javax.ws.rs.core.Response, GetErratumResponse>
                 transformer =
                         GetErratumConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -720,7 +842,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 GetModuleStreamConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetModuleStream", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetModuleStream",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStream/GetModuleStream");
         final java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
                 transformer =
                         GetModuleStreamConverter.fromResponse(
@@ -766,7 +891,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "GetModuleStreamProfile",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStreamProfile/GetModuleStreamProfile");
         final java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
                 transformer =
                         GetModuleStreamProfileConverter.fromResponse(
@@ -810,7 +935,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 GetPackageGroupConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetPackageGroup", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetPackageGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/PackageGroup/GetPackageGroup");
         final java.util.function.Function<javax.ws.rs.core.Response, GetPackageGroupResponse>
                 transformer =
                         GetPackageGroupConverter.fromResponse(
@@ -853,7 +981,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 GetSoftwarePackageConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetSoftwarePackage", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetSoftwarePackage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackage");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
                 transformer =
                         GetSoftwarePackageConverter.fromResponse(
@@ -884,6 +1015,54 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetSoftwarePackageByNameResponse> getSoftwarePackageByName(
+            GetSoftwarePackageByNameRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSoftwarePackageByNameRequest, GetSoftwarePackageByNameResponse>
+                    handler) {
+        LOG.trace("Called async getSoftwarePackageByName");
+        final GetSoftwarePackageByNameRequest interceptedRequest =
+                GetSoftwarePackageByNameConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSoftwarePackageByNameConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "GetSoftwarePackageByName",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackageByName");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSoftwarePackageByNameResponse>
+                transformer =
+                        GetSoftwarePackageByNameConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSoftwarePackageByNameRequest, GetSoftwarePackageByNameResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSoftwarePackageByNameRequest, GetSoftwarePackageByNameResponse>,
+                        java.util.concurrent.Future<GetSoftwarePackageByNameResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSoftwarePackageByNameRequest, GetSoftwarePackageByNameResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSoftwareSourceResponse> getSoftwareSource(
             GetSoftwareSourceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -896,7 +1075,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 GetSoftwareSourceConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "GetSoftwareSource", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "GetSoftwareSource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSource");
         final java.util.function.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
                 transformer =
                         GetSoftwareSourceConverter.fromResponse(
@@ -927,6 +1109,54 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAllSoftwarePackagesResponse> listAllSoftwarePackages(
+            ListAllSoftwarePackagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>
+                    handler) {
+        LOG.trace("Called async listAllSoftwarePackages");
+        final ListAllSoftwarePackagesRequest interceptedRequest =
+                ListAllSoftwarePackagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAllSoftwarePackagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ListAllSoftwarePackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAllSoftwarePackages");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAllSoftwarePackagesResponse>
+                transformer =
+                        ListAllSoftwarePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>,
+                        java.util.concurrent.Future<ListAllSoftwarePackagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAllSoftwarePackagesRequest, ListAllSoftwarePackagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEntitlementsResponse> listEntitlements(
             ListEntitlementsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -939,7 +1169,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 ListEntitlementsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListEntitlements", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListEntitlements",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListEntitlements");
         final java.util.function.Function<javax.ws.rs.core.Response, ListEntitlementsResponse>
                 transformer =
                         ListEntitlementsConverter.fromResponse(
@@ -980,7 +1213,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 ListErrataConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListErrata", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListErrata",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/ListErrata");
         final java.util.function.Function<javax.ws.rs.core.Response, ListErrataResponse>
                 transformer =
                         ListErrataConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1025,7 +1261,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "ListModuleStreamProfiles",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreamProfiles");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListModuleStreamProfilesResponse>
                 transformer =
@@ -1070,7 +1306,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 ListModuleStreamsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListModuleStreams", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListModuleStreams",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreams");
         final java.util.function.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
                 transformer =
                         ListModuleStreamsConverter.fromResponse(
@@ -1113,7 +1352,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 ListPackageGroupsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListPackageGroups", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListPackageGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListPackageGroups");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPackageGroupsResponse>
                 transformer =
                         ListPackageGroupsConverter.fromResponse(
@@ -1144,6 +1386,59 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSoftwarePackageSoftwareSourcesResponse>
+            listSoftwarePackageSoftwareSources(
+                    ListSoftwarePackageSoftwareSourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSoftwarePackageSoftwareSourcesRequest,
+                                    ListSoftwarePackageSoftwareSourcesResponse>
+                            handler) {
+        LOG.trace("Called async listSoftwarePackageSoftwareSources");
+        final ListSoftwarePackageSoftwareSourcesRequest interceptedRequest =
+                ListSoftwarePackageSoftwareSourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSoftwarePackageSoftwareSourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "SoftwareSource",
+                        "ListSoftwarePackageSoftwareSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackageSoftwareSources");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSoftwarePackageSoftwareSourcesResponse>
+                transformer =
+                        ListSoftwarePackageSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSoftwarePackageSoftwareSourcesRequest,
+                        ListSoftwarePackageSoftwareSourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSoftwarePackageSoftwareSourcesRequest,
+                                ListSoftwarePackageSoftwareSourcesResponse>,
+                        java.util.concurrent.Future<ListSoftwarePackageSoftwareSourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSoftwarePackageSoftwareSourcesRequest,
+                    ListSoftwarePackageSoftwareSourcesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSoftwarePackagesResponse> listSoftwarePackages(
             ListSoftwarePackagesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1159,7 +1454,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "ListSoftwarePackages",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackages");
         final java.util.function.Function<javax.ws.rs.core.Response, ListSoftwarePackagesResponse>
                 transformer =
                         ListSoftwarePackagesConverter.fromResponse(
@@ -1206,7 +1501,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "ListSoftwareSourceVendors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSourceVendors");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListSoftwareSourceVendorsResponse>
                 transformer =
@@ -1252,7 +1547,10 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                 ListSoftwareSourcesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "SoftwareSource", "ListSoftwareSources", ib.getRequestUri().toString(), "");
+                        "SoftwareSource",
+                        "ListSoftwareSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSources");
         final java.util.function.Function<javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
                 transformer =
                         ListSoftwareSourcesConverter.fromResponse(
@@ -1301,7 +1599,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "SearchSoftwareSourceModuleStreams",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModuleStreams");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SearchSoftwareSourceModuleStreamsResponse>
                 transformer =
@@ -1359,7 +1657,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "SearchSoftwareSourceModules",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModules");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SearchSoftwareSourceModulesResponse>
                 transformer =
@@ -1415,7 +1713,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "SearchSoftwareSourcePackageGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourcePackageGroups");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SearchSoftwareSourcePackageGroupsResponse>
                 transformer =
@@ -1471,7 +1769,7 @@ public class SoftwareSourceAsyncClient implements SoftwareSourceAsync {
                         "SoftwareSource",
                         "UpdateSoftwareSource",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSource");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
                 transformer =
                         UpdateSoftwareSourceConverter.fromResponse(

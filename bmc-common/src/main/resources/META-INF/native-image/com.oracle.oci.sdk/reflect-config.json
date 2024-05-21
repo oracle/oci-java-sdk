@@ -1,0 +1,7 @@
+[
+  {
+    "name": "sun.security.pkcs11.SunPKCS11",
+    "methods": [{"name": "<init>", "parameterTypes": ["java.lang.String"]},
+      {"name": "configure", "parameterTypes": ["java.lang.String"]}]
+  }
+]

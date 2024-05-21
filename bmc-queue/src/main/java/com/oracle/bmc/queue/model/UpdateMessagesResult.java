@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -51,13 +51,13 @@ public final class UpdateMessagesResult extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid visibilityInSeconds.
+         * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientFailures")
         private Integer clientFailures;
 
         /**
-         * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid visibilityInSeconds.
+         * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
          * @param clientFailures the value to set
          * @return this builder
          **/
@@ -145,13 +145,13 @@ public final class UpdateMessagesResult extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid visibilityInSeconds.
+     * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientFailures")
     private final Integer clientFailures;
 
     /**
-     * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid visibilityInSeconds.
+     * The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid {@code visibilityInSeconds}.
      * @return the value
      **/
     public Integer getClientFailures() {

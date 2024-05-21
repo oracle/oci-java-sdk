@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent;
@@ -148,6 +148,116 @@ public class ManagementAgentPaginators {
                     public java.util.List<
                                     com.oracle.bmc.managementagent.model.AvailabilityHistorySummary>
                             apply(ListAvailabilityHistoriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDataSources operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDataSourcesResponse> listDataSourcesResponseIterator(
+            final ListDataSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDataSourcesRequest.Builder, ListDataSourcesRequest, ListDataSourcesResponse>(
+                new java.util.function.Supplier<ListDataSourcesRequest.Builder>() {
+                    @Override
+                    public ListDataSourcesRequest.Builder get() {
+                        return ListDataSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDataSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListDataSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataSourcesRequest.Builder>,
+                        ListDataSourcesRequest>() {
+                    @Override
+                    public ListDataSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDataSourcesRequest, ListDataSourcesResponse>() {
+                    @Override
+                    public ListDataSourcesResponse apply(ListDataSourcesRequest request) {
+                        return client.listDataSources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.managementagent.model.DataSourceSummary} objects
+     * contained in responses from the listDataSources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.managementagent.model.DataSourceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.managementagent.model.DataSourceSummary>
+            listDataSourcesRecordIterator(final ListDataSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDataSourcesRequest.Builder, ListDataSourcesRequest, ListDataSourcesResponse,
+                com.oracle.bmc.managementagent.model.DataSourceSummary>(
+                new java.util.function.Supplier<ListDataSourcesRequest.Builder>() {
+                    @Override
+                    public ListDataSourcesRequest.Builder get() {
+                        return ListDataSourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDataSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListDataSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDataSourcesRequest.Builder>,
+                        ListDataSourcesRequest>() {
+                    @Override
+                    public ListDataSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDataSourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListDataSourcesRequest, ListDataSourcesResponse>() {
+                    @Override
+                    public ListDataSourcesResponse apply(ListDataSourcesRequest request) {
+                        return client.listDataSources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDataSourcesResponse,
+                        java.util.List<com.oracle.bmc.managementagent.model.DataSourceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.managementagent.model.DataSourceSummary>
+                            apply(ListDataSourcesResponse response) {
                         return response.getItems();
                     }
                 });

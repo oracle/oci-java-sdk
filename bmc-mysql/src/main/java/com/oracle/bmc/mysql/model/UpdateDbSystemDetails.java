@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -45,7 +45,9 @@ public final class UpdateDbSystemDetails
         "freeformTags",
         "definedTags",
         "deletionPolicy",
-        "crashRecovery"
+        "crashRecovery",
+        "databaseManagement",
+        "secureConnections"
     })
     public UpdateDbSystemDetails(
             String displayName,
@@ -69,7 +71,9 @@ public final class UpdateDbSystemDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             UpdateDeletionPolicyDetails deletionPolicy,
-            CrashRecoveryStatus crashRecovery) {
+            CrashRecoveryStatus crashRecovery,
+            DatabaseManagementStatus databaseManagement,
+            SecureConnectionDetails secureConnections) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -93,6 +97,8 @@ public final class UpdateDbSystemDetails
         this.definedTags = definedTags;
         this.deletionPolicy = deletionPolicy;
         this.crashRecovery = crashRecovery;
+        this.databaseManagement = databaseManagement;
+        this.secureConnections = secureConnections;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -545,6 +551,33 @@ public final class UpdateDbSystemDetails
             this.__explicitlySet__.add("crashRecovery");
             return this;
         }
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+        private DatabaseManagementStatus databaseManagement;
+
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         * @param databaseManagement the value to set
+         * @return this builder
+         **/
+        public Builder databaseManagement(DatabaseManagementStatus databaseManagement) {
+            this.databaseManagement = databaseManagement;
+            this.__explicitlySet__.add("databaseManagement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+        private SecureConnectionDetails secureConnections;
+
+        public Builder secureConnections(SecureConnectionDetails secureConnections) {
+            this.secureConnections = secureConnections;
+            this.__explicitlySet__.add("secureConnections");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -573,7 +606,9 @@ public final class UpdateDbSystemDetails
                             this.freeformTags,
                             this.definedTags,
                             this.deletionPolicy,
-                            this.crashRecovery);
+                            this.crashRecovery,
+                            this.databaseManagement,
+                            this.secureConnections);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -647,6 +682,12 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("crashRecovery")) {
                 this.crashRecovery(model.getCrashRecovery());
+            }
+            if (model.wasPropertyExplicitlySet("databaseManagement")) {
+                this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("secureConnections")) {
+                this.secureConnections(model.getSecureConnections());
             }
             return this;
         }
@@ -1066,6 +1107,29 @@ public final class UpdateDbSystemDetails
         return crashRecovery;
     }
 
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
+    private final DatabaseManagementStatus databaseManagement;
+
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     * @return the value
+     **/
+    public DatabaseManagementStatus getDatabaseManagement() {
+        return databaseManagement;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("secureConnections")
+    private final SecureConnectionDetails secureConnections;
+
+    public SecureConnectionDetails getSecureConnections() {
+        return secureConnections;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1102,6 +1166,8 @@ public final class UpdateDbSystemDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", deletionPolicy=").append(String.valueOf(this.deletionPolicy));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
+        sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
         sb.append(")");
         return sb.toString();
     }
@@ -1138,6 +1204,8 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.deletionPolicy, other.deletionPolicy)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
+                && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.secureConnections, other.secureConnections)
                 && super.equals(other);
     }
 
@@ -1189,6 +1257,14 @@ public final class UpdateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.crashRecovery == null ? 43 : this.crashRecovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseManagement == null
+                                ? 43
+                                : this.databaseManagement.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

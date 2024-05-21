@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -19,11 +19,12 @@ package com.oracle.bmc.datasafe.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targetId", "sensitiveDataModelId"})
-    public Dimensions(String targetId, String sensitiveDataModelId) {
+    @java.beans.ConstructorProperties({"targetId", "sensitiveDataModelId", "sensitiveTypeId"})
+    public Dimensions(String targetId, String sensitiveDataModelId, String sensitiveTypeId) {
         super();
         this.targetId = targetId;
         this.sensitiveDataModelId = sensitiveDataModelId;
+        this.sensitiveTypeId = sensitiveTypeId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,29 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("sensitiveDataModelId");
             return this;
         }
+        /**
+         * The OCID of the sensitive type.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
+        private String sensitiveTypeId;
+
+        /**
+         * The OCID of the sensitive type.
+         * @param sensitiveTypeId the value to set
+         * @return this builder
+         **/
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
+            this.__explicitlySet__.add("sensitiveTypeId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Dimensions build() {
-            Dimensions model = new Dimensions(this.targetId, this.sensitiveDataModelId);
+            Dimensions model =
+                    new Dimensions(this.targetId, this.sensitiveDataModelId, this.sensitiveTypeId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,9 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("sensitiveDataModelId")) {
                 this.sensitiveDataModelId(model.getSensitiveDataModelId());
+            }
+            if (model.wasPropertyExplicitlySet("sensitiveTypeId")) {
+                this.sensitiveTypeId(model.getSensitiveTypeId());
             }
             return this;
         }
@@ -123,6 +144,20 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
         return sensitiveDataModelId;
     }
 
+    /**
+     * The OCID of the sensitive type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sensitiveTypeId")
+    private final String sensitiveTypeId;
+
+    /**
+     * The OCID of the sensitive type.
+     * @return the value
+     **/
+    public String getSensitiveTypeId() {
+        return sensitiveTypeId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +174,7 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append("super=").append(super.toString());
         sb.append("targetId=").append(String.valueOf(this.targetId));
         sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
+        sb.append(", sensitiveTypeId=").append(String.valueOf(this.sensitiveTypeId));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +191,7 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
         Dimensions other = (Dimensions) o;
         return java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
+                && java.util.Objects.equals(this.sensitiveTypeId, other.sensitiveTypeId)
                 && super.equals(other);
     }
 
@@ -168,6 +205,9 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.sensitiveDataModelId == null
                                 ? 43
                                 : this.sensitiveDataModelId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sensitiveTypeId == null ? 43 : this.sensitiveTypeId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

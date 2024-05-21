@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -23,12 +23,52 @@ package com.oracle.bmc.ailanguage.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedKeyPhraseExtractionModelDetails.class,
+        name = "PRE_TRAINED_KEYPHRASE_EXTRACTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedHealthNluModelDetails.class,
+        name = "PRE_TRAINED_HEALTH_NLU"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedUniversalModel.class,
+        name = "PRE_TRAINED_UNIVERSAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = NamedEntityRecognitionModelDetails.class,
         name = "NAMED_ENTITY_RECOGNITION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PiiModelDetails.class,
+        name = "PII"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedLanguageDetectionModelDetails.class,
+        name = "PRE_TRAINED_LANGUAGE_DETECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedNamedEntityRecognitionModelDetails.class,
+        name = "PRE_TRAINED_NAMED_ENTITY_RECOGNITION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedSentimentAnalysisModelDetails.class,
+        name = "PRE_TRAINED_SENTIMENT_ANALYSIS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedTextClassificationModelDetails.class,
+        name = "PRE_TRAINED_TEXT_CLASSIFICATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = TextClassificationModelDetails.class,
         name = "TEXT_CLASSIFICATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedSummarization.class,
+        name = "PRE_TRAINED_SUMMARIZATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedPiiModelDetails.class,
+        name = "PRE_TRAINED_PII"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -102,6 +142,17 @@ public class ModelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     public enum ModelType {
         NamedEntityRecognition("NAMED_ENTITY_RECOGNITION"),
         TextClassification("TEXT_CLASSIFICATION"),
+        PreTrainedNamedEntityRecognition("PRE_TRAINED_NAMED_ENTITY_RECOGNITION"),
+        PreTrainedTextClassification("PRE_TRAINED_TEXT_CLASSIFICATION"),
+        PreTrainedSentimentAnalysis("PRE_TRAINED_SENTIMENT_ANALYSIS"),
+        PreTrainedKeyphraseExtraction("PRE_TRAINED_KEYPHRASE_EXTRACTION"),
+        PreTrainedLanguageDetection("PRE_TRAINED_LANGUAGE_DETECTION"),
+        PreTrainedPii("PRE_TRAINED_PII"),
+        PreTrainedTranslation("PRE_TRAINED_TRANSLATION"),
+        PreTrainedHealthNlu("PRE_TRAINED_HEALTH_NLU"),
+        PreTrainedSummarization("PRE_TRAINED_SUMMARIZATION"),
+        PreTrainedUniversal("PRE_TRAINED_UNIVERSAL"),
+        Pii("PII"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

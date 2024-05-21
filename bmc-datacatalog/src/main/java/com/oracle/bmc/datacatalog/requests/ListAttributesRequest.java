@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.requests;
@@ -325,19 +325,22 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return fields;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+     * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+     * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
      *
      **/
     public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         Position("POSITION"),
+        Displayorbusinessname("DISPLAYORBUSINESSNAME"),
         ;
 
         private final String value;
@@ -369,7 +372,8 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+     * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+     * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
      *
      */
     public SortBy getSortBy() {
@@ -819,13 +823,15 @@ public class ListAttributesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+         * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+         * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+         * The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+         * Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance

@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The configuration of a backend server that is a member of a network load balancer backend set.
- * For more information, see [Managing Backend Servers](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm).
+ * For more information, see [Managing Backend Servers](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendServers/backend-server-management.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -142,7 +142,7 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
          * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
          * as a server weighted '1'.
          * For more information about load balancing policies, see
-         * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
          * <p>
          * Example: {@code 3}
          *
@@ -155,7 +155,7 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
          * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
          * as a server weighted '1'.
          * For more information about load balancing policies, see
-         * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
          * <p>
          * Example: {@code 3}
          *
@@ -382,7 +382,7 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
      * as a server weighted '1'.
      * For more information about load balancing policies, see
-     * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
      * <p>
      * Example: {@code 3}
      *
@@ -395,7 +395,7 @@ public final class Backend extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
      * as a server weighted '1'.
      * For more information about load balancing policies, see
-     * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
      * <p>
      * Example: {@code 3}
      *

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,24 +14,24 @@ public class ChangeSecurityRecipeCompartmentRequest
                 com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails> {
 
     /**
-     * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+     * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
      */
     private String securityRecipeId;
 
     /**
-     * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+     * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
      */
     public String getSecurityRecipeId() {
         return securityRecipeId;
     }
     /**
-     * The compartment to which you want to move the recipe.
+     * The compartment to which you want to move the {@code SecurityRecipe} resource
      */
     private com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails
             changeSecurityRecipeCompartmentDetails;
 
     /**
-     * The compartment to which you want to move the recipe.
+     * The compartment to which you want to move the {@code SecurityRecipe} resource
      */
     public com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails
             getChangeSecurityRecipeCompartmentDetails() {
@@ -110,12 +110,12 @@ public class ChangeSecurityRecipeCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          */
         private String securityRecipeId = null;
 
         /**
-         * The unique identifier of the security zone recipe ({@code SecurityRecipe})
+         * The unique identifier of the security zone recipe. ({@code SecurityRecipe})
          * @param securityRecipeId the value to set
          * @return this builder instance
          */
@@ -125,13 +125,13 @@ public class ChangeSecurityRecipeCompartmentRequest
         }
 
         /**
-         * The compartment to which you want to move the recipe.
+         * The compartment to which you want to move the {@code SecurityRecipe} resource
          */
         private com.oracle.bmc.cloudguard.model.ChangeSecurityRecipeCompartmentDetails
                 changeSecurityRecipeCompartmentDetails = null;
 
         /**
-         * The compartment to which you want to move the recipe.
+         * The compartment to which you want to move the {@code SecurityRecipe} resource
          * @param changeSecurityRecipeCompartmentDetails the value to set
          * @return this builder instance
          */

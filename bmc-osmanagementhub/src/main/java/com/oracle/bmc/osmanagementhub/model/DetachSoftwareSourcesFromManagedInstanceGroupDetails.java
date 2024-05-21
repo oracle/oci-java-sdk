@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The software sources OCIDs to detach from the managed instance group.
+ * Provides the information used to detach software sources from a managed instance group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,13 +33,13 @@ public final class DetachSoftwareSourcesFromManagedInstanceGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of software sources OCIDs to be detached.
+         * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
         private java.util.List<String> softwareSources;
 
         /**
-         * The list of software sources OCIDs to be detached.
+         * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
          * @param softwareSources the value to set
          * @return this builder
          **/
@@ -95,13 +95,13 @@ public final class DetachSoftwareSourcesFromManagedInstanceGroupDetails
     }
 
     /**
-     * The list of software sources OCIDs to be detached.
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<String> softwareSources;
 
     /**
-     * The list of software sources OCIDs to be detached.
+     * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      * @return the value
      **/
     public java.util.List<String> getSoftwareSources() {

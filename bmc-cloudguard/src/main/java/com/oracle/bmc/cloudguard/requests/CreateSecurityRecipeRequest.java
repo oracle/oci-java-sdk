@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.requests;
@@ -14,12 +14,12 @@ public class CreateSecurityRecipeRequest
                 com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails> {
 
     /**
-     * Details for the new {@code SecurityRecipe}.
+     * Details for the new {@code SecurityRecipe} resource
      */
     private com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails createSecurityRecipeDetails;
 
     /**
-     * Details for the new {@code SecurityRecipe}.
+     * Details for the new {@code SecurityRecipe} resource
      */
     public com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails
             getCreateSecurityRecipeDetails() {
@@ -77,13 +77,13 @@ public class CreateSecurityRecipeRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new {@code SecurityRecipe}.
+         * Details for the new {@code SecurityRecipe} resource
          */
         private com.oracle.bmc.cloudguard.model.CreateSecurityRecipeDetails
                 createSecurityRecipeDetails = null;
 
         /**
-         * Details for the new {@code SecurityRecipe}.
+         * Details for the new {@code SecurityRecipe} resource
          * @param createSecurityRecipeDetails the value to set
          * @return this builder instance
          */

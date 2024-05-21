@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * condition type provided by cloud guard
+ * Additional information on supported condition types.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,25 +22,29 @@ package com.oracle.bmc.cloudguard.model;
 public final class ConditionMetadataTypeSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "description", "lifecycleState"})
+    @java.beans.ConstructorProperties({"id", "description", "lifecycleState", "locks"})
     public ConditionMetadataTypeSummary(
-            String id, String description, LifecycleState lifecycleState) {
+            String id,
+            String description,
+            LifecycleState lifecycleState,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.description = description;
         this.lifecycleState = lifecycleState;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name used to identify
+         * Unique identifier of the condition type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Name used to identify
+         * Unique identifier of the condition type
          * @param id the value to set
          * @return this builder
          **/
@@ -66,19 +70,35 @@ public final class ConditionMetadataTypeSummary
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource
          * @param lifecycleState the value to set
          * @return this builder
          **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -88,7 +108,7 @@ public final class ConditionMetadataTypeSummary
         public ConditionMetadataTypeSummary build() {
             ConditionMetadataTypeSummary model =
                     new ConditionMetadataTypeSummary(
-                            this.id, this.description, this.lifecycleState);
+                            this.id, this.description, this.lifecycleState, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -106,6 +126,9 @@ public final class ConditionMetadataTypeSummary
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -122,13 +145,13 @@ public final class ConditionMetadataTypeSummary
     }
 
     /**
-     * Name used to identify
+     * Unique identifier of the condition type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Name used to identify
+     * Unique identifier of the condition type
      * @return the value
      **/
     public String getId() {
@@ -150,17 +173,31 @@ public final class ConditionMetadataTypeSummary
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -180,6 +217,7 @@ public final class ConditionMetadataTypeSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -197,6 +235,7 @@ public final class ConditionMetadataTypeSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -209,6 +248,7 @@ public final class ConditionMetadataTypeSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Software vendor name, list of osFamily and archType.
+ * Provides summary information about a software source vendor, including name, operating system family, and architecture type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -52,13 +52,13 @@ public final class SoftwareSourceVendorSummary
             return this;
         }
         /**
-         * List of corresponding osFamilies.
+         * List of corresponding operating system families.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
         private java.util.List<OsFamily> osFamilies;
 
         /**
-         * List of corresponding osFamilies.
+         * List of corresponding operating system families.
          * @param osFamilies the value to set
          * @return this builder
          **/
@@ -68,13 +68,13 @@ public final class SoftwareSourceVendorSummary
             return this;
         }
         /**
-         * List of corresponding archTypes.
+         * List of corresponding architecture types.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("archTypes")
         private java.util.List<ArchType> archTypes;
 
         /**
-         * List of corresponding archTypes.
+         * List of corresponding architecture types.
          * @param archTypes the value to set
          * @return this builder
          **/
@@ -137,13 +137,13 @@ public final class SoftwareSourceVendorSummary
     }
 
     /**
-     * List of corresponding osFamilies.
+     * List of corresponding operating system families.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
     private final java.util.List<OsFamily> osFamilies;
 
     /**
-     * List of corresponding osFamilies.
+     * List of corresponding operating system families.
      * @return the value
      **/
     public java.util.List<OsFamily> getOsFamilies() {
@@ -151,13 +151,13 @@ public final class SoftwareSourceVendorSummary
     }
 
     /**
-     * List of corresponding archTypes.
+     * List of corresponding architecture types.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("archTypes")
     private final java.util.List<ArchType> archTypes;
 
     /**
-     * List of corresponding archTypes.
+     * List of corresponding architecture types.
      * @return the value
      **/
     public java.util.List<ArchType> getArchTypes() {

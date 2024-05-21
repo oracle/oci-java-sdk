@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.model;
@@ -25,7 +25,8 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         "receipt",
         "deliveryCount",
         "visibleAfter",
-        "expireAfter"
+        "expireAfter",
+        "metadata"
     })
     public GetMessage(
             Long id,
@@ -33,7 +34,8 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             String receipt,
             Integer deliveryCount,
             java.util.Date visibleAfter,
-            java.util.Date expireAfter) {
+            java.util.Date expireAfter,
+            MessageMetadata metadata) {
         super();
         this.id = id;
         this.content = content;
@@ -41,18 +43,19 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         this.deliveryCount = deliveryCount;
         this.visibleAfter = visibleAfter;
         this.expireAfter = expireAfter;
+        this.metadata = metadata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The id of the message - this is only used for tracing and debugging purposes and isn't used as a parameter in any request.
+         * The ID of the message. This ID is only used for tracing and debugging purposes and isn't used as a parameter in any request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
-         * The id of the message - this is only used for tracing and debugging purposes and isn't used as a parameter in any request.
+         * The ID of the message. This ID is only used for tracing and debugging purposes and isn't used as a parameter in any request.
          * @param id the value to set
          * @return this builder
          **/
@@ -62,13 +65,13 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The content of the message
+         * The content of the message.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
         /**
-         * The content of the message
+         * The content of the message.
          * @param content the value to set
          * @return this builder
          **/
@@ -98,13 +101,13 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The number of time the message has been delivered to a consumer.
+         * The number of times that the message has been delivered to a consumer.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("deliveryCount")
         private Integer deliveryCount;
 
         /**
-         * The number of time the message has been delivered to a consumer.
+         * The number of times that the message has been delivered to a consumer.
          * @param deliveryCount the value to set
          * @return this builder
          **/
@@ -114,13 +117,19 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+         * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
         private java.util.Date visibleAfter;
 
         /**
-         * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+         * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
          * @param visibleAfter the value to set
          * @return this builder
          **/
@@ -130,19 +139,34 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The time after which the message will be automatically deleted. An RFC3339 formatted datetime string
+         * The time after which the message will be automatically deleted, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("expireAfter")
         private java.util.Date expireAfter;
 
         /**
-         * The time after which the message will be automatically deleted. An RFC3339 formatted datetime string
+         * The time after which the message will be automatically deleted, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
          * @param expireAfter the value to set
          * @return this builder
          **/
         public Builder expireAfter(java.util.Date expireAfter) {
             this.expireAfter = expireAfter;
             this.__explicitlySet__.add("expireAfter");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private MessageMetadata metadata;
+
+        public Builder metadata(MessageMetadata metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
             return this;
         }
 
@@ -157,7 +181,8 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.receipt,
                             this.deliveryCount,
                             this.visibleAfter,
-                            this.expireAfter);
+                            this.expireAfter,
+                            this.metadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -184,6 +209,9 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             if (model.wasPropertyExplicitlySet("expireAfter")) {
                 this.expireAfter(model.getExpireAfter());
             }
+            if (model.wasPropertyExplicitlySet("metadata")) {
+                this.metadata(model.getMetadata());
+            }
             return this;
         }
     }
@@ -200,13 +228,13 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The id of the message - this is only used for tracing and debugging purposes and isn't used as a parameter in any request.
+     * The ID of the message. This ID is only used for tracing and debugging purposes and isn't used as a parameter in any request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
-     * The id of the message - this is only used for tracing and debugging purposes and isn't used as a parameter in any request.
+     * The ID of the message. This ID is only used for tracing and debugging purposes and isn't used as a parameter in any request.
      * @return the value
      **/
     public Long getId() {
@@ -214,13 +242,13 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The content of the message
+     * The content of the message.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
     /**
-     * The content of the message
+     * The content of the message.
      * @return the value
      **/
     public String getContent() {
@@ -246,13 +274,13 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The number of time the message has been delivered to a consumer.
+     * The number of times that the message has been delivered to a consumer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deliveryCount")
     private final Integer deliveryCount;
 
     /**
-     * The number of time the message has been delivered to a consumer.
+     * The number of times that the message has been delivered to a consumer.
      * @return the value
      **/
     public Integer getDeliveryCount() {
@@ -260,13 +288,19 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+     * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
     private final java.util.Date visibleAfter;
 
     /**
-     * The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+     * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
      * @return the value
      **/
     public java.util.Date getVisibleAfter() {
@@ -274,17 +308,30 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The time after which the message will be automatically deleted. An RFC3339 formatted datetime string
+     * The time after which the message will be automatically deleted, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("expireAfter")
     private final java.util.Date expireAfter;
 
     /**
-     * The time after which the message will be automatically deleted. An RFC3339 formatted datetime string
+     * The time after which the message will be automatically deleted, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
      * @return the value
      **/
     public java.util.Date getExpireAfter() {
         return expireAfter;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    private final MessageMetadata metadata;
+
+    public MessageMetadata getMetadata() {
+        return metadata;
     }
 
     @Override
@@ -307,6 +354,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", deliveryCount=").append(String.valueOf(this.deliveryCount));
         sb.append(", visibleAfter=").append(String.valueOf(this.visibleAfter));
         sb.append(", expireAfter=").append(String.valueOf(this.expireAfter));
+        sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
     }
@@ -327,6 +375,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.deliveryCount, other.deliveryCount)
                 && java.util.Objects.equals(this.visibleAfter, other.visibleAfter)
                 && java.util.Objects.equals(this.expireAfter, other.expireAfter)
+                && java.util.Objects.equals(this.metadata, other.metadata)
                 && super.equals(other);
     }
 
@@ -342,6 +391,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.deliveryCount == null ? 43 : this.deliveryCount.hashCode());
         result = (result * PRIME) + (this.visibleAfter == null ? 43 : this.visibleAfter.hashCode());
         result = (result * PRIME) + (this.expireAfter == null ? 43 : this.expireAfter.hashCode());
+        result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -22,14 +22,21 @@ package com.oracle.bmc.datascience.model;
 public final class PipelineInfrastructureConfigurationDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"shapeName", "blockStorageSizeInGBs", "shapeConfigDetails"})
+    @java.beans.ConstructorProperties({
+        "shapeName",
+        "blockStorageSizeInGBs",
+        "subnetId",
+        "shapeConfigDetails"
+    })
     public PipelineInfrastructureConfigurationDetails(
             String shapeName,
             Integer blockStorageSizeInGBs,
+            String subnetId,
             PipelineShapeConfigDetails shapeConfigDetails) {
         super();
         this.shapeName = shapeName;
         this.blockStorageSizeInGBs = blockStorageSizeInGBs;
+        this.subnetId = subnetId;
         this.shapeConfigDetails = shapeConfigDetails;
     }
 
@@ -69,6 +76,24 @@ public final class PipelineInfrastructureConfigurationDetails
             this.__explicitlySet__.add("blockStorageSizeInGBs");
             return this;
         }
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        /**
+         * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         *
+         * @param subnetId the value to set
+         * @return this builder
+         **/
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("shapeConfigDetails")
         private PipelineShapeConfigDetails shapeConfigDetails;
@@ -85,7 +110,10 @@ public final class PipelineInfrastructureConfigurationDetails
         public PipelineInfrastructureConfigurationDetails build() {
             PipelineInfrastructureConfigurationDetails model =
                     new PipelineInfrastructureConfigurationDetails(
-                            this.shapeName, this.blockStorageSizeInGBs, this.shapeConfigDetails);
+                            this.shapeName,
+                            this.blockStorageSizeInGBs,
+                            this.subnetId,
+                            this.shapeConfigDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -99,6 +127,9 @@ public final class PipelineInfrastructureConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("blockStorageSizeInGBs")) {
                 this.blockStorageSizeInGBs(model.getBlockStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("subnetId")) {
+                this.subnetId(model.getSubnetId());
             }
             if (model.wasPropertyExplicitlySet("shapeConfigDetails")) {
                 this.shapeConfigDetails(model.getShapeConfigDetails());
@@ -148,6 +179,22 @@ public final class PipelineInfrastructureConfigurationDetails
         return blockStorageSizeInGBs;
     }
 
+    /**
+     * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     *
+     * @return the value
+     **/
+    public String getSubnetId() {
+        return subnetId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("shapeConfigDetails")
     private final PipelineShapeConfigDetails shapeConfigDetails;
 
@@ -171,6 +218,7 @@ public final class PipelineInfrastructureConfigurationDetails
         sb.append("super=").append(super.toString());
         sb.append("shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", blockStorageSizeInGBs=").append(String.valueOf(this.blockStorageSizeInGBs));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", shapeConfigDetails=").append(String.valueOf(this.shapeConfigDetails));
         sb.append(")");
         return sb.toString();
@@ -189,6 +237,7 @@ public final class PipelineInfrastructureConfigurationDetails
                 (PipelineInfrastructureConfigurationDetails) o;
         return java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.blockStorageSizeInGBs, other.blockStorageSizeInGBs)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.shapeConfigDetails, other.shapeConfigDetails)
                 && super.equals(other);
     }
@@ -203,6 +252,7 @@ public final class PipelineInfrastructureConfigurationDetails
                         + (this.blockStorageSizeInGBs == null
                                 ? 43
                                 : this.blockStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
                         + (this.shapeConfigDetails == null

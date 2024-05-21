@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.internal.http;
@@ -128,6 +128,17 @@ public class AttachSoftwareSourcesToManagedInstanceGroupConverter {
                                                         .builder()
                                                         .__httpStatusCode__(rawResponse.getStatus())
                                                         .headers(headers);
+
+                                java.util.Optional<java.util.List<String>> opcWorkRequestIdHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
                                 java.util.Optional<java.util.List<String>> opcRequestIdHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(

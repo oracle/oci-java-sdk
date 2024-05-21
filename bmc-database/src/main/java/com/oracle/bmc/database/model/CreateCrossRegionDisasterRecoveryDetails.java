@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -25,27 +25,6 @@ package com.oracle.bmc.database.model;
  *   - licenseModel
  *   - whitelistedIps
  *   - isMtlsConnectionRequired
- * Example I - Creating a cross-region standby with required parameters only:
- *     {@code {
- *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- *       "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- *       "source": "CROSS_REGION_DISASTER_RECOVERY",
- *       "remoteDisasterRecoveryType": "BACKUP_BASED"
- *     }}
- * Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters:
- *     {@code {
- *       "compartmentId": "ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>",
- *       "ecpuCount": 2,
- *       "dbName": "adatabasedb1",
- *       "sourceId": "ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>",
- *       "dataStorageSizeInTBs": 1,
- *       "source": "CROSS_REGION_DISASTER_RECOVERY",
- *       "adminPassword" : "<var>&lt;password&gt;</var>",
- *       "dbVersion": "19c",
- *       "licenseModel": "LICENSE_INCLUDED",
- *       "isAutoScalingForStorageEnabled": "true",
- *       "remoteDisasterRecoveryType": "BACKUP_BASED"
- *     }}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -110,6 +89,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+        private Integer backupRetentionPeriodInDays;
+
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            this.__explicitlySet__.add("backupRetentionPeriodInDays");
             return this;
         }
 
@@ -241,6 +229,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
@@ -256,6 +253,15 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+        private Integer inMemoryPercentage;
+
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            this.inMemoryPercentage = inMemoryPercentage;
+            this.__explicitlySet__.add("inMemoryPercentage");
             return this;
         }
 
@@ -395,6 +401,24 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+        private String resourcePoolLeaderId;
+
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
+            this.__explicitlySet__.add("resourcePoolLeaderId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+        private ResourcePoolSummary resourcePoolSummary;
+
+        public Builder resourcePoolSummary(ResourcePoolSummary resourcePoolSummary) {
+            this.resourcePoolSummary = resourcePoolSummary;
+            this.__explicitlySet__.add("resourcePoolSummary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -421,15 +445,6 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
             this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
             this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-        private Integer maxCpuCoreCount;
-
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = maxCpuCoreCount;
-            this.__explicitlySet__.add("maxCpuCoreCount");
             return this;
         }
 
@@ -469,13 +484,13 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the DR association.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the DR association.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
          * @param sourceId the value to set
          * @return this builder
          **/
@@ -485,7 +500,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             return this;
         }
         /**
-         * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database.
+         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
          * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
          * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
@@ -494,7 +509,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         private DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType;
 
         /**
-         * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database.
+         * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
          * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
          * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
@@ -505,6 +520,22 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType) {
             this.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
             this.__explicitlySet__.add("remoteDisasterRecoveryType");
+            return this;
+        }
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+        private Boolean isReplicateAutomaticBackups;
+
+        /**
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         * @param isReplicateAutomaticBackups the value to set
+         * @return this builder
+         **/
+        public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
+            this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            this.__explicitlySet__.add("isReplicateAutomaticBackups");
             return this;
         }
 
@@ -519,6 +550,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.ncharacterSet,
                             this.dbName,
                             this.cpuCoreCount,
+                            this.backupRetentionPeriodInDays,
                             this.computeModel,
                             this.computeCount,
                             this.ocpuCount,
@@ -533,8 +565,10 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.licenseModel,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.inMemoryPercentage,
                             this.isAccessControlEnabled,
                             this.whitelistedIps,
                             this.arePrimaryWhitelistedIpsUsed,
@@ -550,16 +584,18 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                             this.dbVersion,
                             this.customerContacts,
                             this.isMtlsConnectionRequired,
+                            this.resourcePoolLeaderId,
+                            this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
-                            this.maxCpuCoreCount,
                             this.databaseEdition,
                             this.dbToolsDetails,
                             this.secretId,
                             this.secretVersionNumber,
                             this.sourceId,
-                            this.remoteDisasterRecoveryType);
+                            this.remoteDisasterRecoveryType,
+                            this.isReplicateAutomaticBackups);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -582,6 +618,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("backupRetentionPeriodInDays")) {
+                this.backupRetentionPeriodInDays(model.getBackupRetentionPeriodInDays());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
@@ -626,11 +665,17 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
+            }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
             }
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("inMemoryPercentage")) {
+                this.inMemoryPercentage(model.getInMemoryPercentage());
             }
             if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
                 this.isAccessControlEnabled(model.getIsAccessControlEnabled());
@@ -677,6 +722,12 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
                 this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
             }
+            if (model.wasPropertyExplicitlySet("resourcePoolLeaderId")) {
+                this.resourcePoolLeaderId(model.getResourcePoolLeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
+                this.resourcePoolSummary(model.getResourcePoolSummary());
+            }
             if (model.wasPropertyExplicitlySet("autonomousMaintenanceScheduleType")) {
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
@@ -686,9 +737,6 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
                 this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
-            }
-            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
-                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
             }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
@@ -707,6 +755,9 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             }
             if (model.wasPropertyExplicitlySet("remoteDisasterRecoveryType")) {
                 this.remoteDisasterRecoveryType(model.getRemoteDisasterRecoveryType());
+            }
+            if (model.wasPropertyExplicitlySet("isReplicateAutomaticBackups")) {
+                this.isReplicateAutomaticBackups(model.getIsReplicateAutomaticBackups());
             }
             return this;
         }
@@ -730,6 +781,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            Integer backupRetentionPeriodInDays,
             ComputeModel computeModel,
             Float computeCount,
             Float ocpuCount,
@@ -744,8 +796,10 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             LicenseModel licenseModel,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Integer inMemoryPercentage,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -761,22 +815,25 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
+            String resourcePoolLeaderId,
+            ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
             String secretId,
             Integer secretVersionNumber,
             String sourceId,
-            DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType) {
+            DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType,
+            Boolean isReplicateAutomaticBackups) {
         super(
                 compartmentId,
                 characterSet,
                 ncharacterSet,
                 dbName,
                 cpuCoreCount,
+                backupRetentionPeriodInDays,
                 computeModel,
                 computeCount,
                 ocpuCount,
@@ -791,8 +848,10 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 licenseModel,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
+                inMemoryPercentage,
                 isAccessControlEnabled,
                 whitelistedIps,
                 arePrimaryWhitelistedIpsUsed,
@@ -808,26 +867,28 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
+                resourcePoolLeaderId,
+                resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
-                maxCpuCoreCount,
                 databaseEdition,
                 dbToolsDetails,
                 secretId,
                 secretVersionNumber);
         this.sourceId = sourceId;
         this.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
+        this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the DR association.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new standby database for the DR association.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
      * @return the value
      **/
     public String getSourceId() {
@@ -835,7 +896,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
     }
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
@@ -844,7 +905,7 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
     private final DisasterRecoveryConfiguration.DisasterRecoveryType remoteDisasterRecoveryType;
 
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
      * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
      * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
@@ -852,6 +913,20 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
      **/
     public DisasterRecoveryConfiguration.DisasterRecoveryType getRemoteDisasterRecoveryType() {
         return remoteDisasterRecoveryType;
+    }
+
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
+    private final Boolean isReplicateAutomaticBackups;
+
+    /**
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * @return the value
+     **/
+    public Boolean getIsReplicateAutomaticBackups() {
+        return isReplicateAutomaticBackups;
     }
 
     @Override
@@ -871,6 +946,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", remoteDisasterRecoveryType=")
                 .append(String.valueOf(this.remoteDisasterRecoveryType));
+        sb.append(", isReplicateAutomaticBackups=")
+                .append(String.valueOf(this.isReplicateAutomaticBackups));
         sb.append(")");
         return sb.toString();
     }
@@ -889,6 +966,8 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
         return java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(
                         this.remoteDisasterRecoveryType, other.remoteDisasterRecoveryType)
+                && java.util.Objects.equals(
+                        this.isReplicateAutomaticBackups, other.isReplicateAutomaticBackups)
                 && super.equals(other);
     }
 
@@ -902,6 +981,11 @@ public final class CreateCrossRegionDisasterRecoveryDetails extends CreateAutono
                         + (this.remoteDisasterRecoveryType == null
                                 ? 43
                                 : this.remoteDisasterRecoveryType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReplicateAutomaticBackups == null
+                                ? 43
+                                : this.isReplicateAutomaticBackups.hashCode());
         return result;
     }
 }

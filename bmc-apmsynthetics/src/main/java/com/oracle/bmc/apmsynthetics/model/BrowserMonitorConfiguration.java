@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -61,6 +61,22 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             return this;
         }
         /**
+         * If disabled, auto snapshots are not collected.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
+        private Boolean isDefaultSnapshotEnabled;
+
+        /**
+         * If disabled, auto snapshots are not collected.
+         * @param isDefaultSnapshotEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDefaultSnapshotEnabled(Boolean isDefaultSnapshotEnabled) {
+            this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
+            this.__explicitlySet__.add("isDefaultSnapshotEnabled");
+            return this;
+        }
+        /**
          * Verifies all the search strings present in the response.
          * If any search string is not present in the response, then it will be considered as a failure.
          *
@@ -78,6 +94,24 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
         public Builder verifyTexts(java.util.List<VerifyText> verifyTexts) {
             this.verifyTexts = verifyTexts;
             this.__explicitlySet__.add("verifyTexts");
+            return this;
+        }
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
+        private java.util.List<String> verifyResponseCodes;
+
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         * @param verifyResponseCodes the value to set
+         * @return this builder
+         **/
+        public Builder verifyResponseCodes(java.util.List<String> verifyResponseCodes) {
+            this.verifyResponseCodes = verifyResponseCodes;
+            this.__explicitlySet__.add("verifyResponseCodes");
             return this;
         }
 
@@ -99,7 +133,9 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
                             this.isFailureRetried,
                             this.dnsConfiguration,
                             this.isCertificateValidationEnabled,
+                            this.isDefaultSnapshotEnabled,
                             this.verifyTexts,
+                            this.verifyResponseCodes,
                             this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -118,8 +154,14 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             if (model.wasPropertyExplicitlySet("isCertificateValidationEnabled")) {
                 this.isCertificateValidationEnabled(model.getIsCertificateValidationEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isDefaultSnapshotEnabled")) {
+                this.isDefaultSnapshotEnabled(model.getIsDefaultSnapshotEnabled());
+            }
             if (model.wasPropertyExplicitlySet("verifyTexts")) {
                 this.verifyTexts(model.getVerifyTexts());
+            }
+            if (model.wasPropertyExplicitlySet("verifyResponseCodes")) {
+                this.verifyResponseCodes(model.getVerifyResponseCodes());
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
@@ -144,11 +186,15 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
             Boolean isFailureRetried,
             DnsConfiguration dnsConfiguration,
             Boolean isCertificateValidationEnabled,
+            Boolean isDefaultSnapshotEnabled,
             java.util.List<VerifyText> verifyTexts,
+            java.util.List<String> verifyResponseCodes,
             NetworkConfiguration networkConfiguration) {
         super(isFailureRetried, dnsConfiguration);
         this.isCertificateValidationEnabled = isCertificateValidationEnabled;
+        this.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
         this.verifyTexts = verifyTexts;
+        this.verifyResponseCodes = verifyResponseCodes;
         this.networkConfiguration = networkConfiguration;
     }
 
@@ -167,6 +213,20 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
     }
 
     /**
+     * If disabled, auto snapshots are not collected.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDefaultSnapshotEnabled")
+    private final Boolean isDefaultSnapshotEnabled;
+
+    /**
+     * If disabled, auto snapshots are not collected.
+     * @return the value
+     **/
+    public Boolean getIsDefaultSnapshotEnabled() {
+        return isDefaultSnapshotEnabled;
+    }
+
+    /**
      * Verifies all the search strings present in the response.
      * If any search string is not present in the response, then it will be considered as a failure.
      *
@@ -182,6 +242,22 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
      **/
     public java.util.List<VerifyText> getVerifyTexts() {
         return verifyTexts;
+    }
+
+    /**
+     * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
+    private final java.util.List<String> verifyResponseCodes;
+
+    /**
+     * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getVerifyResponseCodes() {
+        return verifyResponseCodes;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
@@ -207,7 +283,10 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", isCertificateValidationEnabled=")
                 .append(String.valueOf(this.isCertificateValidationEnabled));
+        sb.append(", isDefaultSnapshotEnabled=")
+                .append(String.valueOf(this.isDefaultSnapshotEnabled));
         sb.append(", verifyTexts=").append(String.valueOf(this.verifyTexts));
+        sb.append(", verifyResponseCodes=").append(String.valueOf(this.verifyResponseCodes));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
@@ -225,7 +304,10 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
         BrowserMonitorConfiguration other = (BrowserMonitorConfiguration) o;
         return java.util.Objects.equals(
                         this.isCertificateValidationEnabled, other.isCertificateValidationEnabled)
+                && java.util.Objects.equals(
+                        this.isDefaultSnapshotEnabled, other.isDefaultSnapshotEnabled)
                 && java.util.Objects.equals(this.verifyTexts, other.verifyTexts)
+                && java.util.Objects.equals(this.verifyResponseCodes, other.verifyResponseCodes)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
@@ -239,7 +321,17 @@ public final class BrowserMonitorConfiguration extends MonitorConfiguration {
                         + (this.isCertificateValidationEnabled == null
                                 ? 43
                                 : this.isCertificateValidationEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDefaultSnapshotEnabled == null
+                                ? 43
+                                : this.isDefaultSnapshotEnabled.hashCode());
         result = (result * PRIME) + (this.verifyTexts == null ? 43 : this.verifyTexts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.verifyResponseCodes == null
+                                ? 43
+                                : this.verifyResponseCodes.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkConfiguration == null

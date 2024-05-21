@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
 
 /**
- * source parser object.
+ * Source parser object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -41,6 +41,10 @@ package com.oracle.bmc.logging.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UnifiedAgentSyslogParser.class,
         name = "SYSLOG"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UnifiedAgentOpenmetricsParser.class,
+        name = "OPENMETRICS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UnifiedAgentAuditdParser.class,
@@ -110,13 +114,13 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Specify time field for the event time. If the event doesn't have this field, the current time is used.
+     * Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     private final String fieldTimeKey;
 
     /**
-     * Specify time field for the event time. If the event doesn't have this field, the current time is used.
+     * Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
      * @return the value
      **/
     public String getFieldTimeKey() {
@@ -194,13 +198,13 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * If true, an empty string field is replaced with nil.
+     * If true, an empty string field is replaced with a null value.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNullEmptyString")
     private final Boolean isNullEmptyString;
 
     /**
-     * If true, an empty string field is replaced with nil.
+     * If true, an empty string field is replaced with a null value.
      * @return the value
      **/
     public Boolean getIsNullEmptyString() {
@@ -208,13 +212,13 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEstimateCurrentEvent")
     private final Boolean isEstimateCurrentEvent;
 
     /**
-     * If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+     * If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
      * @return the value
      **/
     public Boolean getIsEstimateCurrentEvent() {
@@ -222,13 +226,13 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * If true, keep time field in the record.
+     * If true, keep the time field in the record.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKeepTimeKey")
     private final Boolean isKeepTimeKey;
 
     /**
-     * If true, keep time field in the record.
+     * If true, keep the time field in the record.
      * @return the value
      **/
     public Boolean getIsKeepTimeKey() {
@@ -342,6 +346,7 @@ public class UnifiedAgentParser extends com.oracle.bmc.http.internal.ExplicitlyS
         Multiline("MULTILINE"),
         Grok("GROK"),
         MultilineGrok("MULTILINE_GROK"),
+        Openmetrics("OPENMETRICS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

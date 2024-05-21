@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -33,6 +33,7 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
         "lifecycleDetails",
         "timeCreated",
         "timeUpdated",
+        "peerTargetDatabases",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -51,6 +52,7 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<PeerTargetDatabase> peerTargetDatabases,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -68,6 +70,7 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.peerTargetDatabases = peerTargetDatabases;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -176,13 +179,13 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * The OCIDs of associated resources like database, Data Safe private endpoint etc.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
         private java.util.List<String> associatedResourceIds;
 
         /**
-         * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+         * The OCIDs of associated resources like database, Data Safe private endpoint etc.
          * @param associatedResourceIds the value to set
          * @return this builder
          **/
@@ -224,13 +227,13 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The date and time of target database registration and creation in Data Safe.
+         * The date and time of the target database registration and creation in Data Safe.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time of target database registration and creation in Data Safe.
+         * The date and time of the target database registration and creation in Data Safe.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -253,6 +256,22 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
+         * The OCIDs of associated resources like database, Data Safe private endpoint, etc.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabases")
+        private java.util.List<PeerTargetDatabase> peerTargetDatabases;
+
+        /**
+         * The OCIDs of associated resources like database, Data Safe private endpoint, etc.
+         * @param peerTargetDatabases the value to set
+         * @return this builder
+         **/
+        public Builder peerTargetDatabases(java.util.List<PeerTargetDatabase> peerTargetDatabases) {
+            this.peerTargetDatabases = peerTargetDatabases;
+            this.__explicitlySet__.add("peerTargetDatabases");
             return this;
         }
         /**
@@ -340,6 +359,7 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.peerTargetDatabases,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -389,6 +409,9 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("peerTargetDatabases")) {
+                this.peerTargetDatabases(model.getPeerTargetDatabases());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -499,13 +522,13 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedResourceIds")
     private final java.util.List<String> associatedResourceIds;
 
     /**
-     * The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+     * The OCIDs of associated resources like database, Data Safe private endpoint etc.
      * @return the value
      **/
     public java.util.List<String> getAssociatedResourceIds() {
@@ -541,13 +564,13 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The date and time of target database registration and creation in Data Safe.
+     * The date and time of the target database registration and creation in Data Safe.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time of target database registration and creation in Data Safe.
+     * The date and time of the target database registration and creation in Data Safe.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -566,6 +589,20 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
+    }
+
+    /**
+     * The OCIDs of associated resources like database, Data Safe private endpoint, etc.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerTargetDatabases")
+    private final java.util.List<PeerTargetDatabase> peerTargetDatabases;
+
+    /**
+     * The OCIDs of associated resources like database, Data Safe private endpoint, etc.
+     * @return the value
+     **/
+    public java.util.List<PeerTargetDatabase> getPeerTargetDatabases() {
+        return peerTargetDatabases;
     }
 
     /**
@@ -653,6 +690,7 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", peerTargetDatabases=").append(String.valueOf(this.peerTargetDatabases));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -683,6 +721,7 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.peerTargetDatabases, other.peerTargetDatabases)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -720,6 +759,11 @@ public final class TargetDatabase extends com.oracle.bmc.http.internal.Explicitl
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.peerTargetDatabases == null
+                                ? 43
+                                : this.peerTargetDatabases.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

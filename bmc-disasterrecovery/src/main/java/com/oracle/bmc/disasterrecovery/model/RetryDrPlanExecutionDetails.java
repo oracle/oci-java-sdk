@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
@@ -34,7 +34,7 @@ public final class RetryDrPlanExecutionDetails
         /**
          * The unique id of the group to retry as a whole, or the group containing the step being retried.
          * <p>
-         * Example: {@code sgid1.group..examplegroupsgid}
+         * Example: {@code sgid1.group..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
@@ -43,7 +43,7 @@ public final class RetryDrPlanExecutionDetails
         /**
          * The unique id of the group to retry as a whole, or the group containing the step being retried.
          * <p>
-         * Example: {@code sgid1.group..examplegroupsgid}
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
@@ -56,7 +56,7 @@ public final class RetryDrPlanExecutionDetails
         /**
          * The unique id of the step to retry (optional). Only needed when retrying a step.
          * <p>
-         * Example: {@code sgid1.step..examplestepsgid}
+         * Example: {@code sgid1.step..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
@@ -65,7 +65,7 @@ public final class RetryDrPlanExecutionDetails
         /**
          * The unique id of the step to retry (optional). Only needed when retrying a step.
          * <p>
-         * Example: {@code sgid1.step..examplestepsgid}
+         * Example: {@code sgid1.step..uniqueID}
          *
          * @param stepId the value to set
          * @return this builder
@@ -114,7 +114,7 @@ public final class RetryDrPlanExecutionDetails
     /**
      * The unique id of the group to retry as a whole, or the group containing the step being retried.
      * <p>
-     * Example: {@code sgid1.group..examplegroupsgid}
+     * Example: {@code sgid1.group..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
@@ -123,7 +123,7 @@ public final class RetryDrPlanExecutionDetails
     /**
      * The unique id of the group to retry as a whole, or the group containing the step being retried.
      * <p>
-     * Example: {@code sgid1.group..examplegroupsgid}
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
      **/
@@ -134,7 +134,7 @@ public final class RetryDrPlanExecutionDetails
     /**
      * The unique id of the step to retry (optional). Only needed when retrying a step.
      * <p>
-     * Example: {@code sgid1.step..examplestepsgid}
+     * Example: {@code sgid1.step..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
@@ -143,7 +143,7 @@ public final class RetryDrPlanExecutionDetails
     /**
      * The unique id of the step to retry (optional). Only needed when retrying a step.
      * <p>
-     * Example: {@code sgid1.step..examplestepsgid}
+     * Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
      **/

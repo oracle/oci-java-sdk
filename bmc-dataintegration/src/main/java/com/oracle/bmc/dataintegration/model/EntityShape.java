@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -22,6 +22,10 @@ package com.oracle.bmc.dataintegration.model;
     defaultImpl = EntityShape.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EntityShapeFromObject.class,
+        name = "OBJECT_ENTITY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EntityShapeFromSQL.class,
         name = "SQL_ENTITY"
@@ -94,6 +98,7 @@ public class EntityShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     public enum ModelType {
         FileEntity("FILE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        ObjectEntity("OBJECT_ENTITY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

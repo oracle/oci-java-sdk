@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -8,8 +8,8 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for the operating system environments in your private data centers through a single management console. For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
- * Use the table of contents and search tool to explore the  OS Management Hub API.
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+ * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -62,7 +62,20 @@ public interface ManagementStation extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a management station.
+     * Moves a managment station to a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeManagementStationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeManagementStationCompartment API.
+     */
+    ChangeManagementStationCompartmentResponse changeManagementStationCompartment(
+            ChangeManagementStationCompartmentRequest request);
+
+    /**
+     * Create a management station. You must provide proxy and mirror configuration information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -127,7 +140,21 @@ public interface ManagementStation extends AutoCloseable {
     ListMirrorsResponse listMirrors(ListMirrorsRequest request);
 
     /**
-     * Synchronizes the specified mirrors associated with the management station.
+     * Refreshes the list of software sources mirrored by the management station to support the associated instances.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RefreshManagementStationConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshManagementStationConfig API.
+     */
+    RefreshManagementStationConfigResponse refreshManagementStationConfig(
+            RefreshManagementStationConfigRequest request);
+
+    /**
+     * Synchronize the specified software sources mirrors on the management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -140,7 +167,7 @@ public interface ManagementStation extends AutoCloseable {
     SynchronizeMirrorsResponse synchronizeMirrors(SynchronizeMirrorsRequest request);
 
     /**
-     * Synchronize the specified mirror associated with a management station.
+     * Synchronize the specified software source mirrors on the management station.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

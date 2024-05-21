@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -24,20 +24,44 @@ package com.oracle.bmc.goldengate.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateElasticsearchConnectionDetails.class,
+        name = "ELASTICSEARCH"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateGoogleBigQueryConnectionDetails.class,
+        name = "GOOGLE_BIGQUERY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateOracleConnectionDetails.class,
         name = "ORACLE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateAmazonRedshiftConnectionDetails.class,
+        name = "AMAZON_REDSHIFT"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateOciObjectStorageConnectionDetails.class,
         name = "OCI_OBJECT_STORAGE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateRedisConnectionDetails.class,
+        name = "REDIS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateMongoDbConnectionDetails.class,
         name = "MONGODB"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateGoogleCloudStorageConnectionDetails.class,
+        name = "GOOGLE_CLOUD_STORAGE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateAzureDataLakeStorageConnectionDetails.class,
         name = "AZURE_DATA_LAKE_STORAGE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateAmazonKinesisConnectionDetails.class,
+        name = "AMAZON_KINESIS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateJavaMessageServiceConnectionDetails.class,
@@ -84,6 +108,10 @@ package com.oracle.bmc.goldengate.model;
         name = "KAFKA"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateGenericConnectionDetails.class,
+        name = "GENERIC"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateAzureSynapseConnectionDetails.class,
         name = "AZURE_SYNAPSE_ANALYTICS"
     )
@@ -98,7 +126,9 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         "definedTags",
         "vaultId",
         "keyId",
-        "nsgIds"
+        "nsgIds",
+        "subnetId",
+        "routingMethod"
     })
     protected UpdateConnectionDetails(
             String displayName,
@@ -107,7 +137,9 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String vaultId,
             String keyId,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            String subnetId,
+            RoutingMethod routingMethod) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -116,6 +148,8 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         this.vaultId = vaultId;
         this.keyId = keyId;
         this.nsgIds = nsgIds;
+        this.subnetId = subnetId;
+        this.routingMethod = routingMethod;
     }
 
     /**
@@ -246,6 +280,44 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         return nsgIds;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     *
+     * @return the value
+     **/
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /**
+     * Controls the network traffic direction to the target:
+     * SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+     * DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
+    private final RoutingMethod routingMethod;
+
+    /**
+     * Controls the network traffic direction to the target:
+     * SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+     * DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     *
+     * @return the value
+     **/
+    public RoutingMethod getRoutingMethod() {
+        return routingMethod;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -267,6 +339,8 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
         sb.append(")");
         return sb.toString();
     }
@@ -288,6 +362,8 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.routingMethod, other.routingMethod)
                 && super.equals(other);
     }
 
@@ -302,6 +378,10 @@ public class UpdateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.routingMethod == null ? 43 : this.routingMethod.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

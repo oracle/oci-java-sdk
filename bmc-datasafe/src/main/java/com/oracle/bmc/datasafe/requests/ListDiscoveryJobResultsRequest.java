@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -137,14 +137,14 @@ public class ListDiscoveryJobResultsRequest
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
      * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
      * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
      *
      **/
@@ -186,7 +186,7 @@ public class ListDiscoveryJobResultsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
      * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
      *
      */
@@ -384,14 +384,14 @@ public class ListDiscoveryJobResultsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
          * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
          *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order for timeFinished is descending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for timeFinished is descending.
          * The default order for discoveryType, schemaName, objectName, columnName and plannedAction is ascending.
          *
          * @param sortBy the value to set

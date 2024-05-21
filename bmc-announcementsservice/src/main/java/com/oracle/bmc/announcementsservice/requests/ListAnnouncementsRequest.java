@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.announcementsservice.requests;
@@ -322,6 +322,28 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         return excludeAnnouncementTypes;
     }
     /**
+     * A filter to display only the latest announcement in a chain.
+     */
+    private Boolean shouldShowOnlyLatestInChain;
+
+    /**
+     * A filter to display only the latest announcement in a chain.
+     */
+    public Boolean getShouldShowOnlyLatestInChain() {
+        return shouldShowOnlyLatestInChain;
+    }
+    /**
+     * A filter to return only announcements belonging to the specified announcement chain ID.
+     */
+    private String chainId;
+
+    /**
+     * A filter to return only announcements belonging to the specified announcement chain ID.
+     */
+    public String getChainId() {
+        return chainId;
+    }
+    /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the complete request ID.
      *
@@ -570,6 +592,36 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
+         * A filter to display only the latest announcement in a chain.
+         */
+        private Boolean shouldShowOnlyLatestInChain = null;
+
+        /**
+         * A filter to display only the latest announcement in a chain.
+         * @param shouldShowOnlyLatestInChain the value to set
+         * @return this builder instance
+         */
+        public Builder shouldShowOnlyLatestInChain(Boolean shouldShowOnlyLatestInChain) {
+            this.shouldShowOnlyLatestInChain = shouldShowOnlyLatestInChain;
+            return this;
+        }
+
+        /**
+         * A filter to return only announcements belonging to the specified announcement chain ID.
+         */
+        private String chainId = null;
+
+        /**
+         * A filter to return only announcements belonging to the specified announcement chain ID.
+         * @param chainId the value to set
+         * @return this builder instance
+         */
+        public Builder chainId(String chainId) {
+            this.chainId = chainId;
+            return this;
+        }
+
+        /**
          * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
          * a particular request, please provide the complete request ID.
          *
@@ -630,6 +682,8 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             service(o.getService());
             platformType(o.getPlatformType());
             excludeAnnouncementTypes(o.getExcludeAnnouncementTypes());
+            shouldShowOnlyLatestInChain(o.getShouldShowOnlyLatestInChain());
+            chainId(o.getChainId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -677,9 +731,11 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
             request.service = service;
             request.platformType = platformType;
             request.excludeAnnouncementTypes = excludeAnnouncementTypes;
+            request.shouldShowOnlyLatestInChain = shouldShowOnlyLatestInChain;
+            request.chainId = chainId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAnnouncementsRequest(compartmentId, limit, page, announcementType, lifecycleState, isBanner, sortBy, sortOrder, timeOneEarliestTime, timeOneLatestTime, environmentName, service, platformType, excludeAnnouncementTypes, opcRequestId);
+            // new ListAnnouncementsRequest(compartmentId, limit, page, announcementType, lifecycleState, isBanner, sortBy, sortOrder, timeOneEarliestTime, timeOneLatestTime, environmentName, service, platformType, excludeAnnouncementTypes, shouldShowOnlyLatestInChain, chainId, opcRequestId);
         }
     }
 
@@ -703,6 +759,8 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
                 .service(service)
                 .platformType(platformType)
                 .excludeAnnouncementTypes(excludeAnnouncementTypes)
+                .shouldShowOnlyLatestInChain(shouldShowOnlyLatestInChain)
+                .chainId(chainId)
                 .opcRequestId(opcRequestId);
     }
 
@@ -734,6 +792,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         sb.append(",platformType=").append(String.valueOf(this.platformType));
         sb.append(",excludeAnnouncementTypes=")
                 .append(String.valueOf(this.excludeAnnouncementTypes));
+        sb.append(",shouldShowOnlyLatestInChain=")
+                .append(String.valueOf(this.shouldShowOnlyLatestInChain));
+        sb.append(",chainId=").append(String.valueOf(this.chainId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -765,6 +826,9 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.platformType, other.platformType)
                 && java.util.Objects.equals(
                         this.excludeAnnouncementTypes, other.excludeAnnouncementTypes)
+                && java.util.Objects.equals(
+                        this.shouldShowOnlyLatestInChain, other.shouldShowOnlyLatestInChain)
+                && java.util.Objects.equals(this.chainId, other.chainId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -804,6 +868,12 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.excludeAnnouncementTypes == null
                                 ? 43
                                 : this.excludeAnnouncementTypes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldShowOnlyLatestInChain == null
+                                ? 43
+                                : this.shouldShowOnlyLatestInChain.hashCode());
+        result = (result * PRIME) + (this.chainId == null ? 43 : this.chainId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

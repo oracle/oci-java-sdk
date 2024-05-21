@@ -1,13 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
  * Details relevant to the support ticket.
- * <p>
- **Caution:** Avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -80,13 +78,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The title of the support ticket.
+         * The title of the support ticket. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
-         * The title of the support ticket.
+         * The title of the support ticket. Avoid entering confidential information.
          * @param title the value to set
          * @return this builder
          **/
@@ -96,13 +94,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The description of the support ticket.
+         * The description of the support ticket. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The description of the support ticket.
+         * The description of the support ticket. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
          **/
@@ -111,17 +109,10 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The context from where the ticket is getting created.
-         **/
+
         @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
         private ContextualData contextualData;
 
-        /**
-         * The context from where the ticket is getting created.
-         * @param contextualData the value to set
-         * @return this builder
-         **/
         public Builder contextualData(ContextualData contextualData) {
             this.contextualData = contextualData;
             this.__explicitlySet__.add("contextualData");
@@ -184,6 +175,7 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
         Highest("HIGHEST"),
         High("HIGH"),
         Medium("MEDIUM"),
+        Low("LOW"),
         ;
 
         private final String value;
@@ -242,13 +234,13 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The title of the support ticket.
+     * The title of the support ticket. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
-     * The title of the support ticket.
+     * The title of the support ticket. Avoid entering confidential information.
      * @return the value
      **/
     public String getTitle() {
@@ -256,29 +248,22 @@ public final class CreateTicketDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The description of the support ticket.
+     * The description of the support ticket. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * The description of the support ticket.
+     * The description of the support ticket. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The context from where the ticket is getting created.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contextualData")
     private final ContextualData contextualData;
 
-    /**
-     * The context from where the ticket is getting created.
-     * @return the value
-     **/
     public ContextualData getContextualData() {
         return contextualData;
     }

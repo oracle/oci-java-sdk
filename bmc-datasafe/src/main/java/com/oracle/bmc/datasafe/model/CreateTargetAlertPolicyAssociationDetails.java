@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -136,13 +136,13 @@ public final class CreateTargetAlertPolicyAssociationDetails
             return this;
         }
         /**
-         * Indicates if the target-alert policy association is enabled or disabled.
+         * Indicates if the target-alert policy association is enabled or disabled by user.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates if the target-alert policy association is enabled or disabled.
+         * Indicates if the target-alert policy association is enabled or disabled by user.
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -329,13 +329,13 @@ public final class CreateTargetAlertPolicyAssociationDetails
     }
 
     /**
-     * Indicates if the target-alert policy association is enabled or disabled.
+     * Indicates if the target-alert policy association is enabled or disabled by user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates if the target-alert policy association is enabled or disabled.
+     * Indicates if the target-alert policy association is enabled or disabled by user.
      * @return the value
      **/
     public Boolean getIsEnabled() {

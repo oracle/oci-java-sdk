@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Yum/DNF package group that associated with a software source.
+ * The yum or DNF package group that is associated with a software source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -86,13 +86,13 @@ public final class PackageGroupSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * description of the package group.
+         * Description of the package group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * description of the package group.
+         * Description of the package group.
          * @param description the value to set
          * @return this builder
          **/
@@ -102,13 +102,13 @@ public final class PackageGroupSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * Indicates if this package group is visible by users.
+         * Indicates if this package group is visible to users.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
         private Boolean isUserVisible;
 
         /**
-         * Indicates if this package group is visible by users.
+         * Indicates if this package group is visible to users.
          * @param isUserVisible the value to set
          * @return this builder
          **/
@@ -134,13 +134,13 @@ public final class PackageGroupSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * the IDs of the package group's repositories.
+         * The repository IDs of the package group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositories")
         private java.util.List<String> repositories;
 
         /**
-         * the IDs of the package group's repositories.
+         * The repository IDs of the package group.
          * @param repositories the value to set
          * @return this builder
          **/
@@ -272,13 +272,13 @@ public final class PackageGroupSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * description of the package group.
+     * Description of the package group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * description of the package group.
+     * Description of the package group.
      * @return the value
      **/
     public String getDescription() {
@@ -286,13 +286,13 @@ public final class PackageGroupSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Indicates if this package group is visible by users.
+     * Indicates if this package group is visible to users.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
     private final Boolean isUserVisible;
 
     /**
-     * Indicates if this package group is visible by users.
+     * Indicates if this package group is visible to users.
      * @return the value
      **/
     public Boolean getIsUserVisible() {
@@ -314,13 +314,13 @@ public final class PackageGroupSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * the IDs of the package group's repositories.
+     * The repository IDs of the package group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositories")
     private final java.util.List<String> repositories;
 
     /**
-     * the IDs of the package group's repositories.
+     * The repository IDs of the package group.
      * @return the value
      **/
     public java.util.List<String> getRepositories() {

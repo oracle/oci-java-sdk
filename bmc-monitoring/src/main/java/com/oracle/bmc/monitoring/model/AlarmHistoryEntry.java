@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -63,7 +63,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
         /**
          * Timestamp for this alarm history entry. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -72,7 +72,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
         /**
          * Timestamp for this alarm history entry. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
@@ -86,7 +86,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
          * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
          * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
          * <p>
-         * Example: {@code 2019-02-01T0:59:00.789Z}
+         * Example: {@code 2023-02-01T0:59:00.789Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
@@ -96,7 +96,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
          * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
          * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
          * <p>
-         * Example: {@code 2019-02-01T0:59:00.789Z}
+         * Example: {@code 2023-02-01T0:59:00.789Z}
          *
          * @param timestampTriggered the value to set
          * @return this builder
@@ -172,7 +172,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
     /**
      * Timestamp for this alarm history entry. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -181,7 +181,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
     /**
      * Timestamp for this alarm history entry. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      **/
@@ -193,7 +193,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
      * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
      * <p>
-     * Example: {@code 2019-02-01T0:59:00.789Z}
+     * Example: {@code 2023-02-01T0:59:00.789Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
@@ -203,7 +203,7 @@ public final class AlarmHistoryEntry extends com.oracle.bmc.http.internal.Explic
      * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
      * Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
      * <p>
-     * Example: {@code 2019-02-01T0:59:00.789Z}
+     * Example: {@code 2023-02-01T0:59:00.789Z}
      *
      * @return the value
      **/

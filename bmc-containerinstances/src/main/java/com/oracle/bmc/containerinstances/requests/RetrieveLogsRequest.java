@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.requests;
@@ -12,26 +12,41 @@ import com.oracle.bmc.containerinstances.model.*;
 public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The unique identifier for the Container.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
      */
     private String containerId;
 
     /**
-     * The unique identifier for the Container.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
      */
     public String getContainerId() {
         return containerId;
     }
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * Returns the logs for the previous run of the container in a pod.
+     * If the container fails, this parameter can help you to determine the root cause of the failure.
+     *
+     */
+    private Boolean isPrevious;
+
+    /**
+     * Returns the logs for the previous run of the container in a pod.
+     * If the container fails, this parameter can help you to determine the root cause of the failure.
+     *
+     */
+    public Boolean getIsPrevious() {
+        return isPrevious;
     }
 
     public static class Builder
@@ -42,12 +57,12 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The unique identifier for the Container.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
          */
         private String containerId = null;
 
         /**
-         * The unique identifier for the Container.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container.
          * @param containerId the value to set
          * @return this builder instance
          */
@@ -57,17 +72,36 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Returns the logs for the previous run of the container in a pod.
+         * If the container fails, this parameter can help you to determine the root cause of the failure.
+         *
+         */
+        private Boolean isPrevious = null;
+
+        /**
+         * Returns the logs for the previous run of the container in a pod.
+         * If the container fails, this parameter can help you to determine the root cause of the failure.
+         *
+         * @param isPrevious the value to set
+         * @return this builder instance
+         */
+        public Builder isPrevious(Boolean isPrevious) {
+            this.isPrevious = isPrevious;
             return this;
         }
 
@@ -101,6 +135,7 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         public Builder copy(RetrieveLogsRequest o) {
             containerId(o.getContainerId());
             opcRequestId(o.getOpcRequestId());
+            isPrevious(o.getIsPrevious());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -135,8 +170,9 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
             RetrieveLogsRequest request = new RetrieveLogsRequest();
             request.containerId = containerId;
             request.opcRequestId = opcRequestId;
+            request.isPrevious = isPrevious;
             return request;
-            // new RetrieveLogsRequest(containerId, opcRequestId);
+            // new RetrieveLogsRequest(containerId, opcRequestId, isPrevious);
         }
     }
 
@@ -145,7 +181,10 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().containerId(containerId).opcRequestId(opcRequestId);
+        return new Builder()
+                .containerId(containerId)
+                .opcRequestId(opcRequestId)
+                .isPrevious(isPrevious);
     }
 
     /**
@@ -163,6 +202,7 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append("super=").append(super.toString());
         sb.append(",containerId=").append(String.valueOf(this.containerId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isPrevious=").append(String.valueOf(this.isPrevious));
         sb.append(")");
         return sb.toString();
     }
@@ -179,7 +219,8 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         RetrieveLogsRequest other = (RetrieveLogsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.containerId, other.containerId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isPrevious, other.isPrevious);
     }
 
     @Override
@@ -188,6 +229,7 @@ public class RetrieveLogsRequest extends com.oracle.bmc.requests.BmcRequest<java
         int result = super.hashCode();
         result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.isPrevious == null ? 43 : this.isPrevious.hashCode());
         return result;
     }
 }

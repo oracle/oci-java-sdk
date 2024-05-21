@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -44,6 +44,8 @@ public final class MyDeviceAuthenticationFactors
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
@@ -60,6 +62,8 @@ public final class MyDeviceAuthenticationFactors
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param type the value to set
          * @return this builder
          **/
@@ -79,6 +83,8 @@ public final class MyDeviceAuthenticationFactors
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -94,6 +100,8 @@ public final class MyDeviceAuthenticationFactors
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param status the value to set
          * @return this builder
          **/
@@ -113,6 +121,8 @@ public final class MyDeviceAuthenticationFactors
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
@@ -128,6 +138,8 @@ public final class MyDeviceAuthenticationFactors
          *  - returned: default
          *  - type: string
          *  - uniqueness: none
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * @param publicKey the value to set
          * @return this builder
          **/
@@ -187,6 +199,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     public enum Type {
         Email("EMAIL"),
@@ -251,6 +265,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
@@ -267,6 +283,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public Type getType() {
@@ -284,6 +302,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     public enum Status {
         Initiated("INITIATED"),
@@ -344,6 +364,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
@@ -359,6 +381,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public Status getStatus() {
@@ -376,6 +400,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
@@ -391,6 +417,8 @@ public final class MyDeviceAuthenticationFactors
      *  - returned: default
      *  - type: string
      *  - uniqueness: none
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * @return the value
      **/
     public String getPublicKey() {

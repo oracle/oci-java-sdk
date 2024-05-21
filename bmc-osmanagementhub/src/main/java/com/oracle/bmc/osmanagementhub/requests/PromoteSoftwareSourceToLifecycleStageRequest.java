@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -14,12 +14,12 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
                 com.oracle.bmc.osmanagementhub.model.PromoteSoftwareSourceToLifecycleStageDetails> {
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     private String lifecycleStageId;
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     public String getLifecycleStageId() {
         return lifecycleStageId;
@@ -38,12 +38,12 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
         return promoteSoftwareSourceToLifecycleStageDetails;
     }
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
     private String softwareSourceId;
 
     /**
-     * The OCID for the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
      */
     public String getSoftwareSourceId() {
         return softwareSourceId;
@@ -123,12 +123,12 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * @param lifecycleStageId the value to set
          * @return this builder instance
          */
@@ -157,12 +157,12 @@ public class PromoteSoftwareSourceToLifecycleStageRequest
         }
 
         /**
-         * The OCID for the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          */
         private String softwareSourceId = null;
 
         /**
-         * The OCID for the software source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
          * @param softwareSourceId the value to set
          * @return this builder instance
          */

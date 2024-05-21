@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A single configuration applied to a detector
+ * Configuration details for a detector.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,31 +22,43 @@ package com.oracle.bmc.cloudguard.model;
 public final class DetectorConfiguration
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"configKey", "name", "value", "dataType", "values"})
+    @java.beans.ConstructorProperties({
+        "configKey",
+        "name",
+        "value",
+        "dataType",
+        "values",
+        "allowedValuesDataType",
+        "allowedValues"
+    })
     public DetectorConfiguration(
             String configKey,
             String name,
             String value,
             String dataType,
-            java.util.List<ConfigValue> values) {
+            java.util.List<ConfigValue> values,
+            String allowedValuesDataType,
+            java.util.List<PropertyTuple> allowedValues) {
         super();
         this.configKey = configKey;
         this.name = name;
         this.value = value;
         this.dataType = dataType;
         this.values = values;
+        this.allowedValuesDataType = allowedValuesDataType;
+        this.allowedValues = allowedValues;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
-         * Unique name of the configuration
+         * Unique identifier of the configuration
          * @param configKey the value to set
          * @return this builder
          **/
@@ -56,13 +68,13 @@ public final class DetectorConfiguration
             return this;
         }
         /**
-         * configuration name
+         * Configuration name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * configuration name
+         * Configuration name
          * @param name the value to set
          * @return this builder
          **/
@@ -72,13 +84,13 @@ public final class DetectorConfiguration
             return this;
         }
         /**
-         * configuration value
+         * Configuration value
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * configuration value
+         * Configuration value
          * @param value the value to set
          * @return this builder
          **/
@@ -88,13 +100,13 @@ public final class DetectorConfiguration
             return this;
         }
         /**
-         * configuration data type
+         * Configuration data type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
-         * configuration data type
+         * Configuration data type
          * @param dataType the value to set
          * @return this builder
          **/
@@ -119,6 +131,38 @@ public final class DetectorConfiguration
             this.__explicitlySet__.add("values");
             return this;
         }
+        /**
+         * Map property Value data type
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("allowedValuesDataType")
+        private String allowedValuesDataType;
+
+        /**
+         * Map property Value data type
+         * @param allowedValuesDataType the value to set
+         * @return this builder
+         **/
+        public Builder allowedValuesDataType(String allowedValuesDataType) {
+            this.allowedValuesDataType = allowedValuesDataType;
+            this.__explicitlySet__.add("allowedValuesDataType");
+            return this;
+        }
+        /**
+         * Map of possible values for configuration
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
+        private java.util.List<PropertyTuple> allowedValues;
+
+        /**
+         * Map of possible values for configuration
+         * @param allowedValues the value to set
+         * @return this builder
+         **/
+        public Builder allowedValues(java.util.List<PropertyTuple> allowedValues) {
+            this.allowedValues = allowedValues;
+            this.__explicitlySet__.add("allowedValues");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -126,7 +170,13 @@ public final class DetectorConfiguration
         public DetectorConfiguration build() {
             DetectorConfiguration model =
                     new DetectorConfiguration(
-                            this.configKey, this.name, this.value, this.dataType, this.values);
+                            this.configKey,
+                            this.name,
+                            this.value,
+                            this.dataType,
+                            this.values,
+                            this.allowedValuesDataType,
+                            this.allowedValues);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -150,6 +200,12 @@ public final class DetectorConfiguration
             if (model.wasPropertyExplicitlySet("values")) {
                 this.values(model.getValues());
             }
+            if (model.wasPropertyExplicitlySet("allowedValuesDataType")) {
+                this.allowedValuesDataType(model.getAllowedValuesDataType());
+            }
+            if (model.wasPropertyExplicitlySet("allowedValues")) {
+                this.allowedValues(model.getAllowedValues());
+            }
             return this;
         }
     }
@@ -166,13 +222,13 @@ public final class DetectorConfiguration
     }
 
     /**
-     * Unique name of the configuration
+     * Unique identifier of the configuration
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
-     * Unique name of the configuration
+     * Unique identifier of the configuration
      * @return the value
      **/
     public String getConfigKey() {
@@ -180,13 +236,13 @@ public final class DetectorConfiguration
     }
 
     /**
-     * configuration name
+     * Configuration name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * configuration name
+     * Configuration name
      * @return the value
      **/
     public String getName() {
@@ -194,13 +250,13 @@ public final class DetectorConfiguration
     }
 
     /**
-     * configuration value
+     * Configuration value
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * configuration value
+     * Configuration value
      * @return the value
      **/
     public String getValue() {
@@ -208,13 +264,13 @@ public final class DetectorConfiguration
     }
 
     /**
-     * configuration data type
+     * Configuration data type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
-     * configuration data type
+     * Configuration data type
      * @return the value
      **/
     public String getDataType() {
@@ -233,6 +289,34 @@ public final class DetectorConfiguration
      **/
     public java.util.List<ConfigValue> getValues() {
         return values;
+    }
+
+    /**
+     * Map property Value data type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedValuesDataType")
+    private final String allowedValuesDataType;
+
+    /**
+     * Map property Value data type
+     * @return the value
+     **/
+    public String getAllowedValuesDataType() {
+        return allowedValuesDataType;
+    }
+
+    /**
+     * Map of possible values for configuration
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
+    private final java.util.List<PropertyTuple> allowedValues;
+
+    /**
+     * Map of possible values for configuration
+     * @return the value
+     **/
+    public java.util.List<PropertyTuple> getAllowedValues() {
+        return allowedValues;
     }
 
     @Override
@@ -254,6 +338,8 @@ public final class DetectorConfiguration
         sb.append(", value=").append(String.valueOf(this.value));
         sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", values=").append(String.valueOf(this.values));
+        sb.append(", allowedValuesDataType=").append(String.valueOf(this.allowedValuesDataType));
+        sb.append(", allowedValues=").append(String.valueOf(this.allowedValues));
         sb.append(")");
         return sb.toString();
     }
@@ -273,6 +359,8 @@ public final class DetectorConfiguration
                 && java.util.Objects.equals(this.value, other.value)
                 && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.values, other.values)
+                && java.util.Objects.equals(this.allowedValuesDataType, other.allowedValuesDataType)
+                && java.util.Objects.equals(this.allowedValues, other.allowedValues)
                 && super.equals(other);
     }
 
@@ -285,6 +373,14 @@ public final class DetectorConfiguration
         result = (result * PRIME) + (this.value == null ? 43 : this.value.hashCode());
         result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.values == null ? 43 : this.values.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedValuesDataType == null
+                                ? 43
+                                : this.allowedValuesDataType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.allowedValues == null ? 43 : this.allowedValues.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

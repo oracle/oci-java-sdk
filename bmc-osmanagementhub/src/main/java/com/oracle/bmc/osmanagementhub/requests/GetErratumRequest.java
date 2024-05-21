@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -12,23 +12,23 @@ import com.oracle.bmc.osmanagementhub.model.*;
 public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list. This parameter is required.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The erratum name (e.g. ELSA-2023-34678).
+     * The erratum name (such as ELSA-2023-34678).
      */
     private String name;
 
     /**
-     * The erratum name (e.g. ELSA-2023-34678).
+     * The erratum name (such as ELSA-2023-34678).
      */
     public String getName() {
         return name;
@@ -53,12 +53,12 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This parameter is required.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -68,12 +68,12 @@ public class GetErratumRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The erratum name (e.g. ELSA-2023-34678).
+         * The erratum name (such as ELSA-2023-34678).
          */
         private String name = null;
 
         /**
-         * The erratum name (e.g. ELSA-2023-34678).
+         * The erratum name (such as ELSA-2023-34678).
          * @param name the value to set
          * @return this builder instance
          */

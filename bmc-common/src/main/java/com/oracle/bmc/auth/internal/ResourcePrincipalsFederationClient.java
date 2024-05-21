@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.auth.internal;
@@ -86,39 +86,7 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
             restClient.setEndpoint(resourcePrincipalTokenEndpoint);
             WebTarget target =
                     restClient.getBaseTarget().path(resourcePrincipalTokenPathProvider.getPath());
-            Invocation.Builder ib = target.request();
-            URI requestUri = target.getUri();
-
-            Response response = makeCall(ib, requestUri);
-            ResponseHelper.throwIfNotSuccessful(response);
-
-            GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
-                    ResponseHelper.readEntity(response, GetResourcePrincipalTokenResponse.class);
-
-            String servicePrincipalSessionToken =
-                    getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
-            String resourcePrincipalToken =
-                    getResourcePrincipalTokenResponse.getResourcePrincipalToken();
-
-            // Get resource principal session token with Identity
-            restClient.setEndpoint(federationEndpoint);
-            GetResourcePrincipalSessionTokenRequest getResourcePrincipalSessionTokenRequest =
-                    new GetResourcePrincipalSessionTokenRequest(
-                            resourcePrincipalToken,
-                            servicePrincipalSessionToken,
-                            AuthUtils.base64EncodeNoChunking(publicKey));
-
-            target = restClient.getBaseTarget().path("v1").path("resourcePrincipalSessionToken");
-            ib = target.request();
-            requestUri = target.getUri();
-
-            // Make a call and get back the security token
-            response = makeCall(ib, requestUri, getResourcePrincipalSessionTokenRequest);
-            ResponseHelper.throwIfNotSuccessful(response);
-
-            X509FederationClient.SecurityToken securityToken =
-                    SECURITY_TOKEN_FN.apply(response).getItem();
-            return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);
+            return getSecurityTokenFromServerInner(publicKey, target, null);
 
         } catch (BmcException ex) {
             throw ex;

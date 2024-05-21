@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Specific behavior that can trigger a Sighting
+ * Information for a sighting type
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +46,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique identifier of sighting type
+         * The unique identifier of the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique identifier of sighting type
+         * The unique identifier of the sighting type
          * @param id the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          * @param displayName the value to set
          * @return this builder
          **/
@@ -94,13 +94,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Link of the sighting type
+         * MITRE ATT@CK framework link for the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mitreLink")
         private String mitreLink;
 
         /**
-         * Link of the sighting type
+         * MITRE ATT@CK framework link for the sighting type
          * @param mitreLink the value to set
          * @return this builder
          **/
@@ -110,13 +110,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * Mitre Att&ck tactic
+         * MITRE ATT@CK framework tactic for the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tactic")
         private String tactic;
 
         /**
-         * Mitre Att&ck tactic
+         * MITRE ATT@CK framework tactic for the sighting type
          * @param tactic the value to set
          * @return this builder
          **/
@@ -126,13 +126,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * List of Mitre Att&ck Techniques
+         * List of MITRE ATT@CK framework techniques for the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("techniques")
         private java.util.List<String> techniques;
 
         /**
-         * List of Mitre Att&ck Techniques
+         * List of MITRE ATT@CK framework techniques for the sighting type
          * @param techniques the value to set
          * @return this builder
          **/
@@ -196,13 +196,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The unique identifier of sighting type
+     * The unique identifier of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The unique identifier of sighting type
+     * The unique identifier of the sighting type
      * @return the value
      **/
     public String getId() {
@@ -210,13 +210,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      * @return the value
      **/
     public String getDisplayName() {
@@ -238,13 +238,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Link of the sighting type
+     * MITRE ATT@CK framework link for the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mitreLink")
     private final String mitreLink;
 
     /**
-     * Link of the sighting type
+     * MITRE ATT@CK framework link for the sighting type
      * @return the value
      **/
     public String getMitreLink() {
@@ -252,13 +252,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Mitre Att&ck tactic
+     * MITRE ATT@CK framework tactic for the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tactic")
     private final String tactic;
 
     /**
-     * Mitre Att&ck tactic
+     * MITRE ATT@CK framework tactic for the sighting type
      * @return the value
      **/
     public String getTactic() {
@@ -266,13 +266,13 @@ public final class SightingType extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * List of Mitre Att&ck Techniques
+     * List of MITRE ATT@CK framework techniques for the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("techniques")
     private final java.util.List<String> techniques;
 
     /**
-     * List of Mitre Att&ck Techniques
+     * List of MITRE ATT@CK framework techniques for the sighting type
      * @return the value
      **/
     public java.util.List<String> getTechniques() {

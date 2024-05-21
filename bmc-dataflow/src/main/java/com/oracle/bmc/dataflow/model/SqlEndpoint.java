@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow.model;
@@ -44,6 +44,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
         "definedTags",
         "systemTags",
         "sparkAdvancedConfigurations",
+        "bannerMessage",
         "networkConfiguration"
     })
     public SqlEndpoint(
@@ -71,6 +72,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, String> sparkAdvancedConfigurations,
+            String bannerMessage,
             SqlEndpointNetworkConfiguration networkConfiguration) {
         super();
         this.id = id;
@@ -97,6 +99,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
         this.definedTags = definedTags;
         this.systemTags = systemTags;
         this.sparkAdvancedConfigurations = sparkAdvancedConfigurations;
+        this.bannerMessage = bannerMessage;
         this.networkConfiguration = networkConfiguration;
     }
 
@@ -504,6 +507,22 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("sparkAdvancedConfigurations");
             return this;
         }
+        /**
+         * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("bannerMessage")
+        private String bannerMessage;
+
+        /**
+         * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
+         * @param bannerMessage the value to set
+         * @return this builder
+         **/
+        public Builder bannerMessage(String bannerMessage) {
+            this.bannerMessage = bannerMessage;
+            this.__explicitlySet__.add("bannerMessage");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
         private SqlEndpointNetworkConfiguration networkConfiguration;
@@ -544,6 +563,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.definedTags,
                             this.systemTags,
                             this.sparkAdvancedConfigurations,
+                            this.bannerMessage,
                             this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -624,6 +644,9 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("sparkAdvancedConfigurations")) {
                 this.sparkAdvancedConfigurations(model.getSparkAdvancedConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("bannerMessage")) {
+                this.bannerMessage(model.getBannerMessage());
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
@@ -995,6 +1018,20 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
         return sparkAdvancedConfigurations;
     }
 
+    /**
+     * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bannerMessage")
+    private final String bannerMessage;
+
+    /**
+     * The SQL Endpoint message displayed as a banner to provide user with any action items required on the resource.
+     * @return the value
+     **/
+    public String getBannerMessage() {
+        return bannerMessage;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
     private final SqlEndpointNetworkConfiguration networkConfiguration;
 
@@ -1042,6 +1079,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", sparkAdvancedConfigurations=")
                 .append(String.valueOf(this.sparkAdvancedConfigurations));
+        sb.append(", bannerMessage=").append(String.valueOf(this.bannerMessage));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
@@ -1083,6 +1121,7 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.sparkAdvancedConfigurations, other.sparkAdvancedConfigurations)
+                && java.util.Objects.equals(this.bannerMessage, other.bannerMessage)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
@@ -1149,6 +1188,9 @@ public final class SqlEndpoint extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.sparkAdvancedConfigurations == null
                                 ? 43
                                 : this.sparkAdvancedConfigurations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.bannerMessage == null ? 43 : this.bannerMessage.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkConfiguration == null

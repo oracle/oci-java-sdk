@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Details about the erratum.
+ * An object that defines an erratum..
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -26,6 +26,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "description",
         "timeUpdated",
         "classificationType",
+        "advisoryType",
         "from",
         "solution",
         "references",
@@ -42,6 +43,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             String description,
             java.util.Date timeUpdated,
             ClassificationTypes classificationType,
+            AdvisoryTypes advisoryType,
             String from,
             String solution,
             String references,
@@ -57,6 +59,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.description = description;
         this.timeUpdated = timeUpdated;
         this.classificationType = classificationType;
+        this.advisoryType = advisoryType;
         this.from = from;
         this.solution = solution;
         this.references = references;
@@ -102,16 +105,14 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Date the erratum was issued, as described
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * Date the erratum was issued, as described
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeIssued the value to set
          * @return this builder
@@ -138,16 +139,14 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Most recent date the erratum was updated, as described
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Most recent date the erratum was updated, as described
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -158,19 +157,35 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Type of the erratum.
+         * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("classificationType")
         private ClassificationTypes classificationType;
 
         /**
-         * Type of the erratum.
+         * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
          * @param classificationType the value to set
          * @return this builder
          **/
         public Builder classificationType(ClassificationTypes classificationType) {
             this.classificationType = classificationType;
             this.__explicitlySet__.add("classificationType");
+            return this;
+        }
+        /**
+         * The advisory type of the erratum.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
+        private AdvisoryTypes advisoryType;
+
+        /**
+         * The advisory type of the erratum.
+         * @param advisoryType the value to set
+         * @return this builder
+         **/
+        public Builder advisoryType(AdvisoryTypes advisoryType) {
+            this.advisoryType = advisoryType;
+            this.__explicitlySet__.add("advisoryType");
             return this;
         }
         /**
@@ -254,13 +269,13 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * List of Packages affected by this erratum.
+         * List of packages affected by this erratum.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("packages")
         private java.util.List<SoftwarePackageSummary> packages;
 
         /**
-         * List of Packages affected by this erratum.
+         * List of packages affected by this erratum.
          * @param packages the value to set
          * @return this builder
          **/
@@ -314,6 +329,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.description,
                             this.timeUpdated,
                             this.classificationType,
+                            this.advisoryType,
                             this.from,
                             this.solution,
                             this.references,
@@ -347,6 +363,9 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("classificationType")) {
                 this.classificationType(model.getClassificationType());
+            }
+            if (model.wasPropertyExplicitlySet("advisoryType")) {
+                this.advisoryType(model.getAdvisoryType());
             }
             if (model.wasPropertyExplicitlySet("from")) {
                 this.from(model.getFrom());
@@ -416,16 +435,14 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Date the erratum was issued, as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * Date the erratum was issued, as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/
@@ -448,16 +465,14 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Most recent date the erratum was updated, as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Most recent date the erratum was updated, as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/
@@ -466,17 +481,31 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Type of the erratum.
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("classificationType")
     private final ClassificationTypes classificationType;
 
     /**
-     * Type of the erratum.
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      * @return the value
      **/
     public ClassificationTypes getClassificationType() {
         return classificationType;
+    }
+
+    /**
+     * The advisory type of the erratum.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
+    private final AdvisoryTypes advisoryType;
+
+    /**
+     * The advisory type of the erratum.
+     * @return the value
+     **/
+    public AdvisoryTypes getAdvisoryType() {
+        return advisoryType;
     }
 
     /**
@@ -550,13 +579,13 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * List of Packages affected by this erratum.
+     * List of packages affected by this erratum.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packages")
     private final java.util.List<SoftwarePackageSummary> packages;
 
     /**
-     * List of Packages affected by this erratum.
+     * List of packages affected by this erratum.
      * @return the value
      **/
     public java.util.List<SoftwarePackageSummary> getPackages() {
@@ -611,6 +640,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", classificationType=").append(String.valueOf(this.classificationType));
+        sb.append(", advisoryType=").append(String.valueOf(this.advisoryType));
         sb.append(", from=").append(String.valueOf(this.from));
         sb.append(", solution=").append(String.valueOf(this.solution));
         sb.append(", references=").append(String.valueOf(this.references));
@@ -639,6 +669,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.classificationType, other.classificationType)
+                && java.util.Objects.equals(this.advisoryType, other.advisoryType)
                 && java.util.Objects.equals(this.from, other.from)
                 && java.util.Objects.equals(this.solution, other.solution)
                 && java.util.Objects.equals(this.references, other.references)
@@ -664,6 +695,7 @@ public final class Erratum extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.classificationType == null
                                 ? 43
                                 : this.classificationType.hashCode());
+        result = (result * PRIME) + (this.advisoryType == null ? 43 : this.advisoryType.hashCode());
         result = (result * PRIME) + (this.from == null ? 43 : this.from.hashCode());
         result = (result * PRIME) + (this.solution == null ? 43 : this.solution.hashCode());
         result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());

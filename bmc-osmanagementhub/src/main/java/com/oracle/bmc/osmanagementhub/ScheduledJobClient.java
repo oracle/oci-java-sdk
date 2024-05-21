@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -430,7 +430,8 @@ public class ScheduledJobClient implements ScheduledJob {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -547,6 +548,51 @@ public class ScheduledJobClient implements ScheduledJob {
     }
 
     @Override
+    public ChangeScheduledJobCompartmentResponse changeScheduledJobCompartment(
+            ChangeScheduledJobCompartmentRequest request) {
+        LOG.trace("Called changeScheduledJobCompartment");
+        final ChangeScheduledJobCompartmentRequest interceptedRequest =
+                ChangeScheduledJobCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeScheduledJobCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ScheduledJob",
+                        "ChangeScheduledJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ChangeScheduledJobCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
+                transformer =
+                        ChangeScheduledJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeScheduledJobCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateScheduledJobResponse createScheduledJob(CreateScheduledJobRequest request) {
         LOG.trace("Called createScheduledJob");
         final CreateScheduledJobRequest interceptedRequest =
@@ -561,7 +607,10 @@ public class ScheduledJobClient implements ScheduledJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "CreateScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "CreateScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/CreateScheduledJob");
         java.util.function.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
                 transformer =
                         CreateScheduledJobConverter.fromResponse(
@@ -599,7 +648,10 @@ public class ScheduledJobClient implements ScheduledJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "DeleteScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "DeleteScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/DeleteScheduledJob");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
                 transformer =
                         DeleteScheduledJobConverter.fromResponse(
@@ -634,7 +686,10 @@ public class ScheduledJobClient implements ScheduledJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "GetScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "GetScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/GetScheduledJob");
         java.util.function.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
                 transformer =
                         GetScheduledJobConverter.fromResponse(
@@ -668,7 +723,10 @@ public class ScheduledJobClient implements ScheduledJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "ListScheduledJobs", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "ListScheduledJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ListScheduledJobs");
         java.util.function.Function<javax.ws.rs.core.Response, ListScheduledJobsResponse>
                 transformer =
                         ListScheduledJobsConverter.fromResponse(
@@ -703,7 +761,10 @@ public class ScheduledJobClient implements ScheduledJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "RunScheduledJobNow", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "RunScheduledJobNow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/RunScheduledJobNow");
         java.util.function.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
                 transformer =
                         RunScheduledJobNowConverter.fromResponse(
@@ -738,7 +799,10 @@ public class ScheduledJobClient implements ScheduledJob {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "UpdateScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "UpdateScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/UpdateScheduledJob");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
                 transformer =
                         UpdateScheduledJobConverter.fromResponse(

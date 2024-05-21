@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -15,25 +15,25 @@ public class RemoveModuleStreamProfileFromManagedInstanceGroupRequest
                         .RemoveModuleStreamProfileFromManagedInstanceGroupDetails> {
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     private String managedInstanceGroupId;
 
     /**
-     * The managed instance group OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
     /**
-     * Details for profiles to remove from the managed instance group.
+     * The details used to remove profiles from the managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
      */
     private com.oracle.bmc.osmanagementhub.model
                     .RemoveModuleStreamProfileFromManagedInstanceGroupDetails
             removeModuleStreamProfileFromManagedInstanceGroupDetails;
 
     /**
-     * Details for profiles to remove from the managed instance group.
+     * The details used to remove profiles from the managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
      */
     public com.oracle.bmc.osmanagementhub.model
                     .RemoveModuleStreamProfileFromManagedInstanceGroupDetails
@@ -116,12 +116,12 @@ public class RemoveModuleStreamProfileFromManagedInstanceGroupRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          */
         private String managedInstanceGroupId = null;
 
         /**
-         * The managed instance group OCID.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
@@ -131,14 +131,14 @@ public class RemoveModuleStreamProfileFromManagedInstanceGroupRequest
         }
 
         /**
-         * Details for profiles to remove from the managed instance group.
+         * The details used to remove profiles from the managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
          */
         private com.oracle.bmc.osmanagementhub.model
                         .RemoveModuleStreamProfileFromManagedInstanceGroupDetails
                 removeModuleStreamProfileFromManagedInstanceGroupDetails = null;
 
         /**
-         * Details for profiles to remove from the managed instance group.
+         * The details used to remove profiles from the managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.
          * @param removeModuleStreamProfileFromManagedInstanceGroupDetails the value to set
          * @return this builder instance
          */

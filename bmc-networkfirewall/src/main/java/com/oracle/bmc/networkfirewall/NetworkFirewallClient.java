@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall;
@@ -10,7 +10,7 @@ import com.oracle.bmc.networkfirewall.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class NetworkFirewallClient implements NetworkFirewall {
     /**
      * Service instance for NetworkFirewall.
@@ -431,7 +431,8 @@ public class NetworkFirewallClient implements NetworkFirewall {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -548,6 +549,811 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public ApplyNetworkFirewallPolicyResponse applyNetworkFirewallPolicy(
+            ApplyNetworkFirewallPolicyRequest request) {
+        LOG.trace("Called applyNetworkFirewallPolicy");
+        final ApplyNetworkFirewallPolicyRequest interceptedRequest =
+                ApplyNetworkFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ApplyNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ApplyNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/ApplyNetworkFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, ApplyNetworkFirewallPolicyResponse>
+                transformer =
+                        ApplyNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getApplyNetworkFirewallPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public BulkUploadAddressListsResponse bulkUploadAddressLists(
+            BulkUploadAddressListsRequest request) {
+        LOG.trace("Called bulkUploadAddressLists");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadAddressListsRequest.builder());
+            }
+            final BulkUploadAddressListsRequest interceptedRequest =
+                    BulkUploadAddressListsConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadAddressListsConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadAddressLists",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/BulkUploadAddressLists");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadAddressListsResponse>
+                    transformer =
+                            BulkUploadAddressListsConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadAddressListsDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadAddressListsDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadAddressListsDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadApplicationGroupsResponse bulkUploadApplicationGroups(
+            BulkUploadApplicationGroupsRequest request) {
+        LOG.trace("Called bulkUploadApplicationGroups");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadApplicationGroupsRequest.builder());
+            }
+            final BulkUploadApplicationGroupsRequest interceptedRequest =
+                    BulkUploadApplicationGroupsConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadApplicationGroupsConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadApplicationGroups",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/BulkUploadApplicationGroups");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, BulkUploadApplicationGroupsResponse>
+                    transformer =
+                            BulkUploadApplicationGroupsConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadApplicationGroupsDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadApplicationGroupsDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadApplicationGroupsDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadApplicationsResponse bulkUploadApplications(
+            BulkUploadApplicationsRequest request) {
+        LOG.trace("Called bulkUploadApplications");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadApplicationsRequest.builder());
+            }
+            final BulkUploadApplicationsRequest interceptedRequest =
+                    BulkUploadApplicationsConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadApplicationsConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadApplications",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/BulkUploadApplications");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadApplicationsResponse>
+                    transformer =
+                            BulkUploadApplicationsConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadApplicationsDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadApplicationsDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadApplicationsDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadDecryptionProfilesResponse bulkUploadDecryptionProfiles(
+            BulkUploadDecryptionProfilesRequest request) {
+        LOG.trace("Called bulkUploadDecryptionProfiles");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadDecryptionProfilesRequest.builder());
+            }
+            final BulkUploadDecryptionProfilesRequest interceptedRequest =
+                    BulkUploadDecryptionProfilesConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadDecryptionProfilesConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadDecryptionProfiles",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/BulkUploadDecryptionProfiles");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, BulkUploadDecryptionProfilesResponse>
+                    transformer =
+                            BulkUploadDecryptionProfilesConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadDecryptionProfilesDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadDecryptionProfilesDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadDecryptionProfilesDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadDecryptionRulesResponse bulkUploadDecryptionRules(
+            BulkUploadDecryptionRulesRequest request) {
+        LOG.trace("Called bulkUploadDecryptionRules");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadDecryptionRulesRequest.builder());
+            }
+            final BulkUploadDecryptionRulesRequest interceptedRequest =
+                    BulkUploadDecryptionRulesConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadDecryptionRulesConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadDecryptionRules",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/BulkUploadDecryptionRules");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, BulkUploadDecryptionRulesResponse>
+                    transformer =
+                            BulkUploadDecryptionRulesConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadDecryptionRulesDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadDecryptionRulesDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadDecryptionRulesDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadMappedSecretsResponse bulkUploadMappedSecrets(
+            BulkUploadMappedSecretsRequest request) {
+        LOG.trace("Called bulkUploadMappedSecrets");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadMappedSecretsRequest.builder());
+            }
+            final BulkUploadMappedSecretsRequest interceptedRequest =
+                    BulkUploadMappedSecretsConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadMappedSecretsConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadMappedSecrets",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/BulkUploadMappedSecrets");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadMappedSecretsResponse>
+                    transformer =
+                            BulkUploadMappedSecretsConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadMappedSecretsDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadMappedSecretsDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadMappedSecretsDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadSecurityRulesResponse bulkUploadSecurityRules(
+            BulkUploadSecurityRulesRequest request) {
+        LOG.trace("Called bulkUploadSecurityRules");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadSecurityRulesRequest.builder());
+            }
+            final BulkUploadSecurityRulesRequest interceptedRequest =
+                    BulkUploadSecurityRulesConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadSecurityRulesConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadSecurityRules",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/BulkUploadSecurityRules");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadSecurityRulesResponse>
+                    transformer =
+                            BulkUploadSecurityRulesConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadSecurityRulesDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadSecurityRulesDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadSecurityRulesDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadServiceListsResponse bulkUploadServiceLists(
+            BulkUploadServiceListsRequest request) {
+        LOG.trace("Called bulkUploadServiceLists");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadServiceListsRequest.builder());
+            }
+            final BulkUploadServiceListsRequest interceptedRequest =
+                    BulkUploadServiceListsConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadServiceListsConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadServiceLists",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/BulkUploadServiceLists");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadServiceListsResponse>
+                    transformer =
+                            BulkUploadServiceListsConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadServiceListsDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadServiceListsDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadServiceListsDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadServicesResponse bulkUploadServices(BulkUploadServicesRequest request) {
+        LOG.trace("Called bulkUploadServices");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadServicesRequest.builder());
+            }
+            final BulkUploadServicesRequest interceptedRequest =
+                    BulkUploadServicesConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadServicesConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadServices",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/BulkUploadServices");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadServicesResponse>
+                    transformer =
+                            BulkUploadServicesConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadServicesDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadServicesDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadServicesDetails());
+        }
+    }
+
+    @Override
+    public BulkUploadUrlListsResponse bulkUploadUrlLists(BulkUploadUrlListsRequest request) {
+        LOG.trace("Called bulkUploadUrlLists");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadUrlListsRequest.builder());
+            }
+            final BulkUploadUrlListsRequest interceptedRequest =
+                    BulkUploadUrlListsConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadUrlListsConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadUrlLists",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/BulkUploadUrlLists");
+            java.util.function.Function<javax.ws.rs.core.Response, BulkUploadUrlListsResponse>
+                    transformer =
+                            BulkUploadUrlListsConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadUrlListsDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadUrlListsDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadUrlListsDetails());
+        }
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
         LOG.trace("Called cancelWorkRequest");
         final CancelWorkRequestRequest interceptedRequest =
@@ -564,7 +1370,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/CancelWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -597,13 +1403,14 @@ public class NetworkFirewallClient implements NetworkFirewall {
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
                         interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
                         "NetworkFirewall",
                         "ChangeNetworkFirewallCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ChangeNetworkFirewallCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/ChangeNetworkFirewallCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallCompartmentResponse>
                 transformer =
@@ -649,7 +1456,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ChangeNetworkFirewallPolicyCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/ChangeNetworkFirewallPolicyCompartment");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeNetworkFirewallPolicyCompartmentResponse>
                 transformer =
@@ -676,6 +1483,304 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public CloneNetworkFirewallPolicyResponse cloneNetworkFirewallPolicy(
+            CloneNetworkFirewallPolicyRequest request) {
+        LOG.trace("Called cloneNetworkFirewallPolicy");
+        final CloneNetworkFirewallPolicyRequest interceptedRequest =
+                CloneNetworkFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CloneNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CloneNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/CloneNetworkFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, CloneNetworkFirewallPolicyResponse>
+                transformer =
+                        CloneNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCloneNetworkFirewallPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateAddressListResponse createAddressList(CreateAddressListRequest request) {
+        LOG.trace("Called createAddressList");
+        final CreateAddressListRequest interceptedRequest =
+                CreateAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAddressListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/CreateAddressList");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
+                transformer =
+                        CreateAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateAddressListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateApplicationResponse createApplication(CreateApplicationRequest request) {
+        LOG.trace("Called createApplication");
+        final CreateApplicationRequest interceptedRequest =
+                CreateApplicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApplicationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/CreateApplication");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationResponse>
+                transformer =
+                        CreateApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateApplicationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateApplicationGroupResponse createApplicationGroup(
+            CreateApplicationGroupRequest request) {
+        LOG.trace("Called createApplicationGroup");
+        final CreateApplicationGroupRequest interceptedRequest =
+                CreateApplicationGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApplicationGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/CreateApplicationGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateApplicationGroupResponse>
+                transformer =
+                        CreateApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateApplicationGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateDecryptionProfileResponse createDecryptionProfile(
+            CreateDecryptionProfileRequest request) {
+        LOG.trace("Called createDecryptionProfile");
+        final CreateDecryptionProfileRequest interceptedRequest =
+                CreateDecryptionProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/CreateDecryptionProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDecryptionProfileResponse>
+                transformer =
+                        CreateDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDecryptionProfileDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateDecryptionRuleResponse createDecryptionRule(CreateDecryptionRuleRequest request) {
+        LOG.trace("Called createDecryptionRule");
+        final CreateDecryptionRuleRequest interceptedRequest =
+                CreateDecryptionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/CreateDecryptionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateDecryptionRuleResponse>
+                transformer =
+                        CreateDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDecryptionRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateMappedSecretResponse createMappedSecret(CreateMappedSecretRequest request) {
+        LOG.trace("Called createMappedSecret");
+        final CreateMappedSecretRequest interceptedRequest =
+                CreateMappedSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMappedSecretConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/CreateMappedSecret");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMappedSecretResponse>
+                transformer =
+                        CreateMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateMappedSecretDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateNetworkFirewallResponse createNetworkFirewall(
             CreateNetworkFirewallRequest request) {
         LOG.trace("Called createNetworkFirewall");
@@ -694,7 +1799,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "CreateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/CreateNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/CreateNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallResponse>
                 transformer =
                         CreateNetworkFirewallConverter.fromResponse(
@@ -737,7 +1842,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "CreateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/CreateNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/CreateNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, CreateNetworkFirewallPolicyResponse>
                 transformer =
                         CreateNetworkFirewallPolicyConverter.fromResponse(
@@ -763,6 +1868,400 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public CreateSecurityRuleResponse createSecurityRule(CreateSecurityRuleRequest request) {
+        LOG.trace("Called createSecurityRule");
+        final CreateSecurityRuleRequest interceptedRequest =
+                CreateSecurityRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecurityRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/CreateSecurityRule");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityRuleResponse>
+                transformer =
+                        CreateSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSecurityRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateServiceResponse createService(CreateServiceRequest request) {
+        LOG.trace("Called createService");
+        final CreateServiceRequest interceptedRequest =
+                CreateServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/CreateService");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceResponse> transformer =
+                CreateServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateServiceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateServiceListResponse createServiceList(CreateServiceListRequest request) {
+        LOG.trace("Called createServiceList");
+        final CreateServiceListRequest interceptedRequest =
+                CreateServiceListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/CreateServiceList");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateServiceListResponse>
+                transformer =
+                        CreateServiceListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateServiceListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateUrlListResponse createUrlList(CreateUrlListRequest request) {
+        LOG.trace("Called createUrlList");
+        final CreateUrlListRequest interceptedRequest =
+                CreateUrlListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUrlListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/CreateUrlList");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateUrlListResponse> transformer =
+                CreateUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateUrlListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteAddressListResponse deleteAddressList(DeleteAddressListRequest request) {
+        LOG.trace("Called deleteAddressList");
+        final DeleteAddressListRequest interceptedRequest =
+                DeleteAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAddressListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/DeleteAddressList");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
+                transformer =
+                        DeleteAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request) {
+        LOG.trace("Called deleteApplication");
+        final DeleteApplicationRequest interceptedRequest =
+                DeleteApplicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApplicationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/DeleteApplication");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationResponse>
+                transformer =
+                        DeleteApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteApplicationGroupResponse deleteApplicationGroup(
+            DeleteApplicationGroupRequest request) {
+        LOG.trace("Called deleteApplicationGroup");
+        final DeleteApplicationGroupRequest interceptedRequest =
+                DeleteApplicationGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApplicationGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/DeleteApplicationGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteApplicationGroupResponse>
+                transformer =
+                        DeleteApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDecryptionProfileResponse deleteDecryptionProfile(
+            DeleteDecryptionProfileRequest request) {
+        LOG.trace("Called deleteDecryptionProfile");
+        final DeleteDecryptionProfileRequest interceptedRequest =
+                DeleteDecryptionProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/DeleteDecryptionProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDecryptionProfileResponse>
+                transformer =
+                        DeleteDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDecryptionRuleResponse deleteDecryptionRule(DeleteDecryptionRuleRequest request) {
+        LOG.trace("Called deleteDecryptionRule");
+        final DeleteDecryptionRuleRequest interceptedRequest =
+                DeleteDecryptionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/DeleteDecryptionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteDecryptionRuleResponse>
+                transformer =
+                        DeleteDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteMappedSecretResponse deleteMappedSecret(DeleteMappedSecretRequest request) {
+        LOG.trace("Called deleteMappedSecret");
+        final DeleteMappedSecretRequest interceptedRequest =
+                DeleteMappedSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMappedSecretConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/DeleteMappedSecret");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMappedSecretResponse>
+                transformer =
+                        DeleteMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteNetworkFirewallResponse deleteNetworkFirewall(
             DeleteNetworkFirewallRequest request) {
         LOG.trace("Called deleteNetworkFirewall");
@@ -780,7 +2279,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "DeleteNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/DeleteNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/DeleteNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallResponse>
                 transformer =
                         DeleteNetworkFirewallConverter.fromResponse(
@@ -819,7 +2318,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "DeleteNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/DeleteNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteNetworkFirewallPolicyResponse>
                 transformer =
                         DeleteNetworkFirewallPolicyConverter.fromResponse(
@@ -835,6 +2334,372 @@ public class NetworkFirewallClient implements NetworkFirewall {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSecurityRuleResponse deleteSecurityRule(DeleteSecurityRuleRequest request) {
+        LOG.trace("Called deleteSecurityRule");
+        final DeleteSecurityRuleRequest interceptedRequest =
+                DeleteSecurityRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSecurityRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/DeleteSecurityRule");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityRuleResponse>
+                transformer =
+                        DeleteSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteServiceResponse deleteService(DeleteServiceRequest request) {
+        LOG.trace("Called deleteService");
+        final DeleteServiceRequest interceptedRequest =
+                DeleteServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/DeleteService");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceResponse> transformer =
+                DeleteServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteServiceListResponse deleteServiceList(DeleteServiceListRequest request) {
+        LOG.trace("Called deleteServiceList");
+        final DeleteServiceListRequest interceptedRequest =
+                DeleteServiceListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/DeleteServiceList");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceListResponse>
+                transformer =
+                        DeleteServiceListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteUrlListResponse deleteUrlList(DeleteUrlListRequest request) {
+        LOG.trace("Called deleteUrlList");
+        final DeleteUrlListRequest interceptedRequest =
+                DeleteUrlListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUrlListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/DeleteUrlList");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteUrlListResponse> transformer =
+                DeleteUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetAddressListResponse getAddressList(GetAddressListRequest request) {
+        LOG.trace("Called getAddressList");
+        final GetAddressListRequest interceptedRequest =
+                GetAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAddressListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/GetAddressList");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAddressListResponse> transformer =
+                GetAddressListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetApplicationResponse getApplication(GetApplicationRequest request) {
+        LOG.trace("Called getApplication");
+        final GetApplicationRequest interceptedRequest =
+                GetApplicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApplicationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/GetApplication");
+        java.util.function.Function<javax.ws.rs.core.Response, GetApplicationResponse> transformer =
+                GetApplicationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetApplicationGroupResponse getApplicationGroup(GetApplicationGroupRequest request) {
+        LOG.trace("Called getApplicationGroup");
+        final GetApplicationGroupRequest interceptedRequest =
+                GetApplicationGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApplicationGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/GetApplicationGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetApplicationGroupResponse>
+                transformer =
+                        GetApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDecryptionProfileResponse getDecryptionProfile(GetDecryptionProfileRequest request) {
+        LOG.trace("Called getDecryptionProfile");
+        final GetDecryptionProfileRequest interceptedRequest =
+                GetDecryptionProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/GetDecryptionProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDecryptionProfileResponse>
+                transformer =
+                        GetDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDecryptionRuleResponse getDecryptionRule(GetDecryptionRuleRequest request) {
+        LOG.trace("Called getDecryptionRule");
+        final GetDecryptionRuleRequest interceptedRequest =
+                GetDecryptionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/GetDecryptionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, GetDecryptionRuleResponse>
+                transformer =
+                        GetDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetMappedSecretResponse getMappedSecret(GetMappedSecretRequest request) {
+        LOG.trace("Called getMappedSecret");
+        final GetMappedSecretRequest interceptedRequest =
+                GetMappedSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMappedSecretConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/GetMappedSecret");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMappedSecretResponse>
+                transformer =
+                        GetMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -857,7 +2722,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "GetNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/GetNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/GetNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallResponse>
                 transformer =
                         GetNetworkFirewallConverter.fromResponse(
@@ -895,11 +2760,151 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "GetNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/GetNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/GetNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, GetNetworkFirewallPolicyResponse>
                 transformer =
                         GetNetworkFirewallPolicyConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSecurityRuleResponse getSecurityRule(GetSecurityRuleRequest request) {
+        LOG.trace("Called getSecurityRule");
+        final GetSecurityRuleRequest interceptedRequest =
+                GetSecurityRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecurityRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/GetSecurityRule");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSecurityRuleResponse>
+                transformer =
+                        GetSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetServiceResponse getService(GetServiceRequest request) {
+        LOG.trace("Called getService");
+        final GetServiceRequest interceptedRequest = GetServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/GetService");
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceResponse> transformer =
+                GetServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetServiceListResponse getServiceList(GetServiceListRequest request) {
+        LOG.trace("Called getServiceList");
+        final GetServiceListRequest interceptedRequest =
+                GetServiceListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/GetServiceList");
+        java.util.function.Function<javax.ws.rs.core.Response, GetServiceListResponse> transformer =
+                GetServiceListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetUrlListResponse getUrlList(GetUrlListRequest request) {
+        LOG.trace("Called getUrlList");
+        final GetUrlListRequest interceptedRequest = GetUrlListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUrlListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/GetUrlList");
+        java.util.function.Function<javax.ws.rs.core.Response, GetUrlListResponse> transformer =
+                GetUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -932,9 +2937,233 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/GetWorkRequest");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAddressListsResponse listAddressLists(ListAddressListsRequest request) {
+        LOG.trace("Called listAddressLists");
+        final ListAddressListsRequest interceptedRequest =
+                ListAddressListsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddressListsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListAddressLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/ListAddressLists");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
+                transformer =
+                        ListAddressListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListApplicationGroupsResponse listApplicationGroups(
+            ListApplicationGroupsRequest request) {
+        LOG.trace("Called listApplicationGroups");
+        final ListApplicationGroupsRequest interceptedRequest =
+                ListApplicationGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApplicationGroupsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListApplicationGroups",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/ListApplicationGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListApplicationGroupsResponse>
+                transformer =
+                        ListApplicationGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListApplicationsResponse listApplications(ListApplicationsRequest request) {
+        LOG.trace("Called listApplications");
+        final ListApplicationsRequest interceptedRequest =
+                ListApplicationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApplicationsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListApplications",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/ListApplications");
+        java.util.function.Function<javax.ws.rs.core.Response, ListApplicationsResponse>
+                transformer =
+                        ListApplicationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDecryptionProfilesResponse listDecryptionProfiles(
+            ListDecryptionProfilesRequest request) {
+        LOG.trace("Called listDecryptionProfiles");
+        final ListDecryptionProfilesRequest interceptedRequest =
+                ListDecryptionProfilesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDecryptionProfilesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListDecryptionProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/ListDecryptionProfiles");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDecryptionProfilesResponse>
+                transformer =
+                        ListDecryptionProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDecryptionRulesResponse listDecryptionRules(ListDecryptionRulesRequest request) {
+        LOG.trace("Called listDecryptionRules");
+        final ListDecryptionRulesRequest interceptedRequest =
+                ListDecryptionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDecryptionRulesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListDecryptionRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/ListDecryptionRules");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDecryptionRulesResponse>
+                transformer =
+                        ListDecryptionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMappedSecretsResponse listMappedSecrets(ListMappedSecretsRequest request) {
+        LOG.trace("Called listMappedSecrets");
+        final ListMappedSecretsRequest interceptedRequest =
+                ListMappedSecretsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMappedSecretsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListMappedSecrets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/ListMappedSecrets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMappedSecretsResponse>
+                transformer =
+                        ListMappedSecretsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -968,7 +3197,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListNetworkFirewallPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/ListNetworkFirewallPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/ListNetworkFirewallPolicies");
         java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallPoliciesResponse>
                 transformer =
                         ListNetworkFirewallPoliciesConverter.fromResponse(
@@ -1005,11 +3234,155 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListNetworkFirewalls",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/ListNetworkFirewalls");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/ListNetworkFirewalls");
         java.util.function.Function<javax.ws.rs.core.Response, ListNetworkFirewallsResponse>
                 transformer =
                         ListNetworkFirewallsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListSecurityRulesResponse listSecurityRules(ListSecurityRulesRequest request) {
+        LOG.trace("Called listSecurityRules");
+        final ListSecurityRulesRequest interceptedRequest =
+                ListSecurityRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecurityRulesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListSecurityRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/ListSecurityRules");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSecurityRulesResponse>
+                transformer =
+                        ListSecurityRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListServiceListsResponse listServiceLists(ListServiceListsRequest request) {
+        LOG.trace("Called listServiceLists");
+        final ListServiceListsRequest interceptedRequest =
+                ListServiceListsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceListsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListServiceLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/ListServiceLists");
+        java.util.function.Function<javax.ws.rs.core.Response, ListServiceListsResponse>
+                transformer =
+                        ListServiceListsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListServicesResponse listServices(ListServicesRequest request) {
+        LOG.trace("Called listServices");
+        final ListServicesRequest interceptedRequest =
+                ListServicesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServicesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListServices",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/ListServices");
+        java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
+                ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListUrlListsResponse listUrlLists(ListUrlListsRequest request) {
+        LOG.trace("Called listUrlLists");
+        final ListUrlListsRequest interceptedRequest =
+                ListUrlListsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUrlListsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListUrlLists",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/ListUrlLists");
+        java.util.function.Function<javax.ws.rs.core.Response, ListUrlListsResponse> transformer =
+                ListUrlListsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -1043,7 +3416,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestError/ListWorkRequestErrors");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1080,7 +3453,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1117,7 +3490,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/WorkRequest/ListWorkRequests");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1132,6 +3505,294 @@ public class NetworkFirewallClient implements NetworkFirewall {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public MigrateNetworkFirewallPolicyResponse migrateNetworkFirewallPolicy(
+            MigrateNetworkFirewallPolicyRequest request) {
+        LOG.trace("Called migrateNetworkFirewallPolicy");
+        final MigrateNetworkFirewallPolicyRequest interceptedRequest =
+                MigrateNetworkFirewallPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                MigrateNetworkFirewallPolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "MigrateNetworkFirewallPolicy",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/MigrateNetworkFirewallPolicy");
+        java.util.function.Function<javax.ws.rs.core.Response, MigrateNetworkFirewallPolicyResponse>
+                transformer =
+                        MigrateNetworkFirewallPolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAddressListResponse updateAddressList(UpdateAddressListRequest request) {
+        LOG.trace("Called updateAddressList");
+        final UpdateAddressListRequest interceptedRequest =
+                UpdateAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAddressListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateAddressList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/AddressList/UpdateAddressList");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
+                transformer =
+                        UpdateAddressListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateAddressListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateApplicationResponse updateApplication(UpdateApplicationRequest request) {
+        LOG.trace("Called updateApplication");
+        final UpdateApplicationRequest interceptedRequest =
+                UpdateApplicationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateApplicationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Application/UpdateApplication");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationResponse>
+                transformer =
+                        UpdateApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateApplicationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateApplicationGroupResponse updateApplicationGroup(
+            UpdateApplicationGroupRequest request) {
+        LOG.trace("Called updateApplicationGroup");
+        final UpdateApplicationGroupRequest interceptedRequest =
+                UpdateApplicationGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateApplicationGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateApplicationGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ApplicationGroup/UpdateApplicationGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateApplicationGroupResponse>
+                transformer =
+                        UpdateApplicationGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateApplicationGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateDecryptionProfileResponse updateDecryptionProfile(
+            UpdateDecryptionProfileRequest request) {
+        LOG.trace("Called updateDecryptionProfile");
+        final UpdateDecryptionProfileRequest interceptedRequest =
+                UpdateDecryptionProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDecryptionProfileConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateDecryptionProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionProfile/UpdateDecryptionProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDecryptionProfileResponse>
+                transformer =
+                        UpdateDecryptionProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDecryptionProfileDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateDecryptionRuleResponse updateDecryptionRule(UpdateDecryptionRuleRequest request) {
+        LOG.trace("Called updateDecryptionRule");
+        final UpdateDecryptionRuleRequest interceptedRequest =
+                UpdateDecryptionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDecryptionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateDecryptionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/DecryptionRule/UpdateDecryptionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateDecryptionRuleResponse>
+                transformer =
+                        UpdateDecryptionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDecryptionRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateMappedSecretResponse updateMappedSecret(UpdateMappedSecretRequest request) {
+        LOG.trace("Called updateMappedSecret");
+        final UpdateMappedSecretRequest interceptedRequest =
+                UpdateMappedSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMappedSecretConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateMappedSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/MappedSecret/UpdateMappedSecret");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMappedSecretResponse>
+                transformer =
+                        UpdateMappedSecretConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateMappedSecretDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1155,7 +3816,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "UpdateNetworkFirewall",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewall/UpdateNetworkFirewall");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewall/UpdateNetworkFirewall");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallResponse>
                 transformer =
                         UpdateNetworkFirewallConverter.fromResponse(
@@ -1197,7 +3858,7 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "NetworkFirewall",
                         "UpdateNetworkFirewallPolicy",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20211001/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy");
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/NetworkFirewallPolicy/UpdateNetworkFirewallPolicy");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateNetworkFirewallPolicyResponse>
                 transformer =
                         UpdateNetworkFirewallPolicyConverter.fromResponse(
@@ -1223,6 +3884,166 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public UpdateSecurityRuleResponse updateSecurityRule(UpdateSecurityRuleRequest request) {
+        LOG.trace("Called updateSecurityRule");
+        final UpdateSecurityRuleRequest interceptedRequest =
+                UpdateSecurityRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecurityRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateSecurityRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/SecurityRule/UpdateSecurityRule");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityRuleResponse>
+                transformer =
+                        UpdateSecurityRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSecurityRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateServiceResponse updateService(UpdateServiceRequest request) {
+        LOG.trace("Called updateService");
+        final UpdateServiceRequest interceptedRequest =
+                UpdateServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateServiceConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/UpdateService");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceResponse> transformer =
+                UpdateServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateServiceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateServiceListResponse updateServiceList(UpdateServiceListRequest request) {
+        LOG.trace("Called updateServiceList");
+        final UpdateServiceListRequest interceptedRequest =
+                UpdateServiceListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateServiceListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateServiceList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/UpdateServiceList");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceListResponse>
+                transformer =
+                        UpdateServiceListConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateServiceListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateUrlListResponse updateUrlList(UpdateUrlListRequest request) {
+        LOG.trace("Called updateUrlList");
+        final UpdateUrlListRequest interceptedRequest =
+                UpdateUrlListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUrlListConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateUrlList",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/UrlList/UpdateUrlList");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateUrlListResponse> transformer =
+                UpdateUrlListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateUrlListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public NetworkFirewallWaiters getWaiters() {
         return waiters;
     }
@@ -1230,5 +4051,31 @@ public class NetworkFirewallClient implements NetworkFirewall {
     @Override
     public NetworkFirewallPaginators getPaginators() {
         return paginators;
+    }
+
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

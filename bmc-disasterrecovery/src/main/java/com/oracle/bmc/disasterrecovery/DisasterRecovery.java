@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery;
@@ -8,9 +8,10 @@ import com.oracle.bmc.disasterrecovery.requests.*;
 import com.oracle.bmc.disasterrecovery.responses.*;
 
 /**
- * Use the Full Stack Disaster Recovery (FSDR) API to manage disaster recovery for business applications.
- * FSDR is an OCI disaster recovery orchestration and management service that provides comprehensive disaster recovery
- * capabilities for all layers of an application stack, including infrastructure, middleware, database, and application.
+ * Use the Full Stack Disaster Recovery (DR) API to manage disaster recovery for business applications.
+ * Full Stack DR is an OCI disaster recovery orchestration and management service that provides comprehensive disaster
+ * recovery capabilities for all layers of an application stack, including infrastructure, middleware, database,
+ * and application.
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -63,13 +64,13 @@ public interface DisasterRecovery extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Create an association the DR Protection Group identified by *drProtectionGroupId* and
-     * another DR Protection Group in a different region.
+     * Create an association between the DR protection group identified by *drProtectionGroupId* and
+     * another DR protection group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/AssociateDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AssociateDrProtectionGroup API.
@@ -78,11 +79,11 @@ public interface DisasterRecovery extends AutoCloseable {
             AssociateDrProtectionGroupRequest request);
 
     /**
-     * Cancel the DR Plan Execution indentified by *drPlanExecutionId*.
+     * Cancel the DR plan execution identified by *drPlanExecutionId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/CancelDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDrPlanExecution API.
@@ -94,7 +95,7 @@ public interface DisasterRecovery extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
@@ -102,11 +103,11 @@ public interface DisasterRecovery extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
-     * Move the DR Protection Group identified by *drProtectionGroupId* to a different compartment.
+     * Move the DR protection group identified by *drProtectionGroupId* to a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ChangeDrProtectionGroupCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDrProtectionGroupCompartment API.
@@ -115,11 +116,11 @@ public interface DisasterRecovery extends AutoCloseable {
             ChangeDrProtectionGroupCompartmentRequest request);
 
     /**
-     * Creates a new DR Plan of the specified DR Plan type.
+     * Create a DR plan of the specified DR plan type.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/CreateDrPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrPlan API.
@@ -127,11 +128,11 @@ public interface DisasterRecovery extends AutoCloseable {
     CreateDrPlanResponse createDrPlan(CreateDrPlanRequest request);
 
     /**
-     * Execute a DR Plan for a DR Protection Group.
+     * Execute a DR plan for a DR protection group.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/CreateDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrPlanExecution API.
@@ -139,11 +140,11 @@ public interface DisasterRecovery extends AutoCloseable {
     CreateDrPlanExecutionResponse createDrPlanExecution(CreateDrPlanExecutionRequest request);
 
     /**
-     * Create a new DR Protection Group.
+     * Create a DR protection group.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/CreateDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDrProtectionGroup API.
@@ -151,11 +152,11 @@ public interface DisasterRecovery extends AutoCloseable {
     CreateDrProtectionGroupResponse createDrProtectionGroup(CreateDrProtectionGroupRequest request);
 
     /**
-     * Delete the DR Plan identified by *drPlanId*.
+     * Delete the DR plan identified by *drPlanId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/DeleteDrPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrPlan API.
@@ -163,11 +164,11 @@ public interface DisasterRecovery extends AutoCloseable {
     DeleteDrPlanResponse deleteDrPlan(DeleteDrPlanRequest request);
 
     /**
-     * Delete the DR Plan Execution identified by *drPlanExecutionId*.
+     * Delete the DR plan execution identified by *drPlanExecutionId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/DeleteDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrPlanExecution API.
@@ -175,11 +176,11 @@ public interface DisasterRecovery extends AutoCloseable {
     DeleteDrPlanExecutionResponse deleteDrPlanExecution(DeleteDrPlanExecutionRequest request);
 
     /**
-     * Delete the DR Protection Group identified by *drProtectionGroupId*.
+     * Delete the DR protection group identified by *drProtectionGroupId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/DeleteDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDrProtectionGroup API.
@@ -187,13 +188,13 @@ public interface DisasterRecovery extends AutoCloseable {
     DeleteDrProtectionGroupResponse deleteDrProtectionGroup(DeleteDrProtectionGroupRequest request);
 
     /**
-     * Delete the association between the DR Protection Group identified by *drProtectionGroupId*.
-     * and its peer DR Protection Group.
+     * Delete the association between the DR protection group identified by *drProtectionGroupId*.
+     * and its peer DR protection group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/DisassociateDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DisassociateDrProtectionGroup API.
@@ -202,11 +203,11 @@ public interface DisasterRecovery extends AutoCloseable {
             DisassociateDrProtectionGroupRequest request);
 
     /**
-     * Get details for the DR Plan identified by *drPlanId*.
+     * Get details for the DR plan identified by *drPlanId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetDrPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrPlan API.
@@ -214,11 +215,11 @@ public interface DisasterRecovery extends AutoCloseable {
     GetDrPlanResponse getDrPlan(GetDrPlanRequest request);
 
     /**
-     * Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+     * Get details for the DR plan execution identified by *drPlanExecutionId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrPlanExecution API.
@@ -226,11 +227,11 @@ public interface DisasterRecovery extends AutoCloseable {
     GetDrPlanExecutionResponse getDrPlanExecution(GetDrPlanExecutionRequest request);
 
     /**
-     * Get the DR Protection Group identified by *drProtectionGroupId*.
+     * Get the DR protection group identified by *drProtectionGroupId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDrProtectionGroup API.
@@ -242,7 +243,7 @@ public interface DisasterRecovery extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
@@ -250,11 +251,11 @@ public interface DisasterRecovery extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Ignore failed group or step in DR Plan Execution identified by *drPlanExecutionId* and resume execution.
+     * Ignore the failed group or step in DR plan execution identified by *drPlanExecutionId* and resume execution.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/IgnoreDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use IgnoreDrPlanExecution API.
@@ -262,11 +263,11 @@ public interface DisasterRecovery extends AutoCloseable {
     IgnoreDrPlanExecutionResponse ignoreDrPlanExecution(IgnoreDrPlanExecutionRequest request);
 
     /**
-     * Get a summary list of all DR Plan Executions for a DR Protection Group.
+     * Get a summary list of all DR plan executions for a DR protection group.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrPlanExecutionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrPlanExecutions API.
@@ -274,11 +275,11 @@ public interface DisasterRecovery extends AutoCloseable {
     ListDrPlanExecutionsResponse listDrPlanExecutions(ListDrPlanExecutionsRequest request);
 
     /**
-     * Gets a summary list of all DR Plans for a DR Protection Group.
+     * Get a summary list of all DR plans for a DR protection group.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrPlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrPlans API.
@@ -286,11 +287,11 @@ public interface DisasterRecovery extends AutoCloseable {
     ListDrPlansResponse listDrPlans(ListDrPlansRequest request);
 
     /**
-     * Gets a summary list of all DR Protection Groups in a compartment.
+     * Get a summary list of all DR protection groups in a compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrProtectionGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDrProtectionGroups API.
@@ -298,12 +299,12 @@ public interface DisasterRecovery extends AutoCloseable {
     ListDrProtectionGroupsResponse listDrProtectionGroups(ListDrProtectionGroupsRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Get a list of work request errors for the work request identified by *workRequestId*.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
@@ -311,12 +312,12 @@ public interface DisasterRecovery extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for the work request identified by *workRequestId*.
+     * Get a list of logs for the work request identified by *workRequestId*.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
@@ -329,7 +330,7 @@ public interface DisasterRecovery extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
@@ -337,11 +338,11 @@ public interface DisasterRecovery extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Pause the DR Plan Execution identified by *drPlanExecutionId*.
+     * Pause the DR plan execution identified by *drPlanExecutionId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/PauseDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PauseDrPlanExecution API.
@@ -349,11 +350,11 @@ public interface DisasterRecovery extends AutoCloseable {
     PauseDrPlanExecutionResponse pauseDrPlanExecution(PauseDrPlanExecutionRequest request);
 
     /**
-     * Resume the DR Plan Execution identified by *drPlanExecutionId*.
+     * Resume the DR plan execution identified by *drPlanExecutionId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ResumeDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeDrPlanExecution API.
@@ -361,11 +362,11 @@ public interface DisasterRecovery extends AutoCloseable {
     ResumeDrPlanExecutionResponse resumeDrPlanExecution(ResumeDrPlanExecutionRequest request);
 
     /**
-     * Retry failed group or step in DR Plan Execution identified by *drPlanExecutionId* and resume execution.
+     * Retry the failed group or step in DR plan execution identified by *drPlanExecutionId* and resume execution.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/RetryDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryDrPlanExecution API.
@@ -373,11 +374,11 @@ public interface DisasterRecovery extends AutoCloseable {
     RetryDrPlanExecutionResponse retryDrPlanExecution(RetryDrPlanExecutionRequest request);
 
     /**
-     * Update the DR Plan identified by *drPlanId*.
+     * Update the DR plan identified by *drPlanId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/UpdateDrPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrPlan API.
@@ -385,11 +386,11 @@ public interface DisasterRecovery extends AutoCloseable {
     UpdateDrPlanResponse updateDrPlan(UpdateDrPlanRequest request);
 
     /**
-     * Update the DR Plan Execution identified by *drPlanExecutionId*.
+     * Update the DR plan execution identified by *drPlanExecutionId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/UpdateDrPlanExecutionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrPlanExecution API.
@@ -397,11 +398,11 @@ public interface DisasterRecovery extends AutoCloseable {
     UpdateDrPlanExecutionResponse updateDrPlanExecution(UpdateDrPlanExecutionRequest request);
 
     /**
-     * Update the DR Protection Group identified by *drProtectionGroupId*.
+     * Update the DR protection group identified by *drProtectionGroupId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/UpdateDrProtectionGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrProtectionGroup API.
@@ -409,11 +410,11 @@ public interface DisasterRecovery extends AutoCloseable {
     UpdateDrProtectionGroupResponse updateDrProtectionGroup(UpdateDrProtectionGroupRequest request);
 
     /**
-     * Update the role of the DR Protection Group identified by *drProtectionGroupId*.
+     * Update the role of the DR protection group identified by *drProtectionGroupId*.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/UpdateDrProtectionGroupRoleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDrProtectionGroupRole API.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.requests;
@@ -15,24 +15,24 @@ public class DetachManagedInstancesFromLifecycleStageRequest
                         .DetachManagedInstancesFromLifecycleStageDetails> {
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     private String lifecycleStageId;
 
     /**
-     * The OCID of the lifecycle stage.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
     /**
-     * Details for managed instances to detach from the lifecycle stage.
+     * Details for the managed instance to detach from the lifecycle stage.
      */
     private com.oracle.bmc.osmanagementhub.model.DetachManagedInstancesFromLifecycleStageDetails
             detachManagedInstancesFromLifecycleStageDetails;
 
     /**
-     * Details for managed instances to detach from the lifecycle stage.
+     * Details for the managed instance to detach from the lifecycle stage.
      */
     public com.oracle.bmc.osmanagementhub.model.DetachManagedInstancesFromLifecycleStageDetails
             getDetachManagedInstancesFromLifecycleStageDetails() {
@@ -113,12 +113,12 @@ public class DetachManagedInstancesFromLifecycleStageRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          */
         private String lifecycleStageId = null;
 
         /**
-         * The OCID of the lifecycle stage.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
          * @param lifecycleStageId the value to set
          * @return this builder instance
          */
@@ -128,13 +128,13 @@ public class DetachManagedInstancesFromLifecycleStageRequest
         }
 
         /**
-         * Details for managed instances to detach from the lifecycle stage.
+         * Details for the managed instance to detach from the lifecycle stage.
          */
         private com.oracle.bmc.osmanagementhub.model.DetachManagedInstancesFromLifecycleStageDetails
                 detachManagedInstancesFromLifecycleStageDetails = null;
 
         /**
-         * Details for managed instances to detach from the lifecycle stage.
+         * Details for the managed instance to detach from the lifecycle stage.
          * @param detachManagedInstancesFromLifecycleStageDetails the value to set
          * @return this builder instance
          */

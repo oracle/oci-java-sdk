@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Description of a software source to be created.
+ * Provides the information used to create a software source.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -25,6 +25,10 @@ package com.oracle.bmc.osmanagementhub.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateCustomSoftwareSourceDetails.class,
         name = "CUSTOM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateVendorSoftwareSourceDetails.class,
+        name = "VENDOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateVersionedCustomSoftwareSourceDetails.class,
@@ -57,13 +61,13 @@ public class CreateSoftwareSourceDetails
     }
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the software source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -71,13 +75,13 @@ public class CreateSoftwareSourceDetails
     }
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User friendly name for the software source.
+     * User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -85,13 +89,13 @@ public class CreateSoftwareSourceDetails
     }
 
     /**
-     * Information specified by the user about the software source.
+     * User-specified description for the software source. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the software source.
+     * User-specified description for the software source. Avoid entering confidential information.
      * @return the value
      **/
     public String getDescription() {

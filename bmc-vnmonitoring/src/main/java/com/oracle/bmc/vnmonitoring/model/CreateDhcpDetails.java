@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -27,7 +27,8 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
         "displayName",
         "freeformTags",
         "options",
-        "vcnId"
+        "vcnId",
+        "domainNameType"
     })
     public CreateDhcpDetails(
             String compartmentId,
@@ -35,7 +36,8 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.List<DhcpOption> options,
-            String vcnId) {
+            String vcnId,
+            DomainNameType domainNameType) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -43,6 +45,7 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
         this.freeformTags = freeformTags;
         this.options = options;
         this.vcnId = vcnId;
+        this.domainNameType = domainNameType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -156,6 +159,22 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("vcnId");
             return this;
         }
+        /**
+         * The search domain name type of DHCP options
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+        private DomainNameType domainNameType;
+
+        /**
+         * The search domain name type of DHCP options
+         * @param domainNameType the value to set
+         * @return this builder
+         **/
+        public Builder domainNameType(DomainNameType domainNameType) {
+            this.domainNameType = domainNameType;
+            this.__explicitlySet__.add("domainNameType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -168,7 +187,8 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
                             this.displayName,
                             this.freeformTags,
                             this.options,
-                            this.vcnId);
+                            this.vcnId,
+                            this.domainNameType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -194,6 +214,9 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("domainNameType")) {
+                this.domainNameType(model.getDomainNameType());
             }
             return this;
         }
@@ -306,6 +329,56 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
         return vcnId;
     }
 
+    /**
+     * The search domain name type of DHCP options
+     **/
+    public enum DomainNameType {
+        SubnetDomain("SUBNET_DOMAIN"),
+        VcnDomain("VCN_DOMAIN"),
+        CustomDomain("CUSTOM_DOMAIN"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DomainNameType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DomainNameType v : DomainNameType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DomainNameType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DomainNameType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid DomainNameType: " + key);
+        }
+    };
+    /**
+     * The search domain name type of DHCP options
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainNameType")
+    private final DomainNameType domainNameType;
+
+    /**
+     * The search domain name type of DHCP options
+     * @return the value
+     **/
+    public DomainNameType getDomainNameType() {
+        return domainNameType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -326,6 +399,7 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", options=").append(String.valueOf(this.options));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", domainNameType=").append(String.valueOf(this.domainNameType));
         sb.append(")");
         return sb.toString();
     }
@@ -346,6 +420,7 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.options, other.options)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.domainNameType, other.domainNameType)
                 && super.equals(other);
     }
 
@@ -361,6 +436,9 @@ public final class CreateDhcpDetails extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.options == null ? 43 : this.options.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.domainNameType == null ? 43 : this.domainNameType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

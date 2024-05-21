@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRule.
+ * Detailed information for a responder rule
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,13 +46,13 @@ public final class ResponderRuleDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<ResponderConfiguration> configurations;
 
         /**
-         * ResponderRule configurations
+         * List of responder rule configurations
          * @param configurations the value to set
          * @return this builder
          **/
@@ -62,13 +62,13 @@ public final class ResponderRuleDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Identifies state for ResponderRule
+         * Enabled state for the responder rule
          * @param isEnabled the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class ResponderRuleDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private ResponderModeTypes mode;
 
         /**
-         * Execution Mode for ResponderRule
+         * Execution mode for the responder rule
          * @param mode the value to set
          * @return this builder
          **/
@@ -144,13 +144,13 @@ public final class ResponderRuleDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<ResponderConfiguration> configurations;
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      * @return the value
      **/
     public java.util.List<ResponderConfiguration> getConfigurations() {
@@ -158,13 +158,13 @@ public final class ResponderRuleDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Identifies state for ResponderRule
+     * Enabled state for the responder rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Identifies state for ResponderRule
+     * Enabled state for the responder rule
      * @return the value
      **/
     public Boolean getIsEnabled() {
@@ -172,13 +172,13 @@ public final class ResponderRuleDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final ResponderModeTypes mode;
 
     /**
-     * Execution Mode for ResponderRule
+     * Execution mode for the responder rule
      * @return the value
      **/
     public ResponderModeTypes getMode() {

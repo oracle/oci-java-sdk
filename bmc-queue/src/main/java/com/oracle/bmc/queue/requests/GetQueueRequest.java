@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue.requests;
@@ -12,23 +12,23 @@ import com.oracle.bmc.queue.model.*;
 public class GetQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     private String queueId;
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     public String getQueueId() {
         return queueId;
     }
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -41,12 +41,12 @@ public class GetQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * unique Queue identifier
+         * The unique queue identifier.
          */
         private String queueId = null;
 
         /**
-         * unique Queue identifier
+         * The unique queue identifier.
          * @param queueId the value to set
          * @return this builder instance
          */
@@ -56,12 +56,12 @@ public class GetQueueRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */

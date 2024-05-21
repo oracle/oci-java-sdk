@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.sch.model;
 
 /**
- * The configuration details for moving a service connector to a different compartment.
+ * The configuration details for moving a connector to a different compartment.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -33,7 +33,7 @@ public final class ChangeServiceConnectorCompartmentDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
-         * to move the service connector to.
+         * to move the connector to.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -41,7 +41,7 @@ public final class ChangeServiceConnectorCompartmentDetails
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
-         * to move the service connector to.
+         * to move the connector to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -86,7 +86,7 @@ public final class ChangeServiceConnectorCompartmentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
-     * to move the service connector to.
+     * to move the connector to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -94,7 +94,7 @@ public final class ChangeServiceConnectorCompartmentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
-     * to move the service connector to.
+     * to move the connector to.
      *
      * @return the value
      **/

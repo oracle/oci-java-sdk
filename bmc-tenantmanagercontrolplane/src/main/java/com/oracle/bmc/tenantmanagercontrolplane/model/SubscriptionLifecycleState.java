@@ -1,21 +1,19 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Lifecycle state of the subscription.
+ * The current lifecycle state of the OCS subscription.
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public enum SubscriptionLifecycleState {
-    Creating("CREATING"),
+    NeedsAttention("NEEDS_ATTENTION"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),
-    Updating("UPDATING"),
-    Deleting("DELETING"),
-    Deleted("DELETED"),
     Failed("FAILED"),
+    Creating("CREATING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * A summary of a work request.
+ * The summary of a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -93,18 +93,18 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The ID (OCID) of the work request.
+         * The OCID of the work request.
          * <p>
-         * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.workrequest.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The ID (OCID) of the work request.
+         * The OCID of the work request.
          * <p>
-         * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+         * Example: {@code ocid1.workrequest.oc1..uniqueID}
          *
          * @param id the value to set
          * @return this builder
@@ -120,7 +120,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
          * and those resources are not in the same compartment, it is up to the service team to pick the primary
          * resource whose compartment should be used.
          * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -132,7 +132,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
          * and those resources are not in the same compartment, it is up to the service team to pick the primary
          * resource whose compartment should be used.
          * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleocid1}
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -347,18 +347,18 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The ID (OCID) of the work request.
+     * The OCID of the work request.
      * <p>
-     * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.workrequest.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The ID (OCID) of the work request.
+     * The OCID of the work request.
      * <p>
-     * Example: {@code ocid1.workrequest.oc1.phx.exampleocid1}
+     * Example: {@code ocid1.workrequest.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -372,7 +372,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
      * and those resources are not in the same compartment, it is up to the service team to pick the primary
      * resource whose compartment should be used.
      * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -384,7 +384,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
      * and those resources are not in the same compartment, it is up to the service team to pick the primary
      * resource whose compartment should be used.
      * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleocid1}
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
      **/

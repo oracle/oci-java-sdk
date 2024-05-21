@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details required to add data files or temp files to the tablespace.
+ * lease provide either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -24,6 +25,7 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
+        "databaseCredential",
         "fileType",
         "dataFiles",
         "fileCount",
@@ -36,6 +38,7 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
     })
     public AddDataFilesDetails(
             TablespaceAdminCredentialDetails credentialDetails,
+            DatabaseCredentialDetails databaseCredential,
             FileType fileType,
             java.util.List<String> dataFiles,
             Integer fileCount,
@@ -47,6 +50,7 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
             Boolean isMaxSizeUnlimited) {
         super();
         this.credentialDetails = credentialDetails;
+        this.databaseCredential = databaseCredential;
         this.fileType = fileType;
         this.dataFiles = dataFiles;
         this.fileCount = fileCount;
@@ -67,6 +71,15 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
         public Builder credentialDetails(TablespaceAdminCredentialDetails credentialDetails) {
             this.credentialDetails = credentialDetails;
             this.__explicitlySet__.add("credentialDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
             return this;
         }
         /**
@@ -239,6 +252,7 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
             AddDataFilesDetails model =
                     new AddDataFilesDetails(
                             this.credentialDetails,
+                            this.databaseCredential,
                             this.fileType,
                             this.dataFiles,
                             this.fileCount,
@@ -258,6 +272,9 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
         public Builder copy(AddDataFilesDetails model) {
             if (model.wasPropertyExplicitlySet("credentialDetails")) {
                 this.credentialDetails(model.getCredentialDetails());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             if (model.wasPropertyExplicitlySet("fileType")) {
                 this.fileType(model.getFileType());
@@ -306,6 +323,13 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
 
     public TablespaceAdminCredentialDetails getCredentialDetails() {
         return credentialDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
     }
 
     /**
@@ -503,6 +527,7 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
         sb.append("AddDataFilesDetails(");
         sb.append("super=").append(super.toString());
         sb.append("credentialDetails=").append(String.valueOf(this.credentialDetails));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(", fileType=").append(String.valueOf(this.fileType));
         sb.append(", dataFiles=").append(String.valueOf(this.dataFiles));
         sb.append(", fileCount=").append(String.valueOf(this.fileCount));
@@ -527,6 +552,7 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
 
         AddDataFilesDetails other = (AddDataFilesDetails) o;
         return java.util.Objects.equals(this.credentialDetails, other.credentialDetails)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && java.util.Objects.equals(this.fileType, other.fileType)
                 && java.util.Objects.equals(this.dataFiles, other.dataFiles)
                 && java.util.Objects.equals(this.fileCount, other.fileCount)
@@ -546,6 +572,11 @@ public final class AddDataFilesDetails extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.credentialDetails == null ? 43 : this.credentialDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + (this.fileType == null ? 43 : this.fileType.hashCode());
         result = (result * PRIME) + (this.dataFiles == null ? 43 : this.dataFiles.hashCode());
         result = (result * PRIME) + (this.fileCount == null ? 43 : this.fileCount.hashCode());

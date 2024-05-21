@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ospgateway.model;
@@ -24,20 +24,23 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "taxRegNumber",
         "noTaxReasonCode",
         "noTaxReasonCodeDetails",
-        "taxCnpj"
+        "taxCnpj",
+        "giro"
     })
     public TaxInfo(
             String taxPayerId,
             String taxRegNumber,
             String noTaxReasonCode,
             String noTaxReasonCodeDetails,
-            String taxCnpj) {
+            String taxCnpj,
+            String giro) {
         super();
         this.taxPayerId = taxPayerId;
         this.taxRegNumber = taxRegNumber;
         this.noTaxReasonCode = noTaxReasonCode;
         this.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
         this.taxCnpj = taxCnpj;
+        this.giro = giro;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -122,6 +125,22 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             this.__explicitlySet__.add("taxCnpj");
             return this;
         }
+        /**
+         * Companies' GIRO code
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("giro")
+        private String giro;
+
+        /**
+         * Companies' GIRO code
+         * @param giro the value to set
+         * @return this builder
+         **/
+        public Builder giro(String giro) {
+            this.giro = giro;
+            this.__explicitlySet__.add("giro");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -133,7 +152,8 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.taxRegNumber,
                             this.noTaxReasonCode,
                             this.noTaxReasonCodeDetails,
-                            this.taxCnpj);
+                            this.taxCnpj,
+                            this.giro);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -156,6 +176,9 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             }
             if (model.wasPropertyExplicitlySet("taxCnpj")) {
                 this.taxCnpj(model.getTaxCnpj());
+            }
+            if (model.wasPropertyExplicitlySet("giro")) {
+                this.giro(model.getGiro());
             }
             return this;
         }
@@ -242,6 +265,20 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return taxCnpj;
     }
 
+    /**
+     * Companies' GIRO code
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("giro")
+    private final String giro;
+
+    /**
+     * Companies' GIRO code
+     * @return the value
+     **/
+    public String getGiro() {
+        return giro;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -261,6 +298,7 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", noTaxReasonCode=").append(String.valueOf(this.noTaxReasonCode));
         sb.append(", noTaxReasonCodeDetails=").append(String.valueOf(this.noTaxReasonCodeDetails));
         sb.append(", taxCnpj=").append(String.valueOf(this.taxCnpj));
+        sb.append(", giro=").append(String.valueOf(this.giro));
         sb.append(")");
         return sb.toString();
     }
@@ -281,6 +319,7 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(
                         this.noTaxReasonCodeDetails, other.noTaxReasonCodeDetails)
                 && java.util.Objects.equals(this.taxCnpj, other.taxCnpj)
+                && java.util.Objects.equals(this.giro, other.giro)
                 && super.equals(other);
     }
 
@@ -299,6 +338,7 @@ public final class TaxInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                                 ? 43
                                 : this.noTaxReasonCodeDetails.hashCode());
         result = (result * PRIME) + (this.taxCnpj == null ? 43 : this.taxCnpj.hashCode());
+        result = (result * PRIME) + (this.giro == null ? 43 : this.giro.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.internal.http;
@@ -10,7 +10,7 @@ import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class ListSupportedHostShapesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -32,7 +32,7 @@ public class ListSupportedHostShapesConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20200501").path("supportedHostShapes");
+                client.getBaseTarget().path("/20230701").path("supportedHostShapes");
 
         target =
                 target.queryParam(
@@ -64,12 +64,20 @@ public class ListSupportedHostShapesConverter {
                                     request.getName()));
         }
 
-        if (request.getSddcType() != null) {
+        if (request.getIsSingleHostSddcSupported() != null) {
             target =
                     target.queryParam(
-                            "sddcType",
+                            "isSingleHostSddcSupported",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSddcType().getValue()));
+                                    request.getIsSingleHostSddcSupported()));
+        }
+
+        if (request.getInitialHostShapeName() != null) {
+            target =
+                    target.queryParam(
+                            "initialHostShapeName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getInitialHostShapeName()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

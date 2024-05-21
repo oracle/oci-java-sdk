@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for creating a DR Plan Execution.
+ * The details for creating a DR plan execution.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,7 +46,7 @@ public final class CreateDrPlanExecutionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The display name of the DR Plan Execution.
+         * The display name of the DR plan execution.
          * <p>
          * Example: {@code Execution - EBS Switchover PHX to IAD}
          *
@@ -55,7 +55,7 @@ public final class CreateDrPlanExecutionDetails
         private String displayName;
 
         /**
-         * The display name of the DR Plan Execution.
+         * The display name of the DR plan execution.
          * <p>
          * Example: {@code Execution - EBS Switchover PHX to IAD}
          *
@@ -68,18 +68,18 @@ public final class CreateDrPlanExecutionDetails
             return this;
         }
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          * <p>
-         * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("planId")
         private String planId;
 
         /**
-         * The OCID of the DR Plan.
+         * The OCID of the DR plan.
          * <p>
-         * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param planId the value to set
          * @return this builder
@@ -100,6 +100,7 @@ public final class CreateDrPlanExecutionDetails
         }
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -108,6 +109,7 @@ public final class CreateDrPlanExecutionDetails
 
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -120,6 +122,7 @@ public final class CreateDrPlanExecutionDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -128,6 +131,7 @@ public final class CreateDrPlanExecutionDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -190,7 +194,7 @@ public final class CreateDrPlanExecutionDetails
     }
 
     /**
-     * The display name of the DR Plan Execution.
+     * The display name of the DR plan execution.
      * <p>
      * Example: {@code Execution - EBS Switchover PHX to IAD}
      *
@@ -199,7 +203,7 @@ public final class CreateDrPlanExecutionDetails
     private final String displayName;
 
     /**
-     * The display name of the DR Plan Execution.
+     * The display name of the DR plan execution.
      * <p>
      * Example: {@code Execution - EBS Switchover PHX to IAD}
      *
@@ -210,18 +214,18 @@ public final class CreateDrPlanExecutionDetails
     }
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      * <p>
-     * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("planId")
     private final String planId;
 
     /**
-     * The OCID of the DR Plan.
+     * The OCID of the DR plan.
      * <p>
-     * Example: {@code ocid1.drplan.oc1.iad.exampleocid2}
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
      * @return the value
      **/
@@ -238,6 +242,7 @@ public final class CreateDrPlanExecutionDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -246,6 +251,7 @@ public final class CreateDrPlanExecutionDetails
 
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -256,6 +262,7 @@ public final class CreateDrPlanExecutionDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -264,6 +271,7 @@ public final class CreateDrPlanExecutionDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

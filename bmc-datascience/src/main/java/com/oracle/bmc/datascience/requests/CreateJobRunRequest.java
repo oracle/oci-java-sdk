@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.requests;
@@ -49,6 +49,19 @@ public class CreateJobRunRequest
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
+    }
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     *
+     */
+    private String opcParentRptUrl;
+
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     *
+     */
+    public String getOpcParentRptUrl() {
+        return opcParentRptUrl;
     }
 
     /**
@@ -119,6 +132,23 @@ public class CreateJobRunRequest
         }
 
         /**
+         * URL to fetch the Resource Principal Token from the parent resource.
+         *
+         */
+        private String opcParentRptUrl = null;
+
+        /**
+         * URL to fetch the Resource Principal Token from the parent resource.
+         *
+         * @param opcParentRptUrl the value to set
+         * @return this builder instance
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -149,6 +179,7 @@ public class CreateJobRunRequest
             createJobRunDetails(o.getCreateJobRunDetails());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            opcParentRptUrl(o.getOpcParentRptUrl());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -195,8 +226,9 @@ public class CreateJobRunRequest
             request.createJobRunDetails = createJobRunDetails;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.opcParentRptUrl = opcParentRptUrl;
             return request;
-            // new CreateJobRunRequest(createJobRunDetails, opcRequestId, opcRetryToken);
+            // new CreateJobRunRequest(createJobRunDetails, opcRequestId, opcRetryToken, opcParentRptUrl);
         }
     }
 
@@ -208,7 +240,8 @@ public class CreateJobRunRequest
         return new Builder()
                 .createJobRunDetails(createJobRunDetails)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .opcParentRptUrl(opcParentRptUrl);
     }
 
     /**
@@ -227,6 +260,7 @@ public class CreateJobRunRequest
         sb.append(",createJobRunDetails=").append(String.valueOf(this.createJobRunDetails));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",opcParentRptUrl=").append(String.valueOf(this.opcParentRptUrl));
         sb.append(")");
         return sb.toString();
     }
@@ -244,7 +278,8 @@ public class CreateJobRunRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.createJobRunDetails, other.createJobRunDetails)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.opcParentRptUrl, other.opcParentRptUrl);
     }
 
     @Override
@@ -260,6 +295,9 @@ public class CreateJobRunRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcParentRptUrl == null ? 43 : this.opcParentRptUrl.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.responses;
@@ -35,6 +35,32 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
+     * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     */
+    private String opcPrevPage;
+
+    /**
+     * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * @return the value
+     */
+    public String getOpcPrevPage() {
+        return opcPrevPage;
+    }
+
+    /**
+     * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
+     */
+    private String asOfTime;
+
+    /**
+     * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
+     * @return the value
+     */
+    public String getAsOfTime() {
+        return asOfTime;
+    }
+
+    /**
      * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
      */
     private java.util.List<com.oracle.bmc.cims.model.IncidentSummary> items;
@@ -52,6 +78,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         "headers",
         "opcRequestId",
         "opcNextPage",
+        "opcPrevPage",
+        "asOfTime",
         "items"
     })
     private ListIncidentsResponse(
@@ -59,10 +87,14 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
+            String opcPrevPage,
+            String asOfTime,
             java.util.List<com.oracle.bmc.cims.model.IncidentSummary> items) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
         this.opcNextPage = opcNextPage;
+        this.opcPrevPage = opcPrevPage;
+        this.asOfTime = asOfTime;
         this.items = items;
     }
 
@@ -112,6 +144,36 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
+         * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         */
+        private String opcPrevPage;
+
+        /**
+         * For list pagination. When this header appears in the response, previous pages of results can be queried. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * @param opcPrevPage the value to set
+         * @return this builder
+         */
+        public Builder opcPrevPage(String opcPrevPage) {
+            this.opcPrevPage = opcPrevPage;
+            return this;
+        }
+
+        /**
+         * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
+         */
+        private String asOfTime;
+
+        /**
+         * Returns the age of the incidents in the response in epoch milliseconds. This is used because the incidents might be cached.
+         * @param asOfTime the value to set
+         * @return this builder
+         */
+        public Builder asOfTime(String asOfTime) {
+            this.asOfTime = asOfTime;
+            return this;
+        }
+
+        /**
          * A list of com.oracle.bmc.cims.model.IncidentSummary instances.
          */
         private java.util.List<com.oracle.bmc.cims.model.IncidentSummary> items;
@@ -135,6 +197,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
+            opcPrevPage(o.getOpcPrevPage());
+            asOfTime(o.getAsOfTime());
             items(o.getItems());
 
             return this;
@@ -146,7 +210,13 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
          */
         public ListIncidentsResponse build() {
             return new ListIncidentsResponse(
-                    __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcNextPage,
+                    opcPrevPage,
+                    asOfTime,
+                    items);
         }
     }
 
@@ -165,6 +235,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcNextPage=").append(String.valueOf(opcNextPage));
+        sb.append(",opcPrevPage=").append(String.valueOf(opcPrevPage));
+        sb.append(",asOfTime=").append(String.valueOf(asOfTime));
         sb.append(",items=").append(String.valueOf(items));
         sb.append(")");
         return sb.toString();
@@ -183,6 +255,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcNextPage, other.opcNextPage)
+                && java.util.Objects.equals(this.opcPrevPage, other.opcPrevPage)
+                && java.util.Objects.equals(this.asOfTime, other.asOfTime)
                 && java.util.Objects.equals(this.items, other.items);
     }
 
@@ -192,6 +266,8 @@ public class ListIncidentsResponse extends com.oracle.bmc.responses.BmcResponse 
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.opcNextPage == null ? 43 : this.opcNextPage.hashCode());
+        result = (result * PRIME) + (this.opcPrevPage == null ? 43 : this.opcPrevPage.hashCode());
+        result = (result * PRIME) + (this.asOfTime == null ? 43 : this.asOfTime.hashCode());
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
         return result;
     }

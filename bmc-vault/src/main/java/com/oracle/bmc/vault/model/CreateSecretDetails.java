@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vault.model;
@@ -29,9 +29,12 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         "keyId",
         "metadata",
         "secretContent",
+        "rotationConfig",
         "secretName",
         "secretRules",
-        "vaultId"
+        "vaultId",
+        "secretGenerationContext",
+        "enableAutoGeneration"
     })
     public CreateSecretDetails(
             String compartmentId,
@@ -41,9 +44,12 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             String keyId,
             java.util.Map<String, Object> metadata,
             SecretContentDetails secretContent,
+            RotationConfig rotationConfig,
             String secretName,
             java.util.List<SecretRule> secretRules,
-            String vaultId) {
+            String vaultId,
+            SecretGenerationContext secretGenerationContext,
+            Boolean enableAutoGeneration) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -52,9 +58,12 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         this.keyId = keyId;
         this.metadata = metadata;
         this.secretContent = secretContent;
+        this.rotationConfig = rotationConfig;
         this.secretName = secretName;
         this.secretRules = secretRules;
         this.vaultId = vaultId;
+        this.secretGenerationContext = secretGenerationContext;
+        this.enableAutoGeneration = enableAutoGeneration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -185,6 +194,15 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("secretContent");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+        private RotationConfig rotationConfig;
+
+        public Builder rotationConfig(RotationConfig rotationConfig) {
+            this.rotationConfig = rotationConfig;
+            this.__explicitlySet__.add("rotationConfig");
+            return this;
+        }
         /**
          * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
          *
@@ -236,6 +254,33 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+        private SecretGenerationContext secretGenerationContext;
+
+        public Builder secretGenerationContext(SecretGenerationContext secretGenerationContext) {
+            this.secretGenerationContext = secretGenerationContext;
+            this.__explicitlySet__.add("secretGenerationContext");
+            return this;
+        }
+        /**
+         * The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("enableAutoGeneration")
+        private Boolean enableAutoGeneration;
+
+        /**
+         * The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+         *
+         * @param enableAutoGeneration the value to set
+         * @return this builder
+         **/
+        public Builder enableAutoGeneration(Boolean enableAutoGeneration) {
+            this.enableAutoGeneration = enableAutoGeneration;
+            this.__explicitlySet__.add("enableAutoGeneration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -249,9 +294,12 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
                             this.keyId,
                             this.metadata,
                             this.secretContent,
+                            this.rotationConfig,
                             this.secretName,
                             this.secretRules,
-                            this.vaultId);
+                            this.vaultId,
+                            this.secretGenerationContext,
+                            this.enableAutoGeneration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -281,6 +329,9 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("secretContent")) {
                 this.secretContent(model.getSecretContent());
             }
+            if (model.wasPropertyExplicitlySet("rotationConfig")) {
+                this.rotationConfig(model.getRotationConfig());
+            }
             if (model.wasPropertyExplicitlySet("secretName")) {
                 this.secretName(model.getSecretName());
             }
@@ -289,6 +340,12 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("secretGenerationContext")) {
+                this.secretGenerationContext(model.getSecretGenerationContext());
+            }
+            if (model.wasPropertyExplicitlySet("enableAutoGeneration")) {
+                this.enableAutoGeneration(model.getEnableAutoGeneration());
             }
             return this;
         }
@@ -416,6 +473,13 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         return secretContent;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("rotationConfig")
+    private final RotationConfig rotationConfig;
+
+    public RotationConfig getRotationConfig() {
+        return rotationConfig;
+    }
+
     /**
      * A user-friendly name for the secret. Secret names should be unique within a vault. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *
@@ -460,6 +524,29 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         return vaultId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("secretGenerationContext")
+    private final SecretGenerationContext secretGenerationContext;
+
+    public SecretGenerationContext getSecretGenerationContext() {
+        return secretGenerationContext;
+    }
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enableAutoGeneration")
+    private final Boolean enableAutoGeneration;
+
+    /**
+     * The value of this flag determines whether or not secret content will be generated automatically. If not set, it defaults to false.
+     *
+     * @return the value
+     **/
+    public Boolean getEnableAutoGeneration() {
+        return enableAutoGeneration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -481,9 +568,13 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(", secretContent=").append(String.valueOf(this.secretContent));
+        sb.append(", rotationConfig=").append(String.valueOf(this.rotationConfig));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
         sb.append(", secretRules=").append(String.valueOf(this.secretRules));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", secretGenerationContext=")
+                .append(String.valueOf(this.secretGenerationContext));
+        sb.append(", enableAutoGeneration=").append(String.valueOf(this.enableAutoGeneration));
         sb.append(")");
         return sb.toString();
     }
@@ -505,9 +596,13 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && java.util.Objects.equals(this.secretContent, other.secretContent)
+                && java.util.Objects.equals(this.rotationConfig, other.rotationConfig)
                 && java.util.Objects.equals(this.secretName, other.secretName)
                 && java.util.Objects.equals(this.secretRules, other.secretRules)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(
+                        this.secretGenerationContext, other.secretGenerationContext)
+                && java.util.Objects.equals(this.enableAutoGeneration, other.enableAutoGeneration)
                 && super.equals(other);
     }
 
@@ -526,9 +621,22 @@ public final class CreateSecretDetails extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.secretContent == null ? 43 : this.secretContent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotationConfig == null ? 43 : this.rotationConfig.hashCode());
         result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
         result = (result * PRIME) + (this.secretRules == null ? 43 : this.secretRules.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretGenerationContext == null
+                                ? 43
+                                : this.secretGenerationContext.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enableAutoGeneration == null
+                                ? 43
+                                : this.enableAutoGeneration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

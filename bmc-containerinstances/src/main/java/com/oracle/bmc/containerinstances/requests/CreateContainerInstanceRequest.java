@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.requests;
@@ -14,13 +14,13 @@ public class CreateContainerInstanceRequest
                 com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails> {
 
     /**
-     * Details for the new ContainerInstance.
+     * Details for the new container instance.
      */
     private com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails
             createContainerInstanceDetails;
 
     /**
-     * Details for the new ContainerInstance.
+     * Details for the new container instance.
      */
     public com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails
             getCreateContainerInstanceDetails() {
@@ -48,12 +48,12 @@ public class CreateContainerInstanceRequest
         return opcRetryToken;
     }
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -78,13 +78,13 @@ public class CreateContainerInstanceRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new ContainerInstance.
+         * Details for the new container instance.
          */
         private com.oracle.bmc.containerinstances.model.CreateContainerInstanceDetails
                 createContainerInstanceDetails = null;
 
         /**
-         * Details for the new ContainerInstance.
+         * Details for the new container instance.
          * @param createContainerInstanceDetails the value to set
          * @return this builder instance
          */
@@ -121,12 +121,12 @@ public class CreateContainerInstanceRequest
         }
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */

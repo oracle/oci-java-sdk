@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -48,7 +48,8 @@ public final class UpsertLogAnalyticsParserDetails
         "fieldQualifier",
         "type",
         "isNamespaceAware",
-        "categories"
+        "categories",
+        "isPositionAware"
     })
     public UpsertLogAnalyticsParserDetails(
             String content,
@@ -76,7 +77,8 @@ public final class UpsertLogAnalyticsParserDetails
             String fieldQualifier,
             Type type,
             Boolean isNamespaceAware,
-            java.util.List<LogAnalyticsCategory> categories) {
+            java.util.List<LogAnalyticsCategory> categories,
+            Boolean isPositionAware) {
         super();
         this.content = content;
         this.description = description;
@@ -104,6 +106,7 @@ public final class UpsertLogAnalyticsParserDetails
         this.type = type;
         this.isNamespaceAware = isNamespaceAware;
         this.categories = categories;
+        this.isPositionAware = isPositionAware;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -542,6 +545,24 @@ public final class UpsertLogAnalyticsParserDetails
             this.__explicitlySet__.add("categories");
             return this;
         }
+        /**
+         * A flag indicating whether the parser is positionally aware.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPositionAware")
+        private Boolean isPositionAware;
+
+        /**
+         * A flag indicating whether the parser is positionally aware.
+         *
+         * @param isPositionAware the value to set
+         * @return this builder
+         **/
+        public Builder isPositionAware(Boolean isPositionAware) {
+            this.isPositionAware = isPositionAware;
+            this.__explicitlySet__.add("isPositionAware");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -574,7 +595,8 @@ public final class UpsertLogAnalyticsParserDetails
                             this.fieldQualifier,
                             this.type,
                             this.isNamespaceAware,
-                            this.categories);
+                            this.categories,
+                            this.isPositionAware);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -660,6 +682,9 @@ public final class UpsertLogAnalyticsParserDetails
             }
             if (model.wasPropertyExplicitlySet("categories")) {
                 this.categories(model.getCategories());
+            }
+            if (model.wasPropertyExplicitlySet("isPositionAware")) {
+                this.isPositionAware(model.getIsPositionAware());
             }
             return this;
         }
@@ -1096,6 +1121,22 @@ public final class UpsertLogAnalyticsParserDetails
         return categories;
     }
 
+    /**
+     * A flag indicating whether the parser is positionally aware.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPositionAware")
+    private final Boolean isPositionAware;
+
+    /**
+     * A flag indicating whether the parser is positionally aware.
+     *
+     * @return the value
+     **/
+    public Boolean getIsPositionAware() {
+        return isPositionAware;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1139,6 +1180,7 @@ public final class UpsertLogAnalyticsParserDetails
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isNamespaceAware=").append(String.valueOf(this.isNamespaceAware));
         sb.append(", categories=").append(String.valueOf(this.categories));
+        sb.append(", isPositionAware=").append(String.valueOf(this.isPositionAware));
         sb.append(")");
         return sb.toString();
     }
@@ -1182,6 +1224,7 @@ public final class UpsertLogAnalyticsParserDetails
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isNamespaceAware, other.isNamespaceAware)
                 && java.util.Objects.equals(this.categories, other.categories)
+                && java.util.Objects.equals(this.isPositionAware, other.isPositionAware)
                 && super.equals(other);
     }
 
@@ -1253,6 +1296,9 @@ public final class UpsertLogAnalyticsParserDetails
                 (result * PRIME)
                         + (this.isNamespaceAware == null ? 43 : this.isNamespaceAware.hashCode());
         result = (result * PRIME) + (this.categories == null ? 43 : this.categories.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPositionAware == null ? 43 : this.isPositionAware.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

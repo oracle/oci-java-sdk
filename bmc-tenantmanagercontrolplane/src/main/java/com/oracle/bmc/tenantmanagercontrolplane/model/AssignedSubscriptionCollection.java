@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * List of AssignedSubscription.
+ * Collection of assigned subscription summaries.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -14,7 +14,7 @@ package com.oracle.bmc.tenantmanagercontrolplane.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AssignedSubscriptionCollection.Builder.class
 )
@@ -31,13 +31,13 @@ public final class AssignedSubscriptionCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Array containing AssignedSubscription items.
+         * Array containing assigned subscription summary items.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AssignedSubscriptionSummary> items;
 
         /**
-         * Array containing AssignedSubscription items.
+         * Array containing assigned subscription summary items.
          * @param items the value to set
          * @return this builder
          **/
@@ -79,13 +79,13 @@ public final class AssignedSubscriptionCollection
     }
 
     /**
-     * Array containing AssignedSubscription items.
+     * Array containing assigned subscription summary items.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AssignedSubscriptionSummary> items;
 
     /**
-     * Array containing AssignedSubscription items.
+     * Array containing assigned subscription summary items.
      * @return the value
      **/
     public java.util.List<AssignedSubscriptionSummary> getItems() {

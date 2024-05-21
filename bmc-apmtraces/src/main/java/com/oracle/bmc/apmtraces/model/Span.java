@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces.model;
@@ -31,8 +31,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "serviceName",
         "kind",
         "tags",
+        "tagsMetadata",
         "logs",
-        "isError"
+        "isError",
+        "sourceName"
     })
     public Span(
             String key,
@@ -45,8 +47,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String serviceName,
             String kind,
             java.util.List<Tag> tags,
+            java.util.Map<String, TagMetadata> tagsMetadata,
             java.util.List<SpanLogCollection> logs,
-            Boolean isError) {
+            Boolean isError,
+            SourceName sourceName) {
         super();
         this.key = key;
         this.parentSpanKey = parentSpanKey;
@@ -58,8 +62,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.serviceName = serviceName;
         this.kind = kind;
         this.tags = tags;
+        this.tagsMetadata = tagsMetadata;
         this.logs = logs;
         this.isError = isError;
+        this.sourceName = sourceName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -249,6 +255,24 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
+         * Metadata about the tags in the span.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tagsMetadata")
+        private java.util.Map<String, TagMetadata> tagsMetadata;
+
+        /**
+         * Metadata about the tags in the span.
+         *
+         * @param tagsMetadata the value to set
+         * @return this builder
+         **/
+        public Builder tagsMetadata(java.util.Map<String, TagMetadata> tagsMetadata) {
+            this.tagsMetadata = tagsMetadata;
+            this.__explicitlySet__.add("tagsMetadata");
+            return this;
+        }
+        /**
          * List of logs associated with the span.
          *
          **/
@@ -284,6 +308,24 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("isError");
             return this;
         }
+        /**
+         * Source of span (spans, syn_spans).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
+        private SourceName sourceName;
+
+        /**
+         * Source of span (spans, syn_spans).
+         *
+         * @param sourceName the value to set
+         * @return this builder
+         **/
+        public Builder sourceName(SourceName sourceName) {
+            this.sourceName = sourceName;
+            this.__explicitlySet__.add("sourceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -301,8 +343,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.serviceName,
                             this.kind,
                             this.tags,
+                            this.tagsMetadata,
                             this.logs,
-                            this.isError);
+                            this.isError,
+                            this.sourceName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -341,11 +385,17 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             if (model.wasPropertyExplicitlySet("tags")) {
                 this.tags(model.getTags());
             }
+            if (model.wasPropertyExplicitlySet("tagsMetadata")) {
+                this.tagsMetadata(model.getTagsMetadata());
+            }
             if (model.wasPropertyExplicitlySet("logs")) {
                 this.logs(model.getLogs());
             }
             if (model.wasPropertyExplicitlySet("isError")) {
                 this.isError(model.getIsError());
+            }
+            if (model.wasPropertyExplicitlySet("sourceName")) {
+                this.sourceName(model.getSourceName());
             }
             return this;
         }
@@ -527,6 +577,22 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
+     * Metadata about the tags in the span.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tagsMetadata")
+    private final java.util.Map<String, TagMetadata> tagsMetadata;
+
+    /**
+     * Metadata about the tags in the span.
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, TagMetadata> getTagsMetadata() {
+        return tagsMetadata;
+    }
+
+    /**
      * List of logs associated with the span.
      *
      **/
@@ -558,6 +624,71 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return isError;
     }
 
+    /**
+     * Source of span (spans, syn_spans).
+     *
+     **/
+    public enum SourceName {
+        Spans("SPANS"),
+        SynSpans("SYN_SPANS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SourceName.class);
+
+        private final String value;
+        private static java.util.Map<String, SourceName> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SourceName v : SourceName.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SourceName(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SourceName create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SourceName', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Source of span (spans, syn_spans).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
+    private final SourceName sourceName;
+
+    /**
+     * Source of span (spans, syn_spans).
+     *
+     * @return the value
+     **/
+    public SourceName getSourceName() {
+        return sourceName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -582,8 +713,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", serviceName=").append(String.valueOf(this.serviceName));
         sb.append(", kind=").append(String.valueOf(this.kind));
         sb.append(", tags=").append(String.valueOf(this.tags));
+        sb.append(", tagsMetadata=").append(String.valueOf(this.tagsMetadata));
         sb.append(", logs=").append(String.valueOf(this.logs));
         sb.append(", isError=").append(String.valueOf(this.isError));
+        sb.append(", sourceName=").append(String.valueOf(this.sourceName));
         sb.append(")");
         return sb.toString();
     }
@@ -608,8 +741,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.kind, other.kind)
                 && java.util.Objects.equals(this.tags, other.tags)
+                && java.util.Objects.equals(this.tagsMetadata, other.tagsMetadata)
                 && java.util.Objects.equals(this.logs, other.logs)
                 && java.util.Objects.equals(this.isError, other.isError)
+                && java.util.Objects.equals(this.sourceName, other.sourceName)
                 && super.equals(other);
     }
 
@@ -631,8 +766,10 @@ public final class Span extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result = (result * PRIME) + (this.kind == null ? 43 : this.kind.hashCode());
         result = (result * PRIME) + (this.tags == null ? 43 : this.tags.hashCode());
+        result = (result * PRIME) + (this.tagsMetadata == null ? 43 : this.tagsMetadata.hashCode());
         result = (result * PRIME) + (this.logs == null ? 43 : this.logs.hashCode());
         result = (result * PRIME) + (this.isError == null ? 43 : this.isError.hashCode());
+        result = (result * PRIME) + (this.sourceName == null ? 43 : this.sourceName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

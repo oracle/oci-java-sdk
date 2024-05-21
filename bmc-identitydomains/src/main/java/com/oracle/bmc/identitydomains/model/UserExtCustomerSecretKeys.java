@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -45,7 +45,7 @@ public final class UserExtCustomerSecretKeys
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's customer secret key.
+         * The user's customer secret key identifier.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -63,7 +63,7 @@ public final class UserExtCustomerSecretKeys
         private String value;
 
         /**
-         * The identifier of the User's customer secret key.
+         * The user's customer secret key identifier.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -85,7 +85,7 @@ public final class UserExtCustomerSecretKeys
             return this;
         }
         /**
-         * Ocid of the User's customer secret key.
+         * The user's customer secret key OCID.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -103,7 +103,7 @@ public final class UserExtCustomerSecretKeys
         private String ocid;
 
         /**
-         * Ocid of the User's customer secret key.
+         * The user's customer secret key OCID.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -125,7 +125,7 @@ public final class UserExtCustomerSecretKeys
             return this;
         }
         /**
-         * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+         * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -142,7 +142,7 @@ public final class UserExtCustomerSecretKeys
         private String ref;
 
         /**
-         * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+         * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
          * <p>
          **Added In:** 2102181953
          * <p>
@@ -202,7 +202,7 @@ public final class UserExtCustomerSecretKeys
     }
 
     /**
-     * The identifier of the User's customer secret key.
+     * The user's customer secret key identifier.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -220,7 +220,7 @@ public final class UserExtCustomerSecretKeys
     private final String value;
 
     /**
-     * The identifier of the User's customer secret key.
+     * The user's customer secret key identifier.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -240,7 +240,7 @@ public final class UserExtCustomerSecretKeys
     }
 
     /**
-     * Ocid of the User's customer secret key.
+     * The user's customer secret key OCID.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -258,7 +258,7 @@ public final class UserExtCustomerSecretKeys
     private final String ocid;
 
     /**
-     * Ocid of the User's customer secret key.
+     * The user's customer secret key OCID.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -278,7 +278,7 @@ public final class UserExtCustomerSecretKeys
     }
 
     /**
-     * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+     * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
      * <p>
      **Added In:** 2102181953
      * <p>
@@ -295,7 +295,7 @@ public final class UserExtCustomerSecretKeys
     private final String ref;
 
     /**
-     * The URI of the corresponding CustomerSecretKey resource to which the user belongs
+     * The URI of the corresponding CustomerSecretKey resource to which the user belongs.
      * <p>
      **Added In:** 2102181953
      * <p>

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -305,7 +305,7 @@ public final class UserExtAppRoles extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. OCI IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+         * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: true
@@ -320,7 +320,7 @@ public final class UserExtAppRoles extends com.oracle.bmc.http.internal.Explicit
         private String legacyGroupName;
 
         /**
-         * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. OCI IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+         * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
          * <p>
          **SCIM++ Properties:**
          *  - idcsSearchable: true
@@ -688,7 +688,7 @@ public final class UserExtAppRoles extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. OCI IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+     * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: true
@@ -703,7 +703,7 @@ public final class UserExtAppRoles extends com.oracle.bmc.http.internal.Explicit
     private final String legacyGroupName;
 
     /**
-     * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. OCI IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+     * The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
      * <p>
      **SCIM++ Properties:**
      *  - idcsSearchable: true

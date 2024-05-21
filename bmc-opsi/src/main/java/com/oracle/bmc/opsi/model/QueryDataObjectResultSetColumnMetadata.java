@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opsi.model;
@@ -22,10 +22,12 @@ package com.oracle.bmc.opsi.model;
 public final class QueryDataObjectResultSetColumnMetadata
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "dataTypeName"})
-    public QueryDataObjectResultSetColumnMetadata(String name, DataTypeName dataTypeName) {
+    @java.beans.ConstructorProperties({"name", "dataType", "dataTypeName"})
+    public QueryDataObjectResultSetColumnMetadata(
+            String name, String dataType, DataTypeName dataTypeName) {
         super();
         this.name = name;
+        this.dataType = dataType;
         this.dataTypeName = dataTypeName;
     }
 
@@ -48,13 +50,29 @@ public final class QueryDataObjectResultSetColumnMetadata
             return this;
         }
         /**
-         * Type of the column in a data object query result set.
+         * Type of the column in a data object query result.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+        private String dataType;
+
+        /**
+         * Type of the column in a data object query result.
+         * @param dataType the value to set
+         * @return this builder
+         **/
+        public Builder dataType(String dataType) {
+            this.dataType = dataType;
+            this.__explicitlySet__.add("dataType");
+            return this;
+        }
+        /**
+         * Type name of the column in a data object query result set.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
         private DataTypeName dataTypeName;
 
         /**
-         * Type of the column in a data object query result set.
+         * Type name of the column in a data object query result set.
          * @param dataTypeName the value to set
          * @return this builder
          **/
@@ -69,7 +87,8 @@ public final class QueryDataObjectResultSetColumnMetadata
 
         public QueryDataObjectResultSetColumnMetadata build() {
             QueryDataObjectResultSetColumnMetadata model =
-                    new QueryDataObjectResultSetColumnMetadata(this.name, this.dataTypeName);
+                    new QueryDataObjectResultSetColumnMetadata(
+                            this.name, this.dataType, this.dataTypeName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -80,6 +99,9 @@ public final class QueryDataObjectResultSetColumnMetadata
         public Builder copy(QueryDataObjectResultSetColumnMetadata model) {
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
+            }
+            if (model.wasPropertyExplicitlySet("dataType")) {
+                this.dataType(model.getDataType());
             }
             if (model.wasPropertyExplicitlySet("dataTypeName")) {
                 this.dataTypeName(model.getDataTypeName());
@@ -114,12 +136,27 @@ public final class QueryDataObjectResultSetColumnMetadata
     }
 
     /**
-     * Type of the column in a data object query result set.
+     * Type of the column in a data object query result.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+    private final String dataType;
+
+    /**
+     * Type of the column in a data object query result.
+     * @return the value
+     **/
+    public String getDataType() {
+        return dataType;
+    }
+
+    /**
+     * Type name of the column in a data object query result set.
      **/
     public enum DataTypeName {
         Number("NUMBER"),
         Timestamp("TIMESTAMP"),
         Varchar2("VARCHAR2"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -163,13 +200,13 @@ public final class QueryDataObjectResultSetColumnMetadata
         }
     };
     /**
-     * Type of the column in a data object query result set.
+     * Type name of the column in a data object query result set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
     private final DataTypeName dataTypeName;
 
     /**
-     * Type of the column in a data object query result set.
+     * Type name of the column in a data object query result set.
      * @return the value
      **/
     public DataTypeName getDataTypeName() {
@@ -191,6 +228,7 @@ public final class QueryDataObjectResultSetColumnMetadata
         sb.append("QueryDataObjectResultSetColumnMetadata(");
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", dataType=").append(String.valueOf(this.dataType));
         sb.append(", dataTypeName=").append(String.valueOf(this.dataTypeName));
         sb.append(")");
         return sb.toString();
@@ -207,6 +245,7 @@ public final class QueryDataObjectResultSetColumnMetadata
 
         QueryDataObjectResultSetColumnMetadata other = (QueryDataObjectResultSetColumnMetadata) o;
         return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.dataType, other.dataType)
                 && java.util.Objects.equals(this.dataTypeName, other.dataTypeName)
                 && super.equals(other);
     }
@@ -216,6 +255,7 @@ public final class QueryDataObjectResultSetColumnMetadata
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.dataType == null ? 43 : this.dataType.hashCode());
         result = (result * PRIME) + (this.dataTypeName == null ? 43 : this.dataTypeName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

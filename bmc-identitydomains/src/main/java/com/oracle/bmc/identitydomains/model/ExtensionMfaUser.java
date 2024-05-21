@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -61,7 +61,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Preferred Authentication Factor Type
+         * The preferred authentication factor type.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -79,7 +79,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private PreferredAuthenticationFactor preferredAuthenticationFactor;
 
         /**
-         * Preferred Authentication Factor Type
+         * The preferred authentication factor type.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -102,7 +102,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * User Opted for MFA
+         * The user opted for MFA.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -111,6 +111,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: string
@@ -120,7 +121,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private MfaStatus mfaStatus;
 
         /**
-         * User Opted for MFA
+         * The user opted for MFA.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -129,6 +130,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
          *  - idcsSearchable: true
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: string
@@ -142,7 +144,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Preferred Third party vendor name
+         * The preferred third-party vendor name.
          * <p>
          **Added In:** 19.2.1
          * <p>
@@ -160,7 +162,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private String preferredThirdPartyVendor;
 
         /**
-         * Preferred Third party vendor name
+         * The preferred third-party vendor name.
          * <p>
          **Added In:** 19.2.1
          * <p>
@@ -182,7 +184,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Preferred Authentication method
+         * The preferred authentication method.
          * <p>
          **Added In:** 2009232244
          * <p>
@@ -200,7 +202,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private String preferredAuthenticationMethod;
 
         /**
-         * Preferred Authentication method
+         * The preferred authentication method.
          * <p>
          **Added In:** 2009232244
          * <p>
@@ -222,7 +224,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Number of incorrect Multi Factor Authentication login attempts made by this user. The user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings
+         * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -230,6 +232,8 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: integer
@@ -239,7 +243,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private Integer loginAttempts;
 
         /**
-         * Number of incorrect Multi Factor Authentication login attempts made by this user. The user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings
+         * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -247,6 +251,8 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
          *  - idcsSearchable: false
          *  - multiValued: false
          *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          *  - required: false
          *  - returned: default
          *  - type: integer
@@ -260,7 +266,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -277,7 +283,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private String mfaEnabledOn;
 
         /**
-         * This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+         * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -385,7 +391,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * A list of bypass codes belongs to user
+         * A list of bypass codes that belongs to the user.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -402,7 +408,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         private java.util.List<UserExtBypassCodes> bypassCodes;
 
         /**
-         * A list of bypass codes belongs to user
+         * A list of bypass codes that belongs to the user.
          * <p>
          **Added In:** 18.3.6
          * <p>
@@ -536,7 +542,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Preferred Authentication Factor Type
+     * The preferred authentication factor type.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -606,7 +612,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * Preferred Authentication Factor Type
+     * The preferred authentication factor type.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -624,7 +630,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final PreferredAuthenticationFactor preferredAuthenticationFactor;
 
     /**
-     * Preferred Authentication Factor Type
+     * The preferred authentication factor type.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -644,7 +650,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * User Opted for MFA
+     * The user opted for MFA.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -653,6 +659,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: string
@@ -706,7 +713,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * User Opted for MFA
+     * The user opted for MFA.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -715,6 +722,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: string
@@ -724,7 +732,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final MfaStatus mfaStatus;
 
     /**
-     * User Opted for MFA
+     * The user opted for MFA.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -733,6 +741,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
      *  - idcsSearchable: true
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: string
@@ -744,7 +753,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Preferred Third party vendor name
+     * The preferred third-party vendor name.
      * <p>
      **Added In:** 19.2.1
      * <p>
@@ -762,7 +771,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final String preferredThirdPartyVendor;
 
     /**
-     * Preferred Third party vendor name
+     * The preferred third-party vendor name.
      * <p>
      **Added In:** 19.2.1
      * <p>
@@ -782,7 +791,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Preferred Authentication method
+     * The preferred authentication method.
      * <p>
      **Added In:** 2009232244
      * <p>
@@ -800,7 +809,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final String preferredAuthenticationMethod;
 
     /**
-     * Preferred Authentication method
+     * The preferred authentication method.
      * <p>
      **Added In:** 2009232244
      * <p>
@@ -820,7 +829,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Number of incorrect Multi Factor Authentication login attempts made by this user. The user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings
+     * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -828,6 +837,8 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: integer
@@ -837,7 +848,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final Integer loginAttempts;
 
     /**
-     * Number of incorrect Multi Factor Authentication login attempts made by this user. The user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings
+     * The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -845,6 +856,8 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
      *  - idcsSearchable: false
      *  - multiValued: false
      *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      *  - required: false
      *  - returned: default
      *  - type: integer
@@ -856,7 +869,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -873,7 +886,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final String mfaEnabledOn;
 
     /**
-     * This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+     * The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -973,7 +986,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * A list of bypass codes belongs to user
+     * A list of bypass codes that belongs to the user.
      * <p>
      **Added In:** 18.3.6
      * <p>
@@ -990,7 +1003,7 @@ public final class ExtensionMfaUser extends com.oracle.bmc.http.internal.Explici
     private final java.util.List<UserExtBypassCodes> bypassCodes;
 
     /**
-     * A list of bypass codes belongs to user
+     * A list of bypass codes that belongs to the user.
      * <p>
      **Added In:** 18.3.6
      * <p>

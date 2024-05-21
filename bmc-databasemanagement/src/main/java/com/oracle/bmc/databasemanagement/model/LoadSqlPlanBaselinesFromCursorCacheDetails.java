@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -9,6 +9,7 @@ package com.oracle.bmc.databasemanagement.model;
  * the plans to load using SQL ID, plan identifier, or filterName and filterValue pair.
  * You can also control the SQL plan baseline into which the plans are loaded using either
  * SQL text or SQL handle.
+ * It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -37,7 +38,8 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         "filterValue",
         "isFixed",
         "isEnabled",
-        "credentials"
+        "credentials",
+        "databaseCredential"
     })
     public LoadSqlPlanBaselinesFromCursorCacheDetails(
             String jobName,
@@ -50,7 +52,8 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
             String filterValue,
             Boolean isFixed,
             Boolean isEnabled,
-            ManagedDatabaseCredential credentials) {
+            ManagedDatabaseCredential credentials,
+            DatabaseCredentialDetails databaseCredential) {
         super();
         this.jobName = jobName;
         this.jobDescription = jobDescription;
@@ -63,6 +66,7 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         this.isFixed = isFixed;
         this.isEnabled = isEnabled;
         this.credentials = credentials;
+        this.databaseCredential = databaseCredential;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -273,6 +277,15 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+        private DatabaseCredentialDetails databaseCredential;
+
+        public Builder databaseCredential(DatabaseCredentialDetails databaseCredential) {
+            this.databaseCredential = databaseCredential;
+            this.__explicitlySet__.add("databaseCredential");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -289,7 +302,8 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
                             this.filterValue,
                             this.isFixed,
                             this.isEnabled,
-                            this.credentials);
+                            this.credentials,
+                            this.databaseCredential);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -330,6 +344,9 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
             }
             if (model.wasPropertyExplicitlySet("credentials")) {
                 this.credentials(model.getCredentials());
+            }
+            if (model.wasPropertyExplicitlySet("databaseCredential")) {
+                this.databaseCredential(model.getDatabaseCredential());
             }
             return this;
         }
@@ -572,6 +589,13 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         return credentials;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseCredential")
+    private final DatabaseCredentialDetails databaseCredential;
+
+    public DatabaseCredentialDetails getDatabaseCredential() {
+        return databaseCredential;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -597,6 +621,7 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         sb.append(", isFixed=").append(String.valueOf(this.isFixed));
         sb.append(", isEnabled=").append(String.valueOf(this.isEnabled));
         sb.append(", credentials=").append(String.valueOf(this.credentials));
+        sb.append(", databaseCredential=").append(String.valueOf(this.databaseCredential));
         sb.append(")");
         return sb.toString();
     }
@@ -623,6 +648,7 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
                 && java.util.Objects.equals(this.isFixed, other.isFixed)
                 && java.util.Objects.equals(this.isEnabled, other.isEnabled)
                 && java.util.Objects.equals(this.credentials, other.credentials)
+                && java.util.Objects.equals(this.databaseCredential, other.databaseCredential)
                 && super.equals(other);
     }
 
@@ -643,6 +669,11 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         result = (result * PRIME) + (this.isFixed == null ? 43 : this.isFixed.hashCode());
         result = (result * PRIME) + (this.isEnabled == null ? 43 : this.isEnabled.hashCode());
         result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseCredential == null
+                                ? 43
+                                : this.databaseCredential.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

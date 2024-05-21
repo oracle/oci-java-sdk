@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -103,14 +103,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
         private String autonomousContainerDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
          *
          * @param autonomousContainerDatabaseId the value to set
          * @return this builder
@@ -228,13 +228,13 @@ public final class AutonomousContainerDatabaseDataguardAssociation
             return this;
         }
         /**
-         * The current state of Autonomous Data Guard.
+         * The current state of the Autonomous Container Database.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerLifecycleState")
         private PeerLifecycleState peerLifecycleState;
 
         /**
-         * The current state of Autonomous Data Guard.
+         * The current state of the Autonomous Container Database.
          * @param peerLifecycleState the value to set
          * @return this builder
          **/
@@ -539,14 +539,14 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      *
      * @return the value
      **/
@@ -804,17 +804,23 @@ public final class AutonomousContainerDatabaseDataguardAssociation
     }
 
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Container Database.
      **/
     public enum PeerLifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
-        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        Updating("UPDATING"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
         Failed("FAILED"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
+        Restoring("RESTORING"),
+        RestoreFailed("RESTORE_FAILED"),
+        Restarting("RESTARTING"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        RoleChangeInProgress("ROLE_CHANGE_IN_PROGRESS"),
+        EnablingAutonomousDataGuard("ENABLING_AUTONOMOUS_DATA_GUARD"),
         Unavailable("UNAVAILABLE"),
-        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -858,13 +864,13 @@ public final class AutonomousContainerDatabaseDataguardAssociation
         }
     };
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Container Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerLifecycleState")
     private final PeerLifecycleState peerLifecycleState;
 
     /**
-     * The current state of Autonomous Data Guard.
+     * The current state of the Autonomous Container Database.
      * @return the value
      **/
     public PeerLifecycleState getPeerLifecycleState() {

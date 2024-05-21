@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http;
@@ -21,8 +21,7 @@ public class ApacheConnectorProperties {
     private static ConnectionKeepAliveStrategy DEFAULT_KEEP_ALIVE_STRATEGY = null;
     private static boolean DEFAULT_CONNECTION_MANAGER_SHARED = false;
     private static HttpClientConnectionManager DEFAULT_CONNECTION_MANAGER = null;
-    private static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY =
-            new NoConnectionReuseStrategy();
+    private static ConnectionReuseStrategy DEFAULT_CONNECTION_REUSE_STRATEGY;
     private static SSLContext DEFAULT_SSL_CONTEXT = null;
     private static HostnameVerifier DEFAULT_HOSTNAME_VERIFIER = null;
     private static HttpRequestRetryHandler DEFAULT_REQUEST_RETRY_HANDLER =
@@ -35,6 +34,22 @@ public class ApacheConnectorProperties {
     private static ApacheConnectionPoolConfig DEFAULT_APACHE_CONNECTION_POOL_CONFIG =
             ApacheConnectionPoolConfig.newDefault();
     private static boolean DEFAULT_EXPECT_CONTINUE = true;
+    private static boolean DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED;
+
+    static {
+        DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED =
+                Boolean.parseBoolean(
+                        System.getProperty(
+                                "oci.javasdk.apache.idle.connection.monitor.thread.enabled",
+                                "true"));
+        if (!DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED) {
+            DEFAULT_CONNECTION_REUSE_STRATEGY = new NoConnectionReuseStrategy();
+        }
+    }
+
+    public static int DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS = 5;
+    private static int DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_IN_SECONDS = 20;
+
     /**
      * ConnectionKeepAliveStrategy for the Apache HttpClient.
      * The value MUST be an instance of ConnectionKeepAliveStrategy.
@@ -128,6 +143,28 @@ public class ApacheConnectorProperties {
      * Request RetryHandler to be used for the Apache Connection. Accepts an instance of HttpRequestRetryHandler
      */
     private final HttpRequestRetryHandler requestRetryHandler;
+    /**
+     * Idle monitor thread polls the connection manager to monitor for expired and idle connections and closes any such
+     * connections
+     *
+     * If the property is absent then default value of true will be used
+     */
+    private final boolean idleConnectionMonitorThreadEnabled;
+    /**
+     * The time interval after which the check and closing of expired/idle connections is performed by the
+     * idleMonitorThread. This is applicable only if idleConnectionMonitorThead is enabled/true
+     *
+     * If the property is absent then default value of 5 seconds will be used
+     */
+    private final int idleConnectionMonitorThreadWaitTimeInSeconds;
+    /**
+     * The idle timeout - close connections that have been idle longer than
+     * idleConnectionMonitorThreadIdleTimeoutInSeconds seconds by idleMonitorThread.
+     * This is applicable only if idleConnectionMonitorThead is enabled/true
+     *
+     * If the property is absent then default value of 20 seconds will be used
+     */
+    private final int idleConnectionMonitorThreadIdleTimeoutInSeconds;
 
     private static ConnectionKeepAliveStrategy $default$keepAliveStrategy() {
         return DEFAULT_KEEP_ALIVE_STRATEGY;
@@ -173,6 +210,18 @@ public class ApacheConnectorProperties {
         return DEFAULT_REQUEST_RETRY_HANDLER;
     }
 
+    private static boolean $default$idleConnectionMonitorThreadEnabled() {
+        return DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_ENABLED;
+    }
+
+    private static int $default$idleConnectionMonitorThreadWaitTimeInSeconds() {
+        return DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS;
+    }
+
+    private static int $default$idleConnectionMonitorThreadIdleTimeoutInSeconds() {
+        return DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_IDLE_TIMEOUT_IN_SECONDS;
+    }
+
     @java.beans.ConstructorProperties({
         "keepAliveStrategy",
         "connectionManagerShared",
@@ -184,7 +233,10 @@ public class ApacheConnectorProperties {
         "connectionClosingStrategy",
         "sslContext",
         "hostnameVerifier",
-        "requestRetryHandler"
+        "requestRetryHandler",
+        "idleConnectionMonitorThreadEnabled",
+        "idleConnectionMonitorThreadWaitTimeInSeconds",
+        "idleConnectionMonitorThreadIdleTimeoutInSeconds"
     })
     ApacheConnectorProperties(
             final ConnectionKeepAliveStrategy keepAliveStrategy,
@@ -197,7 +249,10 @@ public class ApacheConnectorProperties {
             final ApacheConnectionClosingStrategy connectionClosingStrategy,
             final SSLContext sslContext,
             final HostnameVerifier hostnameVerifier,
-            final HttpRequestRetryHandler requestRetryHandler) {
+            final HttpRequestRetryHandler requestRetryHandler,
+            final boolean idleConnectionMonitorThreadEnabled,
+            final int idleConnectionMonitorThreadWaitTimeInSeconds,
+            final int idleConnectionMonitorThreadIdleTimeoutInSeconds) {
         this.keepAliveStrategy = keepAliveStrategy;
         this.connectionManagerShared = connectionManagerShared;
         this.connectionManager = connectionManager;
@@ -209,6 +264,11 @@ public class ApacheConnectorProperties {
         this.sslContext = sslContext;
         this.hostnameVerifier = hostnameVerifier;
         this.requestRetryHandler = requestRetryHandler;
+        this.idleConnectionMonitorThreadEnabled = idleConnectionMonitorThreadEnabled;
+        this.idleConnectionMonitorThreadWaitTimeInSeconds =
+                idleConnectionMonitorThreadWaitTimeInSeconds;
+        this.idleConnectionMonitorThreadIdleTimeoutInSeconds =
+                idleConnectionMonitorThreadIdleTimeoutInSeconds;
     }
 
     public static class ApacheConnectorPropertiesBuilder {
@@ -255,6 +315,18 @@ public class ApacheConnectorProperties {
         private boolean requestRetryHandler$set;
 
         private HttpRequestRetryHandler requestRetryHandler$value;
+
+        private boolean idleConnectionMonitorThreadEnabled$set;
+
+        private boolean idleConnectionMonitorThreadEnabled$value;
+
+        private boolean idleConnectionMonitorThreadWaitTimeInSeconds$set;
+
+        private int idleConnectionMonitorThreadWaitTimeInSeconds$value;
+
+        private boolean idleConnectionMonitorThreadIdleTimeoutInSeconds$set;
+
+        private int idleConnectionMonitorThreadIdleTimeoutInSeconds$value;
 
         ApacheConnectorPropertiesBuilder() {}
 
@@ -428,6 +500,51 @@ public class ApacheConnectorProperties {
             return this;
         }
 
+        /**
+         * Idle monitor thread polls the connection manager to monitor for expired and idle connections and closes any
+         * such connections
+         *
+         * If the property is absent then default value of false will be used
+         */
+        public ApacheConnectorProperties.ApacheConnectorPropertiesBuilder
+                idleConnectionMonitorThreadEnabled(
+                        final boolean idleConnectionMonitorThreadEnabled) {
+            this.idleConnectionMonitorThreadEnabled$value = idleConnectionMonitorThreadEnabled;
+            idleConnectionMonitorThreadEnabled$set = true;
+            return this;
+        }
+
+        /**
+         * The time interval after which the check and closing of expired/idle connections is performed by the
+         * idleMonitorThread. This is applicable only if idleConnectionMonitorThead is enabled/true
+         *
+         * If the property is absent then default value of 5 seconds will be used
+         */
+        public ApacheConnectorProperties.ApacheConnectorPropertiesBuilder
+                idleConnectionMonitorThreadWaitTimeInSeconds(
+                        final int idleConnectionMonitorThreadWaitTimeInSeconds) {
+            this.idleConnectionMonitorThreadWaitTimeInSeconds$value =
+                    idleConnectionMonitorThreadWaitTimeInSeconds;
+            idleConnectionMonitorThreadWaitTimeInSeconds$set = true;
+            return this;
+        }
+
+        /**
+         * The idle timeout - close connections that have been idle longer than
+         * idleConnectionMonitorThreadIdleTimeoutInSeconds seconds by idleMonitorThread.
+         * This is applicable only if idleConnectionMonitorThead is enabled/true
+         *
+         * If the property is absent then default value of 20 seconds will be used
+         */
+        public ApacheConnectorProperties.ApacheConnectorPropertiesBuilder
+                idleConnectionMonitorThreadIdleTimeoutInSeconds(
+                        final int idleConnectionMonitorThreadIdleTimeoutInSeconds) {
+            this.idleConnectionMonitorThreadIdleTimeoutInSeconds$value =
+                    idleConnectionMonitorThreadIdleTimeoutInSeconds;
+            idleConnectionMonitorThreadIdleTimeoutInSeconds$set = true;
+            return this;
+        }
+
         public ApacheConnectorProperties build() {
             ConnectionKeepAliveStrategy keepAliveStrategy$value = this.keepAliveStrategy$value;
             if (!this.keepAliveStrategy$set)
@@ -469,6 +586,23 @@ public class ApacheConnectorProperties {
             if (!this.requestRetryHandler$set)
                 requestRetryHandler$value =
                         ApacheConnectorProperties.$default$requestRetryHandler();
+            boolean idleConnectionMonitorThreadEnabled$value =
+                    this.idleConnectionMonitorThreadEnabled$value;
+            if (!this.idleConnectionMonitorThreadEnabled$set)
+                idleConnectionMonitorThreadEnabled$value =
+                        ApacheConnectorProperties.$default$idleConnectionMonitorThreadEnabled();
+            int idleConnectionMonitorThreadWaitTimeInSeconds$value =
+                    this.idleConnectionMonitorThreadWaitTimeInSeconds$value;
+            if (!this.idleConnectionMonitorThreadWaitTimeInSeconds$set)
+                idleConnectionMonitorThreadWaitTimeInSeconds$value =
+                        ApacheConnectorProperties
+                                .$default$idleConnectionMonitorThreadWaitTimeInSeconds();
+            int idleConnectionMonitorThreadIdleTimeoutInSeconds$value =
+                    this.idleConnectionMonitorThreadIdleTimeoutInSeconds$value;
+            if (!this.idleConnectionMonitorThreadIdleTimeoutInSeconds$set)
+                idleConnectionMonitorThreadIdleTimeoutInSeconds$value =
+                        ApacheConnectorProperties
+                                .$default$idleConnectionMonitorThreadIdleTimeoutInSeconds();
             return new ApacheConnectorProperties(
                     keepAliveStrategy$value,
                     connectionManagerShared$value,
@@ -480,7 +614,10 @@ public class ApacheConnectorProperties {
                     connectionClosingStrategy$value,
                     sslContext$value,
                     hostnameVerifier$value,
-                    requestRetryHandler$value);
+                    requestRetryHandler$value,
+                    idleConnectionMonitorThreadEnabled$value,
+                    idleConnectionMonitorThreadWaitTimeInSeconds$value,
+                    idleConnectionMonitorThreadIdleTimeoutInSeconds$value);
         }
 
         @java.lang.Override
@@ -507,6 +644,12 @@ public class ApacheConnectorProperties {
                     + this.hostnameVerifier$value
                     + ", requestRetryHandler$value="
                     + this.requestRetryHandler$value
+                    + ", idleConnectionMonitorThreadEnabled$value="
+                    + this.idleConnectionMonitorThreadEnabled$value
+                    + ", idleConnectionMonitorThreadWaitTimeInSeconds$value"
+                    + this.idleConnectionMonitorThreadWaitTimeInSeconds$value
+                    + ", idleConnectionMonitorThreadIdleTimeoutInSeconds$value"
+                    + this.idleConnectionMonitorThreadIdleTimeoutInSeconds$value
                     + ")";
         }
     }
@@ -566,6 +709,20 @@ public class ApacheConnectorProperties {
         if (this$requestRetryHandler == null
                 ? other$requestRetryHandler != null
                 : !this$requestRetryHandler.equals(other$requestRetryHandler)) return false;
+        if (this.isIdleConnectionMonitorThreadEnabled()
+                != other.isIdleConnectionMonitorThreadEnabled()) return false;
+        final int this$idleConnectionMonitorThreadWaitTimeInSeconds =
+                this.getIdleConnectionMonitorThreadWaitTimeInSeconds();
+        final int other$idleConnectionMonitorThreadWaitTimeInSeconds =
+                other.getIdleConnectionMonitorThreadWaitTimeInSeconds();
+        if (this$idleConnectionMonitorThreadWaitTimeInSeconds
+                != other$idleConnectionMonitorThreadWaitTimeInSeconds) return false;
+        final int this$idleConnectionMonitorThreadIdleTimeoutInSeconds =
+                this.getIdleConnectionMonitorThreadIdleTimeoutInSeconds();
+        final int other$idleConnectionMonitorThreadIdleTimeoutInSeconds =
+                other.getIdleConnectionMonitorThreadIdleTimeoutInSeconds();
+        if (this$idleConnectionMonitorThreadIdleTimeoutInSeconds
+                != other$idleConnectionMonitorThreadIdleTimeoutInSeconds) return false;
         return true;
     }
 
@@ -608,6 +765,14 @@ public class ApacheConnectorProperties {
         result =
                 result * PRIME
                         + ($requestRetryHandler == null ? 43 : $requestRetryHandler.hashCode());
+        result = result * PRIME + (this.isIdleConnectionMonitorThreadEnabled() ? 79 : 97);
+        final int $idleConnectionMonitorThreadWaitTimeInSeconds =
+                this.getIdleConnectionMonitorThreadWaitTimeInSeconds();
+        result = result * PRIME + Integer.hashCode($idleConnectionMonitorThreadWaitTimeInSeconds);
+        final int $idleConnectionMonitorThreadIdleTimeoutInSeconds =
+                this.getIdleConnectionMonitorThreadIdleTimeoutInSeconds();
+        result =
+                result * PRIME + Integer.hashCode($idleConnectionMonitorThreadIdleTimeoutInSeconds);
         return result;
     }
 
@@ -635,6 +800,12 @@ public class ApacheConnectorProperties {
                 + this.getHostnameVerifier()
                 + ", requestRetryHandler="
                 + this.getRequestRetryHandler()
+                + ", idleConnectionMonitorThreadEnabled="
+                + this.isIdleConnectionMonitorThreadEnabled()
+                + ", idleConnectionMonitorThreadWaitTimeInSeconds="
+                + this.getIdleConnectionMonitorThreadWaitTimeInSeconds()
+                + ", idleConnectionMonitorThreadIdleTimeoutInSeconds="
+                + this.getIdleConnectionMonitorThreadIdleTimeoutInSeconds()
                 + ")";
     }
 
@@ -762,5 +933,36 @@ public class ApacheConnectorProperties {
      */
     public HttpRequestRetryHandler getRequestRetryHandler() {
         return this.requestRetryHandler;
+    }
+
+    /**
+     * Idle monitor thread polls the connection manager to monitor for expired and idle connections and closes any
+     * such connections
+     *
+     * If the property is absent then default value of false will be used
+     */
+    public boolean isIdleConnectionMonitorThreadEnabled() {
+        return this.idleConnectionMonitorThreadEnabled;
+    }
+
+    /**
+     * The time interval after which the check and closing of expired/idle connections is performed by the
+     * idleMonitorThread. This is applicable only if idleConnectionMonitorThead is enabled/true
+     *
+     * If the property is absent then default value of 5 seconds will be used
+     */
+    public int getIdleConnectionMonitorThreadWaitTimeInSeconds() {
+        return this.idleConnectionMonitorThreadWaitTimeInSeconds;
+    }
+
+    /**
+     * The idle timeout - close connections that have been idle longer than
+     * idleConnectionMonitorThreadIdleTimeoutInSeconds seconds by idleMonitorThread.
+     * This is applicable only if idleConnectionMonitorThead is enabled/true
+     *
+     * If the property is absent then default value of 20 seconds will be used
+     */
+    public int getIdleConnectionMonitorThreadIdleTimeoutInSeconds() {
+        return this.idleConnectionMonitorThreadIdleTimeoutInSeconds;
     }
 }

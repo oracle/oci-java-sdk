@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of ResourceType
+ * A summary of detailed information on a resource type.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -21,24 +21,29 @@ package com.oracle.bmc.cloudguard.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "displayName", "rules"})
-    public ResourceTypeSummary(String name, String displayName, java.util.List<RuleSummary> rules) {
+    @java.beans.ConstructorProperties({"name", "displayName", "rules", "locks"})
+    public ResourceTypeSummary(
+            String name,
+            String displayName,
+            java.util.List<RuleSummary> rules,
+            java.util.List<ResourceLock> locks) {
         super();
         this.name = name;
         this.displayName = displayName;
         this.rules = rules;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * name of the resource
+         * Name of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * name of the resource
+         * Name of the resource
          * @param name the value to set
          * @return this builder
          **/
@@ -48,13 +53,13 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * display name of the resource
+         * Display name of the resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * display name of the resource
+         * Display name of the resource
          * @param displayName the value to set
          * @return this builder
          **/
@@ -79,13 +84,29 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("rules");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ResourceTypeSummary build() {
             ResourceTypeSummary model =
-                    new ResourceTypeSummary(this.name, this.displayName, this.rules);
+                    new ResourceTypeSummary(this.name, this.displayName, this.rules, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -103,6 +124,9 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("rules")) {
                 this.rules(model.getRules());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -119,13 +143,13 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * name of the resource
+     * Name of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * name of the resource
+     * Name of the resource
      * @return the value
      **/
     public String getName() {
@@ -133,13 +157,13 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * display name of the resource
+     * Display name of the resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * display name of the resource
+     * Display name of the resource
      * @return the value
      **/
     public String getDisplayName() {
@@ -160,6 +184,20 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
         return rules;
     }
 
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -177,6 +215,7 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", rules=").append(String.valueOf(this.rules));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -194,6 +233,7 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.rules, other.rules)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -204,6 +244,7 @@ public final class ResourceTypeSummary extends com.oracle.bmc.http.internal.Expl
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

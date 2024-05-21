@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.logging.model;
@@ -90,13 +90,13 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             return this;
         }
         /**
-         * Time type of JSON parser.
+         * JSON parser time type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeType")
         private TimeType timeType;
 
         /**
-         * Time type of JSON parser.
+         * JSON parser time type.
          * @param timeType the value to set
          * @return this builder
          **/
@@ -121,6 +121,38 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             this.__explicitlySet__.add("timeFormat");
             return this;
         }
+        /**
+         * If true, a separator parameter can be further defined.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parseNested")
+        private Boolean parseNested;
+
+        /**
+         * If true, a separator parameter can be further defined.
+         * @param parseNested the value to set
+         * @return this builder
+         **/
+        public Builder parseNested(Boolean parseNested) {
+            this.parseNested = parseNested;
+            this.__explicitlySet__.add("parseNested");
+            return this;
+        }
+        /**
+         * Keys of adjacent levels are joined by the separator.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("separator")
+        private String separator;
+
+        /**
+         * Keys of adjacent levels are joined by the separator.
+         * @param separator the value to set
+         * @return this builder
+         **/
+        public Builder separator(String separator) {
+            this.separator = separator;
+            this.__explicitlySet__.add("separator");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -136,7 +168,9 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
                             this.isKeepTimeKey,
                             this.timeoutInMilliseconds,
                             this.timeType,
-                            this.timeFormat);
+                            this.timeFormat,
+                            this.parseNested,
+                            this.separator);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -172,6 +206,12 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             if (model.wasPropertyExplicitlySet("timeFormat")) {
                 this.timeFormat(model.getTimeFormat());
             }
+            if (model.wasPropertyExplicitlySet("parseNested")) {
+                this.parseNested(model.getParseNested());
+            }
+            if (model.wasPropertyExplicitlySet("separator")) {
+                this.separator(model.getSeparator());
+            }
             return this;
         }
     }
@@ -197,7 +237,9 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
             Boolean isKeepTimeKey,
             Integer timeoutInMilliseconds,
             TimeType timeType,
-            String timeFormat) {
+            String timeFormat,
+            Boolean parseNested,
+            String separator) {
         super(
                 fieldTimeKey,
                 types,
@@ -208,10 +250,12 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
                 timeoutInMilliseconds);
         this.timeType = timeType;
         this.timeFormat = timeFormat;
+        this.parseNested = parseNested;
+        this.separator = separator;
     }
 
     /**
-     * Time type of JSON parser.
+     * JSON parser time type.
      **/
     public enum TimeType {
         Float("FLOAT"),
@@ -260,13 +304,13 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         }
     };
     /**
-     * Time type of JSON parser.
+     * JSON parser time type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeType")
     private final TimeType timeType;
 
     /**
-     * Time type of JSON parser.
+     * JSON parser time type.
      * @return the value
      **/
     public TimeType getTimeType() {
@@ -287,6 +331,34 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         return timeFormat;
     }
 
+    /**
+     * If true, a separator parameter can be further defined.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parseNested")
+    private final Boolean parseNested;
+
+    /**
+     * If true, a separator parameter can be further defined.
+     * @return the value
+     **/
+    public Boolean getParseNested() {
+        return parseNested;
+    }
+
+    /**
+     * Keys of adjacent levels are joined by the separator.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("separator")
+    private final String separator;
+
+    /**
+     * Keys of adjacent levels are joined by the separator.
+     * @return the value
+     **/
+    public String getSeparator() {
+        return separator;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -303,6 +375,8 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", timeType=").append(String.valueOf(this.timeType));
         sb.append(", timeFormat=").append(String.valueOf(this.timeFormat));
+        sb.append(", parseNested=").append(String.valueOf(this.parseNested));
+        sb.append(", separator=").append(String.valueOf(this.separator));
         sb.append(")");
         return sb.toString();
     }
@@ -319,6 +393,8 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         UnifiedJSONParser other = (UnifiedJSONParser) o;
         return java.util.Objects.equals(this.timeType, other.timeType)
                 && java.util.Objects.equals(this.timeFormat, other.timeFormat)
+                && java.util.Objects.equals(this.parseNested, other.parseNested)
+                && java.util.Objects.equals(this.separator, other.separator)
                 && super.equals(other);
     }
 
@@ -328,6 +404,8 @@ public final class UnifiedJSONParser extends UnifiedAgentParser {
         int result = super.hashCode();
         result = (result * PRIME) + (this.timeType == null ? 43 : this.timeType.hashCode());
         result = (result * PRIME) + (this.timeFormat == null ? 43 : this.timeFormat.hashCode());
+        result = (result * PRIME) + (this.parseNested == null ? 43 : this.parseNested.hashCode());
+        result = (result * PRIME) + (this.separator == null ? 43 : this.separator.hashCode());
         return result;
     }
 }

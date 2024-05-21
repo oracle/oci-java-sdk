@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.internal.http;
@@ -98,6 +98,38 @@ public class GetDatabaseFleetHealthMetricsConverter {
                                     request.getFilterByDatabaseSubType()));
         }
 
+        if (request.getPage() != null) {
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
+        }
+
+        if (request.getLimit() != null) {
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
+        }
+
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
+        }
+
         if (request.getFilterByDatabaseDeploymentType() != null) {
             target =
                     target.queryParam(
@@ -112,6 +144,42 @@ public class GetDatabaseFleetHealthMetricsConverter {
                             "filterByDatabaseVersion",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getFilterByDatabaseVersion()));
+        }
+
+        if (request.getDefinedTagEquals() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "definedTagEquals",
+                            request.getDefinedTagEquals(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getFreeformTagEquals() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "freeformTagEquals",
+                            request.getFreeformTagEquals(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getDefinedTagExists() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "definedTagExists",
+                            request.getDefinedTagExists(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
+        if (request.getFreeformTagExists() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "freeformTagExists",
+                            request.getFreeformTagExists(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
@@ -203,6 +271,17 @@ public class GetDatabaseFleetHealthMetricsConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcNextPageHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
                                                     String.class));
                                 }
 

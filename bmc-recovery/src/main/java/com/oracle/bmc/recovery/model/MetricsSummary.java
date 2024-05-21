@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -26,7 +26,8 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
         "dbSizeInGBs",
         "isRedoLogsEnabled",
         "retentionPeriodInDays",
-        "currentRetentionPeriodInSeconds"
+        "currentRetentionPeriodInSeconds",
+        "minimumRecoveryNeededInDays"
     })
     public MetricsSummary(
             Float backupSpaceUsedInGBs,
@@ -35,7 +36,8 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
             Float dbSizeInGBs,
             Boolean isRedoLogsEnabled,
             Float retentionPeriodInDays,
-            Float currentRetentionPeriodInSeconds) {
+            Float currentRetentionPeriodInSeconds,
+            Float minimumRecoveryNeededInDays) {
         super();
         this.backupSpaceUsedInGBs = backupSpaceUsedInGBs;
         this.backupSpaceEstimateInGBs = backupSpaceEstimateInGBs;
@@ -44,6 +46,7 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
         this.isRedoLogsEnabled = isRedoLogsEnabled;
         this.retentionPeriodInDays = retentionPeriodInDays;
         this.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
+        this.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -168,6 +171,22 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("currentRetentionPeriodInSeconds");
             return this;
         }
+        /**
+         * Number of days of redo/archive to be applied to recover database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumRecoveryNeededInDays")
+        private Float minimumRecoveryNeededInDays;
+
+        /**
+         * Number of days of redo/archive to be applied to recover database.
+         * @param minimumRecoveryNeededInDays the value to set
+         * @return this builder
+         **/
+        public Builder minimumRecoveryNeededInDays(Float minimumRecoveryNeededInDays) {
+            this.minimumRecoveryNeededInDays = minimumRecoveryNeededInDays;
+            this.__explicitlySet__.add("minimumRecoveryNeededInDays");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -181,7 +200,8 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.dbSizeInGBs,
                             this.isRedoLogsEnabled,
                             this.retentionPeriodInDays,
-                            this.currentRetentionPeriodInSeconds);
+                            this.currentRetentionPeriodInSeconds,
+                            this.minimumRecoveryNeededInDays);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -210,6 +230,9 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("currentRetentionPeriodInSeconds")) {
                 this.currentRetentionPeriodInSeconds(model.getCurrentRetentionPeriodInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("minimumRecoveryNeededInDays")) {
+                this.minimumRecoveryNeededInDays(model.getMinimumRecoveryNeededInDays());
             }
             return this;
         }
@@ -332,6 +355,20 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
         return currentRetentionPeriodInSeconds;
     }
 
+    /**
+     * Number of days of redo/archive to be applied to recover database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumRecoveryNeededInDays")
+    private final Float minimumRecoveryNeededInDays;
+
+    /**
+     * Number of days of redo/archive to be applied to recover database.
+     * @return the value
+     **/
+    public Float getMinimumRecoveryNeededInDays() {
+        return minimumRecoveryNeededInDays;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -356,6 +393,8 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", retentionPeriodInDays=").append(String.valueOf(this.retentionPeriodInDays));
         sb.append(", currentRetentionPeriodInSeconds=")
                 .append(String.valueOf(this.currentRetentionPeriodInSeconds));
+        sb.append(", minimumRecoveryNeededInDays=")
+                .append(String.valueOf(this.minimumRecoveryNeededInDays));
         sb.append(")");
         return sb.toString();
     }
@@ -380,6 +419,8 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.retentionPeriodInDays, other.retentionPeriodInDays)
                 && java.util.Objects.equals(
                         this.currentRetentionPeriodInSeconds, other.currentRetentionPeriodInSeconds)
+                && java.util.Objects.equals(
+                        this.minimumRecoveryNeededInDays, other.minimumRecoveryNeededInDays)
                 && super.equals(other);
     }
 
@@ -416,6 +457,11 @@ public final class MetricsSummary extends com.oracle.bmc.http.internal.Explicitl
                         + (this.currentRetentionPeriodInSeconds == null
                                 ? 43
                                 : this.currentRetentionPeriodInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.minimumRecoveryNeededInDays == null
+                                ? 43
+                                : this.minimumRecoveryNeededInDays.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

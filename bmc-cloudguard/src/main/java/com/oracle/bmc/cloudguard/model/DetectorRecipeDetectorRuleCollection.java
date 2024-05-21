@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the DetectorRule.
+ * Collection of summary information for detector rules in a detector recipe.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -22,23 +22,25 @@ package com.oracle.bmc.cloudguard.model;
 public final class DetectorRecipeDetectorRuleCollection
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"items"})
+    @java.beans.ConstructorProperties({"items", "locks"})
     public DetectorRecipeDetectorRuleCollection(
-            java.util.List<DetectorRecipeDetectorRuleSummary> items) {
+            java.util.List<DetectorRecipeDetectorRuleSummary> items,
+            java.util.List<ResourceLock> locks) {
         super();
         this.items = items;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of DetectorRecipeDetectorRuleSummary
+         * List of DetectorRecipeDetectorRuleSummary resources
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DetectorRecipeDetectorRuleSummary> items;
 
         /**
-         * List of DetectorRecipeDetectorRuleSummary
+         * List of DetectorRecipeDetectorRuleSummary resources
          * @param items the value to set
          * @return this builder
          **/
@@ -47,13 +49,29 @@ public final class DetectorRecipeDetectorRuleCollection
             this.__explicitlySet__.add("items");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DetectorRecipeDetectorRuleCollection build() {
             DetectorRecipeDetectorRuleCollection model =
-                    new DetectorRecipeDetectorRuleCollection(this.items);
+                    new DetectorRecipeDetectorRuleCollection(this.items, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -64,6 +82,9 @@ public final class DetectorRecipeDetectorRuleCollection
         public Builder copy(DetectorRecipeDetectorRuleCollection model) {
             if (model.wasPropertyExplicitlySet("items")) {
                 this.items(model.getItems());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -81,17 +102,31 @@ public final class DetectorRecipeDetectorRuleCollection
     }
 
     /**
-     * List of DetectorRecipeDetectorRuleSummary
+     * List of DetectorRecipeDetectorRuleSummary resources
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DetectorRecipeDetectorRuleSummary> items;
 
     /**
-     * List of DetectorRecipeDetectorRuleSummary
+     * List of DetectorRecipeDetectorRuleSummary resources
      * @return the value
      **/
     public java.util.List<DetectorRecipeDetectorRuleSummary> getItems() {
         return items;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -109,6 +144,7 @@ public final class DetectorRecipeDetectorRuleCollection
         sb.append("DetectorRecipeDetectorRuleCollection(");
         sb.append("super=").append(super.toString());
         sb.append("items=").append(String.valueOf(this.items));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -123,7 +159,9 @@ public final class DetectorRecipeDetectorRuleCollection
         }
 
         DetectorRecipeDetectorRuleCollection other = (DetectorRecipeDetectorRuleCollection) o;
-        return java.util.Objects.equals(this.items, other.items) && super.equals(other);
+        return java.util.Objects.equals(this.items, other.items)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && super.equals(other);
     }
 
     @Override
@@ -131,6 +169,7 @@ public final class DetectorRecipeDetectorRuleCollection
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.items == null ? 43 : this.items.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

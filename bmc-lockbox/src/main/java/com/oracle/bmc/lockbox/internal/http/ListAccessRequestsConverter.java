@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox.internal.http;
@@ -73,6 +73,14 @@ public class ListAccessRequestsConverter {
                                     request.getLockboxPartner().getValue()));
         }
 
+        if (request.getPartnerId() != null) {
+            target =
+                    target.queryParam(
+                            "partnerId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPartnerId()));
+        }
+
         if (request.getRequestorId() != null) {
             target =
                     target.queryParam(
@@ -111,6 +119,22 @@ public class ListAccessRequestsConverter {
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortBy().getValue()));
+        }
+
+        if (request.getTimeCreatedAfter() != null) {
+            target =
+                    target.queryParam(
+                            "timeCreatedAfter",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeCreatedAfter()));
+        }
+
+        if (request.getTimeCreatedBefore() != null) {
+            target =
+                    target.queryParam(
+                            "timeCreatedBefore",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeCreatedBefore()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

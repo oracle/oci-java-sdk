@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Resource Profile Endpoints summary.
+ * Summary information for resource profile endpoints.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -92,13 +92,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Resource profile Id associated with the imacted resource
+         * Resource profile ID associated with the impacted resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
         private String resourceProfileId;
 
         /**
-         * Resource profile Id associated with the imacted resource
+         * Resource profile ID associated with the impacted resource
          * @param resourceProfileId the value to set
          * @return this builder
          **/
@@ -108,13 +108,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Problem Id for sighting endpoints
+         * Problem ID for sighting endpoints
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
-         * Problem Id for sighting endpoints
+         * Problem ID for sighting endpoints
          * @param problemId the value to set
          * @return this builder
          **/
@@ -124,13 +124,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Identifier for the sighting type
+         * Type of sighting for sighting endpoints
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
         private String sightingType;
 
         /**
-         * Identifier for the sighting type
+         * Type of sighting for sighting endpoints
          * @param sightingType the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
         private String sightingTypeDisplayName;
 
         /**
-         * Name of the sighting type
+         * Display name of the sighting type
          * @param sightingTypeDisplayName the value to set
          * @return this builder
          **/
@@ -156,13 +156,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * IP Address
+         * IP address for sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * IP Address
+         * IP address for sighting
          * @param ipAddress the value to set
          * @return this builder
          **/
@@ -172,13 +172,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * IP Address type
+         * Type of IP address for sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
         private String ipAddressType;
 
         /**
-         * IP Address type
+         * Type of IP address for sighting
          * @param ipAddressType the value to set
          * @return this builder
          **/
@@ -188,13 +188,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * IP Address classification type
+         * IP address classification type
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipClassificationType")
         private String ipClassificationType;
 
         /**
-         * IP Address classification type
+         * IP address classification type
          * @param ipClassificationType the value to set
          * @return this builder
          **/
@@ -204,13 +204,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Country
+         * Country of sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
-         * Country
+         * Country of sighting
          * @param country the value to set
          * @return this builder
          **/
@@ -220,13 +220,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Latitude
+         * Latitude of sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("latitude")
         private Double latitude;
 
         /**
-         * Latitude
+         * Latitude of sighting
          * @param latitude the value to set
          * @return this builder
          **/
@@ -236,13 +236,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Longitude
+         * Longitude of sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("longitude")
         private Double longitude;
 
         /**
-         * Longitude
+         * Longitude of sighting
          * @param longitude the value to set
          * @return this builder
          **/
@@ -252,13 +252,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * ASN number
+         * ASN number of sighting
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("asnNumber")
         private String asnNumber;
 
         /**
-         * ASN number
+         * ASN number of sighting
          * @param asnNumber the value to set
          * @return this builder
          **/
@@ -268,13 +268,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Regions where activities were performed from this IP
+         * Regions where activities were performed from this IP address
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
-         * Regions where activities were performed from this IP
+         * Regions where activities were performed from this IP address
          * @param regions the value to set
          * @return this builder
          **/
@@ -284,13 +284,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Services where activities were performed from this IP
+         * List of services where activities were performed from this IP address
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<String> services;
 
         /**
-         * Services where activities were performed from this IP
+         * List of services where activities were performed from this IP address
          * @param services the value to set
          * @return this builder
          **/
@@ -300,13 +300,13 @@ public final class ResourceProfileEndpointSummary
             return this;
         }
         /**
-         * Time when activities were created
+         * Date and time when activities were created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
-         * Time when activities were created
+         * Date and time when activities were created
          * @param timeLastDetected the value to set
          * @return this builder
          **/
@@ -420,13 +420,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Resource profile Id associated with the imacted resource
+     * Resource profile ID associated with the impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
     private final String resourceProfileId;
 
     /**
-     * Resource profile Id associated with the imacted resource
+     * Resource profile ID associated with the impacted resource
      * @return the value
      **/
     public String getResourceProfileId() {
@@ -434,13 +434,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Problem Id for sighting endpoints
+     * Problem ID for sighting endpoints
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
-     * Problem Id for sighting endpoints
+     * Problem ID for sighting endpoints
      * @return the value
      **/
     public String getProblemId() {
@@ -448,13 +448,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting for sighting endpoints
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingType")
     private final String sightingType;
 
     /**
-     * Identifier for the sighting type
+     * Type of sighting for sighting endpoints
      * @return the value
      **/
     public String getSightingType() {
@@ -462,13 +462,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sightingTypeDisplayName")
     private final String sightingTypeDisplayName;
 
     /**
-     * Name of the sighting type
+     * Display name of the sighting type
      * @return the value
      **/
     public String getSightingTypeDisplayName() {
@@ -476,13 +476,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * IP Address
+     * IP address for sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * IP Address
+     * IP address for sighting
      * @return the value
      **/
     public String getIpAddress() {
@@ -490,13 +490,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * IP Address type
+     * Type of IP address for sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddressType")
     private final String ipAddressType;
 
     /**
-     * IP Address type
+     * Type of IP address for sighting
      * @return the value
      **/
     public String getIpAddressType() {
@@ -504,13 +504,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * IP Address classification type
+     * IP address classification type
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipClassificationType")
     private final String ipClassificationType;
 
     /**
-     * IP Address classification type
+     * IP address classification type
      * @return the value
      **/
     public String getIpClassificationType() {
@@ -518,13 +518,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Country
+     * Country of sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
-     * Country
+     * Country of sighting
      * @return the value
      **/
     public String getCountry() {
@@ -532,13 +532,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Latitude
+     * Latitude of sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("latitude")
     private final Double latitude;
 
     /**
-     * Latitude
+     * Latitude of sighting
      * @return the value
      **/
     public Double getLatitude() {
@@ -546,13 +546,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Longitude
+     * Longitude of sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("longitude")
     private final Double longitude;
 
     /**
-     * Longitude
+     * Longitude of sighting
      * @return the value
      **/
     public Double getLongitude() {
@@ -560,13 +560,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * ASN number
+     * ASN number of sighting
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("asnNumber")
     private final String asnNumber;
 
     /**
-     * ASN number
+     * ASN number of sighting
      * @return the value
      **/
     public String getAsnNumber() {
@@ -574,13 +574,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Regions where activities were performed from this IP
+     * Regions where activities were performed from this IP address
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
-     * Regions where activities were performed from this IP
+     * Regions where activities were performed from this IP address
      * @return the value
      **/
     public java.util.List<String> getRegions() {
@@ -588,13 +588,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Services where activities were performed from this IP
+     * List of services where activities were performed from this IP address
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
     /**
-     * Services where activities were performed from this IP
+     * List of services where activities were performed from this IP address
      * @return the value
      **/
     public java.util.List<String> getServices() {
@@ -602,13 +602,13 @@ public final class ResourceProfileEndpointSummary
     }
 
     /**
-     * Time when activities were created
+     * Date and time when activities were created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
-     * Time when activities were created
+     * Date and time when activities were created
      * @return the value
      **/
     public java.util.Date getTimeLastDetected() {

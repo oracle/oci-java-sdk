@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp.model;
@@ -16,7 +16,7 @@ package com.oracle.bmc.ocvp.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SupportedVmwareSoftwareVersionSummary.Builder.class
 )
@@ -24,11 +24,15 @@ package com.oracle.bmc.ocvp.model;
 public final class SupportedVmwareSoftwareVersionSummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version", "description"})
-    public SupportedVmwareSoftwareVersionSummary(String version, String description) {
+    @java.beans.ConstructorProperties({"version", "description", "esxiSoftwareVersions"})
+    public SupportedVmwareSoftwareVersionSummary(
+            String version,
+            String description,
+            java.util.List<SupportedEsxiSoftwareVersionSummary> esxiSoftwareVersions) {
         super();
         this.version = version;
         this.description = description;
+        this.esxiSoftwareVersions = esxiSoftwareVersions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -67,13 +71,33 @@ public final class SupportedVmwareSoftwareVersionSummary
             this.__explicitlySet__.add("description");
             return this;
         }
+        /**
+         * A list of supported ESXi software versions.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersions")
+        private java.util.List<SupportedEsxiSoftwareVersionSummary> esxiSoftwareVersions;
+
+        /**
+         * A list of supported ESXi software versions.
+         *
+         * @param esxiSoftwareVersions the value to set
+         * @return this builder
+         **/
+        public Builder esxiSoftwareVersions(
+                java.util.List<SupportedEsxiSoftwareVersionSummary> esxiSoftwareVersions) {
+            this.esxiSoftwareVersions = esxiSoftwareVersions;
+            this.__explicitlySet__.add("esxiSoftwareVersions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SupportedVmwareSoftwareVersionSummary build() {
             SupportedVmwareSoftwareVersionSummary model =
-                    new SupportedVmwareSoftwareVersionSummary(this.version, this.description);
+                    new SupportedVmwareSoftwareVersionSummary(
+                            this.version, this.description, this.esxiSoftwareVersions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -87,6 +111,9 @@ public final class SupportedVmwareSoftwareVersionSummary
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("esxiSoftwareVersions")) {
+                this.esxiSoftwareVersions(model.getEsxiSoftwareVersions());
             }
             return this;
         }
@@ -133,6 +160,22 @@ public final class SupportedVmwareSoftwareVersionSummary
         return description;
     }
 
+    /**
+     * A list of supported ESXi software versions.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("esxiSoftwareVersions")
+    private final java.util.List<SupportedEsxiSoftwareVersionSummary> esxiSoftwareVersions;
+
+    /**
+     * A list of supported ESXi software versions.
+     *
+     * @return the value
+     **/
+    public java.util.List<SupportedEsxiSoftwareVersionSummary> getEsxiSoftwareVersions() {
+        return esxiSoftwareVersions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -149,6 +192,7 @@ public final class SupportedVmwareSoftwareVersionSummary
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", esxiSoftwareVersions=").append(String.valueOf(this.esxiSoftwareVersions));
         sb.append(")");
         return sb.toString();
     }
@@ -165,6 +209,7 @@ public final class SupportedVmwareSoftwareVersionSummary
         SupportedVmwareSoftwareVersionSummary other = (SupportedVmwareSoftwareVersionSummary) o;
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.esxiSoftwareVersions, other.esxiSoftwareVersions)
                 && super.equals(other);
     }
 
@@ -174,6 +219,11 @@ public final class SupportedVmwareSoftwareVersionSummary
         int result = 1;
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.esxiSoftwareVersions == null
+                                ? 43
+                                : this.esxiSoftwareVersions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

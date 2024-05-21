@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -32,13 +32,13 @@ public final class VantagePointExecution
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Vantage point name.
+         * Name of the vantage point.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Vantage point name.
+         * Name of the vantage point.
          * @param name the value to set
          * @return this builder
          **/
@@ -48,13 +48,13 @@ public final class VantagePointExecution
             return this;
         }
         /**
-         * list of execution times in milli seconds.
+         * List of execution times in milliseconds.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("executions")
         private java.util.List<Long> executions;
 
         /**
-         * list of execution times in milli seconds.
+         * List of execution times in milliseconds.
          * @param executions the value to set
          * @return this builder
          **/
@@ -99,13 +99,13 @@ public final class VantagePointExecution
     }
 
     /**
-     * Vantage point name.
+     * Name of the vantage point.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Vantage point name.
+     * Name of the vantage point.
      * @return the value
      **/
     public String getName() {
@@ -113,13 +113,13 @@ public final class VantagePointExecution
     }
 
     /**
-     * list of execution times in milli seconds.
+     * List of execution times in milliseconds.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executions")
     private final java.util.List<Long> executions;
 
     /**
-     * list of execution times in milli seconds.
+     * List of execution times in milliseconds.
      * @return the value
      **/
     public java.util.List<Long> getExecutions() {

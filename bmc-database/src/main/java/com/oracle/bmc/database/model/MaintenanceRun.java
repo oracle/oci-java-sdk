@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -35,6 +35,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         "maintenanceType",
         "patchId",
         "maintenanceSubtype",
+        "isDstFileUpdateEnabled",
         "peerMaintenanceRunId",
         "patchingMode",
         "patchFailureCount",
@@ -65,6 +66,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
             MaintenanceType maintenanceType,
             String patchId,
             MaintenanceSubtype maintenanceSubtype,
+            Boolean isDstFileUpdateEnabled,
             String peerMaintenanceRunId,
             PatchingMode patchingMode,
             Integer patchFailureCount,
@@ -94,6 +96,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         this.maintenanceType = maintenanceType;
         this.patchId = patchId;
         this.maintenanceSubtype = maintenanceSubtype;
+        this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
         this.peerMaintenanceRunId = peerMaintenanceRunId;
         this.patchingMode = patchingMode;
         this.patchFailureCount = patchFailureCount;
@@ -177,14 +180,14 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
         /**
-         * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+         * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+         * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -336,6 +339,22 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         public Builder maintenanceSubtype(MaintenanceSubtype maintenanceSubtype) {
             this.maintenanceSubtype = maintenanceSubtype;
             this.__explicitlySet__.add("maintenanceSubtype");
+            return this;
+        }
+        /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+        private Boolean isDstFileUpdateEnabled;
+
+        /**
+         * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+         * @param isDstFileUpdateEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDstFileUpdateEnabled(Boolean isDstFileUpdateEnabled) {
+            this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            this.__explicitlySet__.add("isDstFileUpdateEnabled");
             return this;
         }
         /**
@@ -587,6 +606,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                             this.maintenanceType,
                             this.patchId,
                             this.maintenanceSubtype,
+                            this.isDstFileUpdateEnabled,
                             this.peerMaintenanceRunId,
                             this.patchingMode,
                             this.patchFailureCount,
@@ -650,6 +670,9 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("maintenanceSubtype")) {
                 this.maintenanceSubtype(model.getMaintenanceSubtype());
+            }
+            if (model.wasPropertyExplicitlySet("isDstFileUpdateEnabled")) {
+                this.isDstFileUpdateEnabled(model.getIsDstFileUpdateEnabled());
             }
             if (model.wasPropertyExplicitlySet("peerMaintenanceRunId")) {
                 this.peerMaintenanceRunId(model.getPeerMaintenanceRunId());
@@ -766,7 +789,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      **/
     public enum LifecycleState {
@@ -822,14 +845,14 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         }
     };
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      *
      * @return the value
      **/
@@ -1062,6 +1085,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         Database("DATABASE"),
         Oneoff("ONEOFF"),
         SecurityMonthly("SECURITY_MONTHLY"),
+        Timezone("TIMEZONE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1116,6 +1140,20 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
      **/
     public MaintenanceSubtype getMaintenanceSubtype() {
         return maintenanceSubtype;
+    }
+
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDstFileUpdateEnabled")
+    private final Boolean isDstFileUpdateEnabled;
+
+    /**
+     * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+     * @return the value
+     **/
+    public Boolean getIsDstFileUpdateEnabled() {
+        return isDstFileUpdateEnabled;
     }
 
     /**
@@ -1445,6 +1483,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", maintenanceType=").append(String.valueOf(this.maintenanceType));
         sb.append(", patchId=").append(String.valueOf(this.patchId));
         sb.append(", maintenanceSubtype=").append(String.valueOf(this.maintenanceSubtype));
+        sb.append(", isDstFileUpdateEnabled=").append(String.valueOf(this.isDstFileUpdateEnabled));
         sb.append(", peerMaintenanceRunId=").append(String.valueOf(this.peerMaintenanceRunId));
         sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
         sb.append(", patchFailureCount=").append(String.valueOf(this.patchFailureCount));
@@ -1493,6 +1532,8 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.maintenanceType, other.maintenanceType)
                 && java.util.Objects.equals(this.patchId, other.patchId)
                 && java.util.Objects.equals(this.maintenanceSubtype, other.maintenanceSubtype)
+                && java.util.Objects.equals(
+                        this.isDstFileUpdateEnabled, other.isDstFileUpdateEnabled)
                 && java.util.Objects.equals(this.peerMaintenanceRunId, other.peerMaintenanceRunId)
                 && java.util.Objects.equals(this.patchingMode, other.patchingMode)
                 && java.util.Objects.equals(this.patchFailureCount, other.patchFailureCount)
@@ -1556,6 +1597,11 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                         + (this.maintenanceSubtype == null
                                 ? 43
                                 : this.maintenanceSubtype.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDstFileUpdateEnabled == null
+                                ? 43
+                                : this.isDstFileUpdateEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.peerMaintenanceRunId == null

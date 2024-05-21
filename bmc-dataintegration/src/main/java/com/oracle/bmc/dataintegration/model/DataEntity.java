@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataintegration.model;
@@ -29,6 +29,10 @@ package com.oracle.bmc.dataintegration.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataEntityFromDataStore.class,
         name = "DATA_STORE_ENTITY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DataEntityFromObject.class,
+        name = "OBJECT_ENTITY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DataEntityFromView.class,
@@ -112,6 +116,7 @@ public class DataEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         TableEntity("TABLE_ENTITY"),
         FileEntity("FILE_ENTITY"),
         SqlEntity("SQL_ENTITY"),
+        ObjectEntity("OBJECT_ENTITY"),
         DataStoreEntity("DATA_STORE_ENTITY"),
         DerivedEntity("DERIVED_ENTITY"),
 

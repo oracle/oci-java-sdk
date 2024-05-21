@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -377,6 +377,21 @@ public class ListLogAnalyticsEntitiesRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+     * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     *
+     */
+    private java.util.List<String> metadataEquals;
+
+    /**
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+     * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     *
+     */
+    public java.util.List<String> getMetadataEquals() {
+        return metadataEquals;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -738,6 +753,36 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
+         * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+         * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+         *
+         */
+        private java.util.List<String> metadataEquals = null;
+
+        /**
+         * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+         * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+         *
+         * @param metadataEquals the value to set
+         * @return this builder instance
+         */
+        public Builder metadataEquals(java.util.List<String> metadataEquals) {
+            this.metadataEquals = metadataEquals;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+         * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder metadataEquals(String singularValue) {
+            return this.metadataEquals(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -784,6 +829,7 @@ public class ListLogAnalyticsEntitiesRequest
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            metadataEquals(o.getMetadataEquals());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -835,8 +881,9 @@ public class ListLogAnalyticsEntitiesRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.metadataEquals = metadataEquals;
             return request;
-            // new ListLogAnalyticsEntitiesRequest(namespaceName, compartmentId, name, nameContains, entityTypeName, cloudResourceId, lifecycleState, lifecycleDetailsContains, isManagementAgentIdNull, hostname, hostnameContains, sourceId, creationSourceType, creationSourceDetails, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListLogAnalyticsEntitiesRequest(namespaceName, compartmentId, name, nameContains, entityTypeName, cloudResourceId, lifecycleState, lifecycleDetailsContains, isManagementAgentIdNull, hostname, hostnameContains, sourceId, creationSourceType, creationSourceDetails, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals);
         }
     }
 
@@ -864,7 +911,8 @@ public class ListLogAnalyticsEntitiesRequest
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .metadataEquals(metadataEquals);
     }
 
     /**
@@ -900,6 +948,7 @@ public class ListLogAnalyticsEntitiesRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",metadataEquals=").append(String.valueOf(this.metadataEquals));
         sb.append(")");
         return sb.toString();
     }
@@ -935,7 +984,8 @@ public class ListLogAnalyticsEntitiesRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.metadataEquals, other.metadataEquals);
     }
 
     @Override
@@ -989,6 +1039,9 @@ public class ListLogAnalyticsEntitiesRequest
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.metadataEquals == null ? 43 : this.metadataEquals.hashCode());
         return result;
     }
 }

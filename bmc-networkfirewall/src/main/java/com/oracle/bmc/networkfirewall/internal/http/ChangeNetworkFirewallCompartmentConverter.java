@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.internal.http;
@@ -10,7 +10,7 @@ import com.oracle.bmc.networkfirewall.requests.*;
 import com.oracle.bmc.networkfirewall.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class ChangeNetworkFirewallCompartmentConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -39,7 +39,7 @@ public class ChangeNetworkFirewallCompartmentConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20211001")
+                        .path("/20230501")
                         .path("networkFirewalls")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
@@ -57,6 +57,10 @@ public class ChangeNetworkFirewallCompartmentConverter {
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
         if (client.getClientConfigurator() != null) {

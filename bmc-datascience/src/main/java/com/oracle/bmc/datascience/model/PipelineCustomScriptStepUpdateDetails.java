@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -55,13 +55,26 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("stepInfrastructureConfigurationDetails")
+        private PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails;
+
+        public Builder stepInfrastructureConfigurationDetails(
+                PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails) {
+            this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
+            this.__explicitlySet__.add("stepInfrastructureConfigurationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PipelineCustomScriptStepUpdateDetails build() {
             PipelineCustomScriptStepUpdateDetails model =
                     new PipelineCustomScriptStepUpdateDetails(
-                            this.stepName, this.description, this.stepConfigurationDetails);
+                            this.stepName,
+                            this.description,
+                            this.stepConfigurationDetails,
+                            this.stepInfrastructureConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +91,10 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
             }
             if (model.wasPropertyExplicitlySet("stepConfigurationDetails")) {
                 this.stepConfigurationDetails(model.getStepConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("stepInfrastructureConfigurationDetails")) {
+                this.stepInfrastructureConfigurationDetails(
+                        model.getStepInfrastructureConfigurationDetails());
             }
             return this;
         }
@@ -98,8 +115,17 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
     public PipelineCustomScriptStepUpdateDetails(
             String stepName,
             String description,
-            PipelineStepConfigurationDetails stepConfigurationDetails) {
+            PipelineStepConfigurationDetails stepConfigurationDetails,
+            PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails) {
         super(stepName, description, stepConfigurationDetails);
+        this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("stepInfrastructureConfigurationDetails")
+    private final PipelineInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails;
+
+    public PipelineInfrastructureConfigurationDetails getStepInfrastructureConfigurationDetails() {
+        return stepInfrastructureConfigurationDetails;
     }
 
     @Override
@@ -116,6 +142,8 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PipelineCustomScriptStepUpdateDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", stepInfrastructureConfigurationDetails=")
+                .append(String.valueOf(this.stepInfrastructureConfigurationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -130,13 +158,21 @@ public final class PipelineCustomScriptStepUpdateDetails extends PipelineStepUpd
         }
 
         PipelineCustomScriptStepUpdateDetails other = (PipelineCustomScriptStepUpdateDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(
+                        this.stepInfrastructureConfigurationDetails,
+                        other.stepInfrastructureConfigurationDetails)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.stepInfrastructureConfigurationDetails == null
+                                ? 43
+                                : this.stepInfrastructureConfigurationDetails.hashCode());
         return result;
     }
 }

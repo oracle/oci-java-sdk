@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent;
@@ -62,6 +62,19 @@ public interface ManagementAgent extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Datasource creation request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/CreateDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataSource API.
+     */
+    CreateDataSourceResponse createDataSource(CreateDataSourceRequest request);
+
+    /**
      * User creates a new install key as part of this API.
      *
      * @param request The request object containing the details to send
@@ -74,6 +87,19 @@ public interface ManagementAgent extends AutoCloseable {
      */
     CreateManagementAgentInstallKeyResponse createManagementAgentInstallKey(
             CreateManagementAgentInstallKeyRequest request);
+
+    /**
+     * Datasource delete request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/DeleteDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataSource API.
+     */
+    DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request);
 
     /**
      * Deletes a Management Agent resource by identifier
@@ -140,6 +166,19 @@ public interface ManagementAgent extends AutoCloseable {
     GetAutoUpgradableConfigResponse getAutoUpgradableConfig(GetAutoUpgradableConfigRequest request);
 
     /**
+     * Get Datasource details for given Id and given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/GetDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataSource API.
+     */
+    GetDataSourceResponse getDataSource(GetDataSourceRequest request);
+
+    /**
      * Gets complete details of the inventory of a given agent id
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -202,6 +241,19 @@ public interface ManagementAgent extends AutoCloseable {
      */
     ListAvailabilityHistoriesResponse listAvailabilityHistories(
             ListAvailabilityHistoriesRequest request);
+
+    /**
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/ListDataSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDataSources API.
+     */
+    ListDataSourcesResponse listDataSources(ListDataSourcesRequest request);
 
     /**
      * Get supported agent image information
@@ -342,6 +394,19 @@ public interface ManagementAgent extends AutoCloseable {
      */
     SummarizeManagementAgentPluginCountsResponse summarizeManagementAgentPluginCounts(
             SummarizeManagementAgentPluginCountsRequest request);
+
+    /**
+     * Datasource update request to given Management Agent.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/UpdateDataSourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataSource API.
+     */
+    UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request);
 
     /**
      * API to update the console managed properties of the Management Agent.

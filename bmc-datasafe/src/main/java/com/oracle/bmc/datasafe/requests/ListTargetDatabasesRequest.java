@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
@@ -58,34 +58,34 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         return displayName;
     }
     /**
-     * A filter to return the target databases that matches the current state of the target database.
+     * A filter to return only target databases that match the specified lifecycle state.
      */
     private com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState lifecycleState;
 
     /**
-     * A filter to return the target databases that matches the current state of the target database.
+     * A filter to return only target databases that match the specified lifecycle state.
      */
     public com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return target databases that match the database type of the target database.
+     * A filter to return only target databases that match the specified database type.
      */
     private com.oracle.bmc.datasafe.model.DatabaseType databaseType;
 
     /**
-     * A filter to return target databases that match the database type of the target database.
+     * A filter to return only target databases that match the specified database type.
      */
     public com.oracle.bmc.datasafe.model.DatabaseType getDatabaseType() {
         return databaseType;
     }
     /**
-     * A filter to return target databases that match the infrastructure type of the target database.
+     * A filter to return only target databases that match the specified infrastructure type.
      */
     private com.oracle.bmc.datasafe.model.InfrastructureType infrastructureType;
 
     /**
-     * A filter to return target databases that match the infrastructure type of the target database.
+     * A filter to return only target databases that match the specified infrastructure type.
      */
     public com.oracle.bmc.datasafe.model.InfrastructureType getInfrastructureType() {
         return infrastructureType;
@@ -371,12 +371,12 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A filter to return the target databases that matches the current state of the target database.
+         * A filter to return only target databases that match the specified lifecycle state.
          */
         private com.oracle.bmc.datasafe.model.TargetDatabaseLifecycleState lifecycleState = null;
 
         /**
-         * A filter to return the target databases that matches the current state of the target database.
+         * A filter to return only target databases that match the specified lifecycle state.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -387,12 +387,12 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A filter to return target databases that match the database type of the target database.
+         * A filter to return only target databases that match the specified database type.
          */
         private com.oracle.bmc.datasafe.model.DatabaseType databaseType = null;
 
         /**
-         * A filter to return target databases that match the database type of the target database.
+         * A filter to return only target databases that match the specified database type.
          * @param databaseType the value to set
          * @return this builder instance
          */
@@ -402,12 +402,12 @@ public class ListTargetDatabasesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A filter to return target databases that match the infrastructure type of the target database.
+         * A filter to return only target databases that match the specified infrastructure type.
          */
         private com.oracle.bmc.datasafe.model.InfrastructureType infrastructureType = null;
 
         /**
-         * A filter to return target databases that match the infrastructure type of the target database.
+         * A filter to return only target databases that match the specified infrastructure type.
          * @param infrastructureType the value to set
          * @return this builder instance
          */

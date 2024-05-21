@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -70,6 +70,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupRetentionPeriodInDays")
+        private Integer backupRetentionPeriodInDays;
+
+        public Builder backupRetentionPeriodInDays(Integer backupRetentionPeriodInDays) {
+            this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            this.__explicitlySet__.add("backupRetentionPeriodInDays");
             return this;
         }
 
@@ -201,6 +210,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
+        private Boolean isDevTier;
+
+        public Builder isDevTier(Boolean isDevTier) {
+            this.isDevTier = isDevTier;
+            this.__explicitlySet__.add("isDevTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
         private Boolean isDedicated;
 
@@ -216,6 +234,15 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("inMemoryPercentage")
+        private Integer inMemoryPercentage;
+
+        public Builder inMemoryPercentage(Integer inMemoryPercentage) {
+            this.inMemoryPercentage = inMemoryPercentage;
+            this.__explicitlySet__.add("inMemoryPercentage");
             return this;
         }
 
@@ -355,6 +382,24 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
+        private String resourcePoolLeaderId;
+
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
+            this.__explicitlySet__.add("resourcePoolLeaderId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolSummary")
+        private ResourcePoolSummary resourcePoolSummary;
+
+        public Builder resourcePoolSummary(ResourcePoolSummary resourcePoolSummary) {
+            this.resourcePoolSummary = resourcePoolSummary;
+            this.__explicitlySet__.add("resourcePoolSummary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
         private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
 
@@ -381,15 +426,6 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         public Builder isAutoScalingForStorageEnabled(Boolean isAutoScalingForStorageEnabled) {
             this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
             this.__explicitlySet__.add("isAutoScalingForStorageEnabled");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCoreCount")
-        private Integer maxCpuCoreCount;
-
-        public Builder maxCpuCoreCount(Integer maxCpuCoreCount) {
-            this.maxCpuCoreCount = maxCpuCoreCount;
-            this.__explicitlySet__.add("maxCpuCoreCount");
             return this;
         }
 
@@ -472,6 +508,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.ncharacterSet,
                             this.dbName,
                             this.cpuCoreCount,
+                            this.backupRetentionPeriodInDays,
                             this.computeModel,
                             this.computeCount,
                             this.ocpuCount,
@@ -486,8 +523,10 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.licenseModel,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
+                            this.isDevTier,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.inMemoryPercentage,
                             this.isAccessControlEnabled,
                             this.whitelistedIps,
                             this.arePrimaryWhitelistedIpsUsed,
@@ -503,10 +542,11 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.dbVersion,
                             this.customerContacts,
                             this.isMtlsConnectionRequired,
+                            this.resourcePoolLeaderId,
+                            this.resourcePoolSummary,
                             this.autonomousMaintenanceScheduleType,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
-                            this.maxCpuCoreCount,
                             this.databaseEdition,
                             this.dbToolsDetails,
                             this.secretId,
@@ -535,6 +575,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
+            }
+            if (model.wasPropertyExplicitlySet("backupRetentionPeriodInDays")) {
+                this.backupRetentionPeriodInDays(model.getBackupRetentionPeriodInDays());
             }
             if (model.wasPropertyExplicitlySet("computeModel")) {
                 this.computeModel(model.getComputeModel());
@@ -579,11 +622,17 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("isAutoScalingEnabled")) {
                 this.isAutoScalingEnabled(model.getIsAutoScalingEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isDevTier")) {
+                this.isDevTier(model.getIsDevTier());
+            }
             if (model.wasPropertyExplicitlySet("isDedicated")) {
                 this.isDedicated(model.getIsDedicated());
             }
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("inMemoryPercentage")) {
+                this.inMemoryPercentage(model.getInMemoryPercentage());
             }
             if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
                 this.isAccessControlEnabled(model.getIsAccessControlEnabled());
@@ -630,6 +679,12 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("isMtlsConnectionRequired")) {
                 this.isMtlsConnectionRequired(model.getIsMtlsConnectionRequired());
             }
+            if (model.wasPropertyExplicitlySet("resourcePoolLeaderId")) {
+                this.resourcePoolLeaderId(model.getResourcePoolLeaderId());
+            }
+            if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
+                this.resourcePoolSummary(model.getResourcePoolSummary());
+            }
             if (model.wasPropertyExplicitlySet("autonomousMaintenanceScheduleType")) {
                 this.autonomousMaintenanceScheduleType(
                         model.getAutonomousMaintenanceScheduleType());
@@ -639,9 +694,6 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("isAutoScalingForStorageEnabled")) {
                 this.isAutoScalingForStorageEnabled(model.getIsAutoScalingForStorageEnabled());
-            }
-            if (model.wasPropertyExplicitlySet("maxCpuCoreCount")) {
-                this.maxCpuCoreCount(model.getMaxCpuCoreCount());
             }
             if (model.wasPropertyExplicitlySet("databaseEdition")) {
                 this.databaseEdition(model.getDatabaseEdition());
@@ -683,6 +735,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             String ncharacterSet,
             String dbName,
             Integer cpuCoreCount,
+            Integer backupRetentionPeriodInDays,
             ComputeModel computeModel,
             Float computeCount,
             Float ocpuCount,
@@ -697,8 +750,10 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             LicenseModel licenseModel,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
+            Boolean isDevTier,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Integer inMemoryPercentage,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -714,10 +769,11 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
             Boolean isMtlsConnectionRequired,
+            String resourcePoolLeaderId,
+            ResourcePoolSummary resourcePoolSummary,
             AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
-            Integer maxCpuCoreCount,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
             String secretId,
@@ -730,6 +786,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 ncharacterSet,
                 dbName,
                 cpuCoreCount,
+                backupRetentionPeriodInDays,
                 computeModel,
                 computeCount,
                 ocpuCount,
@@ -744,8 +801,10 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 licenseModel,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
+                isDevTier,
                 isDedicated,
                 autonomousContainerDatabaseId,
+                inMemoryPercentage,
                 isAccessControlEnabled,
                 whitelistedIps,
                 arePrimaryWhitelistedIpsUsed,
@@ -761,10 +820,11 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 dbVersion,
                 customerContacts,
                 isMtlsConnectionRequired,
+                resourcePoolLeaderId,
+                resourcePoolSummary,
                 autonomousMaintenanceScheduleType,
                 scheduledOperations,
                 isAutoScalingForStorageEnabled,
-                maxCpuCoreCount,
                 databaseEdition,
                 dbToolsDetails,
                 secretId,

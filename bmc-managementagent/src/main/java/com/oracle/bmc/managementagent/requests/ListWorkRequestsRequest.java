@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.managementagent.requests;
@@ -80,12 +80,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The OperationType of the workRequest
      */
-    private com.oracle.bmc.managementagent.model.OperationTypes type;
+    private java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> type;
 
     /**
      * The OperationType of the workRequest
      */
-    public com.oracle.bmc.managementagent.model.OperationTypes getType() {
+    public java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> getType() {
         return type;
     }
     /**
@@ -302,16 +302,26 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The OperationType of the workRequest
          */
-        private com.oracle.bmc.managementagent.model.OperationTypes type = null;
+        private java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> type = null;
 
         /**
          * The OperationType of the workRequest
          * @param type the value to set
          * @return this builder instance
          */
-        public Builder type(com.oracle.bmc.managementagent.model.OperationTypes type) {
+        public Builder type(
+                java.util.List<com.oracle.bmc.managementagent.model.OperationTypes> type) {
             this.type = type;
             return this;
+        }
+
+        /**
+         * Singular setter. The OperationType of the workRequest
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder type(OperationTypes singularValue) {
+            return this.type(java.util.Arrays.asList(singularValue));
         }
 
         /**

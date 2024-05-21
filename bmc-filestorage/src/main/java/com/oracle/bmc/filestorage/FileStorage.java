@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage;
@@ -90,7 +90,7 @@ public interface FileStorage extends AutoCloseable {
             ChangeFilesystemSnapshotPolicyCompartmentRequest request);
 
     /**
-     * Moves a mount target and its associated export set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     * Moves a mount target and its associated export set or share set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -102,6 +102,22 @@ public interface FileStorage extends AutoCloseable {
      */
     ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
             ChangeMountTargetCompartmentRequest request);
+
+    /**
+     * Moves an outbound connector into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ChangeOutboundConnectorCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOutboundConnectorCompartment API.
+     */
+    ChangeOutboundConnectorCompartmentResponse changeOutboundConnectorCompartment(
+            ChangeOutboundConnectorCompartmentRequest request);
 
     /**
      * Moves a replication and its replication target into a different compartment within the same tenancy.
@@ -236,6 +252,38 @@ public interface FileStorage extends AutoCloseable {
     CreateMountTargetResponse createMountTarget(CreateMountTargetRequest request);
 
     /**
+     * Creates a new outbound connector in the specified compartment.
+     * You can associate an outbound connector with a mount target only when
+     * they exist in the same availability domain.
+     * <p>
+     * For information about access control and compartments, see
+     * [Overview of the IAM
+     * Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
+     * <p>
+     * For information about availability domains, see [Regions and
+     * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
+     * To get a list of availability domains, use the
+     * `ListAvailabilityDomains` operation in the Identity and Access
+     * Management Service API.
+     * <p>
+     * All Oracle Cloud Infrastructure Services resources, including
+     * outbound connectors, get an Oracle-assigned, unique ID called an
+     * Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)).
+     * When you create a resource, you can find its OCID in the response.
+     * You can also retrieve a resource's OCID by using a List API operation on that resource
+     * type, or by viewing the resource in the Console.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CreateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOutboundConnector API.
+     */
+    CreateOutboundConnectorResponse createOutboundConnector(CreateOutboundConnectorRequest request);
+
+    /**
      * Creates a new replication in the specified compartment.
      * Replications are the primary resource that governs the policy of cross-region replication between source
      * and target file systems. Replications are associated with a secondary resource called a {@link ReplicationTarget}
@@ -343,6 +391,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMountTarget API.
      */
     DeleteMountTargetResponse deleteMountTarget(DeleteMountTargetRequest request);
+
+    /**
+     * Deletes the specified outbound connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DeleteOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOutboundConnector API.
+     */
+    DeleteOutboundConnectorResponse deleteOutboundConnector(DeleteOutboundConnectorRequest request);
 
     /**
      * Deletes the specified replication and the the associated replication target.
@@ -461,6 +522,18 @@ public interface FileStorage extends AutoCloseable {
     GetMountTargetResponse getMountTarget(GetMountTargetRequest request);
 
     /**
+     * Gets the specified outbound connector's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/GetOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOutboundConnector API.
+     */
+    GetOutboundConnectorResponse getOutboundConnector(GetOutboundConnectorRequest request);
+
+    /**
      * Gets the specified replication's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -566,6 +639,19 @@ public interface FileStorage extends AutoCloseable {
     ListMountTargetsResponse listMountTargets(ListMountTargetsRequest request);
 
     /**
+     * Lists the outbound connector resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ListOutboundConnectorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOutboundConnectors API.
+     */
+    ListOutboundConnectorsResponse listOutboundConnectors(ListOutboundConnectorsRequest request);
+
+    /**
      * Lists the replication target resources in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -596,6 +682,9 @@ public interface FileStorage extends AutoCloseable {
      * or by file system snapshot policy and file system.
      * <p>
      * If file system ID is not specified, a file system snapshot policy ID and compartment ID must be specified.
+     * <p>
+     * Users can only sort by time created when listing snapshots by file system snapshot policy ID and compartment ID
+     * (sort by name is NOT supported for listing snapshots by policy and compartment).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -708,6 +797,18 @@ public interface FileStorage extends AutoCloseable {
     UpdateMountTargetResponse updateMountTarget(UpdateMountTargetRequest request);
 
     /**
+     * Updates the specified outbound connector's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateOutboundConnectorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOutboundConnector API.
+     */
+    UpdateOutboundConnectorResponse updateOutboundConnector(UpdateOutboundConnectorRequest request);
+
+    /**
      * Updates the information for the specified replication and its associated replication target.
      *
      * @param request The request object containing the details to send
@@ -731,6 +832,21 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSnapshot API.
      */
     UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request);
+
+    /**
+     * Validates keytab contents for the secret details passed on the request or validte keytab contents associated with
+     * the mount target passed in the request. The keytabs are deserialized, the contents are validated for compatibility
+     * and the principal, key version number and encryption type of each entry is provided as part of the response.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ValidateKeyTabsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateKeyTabs API.
+     */
+    ValidateKeyTabsResponse validateKeyTabs(ValidateKeyTabsRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

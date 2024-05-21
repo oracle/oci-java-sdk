@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi;
@@ -141,6 +141,124 @@ public class UsageapiPaginators {
                     public java.util.List<com.oracle.bmc.usageapi.model.CustomTableSummary> apply(
                             ListCustomTablesResponse response) {
                         return response.getCustomTableCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listEmailRecipientsGroups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListEmailRecipientsGroupsResponse> listEmailRecipientsGroupsResponseIterator(
+            final ListEmailRecipientsGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListEmailRecipientsGroupsRequest.Builder, ListEmailRecipientsGroupsRequest,
+                ListEmailRecipientsGroupsResponse>(
+                new java.util.function.Supplier<ListEmailRecipientsGroupsRequest.Builder>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest.Builder get() {
+                        return ListEmailRecipientsGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailRecipientsGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailRecipientsGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailRecipientsGroupsRequest.Builder>,
+                        ListEmailRecipientsGroupsRequest>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailRecipientsGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>() {
+                    @Override
+                    public ListEmailRecipientsGroupsResponse apply(
+                            ListEmailRecipientsGroupsRequest request) {
+                        return client.listEmailRecipientsGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects
+     * contained in responses from the listEmailRecipientsGroups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>
+            listEmailRecipientsGroupsRecordIterator(
+                    final ListEmailRecipientsGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListEmailRecipientsGroupsRequest.Builder, ListEmailRecipientsGroupsRequest,
+                ListEmailRecipientsGroupsResponse,
+                com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>(
+                new java.util.function.Supplier<ListEmailRecipientsGroupsRequest.Builder>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest.Builder get() {
+                        return ListEmailRecipientsGroupsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListEmailRecipientsGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListEmailRecipientsGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListEmailRecipientsGroupsRequest.Builder>,
+                        ListEmailRecipientsGroupsRequest>() {
+                    @Override
+                    public ListEmailRecipientsGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListEmailRecipientsGroupsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailRecipientsGroupsRequest, ListEmailRecipientsGroupsResponse>() {
+                    @Override
+                    public ListEmailRecipientsGroupsResponse apply(
+                            ListEmailRecipientsGroupsRequest request) {
+                        return client.listEmailRecipientsGroups(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListEmailRecipientsGroupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>
+                            apply(ListEmailRecipientsGroupsResponse response) {
+                        return response.getEmailRecipientsGroupCollection().getItems();
                     }
                 });
     }
@@ -474,6 +592,128 @@ public class UsageapiPaginators {
                     public java.util.List<com.oracle.bmc.usageapi.model.ScheduleSummary> apply(
                             ListSchedulesResponse response) {
                         return response.getScheduleCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listUsageCarbonEmissionsQueries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListUsageCarbonEmissionsQueriesResponse>
+            listUsageCarbonEmissionsQueriesResponseIterator(
+                    final ListUsageCarbonEmissionsQueriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListUsageCarbonEmissionsQueriesRequest.Builder,
+                ListUsageCarbonEmissionsQueriesRequest, ListUsageCarbonEmissionsQueriesResponse>(
+                new java.util.function.Supplier<ListUsageCarbonEmissionsQueriesRequest.Builder>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest.Builder get() {
+                        return ListUsageCarbonEmissionsQueriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListUsageCarbonEmissionsQueriesResponse, String>() {
+                    @Override
+                    public String apply(ListUsageCarbonEmissionsQueriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsageCarbonEmissionsQueriesRequest.Builder>,
+                        ListUsageCarbonEmissionsQueriesRequest>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsageCarbonEmissionsQueriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageCarbonEmissionsQueriesRequest,
+                        ListUsageCarbonEmissionsQueriesResponse>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesResponse apply(
+                            ListUsageCarbonEmissionsQueriesRequest request) {
+                        return client.listUsageCarbonEmissionsQueries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects
+     * contained in responses from the listUsageCarbonEmissionsQueries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>
+            listUsageCarbonEmissionsQueriesRecordIterator(
+                    final ListUsageCarbonEmissionsQueriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListUsageCarbonEmissionsQueriesRequest.Builder,
+                ListUsageCarbonEmissionsQueriesRequest, ListUsageCarbonEmissionsQueriesResponse,
+                com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>(
+                new java.util.function.Supplier<ListUsageCarbonEmissionsQueriesRequest.Builder>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest.Builder get() {
+                        return ListUsageCarbonEmissionsQueriesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListUsageCarbonEmissionsQueriesResponse, String>() {
+                    @Override
+                    public String apply(ListUsageCarbonEmissionsQueriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListUsageCarbonEmissionsQueriesRequest.Builder>,
+                        ListUsageCarbonEmissionsQueriesRequest>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListUsageCarbonEmissionsQueriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageCarbonEmissionsQueriesRequest,
+                        ListUsageCarbonEmissionsQueriesResponse>() {
+                    @Override
+                    public ListUsageCarbonEmissionsQueriesResponse apply(
+                            ListUsageCarbonEmissionsQueriesRequest request) {
+                        return client.listUsageCarbonEmissionsQueries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListUsageCarbonEmissionsQueriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>
+                            apply(ListUsageCarbonEmissionsQueriesResponse response) {
+                        return response.getUsageCarbonEmissionsQueryCollection().getItems();
                     }
                 });
     }

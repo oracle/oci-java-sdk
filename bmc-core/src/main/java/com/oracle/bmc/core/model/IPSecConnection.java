@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -52,7 +52,8 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
         "cpeLocalIdentifier",
         "cpeLocalIdentifierType",
         "staticRoutes",
-        "timeCreated"
+        "timeCreated",
+        "transportType"
     })
     public IPSecConnection(
             String compartmentId,
@@ -66,7 +67,8 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
             String cpeLocalIdentifier,
             CpeLocalIdentifierType cpeLocalIdentifierType,
             java.util.List<String> staticRoutes,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            TransportType transportType) {
         super();
         this.compartmentId = compartmentId;
         this.cpeId = cpeId;
@@ -80,6 +82,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
         this.cpeLocalIdentifierType = cpeLocalIdentifierType;
         this.staticRoutes = staticRoutes;
         this.timeCreated = timeCreated;
+        this.transportType = transportType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -361,6 +364,24 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /**
+         * The transport type used for the IPSec connection.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+        private TransportType transportType;
+
+        /**
+         * The transport type used for the IPSec connection.
+         *
+         * @param transportType the value to set
+         * @return this builder
+         **/
+        public Builder transportType(TransportType transportType) {
+            this.transportType = transportType;
+            this.__explicitlySet__.add("transportType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -379,7 +400,8 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
                             this.cpeLocalIdentifier,
                             this.cpeLocalIdentifierType,
                             this.staticRoutes,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.transportType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -423,6 +445,9 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("transportType")) {
+                this.transportType(model.getTransportType());
             }
             return this;
         }
@@ -791,6 +816,71 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
         return timeCreated;
     }
 
+    /**
+     * The transport type used for the IPSec connection.
+     *
+     **/
+    public enum TransportType {
+        Internet("INTERNET"),
+        Fastconnect("FASTCONNECT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TransportType.class);
+
+        private final String value;
+        private static java.util.Map<String, TransportType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TransportType v : TransportType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TransportType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TransportType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TransportType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The transport type used for the IPSec connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("transportType")
+    private final TransportType transportType;
+
+    /**
+     * The transport type used for the IPSec connection.
+     *
+     * @return the value
+     **/
+    public TransportType getTransportType() {
+        return transportType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -817,6 +907,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
         sb.append(", cpeLocalIdentifierType=").append(String.valueOf(this.cpeLocalIdentifierType));
         sb.append(", staticRoutes=").append(String.valueOf(this.staticRoutes));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(")");
         return sb.toString();
     }
@@ -844,6 +935,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
                         this.cpeLocalIdentifierType, other.cpeLocalIdentifierType)
                 && java.util.Objects.equals(this.staticRoutes, other.staticRoutes)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.transportType, other.transportType)
                 && super.equals(other);
     }
 
@@ -875,6 +967,9 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
                                 : this.cpeLocalIdentifierType.hashCode());
         result = (result * PRIME) + (this.staticRoutes == null ? 43 : this.staticRoutes.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.transportType == null ? 43 : this.transportType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

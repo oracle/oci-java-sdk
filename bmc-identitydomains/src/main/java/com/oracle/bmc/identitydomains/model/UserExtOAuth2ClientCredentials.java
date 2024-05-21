@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * A list of oauth2 client credentials corresponding to user.
+ * A list of OAuth2 client credentials corresponding to a user.
  * <p>
  **Added In:** 2012271618
  * <p>
@@ -45,7 +45,7 @@ public final class UserExtOAuth2ClientCredentials
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier of the User's oAuth2 client credential.
+         * The user's OAuth2 client credential identifier.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -63,7 +63,7 @@ public final class UserExtOAuth2ClientCredentials
         private String value;
 
         /**
-         * The identifier of the User's oAuth2 client credential.
+         * The user's OAuth2 client credential identifier.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -85,7 +85,7 @@ public final class UserExtOAuth2ClientCredentials
             return this;
         }
         /**
-         * Ocid of the User's oAuth2 client credential.
+         * The user's OAuth2 client credential OCID.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -103,7 +103,7 @@ public final class UserExtOAuth2ClientCredentials
         private String ocid;
 
         /**
-         * Ocid of the User's oAuth2 client credential.
+         * The user's OAuth2 client credential OCID.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -125,7 +125,7 @@ public final class UserExtOAuth2ClientCredentials
             return this;
         }
         /**
-         * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs
+         * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -142,7 +142,7 @@ public final class UserExtOAuth2ClientCredentials
         private String ref;
 
         /**
-         * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs
+         * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs.
          * <p>
          **Added In:** 2012271618
          * <p>
@@ -202,7 +202,7 @@ public final class UserExtOAuth2ClientCredentials
     }
 
     /**
-     * The identifier of the User's oAuth2 client credential.
+     * The user's OAuth2 client credential identifier.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -220,7 +220,7 @@ public final class UserExtOAuth2ClientCredentials
     private final String value;
 
     /**
-     * The identifier of the User's oAuth2 client credential.
+     * The user's OAuth2 client credential identifier.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -240,7 +240,7 @@ public final class UserExtOAuth2ClientCredentials
     }
 
     /**
-     * Ocid of the User's oAuth2 client credential.
+     * The user's OAuth2 client credential OCID.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -258,7 +258,7 @@ public final class UserExtOAuth2ClientCredentials
     private final String ocid;
 
     /**
-     * Ocid of the User's oAuth2 client credential.
+     * The user's OAuth2 client credential OCID.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -278,7 +278,7 @@ public final class UserExtOAuth2ClientCredentials
     }
 
     /**
-     * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs
+     * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs.
      * <p>
      **Added In:** 2012271618
      * <p>
@@ -295,7 +295,7 @@ public final class UserExtOAuth2ClientCredentials
     private final String ref;
 
     /**
-     * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs
+     * The URI of the corresponding OAuth2ClientCredential resource to which the user belongs.
      * <p>
      **Added In:** 2012271618
      * <p>

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.filestorage.model;
@@ -21,14 +21,32 @@ package com.oracle.bmc.filestorage.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateExportDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"exportOptions"})
-    public UpdateExportDetails(java.util.List<ClientOptions> exportOptions) {
+    @java.beans.ConstructorProperties({"isIdmapGroupsForSysAuth", "exportOptions"})
+    public UpdateExportDetails(
+            Boolean isIdmapGroupsForSysAuth, java.util.List<ClientOptions> exportOptions) {
         super();
+        this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
         this.exportOptions = exportOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
+        private Boolean isIdmapGroupsForSysAuth;
+
+        /**
+         * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+         * @param isIdmapGroupsForSysAuth the value to set
+         * @return this builder
+         **/
+        public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
+            this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
+            this.__explicitlySet__.add("isIdmapGroupsForSysAuth");
+            return this;
+        }
         /**
          * New export options for the export.
          * <p>
@@ -60,7 +78,8 @@ public final class UpdateExportDetails extends com.oracle.bmc.http.internal.Expl
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateExportDetails build() {
-            UpdateExportDetails model = new UpdateExportDetails(this.exportOptions);
+            UpdateExportDetails model =
+                    new UpdateExportDetails(this.isIdmapGroupsForSysAuth, this.exportOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -69,6 +88,9 @@ public final class UpdateExportDetails extends com.oracle.bmc.http.internal.Expl
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateExportDetails model) {
+            if (model.wasPropertyExplicitlySet("isIdmapGroupsForSysAuth")) {
+                this.isIdmapGroupsForSysAuth(model.getIsIdmapGroupsForSysAuth());
+            }
             if (model.wasPropertyExplicitlySet("exportOptions")) {
                 this.exportOptions(model.getExportOptions());
             }
@@ -85,6 +107,20 @@ public final class UpdateExportDetails extends com.oracle.bmc.http.internal.Expl
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
+    private final Boolean isIdmapGroupsForSysAuth;
+
+    /**
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     * @return the value
+     **/
+    public Boolean getIsIdmapGroupsForSysAuth() {
+        return isIdmapGroupsForSysAuth;
     }
 
     /**
@@ -125,7 +161,8 @@ public final class UpdateExportDetails extends com.oracle.bmc.http.internal.Expl
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateExportDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("exportOptions=").append(String.valueOf(this.exportOptions));
+        sb.append("isIdmapGroupsForSysAuth=").append(String.valueOf(this.isIdmapGroupsForSysAuth));
+        sb.append(", exportOptions=").append(String.valueOf(this.exportOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -140,7 +177,8 @@ public final class UpdateExportDetails extends com.oracle.bmc.http.internal.Expl
         }
 
         UpdateExportDetails other = (UpdateExportDetails) o;
-        return java.util.Objects.equals(this.exportOptions, other.exportOptions)
+        return java.util.Objects.equals(this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
+                && java.util.Objects.equals(this.exportOptions, other.exportOptions)
                 && super.equals(other);
     }
 
@@ -148,6 +186,11 @@ public final class UpdateExportDetails extends com.oracle.bmc.http.internal.Expl
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.isIdmapGroupsForSysAuth == null
+                                ? 43
+                                : this.isIdmapGroupsForSysAuth.hashCode());
         result =
                 (result * PRIME)
                         + (this.exportOptions == null ? 43 : this.exportOptions.hashCode());

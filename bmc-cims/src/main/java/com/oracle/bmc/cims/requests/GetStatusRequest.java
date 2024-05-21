@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.requests;
@@ -12,15 +12,15 @@ import com.oracle.bmc.cims.model.*;
 public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The system that generated the support ticket, such as My Oracle Support.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
-    private String source;
+    private String opcRequestId;
 
     /**
-     * The system that generated the support ticket, such as My Oracle Support.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
-    public String getSource() {
-        return source;
+    public String getOpcRequestId() {
+        return opcRequestId;
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
@@ -32,17 +32,6 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     public String getOcid() {
         return ocid;
-    }
-    /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     */
-    private String opcRequestId;
-
-    /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     */
-    public String getOpcRequestId() {
-        return opcRequestId;
     }
     /**
      * The region of the tenancy.
@@ -64,17 +53,17 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The system that generated the support ticket, such as My Oracle Support.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
-        private String source = null;
+        private String opcRequestId = null;
 
         /**
-         * The system that generated the support ticket, such as My Oracle Support.
-         * @param source the value to set
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * @param opcRequestId the value to set
          * @return this builder instance
          */
-        public Builder source(String source) {
-            this.source = source;
+        public Builder opcRequestId(String opcRequestId) {
+            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -90,21 +79,6 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          */
         public Builder ocid(String ocid) {
             this.ocid = ocid;
-            return this;
-        }
-
-        /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         */
-        private String opcRequestId = null;
-
-        /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         * @param opcRequestId the value to set
-         * @return this builder instance
-         */
-        public Builder opcRequestId(String opcRequestId) {
-            this.opcRequestId = opcRequestId;
             return this;
         }
 
@@ -151,9 +125,8 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          * @return this builder instance
          */
         public Builder copy(GetStatusRequest o) {
-            source(o.getSource());
-            ocid(o.getOcid());
             opcRequestId(o.getOpcRequestId());
+            ocid(o.getOcid());
             homeregion(o.getHomeregion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -187,12 +160,11 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
          */
         public GetStatusRequest buildWithoutInvocationCallback() {
             GetStatusRequest request = new GetStatusRequest();
-            request.source = source;
-            request.ocid = ocid;
             request.opcRequestId = opcRequestId;
+            request.ocid = ocid;
             request.homeregion = homeregion;
             return request;
-            // new GetStatusRequest(source, ocid, opcRequestId, homeregion);
+            // new GetStatusRequest(opcRequestId, ocid, homeregion);
         }
     }
 
@@ -201,11 +173,7 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder()
-                .source(source)
-                .ocid(ocid)
-                .opcRequestId(opcRequestId)
-                .homeregion(homeregion);
+        return new Builder().opcRequestId(opcRequestId).ocid(ocid).homeregion(homeregion);
     }
 
     /**
@@ -221,9 +189,8 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",source=").append(String.valueOf(this.source));
-        sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
         sb.append(")");
         return sb.toString();
@@ -240,9 +207,8 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         GetStatusRequest other = (GetStatusRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.source, other.source)
-                && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.homeregion, other.homeregion);
     }
 
@@ -250,9 +216,8 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.source == null ? 43 : this.source.hashCode());
-        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());
         return result;
     }

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
+ * The details of the Vault that you wish to backup.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -39,10 +39,17 @@ public final class BackupVaultDetails extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("backupLocation");
             return this;
         }
-
+        /**
+         * A Boolean value that indicates whether the Keys should be included during backing up the Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludeKeys")
         private Boolean isIncludeKeys;
 
+        /**
+         * A Boolean value that indicates whether the Keys should be included during backing up the Vault.
+         * @param isIncludeKeys the value to set
+         * @return this builder
+         **/
         public Builder isIncludeKeys(Boolean isIncludeKeys) {
             this.isIncludeKeys = isIncludeKeys;
             this.__explicitlySet__.add("isIncludeKeys");
@@ -91,9 +98,16 @@ public final class BackupVaultDetails extends com.oracle.bmc.http.internal.Expli
         return backupLocation;
     }
 
+    /**
+     * A Boolean value that indicates whether the Keys should be included during backing up the Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludeKeys")
     private final Boolean isIncludeKeys;
 
+    /**
+     * A Boolean value that indicates whether the Keys should be included during backing up the Vault.
+     * @return the value
+     **/
     public Boolean getIsIncludeKeys() {
         return isIncludeKeys;
     }

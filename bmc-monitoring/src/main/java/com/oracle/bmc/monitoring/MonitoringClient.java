@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring;
@@ -430,7 +430,8 @@ public class MonitoringClient implements Monitoring {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -630,6 +631,49 @@ public class MonitoringClient implements Monitoring {
     }
 
     @Override
+    public CreateAlarmSuppressionResponse createAlarmSuppression(
+            CreateAlarmSuppressionRequest request) {
+        LOG.trace("Called createAlarmSuppression");
+        final CreateAlarmSuppressionRequest interceptedRequest =
+                CreateAlarmSuppressionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAlarmSuppressionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "CreateAlarmSuppression",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/CreateAlarmSuppression");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateAlarmSuppressionResponse>
+                transformer =
+                        CreateAlarmSuppressionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateAlarmSuppressionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request) {
         LOG.trace("Called deleteAlarm");
         final DeleteAlarmRequest interceptedRequest =
@@ -649,6 +693,45 @@ public class MonitoringClient implements Monitoring {
                         "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/DeleteAlarm");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteAlarmResponse> transformer =
                 DeleteAlarmConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteAlarmSuppressionResponse deleteAlarmSuppression(
+            DeleteAlarmSuppressionRequest request) {
+        LOG.trace("Called deleteAlarmSuppression");
+        final DeleteAlarmSuppressionRequest interceptedRequest =
+                DeleteAlarmSuppressionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAlarmSuppressionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "DeleteAlarmSuppression",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/DeleteAlarmSuppression");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteAlarmSuppressionResponse>
+                transformer =
+                        DeleteAlarmSuppressionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -737,6 +820,81 @@ public class MonitoringClient implements Monitoring {
     }
 
     @Override
+    public GetAlarmSuppressionResponse getAlarmSuppression(GetAlarmSuppressionRequest request) {
+        LOG.trace("Called getAlarmSuppression");
+        final GetAlarmSuppressionRequest interceptedRequest =
+                GetAlarmSuppressionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAlarmSuppressionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "GetAlarmSuppression",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/GetAlarmSuppression");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAlarmSuppressionResponse>
+                transformer =
+                        GetAlarmSuppressionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListAlarmSuppressionsResponse listAlarmSuppressions(
+            ListAlarmSuppressionsRequest request) {
+        LOG.trace("Called listAlarmSuppressions");
+        final ListAlarmSuppressionsRequest interceptedRequest =
+                ListAlarmSuppressionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAlarmSuppressionsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "ListAlarmSuppressions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppressionCollection/ListAlarmSuppressions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAlarmSuppressionsResponse>
+                transformer =
+                        ListAlarmSuppressionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListAlarmsResponse listAlarms(ListAlarmsRequest request) {
         LOG.trace("Called listAlarms");
         final ListAlarmsRequest interceptedRequest = ListAlarmsConverter.interceptRequest(request);
@@ -780,7 +938,7 @@ public class MonitoringClient implements Monitoring {
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
@@ -960,6 +1118,50 @@ public class MonitoringClient implements Monitoring {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getRetrieveDimensionStatesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeAlarmSuppressionHistoryResponse summarizeAlarmSuppressionHistory(
+            SummarizeAlarmSuppressionHistoryRequest request) {
+        LOG.trace("Called summarizeAlarmSuppressionHistory");
+        final SummarizeAlarmSuppressionHistoryRequest interceptedRequest =
+                SummarizeAlarmSuppressionHistoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeAlarmSuppressionHistoryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Monitoring",
+                        "SummarizeAlarmSuppressionHistory",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSuppression/SummarizeAlarmSuppressionHistory");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SummarizeAlarmSuppressionHistoryResponse>
+                transformer =
+                        SummarizeAlarmSuppressionHistoryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSummarizeAlarmSuppressionHistoryDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

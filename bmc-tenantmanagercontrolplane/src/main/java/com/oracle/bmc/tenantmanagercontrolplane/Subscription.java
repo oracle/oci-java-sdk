@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane;
@@ -11,7 +11,7 @@ import com.oracle.bmc.tenantmanagercontrolplane.responses.*;
  * Use the Organizations API to consolidate multiple OCI tenancies into an organization, and centrally manage your tenancies and organization resources. For more information, see [Organization Management Overview](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/organization_management_overview.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public interface Subscription extends AutoCloseable {
 
     /**
@@ -98,7 +98,7 @@ public interface Subscription extends AutoCloseable {
     GetAssignedSubscriptionResponse getAssignedSubscription(GetAssignedSubscriptionRequest request);
 
     /**
-     * Gets the subscription details by subscriptionId.
+     * Gets the subscription details by subscription ID.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -120,6 +120,19 @@ public interface Subscription extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetSubscriptionMappingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubscriptionMapping API.
      */
     GetSubscriptionMappingResponse getSubscriptionMapping(GetSubscriptionMappingRequest request);
+
+    /**
+     * List line item summaries that a assigned subscription owns.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListAssignedSubscriptionLineItemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssignedSubscriptionLineItems API.
+     */
+    ListAssignedSubscriptionLineItemsResponse listAssignedSubscriptionLineItems(
+            ListAssignedSubscriptionLineItemsRequest request);
 
     /**
      * Lists subscriptions that are consumed by the compartment. Only the root compartment is allowed.
@@ -145,6 +158,19 @@ public interface Subscription extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListAvailableRegionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAvailableRegions API.
      */
     ListAvailableRegionsResponse listAvailableRegions(ListAvailableRegionsRequest request);
+
+    /**
+     * Lists the line items in a subscription.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListSubscriptionLineItemsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSubscriptionLineItems API.
+     */
+    ListSubscriptionLineItemsResponse listSubscriptionLineItems(
+            ListSubscriptionLineItemsRequest request);
 
     /**
      * Lists the subscription mappings for all the subscriptions owned by a given compartmentId. Only the root compartment is allowed.

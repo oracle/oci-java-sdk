@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fusionapps.model;
@@ -37,6 +37,8 @@ public final class ScheduledActivitySummary
         "timeAccepted",
         "timeUpdated",
         "lifecycleDetails",
+        "scheduledActivityPhase",
+        "scheduledActivityAssociationId",
         "freeformTags",
         "definedTags"
     })
@@ -55,6 +57,8 @@ public final class ScheduledActivitySummary
             java.util.Date timeAccepted,
             java.util.Date timeUpdated,
             String lifecycleDetails,
+            ScheduledActivity.ScheduledActivityPhase scheduledActivityPhase,
+            String scheduledActivityAssociationId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -72,6 +76,8 @@ public final class ScheduledActivitySummary
         this.timeAccepted = timeAccepted;
         this.timeUpdated = timeUpdated;
         this.lifecycleDetails = lifecycleDetails;
+        this.scheduledActivityPhase = scheduledActivityPhase;
+        this.scheduledActivityAssociationId = scheduledActivityAssociationId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -304,6 +310,39 @@ public final class ScheduledActivitySummary
             return this;
         }
         /**
+         * A property describing the phase of the scheduled activity.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityPhase")
+        private ScheduledActivity.ScheduledActivityPhase scheduledActivityPhase;
+
+        /**
+         * A property describing the phase of the scheduled activity.
+         * @param scheduledActivityPhase the value to set
+         * @return this builder
+         **/
+        public Builder scheduledActivityPhase(
+                ScheduledActivity.ScheduledActivityPhase scheduledActivityPhase) {
+            this.scheduledActivityPhase = scheduledActivityPhase;
+            this.__explicitlySet__.add("scheduledActivityPhase");
+            return this;
+        }
+        /**
+         * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityAssociationId")
+        private String scheduledActivityAssociationId;
+
+        /**
+         * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+         * @param scheduledActivityAssociationId the value to set
+         * @return this builder
+         **/
+        public Builder scheduledActivityAssociationId(String scheduledActivityAssociationId) {
+            this.scheduledActivityAssociationId = scheduledActivityAssociationId;
+            this.__explicitlySet__.add("scheduledActivityAssociationId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -365,6 +404,8 @@ public final class ScheduledActivitySummary
                             this.timeAccepted,
                             this.timeUpdated,
                             this.lifecycleDetails,
+                            this.scheduledActivityPhase,
+                            this.scheduledActivityAssociationId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -416,6 +457,12 @@ public final class ScheduledActivitySummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledActivityPhase")) {
+                this.scheduledActivityPhase(model.getScheduledActivityPhase());
+            }
+            if (model.wasPropertyExplicitlySet("scheduledActivityAssociationId")) {
+                this.scheduledActivityAssociationId(model.getScheduledActivityAssociationId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -635,6 +682,34 @@ public final class ScheduledActivitySummary
     }
 
     /**
+     * A property describing the phase of the scheduled activity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityPhase")
+    private final ScheduledActivity.ScheduledActivityPhase scheduledActivityPhase;
+
+    /**
+     * A property describing the phase of the scheduled activity.
+     * @return the value
+     **/
+    public ScheduledActivity.ScheduledActivityPhase getScheduledActivityPhase() {
+        return scheduledActivityPhase;
+    }
+
+    /**
+     * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityAssociationId")
+    private final String scheduledActivityAssociationId;
+
+    /**
+     * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+     * @return the value
+     **/
+    public String getScheduledActivityAssociationId() {
+        return scheduledActivityAssociationId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -698,6 +773,9 @@ public final class ScheduledActivitySummary
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", scheduledActivityPhase=").append(String.valueOf(this.scheduledActivityPhase));
+        sb.append(", scheduledActivityAssociationId=")
+                .append(String.valueOf(this.scheduledActivityAssociationId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -728,6 +806,10 @@ public final class ScheduledActivitySummary
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.scheduledActivityPhase, other.scheduledActivityPhase)
+                && java.util.Objects.equals(
+                        this.scheduledActivityAssociationId, other.scheduledActivityAssociationId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -771,6 +853,16 @@ public final class ScheduledActivitySummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledActivityPhase == null
+                                ? 43
+                                : this.scheduledActivityPhase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.scheduledActivityAssociationId == null
+                                ? 43
+                                : this.scheduledActivityAssociationId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

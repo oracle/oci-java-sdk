@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -88,7 +88,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * The type of destination for the rule. the type is required if {@code direction} = {@code EGRESS}.
+         * The type of destination for the rule.
          * <p>
          * Allowed values:
          * <p>
@@ -102,7 +102,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlyS
         private DestinationType destinationType;
 
         /**
-         * The type of destination for the rule. the type is required if {@code direction} = {@code EGRESS}.
+         * The type of destination for the rule.
          * <p>
          * Allowed values:
          * <p>
@@ -358,7 +358,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The type of destination for the rule. the type is required if {@code direction} = {@code EGRESS}.
+     * The type of destination for the rule.
      * <p>
      * Allowed values:
      * <p>
@@ -414,7 +414,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     };
     /**
-     * The type of destination for the rule. the type is required if {@code direction} = {@code EGRESS}.
+     * The type of destination for the rule.
      * <p>
      * Allowed values:
      * <p>
@@ -428,7 +428,7 @@ public final class DrgRouteRule extends com.oracle.bmc.http.internal.ExplicitlyS
     private final DestinationType destinationType;
 
     /**
-     * The type of destination for the rule. the type is required if {@code direction} = {@code EGRESS}.
+     * The type of destination for the rule.
      * <p>
      * Allowed values:
      * <p>

@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Problem Definition.
+ * Problems are at the core of Cloud Guard\u2019s functionality. A Problem resource is created whenever an action or a configuration on a resource triggers a rule in a detector that\u2019s attached to the target containing the compartment where the resource is located. Each Problem resource contains all the details for a single problem. This is the information for the problem that appears on the Cloud Guard Problems page.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -47,7 +47,8 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "comment",
         "impactedResourceId",
         "impactedResourceName",
-        "impactedResourceType"
+        "impactedResourceType",
+        "locks"
     })
     public Problem(
             String id,
@@ -77,7 +78,8 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             String comment,
             String impactedResourceId,
             String impactedResourceName,
-            String impactedResourceType) {
+            String impactedResourceType,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -107,18 +109,19 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.impactedResourceId = impactedResourceId;
         this.impactedResourceName = impactedResourceName;
         this.impactedResourceType = impactedResourceType;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier that is immutable on creation
+         * Unique identifier that can't be changed after creation
          * @param id the value to set
          * @return this builder
          **/
@@ -128,13 +131,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier where the resource is created
+         * Compartment OCID where the resource is created
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -144,13 +147,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Identifier of the rule
+         * Unique identifier of the detector rule that triggered the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
-         * Identifier of the rule
+         * Unique identifier of the detector rule that triggered the problem
          * @param detectorRuleId the value to set
          * @return this builder
          **/
@@ -192,13 +195,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The Risk Level
+         * The risk level for the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
-         * The Risk Level
+         * The risk level for the problem
          * @param riskLevel the value to set
          * @return this builder
          **/
@@ -208,13 +211,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Risk Score for the problem
+         * The risk score for the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
-         * Risk Score for the problem
+         * The risk score for the problem
          * @param riskScore the value to set
          * @return this builder
          **/
@@ -224,13 +227,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The date and time for the peak risk score that is observed. Format defined by RFC3339.
+         * The date and time for the peak risk score that is observed for the problem. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreDate")
         private String peakRiskScoreDate;
 
         /**
-         * The date and time for the peak risk score that is observed. Format defined by RFC3339.
+         * The date and time for the peak risk score that is observed for the problem. Format defined by RFC3339.
          * @param peakRiskScoreDate the value to set
          * @return this builder
          **/
@@ -288,13 +291,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Identifier of the Resource
+         * Unique identifier of the resource affected by the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Identifier of the Resource
+         * Unique identifier of the resource affected by the problem
          * @param resourceId the value to set
          * @return this builder
          **/
@@ -304,13 +307,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * DisplayName of the Resource
+         * Display name of the affected resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
-         * DisplayName of the Resource
+         * Display name of the affected resource
          * @param resourceName the value to set
          * @return this builder
          **/
@@ -320,13 +323,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Type of the Resource
+         * Type of the affected resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * Type of the Resource
+         * Type of the affected resource
          * @param resourceType the value to set
          * @return this builder
          **/
@@ -336,13 +339,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * user defined labels on the problem
+         * User-defined labels on the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * user defined labels on the problem
+         * User-defined labels on the problem
          * @param labels the value to set
          * @return this builder
          **/
@@ -384,13 +387,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The current state of the Problem.
+         * The current lifecycle state of the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ProblemLifecycleState lifecycleState;
 
         /**
-         * The current state of the Problem.
+         * The current lifecycle state of the problem
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -400,13 +403,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+         * Additional details on the substate of the lifecycle state
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private ProblemLifecycleDetail lifecycleDetail;
 
         /**
-         * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+         * Additional details on the substate of the lifecycle state
          * @param lifecycleDetail the value to set
          * @return this builder
          **/
@@ -416,13 +419,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Id of the detector associated with the Problem.
+         * Unique identifier of the detector rule that triggered the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
         private DetectorEnum detectorId;
 
         /**
-         * Id of the detector associated with the Problem.
+         * Unique identifier of the detector rule that triggered the problem
          * @param detectorId the value to set
          * @return this builder
          **/
@@ -432,13 +435,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * targetId of the problem
+         * Unique identifier of the target associated with the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * targetId of the problem
+         * Unique identifier of the target associated with the problem
          * @param targetId the value to set
          * @return this builder
          **/
@@ -448,13 +451,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * The additional details of the Problem
+         * The additional details of the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
         /**
-         * The additional details of the Problem
+         * The additional details of the problem
          * @param additionalDetails the value to set
          * @return this builder
          **/
@@ -496,13 +499,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * User Comments
+         * User comments on the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
-         * User Comments
+         * User comments on the problem
          * @param comment the value to set
          * @return this builder
          **/
@@ -512,13 +515,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Identifier of the impacted Resource
+         * Unique identifier of the resource impacted by the problem
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceId")
         private String impactedResourceId;
 
         /**
-         * Identifier of the impacted Resource
+         * Unique identifier of the resource impacted by the problem
          * @param impactedResourceId the value to set
          * @return this builder
          **/
@@ -528,13 +531,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * DisplayName of the impacted  Resource
+         * Display name of the impacted resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceName")
         private String impactedResourceName;
 
         /**
-         * DisplayName of the impacted  Resource
+         * Display name of the impacted resource
          * @param impactedResourceName the value to set
          * @return this builder
          **/
@@ -544,19 +547,35 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             return this;
         }
         /**
-         * Type of the impacted Resource
+         * Type of the impacted resource
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceType")
         private String impactedResourceType;
 
         /**
-         * Type of the impacted Resource
+         * Type of the impacted resource
          * @param impactedResourceType the value to set
          * @return this builder
          **/
         public Builder impactedResourceType(String impactedResourceType) {
             this.impactedResourceType = impactedResourceType;
             this.__explicitlySet__.add("impactedResourceType");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
 
@@ -593,7 +612,8 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                             this.comment,
                             this.impactedResourceId,
                             this.impactedResourceName,
-                            this.impactedResourceType);
+                            this.impactedResourceType,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -686,6 +706,9 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             if (model.wasPropertyExplicitlySet("impactedResourceType")) {
                 this.impactedResourceType(model.getImpactedResourceType());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -702,13 +725,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      * @return the value
      **/
     public String getId() {
@@ -716,13 +739,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * @return the value
      **/
     public String getCompartmentId() {
@@ -730,13 +753,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Identifier of the rule
+     * Unique identifier of the detector rule that triggered the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
-     * Identifier of the rule
+     * Unique identifier of the detector rule that triggered the problem
      * @return the value
      **/
     public String getDetectorRuleId() {
@@ -772,13 +795,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The Risk Level
+     * The risk level for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
-     * The Risk Level
+     * The risk level for the problem
      * @return the value
      **/
     public RiskLevel getRiskLevel() {
@@ -786,13 +809,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Risk Score for the problem
+     * The risk score for the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
-     * Risk Score for the problem
+     * The risk score for the problem
      * @return the value
      **/
     public Double getRiskScore() {
@@ -800,13 +823,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The date and time for the peak risk score that is observed. Format defined by RFC3339.
+     * The date and time for the peak risk score that is observed for the problem. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peakRiskScoreDate")
     private final String peakRiskScoreDate;
 
     /**
-     * The date and time for the peak risk score that is observed. Format defined by RFC3339.
+     * The date and time for the peak risk score that is observed for the problem. Format defined by RFC3339.
      * @return the value
      **/
     public String getPeakRiskScoreDate() {
@@ -856,13 +879,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Identifier of the Resource
+     * Unique identifier of the resource affected by the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Identifier of the Resource
+     * Unique identifier of the resource affected by the problem
      * @return the value
      **/
     public String getResourceId() {
@@ -870,13 +893,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * DisplayName of the Resource
+     * Display name of the affected resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
-     * DisplayName of the Resource
+     * Display name of the affected resource
      * @return the value
      **/
     public String getResourceName() {
@@ -884,13 +907,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Type of the Resource
+     * Type of the affected resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * Type of the Resource
+     * Type of the affected resource
      * @return the value
      **/
     public String getResourceType() {
@@ -898,13 +921,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * user defined labels on the problem
+     * User-defined labels on the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * user defined labels on the problem
+     * User-defined labels on the problem
      * @return the value
      **/
     public java.util.List<String> getLabels() {
@@ -940,13 +963,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The current state of the Problem.
+     * The current lifecycle state of the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ProblemLifecycleState lifecycleState;
 
     /**
-     * The current state of the Problem.
+     * The current lifecycle state of the problem
      * @return the value
      **/
     public ProblemLifecycleState getLifecycleState() {
@@ -954,13 +977,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+     * Additional details on the substate of the lifecycle state
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final ProblemLifecycleDetail lifecycleDetail;
 
     /**
-     * The lifecycleDetail will give more detail on the substate of the lifecycleState.
+     * Additional details on the substate of the lifecycle state
      * @return the value
      **/
     public ProblemLifecycleDetail getLifecycleDetail() {
@@ -968,13 +991,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Id of the detector associated with the Problem.
+     * Unique identifier of the detector rule that triggered the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
     private final DetectorEnum detectorId;
 
     /**
-     * Id of the detector associated with the Problem.
+     * Unique identifier of the detector rule that triggered the problem
      * @return the value
      **/
     public DetectorEnum getDetectorId() {
@@ -982,13 +1005,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * targetId of the problem
+     * Unique identifier of the target associated with the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * targetId of the problem
+     * Unique identifier of the target associated with the problem
      * @return the value
      **/
     public String getTargetId() {
@@ -996,13 +1019,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * The additional details of the Problem
+     * The additional details of the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
     /**
-     * The additional details of the Problem
+     * The additional details of the problem
      * @return the value
      **/
     public java.util.Map<String, String> getAdditionalDetails() {
@@ -1038,13 +1061,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * User Comments
+     * User comments on the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
-     * User Comments
+     * User comments on the problem
      * @return the value
      **/
     public String getComment() {
@@ -1052,13 +1075,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Identifier of the impacted Resource
+     * Unique identifier of the resource impacted by the problem
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceId")
     private final String impactedResourceId;
 
     /**
-     * Identifier of the impacted Resource
+     * Unique identifier of the resource impacted by the problem
      * @return the value
      **/
     public String getImpactedResourceId() {
@@ -1066,13 +1089,13 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * DisplayName of the impacted  Resource
+     * Display name of the impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceName")
     private final String impactedResourceName;
 
     /**
-     * DisplayName of the impacted  Resource
+     * Display name of the impacted resource
      * @return the value
      **/
     public String getImpactedResourceName() {
@@ -1080,17 +1103,31 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
-     * Type of the impacted Resource
+     * Type of the impacted resource
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("impactedResourceType")
     private final String impactedResourceType;
 
     /**
-     * Type of the impacted Resource
+     * Type of the impacted resource
      * @return the value
      **/
     public String getImpactedResourceType() {
         return impactedResourceType;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     @Override
@@ -1136,6 +1173,7 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", impactedResourceId=").append(String.valueOf(this.impactedResourceId));
         sb.append(", impactedResourceName=").append(String.valueOf(this.impactedResourceName));
         sb.append(", impactedResourceType=").append(String.valueOf(this.impactedResourceType));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -1179,6 +1217,7 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.impactedResourceId, other.impactedResourceId)
                 && java.util.Objects.equals(this.impactedResourceName, other.impactedResourceName)
                 && java.util.Objects.equals(this.impactedResourceType, other.impactedResourceType)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -1252,6 +1291,7 @@ public final class Problem extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                         + (this.impactedResourceType == null
                                 ? 43
                                 : this.impactedResourceType.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

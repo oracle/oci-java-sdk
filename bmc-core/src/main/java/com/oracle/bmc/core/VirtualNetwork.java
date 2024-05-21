@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -94,7 +94,7 @@ public interface VirtualNetwork extends AutoCloseable {
     AddDrgRouteRulesResponse addDrgRouteRules(AddDrgRouteRulesRequest request);
 
     /**
-     * Add an IPv6 CIDR to a subnet.
+     * Add an IPv6 prefix to a subnet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -107,8 +107,8 @@ public interface VirtualNetwork extends AutoCloseable {
     AddIpv6SubnetCidrResponse addIpv6SubnetCidr(AddIpv6SubnetCidrRequest request);
 
     /**
-     * Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
-     * Once added the IPv6 CIDR block cannot be removed or modified.
+     * Add an IPv6 prefix to a VCN. The VCN size is always /56 and assigned by Oracle.
+     * Once added the IPv6 prefix cannot be removed or modified.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2369,6 +2369,19 @@ public interface VirtualNetwork extends AutoCloseable {
             GetRemotePeeringConnectionRequest request);
 
     /**
+     * Gets the `IpInventory` resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetResourceIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetResourceIpInventory API.
+     */
+    GetResourceIpInventoryResponse getResourceIpInventory(GetResourceIpInventoryRequest request);
+
+    /**
      * Gets the specified route table's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2428,6 +2441,33 @@ public interface VirtualNetwork extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnet API.
      */
     GetSubnetResponse getSubnet(GetSubnetRequest request);
+
+    /**
+     * Gets the CIDR utilization data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetCidrUtilizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetCidrUtilization API.
+     */
+    GetSubnetCidrUtilizationResponse getSubnetCidrUtilization(
+            GetSubnetCidrUtilizationRequest request);
+
+    /**
+     * Gets the IP Inventory data of the specified subnet. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetSubnetIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSubnetIpInventory API.
+     */
+    GetSubnetIpInventoryResponse getSubnetIpInventory(GetSubnetIpInventoryRequest request);
 
     /**
      * Gets a topology for a given subnet.
@@ -2527,6 +2567,19 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     GetVcnDnsResolverAssociationResponse getVcnDnsResolverAssociation(
             GetVcnDnsResolverAssociationRequest request);
+
+    /**
+     * Gets the CIDR overlap information of the specified VCN in selected compartments. Specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVcnOverlapExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVcnOverlap API.
+     */
+    GetVcnOverlapResponse getVcnOverlap(GetVcnOverlapRequest request);
 
     /**
      * Gets a virtual network topology for a given VCN.
@@ -2974,6 +3027,19 @@ public interface VirtualNetwork extends AutoCloseable {
     ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request);
 
     /**
+     * Lists the IP Inventory information in the selected compartments.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListIpInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListIpInventory API.
+     */
+    ListIpInventoryResponse listIpInventory(ListIpInventoryRequest request);
+
+    /**
      * Lists the {@link Ipv6} objects based
      * on one of these filters:
      * <p>
@@ -3240,6 +3306,19 @@ public interface VirtualNetwork extends AutoCloseable {
     ListVcnsResponse listVcns(ListVcnsRequest request);
 
     /**
+     * Gets the specified virtual circuit's associatedTunnelsInfo.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVirtualCircuitAssociatedTunnelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVirtualCircuitAssociatedTunnels API.
+     */
+    ListVirtualCircuitAssociatedTunnelsResponse listVirtualCircuitAssociatedTunnels(
+            ListVirtualCircuitAssociatedTunnelsRequest request);
+
+    /**
      * The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      *
      * @param request The request object containing the details to send
@@ -3385,7 +3464,7 @@ public interface VirtualNetwork extends AutoCloseable {
             RemoveImportDrgRouteDistributionRequest request);
 
     /**
-     * Remove an IPv6 CIDR from a subnet. At least one IPv6 CIDR should remain.
+     * Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3398,7 +3477,7 @@ public interface VirtualNetwork extends AutoCloseable {
     RemoveIpv6SubnetCidrResponse removeIpv6SubnetCidr(RemoveIpv6SubnetCidrRequest request);
 
     /**
-     * Removing an existing IPv6 CIDR from a VCN.
+     * Removing an existing IPv6 prefix from a VCN.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

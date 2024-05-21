@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -28,7 +28,8 @@ public final class CreatePrivateIpDetails
         "freeformTags",
         "hostnameLabel",
         "ipAddress",
-        "vnicId"
+        "vnicId",
+        "vlanId"
     })
     public CreatePrivateIpDetails(
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -36,7 +37,8 @@ public final class CreatePrivateIpDetails
             java.util.Map<String, String> freeformTags,
             String hostnameLabel,
             String ipAddress,
-            String vnicId) {
+            String vnicId,
+            String vlanId) {
         super();
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -44,6 +46,7 @@ public final class CreatePrivateIpDetails
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.vnicId = vnicId;
+        this.vlanId = vlanId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -112,7 +115,7 @@ public final class CreatePrivateIpDetails
         /**
          * The hostname for the private IP. Used for DNS. The value
          * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -120,7 +123,7 @@ public final class CreatePrivateIpDetails
          * For more information, see
          * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
-         * Example: {@code bminstance-1}
+         * Example: {@code bminstance1}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -129,7 +132,7 @@ public final class CreatePrivateIpDetails
         /**
          * The hostname for the private IP. Used for DNS. The value
          * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-         * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+         * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
          * Must be unique across all VNICs in the subnet and comply with
          * [RFC 952](https://tools.ietf.org/html/rfc952) and
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -137,7 +140,7 @@ public final class CreatePrivateIpDetails
          * For more information, see
          * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
-         * Example: {@code bminstance-1}
+         * Example: {@code bminstance1}
          *
          * @param hostnameLabel the value to set
          * @return this builder
@@ -193,6 +196,30 @@ public final class CreatePrivateIpDetails
             this.__explicitlySet__.add("vnicId");
             return this;
         }
+        /**
+         * Use this attribute only with the Oracle Cloud VMware Solution.
+         * <p>
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+         * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+        private String vlanId;
+
+        /**
+         * Use this attribute only with the Oracle Cloud VMware Solution.
+         * <p>
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+         * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+         *
+         * @param vlanId the value to set
+         * @return this builder
+         **/
+        public Builder vlanId(String vlanId) {
+            this.vlanId = vlanId;
+            this.__explicitlySet__.add("vlanId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -205,7 +232,8 @@ public final class CreatePrivateIpDetails
                             this.freeformTags,
                             this.hostnameLabel,
                             this.ipAddress,
-                            this.vnicId);
+                            this.vnicId,
+                            this.vlanId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -231,6 +259,9 @@ public final class CreatePrivateIpDetails
             }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
+            }
+            if (model.wasPropertyExplicitlySet("vlanId")) {
+                this.vlanId(model.getVlanId());
             }
             return this;
         }
@@ -304,7 +335,7 @@ public final class CreatePrivateIpDetails
     /**
      * The hostname for the private IP. Used for DNS. The value
      * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -312,7 +343,7 @@ public final class CreatePrivateIpDetails
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: {@code bminstance-1}
+     * Example: {@code bminstance1}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
@@ -321,7 +352,7 @@ public final class CreatePrivateIpDetails
     /**
      * The hostname for the private IP. Used for DNS. The value
      * is the hostname portion of the private IP's fully qualified domain name (FQDN)
-     * (for example, {@code bminstance-1} in FQDN {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
+     * (for example, {@code bminstance1} in FQDN {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -329,7 +360,7 @@ public final class CreatePrivateIpDetails
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: {@code bminstance-1}
+     * Example: {@code bminstance1}
      *
      * @return the value
      **/
@@ -379,6 +410,28 @@ public final class CreatePrivateIpDetails
         return vnicId;
     }
 
+    /**
+     * Use this attribute only with the Oracle Cloud VMware Solution.
+     * <p>
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+     * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
+    private final String vlanId;
+
+    /**
+     * Use this attribute only with the Oracle Cloud VMware Solution.
+     * <p>
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+     * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
+     *
+     * @return the value
+     **/
+    public String getVlanId() {
+        return vlanId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -399,6 +452,7 @@ public final class CreatePrivateIpDetails
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(", vlanId=").append(String.valueOf(this.vlanId));
         sb.append(")");
         return sb.toString();
     }
@@ -419,6 +473,7 @@ public final class CreatePrivateIpDetails
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.vlanId, other.vlanId)
                 && super.equals(other);
     }
 
@@ -434,6 +489,7 @@ public final class CreatePrivateIpDetails
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.vlanId == null ? 43 : this.vlanId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

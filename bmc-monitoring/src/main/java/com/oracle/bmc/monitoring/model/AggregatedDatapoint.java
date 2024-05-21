@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -34,7 +34,7 @@ public final class AggregatedDatapoint extends com.oracle.bmc.http.internal.Expl
         /**
          * The date and time associated with the value of this data point. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -43,7 +43,7 @@ public final class AggregatedDatapoint extends com.oracle.bmc.http.internal.Expl
         /**
          * The date and time associated with the value of this data point. Format defined by RFC3339.
          * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
@@ -113,7 +113,7 @@ public final class AggregatedDatapoint extends com.oracle.bmc.http.internal.Expl
     /**
      * The date and time associated with the value of this data point. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
@@ -122,7 +122,7 @@ public final class AggregatedDatapoint extends com.oracle.bmc.http.internal.Expl
     /**
      * The date and time associated with the value of this data point. Format defined by RFC3339.
      * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
      **/

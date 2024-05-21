@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -87,13 +87,13 @@ public final class Update extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The update action.
+         * The previous update action performed.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
         private LastAction lastAction;
 
         /**
-         * The update action.
+         * The previous update action performed.
          * @param lastAction the value to set
          * @return this builder
          **/
@@ -295,7 +295,7 @@ public final class Update extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The update action.
+     * The previous update action performed.
      **/
     public enum LastAction {
         RollingApply("ROLLING_APPLY"),
@@ -345,13 +345,13 @@ public final class Update extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     };
     /**
-     * The update action.
+     * The previous update action performed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
     private final LastAction lastAction;
 
     /**
-     * The update action.
+     * The previous update action performed.
      * @return the value
      **/
     public LastAction getLastAction() {
@@ -359,7 +359,6 @@ public final class Update extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The update action.
      **/
     public enum AvailableActions {
         RollingApply("ROLLING_APPLY"),

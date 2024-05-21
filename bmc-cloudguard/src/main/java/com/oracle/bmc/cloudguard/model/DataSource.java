@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of Data source
+ * Detailed information for a data source (DataSource resource).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,6 +31,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
         "dataSourceDetectorMappingInfo",
         "regionStatusDetail",
         "lifecycleState",
+        "locks",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -47,6 +48,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             java.util.List<DataSourceMappingInfo> dataSourceDetectorMappingInfo,
             java.util.List<RegionStatusDetail> regionStatusDetail,
             LifecycleState lifecycleState,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -62,6 +64,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
         this.dataSourceDetectorMappingInfo = dataSourceDetectorMappingInfo;
         this.regionStatusDetail = regionStatusDetail;
         this.lifecycleState = lifecycleState;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -70,13 +73,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Ocid for Data source
+         * OCID for the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Ocid for Data source
+         * OCID for the data source
          * @param id the value to set
          * @return this builder
          **/
@@ -86,13 +89,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * DisplayName of Data source.
+         * Display name of the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * DisplayName of Data source.
+         * Display name of the data source
          * @param displayName the value to set
          * @return this builder
          **/
@@ -118,13 +121,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * CompartmentId of Data source.
+         * Compartment OCID of data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * CompartmentId of Data source.
+         * Compartment OCID of data source
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -159,13 +162,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The date and time the Data source was updated. Format defined by RFC3339.
+         * The date and time the data source was updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the Data source was updated. Format defined by RFC3339.
+         * The date and time the data source was updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -175,13 +178,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Status of data Source
+         * Enablement status of the data source
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DataSourceStatus status;
 
         /**
-         * Status of data Source
+         * Enablement status of the data source
          * @param status the value to set
          * @return this builder
          **/
@@ -224,19 +227,35 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the resource.
+         * The current lifecycle state of the resource.
          * @param lifecycleState the value to set
          * @return this builder
          **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -328,6 +347,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.dataSourceDetectorMappingInfo,
                             this.regionStatusDetail,
                             this.lifecycleState,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -372,6 +392,9 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -397,13 +420,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Ocid for Data source
+     * OCID for the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Ocid for Data source
+     * OCID for the data source
      * @return the value
      **/
     public String getId() {
@@ -411,13 +434,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * DisplayName of Data source.
+     * Display name of the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * DisplayName of Data source.
+     * Display name of the data source
      * @return the value
      **/
     public String getDisplayName() {
@@ -439,13 +462,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * CompartmentId of Data source.
+     * Compartment OCID of data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * CompartmentId of Data source.
+     * Compartment OCID of data source
      * @return the value
      **/
     public String getCompartmentId() {
@@ -474,13 +497,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -488,13 +511,13 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Status of data Source
+     * Enablement status of the data source
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DataSourceStatus status;
 
     /**
-     * Status of data Source
+     * Enablement status of the data source
      * @return the value
      **/
     public DataSourceStatus getStatus() {
@@ -530,17 +553,31 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -633,6 +670,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
                 .append(String.valueOf(this.dataSourceDetectorMappingInfo));
         sb.append(", regionStatusDetail=").append(String.valueOf(this.regionStatusDetail));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -663,6 +701,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
                         this.dataSourceDetectorMappingInfo, other.dataSourceDetectorMappingInfo)
                 && java.util.Objects.equals(this.regionStatusDetail, other.regionStatusDetail)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -702,6 +741,7 @@ public final class DataSource extends com.oracle.bmc.http.internal.ExplicitlySet
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

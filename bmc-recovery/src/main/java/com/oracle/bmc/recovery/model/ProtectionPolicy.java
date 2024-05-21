@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery.model;
@@ -27,6 +27,7 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
         "compartmentId",
         "backupRetentionPeriodInDays",
         "isPredefinedPolicy",
+        "policyLockedDateTime",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -41,6 +42,7 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
             String compartmentId,
             Integer backupRetentionPeriodInDays,
             Boolean isPredefinedPolicy,
+            String policyLockedDateTime,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -54,6 +56,7 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
         this.compartmentId = compartmentId;
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.isPredefinedPolicy = isPredefinedPolicy;
+        this.policyLockedDateTime = policyLockedDateTime;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -146,6 +149,24 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+        private String policyLockedDateTime;
+
+        /**
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         *
+         * @param policyLockedDateTime the value to set
+         * @return this builder
+         **/
+        public Builder policyLockedDateTime(String policyLockedDateTime) {
+            this.policyLockedDateTime = policyLockedDateTime;
+            this.__explicitlySet__.add("policyLockedDateTime");
+            return this;
+        }
+        /**
          * An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
          *
          **/
@@ -182,26 +203,14 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The current state of the protection policy. Allowed values are:
-         *   - CREATING
-         *   - UPDATING
-         *   - ACTIVE
-         *   - DELETING
-         *   - DELETED
-         *   - FAILED
+         * The current state of the protection policy.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the protection policy. Allowed values are:
-         *   - CREATING
-         *   - UPDATING
-         *   - ACTIVE
-         *   - DELETING
-         *   - DELETED
-         *   - FAILED
+         * The current state of the protection policy.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -300,6 +309,7 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
                             this.compartmentId,
                             this.backupRetentionPeriodInDays,
                             this.isPredefinedPolicy,
+                            this.policyLockedDateTime,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -329,6 +339,9 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("isPredefinedPolicy")) {
                 this.isPredefinedPolicy(model.getIsPredefinedPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
+                this.policyLockedDateTime(model.getPolicyLockedDateTime());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -437,6 +450,22 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
+    private final String policyLockedDateTime;
+
+    /**
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     *
+     * @return the value
+     **/
+    public String getPolicyLockedDateTime() {
+        return policyLockedDateTime;
+    }
+
+    /**
      * An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
      *
      **/
@@ -469,26 +498,14 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The current state of the protection policy. Allowed values are:
-     *   - CREATING
-     *   - UPDATING
-     *   - ACTIVE
-     *   - DELETING
-     *   - DELETED
-     *   - FAILED
+     * The current state of the protection policy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the protection policy. Allowed values are:
-     *   - CREATING
-     *   - UPDATING
-     *   - ACTIVE
-     *   - DELETING
-     *   - DELETED
-     *   - FAILED
+     * The current state of the protection policy.
      *
      * @return the value
      **/
@@ -584,6 +601,7 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
         sb.append(", backupRetentionPeriodInDays=")
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", isPredefinedPolicy=").append(String.valueOf(this.isPredefinedPolicy));
+        sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -611,6 +629,7 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.isPredefinedPolicy, other.isPredefinedPolicy)
+                && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -640,6 +659,11 @@ public final class ProtectionPolicy extends com.oracle.bmc.http.internal.Explici
                         + (this.isPredefinedPolicy == null
                                 ? 43
                                 : this.isPredefinedPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.policyLockedDateTime == null
+                                ? 43
+                                : this.policyLockedDateTime.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

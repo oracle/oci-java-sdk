@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -49,7 +49,8 @@ public final class TestParserPayloadDetails
         "fieldDelimiter",
         "fieldQualifier",
         "type",
-        "isNamespaceAware"
+        "isNamespaceAware",
+        "isPositionAware"
     })
     public TestParserPayloadDetails(
             String content,
@@ -78,7 +79,8 @@ public final class TestParserPayloadDetails
             String fieldDelimiter,
             String fieldQualifier,
             Type type,
-            Boolean isNamespaceAware) {
+            Boolean isNamespaceAware,
+            Boolean isPositionAware) {
         super();
         this.content = content;
         this.description = description;
@@ -107,6 +109,7 @@ public final class TestParserPayloadDetails
         this.fieldQualifier = fieldQualifier;
         this.type = type;
         this.isNamespaceAware = isNamespaceAware;
+        this.isPositionAware = isPositionAware;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -550,6 +553,24 @@ public final class TestParserPayloadDetails
             this.__explicitlySet__.add("isNamespaceAware");
             return this;
         }
+        /**
+         * A flag indicating whether the parser is positionally aware.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isPositionAware")
+        private Boolean isPositionAware;
+
+        /**
+         * A flag indicating whether the parser is positionally aware.
+         *
+         * @param isPositionAware the value to set
+         * @return this builder
+         **/
+        public Builder isPositionAware(Boolean isPositionAware) {
+            this.isPositionAware = isPositionAware;
+            this.__explicitlySet__.add("isPositionAware");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -583,7 +604,8 @@ public final class TestParserPayloadDetails
                             this.fieldDelimiter,
                             this.fieldQualifier,
                             this.type,
-                            this.isNamespaceAware);
+                            this.isNamespaceAware,
+                            this.isPositionAware);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -672,6 +694,9 @@ public final class TestParserPayloadDetails
             }
             if (model.wasPropertyExplicitlySet("isNamespaceAware")) {
                 this.isNamespaceAware(model.getIsNamespaceAware());
+            }
+            if (model.wasPropertyExplicitlySet("isPositionAware")) {
+                this.isPositionAware(model.getIsPositionAware());
             }
             return this;
         }
@@ -1111,6 +1136,22 @@ public final class TestParserPayloadDetails
         return isNamespaceAware;
     }
 
+    /**
+     * A flag indicating whether the parser is positionally aware.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPositionAware")
+    private final Boolean isPositionAware;
+
+    /**
+     * A flag indicating whether the parser is positionally aware.
+     *
+     * @return the value
+     **/
+    public Boolean getIsPositionAware() {
+        return isPositionAware;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1155,6 +1196,7 @@ public final class TestParserPayloadDetails
         sb.append(", fieldQualifier=").append(String.valueOf(this.fieldQualifier));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", isNamespaceAware=").append(String.valueOf(this.isNamespaceAware));
+        sb.append(", isPositionAware=").append(String.valueOf(this.isPositionAware));
         sb.append(")");
         return sb.toString();
     }
@@ -1199,6 +1241,7 @@ public final class TestParserPayloadDetails
                 && java.util.Objects.equals(this.fieldQualifier, other.fieldQualifier)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.isNamespaceAware, other.isNamespaceAware)
+                && java.util.Objects.equals(this.isPositionAware, other.isPositionAware)
                 && super.equals(other);
     }
 
@@ -1271,6 +1314,9 @@ public final class TestParserPayloadDetails
         result =
                 (result * PRIME)
                         + (this.isNamespaceAware == null ? 43 : this.isNamespaceAware.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isPositionAware == null ? 43 : this.isPositionAware.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

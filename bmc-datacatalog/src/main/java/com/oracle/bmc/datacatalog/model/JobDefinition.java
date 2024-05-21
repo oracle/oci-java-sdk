@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -29,6 +29,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
         "jobType",
         "isIncremental",
         "dataAssetKey",
+        "glossaryKey",
         "description",
         "connectionKey",
         "internalVersion",
@@ -53,6 +54,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
             JobType jobType,
             Boolean isIncremental,
             String dataAssetKey,
+            String glossaryKey,
             String description,
             String connectionKey,
             String internalVersion,
@@ -76,6 +78,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
         this.jobType = jobType;
         this.isIncremental = isIncremental;
         this.dataAssetKey = dataAssetKey;
+        this.glossaryKey = glossaryKey;
         this.description = description;
         this.connectionKey = connectionKey;
         this.internalVersion = internalVersion;
@@ -194,6 +197,22 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
+            return this;
+        }
+        /**
+         * Unique key of the glossary to which this job applies.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
+        private String glossaryKey;
+
+        /**
+         * Unique key of the glossary to which this job applies.
+         * @param glossaryKey the value to set
+         * @return this builder
+         **/
+        public Builder glossaryKey(String glossaryKey) {
+            this.glossaryKey = glossaryKey;
+            this.__explicitlySet__.add("glossaryKey");
             return this;
         }
         /**
@@ -487,6 +506,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
                             this.jobType,
                             this.isIncremental,
                             this.dataAssetKey,
+                            this.glossaryKey,
                             this.description,
                             this.connectionKey,
                             this.internalVersion,
@@ -528,6 +548,9 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("dataAssetKey")) {
                 this.dataAssetKey(model.getDataAssetKey());
+            }
+            if (model.wasPropertyExplicitlySet("glossaryKey")) {
+                this.glossaryKey(model.getGlossaryKey());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -678,6 +701,20 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
      **/
     public String getDataAssetKey() {
         return dataAssetKey;
+    }
+
+    /**
+     * Unique key of the glossary to which this job applies.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
+    private final String glossaryKey;
+
+    /**
+     * Unique key of the glossary to which this job applies.
+     * @return the value
+     **/
+    public String getGlossaryKey() {
+        return glossaryKey;
     }
 
     /**
@@ -946,6 +983,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", jobType=").append(String.valueOf(this.jobType));
         sb.append(", isIncremental=").append(String.valueOf(this.isIncremental));
         sb.append(", dataAssetKey=").append(String.valueOf(this.dataAssetKey));
+        sb.append(", glossaryKey=").append(String.valueOf(this.glossaryKey));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", connectionKey=").append(String.valueOf(this.connectionKey));
         sb.append(", internalVersion=").append(String.valueOf(this.internalVersion));
@@ -984,6 +1022,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.jobType, other.jobType)
                 && java.util.Objects.equals(this.isIncremental, other.isIncremental)
                 && java.util.Objects.equals(this.dataAssetKey, other.dataAssetKey)
+                && java.util.Objects.equals(this.glossaryKey, other.glossaryKey)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.connectionKey, other.connectionKey)
                 && java.util.Objects.equals(this.internalVersion, other.internalVersion)
@@ -1017,6 +1056,7 @@ public final class JobDefinition extends com.oracle.bmc.http.internal.Explicitly
                 (result * PRIME)
                         + (this.isIncremental == null ? 43 : this.isIncremental.hashCode());
         result = (result * PRIME) + (this.dataAssetKey == null ? 43 : this.dataAssetKey.hashCode());
+        result = (result * PRIME) + (this.glossaryKey == null ? 43 : this.glossaryKey.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)

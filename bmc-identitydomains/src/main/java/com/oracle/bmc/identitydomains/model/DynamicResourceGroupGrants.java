@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydomains.model;
@@ -147,11 +147,11 @@ public final class DynamicResourceGroupGrants
             return this;
         }
         /**
-         * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\
-         * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\
-         *  - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\
-         *  - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\
-         *  - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+         * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+         *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+         *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+         *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -168,11 +168,11 @@ public final class DynamicResourceGroupGrants
         private GrantMechanism grantMechanism;
 
         /**
-         * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\
-         * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\
-         *  - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\
-         *  - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\
-         *  - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+         * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+         * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+         *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+         *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+         *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -342,11 +342,11 @@ public final class DynamicResourceGroupGrants
     }
 
     /**
-     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\
-     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\
-     *  - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\
-     *  - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\
-     *  - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+     *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+     *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -412,11 +412,11 @@ public final class DynamicResourceGroupGrants
         }
     };
     /**
-     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\
-     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\
-     *  - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\
-     *  - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\
-     *  - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+     *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+     *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -433,11 +433,11 @@ public final class DynamicResourceGroupGrants
     private final GrantMechanism grantMechanism;
 
     /**
-     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.\
-     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':\
-     *  - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.\
-     *  - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.\
-     *  - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
+     * Each value of grantMechanism indicates how (or by what component) some App (or App-Entitlement) was granted.
+     * A customer or the UI should use only grantMechanism values that start with 'ADMINISTRATOR':
+     *   - 'ADMINISTRATOR_TO_USER' is for a direct grant to a specific User.
+     *   - 'ADMINISTRATOR_TO_GROUP' is for a grant to a specific Group, which results in indirect grants to Users who are members of that Group.
+     *   - 'ADMINISTRATOR_TO_APP' is for a grant to a specific App.  The grantee (client) App gains access to the granted (server) App.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true

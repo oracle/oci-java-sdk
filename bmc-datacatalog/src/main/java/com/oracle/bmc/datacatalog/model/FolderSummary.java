@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -39,7 +39,8 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
         "timeUpdated",
         "uri",
         "objectStorageUrl",
-        "lifecycleState"
+        "lifecycleState",
+        "lifecycleDetails"
     })
     public FolderSummary(
             String key,
@@ -56,7 +57,8 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             java.util.Date timeUpdated,
             String uri,
             String objectStorageUrl,
-            LifecycleState lifecycleState) {
+            LifecycleState lifecycleState,
+            String lifecycleDetails) {
         super();
         this.key = key;
         this.displayName = displayName;
@@ -73,6 +75,7 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
         this.uri = uri;
         this.objectStorageUrl = objectStorageUrl;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -327,6 +330,26 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -348,7 +371,8 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.timeUpdated,
                             this.uri,
                             this.objectStorageUrl,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.lifecycleDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -401,6 +425,9 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             return this;
         }
@@ -637,6 +664,24 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
         return lifecycleState;
     }
 
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -666,6 +711,7 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", uri=").append(String.valueOf(this.uri));
         sb.append(", objectStorageUrl=").append(String.valueOf(this.objectStorageUrl));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -695,6 +741,7 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.uri, other.uri)
                 && java.util.Objects.equals(this.objectStorageUrl, other.objectStorageUrl)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && super.equals(other);
     }
 
@@ -723,6 +770,9 @@ public final class FolderSummary extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -35,7 +35,8 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
         "isEnabled",
         "lifecycleState",
         "timeCreated",
-        "vcnId"
+        "vcnId",
+        "routeTableId"
     })
     public InternetGateway(
             String compartmentId,
@@ -46,7 +47,8 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
             Boolean isEnabled,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
-            String vcnId) {
+            String vcnId,
+            String routeTableId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -57,6 +59,7 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
         this.lifecycleState = lifecycleState;
         this.timeCreated = timeCreated;
         this.vcnId = vcnId;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -228,6 +231,22 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("vcnId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -243,7 +262,8 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
                             this.isEnabled,
                             this.lifecycleState,
                             this.timeCreated,
-                            this.vcnId);
+                            this.vcnId,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -278,6 +298,9 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("vcnId")) {
                 this.vcnId(model.getVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             return this;
         }
@@ -479,6 +502,20 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
         return vcnId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -502,6 +539,7 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vcnId=").append(String.valueOf(this.vcnId));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -525,6 +563,7 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vcnId, other.vcnId)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -545,6 +584,7 @@ public final class InternetGateway extends com.oracle.bmc.http.internal.Explicit
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vcnId == null ? 43 : this.vcnId.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

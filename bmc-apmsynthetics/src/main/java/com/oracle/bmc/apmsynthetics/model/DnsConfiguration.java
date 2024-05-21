@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Dns settings.
+ * Information about the DNS settings.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,13 @@ public final class DnsConfiguration extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * If isOverrideDns is true, then dns will be overridden.
+         * If isOverrideDns is true, then DNS settings will be overridden.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverrideDns")
         private Boolean isOverrideDns;
 
         /**
-         * If isOverrideDns is true, then dns will be overridden.
+         * If isOverrideDns is true, then DNS settings will be overridden.
          * @param isOverrideDns the value to set
          * @return this builder
          **/
@@ -45,13 +45,13 @@ public final class DnsConfiguration extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("overrideDnsIp")
         private String overrideDnsIp;
 
         /**
-         * Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+         * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
          * @param overrideDnsIp the value to set
          * @return this builder
          **/
@@ -96,13 +96,13 @@ public final class DnsConfiguration extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * If isOverrideDns is true, then dns will be overridden.
+     * If isOverrideDns is true, then DNS settings will be overridden.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideDns")
     private final Boolean isOverrideDns;
 
     /**
-     * If isOverrideDns is true, then dns will be overridden.
+     * If isOverrideDns is true, then DNS settings will be overridden.
      * @return the value
      **/
     public Boolean getIsOverrideDns() {
@@ -110,13 +110,13 @@ public final class DnsConfiguration extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("overrideDnsIp")
     private final String overrideDnsIp;
 
     /**
-     * Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+     * Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
      * @return the value
      **/
     public String getOverrideDnsIp() {

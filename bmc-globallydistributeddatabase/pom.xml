@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>2.72.0</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <artifactId>oci-java-sdk-globallydistributeddatabase</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - Globally Distributed Database</name>
+  <description>This project contains the SDK used for Oracle Cloud Infrastructure Globally Distributed Database</description>
+  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>2.72.0</version>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -45,6 +45,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "availabilityDomain",
         "capacityReservationId",
         "compartmentId",
+        "clusterPlacementGroupId",
         "dedicatedVmHostId",
         "definedTags",
         "displayName",
@@ -70,12 +71,14 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "timeCreated",
         "agentConfig",
         "timeMaintenanceRebootDue",
-        "platformConfig"
+        "platformConfig",
+        "instanceConfigurationId"
     })
     public Instance(
             String availabilityDomain,
             String capacityReservationId,
             String compartmentId,
+            String clusterPlacementGroupId,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
@@ -101,11 +104,13 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             java.util.Date timeCreated,
             InstanceAgentConfig agentConfig,
             java.util.Date timeMaintenanceRebootDue,
-            PlatformConfig platformConfig) {
+            PlatformConfig platformConfig,
+            String instanceConfigurationId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
         this.compartmentId = compartmentId;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
         this.displayName = displayName;
@@ -132,6 +137,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.agentConfig = agentConfig;
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.platformConfig = platformConfig;
+        this.instanceConfigurationId = instanceConfigurationId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -194,6 +200,22 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The OCID of the cluster placement group of the instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The OCID of the cluster placement group of the instance.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
         /**
@@ -399,9 +421,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
          * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
          * <p>
-         * If your instance boot volume type is paravirtualized,
+         * If your instance boot volume attachment type is paravirtualized,
          * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-         * If your instance boot volume type is paravirtualized
+         * If your instance boot volume attachment type is paravirtualized
          * and you use custom iPXE to network boot into your instance,
          * the primary boot volume is attached as a data volume through virtio-scsi drive.
          * <p>
@@ -433,9 +455,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
          * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
          * <p>
-         * If your instance boot volume type is paravirtualized,
+         * If your instance boot volume attachment type is paravirtualized,
          * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-         * If your instance boot volume type is paravirtualized
+         * If your instance boot volume attachment type is paravirtualized
          * and you use custom iPXE to network boot into your instance,
          * the primary boot volume is attached as a data volume through virtio-scsi drive.
          * <p>
@@ -718,6 +740,22 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("platformConfig");
             return this;
         }
+        /**
+         * The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+        private String instanceConfigurationId;
+
+        /**
+         * The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+         * @param instanceConfigurationId the value to set
+         * @return this builder
+         **/
+        public Builder instanceConfigurationId(String instanceConfigurationId) {
+            this.instanceConfigurationId = instanceConfigurationId;
+            this.__explicitlySet__.add("instanceConfigurationId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -728,6 +766,7 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.availabilityDomain,
                             this.capacityReservationId,
                             this.compartmentId,
+                            this.clusterPlacementGroupId,
                             this.dedicatedVmHostId,
                             this.definedTags,
                             this.displayName,
@@ -753,7 +792,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.timeCreated,
                             this.agentConfig,
                             this.timeMaintenanceRebootDue,
-                            this.platformConfig);
+                            this.platformConfig,
+                            this.instanceConfigurationId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -770,6 +810,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             if (model.wasPropertyExplicitlySet("dedicatedVmHostId")) {
                 this.dedicatedVmHostId(model.getDedicatedVmHostId());
@@ -849,6 +892,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
             if (model.wasPropertyExplicitlySet("platformConfig")) {
                 this.platformConfig(model.getPlatformConfig());
             }
+            if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
+                this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
             return this;
         }
     }
@@ -916,6 +962,20 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The OCID of the cluster placement group of the instance.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     /**
@@ -1104,9 +1164,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.
      * <p>
-     * If your instance boot volume type is paravirtualized,
+     * If your instance boot volume attachment type is paravirtualized,
      * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-     * If your instance boot volume type is paravirtualized
+     * If your instance boot volume attachment type is paravirtualized
      * and you use custom iPXE to network boot into your instance,
      * the primary boot volume is attached as a data volume through virtio-scsi drive.
      * <p>
@@ -1138,9 +1198,9 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.
      * <p>
-     * If your instance boot volume type is paravirtualized,
+     * If your instance boot volume attachment type is paravirtualized,
      * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
-     * If your instance boot volume type is paravirtualized
+     * If your instance boot volume attachment type is paravirtualized
      * and you use custom iPXE to network boot into your instance,
      * the primary boot volume is attached as a data volume through virtio-scsi drive.
      * <p>
@@ -1496,6 +1556,20 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return platformConfig;
     }
 
+    /**
+     * The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
+    private final String instanceConfigurationId;
+
+    /**
+     * The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+     * @return the value
+     **/
+    public String getInstanceConfigurationId() {
+        return instanceConfigurationId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1513,6 +1587,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append("availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -1541,6 +1617,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", timeMaintenanceRebootDue=")
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append(", instanceConfigurationId=")
+                .append(String.valueOf(this.instanceConfigurationId));
         sb.append(")");
         return sb.toString();
     }
@@ -1558,6 +1636,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -1586,6 +1666,8 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(
+                        this.instanceConfigurationId, other.instanceConfigurationId)
                 && super.equals(other);
     }
 
@@ -1606,6 +1688,11 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result =
                 (result * PRIME)
                         + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
@@ -1660,6 +1747,11 @@ public final class Instance extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceConfigurationId == null
+                                ? 43
+                                : this.instanceConfigurationId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identitydataplane.model;
@@ -51,7 +51,7 @@ public final class GenerateScopedAccessTokenDetails
         }
         /**
          * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         * key will be put inside the security token by the auth service after successful validation of the certificate.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
@@ -59,7 +59,7 @@ public final class GenerateScopedAccessTokenDetails
 
         /**
          * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         * key will be put inside the security token by the auth service after successful validation of the certificate.
          *
          * @param publicKey the value to set
          * @return this builder
@@ -123,7 +123,7 @@ public final class GenerateScopedAccessTokenDetails
 
     /**
      * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-     * key will by put inside the security token by the auth service after successful validation of the certificate.
+     * key will be put inside the security token by the auth service after successful validation of the certificate.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
@@ -131,7 +131,7 @@ public final class GenerateScopedAccessTokenDetails
 
     /**
      * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-     * key will by put inside the security token by the auth service after successful validation of the certificate.
+     * key will be put inside the security token by the auth service after successful validation of the certificate.
      *
      * @return the value
      **/

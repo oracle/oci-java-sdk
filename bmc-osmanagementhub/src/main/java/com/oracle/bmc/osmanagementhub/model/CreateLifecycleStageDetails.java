@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The information about a lifecycle stage.
+ * Provides the information used to create a lifecycle stage.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -38,13 +38,13 @@ public final class CreateLifecycleStageDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -54,16 +54,14 @@ public final class CreateLifecycleStageDetails
             return this;
         }
         /**
-         * User specified rank for the lifecycle stage.
-         * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+         * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("rank")
         private Integer rank;
 
         /**
-         * User specified rank for the lifecycle stage.
-         * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+         * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
          *
          * @param rank the value to set
          * @return this builder
@@ -162,13 +160,13 @@ public final class CreateLifecycleStageDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * @return the value
      **/
     public String getDisplayName() {
@@ -176,16 +174,14 @@ public final class CreateLifecycleStageDetails
     }
 
     /**
-     * User specified rank for the lifecycle stage.
-     * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rank")
     private final Integer rank;
 
     /**
-     * User specified rank for the lifecycle stage.
-     * Rank determines the hierarchy of the lifecycle stages for a given lifecycle environment.
+     * User-specified rank for the lifecycle stage. Rank determines the hierarchy of the lifecycle stages within the lifecycle environment.
      *
      * @return the value
      **/

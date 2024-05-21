@@ -1,11 +1,19 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
- * The data to create a cluster network.
+ * The data to create a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ * <p>
+ * Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+ * instances that are managed as a group.
+ * <p>
+ * For details about creating compute clusters, which let you manage instances in the RDMA network independently
+ * of each other or use different types of instances in the network group,
+ * see {@link #createComputeClusterDetails(CreateComputeClusterDetailsRequest) createComputeClusterDetails}.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -28,7 +36,8 @@ public final class CreateClusterNetworkDetails
         "displayName",
         "freeformTags",
         "instancePools",
-        "placementConfiguration"
+        "placementConfiguration",
+        "clusterConfiguration"
     })
     public CreateClusterNetworkDetails(
             String compartmentId,
@@ -36,7 +45,8 @@ public final class CreateClusterNetworkDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.List<CreateClusterNetworkInstancePoolDetails> instancePools,
-            ClusterNetworkPlacementConfigurationDetails placementConfiguration) {
+            ClusterNetworkPlacementConfigurationDetails placementConfiguration,
+            ClusterConfigurationDetails clusterConfiguration) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -44,6 +54,7 @@ public final class CreateClusterNetworkDetails
         this.freeformTags = freeformTags;
         this.instancePools = instancePools;
         this.placementConfiguration = placementConfiguration;
+        this.clusterConfiguration = clusterConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -171,6 +182,15 @@ public final class CreateClusterNetworkDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterConfiguration")
+        private ClusterConfigurationDetails clusterConfiguration;
+
+        public Builder clusterConfiguration(ClusterConfigurationDetails clusterConfiguration) {
+            this.clusterConfiguration = clusterConfiguration;
+            this.__explicitlySet__.add("clusterConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -182,7 +202,8 @@ public final class CreateClusterNetworkDetails
                             this.displayName,
                             this.freeformTags,
                             this.instancePools,
-                            this.placementConfiguration);
+                            this.placementConfiguration,
+                            this.clusterConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -208,6 +229,9 @@ public final class CreateClusterNetworkDetails
             }
             if (model.wasPropertyExplicitlySet("placementConfiguration")) {
                 this.placementConfiguration(model.getPlacementConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("clusterConfiguration")) {
+                this.clusterConfiguration(model.getClusterConfiguration());
             }
             return this;
         }
@@ -331,6 +355,13 @@ public final class CreateClusterNetworkDetails
         return placementConfiguration;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterConfiguration")
+    private final ClusterConfigurationDetails clusterConfiguration;
+
+    public ClusterConfigurationDetails getClusterConfiguration() {
+        return clusterConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -351,6 +382,7 @@ public final class CreateClusterNetworkDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", instancePools=").append(String.valueOf(this.instancePools));
         sb.append(", placementConfiguration=").append(String.valueOf(this.placementConfiguration));
+        sb.append(", clusterConfiguration=").append(String.valueOf(this.clusterConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -372,6 +404,7 @@ public final class CreateClusterNetworkDetails
                 && java.util.Objects.equals(this.instancePools, other.instancePools)
                 && java.util.Objects.equals(
                         this.placementConfiguration, other.placementConfiguration)
+                && java.util.Objects.equals(this.clusterConfiguration, other.clusterConfiguration)
                 && super.equals(other);
     }
 
@@ -393,6 +426,11 @@ public final class CreateClusterNetworkDetails
                         + (this.placementConfiguration == null
                                 ? 43
                                 : this.placementConfiguration.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterConfiguration == null
+                                ? 43
+                                : this.clusterConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

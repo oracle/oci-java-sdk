@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog;
@@ -435,7 +435,8 @@ public class DataCatalogClient implements DataCatalog {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -552,6 +553,88 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public AddCatalogLockResponse addCatalogLock(AddCatalogLockRequest request) {
+        LOG.trace("Called addCatalogLock");
+        final AddCatalogLockRequest interceptedRequest =
+                AddCatalogLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddCatalogLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AddCatalogLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AddCatalogLock");
+        java.util.function.Function<javax.ws.rs.core.Response, AddCatalogLockResponse> transformer =
+                AddCatalogLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AddCatalogPrivateEndpointLockResponse addCatalogPrivateEndpointLock(
+            AddCatalogPrivateEndpointLockRequest request) {
+        LOG.trace("Called addCatalogPrivateEndpointLock");
+        final AddCatalogPrivateEndpointLockRequest interceptedRequest =
+                AddCatalogPrivateEndpointLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddCatalogPrivateEndpointLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AddCatalogPrivateEndpointLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/AddCatalogPrivateEndpointLock");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddCatalogPrivateEndpointLockResponse>
+                transformer =
+                        AddCatalogPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AddDataSelectorPatternsResponse addDataSelectorPatterns(
             AddDataSelectorPatternsRequest request) {
         LOG.trace("Called addDataSelectorPatterns");
@@ -595,6 +678,47 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public AddMetastoreLockResponse addMetastoreLock(AddMetastoreLockRequest request) {
+        LOG.trace("Called addMetastoreLock");
+        final AddMetastoreLockRequest interceptedRequest =
+                AddMetastoreLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMetastoreLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AddMetastoreLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/AddMetastoreLock");
+        java.util.function.Function<javax.ws.rs.core.Response, AddMetastoreLockResponse>
+                transformer =
+                        AddMetastoreLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getAddResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AssociateCustomPropertyResponse associateCustomProperty(
             AssociateCustomPropertyRequest request) {
         LOG.trace("Called associateCustomProperty");
@@ -631,6 +755,94 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getAssociateCustomPropertyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AsynchronousExportDataAssetResponse asynchronousExportDataAsset(
+            AsynchronousExportDataAssetRequest request) {
+        LOG.trace("Called asynchronousExportDataAsset");
+        final AsynchronousExportDataAssetRequest interceptedRequest =
+                AsynchronousExportDataAssetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AsynchronousExportDataAssetConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportDataAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AsynchronousExportDataAsset");
+        java.util.function.Function<javax.ws.rs.core.Response, AsynchronousExportDataAssetResponse>
+                transformer =
+                        AsynchronousExportDataAssetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAsynchronousExportDataAssetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public AsynchronousExportGlossaryResponse asynchronousExportGlossary(
+            AsynchronousExportGlossaryRequest request) {
+        LOG.trace("Called asynchronousExportGlossary");
+        final AsynchronousExportGlossaryRequest interceptedRequest =
+                AsynchronousExportGlossaryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AsynchronousExportGlossaryConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "AsynchronousExportGlossary",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/AsynchronousExportGlossary");
+        java.util.function.Function<javax.ws.rs.core.Response, AsynchronousExportGlossaryResponse>
+                transformer =
+                        AsynchronousExportGlossaryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAsynchronousExportGlossaryDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -2591,6 +2803,47 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public FetchEntityLineageResponse fetchEntityLineage(FetchEntityLineageRequest request) {
+        LOG.trace("Called fetchEntityLineage");
+        final FetchEntityLineageRequest interceptedRequest =
+                FetchEntityLineageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                FetchEntityLineageConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "FetchEntityLineage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/FetchEntityLineage");
+        java.util.function.Function<javax.ws.rs.core.Response, FetchEntityLineageResponse>
+                transformer =
+                        FetchEntityLineageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getFetchEntityLineageDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetAttributeResponse getAttribute(GetAttributeRequest request) {
         LOG.trace("Called getAttribute");
         final GetAttributeRequest interceptedRequest =
@@ -3590,6 +3843,46 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getImportGlossaryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportLineageResponse importLineage(ImportLineageRequest request) {
+        LOG.trace("Called importLineage");
+        final ImportLineageRequest interceptedRequest =
+                ImportLineageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportLineageConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "ImportLineage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportLineage");
+        java.util.function.Function<javax.ws.rs.core.Response, ImportLineageResponse> transformer =
+                ImportLineageConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportLineageDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -4870,6 +5163,90 @@ public class DataCatalogClient implements DataCatalog {
     }
 
     @Override
+    public RemoveCatalogLockResponse removeCatalogLock(RemoveCatalogLockRequest request) {
+        LOG.trace("Called removeCatalogLock");
+        final RemoveCatalogLockRequest interceptedRequest =
+                RemoveCatalogLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveCatalogLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/RemoveCatalogLock");
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveCatalogLockResponse>
+                transformer =
+                        RemoveCatalogLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveCatalogPrivateEndpointLockResponse removeCatalogPrivateEndpointLock(
+            RemoveCatalogPrivateEndpointLockRequest request) {
+        LOG.trace("Called removeCatalogPrivateEndpointLock");
+        final RemoveCatalogPrivateEndpointLockRequest interceptedRequest =
+                RemoveCatalogPrivateEndpointLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveCatalogPrivateEndpointLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "RemoveCatalogPrivateEndpointLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/RemoveCatalogPrivateEndpointLock");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveCatalogPrivateEndpointLockResponse>
+                transformer =
+                        RemoveCatalogPrivateEndpointLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RemoveDataSelectorPatternsResponse removeDataSelectorPatterns(
             RemoveDataSelectorPatternsRequest request) {
         LOG.trace("Called removeDataSelectorPatterns");
@@ -4906,6 +5283,47 @@ public class DataCatalogClient implements DataCatalog {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getDataSelectorPatternDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveMetastoreLockResponse removeMetastoreLock(RemoveMetastoreLockRequest request) {
+        LOG.trace("Called removeMetastoreLock");
+        final RemoveMetastoreLockRequest interceptedRequest =
+                RemoveMetastoreLockConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMetastoreLockConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataCatalog",
+                        "RemoveMetastoreLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/RemoveMetastoreLock");
+        java.util.function.Function<javax.ws.rs.core.Response, RemoveMetastoreLockResponse>
+                transformer =
+                        RemoveMetastoreLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRemoveResourceLockDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

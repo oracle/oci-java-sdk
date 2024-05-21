@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard;
@@ -296,6 +296,11 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
         }
         if (endpoint != null) {
             setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "CloudGuardAsyncClient", "getAdhocQueryResultContent"));
         }
     }
 
@@ -788,6 +793,63 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeSavedQueryCompartmentResponse>
+            changeSavedQueryCompartment(
+                    ChangeSavedQueryCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSavedQueryCompartmentRequest,
+                                    ChangeSavedQueryCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeSavedQueryCompartment");
+        final ChangeSavedQueryCompartmentRequest interceptedRequest =
+                ChangeSavedQueryCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSavedQueryCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ChangeSavedQueryCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/ChangeSavedQueryCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSavedQueryCompartmentResponse>
+                transformer =
+                        ChangeSavedQueryCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSavedQueryCompartmentRequest, ChangeSavedQueryCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSavedQueryCompartmentRequest,
+                                ChangeSavedQueryCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSavedQueryCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSavedQueryCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSavedQueryCompartmentRequest, ChangeSavedQueryCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeSecurityRecipeCompartmentResponse>
             changeSecurityRecipeCompartment(
                     ChangeSecurityRecipeCompartmentRequest request,
@@ -891,6 +953,58 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeSecurityZoneCompartmentRequest, ChangeSecurityZoneCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAdhocQueryResponse> createAdhocQuery(
+            CreateAdhocQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAdhocQueryRequest, CreateAdhocQueryResponse>
+                    handler) {
+        LOG.trace("Called async createAdhocQuery");
+        final CreateAdhocQueryRequest interceptedRequest =
+                CreateAdhocQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAdhocQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "CreateAdhocQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/CreateAdhocQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateAdhocQueryResponse>
+                transformer =
+                        CreateAdhocQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateAdhocQueryRequest, CreateAdhocQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateAdhocQueryRequest, CreateAdhocQueryResponse>,
+                        java.util.concurrent.Future<CreateAdhocQueryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAdhocQueryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateAdhocQueryRequest, CreateAdhocQueryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1225,6 +1339,58 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSavedQueryResponse> createSavedQuery(
+            CreateSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSavedQueryRequest, CreateSavedQueryResponse>
+                    handler) {
+        LOG.trace("Called async createSavedQuery");
+        final CreateSavedQueryRequest interceptedRequest =
+                CreateSavedQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSavedQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "CreateSavedQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/CreateSavedQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSavedQueryResponse>
+                transformer =
+                        CreateSavedQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateSavedQueryRequest, CreateSavedQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSavedQueryRequest, CreateSavedQueryResponse>,
+                        java.util.concurrent.Future<CreateSavedQueryResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSavedQueryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSavedQueryRequest, CreateSavedQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSecurityRecipeResponse> createSecurityRecipe(
             CreateSecurityRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1481,6 +1647,104 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateTargetResponderRecipeRequest, CreateTargetResponderRecipeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWlpAgentResponse> createWlpAgent(
+            CreateWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateWlpAgentRequest, CreateWlpAgentResponse>
+                    handler) {
+        LOG.trace("Called async createWlpAgent");
+        final CreateWlpAgentRequest interceptedRequest =
+                CreateWlpAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateWlpAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "CreateWlpAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/CreateWlpAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateWlpAgentResponse>
+                transformer =
+                        CreateWlpAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateWlpAgentRequest, CreateWlpAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateWlpAgentRequest, CreateWlpAgentResponse>,
+                        java.util.concurrent.Future<CreateWlpAgentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateWlpAgentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateWlpAgentRequest, CreateWlpAgentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAdhocQueryResponse> deleteAdhocQuery(
+            DeleteAdhocQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>
+                    handler) {
+        LOG.trace("Called async deleteAdhocQuery");
+        final DeleteAdhocQueryRequest interceptedRequest =
+                DeleteAdhocQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAdhocQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "DeleteAdhocQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/DeleteAdhocQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAdhocQueryResponse>
+                transformer =
+                        DeleteAdhocQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>,
+                        java.util.concurrent.Future<DeleteAdhocQueryResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAdhocQueryRequest, DeleteAdhocQueryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1838,6 +2102,53 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSavedQueryResponse> deleteSavedQuery(
+            DeleteSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSavedQueryRequest, DeleteSavedQueryResponse>
+                    handler) {
+        LOG.trace("Called async deleteSavedQuery");
+        final DeleteSavedQueryRequest interceptedRequest =
+                DeleteSavedQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSavedQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "DeleteSavedQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/DeleteSavedQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSavedQueryResponse>
+                transformer =
+                        DeleteSavedQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteSavedQueryRequest, DeleteSavedQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSavedQueryRequest, DeleteSavedQueryResponse>,
+                        java.util.concurrent.Future<DeleteSavedQueryResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSavedQueryRequest, DeleteSavedQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSecurityRecipeResponse> deleteSecurityRecipe(
             DeleteSecurityRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2077,6 +2388,52 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWlpAgentResponse> deleteWlpAgent(
+            DeleteWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteWlpAgentRequest, DeleteWlpAgentResponse>
+                    handler) {
+        LOG.trace("Called async deleteWlpAgent");
+        final DeleteWlpAgentRequest interceptedRequest =
+                DeleteWlpAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteWlpAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "DeleteWlpAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/DeleteWlpAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteWlpAgentResponse>
+                transformer =
+                        DeleteWlpAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteWlpAgentRequest, DeleteWlpAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteWlpAgentRequest, DeleteWlpAgentResponse>,
+                        java.util.concurrent.Future<DeleteWlpAgentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteWlpAgentRequest, DeleteWlpAgentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ExecuteResponderExecutionResponse> executeResponderExecution(
             ExecuteResponderExecutionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2119,6 +2476,101 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ExecuteResponderExecutionRequest, ExecuteResponderExecutionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdhocQueryResponse> getAdhocQuery(
+            GetAdhocQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetAdhocQueryRequest, GetAdhocQueryResponse>
+                    handler) {
+        LOG.trace("Called async getAdhocQuery");
+        final GetAdhocQueryRequest interceptedRequest =
+                GetAdhocQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAdhocQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "GetAdhocQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/GetAdhocQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAdhocQueryResponse>
+                transformer =
+                        GetAdhocQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAdhocQueryRequest, GetAdhocQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAdhocQueryRequest, GetAdhocQueryResponse>,
+                        java.util.concurrent.Future<GetAdhocQueryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAdhocQueryRequest, GetAdhocQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdhocQueryResultContentResponse>
+            getAdhocQueryResultContent(
+                    GetAdhocQueryResultContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAdhocQueryResultContentRequest,
+                                    GetAdhocQueryResultContentResponse>
+                            handler) {
+        LOG.trace("Called async getAdhocQueryResultContent");
+        final GetAdhocQueryResultContentRequest interceptedRequest =
+                GetAdhocQueryResultContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAdhocQueryResultContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "GetAdhocQueryResultContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQueryResultCollection/GetAdhocQueryResultContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAdhocQueryResultContentResponse>
+                transformer =
+                        GetAdhocQueryResultContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAdhocQueryResultContentRequest, GetAdhocQueryResultContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAdhocQueryResultContentRequest,
+                                GetAdhocQueryResultContentResponse>,
+                        java.util.concurrent.Future<GetAdhocQueryResultContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAdhocQueryResultContentRequest, GetAdhocQueryResultContentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2591,6 +3043,50 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceResponse> getResource(
+            GetResourceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetResourceRequest, GetResourceResponse>
+                    handler) {
+        LOG.trace("Called async getResource");
+        final GetResourceRequest interceptedRequest =
+                GetResourceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "GetResource",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Resource/GetResource");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetResourceResponse>
+                transformer =
+                        GetResourceConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetResourceRequest, GetResourceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetResourceRequest, GetResourceResponse>,
+                        java.util.concurrent.Future<GetResourceResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetResourceRequest, GetResourceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceProfileResponse> getResourceProfile(
             GetResourceProfileRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2624,6 +3120,54 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetResourceProfileRequest, GetResourceProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceVulnerabilityResponse> getResourceVulnerability(
+            GetResourceVulnerabilityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetResourceVulnerabilityRequest, GetResourceVulnerabilityResponse>
+                    handler) {
+        LOG.trace("Called async getResourceVulnerability");
+        final GetResourceVulnerabilityRequest interceptedRequest =
+                GetResourceVulnerabilityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourceVulnerabilityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "GetResourceVulnerability",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceVulnerability/GetResourceVulnerability");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetResourceVulnerabilityResponse>
+                transformer =
+                        GetResourceVulnerabilityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetResourceVulnerabilityRequest, GetResourceVulnerabilityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetResourceVulnerabilityRequest, GetResourceVulnerabilityResponse>,
+                        java.util.concurrent.Future<GetResourceVulnerabilityResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetResourceVulnerabilityRequest, GetResourceVulnerabilityResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2816,6 +3360,50 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetResponderRuleRequest, GetResponderRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSavedQueryResponse> getSavedQuery(
+            GetSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSavedQueryRequest, GetSavedQueryResponse>
+                    handler) {
+        LOG.trace("Called async getSavedQuery");
+        final GetSavedQueryRequest interceptedRequest =
+                GetSavedQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSavedQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "GetSavedQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/GetSavedQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSavedQueryResponse>
+                transformer =
+                        GetSavedQueryConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSavedQueryRequest, GetSavedQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSavedQueryRequest, GetSavedQueryResponse>,
+                        java.util.concurrent.Future<GetSavedQueryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSavedQueryRequest, GetSavedQueryResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3257,6 +3845,50 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetWlpAgentResponse> getWlpAgent(
+            GetWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetWlpAgentRequest, GetWlpAgentResponse>
+                    handler) {
+        LOG.trace("Called async getWlpAgent");
+        final GetWlpAgentRequest interceptedRequest =
+                GetWlpAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWlpAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "GetWlpAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/GetWlpAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWlpAgentResponse>
+                transformer =
+                        GetWlpAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWlpAgentRequest, GetWlpAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWlpAgentRequest, GetWlpAgentResponse>,
+                        java.util.concurrent.Future<GetWlpAgentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWlpAgentRequest, GetWlpAgentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3289,6 +3921,99 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdhocQueriesResponse> listAdhocQueries(
+            ListAdhocQueriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAdhocQueriesRequest, ListAdhocQueriesResponse>
+                    handler) {
+        LOG.trace("Called async listAdhocQueries");
+        final ListAdhocQueriesRequest interceptedRequest =
+                ListAdhocQueriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAdhocQueriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListAdhocQueries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQuery/ListAdhocQueries");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAdhocQueriesResponse>
+                transformer =
+                        ListAdhocQueriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAdhocQueriesRequest, ListAdhocQueriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAdhocQueriesRequest, ListAdhocQueriesResponse>,
+                        java.util.concurrent.Future<ListAdhocQueriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAdhocQueriesRequest, ListAdhocQueriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdhocQueryResultsResponse> listAdhocQueryResults(
+            ListAdhocQueryResultsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAdhocQueryResultsRequest, ListAdhocQueryResultsResponse>
+                    handler) {
+        LOG.trace("Called async listAdhocQueryResults");
+        final ListAdhocQueryResultsRequest interceptedRequest =
+                ListAdhocQueryResultsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAdhocQueryResultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListAdhocQueryResults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/AdhocQueryResultCollection/ListAdhocQueryResults");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAdhocQueryResultsResponse>
+                transformer =
+                        ListAdhocQueryResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAdhocQueryResultsRequest, ListAdhocQueryResultsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAdhocQueryResultsRequest, ListAdhocQueryResultsResponse>,
+                        java.util.concurrent.Future<ListAdhocQueryResultsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAdhocQueryResultsRequest, ListAdhocQueryResultsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4098,6 +4823,52 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourcePortsResponse> listResourcePorts(
+            ListResourcePortsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListResourcePortsRequest, ListResourcePortsResponse>
+                    handler) {
+        LOG.trace("Called async listResourcePorts");
+        final ListResourcePortsRequest interceptedRequest =
+                ListResourcePortsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourcePortsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListResourcePorts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourcePortCollection/ListResourcePorts");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourcePortsResponse>
+                transformer =
+                        ListResourcePortsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListResourcePortsRequest, ListResourcePortsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListResourcePortsRequest, ListResourcePortsResponse>,
+                        java.util.concurrent.Future<ListResourcePortsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListResourcePortsRequest, ListResourcePortsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourceProfileEndpointsResponse>
             listResourceProfileEndpoints(
                     ListResourceProfileEndpointsRequest request,
@@ -4283,6 +5054,101 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListResourceTypesRequest, ListResourceTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceVulnerabilitiesResponse>
+            listResourceVulnerabilities(
+                    ListResourceVulnerabilitiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourceVulnerabilitiesRequest,
+                                    ListResourceVulnerabilitiesResponse>
+                            handler) {
+        LOG.trace("Called async listResourceVulnerabilities");
+        final ListResourceVulnerabilitiesRequest interceptedRequest =
+                ListResourceVulnerabilitiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourceVulnerabilitiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListResourceVulnerabilities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/ResourceVulnerabilityCollection/ListResourceVulnerabilities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListResourceVulnerabilitiesResponse>
+                transformer =
+                        ListResourceVulnerabilitiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListResourceVulnerabilitiesRequest, ListResourceVulnerabilitiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListResourceVulnerabilitiesRequest,
+                                ListResourceVulnerabilitiesResponse>,
+                        java.util.concurrent.Future<ListResourceVulnerabilitiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListResourceVulnerabilitiesRequest, ListResourceVulnerabilitiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesResponse> listResources(
+            ListResourcesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListResourcesRequest, ListResourcesResponse>
+                    handler) {
+        LOG.trace("Called async listResources");
+        final ListResourcesRequest interceptedRequest =
+                ListResourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourcesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListResources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/Resource/ListResources");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListResourcesResponse>
+                transformer =
+                        ListResourcesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListResourcesRequest, ListResourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListResourcesRequest, ListResourcesResponse>,
+                        java.util.concurrent.Future<ListResourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListResourcesRequest, ListResourcesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4525,6 +5391,52 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListResponderRulesRequest, ListResponderRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSavedQueriesResponse> listSavedQueries(
+            ListSavedQueriesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSavedQueriesRequest, ListSavedQueriesResponse>
+                    handler) {
+        LOG.trace("Called async listSavedQueries");
+        final ListSavedQueriesRequest interceptedRequest =
+                ListSavedQueriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSavedQueriesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListSavedQueries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/ListSavedQueries");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSavedQueriesResponse>
+                transformer =
+                        ListSavedQueriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSavedQueriesRequest, ListSavedQueriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSavedQueriesRequest, ListSavedQueriesResponse>,
+                        java.util.concurrent.Future<ListSavedQueriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSavedQueriesRequest, ListSavedQueriesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -5149,6 +6061,50 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListTechniquesRequest, ListTechniquesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWlpAgentsResponse> listWlpAgents(
+            ListWlpAgentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListWlpAgentsRequest, ListWlpAgentsResponse>
+                    handler) {
+        LOG.trace("Called async listWlpAgents");
+        final ListWlpAgentsRequest interceptedRequest =
+                ListWlpAgentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWlpAgentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "ListWlpAgents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/ListWlpAgents");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWlpAgentsResponse>
+                transformer =
+                        ListWlpAgentsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWlpAgentsRequest, ListWlpAgentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWlpAgentsRequest, ListWlpAgentsResponse>,
+                        java.util.concurrent.Future<ListWlpAgentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWlpAgentsRequest, ListWlpAgentsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6732,6 +7688,58 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSavedQueryResponse> updateSavedQuery(
+            UpdateSavedQueryRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSavedQueryRequest, UpdateSavedQueryResponse>
+                    handler) {
+        LOG.trace("Called async updateSavedQuery");
+        final UpdateSavedQueryRequest interceptedRequest =
+                UpdateSavedQueryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSavedQueryConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "UpdateSavedQuery",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/SavedQuery/UpdateSavedQuery");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSavedQueryResponse>
+                transformer =
+                        UpdateSavedQueryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateSavedQueryRequest, UpdateSavedQueryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSavedQueryRequest, UpdateSavedQueryResponse>,
+                        java.util.concurrent.Future<UpdateSavedQueryResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSavedQueryDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSavedQueryRequest, UpdateSavedQueryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSecurityRecipeResponse> updateSecurityRecipe(
             UpdateSecurityRecipeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7104,6 +8112,57 @@ public class CloudGuardAsyncClient implements CloudGuardAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateTargetResponderRecipeResponderRuleRequest,
                     UpdateTargetResponderRecipeResponderRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWlpAgentResponse> updateWlpAgent(
+            UpdateWlpAgentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateWlpAgentRequest, UpdateWlpAgentResponse>
+                    handler) {
+        LOG.trace("Called async updateWlpAgent");
+        final UpdateWlpAgentRequest interceptedRequest =
+                UpdateWlpAgentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWlpAgentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CloudGuard",
+                        "UpdateWlpAgent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/cloud-guard/20200131/WlpAgent/UpdateWlpAgent");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateWlpAgentResponse>
+                transformer =
+                        UpdateWlpAgentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateWlpAgentRequest, UpdateWlpAgentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateWlpAgentRequest, UpdateWlpAgentResponse>,
+                        java.util.concurrent.Future<UpdateWlpAgentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateWlpAgentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateWlpAgentRequest, UpdateWlpAgentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

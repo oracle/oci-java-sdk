@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mediaservices.model;
@@ -21,17 +21,19 @@ package com.oracle.bmc.mediaservices.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "description", "parameters", "tasks"})
+    @java.beans.ConstructorProperties({"name", "description", "parameters", "tasks", "locks"})
     public SystemMediaWorkflow(
             String name,
             String description,
             java.util.Map<String, Object> parameters,
-            java.util.List<MediaWorkflowTask> tasks) {
+            java.util.List<MediaWorkflowTask> tasks,
+            java.util.List<ResourceLock> locks) {
         super();
         this.name = name;
         this.description = description;
         this.parameters = parameters;
         this.tasks = tasks;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -116,6 +118,22 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("tasks");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -123,7 +141,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
         public SystemMediaWorkflow build() {
             SystemMediaWorkflow model =
                     new SystemMediaWorkflow(
-                            this.name, this.description, this.parameters, this.tasks);
+                            this.name, this.description, this.parameters, this.tasks, this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -143,6 +161,9 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("tasks")) {
                 this.tasks(model.getTasks());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -231,6 +252,20 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
         return tasks;
     }
 
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -249,6 +284,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", parameters=").append(String.valueOf(this.parameters));
         sb.append(", tasks=").append(String.valueOf(this.tasks));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -267,6 +303,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.parameters, other.parameters)
                 && java.util.Objects.equals(this.tasks, other.tasks)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -278,6 +315,7 @@ public final class SystemMediaWorkflow extends com.oracle.bmc.http.internal.Expl
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.parameters == null ? 43 : this.parameters.hashCode());
         result = (result * PRIME) + (this.tasks == null ? 43 : this.tasks.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

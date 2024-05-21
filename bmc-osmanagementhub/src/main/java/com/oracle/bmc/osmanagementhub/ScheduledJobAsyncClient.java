@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -458,6 +458,63 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeScheduledJobCompartmentResponse>
+            changeScheduledJobCompartment(
+                    ChangeScheduledJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeScheduledJobCompartmentRequest,
+                                    ChangeScheduledJobCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeScheduledJobCompartment");
+        final ChangeScheduledJobCompartmentRequest interceptedRequest =
+                ChangeScheduledJobCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeScheduledJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ScheduledJob",
+                        "ChangeScheduledJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ChangeScheduledJobCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeScheduledJobCompartmentResponse>
+                transformer =
+                        ChangeScheduledJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeScheduledJobCompartmentRequest, ChangeScheduledJobCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeScheduledJobCompartmentRequest,
+                                ChangeScheduledJobCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeScheduledJobCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeScheduledJobCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeScheduledJobCompartmentRequest, ChangeScheduledJobCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateScheduledJobResponse> createScheduledJob(
             CreateScheduledJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -471,7 +528,10 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "CreateScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "CreateScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/CreateScheduledJob");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateScheduledJobResponse>
                 transformer =
                         CreateScheduledJobConverter.fromResponse(
@@ -519,7 +579,10 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
                 DeleteScheduledJobConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "DeleteScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "DeleteScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/DeleteScheduledJob");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduledJobResponse>
                 transformer =
                         DeleteScheduledJobConverter.fromResponse(
@@ -562,7 +625,10 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
                 GetScheduledJobConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "GetScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "GetScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/GetScheduledJob");
         final java.util.function.Function<javax.ws.rs.core.Response, GetScheduledJobResponse>
                 transformer =
                         GetScheduledJobConverter.fromResponse(
@@ -605,7 +671,10 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
                 ListScheduledJobsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "ListScheduledJobs", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "ListScheduledJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/ListScheduledJobs");
         final java.util.function.Function<javax.ws.rs.core.Response, ListScheduledJobsResponse>
                 transformer =
                         ListScheduledJobsConverter.fromResponse(
@@ -649,7 +718,10 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "RunScheduledJobNow", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "RunScheduledJobNow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/RunScheduledJobNow");
         final java.util.function.Function<javax.ws.rs.core.Response, RunScheduledJobNowResponse>
                 transformer =
                         RunScheduledJobNowConverter.fromResponse(
@@ -692,7 +764,10 @@ public class ScheduledJobAsyncClient implements ScheduledJobAsync {
                 UpdateScheduledJobConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ScheduledJob", "UpdateScheduledJob", ib.getRequestUri().toString(), "");
+                        "ScheduledJob",
+                        "UpdateScheduledJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ScheduledJob/UpdateScheduledJob");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduledJobResponse>
                 transformer =
                         UpdateScheduledJobConverter.fromResponse(

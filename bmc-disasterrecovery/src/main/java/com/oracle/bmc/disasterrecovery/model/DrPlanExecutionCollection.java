@@ -1,12 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Results of a DR Plan Execution search. Contains both DR Plan Execution summary items
- * and other information, such as metadata.
+ * A list of DR plan execution summaries.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -33,14 +32,14 @@ public final class DrPlanExecutionCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of all DR Plan Execution summary objects.
+         * A list of DR plan execution summaries.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<DrPlanExecutionSummary> items;
 
         /**
-         * A list of all DR Plan Execution summary objects.
+         * A list of DR plan execution summaries.
          *
          * @param items the value to set
          * @return this builder
@@ -83,14 +82,14 @@ public final class DrPlanExecutionCollection
     }
 
     /**
-     * A list of all DR Plan Execution summary objects.
+     * A list of DR plan execution summaries.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<DrPlanExecutionSummary> items;
 
     /**
-     * A list of all DR Plan Execution summary objects.
+     * A list of DR plan execution summaries.
      *
      * @return the value
      **/

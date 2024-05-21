@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.nosql.model;
@@ -33,7 +33,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         "readThrottleCount",
         "writeThrottleCount",
         "storageThrottleCount",
-        "maxShardSizeUsageInPercent"
+        "maxShardSizeUsageInPercent",
+        "timeStarted"
     })
     public TableUsageSummary(
             Integer secondsInPeriod,
@@ -43,7 +44,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
             Integer readThrottleCount,
             Integer writeThrottleCount,
             Integer storageThrottleCount,
-            Integer maxShardSizeUsageInPercent) {
+            Integer maxShardSizeUsageInPercent,
+            java.util.Date timeStarted) {
         super();
         this.secondsInPeriod = secondsInPeriod;
         this.readUnits = readUnits;
@@ -53,6 +55,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         this.writeThrottleCount = writeThrottleCount;
         this.storageThrottleCount = storageThrottleCount;
         this.maxShardSizeUsageInPercent = maxShardSizeUsageInPercent;
+        this.timeStarted = timeStarted;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -199,6 +202,24 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("maxShardSizeUsageInPercent");
             return this;
         }
+        /**
+         * The time stamp of this usage record.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+        private java.util.Date timeStarted;
+
+        /**
+         * The time stamp of this usage record.
+         *
+         * @param timeStarted the value to set
+         * @return this builder
+         **/
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            this.__explicitlySet__.add("timeStarted");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -213,7 +234,8 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
                             this.readThrottleCount,
                             this.writeThrottleCount,
                             this.storageThrottleCount,
-                            this.maxShardSizeUsageInPercent);
+                            this.maxShardSizeUsageInPercent,
+                            this.timeStarted);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -245,6 +267,9 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("maxShardSizeUsageInPercent")) {
                 this.maxShardSizeUsageInPercent(model.getMaxShardSizeUsageInPercent());
+            }
+            if (model.wasPropertyExplicitlySet("timeStarted")) {
+                this.timeStarted(model.getTimeStarted());
             }
             return this;
         }
@@ -387,6 +412,22 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         return maxShardSizeUsageInPercent;
     }
 
+    /**
+     * The time stamp of this usage record.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    private final java.util.Date timeStarted;
+
+    /**
+     * The time stamp of this usage record.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeStarted() {
+        return timeStarted;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -410,6 +451,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", storageThrottleCount=").append(String.valueOf(this.storageThrottleCount));
         sb.append(", maxShardSizeUsageInPercent=")
                 .append(String.valueOf(this.maxShardSizeUsageInPercent));
+        sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(")");
         return sb.toString();
     }
@@ -433,6 +475,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.storageThrottleCount, other.storageThrottleCount)
                 && java.util.Objects.equals(
                         this.maxShardSizeUsageInPercent, other.maxShardSizeUsageInPercent)
+                && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && super.equals(other);
     }
 
@@ -464,6 +507,7 @@ public final class TableUsageSummary extends com.oracle.bmc.http.internal.Explic
                         + (this.maxShardSizeUsageInPercent == null
                                 ? 43
                                 : this.maxShardSizeUsageInPercent.hashCode());
+        result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

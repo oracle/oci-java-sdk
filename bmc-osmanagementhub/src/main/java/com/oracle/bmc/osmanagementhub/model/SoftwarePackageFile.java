@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -80,16 +80,14 @@ public final class SoftwarePackageFile extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The date and time of the last modification to this file, as described
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The date and time of the last modification to this file, as described
-         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeModified the value to set
          * @return this builder
@@ -230,16 +228,14 @@ public final class SoftwarePackageFile extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The date and time of the last modification to this file, as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The date and time of the last modification to this file, as described
-     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/

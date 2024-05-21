@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -458,6 +458,60 @@ public class OnboardingAsyncClient implements OnboardingAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeProfileCompartmentResponse> changeProfileCompartment(
+            ChangeProfileCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeProfileCompartmentRequest, ChangeProfileCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeProfileCompartment");
+        final ChangeProfileCompartmentRequest interceptedRequest =
+                ChangeProfileCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProfileCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "ChangeProfileCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ChangeProfileCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeProfileCompartmentResponse>
+                transformer =
+                        ChangeProfileCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeProfileCompartmentRequest, ChangeProfileCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeProfileCompartmentRequest, ChangeProfileCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeProfileCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeProfileCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeProfileCompartmentRequest, ChangeProfileCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProfileResponse> createProfile(
             CreateProfileRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateProfileRequest, CreateProfileResponse>
@@ -470,7 +524,10 @@ public class OnboardingAsyncClient implements OnboardingAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "CreateProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "CreateProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/CreateProfile");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateProfileResponse>
                 transformer =
                         CreateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -516,7 +573,10 @@ public class OnboardingAsyncClient implements OnboardingAsync {
                 DeleteProfileConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "DeleteProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "DeleteProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DeleteProfile");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteProfileResponse>
                 transformer =
                         DeleteProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -556,7 +616,10 @@ public class OnboardingAsyncClient implements OnboardingAsync {
                 GetProfileConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "GetProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "GetProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/GetProfile");
         final java.util.function.Function<javax.ws.rs.core.Response, GetProfileResponse>
                 transformer =
                         GetProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -597,7 +660,10 @@ public class OnboardingAsyncClient implements OnboardingAsync {
                 ListProfilesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "ListProfiles", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "ListProfiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ListProfiles");
         final java.util.function.Function<javax.ws.rs.core.Response, ListProfilesResponse>
                 transformer =
                         ListProfilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -638,7 +704,10 @@ public class OnboardingAsyncClient implements OnboardingAsync {
                 UpdateProfileConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Onboarding", "UpdateProfile", ib.getRequestUri().toString(), "");
+                        "Onboarding",
+                        "UpdateProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/UpdateProfile");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateProfileResponse>
                 transformer =
                         UpdateProfileConverter.fromResponse(java.util.Optional.of(serviceDetails));

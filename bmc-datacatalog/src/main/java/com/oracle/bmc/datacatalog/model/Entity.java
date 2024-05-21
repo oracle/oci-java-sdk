@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datacatalog.model;
@@ -32,6 +32,7 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "createdById",
         "updatedById",
         "lifecycleState",
+        "lifecycleDetails",
         "externalKey",
         "patternKey",
         "realizedExpression",
@@ -63,6 +64,7 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             String createdById,
             String updatedById,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             String externalKey,
             String patternKey,
             String realizedExpression,
@@ -93,6 +95,7 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.createdById = createdById;
         this.updatedById = updatedById;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.externalKey = externalKey;
         this.patternKey = patternKey;
         this.realizedExpression = realizedExpression;
@@ -269,6 +272,26 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+         * see service documentation for details.
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -624,6 +647,7 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.createdById,
                             this.updatedById,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.externalKey,
                             this.patternKey,
                             this.realizedExpression,
@@ -678,6 +702,9 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("externalKey")) {
                 this.externalKey(model.getExternalKey());
@@ -888,6 +915,24 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+     * see service documentation for details.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -1209,6 +1254,7 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", createdById=").append(String.valueOf(this.createdById));
         sb.append(", updatedById=").append(String.valueOf(this.updatedById));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", externalKey=").append(String.valueOf(this.externalKey));
         sb.append(", patternKey=").append(String.valueOf(this.patternKey));
         sb.append(", realizedExpression=").append(String.valueOf(this.realizedExpression));
@@ -1252,6 +1298,7 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.createdById, other.createdById)
                 && java.util.Objects.equals(this.updatedById, other.updatedById)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.externalKey, other.externalKey)
                 && java.util.Objects.equals(this.patternKey, other.patternKey)
                 && java.util.Objects.equals(this.realizedExpression, other.realizedExpression)
@@ -1290,6 +1337,9 @@ public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.externalKey == null ? 43 : this.externalKey.hashCode());
         result = (result * PRIME) + (this.patternKey == null ? 43 : this.patternKey.hashCode());
         result =

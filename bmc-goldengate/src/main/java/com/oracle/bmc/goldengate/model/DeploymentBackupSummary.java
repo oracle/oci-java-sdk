@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -55,7 +55,7 @@ public final class DeploymentBackupSummary
             String lifecycleDetails,
             java.util.Date timeOfBackup,
             java.util.Date timeBackupFinished,
-            java.math.BigDecimal sizeInBytes,
+            Long sizeInBytes,
             DeploymentBackupType backupType,
             String oggVersion,
             String namespaceName,
@@ -264,7 +264,7 @@ public final class DeploymentBackupSummary
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-        private java.math.BigDecimal sizeInBytes;
+        private Long sizeInBytes;
 
         /**
          * The size of the backup stored in object storage (in bytes)
@@ -272,7 +272,7 @@ public final class DeploymentBackupSummary
          * @param sizeInBytes the value to set
          * @return this builder
          **/
-        public Builder sizeInBytes(java.math.BigDecimal sizeInBytes) {
+        public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
@@ -739,14 +739,14 @@ public final class DeploymentBackupSummary
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
-    private final java.math.BigDecimal sizeInBytes;
+    private final Long sizeInBytes;
 
     /**
      * The size of the backup stored in object storage (in bytes)
      *
      * @return the value
      **/
-    public java.math.BigDecimal getSizeInBytes() {
+    public Long getSizeInBytes() {
         return sizeInBytes;
     }
 

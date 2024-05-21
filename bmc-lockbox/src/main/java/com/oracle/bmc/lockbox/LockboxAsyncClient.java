@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox;
@@ -296,6 +296,11 @@ public class LockboxAsyncClient implements LockboxAsync {
         }
         if (endpoint != null) {
             setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "LockboxAsyncClient", "exportAccessRequests"));
         }
     }
 
@@ -866,6 +871,58 @@ public class LockboxAsyncClient implements LockboxAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ExportAccessRequestsResponse> exportAccessRequests(
+            ExportAccessRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExportAccessRequestsRequest, ExportAccessRequestsResponse>
+                    handler) {
+        LOG.trace("Called async exportAccessRequests");
+        final ExportAccessRequestsRequest interceptedRequest =
+                ExportAccessRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExportAccessRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Lockbox",
+                        "ExportAccessRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managed-access/20220126/AccessRequestCollection/ExportAccessRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExportAccessRequestsResponse>
+                transformer =
+                        ExportAccessRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExportAccessRequestsRequest, ExportAccessRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExportAccessRequestsRequest, ExportAccessRequestsResponse>,
+                        java.util.concurrent.Future<ExportAccessRequestsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExportAccessRequestsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExportAccessRequestsRequest, ExportAccessRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccessMaterialsResponse> getAccessMaterials(
             GetAccessMaterialsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -945,6 +1002,54 @@ public class LockboxAsyncClient implements LockboxAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetAccessRequestRequest, GetAccessRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessRequestInternalResponse> getAccessRequestInternal(
+            GetAccessRequestInternalRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAccessRequestInternalRequest, GetAccessRequestInternalResponse>
+                    handler) {
+        LOG.trace("Called async getAccessRequestInternal");
+        final GetAccessRequestInternalRequest interceptedRequest =
+                GetAccessRequestInternalConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAccessRequestInternalConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Lockbox",
+                        "GetAccessRequestInternal",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/managed-access/20220126/AccessRequestExt/GetAccessRequestInternal");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAccessRequestInternalResponse>
+                transformer =
+                        GetAccessRequestInternalConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAccessRequestInternalRequest, GetAccessRequestInternalResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAccessRequestInternalRequest, GetAccessRequestInternalResponse>,
+                        java.util.concurrent.Future<GetAccessRequestInternalResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAccessRequestInternalRequest, GetAccessRequestInternalResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

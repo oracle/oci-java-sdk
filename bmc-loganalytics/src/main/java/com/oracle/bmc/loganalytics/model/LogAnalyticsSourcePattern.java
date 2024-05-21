@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -41,7 +41,8 @@ public final class LogAnalyticsSourcePattern
         "isAgentWarningSuppressed",
         "patternText",
         "patternType",
-        "entityType"
+        "entityType",
+        "patternProperties"
     })
     public LogAnalyticsSourcePattern(
             String convertedText,
@@ -62,7 +63,8 @@ public final class LogAnalyticsSourcePattern
             Boolean isAgentWarningSuppressed,
             String patternText,
             Long patternType,
-            java.util.List<String> entityType) {
+            java.util.List<String> entityType,
+            java.util.List<LogAnalyticsProperty> patternProperties) {
         super();
         this.convertedText = convertedText;
         this.dbParserId = dbParserId;
@@ -83,6 +85,7 @@ public final class LogAnalyticsSourcePattern
         this.patternText = patternText;
         this.patternType = patternType;
         this.entityType = entityType;
+        this.patternProperties = patternProperties;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -398,6 +401,22 @@ public final class LogAnalyticsSourcePattern
             this.__explicitlySet__.add("entityType");
             return this;
         }
+        /**
+         * A list of pattern properties.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("patternProperties")
+        private java.util.List<LogAnalyticsProperty> patternProperties;
+
+        /**
+         * A list of pattern properties.
+         * @param patternProperties the value to set
+         * @return this builder
+         **/
+        public Builder patternProperties(java.util.List<LogAnalyticsProperty> patternProperties) {
+            this.patternProperties = patternProperties;
+            this.__explicitlySet__.add("patternProperties");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -423,7 +442,8 @@ public final class LogAnalyticsSourcePattern
                             this.isAgentWarningSuppressed,
                             this.patternText,
                             this.patternType,
-                            this.entityType);
+                            this.entityType,
+                            this.patternProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -488,6 +508,9 @@ public final class LogAnalyticsSourcePattern
             }
             if (model.wasPropertyExplicitlySet("entityType")) {
                 this.entityType(model.getEntityType());
+            }
+            if (model.wasPropertyExplicitlySet("patternProperties")) {
+                this.patternProperties(model.getPatternProperties());
             }
             return this;
         }
@@ -777,6 +800,20 @@ public final class LogAnalyticsSourcePattern
         return entityType;
     }
 
+    /**
+     * A list of pattern properties.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patternProperties")
+    private final java.util.List<LogAnalyticsProperty> patternProperties;
+
+    /**
+     * A list of pattern properties.
+     * @return the value
+     **/
+    public java.util.List<LogAnalyticsProperty> getPatternProperties() {
+        return patternProperties;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -813,6 +850,7 @@ public final class LogAnalyticsSourcePattern
         sb.append(", patternText=").append(String.valueOf(this.patternText));
         sb.append(", patternType=").append(String.valueOf(this.patternType));
         sb.append(", entityType=").append(String.valueOf(this.entityType));
+        sb.append(", patternProperties=").append(String.valueOf(this.patternProperties));
         sb.append(")");
         return sb.toString();
     }
@@ -850,6 +888,7 @@ public final class LogAnalyticsSourcePattern
                 && java.util.Objects.equals(this.patternText, other.patternText)
                 && java.util.Objects.equals(this.patternType, other.patternType)
                 && java.util.Objects.equals(this.entityType, other.entityType)
+                && java.util.Objects.equals(this.patternProperties, other.patternProperties)
                 && super.equals(other);
     }
 
@@ -896,6 +935,9 @@ public final class LogAnalyticsSourcePattern
         result = (result * PRIME) + (this.patternText == null ? 43 : this.patternText.hashCode());
         result = (result * PRIME) + (this.patternType == null ? 43 : this.patternType.hashCode());
         result = (result * PRIME) + (this.entityType == null ? 43 : this.entityType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patternProperties == null ? 43 : this.patternProperties.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

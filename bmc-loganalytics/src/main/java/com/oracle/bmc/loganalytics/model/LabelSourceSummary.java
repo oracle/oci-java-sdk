@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -27,6 +27,8 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
         "sourceId",
         "labelOperatorName",
         "labelCondition",
+        "conditionString",
+        "conditionBlock",
         "labelFieldDisplayname",
         "labelFieldName"
     })
@@ -36,6 +38,8 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
             Long sourceId,
             String labelOperatorName,
             String labelCondition,
+            String conditionString,
+            ConditionBlock conditionBlock,
             String labelFieldDisplayname,
             String labelFieldName) {
         super();
@@ -44,6 +48,8 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
         this.sourceId = sourceId;
         this.labelOperatorName = labelOperatorName;
         this.labelCondition = labelCondition;
+        this.conditionString = conditionString;
+        this.conditionBlock = conditionBlock;
         this.labelFieldDisplayname = labelFieldDisplayname;
         this.labelFieldName = labelFieldName;
     }
@@ -131,6 +137,33 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * String representation of the label condition.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
+        private String conditionString;
+
+        /**
+         * String representation of the label condition.
+         *
+         * @param conditionString the value to set
+         * @return this builder
+         **/
+        public Builder conditionString(String conditionString) {
+            this.conditionString = conditionString;
+            this.__explicitlySet__.add("conditionString");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("conditionBlock")
+        private ConditionBlock conditionBlock;
+
+        public Builder conditionBlock(ConditionBlock conditionBlock) {
+            this.conditionBlock = conditionBlock;
+            this.__explicitlySet__.add("conditionBlock");
+            return this;
+        }
+        /**
          * The label field display name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
@@ -174,6 +207,8 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
                             this.sourceId,
                             this.labelOperatorName,
                             this.labelCondition,
+                            this.conditionString,
+                            this.conditionBlock,
                             this.labelFieldDisplayname,
                             this.labelFieldName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -198,6 +233,12 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("labelCondition")) {
                 this.labelCondition(model.getLabelCondition());
+            }
+            if (model.wasPropertyExplicitlySet("conditionString")) {
+                this.conditionString(model.getConditionString());
+            }
+            if (model.wasPropertyExplicitlySet("conditionBlock")) {
+                this.conditionBlock(model.getConditionBlock());
             }
             if (model.wasPropertyExplicitlySet("labelFieldDisplayname")) {
                 this.labelFieldDisplayname(model.getLabelFieldDisplayname());
@@ -291,6 +332,29 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * String representation of the label condition.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
+    private final String conditionString;
+
+    /**
+     * String representation of the label condition.
+     *
+     * @return the value
+     **/
+    public String getConditionString() {
+        return conditionString;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("conditionBlock")
+    private final ConditionBlock conditionBlock;
+
+    public ConditionBlock getConditionBlock() {
+        return conditionBlock;
+    }
+
+    /**
      * The label field display name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
@@ -337,6 +401,8 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", sourceId=").append(String.valueOf(this.sourceId));
         sb.append(", labelOperatorName=").append(String.valueOf(this.labelOperatorName));
         sb.append(", labelCondition=").append(String.valueOf(this.labelCondition));
+        sb.append(", conditionString=").append(String.valueOf(this.conditionString));
+        sb.append(", conditionBlock=").append(String.valueOf(this.conditionBlock));
         sb.append(", labelFieldDisplayname=").append(String.valueOf(this.labelFieldDisplayname));
         sb.append(", labelFieldName=").append(String.valueOf(this.labelFieldName));
         sb.append(")");
@@ -358,6 +424,8 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.sourceId, other.sourceId)
                 && java.util.Objects.equals(this.labelOperatorName, other.labelOperatorName)
                 && java.util.Objects.equals(this.labelCondition, other.labelCondition)
+                && java.util.Objects.equals(this.conditionString, other.conditionString)
+                && java.util.Objects.equals(this.conditionBlock, other.conditionBlock)
                 && java.util.Objects.equals(this.labelFieldDisplayname, other.labelFieldDisplayname)
                 && java.util.Objects.equals(this.labelFieldName, other.labelFieldName)
                 && super.equals(other);
@@ -378,6 +446,12 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.labelCondition == null ? 43 : this.labelCondition.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionString == null ? 43 : this.conditionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.conditionBlock == null ? 43 : this.conditionBlock.hashCode());
         result =
                 (result * PRIME)
                         + (this.labelFieldDisplayname == null

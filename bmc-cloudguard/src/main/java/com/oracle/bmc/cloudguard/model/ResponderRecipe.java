@@ -1,11 +1,27 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of ResponderRecipe.
+ * A ResponderRecipe resource contains a specific instance of one of
+ * the supported detector types (for example, activity, configuration,
+ * or threat).
+ * <p>
+ * A ResponderRecipe resource:
+ * * Is effectively a copy of a Responder resource in which users can make
+ * very limited changes if it\u2019s Oracle-managed, and more changes if it\u2019s user-managed.
+ * * Can also be created by cloning an existing ResponderRecipe resource, either
+ * user-managed or Oracle-managed.
+ * * Is visible on Cloud Guard\u2019s Responder Recipes page.
+ * * Is located in a specific OCI compartment.
+ * * Can be modified by users, programmatically or through the UI.
+ * * Changes that can be made here apply globally, to resources in all OCI compartments
+ * mapped to a target that attaches the responder recipe, but are overridden by
+ * any changes made in the corresponding TargetResponderRecipe resource (effectively
+ * created when the responder recipe is attached to the target).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -73,13 +89,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Identifier for ResponderRecipe.
+         * Unique identifier for the responder recip
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Identifier for ResponderRecipe.
+         * Unique identifier for the responder recip
          * @param id the value to set
          * @return this builder
          **/
@@ -89,13 +105,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * ResponderRecipe display name.
+         * Responder recipe display name
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * ResponderRecipe display name.
+         * Responder recipe display name
          * @param displayName the value to set
          * @return this builder
          **/
@@ -105,13 +121,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * ResponderRecipe description.
+         * Responder recipe description
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * ResponderRecipe description.
+         * Responder recipe description
          * @param description the value to set
          * @return this builder
          **/
@@ -121,13 +137,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Owner of ResponderRecipe
+         * Owner of responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
-         * Owner of ResponderRecipe
+         * Owner of responder recipe
          * @param owner the value to set
          * @return this builder
          **/
@@ -153,13 +169,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * List of responder rules associated with the recipe
+         * List of currently enabled responder rules for the responder type, for recipe after applying defaults
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
         private java.util.List<ResponderRecipeResponderRule> effectiveResponderRules;
 
         /**
-         * List of responder rules associated with the recipe
+         * List of currently enabled responder rules for the responder type, for recipe after applying defaults
          * @param effectiveResponderRules the value to set
          * @return this builder
          **/
@@ -170,13 +186,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The id of the source responder recipe.
+         * The unique identifier of the source responder recipe
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
         private String sourceResponderRecipeId;
 
         /**
-         * The id of the source responder recipe.
+         * The unique identifier of the source responder recipe
          * @param sourceResponderRecipeId the value to set
          * @return this builder
          **/
@@ -186,13 +202,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Compartment Identifier
+         * Compartment OCID
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
+         * Compartment OCID
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -218,13 +234,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time the responder recipe was updated. Format defined by RFC3339.
+         * The date and time the responder recipe was last updated. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the responder recipe was updated. Format defined by RFC3339.
+         * The date and time the responder recipe was last updated. Format defined by RFC3339.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -234,13 +250,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Example.
+         * The current lifecycle state of the example
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -427,13 +443,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Identifier for ResponderRecipe.
+     * Unique identifier for the responder recip
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Identifier for ResponderRecipe.
+     * Unique identifier for the responder recip
      * @return the value
      **/
     public String getId() {
@@ -441,13 +457,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * ResponderRecipe display name.
+     * Responder recipe display name
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * ResponderRecipe display name.
+     * Responder recipe display name
      * @return the value
      **/
     public String getDisplayName() {
@@ -455,13 +471,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * ResponderRecipe description.
+     * Responder recipe description
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * ResponderRecipe description.
+     * Responder recipe description
      * @return the value
      **/
     public String getDescription() {
@@ -469,13 +485,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      * @return the value
      **/
     public OwnerType getOwner() {
@@ -497,13 +513,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
     private final java.util.List<ResponderRecipeResponderRule> effectiveResponderRules;
 
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * @return the value
      **/
     public java.util.List<ResponderRecipeResponderRule> getEffectiveResponderRules() {
@@ -511,13 +527,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceResponderRecipeId")
     private final String sourceResponderRecipeId;
 
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      * @return the value
      **/
     public String getSourceResponderRecipeId() {
@@ -525,13 +541,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
+     * Compartment OCID
      * @return the value
      **/
     public String getCompartmentId() {
@@ -553,13 +569,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -567,13 +583,13 @@ public final class ResponderRecipe extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      * @return the value
      **/
     public LifecycleState getLifecycleState() {

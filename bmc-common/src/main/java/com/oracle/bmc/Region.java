@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc;
@@ -120,6 +120,10 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region MX_QUERETARO_1 = register("mx-queretaro-1", Realm.OC1, "qro");
     public static final Region EU_MADRID_1 = register("eu-madrid-1", Realm.OC1, "mad");
     public static final Region US_CHICAGO_1 = register("us-chicago-1", Realm.OC1, "ord");
+    public static final Region MX_MONTERREY_1 = register("mx-monterrey-1", Realm.OC1, "mty");
+    public static final Region US_SALTLAKE_2 = register("us-saltlake-2", Realm.OC1, "aga");
+    public static final Region SA_BOGOTA_1 = register("sa-bogota-1", Realm.OC1, "bog");
+    public static final Region SA_VALPARAISO_1 = register("sa-valparaiso-1", Realm.OC1, "vap");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -158,6 +162,18 @@ public final class Region implements Serializable, Comparable<Region> {
     // OC19
     public static final Region EU_MADRID_2 = register("eu-madrid-2", Realm.OC19, "vll");
     public static final Region EU_FRANKFURT_2 = register("eu-frankfurt-2", Realm.OC19, "str");
+
+    // OC24
+    public static final Region EU_DCC_ZURICH_1 = register("eu-dcc-zurich-1", Realm.OC24, "avz");
+
+    // OC21
+    public static final Region ME_DCC_DOHA_1 = register("me-dcc-doha-1", Realm.OC21, "doh");
+
+    // OC26
+    public static final Region ME_ABUDHABI_3 = register("me-abudhabi-3", Realm.OC26, "ahu");
+
+    // OC15
+    public static final Region AP_DCC_GAZIPUR_1 = register("ap-dcc-gazipur-1", Realm.OC15, "dac");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -10,7 +10,7 @@ import com.oracle.bmc.ocvp.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 public class EsxiHostClient implements EsxiHost {
     /**
      * Service instance for EsxiHost.
@@ -430,7 +430,8 @@ public class EsxiHostClient implements EsxiHost {
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
                     endpoint,
-                    executorService);
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
@@ -564,7 +565,7 @@ public class EsxiHostClient implements EsxiHost {
                         "EsxiHost",
                         "CreateEsxiHost",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost");
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost");
         java.util.function.Function<javax.ws.rs.core.Response, CreateEsxiHostResponse> transformer =
                 CreateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -603,7 +604,7 @@ public class EsxiHostClient implements EsxiHost {
                         "EsxiHost",
                         "DeleteEsxiHost",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost");
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/DeleteEsxiHost");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteEsxiHostResponse> transformer =
                 DeleteEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -639,7 +640,7 @@ public class EsxiHostClient implements EsxiHost {
                         "EsxiHost",
                         "GetEsxiHost",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost");
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/GetEsxiHost");
         java.util.function.Function<javax.ws.rs.core.Response, GetEsxiHostResponse> transformer =
                 GetEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -652,6 +653,43 @@ public class EsxiHostClient implements EsxiHost {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public InplaceUpgradeResponse inplaceUpgrade(InplaceUpgradeRequest request) {
+        LOG.trace("Called inplaceUpgrade");
+        final InplaceUpgradeRequest interceptedRequest =
+                InplaceUpgradeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InplaceUpgradeConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EsxiHost",
+                        "InplaceUpgrade",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/InplaceUpgrade");
+        java.util.function.Function<javax.ws.rs.core.Response, InplaceUpgradeResponse> transformer =
+                InplaceUpgradeConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -674,7 +712,7 @@ public class EsxiHostClient implements EsxiHost {
                         "EsxiHost",
                         "ListEsxiHosts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts");
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHostSummary/ListEsxiHosts");
         java.util.function.Function<javax.ws.rs.core.Response, ListEsxiHostsResponse> transformer =
                 ListEsxiHostsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -687,6 +725,46 @@ public class EsxiHostClient implements EsxiHost {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ReplaceHostResponse replaceHost(ReplaceHostRequest request) {
+        LOG.trace("Called replaceHost");
+        final ReplaceHostRequest interceptedRequest =
+                ReplaceHostConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReplaceHostConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "EsxiHost",
+                        "ReplaceHost",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/ReplaceHost");
+        java.util.function.Function<javax.ws.rs.core.Response, ReplaceHostResponse> transformer =
+                ReplaceHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getReplaceHostDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -710,7 +788,7 @@ public class EsxiHostClient implements EsxiHost {
                         "EsxiHost",
                         "SwapBilling",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling");
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/SwapBilling");
         java.util.function.Function<javax.ws.rs.core.Response, SwapBillingResponse> transformer =
                 SwapBillingConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -746,7 +824,7 @@ public class EsxiHostClient implements EsxiHost {
                         "EsxiHost",
                         "UpdateEsxiHost",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost");
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/UpdateEsxiHost");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateEsxiHostResponse> transformer =
                 UpdateEsxiHostConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

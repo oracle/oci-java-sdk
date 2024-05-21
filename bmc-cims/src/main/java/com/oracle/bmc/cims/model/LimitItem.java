@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cims.model;
 
 /**
- * Reserved for future use.
+ * Details about the LimitItem object.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,13 +70,13 @@ public final class LimitItem extends Item {
             return this;
         }
         /**
-         * The currently available limit of the resource.
+         * The current service limit for the resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
         private Integer currentLimit;
 
         /**
-         * The currently available limit of the resource.
+         * The current service limit for the resource.
          * @param currentLimit the value to set
          * @return this builder
          **/
@@ -86,13 +86,13 @@ public final class LimitItem extends Item {
             return this;
         }
         /**
-         * The current usage of the resource.
+         * The current resource usage.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
         private Integer currentUsage;
 
         /**
-         * The current usage of the resource.
+         * The current resource usage.
          * @param currentUsage the value to set
          * @return this builder
          **/
@@ -102,13 +102,13 @@ public final class LimitItem extends Item {
             return this;
         }
         /**
-         * The requested limit for the resource.
+         * The new service limit being requested for the resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
         private Integer requestedLimit;
 
         /**
-         * The requested limit for the resource.
+         * The new service limit being requested for the resource.
          * @param requestedLimit the value to set
          * @return this builder
          **/
@@ -218,13 +218,13 @@ public final class LimitItem extends Item {
     }
 
     /**
-     * The currently available limit of the resource.
+     * The current service limit for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentLimit")
     private final Integer currentLimit;
 
     /**
-     * The currently available limit of the resource.
+     * The current service limit for the resource.
      * @return the value
      **/
     public Integer getCurrentLimit() {
@@ -232,13 +232,13 @@ public final class LimitItem extends Item {
     }
 
     /**
-     * The current usage of the resource.
+     * The current resource usage.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentUsage")
     private final Integer currentUsage;
 
     /**
-     * The current usage of the resource.
+     * The current resource usage.
      * @return the value
      **/
     public Integer getCurrentUsage() {
@@ -246,13 +246,13 @@ public final class LimitItem extends Item {
     }
 
     /**
-     * The requested limit for the resource.
+     * The new service limit being requested for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestedLimit")
     private final Integer requestedLimit;
 
     /**
-     * The requested limit for the resource.
+     * The new service limit being requested for the resource.
      * @return the value
      **/
     public Integer getRequestedLimit() {

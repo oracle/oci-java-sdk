@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -32,6 +32,7 @@ public final class CreateDeploymentDetails
         "definedTags",
         "deploymentBackupId",
         "subnetId",
+        "loadBalancerSubnetId",
         "fqdn",
         "nsgIds",
         "isPublic",
@@ -39,7 +40,8 @@ public final class CreateDeploymentDetails
         "isAutoScalingEnabled",
         "deploymentType",
         "oggData",
-        "maintenanceWindow"
+        "maintenanceWindow",
+        "maintenanceConfiguration"
     })
     public CreateDeploymentDetails(
             String displayName,
@@ -50,6 +52,7 @@ public final class CreateDeploymentDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String deploymentBackupId,
             String subnetId,
+            String loadBalancerSubnetId,
             String fqdn,
             java.util.List<String> nsgIds,
             Boolean isPublic,
@@ -57,7 +60,8 @@ public final class CreateDeploymentDetails
             Boolean isAutoScalingEnabled,
             DeploymentType deploymentType,
             CreateOggDeploymentDetails oggData,
-            CreateMaintenanceWindowDetails maintenanceWindow) {
+            CreateMaintenanceWindowDetails maintenanceWindow,
+            CreateMaintenanceConfigurationDetails maintenanceConfiguration) {
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
@@ -67,6 +71,7 @@ public final class CreateDeploymentDetails
         this.definedTags = definedTags;
         this.deploymentBackupId = deploymentBackupId;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
         this.fqdn = fqdn;
         this.nsgIds = nsgIds;
         this.isPublic = isPublic;
@@ -75,6 +80,7 @@ public final class CreateDeploymentDetails
         this.deploymentType = deploymentType;
         this.oggData = oggData;
         this.maintenanceWindow = maintenanceWindow;
+        this.maintenanceConfiguration = maintenanceConfiguration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -217,14 +223,14 @@ public final class CreateDeploymentDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -232,6 +238,28 @@ public final class CreateDeploymentDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+         * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         **/
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
             return this;
         }
         /**
@@ -365,6 +393,16 @@ public final class CreateDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceConfiguration")
+        private CreateMaintenanceConfigurationDetails maintenanceConfiguration;
+
+        public Builder maintenanceConfiguration(
+                CreateMaintenanceConfigurationDetails maintenanceConfiguration) {
+            this.maintenanceConfiguration = maintenanceConfiguration;
+            this.__explicitlySet__.add("maintenanceConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -379,6 +417,7 @@ public final class CreateDeploymentDetails
                             this.definedTags,
                             this.deploymentBackupId,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
                             this.fqdn,
                             this.nsgIds,
                             this.isPublic,
@@ -386,7 +425,8 @@ public final class CreateDeploymentDetails
                             this.isAutoScalingEnabled,
                             this.deploymentType,
                             this.oggData,
-                            this.maintenanceWindow);
+                            this.maintenanceWindow,
+                            this.maintenanceConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -419,6 +459,9 @@ public final class CreateDeploymentDetails
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
             }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
+            }
             if (model.wasPropertyExplicitlySet("fqdn")) {
                 this.fqdn(model.getFqdn());
             }
@@ -442,6 +485,9 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("maintenanceWindow")) {
                 this.maintenanceWindow(model.getMaintenanceWindow());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceConfiguration")) {
+                this.maintenanceConfiguration(model.getMaintenanceConfiguration());
             }
             return this;
         }
@@ -581,19 +627,39 @@ public final class CreateDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
      *
      * @return the value
      **/
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+     * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
+     * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+     * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     *
+     * @return the value
+     **/
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
     }
 
     /**
@@ -710,6 +776,13 @@ public final class CreateDeploymentDetails
         return maintenanceWindow;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceConfiguration")
+    private final CreateMaintenanceConfigurationDetails maintenanceConfiguration;
+
+    public CreateMaintenanceConfigurationDetails getMaintenanceConfiguration() {
+        return maintenanceConfiguration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -732,6 +805,7 @@ public final class CreateDeploymentDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
@@ -740,6 +814,8 @@ public final class CreateDeploymentDetails
         sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", oggData=").append(String.valueOf(this.oggData));
         sb.append(", maintenanceWindow=").append(String.valueOf(this.maintenanceWindow));
+        sb.append(", maintenanceConfiguration=")
+                .append(String.valueOf(this.maintenanceConfiguration));
         sb.append(")");
         return sb.toString();
     }
@@ -762,6 +838,7 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
@@ -770,6 +847,8 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.oggData, other.oggData)
                 && java.util.Objects.equals(this.maintenanceWindow, other.maintenanceWindow)
+                && java.util.Objects.equals(
+                        this.maintenanceConfiguration, other.maintenanceConfiguration)
                 && super.equals(other);
     }
 
@@ -791,6 +870,11 @@ public final class CreateDeploymentDetails
                                 ? 43
                                 : this.deploymentBackupId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
@@ -807,6 +891,11 @@ public final class CreateDeploymentDetails
         result =
                 (result * PRIME)
                         + (this.maintenanceWindow == null ? 43 : this.maintenanceWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceConfiguration == null
+                                ? 43
+                                : this.maintenanceConfiguration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

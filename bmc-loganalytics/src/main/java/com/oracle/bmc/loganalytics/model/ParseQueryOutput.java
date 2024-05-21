@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -25,6 +25,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
         "internalQueryString",
         "columns",
         "responseTimeInMs",
+        "timeFilter",
         "commands"
     })
     public ParseQueryOutput(
@@ -32,12 +33,14 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
             String internalQueryString,
             java.util.List<AbstractColumn> columns,
             Long responseTimeInMs,
+            TimeRange timeFilter,
             java.util.List<AbstractCommandDescriptor> commands) {
         super();
         this.displayQueryString = displayQueryString;
         this.internalQueryString = internalQueryString;
         this.columns = columns;
         this.responseTimeInMs = responseTimeInMs;
+        this.timeFilter = timeFilter;
         this.commands = commands;
     }
 
@@ -115,6 +118,15 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("responseTimeInMs");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFilter")
+        private TimeRange timeFilter;
+
+        public Builder timeFilter(TimeRange timeFilter) {
+            this.timeFilter = timeFilter;
+            this.__explicitlySet__.add("timeFilter");
+            return this;
+        }
         /**
          * List of querylanguage command descriptors, describing the specfied query string.
          *
@@ -144,6 +156,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
                             this.internalQueryString,
                             this.columns,
                             this.responseTimeInMs,
+                            this.timeFilter,
                             this.commands);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -164,6 +177,9 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("responseTimeInMs")) {
                 this.responseTimeInMs(model.getResponseTimeInMs());
+            }
+            if (model.wasPropertyExplicitlySet("timeFilter")) {
+                this.timeFilter(model.getTimeFilter());
             }
             if (model.wasPropertyExplicitlySet("commands")) {
                 this.commands(model.getCommands());
@@ -247,6 +263,13 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
         return responseTimeInMs;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFilter")
+    private final TimeRange timeFilter;
+
+    public TimeRange getTimeFilter() {
+        return timeFilter;
+    }
+
     /**
      * List of querylanguage command descriptors, describing the specfied query string.
      *
@@ -281,6 +304,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
         sb.append(", internalQueryString=").append(String.valueOf(this.internalQueryString));
         sb.append(", columns=").append(String.valueOf(this.columns));
         sb.append(", responseTimeInMs=").append(String.valueOf(this.responseTimeInMs));
+        sb.append(", timeFilter=").append(String.valueOf(this.timeFilter));
         sb.append(", commands=").append(String.valueOf(this.commands));
         sb.append(")");
         return sb.toString();
@@ -300,6 +324,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.internalQueryString, other.internalQueryString)
                 && java.util.Objects.equals(this.columns, other.columns)
                 && java.util.Objects.equals(this.responseTimeInMs, other.responseTimeInMs)
+                && java.util.Objects.equals(this.timeFilter, other.timeFilter)
                 && java.util.Objects.equals(this.commands, other.commands)
                 && super.equals(other);
     }
@@ -322,6 +347,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.responseTimeInMs == null ? 43 : this.responseTimeInMs.hashCode());
+        result = (result * PRIME) + (this.timeFilter == null ? 43 : this.timeFilter.hashCode());
         result = (result * PRIME) + (this.commands == null ? 43 : this.commands.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

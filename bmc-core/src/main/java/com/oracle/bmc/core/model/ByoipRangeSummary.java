@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -201,7 +201,7 @@ public final class ByoipRangeSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can  be subdivided into sub-ranges used
+         * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used
          * across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
          * a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
          *
@@ -210,7 +210,7 @@ public final class ByoipRangeSummary extends com.oracle.bmc.http.internal.Explic
         private String ipv6CidrBlock;
 
         /**
-         * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can  be subdivided into sub-ranges used
+         * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used
          * across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
          * a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
          *
@@ -473,7 +473,7 @@ public final class ByoipRangeSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can  be subdivided into sub-ranges used
+     * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used
      * across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
      * a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      *
@@ -482,7 +482,7 @@ public final class ByoipRangeSummary extends com.oracle.bmc.http.internal.Explic
     private final String ipv6CidrBlock;
 
     /**
-     * The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can  be subdivided into sub-ranges used
+     * The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can  be subdivided into sub-ranges used
      * across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
      * a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
      *

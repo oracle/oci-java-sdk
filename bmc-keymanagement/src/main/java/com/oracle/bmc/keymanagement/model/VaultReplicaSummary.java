@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement.model;
@@ -87,10 +87,17 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("region");
             return this;
         }
-
+        /**
+         * Status of the Vault
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        /**
+         * Status of the Vault
+         * @param status the value to set
+         * @return this builder
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -188,6 +195,7 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * Status of the Vault
      **/
     public enum Status {
         Creating("CREATING"),
@@ -235,10 +243,16 @@ public final class VaultReplicaSummary extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-
+    /**
+     * Status of the Vault
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
+    /**
+     * Status of the Vault
+     * @return the value
+     **/
     public Status getStatus() {
         return status;
     }

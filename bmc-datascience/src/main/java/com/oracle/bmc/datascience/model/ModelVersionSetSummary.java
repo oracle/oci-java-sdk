@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -32,7 +32,8 @@ public final class ModelVersionSetSummary
         "timeUpdated",
         "createdBy",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "systemTags"
     })
     public ModelVersionSetSummary(
             String id,
@@ -44,7 +45,8 @@ public final class ModelVersionSetSummary
             java.util.Date timeUpdated,
             String createdBy,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -56,6 +58,7 @@ public final class ModelVersionSetSummary
         this.createdBy = createdBy;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -237,6 +240,26 @@ public final class ModelVersionSetSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -253,7 +276,8 @@ public final class ModelVersionSetSummary
                             this.timeUpdated,
                             this.createdBy,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -291,6 +315,9 @@ public final class ModelVersionSetSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -463,6 +490,24 @@ public final class ModelVersionSetSummary
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -487,6 +532,7 @@ public final class ModelVersionSetSummary
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -511,6 +557,7 @@ public final class ModelVersionSetSummary
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -532,6 +579,7 @@ public final class ModelVersionSetSummary
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

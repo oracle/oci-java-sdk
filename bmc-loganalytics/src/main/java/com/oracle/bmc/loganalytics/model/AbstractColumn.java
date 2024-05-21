@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.model;
@@ -53,6 +53,10 @@ package com.oracle.bmc.loganalytics.model;
         name = "TIME_STATS_DATA_COLUMN"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TableColumn.class,
+        name = "TABLE_COLUMN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ChartColumn.class,
         name = "CHART_COLUMN"
     ),
@@ -73,6 +77,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "isCaseSensitive",
         "isGroupable",
         "isEvaluable",
+        "isHidden",
         "valueType",
         "originalDisplayName",
         "internalName"
@@ -86,6 +91,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
             Boolean isCaseSensitive,
             Boolean isGroupable,
             Boolean isEvaluable,
+            Boolean isHidden,
             ValueType valueType,
             String originalDisplayName,
             String internalName) {
@@ -98,6 +104,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.isCaseSensitive = isCaseSensitive;
         this.isGroupable = isGroupable;
         this.isEvaluable = isEvaluable;
+        this.isHidden = isHidden;
         this.valueType = valueType;
         this.originalDisplayName = originalDisplayName;
         this.internalName = internalName;
@@ -232,6 +239,22 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Identifies if this column should be hidden by default but can be displayed in the UI on demand.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
+    private final Boolean isHidden;
+
+    /**
+     * Identifies if this column should be hidden by default but can be displayed in the UI on demand.
+     *
+     * @return the value
+     **/
+    public Boolean getIsHidden() {
+        return isHidden;
+    }
+
+    /**
      * Field denoting column data type.
      *
      **/
@@ -301,6 +324,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", isCaseSensitive=").append(String.valueOf(this.isCaseSensitive));
         sb.append(", isGroupable=").append(String.valueOf(this.isGroupable));
         sb.append(", isEvaluable=").append(String.valueOf(this.isEvaluable));
+        sb.append(", isHidden=").append(String.valueOf(this.isHidden));
         sb.append(", valueType=").append(String.valueOf(this.valueType));
         sb.append(", originalDisplayName=").append(String.valueOf(this.originalDisplayName));
         sb.append(", internalName=").append(String.valueOf(this.internalName));
@@ -326,6 +350,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.isCaseSensitive, other.isCaseSensitive)
                 && java.util.Objects.equals(this.isGroupable, other.isGroupable)
                 && java.util.Objects.equals(this.isEvaluable, other.isEvaluable)
+                && java.util.Objects.equals(this.isHidden, other.isHidden)
                 && java.util.Objects.equals(this.valueType, other.valueType)
                 && java.util.Objects.equals(this.originalDisplayName, other.originalDisplayName)
                 && java.util.Objects.equals(this.internalName, other.internalName)
@@ -350,6 +375,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.isCaseSensitive == null ? 43 : this.isCaseSensitive.hashCode());
         result = (result * PRIME) + (this.isGroupable == null ? 43 : this.isGroupable.hashCode());
         result = (result * PRIME) + (this.isEvaluable == null ? 43 : this.isEvaluable.hashCode());
+        result = (result * PRIME) + (this.isHidden == null ? 43 : this.isHidden.hashCode());
         result = (result * PRIME) + (this.valueType == null ? 43 : this.valueType.hashCode());
         result =
                 (result * PRIME)
@@ -373,6 +399,7 @@ public class AbstractColumn extends com.oracle.bmc.http.internal.ExplicitlySetBm
         TimeStatsDataColumn("TIME_STATS_DATA_COLUMN"),
         TimeClusterColumn("TIME_CLUSTER_COLUMN"),
         TimeClusterDataColumn("TIME_CLUSTER_DATA_COLUMN"),
+        TableColumn("TABLE_COLUMN"),
         TimeColumn("TIME_COLUMN"),
         TrendColumn("TREND_COLUMN"),
         ClassifyColumn("CLASSIFY_COLUMN"),

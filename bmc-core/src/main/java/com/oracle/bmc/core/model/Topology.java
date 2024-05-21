@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -35,14 +35,21 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"entities", "relationships", "timeCreated"})
+    @java.beans.ConstructorProperties({
+        "entities",
+        "relationships",
+        "limitedEntities",
+        "timeCreated"
+    })
     protected Topology(
             java.util.List<Object> entities,
             java.util.List<TopologyEntityRelationship> relationships,
+            java.util.List<String> limitedEntities,
             java.util.Date timeCreated) {
         super();
         this.entities = entities;
         this.relationships = relationships;
+        this.limitedEntities = limitedEntities;
         this.timeCreated = timeCreated;
     }
 
@@ -75,6 +82,26 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
     }
 
     /**
+     * Lists entities that are limited during ingestion.
+     * The values for the items in the list are the entity type names of the limitedEntities.
+     * Example: {@code vcn}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("limitedEntities")
+    private final java.util.List<String> limitedEntities;
+
+    /**
+     * Lists entities that are limited during ingestion.
+     * The values for the items in the list are the entity type names of the limitedEntities.
+     * Example: {@code vcn}
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getLimitedEntities() {
+        return limitedEntities;
+    }
+
+    /**
      * Records when the virtual network topology was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -104,6 +131,7 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         sb.append("super=").append(super.toString());
         sb.append("entities=").append(String.valueOf(this.entities));
         sb.append(", relationships=").append(String.valueOf(this.relationships));
+        sb.append(", limitedEntities=").append(String.valueOf(this.limitedEntities));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(")");
         return sb.toString();
@@ -121,6 +149,7 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         Topology other = (Topology) o;
         return java.util.Objects.equals(this.entities, other.entities)
                 && java.util.Objects.equals(this.relationships, other.relationships)
+                && java.util.Objects.equals(this.limitedEntities, other.limitedEntities)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && super.equals(other);
     }
@@ -133,6 +162,9 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         result =
                 (result * PRIME)
                         + (this.relationships == null ? 43 : this.relationships.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.limitedEntities == null ? 43 : this.limitedEntities.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

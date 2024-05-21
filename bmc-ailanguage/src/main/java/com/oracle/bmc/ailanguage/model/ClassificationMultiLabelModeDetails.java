@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ailanguage.model;
@@ -27,12 +27,29 @@ package com.oracle.bmc.ailanguage.model;
 public final class ClassificationMultiLabelModeDetails extends ClassificationType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("version")
+        private String version;
+
+        /**
+         * Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+         * @param version the value to set
+         * @return this builder
+         **/
+        public Builder version(String version) {
+            this.version = version;
+            this.__explicitlySet__.add("version");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ClassificationMultiLabelModeDetails build() {
-            ClassificationMultiLabelModeDetails model = new ClassificationMultiLabelModeDetails();
+            ClassificationMultiLabelModeDetails model =
+                    new ClassificationMultiLabelModeDetails(this.version);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -41,6 +58,9 @@ public final class ClassificationMultiLabelModeDetails extends ClassificationTyp
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ClassificationMultiLabelModeDetails model) {
+            if (model.wasPropertyExplicitlySet("version")) {
+                this.version(model.getVersion());
+            }
             return this;
         }
     }
@@ -57,8 +77,23 @@ public final class ClassificationMultiLabelModeDetails extends ClassificationTyp
     }
 
     @Deprecated
-    public ClassificationMultiLabelModeDetails() {
+    public ClassificationMultiLabelModeDetails(String version) {
         super();
+        this.version = version;
+    }
+
+    /**
+     * Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    private final String version;
+
+    /**
+     * Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+     * @return the value
+     **/
+    public String getVersion() {
+        return version;
     }
 
     @Override
@@ -75,6 +110,7 @@ public final class ClassificationMultiLabelModeDetails extends ClassificationTyp
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ClassificationMultiLabelModeDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", version=").append(String.valueOf(this.version));
         sb.append(")");
         return sb.toString();
     }
@@ -89,13 +125,14 @@ public final class ClassificationMultiLabelModeDetails extends ClassificationTyp
         }
 
         ClassificationMultiLabelModeDetails other = (ClassificationMultiLabelModeDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.version, other.version) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         return result;
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.loganalytics.requests;
@@ -103,6 +103,19 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
      */
     public Kind getKind() {
         return kind;
+    }
+    /**
+     * The target service to use for filtering.
+     *
+     */
+    private String targetService;
+
+    /**
+     * The target service to use for filtering.
+     *
+     */
+    public String getTargetService() {
+        return targetService;
     }
     /**
      * The rule lifecycle state used for filtering. Currently supported
@@ -332,6 +345,23 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
+         * The target service to use for filtering.
+         *
+         */
+        private String targetService = null;
+
+        /**
+         * The target service to use for filtering.
+         *
+         * @param targetService the value to set
+         * @return this builder instance
+         */
+        public Builder targetService(String targetService) {
+            this.targetService = targetService;
+            return this;
+        }
+
+        /**
          * The rule lifecycle state used for filtering. Currently supported
          * values are ACTIVE and DELETED.
          *
@@ -462,6 +492,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             compartmentId(o.getCompartmentId());
             displayName(o.getDisplayName());
             kind(o.getKind());
+            targetService(o.getTargetService());
             lifecycleState(o.getLifecycleState());
             limit(o.getLimit());
             page(o.getPage());
@@ -504,6 +535,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.compartmentId = compartmentId;
             request.displayName = displayName;
             request.kind = kind;
+            request.targetService = targetService;
             request.lifecycleState = lifecycleState;
             request.limit = limit;
             request.page = page;
@@ -511,7 +543,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListRulesRequest(namespaceName, compartmentId, displayName, kind, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListRulesRequest(namespaceName, compartmentId, displayName, kind, targetService, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -525,6 +557,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .compartmentId(compartmentId)
                 .displayName(displayName)
                 .kind(kind)
+                .targetService(targetService)
                 .lifecycleState(lifecycleState)
                 .limit(limit)
                 .page(page)
@@ -550,6 +583,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",kind=").append(String.valueOf(this.kind));
+        sb.append(",targetService=").append(String.valueOf(this.targetService));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -575,6 +609,7 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.kind, other.kind)
+                && java.util.Objects.equals(this.targetService, other.targetService)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -595,6 +630,9 @@ public class ListRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.kind == null ? 43 : this.kind.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetService == null ? 43 : this.targetService.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

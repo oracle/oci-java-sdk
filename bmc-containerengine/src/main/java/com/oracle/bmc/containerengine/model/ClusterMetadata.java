@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -28,7 +28,8 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
         "deletedByWorkRequestId",
         "timeUpdated",
         "updatedByUserId",
-        "updatedByWorkRequestId"
+        "updatedByWorkRequestId",
+        "timeCredentialExpiration"
     })
     public ClusterMetadata(
             java.util.Date timeCreated,
@@ -39,7 +40,8 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
             String deletedByWorkRequestId,
             java.util.Date timeUpdated,
             String updatedByUserId,
-            String updatedByWorkRequestId) {
+            String updatedByWorkRequestId,
+            java.util.Date timeCredentialExpiration) {
         super();
         this.timeCreated = timeCreated;
         this.createdByUserId = createdByUserId;
@@ -50,6 +52,7 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
         this.timeUpdated = timeUpdated;
         this.updatedByUserId = updatedByUserId;
         this.updatedByWorkRequestId = updatedByWorkRequestId;
+        this.timeCredentialExpiration = timeCredentialExpiration;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -198,6 +201,22 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("updatedByWorkRequestId");
             return this;
         }
+        /**
+         * The time until which the cluster credential is valid.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCredentialExpiration")
+        private java.util.Date timeCredentialExpiration;
+
+        /**
+         * The time until which the cluster credential is valid.
+         * @param timeCredentialExpiration the value to set
+         * @return this builder
+         **/
+        public Builder timeCredentialExpiration(java.util.Date timeCredentialExpiration) {
+            this.timeCredentialExpiration = timeCredentialExpiration;
+            this.__explicitlySet__.add("timeCredentialExpiration");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -213,7 +232,8 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
                             this.deletedByWorkRequestId,
                             this.timeUpdated,
                             this.updatedByUserId,
-                            this.updatedByWorkRequestId);
+                            this.updatedByWorkRequestId,
+                            this.timeCredentialExpiration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -248,6 +268,9 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("updatedByWorkRequestId")) {
                 this.updatedByWorkRequestId(model.getUpdatedByWorkRequestId());
+            }
+            if (model.wasPropertyExplicitlySet("timeCredentialExpiration")) {
+                this.timeCredentialExpiration(model.getTimeCredentialExpiration());
             }
             return this;
         }
@@ -390,6 +413,20 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
         return updatedByWorkRequestId;
     }
 
+    /**
+     * The time until which the cluster credential is valid.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCredentialExpiration")
+    private final java.util.Date timeCredentialExpiration;
+
+    /**
+     * The time until which the cluster credential is valid.
+     * @return the value
+     **/
+    public java.util.Date getTimeCredentialExpiration() {
+        return timeCredentialExpiration;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -413,6 +450,8 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", updatedByUserId=").append(String.valueOf(this.updatedByUserId));
         sb.append(", updatedByWorkRequestId=").append(String.valueOf(this.updatedByWorkRequestId));
+        sb.append(", timeCredentialExpiration=")
+                .append(String.valueOf(this.timeCredentialExpiration));
         sb.append(")");
         return sb.toString();
     }
@@ -439,6 +478,8 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.updatedByUserId, other.updatedByUserId)
                 && java.util.Objects.equals(
                         this.updatedByWorkRequestId, other.updatedByWorkRequestId)
+                && java.util.Objects.equals(
+                        this.timeCredentialExpiration, other.timeCredentialExpiration)
                 && super.equals(other);
     }
 
@@ -473,6 +514,11 @@ public final class ClusterMetadata extends com.oracle.bmc.http.internal.Explicit
                         + (this.updatedByWorkRequestId == null
                                 ? 43
                                 : this.updatedByWorkRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeCredentialExpiration == null
+                                ? 43
+                                : this.timeCredentialExpiration.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

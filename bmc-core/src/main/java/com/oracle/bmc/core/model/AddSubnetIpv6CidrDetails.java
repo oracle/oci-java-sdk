@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
 
 /**
- * Details used when adding an IPv6 CIDR block to a subnet.
+ * Details used when adding an IPv6 prefix to a subnet.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,7 +31,7 @@ public final class AddSubnetIpv6CidrDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This field is not required and should only be specified when adding an IPv6 CIDR
+         * This field is not required and should only be specified when adding an IPv6 prefix
          * to a subnet's IPv6 address space.
          * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
@@ -42,7 +42,7 @@ public final class AddSubnetIpv6CidrDetails
         private String ipv6CidrBlock;
 
         /**
-         * This field is not required and should only be specified when adding an IPv6 CIDR
+         * This field is not required and should only be specified when adding an IPv6 prefix
          * to a subnet's IPv6 address space.
          * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
@@ -89,7 +89,7 @@ public final class AddSubnetIpv6CidrDetails
     }
 
     /**
-     * This field is not required and should only be specified when adding an IPv6 CIDR
+     * This field is not required and should only be specified when adding an IPv6 prefix
      * to a subnet's IPv6 address space.
      * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
@@ -100,7 +100,7 @@ public final class AddSubnetIpv6CidrDetails
     private final String ipv6CidrBlock;
 
     /**
-     * This field is not required and should only be specified when adding an IPv6 CIDR
+     * This field is not required and should only be specified when adding an IPv6 prefix
      * to a subnet's IPv6 address space.
      * See[IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>

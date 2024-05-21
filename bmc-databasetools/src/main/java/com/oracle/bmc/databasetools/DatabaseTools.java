@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasetools;
@@ -60,6 +60,32 @@ public interface DatabaseTools extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a DatabaseToolsConnection resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsConnectionLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDatabaseToolsConnectionLock API.
+     */
+    AddDatabaseToolsConnectionLockResponse addDatabaseToolsConnectionLock(
+            AddDatabaseToolsConnectionLockRequest request);
+
+    /**
+     * Adds a lock to a DatabaseToolsPrivateEndpoint resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/AddDatabaseToolsPrivateEndpointLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDatabaseToolsPrivateEndpointLock API.
+     */
+    AddDatabaseToolsPrivateEndpointLockResponse addDatabaseToolsPrivateEndpointLock(
+            AddDatabaseToolsPrivateEndpointLockRequest request);
+
+    /**
      * Moves the specified Database Tools connection to a different compartment in the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -98,7 +124,7 @@ public interface DatabaseTools extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CreateDatabaseToolsConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDatabaseToolsConnection API.
@@ -112,7 +138,7 @@ public interface DatabaseTools extends AutoCloseable {
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
-     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/CreateDatabaseToolsPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDatabaseToolsPrivateEndpoint API.
@@ -277,6 +303,32 @@ public interface DatabaseTools extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Removes a lock from a DatabaseToolsConnection resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsConnectionLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDatabaseToolsConnectionLock API.
+     */
+    RemoveDatabaseToolsConnectionLockResponse removeDatabaseToolsConnectionLock(
+            RemoveDatabaseToolsConnectionLockRequest request);
+
+    /**
+     * Removes a lock from a DatabaseToolsPrivateEndpoint resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsPrivateEndpointLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDatabaseToolsPrivateEndpointLock API.
+     */
+    RemoveDatabaseToolsPrivateEndpointLockResponse removeDatabaseToolsPrivateEndpointLock(
+            RemoveDatabaseToolsPrivateEndpointLockRequest request);
 
     /**
      * Updates the specified Database Tools connection.

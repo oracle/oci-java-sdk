@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information to be updated.
+ * The target information to be updated.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -70,13 +70,13 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The current state of the Target.
+         * The current lifecycle state of the Target.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Target.
+         * The current lifecycle state of the Target.
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -86,13 +86,13 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The details of target detector recipes to be updated.
+         * The details of target detector recipes to be updated
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
         private java.util.List<UpdateTargetDetectorRecipe> targetDetectorRecipes;
 
         /**
-         * The details of target detector recipes to be updated.
+         * The details of target detector recipes to be updated
          * @param targetDetectorRecipes the value to set
          * @return this builder
          **/
@@ -103,13 +103,13 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The details of target responder recipes to be updated.
+         * The details of target responder recipes to be updated
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
         private java.util.List<UpdateTargetResponderRecipe> targetResponderRecipes;
 
         /**
-         * The details of target responder recipes to be updated.
+         * The details of target responder recipes to be updated
          * @param targetResponderRecipes the value to set
          * @return this builder
          **/
@@ -239,13 +239,13 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The current state of the Target.
+     * The current lifecycle state of the Target.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Target.
+     * The current lifecycle state of the Target.
      * @return the value
      **/
     public LifecycleState getLifecycleState() {
@@ -253,13 +253,13 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The details of target detector recipes to be updated.
+     * The details of target detector recipes to be updated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
     private final java.util.List<UpdateTargetDetectorRecipe> targetDetectorRecipes;
 
     /**
-     * The details of target detector recipes to be updated.
+     * The details of target detector recipes to be updated
      * @return the value
      **/
     public java.util.List<UpdateTargetDetectorRecipe> getTargetDetectorRecipes() {
@@ -267,13 +267,13 @@ public final class UpdateTargetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The details of target responder recipes to be updated.
+     * The details of target responder recipes to be updated
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
     private final java.util.List<UpdateTargetResponderRecipe> targetResponderRecipes;
 
     /**
-     * The details of target responder recipes to be updated.
+     * The details of target responder recipes to be updated
      * @return the value
      **/
     public java.util.List<UpdateTargetResponderRecipe> getTargetResponderRecipes() {

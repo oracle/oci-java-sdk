@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Description of managed instance group.
+ * An object that defines the managed instance group.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -33,9 +33,14 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
         "archType",
         "vendorName",
         "softwareSourceIds",
+        "softwareSources",
         "managedInstanceIds",
         "managedInstanceCount",
+        "location",
         "pendingJobCount",
+        "notificationTopicId",
+        "autonomousSettings",
+        "isManagedByAutonomousLinux",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -52,9 +57,14 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             ArchType archType,
             VendorName vendorName,
             java.util.List<SoftwareSourceDetails> softwareSourceIds,
+            java.util.List<SoftwareSourceDetails> softwareSources,
             java.util.List<String> managedInstanceIds,
             Integer managedInstanceCount,
+            ManagedInstanceLocation location,
             Integer pendingJobCount,
+            String notificationTopicId,
+            AutonomousSettings autonomousSettings,
+            Boolean isManagedByAutonomousLinux,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -70,9 +80,14 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
         this.archType = archType;
         this.vendorName = vendorName;
         this.softwareSourceIds = softwareSourceIds;
+        this.softwareSources = softwareSources;
         this.managedInstanceIds = managedInstanceIds;
         this.managedInstanceCount = managedInstanceCount;
+        this.location = location;
         this.pendingJobCount = pendingJobCount;
+        this.notificationTopicId = notificationTopicId;
+        this.autonomousSettings = autonomousSettings;
+        this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -81,13 +96,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The managed instance group OCID that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The managed instance group OCID that is immutable on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
          * @param id the value to set
          * @return this builder
          **/
@@ -97,13 +112,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The OCID of the tenancy containing the managed instance group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the tenancy containing the managed instance group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -113,13 +128,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the managed instance group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the managed instance group.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -129,13 +144,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Details describing the managed instance group.
+         * User-specified information about the managed instance group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Details describing the managed instance group.
+         * User-specified information about the managed instance group.
          * @param description the value to set
          * @return this builder
          **/
@@ -145,13 +160,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The time the managed instance group was created. An RFC3339 formatted datetime string.
+         * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the managed instance group was created. An RFC3339 formatted datetime string.
+         * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -161,13 +176,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+         * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+         * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeModified the value to set
          * @return this builder
          **/
@@ -225,13 +240,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The software source vendor name.
+         * The vendor of the operating system used by the managed instances in the group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
-         * The software source vendor name.
+         * The vendor of the operating system used by the managed instances in the group.
          * @param vendorName the value to set
          * @return this builder
          **/
@@ -241,13 +256,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The list of software sources that the managed instance group will use.
+         * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<SoftwareSourceDetails> softwareSourceIds;
 
         /**
-         * The list of software sources that the managed instance group will use.
+         * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
          * @param softwareSourceIds the value to set
          * @return this builder
          **/
@@ -257,13 +272,29 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The list of managed instances OCIDs attached to the managed instance group.
+         * The list of software sources that the managed instance group will use.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
+        private java.util.List<SoftwareSourceDetails> softwareSources;
+
+        /**
+         * The list of software sources that the managed instance group will use.
+         * @param softwareSources the value to set
+         * @return this builder
+         **/
+        public Builder softwareSources(java.util.List<SoftwareSourceDetails> softwareSources) {
+            this.softwareSources = softwareSources;
+            this.__explicitlySet__.add("softwareSources");
+            return this;
+        }
+        /**
+         * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
         private java.util.List<String> managedInstanceIds;
 
         /**
-         * The list of managed instances OCIDs attached to the managed instance group.
+         * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
          * @param managedInstanceIds the value to set
          * @return this builder
          **/
@@ -273,19 +304,35 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The number of Managed Instances in the managed instance group.
+         * The number of managed instances in the group.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
         private Integer managedInstanceCount;
 
         /**
-         * The number of Managed Instances in the managed instance group.
+         * The number of managed instances in the group.
          * @param managedInstanceCount the value to set
          * @return this builder
          **/
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = managedInstanceCount;
             this.__explicitlySet__.add("managedInstanceCount");
+            return this;
+        }
+        /**
+         * The location of managed instances attached to the group.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("location")
+        private ManagedInstanceLocation location;
+
+        /**
+         * The location of managed instances attached to the group.
+         * @param location the value to set
+         * @return this builder
+         **/
+        public Builder location(ManagedInstanceLocation location) {
+            this.location = location;
+            this.__explicitlySet__.add("location");
             return this;
         }
         /**
@@ -302,6 +349,47 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
         public Builder pendingJobCount(Integer pendingJobCount) {
             this.pendingJobCount = pendingJobCount;
             this.__explicitlySet__.add("pendingJobCount");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+        private String notificationTopicId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         * @param notificationTopicId the value to set
+         * @return this builder
+         **/
+        public Builder notificationTopicId(String notificationTopicId) {
+            this.notificationTopicId = notificationTopicId;
+            this.__explicitlySet__.add("notificationTopicId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousSettings")
+        private AutonomousSettings autonomousSettings;
+
+        public Builder autonomousSettings(AutonomousSettings autonomousSettings) {
+            this.autonomousSettings = autonomousSettings;
+            this.__explicitlySet__.add("autonomousSettings");
+            return this;
+        }
+        /**
+         * Indicates whether the Autonomous Linux service manages the group.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+        private Boolean isManagedByAutonomousLinux;
+
+        /**
+         * Indicates whether the Autonomous Linux service manages the group.
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder
+         **/
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
         /**
@@ -387,9 +475,14 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
                             this.archType,
                             this.vendorName,
                             this.softwareSourceIds,
+                            this.softwareSources,
                             this.managedInstanceIds,
                             this.managedInstanceCount,
+                            this.location,
                             this.pendingJobCount,
+                            this.notificationTopicId,
+                            this.autonomousSettings,
+                            this.isManagedByAutonomousLinux,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -434,14 +527,29 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
             if (model.wasPropertyExplicitlySet("softwareSourceIds")) {
                 this.softwareSourceIds(model.getSoftwareSourceIds());
             }
+            if (model.wasPropertyExplicitlySet("softwareSources")) {
+                this.softwareSources(model.getSoftwareSources());
+            }
             if (model.wasPropertyExplicitlySet("managedInstanceIds")) {
                 this.managedInstanceIds(model.getManagedInstanceIds());
             }
             if (model.wasPropertyExplicitlySet("managedInstanceCount")) {
                 this.managedInstanceCount(model.getManagedInstanceCount());
             }
+            if (model.wasPropertyExplicitlySet("location")) {
+                this.location(model.getLocation());
+            }
             if (model.wasPropertyExplicitlySet("pendingJobCount")) {
                 this.pendingJobCount(model.getPendingJobCount());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTopicId")) {
+                this.notificationTopicId(model.getNotificationTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousSettings")) {
+                this.autonomousSettings(model.getAutonomousSettings());
+            }
+            if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
+                this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -468,13 +576,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The managed instance group OCID that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The managed instance group OCID that is immutable on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      * @return the value
      **/
     public String getId() {
@@ -482,13 +590,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The OCID of the tenancy containing the managed instance group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the tenancy containing the managed instance group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -496,13 +604,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the managed instance group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name for the managed instance group.
      * @return the value
      **/
     public String getDisplayName() {
@@ -510,13 +618,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Details describing the managed instance group.
+     * User-specified information about the managed instance group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Details describing the managed instance group.
+     * User-specified information about the managed instance group.
      * @return the value
      **/
     public String getDescription() {
@@ -524,13 +632,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the managed instance group was created. An RFC3339 formatted datetime string.
+     * The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -538,13 +646,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The time the managed instance group was last modified. An RFC3339 formatted datetime string.
+     * The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
      **/
     public java.util.Date getTimeModified() {
@@ -646,13 +754,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
-     * The software source vendor name.
+     * The vendor of the operating system used by the managed instances in the group.
      * @return the value
      **/
     public VendorName getVendorName() {
@@ -660,13 +768,13 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The list of software sources that the managed instance group will use.
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<SoftwareSourceDetails> softwareSourceIds;
 
     /**
-     * The list of software sources that the managed instance group will use.
+     * The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the managed instance group will use.
      * @return the value
      **/
     public java.util.List<SoftwareSourceDetails> getSoftwareSourceIds() {
@@ -674,13 +782,27 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The list of managed instances OCIDs attached to the managed instance group.
+     * The list of software sources that the managed instance group will use.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
+    private final java.util.List<SoftwareSourceDetails> softwareSources;
+
+    /**
+     * The list of software sources that the managed instance group will use.
+     * @return the value
+     **/
+    public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
+        return softwareSources;
+    }
+
+    /**
+     * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceIds")
     private final java.util.List<String> managedInstanceIds;
 
     /**
-     * The list of managed instances OCIDs attached to the managed instance group.
+     * The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) attached to the managed instance group.
      * @return the value
      **/
     public java.util.List<String> getManagedInstanceIds() {
@@ -688,17 +810,31 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The number of Managed Instances in the managed instance group.
+     * The number of managed instances in the group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
     private final Integer managedInstanceCount;
 
     /**
-     * The number of Managed Instances in the managed instance group.
+     * The number of managed instances in the group.
      * @return the value
      **/
     public Integer getManagedInstanceCount() {
         return managedInstanceCount;
+    }
+
+    /**
+     * The location of managed instances attached to the group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("location")
+    private final ManagedInstanceLocation location;
+
+    /**
+     * The location of managed instances attached to the group.
+     * @return the value
+     **/
+    public ManagedInstanceLocation getLocation() {
+        return location;
     }
 
     /**
@@ -713,6 +849,41 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
      **/
     public Integer getPendingJobCount() {
         return pendingJobCount;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+    private final String notificationTopicId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     * @return the value
+     **/
+    public String getNotificationTopicId() {
+        return notificationTopicId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousSettings")
+    private final AutonomousSettings autonomousSettings;
+
+    public AutonomousSettings getAutonomousSettings() {
+        return autonomousSettings;
+    }
+
+    /**
+     * Indicates whether the Autonomous Linux service manages the group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+    private final Boolean isManagedByAutonomousLinux;
+
+    /**
+     * Indicates whether the Autonomous Linux service manages the group.
+     * @return the value
+     **/
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
     }
 
     /**
@@ -798,9 +969,15 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
         sb.append(", archType=").append(String.valueOf(this.archType));
         sb.append(", vendorName=").append(String.valueOf(this.vendorName));
         sb.append(", softwareSourceIds=").append(String.valueOf(this.softwareSourceIds));
+        sb.append(", softwareSources=").append(String.valueOf(this.softwareSources));
         sb.append(", managedInstanceIds=").append(String.valueOf(this.managedInstanceIds));
         sb.append(", managedInstanceCount=").append(String.valueOf(this.managedInstanceCount));
+        sb.append(", location=").append(String.valueOf(this.location));
         sb.append(", pendingJobCount=").append(String.valueOf(this.pendingJobCount));
+        sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
+        sb.append(", autonomousSettings=").append(String.valueOf(this.autonomousSettings));
+        sb.append(", isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -829,9 +1006,15 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.archType, other.archType)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.softwareSourceIds, other.softwareSourceIds)
+                && java.util.Objects.equals(this.softwareSources, other.softwareSources)
                 && java.util.Objects.equals(this.managedInstanceIds, other.managedInstanceIds)
                 && java.util.Objects.equals(this.managedInstanceCount, other.managedInstanceCount)
+                && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.pendingJobCount, other.pendingJobCount)
+                && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
+                && java.util.Objects.equals(this.autonomousSettings, other.autonomousSettings)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -861,6 +1044,9 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
                         + (this.softwareSourceIds == null ? 43 : this.softwareSourceIds.hashCode());
         result =
                 (result * PRIME)
+                        + (this.softwareSources == null ? 43 : this.softwareSources.hashCode());
+        result =
+                (result * PRIME)
                         + (this.managedInstanceIds == null
                                 ? 43
                                 : this.managedInstanceIds.hashCode());
@@ -869,9 +1055,25 @@ public final class ManagedInstanceGroup extends com.oracle.bmc.http.internal.Exp
                         + (this.managedInstanceCount == null
                                 ? 43
                                 : this.managedInstanceCount.hashCode());
+        result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result =
                 (result * PRIME)
                         + (this.pendingJobCount == null ? 43 : this.pendingJobCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicId == null
+                                ? 43
+                                : this.notificationTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousSettings == null
+                                ? 43
+                                : this.autonomousSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

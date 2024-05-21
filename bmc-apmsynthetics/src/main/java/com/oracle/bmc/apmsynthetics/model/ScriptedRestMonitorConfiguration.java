@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmsynthetics.model;
@@ -44,6 +44,41 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
             this.__explicitlySet__.add("dnsConfiguration");
             return this;
         }
+        /**
+         * Request HTTP authentication scheme.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
+        private RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme;
+
+        /**
+         * Request HTTP authentication scheme.
+         * @param reqAuthenticationScheme the value to set
+         * @return this builder
+         **/
+        public Builder reqAuthenticationScheme(
+                RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme) {
+            this.reqAuthenticationScheme = reqAuthenticationScheme;
+            this.__explicitlySet__.add("reqAuthenticationScheme");
+            return this;
+        }
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
+        private java.util.List<String> verifyResponseCodes;
+
+        /**
+         * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+         *
+         * @param verifyResponseCodes the value to set
+         * @return this builder
+         **/
+        public Builder verifyResponseCodes(java.util.List<String> verifyResponseCodes) {
+            this.verifyResponseCodes = verifyResponseCodes;
+            this.__explicitlySet__.add("verifyResponseCodes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
         private NetworkConfiguration networkConfiguration;
@@ -62,6 +97,8 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
                     new ScriptedRestMonitorConfiguration(
                             this.isFailureRetried,
                             this.dnsConfiguration,
+                            this.reqAuthenticationScheme,
+                            this.verifyResponseCodes,
                             this.networkConfiguration);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -76,6 +113,12 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
             }
             if (model.wasPropertyExplicitlySet("dnsConfiguration")) {
                 this.dnsConfiguration(model.getDnsConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("reqAuthenticationScheme")) {
+                this.reqAuthenticationScheme(model.getReqAuthenticationScheme());
+            }
+            if (model.wasPropertyExplicitlySet("verifyResponseCodes")) {
+                this.verifyResponseCodes(model.getVerifyResponseCodes());
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
@@ -99,9 +142,43 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
     public ScriptedRestMonitorConfiguration(
             Boolean isFailureRetried,
             DnsConfiguration dnsConfiguration,
+            RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme,
+            java.util.List<String> verifyResponseCodes,
             NetworkConfiguration networkConfiguration) {
         super(isFailureRetried, dnsConfiguration);
+        this.reqAuthenticationScheme = reqAuthenticationScheme;
+        this.verifyResponseCodes = verifyResponseCodes;
         this.networkConfiguration = networkConfiguration;
+    }
+
+    /**
+     * Request HTTP authentication scheme.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reqAuthenticationScheme")
+    private final RequestAuthenticationSchemesForScriptedRest reqAuthenticationScheme;
+
+    /**
+     * Request HTTP authentication scheme.
+     * @return the value
+     **/
+    public RequestAuthenticationSchemesForScriptedRest getReqAuthenticationScheme() {
+        return reqAuthenticationScheme;
+    }
+
+    /**
+     * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("verifyResponseCodes")
+    private final java.util.List<String> verifyResponseCodes;
+
+    /**
+     * Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getVerifyResponseCodes() {
+        return verifyResponseCodes;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfiguration")
@@ -125,6 +202,9 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ScriptedRestMonitorConfiguration(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", reqAuthenticationScheme=")
+                .append(String.valueOf(this.reqAuthenticationScheme));
+        sb.append(", verifyResponseCodes=").append(String.valueOf(this.verifyResponseCodes));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
         sb.append(")");
         return sb.toString();
@@ -140,7 +220,9 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
         }
 
         ScriptedRestMonitorConfiguration other = (ScriptedRestMonitorConfiguration) o;
-        return java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
+        return java.util.Objects.equals(this.reqAuthenticationScheme, other.reqAuthenticationScheme)
+                && java.util.Objects.equals(this.verifyResponseCodes, other.verifyResponseCodes)
+                && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
                 && super.equals(other);
     }
 
@@ -148,6 +230,16 @@ public final class ScriptedRestMonitorConfiguration extends MonitorConfiguration
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.reqAuthenticationScheme == null
+                                ? 43
+                                : this.reqAuthenticationScheme.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.verifyResponseCodes == null
+                                ? 43
+                                : this.verifyResponseCodes.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkConfiguration == null

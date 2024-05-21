@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -44,6 +44,17 @@ public class GetOptimizerStatisticsCollectionOperationRequest
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * The OCID of the Named Credential.
+     */
+    private String opcNamedCredentialId;
+
+    /**
+     * The OCID of the Named Credential.
+     */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
     }
 
     public static class Builder
@@ -101,6 +112,21 @@ public class GetOptimizerStatisticsCollectionOperationRequest
         }
 
         /**
+         * The OCID of the Named Credential.
+         */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -132,6 +158,7 @@ public class GetOptimizerStatisticsCollectionOperationRequest
             optimizerStatisticsCollectionOperationId(
                     o.getOptimizerStatisticsCollectionOperationId());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -170,8 +197,9 @@ public class GetOptimizerStatisticsCollectionOperationRequest
             request.optimizerStatisticsCollectionOperationId =
                     optimizerStatisticsCollectionOperationId;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetOptimizerStatisticsCollectionOperationRequest(managedDatabaseId, optimizerStatisticsCollectionOperationId, opcRequestId);
+            // new GetOptimizerStatisticsCollectionOperationRequest(managedDatabaseId, optimizerStatisticsCollectionOperationId, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -183,7 +211,8 @@ public class GetOptimizerStatisticsCollectionOperationRequest
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .optimizerStatisticsCollectionOperationId(optimizerStatisticsCollectionOperationId)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -203,6 +232,7 @@ public class GetOptimizerStatisticsCollectionOperationRequest
         sb.append(",optimizerStatisticsCollectionOperationId=")
                 .append(String.valueOf(this.optimizerStatisticsCollectionOperationId));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -223,7 +253,8 @@ public class GetOptimizerStatisticsCollectionOperationRequest
                 && java.util.Objects.equals(
                         this.optimizerStatisticsCollectionOperationId,
                         other.optimizerStatisticsCollectionOperationId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -239,6 +270,11 @@ public class GetOptimizerStatisticsCollectionOperationRequest
                                 ? 43
                                 : this.optimizerStatisticsCollectionOperationId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

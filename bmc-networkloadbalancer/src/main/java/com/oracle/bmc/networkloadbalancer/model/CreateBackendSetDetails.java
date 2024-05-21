@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The configuration details for creating a backend set in a network load balancer.
  * For more information about backend set configuration, see
- * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
+ * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
  * <p>
  **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -31,6 +31,8 @@ public final class CreateBackendSetDetails
         "name",
         "policy",
         "isPreserveSource",
+        "isFailOpen",
+        "isInstantFailoverEnabled",
         "ipVersion",
         "backends",
         "healthChecker"
@@ -39,6 +41,8 @@ public final class CreateBackendSetDetails
             String name,
             NetworkLoadBalancingPolicy policy,
             Boolean isPreserveSource,
+            Boolean isFailOpen,
+            Boolean isInstantFailoverEnabled,
             IpVersion ipVersion,
             java.util.List<BackendDetails> backends,
             HealthCheckerDetails healthChecker) {
@@ -46,6 +50,8 @@ public final class CreateBackendSetDetails
         this.name = name;
         this.policy = policy;
         this.isPreserveSource = isPreserveSource;
+        this.isFailOpen = isFailOpen;
+        this.isInstantFailoverEnabled = isInstantFailoverEnabled;
         this.ipVersion = ipVersion;
         this.backends = backends;
         this.healthChecker = healthChecker;
@@ -126,6 +132,44 @@ public final class CreateBackendSetDetails
             return this;
         }
         /**
+         * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+         * The value is false by default.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isFailOpen")
+        private Boolean isFailOpen;
+
+        /**
+         * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+         * The value is false by default.
+         *
+         * @param isFailOpen the value to set
+         * @return this builder
+         **/
+        public Builder isFailOpen(Boolean isFailOpen) {
+            this.isFailOpen = isFailOpen;
+            this.__explicitlySet__.add("isFailOpen");
+            return this;
+        }
+        /**
+         * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverEnabled")
+        private Boolean isInstantFailoverEnabled;
+
+        /**
+         * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+         *
+         * @param isInstantFailoverEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isInstantFailoverEnabled(Boolean isInstantFailoverEnabled) {
+            this.isInstantFailoverEnabled = isInstantFailoverEnabled;
+            this.__explicitlySet__.add("isInstantFailoverEnabled");
+            return this;
+        }
+        /**
          * IP version associated with the backend set.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
@@ -176,6 +220,8 @@ public final class CreateBackendSetDetails
                             this.name,
                             this.policy,
                             this.isPreserveSource,
+                            this.isFailOpen,
+                            this.isInstantFailoverEnabled,
                             this.ipVersion,
                             this.backends,
                             this.healthChecker);
@@ -195,6 +241,12 @@ public final class CreateBackendSetDetails
             }
             if (model.wasPropertyExplicitlySet("isPreserveSource")) {
                 this.isPreserveSource(model.getIsPreserveSource());
+            }
+            if (model.wasPropertyExplicitlySet("isFailOpen")) {
+                this.isFailOpen(model.getIsFailOpen());
+            }
+            if (model.wasPropertyExplicitlySet("isInstantFailoverEnabled")) {
+                this.isInstantFailoverEnabled(model.getIsInstantFailoverEnabled());
             }
             if (model.wasPropertyExplicitlySet("ipVersion")) {
                 this.ipVersion(model.getIpVersion());
@@ -287,6 +339,40 @@ public final class CreateBackendSetDetails
     }
 
     /**
+     * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+     * The value is false by default.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFailOpen")
+    private final Boolean isFailOpen;
+
+    /**
+     * If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy.
+     * The value is false by default.
+     *
+     * @return the value
+     **/
+    public Boolean getIsFailOpen() {
+        return isFailOpen;
+    }
+
+    /**
+     * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverEnabled")
+    private final Boolean isInstantFailoverEnabled;
+
+    /**
+     * If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
+     *
+     * @return the value
+     **/
+    public Boolean getIsInstantFailoverEnabled() {
+        return isInstantFailoverEnabled;
+    }
+
+    /**
      * IP version associated with the backend set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
@@ -338,6 +424,9 @@ public final class CreateBackendSetDetails
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", policy=").append(String.valueOf(this.policy));
         sb.append(", isPreserveSource=").append(String.valueOf(this.isPreserveSource));
+        sb.append(", isFailOpen=").append(String.valueOf(this.isFailOpen));
+        sb.append(", isInstantFailoverEnabled=")
+                .append(String.valueOf(this.isInstantFailoverEnabled));
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
         sb.append(", backends=").append(String.valueOf(this.backends));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
@@ -358,6 +447,9 @@ public final class CreateBackendSetDetails
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.policy, other.policy)
                 && java.util.Objects.equals(this.isPreserveSource, other.isPreserveSource)
+                && java.util.Objects.equals(this.isFailOpen, other.isFailOpen)
+                && java.util.Objects.equals(
+                        this.isInstantFailoverEnabled, other.isInstantFailoverEnabled)
                 && java.util.Objects.equals(this.ipVersion, other.ipVersion)
                 && java.util.Objects.equals(this.backends, other.backends)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker)
@@ -373,6 +465,12 @@ public final class CreateBackendSetDetails
         result =
                 (result * PRIME)
                         + (this.isPreserveSource == null ? 43 : this.isPreserveSource.hashCode());
+        result = (result * PRIME) + (this.isFailOpen == null ? 43 : this.isFailOpen.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInstantFailoverEnabled == null
+                                ? 43
+                                : this.isInstantFailoverEnabled.hashCode());
         result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
         result = (result * PRIME) + (this.backends == null ? 43 : this.backends.hashCode());
         result =

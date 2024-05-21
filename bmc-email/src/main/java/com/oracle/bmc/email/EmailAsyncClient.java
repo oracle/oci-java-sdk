@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email;
@@ -669,6 +669,59 @@ public class EmailAsyncClient implements EmailAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEmailReturnPathResponse> createEmailReturnPath(
+            CreateEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateEmailReturnPathRequest, CreateEmailReturnPathResponse>
+                    handler) {
+        LOG.trace("Called async createEmailReturnPath");
+        final CreateEmailReturnPathRequest interceptedRequest =
+                CreateEmailReturnPathConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateEmailReturnPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "CreateEmailReturnPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/CreateEmailReturnPath");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateEmailReturnPathResponse>
+                transformer =
+                        CreateEmailReturnPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateEmailReturnPathRequest, CreateEmailReturnPathResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateEmailReturnPathRequest, CreateEmailReturnPathResponse>,
+                        java.util.concurrent.Future<CreateEmailReturnPathResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateEmailReturnPathDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateEmailReturnPathRequest, CreateEmailReturnPathResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSenderResponse> createSender(
             CreateSenderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateSenderRequest, CreateSenderResponse>
@@ -858,6 +911,53 @@ public class EmailAsyncClient implements EmailAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEmailReturnPathResponse> deleteEmailReturnPath(
+            DeleteEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEmailReturnPathRequest, DeleteEmailReturnPathResponse>
+                    handler) {
+        LOG.trace("Called async deleteEmailReturnPath");
+        final DeleteEmailReturnPathRequest interceptedRequest =
+                DeleteEmailReturnPathConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteEmailReturnPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "DeleteEmailReturnPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/DeleteEmailReturnPath");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteEmailReturnPathResponse>
+                transformer =
+                        DeleteEmailReturnPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteEmailReturnPathRequest, DeleteEmailReturnPathResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteEmailReturnPathRequest, DeleteEmailReturnPathResponse>,
+                        java.util.concurrent.Future<DeleteEmailReturnPathResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteEmailReturnPathRequest, DeleteEmailReturnPathResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSenderResponse> deleteSender(
             DeleteSenderRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteSenderRequest, DeleteSenderResponse>
@@ -988,6 +1088,53 @@ public class EmailAsyncClient implements EmailAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetEmailConfigurationResponse> getEmailConfiguration(
+            GetEmailConfigurationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailConfigurationRequest, GetEmailConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async getEmailConfiguration");
+        final GetEmailConfigurationRequest interceptedRequest =
+                GetEmailConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "GetEmailConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/Configuration/GetEmailConfiguration");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEmailConfigurationResponse>
+                transformer =
+                        GetEmailConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetEmailConfigurationRequest, GetEmailConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailConfigurationRequest, GetEmailConfigurationResponse>,
+                        java.util.concurrent.Future<GetEmailConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailConfigurationRequest, GetEmailConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEmailDomainResponse> getEmailDomain(
             GetEmailDomainRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1020,6 +1167,52 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetEmailDomainRequest, GetEmailDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailReturnPathResponse> getEmailReturnPath(
+            GetEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEmailReturnPathRequest, GetEmailReturnPathResponse>
+                    handler) {
+        LOG.trace("Called async getEmailReturnPath");
+        final GetEmailReturnPathRequest interceptedRequest =
+                GetEmailReturnPathConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEmailReturnPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "GetEmailReturnPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/GetEmailReturnPath");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetEmailReturnPathResponse>
+                transformer =
+                        GetEmailReturnPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetEmailReturnPathRequest, GetEmailReturnPathResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEmailReturnPathRequest, GetEmailReturnPathResponse>,
+                        java.util.concurrent.Future<GetEmailReturnPathResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEmailReturnPathRequest, GetEmailReturnPathResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1240,6 +1433,53 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListEmailDomainsRequest, ListEmailDomainsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEmailReturnPathsResponse> listEmailReturnPaths(
+            ListEmailReturnPathsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>
+                    handler) {
+        LOG.trace("Called async listEmailReturnPaths");
+        final ListEmailReturnPathsRequest interceptedRequest =
+                ListEmailReturnPathsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEmailReturnPathsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "ListEmailReturnPaths",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/ListEmailReturnPaths");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListEmailReturnPathsResponse>
+                transformer =
+                        ListEmailReturnPathsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>,
+                        java.util.concurrent.Future<ListEmailReturnPathsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEmailReturnPathsRequest, ListEmailReturnPathsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1569,6 +1809,58 @@ public class EmailAsyncClient implements EmailAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateEmailDomainRequest, UpdateEmailDomainResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailReturnPathResponse> updateEmailReturnPath(
+            UpdateEmailReturnPathRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEmailReturnPathRequest, UpdateEmailReturnPathResponse>
+                    handler) {
+        LOG.trace("Called async updateEmailReturnPath");
+        final UpdateEmailReturnPathRequest interceptedRequest =
+                UpdateEmailReturnPathConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateEmailReturnPathConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Email",
+                        "UpdateEmailReturnPath",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/emaildelivery/20170907/EmailReturnPath/UpdateEmailReturnPath");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateEmailReturnPathResponse>
+                transformer =
+                        UpdateEmailReturnPathConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateEmailReturnPathRequest, UpdateEmailReturnPathResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateEmailReturnPathRequest, UpdateEmailReturnPathResponse>,
+                        java.util.concurrent.Future<UpdateEmailReturnPathResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateEmailReturnPathDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateEmailReturnPathRequest, UpdateEmailReturnPathResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

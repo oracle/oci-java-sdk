@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocicontrolcenter;
@@ -471,7 +471,10 @@ public class OccMetricsAsyncClient implements OccMetricsAsync {
                 ListMetricPropertiesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OccMetrics", "ListMetricProperties", ib.getRequestUri().toString(), "");
+                        "OccMetrics",
+                        "ListMetricProperties",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/MetricPropertyCollection/ListMetricProperties");
         final java.util.function.Function<javax.ws.rs.core.Response, ListMetricPropertiesResponse>
                 transformer =
                         ListMetricPropertiesConverter.fromResponse(
@@ -515,7 +518,10 @@ public class OccMetricsAsyncClient implements OccMetricsAsync {
                 ListNamespacesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OccMetrics", "ListNamespaces", ib.getRequestUri().toString(), "");
+                        "OccMetrics",
+                        "ListNamespaces",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/NamespaceCollection/ListNamespaces");
         final java.util.function.Function<javax.ws.rs.core.Response, ListNamespacesResponse>
                 transformer =
                         ListNamespacesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -562,7 +568,7 @@ public class OccMetricsAsyncClient implements OccMetricsAsync {
                         "OccMetrics",
                         "RequestSummarizedMetricData",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occ/20230515/SummarizedMetricDataCollection/RequestSummarizedMetricData");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedMetricDataResponse>
                 transformer =

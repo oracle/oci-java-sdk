@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Detail information for an OCI Compute instance that is being managed.
+ * An object that defines the instance being managed by the service.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -45,6 +45,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         "lifecycleStage",
         "isRebootRequired",
         "installedPackages",
+        "installedWindowsUpdates",
         "updatesAvailable",
         "securityUpdatesAvailable",
         "bugUpdatesAvailable",
@@ -53,7 +54,10 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         "scheduledJobCount",
         "workRequestCount",
         "timeCreated",
-        "timeUpdated"
+        "timeUpdated",
+        "notificationTopicId",
+        "autonomousSettings",
+        "isManagedByAutonomousLinux"
     })
     public ManagedInstance(
             String id,
@@ -81,6 +85,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             Id lifecycleStage,
             Boolean isRebootRequired,
             Integer installedPackages,
+            Integer installedWindowsUpdates,
             Integer updatesAvailable,
             Integer securityUpdatesAvailable,
             Integer bugUpdatesAvailable,
@@ -89,7 +94,10 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             Integer scheduledJobCount,
             Integer workRequestCount,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            String notificationTopicId,
+            AutonomousSettings autonomousSettings,
+            Boolean isManagedByAutonomousLinux) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -116,6 +124,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         this.lifecycleStage = lifecycleStage;
         this.isRebootRequired = isRebootRequired;
         this.installedPackages = installedPackages;
+        this.installedWindowsUpdates = installedWindowsUpdates;
         this.updatesAvailable = updatesAvailable;
         this.securityUpdatesAvailable = securityUpdatesAvailable;
         this.bugUpdatesAvailable = bugUpdatesAvailable;
@@ -125,18 +134,23 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         this.workRequestCount = workRequestCount;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.notificationTopicId = notificationTopicId;
+        this.autonomousSettings = autonomousSettings;
+        this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID for the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID for the managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+         *
          * @param id the value to set
          * @return this builder
          **/
@@ -146,13 +160,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Managed instance identifier.
+         * User-friendly name for the managed instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Managed instance identifier.
+         * User-friendly name for the managed instance.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -162,13 +176,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Information specified by the user about the managed instance.
+         * User-specified description for the managed instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Information specified by the user about the managed instance.
+         * User-specified description for the managed instance.
          * @param description the value to set
          * @return this builder
          **/
@@ -178,13 +192,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID for the tenancy this managed instance resides in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The OCID for the tenancy this managed instance resides in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+         *
          * @param tenancyId the value to set
          * @return this builder
          **/
@@ -194,13 +210,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID for the compartment this managed instance resides in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID for the compartment this managed instance resides in.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+         *
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -210,13 +228,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * location of the managed instance.
+         * The location of the managed instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private ManagedInstanceLocation location;
 
         /**
-         * location of the managed instance.
+         * The location of the managed instance.
          * @param location the value to set
          * @return this builder
          **/
@@ -226,16 +244,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Time at which the instance last checked in, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastCheckin")
         private java.util.Date timeLastCheckin;
 
         /**
-         * Time at which the instance last checked in, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeLastCheckin the value to set
          * @return this builder
@@ -246,16 +262,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Time at which the instance last booted, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastBoot")
         private java.util.Date timeLastBoot;
 
         /**
-         * Time at which the instance last booted, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeLastBoot the value to set
          * @return this builder
@@ -266,13 +280,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Operating System Name.
+         * Operating system name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osName")
         private String osName;
 
         /**
-         * Operating System Name.
+         * Operating system name.
          * @param osName the value to set
          * @return this builder
          **/
@@ -282,13 +296,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Operating System Version.
+         * Operating system version.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
         private String osVersion;
 
         /**
-         * Operating System Version.
+         * Operating system version.
          * @param osVersion the value to set
          * @return this builder
          **/
@@ -298,13 +312,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Operating System Kernel Version.
+         * Operating system kernel version.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
         private String osKernelVersion;
 
         /**
-         * Operating System Kernel Version.
+         * Operating system kernel version.
          * @param osKernelVersion the value to set
          * @return this builder
          **/
@@ -346,13 +360,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The Operating System type of the managed instance.
+         * The operating system type of the managed instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
-         * The Operating System type of the managed instance.
+         * The operating system type of the managed instance.
          * @param osFamily the value to set
          * @return this builder
          **/
@@ -362,13 +376,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * status of the managed instance.
+         * Current status of the managed instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ManagedInstanceStatus status;
 
         /**
-         * status of the managed instance.
+         * Current status of the managed instance.
          * @param status the value to set
          * @return this builder
          **/
@@ -378,13 +392,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The content profile of this instance.
+         * The profile that was used to register this instance with the service.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
         /**
-         * The content profile of this instance.
+         * The profile that was used to register this instance with the service.
          * @param profile the value to set
          * @return this builder
          **/
@@ -394,13 +408,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Whether this managed instance is acting as an on-premise management station.
+         * Indicates whether this managed instance is acting as an on-premises management station.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagementStation")
         private Boolean isManagementStation;
 
         /**
-         * Whether this managed instance is acting as an on-premise management station.
+         * Indicates whether this managed instance is acting as an on-premises management station.
          * @param isManagementStation the value to set
          * @return this builder
          **/
@@ -410,13 +424,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of a management station to be used as the preferred primary.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryManagementStationId")
         private String primaryManagementStationId;
 
         /**
-         * The OCID of a management station to be used as the preferred primary.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+         *
          * @param primaryManagementStationId the value to set
          * @return this builder
          **/
@@ -426,13 +442,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The OCID of a management station to be used as the preferred secondary.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryManagementStationId")
         private String secondaryManagementStationId;
 
         /**
-         * The OCID of a management station to be used as the preferred secondary.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+         *
          * @param secondaryManagementStationId the value to set
          * @return this builder
          **/
@@ -501,13 +519,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Number of packages installed on the system.
+         * Number of packages installed on the instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("installedPackages")
         private Integer installedPackages;
 
         /**
-         * Number of packages installed on the system.
+         * Number of packages installed on the instance.
          * @param installedPackages the value to set
          * @return this builder
          **/
@@ -517,13 +535,29 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Number of updates available to be installed.
+         * Number of Windows updates installed on the instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("installedWindowsUpdates")
+        private Integer installedWindowsUpdates;
+
+        /**
+         * Number of Windows updates installed on the instance.
+         * @param installedWindowsUpdates the value to set
+         * @return this builder
+         **/
+        public Builder installedWindowsUpdates(Integer installedWindowsUpdates) {
+            this.installedWindowsUpdates = installedWindowsUpdates;
+            this.__explicitlySet__.add("installedWindowsUpdates");
+            return this;
+        }
+        /**
+         * Number of updates available for installation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
         private Integer updatesAvailable;
 
         /**
-         * Number of updates available to be installed.
+         * Number of updates available for installation.
          * @param updatesAvailable the value to set
          * @return this builder
          **/
@@ -533,13 +567,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Number of security type updates available to be installed.
+         * Number of security type updates available for installation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
         private Integer securityUpdatesAvailable;
 
         /**
-         * Number of security type updates available to be installed.
+         * Number of security type updates available for installation.
          * @param securityUpdatesAvailable the value to set
          * @return this builder
          **/
@@ -549,13 +583,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Number of bug fix type updates available to be installed.
+         * Number of bug fix type updates available for installation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
         private Integer bugUpdatesAvailable;
 
         /**
-         * Number of bug fix type updates available to be installed.
+         * Number of bug fix type updates available for installation.
          * @param bugUpdatesAvailable the value to set
          * @return this builder
          **/
@@ -565,13 +599,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Number of enhancement type updates available to be installed.
+         * Number of enhancement type updates available for installation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
         private Integer enhancementUpdatesAvailable;
 
         /**
-         * Number of enhancement type updates available to be installed.
+         * Number of enhancement type updates available for installation.
          * @param enhancementUpdatesAvailable the value to set
          * @return this builder
          **/
@@ -581,13 +615,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * Number of non-classified updates available to be installed.
+         * Number of non-classified (other) updates available for installation.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
         private Integer otherUpdatesAvailable;
 
         /**
-         * Number of non-classified updates available to be installed.
+         * Number of non-classified (other) updates available for installation.
          * @param otherUpdatesAvailable the value to set
          * @return this builder
          **/
@@ -629,16 +663,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time the work request was created, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the work request was created, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -649,16 +681,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The date and time the work request was updated, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the work request was updated, as described in
-         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeUpdated the value to set
          * @return this builder
@@ -666,6 +696,49 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+        private String notificationTopicId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+         *
+         * @param notificationTopicId the value to set
+         * @return this builder
+         **/
+        public Builder notificationTopicId(String notificationTopicId) {
+            this.notificationTopicId = notificationTopicId;
+            this.__explicitlySet__.add("notificationTopicId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousSettings")
+        private AutonomousSettings autonomousSettings;
+
+        public Builder autonomousSettings(AutonomousSettings autonomousSettings) {
+            this.autonomousSettings = autonomousSettings;
+            this.__explicitlySet__.add("autonomousSettings");
+            return this;
+        }
+        /**
+         * Indicates whether the Autonomous Linux service manages the instance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+        private Boolean isManagedByAutonomousLinux;
+
+        /**
+         * Indicates whether the Autonomous Linux service manages the instance.
+         * @param isManagedByAutonomousLinux the value to set
+         * @return this builder
+         **/
+        public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
+            this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+            this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
 
@@ -700,6 +773,7 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                             this.lifecycleStage,
                             this.isRebootRequired,
                             this.installedPackages,
+                            this.installedWindowsUpdates,
                             this.updatesAvailable,
                             this.securityUpdatesAvailable,
                             this.bugUpdatesAvailable,
@@ -708,7 +782,10 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                             this.scheduledJobCount,
                             this.workRequestCount,
                             this.timeCreated,
-                            this.timeUpdated);
+                            this.timeUpdated,
+                            this.notificationTopicId,
+                            this.autonomousSettings,
+                            this.isManagedByAutonomousLinux);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -792,6 +869,9 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("installedPackages")) {
                 this.installedPackages(model.getInstalledPackages());
             }
+            if (model.wasPropertyExplicitlySet("installedWindowsUpdates")) {
+                this.installedWindowsUpdates(model.getInstalledWindowsUpdates());
+            }
             if (model.wasPropertyExplicitlySet("updatesAvailable")) {
                 this.updatesAvailable(model.getUpdatesAvailable());
             }
@@ -819,6 +899,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("notificationTopicId")) {
+                this.notificationTopicId(model.getNotificationTopicId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousSettings")) {
+                this.autonomousSettings(model.getAutonomousSettings());
+            }
+            if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
+                this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
             return this;
         }
     }
@@ -835,13 +924,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID for the managed instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID for the managed instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
+     *
      * @return the value
      **/
     public String getId() {
@@ -849,13 +940,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Managed instance identifier.
+     * User-friendly name for the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Managed instance identifier.
+     * User-friendly name for the managed instance.
      * @return the value
      **/
     public String getDisplayName() {
@@ -863,13 +954,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Information specified by the user about the managed instance.
+     * User-specified description for the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Information specified by the user about the managed instance.
+     * User-specified description for the managed instance.
      * @return the value
      **/
     public String getDescription() {
@@ -877,13 +968,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID for the tenancy this managed instance resides in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The OCID for the tenancy this managed instance resides in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy that the managed instance resides in.
+     *
      * @return the value
      **/
     public String getTenancyId() {
@@ -891,13 +984,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID for the compartment this managed instance resides in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID for the compartment this managed instance resides in.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance.
+     *
      * @return the value
      **/
     public String getCompartmentId() {
@@ -905,13 +1000,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * location of the managed instance.
+     * The location of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final ManagedInstanceLocation location;
 
     /**
-     * location of the managed instance.
+     * The location of the managed instance.
      * @return the value
      **/
     public ManagedInstanceLocation getLocation() {
@@ -919,16 +1014,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Time at which the instance last checked in, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastCheckin")
     private final java.util.Date timeLastCheckin;
 
     /**
-     * Time at which the instance last checked in, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * Time that the instance last checked in with the service (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/
@@ -937,16 +1030,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Time at which the instance last booted, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastBoot")
     private final java.util.Date timeLastBoot;
 
     /**
-     * Time at which the instance last booted, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * Time that the instance last booted (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/
@@ -955,13 +1046,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Operating System Name.
+     * Operating system name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osName")
     private final String osName;
 
     /**
-     * Operating System Name.
+     * Operating system name.
      * @return the value
      **/
     public String getOsName() {
@@ -969,13 +1060,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Operating System Version.
+     * Operating system version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
     private final String osVersion;
 
     /**
-     * Operating System Version.
+     * Operating system version.
      * @return the value
      **/
     public String getOsVersion() {
@@ -983,13 +1074,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Operating System Kernel Version.
+     * Operating system kernel version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
     private final String osKernelVersion;
 
     /**
-     * Operating System Kernel Version.
+     * Operating system kernel version.
      * @return the value
      **/
     public String getOsKernelVersion() {
@@ -1025,13 +1116,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The Operating System type of the managed instance.
+     * The operating system type of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The Operating System type of the managed instance.
+     * The operating system type of the managed instance.
      * @return the value
      **/
     public OsFamily getOsFamily() {
@@ -1039,13 +1130,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * status of the managed instance.
+     * Current status of the managed instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ManagedInstanceStatus status;
 
     /**
-     * status of the managed instance.
+     * Current status of the managed instance.
      * @return the value
      **/
     public ManagedInstanceStatus getStatus() {
@@ -1053,13 +1144,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The content profile of this instance.
+     * The profile that was used to register this instance with the service.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     private final String profile;
 
     /**
-     * The content profile of this instance.
+     * The profile that was used to register this instance with the service.
      * @return the value
      **/
     public String getProfile() {
@@ -1067,13 +1158,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Whether this managed instance is acting as an on-premise management station.
+     * Indicates whether this managed instance is acting as an on-premises management station.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagementStation")
     private final Boolean isManagementStation;
 
     /**
-     * Whether this managed instance is acting as an on-premise management station.
+     * Indicates whether this managed instance is acting as an on-premises management station.
      * @return the value
      **/
     public Boolean getIsManagementStation() {
@@ -1081,13 +1172,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of a management station to be used as the preferred primary.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryManagementStationId")
     private final String primaryManagementStationId;
 
     /**
-     * The OCID of a management station to be used as the preferred primary.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
+     *
      * @return the value
      **/
     public String getPrimaryManagementStationId() {
@@ -1095,13 +1188,15 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The OCID of a management station to be used as the preferred secondary.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("secondaryManagementStationId")
     private final String secondaryManagementStationId;
 
     /**
-     * The OCID of a management station to be used as the preferred secondary.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary managment station.
+     *
      * @return the value
      **/
     public String getSecondaryManagementStationId() {
@@ -1158,13 +1253,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Number of packages installed on the system.
+     * Number of packages installed on the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("installedPackages")
     private final Integer installedPackages;
 
     /**
-     * Number of packages installed on the system.
+     * Number of packages installed on the instance.
      * @return the value
      **/
     public Integer getInstalledPackages() {
@@ -1172,13 +1267,27 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Number of updates available to be installed.
+     * Number of Windows updates installed on the instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("installedWindowsUpdates")
+    private final Integer installedWindowsUpdates;
+
+    /**
+     * Number of Windows updates installed on the instance.
+     * @return the value
+     **/
+    public Integer getInstalledWindowsUpdates() {
+        return installedWindowsUpdates;
+    }
+
+    /**
+     * Number of updates available for installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
     private final Integer updatesAvailable;
 
     /**
-     * Number of updates available to be installed.
+     * Number of updates available for installation.
      * @return the value
      **/
     public Integer getUpdatesAvailable() {
@@ -1186,13 +1295,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Number of security type updates available to be installed.
+     * Number of security type updates available for installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
     private final Integer securityUpdatesAvailable;
 
     /**
-     * Number of security type updates available to be installed.
+     * Number of security type updates available for installation.
      * @return the value
      **/
     public Integer getSecurityUpdatesAvailable() {
@@ -1200,13 +1309,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Number of bug fix type updates available to be installed.
+     * Number of bug fix type updates available for installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
     private final Integer bugUpdatesAvailable;
 
     /**
-     * Number of bug fix type updates available to be installed.
+     * Number of bug fix type updates available for installation.
      * @return the value
      **/
     public Integer getBugUpdatesAvailable() {
@@ -1214,13 +1323,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Number of enhancement type updates available to be installed.
+     * Number of enhancement type updates available for installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
     private final Integer enhancementUpdatesAvailable;
 
     /**
-     * Number of enhancement type updates available to be installed.
+     * Number of enhancement type updates available for installation.
      * @return the value
      **/
     public Integer getEnhancementUpdatesAvailable() {
@@ -1228,13 +1337,13 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Number of non-classified updates available to be installed.
+     * Number of non-classified (other) updates available for installation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
     private final Integer otherUpdatesAvailable;
 
     /**
-     * Number of non-classified updates available to be installed.
+     * Number of non-classified (other) updates available for installation.
      * @return the value
      **/
     public Integer getOtherUpdatesAvailable() {
@@ -1270,16 +1379,14 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time the work request was created, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the work request was created, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the instance was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/
@@ -1288,21 +1395,56 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The date and time the work request was updated, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the work request was updated, as described in
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the instance was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
+    private final String notificationTopicId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
+     *
+     * @return the value
+     **/
+    public String getNotificationTopicId() {
+        return notificationTopicId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousSettings")
+    private final AutonomousSettings autonomousSettings;
+
+    public AutonomousSettings getAutonomousSettings() {
+        return autonomousSettings;
+    }
+
+    /**
+     * Indicates whether the Autonomous Linux service manages the instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
+    private final Boolean isManagedByAutonomousLinux;
+
+    /**
+     * Indicates whether the Autonomous Linux service manages the instance.
+     * @return the value
+     **/
+    public Boolean getIsManagedByAutonomousLinux() {
+        return isManagedByAutonomousLinux;
     }
 
     @Override
@@ -1347,6 +1489,8 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         sb.append(", lifecycleStage=").append(String.valueOf(this.lifecycleStage));
         sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
         sb.append(", installedPackages=").append(String.valueOf(this.installedPackages));
+        sb.append(", installedWindowsUpdates=")
+                .append(String.valueOf(this.installedWindowsUpdates));
         sb.append(", updatesAvailable=").append(String.valueOf(this.updatesAvailable));
         sb.append(", securityUpdatesAvailable=")
                 .append(String.valueOf(this.securityUpdatesAvailable));
@@ -1358,6 +1502,10 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
         sb.append(", workRequestCount=").append(String.valueOf(this.workRequestCount));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", notificationTopicId=").append(String.valueOf(this.notificationTopicId));
+        sb.append(", autonomousSettings=").append(String.valueOf(this.autonomousSettings));
+        sb.append(", isManagedByAutonomousLinux=")
+                .append(String.valueOf(this.isManagedByAutonomousLinux));
         sb.append(")");
         return sb.toString();
     }
@@ -1400,6 +1548,8 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.lifecycleStage, other.lifecycleStage)
                 && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
                 && java.util.Objects.equals(this.installedPackages, other.installedPackages)
+                && java.util.Objects.equals(
+                        this.installedWindowsUpdates, other.installedWindowsUpdates)
                 && java.util.Objects.equals(this.updatesAvailable, other.updatesAvailable)
                 && java.util.Objects.equals(
                         this.securityUpdatesAvailable, other.securityUpdatesAvailable)
@@ -1411,6 +1561,10 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.workRequestCount, other.workRequestCount)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.notificationTopicId, other.notificationTopicId)
+                && java.util.Objects.equals(this.autonomousSettings, other.autonomousSettings)
+                && java.util.Objects.equals(
+                        this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
                 && super.equals(other);
     }
 
@@ -1483,6 +1637,11 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                         + (this.installedPackages == null ? 43 : this.installedPackages.hashCode());
         result =
                 (result * PRIME)
+                        + (this.installedWindowsUpdates == null
+                                ? 43
+                                : this.installedWindowsUpdates.hashCode());
+        result =
+                (result * PRIME)
                         + (this.updatesAvailable == null ? 43 : this.updatesAvailable.hashCode());
         result =
                 (result * PRIME)
@@ -1512,6 +1671,21 @@ public final class ManagedInstance extends com.oracle.bmc.http.internal.Explicit
                         + (this.workRequestCount == null ? 43 : this.workRequestCount.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTopicId == null
+                                ? 43
+                                : this.notificationTopicId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousSettings == null
+                                ? 43
+                                : this.autonomousSettings.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isManagedByAutonomousLinux == null
+                                ? 43
+                                : this.isManagedByAutonomousLinux.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

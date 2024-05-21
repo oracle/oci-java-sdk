@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
@@ -108,13 +108,13 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
             return this;
         }
         /**
-         * Container health check Http's path
+         * Container health check HTTP path.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
-         * Container health check Http's path
+         * Container health check HTTP path.
          * @param path the value to set
          * @return this builder
          **/
@@ -124,13 +124,13 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
             return this;
         }
         /**
-         * Container health check Http's port
+         * Container health check HTTP port.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
-         * Container health check Http's port
+         * Container health check HTTP port.
          * @param port the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
             return this;
         }
         /**
-         * Container health check Http's headers.
+         * Container health check HTTP headers.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.List<HealthCheckHttpHeader> headers;
 
         /**
-         * Container health check Http's headers.
+         * Container health check HTTP headers.
          * @param headers the value to set
          * @return this builder
          **/
@@ -263,13 +263,13 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
     }
 
     /**
-     * Container health check Http's path
+     * Container health check HTTP path.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
-     * Container health check Http's path
+     * Container health check HTTP path.
      * @return the value
      **/
     public String getPath() {
@@ -277,13 +277,13 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
     }
 
     /**
-     * Container health check Http's port
+     * Container health check HTTP port.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
-     * Container health check Http's port
+     * Container health check HTTP port.
      * @return the value
      **/
     public Integer getPort() {
@@ -291,13 +291,13 @@ public final class ContainerHttpHealthCheck extends ContainerHealthCheck {
     }
 
     /**
-     * Container health check Http's headers.
+     * Container health check HTTP headers.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.List<HealthCheckHttpHeader> headers;
 
     /**
-     * Container health check Http's headers.
+     * Container health check HTTP headers.
      * @return the value
      **/
     public java.util.List<HealthCheckHttpHeader> getHeaders() {

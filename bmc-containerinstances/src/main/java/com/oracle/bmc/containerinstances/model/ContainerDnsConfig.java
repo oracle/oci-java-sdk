@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerinstances.model;
@@ -35,13 +35,13 @@ public final class ContainerDnsConfig extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name server IP address
+         * IP address of the name server..
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
         private java.util.List<String> nameservers;
 
         /**
-         * Name server IP address
+         * IP address of the name server..
          * @param nameservers the value to set
          * @return this builder
          **/
@@ -51,13 +51,13 @@ public final class ContainerDnsConfig extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * Search list for host-name lookup.
+         * Search list for hostname lookup.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("searches")
         private java.util.List<String> searches;
 
         /**
-         * Search list for host-name lookup.
+         * Search list for hostname lookup.
          * @param searches the value to set
          * @return this builder
          **/
@@ -122,13 +122,13 @@ public final class ContainerDnsConfig extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Name server IP address
+     * IP address of the name server..
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
     private final java.util.List<String> nameservers;
 
     /**
-     * Name server IP address
+     * IP address of the name server..
      * @return the value
      **/
     public java.util.List<String> getNameservers() {
@@ -136,13 +136,13 @@ public final class ContainerDnsConfig extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Search list for host-name lookup.
+     * Search list for hostname lookup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searches")
     private final java.util.List<String> searches;
 
     /**
-     * Search list for host-name lookup.
+     * Search list for hostname lookup.
      * @return the value
      **/
     public java.util.List<String> getSearches() {

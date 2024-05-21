@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dns.requests;
@@ -134,12 +134,12 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return scope;
     }
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     private String viewId;
 
     /**
-     * The OCID of the view the resource is associated with.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     public String getViewId() {
         return viewId;
@@ -307,12 +307,12 @@ public class DeleteRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The OCID of the view the resource is associated with.
+         * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          */
         private String viewId = null;
 
         /**
-         * The OCID of the view the resource is associated with.
+         * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * @param viewId the value to set
          * @return this builder instance
          */

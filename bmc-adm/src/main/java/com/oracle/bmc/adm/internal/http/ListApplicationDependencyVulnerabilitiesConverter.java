@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.adm.internal.http;
@@ -68,6 +68,14 @@ public class ListApplicationDependencyVulnerabilitiesConverter {
                                     request.getCvssV2GreaterThanOrEqual()));
         }
 
+        if (request.getSeverityGreaterThanOrEqual() != null) {
+            target =
+                    target.queryParam(
+                            "severityGreaterThanOrEqual",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSeverityGreaterThanOrEqual().getValue()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(
@@ -122,6 +130,14 @@ public class ListApplicationDependencyVulnerabilitiesConverter {
                             "gav",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getGav()));
+        }
+
+        if (request.getPurl() != null) {
+            target =
+                    target.queryParam(
+                            "purl",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPurl()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

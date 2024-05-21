@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.requests;
@@ -55,6 +55,17 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
      */
     public String getOpcRequestId() {
         return opcRequestId;
+    }
+    /**
+     * The OCID of the Named Credential.
+     */
+    private String opcNamedCredentialId;
+
+    /**
+     * The OCID of the Named Credential.
+     */
+    public String getOpcNamedCredentialId() {
+        return opcNamedCredentialId;
     }
 
     public static class Builder
@@ -122,6 +133,21 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
+         * The OCID of the Named Credential.
+         */
+        private String opcNamedCredentialId = null;
+
+        /**
+         * The OCID of the Named Credential.
+         * @param opcNamedCredentialId the value to set
+         * @return this builder instance
+         */
+        public Builder opcNamedCredentialId(String opcNamedCredentialId) {
+            this.opcNamedCredentialId = opcNamedCredentialId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -152,6 +178,7 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
             managedDatabaseId(o.getManagedDatabaseId());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            opcNamedCredentialId(o.getOpcNamedCredentialId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -187,8 +214,9 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
             request.managedDatabaseId = managedDatabaseId;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GenerateAwrSnapshotRequest(managedDatabaseId, opcRetryToken, opcRequestId);
+            // new GenerateAwrSnapshotRequest(managedDatabaseId, opcRetryToken, opcRequestId, opcNamedCredentialId);
         }
     }
 
@@ -200,7 +228,8 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
         return new Builder()
                 .managedDatabaseId(managedDatabaseId)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .opcNamedCredentialId(opcNamedCredentialId);
     }
 
     /**
@@ -219,6 +248,7 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",managedDatabaseId=").append(String.valueOf(this.managedDatabaseId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",opcNamedCredentialId=").append(String.valueOf(this.opcNamedCredentialId));
         sb.append(")");
         return sb.toString();
     }
@@ -236,7 +266,8 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
         return super.equals(o)
                 && java.util.Objects.equals(this.managedDatabaseId, other.managedDatabaseId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcNamedCredentialId, other.opcNamedCredentialId);
     }
 
     @Override
@@ -250,6 +281,11 @@ public class GenerateAwrSnapshotRequest extends com.oracle.bmc.requests.BmcReque
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcNamedCredentialId == null
+                                ? 43
+                                : this.opcNamedCredentialId.hashCode());
         return result;
     }
 }

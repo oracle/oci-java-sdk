@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms.model;
@@ -26,6 +26,7 @@ public final class JavaMigrationAnalysisResultSummary
         "id",
         "workRequestId",
         "fleetId",
+        "applicationKey",
         "applicationName",
         "applicationPath",
         "applicationExecutionType",
@@ -44,6 +45,7 @@ public final class JavaMigrationAnalysisResultSummary
             String id,
             String workRequestId,
             String fleetId,
+            String applicationKey,
             String applicationName,
             String applicationPath,
             ApplicationExecutionType applicationExecutionType,
@@ -61,6 +63,7 @@ public final class JavaMigrationAnalysisResultSummary
         this.id = id;
         this.workRequestId = workRequestId;
         this.fleetId = fleetId;
+        this.applicationKey = applicationKey;
         this.applicationName = applicationName;
         this.applicationPath = applicationPath;
         this.applicationExecutionType = applicationExecutionType;
@@ -124,6 +127,22 @@ public final class JavaMigrationAnalysisResultSummary
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
+            return this;
+        }
+        /**
+         * The unique key that identifies the application.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
+        private String applicationKey;
+
+        /**
+         * The unique key that identifies the application.
+         * @param applicationKey the value to set
+         * @return this builder
+         **/
+        public Builder applicationKey(String applicationKey) {
+            this.applicationKey = applicationKey;
+            this.__explicitlySet__.add("applicationKey");
             return this;
         }
         /**
@@ -344,6 +363,7 @@ public final class JavaMigrationAnalysisResultSummary
                             this.id,
                             this.workRequestId,
                             this.fleetId,
+                            this.applicationKey,
                             this.applicationName,
                             this.applicationPath,
                             this.applicationExecutionType,
@@ -373,6 +393,9 @@ public final class JavaMigrationAnalysisResultSummary
             }
             if (model.wasPropertyExplicitlySet("fleetId")) {
                 this.fleetId(model.getFleetId());
+            }
+            if (model.wasPropertyExplicitlySet("applicationKey")) {
+                this.applicationKey(model.getApplicationKey());
             }
             if (model.wasPropertyExplicitlySet("applicationName")) {
                 this.applicationName(model.getApplicationName());
@@ -468,6 +491,20 @@ public final class JavaMigrationAnalysisResultSummary
      **/
     public String getFleetId() {
         return fleetId;
+    }
+
+    /**
+     * The unique key that identifies the application.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
+    private final String applicationKey;
+
+    /**
+     * The unique key that identifies the application.
+     * @return the value
+     **/
+    public String getApplicationKey() {
+        return applicationKey;
     }
 
     /**
@@ -669,6 +706,7 @@ public final class JavaMigrationAnalysisResultSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
+        sb.append(", applicationKey=").append(String.valueOf(this.applicationKey));
         sb.append(", applicationName=").append(String.valueOf(this.applicationName));
         sb.append(", applicationPath=").append(String.valueOf(this.applicationPath));
         sb.append(", applicationExecutionType=")
@@ -701,6 +739,7 @@ public final class JavaMigrationAnalysisResultSummary
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
+                && java.util.Objects.equals(this.applicationKey, other.applicationKey)
                 && java.util.Objects.equals(this.applicationName, other.applicationName)
                 && java.util.Objects.equals(this.applicationPath, other.applicationPath)
                 && java.util.Objects.equals(
@@ -728,6 +767,9 @@ public final class JavaMigrationAnalysisResultSummary
                 (result * PRIME)
                         + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationKey == null ? 43 : this.applicationKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.applicationName == null ? 43 : this.applicationName.hashCode());

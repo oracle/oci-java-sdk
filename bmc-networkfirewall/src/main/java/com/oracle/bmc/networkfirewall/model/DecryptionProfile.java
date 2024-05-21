@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkfirewall.model;
@@ -14,7 +14,7 @@ package com.oracle.bmc.networkfirewall.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -34,9 +34,39 @@ package com.oracle.bmc.networkfirewall.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DecryptionProfile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected DecryptionProfile() {
+    @java.beans.ConstructorProperties({"name", "parentResourceId"})
+    protected DecryptionProfile(String name, String parentResourceId) {
         super();
+        this.name = name;
+        this.parentResourceId = parentResourceId;
+    }
+
+    /**
+     * Unique Name of the decryption profile.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    private final String name;
+
+    /**
+     * Unique Name of the decryption profile.
+     * @return the value
+     **/
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
+    private final String parentResourceId;
+
+    /**
+     * OCID of the Network Firewall Policy this decryption profile belongs to.
+     * @return the value
+     **/
+    public String getParentResourceId() {
+        return parentResourceId;
     }
 
     @Override
@@ -53,6 +83,8 @@ public class DecryptionProfile extends com.oracle.bmc.http.internal.ExplicitlySe
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DecryptionProfile(");
         sb.append("super=").append(super.toString());
+        sb.append("name=").append(String.valueOf(this.name));
+        sb.append(", parentResourceId=").append(String.valueOf(this.parentResourceId));
         sb.append(")");
         return sb.toString();
     }
@@ -67,61 +99,20 @@ public class DecryptionProfile extends com.oracle.bmc.http.internal.ExplicitlySe
         }
 
         DecryptionProfile other = (DecryptionProfile) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.parentResourceId, other.parentResourceId)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentResourceId == null ? 43 : this.parentResourceId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
-
-    /**
-     * Describes the type of Decryption Profile SslForwardProxy or SslInboundInspection.
-     **/
-    public enum Type {
-        SslInboundInspection("SSL_INBOUND_INSPECTION"),
-        SslForwardProxy("SSL_FORWARD_PROXY"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
-
-        private final String value;
-        private static java.util.Map<String, Type> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Type(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Type create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
 }
