@@ -34,6 +34,10 @@ public final class JavaDownloadReport
         "compartmentId",
         "createdBy",
         "timeCreated",
+        "timeStart",
+        "timeEnd",
+        "sortBy",
+        "sortOrder",
         "lifecycleState",
         "freeformTags",
         "definedTags",
@@ -49,6 +53,10 @@ public final class JavaDownloadReport
             String compartmentId,
             Principal createdBy,
             java.util.Date timeCreated,
+            java.util.Date timeStart,
+            java.util.Date timeEnd,
+            JavaDownloadRecordSortBy sortBy,
+            SortOrder sortOrder,
             LifecycleState lifecycleState,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -63,6 +71,10 @@ public final class JavaDownloadReport
         this.compartmentId = compartmentId;
         this.createdBy = createdBy;
         this.timeCreated = timeCreated;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.sortBy = sortBy;
+        this.sortOrder = sortOrder;
         this.lifecycleState = lifecycleState;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -193,12 +205,16 @@ public final class JavaDownloadReport
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** The time the Java download report was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time the Java download report was created, displayed as an
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the Java download report was created. An RFC3339 formatted datetime string.
+         * The time the Java download report was created, displayed as an
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -206,6 +222,74 @@ public final class JavaDownloadReport
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * The start time from when the download records are included (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
+        private java.util.Date timeStart;
+
+        /**
+         * The start time from when the download records are included (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeStart the value to set
+         * @return this builder
+         */
+        public Builder timeStart(java.util.Date timeStart) {
+            this.timeStart = timeStart;
+            this.__explicitlySet__.add("timeStart");
+            return this;
+        }
+        /**
+         * The end time until when the download records are included (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
+        private java.util.Date timeEnd;
+
+        /**
+         * The end time until when the download records are included (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeEnd the value to set
+         * @return this builder
+         */
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
+            this.__explicitlySet__.add("timeEnd");
+            return this;
+        }
+        /** The property used for sorting the records. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
+        private JavaDownloadRecordSortBy sortBy;
+
+        /**
+         * The property used for sorting the records.
+         *
+         * @param sortBy the value to set
+         * @return this builder
+         */
+        public Builder sortBy(JavaDownloadRecordSortBy sortBy) {
+            this.sortBy = sortBy;
+            this.__explicitlySet__.add("sortBy");
+            return this;
+        }
+        /** The sort order for the records. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
+        private SortOrder sortOrder;
+
+        /**
+         * The sort order for the records.
+         *
+         * @param sortOrder the value to set
+         * @return this builder
+         */
+        public Builder sortOrder(SortOrder sortOrder) {
+            this.sortOrder = sortOrder;
+            this.__explicitlySet__.add("sortOrder");
             return this;
         }
         /** The current state of the Java download report. */
@@ -311,6 +395,10 @@ public final class JavaDownloadReport
                             this.compartmentId,
                             this.createdBy,
                             this.timeCreated,
+                            this.timeStart,
+                            this.timeEnd,
+                            this.sortBy,
+                            this.sortOrder,
                             this.lifecycleState,
                             this.freeformTags,
                             this.definedTags,
@@ -349,6 +437,18 @@ public final class JavaDownloadReport
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeStart")) {
+                this.timeStart(model.getTimeStart());
+            }
+            if (model.wasPropertyExplicitlySet("timeEnd")) {
+                this.timeEnd(model.getTimeEnd());
+            }
+            if (model.wasPropertyExplicitlySet("sortBy")) {
+                this.sortBy(model.getSortBy());
+            }
+            if (model.wasPropertyExplicitlySet("sortOrder")) {
+                this.sortOrder(model.getSortOrder());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -481,17 +581,81 @@ public final class JavaDownloadReport
         return createdBy;
     }
 
-    /** The time the Java download report was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Java download report was created, displayed as an
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the Java download report was created. An RFC3339 formatted datetime string.
+     * The time the Java download report was created, displayed as an
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      *
      * @return the value
      */
     public java.util.Date getTimeCreated() {
         return timeCreated;
+    }
+
+    /**
+     * The start time from when the download records are included (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
+    private final java.util.Date timeStart;
+
+    /**
+     * The start time from when the download records are included (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
+
+    /**
+     * The end time until when the download records are included (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
+    private final java.util.Date timeEnd;
+
+    /**
+     * The end time until when the download records are included (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
+
+    /** The property used for sorting the records. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
+    private final JavaDownloadRecordSortBy sortBy;
+
+    /**
+     * The property used for sorting the records.
+     *
+     * @return the value
+     */
+    public JavaDownloadRecordSortBy getSortBy() {
+        return sortBy;
+    }
+
+    /** The sort order for the records. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
+    private final SortOrder sortOrder;
+
+    /**
+     * The sort order for the records.
+     *
+     * @return the value
+     */
+    public SortOrder getSortOrder() {
+        return sortOrder;
     }
 
     /** The current state of the Java download report. */
@@ -594,6 +758,10 @@ public final class JavaDownloadReport
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
+        sb.append(", sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -621,6 +789,10 @@ public final class JavaDownloadReport
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
+                && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -647,6 +819,10 @@ public final class JavaDownloadReport
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
+        result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

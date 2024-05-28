@@ -147,6 +147,7 @@ public final class DatabasePasswordCredentialDetails extends DatabaseCredentialD
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Normal("NORMAL"),
         Sysdba("SYSDBA"),
+        Sysdg("SYSDG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

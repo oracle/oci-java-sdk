@@ -262,6 +262,7 @@ public final class DatabaseSslConnectionCredentials extends DatabaseConnectionCr
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
+        Sysdg("SYSDG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

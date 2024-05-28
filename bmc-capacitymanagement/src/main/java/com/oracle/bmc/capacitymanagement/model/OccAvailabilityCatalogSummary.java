@@ -124,14 +124,14 @@ public final class OccAvailabilityCatalogSummary
             return this;
         }
         /**
-         * An user-friendly name for the availability catalog. Does not have to be unique, and it's
+         * An user-friendly name for the availability catalog. Does not have to be unique, and is
          * changeable. Avoid entering confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * An user-friendly name for the availability catalog. Does not have to be unique, and it's
+         * An user-friendly name for the availability catalog. Does not have to be unique, and is
          * changeable. Avoid entering confidential information.
          *
          * @param displayName the value to set
@@ -450,14 +450,14 @@ public final class OccAvailabilityCatalogSummary
     }
 
     /**
-     * An user-friendly name for the availability catalog. Does not have to be unique, and it's
+     * An user-friendly name for the availability catalog. Does not have to be unique, and is
      * changeable. Avoid entering confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * An user-friendly name for the availability catalog. Does not have to be unique, and it's
+     * An user-friendly name for the availability catalog. Does not have to be unique, and is
      * changeable. Avoid entering confidential information.
      *
      * @return the value

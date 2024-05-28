@@ -7,7 +7,10 @@ package com.oracle.bmc.jmsjavadownloads;
 import com.oracle.bmc.jmsjavadownloads.requests.*;
 import com.oracle.bmc.jmsjavadownloads.responses.*;
 
-/** The APIs for the download engine of the Java Management Service. */
+/**
+ * The APIs for the <a href="https://docs.oracle.com/en-us/iaas/jms/doc/java-download.html">Java
+ * Download</a> feature of Java Management Service.
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 public interface JavaDownloadAsync extends AutoCloseable {
 
@@ -92,7 +95,13 @@ public interface JavaDownloadAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new JavaDownloadToken in the tenancy with specified attributes.
+     * Creates a new JavaDownloadToken in the tenancy with specified attributes. Ensure that you
+     * review the license terms before token generation. Visit the <a
+     * href=\"https://www.oracle.com/java/technologies/downloads\"/>Oracle Java Downloads</a> page
+     * to understand the license terms of the Java version for which you are generating a token. By
+     * generating a token, you agree to the associated license terms. See <a
+     * href=\"https://www.oracle.com/cis/java/technologies/javase/jdk-faqs.html\">Oracle JDK
+     * Licensing - FAQs</a> for detailed information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

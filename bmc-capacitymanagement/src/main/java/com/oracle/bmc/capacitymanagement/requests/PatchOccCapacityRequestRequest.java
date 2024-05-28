@@ -16,11 +16,11 @@ public class PatchOccCapacityRequestRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.capacitymanagement.model.PatchOccCapacityRequestDetails> {
 
-    /** Request to update the properties of the capacity request. */
+    /** Request to update the details of the capacity request. */
     private com.oracle.bmc.capacitymanagement.model.PatchOccCapacityRequestDetails
             patchOccCapacityRequestDetails;
 
-    /** Request to update the properties of the capacity request. */
+    /** Request to update the details of the capacity request. */
     public com.oracle.bmc.capacitymanagement.model.PatchOccCapacityRequestDetails
             getPatchOccCapacityRequestDetails() {
         return patchOccCapacityRequestDetails;
@@ -81,12 +81,12 @@ public class PatchOccCapacityRequestRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to update the properties of the capacity request. */
+        /** Request to update the details of the capacity request. */
         private com.oracle.bmc.capacitymanagement.model.PatchOccCapacityRequestDetails
                 patchOccCapacityRequestDetails = null;
 
         /**
-         * Request to update the properties of the capacity request.
+         * Request to update the details of the capacity request.
          *
          * @param patchOccCapacityRequestDetails the value to set
          * @return this builder instance

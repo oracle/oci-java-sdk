@@ -8,7 +8,8 @@ import com.oracle.bmc.jmsjavadownloads.requests.*;
 import com.oracle.bmc.jmsjavadownloads.responses.*;
 
 /**
- * The APIs for the download engine of the Java Management Service. This service client uses
+ * The APIs for the <a href="https://docs.oracle.com/en-us/iaas/jms/doc/java-download.html">Java
+ * Download</a> feature of Java Management Service. This service client uses
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
@@ -97,7 +98,13 @@ public interface JavaDownload extends AutoCloseable {
             CreateJavaDownloadReportRequest request);
 
     /**
-     * Creates a new JavaDownloadToken in the tenancy with specified attributes.
+     * Creates a new JavaDownloadToken in the tenancy with specified attributes. Ensure that you
+     * review the license terms before token generation. Visit the <a
+     * href=\"https://www.oracle.com/java/technologies/downloads\"/>Oracle Java Downloads</a> page
+     * to understand the license terms of the Java version for which you are generating a token. By
+     * generating a token, you agree to the associated license terms. See <a
+     * href=\"https://www.oracle.com/cis/java/technologies/javase/jdk-faqs.html\">Oracle JDK
+     * Licensing - FAQs</a> for detailed information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

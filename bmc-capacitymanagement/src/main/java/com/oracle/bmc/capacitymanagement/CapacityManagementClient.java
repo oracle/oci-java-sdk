@@ -378,6 +378,47 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ListInternalNamespaceOccOverviewsResponse listInternalNamespaceOccOverviews(
+            ListInternalNamespaceOccOverviewsRequest request) {
+
+        Validate.notBlank(request.getNamespace().getValue(), "namespace must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInternalNamespaceOccOverviewsResponse::builder)
+                .logger(LOG, "listInternalNamespaceOccOverviews")
+                .serviceDetails("CapacityManagement", "ListInternalNamespaceOccOverviews", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInternalNamespaceOccOverviewsRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("internal")
+                .appendPathParam("namespace")
+                .appendPathParam(request.getNamespace().getValue())
+                .appendPathParam("occOverview")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("occCustomerGroupId", request.getOccCustomerGroupId())
+                .appendQueryParam("workloadType", request.getWorkloadType())
+                .appendQueryParam("from", request.getFrom())
+                .appendQueryParam("to", request.getTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccOverviewCollection.class,
+                        ListInternalNamespaceOccOverviewsResponse.Builder::occOverviewCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListInternalNamespaceOccOverviewsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListInternalNamespaceOccOverviewsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListOccAvailabilitiesResponse listOccAvailabilities(
             ListOccAvailabilitiesRequest request) {
 
@@ -397,8 +438,8 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam(
                         "dateExpectedCapacityHandover", request.getDateExpectedCapacityHandover())
                 .appendQueryParam("resourceName", request.getResourceName())
-                .appendEnumQueryParam("resourceType", request.getResourceType())
-                .appendEnumQueryParam("workloadType", request.getWorkloadType())
+                .appendQueryParam("resourceType", request.getResourceType())
+                .appendQueryParam("workloadType", request.getWorkloadType())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -507,6 +548,7 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("occAvailabilityCatalogId", request.getOccAvailabilityCatalogId())
                 .appendEnumQueryParam("namespace", request.getNamespace())
+                .appendEnumQueryParam("requestType", request.getRequestType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())
@@ -544,6 +586,7 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("occAvailabilityCatalogId", request.getOccAvailabilityCatalogId())
                 .appendEnumQueryParam("namespace", request.getNamespace())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("requestType", request.getRequestType())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -595,6 +638,77 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListOccCustomerGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOccCustomerGroupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOccOverviewsResponse listOccOverviews(ListOccOverviewsRequest request) {
+
+        Validate.notBlank(request.getNamespace().getValue(), "namespace must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListOccOverviewsResponse::builder)
+                .logger(LOG, "listOccOverviews")
+                .serviceDetails("CapacityManagement", "ListOccOverviews", "")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOccOverviewsRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("namespace")
+                .appendPathParam(request.getNamespace().getValue())
+                .appendPathParam("occOverview")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("from", request.getFrom())
+                .appendQueryParam("to", request.getTo())
+                .appendQueryParam("workloadType", request.getWorkloadType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccOverviewCollection.class,
+                        ListOccOverviewsResponse.Builder::occOverviewCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListOccOverviewsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOccOverviewsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public PatchInternalOccCapacityRequestResponse patchInternalOccCapacityRequest(
+            PatchInternalOccCapacityRequestRequest request) {
+        Objects.requireNonNull(
+                request.getPatchOccCapacityRequestDetails(),
+                "patchOccCapacityRequestDetails is required");
+
+        Validate.notBlank(
+                request.getOccCapacityRequestId(), "occCapacityRequestId must not be blank");
+
+        return clientCall(request, PatchInternalOccCapacityRequestResponse::builder)
+                .logger(LOG, "patchInternalOccCapacityRequest")
+                .serviceDetails("CapacityManagement", "PatchInternalOccCapacityRequest", "")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchInternalOccCapacityRequestRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("internal")
+                .appendPathParam("occCapacityRequests")
+                .appendPathParam(request.getOccCapacityRequestId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.class,
+                        PatchInternalOccCapacityRequestResponse.Builder::occCapacityRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        PatchInternalOccCapacityRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PatchInternalOccCapacityRequestResponse.Builder::etag)
                 .callSync();
     }
 

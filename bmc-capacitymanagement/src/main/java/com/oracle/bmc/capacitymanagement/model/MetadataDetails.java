@@ -79,6 +79,7 @@ public final class MetadataDetails
     /** The version for the format of the catalog file being uploaded. */
     public enum FormatVersion implements com.oracle.bmc.http.internal.BmcEnum {
         V1("V1"),
+        V2("V2"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

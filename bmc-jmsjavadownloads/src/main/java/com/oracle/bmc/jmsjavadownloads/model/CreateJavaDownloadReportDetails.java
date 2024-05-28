@@ -29,7 +29,9 @@ public final class CreateJavaDownloadReportDetails
         "timeEnd",
         "sortBy",
         "sortOrder",
-        "format"
+        "format",
+        "freeformTags",
+        "definedTags"
     })
     public CreateJavaDownloadReportDetails(
             String compartmentId,
@@ -37,7 +39,9 @@ public final class CreateJavaDownloadReportDetails
             java.util.Date timeEnd,
             JavaDownloadRecordSortBy sortBy,
             SortOrder sortOrder,
-            JavaDownloadReportFormat format) {
+            JavaDownloadReportFormat format,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.compartmentId = compartmentId;
         this.timeStart = timeStart;
@@ -45,6 +49,8 @@ public final class CreateJavaDownloadReportDetails
         this.sortBy = sortBy;
         this.sortOrder = sortOrder;
         this.format = format;
+        this.freeformTags = freeformTags;
+        this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -108,12 +114,12 @@ public final class CreateJavaDownloadReportDetails
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** The property to be used for sorting the reports. */
+        /** The property to be used for sorting the records. */
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private JavaDownloadRecordSortBy sortBy;
 
         /**
-         * The property to be used for sorting the reports.
+         * The property to be used for sorting the records.
          *
          * @param sortBy the value to set
          * @return this builder
@@ -123,12 +129,12 @@ public final class CreateJavaDownloadReportDetails
             this.__explicitlySet__.add("sortBy");
             return this;
         }
-        /** The sort order for the reports. */
+        /** The sort order for the records. */
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
-         * The sort order for the reports.
+         * The sort order for the records.
          *
          * @param sortOrder the value to set
          * @return this builder
@@ -153,6 +159,51 @@ public final class CreateJavaDownloadReportDetails
             this.__explicitlySet__.add("format");
             return this;
         }
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
+         * and Tag
+         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
+         * and Tag
+         * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
+         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
+         * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -165,7 +216,9 @@ public final class CreateJavaDownloadReportDetails
                             this.timeEnd,
                             this.sortBy,
                             this.sortOrder,
-                            this.format);
+                            this.format,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -191,6 +244,12 @@ public final class CreateJavaDownloadReportDetails
             }
             if (model.wasPropertyExplicitlySet("format")) {
                 this.format(model.getFormat());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
             }
             return this;
         }
@@ -258,12 +317,12 @@ public final class CreateJavaDownloadReportDetails
         return timeEnd;
     }
 
-    /** The property to be used for sorting the reports. */
+    /** The property to be used for sorting the records. */
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final JavaDownloadRecordSortBy sortBy;
 
     /**
-     * The property to be used for sorting the reports.
+     * The property to be used for sorting the records.
      *
      * @return the value
      */
@@ -271,12 +330,12 @@ public final class CreateJavaDownloadReportDetails
         return sortBy;
     }
 
-    /** The sort order for the reports. */
+    /** The sort order for the records. */
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
-     * The sort order for the reports.
+     * The sort order for the records.
      *
      * @return the value
      */
@@ -295,6 +354,44 @@ public final class CreateJavaDownloadReportDetails
      */
     public JavaDownloadReportFormat getFormat() {
         return format;
+    }
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
+     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
+     * Namespaces](https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
+     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
+     * Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
     }
 
     @Override
@@ -318,6 +415,8 @@ public final class CreateJavaDownloadReportDetails
         sb.append(", sortBy=").append(String.valueOf(this.sortBy));
         sb.append(", sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(", format=").append(String.valueOf(this.format));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
         return sb.toString();
     }
@@ -338,6 +437,8 @@ public final class CreateJavaDownloadReportDetails
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.format, other.format)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
     }
 
@@ -353,6 +454,8 @@ public final class CreateJavaDownloadReportDetails
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.format == null ? 43 : this.format.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

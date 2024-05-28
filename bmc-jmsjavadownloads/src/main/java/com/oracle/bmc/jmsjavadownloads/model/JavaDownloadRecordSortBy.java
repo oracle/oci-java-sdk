@@ -10,7 +10,15 @@ public enum JavaDownloadRecordSortBy implements com.oracle.bmc.http.internal.Bmc
     TimeDownloaded("timeDownloaded"),
     DownloadSourceId("downloadSourceId"),
     DownloadType("downloadType"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(JavaDownloadRecordSortBy.class);
 
     private final String value;
     private static java.util.Map<String, JavaDownloadRecordSortBy> map;
@@ -18,7 +26,9 @@ public enum JavaDownloadRecordSortBy implements com.oracle.bmc.http.internal.Bmc
     static {
         map = new java.util.HashMap<>();
         for (JavaDownloadRecordSortBy v : JavaDownloadRecordSortBy.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -36,6 +46,9 @@ public enum JavaDownloadRecordSortBy implements com.oracle.bmc.http.internal.Bmc
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid JavaDownloadRecordSortBy: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'JavaDownloadRecordSortBy', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }
