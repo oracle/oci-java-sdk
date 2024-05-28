@@ -46,24 +46,20 @@ public class ListOccAvailabilitiesRequest
      * Resource type using which the capacity constraints of an availability catalog can be
      * filtered.
      */
-    private com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.ResourceType
-            resourceType;
+    private String resourceType;
 
     /**
      * Resource type using which the capacity constraints of an availability catalog can be
      * filtered.
      */
-    public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.ResourceType
-            getResourceType() {
+    public String getResourceType() {
         return resourceType;
     }
     /** Workload type using the resources in an availability catalog can be filtered. */
-    private com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.WorkloadType
-            workloadType;
+    private String workloadType;
 
     /** Workload type using the resources in an availability catalog can be filtered. */
-    public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.WorkloadType
-            getWorkloadType() {
+    public String getWorkloadType() {
         return workloadType;
     }
     /** The maximum number of items to return. */
@@ -213,8 +209,7 @@ public class ListOccAvailabilitiesRequest
          * Resource type using which the capacity constraints of an availability catalog can be
          * filtered.
          */
-        private com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.ResourceType
-                resourceType = null;
+        private String resourceType = null;
 
         /**
          * Resource type using which the capacity constraints of an availability catalog can be
@@ -223,16 +218,13 @@ public class ListOccAvailabilitiesRequest
          * @param resourceType the value to set
          * @return this builder instance
          */
-        public Builder resourceType(
-                com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.ResourceType
-                        resourceType) {
+        public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             return this;
         }
 
         /** Workload type using the resources in an availability catalog can be filtered. */
-        private com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.WorkloadType
-                workloadType = null;
+        private String workloadType = null;
 
         /**
          * Workload type using the resources in an availability catalog can be filtered.
@@ -240,9 +232,7 @@ public class ListOccAvailabilitiesRequest
          * @param workloadType the value to set
          * @return this builder instance
          */
-        public Builder workloadType(
-                com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary.WorkloadType
-                        workloadType) {
+        public Builder workloadType(String workloadType) {
             this.workloadType = workloadType;
             return this;
         }

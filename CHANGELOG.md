@@ -3,6 +3,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.42.0 - 2024-05-28
+### Added
+- Support for Demand Signal service
+- Support for external database connectors in the Database service
+- Support for monitoring standby databases in the Database Management service
+- Support for resource overviews in the Capacity Management service
+- Support for optional parameters in the download API in the Java Management Service Downloads service
+  
+### Breaking Changes
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType` has been removed in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType` has been removed in the Capacity Management service
+- Added final modifier to class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails$ResourceType` has been removed in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestComputeDetails` has been removed in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
+
 ## 3.41.3 - 2024-05-21
 ### Added
 - Support for the Resource Scheduler service

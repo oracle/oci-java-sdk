@@ -33,6 +33,11 @@ public final class DatabaseUsageMetrics
         "workloadType",
         "databaseName",
         "databaseContainerId",
+        "databaseId",
+        "primaryDbId",
+        "primaryDbUniqueName",
+        "dbUniqueName",
+        "dbRole",
         "metrics"
     })
     public DatabaseUsageMetrics(
@@ -45,6 +50,11 @@ public final class DatabaseUsageMetrics
             WorkloadType workloadType,
             String databaseName,
             String databaseContainerId,
+            String databaseId,
+            String primaryDbId,
+            String primaryDbUniqueName,
+            String dbUniqueName,
+            DbRole dbRole,
             java.util.List<FleetMetricDefinition> metrics) {
         super();
         this.dbId = dbId;
@@ -56,6 +66,11 @@ public final class DatabaseUsageMetrics
         this.workloadType = workloadType;
         this.databaseName = databaseName;
         this.databaseContainerId = databaseContainerId;
+        this.databaseId = databaseId;
+        this.primaryDbId = primaryDbId;
+        this.primaryDbUniqueName = primaryDbUniqueName;
+        this.dbUniqueName = dbUniqueName;
+        this.dbRole = dbRole;
         this.metrics = metrics;
     }
 
@@ -214,6 +229,85 @@ public final class DatabaseUsageMetrics
             this.__explicitlySet__.add("databaseContainerId");
             return this;
         }
+        /**
+         * The Database id of the Managed Database. Every database had its own id and that value is
+         * captured here.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+        private String databaseId;
+
+        /**
+         * The Database id of the Managed Database. Every database had its own id and that value is
+         * captured here.
+         *
+         * @param databaseId the value to set
+         * @return this builder
+         */
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            this.__explicitlySet__.add("databaseId");
+            return this;
+        }
+        /** The Primary Database id of the Managed Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryDbId")
+        private String primaryDbId;
+
+        /**
+         * The Primary Database id of the Managed Database.
+         *
+         * @param primaryDbId the value to set
+         * @return this builder
+         */
+        public Builder primaryDbId(String primaryDbId) {
+            this.primaryDbId = primaryDbId;
+            this.__explicitlySet__.add("primaryDbId");
+            return this;
+        }
+        /** The Primary Database unique name of the Managed Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryDbUniqueName")
+        private String primaryDbUniqueName;
+
+        /**
+         * The Primary Database unique name of the Managed Database.
+         *
+         * @param primaryDbUniqueName the value to set
+         * @return this builder
+         */
+        public Builder primaryDbUniqueName(String primaryDbUniqueName) {
+            this.primaryDbUniqueName = primaryDbUniqueName;
+            this.__explicitlySet__.add("primaryDbUniqueName");
+            return this;
+        }
+        /** The Database unique name of the Managed Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        /**
+         * The Database unique name of the Managed Database.
+         *
+         * @param dbUniqueName the value to set
+         * @return this builder
+         */
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+        /** The Database role of the Managed Database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
+        private DbRole dbRole;
+
+        /**
+         * The Database role of the Managed Database.
+         *
+         * @param dbRole the value to set
+         * @return this builder
+         */
+        public Builder dbRole(DbRole dbRole) {
+            this.dbRole = dbRole;
+            this.__explicitlySet__.add("dbRole");
+            return this;
+        }
         /** A list of the database health metrics like CPU, Storage, and Memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<FleetMetricDefinition> metrics;
@@ -245,6 +339,11 @@ public final class DatabaseUsageMetrics
                             this.workloadType,
                             this.databaseName,
                             this.databaseContainerId,
+                            this.databaseId,
+                            this.primaryDbId,
+                            this.primaryDbUniqueName,
+                            this.dbUniqueName,
+                            this.dbRole,
                             this.metrics);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -280,6 +379,21 @@ public final class DatabaseUsageMetrics
             }
             if (model.wasPropertyExplicitlySet("databaseContainerId")) {
                 this.databaseContainerId(model.getDatabaseContainerId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseId")) {
+                this.databaseId(model.getDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("primaryDbId")) {
+                this.primaryDbId(model.getPrimaryDbId());
+            }
+            if (model.wasPropertyExplicitlySet("primaryDbUniqueName")) {
+                this.primaryDbUniqueName(model.getPrimaryDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("dbUniqueName")) {
+                this.dbUniqueName(model.getDbUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("dbRole")) {
+                this.dbRole(model.getDbRole());
             }
             if (model.wasPropertyExplicitlySet("metrics")) {
                 this.metrics(model.getMetrics());
@@ -432,6 +546,75 @@ public final class DatabaseUsageMetrics
         return databaseContainerId;
     }
 
+    /**
+     * The Database id of the Managed Database. Every database had its own id and that value is
+     * captured here.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+    private final String databaseId;
+
+    /**
+     * The Database id of the Managed Database. Every database had its own id and that value is
+     * captured here.
+     *
+     * @return the value
+     */
+    public String getDatabaseId() {
+        return databaseId;
+    }
+
+    /** The Primary Database id of the Managed Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryDbId")
+    private final String primaryDbId;
+
+    /**
+     * The Primary Database id of the Managed Database.
+     *
+     * @return the value
+     */
+    public String getPrimaryDbId() {
+        return primaryDbId;
+    }
+
+    /** The Primary Database unique name of the Managed Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryDbUniqueName")
+    private final String primaryDbUniqueName;
+
+    /**
+     * The Primary Database unique name of the Managed Database.
+     *
+     * @return the value
+     */
+    public String getPrimaryDbUniqueName() {
+        return primaryDbUniqueName;
+    }
+
+    /** The Database unique name of the Managed Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    private final String dbUniqueName;
+
+    /**
+     * The Database unique name of the Managed Database.
+     *
+     * @return the value
+     */
+    public String getDbUniqueName() {
+        return dbUniqueName;
+    }
+
+    /** The Database role of the Managed Database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
+    private final DbRole dbRole;
+
+    /**
+     * The Database role of the Managed Database.
+     *
+     * @return the value
+     */
+    public DbRole getDbRole() {
+        return dbRole;
+    }
+
     /** A list of the database health metrics like CPU, Storage, and Memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<FleetMetricDefinition> metrics;
@@ -469,6 +652,11 @@ public final class DatabaseUsageMetrics
         sb.append(", workloadType=").append(String.valueOf(this.workloadType));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
         sb.append(", databaseContainerId=").append(String.valueOf(this.databaseContainerId));
+        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", primaryDbId=").append(String.valueOf(this.primaryDbId));
+        sb.append(", primaryDbUniqueName=").append(String.valueOf(this.primaryDbUniqueName));
+        sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
+        sb.append(", dbRole=").append(String.valueOf(this.dbRole));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
         sb.append(")");
         return sb.toString();
@@ -493,6 +681,11 @@ public final class DatabaseUsageMetrics
                 && java.util.Objects.equals(this.workloadType, other.workloadType)
                 && java.util.Objects.equals(this.databaseName, other.databaseName)
                 && java.util.Objects.equals(this.databaseContainerId, other.databaseContainerId)
+                && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.primaryDbId, other.primaryDbId)
+                && java.util.Objects.equals(this.primaryDbUniqueName, other.primaryDbUniqueName)
+                && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
+                && java.util.Objects.equals(this.dbRole, other.dbRole)
                 && java.util.Objects.equals(this.metrics, other.metrics)
                 && super.equals(other);
     }
@@ -522,6 +715,15 @@ public final class DatabaseUsageMetrics
                         + (this.databaseContainerId == null
                                 ? 43
                                 : this.databaseContainerId.hashCode());
+        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result = (result * PRIME) + (this.primaryDbId == null ? 43 : this.primaryDbId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryDbUniqueName == null
+                                ? 43
+                                : this.primaryDbUniqueName.hashCode());
+        result = (result * PRIME) + (this.dbUniqueName == null ? 43 : this.dbUniqueName.hashCode());
+        result = (result * PRIME) + (this.dbRole == null ? 43 : this.dbRole.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

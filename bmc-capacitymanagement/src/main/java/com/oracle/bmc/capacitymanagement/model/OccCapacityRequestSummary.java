@@ -35,6 +35,7 @@ public final class OccCapacityRequestSummary
         "availabilityDomain",
         "dateExpectedCapacityHandover",
         "requestState",
+        "requestType",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -55,6 +56,7 @@ public final class OccCapacityRequestSummary
             String availabilityDomain,
             java.util.Date dateExpectedCapacityHandover,
             OccCapacityRequest.RequestState requestState,
+            OccCapacityRequest.RequestType requestType,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             OccCapacityRequest.LifecycleState lifecycleState,
@@ -74,6 +76,7 @@ public final class OccCapacityRequestSummary
         this.availabilityDomain = availabilityDomain;
         this.dateExpectedCapacityHandover = dateExpectedCapacityHandover;
         this.requestState = requestState;
+        this.requestType = requestType;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -256,6 +259,21 @@ public final class OccCapacityRequestSummary
             this.__explicitlySet__.add("requestState");
             return this;
         }
+        /** Type of Capacity Request(New or Transfer) */
+        @com.fasterxml.jackson.annotation.JsonProperty("requestType")
+        private OccCapacityRequest.RequestType requestType;
+
+        /**
+         * Type of Capacity Request(New or Transfer)
+         *
+         * @param requestType the value to set
+         * @return this builder
+         */
+        public Builder requestType(OccCapacityRequest.RequestType requestType) {
+            this.requestType = requestType;
+            this.__explicitlySet__.add("requestType");
+            return this;
+        }
         /** The time when the capacity request was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
@@ -396,6 +414,7 @@ public final class OccCapacityRequestSummary
                             this.availabilityDomain,
                             this.dateExpectedCapacityHandover,
                             this.requestState,
+                            this.requestType,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -443,6 +462,9 @@ public final class OccCapacityRequestSummary
             }
             if (model.wasPropertyExplicitlySet("requestState")) {
                 this.requestState(model.getRequestState());
+            }
+            if (model.wasPropertyExplicitlySet("requestType")) {
+                this.requestType(model.getRequestType());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -625,6 +647,19 @@ public final class OccCapacityRequestSummary
         return requestState;
     }
 
+    /** Type of Capacity Request(New or Transfer) */
+    @com.fasterxml.jackson.annotation.JsonProperty("requestType")
+    private final OccCapacityRequest.RequestType requestType;
+
+    /**
+     * Type of Capacity Request(New or Transfer)
+     *
+     * @return the value
+     */
+    public OccCapacityRequest.RequestType getRequestType() {
+        return requestType;
+    }
+
     /** The time when the capacity request was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
@@ -760,6 +795,7 @@ public final class OccCapacityRequestSummary
         sb.append(", dateExpectedCapacityHandover=")
                 .append(String.valueOf(this.dateExpectedCapacityHandover));
         sb.append(", requestState=").append(String.valueOf(this.requestState));
+        sb.append(", requestType=").append(String.valueOf(this.requestType));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -794,6 +830,7 @@ public final class OccCapacityRequestSummary
                 && java.util.Objects.equals(
                         this.dateExpectedCapacityHandover, other.dateExpectedCapacityHandover)
                 && java.util.Objects.equals(this.requestState, other.requestState)
+                && java.util.Objects.equals(this.requestType, other.requestType)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -837,6 +874,7 @@ public final class OccCapacityRequestSummary
                                 ? 43
                                 : this.dateExpectedCapacityHandover.hashCode());
         result = (result * PRIME) + (this.requestState == null ? 43 : this.requestState.hashCode());
+        result = (result * PRIME) + (this.requestType == null ? 43 : this.requestType.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

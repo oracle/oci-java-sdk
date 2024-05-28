@@ -337,6 +337,7 @@ public final class ModifyPluggableDatabaseManagementDetails
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
+        Sysdg("SYSDG"),
         ;
 
         private final String value;

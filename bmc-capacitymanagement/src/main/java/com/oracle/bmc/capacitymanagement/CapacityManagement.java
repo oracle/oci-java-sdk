@@ -198,6 +198,23 @@ public interface CapacityManagement extends AutoCloseable {
     GetOccCustomerGroupResponse getOccCustomerGroup(GetOccCustomerGroupRequest request);
 
     /**
+     * Lists an overview of all resources in that namespace in a given time interval.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalNamespaceOccOverviewsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListInternalNamespaceOccOverviews API.
+     */
+    ListInternalNamespaceOccOverviewsResponse listInternalNamespaceOccOverviews(
+            ListInternalNamespaceOccOverviewsRequest request);
+
+    /**
      * Lists availabilities for a particular availability catalog.
      *
      * @param request The request object containing the details to send
@@ -295,6 +312,39 @@ public interface CapacityManagement extends AutoCloseable {
      *     ListOccCustomerGroups API.
      */
     ListOccCustomerGroupsResponse listOccCustomerGroups(ListOccCustomerGroupsRequest request);
+
+    /**
+     * Lists an overview of all resources in that namespace in a given time interval.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccOverviewsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccOverviews
+     *     API.
+     */
+    ListOccOverviewsResponse listOccOverviews(ListOccOverviewsRequest request);
+
+    /**
+     * Updates the OccCapacityRequest by evaluating a sequence of instructions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PatchInternalOccCapacityRequestExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchInternalOccCapacityRequest API.
+     */
+    PatchInternalOccCapacityRequestResponse patchInternalOccCapacityRequest(
+            PatchInternalOccCapacityRequestRequest request);
 
     /**
      * Updates the OccCapacityRequest by evaluating a sequence of instructions.

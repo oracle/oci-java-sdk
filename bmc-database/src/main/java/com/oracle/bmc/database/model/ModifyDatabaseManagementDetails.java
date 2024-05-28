@@ -405,6 +405,7 @@ public final class ModifyDatabaseManagementDetails
     public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
+        Sysdg("SYSDG"),
         ;
 
         private final String value;

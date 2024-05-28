@@ -130,7 +130,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ActivateScheduleResponse::builder)
                 .logger(LOG, "activateSchedule")
-                .serviceDetails("Schedule", "ActivateSchedule", "")
+                .serviceDetails(
+                        "Schedule",
+                        "ActivateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/ActivateSchedule")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ActivateScheduleRequest::builder)
                 .basePath("/20240430")
@@ -159,7 +162,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("Schedule", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "Schedule",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20240430")
@@ -181,7 +187,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, CreateScheduleResponse::builder)
                 .logger(LOG, "createSchedule")
-                .serviceDetails("Schedule", "CreateSchedule", "")
+                .serviceDetails(
+                        "Schedule",
+                        "CreateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/CreateSchedule")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateScheduleRequest::builder)
                 .basePath("/20240430")
@@ -212,7 +221,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, DeactivateScheduleResponse::builder)
                 .logger(LOG, "deactivateSchedule")
-                .serviceDetails("Schedule", "DeactivateSchedule", "")
+                .serviceDetails(
+                        "Schedule",
+                        "DeactivateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/DeactivateSchedule")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DeactivateScheduleRequest::builder)
                 .basePath("/20240430")
@@ -241,7 +253,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, DeleteScheduleResponse::builder)
                 .logger(LOG, "deleteSchedule")
-                .serviceDetails("Schedule", "DeleteSchedule", "")
+                .serviceDetails(
+                        "Schedule",
+                        "DeleteSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/DeleteSchedule")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteScheduleRequest::builder)
                 .basePath("/20240430")
@@ -263,7 +278,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetScheduleResponse::builder)
                 .logger(LOG, "getSchedule")
-                .serviceDetails("Schedule", "GetSchedule", "")
+                .serviceDetails(
+                        "Schedule",
+                        "GetSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/GetSchedule")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetScheduleRequest::builder)
                 .basePath("/20240430")
@@ -288,7 +306,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("Schedule", "GetWorkRequest", "")
+                .serviceDetails(
+                        "Schedule",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20240430")
@@ -313,7 +334,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListResourceTypesResponse::builder)
                 .logger(LOG, "listResourceTypes")
-                .serviceDetails("Schedule", "ListResourceTypes", "")
+                .serviceDetails(
+                        "Schedule",
+                        "ListResourceTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/ResourceTypeCollection/ListResourceTypes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListResourceTypesRequest::builder)
                 .basePath("/20240430")
@@ -340,7 +364,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListSchedulesResponse::builder)
                 .logger(LOG, "listSchedules")
-                .serviceDetails("Schedule", "ListSchedules", "")
+                .serviceDetails(
+                        "Schedule",
+                        "ListSchedules",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/ListSchedules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSchedulesRequest::builder)
                 .basePath("/20240430")
@@ -374,7 +401,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("Schedule", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "Schedule",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20240430")
@@ -405,7 +435,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("Schedule", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "Schedule",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20240430")
@@ -434,7 +467,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("Schedule", "ListWorkRequests", "")
+                .serviceDetails(
+                        "Schedule",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20240430")
@@ -470,7 +506,10 @@ public class ScheduleClient extends com.oracle.bmc.http.internal.BaseSyncClient
 
         return clientCall(request, UpdateScheduleResponse::builder)
                 .logger(LOG, "updateSchedule")
-                .serviceDetails("Schedule", "UpdateSchedule", "")
+                .serviceDetails(
+                        "Schedule",
+                        "UpdateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/UpdateSchedule")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateScheduleRequest::builder)
                 .basePath("/20240430")

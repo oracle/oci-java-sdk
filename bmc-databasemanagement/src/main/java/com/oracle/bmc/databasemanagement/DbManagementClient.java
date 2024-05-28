@@ -2577,6 +2577,43 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetDataguardPerformanceMetricsResponse getDataguardPerformanceMetrics(
+            GetDataguardPerformanceMetricsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDataguardPerformanceMetricsResponse::builder)
+                .logger(LOG, "getDataguardPerformanceMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDataguardPerformanceMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DataguardPerformanceMetrics/GetDataguardPerformanceMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDataguardPerformanceMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("dataguardPerformanceMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam(
+                        "peerDatabaseCompartmentId", request.getPeerDatabaseCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DataguardPerformanceMetrics.class,
+                        GetDataguardPerformanceMetricsResponse.Builder::dataguardPerformanceMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDataguardPerformanceMetricsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetDbManagementPrivateEndpointResponse getDbManagementPrivateEndpoint(
             GetDbManagementPrivateEndpointRequest request) {
 
@@ -3434,6 +3471,43 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetPdbMetricsResponse.Builder::pdbMetrics)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPdbMetricsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPeerDatabaseMetricsResponse getPeerDatabaseMetrics(
+            GetPeerDatabaseMetricsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetPeerDatabaseMetricsResponse::builder)
+                .logger(LOG, "getPeerDatabaseMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetPeerDatabaseMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PeerDatabaseMetrics/GetPeerDatabaseMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPeerDatabaseMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("peerDatabaseMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam(
+                        "peerDatabaseCompartmentId", request.getPeerDatabaseCompartmentId())
+                .appendEnumQueryParam("compareType", request.getCompareType())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PeerDatabaseMetrics.class,
+                        GetPeerDatabaseMetricsResponse.Builder::peerDatabaseMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPeerDatabaseMetricsResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -69,6 +69,19 @@ public class ListOccCapacityRequestsInternalRequest
         return displayName;
     }
     /**
+     * A filter to return only the resources that match the request type. The match is not case
+     * sensitive.
+     */
+    private com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType requestType;
+
+    /**
+     * A filter to return only the resources that match the request type. The match is not case
+     * sensitive.
+     */
+    public com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType getRequestType() {
+        return requestType;
+    }
+    /**
      * A filter to return the list of capacity requests based on the OCID of the capacity request.
      * This is done for the users who have INSPECT permission on the resource but do not have READ
      * permission.
@@ -266,6 +279,27 @@ public class ListOccCapacityRequestsInternalRequest
         }
 
         /**
+         * A filter to return only the resources that match the request type. The match is not case
+         * sensitive.
+         */
+        private com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType requestType =
+                null;
+
+        /**
+         * A filter to return only the resources that match the request type. The match is not case
+         * sensitive.
+         *
+         * @param requestType the value to set
+         * @return this builder instance
+         */
+        public Builder requestType(
+                com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType
+                        requestType) {
+            this.requestType = requestType;
+            return this;
+        }
+
+        /**
          * A filter to return the list of capacity requests based on the OCID of the capacity
          * request. This is done for the users who have INSPECT permission on the resource but do
          * not have READ permission.
@@ -404,6 +438,7 @@ public class ListOccCapacityRequestsInternalRequest
             occAvailabilityCatalogId(o.getOccAvailabilityCatalogId());
             namespace(o.getNamespace());
             displayName(o.getDisplayName());
+            requestType(o.getRequestType());
             id(o.getId());
             limit(o.getLimit());
             page(o.getPage());
@@ -452,6 +487,7 @@ public class ListOccCapacityRequestsInternalRequest
             request.occAvailabilityCatalogId = occAvailabilityCatalogId;
             request.namespace = namespace;
             request.displayName = displayName;
+            request.requestType = requestType;
             request.id = id;
             request.limit = limit;
             request.page = page;
@@ -460,8 +496,8 @@ public class ListOccCapacityRequestsInternalRequest
             request.sortBy = sortBy;
             return request;
             // new ListOccCapacityRequestsInternalRequest(compartmentId, occCustomerGroupId,
-            // occAvailabilityCatalogId, namespace, displayName, id, limit, page, opcRequestId,
-            // sortOrder, sortBy);
+            // occAvailabilityCatalogId, namespace, displayName, requestType, id, limit, page,
+            // opcRequestId, sortOrder, sortBy);
         }
     }
 
@@ -477,6 +513,7 @@ public class ListOccCapacityRequestsInternalRequest
                 .occAvailabilityCatalogId(occAvailabilityCatalogId)
                 .namespace(namespace)
                 .displayName(displayName)
+                .requestType(requestType)
                 .id(id)
                 .limit(limit)
                 .page(page)
@@ -505,6 +542,7 @@ public class ListOccCapacityRequestsInternalRequest
                 .append(String.valueOf(this.occAvailabilityCatalogId));
         sb.append(",namespace=").append(String.valueOf(this.namespace));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",requestType=").append(String.valueOf(this.requestType));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -532,6 +570,7 @@ public class ListOccCapacityRequestsInternalRequest
                         this.occAvailabilityCatalogId, other.occAvailabilityCatalogId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.requestType, other.requestType)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -559,6 +598,7 @@ public class ListOccCapacityRequestsInternalRequest
                                 : this.occAvailabilityCatalogId.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.requestType == null ? 43 : this.requestType.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

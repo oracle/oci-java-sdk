@@ -1349,6 +1349,27 @@ public interface DbManagement extends AutoCloseable {
     GetDatabaseHomeMetricsResponse getDatabaseHomeMetrics(GetDatabaseHomeMetricsRequest request);
 
     /**
+     * Gets a historical summary of the Database Guard performance metrics for Managed Databases. If
+     * the peerDatabaseCompartmentId is specified, then the metrics are only retrieved from the
+     * specified compartment. If the peerDatabaseCompartmentId is not specified, then the metrics
+     * are retrieved from the compartment of the Managed Database specified by the
+     * ManagedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDataguardPerformanceMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDataguardPerformanceMetrics API.
+     */
+    GetDataguardPerformanceMetricsResponse getDataguardPerformanceMetrics(
+            GetDataguardPerformanceMetricsRequest request);
+
+    /**
      * Gets the details of a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
@@ -1813,6 +1834,26 @@ public interface DbManagement extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPdbMetrics API.
      */
     GetPdbMetricsResponse getPdbMetrics(GetPdbMetricsRequest request);
+
+    /**
+     * Gets a comparative summary of the baseline and target values of the Data Guard performance
+     * metrics for Managed Databases. If the peerDatabaseCompartmentId is specified, then the
+     * metrics are only retrieved from the specified compartment. If the peerDatabaseCompartmentId
+     * is not specified, then the metrics are retrieved from the compartment of the Managed Database
+     * specified by the ManagedDatabaseId.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetPeerDatabaseMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetPeerDatabaseMetrics API.
+     */
+    GetPeerDatabaseMetricsResponse getPeerDatabaseMetrics(GetPeerDatabaseMetricsRequest request);
 
     /**
      * Gets the preferred credential details for a Managed Database based on credentialName.
